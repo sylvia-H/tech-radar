@@ -63,13 +63,18 @@ jobs:
           echo "::error::狀態 commit/push 重試 3 次仍失敗"
           exit 1
 
-      - name: Failure alert (app 自身邏輯以外)
-        # 只補送 app 啟動前（run-app 被跳過）與 app 成功後的狀態 commit/push 失敗；
-        # app 內失敗（run-app outcome == 'failure'）已由 CLI postFailureAlert 送告警，此步跳過避免重複。
-        if: failure() && steps.run-app.outcome != 'failure'
+      - name: Failure alert (CLI 未送出告警的任何失敗)
+        # CLI 成功送出告警後會寫 .radar-alert-sent marker；此步只在 marker 缺席時補送。
+        # 去重依據是「CLI 明確回報已送出」而非 run-app 的 outcome，因此涵蓋
+        # app 啟動前失敗（env 驗證/DI）、CLI 告警送出失敗、狀態 commit/push 失敗。
+        if: failure()
         run: |
+          if [ -f .radar-alert-sent ]; then
+            echo "CLI 已送出失敗告警，跳過補送"
+            exit 0
+          fi
           curl -sf -H "Content-Type: application/json" \
-            -d '{"username":"Tech Radar","embeds":[{"title":"⚠️ Tech Radar 執行失敗","description":"workflow 失敗（app 啟動前或狀態 commit/push），請查 Actions log","color":15158322}]}' \
+            -d '{"username":"Tech Radar","embeds":[{"title":"⚠️ Tech Radar 執行失敗","description":"workflow 失敗且 CLI 未送出告警（啟動前失敗、告警送出失敗或狀態 commit/push 失敗），請查 Actions log","color":15158322}]}' \
             "$DISCORD_WEBHOOK_URL"
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
