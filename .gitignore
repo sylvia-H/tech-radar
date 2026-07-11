@@ -13,6 +13,10 @@ dist/
 # Logs
 *.log
 
+# 執行期產物（CLI 送出失敗告警後的 marker；workflow 據此去重）
+.radar-alert-sent
+state/*.tmp
+
 # Coverage
 coverage/
 
