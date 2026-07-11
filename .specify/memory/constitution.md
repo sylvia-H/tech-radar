@@ -1,23 +1,26 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: (template, unversioned) → 1.0.0
-Bump rationale: 首次由模板具體化為正式憲章（MAJOR 起始版），確立本專案全部非協商原則。
+Version change: 1.0.0 → 1.0.1
+Bump rationale: PATCH——釐清「技術與安全約束」中狀態 commit 的措辭，使其與開發指南 §8
+  workflow 的 no-diff 早退（僅在狀態實際變更時 commit）及 F1 spec 的澄清一致；非語意變更。
 
-Modified principles:
-  - 模板佔位 [PRINCIPLE_1..5] → 八條具名原則（見下）
-Added sections:
-  - 核心原則 I–VIII（取自開發指南 §11 非協商原則、§3–§10、§14）
-  - 技術與安全約束（取自 §2、§11「秘密不入庫」、§11.2 技術釘死）
-  - 開發流程（取自 §11 SDD × Spec Kit、§11.1 Git 分支策略、§11.2 F1–F8）
-  - 治理（版本政策、修訂程序、合規審查）
-Removed sections: 無（僅將模板佔位替換為具體內容）
+Modified sections:
+  - 技術與安全約束 → 「執行與排程」項：由「每次成功執行都 commit」改為「僅在狀態實際變更時
+    commit；保活由正式期每日 `lastNewsPushAt` 變更與開發期程式碼 commit 自然達成」。
+Added sections: 無
+Removed sections: 無
+
+Prior history:
+  - 1.0.0（2026-07-11）：首次由模板具體化為正式憲章（MAJOR 起始版），確立八條非協商原則、
+    技術與安全約束、開發流程與治理章節。
 
 Templates requiring updates:
   - .specify/templates/plan-template.md ✅ 對齊（Constitution Check 為泛用 gate，無過時引用）
   - .specify/templates/spec-template.md ✅ 對齊（泛用範本，未硬編原則）
   - .specify/templates/tasks-template.md ✅ 對齊（泛用範本，未硬編原則）
-  - docs/tech-radar-dev-guide.md ✅ 為本憲章來源，內容一致
+  - docs/tech-radar-dev-guide.md ✅ 為本憲章來源，內容一致（§8 no-diff 早退）
+  - specs/001-foundation/spec.md ✅ 對齊（FR-007 commit-on-change、Session 2026-07-11 澄清）
 
 Follow-up TODOs: 無（無延遲佔位）
 -->
@@ -119,7 +122,9 @@ Follow-up TODOs: 無（無延遲佔位）
   `NestFactory.createApplicationContext()` 跑一次性 CLI job（保留 DI、不啟 HTTP server、跑完即退）；
   `cheerio`（爬 Trending）、`rss-parser`、`@google/genai`、`undici`/`fetch`；F8 另加 `feed`。
 - **執行與排程**：GitHub Actions，晨報排雙離峰 cron（`:07` / `:37`，UTC），並以 guard 抗漏跑；
-  每次成功執行都 commit `state/board.json` 以保 workflow 活性（避免 60 天停用）。
+  狀態 commit **僅在 `state/board.json` 實際變更時進行**（沿用開發指南 §8 workflow 的 no-diff 早退，
+  不製造空 commit）。workflow 活性（避免 60 天停用）由正式期每日 `lastNewsPushAt` 變更與開發期
+  程式碼 commit 自然維持，不依賴人工心跳 commit。
 - **Secrets 命名**：`GH_API_TOKEN`（不可用 `GITHUB_` 前綴）、`GEMINI_API_KEY`、`DISCORD_WEBHOOK_URL`，
   皆存於 Actions Secrets。
 - **抓取禮貌**：帶自訂 User-Agent、條件式請求（ETag / If-Modified-Since）、失敗指數退避；
@@ -156,4 +161,4 @@ Follow-up TODOs: 無（無延遲佔位）
 - **來源文件**：執行期與設計細節以 `docs/tech-radar-dev-guide.md` 為準；該指南與本憲章不一致時，
   以本憲章的非協商原則為最高約束，並修訂指南使其一致。
 
-**Version**: 1.0.0 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-11
+**Version**: 1.0.1 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-11
