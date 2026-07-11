@@ -11,7 +11,7 @@
 | 執行環境   | **GitHub Actions 排程 workflow**                                                                       | 純排程任務（1 次/日）不需要常駐伺服器。Actions 免費、零維運、內建 secrets 與 cron。     |
 | 排程       | Actions `schedule:` 每日晨報**雙 cron**（主排 + 補跑，UTC）；榜單每三天一次（由程式依狀態計時）        | Actions cron 可能延遲/跳過，雙 cron + 狀態 guard 保證每日恰一次；非即時任務可容忍延遲。 |
 | 星星暴增   | 讀 **GitHub Trending weekly 的「stars this week」** + Search API `created:>7天`                        | GitHub 官方替你算好一週星星增量，**不必自存快照與 day-over-day 對比**。                 |
-| 變化追蹤   | 持久化「上次榜單」快照，每三天 diff 出**新進榜 / 竄升 / 跌出榜**                                       | 「只看變化」的核心；週指標用三日節奏推播剛好，不洗版。                                  |
+| 變化追蹤   | 持久化「上次推播榜」快照，每三天 diff 出**新進 / 竄升 / 下降**（掉出榜靜默）                                       | 「只看變化」的核心；週指標用三日節奏推播剛好，不洗版。                                  |
 | 新聞晨報   | 每日精選 **6 則**（AI 為主，DevOps/後端/前端合計 ≤2），每則**繁中標題 ≤50 字＋內容 ≤300 字**：**結構性去重（target-URL 正規化）→ 門檻 → 單次 LLM 依「開發者重要性」策展** | 控制資訊量、防通知疲勞；**依對開發者的重要性排序（非熱度）**，重要度優先於數量；新聞每日僅 1 次 LLM。                                              |
 | 新聞來源   | **單一設定檔集中管理**（`news-sources.ts`），分三層：Tier 1 高訊號聚合 / Tier 2 高精準一手 / Tier 3 選配實驗                | 增刪修來源只改設定檔、不動 pipeline code；用一手來源（releases/官方公告）換掉低訊噪比聚合源。 |
 | repo 簡介  | 首次進榜時抓 README → Gemini 產 ≤250 字簡介 → **按 repoId 快取（獨立於榜單快照）**                     | 只生成一次，省額度、內容穩定；跌出榜再進榜也不重生成，且天然只介紹「有變化」的 repo。   |
@@ -37,7 +37,7 @@
   │   1. 抓當前榜單                          │                └─────────┘
   │      ├ GitHub Trending weekly            │
   │      └ GitHub Search (created:>7d)       │
-  │   2. 載入上次榜單 → diff（新進/竄升/跌出）│
+  │   2. 載入上次榜單 → diff（新進/竄升/下降）│
   │   3. 對「新進榜」抓 README → Gemini 簡介  │  ← 只對變化的 repo 生成，並快取
   │   4. 抓相關討論（RSS）取變化              │
   │   5. 組「變化摘要」→ POST 到 Discord      │
@@ -129,7 +129,8 @@ GET /search/repositories?q=(nextjs OR react OR svelte OR nodejs OR golang) creat
 
 - 兩來源 union → 用 `repoId`（GitHub numeric id，抗改名）去重。
 - 排序鍵：Trending 來源用 `starsThisWeek`；Search 來源用「總星數 ÷ 建立天數」近似速度。
-- 每領域各取 **top 15** 作為「當前榜單」，交給 §5 做變化比對；推播只把「變化」卡片化、必要時限縮張數（見 §7）。**追蹤深度（15）大於推播呈現**，`RANK_JUMP_THRESHOLD` 等級的竄升/下降才有被偵測的空間。
+- 每領域各取 **top 15** 作為「當前榜單」（**追蹤深度**），交給 §5 做變化比對。**推播呈現另取「跨領域綜合 top 10」**：把三領域 45 筆以統一尺「**估算本週增星**」合成單一排名、**保底每領域至少 2 席**，只推前 10（見 §5.2 / §5.3 / §7）。**追蹤深度（15）大於推播呈現（10）**，`RANK_JUMP_THRESHOLD` 等級的竄升/下降才有被偵測的空間。
+  - **統一尺「估算本週增星」**：Trending repo 用 `starsThisWeek`；Search-only repo 用 `(總星數 ÷ 建立天數) × 7` 估成週增星等值；同時在兩來源者以 `starsThisWeek` 為準。
 
 ---
 
@@ -243,7 +244,7 @@ export const NEWS_SOURCES: NewsSource[] = [
 
 ## 5. 變化追蹤：榜單每三天「只看變化」
 
-榜單推播**不重述整份榜單**，只呈現「自上次榜單推播以來的變化」。因為「本週增星」是週指標、幾小時內幾乎不動，用**三天**的節奏推播剛好：既能捕捉到有意義的**新進榜 / 跌出榜**（其次是**明顯竄升**），又不會每天洗版。新聞晨報則每日獨立推送（見 §4.4），與榜單節奏解耦。
+榜單推播**不重述整份榜單**，只呈現「自上次榜單推播以來的變化」，且**變化以「跨領域綜合 top 10」為視窗計算**（非各領域全榜；見 §5.2）。因為「本週增星」是週指標、幾小時內幾乎不動，用**三天**的節奏推播剛好：既能捕捉到有意義的**新進 top 10**與**竄升／下降**，又不會每天洗版（掉出 top 10 者當次靜默、不另報，日後重回即以新進呈現）。新聞晨報則每日獨立推送（見 §4.4），與榜單節奏解耦。
 
 ### 5.1 狀態結構（`state/board.json`）
 
@@ -252,6 +253,7 @@ export const NEWS_SOURCES: NewsSource[] = [
   "lastBoardPushAt": "2026-07-08T22:00:00Z", // 榜單上次推播；距今 ≥3 天才再推榜單
   "lastNewsPushAt": "2026-07-09T22:00:00Z", // 晨報上次推播；距今 <~18h 則本次跳過新聞段（雙 cron 去重 + 漏跑補推，見 §8）
   "board": {
+    // 只存「上次推播的綜合 top 10」（≤10 筆）；45 追蹤深度（每領域 top 15）每次執行即時重建、不落地
     "123456789": {
       // key = repoId
       "fullName": "owner/name",
@@ -273,26 +275,46 @@ export const NEWS_SOURCES: NewsSource[] = [
 }
 ```
 
+> **狀態只存推播榜（≤10），不存追蹤深度（45）**：45 筆（每領域 top 15）只在單次執行的記憶體中用來挑選綜合 top 10 與偵測竄升/下降，**不寫入 `state.board`**；`state.board` 只保留「上次推播的綜合 top 10」供下次 diff（top 10 外一律當新進，故無需存其名次）。`state.intros` 亦只會有「**曾進過 top 10**」的 repo（簡介只在進榜時生成），且**跌出不清除**以利重回時命中快取——兩者都不會膨脹到 45。
+
 ### 5.2 Diff 邏輯
 
 ```ts
-const prev = loadState().board; // 上次
-const curr = buildCurrentBoard(); // 本次（§3 合併結果，key=repoId）
-const T = RANK_JUMP_THRESHOLD; // 建議 5～8，避免把微幅洗牌當變化
+// 綜合 top 10：把三領域各自的 top 15（追蹤深度）合成單一推播榜
+function pickPushBoard(board) {
+  const scored = allDomains(board).map((r) => ({
+    ...r,
+    // 統一尺「估算本週增星」：Trending 用 starsThisWeek；Search-only 用 (總星數/建立天數)*7；
+    // 兩來源都有時以 starsThisWeek 為準
+    weeklyStars: r.starsThisWeek ?? Math.round((r.totalStars / Math.max(r.ageDays, 1)) * 7),
+  }));
+  // 保底：每領域先取熱度最高 2 席（2×3=6），其餘 4 席跨領域比 weeklyStars
+  const floor = domains.flatMap((d) => topN(scored.filter(byDomain(d)), 2));
+  const rest = topN(exclude(scored, floor), 10 - floor.length);
+  return assignRanks([...floor, ...rest].sort(byWeeklyStarsDesc)); // key=repoId，rank #1..#10
+}
 
-const newcomers = keysIn(curr).filter((id) => !prev[id]); // 🆕 新進榜（帶簡介）
-const dropped = keysIn(prev).filter((id) => !curr[id]); // ✖️ 跌出榜
+const prev = loadState().board; // 上次推播的綜合 top 10（key=repoId，rank=綜合名次）
+const curr = pickPushBoard(buildCurrentBoard()); // 本次：45 筆 → 綜合 top 10
+const T = RANK_JUMP_THRESHOLD; // top-10 窗小，宜取較小值（初值於 F3 clarify 定案）
+
+const newcomers = keysIn(curr).filter((id) => !prev[id]); // 🆕 進入 top 10（帶簡介）
+// 掉出 top 10（在 prev、不在 curr）**當次靜默**：不推卡、不另報「跌出」；簡介快取保留（見 §6），
+// 日後重回時 curr 中它又不在 prev → 自然以 newcomers（新進）呈現。故不需計算 dropped。
 const climbed = keysIn(curr).filter(
   (id) => prev[id] && prev[id].rank - curr[id].rank >= T,
-); // 🔺 竄升
+); // 🔺 綜合名次竄升
 const declined = keysIn(curr).filter(
   (id) => prev[id] && curr[id].rank - prev[id].rank >= T,
-); // 🔻 下降
-// 竄升同樣附簡介（讀快取）；下降/跌出只報名次變化
+); // 🔻 綜合名次下降
+// 竄升同樣附簡介（讀快取）；下降只報名次變化
 ```
 
-- `newcomers` 與 `climbed` 附簡介（新進榜首次生成、竄升讀快取）；`declined / dropped` 只呈現名次變化。
-- 「rank」為該 repo 在其領域榜（top 15，見 §3.3）的名次。
+- `newcomers` 與 `climbed` 附簡介（進 top 10 首次生成、竄升讀快取）；`declined` 只呈現名次變化；掉出 top 10 者不計入任何推播集合（靜默）。
+- **留榜但變化未達門檻 → 靜默**：在 `prev` 與 `curr` 皆存在（同一 `repoId`）、但綜合名次變化 `< RANK_JUMP_THRESHOLD`（**含完全不變**）的 repo，不落入 `newcomers`／`climbed`／`declined` 任一集合 → **當次不推**（**穩定留榜**，符合憲章 III「只推變化、不重述整份榜單」）。此與「掉出 top 10」同為不推、但語意不同：一個仍在榜、一個已離榜。故 top 10 中**多數穩定成員每個榜單日都不會被重述**，只有跨門檻的移動與新進才成卡片。
+- **同一性以 `repoId`（數字 id）判定**：改名／轉移擁有者不影響「是否同一 repo」，故「上次本次同一 repo」一律看 id 而非 `fullName`。
+- 「rank」為該 repo 在**跨領域綜合 top 10** 的名次（`#1..#10`）；追蹤深度仍為各領域 top 15（見 §3.3）。
+- **冷啟動（首次推播）**：`prev` 為空 → 綜合 top 10 全數落入 `newcomers`，直接推 **10 張帶簡介的卡片**（不採「靜默建 baseline」）。之後穩定態每三天只有 0～數個真正的新進與竄升／下降。
 - **榜單日但無變化**：不必無聲，但也不用大張旗鼓——把「榜單無變化」縮成晨報裡的一行（例如「📊 榜單無變化 · AI 榜首 owner/name ⭐+8.6k」）即可；job 是否存活改由 §8 的 `if: failure()` 告警與每日晨報本身來保證。
 
 ### 5.3 推播的組成
@@ -301,18 +323,20 @@ const declined = keysIn(curr).filter(
 
 - **📰 精選新聞**：經 §4.4 漏斗（結構性去重 → 門檻 → 單次 LLM 依開發者重要性策展）篩出的 6 則（AI ≥4；DevOps/後端/前端合計 ≤2），每則為**繁中標題（≤50 字）＋內容（≤300 字）**，說明發生什麼事、為什麼對開發者重要。
 
-**榜單日（每三天，疊加在當日晨報前）**
+**榜單日（每三天，疊加在當日晨報前）**——一律以**跨領域綜合 top 10**（保底每領域 ≥2 席）為變化視窗，卡片 fields **標示週增星數**以呈現人氣落差：
 
-- **🆕 新進榜**：repo + ⭐本週增星 + **250 字簡介**（首次生成，見 §6）。
-- **🔺 竄升**：repo + 名次變化（如 `#9 → #3`）+ **250 字簡介**（讀快取）。
-- **🔻 下降**：只報名次變化（如 `#3 → #8`），不帶簡介。
-- **✖️ 跌出榜**：只列名稱與上次名次（如 `上次 #7`），不帶簡介。
+- **🆕 新進 top 10**：repo + ⭐本週增星 + **250 字簡介**（首次生成，見 §6）。
+- **🔺 竄升**：repo + 綜合名次變化（如 `#9 → #3`）+ **250 字簡介**（讀快取）。
+- **🔻 下降**：只報綜合名次變化（如 `#3 → #8`），不帶簡介。
+- **掉出 top 10**：**當次靜默**——不推卡、也不列「跌出」提示；簡介快取保留，**日後重回 top 10 即以「🆕 新進」呈現（帶簡介、讀快取）**。
+
+> **卡片張數天然受控**：帶簡介的卡片＝`新進 + 竄升`，因整個視窗僅 10 席故 **≤10 張**；**冷啟動首次推播即 10 張**（全數新進）。穩定態每三天多半 0～數張。Discord 一則訊息 ≤10 embeds，卡片逼近上限時把晨報新聞另送第二則訊息（見 §7.1）。
 
 ---
 
 ## 6. 每個 repo 的 250 字簡介
 
-**新進榜**與**竄升**的 repo 都附簡介：新進榜在首次進榜時生成一次 ≤250 字繁中簡介並快取，竄升時直接讀快取、不重生成。下降／跌出只報名次變化、不顯示簡介。因此每個 repo 一生只會**生成一次**簡介（進榜當下）；快取存於 `state.intros`、獨立於榜單快照，跌出榜不清除，所以「掉出後又重新進榜」也不會重生成。
+**新進**與**竄升**的 repo 都附簡介：新進在首次進 top 10 時生成一次 ≤250 字繁中簡介並快取，竄升時直接讀快取、不重生成。下降只報名次變化、不顯示簡介；掉出 top 10 當次靜默不推。因此每個 repo 一生只會**生成一次**簡介（首次進 top 10 當下）；快取存於 `state.intros`、獨立於榜單快照，**掉出榜不清除快取**，所以「掉出後又重新進榜」以新進呈現時也直接讀快取、不重生成。
 
 ### 6.1 流程
 
@@ -340,14 +364,14 @@ async function ensureIntro(repo, state) {
 
 ### 6.3 額度與品質
 
-- **快取是關鍵**：只在首次進榜生成。穩定態每三天才有 0～數個新 repo → 遠低於 1,500 RPD；加上晨報每日一次策展呼叫，用量依舊極低。即使冷啟動日一次引入 ~40 個 repo（40 次呼叫）也在免費額度內。
+- **快取是關鍵**：只在首次**進 top 10** 生成（簡介僅推播榜成員才需要）。穩定態每三天才有 0～數個新 repo → 遠低於 1,500 RPD；加上晨報每日一次策展呼叫，用量依舊極低。**冷啟動首次推播最多 10 個新進（≤10 次呼叫）**，也在免費額度內。
 - README 截斷到 ~6k 字元即可涵蓋多數專案重點，控制 token 又保品質。
 
 ---
 
 ## 7. Discord 呈現與模板設計
 
-每日晨報固定有一張**新聞精選 embed**（6 則，AI 優先）；**榜單日**（每三天）再於其前疊加榜單區塊——**一張榜單變化封面 + 每個新進榜/竄升 repo 一張卡**：封面一行式列出不需簡介的名次變化（下降／跌出），卡片留給帶 250 字簡介的新進榜與竄升，並用 embed 的 `url` 讓卡片標題可點。
+每日晨報固定有一張**新聞精選 embed**（6 則，AI 優先）；**榜單日**（每三天）再於其前疊加榜單區塊，變化視窗為**跨領域綜合 top 10**（保底每領域 ≥2 席）——**一張榜單變化封面 + 每個新進 top 10／竄升 repo 一張卡**：封面一行式列出不需簡介的名次變化（下降），卡片留給帶 250 字簡介的新進與竄升，卡片 fields 標示**週增星數**（估算本週增星）與綜合名次，並用 embed 的 `url` 讓卡片標題可點（掉出 top 10 者當次靜默、不列於封面）。
 
 ### 7.1 embed 規格重點
 
@@ -357,7 +381,7 @@ async function ensureIntro(repo, state) {
 | `url`         | —                            | 設在 embed 上 → 點標題直接開 repo                              |
 | `description` | 4096                         | 放 250 字簡介綽綽有餘；吃遮罩連結、粗體、引言、清單            |
 | `fields`      | ≤25，name ≤256 / value ≤1024 | 放 ⭐增星、語言、名次/領域                                     |
-| 一則訊息      | ≤10 embeds                   | 封面 1 + 卡片（新進+竄升）≤9；超出就分兩則訊息或砍到 top N     |
+| 一則訊息      | ≤10 embeds                   | 封面 1 + 卡片（新進+竄升）≤10；冷啟動 10 張卡＋封面超過 10 → 晨報新聞改送第二則訊息 |
 
 可用 Markdown：`**粗體**`、`` `行內碼` ``、`> 引言`、`- 清單`、遮罩連結 `[文字](url)`。
 
@@ -366,7 +390,7 @@ async function ensureIntro(repo, state) {
 ```ts
 const embeds = [];
 
-// —— 榜單日才有：封面（下降/跌出）+ 新進榜/竄升卡 ——
+// —— 榜單日才有：封面（下降）+ 新進/竄升卡 ——（掉出 top 10 靜默、不列封面）
 if (isBoardDay) {
   const line = (r) => `[${r.fullName}](${r.url})`;
   const parts = [`**本次榜單變化**\n${changeTldr}`]; // Gemini 產生的一句話變化摘要（榜單日一次，見 §10）
@@ -376,11 +400,6 @@ if (isBoardDay) {
         declined
           .map((r) => `${line(r)} #${r.prevRank} → #${r.rank}`)
           .join("\n"),
-    );
-  if (dropped.length)
-    parts.push(
-      "✖️ 跌出榜\n" +
-        dropped.map((r) => `${line(r)}（上次 #${r.prevRank}）`).join("\n"),
     );
   embeds.push({
     title: `📊 榜單變化 · ${dateLabel}`,
@@ -431,20 +450,19 @@ await postWebhook({
 });
 ```
 
-> 非榜單日只有一張晨報 embed；榜單日若「新進榜 + 竄升」超過 8 張（多半只在冷啟動日），把榜單區塊留在第一則訊息、晨報另送第二則，或只卡片化 top N。
+> 非榜單日只有一張晨報 embed；榜單日帶簡介的卡片＝「新進 top 10 + 竄升」，因視窗僅 10 席故 ≤10 張。**冷啟動日**（全數新進、10 張卡）＋封面會超過 Discord 單則 10 embeds 上限 → 把榜單區塊（封面＋卡片）留在第一則訊息、**晨報新聞另送第二則**即可。
 
 ### 7.3 呈現後大概長這樣（mock）
 
 ```
 ┌─────────────────────────────────────────────┐
-│ 📊 榜單變化 · 2026-07-09（榜單日）             │
-│ 本次榜單變化                                  │
+│ 📊 榜單變化 · 綜合 top 10 · 2026-07-09         │
+│ 本次榜單變化（跨領域綜合 top 10）             │
 │ AI 沙箱工具爆紅進榜、GitOps 工具大幅竄升       │
 │                                               │
 │ 🔻 下降                                       │
 │ owner/vue-thing #3 → #8                        │
-│ ✖️ 跌出榜                                     │
-│ owner/old-repo（上次 #7）                      │
+│ （掉出 top 10 者當次靜默、不列出）            │
 ├─────────────────────────────────────────────┤
 │ 🆕 owner/agent-sandbox      （標題可點）       │
 │ 給 AI agent 用的並發安全沙箱。它把每個工具呼叫 │
@@ -558,7 +576,7 @@ src/
 │  └─ news.service.ts              # 依 config/news-sources.ts 清單抓取（HN / Reddit / RSS / releases.atom）
 ├─ classify/          # ClassifyService（三領域關鍵字/topic 歸類）
 ├─ news-filter/       # NewsFilterService（去重→門檻→交叉驗證→配額策展，見 §4.4）
-├─ diff/              # BoardDiffService（新進/竄升/下降/跌出）
+├─ diff/              # BoardDiffService（新進/竄升/下降；掉出 top 10 靜默、不推）
 ├─ intro/             # IntroService（README→Gemini→快取）
 ├─ summary/           # SummaryService（組「本次變化」TL;DR）
 ├─ llm/               # LlmService（Gemini 封裝 + 退避）
@@ -656,7 +674,8 @@ bootstrap();
 
 **F3 `003-board-state-diff` — 榜單狀態與變化偵測**
 
-- 範圍：board 狀態 schema（§5.1）、`BoardDiffService`（新進/竄升/下降/跌出，`RANK_JUMP_THRESHOLD` 初值在 clarify 定案）、三日節奏（`lastBoardPushAt` guard）、狀態冪等（成功推播後才寫回）。
+- 範圍：board 狀態 schema（§5.1）、`BoardDiffService`（跨領域綜合 top 10、保底每領域 2 席、統一尺「估算本週增星」、新進/竄升/下降；掉出 top 10 靜默）、三日節奏（`lastBoardPushAt` guard）、狀態冪等（成功推播後才寫回）。
+- **本 Feature 待定（F2 clarify 2026-07-11 標記，留待此處定案）**：`RANK_JUMP_THRESHOLD`（T）之值，**與「被新進 repo 擠下來的純位移（週增星未變、名次退 1）是否算下降」的定義**。使用者初步傾向 **T=1**（±1 即算變化），但在**綜合 top 10 單一排名**下，任一新進會把其下所有成員各推低 1 名 → 純位移會被判成一整排「🔻 下降 1 名」，與憲章 III「控制節奏、避免通知疲勞」拉扯；故 T 值與「位移 vs 真跌」須在此 Feature 一併評估後定案。
 - 驗收：連跑兩次，第二次只產出差異；未滿三日時榜單段整段跳過。
 
 **F4 `004-news-ingest` — 新聞來源與零 LLM 漏斗（階段 A）**
@@ -711,7 +730,7 @@ bootstrap();
 | ---------- | --------------------------------------------------------------- | -------------------------------------------- |
 | M0         | Actions 骨架 + Discord Webhook 打通                             | 手機收得到訊息                               |
 | M1         | Trending weekly 解析 + Search 補位 + 三領域歸類                 | log 印出正確的本週增星榜                     |
-| M2         | 狀態存取 + diff（新進/竄升/跌出）+ **新聞 target-URL/標題去重**   | 連跑兩次，第二次只顯示差異；跨來源同一則只出現一次 |
+| M2         | 狀態存取 + diff（新進/竄升/下降）+ **新聞 target-URL/標題去重**   | 連跑兩次，第二次只顯示差異；跨來源同一則只出現一次 |
 | M3         | Intro：README → Gemini 250 字簡介 + 快取                        | 新進榜 repo 帶簡介，重複出現讀快取           |
 | M4         | 每日晨報（6 則 · 繁中 50/300 格式 · 依開發者重要性）+ 榜單三日 diff 卡片 + 配色，**雙 cron + `lastNewsPushAt` guard** 上線 | 每日恰一晨報（漏跑會補、不重複）、榜單三天一次、只呈現變化且帶簡介 |
 | M5（可選） | **GitHub Pages 儀表板 + RSS/Atom（§14）**                       | 公開 URL 可瀏覽榜單與今日晨報；RSS reader 能訂閱且不重複 |

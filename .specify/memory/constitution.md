@@ -1,17 +1,20 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.0.0 → 1.0.1
-Bump rationale: PATCH——釐清「技術與安全約束」中狀態 commit 的措辭，使其與開發指南 §8
-  workflow 的 no-diff 早退（僅在狀態實際變更時 commit）及 F1 spec 的澄清一致；非語意變更。
+Version change: 1.0.1 → 1.1.0
+Bump rationale: MINOR——原則 III 收斂榜單推播的變化類型：移除「跌出」為獨立推播項，改為
+  「repo 掉出推播榜（跨領域綜合 top 10）當次靜默、不另報跌出；日後重回即以新進呈現」。屬既有
+  指引的實質行為調整（更貼近「寧缺勿濫、控制節奏」），非移除或重新定義原則本身。決策來源：F2
+  (002-board-sources) /speckit-clarify（2026-07-11）確立「跨領域綜合 top 10」推播模型。
 
 Modified sections:
-  - 技術與安全約束 → 「執行與排程」項：由「每次成功執行都 commit」改為「僅在狀態實際變更時
-    commit；保活由正式期每日 `lastNewsPushAt` 變更與開發期程式碼 commit 自然達成」。
+  - 原則 III「只推變化、控制節奏」→ 榜單差異列舉由「新進榜 / 竄升 / 下降 / 跌出」改為
+    「新進 / 竄升 / 下降」，並註明掉出推播榜靜默、重回以新進呈現。
 Added sections: 無
-Removed sections: 無
+Removed sections: 無（僅收斂原則 III 的一項列舉，未刪章節）
 
 Prior history:
+  - 1.0.1（2026-07-11）：PATCH——釐清「技術與安全約束」狀態 commit 措辭（no-diff 早退）。
   - 1.0.0（2026-07-11）：首次由模板具體化為正式憲章（MAJOR 起始版），確立八條非協商原則、
     技術與安全約束、開發流程與治理章節。
 
@@ -19,7 +22,8 @@ Templates requiring updates:
   - .specify/templates/plan-template.md ✅ 對齊（Constitution Check 為泛用 gate，無過時引用）
   - .specify/templates/spec-template.md ✅ 對齊（泛用範本，未硬編原則）
   - .specify/templates/tasks-template.md ✅ 對齊（泛用範本，未硬編原則）
-  - docs/tech-radar-dev-guide.md ✅ 為本憲章來源，內容一致（§8 no-diff 早退）
+  - docs/tech-radar-dev-guide.md ✅ 已同步（§3.3/§5/§6.3/§7 改為綜合 top 10、掉出靜默）
+  - specs/002-board-sources/spec.md ✅ 已同步（Clarifications Session 2026-07-11）
   - specs/001-foundation/spec.md ✅ 對齊（FR-007 commit-on-change、Session 2026-07-11 澄清）
 
 Follow-up TODOs: 無（無延遲佔位）
@@ -54,7 +58,8 @@ Follow-up TODOs: 無（無延遲佔位）
 
 推播節奏與資訊量受硬性約束，優先「少而重要」而非「多而全」：
 
-- **榜單每三天推一次，且只呈現與上次的差異**（新進榜 / 竄升 / 下降 / 跌出），不重述整份榜單；
+- **榜單每三天推一次，且只呈現與上次的差異**（新進 / 竄升 / 下降），不重述整份榜單；
+  **repo 掉出推播榜（跨領域綜合 top 10）當次靜默、不另報「跌出」，日後重回即以新進呈現**；
   三日節奏由 `lastBoardPushAt` 計時（非 cron）。
 - **新聞晨報每日固定精選 6 則**，配額為 **AI ≥ 4；DevOps / 後端 / 前端合計 ≤ 2**（軟性上限，
   寧缺勿濫、不足 6 則不硬湊）。
@@ -161,4 +166,4 @@ Follow-up TODOs: 無（無延遲佔位）
 - **來源文件**：執行期與設計細節以 `docs/tech-radar-dev-guide.md` 為準；該指南與本憲章不一致時，
   以本憲章的非協商原則為最高約束，並修訂指南使其一致。
 
-**Version**: 1.0.1 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-11
+**Version**: 1.1.0 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-11
