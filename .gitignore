@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Secrets / local env（機密只走 Actions Secrets，絕不入庫）
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+
+# 執行期產物（CLI 送出失敗告警後的 marker；workflow 據此去重）
+.radar-alert-sent
+state/*.tmp
+
+# Coverage
+coverage/
+
+# OS / editor
+.DS_Store
+Thumbs.db

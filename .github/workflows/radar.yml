@@ -1,0 +1,80 @@
+name: Tech Radar
+
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC 22:07 → 台北 06:07（主排）
+    - cron: '7 22 * * *'
+    # UTC 22:37 → 台北 06:37（補跑）
+    - cron: '37 22 * * *'
+
+concurrency:
+  group: tech-radar
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Run Tech Radar
+        id: run-app
+        run: node dist/main.cli.js
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Commit state (on change only)
+        run: |
+          git add state/board.json
+          if git diff --cached --quiet; then
+            echo "狀態無變更，跳過 commit"
+            exit 0
+          fi
+          git config user.name "radar-bot"
+          git config user.email "radar-bot@users.noreply.github.com"
+          git commit -m "chore: update board state [skip ci]"
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash && git push; then
+              echo "狀態已推回（第 ${attempt} 次嘗試）"
+              exit 0
+            fi
+            echo "第 ${attempt} 次推回失敗，重試中…"
+            sleep 3
+          done
+          echo "::error::狀態 commit/push 重試 3 次仍失敗"
+          exit 1
+
+      - name: Failure alert (CLI 未送出告警的任何失敗)
+        # CLI 成功送出告警後會寫 .radar-alert-sent marker；此步只在 marker 缺席時補送。
+        # 去重依據是「CLI 明確回報已送出」而非 run-app 的 outcome，因此涵蓋
+        # app 啟動前失敗（env 驗證/DI）、CLI 告警送出失敗、狀態 commit/push 失敗。
+        if: failure()
+        run: |
+          if [ -f .radar-alert-sent ]; then
+            echo "CLI 已送出失敗告警，跳過補送"
+            exit 0
+          fi
+          curl -sf -H "Content-Type: application/json" \
+            -d '{"username":"Tech Radar","embeds":[{"title":"⚠️ Tech Radar 執行失敗","description":"workflow 失敗且 CLI 未送出告警（啟動前失敗、告警送出失敗或狀態 commit/push 失敗），請查 Actions log","color":15158322}]}' \
+            "$DISCORD_WEBHOOK_URL"
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
