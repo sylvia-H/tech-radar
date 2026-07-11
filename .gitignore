@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Secrets / local env（機密只走 Actions Secrets，絕不入庫）
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# OS / editor
+.DS_Store
+Thumbs.db
