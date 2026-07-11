@@ -62,12 +62,12 @@ Content-Type: application/json
 }
 ```
 
-### 失敗告警（workflow `if: failure()`，FR-014）
+### 失敗告警（workflow `if: failure()` + marker 去重，FR-014）
 
-同上紅色 embed，description 為固定字串（如「workflow 失敗，請查 Actions log」），由 workflow 內 `curl` 送出，涵蓋 checkout/build/機密載入**與 app 成功後的狀態 commit/push** 失敗。
+同上紅色 embed，description 為固定字串（如「workflow 失敗且 CLI 未送出告警，請查 Actions log」），由 workflow 內 `curl` 送出。只在告警 marker `.radar-alert-sent` 缺席（CLI 未成功送出告警）時補送，涵蓋 checkout/build 失敗、env 驗證/DI 等 app 啟動失敗、CLI 告警送出失敗、與 app 成功後的狀態 commit/push 失敗。
 
 ## 契約性質不變條件
 
 - **機密不外洩**：任何 embed 的 title/description/fields **絕不**包含 token、webhook URL 或金鑰（憲章 VII）。
-- **失敗不無聲**：app 內失敗與 app 啟動前失敗各由一層負責，至少一則紅色告警必達（除非 Discord 本身不可用）。
+- **失敗不無聲**：CLI 成功送出告警即寫 marker，workflow 依 marker 缺席補送；任何失敗路徑至少一層送出紅色告警（除非 Discord 本身不可用），寧可重複、不可沉默。
 - 單則訊息 `embeds` ≤10；F1 每次僅送 1 筆。

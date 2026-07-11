@@ -29,6 +29,7 @@ interface StateStore {
 | 傳入合法 `BoardState` | 序列化（穩定鍵序、2-space、結尾換行）寫入 `state/board.json` |
 | 傳入不合法物件 | 擲錯，不寫檔 |
 | 內容與現存檔相同 | 仍可寫入相同內容；是否 commit 由 workflow 的 `git diff --cached --quiet` 判斷（no-diff→不 commit） |
+| 寫入途中進程被中斷 | `board.json` 仍是完整的舊版（**原子寫入**：先落同目錄暫存檔 `board.json.tmp` 再 rename），不得留下半寫入壞檔 |
 
 ## 檔案格式不變條件
 

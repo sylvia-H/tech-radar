@@ -53,10 +53,10 @@
 ## D8. 失敗告警：兩層
 
 - **Decision**:
-  - **App 內**（spec FR-010）：`main.cli.ts` 以 try/catch 包住 `PipelineService.run()`，捕獲即呼叫 `DiscordWebhookService.postFailureAlert()`（紅色 embed `0xE74C3C`），再以非零 exit code 結束。
-  - **Workflow 層**（spec FR-014）：`if: failure()` 步驟用 `curl` POST 一則紅色 embed，涵蓋 app 啟動前（checkout / `npm ci` / build / 機密載入）的失敗。
-- **Rationale**: 保證任何層級失敗都不無聲（憲章 VII）。兩層都送同一 `DISCORD_WEBHOOK_URL`。
-- **Alternatives**: 只靠 workflow 層 → 失去 app 內可帶的錯誤脈絡；只靠 app 內 → build 失敗時 app 根本沒跑、會無聲。
+  - **App 內**（spec FR-010）：`main.cli.ts` 以 try/catch 包住 `PipelineService.run()`，捕獲即呼叫 `DiscordWebhookService.postFailureAlert()`（紅色 embed `0xE74C3C`）；**成功送出後寫 marker 檔 `.radar-alert-sent`**，再以非零 exit code 結束。
+  - **Workflow 層**（spec FR-014）：`if: failure()` 步驟先檢查 marker——存在即跳過（CLI 已告警），缺席才用 `curl` POST 一則紅色 embed。涵蓋 app 啟動前（checkout / `npm ci` / build）、app 啟動中（機密載入/env 驗證、DI）、CLI 告警送出失敗、與狀態 commit/push 失敗。
+- **Rationale**: 保證任何層級失敗都不無聲（憲章 VII）。兩層都送同一 `DISCORD_WEBHOOK_URL`。去重以「CLI 明確回報已送出」為準——早期版本以 `steps.run-app.outcome != 'failure'` 推測，會把「app 啟動失敗（未告警）」誤判為「app 內已告警」而兩邊沉默。
+- **Alternatives**: 只靠 workflow 層 → 失去 app 內可帶的錯誤脈絡；只靠 app 內 → build 失敗時 app 根本沒跑、會無聲；以 outcome 推測去重 → 存在啟動失敗與告警送出失敗兩個沉默缺口。
 
 ## D9. 排程與冪等（F1 範圍界線）
 

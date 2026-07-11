@@ -80,6 +80,7 @@ src/
 ├── discord/
 │   ├── discord.webhook.service.ts  # 組 embed → POST（fetch）；提供 postTestEmbed 與 postFailureAlert
 │   ├── discord.embed.ts        # embed 組版純函式（可單測）
+│   ├── failure-alert.ts        # best-effort 送失敗告警；成功後寫 .radar-alert-sent marker 供 workflow 去重
 │   └── discord.webhook.service.spec.ts
 └── pipeline/
     └── pipeline.service.ts     # F1 最小編排：載入設定 → 載入狀態 → 推測試 embed → 成功後寫回狀態
@@ -88,7 +89,7 @@ state/
 └── board.json                  # seed 的合法空骨架（FR-015）
 
 .github/workflows/
-└── radar.yml                   # 雙 cron + workflow_dispatch + concurrency + state commit(rebase 重試) + if:failure() 告警
+└── radar.yml                   # 雙 cron + workflow_dispatch + concurrency + state commit(rebase 重試) + if:failure() 告警（依 marker 去重）
 
 package.json / tsconfig.json / jest 設定 / .gitignore（.env 等機密不入庫）
 ```
