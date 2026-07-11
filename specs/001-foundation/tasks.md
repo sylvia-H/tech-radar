@@ -28,10 +28,10 @@ description: "Task list for 001-foundation implementation"
 
 **Purpose**: 專案初始化與工具鏈
 
-- [ ] T001 建立 `package.json`（deps：`@nestjs/core`、`@nestjs/common`、`@nestjs/config`、`reflect-metadata`、`rxjs`、`zod`；devDeps：`typescript`、`jest`、`ts-jest`、`@nestjs/testing`、`@types/node`、`@types/jest`；`engines.node >= 24`；scripts：`build`/`start:cli`/`test`）於 repo 根目錄
-- [ ] T002 [P] 建立 `tsconfig.json`（Node 24 目標、`experimentalDecorators`、`emitDecoratorMetadata`、`outDir dist`）於 repo 根目錄
-- [ ] T003 [P] 建立 `jest.config.cjs`（`ts-jest` preset、`testRegex` `.*\.spec\.ts$`）於 repo 根目錄
-- [ ] T004 [P] 建立 `.gitignore`（`node_modules`、`dist`、`.env`、`*.local`）於 repo 根目錄
+- [X] T001 建立 `package.json`（deps：`@nestjs/core`、`@nestjs/common`、`@nestjs/config`、`reflect-metadata`、`rxjs`、`zod`；devDeps：`typescript`、`jest`、`ts-jest`、`@nestjs/testing`、`@types/node`、`@types/jest`；`engines.node >= 24`；scripts：`build`/`start:cli`/`test`）於 repo 根目錄
+- [X] T002 [P] 建立 `tsconfig.json`（Node 24 目標、`experimentalDecorators`、`emitDecoratorMetadata`、`outDir dist`）於 repo 根目錄
+- [X] T003 [P] 建立 `jest.config.cjs`（`ts-jest` preset、`testRegex` `.*\.spec\.ts$`）於 repo 根目錄
+- [X] T004 [P] 建立 `.gitignore`（`node_modules`、`dist`、`.env`、`*.local`）於 repo 根目錄
 
 ---
 
@@ -41,12 +41,12 @@ description: "Task list for 001-foundation implementation"
 
 **⚠️ CRITICAL**: 本階段完成前，任何 User Story 不能開始
 
-- [ ] T005 實作環境變數 zod schema 於 `src/config/env.schema.ts`（`DISCORD_WEBHOOK_URL` 非空且符合 Discord webhook URL 樣式 `^https://(ptb\.|canary\.)?discord(app)?\.com/api/webhooks/`（容許 discord.com / discordapp.com 及 ptb/canary 變體）；`GH_API_TOKEN`、`GEMINI_API_KEY` 非空；三者皆必填）
-- [ ] T006 [P] 單元測試 env schema（合法／缺任一機密／URL 格式錯；含 discordapp.com / ptb / canary 合法變體可通過）於 `src/config/env.schema.spec.ts`
-- [ ] T007 實作 `ConfigModule` 於 `src/config/config.module.ts`（`ConfigModule.forRoot({ isGlobal: true, validate })` 套用 T005 schema，缺失即 fail-fast）
-- [ ] T008 建立 `PipelineService` 骨架與 `PipelineModule` 於 `src/pipeline/pipeline.service.ts`、`src/pipeline/pipeline.module.ts`（`run()` 佔位）
-- [ ] T009 建立 `AppModule` 於 `src/app.module.ts`（匯入 `ConfigModule`、`PipelineModule`；後續 Story 追加 Discord/State 模組）
-- [ ] T010 建立 CLI 進入點於 `src/main.cli.ts`（`createApplicationContext(AppModule)` → `get(PipelineService).run()` → `finally app.close()`；try/catch 骨架先 rethrow，告警於 US3 接上）
+- [X] T005 實作環境變數 zod schema 於 `src/config/env.schema.ts`（`DISCORD_WEBHOOK_URL` 非空且符合 Discord webhook URL 樣式 `^https://(ptb\.|canary\.)?discord(app)?\.com/api/webhooks/`（容許 discord.com / discordapp.com 及 ptb/canary 變體）；`GH_API_TOKEN`、`GEMINI_API_KEY` 非空；三者皆必填）
+- [X] T006 [P] 單元測試 env schema（合法／缺任一機密／URL 格式錯；含 discordapp.com / ptb / canary 合法變體可通過）於 `src/config/env.schema.spec.ts`
+- [X] T007 實作 `ConfigModule` 於 `src/config/config.module.ts`（`ConfigModule.forRoot({ isGlobal: true, validate })` 套用 T005 schema，缺失即 fail-fast）
+- [X] T008 建立 `PipelineService` 骨架與 `PipelineModule` 於 `src/pipeline/pipeline.service.ts`、`src/pipeline/pipeline.module.ts`（`run()` 佔位）
+- [X] T009 建立 `AppModule` 於 `src/app.module.ts`（匯入 `ConfigModule`、`PipelineModule`；後續 Story 追加 Discord/State 模組）
+- [X] T010 建立 CLI 進入點於 `src/main.cli.ts`（`createApplicationContext(AppModule)` → `get(PipelineService).run()` → `finally app.close()`；try/catch 骨架先 rethrow，告警於 US3 接上）
 
 **Checkpoint**: 骨架可 `npm run build` 且 `node dist/main.cli.js` 在缺機密時 fail-fast、不推播。
 
@@ -60,16 +60,16 @@ description: "Task list for 001-foundation implementation"
 
 ### Tests for User Story 1 ⚠️（先寫、先失敗）
 
-- [ ] T011 [P] [US1] 單元測試 embed 組版 `buildTestEmbed`（橙色 `0xF5A623`、標題、時間戳、`embeds` 結構）於 `src/discord/discord.embed.spec.ts`
-- [ ] T012 [P] [US1] 單元測試 `DiscordWebhookService.postTestEmbed`（mock `fetch`：204 成功、429 有限退避、失敗擲錯；斷言不含機密）於 `src/discord/discord.webhook.service.spec.ts`
+- [X] T011 [P] [US1] 單元測試 embed 組版 `buildTestEmbed`（橙色 `0xF5A623`、標題、時間戳、`embeds` 結構）於 `src/discord/discord.embed.spec.ts`
+- [X] T012 [P] [US1] 單元測試 `DiscordWebhookService.postTestEmbed`（mock `fetch`：204 成功、429 有限退避、失敗擲錯；斷言不含機密）於 `src/discord/discord.webhook.service.spec.ts`
 
 ### Implementation for User Story 1
 
-- [ ] T013 [P] [US1] 實作 embed 組版純函式 `buildTestEmbed` 於 `src/discord/discord.embed.ts`（依 contracts/discord-webhook）
-- [ ] T014 [US1] 實作 `DiscordWebhookService` 於 `src/discord/discord.webhook.service.ts`（`postTestEmbed`：內建 `fetch` POST、204 判定、429 有限退避、絕不記錄機密）（依 T013）
-- [ ] T015 [US1] 建立 `DiscordModule` 於 `src/discord/discord.module.ts`，並在 `src/app.module.ts` 匯入
-- [ ] T016 [US1] 於 `src/pipeline/pipeline.service.ts` 串接 `run()`：呼叫 `postTestEmbed`（帶執行時間戳與 `env=ci|local` 標記）
-- [ ] T017 [US1] 建立 `.github/workflows/radar.yml` 基底：`workflow_dispatch` + 雙 `schedule` cron（`7 22 * * *`、`37 22 * * *`）+ `concurrency: { group: tech-radar, cancel-in-progress: false }` + `permissions: contents: write` + `checkout@v4` + `setup-node@v4`（`node-version: 24`、`cache: npm`）+ `npm ci` + `npm run build` + `node dist/main.cli.js`（此執行步驟設 `id: run-app`，供 T029 告警條件辨識 app 內失敗；帶 `DISCORD_WEBHOOK_URL`/`GH_API_TOKEN`/`GEMINI_API_KEY` 三 secrets）
+- [X] T013 [P] [US1] 實作 embed 組版純函式 `buildTestEmbed` 於 `src/discord/discord.embed.ts`（依 contracts/discord-webhook）
+- [X] T014 [US1] 實作 `DiscordWebhookService` 於 `src/discord/discord.webhook.service.ts`（`postTestEmbed`：內建 `fetch` POST、204 判定、429 有限退避、絕不記錄機密）（依 T013）
+- [X] T015 [US1] 建立 `DiscordModule` 於 `src/discord/discord.module.ts`，並在 `src/app.module.ts` 匯入
+- [X] T016 [US1] 於 `src/pipeline/pipeline.service.ts` 串接 `run()`：呼叫 `postTestEmbed`（帶執行時間戳與 `env=ci|local` 標記）
+- [X] T017 [US1] 建立 `.github/workflows/radar.yml` 基底：`workflow_dispatch` + 雙 `schedule` cron（`7 22 * * *`、`37 22 * * *`）+ `concurrency: { group: tech-radar, cancel-in-progress: false }` + `permissions: contents: write` + `checkout@v4` + `setup-node@v4`（`node-version: 24`、`cache: npm`）+ `npm ci` + `npm run build` + `node dist/main.cli.js`（此執行步驟設 `id: run-app`，供 T029 告警條件辨識 app 內失敗；帶 `DISCORD_WEBHOOK_URL`/`GH_API_TOKEN`/`GEMINI_API_KEY` 三 secrets）
 
 **Checkpoint**: US1 可獨立展示 M0 核心（SC-001、SC-003）——收到測試 embed；缺機密 fail-fast 不推播。
 
@@ -83,17 +83,17 @@ description: "Task list for 001-foundation implementation"
 
 ### Tests for User Story 2 ⚠️（先寫、先失敗）
 
-- [ ] T018 [P] [US2] 單元測試 `StateStore`（缺檔→回空骨架不擲錯；合法檔 round-trip 不遺失既有欄位；壞檔/結構不合法→擲錯且不覆寫；`save` 前驗證＋穩定鍵序＋結尾換行）於 `src/state/state.store.spec.ts`
-- [ ] T019 [P] [US2] 單元測試狀態 schema（`BoardState` 五欄位＋子實體型別）於 `src/state/state.schema.spec.ts`
+- [X] T018 [P] [US2] 單元測試 `StateStore`（缺檔→回空骨架不擲錯；合法檔 round-trip 不遺失既有欄位；壞檔/結構不合法→擲錯且不覆寫；`save` 前驗證＋穩定鍵序＋結尾換行）於 `src/state/state.store.spec.ts`
+- [X] T019 [P] [US2] 單元測試狀態 schema（`BoardState` 五欄位＋子實體型別）於 `src/state/state.schema.spec.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T020 [P] [US2] 實作狀態 zod schema 於 `src/state/state.schema.ts`（`BoardState`＋`BoardEntry`/`IntroCache`/`SeenNewsEntry`，依 data-model）
-- [ ] T021 [US2] 實作 `StateStore` 於 `src/state/state.store.ts`（`load`/`save` 依 contracts/state-file：缺檔→骨架、壞檔→擲錯、穩定鍵序序列化）（依 T020）
-- [ ] T022 [US2] 建立 `StateModule` 於 `src/state/state.module.ts`，並在 `src/app.module.ts` 匯入
-- [ ] T023 [US2] 於 `src/pipeline/pipeline.service.ts` 串接：`run()` 開頭 `StateStore.load()`；**推播成功後**才 `StateStore.save()`（FR-008，防半套狀態）
-- [ ] T024 [P] [US2] 建立 seed 空骨架檔 `state/board.json`（`{ lastBoardPushAt:null, lastNewsPushAt:null, board:{}, intros:{}, seenNews:[] }`，FR-015）
-- [ ] T025 [US2] 於 `.github/workflows/radar.yml` 加入狀態 commit 步驟：`git add state/board.json` → `git diff --cached --quiet` 早退（不 commit）→ 否則先設 committer 身分 `git config user.name "radar-bot"` / `git config user.email "radar-bot@users.noreply.github.com"`（與 quickstart 的 `radar-bot` commit 作者一致）→ `commit -m "chore: update board state [skip ci]"` → `pull --rebase --autostash` + `push`，重試至多 3 次，最終失敗 `::error::` 讓 job 失敗
+- [X] T020 [P] [US2] 實作狀態 zod schema 於 `src/state/state.schema.ts`（`BoardState`＋`BoardEntry`/`IntroCache`/`SeenNewsEntry`，依 data-model）
+- [X] T021 [US2] 實作 `StateStore` 於 `src/state/state.store.ts`（`load`/`save` 依 contracts/state-file：缺檔→骨架、壞檔→擲錯、穩定鍵序序列化）（依 T020）
+- [X] T022 [US2] 建立 `StateModule` 於 `src/state/state.module.ts`，並在 `src/app.module.ts` 匯入
+- [X] T023 [US2] 於 `src/pipeline/pipeline.service.ts` 串接：`run()` 開頭 `StateStore.load()`；**推播成功後**才 `StateStore.save()`（FR-008，防半套狀態）
+- [X] T024 [P] [US2] 建立 seed 空骨架檔 `state/board.json`（`{ lastBoardPushAt:null, lastNewsPushAt:null, board:{}, intros:{}, seenNews:[] }`，FR-015）
+- [X] T025 [US2] 於 `.github/workflows/radar.yml` 加入狀態 commit 步驟：`git add state/board.json` → `git diff --cached --quiet` 早退（不 commit）→ 否則先設 committer 身分 `git config user.name "radar-bot"` / `git config user.email "radar-bot@users.noreply.github.com"`（與 quickstart 的 `radar-bot` commit 作者一致）→ `commit -m "chore: update board state [skip ci]"` → `pull --rebase --autostash` + `push`，重試至多 3 次，最終失敗 `::error::` 讓 job 失敗
 
 **Checkpoint**: US1 + US2 皆可獨立運作（M2 半，SC-002）。
 
@@ -107,13 +107,13 @@ description: "Task list for 001-foundation implementation"
 
 ### Tests for User Story 3 ⚠️（先寫、先失敗）
 
-- [ ] T026 [US3] 單元測試 `buildFailureAlert`（紅色 `0xE74C3C`、description 不含 token/URL/金鑰）於 `src/discord/discord.embed.spec.ts`（追加）
+- [X] T026 [US3] 單元測試 `buildFailureAlert`（紅色 `0xE74C3C`、description 不含 token/URL/金鑰）於 `src/discord/discord.embed.spec.ts`（追加）
 
 ### Implementation for User Story 3
 
-- [ ] T027 [US3] 實作 `buildFailureAlert` 於 `src/discord/discord.embed.ts` 並在 `src/discord/discord.webhook.service.ts` 加 `postFailureAlert`（紅色 embed、帶不含機密的錯誤摘要）
-- [ ] T028 [US3] 於 `src/main.cli.ts` 的 try/catch 串接：app 內失敗時呼叫 `postFailureAlert` 後以非零 exit code 結束（FR-010）
-- [ ] T029 [US3] 於 `.github/workflows/radar.yml` 加入告警步驟，條件為 `if: failure() && steps.run-app.outcome != 'failure'`（`curl` POST 紅色 embed）——只補送 **app 自身邏輯以外**的失敗：app 啟動前（checkout/build/機密載入，`run-app` 被跳過→`outcome == 'skipped'`）與 app 成功後的狀態 commit/push 失敗（`run-app` `outcome == 'success'`）；app 內失敗（`run-app` `outcome == 'failure'`）已由 T028 送紅色告警，此步跳過以免**重複告警**（FR-014）
+- [X] T027 [US3] 實作 `buildFailureAlert` 於 `src/discord/discord.embed.ts` 並在 `src/discord/discord.webhook.service.ts` 加 `postFailureAlert`（紅色 embed、帶不含機密的錯誤摘要）
+- [X] T028 [US3] 於 `src/main.cli.ts` 的 try/catch 串接：app 內失敗時呼叫 `postFailureAlert` 後以非零 exit code 結束（FR-010）
+- [X] T029 [US3] 於 `.github/workflows/radar.yml` 加入告警步驟，條件為 `if: failure() && steps.run-app.outcome != 'failure'`（`curl` POST 紅色 embed）——只補送 **app 自身邏輯以外**的失敗：app 啟動前（checkout/build/機密載入，`run-app` 被跳過→`outcome == 'skipped'`）與 app 成功後的狀態 commit/push 失敗（`run-app` `outcome == 'success'`）；app 內失敗（`run-app` `outcome == 'failure'`）已由 T028 送紅色告警，此步跳過以免**重複告警**（FR-014）
 
 **Checkpoint**: 三個 Story 皆獨立可驗；M0 全綠。
 
@@ -123,9 +123,9 @@ description: "Task list for 001-foundation implementation"
 
 **Purpose**: 跨 Story 收尾與驗收
 
-- [ ] T030 [P] （DX/Polish，非 spec 需求）撰寫本機執行與 secrets 設定說明（`README.md` 或 `docs/` 內，引用 [quickstart.md](quickstart.md)）
-- [ ] T031 依 [quickstart.md](quickstart.md) 逐項跑驗證（A 本機、B Actions），確認 **SC-001..005** 單次可驗項對映成立；SC-006（成本護欄）屬跨月營運指標，以**設計檢查**確認（每日兩次 cron、單次 1–3 分鐘、無資料/LLM 呼叫）而非單次實測
-- [ ] T032 [P] 機密不外洩複查：檢視 log／embed／`state/board.json` 皆無 token/URL/金鑰（憲章 VII）
+- [X] T030 [P] （DX/Polish，非 spec 需求）撰寫本機執行與 secrets 設定說明（`README.md` 或 `docs/` 內，引用 [quickstart.md](quickstart.md)）
+- [X] T031 依 [quickstart.md](quickstart.md) 逐項跑驗證（A 本機、B Actions），確認 **SC-001..005** 單次可驗項對映成立；SC-006（成本護欄）屬跨月營運指標，以**設計檢查**確認（每日兩次 cron、單次 1–3 分鐘、無資料/LLM 呼叫）而非單次實測
+- [X] T032 [P] 機密不外洩複查：檢視 log／embed／`state/board.json` 皆無 token/URL/金鑰（憲章 VII）
 
 ---
 
