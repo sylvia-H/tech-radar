@@ -34,6 +34,16 @@ Kit（SDD）開發。**工程約束以 `.specify/memory/constitution.md` 憲章�
 > 目前作用中的 Feature 見 `.specify/feature.json`（現為 `specs/001-foundation`）。F2+ 才會出現的
 > 檔案（如 `news-sources.ts`、`sources/`、`news-filter/`）在動手前先確認是否已存在，勿引用尚未建立者。
 
+### 跨 Feature 決策必須落地到真實來源（MUST）
+
+在任一 Feature 的 `/speckit-clarify`、`/speckit-analyze`（或任何階段）中，若修正或新定了一項決策，
+而該決策**不屬於本次 Feature 的實作範圍、卻會影響其他 Feature**（例：在 F2 clarify 定了 F3/F7 的
+推播規則），則 **MUST** 立即將該決策寫入對應的真實來源——`docs/tech-radar-dev-guide.md`（架構／
+執行／版面等設計細節）或 `.specify/memory/constitution.md`（涉及非協商原則時），並**同步修訂既有
+內容使其與新決策一致、消除矛盾**（例如舊的推播模型段落須一併改寫，不得留下自相矛盾的敘述）。
+**MUST NOT** 只寫進 Agent memory、或僅留在該 Feature 的 spec 就當作已定案。Agent memory 可作輔助
+備忘，但**不是專案真實來源**；未同步到 dev-guide／憲章前，該跨 Feature 決策一律視為「未落地」。
+
 ## 環境
 
 - 作業系統 **Windows**。終端機預設 **PowerShell**：用 `Copy-Item`、
