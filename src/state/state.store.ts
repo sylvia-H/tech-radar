@@ -51,7 +51,11 @@ export class StateStore {
     const validated = boardStateSchema.parse(state);
     const serialized = stableStringify(validated) + '\n';
     await fs.mkdir(path.dirname(this.filePath), { recursive: true });
-    await fs.writeFile(this.filePath, serialized, 'utf-8');
+    // 原子寫入：先落同目錄暫存檔再 rename（同檔案系統下為原子操作），
+    // 進程中途被中斷時 board.json 仍是完整的舊版，不會留下半寫入壞檔。
+    const tmpPath = `${this.filePath}.tmp`;
+    await fs.writeFile(tmpPath, serialized, 'utf-8');
+    await fs.rename(tmpPath, this.filePath);
   }
 }
 

@@ -76,6 +76,20 @@ describe('StateStore.save', () => {
     await expect(fs.access(file)).rejects.toThrow();
   });
 
+  it('覆寫既有檔後內容完整且不殘留暫存檔', async () => {
+    const file = await tmpFile();
+    const store = new StateStore(file);
+    await store.save(emptyBoardState());
+    const updated: BoardState = {
+      ...emptyBoardState(),
+      lastBoardPushAt: '2026-07-11T22:07:00.000Z',
+    };
+    await store.save(updated);
+    await expect(store.load()).resolves.toEqual(updated);
+    // 原子寫入的暫存檔已 rename 掉，不殘留
+    await expect(fs.access(`${file}.tmp`)).rejects.toThrow();
+  });
+
   it('save 後可被 load 還原（round-trip）', async () => {
     const file = await tmpFile();
     const store = new StateStore(file);
