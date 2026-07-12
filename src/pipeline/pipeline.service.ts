@@ -1,33 +1,21 @@
-import { Injectable } from '@nestjs/common';
-import { DiscordWebhookService } from '../discord/discord.webhook.service';
-import { RunEnv } from '../discord/discord.embed';
-import { StateStore } from '../state/state.store';
+import { Injectable, Logger } from '@nestjs/common';
+import { BoardBuilderService } from '../board/board-builder.service';
+import { formatCurrentBoard } from '../board/board-log';
 
 /**
- * F1 最小編排：載入設定 → 載入狀態 → 推測試 embed → 成功後寫回狀態。
+ * F2 編排：建置三領域當前榜並以結構化 log 印出（M1 觀測，research D8）。
  *
- * FR-008：狀態僅在**推播成功後**才寫回，避免半套狀態。
- * F1 無資料來源，狀態內容不變 → workflow 依 git diff 判定不 commit（commit-on-change）。
+ * 邊界（憲章 III/VI 不受影響）：**不** diff、**不**推播 Discord、**不**寫回 state/board.json。
+ * 來源隔離容錯與告警於 BoardBuilderService 內處理（US4）；本層只負責觸發與輸出。
  */
 @Injectable()
 export class PipelineService {
-  constructor(
-    private readonly discord: DiscordWebhookService,
-    private readonly state: StateStore,
-  ) {}
+  private readonly logger = new Logger(PipelineService.name);
+
+  constructor(private readonly boardBuilder: BoardBuilderService) {}
 
   async run(): Promise<void> {
-    const board = await this.state.load();
-    const timestamp = new Date().toISOString();
-    await this.discord.postTestEmbed(timestamp, resolveRunEnv());
-    // 推播成功後才寫回（FR-008）。F1 不變更狀態內容，交由 workflow diff 決定是否 commit。
-    await this.state.save(board);
+    const board = await this.boardBuilder.build();
+    this.logger.log('\n' + formatCurrentBoard(board));
   }
-}
-
-/** 依 GitHub Actions 提供的 CI 環境變數判定執行環境標記。 */
-function resolveRunEnv(): RunEnv {
-  return process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true'
-    ? 'ci'
-    : 'local';
 }
