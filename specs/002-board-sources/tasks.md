@@ -135,9 +135,9 @@
 **Purpose**: 收尾驗證與跨 Story 一致性
 
 - [x] T029 [P] 執行 `npm test` 全綠：涵蓋 Trending 快照、分類、去重、排序穩定、`weeklyStarsEstimate`、容錯告警（quickstart §1、憲章 VIII）
-- [ ] T030 依 quickstart §2 本機實跑 `node dist/main.cli.js`（三機密以 env 提供）：確認 log 印出欄位齊備的三領域榜與 `api: core=…, search=…`（core ≤ ~150 安全上限、單次典型約 120；search ≤ 3）、且 `git status` 無 `state/` 變更（SC-001/SC-006、FR-006）
+- [x] T030 依 quickstart §2 本機實跑 `node dist/main.cli.js`（三機密以 env 提供）：確認 log 印出欄位齊備的三領域榜與 `api: core=…, search=…`（core ≤ ~150 安全上限、單次典型約 120；search ≤ 3）、且 `git status` 無 `state/` 變更（SC-001/SC-006、FR-006）
 - [x] T031 [P] 依 quickstart §4 抽驗容錯情境（主力/補位擇一模擬失敗）→ 告警帶來源 id、另一來源仍出榜（SC-004）
-- [ ] T032 [P] 依 quickstart §3 抽查 SC-002：隨機挑 **≥10 筆**（跨三領域）開 GitHub 頁核對領域歸類，記錄歸對率 **MUST ≥90%**；並確認補位來源確有 `[search]` 標記的近 7 天新星（SC-002）
+- [x] T032 [P] 依 quickstart §3 抽查 SC-002：隨機挑 **≥10 筆**（跨三領域）開 GitHub 頁核對領域歸類，記錄歸對率 **MUST ≥90%**；並確認補位來源確有 `[search]` 標記的近 7 天新星（SC-002）
 
 ---
 
