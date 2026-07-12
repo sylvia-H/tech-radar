@@ -120,11 +120,11 @@
 
 ### Tests for User Story 4 ⚠️
 
-- [ ] T027 [P] [US4] 撰寫（或補充 `board-builder.service.spec.ts`）容錯測試：mock 主力 Trending 失敗或**解析 0 筆** → 補位仍出榜、送告警 `source=github-trending`；mock 補位某組失敗 → 主力仍出榜、送告警 `source=github-search:{domain}`；**Search 某組 0 筆不告警**（與主力 0 筆區分）；mock `GET /repos` 出現 **401/403** 或批次**失敗率 > 50%** → 送告警 `source=github-repo`（未達門檻的零星失敗僅略過該候選、不告警）；兩來源皆正常 → 不發任何來源告警（FR-007/FR-009、SC-004、Edge Case「Trending 候選補 topics 失敗」）
+- [x] T027 [P] [US4] 撰寫（或補充 `board-builder.service.spec.ts`）容錯測試：mock 主力 Trending 失敗或**解析 0 筆** → 補位仍出榜、送告警 `source=github-trending`；mock 補位某組失敗 → 主力仍出榜、送告警 `source=github-search:{domain}`；**Search 某組 0 筆不告警**（與主力 0 筆區分）；mock `GET /repos` 出現 **401/403** 或批次**失敗率 > 50%** → 送告警 `source=github-repo`（未達門檻的零星失敗僅略過該候選、不告警）；兩來源皆正常 → 不發任何來源告警（FR-007/FR-009、SC-004、Edge Case「Trending 候選補 topics 失敗」）
 
 ### Implementation for User Story 4
 
-- [ ] T028 [US4] 於 `src/board/board-builder.service.ts` 對主力 Trending 與補位 Search（每組）以 try/catch 隔離：任一拋錯或主力 0 筆 → 呼叫 F1 `DiscordWebhookService.postFailureAlert`（或 `tryPostFailureAlert`）送**帶來源 id**（`github-trending`／`github-search:{domain}`／`github-repo`）紅色告警，另一來源續行；Search 0 筆視為正常不告警；`github-repo` 依門檻告警（401/403 即告警一次、其餘批次失敗率 > 50% 告警一次，零星失敗僅略過）（依賴 T025；research D6、contracts §1/§2/§3）
+- [x] T028 [US4] 於 `src/board/board-builder.service.ts` 對主力 Trending 與補位 Search（每組）以 try/catch 隔離：任一拋錯或主力 0 筆 → 呼叫 F1 `DiscordWebhookService.postFailureAlert`（或 `tryPostFailureAlert`）送**帶來源 id**（`github-trending`／`github-search:{domain}`／`github-repo`）紅色告警，另一來源續行；Search 0 筆視為正常不告警；`github-repo` 依門檻告警（401/403 即告警一次、其餘批次失敗率 > 50% 告警一次，零星失敗僅略過）（依賴 T025；research D6、contracts §1/§2/§3）
 
 **Checkpoint**: 所有 User Story 完成，具備無人值守容錯護欄
 

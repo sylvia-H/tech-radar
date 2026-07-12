@@ -3,7 +3,7 @@ import { GithubTrendingService } from '../sources/github-trending.service';
 import { GithubRepoService, RepoMetasResult } from '../sources/github-repo.service';
 import { GithubSearchService, SearchResult } from '../sources/github-search.service';
 import { ClassifyService } from '../classify/classify.service';
-import { BoardBuilderService, assembleBoards, mergeById } from './board-builder.service';
+import { BoardBuilderService, assembleBoards, mergeById, shouldAlertRepoFailures } from './board-builder.service';
 import { CandidateRepo, RawSearchRepo, RawTrendingRepo, RepoMeta } from './board.types';
 
 function trending(fullName: string, starsThisWeek: number, description: string | null = null): RawTrendingRepo {
@@ -43,7 +43,8 @@ function buildService(
   const trendingSvc = { fetchTrending: jest.fn().mockResolvedValue(trendingRepos) } as unknown as GithubTrendingService;
   const reposSvc = { fetchRepoMetas: jest.fn().mockResolvedValue(metasResult) } as unknown as GithubRepoService;
   const searchSvc = { fetchSearch: jest.fn().mockResolvedValue(searchResult) } as unknown as GithubSearchService;
-  return new BoardBuilderService(http, trendingSvc, reposSvc, searchSvc, new ClassifyService());
+  const discord = { postFailureAlert: jest.fn().mockResolvedValue(undefined) };
+  return new BoardBuilderService(http, trendingSvc, reposSvc, searchSvc, new ClassifyService(), discord as never);
 }
 
 describe('BoardBuilderService.build（Trending-only, US1）', () => {
@@ -138,6 +139,117 @@ describe('mergeById（repoId 去重，FR-004/SC-003）', () => {
       [searchRepo(9, 'o/search-only', ['rag'], 500, '2026-07-06T00:00:00Z')],
     );
     expect(merged.map((m) => m.repoId)).toEqual([9]);
+  });
+});
+
+describe('BoardBuilderService 容錯與告警（US4, FR-007/FR-009/SC-004）', () => {
+  function makeService(o: {
+    trending?: jest.Mock;
+    metas?: RepoMetasResult;
+    search?: jest.Mock;
+  }): { svc: BoardBuilderService; discord: { postFailureAlert: jest.Mock } } {
+    const discord = { postFailureAlert: jest.fn().mockResolvedValue(undefined) };
+    const http = { resetCounts: jest.fn(), get counts() { return { core: 0, search: 0 }; } };
+    const trendingSvc = { fetchTrending: o.trending ?? jest.fn().mockResolvedValue([]) };
+    const reposSvc = { fetchRepoMetas: jest.fn().mockResolvedValue(o.metas ?? { metas: new Map(), failures: [] }) };
+    const searchSvc = { fetchSearch: o.search ?? jest.fn().mockResolvedValue({ repos: [], failures: [] }) };
+    const svc = new BoardBuilderService(
+      http as never,
+      trendingSvc as never,
+      reposSvc as never,
+      searchSvc as never,
+      new ClassifyService(),
+      discord as never,
+    );
+    return { svc, discord };
+  }
+
+  const okSearch = { repos: [searchRepo(500, 'newbie/rag', ['rag'], 700, '2026-07-05T00:00:00Z')], failures: [] };
+
+  it('主力 Trending 失敗 → 補位仍出榜、告警 github-trending', async () => {
+    const { svc, discord } = makeService({
+      trending: jest.fn().mockRejectedValue(new Error('trending down')),
+      search: jest.fn().mockResolvedValue(okSearch),
+    });
+    const board = await svc.build();
+    expect(board.boards.find((b) => b.domain === 'ai')!.entries).toHaveLength(1); // 補位出榜
+    expect(discord.postFailureAlert).toHaveBeenCalledWith(expect.stringContaining('github-trending'));
+  });
+
+  it('主力解析 0 筆（擲錯）→ 告警 github-trending', async () => {
+    const { svc, discord } = makeService({
+      trending: jest.fn().mockRejectedValue(new Error('Trending 解析 0 筆（疑似頁面改版）')),
+      search: jest.fn().mockResolvedValue(okSearch),
+    });
+    await svc.build();
+    expect(discord.postFailureAlert).toHaveBeenCalledWith(expect.stringContaining('github-trending'));
+  });
+
+  it('補位某組失敗 → 告警 github-search:{domain}，主力仍出榜', async () => {
+    const { svc, discord } = makeService({
+      trending: jest.fn().mockResolvedValue([trending('acme/ai1', 8600)]),
+      metas: { metas: new Map([['acme/ai1', meta(101, ['llm'])]]), failures: [] },
+      search: jest.fn().mockResolvedValue({ repos: [], failures: [{ domain: 'frontend-backend', status: 503 }] }),
+    });
+    const board = await svc.build();
+    expect(board.boards.find((b) => b.domain === 'ai')!.entries).toHaveLength(1); // 主力出榜
+    expect(discord.postFailureAlert).toHaveBeenCalledWith(expect.stringContaining('github-search:frontend-backend'));
+  });
+
+  it('補位某組 0 筆屬正常 → 不告警', async () => {
+    const { svc, discord } = makeService({
+      trending: jest.fn().mockResolvedValue([trending('acme/ai1', 8600)]),
+      metas: { metas: new Map([['acme/ai1', meta(101, ['llm'])]]), failures: [] },
+      search: jest.fn().mockResolvedValue({ repos: [], failures: [] }),
+    });
+    await svc.build();
+    expect(discord.postFailureAlert).not.toHaveBeenCalled();
+  });
+
+  it('GET /repos 出現 403 → 告警 github-repo', async () => {
+    const { svc, discord } = makeService({
+      trending: jest.fn().mockResolvedValue([trending('a/x', 100), trending('b/y', 200)]),
+      metas: { metas: new Map([['a/x', meta(1, ['llm'])]]), failures: [{ fullName: 'b/y', status: 403 }] },
+    });
+    await svc.build();
+    expect(discord.postFailureAlert).toHaveBeenCalledWith(expect.stringContaining('github-repo'));
+  });
+
+  it('GET /repos 零星失敗（<50%、無 401/403）→ 不告警', async () => {
+    const trendingRepos = Array.from({ length: 10 }, (_, i) => trending(`o/r${i}`, 100));
+    const metas = new Map(trendingRepos.slice(1).map((t, i) => [t.fullName, meta(i + 10, ['llm'])] as const));
+    const { svc, discord } = makeService({
+      trending: jest.fn().mockResolvedValue(trendingRepos),
+      metas: { metas, failures: [{ fullName: 'o/r0', status: 500 }] },
+    });
+    await svc.build();
+    expect(discord.postFailureAlert).not.toHaveBeenCalled();
+  });
+
+  it('兩來源皆正常 → 不發任何來源告警', async () => {
+    const { svc, discord } = makeService({
+      trending: jest.fn().mockResolvedValue([trending('acme/ai1', 8600)]),
+      metas: { metas: new Map([['acme/ai1', meta(101, ['llm'])]]), failures: [] },
+      search: jest.fn().mockResolvedValue(okSearch),
+    });
+    await svc.build();
+    expect(discord.postFailureAlert).not.toHaveBeenCalled();
+  });
+});
+
+describe('shouldAlertRepoFailures（github-repo 告警門檻, U3）', () => {
+  it('出現 401/403 即告警', () => {
+    expect(shouldAlertRepoFailures([{ fullName: 'a', status: 403 }], 10)).toBe(true);
+    expect(shouldAlertRepoFailures([{ fullName: 'a', status: 401 }], 10)).toBe(true);
+  });
+
+  it('其餘錯誤失敗率 > 50% 才告警', () => {
+    expect(shouldAlertRepoFailures([{ fullName: 'a', status: 500 }, { fullName: 'b', status: 500 }, { fullName: 'c', status: null }], 5)).toBe(true);
+    expect(shouldAlertRepoFailures([{ fullName: 'a', status: 500 }], 10)).toBe(false);
+  });
+
+  it('無失敗 → 不告警', () => {
+    expect(shouldAlertRepoFailures([], 10)).toBe(false);
   });
 });
 
