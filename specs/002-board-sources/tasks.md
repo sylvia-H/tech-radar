@@ -80,12 +80,12 @@
 
 ### Tests for User Story 2 ⚠️
 
-- [ ] T019 [P] [US2] 撰寫 `src/sources/github-search.service.spec.ts`：三組領域查詢 `q`（AI `(llm OR rag OR agent OR gpt) stars:>30`、DevOps `(kubernetes OR terraform OR gitops) stars:>20`、前後端 `(nextjs OR react OR svelte OR nodejs OR golang) stars:>20`，皆帶 `created:>{today-7d}`、`sort=stars&order=desc`）；回應欄位映射為 `RawSearchRepo`（含 `topics`）；**某組 0 筆屬正常、不告警**（FR-002、contracts §2）
+- [x] T019 [P] [US2] 撰寫 `src/sources/github-search.service.spec.ts`：三組領域查詢 `q`（AI `(llm OR rag OR agent OR gpt) stars:>30`、DevOps `(kubernetes OR terraform OR gitops) stars:>20`、前後端 `(nextjs OR react OR svelte OR nodejs OR golang) stars:>20`，皆帶 `created:>{today-7d}`、`sort=stars&order=desc`）；回應欄位映射為 `RawSearchRepo`（含 `topics`）；**某組 0 筆屬正常、不告警**（FR-002、contracts §2）
 
 ### Implementation for User Story 2
 
-- [ ] T020 [US2] 實作 `src/sources/github-search.service.ts`：對三領域各發一次 `GET /search/repositories`（門檻與 `q` 見 T019／FR-010），解析 `id`/`full_name`/`description`/`language`/`topics`/`stargazers_count`/`created_at` → `RawSearchRepo[]`（`topics` 隨回應返回，免再打 /repos）；依賴 T004、T003（research D3、contracts §2）
-- [ ] T021 [US2] 於 `src/board/board-builder.service.ts` 併入 Search 來源：`build()` 同時取 Search 候選、經 `classify`（`queriedDomain` 為提示、仍以 topics/description 為準）納入各領域候選池，並於 `board.module.ts` 註冊 `GithubSearchService`（依賴 T016、T020）
+- [x] T020 [US2] 實作 `src/sources/github-search.service.ts`：對三領域各發一次 `GET /search/repositories`（門檻與 `q` 見 T019／FR-010），解析 `id`/`full_name`/`description`/`language`/`topics`/`stargazers_count`/`created_at` → `RawSearchRepo[]`（`topics` 隨回應返回，免再打 /repos）；依賴 T004、T003（research D3、contracts §2）
+- [x] T021 [US2] 於 `src/board/board-builder.service.ts` 併入 Search 來源：`build()` 同時取 Search 候選、經 `classify`（`queriedDomain` 為提示、仍以 topics/description 為準）納入各領域候選池，並於 `board.module.ts` 註冊 `GithubSearchService`（依賴 T016、T020）
 
 **Checkpoint**: US1＋US2 → 榜單同時涵蓋熱門主力與新崛起補位（合併去重於 US3 完成）
 
@@ -99,14 +99,14 @@
 
 ### Tests for User Story 3 ⚠️
 
-- [ ] T022 [P] [US3] 撰寫（或補充 `board-builder.service.spec.ts`）合併去重測試：同一 `repoId` 同時來自 trending＋search → 只保留一筆、**保留主力 `starsThisWeek`** 作 `weeklyStarsEstimate` 依據、`sources` 同時含 `trending`+`search`；改名（fullName 變、repoId 同）視為同一筆（FR-004、SC-003）
-- [ ] T023 [P] [US3] 補充 `weekly-stars.spec.ts` 純 Search 分支：`= round(totalStars / max(ageDays,1) × 7)`，並驗證同時來自兩來源者以 `starsThisWeek` 為準（FR-005、research D5）
-- [ ] T024 [P] [US3] 撰寫排序穩定性測試：打亂來源處理順序 → 各領域名次不變；tie-break 為 `weeklyStarsEstimate desc, repoId asc`；超過 15 只留前 15、`rank` 1..n 連號（SC-005、FR-005）
+- [x] T022 [P] [US3] 撰寫（或補充 `board-builder.service.spec.ts`）合併去重測試：同一 `repoId` 同時來自 trending＋search → 只保留一筆、**保留主力 `starsThisWeek`** 作 `weeklyStarsEstimate` 依據、`sources` 同時含 `trending`+`search`；改名（fullName 變、repoId 同）視為同一筆（FR-004、SC-003）
+- [x] T023 [P] [US3] 補充 `weekly-stars.spec.ts` 純 Search 分支：`= round(totalStars / max(ageDays,1) × 7)`，並驗證同時來自兩來源者以 `starsThisWeek` 為準（FR-005、research D5）
+- [x] T024 [P] [US3] 撰寫排序穩定性測試：打亂來源處理順序 → 各領域名次不變；tie-break 為 `weeklyStarsEstimate desc, repoId asc`；超過 15 只留前 15、`rank` 1..n 連號（SC-005、FR-005）
 
 ### Implementation for User Story 3
 
-- [ ] T025 [US3] 於 `src/board/board-builder.service.ts` 實作 union（trending＋search）後以 `repoId` 去重：同一 repo 合併 `sources`、依 FR-004 保留主力 `starsThisWeek`／補位 `totalStars`+`createdAt`，再以 `weekly-stars` 計 `weeklyStarsEstimate`（依賴 T021、T013）
-- [ ] T026 [US3] 於 `board-builder` 實作每領域穩定排序 `(weeklyStarsEstimate desc, repoId asc)` → top 15 → `rank` 連號；確保相同輸入必得相同順序、不受來源順序影響（依賴 T025；SC-005/FR-005）
+- [x] T025 [US3] 於 `src/board/board-builder.service.ts` 實作 union（trending＋search）後以 `repoId` 去重：同一 repo 合併 `sources`、依 FR-004 保留主力 `starsThisWeek`／補位 `totalStars`+`createdAt`，再以 `weekly-stars` 計 `weeklyStarsEstimate`（依賴 T021、T013）
+- [x] T026 [US3] 於 `board-builder` 實作每領域穩定排序 `(weeklyStarsEstimate desc, repoId asc)` → top 15 → `rank` 連號；確保相同輸入必得相同順序、不受來源順序影響（依賴 T025；SC-005/FR-005）
 
 **Checkpoint**: 三領域榜去重乾淨、排序可重現，具備 F3 diff 前提
 

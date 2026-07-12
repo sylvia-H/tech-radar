@@ -2,16 +2,20 @@ import { Injectable } from '@nestjs/common';
 import { GithubHttpService } from '../github/github-http';
 import { GithubTrendingService } from '../sources/github-trending.service';
 import { GithubRepoService } from '../sources/github-repo.service';
+import { GithubSearchService } from '../sources/github-search.service';
 import { ClassifyService } from '../classify/classify.service';
 import { weeklyStarsEstimate } from './weekly-stars';
 import {
   BoardRow,
   CandidateRepo,
   CurrentBoard,
+  Domain,
   DomainBoard,
   DOMAINS,
+  RawSearchRepo,
   RawTrendingRepo,
   RepoMeta,
+  SourceTag,
 } from './board.types';
 
 /** 每領域榜追蹤深度（FR-005；> 推播呈現，保留竄升／下降偵測空間）。 */
@@ -19,11 +23,26 @@ export const MAX_PER_DOMAIN = 15;
 
 const MS_PER_DAY = 86_400_000;
 
+/** 合併去重的中間結構（以 repoId 為同一性；classify/estimate 前）。 */
+interface MergedRepo {
+  repoId: number;
+  fullName: string;
+  url: string;
+  description: string | null;
+  language: string | null;
+  topics: string[];
+  starsThisWeek: number | null;
+  totalStars: number | null;
+  createdAt: string | null;
+  sources: SourceTag[];
+}
+
 /**
  * 編排器：sources → classify → merge(repoId 去重) → weeklyStarsEstimate → 每領域 top 15。
  * 產出僅記憶體＋log 的 `CurrentBoard`（不寫 state/board.json）；即 F3 `buildCurrentBoard()` 契約。
  *
- * US1（本階段）：Trending-only 路徑。US2 併入 Search、US3 合併去重、US4 容錯告警於後續擴充。
+ * US1 Trending 主力、US2 併入 Search 補位、US3 以 repoId 合併去重＋穩定排序。
+ * US4 將主力/補位以 try/catch 隔離並發來源告警（本階段直接串接，失敗冒泡至頂層）。
  */
 @Injectable()
 export class BoardBuilderService {
@@ -31,6 +50,7 @@ export class BoardBuilderService {
     private readonly http: GithubHttpService,
     private readonly trending: GithubTrendingService,
     private readonly repos: GithubRepoService,
+    private readonly search: GithubSearchService,
     private readonly classify: ClassifyService,
   ) {}
 
@@ -44,49 +64,104 @@ export class BoardBuilderService {
     };
   }
 
-  /** 收集並歸類所有來源候選（US1：Trending 主力；U1 略過缺 repoId 者）。 */
+  /** 收集兩來源、以 repoId 合併去重、歸類後產出 CandidateRepo[]（US2/US3）。 */
   private async collectCandidates(): Promise<CandidateRepo[]> {
+    // 主力 Trending：補 repoId/topics（缺 repoId 略過，U1/FR-004）。
     const trendingRepos = await this.trending.fetchTrending();
     const { metas } = await this.repos.fetchRepoMetas(trendingRepos.map((r) => r.fullName));
 
+    // 補位 Search：回應已含 topics。
+    const { repos: searchRepos } = await this.search.fetchSearch();
+
+    const merged = mergeById(trendingRepos, metas, searchRepos);
+
     const candidates: CandidateRepo[] = [];
-    for (const t of trendingRepos) {
-      const meta = metas.get(t.fullName);
-      if (!meta) {
-        continue; // 缺 repoId（/repos 失敗）→ 略過（U1/FR-004）
-      }
-      const domain = this.classify.classify({ topics: meta.topics, description: t.description });
+    for (const m of merged) {
+      const domain = this.classify.classify({ topics: m.topics, description: m.description });
       if (!domain) {
         continue; // 無法歸類 → 排除（寧缺勿濫）
       }
-      candidates.push(trendingCandidate(t, meta, domain));
+      candidates.push(finalizeCandidate(m, domain));
     }
     return candidates;
   }
 }
 
-/** 由 Trending 候選＋repos meta 組 CandidateRepo。 */
-function trendingCandidate(
-  t: RawTrendingRepo,
-  meta: RepoMeta,
-  domain: CandidateRepo['domain'],
-): CandidateRepo {
-  const ageDays = ageInDays(meta.createdAt);
-  return {
-    repoId: meta.repoId,
-    fullName: t.fullName,
-    url: `https://github.com/${t.fullName}`,
-    description: t.description,
-    language: t.language,
-    topics: meta.topics,
-    starsThisWeek: t.starsThisWeek,
-    totalStars: meta.totalStars,
-    ageDays,
-    sources: ['trending'],
-    domain,
-    weeklyStarsEstimate: weeklyStarsEstimate({
+/**
+ * 以 GitHub 數字 `repoId` 合併兩來源、去重（抗改名，FR-004）。
+ * 同一 repo 同時來自兩來源 → 合併 `sources`、**保留主力 `starsThisWeek`**（優於補位估算）。
+ * Trending 候選缺 repoId（metas 無）→ 略過（U1）。處理順序不影響結果（repoId 為鍵）。
+ */
+export function mergeById(
+  trendingRepos: readonly RawTrendingRepo[],
+  metas: ReadonlyMap<string, RepoMeta>,
+  searchRepos: readonly RawSearchRepo[],
+): MergedRepo[] {
+  const byId = new Map<number, MergedRepo>();
+
+  for (const t of trendingRepos) {
+    const meta = metas.get(t.fullName);
+    if (!meta) {
+      continue; // 缺 repoId → 略過（U1/FR-004）
+    }
+    byId.set(meta.repoId, {
+      repoId: meta.repoId,
+      fullName: t.fullName,
+      url: `https://github.com/${t.fullName}`,
+      description: t.description,
+      language: t.language,
+      topics: meta.topics,
       starsThisWeek: t.starsThisWeek,
       totalStars: meta.totalStars,
+      createdAt: meta.createdAt,
+      sources: ['trending'],
+    });
+  }
+
+  for (const s of searchRepos) {
+    const existing = byId.get(s.repoId);
+    if (existing) {
+      // 已來自主力：加 search 標記，保留主力欄位（含 starsThisWeek）。
+      if (!existing.sources.includes('search')) {
+        existing.sources.push('search');
+      }
+      continue;
+    }
+    byId.set(s.repoId, {
+      repoId: s.repoId,
+      fullName: s.fullName,
+      url: `https://github.com/${s.fullName}`,
+      description: s.description,
+      language: s.language,
+      topics: s.topics,
+      starsThisWeek: null,
+      totalStars: s.totalStars,
+      createdAt: s.createdAt,
+      sources: ['search'],
+    });
+  }
+
+  return [...byId.values()];
+}
+
+/** 合併結果 → CandidateRepo（計 ageDays 與 weeklyStarsEstimate）。 */
+function finalizeCandidate(m: MergedRepo, domain: Domain): CandidateRepo {
+  const ageDays = m.createdAt !== null ? ageInDays(m.createdAt) : null;
+  return {
+    repoId: m.repoId,
+    fullName: m.fullName,
+    url: m.url,
+    description: m.description,
+    language: m.language,
+    topics: m.topics,
+    starsThisWeek: m.starsThisWeek,
+    totalStars: m.totalStars,
+    ageDays,
+    sources: m.sources,
+    domain,
+    weeklyStarsEstimate: weeklyStarsEstimate({
+      starsThisWeek: m.starsThisWeek,
+      totalStars: m.totalStars,
       ageDays,
     }),
   };

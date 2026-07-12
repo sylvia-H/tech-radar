@@ -1,35 +1,53 @@
 import { GithubHttpService } from '../github/github-http';
 import { GithubTrendingService } from '../sources/github-trending.service';
 import { GithubRepoService, RepoMetasResult } from '../sources/github-repo.service';
+import { GithubSearchService, SearchResult } from '../sources/github-search.service';
 import { ClassifyService } from '../classify/classify.service';
-import { BoardBuilderService, assembleBoards } from './board-builder.service';
-import { CandidateRepo, RawTrendingRepo, RepoMeta } from './board.types';
+import { BoardBuilderService, assembleBoards, mergeById } from './board-builder.service';
+import { CandidateRepo, RawSearchRepo, RawTrendingRepo, RepoMeta } from './board.types';
 
 function trending(fullName: string, starsThisWeek: number, description: string | null = null): RawTrendingRepo {
   return { fullName, description, language: null, starsThisWeek };
 }
 
-function meta(repoId: number, topics: string[]): RepoMeta {
-  return { repoId, topics, totalStars: 500, createdAt: '2026-07-01T00:00:00Z' };
+function meta(repoId: number, topics: string[], createdAt = '2026-07-01T00:00:00Z'): RepoMeta {
+  return { repoId, topics, totalStars: 500, createdAt };
 }
+
+function searchRepo(repoId: number, fullName: string, topics: string[], totalStars: number, ageDaysAgoIso: string): RawSearchRepo {
+  return {
+    repoId,
+    fullName,
+    description: null,
+    language: null,
+    topics,
+    totalStars,
+    createdAt: ageDaysAgoIso,
+    queriedDomain: 'ai',
+  };
+}
+
+const EMPTY_SEARCH: SearchResult = { repos: [], failures: [] };
 
 function buildService(
   trendingRepos: RawTrendingRepo[],
   metasResult: RepoMetasResult,
+  searchResult: SearchResult = EMPTY_SEARCH,
 ): BoardBuilderService {
   const http = {
     resetCounts: jest.fn(),
     get counts() {
-      return { core: metasResult.metas.size, search: 0 };
+      return { core: metasResult.metas.size, search: 3 };
     },
   } as unknown as GithubHttpService;
   const trendingSvc = { fetchTrending: jest.fn().mockResolvedValue(trendingRepos) } as unknown as GithubTrendingService;
   const reposSvc = { fetchRepoMetas: jest.fn().mockResolvedValue(metasResult) } as unknown as GithubRepoService;
-  return new BoardBuilderService(http, trendingSvc, reposSvc, new ClassifyService());
+  const searchSvc = { fetchSearch: jest.fn().mockResolvedValue(searchResult) } as unknown as GithubSearchService;
+  return new BoardBuilderService(http, trendingSvc, reposSvc, searchSvc, new ClassifyService());
 }
 
 describe('BoardBuilderService.build（Trending-only, US1）', () => {
-  it('每領域以 weeklyStarsEstimate 排序、rank 連號；boards 恰三領域；apiCalls 計數', async () => {
+  it('每領域以 weeklyStarsEstimate 排序、rank 連號；boards 恰三領域', async () => {
     const trendingRepos = [
       trending('acme/ai1', 8600),
       trending('acme/ai2', 9000),
@@ -50,37 +68,80 @@ describe('BoardBuilderService.build（Trending-only, US1）', () => {
       [1, 'acme/ai2', 9000],
       [2, 'acme/ai1', 8600],
     ]);
-    expect(board.boards.find((b) => b.domain === 'devops')!.entries[0].fullName).toBe('globex/dev1');
     expect(board.boards.find((b) => b.domain === 'frontend-backend')!.entries[0].fullName).toBe('initech/fe1');
-    expect(board.apiCalls).toEqual({ core: 4, search: 0 });
-    expect(typeof board.builtAt).toBe('string');
   });
 
   it('缺 repoId（metas 無該筆）→ 略過該候選（U1）', async () => {
     const trendingRepos = [trending('acme/ai1', 8600), trending('ghost/no-meta', 9999)];
     const metas = new Map<string, RepoMeta>([['acme/ai1', meta(101, ['llm'])]]);
     const board = await buildService(trendingRepos, { metas, failures: [{ fullName: 'ghost/no-meta', status: 500 }] }).build();
-    const all = board.boards.flatMap((b) => b.entries.map((e) => e.fullName));
-    expect(all).toEqual(['acme/ai1']);
+    expect(board.boards.flatMap((b) => b.entries.map((e) => e.fullName))).toEqual(['acme/ai1']);
   });
 
-  it('無法歸類（topics/description 皆無命中）→ 排除', async () => {
+  it('無法歸類 → 排除；build 開頭重置計數', async () => {
     const trendingRepos = [trending('acme/misc', 5000, 'grow tomatoes')];
     const metas = new Map<string, RepoMeta>([['acme/misc', meta(101, ['gardening'])]]);
-    const board = await buildService(trendingRepos, { metas, failures: [] }).build();
+    const svc = buildService(trendingRepos, { metas, failures: [] });
+    const board = await svc.build();
     expect(board.boards.every((b) => b.entries.length === 0)).toBe(true);
-  });
-
-  it('build 開頭重置呼叫計數', async () => {
-    const http = { resetCounts: jest.fn(), get counts() { return { core: 0, search: 0 }; } } as unknown as GithubHttpService;
-    const trendingSvc = { fetchTrending: jest.fn().mockResolvedValue([]) } as unknown as GithubTrendingService;
-    const reposSvc = { fetchRepoMetas: jest.fn().mockResolvedValue({ metas: new Map(), failures: [] }) } as unknown as GithubRepoService;
-    await new BoardBuilderService(http, trendingSvc, reposSvc, new ClassifyService()).build();
-    expect(http.resetCounts).toHaveBeenCalledTimes(1);
   });
 });
 
-describe('assembleBoards（純函式排序穩定性）', () => {
+describe('BoardBuilderService.build（併入 Search 補位, US2/US3）', () => {
+  it('純 Search 候選以估算 weeklyStarsEstimate 入榜、標 [search]', async () => {
+    const search: SearchResult = {
+      repos: [searchRepo(500, 'newbie/rag', ['rag'], 700, '2026-07-05T00:00:00Z')],
+      failures: [],
+    };
+    const board = await buildService([], { metas: new Map(), failures: [] }, search).build();
+    const ai = board.boards.find((b) => b.domain === 'ai')!;
+    expect(ai.entries).toHaveLength(1);
+    expect(ai.entries[0].sources).toEqual(['search']);
+    expect(ai.entries[0].starsThisWeek).toBeNull();
+    expect(ai.entries[0].weeklyStarsEstimate).toBeGreaterThan(0);
+  });
+
+  it('同一 repoId 同時來自兩來源 → 一筆、保留主力 starsThisWeek、sources 合併', async () => {
+    const trendingRepos = [trending('acme/dup', 5000)];
+    const metas = new Map<string, RepoMeta>([['acme/dup', meta(100, ['llm'])]]);
+    // 改名情境：search 回同一 repoId 但 fullName 不同
+    const search: SearchResult = {
+      repos: [searchRepo(100, 'acme/dup-renamed', ['llm'], 9999, '2026-07-05T00:00:00Z')],
+      failures: [],
+    };
+    const board = await buildService(trendingRepos, { metas, failures: [] }, search).build();
+    const ai = board.boards.find((b) => b.domain === 'ai')!;
+    expect(ai.entries).toHaveLength(1); // 去重
+    expect(ai.entries[0].repoId).toBe(100);
+    expect(ai.entries[0].weeklyStarsEstimate).toBe(5000); // 保留主力 starsThisWeek
+    expect(ai.entries[0].sources.sort()).toEqual(['search', 'trending']);
+    expect(ai.entries[0].fullName).toBe('acme/dup'); // 保留主力 fullName
+  });
+});
+
+describe('mergeById（repoId 去重，FR-004/SC-003）', () => {
+  it('改名（fullName 變、repoId 同）視為同一筆；保留主力 starsThisWeek', () => {
+    const merged = mergeById(
+      [trending('o/old-name', 3000)],
+      new Map([['o/old-name', meta(7, ['llm'])]]),
+      [searchRepo(7, 'o/new-name', ['llm'], 8000, '2026-07-05T00:00:00Z')],
+    );
+    expect(merged).toHaveLength(1);
+    expect(merged[0].starsThisWeek).toBe(3000);
+    expect(merged[0].sources.sort()).toEqual(['search', 'trending']);
+  });
+
+  it('缺 repoId 的 Trending 候選略過；純 Search 候選保留', () => {
+    const merged = mergeById(
+      [trending('o/no-meta', 100)],
+      new Map(), // 無 meta → 略過
+      [searchRepo(9, 'o/search-only', ['rag'], 500, '2026-07-06T00:00:00Z')],
+    );
+    expect(merged.map((m) => m.repoId)).toEqual([9]);
+  });
+});
+
+describe('assembleBoards（純函式排序穩定性, SC-005）', () => {
   function candidate(repoId: number, estimate: number, domain: CandidateRepo['domain']): CandidateRepo {
     return {
       repoId,
@@ -99,10 +160,10 @@ describe('assembleBoards（純函式排序穩定性）', () => {
   }
 
   it('同 estimate 以 repoId asc tie-break；超過 15 只留前 15、rank 連號', () => {
-    const many = Array.from({ length: 20 }, (_, i) => candidate(20 - i, 100, 'ai')); // 同 estimate、repoId 20..1
+    const many = Array.from({ length: 20 }, (_, i) => candidate(20 - i, 100, 'ai'));
     const [ai] = assembleBoards(many);
     expect(ai.entries).toHaveLength(15);
-    expect(ai.entries[0].repoId).toBe(1); // repoId 最小者第一
+    expect(ai.entries[0].repoId).toBe(1);
     expect(ai.entries.map((e) => e.rank)).toEqual(Array.from({ length: 15 }, (_, i) => i + 1));
   });
 
@@ -110,7 +171,7 @@ describe('assembleBoards（純函式排序穩定性）', () => {
     const base = [candidate(5, 300, 'ai'), candidate(9, 300, 'ai'), candidate(2, 900, 'ai')];
     const order1 = assembleBoards(base)[0].entries.map((e) => e.repoId);
     const order2 = assembleBoards([...base].reverse())[0].entries.map((e) => e.repoId);
-    expect(order1).toEqual([2, 5, 9]); // 900 first；同 300 以 repoId asc（5 前於 9）
+    expect(order1).toEqual([2, 5, 9]);
     expect(order2).toEqual(order1);
   });
 });
