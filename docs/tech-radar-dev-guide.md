@@ -681,6 +681,7 @@ bootstrap();
 **F4 `004-news-ingest` — 新聞來源與零 LLM 漏斗（階段 A）**
 
 - 範圍：`news-sources.ts` 設定檔 + schema 驗證 + tier 加權、四種抓取器（`hn-algolia` / `reddit-weekly` / `rss` / `github-releases`，含 User-Agent/條件式請求/0 筆告警、releases 過濾 pre-release 與純 patch）、正規化為統一結構、階段 A 漏斗（**target-URL 正規化去重、標題 Jaccard 補漏**、分數門檻、交叉驗證、榜單相關性加權、`seenNews` 7 天修剪）；上線前逐一驗證 feed URL 可用（§12）。
+- **本 Feature 待定（F2 clarify 2026-07-11 標記，留待此處定案）**：**新聞領域分類法是否對齊榜單**——即把新聞 `domain` 由 `ai | devops | backend | frontend | cross` 收斂為 `ai | devops | frontend-backend | cross`（比照 F2 榜單合併前後端）。背景：新聞側**輸出層本就不分前後端**（配額「DevOps / 後端 / 前端合計 ≤2」已合併計算），前後端分開**僅承載不對稱降噪規則**（後端只收 Node.js/Python、前端以 TypeScript 為主且不收 CSS 技巧/教學）。若對齊，MUST 把這些降噪規則由「綁在領域標籤」改寫為**外顯過濾規則**，並同步修訂憲章 III（配額措辭）與 §4.1–4.3。傾向對齊（一套分類法貫穿全專案、降噪規則更外顯），惟屬接近平手之抉擇，於本 Feature 評估後定案。
 - 驗收（F3 + F4 = M2）：跨來源同一則新聞只出現一筆（`sources[]` 正確合併）；候選收斂至約 15～25 則。
 
 **F5 `005-repo-intro` — LLM 封裝與 repo 簡介**
