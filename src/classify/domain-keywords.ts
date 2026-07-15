@@ -9,7 +9,7 @@ export interface DomainKeywordSet {
 }
 
 /**
- * 三領域關鍵字種子集（v1 canonical）。**增刪只改此檔、不動分類邏輯**（憲章 IV 精神）。
+ * 兩領域關鍵字種子集（v1 canonical）。**增刪只改此檔、不動分類邏輯**（憲章 IV 精神）。
  *
  * 兩群分工由 spec 定義：`search` 兼作補位 Search 的 OR 群，`extra` 只參與比對。
  * `DOMAIN_KEYWORDS`（完整集）與 `SEARCH_QUERIES`（OR 群）皆由此衍生，兩邊不再各自
@@ -18,6 +18,10 @@ export interface DomainKeywordSet {
  * 比對語意為**小寫詞界**（以非英數字元為界），topics 與 description 共用同一集合（A2）。
  * 詞界比對不會讓 `ai` 誤命中 `blockchain`／`domain`，代價是接不到 `openai`／`agents`
  * 這類黏著變體，故將常見變體逐一列入 `extra`（增刪仍只改此檔）。
+ *
+ * **DevOps 群已於 2026-07-15 隨榜單 DevOps 領域一併移除**——其命中主力 `docker` 是
+ * 「部署方式」而非「領域」標籤（self-hosted 應用幾乎都貼），實測歸類正確率為 0。
+ * 此處僅指**榜單**；新聞側的 DevOps 領域與來源不受影響（另一條資料流，憲章 III）。
  */
 export const DOMAIN_KEYWORD_SETS: Record<Domain, DomainKeywordSet> = {
   ai: {
@@ -35,18 +39,6 @@ export const DOMAIN_KEYWORD_SETS: Record<Domain, DomainKeywordSet> = {
       'openai',
       'genai',
       'chatgpt',
-    ],
-  },
-  devops: {
-    search: ['kubernetes', 'terraform', 'gitops'],
-    extra: [
-      'devops',
-      'ci-cd',
-      'docker',
-      'observability',
-      'platform-engineering',
-      // 同上：docker 的黏著變體
-      'dockerfile',
     ],
   },
   'frontend-backend': {
@@ -72,6 +64,5 @@ function mergeKeywords(set: DomainKeywordSet): string[] {
 /** 各領域完整關鍵字集（`search` ＋ `extra`），供 topics／description 比對共用。 */
 export const DOMAIN_KEYWORDS: Record<Domain, string[]> = {
   ai: mergeKeywords(DOMAIN_KEYWORD_SETS.ai),
-  devops: mergeKeywords(DOMAIN_KEYWORD_SETS.devops),
   'frontend-backend': mergeKeywords(DOMAIN_KEYWORD_SETS['frontend-backend']),
 };

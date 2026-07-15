@@ -6,9 +6,13 @@ shell commands, and other important information, read the current plan:
 
 # tech-radar — Agent 協作指引
 
-tech-radar 是一個**排程型、純自用、全免費、零維運**的每日晨報：自動追蹤 DevOps / AI /
-前後端近一週最受關注、新崛起的 GitHub repo 與相關討論，透過 Discord 推播。以 GitHub Spec
-Kit（SDD）開發。**工程約束以 `.specify/memory/constitution.md` 憲章為最高規範**，凌駕其他
+tech-radar 是一個**排程型、純自用、全免費、零維運**的每日晨報：自動追蹤近一週最受關注、
+新崛起的 GitHub repo（**榜單：AI / 前後端**）與相關技術討論（**新聞：AI 為主，兼及 DevOps /
+後端 / 前端**），透過 Discord 推播。以 GitHub Spec Kit（SDD）開發。
+
+> **榜單與新聞的領域集合刻意不同**（兩條獨立資料流）：榜單的 DevOps 已於 2026-07-15 移除
+> （實測歸類正確率 0、週增星量級遠低於 AI）；**新聞的 DevOps 配額與來源不受影響**。改動時
+> 勿把兩者混為一談。**工程約束以 `.specify/memory/constitution.md` 憲章為最高規範**，凌駕其他
 慣例；本檔只放憲章與開發指南中與 Agent 日常操作相關的行動層守則。
 
 ## 溝通語言

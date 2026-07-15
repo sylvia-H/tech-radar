@@ -5,18 +5,21 @@
  */
 
 /**
- * 榜單三領域（3-way；`frontend-backend` = 前端＋後端合併，顯示「前後端」）。
- * 與 F1 `BoardEntry.domain`（4-way 佔位）的對齊屬持久化層、留待 F3（research D7）。
+ * 榜單兩領域（`frontend-backend` = 前端＋後端合併，顯示「前後端」）。
+ *
+ * **DevOps 已於 2026-07-15 移除**（見 spec Clarifications Session 2026-07-15）：實測
+ * DevOps 榜的候選幾乎只靠 `docker` 這種「部署方式」標籤命中、歸類正確率為 0，且週增星
+ * 只有兩位到三位數（對比 AI 榜上萬），即使有保底席次也排不上號。**此處僅指榜單**——
+ * 新聞側的 DevOps 領域、配額與來源不受影響（屬另一條資料流，見憲章 III）。
  */
-export type Domain = 'ai' | 'devops' | 'frontend-backend';
+export type Domain = 'ai' | 'frontend-backend';
 
-/** 三領域固定順序（輸出／log 與跨領域主領域決勝優先序：AI > DevOps > 前後端，FR-011）。 */
-export const DOMAINS: readonly Domain[] = ['ai', 'devops', 'frontend-backend'];
+/** 兩領域固定順序（輸出／log 與跨領域主領域決勝優先序：AI > 前後端，FR-011）。 */
+export const DOMAINS: readonly Domain[] = ['ai', 'frontend-backend'];
 
 /** 領域顯示標籤（log 標題用中文；資料列 `domain` 仍用 enum 值）。 */
 export const DOMAIN_LABELS: Record<Domain, string> = {
   ai: 'AI',
-  devops: 'DevOps',
   'frontend-backend': '前後端',
 };
 
@@ -94,9 +97,9 @@ export interface ApiCallCounts {
   search: number;
 }
 
-/** F2 最終產出：三領域當前榜（僅記憶體＋log，不寫 state/board.json）。 */
+/** F2 最終產出：兩領域當前榜（僅記憶體＋log，不寫 state/board.json）。 */
 export interface CurrentBoard {
   builtAt: string; // ISO 8601（本次執行時間）
-  boards: DomainBoard[]; // 恰三領域（不足 15 照實呈現）
+  boards: DomainBoard[]; // 恰兩領域（不足 15 照實呈現）
   apiCalls: ApiCallCounts;
 }

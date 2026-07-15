@@ -6,14 +6,12 @@ describe('ClassifyService', () => {
   describe('topics 為主要訊號（詞界比對）', () => {
     it('topics 明確命中 → 歸對領域', () => {
       expect(svc.classify({ topics: ['machine-learning'], description: null })).toBe('ai');
-      expect(svc.classify({ topics: ['kubernetes'], description: null })).toBe('devops');
       expect(svc.classify({ topics: ['react'], description: null })).toBe('frontend-backend');
     });
 
     it('topics 以連字號為界寬鬆命中（ai-agents → ai）', () => {
       expect(svc.classify({ topics: ['ai-agents'], description: null })).toBe('ai');
       expect(svc.classify({ topics: ['react-native'], description: null })).toBe('frontend-backend');
-      expect(svc.classify({ topics: ['docker-compose'], description: null })).toBe('devops');
     });
 
     it('短關鍵字不誤命中含該字母序列的一般 topic（SC-002）', () => {
@@ -32,7 +30,23 @@ describe('ClassifyService', () => {
       expect(svc.classify({ topics: ['chatgpt'], description: null })).toBe('ai');
       expect(svc.classify({ topics: ['reactjs'], description: null })).toBe('frontend-backend');
       expect(svc.classify({ topics: ['sveltekit'], description: null })).toBe('frontend-backend');
-      expect(svc.classify({ topics: ['dockerfile'], description: null })).toBe('devops');
+    });
+
+    it('榜單已無 DevOps 領域：僅靠部署/維運標籤命中者一律排除', () => {
+      // 2026-07-15 移除 DevOps 榜；docker 這類「部署方式」標籤不再讓候選入榜
+      expect(svc.classify({ topics: ['docker', 'steam', 'gameserver'], description: null })).toBeNull();
+      expect(svc.classify({ topics: ['kubernetes', 'terraform', 'gitops'], description: null })).toBeNull();
+      expect(svc.classify({ topics: ['docker-compose', 'observability'], description: null })).toBeNull();
+    });
+
+    it('原被 docker 錯置到 DevOps 的前後端專案，現歸前後端', () => {
+      // teledrive 的真實 topics：曾因 docker 命中 devops、又被優先序搶走而錯置
+      expect(
+        svc.classify({
+          topics: ['react', 'python', 'docker', 'open-source', 'typescript', 'telegram', 'vite', 'fastapi'],
+          description: null,
+        }),
+      ).toBe('frontend-backend');
     });
 
     it('topics 非空但無命中 → 排除（不 fallback description）', () => {
@@ -50,8 +64,12 @@ describe('ClassifyService', () => {
       expect(svc.classify({ topics: [], description: 'domain chain logic library' })).toBeNull();
     });
 
-    it('description 命中 DevOps 關鍵字', () => {
-      expect(svc.classify({ topics: [], description: 'a gitops controller for kubernetes' })).toBe('devops');
+    it('description 命中前後端關鍵字', () => {
+      expect(svc.classify({ topics: [], description: 'a fastify plugin for nodejs' })).toBe('frontend-backend');
+    });
+
+    it('description 只提 DevOps 語彙 → 排除（榜單已無此領域）', () => {
+      expect(svc.classify({ topics: [], description: 'a gitops controller for kubernetes' })).toBeNull();
     });
   });
 
@@ -62,13 +80,10 @@ describe('ClassifyService', () => {
     });
   });
 
-  describe('跨領域擇一主領域（固定優先序 AI > DevOps > 前後端）', () => {
-    it('AI + DevOps 同時命中 → AI', () => {
-      expect(svc.classify({ topics: ['llm', 'kubernetes'], description: null })).toBe('ai');
-    });
-
-    it('DevOps + 前後端 同時命中 → DevOps', () => {
-      expect(svc.classify({ topics: ['kubernetes', 'react'], description: null })).toBe('devops');
+  describe('跨領域擇一主領域（固定優先序 AI > 前後端）', () => {
+    it('AI + 前後端 同時命中 → AI', () => {
+      expect(svc.classify({ topics: ['llm', 'react'], description: null })).toBe('ai');
+      expect(svc.classify({ topics: ['typescript', 'openai'], description: null })).toBe('ai');
     });
   });
 

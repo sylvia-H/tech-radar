@@ -1,19 +1,30 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.0.1 → 1.1.0
-Bump rationale: MINOR——原則 III 收斂榜單推播的變化類型：移除「跌出」為獨立推播項，改為
-  「repo 掉出推播榜（跨領域綜合 top 10）當次靜默、不另報跌出；日後重回即以新進呈現」。屬既有
-  指引的實質行為調整（更貼近「寧缺勿濫、控制節奏」），非移除或重新定義原則本身。決策來源：F2
-  (002-board-sources) /speckit-clarify（2026-07-11）確立「跨領域綜合 top 10」推播模型。
+Version change: 1.1.0 → 1.2.0
+Bump rationale: MINOR——**榜單**領域由三領域（AI / DevOps / 前後端）收斂為**兩領域（AI /
+  前後端）**，移除 DevOps。屬產品範圍的實質調整，未移除或重新定義八條原則本身。決策來源：F2
+  (002-board-sources) M1 驗收之 SC-002 人工抽查（2026-07-15）以真實資料證實 DevOps 榜歸類
+  正確率為 0——3 筆候選全部只靠 `docker`（部署方式標籤，非領域標籤）命中，且其中 teledrive
+  （react/typescript/fastapi）遭優先序自前後端榜錯置；DevOps 候選週增星僅 259/136/25，
+  對比 AI 榜 13,195/7,129，即使有保底席次亦排不上號。實測僅收窄 `docker` 不足以解決
+  （docker-mailserver 真的貼了 `kubernetes`；「能跑在 k8s 上」與「是 k8s 工具」在零 LLM
+  的純關鍵字分類下無法區分，屬固有極限），故直接移除領域。
+
+Scope note（重要）: 本次變更**僅限榜單**。**新聞側完全不受影響**——原則 III 的新聞配額
+  「AI ≥ 4；DevOps / 後端 / 前端合計 ≤ 2」維持不變，dev-guide §4 的三個 DevOps 專屬來源
+  （Reddit r/devops、The New Stack、Lobste.rs /t/devops.rss）亦全數保留。理由：榜單與新聞
+  是兩條獨立資料流，「DevOps 沒有爆紅 repo」不等於「沒有值得讀的 DevOps 消息」，且新聞本就
+  以「重要度優先於熱度」排序（原則 III），低配額不致洗版。
 
 Modified sections:
-  - 原則 III「只推變化、控制節奏」→ 榜單差異列舉由「新進榜 / 竄升 / 下降 / 跌出」改為
-    「新進 / 竄升 / 下降」，並註明掉出推播榜靜默、重回以新進呈現。
+  - 概述（本檔開頭）→ 明確區分兩條資料流：榜單追蹤 AI / 前後端；新聞維持 AI 為主、兼及
+    DevOps / 後端 / 前端。
 Added sections: 無
-Removed sections: 無（僅收斂原則 III 的一項列舉，未刪章節）
+Removed sections: 無（榜單領域收斂，未刪章節；新聞配額原封不動）
 
 Prior history:
+  - 1.1.0（2026-07-11）：MINOR——原則 III 收斂榜單推播變化類型，移除「跌出」為獨立推播項。
   - 1.0.1（2026-07-11）：PATCH——釐清「技術與安全約束」狀態 commit 措辭（no-diff 早退）。
   - 1.0.0（2026-07-11）：首次由模板具體化為正式憲章（MAJOR 起始版），確立八條非協商原則、
     技術與安全約束、開發流程與治理章節。
@@ -22,17 +33,29 @@ Templates requiring updates:
   - .specify/templates/plan-template.md ✅ 對齊（Constitution Check 為泛用 gate，無過時引用）
   - .specify/templates/spec-template.md ✅ 對齊（泛用範本，未硬編原則）
   - .specify/templates/tasks-template.md ✅ 對齊（泛用範本，未硬編原則）
-  - docs/tech-radar-dev-guide.md ✅ 已同步（§3.3/§5/§6.3/§7 改為綜合 top 10、掉出靜默）
-  - specs/002-board-sources/spec.md ✅ 已同步（Clarifications Session 2026-07-11）
-  - specs/001-foundation/spec.md ✅ 對齊（FR-007 commit-on-change、Session 2026-07-11 澄清）
+  - CLAUDE.md ✅ 已同步（專案描述之榜單領域；硬規則 3 之新聞配額不動）
+  - docs/tech-radar-dev-guide.md ✅ 已同步（概述、§3.1/§3.2 榜單領域、§7.4 卡片配色、§11.2
+    F2 範圍；§4 新聞來源與配額不動）
+  - specs/002-board-sources/* ✅ 已同步（Clarifications Session 2026-07-15、FR-003/FR-011、
+    種子集、contracts、data-model、tasks）
+  - specs/001-foundation/spec.md ✅ 對齊（F1 未涉榜單領域；`state.schema.ts` 4-way 佔位之
+    對齊（含移除 devops）留待 F3，已於 F2 research D7／data-model 標記）
 
-Follow-up TODOs: 無（無延遲佔位）
+Follow-up TODOs:
+  - F3 (003-board-state-diff)：`state.schema.ts` 之 `BoardEntry.domain` 由 4-way 佔位
+    （ai|devops|backend|frontend）對齊為 2-way（ai|frontend-backend），一併移除 devops。
+  - F4 (004-news-sources)：新聞 domain 分類法「是否比照榜單合併前後端」之待定項仍有效，但
+    **不得**因榜單移除 DevOps 而連帶移除新聞的 devops（見上方 Scope note；dev-guide §11.2 F4）。
 -->
 
 # Tech Radar Constitution
 
-> 每日晨報自動追蹤 DevOps / AI / 前後端近一週最受關注、新崛起的 GitHub repo 與相關討論，
-> 透過 Discord 推播；純自用、全免費、零維運，走 Spec-Driven Development。
+> 每日晨報自動追蹤近一週最受關注、新崛起的 GitHub repo（**榜單：AI / 前後端**）與相關技術
+> 討論（**新聞：AI 為主，兼及 DevOps / 後端 / 前端**），透過 Discord 推播；純自用、全免費、
+> 零維運，走 Spec-Driven Development。
+>
+> 榜單與新聞是**兩條獨立資料流**，領域集合刻意不同：榜單的 DevOps 已於 2026-07-15 移除
+> （F2 M1 驗收實測歸類正確率 0、訊號量級過低），新聞的 DevOps 配額與來源則維持不變。
 > 本憲章為全專案的最高規範，凌駕其他慣例；違反須依「治理」章節記錄並取得核可。
 
 ## Core Principles

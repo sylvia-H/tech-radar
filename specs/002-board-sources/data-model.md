@@ -4,10 +4,10 @@ F2 的資料模型**全為單次執行的記憶體結構**（不持久化，spec
 
 ---
 
-## 型別：Domain（三領域）
+## 型別：Domain（兩領域）
 
 ```ts
-type Domain = "ai" | "devops" | "frontend-backend"; // 顯示：AI / DevOps / 前後端
+type Domain = "ai" | "frontend-backend"; // 顯示：AI / 前後端
 ```
 
 - 榜單的三個分類；`frontend-backend` = 前端＋後端合併（clarify 已定）。
@@ -90,7 +90,7 @@ interface BoardRow {
 }
 interface CurrentBoard {
   builtAt: string;            // ISO 8601（本次執行時間）
-  boards: DomainBoard[];      // 恰三領域（不足 15 照實呈現）
+  boards: DomainBoard[];      // 恰兩領域（不足 15 照實呈現）
   apiCalls: { core: number; search: number }; // 供 SC-006 觀測
 }
 ```
@@ -108,8 +108,9 @@ interface CurrentBoard {
 | Domain | `search` 群（兼作 Search `q`） | `extra` 群（僅比對，含詞界接不到的黏著變體） |
 |--------|------------------------------|--------------------------------------------|
 | `ai` | `llm`、`rag`、`agent`、`gpt` | `ai`、`machine-learning`、`deep-learning`、`llmops`、`transformers`、`llms`、`agents`、`agentic`、`openai`、`genai`、`chatgpt` |
-| `devops` | `kubernetes`、`terraform`、`gitops` | `devops`、`ci-cd`、`docker`、`observability`、`platform-engineering`、`dockerfile` |
 | `frontend-backend` | `nextjs`、`react`、`svelte`、`nodejs`、`golang` | `typescript`、`vue`、`fastapi`、`frontend`、`backend`、`reactjs`、`sveltekit`、`vuejs` |
+
+> **`devops` 群已於 2026-07-15 隨榜單 DevOps 領域移除**（原 `kubernetes`／`terraform`／`gitops` ＋ `devops`／`ci-cd`／`docker`／`observability`／`platform-engineering`）：其命中主力 `docker` 是「部署方式」而非「領域」標籤，實測歸類正確率 0（見 spec Clarifications Session 2026-07-15）。**僅榜單**；新聞側 DevOps 不受影響。
 
 > 沿用開發指南 §3.2；為可日後擴充的 v1，調整只改設定不改分類邏輯。`extra` 群末段的黏著變體係 A1 改詞界後補回原本靠子字串涵蓋的常見 topic——**寬鬆傾向由此群承擔，不得回頭放寬比對語意**。
 
@@ -125,7 +126,8 @@ interface CurrentBoard {
 | topics／description 一律詞界比對，防短詞誤命中 | FR-003（A1） | `ai` 不命中 topic `blockchain`／`domain-driven-design`、description `domain chain`；`ai-agents`／`AI-powered` 命中 |
 | 黏著變體由種子集 `extra` 群涵蓋 | FR-003（A1） | topic `openai`／`genai`／`agents`／`reactjs` 仍歸對領域 |
 | Search `q` OR 群衍生自 `search` 群、不另抄字面量 | FR-010、領域關鍵字種子集 | `SEARCH_QUERIES[i].keywords` 恆等於 `DOMAIN_KEYWORD_SETS[domain].search` |
-| 跨領域擇一主領域（固定優先序 AI>DevOps>前後端） | FR-011 | 同時命中 AI+DevOps → 入 AI，只出現一次 |
+| 跨領域擇一主領域（固定優先序 AI>前後端） | FR-011 | 同時命中 AI+前後端 → 入 AI，只出現一次 |
+| 榜單無 DevOps 領域 | Clarifications 2026-07-15 | 純 DevOps topics（`docker`／`kubernetes`）→ 排除；`teledrive` 那類 `react+docker` → 歸前後端而非被搶走 |
 | Trending 候選缺 `repoId`（/repos 失敗）→ 略過 | FR-004（U1）、contracts §3 | mock /repos 失敗 → 該候選不入榜、不擲錯全線 |
 | `repoId` 去重（抗改名） | FR-004、SC-003 | 同 repo 兩來源／改名樣本 → 最終只一筆 |
 | 每領域 `weeklyStarsEstimate` 排序取 top 15 | FR-005、SC-001 | 超過 15 只留前 15；不足 15 照實 |

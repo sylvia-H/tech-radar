@@ -10,11 +10,12 @@ import {
 } from './github-search.service';
 
 describe('Search query 組裝', () => {
-  it('三組 q 帶關鍵字 OR 群、created 時間窗與 stars 門檻', () => {
+  it('兩組 q 帶關鍵字 OR 群、created 時間窗與 stars 門檻', () => {
     const since = '2026-07-05';
-    const [ai, devops, fe] = SEARCH_QUERIES;
+    const [ai, fe] = SEARCH_QUERIES;
+    expect(SEARCH_QUERIES).toHaveLength(2); // DevOps 移除後只剩兩組（SC-006：search 3→2）
+    expect(SEARCH_QUERIES.map((c) => c.domain)).toEqual(['ai', 'frontend-backend']);
     expect(buildSearchQuery(ai, since)).toBe('(llm OR rag OR agent OR gpt) created:>2026-07-05 stars:>30');
-    expect(buildSearchQuery(devops, since)).toBe('(kubernetes OR terraform OR gitops) created:>2026-07-05 stars:>20');
     expect(buildSearchQuery(fe, since)).toBe(
       '(nextjs OR react OR svelte OR nodejs OR golang) created:>2026-07-05 stars:>20',
     );
@@ -73,26 +74,26 @@ describe('parseSearchResponse', () => {
 });
 
 describe('GithubSearchService.fetchSearch', () => {
-  it('三組皆成功 → 合併 repos、無 failures', async () => {
+  it('兩組皆成功 → 合併 repos、無 failures', async () => {
     const getJson = jest.fn(async () => ({
       items: [{ id: 1, full_name: 'o/r', stargazers_count: 50, created_at: '2026-07-09T00:00:00Z' }],
     }));
     const http = { getJson } as unknown as GithubHttpService;
     const { repos, failures } = await new GithubSearchService(http).fetchSearch(new Date('2026-07-12T00:00:00Z'));
-    expect(getJson).toHaveBeenCalledTimes(3);
-    expect(repos).toHaveLength(3); // 每組一筆
+    expect(getJson).toHaveBeenCalledTimes(2); // SC-006：search 呼叫數為 2
+    expect(repos).toHaveLength(2); // 每組一筆
     expect(failures).toEqual([]);
   });
 
   it('某組 0 筆屬正常 → 不列入 failures', async () => {
     const getJson = jest.fn(async (url: string) =>
-      url.includes(encodeURIComponent('kubernetes'))
+      url.includes(encodeURIComponent('nextjs'))
         ? { items: [] }
         : { items: [{ id: 1, full_name: 'o/r', stargazers_count: 50, created_at: '2026-07-09T00:00:00Z' }] },
     );
     const http = { getJson } as unknown as GithubHttpService;
     const { repos, failures } = await new GithubSearchService(http).fetchSearch(new Date('2026-07-12T00:00:00Z'));
-    expect(repos).toHaveLength(2); // devops 組 0 筆
+    expect(repos).toHaveLength(1); // frontend-backend 組 0 筆
     expect(failures).toEqual([]);
   });
 
@@ -105,7 +106,7 @@ describe('GithubSearchService.fetchSearch', () => {
     });
     const http = { getJson } as unknown as GithubHttpService;
     const { repos, failures } = await new GithubSearchService(http).fetchSearch(new Date('2026-07-12T00:00:00Z'));
-    expect(repos).toHaveLength(2); // ai + devops 成功
+    expect(repos).toHaveLength(1); // ai 組成功
     expect(failures).toEqual([{ domain: 'frontend-backend', status: 503 }]);
   });
 });

@@ -1,6 +1,6 @@
 # Tech Radar — 開發指南
 
-> 每日一次**晨報**（台灣時間約 06:00）自動追蹤 **DevOps / AI / 前後端** 領域近一週最受關注、新崛起的 GitHub repo 與相關討論。晨報固定推**精選 6 則對開發者最重要的新聞**（以 AI 為主，重要度優先於熱度；每則精煉為繁中標題 ≤50 字＋內容 ≤300 字）；repo 榜單變化則**每三天**推一次，**只呈現自上次以來的變化**，並為**新進榜與竄升**的 repo 附上 **250 字以內的繁體中文簡介**，透過 Discord 推播到你的手機。純自用、全免費、走 Spec-Driven Development（GitHub Spec Kit + Claude Code）。
+> 每日一次**晨報**（台灣時間約 06:00）自動追蹤近一週最受關注、新崛起的 GitHub repo（**榜單：AI / 前後端** 兩領域）與相關技術討論（**新聞：AI 為主，兼及 DevOps / 後端 / 前端**）。**榜單與新聞的領域集合刻意不同**——榜單的 DevOps 已於 2026-07-15 移除（實測歸類正確率 0、訊號量級過低，見 §3.2 註），新聞的 DevOps 配額與來源不受影響。晨報固定推**精選 6 則對開發者最重要的新聞**（以 AI 為主，重要度優先於熱度；每則精煉為繁中標題 ≤50 字＋內容 ≤300 字）；repo 榜單變化則**每三天**推一次，**只呈現自上次以來的變化**，並為**新進榜與竄升**的 repo 附上 **250 字以內的繁體中文簡介**，透過 Discord 推播到你的手機。純自用、全免費、走 Spec-Driven Development（GitHub Spec Kit + Claude Code）。
 
 ---
 
@@ -101,7 +101,7 @@
 
 - 讀 `https://github.com/trending?since=weekly`。**每個 repo 標了「X stars this week」**——就是你要的週增量，官方算好、零狀態。
 - 無官方 API，爬 HTML（`cheerio`）。頁面結構簡單穩定；第三方服務多要錢或不穩，自爬更划算。
-- **領域過濾**：Trending 只能用程式語言分頁（`/trending/python?since=weekly`、`typescript`、`go`、`rust`、`shell`…），不能用 topic。做法：爬「全站 + 幾個高相關語言頁」，再對每個候選 `GET /repos/{owner}/{repo}` 取 `topics`，用三領域關鍵字集合比對，命中才留。
+- **領域過濾**：Trending 只能用程式語言分頁（`/trending/python?since=weekly`、`typescript`、`go`、`rust`、`shell`…），不能用 topic。做法：爬「全站 + 幾個高相關語言頁」，再對每個候選 `GET /repos/{owner}/{repo}` 取 `topics`，用兩領域（AI／前後端）關鍵字集合比對，命中才留。
 
 ```ts
 $("article.Box-row").each((_, el) => {
@@ -119,17 +119,18 @@ $("article.Box-row").each((_, el) => {
 
 ```
 GET /search/repositories?q=(llm OR rag OR agent OR gpt) created:>{今天−7天} stars:>30&sort=stars&order=desc
-GET /search/repositories?q=(kubernetes OR terraform OR gitops) created:>{今天−7天} stars:>20&sort=stars&order=desc
 GET /search/repositories?q=(nextjs OR react OR svelte OR nodejs OR golang) created:>{今天−7天} stars:>20&sort=stars&order=desc
 ```
 
 - 回傳是**當前總星數**，配合 `created:>7天前` 即等於「一週內誕生且已累積不少星」=「新崛起」，零狀態。
 
+> **榜單為何沒有 DevOps 組**（2026-07-15 移除，F2 M1 驗收實測）：DevOps 榜的候選幾乎只靠 `docker` 命中，而 `docker` 是**部署方式**標籤、不是領域標籤——self-hosted 應用幾乎都貼，導致 `docker-steam-headless`（Steam 遊戲容器）、`docker-mailserver`（郵件伺服器）、`teledrive`（React+FastAPI 檔案管理器，還因 DevOps 優先序較高而被自前後端榜錯置）全數誤收，**歸類正確率 0/3**；且其週增星僅 259/136/25，對比 AI 榜的 13,195/7,129 根本排不上號。僅收窄 `docker` 不足以解決（`docker-mailserver` 真的貼了 `kubernetes`；「能跑在 k8s 上」與「是 k8s 工具」在零 LLM 的純關鍵字分類下無法區分），故直接移除領域。**此決策僅限榜單——§4 的新聞 DevOps 配額與三個專屬來源全數保留**，因為「DevOps 沒有爆紅 repo」不等於「沒有值得讀的 DevOps 消息」。
+
 ### 3.3 合併與排名
 
 - 兩來源 union → 用 `repoId`（GitHub numeric id，抗改名）去重。
 - 排序鍵：Trending 來源用 `starsThisWeek`；Search 來源用「總星數 ÷ 建立天數」近似速度（**上限為總星數**，見下）。
-- 每領域各取 **top 15** 作為「當前榜單」（**追蹤深度**），交給 §5 做變化比對。**推播呈現另取「跨領域綜合 top 10」**：把三領域 45 筆以統一尺「**估算本週增星**」合成單一排名、**保底每領域至少 2 席**，只推前 10（見 §5.2 / §5.3 / §7）。**追蹤深度（15）大於推播呈現（10）**，`RANK_JUMP_THRESHOLD` 等級的竄升/下降才有被偵測的空間。
+- 每領域各取 **top 15** 作為「當前榜單」（**追蹤深度**），交給 §5 做變化比對。**推播呈現另取「跨領域綜合 top 10」**：把兩領域 30 筆以統一尺「**估算本週增星**」合成單一排名、**保底每領域至少 2 席**，只推前 10（見 §5.2 / §5.3 / §7）。**追蹤深度（15）大於推播呈現（10）**，`RANK_JUMP_THRESHOLD` 等級的竄升/下降才有被偵測的空間。
   - **統一尺「估算本週增星」**（F2 建立於 `src/board/weekly-stars.ts`，**F3/F7 沿用同一把尺、不另發明**）：
     - Trending repo：用 `starsThisWeek`（官方週增量）。
     - Search-only repo：`min(round((總星數 ÷ max(建立天數, 1)) × 7), 總星數)`。
@@ -285,7 +286,7 @@ export const NEWS_SOURCES: NewsSource[] = [
 ### 5.2 Diff 邏輯
 
 ```ts
-// 綜合 top 10：把三領域各自的 top 15（追蹤深度）合成單一推播榜
+// 綜合 top 10：把兩領域各自的 top 15（追蹤深度）合成單一推播榜
 function pickPushBoard(board) {
   const scored = allDomains(board).map((r) => ({
     ...r,
@@ -418,7 +419,7 @@ if (isBoardDay) {
       title: `${isNew ? "🆕" : "🔺"} ${r.fullName}`,
       url: r.url, // 點標題開 repo
       description: r.intro, // ← 250 字簡介
-      color: domainColor(r.domain), // AI/DevOps/前後端 各一色
+      color: domainColor(r.domain), // AI/前後端 各一色
       fields: [
         {
           name: "本週增星",
@@ -495,7 +496,7 @@ await postWebhook({
 ### 7.4 小巧思
 
 - **區塊配色**：榜單變化封面藍 `0x5865F2`、新聞晨報橙 `0xF5A623`；卡片再依領域上色（下）。
-- **領域配色（卡片）**：AI `0x10A37F` / DevOps `0x326CE5` / 前後端 `0xF7DF1E`，掃描更快。
+- **領域配色（榜單卡片）**：AI `0x10A37F` / 前後端 `0xF7DF1E`，掃描更快。（榜單 DevOps `0x326CE5` 已於 2026-07-15 隨領域移除；**新聞晨報是單張橙卡、領域僅以 `[DevOps]` 等文字標籤呈現，不受影響**。）
 - **敘事與數據分工**：簡介、TLDR 交給 Gemini（放 description）；增星、連結、名次由程式放（fields / 封面一行式）。就算 LLM 抽風，數字與連結永遠是真的。
 - **失敗要看得到**：任一步失敗發一則紅色告警 embed，別無聲失敗。
 
@@ -579,7 +580,7 @@ src/
 │  ├─ github-search.service.ts     # created:>7d 新崛起 repo
 │  ├─ github-readme.service.ts     # 取 README（簡介素材）
 │  └─ news.service.ts              # 依 config/news-sources.ts 清單抓取（HN / Reddit / RSS / releases.atom）
-├─ classify/          # ClassifyService（三領域關鍵字/topic 歸類）
+├─ classify/          # ClassifyService（兩領域關鍵字/topic 歸類）
 ├─ news-filter/       # NewsFilterService（去重→門檻→交叉驗證→配額策展，見 §4.4）
 ├─ diff/              # BoardDiffService（新進/竄升/下降；掉出 top 10 靜默、不推）
 ├─ intro/             # IntroService（README→Gemini→快取）
@@ -642,7 +643,7 @@ bootstrap();
 - **秘密不入庫、不入發佈物**：token / webhook URL 走 Actions Secrets；Pages 擴充（§14）僅適用 public repo，任何要發佈到 Pages 的產物（儀表板/feed）**絕不得含機密**。
 - **來源隔離容錯**：任一資料源失敗不得使整條 pipeline 失敗。
 - **發佈僅限 public、且不得波及推播**：Pages 發佈（§14）僅在 repo 為 public 時啟用，切成 private 須依可見性偵測**自動停用**；發佈是隔離末段，其停用或失敗**絕不得影響 Discord 推播與 state 存取**。
-- **關鍵邏輯測試優先**：trending 解析、三領域歸類、diff、**target-URL 正規化去重**、**標題近似去重**、簡介快取命中、**新聞配額（6 則 / AI≥4 / DevOps+後端+前端合計 ≤2）**、**50/300 字數上限驗證**、**來源清單 schema 驗證（`news-sources.ts`）與 tier 加權**、**晨報 idempotency guard（`lastNewsPushAt` <~18h 跳過）**、**榜單三日節奏（`lastBoardPushAt` 計時）** 都要單元測試（trending HTML 用快照測試守著；策展呼叫可 mock、另測失敗時的純程式排序備援）。
+- **關鍵邏輯測試優先**：trending 解析、兩領域歸類、diff、**target-URL 正規化去重**、**標題近似去重**、簡介快取命中、**新聞配額（6 則 / AI≥4 / DevOps+後端+前端合計 ≤2）**、**50/300 字數上限驗證**、**來源清單 schema 驗證（`news-sources.ts`）與 tier 加權**、**晨報 idempotency guard（`lastNewsPushAt` <~18h 跳過）**、**榜單三日節奏（`lastBoardPushAt` 計時）** 都要單元測試（trending HTML 用快照測試守著；策展呼叫可 mock、另測失敗時的純程式排序備援）。
 
 ### 11.1 Git 分支策略（進入開發階段後生效）
 
@@ -658,7 +659,7 @@ bootstrap();
 | #   | Feature 分支            | 內容                                | 對應章節           | 依賴     | 里程碑   |
 | --- | ----------------------- | ----------------------------------- | ------------------ | -------- | -------- |
 | F1  | `001-foundation`        | 專案骨架、狀態存取、推播通道、排程  | §2、§8、§9         | —        | M0       |
-| F2  | `002-board-sources`     | 榜單來源抓取與三領域歸類            | §3                 | F1       | M1       |
+| F2  | `002-board-sources`     | 榜單來源抓取與兩領域歸類            | §3                 | F1       | M1       |
 | F3  | `003-board-state-diff`  | 榜單狀態快照與變化偵測              | §5                 | F1、F2   | M2（半） |
 | F4  | `004-news-ingest`       | 新聞來源設定檔與零 LLM 過濾漏斗     | §4.1–4.3、§4.4-A   | F1       | M2（半） |
 | F5  | `005-repo-intro`        | LLM 封裝與 repo 250 字簡介          | §6、§10            | F1、F3   | M3       |
@@ -672,10 +673,10 @@ bootstrap();
 - 不含：任何資料來源、LLM、漏斗邏輯。
 - 驗收（= M0）：`workflow_dispatch` 觸發後手機收到測試 embed，且 state 檔成功 commit 回 repo。
 
-**F2 `002-board-sources` — 榜單來源與三領域歸類**
+**F2 `002-board-sources` — 榜單來源與兩領域歸類**
 
-- 範圍：`github-trending.service`（爬 weekly、解析 stars this week，**快照測試**）、`github-search.service`（`created:>7d` 三組查詢）、`ClassifyService`（topics/關鍵字歸類——關鍵字集合在本 Feature 的 clarify 定案）、兩來源 union + `repoId` 去重、排序鍵、每領域 top 15。
-- 驗收（= M1）：本機/Actions log 印出正確的三領域週增星榜。
+- 範圍：`github-trending.service`（爬 weekly、解析 stars this week，**快照測試**）、`github-search.service`（`created:>7d` 兩組查詢）、`ClassifyService`（topics/關鍵字歸類——關鍵字集合在本 Feature 的 clarify 定案）、兩來源 union + `repoId` 去重、排序鍵、每領域 top 15。
+- 驗收（= M1）：本機/Actions log 印出正確的兩領域週增星榜。
 
 **F3 `003-board-state-diff` — 榜單狀態與變化偵測**
 
@@ -686,7 +687,8 @@ bootstrap();
 **F4 `004-news-ingest` — 新聞來源與零 LLM 漏斗（階段 A）**
 
 - 範圍：`news-sources.ts` 設定檔 + schema 驗證 + tier 加權、四種抓取器（`hn-algolia` / `reddit-weekly` / `rss` / `github-releases`，含 User-Agent/條件式請求/0 筆告警、releases 過濾 pre-release 與純 patch）、正規化為統一結構、階段 A 漏斗（**target-URL 正規化去重、標題 Jaccard 補漏**、分數門檻、交叉驗證、榜單相關性加權、`seenNews` 7 天修剪）；上線前逐一驗證 feed URL 可用（§12）。
-- **本 Feature 待定（F2 clarify 2026-07-11 標記，留待此處定案）**：**新聞領域分類法是否對齊榜單**——即把新聞 `domain` 由 `ai | devops | backend | frontend | cross` 收斂為 `ai | devops | frontend-backend | cross`（比照 F2 榜單合併前後端）。背景：新聞側**輸出層本就不分前後端**（配額「DevOps / 後端 / 前端合計 ≤2」已合併計算），前後端分開**僅承載不對稱降噪規則**（後端只收 Node.js/Python、前端以 TypeScript 為主且不收 CSS 技巧/教學）。若對齊，MUST 把這些降噪規則由「綁在領域標籤」改寫為**外顯過濾規則**，並同步修訂憲章 III（配額措辭）與 §4.1–4.3。傾向對齊（一套分類法貫穿全專案、降噪規則更外顯），惟屬接近平手之抉擇，於本 Feature 評估後定案。
+- **本 Feature 待定（F2 clarify 2026-07-11 標記，留待此處定案）**：**新聞領域分類法是否比照榜單合併前後端**——即把新聞 `domain` 由 `ai | devops | backend | frontend | cross` 收斂為 `ai | devops | frontend-backend | cross`。
+  > **⚠️ 2026-07-15 更新前提**：榜單已移除 DevOps（收為 `ai | frontend-backend`），故此待定項**不再是「與榜單對齊成同一組領域」**，而僅是「**是否比照榜單合併前後端**」這一件事。**新聞 MUST 保留 `devops`**（配額與三個專屬來源皆不變，見憲章 Scope note）——兩條資料流的領域集合刻意不同，**不得**因榜單移除 DevOps 而連帶移除新聞的 devops。背景：新聞側**輸出層本就不分前後端**（配額「DevOps / 後端 / 前端合計 ≤2」已合併計算），前後端分開**僅承載不對稱降噪規則**（後端只收 Node.js/Python、前端以 TypeScript 為主且不收 CSS 技巧/教學）。若對齊，MUST 把這些降噪規則由「綁在領域標籤」改寫為**外顯過濾規則**，並同步修訂憲章 III（配額措辭）與 §4.1–4.3。傾向對齊（一套分類法貫穿全專案、降噪規則更外顯），惟屬接近平手之抉擇，於本 Feature 評估後定案。
 - 驗收（F3 + F4 = M2）：跨來源同一則新聞只出現一筆（`sources[]` 正確合併）；候選收斂至約 15～25 則。
 
 **F5 `005-repo-intro` — LLM 封裝與 repo 簡介**
@@ -735,7 +737,7 @@ bootstrap();
 | 里程碑     | 內容                                                            | 完成即可驗證                                 |
 | ---------- | --------------------------------------------------------------- | -------------------------------------------- |
 | M0         | Actions 骨架 + Discord Webhook 打通                             | 手機收得到訊息                               |
-| M1         | Trending weekly 解析 + Search 補位 + 三領域歸類                 | log 印出正確的本週增星榜                     |
+| M1         | Trending weekly 解析 + Search 補位 + 兩領域歸類                 | log 印出正確的本週增星榜                     |
 | M2         | 狀態存取 + diff（新進/竄升/下降）+ **新聞 target-URL/標題去重**   | 連跑兩次，第二次只顯示差異；跨來源同一則只出現一次 |
 | M3         | Intro：README → Gemini 250 字簡介 + 快取                        | 新進榜 repo 帶簡介，重複出現讀快取           |
 | M4         | 每日晨報（6 則 · 繁中 50/300 格式 · 依開發者重要性）+ 榜單三日 diff 卡片 + 配色，**雙 cron + `lastNewsPushAt` guard** 上線 | 每日恰一晨報（漏跑會補、不重複）、榜單三天一次、只呈現變化且帶簡介 |

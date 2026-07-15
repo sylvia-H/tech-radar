@@ -13,29 +13,29 @@
 
 ## D2 — GitHub API 用量預算（憲章 I 核心 gate）
 
-- **Decision**：單次執行預算——(a) Trending HTML **6 次**（github.com 網頁，不計 API 限額）；(b) 每個 **Trending 唯一候選**呼叫 `GET /repos/{owner}/{repo}` 取 topics，去重後 ≤ ~120 次（core，估算值；SC-006 安全上限設 ~150）；(c) Search **3 次**（每領域一組，API 端已回 topics，免再打 /repos）。core 上限 5,000/hr、Search 30/min → 使用率 < 3% / 10%。
+- **Decision**：單次執行預算——(a) Trending HTML **6 次**（github.com 網頁，不計 API 限額）；(b) 每個 **Trending 唯一候選**呼叫 `GET /repos/{owner}/{repo}` 取 topics，去重後 ≤ ~120 次（core，估算值；SC-006 安全上限設 ~150；2026-07-15 實測 102 次）；(c) Search **2 次**（每領域一組，DevOps 移除後由 3 次減為 2 次；API 端已回 topics，免再打 /repos）。core 上限 5,000/hr、Search 30/min → 使用率 < 3% / 7%。
 - **Rationale**：唯一會逼近限額的是 Trending 候選的 topics 補抓；用「先 `fullName` 去重再打 /repos」「有限並發 ≤6」「條件式請求（ETag）」壓低次數與 secondary rate limit 風險。
 - **Alternatives**：對每列都打 /repos（重複浪費）；用 GraphQL 批次取 topics（可行但增複雜度，F2 規模用不到）——暫否決，量大時再議。
 - **量測**：`board-builder` 記錄本次 core/search 呼叫次數並在 log 印出，供 SC-006 人工核對。
 
-## D3 — 補位 Search：三組領域查詢
+## D3 — 補位 Search：兩組領域查詢
 
-- **Decision**：對 AI / DevOps / 前後端各發一次 `GET /search/repositories`，`q` 帶該領域關鍵字 OR 群、`created:>{今天−7天}`、`stars:>{門檻}`，`sort=stars&order=desc`，取每組前 N（N 取足以供分類與 top 15，建議 ~30）。**門檻（clarify 已定）**：AI `stars:>30`、DevOps `stars:>20`、前後端 `stars:>20`。
+- **Decision**：對 AI / 前後端各發一次 `GET /search/repositories`，`q` 帶該領域關鍵字 OR 群、`created:>{今天−7天}`、`stars:>{門檻}`，`sort=stars&order=desc`，取每組前 N（N 取足以供分類與 top 15，建議 ~30）。**門檻（clarify 已定）**：AI `stars:>30`、前後端 `stars:>20`（DevOps 組已於 2026-07-15 隨領域移除，查詢由 3 組減為 **2 組**）。
 - **Rationale**：`created:>7天前` ＋ 當前總星數即「一週內誕生且已累積不少星」＝新崛起，零狀態（憲章 II）。Search 回應本身含 `topics`，補位候選不需再打 /repos。
 - **Alternatives**：單一大查詢再本地分類（q 語意糊、命中差）；用 stars 排序以外的 sort（偏離「已很紅」）——否決。
 - **注意**：Search 回的是**當前總星數＋建立日期**（非週增星），排序用 `weeklyStarsEstimate`（D5）換算。
 
-## D4 — 三領域歸類演算法（clarify 已定規則，本節定實作）
+## D4 — 兩領域歸類演算法（clarify 已定規則，本節定實作）
 
 - **Decision**：對每個候選，依序：
-  1. **topics**（主要訊號）比對三領域關鍵字種子集 → 命中的領域集合。
+  1. **topics**（主要訊號）比對兩領域關鍵字種子集 → 命中的領域集合。
   2. 若**無 topics**，改以 **description** 比對關鍵字 → 命中領域集合。
   3. **language** 僅作**輔助訊號**、**不得單獨決定領域**，且**不參與跨領域主領域決勝**（跨領域一律依步驟 4 固定優先序）；language 至多用於「已因 topics/description 命中單一領域」時的信心佐證，不改變領域歸屬。
-  4. 命中多領域 → **擇一主領域**，固定優先序 **AI > DevOps > 前後端**（FR-011）。
+  4. 命中多領域 → **擇一主領域**，固定優先序 **AI > 前後端**（FR-011）。
   5. topics 與 description 皆無命中 → **排除**（不強行歸類，寧缺勿濫）。
-  - 歸類採**寬鬆傾向**：確屬三領域的開發者工具不因關鍵字過嚴被漏收。
+  - 歸類採**寬鬆傾向**：確屬兩領域的開發者工具不因關鍵字過嚴被漏收。
   - **比對語意**（A1，**2026-07-15 修訂**）：topics 與 description **一律小寫詞界**比對（以非英數字元為界）。原定 topics 用子字串（求寬鬆），但 `ai` 會命中 `blockchain`／`domain-driven-design`、`rag` 會命中 `drag-and-drop`，加上 AI 優先序最高 → 直接侵蝕 SC-002；寬鬆傾向改由種子集補充群（`openai`／`agents`／`reactjs`…）承擔。見 [data-model.md](data-model.md) 與 spec FR-003、Clarifications Session 2026-07-15。
-  - **實作**：三領域各預編一條 `(?<![a-z0-9])(kw|kw…)(?![a-z0-9])` regex（模組載入時編一次），topics 逐個比對、description 整串比對；增刪關鍵字仍只改 `domain-keywords.ts`。
+  - **實作**：兩領域各預編一條 `(?<![a-z0-9])(kw|kw…)(?![a-z0-9])` regex（模組載入時編一次），topics 逐個比對、description 整串比對；增刪關鍵字仍只改 `domain-keywords.ts`。
 - **Rationale**：直接落實 spec FR-003/FR-011 與 clarify；純字串比對、零 LLM（憲章 V）。
 - **Alternatives**：LLM 歸類（違憲章 V、且 F2 不引入 LLM）；允許同時入多榜（clarify 已否決，去重/名額會亂）；topics 子字串比對（A1 原案，已因 SC-002 誤判撤回）；token 前綴／後綴比對（可不擴充種子集就接住 `openai`，但 `rag` 仍會誤命中 `drag`）——皆否決。
 - **關鍵字種子集（v1 canonical）**：見 [data-model.md](data-model.md#領域關鍵字種子集v1-canonical) 與 `src/classify/domain-keywords.ts`；增刪只改該檔（憲章 IV 精神）。
@@ -59,17 +59,17 @@
 - **Rationale**：無人值守自用任務的護欄（憲章 VII）；沿用 F1 既有告警通道，不新建。
 - **Alternatives**：任一失敗即中止全流程（違 FR-007）；靜默略過 0 筆（違 FR-009，會把「解析壞掉」誤當「本週無熱門」）；單列漂移只略過該列（會讓真正的改版被稀釋成「少幾筆」而測不出，違 FR-009）——皆否決。
 
-## D7 — 三領域 Domain enum 與 F1 佔位對齊
+## D7 — 兩領域 Domain enum 與 F1 佔位對齊
 
-- **Decision**：F2 記憶體型別 `Domain = "ai" | "devops" | "frontend-backend"`（3-way；`frontend-backend` 對應人類標籤「前後端」）。F1 `state.schema.ts` 之 `BoardEntry.domain` 目前為 4-way 佔位，因 **F2 不持久化**故**不在本 Feature 修改**；持久化層對齊 3-way 留待 **F3**（首次寫回 board）。
+- **Decision**：F2 記憶體型別 `Domain = "ai" | "frontend-backend"`（2-way；`frontend-backend` 對應人類標籤「前後端」）。**DevOps 已於 2026-07-15 移除**（實測歸類正確率 0、週增星量級遠低，見 spec Clarifications Session 2026-07-15；僅榜單，新聞不受影響）。F1 `state.schema.ts` 之 `BoardEntry.domain` 目前為 4-way 佔位（`ai|devops|backend|frontend`），因 **F2 不持久化**故**不在本 Feature 修改**；持久化層對齊 2-way（**含移除 `devops`**）留待 **F3**（首次寫回 board）。
 - **Rationale**：F1 data-model 已註明「domain enum 值在 F2 clarify 定案」；F2 定義權威分類型別、但依 spec「不寫回 state」故不動 schema，避免在無持久化需求下改動 F1 交付。
-- **Alternatives**：F2 直接改 `state.schema.ts` 為 3-way（超出 F2「不觸狀態」範圍、且無 runtime 用途）；沿用 4-way 分列 backend/frontend（變 4 領域榜、違 spec 三領域/共 45）——否決。
+- **Alternatives**：F2 直接改 `state.schema.ts` 為 2-way（超出 F2「不觸狀態」範圍、且無 runtime 用途）；沿用 4-way 分列 backend/frontend（變多領域榜、違 spec 兩領域/共 30）——否決。
 - **命名**：程式 enum 用 `frontend-backend`；log/顯示用「前後端」；卡片配色沿用 §7.4「前後端 `0xF7DF1E`」（屬 F7）。
 
 ## D8 — M1 可觀測性接點（不越界到 F3/F7）
 
-- **Decision**：`PipelineService` 增一個「建置並印榜」步驟：呼叫 `BoardBuilderService.build()` 取得 `CurrentBoard`，以結構化 log 印三領域榜（每筆：名次、`owner/name`、`weeklyStarsEstimate`、來源、領域）。**不** diff、**不**推播 Discord、**不**寫 `state/board.json`。可經 `workflow_dispatch` 或本機 `node dist/main.cli.js` 觸發。
-- **Rationale**：M1 驗收就是「log 印出正確三領域榜」；把建置掛進既有 pipeline 進入點最省事，且不製造狀態或推播副作用（憲章 III/VI 不受影響）。
+- **Decision**：`PipelineService` 增一個「建置並印榜」步驟：呼叫 `BoardBuilderService.build()` 取得 `CurrentBoard`，以結構化 log 印兩領域榜（每筆：名次、`owner/name`、`weeklyStarsEstimate`、來源、領域）。**不** diff、**不**推播 Discord、**不**寫 `state/board.json`。可經 `workflow_dispatch` 或本機 `node dist/main.cli.js` 觸發。
+- **Rationale**：M1 驗收就是「log 印出正確兩領域榜」；把建置掛進既有 pipeline 進入點最省事，且不製造狀態或推播副作用（憲章 III/VI 不受影響）。
 - **Alternatives**：另做獨立 CLI 子命令（多一個進入點、非必要）；直接接 Discord 推播（越界到 F7）——否決。
 
 ## D9 — 抓取禮貌與退避（憲章 VII / §12）

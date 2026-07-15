@@ -20,7 +20,7 @@ class BoardBuilderService {
 
 `CurrentBoard` / `DomainBoard` / `BoardRow` 結構見 [../data-model.md](../data-model.md)。契約要點：
 
-- **`boards` 恰含三領域**（`ai`／`devops`／`frontend-backend`）；某領域候選不足 15 → `entries` 照實筆數，不硬湊、不補位（Edge Case「候選不足 15」）。
+- **`boards` 恰含兩領域**（`ai`／`frontend-backend`；DevOps 已於 2026-07-15 移除）；某領域候選不足 15 → `entries` 照實筆數，不硬湊、不補位（Edge Case「候選不足 15」）。
 - **每筆唯一**：全 `boards` 中同一 `repoId` 只出現一次，且只在其**主領域**（FR-004/FR-011）。
 - **排序穩定**：`entries` 依 `(weeklyStarsEstimate desc, repoId asc)`；`rank` 為 1..n 連號。相同輸入必得相同順序（SC-005）。
 - **不含機密**：`CurrentBoard` 及其 log **不得**含 token 或任何非公開資料。
@@ -32,14 +32,11 @@ class BoardBuilderService {
 每領域一段，每筆一行，欄位齊備（SC-001）：
 
 ```
-📊 CurrentBoard @ 2026-07-12T22:07:00Z  (api: core=112, search=3)
+📊 CurrentBoard @ 2026-07-12T22:07:00Z  (api: core=112, search=2)
 ── AI ──────────────────────────────
  #1  owner/agent-sandbox      ~8600/wk  [trending]        ai
  #2  owner/new-rag-lib         ~2100/wk  [search]          ai
  …（≤15）
-── DevOps ──────────────────────────
- #1  owner/gitops-x          ~11000/wk  [trending,search] devops
- …
 ── 前後端 ───────────────────────────
  #1  owner/svelte-thing       ~4300/wk  [trending]        frontend-backend
  …

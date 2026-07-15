@@ -12,12 +12,12 @@ export interface SearchQueryConfig {
   minStars: number;
 }
 
-/** 各領域星數門檻（clarify 已定：AI > 30、DevOps／前後端 > 20；FR-010）。 */
-const MIN_STARS: Record<Domain, number> = { ai: 30, devops: 20, 'frontend-backend': 20 };
+/** 各領域星數門檻（clarify 已定：AI > 30、前後端 > 20；FR-010）。 */
+const MIN_STARS: Record<Domain, number> = { ai: 30, 'frontend-backend': 20 };
 
 /**
- * 三組領域查詢。關鍵字**衍生自 `DOMAIN_KEYWORD_SETS[domain].search`**，不另抄一份字面量——
- * 否則往種子集加關鍵字只會擴大分類、不會擴大搜尋（`vue` 就曾這樣漂移）。
+ * 每領域一組查詢（DevOps 移除後為兩組）。關鍵字**衍生自 `DOMAIN_KEYWORD_SETS[domain].search`**，
+ * 不另抄一份字面量——否則往種子集加關鍵字只會擴大分類、不會擴大搜尋（`vue` 就曾這樣漂移）。
  */
 export const SEARCH_QUERIES: readonly SearchQueryConfig[] = DOMAINS.map((domain) => ({
   domain,

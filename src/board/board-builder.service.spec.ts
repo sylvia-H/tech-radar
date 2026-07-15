@@ -54,7 +54,7 @@ function buildService(
 }
 
 describe('BoardBuilderService.build（Trending-only, US1）', () => {
-  it('每領域以 weeklyStarsEstimate 排序、rank 連號；boards 恰三領域', async () => {
+  it('每領域以 weeklyStarsEstimate 排序、rank 連號；boards 恰兩領域', async () => {
     const trendingRepos = [
       trending('acme/ai1', 8600),
       trending('acme/ai2', 9000),
@@ -64,12 +64,14 @@ describe('BoardBuilderService.build（Trending-only, US1）', () => {
     const metas = new Map<string, RepoMeta>([
       ['acme/ai1', meta(101, ['llm'])],
       ['acme/ai2', meta(102, ['rag'])],
+      // 純 DevOps topics：榜單已無此領域 → 即使週增星最高也排除
       ['globex/dev1', meta(201, ['kubernetes'])],
       ['initech/fe1', meta(301, ['react'])],
     ]);
     const board = await buildService(trendingRepos, { metas, failures: [] }).build();
 
-    expect(board.boards.map((b) => b.domain)).toEqual(['ai', 'devops', 'frontend-backend']);
+    expect(board.boards.map((b) => b.domain)).toEqual(['ai', 'frontend-backend']);
+    expect(board.boards.flatMap((b) => b.entries.map((e) => e.fullName))).not.toContain('globex/dev1');
     const ai = board.boards.find((b) => b.domain === 'ai')!;
     expect(ai.entries.map((e) => [e.rank, e.fullName, e.weeklyStarsEstimate])).toEqual([
       [1, 'acme/ai2', 9000],

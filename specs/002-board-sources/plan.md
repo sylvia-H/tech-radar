@@ -1,4 +1,4 @@
-# Implementation Plan: 榜單來源與三領域歸類（Board Sources）
+# Implementation Plan: 榜單來源與兩領域歸類（Board Sources）
 
 **Branch**: `002-board-sources` | **Date**: 2026-07-11 | **Spec**: [spec.md](spec.md)
 
@@ -6,7 +6,7 @@
 
 ## Summary
 
-在 F1 骨架上新增「榜單來源與三領域歸類」：以 `cheerio` 爬 GitHub Trending weekly（全站＋5 語言頁）解析「stars this week」為主力候選，並以 GitHub Search API（`created:>7天` 三組領域查詢）補位新崛起 repo；對每個候選以 **topics 為主、description 為輔**（language 僅輔助訊號、不單獨定領域、不參與跨領域決勝）歸入 **AI / DevOps / 前後端** 三領域（跨領域擇一主領域，優先序 AI > DevOps > 前後端），以 **GitHub 數字 `repoId`** 合併去重，計算統一排序鍵 **`weeklyStarsEstimate`**，每領域取 **top 15** 產出**當前榜單並印到 log**。本 Feature **只產出可觀測榜單、不寫回 `state/board.json`、不做 diff／推播／簡介／新聞**（分屬 F3/F5/F7）。M1 驗收＝本機／Actions log 印出正確的三領域週增星榜。
+在 F1 骨架上新增「榜單來源與兩領域歸類」：以 `cheerio` 爬 GitHub Trending weekly（全站＋5 語言頁）解析「stars this week」為主力候選，並以 GitHub Search API（`created:>7天` 三組領域查詢）補位新崛起 repo；對每個候選以 **topics 為主、description 為輔**（language 僅輔助訊號、不單獨定領域、不參與跨領域決勝）歸入 **AI / 前後端** 兩領域（跨領域擇一主領域，優先序 AI > 前後端），以 **GitHub 數字 `repoId`** 合併去重，計算統一排序鍵 **`weeklyStarsEstimate`**，每領域取 **top 15** 產出**當前榜單並印到 log**。本 Feature **只產出可觀測榜單、不寫回 `state/board.json`、不做 diff／推播／簡介／新聞**（分屬 F3/F5/F7）。M1 驗收＝本機／Actions log 印出正確的兩領域週增星榜。
 
 ## Technical Context
 
@@ -30,7 +30,7 @@
 - **來源隔離容錯**（憲章 VII）：主力／補位任一失敗或解析到 0 筆，發**帶來源 id** 的紅色告警並讓另一來源照常產出，不使整條 pipeline 失敗。
 - 機密只走 F1 已驗證的 `GH_API_TOKEN`（Actions Secrets），不入庫、不入任何產物。
 
-**Scale/Scope**: Trending 去重後約 80–120 個 unique 候選 ＋ 補位每領域數個；分類排除非三領域雜訊後，每領域 top 15、合計 ≤45 筆為榜單輸出。
+**Scale/Scope**: Trending 去重後約 80–120 個 unique 候選 ＋ 補位每領域數個；分類排除非兩領域雜訊後，每領域 top 15、合計 ≤45 筆為榜單輸出。
 
 ## Constitution Check
 
@@ -41,11 +41,11 @@
 | I | 零維運免費基礎設施 | 是（GitHub API + Trending HTML） | ✅ 用量估算遠低於 core 5000/hr、Search 30/min；只加免費 lib `cheerio`，無常駐/付費（research D2） |
 | II | 不自存星星歷史 | 是（榜單來源） | ✅ 週增星取自 Trending weekly 官方週增量；補位用 Search `created:>7天` 當前總星數；**不自建每日快照/day-over-day** |
 | III | 只推變化、控制節奏 | 否（F2 不推播、不 diff） | ✅ 只產出可觀測榜單、log 輸出；推播/節奏屬 F3/F7 |
-| IV | 新聞來源設定即資料 | 否（F2 非新聞來源） | ✅ 榜單來源（Trending/Search）為憲章 II 釘死之資料來源，非 `news-sources.ts`；三領域關鍵字種子集獨立於分類模組設定 |
+| IV | 新聞來源設定即資料 | 否（F2 非新聞來源） | ✅ 榜單來源（Trending/Search）為憲章 II 釘死之資料來源，非 `news-sources.ts`；兩領域關鍵字種子集獨立於分類模組設定 |
 | V | 去重確實且節制 LLM | 是（跨來源去重） | ✅ 去重以 `repoId` 正規化、**零 LLM**；F2 不呼叫 Gemini |
 | VI | 冪等、快取與單一狀態來源 | 部分（讀狀態？） | ✅ F2 **不讀不寫** `state/board.json`、不變更任何狀態，天然冪等；無半套狀態風險 |
 | VII | 機密隔離與容錯發佈 | 是（token、來源隔離） | ✅ `GH_API_TOKEN` 走 env、不入產物；來源失敗/0 筆帶 id 告警、不斷全線（FR-007/FR-009，沿用 F1 `failure-alert`） |
-| VIII | 關鍵邏輯測試優先 | 是 | ✅ Trending 解析快照測試、三領域歸類、merge/`repoId` 去重、per-domain top 15 排序、`weeklyStarsEstimate`、0 筆告警皆納入交付（FR 對映見 tasks 階段） |
+| VIII | 關鍵邏輯測試優先 | 是 | ✅ Trending 解析快照測試、兩領域歸類、merge/`repoId` 去重、per-domain top 15 排序、`weeklyStarsEstimate`、0 筆告警皆納入交付（FR 對映見 tasks 階段） |
 
 **結論**：無違反、無需正當化的複雜度 → Complexity Tracking 留空。設計後複查（見文末）維持通過。
 
@@ -74,7 +74,7 @@ specs/002-board-sources/
 src/
 ├── main.cli.ts                    # 沿用 F1；M1 期間經 PipelineService 觸發榜單建置並印 log
 ├── pipeline/
-│   └── pipeline.service.ts        # 擴充：呼叫 BoardBuilderService.build() → 印三領域榜（不 diff/不推播/不寫狀態）
+│   └── pipeline.service.ts        # 擴充：呼叫 BoardBuilderService.build() → 印兩領域榜（不 diff/不推播/不寫狀態）
 ├── github/
 │   ├── github-http.ts             # GitHub REST 共用薄客戶端：Auth(GH_API_TOKEN)+UA+條件式請求+指數退避+有限並發
 │   └── github-http.spec.ts
@@ -86,9 +86,9 @@ src/
 │   ├── github-repo.service.ts     # GET /repos/{o}/{r} 取 topics/metadata（給 Trending 候選補 topics）
 │   └── github-repo.service.spec.ts
 ├── classify/
-│   ├── classify.service.ts        # 三領域歸類：topics→description（language 僅輔助、不參與決勝）；跨領域擇一主領域
+│   ├── classify.service.ts        # 兩領域歸類：topics→description（language 僅輔助、不參與決勝）；跨領域擇一主領域
 │   ├── classify.service.spec.ts
-│   └── domain-keywords.ts         # 三領域關鍵字種子集（v1 canonical，增刪只改此檔）
+│   └── domain-keywords.ts         # 兩領域關鍵字種子集（v1 canonical，增刪只改此檔）
 ├── board/
 │   ├── board-builder.service.ts   # 編排：sources→classify→merge(repoId 去重)→weeklyStarsEstimate→每領域 top 15
 │   ├── board-builder.service.spec.ts
@@ -120,6 +120,6 @@ Phase 1 設計（research / data-model / contracts / quickstart）完成後複�
 - **VII 機密與容錯**：`github-http` 由 env 取 `GH_API_TOKEN`、不入產物；`board-builder` 對主力/補位以 try/catch 隔離，任一失敗或 0 筆→`failure-alert` 帶來源 id、另一來源續行（contracts/github-sources.md「失敗與 0 筆」）。✅
 - **VIII 測試優先**：Trending 快照、classify、merge/去重、top 15 排序、`weeklyStarsEstimate`、0 筆告警皆有對映測試（data-model「驗證規則」與 quickstart）。✅
 
-**跨 Feature 一致性註記**：F1 `BoardEntry.domain` 為 4-way 佔位（`ai|devops|backend|frontend`），F2 clarify 定案榜單為 **3-way**（前後端合併）。F2 **不持久化**，故其記憶體型別 `Domain = "ai"|"devops"|"frontend-backend"` 為分類輸出的權威定義；`state.schema.ts` 之 `BoardEntry.domain` 對齊為 3-way 屬**持久化層**、留待 **F3**（首次寫回 board 時）refine——已於 data-model 標記，符合 F1「enum 值在 F2 clarify 定案」之預期，非本 Feature 破壞性變更。
+**跨 Feature 一致性註記**：F1 `BoardEntry.domain` 為 4-way 佔位（`ai|devops|backend|frontend`），F2 定案榜單為 **2-way**（前後端合併；**DevOps 於 2026-07-15 移除**，見 spec Clarifications Session 2026-07-15）。F2 **不持久化**，故其記憶體型別 `Domain = "ai"|"frontend-backend"` 為分類輸出的權威定義；`state.schema.ts` 之 `BoardEntry.domain` 對齊為 2-way（**含移除 `devops`**）屬**持久化層**、留待 **F3**（首次寫回 board 時）refine——已於 data-model 標記，符合 F1「enum 值在 F2 clarify 定案」之預期，非本 Feature 破壞性變更。
 
 無新增違反 → Gate 維持 PASS。

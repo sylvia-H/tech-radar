@@ -29,7 +29,6 @@ F2 對外倚賴的三個 GitHub 介面。所有請求走共用 `src/github/githu
   | Domain | `q` | 備註 |
   |--------|-----|------|
   | `ai` | `(llm OR rag OR agent OR gpt) created:>{today-7d} stars:>30` | `sort=stars&order=desc&per_page=30` |
-  | `devops` | `(kubernetes OR terraform OR gitops) created:>{today-7d} stars:>20` | 同上 |
   | `frontend-backend` | `(nextjs OR react OR svelte OR nodejs OR golang) created:>{today-7d} stars:>20` | 同上 |
 
 - **回應取用欄位**：`id`(→`repoId`)、`full_name`、`description`、`language`、`topics`、`stargazers_count`(→`totalStars`)、`created_at`。**topics 隨回應返回**，補位候選免再打 /repos。**不記查詢領域**：歸類一律走 FR-003（topics／description），`queriedDomain` 已於 2026-07-15 移除。
