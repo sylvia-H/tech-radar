@@ -6,9 +6,13 @@ shell commands, and other important information, read the current plan:
 
 # tech-radar — Agent 協作指引
 
-tech-radar 是一個**排程型、純自用、全免費、零維運**的每日晨報：自動追蹤 DevOps / AI /
-前後端近一週最受關注、新崛起的 GitHub repo 與相關討論，透過 Discord 推播。以 GitHub Spec
-Kit（SDD）開發。**工程約束以 `.specify/memory/constitution.md` 憲章為最高規範**，凌駕其他
+tech-radar 是一個**排程型、純自用、全免費、零維運**的每日晨報：自動追蹤近一週最受關注、
+新崛起的 GitHub repo（**榜單：AI / 前後端**）與相關技術討論（**新聞：AI 為主，兼及 DevOps /
+後端 / 前端**），透過 Discord 推播。以 GitHub Spec Kit（SDD）開發。
+
+> **榜單與新聞的領域集合刻意不同**（兩條獨立資料流）：榜單的 DevOps 已於 2026-07-15 移除
+> （實測歸類正確率 0、週增星量級遠低於 AI）；**新聞的 DevOps 配額與來源不受影響**。改動時
+> 勿把兩者混為一談。**工程約束以 `.specify/memory/constitution.md` 憲章為最高規範**，凌駕其他
 慣例；本檔只放憲章與開發指南中與 Agent 日常操作相關的行動層守則。
 
 ## 溝通語言
@@ -33,6 +37,16 @@ Kit（SDD）開發。**工程約束以 `.specify/memory/constitution.md` 憲章�
 
 > 目前作用中的 Feature 見 `.specify/feature.json`（現為 `specs/001-foundation`）。F2+ 才會出現的
 > 檔案（如 `news-sources.ts`、`sources/`、`news-filter/`）在動手前先確認是否已存在，勿引用尚未建立者。
+
+### 跨 Feature 決策必須落地到真實來源（MUST）
+
+在任一 Feature 的 `/speckit-clarify`、`/speckit-analyze`（或任何階段）中，若修正或新定了一項決策，
+而該決策**不屬於本次 Feature 的實作範圍、卻會影響其他 Feature**（例：在 F2 clarify 定了 F3/F7 的
+推播規則），則 **MUST** 立即將該決策寫入對應的真實來源——`docs/tech-radar-dev-guide.md`（架構／
+執行／版面等設計細節）或 `.specify/memory/constitution.md`（涉及非協商原則時），並**同步修訂既有
+內容使其與新決策一致、消除矛盾**（例如舊的推播模型段落須一併改寫，不得留下自相矛盾的敘述）。
+**MUST NOT** 只寫進 Agent memory、或僅留在該 Feature 的 spec 就當作已定案。Agent memory 可作輔助
+備忘，但**不是專案真實來源**；未同步到 dev-guide／憲章前，該跨 Feature 決策一律視為「未落地」。
 
 ## 環境
 

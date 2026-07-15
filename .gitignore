@@ -20,6 +20,9 @@ state/*.tmp
 # Coverage
 coverage/
 
+# CodeGraph 本機索引（工具產物，不入庫）
+.codegraph/
+
 # OS / editor
 .DS_Store
 Thumbs.db

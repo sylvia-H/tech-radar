@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+  GitHub Trending weekly 頁面快照（精簡）——F2 Trending 解析的回歸基準（FR-009、research D1）。
+  僅保留解析所需的 article.Box-row 結構與選擇器（h2 a / p / [itemprop=programmingLanguage] / .float-sm-right）。
+  GitHub 改版導致選擇器漂移時，github-trending.service.spec.ts 會先紅。
+-->
+<html lang="en">
+  <head><title>Trending repositories on GitHub this week</title></head>
+  <body>
+    <main>
+      <div class="Box">
+        <article class="Box-row">
+          <h2 class="h3 lh-condensed">
+            <a href="/acme/agent-sandbox">
+              <span class="text-normal">acme /</span>
+              agent-sandbox
+            </a>
+          </h2>
+          <p class="col-9 color-fg-muted my-1 pr-4">
+            An autonomous LLM agent sandbox for building RAG pipelines.
+          </p>
+          <div class="f6 color-fg-muted mt-2">
+            <span itemprop="programmingLanguage">Python</span>
+            <a class="Link--muted d-inline-block mr-3" href="/acme/agent-sandbox/stargazers">12,500</a>
+            <span class="d-inline-block float-sm-right">8,600 stars this week</span>
+          </div>
+        </article>
+
+        <article class="Box-row">
+          <h2 class="h3 lh-condensed">
+            <a href="/globex/gitops-flow">
+              <span class="text-normal">globex /</span>
+              gitops-flow
+            </a>
+          </h2>
+          <p class="col-9 color-fg-muted my-1 pr-4">
+            Declarative Kubernetes GitOps controller with observability baked in.
+          </p>
+          <div class="f6 color-fg-muted mt-2">
+            <span itemprop="programmingLanguage">Go</span>
+            <a class="Link--muted d-inline-block mr-3" href="/globex/gitops-flow/stargazers">9,800</a>
+            <span class="d-inline-block float-sm-right">11,000 stars this week</span>
+          </div>
+        </article>
+
+        <article class="Box-row">
+          <h2 class="h3 lh-condensed">
+            <a href="/initech/svelte-things">
+              <span class="text-normal">initech /</span>
+              svelte-things
+            </a>
+          </h2>
+          <p class="col-9 color-fg-muted my-1 pr-4">
+            A React and Svelte component toolkit for modern frontend apps.
+          </p>
+          <div class="f6 color-fg-muted mt-2">
+            <span itemprop="programmingLanguage">TypeScript</span>
+            <a class="Link--muted d-inline-block mr-3" href="/initech/svelte-things/stargazers">4,100</a>
+            <span class="d-inline-block float-sm-right">4,300 stars this week</span>
+          </div>
+        </article>
+
+        <article class="Box-row">
+          <h2 class="h3 lh-condensed">
+            <a href="/hooli/quantum-notes">
+              <span class="text-normal">hooli /</span>
+              quantum-notes
+            </a>
+          </h2>
+          <p class="col-9 color-fg-muted my-1 pr-4">
+            A minimalist note-taking desktop app.
+          </p>
+          <div class="f6 color-fg-muted mt-2">
+            <span itemprop="programmingLanguage">C++</span>
+            <a class="Link--muted d-inline-block mr-3" href="/hooli/quantum-notes/stargazers">2,200</a>
+            <span class="d-inline-block float-sm-right">1,900 stars this week</span>
+          </div>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
