@@ -66,8 +66,9 @@ tech-radar 是一個**排程型、純自用、全免費、零維運**的每日�
    上限（Actions 分鐘、Gemini RPD、GitHub API 限額）的設計——先降用量或改架構，不得升級付費。
 2. **不自存星星歷史（II）**：「本週增星」一律取自 GitHub Trending weekly 官方週增量與 Search API
    `created:>7天`。**禁止**自建每日星星快照或 day-over-day 對比。
-3. **只推變化、控制節奏（III）**：榜單**每三天推一次且只呈現差異**（`lastBoardPushAt` 計時，非
-   cron）；新聞**每日固定精選 6 則**（AI ≥ 4；DevOps/後端/前端合計 ≤ 2，寧缺勿濫）；字數上限
+3. **只推變化、控制節奏（III）**：榜單**每七天推一次且只呈現差異**（`lastBoardPushAt` 計時，非
+   cron；到期門檻 **162h** = 168h − 6h 寬限）；新聞**每日固定精選 6 則**（AI ≥ 4；DevOps/後端/
+   前端合計 ≤ 2，寧缺勿濫）；字數上限
    **標題 ≤ 50 / 內容 ≤ 300 / 簡介 ≤ 250**；一律繁體中文；按對開發者重要性排序（非熱度）。
 4. **來源只改設定檔（IV）**：新聞來源增刪修只動 `src/config/news-sources.ts`，不碰 pipeline；
    「解析到 0 筆」**必須發告警並帶來源 `id`**，不得無聲略過。
@@ -80,8 +81,9 @@ tech-radar 是一個**排程型、純自用、全免費、零維運**的每日�
 7. **機密隔離與容錯（VII）**：token / webhook URL 只走 GitHub Actions Secrets，**絕不入庫、絕不寫進
    任何發佈產物**（只 commit 憑證的示意，不 commit `.env` / API key）；任一資料來源失敗不得使整條
    pipeline 失敗；失敗須發紅色告警 embed，不得無聲。
-8. **關鍵邏輯測試優先（VIII）**：trending 解析（快照測試）、三領域歸類、榜單 diff、URL/標題去重、
-   簡介快取命中、新聞配額與字數上限、來源 schema/tier 加權、晨報 idempotency guard、榜單三日節奏
+8. **關鍵邏輯測試優先（VIII）**：trending 解析（快照測試）、兩領域歸類、榜單 diff、URL/標題去重、
+   簡介快取命中、新聞配額與字數上限、來源 schema/tier 加權、晨報 idempotency guard、榜單每週節奏
+   （`lastBoardPushAt` 計時、162h 門檻）
    ——這些**須有單元測試方可視為完成**；外部呼叫（Gemini）以 mock 測，並另測降級備援路徑。
 
 ### 技術約束（於各 Feature `/speckit-plan` 確認）

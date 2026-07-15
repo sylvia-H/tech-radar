@@ -1,29 +1,41 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.1.0 → 1.2.0
-Bump rationale: MINOR——**榜單**領域由三領域（AI / DevOps / 前後端）收斂為**兩領域（AI /
-  前後端）**，移除 DevOps。屬產品範圍的實質調整，未移除或重新定義八條原則本身。決策來源：F2
-  (002-board-sources) M1 驗收之 SC-002 人工抽查（2026-07-15）以真實資料證實 DevOps 榜歸類
-  正確率為 0——3 筆候選全部只靠 `docker`（部署方式標籤，非領域標籤）命中，且其中 teledrive
-  （react/typescript/fastapi）遭優先序自前後端榜錯置；DevOps 候選週增星僅 259/136/25，
-  對比 AI 榜 13,195/7,129，即使有保底席次亦排不上號。實測僅收窄 `docker` 不足以解決
-  （docker-mailserver 真的貼了 `kubernetes`；「能跑在 k8s 上」與「是 k8s 工具」在零 LLM
-  的純關鍵字分類下無法區分，屬固有極限），故直接移除領域。
+Version change: 1.2.0 → 1.3.0
+Bump rationale: MINOR——原則 III 的**榜單推播節奏由「每三天」改為「每七天」**，並明定到期門檻
+  為 **162 小時**（168h − 6h 寬限）。屬既有原則內的參數與指引實質調整，未移除或重新定義八條
+  原則本身，故非 MAJOR（先例：1.1.0 同樣調整原則 III 的榜單變化類型，判 MINOR）。決策來源：
+  F3 (003-board-state-diff) `/speckit-clarify` Session 2026-07-15，使用者明確授權。
 
-Scope note（重要）: 本次變更**僅限榜單**。**新聞側完全不受影響**——原則 III 的新聞配額
-  「AI ≥ 4；DevOps / 後端 / 前端合計 ≤ 2」維持不變，dev-guide §4 的三個 DevOps 專屬來源
-  （Reddit r/devops、The New Stack、Lobste.rs /t/devops.rss）亦全數保留。理由：榜單與新聞
-  是兩條獨立資料流，「DevOps 沒有爆紅 repo」不等於「沒有值得讀的 DevOps 消息」，且新聞本就
-  以「重要度優先於熱度」排序（原則 III），低配額不致洗版。
+  節奏改動理由：榜單的統一尺是「估算**本週**增星」（七日指標）。三天推一次等於用**重疊四天**
+  的兩個七日視窗互比——兩次快照有超過一半是同一批星星，名次移動無法代表真實的週對週變化。
+  七天節奏使兩次比較的視窗剛好不重疊，「這週 vs 上週」才成立。
+
+  6 小時寬限理由：`lastBoardPushAt` 記錄的是**推播完成**時間，必晚於當次 cron 觸發時間；若取
+  精確 168h，三天後（原設計）同一 cron 觸發時算出來恆略小於門檻而跳過，誤差單向累積使節奏
+  漂移。寬限沿用新聞每日 guard 的同一比例（24h 週期留 6h → 「< ~18h 跳過」），使節奏穩定
+  錨在每週同一時段。
+
+Scope note（重要）: 本次變更**僅限榜單節奏**。**新聞側完全不受影響**——每日晨報、
+  `lastNewsPushAt` guard（< ~18h 跳過）、配額「AI ≥ 4；DevOps / 後端 / 前端合計 ≤ 2」與所有
+  新聞來源皆原封不動。榜單與新聞是兩條獨立資料流，節奏本即解耦（dev-guide §5、§4.4）。
 
 Modified sections:
-  - 概述（本檔開頭）→ 明確區分兩條資料流：榜單追蹤 AI / 前後端；新聞維持 AI 為主、兼及
-    DevOps / 後端 / 前端。
+  - 原則 III「只推變化、控制節奏」→ 榜單節奏三天 → 七天；新增 162 小時門檻與「節奏須與七日
+    尺對齊」之理由。
+  - 原則 VIII「關鍵邏輯測試優先」→ 必測項「榜單三日節奏」→「榜單每週節奏（162 小時門檻）」。
 Added sections: 無
-Removed sections: 無（榜單領域收斂，未刪章節；新聞配額原封不動）
+Removed sections: 無
+
+Drive-by 補正（修復 1.2.0 未完成的同步，非本次節奏決策之一部分）:
+  - **檔尾 Version 行**先前停在 `1.1.0`、Last Amended 停在 `2026-07-11`，與 1.2.0 的 Sync
+    Impact Report 不一致（1.2.0 修訂時漏更）。本次一併校正為 1.3.0 / 2026-07-15。
+  - **原則 VIII** 先前仍寫「**三**領域歸類」，與 1.2.0 已將榜單收斂為兩領域矛盾（1.2.0 修訂
+    時漏改）。本次改為「**兩**領域歸類」。
 
 Prior history:
+  - 1.2.0（2026-07-15）：MINOR——榜單領域由三領域收斂為兩領域（AI / 前後端），移除 DevOps；
+    依 F2 M1 驗收實測（歸類正確率 0、訊號量級過低）。新聞側 DevOps 配額與來源不受影響。
   - 1.1.0（2026-07-11）：MINOR——原則 III 收斂榜單推播變化類型，移除「跌出」為獨立推播項。
   - 1.0.1（2026-07-11）：PATCH——釐清「技術與安全約束」狀態 commit 措辭（no-diff 早退）。
   - 1.0.0（2026-07-11）：首次由模板具體化為正式憲章（MAJOR 起始版），確立八條非協商原則、
@@ -33,19 +45,19 @@ Templates requiring updates:
   - .specify/templates/plan-template.md ✅ 對齊（Constitution Check 為泛用 gate，無過時引用）
   - .specify/templates/spec-template.md ✅ 對齊（泛用範本，未硬編原則）
   - .specify/templates/tasks-template.md ✅ 對齊（泛用範本，未硬編原則）
-  - CLAUDE.md ✅ 已同步（專案描述之榜單領域；硬規則 3 之新聞配額不動）
-  - docs/tech-radar-dev-guide.md ✅ 已同步（概述、§3.1/§3.2 榜單領域、§7.4 卡片配色、§11.2
-    F2 範圍；§4 新聞來源與配額不動）
-  - specs/002-board-sources/* ✅ 已同步（Clarifications Session 2026-07-15、FR-003/FR-011、
-    種子集、contracts、data-model、tasks）
-  - specs/001-foundation/spec.md ✅ 對齊（F1 未涉榜單領域；`state.schema.ts` 4-way 佔位之
-    對齊（含移除 devops）留待 F3，已於 F2 research D7／data-model 標記）
+  - CLAUDE.md ✅ 已同步（硬規則 3 之榜單節奏）
+  - docs/tech-radar-dev-guide.md ✅ 已同步（概述、§2 表格、§3.3、§5、§6、§8、§11.2 F3、§13、
+    M4 里程碑等處之「三天／三日」敘述）
+  - specs/003-board-state-diff/spec.md ✅ 已同步（Clarifications Session 2026-07-15、US2、
+    FR-017～FR-019a、SC-002）
+  - specs/001-foundation、specs/002-board-sources ✅ 對齊（未涉榜單節奏）
 
 Follow-up TODOs:
   - F3 (003-board-state-diff)：`state.schema.ts` 之 `BoardEntry.domain` 由 4-way 佔位
     （ai|devops|backend|frontend）對齊為 2-way（ai|frontend-backend），一併移除 devops。
+    （承 1.2.0，仍未完成——F3 spec FR-024 已涵蓋。）
   - F4 (004-news-sources)：新聞 domain 分類法「是否比照榜單合併前後端」之待定項仍有效，但
-    **不得**因榜單移除 DevOps 而連帶移除新聞的 devops（見上方 Scope note；dev-guide §11.2 F4）。
+    **不得**因榜單移除 DevOps 而連帶移除新聞的 devops（見 1.2.0 Scope note；dev-guide §11.2 F4）。
 -->
 
 # Tech Radar Constitution
@@ -81,9 +93,11 @@ Follow-up TODOs:
 
 推播節奏與資訊量受硬性約束，優先「少而重要」而非「多而全」：
 
-- **榜單每三天推一次，且只呈現與上次的差異**（新進 / 竄升 / 下降），不重述整份榜單；
+- **榜單每七天推一次，且只呈現與上次的差異**（新進 / 竄升 / 下降），不重述整份榜單；
   **repo 掉出推播榜（跨領域綜合 top 10）當次靜默、不另報「跌出」，日後重回即以新進呈現**；
-  三日節奏由 `lastBoardPushAt` 計時（非 cron）。
+  每週節奏由 `lastBoardPushAt` 計時（非 cron），到期門檻為 **162 小時**（七天 168 小時減
+  6 小時寬限，用於吸收排程延遲與雙班抖動，使節奏不單向漂移）。節奏必須與榜單的尺對齊：
+  「估算本週增星」是七日指標，短於七天推播等同以**重疊視窗**互比，名次移動即失去意義。
 - **新聞晨報每日固定精選 6 則**，配額為 **AI ≥ 4；DevOps / 後端 / 前端合計 ≤ 2**（軟性上限，
   寧缺勿濫、不足 6 則不硬湊）。
 - 新聞以**對開發者的重要性排序（非熱度）**；分數僅為提示，非排序主鍵。
@@ -136,10 +150,10 @@ Follow-up TODOs:
 ### VIII. 關鍵邏輯測試優先（NON-NEGOTIABLE）
 
 下列關鍵邏輯必須有單元測試，方可視為完成：trending HTML 解析（以快照測試守著改版）、
-三領域歸類、榜單 diff、**target-URL 正規化去重**、**標題近似去重**、簡介快取命中、
+**兩領域歸類**、榜單 diff、**target-URL 正規化去重**、**標題近似去重**、簡介快取命中、
 **新聞配額（6 則 / AI ≥ 4 / DevOps+後端+前端 ≤ 2）**、**50 / 300 / 250 字數上限驗證**、
 **來源清單 schema 驗證與 tier 加權**、**晨報 idempotency guard（`lastNewsPushAt` < ~18h 跳過）**、
-**榜單三日節奏（`lastBoardPushAt` 計時）**。外部呼叫（Gemini 策展）以 mock 測試，
+**榜單每週節奏（`lastBoardPushAt` 計時、162 小時門檻）**。外部呼叫（Gemini 策展）以 mock 測試，
 並必須另測「策展失敗時退回純程式排序」的降級備援路徑。
 
 理由：這些是資料正確性與節奏保證的要害；無測試覆蓋即無法在改動來源或解析時安全回歸。
@@ -189,4 +203,4 @@ Follow-up TODOs:
 - **來源文件**：執行期與設計細節以 `docs/tech-radar-dev-guide.md` 為準；該指南與本憲章不一致時，
   以本憲章的非協商原則為最高約束，並修訂指南使其一致。
 
-**Version**: 1.1.0 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-11
+**Version**: 1.3.0 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-15
