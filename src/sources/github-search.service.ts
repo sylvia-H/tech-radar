@@ -1,21 +1,29 @@
 import { Injectable } from '@nestjs/common';
 import { z } from 'zod';
 import { GithubHttpError, GithubHttpService } from '../github/github-http';
-import { Domain, RawSearchRepo } from '../board/board.types';
+import { Domain, DOMAINS, RawSearchRepo } from '../board/board.types';
+import { DOMAIN_KEYWORD_SETS } from '../classify/domain-keywords';
 
-/** Search 每組領域查詢設定（v1 canonical，門檻 clarify 已定；增刪只改此檔）。 */
+/** Search 每組領域查詢設定（v1 canonical，門檻 clarify 已定；增刪只改設定）。 */
 export interface SearchQueryConfig {
   domain: Domain;
-  /** OR 群關鍵字（同時為分類種子集前段；contracts §2）。 */
+  /** OR 群關鍵字（衍生自分類種子集的 `search` 群；contracts §2）。 */
   keywords: string[];
   minStars: number;
 }
 
-export const SEARCH_QUERIES: readonly SearchQueryConfig[] = [
-  { domain: 'ai', keywords: ['llm', 'rag', 'agent', 'gpt'], minStars: 30 },
-  { domain: 'devops', keywords: ['kubernetes', 'terraform', 'gitops'], minStars: 20 },
-  { domain: 'frontend-backend', keywords: ['nextjs', 'react', 'svelte', 'nodejs', 'golang'], minStars: 20 },
-];
+/** 各領域星數門檻（clarify 已定：AI > 30、DevOps／前後端 > 20；FR-010）。 */
+const MIN_STARS: Record<Domain, number> = { ai: 30, devops: 20, 'frontend-backend': 20 };
+
+/**
+ * 三組領域查詢。關鍵字**衍生自 `DOMAIN_KEYWORD_SETS[domain].search`**，不另抄一份字面量——
+ * 否則往種子集加關鍵字只會擴大分類、不會擴大搜尋（`vue` 就曾這樣漂移）。
+ */
+export const SEARCH_QUERIES: readonly SearchQueryConfig[] = DOMAINS.map((domain) => ({
+  domain,
+  keywords: DOMAIN_KEYWORD_SETS[domain].search,
+  minStars: MIN_STARS[domain],
+}));
 
 const SEARCH_WINDOW_DAYS = 7;
 const PER_PAGE = 30;
@@ -63,7 +71,7 @@ export class GithubSearchService {
     for (const cfg of SEARCH_QUERIES) {
       try {
         const raw = await this.http.getJson<unknown>(searchUrl(cfg, since), 'search');
-        repos.push(...parseSearchResponse(raw, cfg.domain));
+        repos.push(...parseSearchResponse(raw));
       } catch (err) {
         failures.push({ domain: cfg.domain, status: err instanceof GithubHttpError ? err.status : null });
       }
@@ -87,8 +95,11 @@ export function searchUrl(cfg: SearchQueryConfig, since: string): string {
   return `https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=${PER_PAGE}`;
 }
 
-/** 解析 Search 回應 → RawSearchRepo[]（zod 邊界驗證；帶 queriedDomain 提示）。 */
-export function parseSearchResponse(raw: unknown, queriedDomain: Domain): RawSearchRepo[] {
+/**
+ * 解析 Search 回應 → RawSearchRepo[]（zod 邊界驗證）。
+ * 不記「來自哪組查詢」——歸類一律走 topics／description（FR-003），查詢領域不參與。
+ */
+export function parseSearchResponse(raw: unknown): RawSearchRepo[] {
   const { items } = searchResponseSchema.parse(raw);
   return items.map((it) => ({
     repoId: it.id,
@@ -98,6 +109,5 @@ export function parseSearchResponse(raw: unknown, queriedDomain: Domain): RawSea
     topics: it.topics,
     totalStars: it.stargazers_count,
     createdAt: it.created_at,
-    queriedDomain,
   }));
 }

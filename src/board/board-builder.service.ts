@@ -88,17 +88,23 @@ export class BoardBuilderService {
   }
 
   /**
-   * 主力 Trending（含補 repoId/topics）。fetchTrending 失敗或解析 0 筆（擲錯）→
+   * 主力 Trending（含補 repoId/topics）。全部頁失敗或合併後 0 筆（擲錯）→
    * 告警 `github-trending`、回空，讓補位續行（FR-007/FR-009）。
-   * `GET /repos` 批次失敗達門檻（401/403 或 >50%）→ 告警 `github-repo`。
+   * 部分語言頁失敗但仍有候選 → 逐頁告警 `github-trending:{page}`、其餘頁照常入榜。
+   * `GET /repos` 批次失敗達門檻（憑證型 401/403 或 >50%）→ 告警 `github-repo`。
    */
   private async gatherTrending(): Promise<{ repos: RawTrendingRepo[]; metas: Map<string, RepoMeta> }> {
     let trendingRepos: RawTrendingRepo[];
+    let failedPages: string[];
     try {
-      trendingRepos = await this.trending.fetchTrending();
+      ({ repos: trendingRepos, failedPages } = await this.trending.fetchTrending());
     } catch (err) {
       await this.alert(TRENDING_SOURCE_ID, errMsg(err));
       return { repos: [], metas: new Map() };
+    }
+
+    for (const page of failedPages) {
+      await this.alert(`${TRENDING_SOURCE_ID}:${page}`, '該語言頁抓取或解析失敗');
     }
 
     const { metas, failures } = await this.repos.fetchRepoMetas(trendingRepos.map((r) => r.fullName));
@@ -235,7 +241,6 @@ export function assembleBoards(candidates: readonly CandidateRepo[]): DomainBoar
   return DOMAINS.map((domain) => {
     const entries: BoardRow[] = candidates
       .filter((c) => c.domain === domain)
-      .slice()
       .sort((a, b) => b.weeklyStarsEstimate - a.weeklyStarsEstimate || a.repoId - b.repoId)
       .slice(0, MAX_PER_DOMAIN)
       .map((c, i) => ({
@@ -252,10 +257,14 @@ export function assembleBoards(candidates: readonly CandidateRepo[]): DomainBoar
   });
 }
 
-function ageInDays(createdAt: string, now: number = Date.now()): number {
+/**
+ * `createdAt` → 建立天數；無法解析回 `null` 而非 0——回 0 等於宣稱「今天新建」，
+ * 會讓壞日期的候選在 `weeklyStarsEstimate` 拿到最短的建立天數、被外推放大。
+ */
+function ageInDays(createdAt: string, now: number = Date.now()): number | null {
   const created = new Date(createdAt).getTime();
   if (!Number.isFinite(created)) {
-    return 0;
+    return null;
   }
   return Math.max(0, Math.floor((now - created) / MS_PER_DAY));
 }

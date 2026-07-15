@@ -12,8 +12,11 @@ export interface ClassifyInput {
  * 三領域歸類（FR-003 / FR-011，零 LLM）。
  *
  * 訊號優先序：**topics（主要）→ 無 topics 時改用 description**。
- * - topics 非空：只比對 topics（小寫子字串）；無命中即排除，**不** fallback 到 description。
- * - topics 為空：改以 description（小寫詞界）比對。
+ * - topics 非空：只比對 topics；無命中即排除，**不** fallback 到 description。
+ * - topics 為空：改以 description 比對。
+ * 兩者皆用**小寫詞界**比對（以非英數字元為界）：短關鍵字 `ai`／`rag`／`gpt` 若用子字串，
+ * 會讓 topic `blockchain`／`domain-driven-design` 誤命中 `ai`，再被 AI 最高優先序吃掉歸類
+ * （SC-002）；詞界接不到的黏著變體（`openai`／`agents`…）改由種子集 `extra` 群逐一涵蓋。
  * language **僅為輔助訊號**：不單獨定領域、不參與跨領域主領域決勝、不改變歸屬（I1），
  * 故本服務不讀 language。
  * 命中多領域時依固定優先序 **AI > DevOps > 前後端** 擇一主領域（FR-011）。
@@ -22,57 +25,34 @@ export interface ClassifyInput {
 @Injectable()
 export class ClassifyService {
   classify(input: ClassifyInput): Domain | null {
-    const hits =
+    const haystacks =
       input.topics.length > 0
-        ? this.matchTopics(input.topics)
-        : this.matchDescription(input.description);
+        ? input.topics.map((t) => t.toLowerCase())
+        : descriptionHaystack(input.description);
 
     // 固定優先序擇一主領域（DOMAINS 即 AI > DevOps > 前後端）。
     for (const domain of DOMAINS) {
-      if (hits.has(domain)) {
+      if (haystacks.some((h) => DOMAIN_PATTERNS[domain].test(h))) {
         return domain;
       }
     }
     return null;
   }
-
-  /** topics：小寫子字串比對（寬鬆）。 */
-  private matchTopics(topics: string[]): Set<Domain> {
-    const lowered = topics.map((t) => t.toLowerCase());
-    const hits = new Set<Domain>();
-    for (const domain of DOMAINS) {
-      for (const kw of DOMAIN_KEYWORDS[domain]) {
-        if (lowered.some((t) => t.includes(kw))) {
-          hits.add(domain);
-          break;
-        }
-      }
-    }
-    return hits;
-  }
-
-  /** description：小寫詞界比對（以非英數字元為界，短關鍵字不誤命中一般字詞）。 */
-  private matchDescription(description: string | null): Set<Domain> {
-    const hits = new Set<Domain>();
-    if (!description) {
-      return hits;
-    }
-    const text = description.toLowerCase();
-    for (const domain of DOMAINS) {
-      for (const kw of DOMAIN_KEYWORDS[domain]) {
-        if (wordBoundaryIncludes(text, kw)) {
-          hits.add(domain);
-          break;
-        }
-      }
-    }
-    return hits;
-  }
 }
 
-/** 已小寫的 text 是否以「非英數字元為界」包含 keyword（keyword 內部連字號不受影響）。 */
-function wordBoundaryIncludes(loweredText: string, keyword: string): boolean {
-  const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const pattern = new RegExp(`(?<![a-z0-9])${escaped}(?![a-z0-9])`);
-  return pattern.test(loweredText);
+function descriptionHaystack(description: string | null): string[] {
+  return description ? [description.toLowerCase()] : [];
+}
+
+/** 領域關鍵字 → 單一詞界 regex（模組載入時編一次；增刪關鍵字仍只改 domain-keywords）。 */
+const DOMAIN_PATTERNS: Record<Domain, RegExp> = {
+  ai: buildPattern(DOMAIN_KEYWORDS.ai),
+  devops: buildPattern(DOMAIN_KEYWORDS.devops),
+  'frontend-backend': buildPattern(DOMAIN_KEYWORDS['frontend-backend']),
+};
+
+/** 組出「以非英數字元為界，命中任一關鍵字」的 regex（keyword 內部連字號不受影響）。 */
+function buildPattern(keywords: readonly string[]): RegExp {
+  const alternatives = keywords.map((kw) => kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  return new RegExp(`(?<![a-z0-9])(?:${alternatives})(?![a-z0-9])`);
 }

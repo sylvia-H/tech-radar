@@ -128,9 +128,14 @@ GET /search/repositories?q=(nextjs OR react OR svelte OR nodejs OR golang) creat
 ### 3.3 合併與排名
 
 - 兩來源 union → 用 `repoId`（GitHub numeric id，抗改名）去重。
-- 排序鍵：Trending 來源用 `starsThisWeek`；Search 來源用「總星數 ÷ 建立天數」近似速度。
+- 排序鍵：Trending 來源用 `starsThisWeek`；Search 來源用「總星數 ÷ 建立天數」近似速度（**上限為總星數**，見下）。
 - 每領域各取 **top 15** 作為「當前榜單」（**追蹤深度**），交給 §5 做變化比對。**推播呈現另取「跨領域綜合 top 10」**：把三領域 45 筆以統一尺「**估算本週增星**」合成單一排名、**保底每領域至少 2 席**，只推前 10（見 §5.2 / §5.3 / §7）。**追蹤深度（15）大於推播呈現（10）**，`RANK_JUMP_THRESHOLD` 等級的竄升/下降才有被偵測的空間。
-  - **統一尺「估算本週增星」**：Trending repo 用 `starsThisWeek`；Search-only repo 用 `(總星數 ÷ 建立天數) × 7` 估成週增星等值；同時在兩來源者以 `starsThisWeek` 為準。
+  - **統一尺「估算本週增星」**（F2 建立於 `src/board/weekly-stars.ts`，**F3/F7 沿用同一把尺、不另發明**）：
+    - Trending repo：用 `starsThisWeek`（官方週增量）。
+    - Search-only repo：`min(round((總星數 ÷ max(建立天數, 1)) × 7), 總星數)`。
+    - 同時在兩來源者：以 `starsThisWeek` 為準。
+  - **為何有「總星數」上限**：補位只撈 `created:>今天−7天`，這些 repo 的星**全部是本週累積的**，故「本週增星」的真值上界就是總星數。無上限時 `×7` 是憑空外推——今日新建、已 300 星者會被估成 2,100，壓過官方週增星 1,800 的 Trending 龍頭，跨領域綜合 top 10 會被灌爆。`建立天數 ≤ 7` 時上限恆生效（等價於直接採計總星數）；保留 `min` 形式只為讓建立天數異常（> 7）的樣本仍走換算公式。`max(建立天數, 1)` 防除零；建立天數無法判定時視為未知、不得當作 0（等同宣稱今日新建）。
+    > 此上限係 F2 實作後 code review 定案（2026-07-15），已回填 `specs/002-board-sources/spec.md` FR-005。**F3/F7 實作綜合排名時直接引用 F2 的 `weeklyStarsEstimate()`**，不得重寫一份無上限的公式。
 
 ---
 

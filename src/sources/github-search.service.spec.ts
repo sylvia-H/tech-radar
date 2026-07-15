@@ -1,4 +1,5 @@
 import { GithubHttpError, GithubHttpService } from '../github/github-http';
+import { DOMAIN_KEYWORDS, DOMAIN_KEYWORD_SETS } from '../classify/domain-keywords';
 import {
   buildSearchQuery,
   createdSince,
@@ -19,6 +20,14 @@ describe('Search query 組裝', () => {
     );
   });
 
+  it('OR 群衍生自分類種子集的 search 群，不另抄字面量（防兩份清單漂移）', () => {
+    for (const cfg of SEARCH_QUERIES) {
+      expect(cfg.keywords).toBe(DOMAIN_KEYWORD_SETS[cfg.domain].search);
+      // 種子集完整集必然涵蓋 OR 群 → 搜尋得到的一定分類得到
+      expect(DOMAIN_KEYWORDS[cfg.domain]).toEqual(expect.arrayContaining(cfg.keywords));
+    }
+  });
+
   it('createdSince = 今天 − 7 天（YYYY-MM-DD）', () => {
     expect(createdSince(new Date('2026-07-12T10:00:00Z'))).toBe('2026-07-05');
   });
@@ -31,7 +40,7 @@ describe('Search query 組裝', () => {
 });
 
 describe('parseSearchResponse', () => {
-  it('映射 id/full_name/topics/stars/created_at → RawSearchRepo，帶 queriedDomain', () => {
+  it('映射 id/full_name/topics/stars/created_at → RawSearchRepo', () => {
     const raw = {
       items: [
         {
@@ -45,7 +54,7 @@ describe('parseSearchResponse', () => {
         },
       ],
     };
-    expect(parseSearchResponse(raw, 'ai')).toEqual([
+    expect(parseSearchResponse(raw)).toEqual([
       {
         repoId: 55,
         fullName: 'acme/new-rag',
@@ -54,13 +63,12 @@ describe('parseSearchResponse', () => {
         topics: ['rag', 'llm'],
         totalStars: 120,
         createdAt: '2026-07-08T00:00:00Z',
-        queriedDomain: 'ai',
       },
     ]);
   });
 
   it('items 為空 → 回空陣列（該組 0 筆）', () => {
-    expect(parseSearchResponse({ items: [] }, 'devops')).toEqual([]);
+    expect(parseSearchResponse({ items: [] })).toEqual([]);
   });
 });
 
@@ -73,7 +81,6 @@ describe('GithubSearchService.fetchSearch', () => {
     const { repos, failures } = await new GithubSearchService(http).fetchSearch(new Date('2026-07-12T00:00:00Z'));
     expect(getJson).toHaveBeenCalledTimes(3);
     expect(repos).toHaveLength(3); // 每組一筆
-    expect(repos.map((r) => r.queriedDomain)).toEqual(['ai', 'devops', 'frontend-backend']);
     expect(failures).toEqual([]);
   });
 

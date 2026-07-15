@@ -93,7 +93,7 @@ src/
 │   ├── board-builder.service.ts   # 編排：sources→classify→merge(repoId 去重)→weeklyStarsEstimate→每領域 top 15
 │   ├── board-builder.service.spec.ts
 │   ├── board.types.ts             # Domain(3-way)/CandidateRepo/DomainBoard/CurrentBoard
-│   └── weekly-stars.ts            # weeklyStarsEstimate 純函式（Trending=starsThisWeek；Search=(總星/建立天數)×7）
+│   └── weekly-stars.ts            # weeklyStarsEstimate 純函式（Trending=starsThisWeek；Search=min((總星/建立天數)×7, 總星)）
 └── (F1 既有 config/ state/ discord/ 不動；F2 沿用 discord/failure-alert 發來源告警)
 
 tests/fixtures/

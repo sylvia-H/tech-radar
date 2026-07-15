@@ -49,6 +49,13 @@ describe('GithubHttpService', () => {
       await svc.getJson('https://api.github.com/repos/o/r', 'core');
       expect(svc.counts.core).toBe(1);
     });
+
+    it('失敗的呼叫一樣計數（它同樣吃掉限額，SC-006 不得低估）', async () => {
+      const svc = makeService();
+      jest.spyOn(global, 'fetch').mockResolvedValue(new Response('', { status: 404 }));
+      await expect(svc.getJson('https://api.github.com/repos/o/r', 'core')).rejects.toThrow();
+      expect(svc.counts.core).toBe(1);
+    });
   });
 
   describe('退避重試', () => {
@@ -114,6 +121,57 @@ describe('GithubHttpService', () => {
       expect(delaySpy(svc)).not.toHaveBeenCalled(); // 首次未退避
       await svc.getJson('https://api.github.com/repos/o/r2', 'core');
       expect(delaySpy(svc)).toHaveBeenCalledTimes(1); // 逼近門檻 → 退避
+    });
+
+    it('缺 x-ratelimit-remaining header → 不得誤判為逼近限額', async () => {
+      // Number(null) 是 0（不是 NaN），逕自轉數字會把「沒有 header」讀成「剩餘 0」
+      const svc = makeService();
+      // 每次回新 Response：body 只能讀一次，共用同一物件會在第二次呼叫就爆
+      jest.spyOn(global, 'fetch').mockImplementation(async () => jsonRes({}));
+      await svc.getJson('https://api.github.com/repos/o/r', 'core');
+      await svc.getJson('https://api.github.com/repos/o/r2', 'core');
+      await svc.getJson('https://api.github.com/repos/o/r3', 'core');
+      expect(delaySpy(svc)).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('限流型 403 與憑證型 403 分流', () => {
+    it('403 帶 Retry-After（secondary rate limit）→ 退避重試', async () => {
+      const svc = makeService();
+      const fetchMock = jest
+        .spyOn(global, 'fetch')
+        .mockResolvedValueOnce(new Response('', { status: 403, headers: { 'retry-after': '1' } }))
+        .mockResolvedValueOnce(jsonRes({ ok: true }));
+      const out = await svc.getJson<{ ok: boolean }>('https://api.github.com/repos/o/r', 'core');
+      expect(out.ok).toBe(true);
+      expect(fetchMock).toHaveBeenCalledTimes(2);
+      expect(delaySpy(svc)).toHaveBeenCalledWith(1000);
+    });
+
+    it('403 帶 x-ratelimit-remaining: 0（限額耗盡）→ 退避重試', async () => {
+      const svc = makeService();
+      const fetchMock = jest
+        .spyOn(global, 'fetch')
+        .mockResolvedValueOnce(new Response('', { status: 403, headers: { 'x-ratelimit-remaining': '0' } }))
+        .mockResolvedValueOnce(jsonRes({ ok: true }));
+      await svc.getJson('https://api.github.com/repos/o/r', 'core');
+      expect(fetchMock).toHaveBeenCalledTimes(2);
+      expect(delaySpy(svc)).toHaveBeenCalledTimes(1);
+    });
+
+    it('憑證型 403（無限流跡象）→ 不重試，直接擲錯', async () => {
+      const svc = makeService();
+      const fetchMock = jest.spyOn(global, 'fetch').mockResolvedValue(new Response('', { status: 403 }));
+      await expect(svc.getJson('https://api.github.com/repos/o/r', 'core')).rejects.toThrow(/HTTP 403/);
+      expect(fetchMock).toHaveBeenCalledTimes(1);
+      expect(delaySpy(svc)).not.toHaveBeenCalled();
+    });
+
+    it('401 → 不重試，直接擲錯', async () => {
+      const svc = makeService();
+      const fetchMock = jest.spyOn(global, 'fetch').mockResolvedValue(new Response('', { status: 401 }));
+      await expect(svc.getJson('https://api.github.com/repos/o/r', 'core')).rejects.toThrow(/HTTP 401/);
+      expect(fetchMock).toHaveBeenCalledTimes(1);
     });
   });
 

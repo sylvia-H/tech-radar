@@ -36,7 +36,7 @@
 **⚠️ CRITICAL**: 本階段完成前，任何 User Story 不得開始
 
 - [x] T003 建立記憶體型別 `src/board/board.types.ts`：`Domain = "ai"|"devops"|"frontend-backend"`、`RawTrendingRepo`、`RawSearchRepo`、`RepoMeta`、`CandidateRepo`、`BoardRow`、`DomainBoard`、`CurrentBoard`（欄位依 data-model.md；含 `apiCalls: { core; search }`）；型別即 F3 `buildCurrentBoard()` 契約來源（contracts/board-output.md）
-- [x] T004 建立共用 `src/github/github-http.ts`：自訂 `User-Agent`（`tech-radar/1.0 (+github-actions; personal)`）、`Authorization: Bearer $GH_API_TOKEN`（僅 API 端點帶、Trending 網頁不帶）、條件式請求（ETag／If-None-Match、If-Modified-Since；**F2 為機制骨架**——F2 不持久化、單次執行內同 URL 只抓一次，執行期**無前值可帶**、實為 no-op，介面保留供 F5+ 有快取值時復用，**不得**為此另建快取檔）、失敗（5xx／429／網路）**指數退避＋jitter**、`GET /repos` 批次**有限並發 ≤6**、讀 `X-RateLimit-Remaining` 逼近時退避、core／search 呼叫**計數**；**token 絕不寫入 log／產物**（research D9、contracts §通用要求、憲章 VII）
+- [x] T004 建立共用 `src/github/github-http.ts`：自訂 `User-Agent`（`tech-radar/1.0 (+github-actions; personal)`）、`Authorization: Bearer $GH_API_TOKEN`（僅 API 端點帶、Trending 網頁不帶）、條件式請求（ETag／If-None-Match、If-Modified-Since；**F2 為機制骨架**——F2 不持久化、單次執行內同 URL 只抓一次，執行期**無前值可帶**、實為 no-op，介面保留供 F5+ 有快取值時復用，**不得**為此另建快取檔）、失敗（5xx／429／**限流型 403**／網路）**指數退避＋jitter**（2026-07-15 修訂：GitHub secondary rate limit 可能回 403，以 `Retry-After`／`X-RateLimit-Remaining: 0` 辨識；憑證型 403 仍不重試）、`GET /repos` 批次**有限並發 ≤6**、讀 `X-RateLimit-Remaining` 逼近時退避（**header 缺席須略過判斷**，`Number(null)` 為 0）、core／search 呼叫**計數**（**送出前**累加，失敗亦計）；**token 絕不寫入 log／產物**（research D9、contracts §通用要求、憲章 VII）
 - [x] T005 [P] 撰寫 `src/github/github-http.spec.ts`：退避行為、並發上限 ≤6、逼近 rate-limit 退避、呼叫計數、條件式請求（**注入快取值**時帶 `If-None-Match`／`If-Modified-Since`、無前值不帶）、錯誤訊息／log **不含 token/URL**（憲章 VII）
 
 **Checkpoint**: 型別與 HTTP 客戶端就緒，US1–US4 可開始
@@ -53,16 +53,16 @@
 
 - [x] T006 [P] [US1] 建立 Trending 頁面快照 fixture `tests/fixtures/trending-weekly.html`（保留 `article.Box-row` 結構，作為解析回歸基準；FR-009、research D1）
 - [x] T007 [P] [US1] 撰寫 `src/sources/github-trending.service.spec.ts`：以 fixture 快照比對解析出 `fullName`/`description`/`language`/`starsThisWeek`；**解析 0 列或欄位抽不到 → 觸發告警**（FR-009、contracts §1）
-- [x] T008 [P] [US1] 撰寫 `src/classify/classify.service.spec.ts`：topics 命中歸對領域（**topics 子字串**）；無 topics 改用 description（**description 詞界比對**：`ai` 不命中 `domain`／`chain`、但 `AI-powered` 命中）；只有語言相符但無關鍵字命中 → 不歸類（排除）；跨領域命中 → 依**固定優先序**擇一主領域（AI>DevOps>前後端，language **不參與**決勝）；topics 與 description 皆無命中 → 排除（FR-003/FR-011、data-model 分類規則）
+- [x] T008 [P] [US1] 撰寫 `src/classify/classify.service.spec.ts`：topics 命中歸對領域（**topics 詞界比對**——原定子字串，已於 2026-07-15 修訂，見 spec Clarifications Session 2026-07-15）；無 topics 改用 description（**同樣詞界比對**：`ai` 不命中 `domain`／`chain`／`blockchain`、但 `AI-powered`／`ai-agents` 命中）；只有語言相符但無關鍵字命中 → 不歸類（排除）；跨領域命中 → 依**固定優先序**擇一主領域（AI>DevOps>前後端，language **不參與**決勝）；topics 與 description 皆無命中 → 排除（FR-003/FR-011、data-model 分類規則）
 - [x] T009 [P] [US1] 撰寫 `src/board/weekly-stars.spec.ts`：Trending 候選 `weeklyStarsEstimate = starsThisWeek`；`ageDays=0`（今日新建）不除以零、結果有限非 NaN/Infinity（FR-005、Edge Case）
 - [x] T010 [P] [US1] 撰寫 `src/board/board-builder.service.spec.ts`（Trending-only 路徑）：Trending 候選經分類後每領域以 `weeklyStarsEstimate` 排序取 top 15、`rank` 連號、不足 15 照實呈現；`CurrentBoard.boards` 恰三領域；`apiCalls` 計數正確（SC-001、FR-005/FR-006）
 
 ### Implementation for User Story 1
 
 - [x] T011 [P] [US1] 建立 `src/classify/domain-keywords.ts`：三領域關鍵字種子集 v1 canonical（AI／DevOps／前後端，見 data-model「領域關鍵字種子集」）；增刪只改此檔（憲章 IV 精神）
-- [x] T012 [US1] 實作 `src/classify/classify.service.ts`：對候選依序比對 topics（**小寫子字串**）→ 無 topics 則 description（**小寫詞界**）；language 僅為輔助訊號（不單獨定領域、**不參與跨領域決勝**）；命中多領域依**固定優先序**擇一主領域（AI>DevOps>前後端），皆無命中回 `null`（排除）；寬鬆傾向（依賴 T011；FR-003/FR-011）
-- [x] T013 [P] [US1] 實作純函式 `src/board/weekly-stars.ts`：Trending 候選 `= starsThisWeek`；純 Search 候選 `= round(totalStars / max(ageDays,1) × 7)`（**兩分支一次寫齊**，供 US3 沿用；FR-005、research D5）
-- [x] T014 [US1] 實作 `src/sources/github-trending.service.ts`：以 `github-http` 抓全站＋`typescript`/`javascript`/`python`/`rust`/`shell` 共 6 頁 `?since=weekly`，`cheerio` 逐 `article.Box-row` 解析 → `RawTrendingRepo[]`，跨頁先以 `fullName` 去重；解析 0 筆/欄位抽不到擲可辨識錯誤（依賴 T004、T003；contracts §1、research D1）
+- [x] T012 [US1] 實作 `src/classify/classify.service.ts`：對候選依序比對 topics → 無 topics 則 description，**兩者皆用小寫詞界**（原定 topics 子字串，已於 2026-07-15 修訂：`ai` 會誤命中 `blockchain` 而侵蝕 SC-002；寬鬆傾向改由種子集 `extra` 群承擔）；language 僅為輔助訊號（不單獨定領域、**不參與跨領域決勝**）；命中多領域依**固定優先序**擇一主領域（AI>DevOps>前後端），皆無命中回 `null`（排除）；寬鬆傾向（依賴 T011；FR-003/FR-011）
+- [x] T013 [P] [US1] 實作純函式 `src/board/weekly-stars.ts`：Trending 候選 `= starsThisWeek`；純 Search 候選 `= min(round(totalStars / max(ageDays,1) × 7), totalStars)`（**上限為 2026-07-15 修訂補入**：`created:>7天` 的 repo 其星全為本週累積，無上限會把今日新建者外推 ×7 而壓過主力龍頭）（**兩分支一次寫齊**，供 US3 沿用；FR-005、research D5）
+- [x] T014 [US1] 實作 `src/sources/github-trending.service.ts`：以 `github-http` 抓全站＋`typescript`/`javascript`/`python`/`rust`/`shell` 共 6 頁 `?since=weekly`，`cheerio` 逐 `article.Box-row` 解析 → `TrendingResult { repos, failedPages }`，跨頁先以 `fullName` 去重；**逐頁 try/catch**（2026-07-15 修訂：單頁失敗只記 `failedPages`、其餘頁照常合併，不得讓一頁 404 拖垮主力）；**合併後 0 筆**才擲可辨識錯誤；欄位抽不到擲錯（爆炸半徑限該頁）（依賴 T004、T003；contracts §1、research D1/D6）
 - [x] T015 [US1] 實作 `src/sources/github-repo.service.ts`：對 Trending **唯一候選**呼叫 `GET /repos/{owner}/{repo}` 取 `id(→repoId)`/`topics`/`stargazers_count`/`created_at` → `RepoMeta`，有限並發 ≤6、條件式請求；**單筆失敗（重試耗盡）→ 該候選無 `repoId`，MUST 略過**、不中斷全線（U1；依賴 T004、T003；contracts §3、research D2）
 - [x] T016 [US1] 實作 `src/board/board-builder.service.ts` 的 `build(): Promise<CurrentBoard>`（**Trending-only 路徑**）：Trending → `github-repo` 補 `repoId`/`topics`（**取不到 `repoId` 者略過該候選**，U1）→ `classify` 歸類 → 每領域以 `weekly-stars` 計 `weeklyStarsEstimate` 排序取 top 15、`rank` 連號 → 組 `CurrentBoard`（含 `builtAt`、三領域 `boards`、`apiCalls`）；記錄 core/search 呼叫數（依賴 T012–T015）
 - [x] T017 [US1] 建立 `src/board/board.module.ts` 註冊 `GithubTrendingService`／`GithubRepoService`／`ClassifyService`／`BoardBuilderService`（及 `github-http` provider），並於 `src/app.module.ts` 匯入 `BoardModule`
@@ -85,7 +85,7 @@
 ### Implementation for User Story 2
 
 - [x] T020 [US2] 實作 `src/sources/github-search.service.ts`：對三領域各發一次 `GET /search/repositories`（門檻與 `q` 見 T019／FR-010），解析 `id`/`full_name`/`description`/`language`/`topics`/`stargazers_count`/`created_at` → `RawSearchRepo[]`（`topics` 隨回應返回，免再打 /repos）；依賴 T004、T003（research D3、contracts §2）
-- [x] T021 [US2] 於 `src/board/board-builder.service.ts` 併入 Search 來源：`build()` 同時取 Search 候選、經 `classify`（`queriedDomain` 為提示、仍以 topics/description 為準）納入各領域候選池，並於 `board.module.ts` 註冊 `GithubSearchService`（依賴 T016、T020）
+- [x] T021 [US2] 於 `src/board/board-builder.service.ts` 併入 Search 來源：`build()` 同時取 Search 候選、經 `classify`（一律以 topics/description 為準；原「`queriedDomain` 提示」欄位從未被消費，已於 2026-07-15 移除）納入各領域候選池，並於 `board.module.ts` 註冊 `GithubSearchService`（依賴 T016、T020）
 
 **Checkpoint**: US1＋US2 → 榜單同時涵蓋熱門主力與新崛起補位（合併去重於 US3 完成）
 

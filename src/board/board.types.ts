@@ -31,7 +31,11 @@ export interface RawTrendingRepo {
   starsThisWeek: number; // 本週增星（排序主鍵來源）
 }
 
-/** Search 解析輸出（補位）。回應本身含 topics，免再打 /repos。 */
+/**
+ * Search 解析輸出（補位）。回應本身含 topics，免再打 /repos。
+ * 不攜帶「來自哪組領域查詢」——FR-003 要求一律以 topics／description 歸類，
+ * 皆無命中即排除（寧缺勿濫），故查詢領域不得作為歸類依據。
+ */
 export interface RawSearchRepo {
   repoId: number;
   fullName: string;
@@ -40,7 +44,6 @@ export interface RawSearchRepo {
   topics: string[];
   totalStars: number; // 當前總星數
   createdAt: string; // ISO 8601
-  queriedDomain: Domain; // 來自哪組領域查詢（提示，非最終歸類）
 }
 
 /** `GET /repos/{o}/{r}` 輸出：補 Trending 候選的 repoId/topics。 */

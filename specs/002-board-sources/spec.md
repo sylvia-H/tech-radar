@@ -40,7 +40,7 @@
 
 1. **Given** 近 7 天內有新建且已累積相當星數的 repo，**When** 補位來源查詢執行，**Then** 這些 repo 被納入候選並依領域關鍵字分組查詢（AI／DevOps／前後端各一組）。
 2. **Given** 一個 repo 同時出現在主力與補位來源，**When** 兩來源合併，**Then** 最終榜單中該 repo 只出現一次（見 User Story 3 的去重）。
-3. **Given** 補位來源回傳的是「當前總星數」而非週增量，**When** 排序，**Then** 以「總星數 ÷ 建立天數」近似其崛起速度作為排序依據，與主力來源的週增星排序鍵可並存比較。
+3. **Given** 補位來源回傳的是「當前總星數」而非週增量，**When** 排序，**Then** 以「總星數 ÷ 建立天數」近似其崛起速度、並以總星數為上限（見 FR-005）作為排序依據，與主力來源的週增星排序鍵可並存比較。
 
 ---
 
@@ -84,7 +84,8 @@
 - **跨領域 repo**：同時符合多個領域關鍵字的 repo，**擇一主領域，優先序 AI > DevOps > 前後端**，只入單一領域榜（見 FR-011）。
 - **候選不足 15 筆**：某領域本週候選少於 15 筆時，榜單就呈現實際筆數，不硬湊。
 - **API 限額**：`GET /repos` 補 topics 是主要 API 消耗；MUST 先以 `fullName` 去重再逐一查詢、限並發並監看 `X-RateLimit-Remaining`（見 FR-008、SC-006）。Trending HTML（github.com 網頁）不計 API 限額，僅 Search／`/repos` 計入。
-- **建立天數為 0（今日新建）**：計算 `weeklyStarsEstimate` 時 MUST 以 `建立天數 = max(建立天數, 1)` 避免除以零（結果為有限值，不得為 NaN／Infinity）。
+- **建立天數為 0（今日新建）**：計算 `weeklyStarsEstimate` 時 MUST 以 `建立天數 = max(建立天數, 1)` 避免除以零（結果為有限值，不得為 NaN／Infinity），並 MUST 以**總星數為上限**收斂該外推值（見 FR-005）——否則今日新建 300 星的補位候選會被估成 2,100，壓過官方週增星 1,800 的主力龍頭。
+- **建立時間無法解析**：`createdAt` 非合法日期時，建立天數 MUST 判定為「未知」而非 `0`——判為 0 等同宣稱「今日新建」，會讓壞資料在 `weeklyStarsEstimate` 拿到最短建立天數而被放大（同受 FR-005 總星數上限保護）。
 - **Trending 候選補 topics 失敗**：Trending HTML 不含數字 `repoId`，需以 `GET /repos` 補 `repoId` ＋ topics；該呼叫（重試耗盡後）失敗的候選 **MUST 略過**——無 `repoId` 即無法去重與穩定入榜（FR-004），不得以「缺 repoId」半套入榜。**`github-repo` 來源告警門檻**（循 FR-007、帶來源 id `github-repo`）：出現 **401/403**（憑證／權限層級問題）即告警一次；其餘錯誤於該批次**失敗率 > 50%** 時告警一次；未達門檻的零星失敗僅略過該候選、不告警。
 
 ## Clarifications
@@ -114,7 +115,7 @@
 - 告警**來源識別粒度**；**Search 0 筆屬正常** vs **主力 0 筆須告警**（FR-007，CHK025/026）。
 - **抓取禮貌具體化**與逼近限額退避（FR-008，CHK006/034）；**API 預算量化**與用量可觀測（SC-006，CHK029）。
 - **`建立天數 = max(_, 1)` 防除零**（Edge Case，CHK031）。
-- **關鍵字比對語意**（topics 小寫子字串／description 小寫詞界，見 FR-003）（領域關鍵字種子集註，CHK011）。
+- **關鍵字比對語意**（原定 topics 小寫子字串／description 小寫詞界；**topics 一側已於 Session 2026-07-15 修訂為詞界**，以 FR-003 現行條文為準）（領域關鍵字種子集註，CHK011）。
 - 榜單 **3-way domain 與 F1 4-way 佔位對齊留待 F3**（Assumptions／Key Entities，CHK015）。
 
 ### Session 2026-07-12（/speckit-analyze 收斂 I1/A1/U1/N1）
@@ -123,6 +124,7 @@
 
 - **I1 跨領域決勝機制**：language **不參與**跨領域主領域決勝；跨領域一律依 **FR-011 固定優先序 AI > DevOps > 前後端**。language 僅為輔助訊號、不單獨定領域、不改變領域歸屬（FR-003 已據此收斂；解消與研究 D4「語言加分跨領域決勝」之張力）。
 - **A1 比對語意**：topics 以小寫**子字串**比對（維持寬鬆）；description 以小寫**詞界**比對，避免 `ai`／`rag`／`gpt` 等短關鍵字誤命中 `domain`／`chain` 等一般字詞（FR-003、領域關鍵字種子集註）。
+  > **⚠️ 已於 Session 2026-07-15 修訂並作廢**：topics 側的子字串比對讓 `ai` 命中 `blockchain` 等 topic 而侵蝕 SC-002 → 改為 **topics 與 description 一律詞界比對**，寬鬆傾向由種子集補充群承擔。以 FR-003 現行條文為準。
 - **U1 Trending 候選缺 `repoId`**：`GET /repos` 失敗（重試耗盡）的 Trending 候選 **MUST 略過**——無 `repoId` 無法去重／穩定入榜（FR-004、Edge Cases）。
 - **N1 API 預算措辭**：core REST 單次典型估算 **~120 次**、安全上限 **~150 次**（SC-006 與 plan/research D2 統一此關係）。
 
@@ -135,17 +137,26 @@
 - **U3 `github-repo` 告警門檻**：`GET /repos` 批次出現 **401/403 即告警一次**（憑證／權限層級）；其餘錯誤於**批次失敗率 > 50%** 告警一次；零星失敗僅略過該候選、不告警（Edge Cases、contracts §3、T027/T028）。
 - **I2/I3/I4 文件同步**：plan 「language 加權」舊措辭改為「僅輔助、不參與決勝」；board-output.md 註明原始欄位（`totalStars`／`createdAt`）保留於建置期 `CandidateRepo`、`BoardRow` 不另攜帶；plan 文件樹補列 `checklists/board-sources.md`。
 
+### Session 2026-07-15（實作後 code review 收斂：A1 修訂、排序鍵上限、隔離粒度）
+
+F2 實作完成後的 code review 發現三項**已定案決策本身**有缺陷（非實作偏離），經擁有者拍板修訂並回填本文、research 與 data-model；`weeklyStarsEstimate` 一項因屬 F3/F7 共用的尺，另同步 `docs/tech-radar-dev-guide.md` §3.3（CLAUDE.md 跨 Feature 決策落地要求）：
+
+- **A1 比對語意修訂（topics 子字串 → 詞界）**：原定案「topics 以子字串比對（維持寬鬆）」會讓 `ai` 命中 topic `blockchain`／`domain-driven-design`／`training`、`rag` 命中 `drag-and-drop`，且因 FR-011 的 AI 優先序最高，區塊鏈專案會直接進 AI 榜，**直接侵蝕 SC-002（歸類合理率 ≥ 90%）**；description 那側原本就用詞界防了同一件事，兩側語意不一致並無正當理由。→ **topics 與 description 統一詞界比對**；原本靠子字串涵蓋的黏著變體（`openai`／`agents`…）改由種子集補充群逐一列入，**寬鬆傾向由種子集承擔，而非由比對語意承擔**（FR-003、領域關鍵字種子集）。
+- **排序鍵上限（FR-005）**：原公式 `round(總星數 ÷ 建立天數 × 7)` 對 `created:>7天` 的補位候選是憑空外推——這些 repo 的星本來就全是本週累積的，×7 等於把一天的觀測放大七倍，今日新建 300 星者會估成 2,100 而壓過官方週增星 1,800 的主力龍頭。→ 加上**總星數上限** `min(..., 總星數)`（`age ≤ 7` 時上限恆生效，等價於直接採計總星數；`age > 7` 的異常樣本仍走原公式），並一併處理「建立時間無法解析」不得判為 0 天（FR-005、Edge Cases）。
+- **隔離粒度到單次請求（FR-007）**：原實作 6 個 Trending 語言頁共用一個 try/catch，任一頁 404 或任一列欄位漂移即讓主力整個歸零，與 FR-007「MUST NOT 使整條流程失敗」的精神相違。→ **逐頁隔離**、失敗頁記 `github-trending:{page}` 告警、其餘頁照常入榜；**全部頁合併後 0 筆**才發 `github-trending` 主力告警（FR-007、FR-009）。
+- **`queriedDomain` 一併移除**：`RawSearchRepo` 原帶「來自哪組領域查詢」欄位，但 FR-003 要求一律以 topics／description 歸類、皆無命中即排除，該欄位在流程中**從未被消費**（死欄位）。→ 自 data-model 與實作移除；補位候選的歸類一律走 FR-003，不因「被某組查詢撈到」而放行（維持寧缺勿濫）。
+
 ## Requirements *(mandatory)*
 
 ### Functional Requirements
 
 - **FR-001**: 系統 MUST 從 GitHub 官方「本週熱門」週增量取得主力候選 repo，並解析出每個 repo 的**本週增星量**作為排序依據；**MUST NOT** 自建每日星星快照或 day-over-day 對比（憲章 II）。
 - **FR-002**: 系統 MUST 從 GitHub Search 取得「建立時間在近 7 天內、且已累積一定星數」的補位候選，並針對 AI／DevOps／前後端分別查詢，以補足尚未擠上主榜的新崛起 repo。
-- **FR-003**: 系統 MUST 將候選 repo 歸入三領域之一：**AI / DevOps / 前後端**。歸類**主要訊號為 repo 的 topics**；當 repo **無 topics** 時，MUST 退而以 **description** 比對三領域關鍵字集合。主要語言（language）**僅為輔助訊號、MUST NOT 單獨決定領域，且 MUST NOT 改變跨領域主領域之判定**（未因 topics/description 命中任何關鍵字者，即使語言相符也 MUST 被排除；命中多領域時，主領域一律依 FR-011 固定優先序決定，language 不參與該決勝，至多作為「已命中單一領域」時的信心佐證，不改變領域歸屬）；topics 與 description 皆無命中者 MUST 被排除，不強行歸類（寧缺勿濫）。**比對語意**（正規化為小寫後）：topics 以**子字串**比對（topic slug 為結構化標籤，寬鬆命中風險低）；description 以**詞界**比對（以非英數字元為界的 token 比對，避免 `ai`／`rag`／`gpt` 等短關鍵字誤命中 `domain`／`chain` 等一般字詞）。歸類採**寬鬆傾向**：確屬三領域的開發者工具（工具鏈／框架／平台等，如 codegraph）不應因關鍵字過嚴而被漏收。
+- **FR-003**: 系統 MUST 將候選 repo 歸入三領域之一：**AI / DevOps / 前後端**。歸類**主要訊號為 repo 的 topics**；當 repo **無 topics** 時，MUST 退而以 **description** 比對三領域關鍵字集合。主要語言（language）**僅為輔助訊號、MUST NOT 單獨決定領域，且 MUST NOT 改變跨領域主領域之判定**（未因 topics/description 命中任何關鍵字者，即使語言相符也 MUST 被排除；命中多領域時，主領域一律依 FR-011 固定優先序決定，language 不參與該決勝，至多作為「已命中單一領域」時的信心佐證，不改變領域歸屬）；topics 與 description 皆無命中者 MUST 被排除，不強行歸類（寧缺勿濫）。**比對語意**（正規化為小寫後）：topics 與 description **一律以詞界比對**（以非英數字元為界，keyword 內部連字號不受影響）——短關鍵字若對 topics 用子字串，`ai` 會命中 `blockchain`／`domain-driven-design`／`training`，再被 FR-011 的 AI 最高優先序吃掉歸類，直接侵蝕 SC-002（見 Clarifications「Session 2026-07-15」A1 修訂）。**寬鬆傾向**改由種子集承擔：詞界比對接不到的黏著變體（`openai`／`genai`／`agents`／`reactjs` 等）MUST 逐一列入關鍵字種子集的補充群，確屬三領域的開發者工具（工具鏈／框架／平台等，如 codegraph）不應因關鍵字過嚴而被漏收；增刪仍只改設定、不動 pipeline。
 - **FR-004**: 系統 MUST 以 GitHub 數字 id（`repoId`）作為 repo 同一性依據來合併兩來源並去重，確保同一 repo（含改名後）在最終榜單只出現一次。**同一 repo 同時來自主力與補位時** MUST 合併為一筆、**保留主力的 `starsThisWeek`**（作為 `weeklyStarsEstimate` 依據，優於補位的估算值），且來源標記 MUST 同時記錄兩者。主力 Trending 候選的 `repoId` 由 `GET /repos` 補取（Trending HTML 不含數字 id）；**無法取得 `repoId` 者 MUST 略過、不進入榜單**（見 Edge Cases「Trending 候選補 topics 失敗」）。
-- **FR-005**: 系統 MUST 對每個領域以**單一可比排序鍵**排序後取**前 15 名**作為當前榜單。因一個領域榜可能**同時混入兩來源**，排序鍵 MUST 統一為**「估算本週增星」`weeklyStarsEstimate`**：主力（Trending）候選 `= starsThisWeek`；純補位（Search）候選 `= round(總星數 ÷ 建立天數 × 7)`（將「崛起速度」換算為週增星等值以與主力同尺）；同時來自兩來源者以 `starsThisWeek` 為準。排序 MUST **可重現**：以 `weeklyStarsEstimate` 由大到小、**同值時以 `repoId` 由小到大** tie-break，確保相同輸入必得相同順序、不受來源處理順序影響。某領域候選不足 15 筆時照實呈現、不硬湊。
+- **FR-005**: 系統 MUST 對每個領域以**單一可比排序鍵**排序後取**前 15 名**作為當前榜單。因一個領域榜可能**同時混入兩來源**，排序鍵 MUST 統一為**「估算本週增星」`weeklyStarsEstimate`**：主力（Trending）候選 `= starsThisWeek`；純補位（Search）候選 `= min(round(總星數 ÷ 建立天數 × 7), 總星數)`（將「崛起速度」換算為週增星等值以與主力同尺，並以總星數為上限——補位只撈 `created:>今天−7天` 的 repo，其星數全部是本週累積的，**本週增星在數學上不可能超過總星數**，少了這道上限，今日新建的 repo 會被 ×7 外推而壓過主力龍頭）；同時來自兩來源者以 `starsThisWeek` 為準。排序 MUST **可重現**：以 `weeklyStarsEstimate` 由大到小、**同值時以 `repoId` 由小到大** tie-break，確保相同輸入必得相同順序、不受來源處理順序影響。某領域候選不足 15 筆時照實呈現、不硬湊。
 - **FR-006**: 系統 MUST 將產出的三領域當前榜單以可觀測方式輸出（log 可印出，含 repo 識別、本週增星量、領域、名次），供人工驗收與後續 Feature 取用；本 Feature **MUST NOT** 進行狀態快照寫回、變化偵測或 Discord 推播。
-- **FR-007**: 任一來源**失敗**（或**主力解析到 0 筆**，見 FR-009）時，系統 MUST 發出**帶來源識別的告警**，且 MUST NOT 使整條流程失敗——另一來源仍須照常產出榜單（憲章 VII 來源隔離容錯）。來源識別 MUST **可定位到出錯的子來源**（例：`github-trending`、`github-search:ai`、`github-repo`），而非僅泛稱「來源失敗」。**補位 Search 某組查詢回 0 筆屬正常**（該週該領域無新星），MUST NOT 因此告警——與「主力解析 0 筆＝疑似頁面改版」明確區分（見 FR-009 / SC-004）。
+- **FR-007**: 任一來源**失敗**（或**主力解析到 0 筆**，見 FR-009）時，系統 MUST 發出**帶來源識別的告警**，且 MUST NOT 使整條流程失敗——另一來源仍須照常產出榜單（憲章 VII 來源隔離容錯）。來源識別 MUST **可定位到出錯的子來源**（例：`github-trending`、`github-trending:python`、`github-search:ai`、`github-repo`），而非僅泛稱「來源失敗」。**隔離粒度 MUST 到「單次請求」而非「整個來源」**：主力的 6 個 Trending 語言頁 MUST 逐頁隔離——單頁抓取或解析失敗只損失該頁、記 `github-trending:{page}` 告警（全站頁記為 `all`），其餘頁的候選 MUST 照常合併入榜；唯有**全部頁合併後仍為 0 筆**才屬 FR-009 的「疑似改版」、發 `github-trending` 主力告警。否則一頁 404 或一列欄位漂移就會讓其餘 5 頁已解析的上百筆候選一起陪葬，主力形同全滅。**補位 Search 某組查詢回 0 筆屬正常**（該週該領域無新星），MUST NOT 因此告警——與「主力解析 0 筆＝疑似頁面改版」明確區分（見 FR-009 / SC-004）。
 - **FR-008**: 系統 MUST 只讀取並處理**公開**的 repo 資料；抓取 MUST 具體表現抓取禮貌：**自訂 User-Agent**、**支援條件式請求**（ETag / If-Modified-Since；「有前值才帶對應 header」——F2 不持久化且單次執行內同 URL 只請求一次，執行期無前值可帶，故本 Feature 屬**機制骨架**、留待 F5+ 有跨請求快取時生效，MUST NOT 為此另建快取檔）、失敗（5xx／429／網路錯誤）**指數退避＋jitter**、`GET /repos` 批次以**有限並發（≤6）**避免 secondary rate limit。系統 MUST 監看 GitHub 回應的 `X-RateLimit-Remaining`，**逼近限額時退避**，使單次執行 API 用量維持在免費上限安全範圍（量化門檻見 SC-006）。
 - **FR-009**: 主力來源的頁面解析 MUST 有守著頁面改版的回歸保護（以快照為基準比對），解析失敗須被偵測並告警，不得靜默視為「本週無熱門」。
 - **FR-010**: 本 Feature 的關鍵設定已於 `/speckit-clarify`（Session 2026-07-11）定案並回填如下，屬**可日後擴充的 v1 canonical**（調整只改設定、不改 pipeline）：
@@ -157,11 +168,13 @@
 
 ### 領域關鍵字種子集（v1 canonical，可日後擴充）
 
-> 沿用開發指南 §3.2 為起始集合；**topics 為主要比對來源，無 topics 時比對 description**（見 FR-003）。各領域**兩群關鍵字（前群兼作補位 Search `q` 關鍵字，括號內為補充的 topics 常用標籤）合併為該領域的完整關鍵字集**，topics 與 description 比對**共用同一合併集合**——例如 description 詞界比對亦可命中括號群的 `ai`（如 `AI-powered`）。**比對語意**（正規化為小寫後）：**topics 做子字串比對**（含該關鍵字即命中，維持寬鬆）；**description 做詞界比對**（以非英數字元為界的 token 比對，避免 `ai`／`rag`／`gpt` 等短關鍵字誤命中 `domain`／`chain` 等一般字詞）。日後增刪關鍵字只改設定、不動 pipeline（憲章 IV 精神）。
+> 沿用開發指南 §3.2 為起始集合；**topics 為主要比對來源，無 topics 時比對 description**（見 FR-003）。各領域**兩群關鍵字（前群兼作補位 Search `q` 關鍵字，括號內為只供比對的補充群）合併為該領域的完整關鍵字集**，topics 與 description 比對**共用同一合併集合**——例如詞界比對亦可命中括號群的 `ai`（如 `AI-powered`）。**比對語意**（正規化為小寫後）：**topics 與 description 一律做詞界比對**（以非英數字元為界，避免 `ai`／`rag`／`gpt` 等短關鍵字誤命中 `blockchain`／`domain`／`drag-and-drop` 等一般字詞；A1 修訂見 Clarifications「Session 2026-07-15」）。**兩群 MUST 以結構表達而非「陣列前段」的隱性約定**——Search `q` 群 MUST 由設定衍生、不得另抄一份字面量（`vue` 曾因錯置於前段而使兩份清單漂移）。日後增刪關鍵字只改設定、不動 pipeline（憲章 IV 精神）。
 
-- **AI**：`llm`、`rag`、`agent`、`gpt`（＋ topics：`ai`、`machine-learning`、`deep-learning`、`llmops`、`transformers`）
-- **DevOps**：`kubernetes`、`terraform`、`gitops`（＋ topics：`devops`、`ci-cd`、`docker`、`observability`、`platform-engineering`）
-- **前後端**：`nextjs`、`react`、`svelte`、`nodejs`、`golang`（＋ topics：`typescript`、`vue`、`fastapi`、`frontend`、`backend`）
+- **AI**：`llm`、`rag`、`agent`、`gpt`（＋ 比對補充：`ai`、`machine-learning`、`deep-learning`、`llmops`、`transformers`、`llms`、`agents`、`agentic`、`openai`、`genai`、`chatgpt`）
+- **DevOps**：`kubernetes`、`terraform`、`gitops`（＋ 比對補充：`devops`、`ci-cd`、`docker`、`observability`、`platform-engineering`、`dockerfile`）
+- **前後端**：`nextjs`、`react`、`svelte`、`nodejs`、`golang`（＋ 比對補充：`typescript`、`vue`、`fastapi`、`frontend`、`backend`、`reactjs`、`sveltekit`、`vuejs`）
+
+> **補充群末段的黏著變體**（`llms`／`agents`／`openai`／`genai`／`chatgpt`／`dockerfile`／`reactjs`／`sveltekit`／`vuejs`）係 A1 由子字串改為詞界比對後，用以補回原本靠子字串涵蓋的常見 topic（如 `openai` 不含詞界意義下的 `ai`）。**寬鬆傾向由此群承擔**：日後發現漏收，加關鍵字於此群即可，不得回頭放寬比對語意。
 
 ### Key Entities *(include if feature involves data)*
 
@@ -183,7 +196,7 @@
 ## Assumptions
 
 - **三領域定義沿用專案既定分類**：AI / DevOps / 前後端（前端 + 後端合為一領域，與卡片領域配色一致）。**關鍵字／主題種子集已於 clarify 定案**（見 FR-010 與「領域關鍵字種子集」），為可日後擴充的 v1。
-- **排序鍵沿用開發指南 §3.3、以「估算本週增星」統一**：主力用本週增星量、補位用「總星數 ÷ 建立天數」；因領域榜會**混入兩來源**，F2 **在領域內即以 `weeklyStarsEstimate` 將兩者換算成同尺**排序（見 FR-005）。此鍵**與 F3/F7 跨領域綜合 top 10 所用者為同一把尺**——F2 先建立、下游沿用，不另發明。
+- **排序鍵沿用開發指南 §3.3、以「估算本週增星」統一**：主力用本週增星量、補位用「總星數 ÷ 建立天數」並以總星數為上限（見 FR-005）；因領域榜會**混入兩來源**，F2 **在領域內即以 `weeklyStarsEstimate` 將兩者換算成同尺**排序。此鍵**與 F3/F7 跨領域綜合 top 10 所用者為同一把尺**——F2 先建立、下游沿用，不另發明；故其定義（含總星數上限）已同步 `docs/tech-radar-dev-guide.md` §3.3。
 - **榜單領域為 3-way、與 F1 持久化 schema 對齊留待 F3**：本 Feature 分類輸出的領域型別為三值 `ai` / `devops` / `frontend-backend`（顯示「前後端」）。F1 `state.schema.ts` 之 `BoardEntry.domain` 目前為 4-way 佔位（`ai|devops|backend|frontend`），因 **F2 不寫回狀態**故不在本 Feature 修改；持久化層對齊 3-way 留待 **F3**（首次寫回 board 時，符合 F1「domain enum 值在 F2 clarify 定案」之預期）。
 - **追蹤深度 15 > 推播呈現**：每領域保留 top 15 以利後續（F3）偵測竄升／下降；**本 Feature 不決定也不實作推播**。已於本次 clarify 為 F3/F7 預定推播規則：推播取**跨領域綜合 top 10**、**保底每領域至少 2 席**、以**「估算本週增星」**（Trending 用 `starsThisWeek`；Search-only 用 `(總星數÷建立天數)×7`）為統一排名尺、diff 針對 top 10、卡片標示週增星數——**本 F2 只需保留 `starsThisWeek`／總星數／建立日期等原始欄位**供其計算（保留於**建置期記憶體的候選結構**，估算折入 `weeklyStarsEstimate` 隨榜單輸出；輸出契約不另攜帶原始值，F3/F7 每輪重建即得），不建立綜合排名。
 - **不引入新狀態**：本 Feature 不寫回 `state/board.json`，也不做變化偵測；當前榜單僅存在於單次執行的記憶體與 log，狀態化留待 F3。

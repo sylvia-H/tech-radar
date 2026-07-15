@@ -1,5 +1,5 @@
 import { GithubHttpService } from '../github/github-http';
-import { GithubTrendingService } from '../sources/github-trending.service';
+import { GithubTrendingService, TrendingResult } from '../sources/github-trending.service';
 import { GithubRepoService, RepoMetasResult } from '../sources/github-repo.service';
 import { GithubSearchService, SearchResult } from '../sources/github-search.service';
 import { ClassifyService } from '../classify/classify.service';
@@ -23,11 +23,15 @@ function searchRepo(repoId: number, fullName: string, topics: string[], totalSta
     topics,
     totalStars,
     createdAt: ageDaysAgoIso,
-    queriedDomain: 'ai',
   };
 }
 
 const EMPTY_SEARCH: SearchResult = { repos: [], failures: [] };
+
+/** fetchTrending 的成功回傳（無失敗頁）。 */
+function trendingOk(repos: RawTrendingRepo[]): TrendingResult {
+  return { repos, failedPages: [] };
+}
 
 function buildService(
   trendingRepos: RawTrendingRepo[],
@@ -40,7 +44,9 @@ function buildService(
       return { core: metasResult.metas.size, search: 3 };
     },
   } as unknown as GithubHttpService;
-  const trendingSvc = { fetchTrending: jest.fn().mockResolvedValue(trendingRepos) } as unknown as GithubTrendingService;
+  const trendingSvc = {
+    fetchTrending: jest.fn().mockResolvedValue(trendingOk(trendingRepos)),
+  } as unknown as GithubTrendingService;
   const reposSvc = { fetchRepoMetas: jest.fn().mockResolvedValue(metasResult) } as unknown as GithubRepoService;
   const searchSvc = { fetchSearch: jest.fn().mockResolvedValue(searchResult) } as unknown as GithubSearchService;
   const discord = { postFailureAlert: jest.fn().mockResolvedValue(undefined) };
@@ -150,7 +156,7 @@ describe('BoardBuilderService 容錯與告警（US4, FR-007/FR-009/SC-004）', (
   }): { svc: BoardBuilderService; discord: { postFailureAlert: jest.Mock } } {
     const discord = { postFailureAlert: jest.fn().mockResolvedValue(undefined) };
     const http = { resetCounts: jest.fn(), get counts() { return { core: 0, search: 0 }; } };
-    const trendingSvc = { fetchTrending: o.trending ?? jest.fn().mockResolvedValue([]) };
+    const trendingSvc = { fetchTrending: o.trending ?? jest.fn().mockResolvedValue(trendingOk([])) };
     const reposSvc = { fetchRepoMetas: jest.fn().mockResolvedValue(o.metas ?? { metas: new Map(), failures: [] }) };
     const searchSvc = { fetchSearch: o.search ?? jest.fn().mockResolvedValue({ repos: [], failures: [] }) };
     const svc = new BoardBuilderService(
@@ -185,9 +191,24 @@ describe('BoardBuilderService 容錯與告警（US4, FR-007/FR-009/SC-004）', (
     expect(discord.postFailureAlert).toHaveBeenCalledWith(expect.stringContaining('github-trending'));
   });
 
+  it('主力部分語言頁失敗 → 逐頁告警 github-trending:{page}，其餘頁仍出榜', async () => {
+    const { svc, discord } = makeService({
+      trending: jest.fn().mockResolvedValue({
+        repos: [trending('acme/ai1', 8600)],
+        failedPages: ['python', 'rust'],
+      }),
+      metas: { metas: new Map([['acme/ai1', meta(101, ['llm'])]]), failures: [] },
+    });
+    const board = await svc.build();
+    expect(board.boards.find((b) => b.domain === 'ai')!.entries).toHaveLength(1); // 存活頁照常出榜
+    expect(discord.postFailureAlert).toHaveBeenCalledTimes(2);
+    expect(discord.postFailureAlert).toHaveBeenCalledWith(expect.stringContaining('github-trending:python'));
+    expect(discord.postFailureAlert).toHaveBeenCalledWith(expect.stringContaining('github-trending:rust'));
+  });
+
   it('補位某組失敗 → 告警 github-search:{domain}，主力仍出榜', async () => {
     const { svc, discord } = makeService({
-      trending: jest.fn().mockResolvedValue([trending('acme/ai1', 8600)]),
+      trending: jest.fn().mockResolvedValue(trendingOk([trending('acme/ai1', 8600)])),
       metas: { metas: new Map([['acme/ai1', meta(101, ['llm'])]]), failures: [] },
       search: jest.fn().mockResolvedValue({ repos: [], failures: [{ domain: 'frontend-backend', status: 503 }] }),
     });
@@ -198,7 +219,7 @@ describe('BoardBuilderService 容錯與告警（US4, FR-007/FR-009/SC-004）', (
 
   it('補位某組 0 筆屬正常 → 不告警', async () => {
     const { svc, discord } = makeService({
-      trending: jest.fn().mockResolvedValue([trending('acme/ai1', 8600)]),
+      trending: jest.fn().mockResolvedValue(trendingOk([trending('acme/ai1', 8600)])),
       metas: { metas: new Map([['acme/ai1', meta(101, ['llm'])]]), failures: [] },
       search: jest.fn().mockResolvedValue({ repos: [], failures: [] }),
     });
@@ -208,7 +229,7 @@ describe('BoardBuilderService 容錯與告警（US4, FR-007/FR-009/SC-004）', (
 
   it('GET /repos 出現 403 → 告警 github-repo', async () => {
     const { svc, discord } = makeService({
-      trending: jest.fn().mockResolvedValue([trending('a/x', 100), trending('b/y', 200)]),
+      trending: jest.fn().mockResolvedValue(trendingOk([trending('a/x', 100), trending('b/y', 200)])),
       metas: { metas: new Map([['a/x', meta(1, ['llm'])]]), failures: [{ fullName: 'b/y', status: 403 }] },
     });
     await svc.build();
@@ -219,7 +240,7 @@ describe('BoardBuilderService 容錯與告警（US4, FR-007/FR-009/SC-004）', (
     const trendingRepos = Array.from({ length: 10 }, (_, i) => trending(`o/r${i}`, 100));
     const metas = new Map(trendingRepos.slice(1).map((t, i) => [t.fullName, meta(i + 10, ['llm'])] as const));
     const { svc, discord } = makeService({
-      trending: jest.fn().mockResolvedValue(trendingRepos),
+      trending: jest.fn().mockResolvedValue(trendingOk(trendingRepos)),
       metas: { metas, failures: [{ fullName: 'o/r0', status: 500 }] },
     });
     await svc.build();
@@ -228,7 +249,7 @@ describe('BoardBuilderService 容錯與告警（US4, FR-007/FR-009/SC-004）', (
 
   it('兩來源皆正常 → 不發任何來源告警', async () => {
     const { svc, discord } = makeService({
-      trending: jest.fn().mockResolvedValue([trending('acme/ai1', 8600)]),
+      trending: jest.fn().mockResolvedValue(trendingOk([trending('acme/ai1', 8600)])),
       metas: { metas: new Map([['acme/ai1', meta(101, ['llm'])]]), failures: [] },
       search: jest.fn().mockResolvedValue(okSearch),
     });

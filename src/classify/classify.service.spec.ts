@@ -3,15 +3,36 @@ import { ClassifyService } from './classify.service';
 describe('ClassifyService', () => {
   const svc = new ClassifyService();
 
-  describe('topics 為主要訊號（子字串比對）', () => {
+  describe('topics 為主要訊號（詞界比對）', () => {
     it('topics 明確命中 → 歸對領域', () => {
       expect(svc.classify({ topics: ['machine-learning'], description: null })).toBe('ai');
       expect(svc.classify({ topics: ['kubernetes'], description: null })).toBe('devops');
       expect(svc.classify({ topics: ['react'], description: null })).toBe('frontend-backend');
     });
 
-    it('topics 子字串寬鬆命中（ai-agents → ai）', () => {
+    it('topics 以連字號為界寬鬆命中（ai-agents → ai）', () => {
       expect(svc.classify({ topics: ['ai-agents'], description: null })).toBe('ai');
+      expect(svc.classify({ topics: ['react-native'], description: null })).toBe('frontend-backend');
+      expect(svc.classify({ topics: ['docker-compose'], description: null })).toBe('devops');
+    });
+
+    it('短關鍵字不誤命中含該字母序列的一般 topic（SC-002）', () => {
+      // 子字串比對時 'blockchain'.includes('ai') 為真 → 區塊鏈專案被 AI 最高優先序吃掉
+      expect(svc.classify({ topics: ['blockchain', 'solidity'], description: null })).toBeNull();
+      expect(svc.classify({ topics: ['domain-driven-design'], description: null })).toBeNull();
+      expect(svc.classify({ topics: ['training', 'email'], description: null })).toBeNull();
+      expect(svc.classify({ topics: ['drag-and-drop'], description: null })).toBeNull();
+    });
+
+    it('詞界接不到的黏著變體由種子集 extra 群涵蓋', () => {
+      expect(svc.classify({ topics: ['openai'], description: null })).toBe('ai');
+      expect(svc.classify({ topics: ['genai'], description: null })).toBe('ai');
+      expect(svc.classify({ topics: ['agents'], description: null })).toBe('ai');
+      expect(svc.classify({ topics: ['llms'], description: null })).toBe('ai');
+      expect(svc.classify({ topics: ['chatgpt'], description: null })).toBe('ai');
+      expect(svc.classify({ topics: ['reactjs'], description: null })).toBe('frontend-backend');
+      expect(svc.classify({ topics: ['sveltekit'], description: null })).toBe('frontend-backend');
+      expect(svc.classify({ topics: ['dockerfile'], description: null })).toBe('devops');
     });
 
     it('topics 非空但無命中 → 排除（不 fallback description）', () => {

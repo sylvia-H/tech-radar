@@ -78,8 +78,16 @@ export class GithubHttpService {
   /**
    * 帶認證的 GitHub API JSON 請求（core 或 search）。每次邏輯呼叫計數一次（重試不重複計）。
    * 失敗（重試耗盡）擲錯，訊息只含狀態碼、不含 URL/token。
+   *
+   * 計數在**送出前**累加：失敗的呼叫一樣吃掉限額，若只計成功數，SC-006 的用量觀測會在
+   * 最需要它的失敗場景下低估實際消耗。
    */
   async getJson<T>(url: string, kind: 'core' | 'search' = 'core'): Promise<T> {
+    if (kind === 'search') {
+      this.search += 1;
+    } else {
+      this.core += 1;
+    }
     const res = await this.requestWithRetry(
       url,
       {
@@ -92,11 +100,6 @@ export class GithubHttpService {
       },
       kind,
     );
-    if (kind === 'search') {
-      this.search += 1;
-    } else {
-      this.core += 1;
-    }
     this.noteRateLimit(res, kind);
     return (await res.json()) as T;
   }
@@ -165,7 +168,7 @@ export class GithubHttpService {
         return res;
       }
 
-      if (res.status === 429 || res.status >= 500) {
+      if (isThrottled(res) || res.status >= 500) {
         if (attempt < MAX_RETRIES) {
           const wait = this.retryAfterMs(res) ?? this.backoffMs(attempt);
           this.logger.warn(`GitHub 回應 HTTP ${res.status}，第 ${attempt}/${MAX_RETRIES} 次退避 ${wait}ms`);
@@ -176,16 +179,24 @@ export class GithubHttpService {
         throw new GithubHttpError(res.status);
       }
 
-      // 其餘 4xx（401/403/404/422…）：不重試，擲帶狀態碼的錯誤。
+      // 其餘 4xx（401/憑證型 403/404/422…）：不重試，擲帶狀態碼的錯誤。
       throw new GithubHttpError(res.status);
     }
     // 不可達（迴圈必定 return 或 throw）。
     throw new Error('GitHub 請求失敗：重試耗盡');
   }
 
-  /** 讀 `X-RateLimit-Remaining`，低於門檻則標記下次同類請求前退避。 */
+  /**
+   * 讀 `X-RateLimit-Remaining`，低於門檻則標記下次同類請求前退避。
+   * header 缺席時直接略過：`Number(null)` 為 0（不是 NaN），逕自轉數字會把「沒有這個
+   * header」誤判成「剩餘 0、逼近限額」，白白退避並印出假警告。
+   */
   private noteRateLimit(res: Response, kind: 'core' | 'search'): void {
-    const remaining = Number(res.headers.get('x-ratelimit-remaining'));
+    const header = res.headers.get('x-ratelimit-remaining');
+    if (header === null) {
+      return;
+    }
+    const remaining = Number(header);
     if (Number.isFinite(remaining) && remaining <= RATE_LIMIT_THRESHOLD[kind]) {
       this.low[kind] = true;
       this.logger.warn(`GitHub ${kind} rate-limit 剩餘 ${remaining}，逼近門檻`);
@@ -212,6 +223,24 @@ export class GithubHttpService {
   private delay(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
+}
+
+/**
+ * 此回應是否為「限流」而非「憑證／權限」問題（決定該不該退避重試）。
+ *
+ * GitHub 的 secondary rate limit 與限額耗盡都可能回 **403**（非只有 429），辨識特徵是
+ * 帶 `Retry-After` 或 `X-RateLimit-Remaining: 0`。少了這道判斷，`GET /repos` 批次一旦
+ * 觸發 secondary limit 就會整批不重試地失敗，還被 `shouldAlertRepoFailures` 依 403 誤報
+ * 成憑證問題。純憑證型 403（無這些 header）仍照舊直接擲錯、不重試。
+ */
+export function isThrottled(res: Response): boolean {
+  if (res.status === 429) {
+    return true;
+  }
+  if (res.status !== 403) {
+    return false;
+  }
+  return res.headers.has('retry-after') || res.headers.get('x-ratelimit-remaining') === '0';
 }
 
 /**
