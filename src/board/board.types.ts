@@ -82,6 +82,8 @@ export interface BoardRow {
   domain: Domain;
   weeklyStarsEstimate: number;
   starsThisWeek: number | null;
+  totalStars: number | null; // F3 決勝第 2 層（CandidateRepo 既有值轉遞，不新增外部呼叫）
+  language: string | null; // F3 寫入 BoardEntry.language 所需（CandidateRepo 既有值轉遞）
   sources: SourceTag[];
 }
 

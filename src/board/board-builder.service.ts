@@ -235,7 +235,8 @@ function finalizeCandidate(m: MergedRepo, domain: Domain): CandidateRepo {
 /**
  * 每領域穩定排序取 top 15（純函式，SC-005/FR-005）。
  * tie-break：`weeklyStarsEstimate desc, repoId asc` → 相同輸入必得相同順序、不受來源處理順序影響。
- * `boards` 恰含三領域（DOMAINS 順序）；不足 15 照實呈現、不硬湊。
+ * `boards` 恰含兩領域（DOMAINS 順序，F2 移除 DevOps 後）；不足 15 照實呈現、不硬湊。
+ * `totalStars`／`language` 為 `CandidateRepo` 既有值的轉遞（F3 決勝與快照所需），不改排序語意。
  */
 export function assembleBoards(candidates: readonly CandidateRepo[]): DomainBoard[] {
   return DOMAINS.map((domain) => {
@@ -251,6 +252,8 @@ export function assembleBoards(candidates: readonly CandidateRepo[]): DomainBoar
         domain,
         weeklyStarsEstimate: c.weeklyStarsEstimate,
         starsThisWeek: c.starsThisWeek,
+        totalStars: c.totalStars,
+        language: c.language,
         sources: c.sources,
       }));
     return { domain, entries };
