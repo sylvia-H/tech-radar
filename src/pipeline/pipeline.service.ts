@@ -1,21 +1,18 @@
-import { Injectable, Logger } from '@nestjs/common';
-import { BoardBuilderService } from '../board/board-builder.service';
-import { formatCurrentBoard } from '../board/board-log';
+import { Injectable } from '@nestjs/common';
+import { BoardDiffService } from '../diff/board-diff.service';
 
 /**
- * F2 編排：建置三領域當前榜並以結構化 log 印出（M1 觀測，research D8）。
+ * F3 編排：執行榜單段（節奏判定 → 建置兩領域榜 → 跨領域綜合 top 10 → 與上次快照 diff →
+ * 輸出變化 log →（交付成功後）寫回狀態）。判定與副作用皆封裝於 `BoardDiffService`；
+ * 本層只負責觸發並傳入當前時間（時間可注入，spec Assumptions）。
  *
- * 邊界（憲章 III/VI 不受影響）：**不** diff、**不**推播 Discord、**不**寫回 state/board.json。
- * 來源隔離容錯與告警於 BoardBuilderService 內處理（US4）；本層只負責觸發與輸出。
+ * 邊界（憲章 III/VI）：**不**推播 Discord（F7）、**不**生成簡介（F5）、**不**碰新聞（F4/F6）。
  */
 @Injectable()
 export class PipelineService {
-  private readonly logger = new Logger(PipelineService.name);
-
-  constructor(private readonly boardBuilder: BoardBuilderService) {}
+  constructor(private readonly boardDiff: BoardDiffService) {}
 
   async run(): Promise<void> {
-    const board = await this.boardBuilder.build();
-    this.logger.log('\n' + formatCurrentBoard(board));
+    await this.boardDiff.runBoardSegment(new Date());
   }
 }

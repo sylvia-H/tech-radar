@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { BoardModule } from '../board/board.module';
+import { DiffModule } from '../diff/diff.module';
 import { PipelineService } from './pipeline.service';
 
 @Module({
-  imports: [BoardModule],
+  imports: [DiffModule],
   providers: [PipelineService],
   exports: [PipelineService],
 })

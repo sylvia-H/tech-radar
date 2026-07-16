@@ -25,7 +25,7 @@ describe('StateStore.load', () => {
           fullName: 'owner/name',
           url: 'https://github.com/owner/name',
           language: 'TypeScript',
-          domain: 'frontend',
+          domain: 'frontend-backend',
           starsThisWeek: 5,
           rank: 2,
           firstSeenAt: '2026-07-01T00:00:00.000Z',
