@@ -2,6 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { BoardBuilderService } from '../board/board-builder.service';
 import { StateStore } from '../state/state.store';
 import { DiscordWebhookService } from '../discord/discord.webhook.service';
+import { bestEffortFailureAlert } from '../discord/best-effort-alert';
 import { pickPushBoard } from './push-board';
 import { diffBoard } from './board-diff';
 import { decideCadence } from './board-cadence';
@@ -42,7 +43,7 @@ export class BoardDiffService {
     this.logger.log(formatCadence(cadence));
     if (cadence.reason === 'clock-anomaly') {
       // 未來時間戳：告警但不中止（FR-019a），lastBoardPushAt 不因此變動。
-      await this.alert(CLOCK_ANOMALY_ALERT);
+      await bestEffortFailureAlert(this.discord, this.logger, CLOCK_ANOMALY_ALERT);
     }
     if (!cadence.due) {
       // 未到期：在 build() 之前早退，確保不抓取、不耗 GitHub API 配額（憲章 I）。
@@ -55,7 +56,7 @@ export class BoardDiffService {
 
     if (pushBoard.length === 0) {
       // 空榜＝上游全滅，屬異常而非「這週沒變化」：告警並中止，不 diff、不 commit（FR-025）。
-      await this.alert(EMPTY_BOARD_ALERT);
+      await bestEffortFailureAlert(this.discord, this.logger, EMPTY_BOARD_ALERT);
       return { status: 'aborted' };
     }
 
@@ -68,14 +69,5 @@ export class BoardDiffService {
     await this.stateStore.save(next);
 
     return { status: 'ok', diff };
-  }
-
-  /** best-effort 紅色告警；告警本身失敗只記 log、不擲錯（憲章 VII，比照 BoardBuilderService.alert）。 */
-  private async alert(summary: string): Promise<void> {
-    try {
-      await this.discord.postFailureAlert(summary);
-    } catch (err) {
-      this.logger.error('送出榜單告警失敗', err instanceof Error ? err.stack : String(err));
-    }
   }
 }

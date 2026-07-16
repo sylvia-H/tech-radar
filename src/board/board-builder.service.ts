@@ -5,6 +5,7 @@ import { GithubRepoService, REPO_SOURCE_ID, RepoFetchFailure } from '../sources/
 import { GithubSearchService } from '../sources/github-search.service';
 import { ClassifyService } from '../classify/classify.service';
 import { DiscordWebhookService } from '../discord/discord.webhook.service';
+import { bestEffortFailureAlert } from '../discord/best-effort-alert';
 import { weeklyStarsEstimate } from './weekly-stars';
 import {
   BoardRow,
@@ -126,13 +127,9 @@ export class BoardBuilderService {
     return repos;
   }
 
-  /** best-effort 發帶來源 id 的紅色告警；告警本身失敗只記 log，不中斷 pipeline（憲章 VII）。 */
+  /** best-effort 發帶來源 id 的紅色告警（共用包裝 bestEffortFailureAlert，憲章 VII）。 */
   private async alert(sourceId: string, detail: string): Promise<void> {
-    try {
-      await this.discord.postFailureAlert(`榜單來源失敗 [${sourceId}]：${detail}`);
-    } catch (err) {
-      this.logger.error(`送出來源告警失敗 [${sourceId}]`, err instanceof Error ? err.stack : String(err));
-    }
+    await bestEffortFailureAlert(this.discord, this.logger, `榜單來源失敗 [${sourceId}]：${detail}`);
   }
 }
 
