@@ -30,6 +30,8 @@ export function pickPushBoard(boards: DomainBoard[], prevIds: ReadonlySet<number
     }
   }
 
+  // 現行常數下 reserved ≤ 2 領域 × 2 = 4，故 remainingSlots ≥ 6；`Math.max(0, …)` 僅在日後
+  // 調高保底席次／增加領域致其為負時，擋掉 `slice(0, 負值)` 從尾端反向取的靜默錯誤。
   const remainingSlots = PUSH_BOARD_SIZE - reserved.length;
   const contenders = boards
     .flatMap((db) => db.entries)
