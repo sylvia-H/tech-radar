@@ -30,7 +30,7 @@ description: "Task list for 003-board-state-diff implementation"
 
 **Purpose**: 建立 F3 模組的型別基礎。**無新增相依**（plan Technical Context：F3 不引入任何 npm 套件）。
 
-- [ ] T001 建立 `src/diff/diff.types.ts`，定義 `PushBoardRow` / `PushBoard` / `ChangeKind` / `BoardChange` / `BoardDiff` / `CadenceDecision` / `BoardSegmentResult`，欄位依 [data-model.md](data-model.md) §2；`BoardDiff.changes` 採「單一陣列 + `kind` 標籤」而非三個具名陣列；`BoardSegmentResult` 為以 `status` 判別的聯集 `{ status: 'skipped' } | { status: 'aborted' } | { status: 'ok'; diff: BoardDiff }`（即 T009／T017／T021 所斷言的形狀，介面全文見 [contracts/board-diff.md](contracts/board-diff.md) §2）
+- [X] T001 建立 `src/diff/diff.types.ts`，定義 `PushBoardRow` / `PushBoard` / `ChangeKind` / `BoardChange` / `BoardDiff` / `CadenceDecision` / `BoardSegmentResult`，欄位依 [data-model.md](data-model.md) §2；`BoardDiff.changes` 採「單一陣列 + `kind` 標籤」而非三個具名陣列；`BoardSegmentResult` 為以 `status` 判別的聯集 `{ status: 'skipped' } | { status: 'aborted' } | { status: 'ok'; diff: BoardDiff }`（即 T009／T017／T021 所斷言的形狀，介面全文見 [contracts/board-diff.md](contracts/board-diff.md) §2）
 
 ---
 
@@ -40,10 +40,10 @@ description: "Task list for 003-board-state-diff implementation"
 
 **⚠️ CRITICAL**: 本階段未完成前，任何 User Story 都無法開始——US1 需讀 `state.board` 取 `prevIds`、US2 需讀 `lastBoardPushAt`、US3 需寫回；而 `state.schema.ts` 現為 F1 的 4-way 佔位（含 `devops`），與 F2 的 2-way `Domain` 對不起來，**一寫入即失敗**（research D6）。
 
-- [ ] T002 [P] 在 `src/state/state.schema.spec.ts` 補測（先寫、須紅）：含 `domain: "devops"` 的舊 board 條目 → **剔除該條目 + 記錄警告**、其餘條目照常載入、整份狀態不失效（FR-024）；根結構不合法（五欄位缺一 / `board` 非物件）→ **仍擲錯**（憲章 VI 壞檔不覆寫）
-- [ ] T003 修改 `src/state/state.schema.ts`：`domainSchema` 由 `['ai','devops','backend','frontend']` 對齊為 `['ai','frontend-backend']`（與 `src/board/board.types.ts` 的 `Domain` 一致）；`boardStateSchema.board` 改為**條目層寬鬆載入**（逐條 `safeParse`，不合法者剔除 + warn），根結構維持嚴格（research D6）。一併改掉 `domainSchema` 上方的過時註解「領域歸類（frontend/backend 分列）；enum 值於 F2 clarify 定案，F1 僅固定型別」——前後端已合併且 enum 於此兌現，留著會與新的 2-way 定義矛盾
-- [ ] T004 [P] 修改 `src/board/board.types.ts`：`BoardRow` 新增 `totalStars: number | null` 與 `language: string | null`（FR-004 決勝第 2 層與快照持久化所需；兩者皆為 `CandidateRepo` 既有值，**不新增任何外部呼叫**，research D1）
-- [ ] T005 修改 `src/board/board-builder.service.ts` 的 `assembleBoards()`：由 `CandidateRepo` 帶出 `totalStars` 與 `language` 至 `BoardRow`（**不得**變更既有的歸類、合併去重、領域內排序與統一尺——FR-002 禁止另訂換算公式）；同步更新 `src/board/board-builder.service.spec.ts` 既有斷言（依賴 T004）
+- [X] T002 [P] 在 `src/state/state.schema.spec.ts` 補測（先寫、須紅）：含 `domain: "devops"` 的舊 board 條目 → **剔除該條目 + 記錄警告**、其餘條目照常載入、整份狀態不失效（FR-024）；根結構不合法（五欄位缺一 / `board` 非物件）→ **仍擲錯**（憲章 VI 壞檔不覆寫）
+- [X] T003 修改 `src/state/state.schema.ts`：`domainSchema` 由 `['ai','devops','backend','frontend']` 對齊為 `['ai','frontend-backend']`（與 `src/board/board.types.ts` 的 `Domain` 一致）；`boardStateSchema.board` 改為**條目層寬鬆載入**（逐條 `safeParse`，不合法者剔除 + warn），根結構維持嚴格（research D6）。一併改掉 `domainSchema` 上方的過時註解「領域歸類（frontend/backend 分列）；enum 值於 F2 clarify 定案，F1 僅固定型別」——前後端已合併且 enum 於此兌現，留著會與新的 2-way 定義矛盾
+- [X] T004 [P] 修改 `src/board/board.types.ts`：`BoardRow` 新增 `totalStars: number | null` 與 `language: string | null`（FR-004 決勝第 2 層與快照持久化所需；兩者皆為 `CandidateRepo` 既有值，**不新增任何外部呼叫**，research D1）
+- [X] T005 修改 `src/board/board-builder.service.ts` 的 `assembleBoards()`：由 `CandidateRepo` 帶出 `totalStars` 與 `language` 至 `BoardRow`（**不得**變更既有的歸類、合併去重、領域內排序與統一尺——FR-002 禁止另訂換算公式）；同步更新 `src/board/board-builder.service.spec.ts` 既有斷言（依賴 T004）
 
 **Checkpoint**: 持久化層與上游欄位就緒——三個 User Story 可開始。
 
@@ -57,19 +57,19 @@ description: "Task list for 003-board-state-diff implementation"
 
 ### Tests for User Story 1 ⚠️ 先寫、確認紅
 
-- [ ] T006 [P] [US1] 建立 `src/diff/rank-compare.spec.ts`：四層全序（`weeklyStarsEstimate`↓ → `totalStars ?? 0`↓ → 新進者優先 → `repoId`↑）；**含前三層全平手、僅靠 `repoId` 分出高下**的案例；`totalStars` 為 `null` 時視為最低（FR-004）
-- [ ] T007 [P] [US1] 建立 `src/diff/push-board.spec.ts`：保底每領域 2 席（SC-005，候選充足＝每領域各 ≥2 筆）；某領域不足 2 筆時照實取用、空席由另一領域依**同一比較器**遞補；候選總數 <10 → 照實 `#1..#N` 不湊數；≤10 筆（SC-009）；**打亂輸入順序重跑 10 次名次序列一致**（SC-008，「相同輸入」＝候選與 `prevIds` 皆相同）；候選 0 筆 → 回傳 `[]`
-- [ ] T008 [P] [US1] 建立 `src/diff/board-diff.spec.ts`：三類互斥且正確（FR-007/008/009）；掉出 top 10 → 不在任何一類（FR-011/SC-007）；留榜且名次未變 → 不在任何一類（FR-012）；冷啟動 `prev` 空 → 全數新進、0 竄升 0 下降（FR-013/SC-003）；**純位移照實計為下降**（FR-010/US1 場景 6）；更名／轉移擁有者仍以 `repoId` 判同一（FR-006/US1 場景 10）；三類皆空 → `unchanged: true` 且 `topEntry` 為 `#1`（FR-014）；變化總數 ≤10（SC-004）；`needsIntro` 新進/竄升 `true`、下降 `false`（FR-016）；**跨領域邊界的 repo 其領域取本次**（FR-015）
-- [ ] T009 [P] [US1] 建立 `src/diff/board-diff.service.spec.ts`：**空榜 → 發告警 + 回 `{ status: 'aborted' }` + 不產出 diff、不擲錯、不中斷**（FR-025/SC-010）；告警送出失敗僅記 log、不擲錯（憲章 VII）
+- [X] T006 [P] [US1] 建立 `src/diff/rank-compare.spec.ts`：四層全序（`weeklyStarsEstimate`↓ → `totalStars ?? 0`↓ → 新進者優先 → `repoId`↑）；**含前三層全平手、僅靠 `repoId` 分出高下**的案例；`totalStars` 為 `null` 時視為最低（FR-004）
+- [X] T007 [P] [US1] 建立 `src/diff/push-board.spec.ts`：保底每領域 2 席（SC-005，候選充足＝每領域各 ≥2 筆）；某領域不足 2 筆時照實取用、空席由另一領域依**同一比較器**遞補；候選總數 <10 → 照實 `#1..#N` 不湊數；≤10 筆（SC-009）；**打亂輸入順序重跑 10 次名次序列一致**（SC-008，「相同輸入」＝候選與 `prevIds` 皆相同）；候選 0 筆 → 回傳 `[]`
+- [X] T008 [P] [US1] 建立 `src/diff/board-diff.spec.ts`：三類互斥且正確（FR-007/008/009）；掉出 top 10 → 不在任何一類（FR-011/SC-007）；留榜且名次未變 → 不在任何一類（FR-012）；冷啟動 `prev` 空 → 全數新進、0 竄升 0 下降（FR-013/SC-003）；**純位移照實計為下降**（FR-010/US1 場景 6）；更名／轉移擁有者仍以 `repoId` 判同一（FR-006/US1 場景 10）；三類皆空 → `unchanged: true` 且 `topEntry` 為 `#1`（FR-014）；變化總數 ≤10（SC-004）；`needsIntro` 新進/竄升 `true`、下降 `false`（FR-016）；**跨領域邊界的 repo 其領域取本次**（FR-015）
+- [X] T009 [P] [US1] 建立 `src/diff/board-diff.service.spec.ts`：**空榜 → 發告警 + 回 `{ status: 'aborted' }` + 不產出 diff、不擲錯、不中斷**（FR-025/SC-010）；告警送出失敗僅記 log、不擲錯（憲章 VII）
 
 ### Implementation for User Story 1
 
-- [ ] T010 [P] [US1] 建立 `src/diff/rank-compare.ts`：匯出 `compareForPushBoard(prevIds: ReadonlySet<number>)` 回傳比較器；第 4 層 `repoId` 保證**全序**（永不回傳 0）故排名不依賴 `Array.sort` 穩定性（FR-004、research D2）
-- [ ] T011 [US1] 建立 `src/diff/push-board.ts`：`pickPushBoard(boards, prevIds)` — 攤平兩領域候選 → 每領域保底 2 席 → 其餘席次跨領域競爭 → 合併排序指派 `rank 1..N`。**保底、競爭、指派名次全程只用 `compareForPushBoard` 這一把尺**（FR-003 明文禁止另引「熱度」等替代判準；沿用 F2 的兩層排序會在平手時產生兩套尺，research D2）（依賴 T010）
-- [ ] T012 [P] [US1] 建立 `src/diff/board-diff.ts`：`diffBoard(prev, pushBoard)` 與常數 `RANK_JUMP_THRESHOLD = 1`（兩方向對稱、單一常數可調，FR-010）；`changes` 依 `currentRank` 升序
-- [ ] T013 [P] [US1] 建立 `src/diff/diff-log.ts`：結構化輸出變化結果（綜合 top 10、三類變化含 `#舊 → #新`、或「榜單無變化 + 榜首一行摘要」），風格比照既有 `src/board/board-log.ts`（research D8）
-- [ ] T014 [US1] 建立 `src/diff/board-diff.service.ts`：薄編排——讀 `StateStore` 取 `prev` → `BoardBuilderService.build()` → `pickPushBoard` → **空榜即告警並中止**（FR-025）→ `diffBoard` → 輸出 log。告警走**注入 `DiscordWebhookService` 並呼叫 `postFailureAlert('榜單為空：上游來源全數失敗或候選全被過濾')`**，以私有 best-effort `alert()` 包裝（告警本身失敗只記 log、不擲錯），比照 `src/board/board-builder.service.ts` 既有的 `alert()`（research D4）。**不可**用 `src/discord/failure-alert.ts` 的 `tryPostFailureAlert`——那支吃 `INestApplicationContext` 且會寫 `.radar-alert-sent` marker，是 `main.cli.ts` 頂層 catch 專用。副作用只在本層；判定邏輯全在純函式（依賴 T011、T012、T013）
-- [ ] T015 [US1] 建立 `src/diff/diff.module.ts` 並註冊至 `src/app.module.ts`；修改 `src/pipeline/pipeline.service.ts` 改為呼叫 `BoardDiffService.runBoardSegment()`（暫不含節奏與寫回），更新其註解（現寫「建置三領域當前榜」為 F2 遺留且領域數已過時）
+- [X] T010 [P] [US1] 建立 `src/diff/rank-compare.ts`：匯出 `compareForPushBoard(prevIds: ReadonlySet<number>)` 回傳比較器；第 4 層 `repoId` 保證**全序**（永不回傳 0）故排名不依賴 `Array.sort` 穩定性（FR-004、research D2）
+- [X] T011 [US1] 建立 `src/diff/push-board.ts`：`pickPushBoard(boards, prevIds)` — 攤平兩領域候選 → 每領域保底 2 席 → 其餘席次跨領域競爭 → 合併排序指派 `rank 1..N`。**保底、競爭、指派名次全程只用 `compareForPushBoard` 這一把尺**（FR-003 明文禁止另引「熱度」等替代判準；沿用 F2 的兩層排序會在平手時產生兩套尺，research D2）（依賴 T010）
+- [X] T012 [P] [US1] 建立 `src/diff/board-diff.ts`：`diffBoard(prev, pushBoard)` 與常數 `RANK_JUMP_THRESHOLD = 1`（兩方向對稱、單一常數可調，FR-010）；`changes` 依 `currentRank` 升序
+- [X] T013 [P] [US1] 建立 `src/diff/diff-log.ts`：結構化輸出變化結果（綜合 top 10、三類變化含 `#舊 → #新`、或「榜單無變化 + 榜首一行摘要」），風格比照既有 `src/board/board-log.ts`（research D8）
+- [X] T014 [US1] 建立 `src/diff/board-diff.service.ts`：薄編排——讀 `StateStore` 取 `prev` → `BoardBuilderService.build()` → `pickPushBoard` → **空榜即告警並中止**（FR-025）→ `diffBoard` → 輸出 log。告警走**注入 `DiscordWebhookService` 並呼叫 `postFailureAlert('榜單為空：上游來源全數失敗或候選全被過濾')`**，以私有 best-effort `alert()` 包裝（告警本身失敗只記 log、不擲錯），比照 `src/board/board-builder.service.ts` 既有的 `alert()`（research D4）。**不可**用 `src/discord/failure-alert.ts` 的 `tryPostFailureAlert`——那支吃 `INestApplicationContext` 且會寫 `.radar-alert-sent` marker，是 `main.cli.ts` 頂層 catch 專用。副作用只在本層；判定邏輯全在純函式（依賴 T011、T012、T013）
+- [X] T015 [US1] 建立 `src/diff/diff.module.ts` 並註冊至 `src/app.module.ts`；修改 `src/pipeline/pipeline.service.ts` 改為呼叫 `BoardDiffService.runBoardSegment()`（暫不含節奏與寫回），更新其註解（現寫「建置三領域當前榜」為 F2 遺留且領域數已過時）
 
 **Checkpoint**: 變化偵測可獨立驗證——`npm test` 全綠且本機執行可看到三類變化 log。此時**尚未**有節奏 guard 與狀態寫回。
 
@@ -83,13 +83,13 @@ description: "Task list for 003-board-state-diff implementation"
 
 ### Tests for User Story 2 ⚠️ 先寫、確認紅
 
-- [ ] T016 [P] [US2] 建立 `src/diff/board-cadence.spec.ts`：<162h → `{ due: false, reason: 'not-due' }`（FR-018/SC-002）；**恰好 162h → 執行**（`≥` 邊界，SC-002 明定「已滿 162 小時或更久」）；**163h（未滿七天整）→ 執行**（6h 寬限生效，US2 場景 5）；`null` → `{ due: true, reason: 'no-timestamp' }`（FR-019）；**晚於當前時間 → `{ due: true, reason: 'clock-anomaly' }`**（FR-019a/US2 場景 6）；`now` 一律由參數注入
-- [ ] T017 [P] [US2] 在 `src/diff/board-diff.service.spec.ts` 補測：未到期 → 回 `{ status: 'skipped' }`、**不進行任何榜單抓取**（mock `BoardBuilderService.build` 須零呼叫，FR-018＋憲章 I 不消耗 API 配額）、狀態不變；`clock-anomaly` → **發紅色告警後照常執行**榜單段（FR-019a）
+- [X] T016 [P] [US2] 建立 `src/diff/board-cadence.spec.ts`：<162h → `{ due: false, reason: 'not-due' }`（FR-018/SC-002）；**恰好 162h → 執行**（`≥` 邊界，SC-002 明定「已滿 162 小時或更久」）；**163h（未滿七天整）→ 執行**（6h 寬限生效，US2 場景 5）；`null` → `{ due: true, reason: 'no-timestamp' }`（FR-019）；**晚於當前時間 → `{ due: true, reason: 'clock-anomaly' }`**（FR-019a/US2 場景 6）；`now` 一律由參數注入
+- [X] T017 [P] [US2] 在 `src/diff/board-diff.service.spec.ts` 補測：未到期 → 回 `{ status: 'skipped' }`、**不進行任何榜單抓取**（mock `BoardBuilderService.build` 須零呼叫，FR-018＋憲章 I 不消耗 API 配額）、狀態不變；`clock-anomaly` → **發紅色告警後照常執行**榜單段（FR-019a）
 
 ### Implementation for User Story 2
 
-- [ ] T018 [P] [US2] 建立 `src/diff/board-cadence.ts`：匯出常數 `BOARD_PUSH_INTERVAL_HOURS = 162` 與純函式 `decideCadence(lastBoardPushAt, now)`；判定順序為 `null` → 未來時間 → `>= 162h` → 否則未到期（research D3）。回傳 `reason` 而非裸 boolean——`clock-anomaly` 與 `due` 都要執行但前者**額外需告警**，回 boolean 會逼編排層重算一次
-- [ ] T019 [US2] 修改 `src/diff/board-diff.service.ts`：`runBoardSegment(now)` 開頭加節奏 guard——未到期即早退（**在 `build()` 之前**，確保不抓取、不耗配額）；`reason === 'clock-anomaly'` 時經 T014 同一個私有 `alert()` 發紅色告警後續行（FR-019a 明定與 FR-025 為同一種告警——本專案不區分嚴重度）（依賴 T018）
+- [X] T018 [P] [US2] 建立 `src/diff/board-cadence.ts`：匯出常數 `BOARD_PUSH_INTERVAL_HOURS = 162` 與純函式 `decideCadence(lastBoardPushAt, now)`；判定順序為 `null` → 未來時間 → `>= 162h` → 否則未到期（research D3）。回傳 `reason` 而非裸 boolean——`clock-anomaly` 與 `due` 都要執行但前者**額外需告警**，回 boolean 會逼編排層重算一次
+- [X] T019 [US2] 修改 `src/diff/board-diff.service.ts`：`runBoardSegment(now)` 開頭加節奏 guard——未到期即早退（**在 `build()` 之前**，確保不抓取、不耗配額）；`reason === 'clock-anomaly'` 時經 T014 同一個私有 `alert()` 發紅色告警後續行（FR-019a 明定與 FR-025 為同一種告警——本專案不區分嚴重度）（依賴 T018）
 
 **Checkpoint**: US1 + US2 皆可獨立運作——未到期時整段跳過且無任何 API 呼叫。此時**尚未**有狀態寫回。
 
@@ -103,13 +103,13 @@ description: "Task list for 003-board-state-diff implementation"
 
 ### Tests for User Story 3 ⚠️ 先寫、確認紅
 
-- [ ] T020 [P] [US3] 建立 `src/diff/board-commit.spec.ts`：`board` 由 `pushBoard` 重建且 **≤10 筆**、**不含追蹤深度 30 筆**（FR-005/SC-009）；`rank` 存的是**綜合**名次；`starsThisWeek` 欄位存入的是 **`weeklyStarsEstimate`**（統一尺，見 [contracts/board-state.md](contracts/board-state.md) §3）；`lastBoardPushAt` 與 `board` **同一次回傳**（FR-021 禁止半套）；`intros` / `seenNews` / `lastNewsPushAt` **原樣帶回**、掉出 top 10 者的簡介快取**不清除**（FR-023/SC-007）；`firstSeenAt` 既有成員沿用 `prev`、新進者用 `pushedAt`、掉出重回者重設（research D7）
-- [ ] T021 [P] [US3] 在 `src/diff/board-diff.service.spec.ts` 補測：交付成功 → `commitBoardPush` + `StateStore.save()` 各呼叫一次（FR-020）；**交付失敗 → `save()` 零呼叫、狀態不變**（SC-006）；**空榜中止 → `save()` 零呼叫**（SC-010）；未到期跳過 → `save()` 零呼叫（US2 場景 1）
+- [X] T020 [P] [US3] 建立 `src/diff/board-commit.spec.ts`：`board` 由 `pushBoard` 重建且 **≤10 筆**、**不含追蹤深度 30 筆**（FR-005/SC-009）；`rank` 存的是**綜合**名次；`starsThisWeek` 欄位存入的是 **`weeklyStarsEstimate`**（統一尺，見 [contracts/board-state.md](contracts/board-state.md) §3）；`lastBoardPushAt` 與 `board` **同一次回傳**（FR-021 禁止半套）；`intros` / `seenNews` / `lastNewsPushAt` **原樣帶回**、掉出 top 10 者的簡介快取**不清除**（FR-023/SC-007）；`firstSeenAt` 既有成員沿用 `prev`、新進者用 `pushedAt`、掉出重回者重設（research D7）
+- [X] T021 [P] [US3] 在 `src/diff/board-diff.service.spec.ts` 補測：交付成功 → `commitBoardPush` + `StateStore.save()` 各呼叫一次（FR-020）；**交付失敗 → `save()` 零呼叫、狀態不變**（SC-006）；**空榜中止 → `save()` 零呼叫**（SC-010）；未到期跳過 → `save()` 零呼叫（US2 場景 1）
 
 ### Implementation for User Story 3
 
-- [ ] T022 [P] [US3] 建立 `src/diff/board-commit.ts`：純函式 `commitBoardPush(state, pushBoard, pushedAt): BoardState`，**不含 I/O**。收斂為**單一提交點**使 FR-021「禁止半套」成為型別層面的保證——一次回傳完整新狀態，呼叫端無法只寫一半（research D5）
-- [ ] T023 [US3] 修改 `src/diff/board-diff.service.ts`：在**變化結果成功輸出到 log 之後**（即 F3 階段的「交付成功」判準，spec Assumptions）呼叫 `commitBoardPush` 並經 `StateStore.save()` 落檔；任一步擲錯即不 commit。**F7 接上 Discord 後只需把觸發點由「log 成功」換成「推播回報成功」，純函式與其測試不動**（依賴 T022）
+- [X] T022 [P] [US3] 建立 `src/diff/board-commit.ts`：純函式 `commitBoardPush(state, pushBoard, pushedAt): BoardState`，**不含 I/O**。收斂為**單一提交點**使 FR-021「禁止半套」成為型別層面的保證——一次回傳完整新狀態，呼叫端無法只寫一半（research D5）
+- [X] T023 [US3] 修改 `src/diff/board-diff.service.ts`：在**變化結果成功輸出到 log 之後**（即 F3 階段的「交付成功」判準，spec Assumptions）呼叫 `commitBoardPush` 並經 `StateStore.save()` 落檔；任一步擲錯即不 commit。**F7 接上 Discord 後只需把觸發點由「log 成功」換成「推播回報成功」，純函式與其測試不動**（依賴 T022）
 
 **Checkpoint**: 三個 Story 全部可獨立運作；連跑兩次的端到端行為成立。
 
@@ -117,10 +117,10 @@ description: "Task list for 003-board-state-diff implementation"
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T024 [P] 修正 `src/board/board-builder.service.ts` 中 `assembleBoards()` 的過時註解「`boards` 恰含三領域」→ 兩領域（F2 移除 DevOps 後的遺留，非 F3 行為變更）
-- [ ] T025 執行 `npm run build` 與 `npm test`：全綠，且覆蓋 [data-model.md](data-model.md) §5 的 25 條規則→測試對映
-- [ ] T026 依 [quickstart.md](quickstart.md) 執行 M2 本機驗收：§2 冷啟動（10 筆新進、狀態寫入 ≤10 筆）→ §3 手動回撥時間戳驗「無變化」（SC-001）→ §4 未到期整段跳過且無 `api: core=…` 行（SC-002）→ §5 空榜時狀態雜湊不變（SC-006/SC-010）→ §6 `git checkout state/board.json` 還原，**不把驗證產生的快照入庫**
-- [ ] T027 [P] 更新 `.specify/memory/constitution.md` 的 Sync Impact Report：將 Follow-up TODO「F3：`BoardEntry.domain` 由 4-way 佔位對齊為 2-way、移除 `devops`」標記為**已完成**（由 T003 兌現）
+- [X] T024 [P] 修正 `src/board/board-builder.service.ts` 中 `assembleBoards()` 的過時註解「`boards` 恰含三領域」→ 兩領域（F2 移除 DevOps 後的遺留，非 F3 行為變更）
+- [X] T025 執行 `npm run build` 與 `npm test`：全綠，且覆蓋 [data-model.md](data-model.md) §5 的 25 條規則→測試對映
+- [X] T026 依 [quickstart.md](quickstart.md) 執行 M2 本機驗收：§2 冷啟動（10 筆新進、狀態寫入 ≤10 筆）→ §3 手動回撥時間戳驗「無變化」（SC-001）→ §4 未到期整段跳過且無 `api: core=…` 行（SC-002）→ §5 空榜時狀態雜湊不變（SC-006/SC-010）→ §6 `git checkout state/board.json` 還原，**不把驗證產生的快照入庫**
+- [X] T027 [P] 更新 `.specify/memory/constitution.md` 的 Sync Impact Report：將 Follow-up TODO「F3：`BoardEntry.domain` 由 4-way 佔位對齊為 2-way、移除 `devops`」標記為**已完成**（由 T003 兌現）
 
 ---
 

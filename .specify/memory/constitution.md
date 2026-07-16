@@ -55,7 +55,8 @@ Templates requiring updates:
 Follow-up TODOs:
   - F3 (003-board-state-diff)：`state.schema.ts` 之 `BoardEntry.domain` 由 4-way 佔位
     （ai|devops|backend|frontend）對齊為 2-way（ai|frontend-backend），一併移除 devops。
-    （承 1.2.0，仍未完成——F3 spec FR-024 已涵蓋。）
+    ✅ 已完成（2026-07-16，F3 實作 T003 兌現 FR-024；`domainSchema` 已對齊、`board` 改條目層
+    寬鬆載入，舊 devops 條目剔除 + warn 而不使整份狀態失效）。
   - F4 (004-news-sources)：新聞 domain 分類法「是否比照榜單合併前後端」之待定項仍有效，但
     **不得**因榜單移除 DevOps 而連帶移除新聞的 devops（見 1.2.0 Scope note；dev-guide §11.2 F4）。
 -->
