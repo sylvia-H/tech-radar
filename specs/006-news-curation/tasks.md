@@ -120,12 +120,12 @@ digest 且呼叫 0 次。全程 mock、不連網。
 
 ### Tests for User Story 3 ⚠️（對抗性違規回應）
 
-- [ ] T020 [US3] 護欄對抗性測試（截總數／超長收斂）於 [src/curation/curation-validate.spec.ts](src/curation/curation-validate.spec.ts)：mock 7 則 → 依重要性序截前 6；標題 60 字/內容 400 字 → 收斂至 ≤50/≤300（字以 code point 計）（FR-008、SC-002/003）
-- [ ] T021 [US3] 護欄對抗性測試（幻覺剔除／配額夾制）於 [src/curation/curation-validate.spec.ts](src/curation/curation-validate.spec.ts)：越界/無法對應 `ref` → 剔除；非 AI 3 則 → 依領域優先序夾至 ≤2；夾制後不足 6 → 照實輸出較少則數、**不從未改寫候選遞補**（FR-009/010、SC-003/005、SC-002）
+- [X] T020 [US3] 護欄對抗性測試（截總數／超長收斂）於 [src/curation/curation-validate.spec.ts](src/curation/curation-validate.spec.ts)：mock 7 則 → 依重要性序截前 6；標題 60 字/內容 400 字 → 收斂至 ≤50/≤300（字以 code point 計）（FR-008、SC-002/003）
+- [X] T021 [US3] 護欄對抗性測試（幻覺剔除／配額夾制）於 [src/curation/curation-validate.spec.ts](src/curation/curation-validate.spec.ts)：越界/無法對應 `ref` → 剔除；非 AI 3 則 → 依領域優先序夾至 ≤2；夾制後不足 6 → 照實輸出較少則數、**不從未改寫候選遞補**（FR-009/010、SC-003/005、SC-002）
 
 ### Implementation for User Story 3
 
-- [ ] T022 [US3] 依 T020/T021 若發現缺口，於 [src/curation/curation-validate.ts](src/curation/curation-validate.ts) 補強護欄邊界（如空 picks、全幻覺、單一 `ref` 多次交錯重複）使管線在對抗性輸入下恆合規；若 US1 的 `validateCuration` 已全數涵蓋則僅補測試、不改實作（FR-008/009/010）
+- [X] T022 [US3] 依 T020/T021 若發現缺口，於 [src/curation/curation-validate.ts](src/curation/curation-validate.ts) 補強護欄邊界（如空 picks、全幻覺、單一 `ref` 多次交錯重複）使管線在對抗性輸入下恆合規；若 US1 的 `validateCuration` 已全數涵蓋則僅補測試、不改實作（FR-008/009/010）
 
 **Checkpoint**：US1–US3 皆可獨立驗證——對任意（含違規）LLM 回應，外流精選集恆合規。
 
