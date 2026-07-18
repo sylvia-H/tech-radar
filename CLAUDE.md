@@ -118,9 +118,12 @@ tech-radar 是一個**排程型、純自用、全免費、零維運**的每日�
 - **多行訊息**用 Bash 工具搭配 POSIX heredoc 餵給 `git commit -F -`；勿在 Bash 工具用 PowerShell
   here-string `@'…'@`。單行用 `-m`。不使用 `--no-verify`、不跳過 hook——hook 失敗修根因。
 - **預設只在使用者要求時才 commit**；且開發期一律在 Feature branch 上進行，**不在 `develop` 直接
-  commit**。秘密永不入庫（硬規則 7）。
-- `/speckit-implement` 期間可依 tasks.md 的內聚主題**分段 commit**（讓歷史能還原開發順序），每個
-  commit 標 Feature scope、type 依該段主要性質；同段的 `tasks.md` 勾選併入該段 commit。
+  commit**。秘密永不入庫（硬規則 7）。**例外**：使用者呼叫 `/speckit-implement` 本身即視為對分段
+  commit 的既有授權，執行期間 MUST 依下一條規則主動分段 commit，不需在過程中再次詢問是否要 commit。
+- `/speckit-implement` 執行期間 MUST 依 tasks.md 的 Phase／User Story 分段 commit（讓歷史能還原
+  開發順序）：每完成一個 Phase 或一個 User Story 的實作＋測試即建立一個 commit，標 Feature scope、
+  type 依該段主要性質；同段的 `tasks.md` 勾選併入該段 commit。全部任務跑完後不再另外彙總，也不需
+  事後用 `/commit-split` 補分類。
 
 ## SDD 流程與分支
 
