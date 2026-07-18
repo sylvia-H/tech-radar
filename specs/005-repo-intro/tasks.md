@@ -29,8 +29,8 @@ description: "Task list for F5 — LLM 封裝與 repo 250 字簡介"
 
 **Purpose**：安裝新相依、確認基線可建置。
 
-- [ ] T001 安裝 `@google/genai` 相依：於 repo 根執行 `npm install @google/genai`（憲章技術釘死清單內；更新 package.json / package-lock.json）
-- [ ] T002 確認基線：執行 `npm run build`（tsc strict 零 error）與 `npm test`（現有全綠），確保在既有基礎上疊加
+- [X] T001 安裝 `@google/genai` 相依：於 repo 根執行 `npm install @google/genai`（憲章技術釘死清單內；更新 package.json / package-lock.json）
+- [X] T002 確認基線：執行 `npm run build`（tsc strict 零 error）與 `npm test`（現有全綠），確保在既有基礎上疊加
 
 ---
 
@@ -40,8 +40,8 @@ description: "Task list for F5 — LLM 封裝與 repo 250 字簡介"
 
 **⚠️ CRITICAL**：本階段完成前，任何 User Story 皆無法動工。
 
-- [ ] T003 [P] 定義 LLM 側型別與常數於 [src/llm/llm.types.ts](src/llm/llm.types.ts)：`LlmError`（`name: 'LlmError'`、`reason: 'exhausted' | 'empty' | 'error'`）與具名常數 `GEMINI_MODEL = 'gemini-2.5-flash'`、`LLM_MAX_RETRIES = 4`、`LLM_BACKOFF_BASE_MS = 1000`、`LLM_MAX_BACKOFF_MS = 8000`（contracts/llm-service.md、research D5/D6）
-- [ ] T004 [P] 定義簡介側型別與常數於 [src/intro/intro.types.ts](src/intro/intro.types.ts)：`IntroInput`（`repoId / fullName / description / language / topics / starsThisWeek`）、`IntroResult` discriminated union（`cached | generated | degraded`）、常數 `MAX_INTRO_CHARS = 250`、`MAX_README_CHARS = 6000`、`MIN_README_CHARS = 200`（data-model §1/§2、contracts/intro-service.md）
+- [X] T003 [P] 定義 LLM 側型別與常數於 [src/llm/llm.types.ts](src/llm/llm.types.ts)：`LlmError`（`name: 'LlmError'`、`reason: 'exhausted' | 'empty' | 'error'`）與具名常數 `GEMINI_MODEL = 'gemini-2.5-flash'`、`LLM_MAX_RETRIES = 4`、`LLM_BACKOFF_BASE_MS = 1000`、`LLM_MAX_BACKOFF_MS = 8000`（contracts/llm-service.md、research D5/D6）
+- [X] T004 [P] 定義簡介側型別與常數於 [src/intro/intro.types.ts](src/intro/intro.types.ts)：`IntroInput`（`repoId / fullName / description / language / topics / starsThisWeek`）、`IntroResult` discriminated union（`cached | generated | degraded`）、常數 `MAX_INTRO_CHARS = 250`、`MAX_README_CHARS = 6000`、`MIN_README_CHARS = 200`（data-model §1/§2、contracts/intro-service.md）
 
 **Checkpoint**：型別契約就緒——各 User Story 可開始。
 
@@ -55,22 +55,22 @@ description: "Task list for F5 — LLM 封裝與 repo 250 字簡介"
 
 ### Tests for User Story 1 ⚠️（先寫、先失敗）
 
-- [ ] T005 [P] [US1] `fetchReadme` 測試於 [src/github/github-readme.spec.ts](src/github/github-readme.spec.ts)：mock `GithubHttpService.getJson` 回 `{ content: base64(md), encoding: 'base64' }` → 斷言解碼正確（contracts/github-readme.md 測試契約）
-- [ ] T006 [P] [US1] `stripMarkdownNoise` 測試於 [src/intro/markdown-noise.spec.ts](src/intro/markdown-noise.spec.ts)：斷言去除 HTML 註解／標籤、badge 與圖片 `![](...)`、連結收斂為顯示文字、程式碼圍欄、收斂多餘空白；保留標題與內文（research D10、FR-003）
-- [ ] T007 [P] [US1] `clampTo250` / `countCodePoints` 測試於 [src/intro/intro-length.spec.ts](src/intro/intro-length.spec.ts)：以 code point 計數（surrogate pair/emoji 正確）；>250 於自然邊界（句號/問號/驚嘆號/換行）截斷加「…」，無邊界硬截 249+「…」（research D4、FR-006、SC-002）
-- [ ] T008 [US1] IntroService 生成路徑測試於 [src/intro/intro.service.spec.ts](src/intro/intro.service.spec.ts)：快取未命中 + README 可取，mock LlmService/fetchReadme/`now` → 斷言回 `generated`、`intro` ≤250、`state.intros[key] = { intro, introAt }` 已寫入（contracts/intro-service.md、SC-002/FR-004）
+- [X] T005 [P] [US1] `fetchReadme` 測試於 [src/github/github-readme.spec.ts](src/github/github-readme.spec.ts)：mock `GithubHttpService.getJson` 回 `{ content: base64(md), encoding: 'base64' }` → 斷言解碼正確（contracts/github-readme.md 測試契約）
+- [X] T006 [P] [US1] `stripMarkdownNoise` 測試於 [src/intro/markdown-noise.spec.ts](src/intro/markdown-noise.spec.ts)：斷言去除 HTML 註解／標籤、badge 與圖片 `![](...)`、連結收斂為顯示文字、程式碼圍欄、收斂多餘空白；保留標題與內文（research D10、FR-003）
+- [X] T007 [P] [US1] `clampTo250` / `countCodePoints` 測試於 [src/intro/intro-length.spec.ts](src/intro/intro-length.spec.ts)：以 code point 計數（surrogate pair/emoji 正確）；>250 於自然邊界（句號/問號/驚嘆號/換行）截斷加「…」，無邊界硬截 249+「…」（research D4、FR-006、SC-002）
+- [X] T008 [US1] IntroService 生成路徑測試於 [src/intro/intro.service.spec.ts](src/intro/intro.service.spec.ts)：快取未命中 + README 可取，mock LlmService/fetchReadme/`now` → 斷言回 `generated`、`intro` ≤250、`state.intros[key] = { intro, introAt }` 已寫入（contracts/intro-service.md、SC-002/FR-004）
 
 ### Implementation for User Story 1
 
-- [ ] T009 [P] [US1] 實作 `fetchReadme(http, owner, name)` 於 [src/github/github-readme.ts](src/github/github-readme.ts)：`getJson<ReadmeEnvelope>('.../repos/{owner}/{name}/readme')` → `Buffer.from(content,'base64').toString('utf-8')`；404／其他 `GithubHttpError`／網路錯誤／`encoding !== 'base64'` 一律 catch 回 `''`（FR-010、research D1）
-- [ ] T010 [P] [US1] 實作純函式 `stripMarkdownNoise(readme)` 於 [src/intro/markdown-noise.ts](src/intro/markdown-noise.ts)：正則管線移除/收斂 HTML 註解、HTML 標籤、圖片/badge、連結→顯示文字、程式碼圍欄、多餘空白（research D10）
-- [ ] T011 [P] [US1] 實作純函式 `countCodePoints` 與 `clampTo250` 於 [src/intro/intro-length.ts](src/intro/intro-length.ts)：`[...str].length` 計數、超長截斷收斂加省略號、不重呼叫 LLM（research D4、FR-006）
-- [ ] T012 [P] [US1] 實作純函式 `introPrompt(input, material)` 於 [src/intro/intro-prompt.ts](src/intro/intro-prompt.ts)：組出「繁體中文、≤250 字、結構為解決什麼→特色→適合誰、只依素材、不杜撰數字/名次/連結」的 prompt；事實數據（starsThisWeek/fullName）僅作語境不要求 LLM 產生（FR-007、contracts/intro-service.md 防幻覺契約）
-- [ ] T013 [US1] 實作 `buildMaterial(input, readme)` 之 **README 分支** 於 [src/intro/intro-material.ts](src/intro/intro-material.ts)：`stripMarkdownNoise` 後 code points ≥ `MIN_README_CHARS` → `{ text: 截斷至 MAX_README_CHARS, source: 'readme', sparse: false }`（依賴 T010；fallback 分支於 US3 補上，FR-003）
-- [ ] T014 [US1] 實作 `LlmService.generate(prompt)` **happy-path** 於 [src/llm/llm.service.ts](src/llm/llm.service.ts)：`@Injectable`、以 `ConfigService.get('GEMINI_API_KEY')` 建 `new GoogleGenAI(...)`、`generateContent({ model: GEMINI_MODEL, contents: prompt })` 取 `response.text`（trim）；空 prompt／空回應 → 擲 `LlmError('empty')`；不記錄 prompt/回應全文（依賴 T003；退避重試於 US4 補上，contracts/llm-service.md、FR-013）
-- [ ] T015 [US1] 建立 `LlmModule` 於 [src/llm/llm.module.ts](src/llm/llm.module.ts)：provide 並 export `LlmService`（ConfigModule 為全域，直接注入 ConfigService）（依賴 T014、FR-011）
-- [ ] T016 [US1] 實作 `IntroService.ensureIntro(input, state, now?)` **生成路徑** 於 [src/intro/intro.service.ts](src/intro/intro.service.ts)：拆 `fullName` 取 owner/name → `fetchReadme` → `buildMaterial` → `introPrompt` → `llm.generate` → `clampTo250` → 就地寫 `state.intros[String(repoId)] = { intro, introAt: now().toISOString() }` → 回 `{ status: 'generated', ... }`；**不呼叫 StateStore.save()**（依賴 T009–T014、research D9、FR-004）
-- [ ] T017 [US1] 建立 `IntroModule` 於 [src/intro/intro.module.ts](src/intro/intro.module.ts)（imports `LlmModule`、provide `GithubHttpService` 與 `IntroService`）並於 [src/app.module.ts](src/app.module.ts) 註冊 `IntroModule`（依賴 T015、T016）
+- [X] T009 [P] [US1] 實作 `fetchReadme(http, owner, name)` 於 [src/github/github-readme.ts](src/github/github-readme.ts)：`getJson<ReadmeEnvelope>('.../repos/{owner}/{name}/readme')` → `Buffer.from(content,'base64').toString('utf-8')`；404／其他 `GithubHttpError`／網路錯誤／`encoding !== 'base64'` 一律 catch 回 `''`（FR-010、research D1）
+- [X] T010 [P] [US1] 實作純函式 `stripMarkdownNoise(readme)` 於 [src/intro/markdown-noise.ts](src/intro/markdown-noise.ts)：正則管線移除/收斂 HTML 註解、HTML 標籤、圖片/badge、連結→顯示文字、程式碼圍欄、多餘空白（research D10）
+- [X] T011 [P] [US1] 實作純函式 `countCodePoints` 與 `clampTo250` 於 [src/intro/intro-length.ts](src/intro/intro-length.ts)：`[...str].length` 計數、超長截斷收斂加省略號、不重呼叫 LLM（research D4、FR-006）
+- [X] T012 [P] [US1] 實作純函式 `introPrompt(input, material)` 於 [src/intro/intro-prompt.ts](src/intro/intro-prompt.ts)：組出「繁體中文、≤250 字、結構為解決什麼→特色→適合誰、只依素材、不杜撰數字/名次/連結」的 prompt；事實數據（starsThisWeek/fullName）僅作語境不要求 LLM 產生（FR-007、contracts/intro-service.md 防幻覺契約）
+- [X] T013 [US1] 實作 `buildMaterial(input, readme)` 之 **README 分支** 於 [src/intro/intro-material.ts](src/intro/intro-material.ts)：`stripMarkdownNoise` 後 code points ≥ `MIN_README_CHARS` → `{ text: 截斷至 MAX_README_CHARS, source: 'readme', sparse: false }`（依賴 T010；fallback 分支於 US3 補上，FR-003）
+- [X] T014 [US1] 實作 `LlmService.generate(prompt)` **happy-path** 於 [src/llm/llm.service.ts](src/llm/llm.service.ts)：`@Injectable`、以 `ConfigService.get('GEMINI_API_KEY')` 建 `new GoogleGenAI(...)`、`generateContent({ model: GEMINI_MODEL, contents: prompt })` 取 `response.text`（trim）；空 prompt／空回應 → 擲 `LlmError('empty')`；不記錄 prompt/回應全文（依賴 T003；退避重試於 US4 補上，contracts/llm-service.md、FR-013）
+- [X] T015 [US1] 建立 `LlmModule` 於 [src/llm/llm.module.ts](src/llm/llm.module.ts)：provide 並 export `LlmService`（ConfigModule 為全域，直接注入 ConfigService）（依賴 T014、FR-011）
+- [X] T016 [US1] 實作 `IntroService.ensureIntro(input, state, now?)` **生成路徑** 於 [src/intro/intro.service.ts](src/intro/intro.service.ts)：拆 `fullName` 取 owner/name → `fetchReadme` → `buildMaterial` → `introPrompt` → `llm.generate` → `clampTo250` → 就地寫 `state.intros[String(repoId)] = { intro, introAt: now().toISOString() }` → 回 `{ status: 'generated', ... }`；**不呼叫 StateStore.save()**（依賴 T009–T014、research D9、FR-004）
+- [X] T017 [US1] 建立 `IntroModule` 於 [src/intro/intro.module.ts](src/intro/intro.module.ts)（imports `LlmModule`、provide `GithubHttpService` 與 `IntroService`）並於 [src/app.module.ts](src/app.module.ts) 註冊 `IntroModule`（依賴 T015、T016）
 
 **Checkpoint**：US1 可獨立驗證——給定未快取 repo 即得可貼卡片的 ≤250 繁中簡介並寫入 state。
 
@@ -84,11 +84,11 @@ description: "Task list for F5 — LLM 封裝與 repo 250 字簡介"
 
 ### Tests for User Story 2 ⚠️
 
-- [ ] T018 [US2] 於 [src/intro/intro.service.spec.ts](src/intro/intro.service.spec.ts) 新增快取命中測試：預置 `state.intros[key]` → 回 `cached`、**斷言 `llm.generate` 與 `fetchReadme` 呼叫次數 = 0**（SC-001/FR-002）；掉出後重進榜仍 `cached`、0 次重生成（SC-006/FR-005）；`intro === ''` 視為未命中並重新生成（Edge Case）
+- [X] T018 [US2] 於 [src/intro/intro.service.spec.ts](src/intro/intro.service.spec.ts) 新增快取命中測試：預置 `state.intros[key]` → 回 `cached`、**斷言 `llm.generate` 與 `fetchReadme` 呼叫次數 = 0**（SC-001/FR-002）；掉出後重進榜仍 `cached`、0 次重生成（SC-006/FR-005）；`intro === ''` 視為未命中並重新生成（Edge Case）
 
 ### Implementation for User Story 2
 
-- [ ] T019 [US2] 於 [src/intro/intro.service.ts](src/intro/intro.service.ts) `ensureIntro` 最前端加入快取短路守衛：`state.intros[String(input.repoId)]?.intro` 非空 → 立即回 `{ status: 'cached', intro }`，在任何 README/LLM 呼叫之前（FR-002、依賴 T016）
+- [X] T019 [US2] 於 [src/intro/intro.service.ts](src/intro/intro.service.ts) `ensureIntro` 最前端加入快取短路守衛：`state.intros[String(input.repoId)]?.intro` 非空 → 立即回 `{ status: 'cached', intro }`，在任何 README/LLM 呼叫之前（FR-002、依賴 T016）
 
 **Checkpoint**：US1＋US2 皆可獨立運作——未命中生成、命中零呼叫。
 
@@ -102,13 +102,13 @@ description: "Task list for F5 — LLM 封裝與 repo 250 字簡介"
 
 ### Tests for User Story 3 ⚠️
 
-- [ ] T020 [P] [US3] `buildMaterial` fallback/sparse 測試於 [src/intro/intro-material.spec.ts](src/intro/intro-material.spec.ts)：README 空／去雜訊後 <200 → `source='fallback'`、`text` 由 description+topics 組成；description 與 topics 近乎空 → `sparse=true`（FR-008、US3、research D3）
-- [ ] T021 [US3] 於 [src/intro/intro.service.spec.ts](src/intro/intro.service.spec.ts) 新增退回路徑測試：README 取不到／極短 → 仍回 `generated`、`intro` ≤250 繁中（US3、SC-002）
+- [X] T020 [P] [US3] `buildMaterial` fallback/sparse 測試於 [src/intro/intro-material.spec.ts](src/intro/intro-material.spec.ts)：README 空／去雜訊後 <200 → `source='fallback'`、`text` 由 description+topics 組成；description 與 topics 近乎空 → `sparse=true`（FR-008、US3、research D3）
+- [X] T021 [US3] 於 [src/intro/intro.service.spec.ts](src/intro/intro.service.spec.ts) 新增退回路徑測試：README 取不到／極短 → 仍回 `generated`、`intro` ≤250 繁中（US3、SC-002）
 
 ### Implementation for User Story 3
 
-- [ ] T022 [US3] 於 [src/intro/intro-material.ts](src/intro/intro-material.ts) 補上 `buildMaterial` **fallback 分支**：去雜訊後 code points < `MIN_README_CHARS`（含空）→ `source='fallback'`、`text` = description + topics 拼接；description/topics 皆近乎空 → `sparse=true`（依賴 T013、FR-008、US3-3 最小可用）
-- [ ] T023 [US3] 於 [src/intro/intro-prompt.ts](src/intro/intro-prompt.ts) 擴充 `introPrompt`：當 `material.sparse` 為真時，於指示加入「末尾標註（資訊有限）」（依賴 T012、FR-009）
+- [X] T022 [US3] 於 [src/intro/intro-material.ts](src/intro/intro-material.ts) 補上 `buildMaterial` **fallback 分支**：去雜訊後 code points < `MIN_README_CHARS`（含空）→ `source='fallback'`、`text` = description + topics 拼接；description/topics 皆近乎空 → `sparse=true`（依賴 T013、FR-008、US3-3 最小可用）
+- [X] T023 [US3] 於 [src/intro/intro-prompt.ts](src/intro/intro-prompt.ts) 擴充 `introPrompt`：當 `material.sparse` 為真時，於指示加入「末尾標註（資訊有限）」（依賴 T012、FR-009）
 
 **Checkpoint**：US1–US3 皆可獨立運作——素材不足的 repo 仍得保守可用簡介。
 
@@ -122,13 +122,13 @@ description: "Task list for F5 — LLM 封裝與 repo 250 字簡介"
 
 ### Tests for User Story 4 ⚠️
 
-- [ ] T024 [US4] `LlmService` 退避測試於 [src/llm/llm.service.spec.ts](src/llm/llm.service.spec.ts)：注入 mock `@google/genai` 客戶端與 `sleep`；首次 429→成功（斷言有退避、回正常文字，SC-007）；持續 429→擲 `LlmError('exhausted')`、重試次數 = `LLM_MAX_RETRIES`；503/網路錯誤→重試；空回應→`LlmError('empty')`；400/403→不重試、`LlmError('error')`（contracts/llm-service.md、FR-012）
-- [ ] T025 [US4] 於 [src/intro/intro.service.spec.ts](src/intro/intro.service.spec.ts) 新增降級測試：LlmService 持續失敗 → 回 `{ status: 'degraded', description }`、**`state.intros` 未新增鍵**、`logger.warn` 有呼叫、**`ensureIntro` 不擲錯**（呼叫端得以續跑其餘 repo；批次層非中斷屬 F7 範圍、不在 F5 單測驗證）（SC-004、FR-014/015/016）
+- [X] T024 [US4] `LlmService` 退避測試於 [src/llm/llm.service.spec.ts](src/llm/llm.service.spec.ts)：注入 mock `@google/genai` 客戶端與 `sleep`；首次 429→成功（斷言有退避、回正常文字，SC-007）；持續 429→擲 `LlmError('exhausted')`、重試次數 = `LLM_MAX_RETRIES`；503/網路錯誤→重試；空回應→`LlmError('empty')`；400/403→不重試、`LlmError('error')`（contracts/llm-service.md、FR-012）
+- [X] T025 [US4] 於 [src/intro/intro.service.spec.ts](src/intro/intro.service.spec.ts) 新增降級測試：LlmService 持續失敗 → 回 `{ status: 'degraded', description }`、**`state.intros` 未新增鍵**、`logger.warn` 有呼叫、**`ensureIntro` 不擲錯**（呼叫端得以續跑其餘 repo；批次層非中斷屬 F7 範圍、不在 F5 單測驗證）（SC-004、FR-014/015/016）
 
 ### Implementation for User Story 4
 
-- [ ] T026 [US4] 於 [src/llm/llm.service.ts](src/llm/llm.service.ts) 加入重試迴圈：可注入 `sleep(ms)`；`base × 2^(attempt-1) + random[0, base)` 上限 `LLM_MAX_BACKOFF_MS`；429/503/網路錯誤重試至 `LLM_MAX_RETRIES` → `LlmError('exhausted')`；400/401/403 → `LlmError('error')` 不重試（依賴 T014、research D6、FR-012）
-- [ ] T027 [US4] 於 [src/intro/intro.service.ts](src/intro/intro.service.ts) 以 try-catch 包裹生成流程：任一失敗（`LlmError`、空/無效回應）→ `logger.warn`（含 repoId/fullName、**不含 prompt 全文**）→ 回 `{ status: 'degraded', description: input.description }`、**不寫 state.intros**、不擲錯（依賴 T016、FR-014/015/016、research D8）
+- [X] T026 [US4] 於 [src/llm/llm.service.ts](src/llm/llm.service.ts) 加入重試迴圈：可注入 `sleep(ms)`；`base × 2^(attempt-1) + random[0, base)` 上限 `LLM_MAX_BACKOFF_MS`；429/503/網路錯誤重試至 `LLM_MAX_RETRIES` → `LlmError('exhausted')`；400/401/403 → `LlmError('error')` 不重試（依賴 T014、research D6、FR-012）
+- [X] T027 [US4] 於 [src/intro/intro.service.ts](src/intro/intro.service.ts) 以 try-catch 包裹生成流程：任一失敗（`LlmError`、空/無效回應）→ `logger.warn`（含 repoId/fullName、**不含 prompt 全文**）→ 回 `{ status: 'degraded', description: input.description }`、**不寫 state.intros**、不擲錯（依賴 T016、FR-014/015/016、research D8）
 
 **Checkpoint**：全部 4 個 User Story 皆可獨立運作——退避重試與單筆降級隔離就位。
 
@@ -138,9 +138,9 @@ description: "Task list for F5 — LLM 封裝與 repo 250 字簡介"
 
 **Purpose**：最終整合驗證（對照 quickstart 與 SC-001…SC-007）。
 
-- [ ] T028 [P] 執行 `npm run build`（tsc strict 零 error，避免 `any` 逃逸）
-- [ ] T029 執行 `npm test`（全綠）；重點確認快取命中測試以 mock 斷言呼叫次數 0（額度安全核心護欄）
-- [ ] T030 依 [specs/005-repo-intro/quickstart.md](specs/005-repo-intro/quickstart.md) 對照表逐項驗證測試→SC/FR 覆蓋齊全（可選：具 `GEMINI_API_KEY`/`GH_API_TOKEN` 的本機做一次性真實生成人工抽驗品質，不納入 CI、不推播、不寫入 repo 內 state）
+- [X] T028 [P] 執行 `npm run build`（tsc strict 零 error，避免 `any` 逃逸）
+- [X] T029 執行 `npm test`（全綠）；重點確認快取命中測試以 mock 斷言呼叫次數 0（額度安全核心護欄）
+- [X] T030 依 [specs/005-repo-intro/quickstart.md](specs/005-repo-intro/quickstart.md) 對照表逐項驗證測試→SC/FR 覆蓋齊全（可選：具 `GEMINI_API_KEY`/`GH_API_TOKEN` 的本機做一次性真實生成人工抽驗品質，不納入 CI、不推播、不寫入 repo 內 state）
 
 ---
 
