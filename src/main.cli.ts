@@ -2,7 +2,11 @@ import 'reflect-metadata';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { PipelineService } from './pipeline/pipeline.service';
+import { NewsIngestService } from './news/news-ingest.service';
 import { tryPostFailureAlert } from './discord/failure-alert';
+
+/** 設為 `1` 時只跑 F4 階段 A 新聞漏斗、印出候選清單觀測（不推播）。 */
+const NEWS_OBSERVE_ENV = 'NEWS_INGEST_OBSERVE';
 
 /**
  * CLI 進入點：建立 application context（不啟 HTTP server）→ 執行 pipeline → 跑完即退。
@@ -19,7 +23,12 @@ async function bootstrap(): Promise<void> {
   });
 
   try {
-    await app.get(PipelineService).run();
+    if (process.env[NEWS_OBSERVE_ENV] === '1') {
+      // F4 觀測模式：只跑階段 A 新聞漏斗、印出候選清單（不推播；正式串接進 pipeline 屬 F7）。
+      await app.get(NewsIngestService).ingest();
+    } else {
+      await app.get(PipelineService).run();
+    }
   } catch (err) {
     // app 內失敗：best-effort 送紅色告警（不遮蔽原始錯誤），再以非零 exit 結束。
     await tryPostFailureAlert(app, err);

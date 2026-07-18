@@ -168,7 +168,7 @@ export interface NewsSource {
   id: string; // 唯一鍵：抓取告警、seenNews 統計都引用它
   type: "hn-algolia" | "reddit-weekly" | "rss" | "github-releases";
   url: string;
-  domain: "ai" | "devops" | "backend" | "frontend" | "cross"; // cross 由關鍵字歸類（§4.3）
+  domain: "ai" | "devops" | "frontend-backend" | "cross"; // 前後端合併（F4 clarify 2026-07-16）；cross 由關鍵字歸類（§4.3）
   tier: 1 | 2 | 3; // 漏斗依 tier 加權（§4.4）
   enabled?: boolean; // 預設 true；先停用觀察比直接刪安全
 }
@@ -202,13 +202,13 @@ export const NEWS_SOURCES: NewsSource[] = [
 | --------------------------- | -------------------------------------------------------- | -------- | ---------------------------------- |
 | **The New Stack**           | `https://thenewstack.io/feed/`                           | devops   | 深度報導補充。                     |
 | **Reddit r/devops**         | `/r/devops/top/.rss?t=week`                              | devops   | 社群風向。                         |
-| **Reddit r/node、r/python** | `/r/node/top/.rss?t=week`、`/r/Python/top/.rss?t=week`   | backend  | 對齊後端聚焦 Node.js / Python。    |
-| **Reddit r/reactjs**        | `/r/reactjs/top/.rss?t=week`                             | frontend | 抓前端社群風向用，低權重。         |
+| **Reddit r/node、r/python** | `/r/node/top/.rss?t=week`、`/r/Python/top/.rss?t=week`   | frontend-backend | 對齊後端聚焦 Node.js / Python。    |
+| **Reddit r/reactjs**        | `/r/reactjs/top/.rss?t=week`                             | frontend-backend | 抓前端社群風向用，低權重。         |
 
 ### 4.3 實作要點
 
 - **統一「本週」口徑**：Reddit `t=week`、HN 過濾近 7 天、GitHub trending weekly，讓整份摘要時間軸一致。
-- **歸類與去重**：正規化成 `{ title, url, summary, source, score, domain, tier }`——`domain` 與 `tier` 直接取自 `news-sources.ts` 的來源設定，**只有 `cross` 來源（HN、Lobste.rs programming）需要用關鍵字歸類**；`summary` 為 feed 的摘要/描述節錄（截 ~500 字，供 §4.4 階段 B 產出 300 字內容的素材）。以 `url` 去重、以 `score`/新鮮度排序。
+- **歸類與去重**：正規化成 `{ title, url, summary, source, score, domain, tier }`——`domain` 列舉為 `ai | devops | frontend-backend | cross`（**前後端合併**，F4 clarify 2026-07-16），`domain` 與 `tier` 直接取自 `news-sources.ts` 的來源設定（releases 的 nodejs/cpython/typescript/vue/react、r/node、r/python、r/reactjs 皆標 `frontend-backend`），**只有 `cross` 來源（HN、Lobste.rs programming）需要用關鍵字歸類**（前後端相關項一律歸入 `frontend-backend`）；`summary` 為 feed 的摘要/描述節錄（截 ~500 字，供 §4.4 階段 B 產出 300 字內容的素材）。以 `url` 去重、以 `score`/新鮮度排序。
 - 新聞同樣走「只推新出現」邏輯：記住上次推過的 url（見 §5.1 `seenNews`），只留**新出現**的討論，再交給 §4.4 漏斗篩選。
 
 > 抓取禮貌：帶自訂 `User-Agent`、條件式請求（ETag / If-Modified-Since）、失敗退避重試。上線前逐一確認 feed URL 可用；「解析到 0 筆」要發告警（帶來源 `id`）而非無聲略過——壞掉的 feed 在 `news-sources.ts` 停用或替換即可，不動 code。
@@ -705,8 +705,9 @@ bootstrap();
 **F4 `004-news-ingest` — 新聞來源與零 LLM 漏斗（階段 A）**
 
 - 範圍：`news-sources.ts` 設定檔 + schema 驗證 + tier 加權、四種抓取器（`hn-algolia` / `reddit-weekly` / `rss` / `github-releases`，含 User-Agent/條件式請求/0 筆告警、releases 過濾 pre-release 與純 patch）、正規化為統一結構、階段 A 漏斗（**target-URL 正規化去重、標題 Jaccard 補漏**、分數門檻、交叉驗證、榜單相關性加權、`seenNews` 7 天修剪）；上線前逐一驗證 feed URL 可用（§12）。
-- **本 Feature 待定（F2 clarify 2026-07-11 標記，留待此處定案）**：**新聞領域分類法是否比照榜單合併前後端**——即把新聞 `domain` 由 `ai | devops | backend | frontend | cross` 收斂為 `ai | devops | frontend-backend | cross`。
-  > **⚠️ 2026-07-15 更新前提**：榜單已移除 DevOps（收為 `ai | frontend-backend`），故此待定項**不再是「與榜單對齊成同一組領域」**，而僅是「**是否比照榜單合併前後端**」這一件事。**新聞 MUST 保留 `devops`**（配額與三個專屬來源皆不變，見憲章 Scope note）——兩條資料流的領域集合刻意不同，**不得**因榜單移除 DevOps 而連帶移除新聞的 devops。背景：新聞側**輸出層本就不分前後端**（配額「DevOps / 後端 / 前端合計 ≤2」已合併計算），前後端分開**僅承載不對稱降噪規則**（後端只收 Node.js/Python、前端以 TypeScript 為主且不收 CSS 技巧/教學）。若對齊，MUST 把這些降噪規則由「綁在領域標籤」改寫為**外顯過濾規則**，並同步修訂憲章 III（配額措辭）與 §4.1–4.3。傾向對齊（一套分類法貫穿全專案、降噪規則更外顯），惟屬接近平手之抉擇，於本 Feature 評估後定案。
+- **本 Feature 待定已定案（F4 clarify 2026-07-16）**：新聞領域分類法**比照榜單合併前後端**——新聞 `domain` 收斂為 `ai | devops | frontend-backend | cross`（**保留 `devops`**：配額與三個 DevOps 專屬來源不變，憲章 Scope note）。`cross` 來源關鍵字歸類的前後端項一律歸入單一 `frontend-backend` 桶，不再細分 backend/frontend。決策全文見 `specs/004-news-ingest/spec.md` Clarifications Session 2026-07-16 與 FR-027／FR-028。
+  > **主題降噪規則歸屬**：「後端只收 Node.js/Python、前端以 TypeScript 為主、不收 CSS 技巧/教學」等**不對稱降噪規則**留在**階段 B（F6 單次 LLM 策展）外顯執行**（§4.4 階段 B 已明列），本 Feature 階段 A **不以關鍵字硬篩內容主題**——語意判斷交 LLM 更準（避免把重要的 CSS 引擎/框架 release 誤殺），且不擴大 F4 範圍。前後端內容於階段 A 一律先歸入 `frontend-backend` 候選，交由階段 B 依開發者重要性取捨。
+  > **憲章 III 配額措辭審視結論：不需修訂**。合併僅改**內部 `domain` 列舉與 `cross` 歸類目標**（實作細節，憲章未列舉）；使用者可見的**配額「AI ≥4；DevOps／後端／前端合計 ≤2」與領域聚焦內容政策皆不變**（前後端仍是內容層面的真實類別、降噪續由 §4.4 階段 B 外顯執行），故無語意矛盾、無需版本升版。§4.2 型別與 Tier 3 標記、§4.3 歸類說明已同步為 `frontend-backend`。
 - 驗收（F3 + F4 = M2）：跨來源同一則新聞只出現一筆（`sources[]` 正確合併）；候選收斂至約 15～25 則。
 
 **F5 `005-repo-intro` — LLM 封裝與 repo 簡介**
