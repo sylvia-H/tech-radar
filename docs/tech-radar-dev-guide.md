@@ -372,6 +372,12 @@ async function ensureIntro(repo, state) {
 }
 ```
 
+> **`repo` 素材由呼叫端傳入（F5 clarify 2026-07-18）**：`intro` 服務只自行取 README，`description /
+> topics / language / starsThisWeek` 等 metadata 由**呼叫端**（F7）以 `repoId` join 當次榜單抓取結果
+> 後傳入——因為持久化的 `state.board` 快照**不存 description/topics**，不可從 state 讀回；F5 也不另打
+> `GET /repos` 補取（省 GitHub 額度）。簡介失敗時服務回傳可區別的降級結果（帶備援 description），
+> 由 F7 渲染為降級卡，失敗不寫入快取。
+
 ### 6.2 Prompt 要點
 
 - 明確約束：**繁體中文、250 字以內、只根據提供的 README/metadata，不得杜撰功能或數字**。
