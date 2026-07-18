@@ -142,15 +142,15 @@ diff 事實、不杜撰；再讓 `LlmService` 擲錯 → 回 `factSummary`（依
 
 ### Tests for User Story 4 ⚠️（先寫、先失敗）
 
-- [ ] T023 [P] [US4] 事實型摘要測試於 [src/curation/board-summary-fallback.spec.ts](src/curation/board-summary-fallback.spec.ts)：`factSummary(digest)` → 「本週 N 個新進、M 個竄升、K 個下降」（計數為 0 的子句省略）；三者皆 0 → 「本週榜單無變化」；數字 100% 取自 `digest`（FR-016、SC-007、US4-3）
-- [ ] T024 [P] [US4] `BoardSummaryService.summarize()` 測試於 [src/curation/board-summary.service.spec.ts](src/curation/board-summary.service.spec.ts)：mock 成功 → `degraded:false` 一句繁中；mock `LlmService` 擲 `LlmError` → 回 `factSummary`、`degraded:true`、**未擲錯**、`logger.warn` 被呼叫；全 0 diff → 「無變化」（contracts/board-summary §測試點、FR-015/016、SC-007）
+- [X] T023 [P] [US4] 事實型摘要測試於 [src/curation/board-summary-fallback.spec.ts](src/curation/board-summary-fallback.spec.ts)：`factSummary(digest)` → 「本週 N 個新進、M 個竄升、K 個下降」（計數為 0 的子句省略）；三者皆 0 → 「本週榜單無變化」；數字 100% 取自 `digest`（FR-016、SC-007、US4-3）
+- [X] T024 [P] [US4] `BoardSummaryService.summarize()` 測試於 [src/curation/board-summary.service.spec.ts](src/curation/board-summary.service.spec.ts)：mock 成功 → `degraded:false` 一句繁中；mock `LlmService` 擲 `LlmError` → 回 `factSummary`、`degraded:true`、**未擲錯**、`logger.warn` 被呼叫；全 0 diff → 「無變化」（contracts/board-summary §測試點、FR-015/016、SC-007）
 
 ### Implementation for User Story 4
 
-- [ ] T025 [P] [US4] 實作 `factSummary(digest)` 於 [src/curation/board-summary-fallback.ts](src/curation/board-summary-fallback.ts)：依計數組事實句、含「無變化」情形，數字只取自 `digest`（FR-016、SC-007）
-- [ ] T026 [P] [US4] 實作 `buildBoardSummaryPrompt(digest)` 於 [src/curation/board-summary-prompt.ts](src/curation/board-summary-prompt.ts)：要求一句繁中 TL;DR、只依提供的計數與領域分布、不杜撰未提供的數字/名稱（FR-015、憲章 VI）
-- [ ] T027 [US4] 實作 `BoardSummaryService.summarize(digest)` 於 [src/curation/board-summary.service.ts](src/curation/board-summary.service.ts)：`@Injectable`、注入 `LlmService`；**單次** `llm.generate(buildBoardSummaryPrompt(...))` → `{summary, degraded:false}`；catch `LlmError` → `logger.warn`（不含 prompt/回應全文）→ 回 `{summary: factSummary(digest), degraded:true}`，不擲錯（依賴 T025/T026、FR-015/016/017、SC-007）
-- [ ] T028 [US4] 於 [src/curation/curation.module.ts](src/curation/curation.module.ts) 追加 provide 並 export `BoardSummaryService`（與 `NewsCurationService` 同模組、共用注入的 `LlmModule`）（依賴 T027、FR-018）
+- [X] T025 [P] [US4] 實作 `factSummary(digest)` 於 [src/curation/board-summary-fallback.ts](src/curation/board-summary-fallback.ts)：依計數組事實句、含「無變化」情形，數字只取自 `digest`（FR-016、SC-007）
+- [X] T026 [P] [US4] 實作 `buildBoardSummaryPrompt(digest)` 於 [src/curation/board-summary-prompt.ts](src/curation/board-summary-prompt.ts)：要求一句繁中 TL;DR、只依提供的計數與領域分布、不杜撰未提供的數字/名稱（FR-015、憲章 VI）
+- [X] T027 [US4] 實作 `BoardSummaryService.summarize(digest)` 於 [src/curation/board-summary.service.ts](src/curation/board-summary.service.ts)：`@Injectable`、注入 `LlmService`；**單次** `llm.generate(buildBoardSummaryPrompt(...))` → `{summary, degraded:false}`；catch `LlmError` → `logger.warn`（不含 prompt/回應全文）→ 回 `{summary: factSummary(digest), degraded:true}`，不擲錯（依賴 T025/T026、FR-015/016/017、SC-007）
+- [X] T028 [US4] 於 [src/curation/curation.module.ts](src/curation/curation.module.ts) 追加 provide 並 export `BoardSummaryService`（與 `NewsCurationService` 同模組、共用注入的 `LlmModule`）（依賴 T027、FR-018）
 
 **Checkpoint**：US1–US4 皆可獨立驗證——榜單日封面得繁中 TL;DR，LLM 失敗仍得事實型摘要且推播不中止。
 
