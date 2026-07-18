@@ -1,4 +1,6 @@
+import { Logger } from '@nestjs/common';
 import { LlmService } from '../llm/llm.service';
+import { LlmError } from '../llm/llm.types';
 import { NewsCandidate } from '../news/news.types';
 import { NewsCurationService } from './curation.service';
 
@@ -95,5 +97,30 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
     expect(typeof prompt).toBe('string');
     expect(prompt).not.toMatch(/GEMINI_API_KEY|DISCORD_WEBHOOK_URL|GH_API_TOKEN/i);
     expect(prompt).toContain(candidates[0].title);
+  });
+});
+
+describe('NewsCurationService.curate（US2 降級路徑）', () => {
+  const cases: Array<[string, () => Promise<string>]> = [
+    ['LlmError(exhausted)', () => Promise.reject(new LlmError('exhausted'))],
+    ['LlmError(empty)', () => Promise.reject(new LlmError('empty'))],
+    ['不可解析內容', () => Promise.resolve('這不是 JSON')],
+  ];
+
+  it.each(cases)('%s → 回 degraded:true digest、未擲錯、logger.warn 被呼叫（FR-011/014、SC-004）', async (_label, mockImpl) => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const candidates: NewsCandidate[] = [makeCandidate({ originalUrl: 'https://a.com', weightedScore: 200 })];
+    const { service } = makeService(jest.fn().mockImplementation(mockImpl));
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(true);
+    expect(result.items).toEqual([
+      { title: 'Original Title', content: null, url: 'https://a.com', domain: 'ai', sourceCount: 1, weightedScore: 200, degraded: true },
+    ]);
+    expect(warnSpy).toHaveBeenCalled();
+    const warnMessage = warnSpy.mock.calls[0][0] as string;
+    expect(warnMessage).not.toMatch(/這不是 JSON|prompt/i);
+    warnSpy.mockRestore();
   });
 });

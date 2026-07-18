@@ -97,13 +97,13 @@ digest 且呼叫 0 次。全程 mock、不連網。
 
 ### Tests for User Story 2 ⚠️（先寫、先失敗）
 
-- [ ] T016 [P] [US2] 降級精選測試於 [src/curation/curation-fallback.spec.ts](src/curation/curation-fallback.spec.ts)：`fallbackDigest(candidates)` 以 `weightedScore` 序（已排序候選取前段）套配額（非 AI ≤2、≤6）→ 每則 `title=原文標題`（**不套 50 字收斂**）、`content:null`、程式提供**全部事實欄位 `url/domain/sourceCount/weightedScore`**、`degraded:true`（U3、FR-012/013、Edge、SC-004）
-- [ ] T017 [US2] `curate()` **降級路徑**測試於 [src/curation/curation.service.spec.ts](src/curation/curation.service.spec.ts)：mock `llm.generate` 擲 `LlmError('exhausted')`、`LlmError('empty')`、以及回不可解析字串（`CurationParseError`）三態 → 皆回 `degraded:true` digest、**未擲錯**、`logger.warn` 被呼叫（以 spy 斷言，且訊息不含 prompt/回應全文）（FR-011/014、SC-004）
+- [X] T016 [P] [US2] 降級精選測試於 [src/curation/curation-fallback.spec.ts](src/curation/curation-fallback.spec.ts)：`fallbackDigest(candidates)` 以 `weightedScore` 序（已排序候選取前段）套配額（非 AI ≤2、≤6）→ 每則 `title=原文標題`（**不套 50 字收斂**）、`content:null`、程式提供**全部事實欄位 `url/domain/sourceCount/weightedScore`**、`degraded:true`（U3、FR-012/013、Edge、SC-004）
+- [X] T017 [US2] `curate()` **降級路徑**測試於 [src/curation/curation.service.spec.ts](src/curation/curation.service.spec.ts)：mock `llm.generate` 擲 `LlmError('exhausted')`、`LlmError('empty')`、以及回不可解析字串（`CurationParseError`）三態 → 皆回 `degraded:true` digest、**未擲錯**、`logger.warn` 被呼叫（以 spy 斷言，且訊息不含 prompt/回應全文）（FR-011/014、SC-004）
 
 ### Implementation for User Story 2
 
-- [ ] T018 [P] [US2] 實作 `fallbackDigest(candidates)` 於 [src/curation/curation-fallback.ts](src/curation/curation-fallback.ts)：沿用候選既有 `weightedScore` 序（不重寫排序公式）套 `clampNonAi`＋截 ≤6 → 映射為 `CuratedNewsItem`（原文標題不收斂、`content:null`、**附回全部程式事實欄位 `url=originalUrl`/`domain`（`as NewsDomain3`，同 T014 收窄）/`sourceCount=sources.length`/`weightedScore`**、`degraded:true`）（U3、依賴 T010、FR-012/013）
-- [ ] T019 [US2] 於 [src/curation/curation.service.ts](src/curation/curation.service.ts) 為 `curate()` 加降級包覆：`try { …成功路徑… } catch (err)` 捕捉 `LlmError`／`CurationParseError` → `logger.warn`（含失敗原因與候選規模、**不含** prompt/回應全文）→ 回 `fallbackDigest(candidates)`；空候選短路仍在 try 之前（依賴 T018、FR-011/014，**不發 Discord**——屬 F7）
+- [X] T018 [P] [US2] 實作 `fallbackDigest(candidates)` 於 [src/curation/curation-fallback.ts](src/curation/curation-fallback.ts)：沿用候選既有 `weightedScore` 序（不重寫排序公式）套 `clampNonAi`＋截 ≤6 → 映射為 `CuratedNewsItem`（原文標題不收斂、`content:null`、**附回全部程式事實欄位 `url=originalUrl`/`domain`（`as NewsDomain3`，同 T014 收窄）/`sourceCount=sources.length`/`weightedScore`**、`degraded:true`）（U3、依賴 T010、FR-012/013）
+- [X] T019 [US2] 於 [src/curation/curation.service.ts](src/curation/curation.service.ts) 為 `curate()` 加降級包覆：`try { …成功路徑… } catch (err)` 捕捉 `LlmError`／`CurationParseError` → `logger.warn`（含失敗原因與候選規模、**不含** prompt/回應全文）→ 回 `fallbackDigest(candidates)`；空候選短路仍在 try 之前（依賴 T018、FR-011/014，**不發 Discord**——屬 F7）
 
 **Checkpoint**：US1＋US2 皆可獨立驗證——成功得繁中精煉版、任一 LLM 失敗得降級原文版且晨報不中止。
 
