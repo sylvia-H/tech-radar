@@ -20,6 +20,11 @@ describe('stripMarkdownNoise', () => {
     );
   });
 
+  it('移除參考式連結定義行（[label]: url），保留正文', () => {
+    const input = '這是內文，詳見官方文件。\n\n[build]: https://img.shields.io/badge.svg\n[docs]: https://example.com/docs "文件"';
+    expect(stripMarkdownNoise(input)).toBe('這是內文，詳見官方文件。');
+  });
+
   it('移除程式碼圍欄區塊', () => {
     const input = '說明文字\n```ts\nconst x = 1;\n```\n後續文字';
     expect(stripMarkdownNoise(input)).toBe('說明文字\n\n後續文字');
