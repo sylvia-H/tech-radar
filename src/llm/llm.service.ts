@@ -48,6 +48,8 @@ export class LlmService {
         });
         const text = (response.text ?? '').trim();
         if (!text) {
+          // 空回應（多為 MAX_TOKENS 截斷或安全過濾）刻意不重試：重送同一 prompt 通常仍空，
+          // 重試只會白白多燒一次 Gemini 免費層配額（憲章 I／V 節制 LLM）；交由呼叫端降級。
           throw new LlmError('empty');
         }
         return text;
