@@ -64,4 +64,16 @@ describe('fallbackDigest（US2 降級路徑）', () => {
     const digest = fallbackDigest(candidates);
     expect(digest.items).toHaveLength(1);
   });
+
+  it('降級路徑不做語意去重，殘留語意重複（不同連結、同一事件）可能並存（Edge、SC-006 不適用降級路徑）', () => {
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ originalUrl: 'https://a.com/same-event', title: 'Same event via A', weightedScore: 200 }),
+      makeCandidate({ originalUrl: 'https://b.com/same-event', title: 'Same event via B', weightedScore: 190 }),
+    ];
+
+    const digest = fallbackDigest(candidates);
+
+    expect(digest.items).toHaveLength(2);
+    expect(digest.items.map((it) => it.url)).toEqual(['https://a.com/same-event', 'https://b.com/same-event']);
+  });
 });

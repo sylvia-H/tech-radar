@@ -98,6 +98,26 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
     expect(prompt).not.toMatch(/GEMINI_API_KEY|DISCORD_WEBHOOK_URL|GH_API_TOKEN/i);
     expect(prompt).toContain(candidates[0].title);
   });
+
+  it('候選全為非 AI → 照實輸出非 AI（受 ≤2 約束），不因湊不到 4 則 AI 而失敗（Edge）', async () => {
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ originalUrl: 'https://devops.com', domain: 'devops', title: 'DevOps only' }),
+      makeCandidate({ originalUrl: 'https://fe.com', domain: 'frontend-backend', title: 'Frontend only' }),
+    ];
+    const raw = JSON.stringify({
+      picks: [
+        { ref: 0, title: '繁中 DevOps', content: '內容' },
+        { ref: 1, title: '繁中前端', content: '內容' },
+      ],
+    });
+    const { service } = makeService(jest.fn().mockResolvedValue(raw));
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(false);
+    expect(result.items).toHaveLength(2);
+    expect(result.items.every((it) => it.domain !== 'ai')).toBe(true);
+  });
 });
 
 describe('NewsCurationService.curate（US2 降級路徑）', () => {

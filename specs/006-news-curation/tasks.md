@@ -160,9 +160,9 @@ diff 事實、不杜撰；再讓 `LlmService` 擲錯 → 回 `factSummary`（依
 
 **Purpose**：全套驗證與憲章邊界複查。
 
-- [ ] T029 全套建置與測試：`npm run build`（tsc strict 零 error、無 `any` 逃逸）與 `npm test` 全綠（含 F1–F5 未回歸）
-- [ ] T030 執行 [quickstart.md](specs/006-news-curation/quickstart.md) 的 US1–US4＋Edge 驗收情境，逐項對照契約/憲章/SC 速查表確認通過
-- [ ] T031 憲章邊界複查（grep `src/curation/`）：確認**無** `StateStore`/`.save(`/`seenNews`/`commit`/Discord/`webhook` 呼叫、**無**新增 npm 依賴、**未改動** F4/F5 既有檔案（只 import）（FR-019、plan Structure Decision）
+- [X] T029 全套建置與測試：`npm run build`（tsc strict 零 error、無 `any` 逃逸）與 `npm test` 全綠（含 F1–F5 未回歸）
+- [X] T030 執行 [quickstart.md](specs/006-news-curation/quickstart.md) 的 US1–US4＋Edge 驗收情境，逐項對照契約/憲章/SC 速查表確認通過
+- [X] T031 憲章邊界複查（grep `src/curation/`）：確認**無** `StateStore`/`.save(`/`seenNews`/`commit`/Discord/`webhook` 呼叫、**無**新增 npm 依賴、**未改動** F4/F5 既有檔案（只 import）（FR-019、plan Structure Decision）
 
 ---
 
