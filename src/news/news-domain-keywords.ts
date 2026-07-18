@@ -1,0 +1,83 @@
+import { NewsDomain3 } from './news.types';
+
+/**
+ * 新聞領域關鍵字三桶（`ai | devops | frontend-backend`），供 `cross` 來源歸類（FR-006/027）。
+ * **增刪只改此檔、不動歸類邏輯**（憲章 IV 精神）。**獨立於榜單的 `classify/domain-keywords`**
+ * ——榜單是 2-way（無 devops）、輸入為 repo topics；新聞是 3-way（含 devops）、輸入為標題／摘要。
+ *
+ * 比對語意為**小寫詞界**（見 `news-classify`）：短關鍵字如 `ai`／`ci` 不會誤命中 `email`／
+ * `training`／`basic`；詞界接不到的黏著變體（`openai`／`nodejs`…）逐一列入。
+ */
+export const NEWS_DOMAIN_KEYWORDS: Record<NewsDomain3, readonly string[]> = {
+  ai: [
+    'ai',
+    'llm',
+    'llms',
+    'gpt',
+    'chatgpt',
+    'rag',
+    'agent',
+    'agents',
+    'agentic',
+    'openai',
+    'anthropic',
+    'claude',
+    'gemini',
+    'llama',
+    'mistral',
+    'transformer',
+    'transformers',
+    'machine-learning',
+    'deep-learning',
+    'genai',
+    'diffusion',
+    'embedding',
+    'embeddings',
+    'inference',
+    'fine-tuning',
+  ],
+  devops: [
+    'devops',
+    'kubernetes',
+    'k8s',
+    'docker',
+    'container',
+    'containers',
+    'terraform',
+    'ansible',
+    'helm',
+    'gitops',
+    'ci-cd',
+    'cicd',
+    'sre',
+    'observability',
+    'prometheus',
+    'grafana',
+    'opentelemetry',
+  ],
+  'frontend-backend': [
+    'nodejs',
+    'node',
+    'deno',
+    'bun',
+    'python',
+    'django',
+    'flask',
+    'fastapi',
+    'typescript',
+    'javascript',
+    'react',
+    'reactjs',
+    'vue',
+    'vuejs',
+    'svelte',
+    'sveltekit',
+    'angular',
+    'nextjs',
+    'nuxt',
+    'vite',
+    'graphql',
+    'frontend',
+    'backend',
+  ],
+};
