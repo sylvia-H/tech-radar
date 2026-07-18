@@ -1,4 +1,4 @@
----
+﻿---
 description: "Task list for 004-news-ingest implementation"
 ---
 
@@ -30,8 +30,8 @@ description: "Task list for 004-news-ingest implementation"
 
 **Purpose**: 相依與模組骨架
 
-- [ ] T001 安裝 `rss-parser` 相依並記入 `package.json`（憲章技術釘死清單內；`npm i rss-parser`），確認 `npm run build`（tsc strict）通過
-- [ ] T002 建立新聞模組骨架 `src/news/news.module.ts`（空 `@Module`，之後逐步掛 provider），並確認 `src/config/` 目錄可放來源設定檔
+- [X] T001 安裝 `rss-parser` 相依並記入 `package.json`（憲章技術釘死清單內；`npm i rss-parser`），確認 `npm run build`（tsc strict）通過
+- [X] T002 建立新聞模組骨架 `src/news/news.module.ts`（空 `@Module`，之後逐步掛 provider），並確認 `src/config/` 目錄可放來源設定檔
 
 ---
 
@@ -41,8 +41,8 @@ description: "Task list for 004-news-ingest implementation"
 
 **⚠️ CRITICAL**: 本階段完成前，任何 User Story 都不能開始
 
-- [ ] T003 建立 `src/news/news.types.ts`：定義 `NewsSource`、`RawItem`、`NewsCandidate`、`CandidateSet`／`FunnelResult` 型別與新聞 `Domain` 列舉（`ai|devops|frontend-backend|cross` 於來源設定、`ai|devops|frontend-backend` 於候選輸出）；**不复用** `board.types.ts` 的 `Domain`（data-model.md §領域列舉關係圖）
-- [ ] T004 建立 `src/news/news-http.ts`：`getText(url, conditional?)` 與 `getJson<T>(url)`，帶自訂 User-Agent、可選條件式請求（ETag／If-Modified-Since，304 回 notModified）、5xx/429/網路錯誤指數退避＋jitter（鏡射 `src/github/github-http.ts` 的 `requestWithRetry`/`backoffMs`）；**無 token、host 無關；錯誤訊息可含來源 URL**（feed 公開、不帶 token，利於定位失敗來源；research D3、FR-009）
+- [X] T003 建立 `src/news/news.types.ts`：定義 `NewsSource`、`RawItem`、`NewsCandidate`、`CandidateSet`／`FunnelResult` 型別與新聞 `Domain` 列舉（`ai|devops|frontend-backend|cross` 於來源設定、`ai|devops|frontend-backend` 於候選輸出）；**不复用** `board.types.ts` 的 `Domain`（data-model.md §領域列舉關係圖）
+- [X] T004 建立 `src/news/news-http.ts`：`getText(url, conditional?)` 與 `getJson<T>(url)`，帶自訂 User-Agent、可選條件式請求（ETag／If-Modified-Since，304 回 notModified）、5xx/429/網路錯誤指數退避＋jitter（鏡射 `src/github/github-http.ts` 的 `requestWithRetry`/`backoffMs`）；**無 token、host 無關；錯誤訊息可含來源 URL**（feed 公開、不帶 token，利於定位失敗來源；research D3、FR-009）
 
 **Checkpoint**: 型別與 HTTP 基座就緒 — 可開始 User Story 實作
 
@@ -58,31 +58,31 @@ description: "Task list for 004-news-ingest implementation"
 
 > **先寫測試並確認 FAIL，再實作**
 
-- [ ] T005 [P] [US1] 來源 schema 驗證測試 `src/config/news-source.schema.spec.ts`：重複 `id`／缺必填欄位／列舉不符擲帶 id 明確錯誤（FR-002）
-- [ ] T006 [P] [US1] 抓取器分派測試 `src/news/fetchers/fetcher.spec.ts`：依 `type` 正確分派、停用來源略過、新增同型別免改 code（FR-003/004）
-- [ ] T007 [P] [US1] HN Algolia 抓取快照測試 `src/news/fetchers/hn-algolia.fetcher.spec.ts`：近 7 天過濾、`points`→score、`url` 空退回 permalink（mock fetch；FR-005/010/015）
-- [ ] T008 [P] [US1] Reddit weekly 抓取快照測試 `src/news/fetchers/reddit-weekly.fetcher.spec.ts`：`/top/.rss?t=week`、`score` 記 `null`（注入 parser；research D5/D8）
-- [ ] T009 [P] [US1] 一般 RSS 抓取快照測試 `src/news/fetchers/rss.fetcher.spec.ts`：`title`/`link`/`contentSnippet` 截 ~500 字/`isoDate`（注入 parser；FR-005/007）
-- [ ] T010 [P] [US1] GitHub releases 抓取快照測試 `src/news/fetchers/github-releases.fetcher.spec.ts`：解析 `releases.atom` 並套版本過濾（注入 parser；FR-005/008）
-- [ ] T011 [P] [US1] releases 版本過濾測試 `src/news/release-filter.spec.ts`：drop pre-release（`-alpha/-beta/-rc/-pre/-dev/-canary`）與純 patch、keep major/minor 與 security 字樣、無法解析保守保留（FR-008、**SC-010**）
-- [ ] T012 [P] [US1] cross 歸類測試 `src/news/news-classify.spec.ts`：前後端項一律歸單一 `frontend-backend` 桶、含 devops、非 `cross` 不重歸類、詞界比對避免子字串誤命中（FR-006/027、US1-7）
-- [ ] T013 [US1] 編排容錯測試（US1 部分）`src/news/news-ingest.service.spec.ts`：任一來源 0 筆發帶 `id` 告警（含 Tier 2）、單源失敗不斷全線（mock `DiscordWebhookService`；FR-025/026、**SC-003/004**）
+- [X] T005 [P] [US1] 來源 schema 驗證測試 `src/config/news-source.schema.spec.ts`：重複 `id`／缺必填欄位／列舉不符擲帶 id 明確錯誤（FR-002）
+- [X] T006 [P] [US1] 抓取器分派測試 `src/news/fetchers/fetcher.spec.ts`：依 `type` 正確分派、停用來源略過、新增同型別免改 code（FR-003/004）
+- [X] T007 [P] [US1] HN Algolia 抓取快照測試 `src/news/fetchers/hn-algolia.fetcher.spec.ts`：近 7 天過濾、`points`→score、`url` 空退回 permalink（mock fetch；FR-005/010/015）
+- [X] T008 [P] [US1] Reddit weekly 抓取快照測試 `src/news/fetchers/reddit-weekly.fetcher.spec.ts`：`/top/.rss?t=week`、`score` 記 `null`（注入 parser；research D5/D8）
+- [X] T009 [P] [US1] 一般 RSS 抓取快照測試 `src/news/fetchers/rss.fetcher.spec.ts`：`title`/`link`/`contentSnippet` 截 ~500 字/`isoDate`（注入 parser；FR-005/007）
+- [X] T010 [P] [US1] GitHub releases 抓取快照測試 `src/news/fetchers/github-releases.fetcher.spec.ts`：解析 `releases.atom` 並套版本過濾（注入 parser；FR-005/008）
+- [X] T011 [P] [US1] releases 版本過濾測試 `src/news/release-filter.spec.ts`：drop pre-release（`-alpha/-beta/-rc/-pre/-dev/-canary`）與純 patch、keep major/minor 與 security 字樣、無法解析保守保留（FR-008、**SC-010**）
+- [X] T012 [P] [US1] cross 歸類測試 `src/news/news-classify.spec.ts`：前後端項一律歸單一 `frontend-backend` 桶、含 devops、非 `cross` 不重歸類、詞界比對避免子字串誤命中（FR-006/027、US1-7）
+- [X] T013 [US1] 編排容錯測試（US1 部分）`src/news/news-ingest.service.spec.ts`：任一來源 0 筆發帶 `id` 告警（含 Tier 2）、單源失敗不斷全線（mock `DiscordWebhookService`；FR-025/026、**SC-003/004**）
 
 ### Implementation for User Story 1
 
-- [ ] T014 [P] [US1] 建立來源清單 schema `src/config/news-source.schema.ts`：zod 逐筆 `newsSourceSchema`（`id/type/url/domain/tier/enabled?`）＋清單層 `validateNewsSources()` 唯一 `id` 檢查，違規擲帶 id 錯誤（research D1、FR-002）
-- [ ] T015 [P] [US1] 建立來源清單設定 `src/config/news-sources.ts`：匯出 `NEWS_SOURCES: NewsSource[]`（依 dev-guide §4.2 初始來源，四型齊備、含三個 DevOps 專屬來源），載入時經 `validateNewsSources()`（憲章 IV、FR-001）
-- [ ] T016 [P] [US1] 建立版本過濾純函式 `src/news/release-filter.ts`：`isNoisyRelease(tagOrTitle)` 依 research D6 判定（drop pre-release/純 patch，keep major/minor/security）
-- [ ] T017 [P] [US1] 建立新聞領域關鍵字 `src/news/news-domain-keywords.ts`：`ai|devops|frontend-backend` 三桶關鍵字集（含 devops；獨立於榜單 `domain-keywords`）
-- [ ] T018 [US1] 建立 cross 歸類純函式 `src/news/news-classify.ts`：以 `news-domain-keywords` 對 `cross` 來源標題/摘要歸類為三桶之一、前後端收斂單桶、詞界比對（依 T017；FR-006/027）
-- [ ] T019 [US1] 建立抓取器介面與分派 `src/news/fetchers/fetcher.ts`：`SourceFetcher = (source, ctx) => Promise<RawItem[]>`、`FetcherContext`（`now`/`http`/`parser`）、`type`→fetcher 的 `Record` 分派（research D2）
-- [ ] T020 [P] [US1] 實作 `src/news/fetchers/hn-algolia.fetcher.ts`：Algolia JSON、`created_at_i>7天前`、`points`→score、`url` 空退回 permalink（依 T004/T019；research D4）
-- [ ] T021 [P] [US1] 實作 `src/news/fetchers/reddit-weekly.fetcher.ts`：`rss-parser` 解析 `/top/.rss?t=week`、`score=null`（依 T004/T019；research D5）
-- [ ] T022 [P] [US1] 實作 `src/news/fetchers/rss.fetcher.ts`：`rss-parser` 通用 RSS/Atom、摘要截 ~500 字（依 T004/T019；research D5、FR-007）
-- [ ] T023 [P] [US1] 實作 `src/news/fetchers/github-releases.fetcher.ts`：`rss-parser` 解析 `releases.atom` ＋套 `release-filter`（依 T004/T016/T019；FR-008）
-- [ ] T024 [P] [US1] 建立候選觀測輸出 `src/news/news-log.ts`：印出候選清單（統一結構、`domain`/`tier`/`sources[]`/規模）作為本 Feature 唯一產出面
-- [ ] T025 [US1] 建立編排服務 `src/news/news-ingest.service.ts`（US1 部分）：`@Injectable`，載入設定→對每個 `enabled` 來源**獨立 try/catch** 抓取＋正規化為 `NewsCandidate`（填 `normalizedUrl`/`domain`/`sources=[sourceId]`）→ `cross` 歸類 → 0 筆／失敗經 `bestEffortFailureAlert` 發帶 `id` 告警 → 匯集後經 `news-log` 觀測（依 T014/T018/T019/T024；FR-005/006/025/026）
-- [ ] T026 [US1] 於 `src/news/news.module.ts` 掛入 `NewsIngestService` 及相依（import `DiscordModule`/`StateModule` 供告警與後續狀態存取），並在 `src/app.module.ts` 註冊 `NewsModule`
+- [X] T014 [P] [US1] 建立來源清單 schema `src/config/news-source.schema.ts`：zod 逐筆 `newsSourceSchema`（`id/type/url/domain/tier/enabled?`）＋清單層 `validateNewsSources()` 唯一 `id` 檢查，違規擲帶 id 錯誤（research D1、FR-002）
+- [X] T015 [P] [US1] 建立來源清單設定 `src/config/news-sources.ts`：匯出 `NEWS_SOURCES: NewsSource[]`（依 dev-guide §4.2 初始來源，四型齊備、含三個 DevOps 專屬來源），載入時經 `validateNewsSources()`（憲章 IV、FR-001）
+- [X] T016 [P] [US1] 建立版本過濾純函式 `src/news/release-filter.ts`：`isNoisyRelease(tagOrTitle)` 依 research D6 判定（drop pre-release/純 patch，keep major/minor/security）
+- [X] T017 [P] [US1] 建立新聞領域關鍵字 `src/news/news-domain-keywords.ts`：`ai|devops|frontend-backend` 三桶關鍵字集（含 devops；獨立於榜單 `domain-keywords`）
+- [X] T018 [US1] 建立 cross 歸類純函式 `src/news/news-classify.ts`：以 `news-domain-keywords` 對 `cross` 來源標題/摘要歸類為三桶之一、前後端收斂單桶、詞界比對（依 T017；FR-006/027）
+- [X] T019 [US1] 建立抓取器介面與分派 `src/news/fetchers/fetcher.ts`：`SourceFetcher = (source, ctx) => Promise<RawItem[]>`、`FetcherContext`（`now`/`http`/`parser`）、`type`→fetcher 的 `Record` 分派（research D2）
+- [X] T020 [P] [US1] 實作 `src/news/fetchers/hn-algolia.fetcher.ts`：Algolia JSON、`created_at_i>7天前`、`points`→score、`url` 空退回 permalink（依 T004/T019；research D4）
+- [X] T021 [P] [US1] 實作 `src/news/fetchers/reddit-weekly.fetcher.ts`：`rss-parser` 解析 `/top/.rss?t=week`、`score=null`（依 T004/T019；research D5）
+- [X] T022 [P] [US1] 實作 `src/news/fetchers/rss.fetcher.ts`：`rss-parser` 通用 RSS/Atom、摘要截 ~500 字（依 T004/T019；research D5、FR-007）
+- [X] T023 [P] [US1] 實作 `src/news/fetchers/github-releases.fetcher.ts`：`rss-parser` 解析 `releases.atom` ＋套 `release-filter`（依 T004/T016/T019；FR-008）
+- [X] T024 [P] [US1] 建立候選觀測輸出 `src/news/news-log.ts`：印出候選清單（統一結構、`domain`/`tier`/`sources[]`/規模）作為本 Feature 唯一產出面
+- [X] T025 [US1] 建立編排服務 `src/news/news-ingest.service.ts`（US1 部分）：`@Injectable`，載入設定→對每個 `enabled` 來源**獨立 try/catch** 抓取＋正規化為 `NewsCandidate`（填 `normalizedUrl`/`domain`/`sources=[sourceId]`）→ `cross` 歸類 → 0 筆／失敗經 `bestEffortFailureAlert` 發帶 `id` 告警 → 匯集後經 `news-log` 觀測（依 T014/T018/T019/T024；FR-005/006/025/026）
+- [X] T026 [US1] 於 `src/news/news.module.ts` 掛入 `NewsIngestService` 及相依（import `DiscordModule`/`StateModule` 供告警與後續狀態存取），並在 `src/app.module.ts` 註冊 `NewsModule`
 
 **Checkpoint**: US1 可獨立驗證 — 從設定檔抓到正規化候選、0 筆告警、來源隔離皆成立（尚未去重／過濾）
 
@@ -96,16 +96,16 @@ description: "Task list for 004-news-ingest implementation"
 
 ### Tests for User Story 2 ⚠️
 
-- [ ] T027 [P] [US2] target-URL 正規化測試 `src/news/url-normalize.spec.ts`：小寫 host、去 `www.`、去追蹤參數（`utm_*`/`ref`/`fbclid`/`gclid`/`mc_*`）、統一尾斜線、去 fragment、已知短網址單次解、指向同一資源得相同鍵（FR-011、**SC-009**）
-- [ ] T028 [P] [US2] 標題相似度測試 `src/news/title-similarity.spec.ts`：標題正規化（小寫/去標點/去 stop words）→ token Jaccard、門檻上下界行為（FR-013）
-- [ ] T029 [P] [US2] 去重合併測試 `src/news/dedup.spec.ts`：同 `normalizedUrl` 合併保留最高分代表＋`sources[]` 累積（**SC-001**）、**同分時代表以 `sourceId`→`originalUrl` 字典序確定性決勝**（FR-012 決定性，**SC-011**）、標題近似合併／低於門檻不誤合併、無目標連結以自身連結為鍵不崩潰（FR-012/013/015、Edge）
+- [X] T027 [P] [US2] target-URL 正規化測試 `src/news/url-normalize.spec.ts`：小寫 host、去 `www.`、去追蹤參數（`utm_*`/`ref`/`fbclid`/`gclid`/`mc_*`）、統一尾斜線、去 fragment、已知短網址單次解、指向同一資源得相同鍵（FR-011、**SC-009**）
+- [X] T028 [P] [US2] 標題相似度測試 `src/news/title-similarity.spec.ts`：標題正規化（小寫/去標點/去 stop words）→ token Jaccard、門檻上下界行為（FR-013）
+- [X] T029 [P] [US2] 去重合併測試 `src/news/dedup.spec.ts`：同 `normalizedUrl` 合併保留最高分代表＋`sources[]` 累積（**SC-001**）、**同分時代表以 `sourceId`→`originalUrl` 字典序確定性決勝**（FR-012 決定性，**SC-011**）、標題近似合併／低於門檻不誤合併、無目標連結以自身連結為鍵不崩潰（FR-012/013/015、Edge）
 
 ### Implementation for User Story 2
 
-- [ ] T030 [P] [US2] 建立 `src/news/url-normalize.ts`：純函式 `normalizeTargetUrl(raw)` 依 research D7（WHATWG `URL` 逐段處理、已知短網址 host 才單次解址、否則照原樣）
-- [ ] T031 [P] [US2] 建立 `src/news/title-similarity.ts`：純函式 標題正規化 ＋ `jaccard()`，`TITLE_JACCARD_THRESHOLD` 起始 0.6（可調常數；research D9）
-- [ ] T032 [US2] 建立 `src/news/dedup.ts`：URL 合併（同 `normalizedUrl` 取最高分為代表、併 `sources[]`）＋標題 Jaccard 補漏合併（依 T030/T031；FR-012/013/015）
-- [ ] T033 [US2] 於 `news-ingest.service.ts` 串接去重：正規化後 → URL 去重 → 標題 Jaccard 去重，並在 `news-ingest.service.spec.ts` 補跨來源同一則只一筆、`sources[]` 合併之整合斷言（依 T032；SC-001）
+- [X] T030 [P] [US2] 建立 `src/news/url-normalize.ts`：純函式 `normalizeTargetUrl(raw)` 依 research D7（WHATWG `URL` 逐段處理、已知短網址 host 才單次解址、否則照原樣）
+- [X] T031 [P] [US2] 建立 `src/news/title-similarity.ts`：純函式 標題正規化 ＋ `jaccard()`，`TITLE_JACCARD_THRESHOLD` 起始 0.6（可調常數；research D9）
+- [X] T032 [US2] 建立 `src/news/dedup.ts`：URL 合併（同 `normalizedUrl` 取最高分為代表、併 `sources[]`）＋標題 Jaccard 補漏合併（依 T030/T031；FR-012/013/015）
+- [X] T033 [US2] 於 `news-ingest.service.ts` 串接去重：正規化後 → URL 去重 → 標題 Jaccard 去重，並在 `news-ingest.service.spec.ts` 補跨來源同一則只一筆、`sources[]` 合併之整合斷言（依 T032；SC-001）
 
 **Checkpoint**: US1＋US2 可並行驗證 — 跨來源同一則只出現一筆、`sources[]` 正確合併（M2 驗收核心）
 
@@ -119,12 +119,12 @@ description: "Task list for 004-news-ingest implementation"
 
 ### Tests for User Story 3 ⚠️
 
-- [ ] T034 [P] [US3] 漏斗測試 `src/news/funnel.spec.ts`：分數門檻僅作用有分數來源、**Tier 2／`score===null` 不被丟**（SC-005）、交叉驗證加權、榜單相關加權且空榜單安全略過（Edge）、tier 差異化門檻與權重（FR-019）、全序決勝（加權分↓→新鮮度↓→URL↑）與收斂規模、**相同輸入確定性**（FR-016~021、**SC-005/006/011**）
+- [X] T034 [P] [US3] 漏斗測試 `src/news/funnel.spec.ts`：分數門檻僅作用有分數來源、**Tier 2／`score===null` 不被丟**（SC-005）、交叉驗證加權、榜單相關加權且空榜單安全略過（Edge）、tier 差異化門檻與權重（FR-019）、全序決勝（加權分↓→新鮮度↓→URL↑）與收斂規模、**相同輸入確定性**（FR-016~021、**SC-005/006/011**）
 
 ### Implementation for User Story 3
 
-- [ ] T035 [US3] 建立 `src/news/funnel.ts`：純函式 過濾（`SCORE_THRESHOLDS` 可調常數表、無分數不套門檻）＋加權（交叉驗證、榜單相關、tier 差異化）＋四層全序決勝排序 ＋收斂取前 N（稀少照實不硬湊）；榜單相關集（由 T036 傳入的榜上 repo 名 `Set`）為空集合時整段略過（research D8/D10/D11）
-- [ ] T036 [US3] 於 `news-ingest.service.ts` 串接漏斗：去重後 → 從 `state.board`（`StateStore.load()`）建榜單 repo 名 `Set` 傳入 `funnel` → 過濾/加權/排序/收斂；無榜單資料時傳空集合安全略過（依 T035；FR-018、Assumptions）
+- [X] T035 [US3] 建立 `src/news/funnel.ts`：純函式 過濾（`SCORE_THRESHOLDS` 可調常數表、無分數不套門檻）＋加權（交叉驗證、榜單相關、tier 差異化）＋四層全序決勝排序 ＋收斂取前 N（稀少照實不硬湊）；榜單相關集（由 T036 傳入的榜上 repo 名 `Set`）為空集合時整段略過（research D8/D10/D11）
+- [X] T036 [US3] 於 `news-ingest.service.ts` 串接漏斗：去重後 → 從 `state.board`（`StateStore.load()`）建榜單 repo 名 `Set` 傳入 `funnel` → 過濾/加權/排序/收斂；無榜單資料時傳空集合安全略過（依 T035；FR-018、Assumptions）
 
 **Checkpoint**: US1＋US2＋US3 — 候選收斂至約 15–25 則、排序確定（SC-006/011）
 
@@ -138,12 +138,12 @@ description: "Task list for 004-news-ingest implementation"
 
 ### Tests for User Story 4 ⚠️
 
-- [ ] T037 [P] [US4] seenNews 測試 `src/news/seen-news.spec.ts`：`pruneSeenNews` 剔除逾 7 天、保留期內留存（**SC-008**）；`excludeSeen` 以**正規化 URL**比對排除已見、帶不同追蹤參數同連結仍判已見（FR-022/023、**SC-007**）
+- [X] T037 [P] [US4] seenNews 測試 `src/news/seen-news.spec.ts`：`pruneSeenNews` 剔除逾 7 天、保留期內留存（**SC-008**）；`excludeSeen` 以**正規化 URL**比對排除已見、帶不同追蹤參數同連結仍判已見（FR-022/023、**SC-007**）
 
 ### Implementation for User Story 4
 
-- [ ] T038 [P] [US4] 建立 `src/news/seen-news.ts`：純函式 `pruneSeenNews(entries, now, retentionDays=7)` 與 `excludeSeen(candidates, seenSet, now)`，比對套 `normalizeTargetUrl`（依 T030；research D12）
-- [ ] T039 [US4] 於 `news-ingest.service.ts` 串接：`StateStore.load()` 後記憶體修剪 `seenNews` → 漏斗排序後 `excludeSeen` 排除；**不寫回**（FR-024）；補整合斷言（依 T038；SC-007/008）
+- [X] T038 [P] [US4] 建立 `src/news/seen-news.ts`：純函式 `pruneSeenNews(entries, now, retentionDays=7)` 與 `excludeSeen(candidates, seenSet, now)`，比對套 `normalizeTargetUrl`（依 T030；research D12）
+- [X] T039 [US4] 於 `news-ingest.service.ts` 串接：`StateStore.load()` 後記憶體修剪 `seenNews` → 漏斗排序後 `excludeSeen` 排除；**不寫回**（FR-024）；補整合斷言（依 T038；SC-007/008）
 
 **Checkpoint**: 四個故事皆可獨立驗證 — 完整鏈路「設定檔→抓取→正規化→去重→過濾→排除 seen→候選觀測」成立
 
@@ -153,9 +153,9 @@ description: "Task list for 004-news-ingest implementation"
 
 **Purpose**: 收尾與跨故事驗證
 
-- [ ] T040 [US4] （可選）於 `src/main.cli.ts` 以觀測模式呼叫 `NewsIngestService.ingest(now, boardRepoNames)` 印出候選（不接推播；推播串接屬 F7）
-- [ ] T041 執行 quickstart.md 驗證：`npm run build`（tsc strict 無錯）＋ `npm test` 全綠，逐一對照 SC-001~SC-011
-- [ ] T042 勾選 `specs/004-news-ingest/tasks.md` 完成項，確認無跨故事破壞獨立性、無同檔衝突遺留
+- [X] T040 [US4] （可選）於 `src/main.cli.ts` 以觀測模式呼叫 `NewsIngestService.ingest(now, boardRepoNames)` 印出候選（不接推播；推播串接屬 F7）
+- [X] T041 執行 quickstart.md 驗證：`npm run build`（tsc strict 無錯）＋ `npm test` 全綠，逐一對照 SC-001~SC-011
+- [X] T042 勾選 `specs/004-news-ingest/tasks.md` 完成項，確認無跨故事破壞獨立性、無同檔衝突遺留
 
 ---
 
