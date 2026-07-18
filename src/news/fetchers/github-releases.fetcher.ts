@@ -8,15 +8,17 @@ import { isNoisyRelease } from '../release-filter';
  * 純 patch**，只留 major/minor 或安全修補（FR-008 / SC-010）。releases 無社群分數 → `score = null`。
  */
 export const githubReleasesFetcher: SourceFetcher = async (source, ctx) => {
-  const items = await fetchAndParse(source, ctx);
+  const parsed = await fetchAndParse(source, ctx);
   const out: RawItem[] = [];
-  for (const item of items) {
+  for (const item of parsed) {
     const title = item.title?.trim();
     const link = item.link?.trim();
     if (!title || !link) {
       continue;
     }
-    if (isNoisyRelease(title)) {
+    // 安全字樣常只在 release 內文（body）而非標題，故 body 併入安全豁免判定（title 仍主導版號／pre-release）。
+    const body = item.content ?? item.contentSnippet ?? null;
+    if (isNoisyRelease(title, body)) {
       continue; // 版本噪音（pre-release／純 patch）不入候選池
     }
     out.push({
@@ -27,5 +29,5 @@ export const githubReleasesFetcher: SourceFetcher = async (source, ctx) => {
       publishedAt: item.isoDate ?? null,
     });
   }
-  return out;
+  return { parsedCount: parsed.length, items: out };
 };

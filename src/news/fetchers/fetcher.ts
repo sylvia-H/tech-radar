@@ -44,8 +44,21 @@ export interface FetcherContext {
   parser: RssParser;
 }
 
-/** 抓取器介面（FR-004）：`(source, ctx) => RawItem[]`。 */
-export type SourceFetcher = (source: NewsSource, ctx: FetcherContext) => Promise<RawItem[]>;
+/**
+ * 抓取器輸出（FR-004）：`items` 為過濾後產出的候選原料；`parsedCount` 為**過濾前**、fetcher 從
+ * 來源實際解析到的原始條目數。二者分離，讓呼叫端能區分「來源空／壞掉」（`parsedCount === 0` →
+ * 發 0 筆告警）與「來源正常、只是內容過濾後無合格項」（`parsedCount > 0` 但 `items` 空 → 不告警，
+ * 避免 github-releases 過濾光 patch 時的誤告警，FR-025/026）。
+ */
+export interface FetchResult {
+  /** 過濾前解析到的原始條目數（0 = 來源空／壞，才是「解析到 0 筆」）。 */
+  parsedCount: number;
+  /** 過濾後產出的候選原料。 */
+  items: RawItem[];
+}
+
+/** 抓取器介面（FR-004）：`(source, ctx) => FetchResult`。 */
+export type SourceFetcher = (source: NewsSource, ctx: FetcherContext) => Promise<FetchResult>;
 
 /** `type` → fetcher 的分派表（策略表；新增同型別來源只改設定，不動此處，FR-004）。 */
 export const FETCHERS: Record<NewsSourceType, SourceFetcher> = {

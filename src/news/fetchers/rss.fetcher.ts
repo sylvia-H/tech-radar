@@ -37,5 +37,6 @@ export async function fetchAndParse(source: { url: string }, ctx: FetcherContext
 
 /** 一般 RSS/Atom（官方 blog、Lobste.rs 標籤…）。 */
 export const rssFetcher: SourceFetcher = async (source, ctx) => {
-  return rssItemsToRaw(await fetchAndParse(source, ctx));
+  const parsed = await fetchAndParse(source, ctx);
+  return { parsedCount: parsed.length, items: rssItemsToRaw(parsed) };
 };

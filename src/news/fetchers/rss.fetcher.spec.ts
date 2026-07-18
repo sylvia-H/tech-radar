@@ -16,7 +16,7 @@ function ctxWithFeed(items: RssItem[]): FetcherContext {
 describe('rssFetcher（FR-005/007）', () => {
   it('title/link/摘要截 ~500 字/isoDate；缺 title 或 link 者略過', async () => {
     const long = 'x'.repeat(SUMMARY_MAX + 100);
-    const items = await rssFetcher(
+    const result = await rssFetcher(
       SRC,
       ctxWithFeed([
         { title: 'Keep', link: 'https://a.com', content: long, isoDate: '2026-07-17T00:00:00Z' },
@@ -25,9 +25,10 @@ describe('rssFetcher（FR-005/007）', () => {
         { title: 'NoLink' }, // 缺 link → 略過
       ]),
     );
-    expect(items).toHaveLength(1);
-    expect(items[0].title).toBe('Keep');
-    expect(items[0].summary!.length).toBe(SUMMARY_MAX);
-    expect(items[0].score).toBeNull();
+    expect(result.items).toHaveLength(1);
+    expect(result.items[0].title).toBe('Keep');
+    expect(result.items[0].summary!.length).toBe(SUMMARY_MAX);
+    expect(result.items[0].score).toBeNull();
+    expect(result.parsedCount).toBe(4); // 原始解析 4 筆（含被略過的 malformed）
   });
 });

@@ -28,8 +28,9 @@ export const hnAlgoliaFetcher: SourceFetcher = async (source, ctx) => {
   const url = `${source.url}${sep}numericFilters=created_at_i>${cutoff}&hitsPerPage=100`;
   const data = await ctx.http.getJson<AlgoliaResponse>(url);
 
+  const hits = data.hits ?? [];
   const items: RawItem[] = [];
-  for (const hit of data.hits ?? []) {
+  for (const hit of hits) {
     const createdAt = typeof hit.created_at_i === 'number' ? hit.created_at_i : null;
     if (createdAt !== null && createdAt < cutoff) {
       continue; // 近 7 天雙重保險（query 已濾，防端點行為變動）
@@ -48,5 +49,6 @@ export const hnAlgoliaFetcher: SourceFetcher = async (source, ctx) => {
       publishedAt: createdAt !== null ? new Date(createdAt * 1000).toISOString() : null,
     });
   }
-  return items;
+  // parsedCount 取原始 hits 數：Algolia 有回應（即使全被近 7 天／空標題濾除）即非「解析到 0 筆」。
+  return { parsedCount: hits.length, items };
 };

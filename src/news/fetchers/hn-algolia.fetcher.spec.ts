@@ -36,11 +36,12 @@ describe('hnAlgoliaFetcher（FR-005/010/015）', () => {
       },
       now,
     );
-    const items = await hnAlgoliaFetcher(SRC, ctx);
+    const result = await hnAlgoliaFetcher(SRC, ctx);
 
-    expect(items).toHaveLength(2); // 超過 7 天者濾除
-    expect(items[0]).toMatchObject({ title: 'A', targetUrl: 'https://a.com/x', score: 150, summary: null });
-    expect(items[1].targetUrl).toBe('https://news.ycombinator.com/item?id=2');
+    expect(result.items).toHaveLength(2); // 超過 7 天者濾除
+    expect(result.items[0]).toMatchObject({ title: 'A', targetUrl: 'https://a.com/x', score: 150, summary: null });
+    expect(result.items[1].targetUrl).toBe('https://news.ycombinator.com/item?id=2');
+    expect(result.parsedCount).toBe(3); // 原始 hits 數（過濾前）
     expect(getJson.mock.calls[0][0]).toContain(`numericFilters=created_at_i>${weekAgo}`);
   });
 });

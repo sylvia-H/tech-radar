@@ -7,5 +7,6 @@ import { fetchAndParse, rssItemsToRaw } from './rss.fetcher';
  * 對齊「本週」口徑（FR-010）。
  */
 export const redditWeeklyFetcher: SourceFetcher = async (source, ctx) => {
-  return rssItemsToRaw(await fetchAndParse(source, ctx));
+  const parsed = await fetchAndParse(source, ctx);
+  return { parsedCount: parsed.length, items: rssItemsToRaw(parsed) };
 };

@@ -1,4 +1,4 @@
-import { NewsIngestService } from './news-ingest.service';
+import { NewsIngestService, boardRepoNameSet } from './news-ingest.service';
 import { NewsHttp } from './news-http';
 import { NewsRssParser } from './fetchers/fetcher';
 import { DiscordWebhookService } from '../discord/discord.webhook.service';
@@ -133,5 +133,73 @@ describe('NewsIngestService.ingest — 榜單相關性 ＋ 跨天排除（US3/US
     const { svc } = makeService({ parse });
     const out = await svc.ingest(NOW, new Set(['langchain']), sources);
     expect(out[0].normalizedUrl).toBe(normalizeTargetUrl('https://good.example/b'));
+  });
+});
+
+describe('boardRepoNameSet — 通用短名不加入比對集（Fix 5）', () => {
+  it('保留 fullName 與非通用短名；通用短名（core/cli…）跳過', () => {
+    const board = {
+      'vuejs/core': {},
+      'langchain-ai/langchain': {},
+      'some-owner/cli': {},
+    } as unknown as BoardState['board'];
+    const names = boardRepoNameSet(board);
+
+    expect(names.has('vuejs/core')).toBe(true); // fullName 全名保留
+    expect(names.has('langchain')).toBe(true); // 具鑑別度的短名保留
+    expect(names.has('core')).toBe(false); // 通用短名跳過（避免誤命中內文一般詞）
+    expect(names.has('cli')).toBe(false); // 通用短名跳過
+  });
+});
+
+describe('NewsIngestService.ingest — 過濾後 0 筆不誤告警（Fix 2）', () => {
+  const sources: NewsSource[] = [
+    { id: 'gh-allpatch', type: 'github-releases', url: 'https://github.com/x/y/releases.atom', domain: 'frontend-backend', tier: 2 },
+  ];
+  // 原始解析 2 筆、但全為純 patch／pre-release → 過濾後 0 筆。
+  const parse = (xml: string) =>
+    xml.includes('releases')
+      ? {
+          items: [
+            { title: 'v1.0.1', link: 'https://github.com/x/y/releases/1' },
+            { title: 'v2.0.0-beta', link: 'https://github.com/x/y/releases/2' },
+          ],
+        }
+      : { items: [] };
+
+  it('原始解析>0、過濾後為 0（全 patch/pre-release）→ 不發 0 筆告警、輸出為空', async () => {
+    const { svc, postFailureAlert } = makeService({ parse });
+    const out = await svc.ingest(NOW, new Set(), sources);
+
+    expect(out).toEqual([]);
+    const alerts = postFailureAlert.mock.calls.map((c) => String(c[0]));
+    expect(alerts.some((m) => m.includes('gh-allpatch'))).toBe(false); // 過濾歸零屬正常、不告警
+  });
+});
+
+describe('NewsIngestService.ingest — 排除已見於收斂之前（Fix 1）', () => {
+  const sources: NewsSource[] = [{ id: 'good-rss', type: 'rss', url: 'https://good.example/multi', domain: 'ai', tier: 1 }];
+
+  // 26 筆（> convergeMax 25），依 publishedAt 遞減；i=0 最新、i=25 最舊。
+  const twentySix = Array.from({ length: 26 }, (_, i) => ({
+    title: `Post number ${i}`,
+    link: `https://good.example/p${String(i).padStart(2, '0')}`,
+    isoDate: new Date(NOW.getTime() - i * 3_600_000).toISOString(),
+  }));
+  const parse = (xml: string) => (xml.includes('multi') ? { items: twentySix } : { items: [] });
+
+  it('最新一筆已見時：先排除再收斂 → 仍輸出 25 筆，且排名其後的新鮮候選不被排擠', async () => {
+    const state: BoardState = {
+      ...emptyBoardState(),
+      seenNews: [{ url: 'https://good.example/p00', seenAt: '2026-07-17T12:00:00Z' }], // 最新一筆已見
+    };
+    const { svc } = makeService({ parse, state });
+    const out = await svc.ingest(NOW, new Set(), sources);
+
+    // 先排除已見 p00（剩 25）→ 收斂上限 25 → 全數保留；最舊的 p25 不因先收斂而被排擠掉。
+    expect(out).toHaveLength(25);
+    const urls = out.map((c) => c.normalizedUrl);
+    expect(urls).not.toContain(normalizeTargetUrl('https://good.example/p00'));
+    expect(urls).toContain(normalizeTargetUrl('https://good.example/p25'));
   });
 });
