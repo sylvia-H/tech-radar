@@ -36,3 +36,14 @@ export function chunkEmbeds(embeds: DiscordEmbed[], max = 10): DiscordEmbed[][];
 
 呼叫端（**每段服務各自**呼叫一次，不跨段合併輸入）對每批 `await discord.send({ username, embeds: batch })`；
 任一批擲錯即該段 push-then-commit 不提交（見 `pipeline-orchestration.md` C2/C3）。
+
+## 已知有界缺點：多批推播非原子
+
+當一段被切成 **>1 批**（唯一實際情境：榜單段冷啟動 11 = 封面＋10 卡 → 10+1）時，逐批 `send` **不是原子操作**：
+若「前批 `send` 成功、後批 `send` 失敗」，該段依 push-then-commit 語意**不提交**（`lastBoardPushAt` 不前進），
+下一次 cron 到期後**整段重跑並重送前批**——已送達的封面＋前 10 卡會在 Discord **重複出現一次**。
+
+這是**刻意接受的有界缺點**（非漏處理）：觸發需同時滿足「冷啟動（一生一次）」＋「恰在批次間失敗」，機率極低；
+而要真正原子化只能靠「壓成單則 ≤10 embeds（犧牲版面／FR-010 呈現）」或「在 `state` 記批次 checkpoint
+（新增持久化狀態與還原邏輯）」，兩者都為此極窄邊角付出與風險不成比例的代價，牴觸憲章 I（零維運／免費）
+與最簡設計原則。若日後實測觀察到重複造成困擾，再升級處理。

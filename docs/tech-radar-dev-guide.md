@@ -484,6 +484,10 @@ for (const batch of chunkEmbeds(digestEmbeds, 10)) {
 
 > 非榜單日只有一則晨報訊息；榜單日帶簡介的卡片＝「新進 top 10 + 竄升」，因視窗僅 10 席故 ≤10 張。**冷啟動日**（全數新進、10 張卡）＋封面＝**榜單段自身 11 個 embeds**、超過 Discord 單則 10 embeds 上限 → 榜單段依顯示順序切成 2 則（`chunkEmbeds`，F7），不特例處理「晨報改送第二則」——通用切分即可涵蓋，且不會漏送或整批被拒收；晨報段照常獨立送出自己的訊息，**不與榜單段合併**（維持段間隔離，任一段推播失敗不牽連另一段的 push-then-commit）。
 
+> **`dateLabel` 取台北日期（UTC+8）**：晨報／榜單封面標題的 `· ${dateLabel}` 以 `taipeiDateLabel(now)`（`src/pipeline/layout/date-label.ts`）計算，非直接取 `now.toISOString()` 的 UTC 日期。cron 22:xx UTC ＝台北隔日 06:xx，取 UTC 日期會比讀者實際收到的日子慢一天；台灣無夏令時，固定 +8h 位移後取日期即台北當地日期。
+
+> **多批推播非原子（已知有界缺點）**：僅榜單段冷啟動（11 embeds → 10+1）會 >1 批。逐批 `send` 若「前批成功、後批失敗」則該段不提交，下次 cron 整段重跑會**重送前批**（封面＋前 10 卡在 Discord 重複一次）。這是**刻意接受**的取捨——觸發需「冷啟動（一生一次）＋恰在批次間失敗」，機率極低；真正原子化只能壓成單則（犧牲版面／FR-010）或在 `state` 記批次 checkpoint（新增持久化狀態），皆與憲章 I（零維運）／最簡設計不成比例。詳見 `specs/007-pipeline-push/contracts/embed-split.md`。
+
 ### 7.3 呈現後大概長這樣（mock）
 
 ```

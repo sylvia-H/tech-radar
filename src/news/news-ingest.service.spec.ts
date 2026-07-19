@@ -65,6 +65,22 @@ describe('NewsIngestService.ingest — 隔離容錯（US1, FR-025/026, SC-003/00
 
     expect(getText).not.toHaveBeenCalledWith('https://off.example/feed'); // 停用不抓取
   });
+
+  it('同時給定 boardRepoNames 與 seenNews → 不呼叫 stateStore.load()（F7 pipeline 已 load，免重複讀盤）', async () => {
+    const { svc, load } = makeService({ parse });
+
+    await svc.ingest(NOW, new Set(), sources, []);
+
+    expect(load).not.toHaveBeenCalled();
+  });
+
+  it('未給 seenNews → 仍回退 stateStore.load() 取 seenNews（向後相容）', async () => {
+    const { svc, load } = makeService({ parse });
+
+    await svc.ingest(NOW, new Set(), sources);
+
+    expect(load).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('NewsIngestService.ingest — 跨來源去重（US2, SC-001）', () => {
