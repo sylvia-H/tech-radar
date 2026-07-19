@@ -34,10 +34,12 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   { id: 'gh-vue', type: 'github-releases', url: 'https://github.com/vuejs/core/releases.atom', domain: 'frontend-backend', tier: 3 },
   { id: 'gh-react', type: 'github-releases', url: 'https://github.com/facebook/react/releases.atom', domain: 'frontend-backend', tier: 3 },
   { id: 'thenewstack', type: 'rss', url: 'https://thenewstack.io/feed/', domain: 'devops', tier: 3 },
-  { id: 'reddit-devops', type: 'reddit-weekly', url: 'https://www.reddit.com/r/devops/top/.rss?t=week', domain: 'devops', tier: 3 },
-  { id: 'reddit-node', type: 'reddit-weekly', url: 'https://www.reddit.com/r/node/top/.rss?t=week', domain: 'frontend-backend', tier: 3 },
-  { id: 'reddit-python', type: 'reddit-weekly', url: 'https://www.reddit.com/r/Python/top/.rss?t=week', domain: 'frontend-backend', tier: 3 },
-  { id: 'reddit-reactjs', type: 'reddit-weekly', url: 'https://www.reddit.com/r/reactjs/top/.rss?t=week', domain: 'frontend-backend', tier: 3 },
+  // 2026-07-19 實測：GitHub Actions runner IP 持續遭 Reddit 擋 403/429（重試 3 次仍失敗），
+  // 非單次抖動。四者皆 Tier 3、社群訊號可由其他來源替代，先停用觀察，不刪除設定（§4.3）。
+  { id: 'reddit-devops', type: 'reddit-weekly', url: 'https://www.reddit.com/r/devops/top/.rss?t=week', domain: 'devops', tier: 3, enabled: false },
+  { id: 'reddit-node', type: 'reddit-weekly', url: 'https://www.reddit.com/r/node/top/.rss?t=week', domain: 'frontend-backend', tier: 3, enabled: false },
+  { id: 'reddit-python', type: 'reddit-weekly', url: 'https://www.reddit.com/r/Python/top/.rss?t=week', domain: 'frontend-backend', tier: 3, enabled: false },
+  { id: 'reddit-reactjs', type: 'reddit-weekly', url: 'https://www.reddit.com/r/reactjs/top/.rss?t=week', domain: 'frontend-backend', tier: 3, enabled: false },
 ];
 
 /** 已驗證的來源清單（載入時經 `validateNewsSources`：唯一 id、必填欄位、列舉）。 */
