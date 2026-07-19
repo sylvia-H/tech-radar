@@ -64,16 +64,25 @@
 
 - 一個 commit 回 repo 的 JSON，兼顧「上次榜單快照」、「簡介快取」與「已推新聞紀錄」。體積小（數十 KB），且被 git 版本化是免費的歷史紀錄。
 
-### 2.3 推播與串接方式：Discord Channel Webhook
+### 2.3 推播與串接方式：Discord Channel Webhook（三頻道分流）
 
-本專案是「自用」，串接非常單純，**不需要前後台、帳號或訂閱系統**：
+本專案是「自用」，串接非常單純，**不需要前後台、帳號或訂閱系統**。2026-07-19 起改為
+**三條獨立 webhook**（原單一 `DISCORD_WEBHOOK_URL` 已拆分），彼此互不共用頻道：
 
-1. 在 Discord 建一個自己的伺服器與一個私人頻道。
+| 用途 | Secret 名稱 | 對應呼叫 |
+|------|-------------|----------|
+| 每日晨報 | `DISCORD_NEWS_WEBHOOK_URL` | `NewsSegmentService` → `discord.send(payload, 'news')` |
+| GitHub repo 榜單 | `DISCORD_BOARD_WEBHOOK_URL` | `BoardSegmentService` → `discord.send(payload, 'board')` |
+| 告警訊息 | `DISCORD_ALERT_WEBHOOK_URL` | 所有 `postFailureAlert`／`bestEffortFailureAlert`／`postTestEmbed`（來源失敗、推播失敗、pipeline 未預期錯誤、workflow 層級補送告警） |
+
+設定步驟（每條 webhook 各做一次）：
+
+1. 在 Discord 建一個自己的伺服器與對應頻道（可以是同一伺服器下三個頻道，或分開的伺服器）。
 2. 頻道設定 → 整合 → Webhook → 新增 Webhook，複製 **Webhook URL**（格式 `https://discord.com/api/webhooks/{id}/{token}`）。
-3. 把這個 URL 放進 GitHub Actions Secrets（`DISCORD_WEBHOOK_URL`），**不要進 repo**。
-4. job 每次 POST 含 `embeds` 的 JSON 到該 URL 即完成推播。
+3. 把這個 URL 放進 GitHub Actions Secrets（依上表對應的 secret 名稱），**不要進 repo**。
+4. job 依訊息類型 POST 含 `embeds` 的 JSON 到對應的 URL 即完成推播。
 
-也就是說——**「開一個頻道、拿到它的 webhook URL、寫進 env」就等於訂閱了**，沒有輸入框/訂閱鈕/後台這回事。要停止收推播，把該 secret 移除或關掉 workflow 即可。注意 webhook URL 本身即是憑證：**持有它的人就能對該頻道發文**，務必當機密保管、別公開貼出。
+也就是說——**「開一個頻道、拿到它的 webhook URL、寫進對應 secret」就等於訂閱了**，沒有輸入框/訂閱鈕/後台這回事。要停止收某一類推播，把該 secret 移除或清空即可（三者互相獨立，互不影響）。注意 webhook URL 本身即是憑證：**持有它的人就能對該頻道發文**，務必當機密保管、別公開貼出。
 
 ### 2.4 LLM：Gemini 免費層
 
@@ -572,8 +581,8 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with: { node-version: "24", cache: "npm" }
       - run: npm ci
       - run: npm run build
@@ -581,7 +590,9 @@ jobs:
         env:
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_NEWS_WEBHOOK_URL: ${{ secrets.DISCORD_NEWS_WEBHOOK_URL }}
+          DISCORD_BOARD_WEBHOOK_URL: ${{ secrets.DISCORD_BOARD_WEBHOOK_URL }}
+          DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
       - name: Commit & push state（rebase + 重試，失敗要響）
         run: |
           git config user.name  "radar-bot"
@@ -600,9 +611,9 @@ jobs:
         run: |
           curl -s -H "Content-Type: application/json" \
             -d '{"embeds":[{"title":"⚠️ Tech Radar 執行失敗","description":"workflow 失敗，請查 Actions log。","color":15158332}]}' \
-            "${DISCORD_WEBHOOK_URL}"
+            "${DISCORD_ALERT_WEBHOOK_URL}"
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
 ```
 
 ---

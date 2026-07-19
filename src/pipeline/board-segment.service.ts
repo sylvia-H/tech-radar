@@ -109,7 +109,7 @@ export class BoardSegmentService {
       const embeds = [cover, ...cards];
 
       for (const batch of chunkEmbeds(embeds, 10)) {
-        await this.discord.send({ username: 'Tech Radar', embeds: batch });
+        await this.discord.send({ username: 'Tech Radar', embeds: batch }, 'board');
       }
 
       // push-then-commit：commitBoardPush 為純函式回傳新 BoardState。順序為「先原子 save→成功後才

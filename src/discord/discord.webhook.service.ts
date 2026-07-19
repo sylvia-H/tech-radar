@@ -10,6 +10,15 @@ import {
 const MAX_RETRIES = 3;
 const MAX_BACKOFF_MS = 5000;
 
+/** 三條獨立 Discord webhook（晨報／榜單／告警），互不共用同一頻道。 */
+export type DiscordChannel = 'news' | 'board' | 'alert';
+
+const CHANNEL_ENV_KEY: Record<DiscordChannel, string> = {
+  news: 'DISCORD_NEWS_WEBHOOK_URL',
+  board: 'DISCORD_BOARD_WEBHOOK_URL',
+  alert: 'DISCORD_ALERT_WEBHOOK_URL',
+};
+
 /**
  * 對 Discord webhook 的唯一出口。只推播、不收訊息。
  * - 204 判定成功
@@ -22,37 +31,39 @@ export class DiscordWebhookService {
 
   constructor(private readonly config: ConfigService) {}
 
-  private get webhookUrl(): string {
-    const url = this.config.get<string>('DISCORD_WEBHOOK_URL');
+  private webhookUrl(channel: DiscordChannel): string {
+    const envKey = CHANNEL_ENV_KEY[channel];
+    const url = this.config.get<string>(envKey);
     if (!url) {
-      throw new Error('DISCORD_WEBHOOK_URL 未設定');
+      throw new Error(`${envKey} 未設定`);
     }
     return url;
   }
 
-  /** 推一則橙色連通測試 embed。 */
+  /** 推一則橙色連通測試 embed（告警頻道）。 */
   async postTestEmbed(timestamp: string, env: RunEnv): Promise<void> {
-    await this.post(buildTestEmbed(timestamp, env));
+    await this.post(buildTestEmbed(timestamp, env), 'alert');
   }
 
-  /** 推一則紅色失敗告警 embed（summary 須為不含機密的錯誤摘要）。 */
+  /** 推一則紅色失敗告警 embed（告警頻道；summary 須為不含機密的錯誤摘要）。 */
   async postFailureAlert(summary: string): Promise<void> {
-    await this.post(buildFailureAlert(summary));
+    await this.post(buildFailureAlert(summary), 'alert');
   }
 
-  /** F7 公開送出任意 payload（榜單/晨報組版批次）；委派既有 private post，204/429 退避與機密消毒不動。 */
-  async send(payload: DiscordWebhookPayload): Promise<void> {
-    await this.post(payload);
+  /** F7 公開送出任意 payload（榜單/晨報組版批次），依 channel 分流至對應 webhook。 */
+  async send(payload: DiscordWebhookPayload, channel: 'news' | 'board'): Promise<void> {
+    await this.post(payload, channel);
   }
 
   /**
    * 送出 payload。204 成功；429 有限退避重試；其餘失敗擲錯（不含機密）。
    */
-  private async post(payload: DiscordWebhookPayload): Promise<void> {
+  private async post(payload: DiscordWebhookPayload, channel: DiscordChannel): Promise<void> {
+    const url = this.webhookUrl(channel);
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
       let res: Response;
       try {
-        res = await fetch(this.webhookUrl, {
+        res = await fetch(url, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),

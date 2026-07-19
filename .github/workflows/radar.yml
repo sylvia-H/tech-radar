@@ -38,7 +38,9 @@ jobs:
         id: run-app
         run: node dist/main.cli.js
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_NEWS_WEBHOOK_URL: ${{ secrets.DISCORD_NEWS_WEBHOOK_URL }}
+          DISCORD_BOARD_WEBHOOK_URL: ${{ secrets.DISCORD_BOARD_WEBHOOK_URL }}
+          DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
@@ -75,6 +77,6 @@ jobs:
           fi
           curl -sf -H "Content-Type: application/json" \
             -d '{"username":"Tech Radar","embeds":[{"title":"⚠️ Tech Radar 執行失敗","description":"workflow 失敗且 CLI 未送出告警（啟動前失敗、告警送出失敗或狀態 commit/push 失敗），請查 Actions log","color":15158322}]}' \
-            "$DISCORD_WEBHOOK_URL"
+            "$DISCORD_ALERT_WEBHOOK_URL"
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
