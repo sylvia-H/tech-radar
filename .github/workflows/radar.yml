@@ -22,6 +22,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      - name: Checkout state branch
+        uses: actions/checkout@v5
+        with:
+          ref: state
+          path: state-branch
+
+      - name: Load state into workspace
+        run: |
+          mkdir -p state
+          cp state-branch/state/board.json state/board.json
+
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
@@ -45,7 +56,11 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Commit state (on change only)
+        # 狀態只 commit 到獨立的 state 分支，develop/main 不再出現 bot commit（見
+        # dev-guide §8）。
         run: |
+          cp state/board.json state-branch/state/board.json
+          cd state-branch
           git add state/board.json
           if git diff --cached --quiet; then
             echo "狀態無變更，跳過 commit"

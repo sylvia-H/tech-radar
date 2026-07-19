@@ -17,6 +17,9 @@ dist/
 .radar-alert-sent
 state/*.tmp
 
+# 唯一權威狀態改由獨立 state 分支管理（不與程式碼歷史混雜），develop/main 不再追蹤
+state/board.json
+
 # Coverage
 coverage/
 

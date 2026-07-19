@@ -95,7 +95,8 @@ tech-radar 是一個**排程型、純自用、全免費、零維運**的每日�
   `DISCORD_ALERT_WEBHOOK_URL` 告警，2026-07-19 由單一 `DISCORD_WEBHOOK_URL` 拆分，見 dev-guide §2.3），
   皆存於 Actions Secrets。
 - 排程雙離峰 cron（`:07` / `:37`，UTC）＋ guard 抗漏跑；狀態 commit **僅在 `state/board.json` 實際
-  變更時**（no-diff 早退，不製造空 commit）。
+  變更時**（no-diff 早退，不製造空 commit）；commit 落在獨立的 `state` 分支（2026-07-19 起，見
+  dev-guide §2.2/§8），**不落在 `develop`/`main`**。
 - 抓取禮貌：自訂 User-Agent、條件式請求（ETag / If-Modified-Since）、失敗指數退避；Gemini 429 用
   指數退避 + jitter。只送公開資料給 LLM。
 
@@ -134,8 +135,9 @@ tech-radar 是一個**排程型、純自用、全免費、零維運**的每日�
   merge 回 develop`，完成後才開下一支。Feature 順序依開發指南 §11.2（F1 `001-foundation` →
   F8 `008-pages-publish`）。
 - 不要在同一 branch 混多個大 Feature；不要貼整包 code 取代 `/speckit-implement`。
-- **`main` 不直接 commit**，只接受來自 `develop` 的合併。唯一 bot 例外：排程 workflow 自動 commit
-  的 `state/board.json`（執行期狀態更新）。
+- **`main` 不直接 commit**，只接受來自 `develop` 的合併。排程 workflow 自動 commit 的
+  `state/board.json`（執行期狀態更新）落在獨立的 `state` 分支（2026-07-19 起），不落在
+  `develop`/`main`，兩者皆無此類 bot commit、無例外。
 
 ### Merge 回 `develop`：MUST `--no-ff`，不得 fast-forward
 

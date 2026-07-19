@@ -15,7 +15,7 @@
 | 新聞晨報   | 每日精選 **6 則**（AI 為主，DevOps/後端/前端合計 ≤2），每則**繁中標題 ≤50 字＋內容 ≤300 字**：**結構性去重（target-URL 正規化）→ 門檻 → 單次 LLM 依「開發者重要性」策展** | 控制資訊量、防通知疲勞；**依對開發者的重要性排序（非熱度）**，重要度優先於數量；新聞每日僅 1 次 LLM。                                              |
 | 新聞來源   | **單一設定檔集中管理**（`news-sources.ts`），分三層：Tier 1 高訊號聚合 / Tier 2 高精準一手 / Tier 3 選配實驗                | 增刪修來源只改設定檔、不動 pipeline code；用一手來源（releases/官方公告）換掉低訊噪比聚合源。 |
 | repo 簡介  | 首次進榜時抓 README → Gemini 產 ≤250 字簡介 → **按 repoId 快取（獨立於榜單快照）**                     | 只生成一次，省額度、內容穩定；跌出榜再進榜也不重生成，且天然只介紹「有變化」的 repo。   |
-| 狀態存放   | **commit 回 repo 的 `state/board.json`**（榜單快照 + 簡介快取 + 已推新聞紀錄）                         | 「只看變化」需要跨執行的狀態；committed JSON 零外部依賴，順帶替排程保活（§2.1）。       |
+| 狀態存放   | **commit 到獨立 `state` 分支的 `state/board.json`**（榜單快照 + 簡介快取 + 已推新聞紀錄）               | 「只看變化」需要跨執行的狀態；committed JSON 零外部依賴，順帶替排程保活（§2.1）；獨立分支使 bot commit 不混入 `develop`/`main` 開發歷史（§2.2、§8）。 |
 | 推播       | **Discord Channel Webhook**（HTTP POST）                                                               | 只推播不收訊息 → 不需要 bot、gateway、Message Content Intent。                          |
 | LLM        | **Gemini 免費層（Flash 系）**                                                                          | 簡介 + 摘要用量遠低於 ~1,500 RPD 免費上限。                                             |
 | DB（歷史） | 不用                                                                                                   | MVP 不需要通用資料庫；星星歷史不自存（見 §3）。                                         |
@@ -30,7 +30,7 @@
   GitHub Actions（每日約 06:00 台北 · UTC cron）              Discord
   ┌────────────────────────────────────────┐               （你的私人频道）
   │ 每日 06:00 晨報 · 榜單每七天           │                     ▲
-  │  checkout（含 state/board.json）         │                     │ HTTP POST
+  │  checkout 程式碼分支 + checkout state 分支│                     │ HTTP POST
   │      │                                   │                     │ (embeds)
   │      ▼                                   │   Gemini API   ┌────┴────┐
   │  NestJS app context (CLI)                │──(Flash,免費)─▶│ Webhook │
@@ -41,12 +41,13 @@
   │   3. 對「新進榜」抓 README → Gemini 簡介  │  ← 只對變化的 repo 生成，並快取
   │   4. 抓相關討論（RSS）取變化              │
   │   5. 組「變化摘要」→ POST 到 Discord      │
-  │   6. 存回 state/board.json（含簡介快取）  │  ← commit 回 repo
+  │   6. 存回 state/board.json（含簡介快取）  │  ← commit 回 state 分支（非程式碼分支）
   └────────────────────────────────────────┘
 ```
 
 - 無伺服器、無通用 DB、無常駐程序。全免費、近乎零維運。
-- 唯一持久狀態：`state/board.json`（榜單快照 + 簡介快取 + 已推新聞紀錄），由 workflow commit 回 repo。
+- 唯一持久狀態：`state/board.json`（榜單快照 + 簡介快取 + 已推新聞紀錄），由 workflow commit 到
+  獨立的 `state` 分支（與 `develop`/`main` 的程式碼歷史解耦，§2.2）。
 - 排程解耦：每日晨報只出新聞精選；repo 榜單變化每七天推一次（以 `state` 內的 `lastBoardPushAt` 計時，門檻 162h，抗漏跑/延遲）。
 
 ---
@@ -58,11 +59,22 @@
 - **額度**：public repo 無限；private repo 每月 2,000 分鐘。一天 2 次觸發（主排 1～3 分鐘；補跑因 guard 多半數十秒內結束）→ 一個月遠低於限額。
 - **注意**：
   - cron 是 **UTC**，尖峰時可能延遲數分鐘（偶爾更久）。摘要推播可接受。
-  - 排程 workflow 在 repo **連續 60 天無活動**會被停用；每次 run 都 commit `state/board.json` 即可保活。
+  - 排程 workflow 在 repo **連續 60 天無活動**會被停用；每次 run 都 commit `state/board.json`
+    （到 `state` 分支）即可保活——commit 到任一分支皆算 repo 活動，不限定 default branch。
 
-### 2.2 狀態存放：`state/board.json`
+### 2.2 狀態存放：`state/board.json`（獨立 `state` 分支）
 
-- 一個 commit 回 repo 的 JSON，兼顧「上次榜單快照」、「簡介快取」與「已推新聞紀錄」。體積小（數十 KB），且被 git 版本化是免費的歷史紀錄。
+- 一個 commit 的 JSON，兼顧「上次榜單快照」、「簡介快取」與「已推新聞紀錄」。體積小（數十 KB），
+  且被 git 版本化是免費的歷史紀錄。
+- **落在獨立的 `state` orphan 分支**（2026-07-19 起，與 `develop`/`main` 無共同祖先，只放這一個
+  檔案）：`develop`/`main` 的 `.gitignore` 已排除 `state/board.json`，不再追蹤。workflow 執行時
+  額外 checkout `state` 分支到子目錄取得最新狀態、餵給 app、執行後把更新結果 commit/push 回
+  `state` 分支（細節見 §8）。
+- **理由**：先前 `state/board.json` 直接 commit 在觸發 workflow 的分支（曾是 `develop`）上，
+  每次排程執行都在開發歷史裡插入一個 `chore: update board state` bot commit，混淆
+  `git log`／`git blame`，且 `develop`/`main` 分歧或合併時容易在這個高頻變動檔案上產生衝突。
+  獨立分支讓程式碼歷史與自動化狀態更新完全解耦，`state` 分支的歷史可自由清理（例如未來要
+  squash 舊快照）而不影響任何程式碼分支。
 
 ### 2.3 推播與串接方式：Discord Channel Webhook（三頻道分流）
 
@@ -563,6 +575,14 @@ for (const batch of chunkEmbeds(digestEmbeds, 10)) {
 > **為何是 162h 而非 168h**：`lastBoardPushAt` 記的是**推播完成**時間，必定晚於當次 cron 觸發時間。若取精確 168h，七天後同一班 cron 觸發時算出來恆略小於門檻而跳過，改由次一班（`:37`）或隔天補推，起算點又再往後挪——Actions cron 只會延遲不會提前，故誤差**單向累積**，節奏會從 7 天滑成 7.x 天直到跨過一整天。留 6h 寬限即可吸收延遲與雙班抖動，使節奏穩定錨在每週同一時段。比例沿用新聞每日 guard（24h 週期留 6h → 「<18h 跳過」）。
 >
 > ⚠️ guard 正確性依賴「成功推播後盡快把 `lastNewsPushAt` commit 回 state」。若 job 在推播成功後、commit 前失敗，補跑那次會重推一次——機率低、自用可接受；靠「推播成功後才寫入狀態、且狀態 commit 緊接在推播之後」把這個風險窗縮到最小（見 §12 狀態一致性）。
+>
+> **`state/board.json` 的 commit 落在獨立的 `state` 分支，不落在 `develop`/`main`**（2026-07-19
+> 起）：workflow 除了 checkout 程式碼所在分支，另外 checkout `state` 分支到 `state-branch/`
+> 子目錄，執行前把 `state-branch/state/board.json` 複製進工作區給 `StateStore` 讀寫，執行後只把
+> 更新後的檔案複製回 `state-branch/`、在該子目錄內 commit/push——`develop`/`main` 完全不會出現
+> `chore: update board state` 這類 bot commit，開發歷史與自動化狀態更新徹底解耦，也不會在
+> `develop`/`main` 分歧時於這個檔案產生合併衝突。`state` 分支只放 `state/board.json` 一個檔案，
+> 與程式碼歷史無關聯（orphan branch）。
 
 ```yaml
 # .github/workflows/radar.yml
@@ -573,7 +593,7 @@ on:
     - cron: "37 22 * * *" # 06:37 台北 · 補跑（主排被 Actions 跳過時遞補；靠 lastNewsPushAt guard 去重）
   workflow_dispatch: {}
 permissions:
-  contents: write # 為了 commit state/board.json
+  contents: write # 為了 commit state 分支上的 state/board.json
 concurrency:
   group: tech-radar # 避免手動觸發撞上排程造成 push 衝突
   cancel-in-progress: false
@@ -582,6 +602,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - uses: actions/checkout@v5 # 狀態獨立分支，與程式碼歷史解耦
+        with: { ref: "state", path: "state-branch" }
+      - run: mkdir -p state && cp state-branch/state/board.json state/board.json
       - uses: actions/setup-node@v5
         with: { node-version: "24", cache: "npm" }
       - run: npm ci
@@ -593,15 +616,17 @@ jobs:
           DISCORD_NEWS_WEBHOOK_URL: ${{ secrets.DISCORD_NEWS_WEBHOOK_URL }}
           DISCORD_BOARD_WEBHOOK_URL: ${{ secrets.DISCORD_BOARD_WEBHOOK_URL }}
           DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
-      - name: Commit & push state（rebase + 重試，失敗要響）
+      - name: Commit & push state to state 分支（rebase + 重試，失敗要響）
         run: |
+          cp state/board.json state-branch/state/board.json
+          cd state-branch
           git config user.name  "radar-bot"
           git config user.email "radar@users.noreply.github.com"
           git add state/board.json
           git diff --cached --quiet && echo "no state change" && exit 0
           git commit -m "chore: update board state [skip ci]"
           for i in 1 2 3; do
-            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" \
+            git pull --rebase --autostash origin state \
               && git push && exit 0
             echo "push retry $i…"; sleep $((RANDOM % 5 + 1))
           done
@@ -699,7 +724,8 @@ bootstrap();
 - **`main` 不直接 commit**：`main` 只接受來自 `develop` 的合併，保持隨時穩定可回溯。
 - **`develop` 為整合分支**（正式開發時手動建立）：所有 Feature 分支合回 `develop`；驗證穩定後再由 `develop` 合入 `main`。
 - **每個 Feature 一條分支**：一律**從 `develop` 切出**，命名沿用 Spec Kit 慣例 `NNN-feature-name`（`/speckit.specify` 建分支時，確保當前基底是 `develop`），完成該 Feature 的 implement 與驗收後合回 `develop`。
-- **唯一例外**：排程 workflow 由 bot 自動 commit 的 `state/board.json`（§8）——那是上線後的執行期狀態更新，發生在部署所在分支，不屬開發 commit。
+- **無例外**：排程 workflow 的 bot commit（`chore: update board state`，§8）改落在獨立的
+  `state` 分支（2026-07-19 起），不再出現在 `develop`／`main` 上，故兩者皆不需要為此設例外。
 
 ### 11.2 Feature 規劃（依 SDD 進程分列，開發時依序執行）
 
