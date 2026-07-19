@@ -18,6 +18,8 @@ function brow(
     totalStars,
     language: null,
     sources: ['trending'],
+    description: null,
+    topics: [],
   };
 }
 

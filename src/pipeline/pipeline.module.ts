@@ -1,10 +1,14 @@
 import { Module } from '@nestjs/common';
-import { DiffModule } from '../diff/diff.module';
+import { StateModule } from '../state/state.module';
+import { DiscordModule } from '../discord/discord.module';
+import { NewsModule } from '../news/news.module';
+import { CurationModule } from '../curation/curation.module';
 import { PipelineService } from './pipeline.service';
+import { NewsSegmentService } from './news-segment.service';
 
 @Module({
-  imports: [DiffModule],
-  providers: [PipelineService],
+  imports: [StateModule, DiscordModule, NewsModule, CurationModule],
+  providers: [PipelineService, NewsSegmentService],
   exports: [PipelineService],
 })
 export class PipelineModule {}

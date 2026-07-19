@@ -36,6 +36,8 @@ function currentBoard(rows: { repoId: number; domain: Domain; weekly: number }[]
       totalStars: null,
       language: null,
       sources: ['trending'],
+      description: null,
+      topics: [],
     });
   }
   return {
