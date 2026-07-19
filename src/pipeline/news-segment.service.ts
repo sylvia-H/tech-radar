@@ -60,7 +60,7 @@ export class NewsSegmentService {
 
     try {
       for (const batch of batches) {
-        await this.discord.send({ username: 'Tech Radar', embeds: batch });
+        await this.discord.send({ username: 'Tech Radar', embeds: batch }, 'news');
       }
     } catch (err) {
       await bestEffortFailureAlert(this.discord, this.logger, `晨報推播失敗：${errMsg(err)}`);

@@ -95,7 +95,9 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
     expect(generate).toHaveBeenCalledTimes(1);
     const prompt: string = generate.mock.calls[0][0];
     expect(typeof prompt).toBe('string');
-    expect(prompt).not.toMatch(/GEMINI_API_KEY|DISCORD_WEBHOOK_URL|GH_API_TOKEN/i);
+    expect(prompt).not.toMatch(
+      /GEMINI_API_KEY|DISCORD_(NEWS|BOARD|ALERT)_WEBHOOK_URL|GH_API_TOKEN/i,
+    );
     expect(prompt).toContain(candidates[0].title);
   });
 

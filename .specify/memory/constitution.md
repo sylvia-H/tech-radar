@@ -1,39 +1,51 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.2.0 → 1.3.0
-Bump rationale: MINOR——原則 III 的**榜單推播節奏由「每三天」改為「每七天」**，並明定到期門檻
-  為 **162 小時**（168h − 6h 寬限）。屬既有原則內的參數與指引實質調整，未移除或重新定義八條
-  原則本身，故非 MAJOR（先例：1.1.0 同樣調整原則 III 的榜單變化類型，判 MINOR）。決策來源：
-  F3 (003-board-state-diff) `/speckit-clarify` Session 2026-07-15，使用者明確授權。
+Version change: 1.3.0 → 1.3.1
+Bump rationale: PATCH——「技術與安全約束」之 Discord Secrets 命名由單一 `DISCORD_WEBHOOK_URL`
+  拆分為三條獨立 webhook：`DISCORD_NEWS_WEBHOOK_URL`（每日晨報）、`DISCORD_BOARD_WEBHOOK_URL`
+  （GitHub repo 榜單）、`DISCORD_ALERT_WEBHOOK_URL`（告警訊息，涵蓋所有
+  `postFailureAlert`/`bestEffortFailureAlert`/`postTestEmbed`）。屬既有原則 I（Discord Channel
+  Webhook 為推播通道）內的實作細節調整——推播通道本身、免費/零維運前提、告警不得無聲皆未變，
+  僅改「幾條」webhook 與其命名，故非 MAJOR/MINOR。決策來源：使用者於一般對話中明確要求「榜單
+  變化、每日晨報、告警訊息各自送不同 Discord webhook」，2026-07-19。
 
-  節奏改動理由：榜單的統一尺是「估算**本週**增星」（七日指標）。三天推一次等於用**重疊四天**
-  的兩個七日視窗互比——兩次快照有超過一半是同一批星星，名次移動無法代表真實的週對週變化。
-  七天節奏使兩次比較的視窗剛好不重疊，「這週 vs 上週」才成立。
-
-  6 小時寬限理由：`lastBoardPushAt` 記錄的是**推播完成**時間，必晚於當次 cron 觸發時間；若取
-  精確 168h，三天後（原設計）同一 cron 觸發時算出來恆略小於門檻而跳過，誤差單向累積使節奏
-  漂移。寬限沿用新聞每日 guard 的同一比例（24h 週期留 6h → 「< ~18h 跳過」），使節奏穩定
-  錨在每週同一時段。
-
-Scope note（重要）: 本次變更**僅限榜單節奏**。**新聞側完全不受影響**——每日晨報、
-  `lastNewsPushAt` guard（< ~18h 跳過）、配額「AI ≥ 4；DevOps / 後端 / 前端合計 ≤ 2」與所有
-  新聞來源皆原封不動。榜單與新聞是兩條獨立資料流，節奏本即解耦（dev-guide §5、§4.4）。
+  動機：原單一頻道把榜單週報、每日晨報、告警訊息混在同一處，使用者難以分別靜音/訂閱單一類型
+  通知。三頻道分流後可各自獨立開關，不互相干擾。
 
 Modified sections:
-  - 原則 III「只推變化、控制節奏」→ 榜單節奏三天 → 七天；新增 162 小時門檻與「節奏須與七日
-    尺對齊」之理由。
-  - 原則 VIII「關鍵邏輯測試優先」→ 必測項「榜單三日節奏」→「榜單每週節奏（162 小時門檻）」。
+  - 「技術與安全約束」→ Secrets 命名：`DISCORD_WEBHOOK_URL` → 三條
+    `DISCORD_NEWS_WEBHOOK_URL` / `DISCORD_BOARD_WEBHOOK_URL` / `DISCORD_ALERT_WEBHOOK_URL`。
 Added sections: 無
 Removed sections: 無
 
-Drive-by 補正（修復 1.2.0 未完成的同步，非本次節奏決策之一部分）:
-  - **檔尾 Version 行**先前停在 `1.1.0`、Last Amended 停在 `2026-07-11`，與 1.2.0 的 Sync
-    Impact Report 不一致（1.2.0 修訂時漏更）。本次一併校正為 1.3.0 / 2026-07-15。
-  - **原則 VIII** 先前仍寫「**三**領域歸類」，與 1.2.0 已將榜單收斂為兩領域矛盾（1.2.0 修訂
-    時漏改）。本次改為「**兩**領域歸類」。
+Templates requiring updates:
+  - CLAUDE.md ✅ 已同步（技術約束之 Secrets 命名固定段落）
+  - docs/tech-radar-dev-guide.md ✅ 已同步（§2.3 推播與串接方式改為三頻道表格＋設定步驟、
+    §8 workflow 範例 YAML 之 env 與失敗告警 curl）
+  - README.md ✅ 已同步（機密表格、本機執行環境變數範例、GitHub Actions 段落「三項」→「五項」）
+  - .github/workflows/radar.yml ✅ 已同步（Run Tech Radar 與 Failure alert 兩步驟之 env）
+  - src/config/env.schema.ts、src/discord/discord.webhook.service.ts、
+    src/pipeline/board-segment.service.ts、src/pipeline/news-segment.service.ts ✅ 已同步
+    （實作與呼叫點）
+  - 相關測試（env.schema.spec.ts、discord.webhook.service.spec.ts、board-segment.service.spec.ts、
+    news-segment.service.spec.ts、curation.service.spec.ts 機密洩漏斷言）✅ 已同步
+  - .specify/templates/plan-template.md / spec-template.md / tasks-template.md ✅ 對齊（泛用
+    範本，未硬編 secret 名稱）
+  - specs/001-foundation ~ specs/007-pipeline-push 之既有 spec/plan/quickstart 內 `DISCORD_WEBHOOK_URL`
+    引用 ⚠ 維持原樣不改——各 Feature 已驗收合併，屬完成當時的歷史紀錄（沿用本專案「歷史 spec
+    不回改，只更新真實來源」慣例，見 CLAUDE.md）
+
+Follow-up TODOs:
+  - 使用者須自行在 GitHub repo Settings → Secrets and variables → Actions 新增
+    `DISCORD_NEWS_WEBHOOK_URL`、`DISCORD_BOARD_WEBHOOK_URL`，並將原 `DISCORD_WEBHOOK_URL` 的值
+    改放到 `DISCORD_ALERT_WEBHOOK_URL`（或為三者各自建立新的 Discord webhook）——此步驟不在
+    程式碼變更範圍內，需人工於 GitHub 網頁完成。
 
 Prior history:
+  - 1.3.0（2026-07-15）：MINOR——原則 III 的榜單推播節奏由「每三天」改為「每七天」，明定到期
+    門檻為 162 小時（168h − 6h 寬限），使節奏與「估算本週增星」的七日尺對齊；新聞側完全不受
+    影響。Drive-by 一併校正檔尾 Version/Last Amended 漏更、原則 VIII 殘留「三領域」用字。
   - 1.2.0（2026-07-15）：MINOR——榜單領域由三領域收斂為兩領域（AI / 前後端），移除 DevOps；
     依 F2 M1 驗收實測（歸類正確率 0、訊號量級過低）。新聞側 DevOps 配額與來源不受影響。
   - 1.1.0（2026-07-11）：MINOR——原則 III 收斂榜單推播變化類型，移除「跌出」為獨立推播項。
@@ -41,22 +53,7 @@ Prior history:
   - 1.0.0（2026-07-11）：首次由模板具體化為正式憲章（MAJOR 起始版），確立八條非協商原則、
     技術與安全約束、開發流程與治理章節。
 
-Templates requiring updates:
-  - .specify/templates/plan-template.md ✅ 對齊（Constitution Check 為泛用 gate，無過時引用）
-  - .specify/templates/spec-template.md ✅ 對齊（泛用範本，未硬編原則）
-  - .specify/templates/tasks-template.md ✅ 對齊（泛用範本，未硬編原則）
-  - CLAUDE.md ✅ 已同步（硬規則 3 之榜單節奏）
-  - docs/tech-radar-dev-guide.md ✅ 已同步（概述、§2 表格、§3.3、§5、§6、§8、§11.2 F3、§13、
-    M4 里程碑等處之「三天／三日」敘述）
-  - specs/003-board-state-diff/spec.md ✅ 已同步（Clarifications Session 2026-07-15、US2、
-    FR-017～FR-019a、SC-002）
-  - specs/001-foundation、specs/002-board-sources ✅ 對齊（未涉榜單節奏）
-
-Follow-up TODOs:
-  - F3 (003-board-state-diff)：`state.schema.ts` 之 `BoardEntry.domain` 由 4-way 佔位
-    （ai|devops|backend|frontend）對齊為 2-way（ai|frontend-backend），一併移除 devops。
-    ✅ 已完成（2026-07-16，F3 實作 T003 兌現 FR-024；`domainSchema` 已對齊、`board` 改條目層
-    寬鬆載入，舊 devops 條目剔除 + warn 而不使整份狀態失效）。
+Follow-up TODOs（沿自舊版本，仍有效）:
   - F4 (004-news-sources)：新聞 domain 分類法「是否比照榜單合併前後端」之待定項仍有效，但
     **不得**因榜單移除 DevOps 而連帶移除新聞的 devops（見 1.2.0 Scope note；dev-guide §11.2 F4）。
 -->
@@ -168,7 +165,9 @@ Follow-up TODOs:
   狀態 commit **僅在 `state/board.json` 實際變更時進行**（沿用開發指南 §8 workflow 的 no-diff 早退，
   不製造空 commit）。workflow 活性（避免 60 天停用）由正式期每日 `lastNewsPushAt` 變更與開發期
   程式碼 commit 自然維持，不依賴人工心跳 commit。
-- **Secrets 命名**：`GH_API_TOKEN`（不可用 `GITHUB_` 前綴）、`GEMINI_API_KEY`、`DISCORD_WEBHOOK_URL`，
+- **Secrets 命名**：`GH_API_TOKEN`（不可用 `GITHUB_` 前綴）、`GEMINI_API_KEY`、Discord webhook
+  三頻道分流（`DISCORD_NEWS_WEBHOOK_URL` 晨報／`DISCORD_BOARD_WEBHOOK_URL` 榜單／
+  `DISCORD_ALERT_WEBHOOK_URL` 告警，2026-07-19 由單一 `DISCORD_WEBHOOK_URL` 拆分），
   皆存於 Actions Secrets。
 - **抓取禮貌**：帶自訂 User-Agent、條件式請求（ETag / If-Modified-Since）、失敗指數退避；
   Gemini 429 用指數退避 + jitter。
@@ -204,4 +203,4 @@ Follow-up TODOs:
 - **來源文件**：執行期與設計細節以 `docs/tech-radar-dev-guide.md` 為準；該指南與本憲章不一致時，
   以本憲章的非協商原則為最高約束，並修訂指南使其一致。
 
-**Version**: 1.3.0 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-15
+**Version**: 1.3.1 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-19

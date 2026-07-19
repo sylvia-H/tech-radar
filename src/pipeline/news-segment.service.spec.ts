@@ -94,6 +94,7 @@ describe('NewsSegmentService.run — US1 Acceptance（每日晨報端到端）',
     const payload = send.mock.calls[0][0];
     expect(payload.embeds).toHaveLength(1);
     expect(payload.embeds[0].description).toContain('https://example.com/a?utm_source=x');
+    expect(send.mock.calls[0][1]).toBe('news'); // 晨報段固定送 news 頻道
 
     expect(stateAtSendTime!.seenNews).toEqual([]);
     expect(stateAtSendTime!.lastNewsPushAt).toBe(hoursAgo(24));

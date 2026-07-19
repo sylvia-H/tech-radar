@@ -168,6 +168,7 @@ describe('BoardSegmentService.run — US3 Acceptance（榜單日疊加、push-th
     const payload = send.mock.calls[0][0];
     expect(payload.embeds).toHaveLength(3); // 封面 + 2 張卡（新進+竄升）
     expect(payload.embeds[0].title).toContain('📊 榜單變化');
+    expect(send.mock.calls[0][1]).toBe('board'); // 榜單段固定送 board 頻道
   });
 
   it('Acceptance 4：簡介降級（repoId 1）以可區分的 description 卡呈現，榜單仍照常推播', async () => {

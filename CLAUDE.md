@@ -91,7 +91,9 @@ tech-radar 是一個**排程型、純自用、全免費、零維運**的每日�
 - NestJS 以 `NestFactory.createApplicationContext()` 跑一次性 CLI job（保留 DI、不啟 HTTP server、
   跑完即退）。技術釘死：`cheerio`、`rss-parser`、`@google/genai`、`undici`/`fetch`（F8 另加 `feed`）。
 - **Secrets 命名固定**：`GH_API_TOKEN`（**不可**用 `GITHUB_` 前綴，Actions 會擋）、`GEMINI_API_KEY`、
-  `DISCORD_WEBHOOK_URL`，皆存於 Actions Secrets。
+  Discord webhook 三頻道分流（`DISCORD_NEWS_WEBHOOK_URL` 晨報／`DISCORD_BOARD_WEBHOOK_URL` 榜單／
+  `DISCORD_ALERT_WEBHOOK_URL` 告警，2026-07-19 由單一 `DISCORD_WEBHOOK_URL` 拆分，見 dev-guide §2.3），
+  皆存於 Actions Secrets。
 - 排程雙離峰 cron（`:07` / `:37`，UTC）＋ guard 抗漏跑；狀態 commit **僅在 `state/board.json` 實際
   變更時**（no-diff 早退，不製造空 commit）。
 - 抓取禮貌：自訂 User-Agent、條件式請求（ETag / If-Modified-Since）、失敗指數退避；Gemini 429 用

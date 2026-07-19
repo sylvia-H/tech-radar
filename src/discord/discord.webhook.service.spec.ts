@@ -1,11 +1,19 @@
 import { ConfigService } from '@nestjs/config';
 import { DiscordWebhookService } from './discord.webhook.service';
 
-const WEBHOOK_URL = 'https://discord.com/api/webhooks/123/secrettoken';
+const NEWS_URL = 'https://discord.com/api/webhooks/123/newstoken';
+const BOARD_URL = 'https://discord.com/api/webhooks/123/boardtoken';
+const ALERT_URL = 'https://discord.com/api/webhooks/123/alerttoken';
+const WEBHOOK_URL = ALERT_URL; // postTestEmbed/postFailureAlert 走告警頻道
 
 function makeService(): DiscordWebhookService {
+  const urls: Record<string, string> = {
+    DISCORD_NEWS_WEBHOOK_URL: NEWS_URL,
+    DISCORD_BOARD_WEBHOOK_URL: BOARD_URL,
+    DISCORD_ALERT_WEBHOOK_URL: ALERT_URL,
+  };
   const config = {
-    get: (key: string) => (key === 'DISCORD_WEBHOOK_URL' ? WEBHOOK_URL : undefined),
+    get: (key: string) => urls[key],
   } as unknown as ConfigService;
   return new DiscordWebhookService(config);
 }
@@ -74,7 +82,7 @@ describe('DiscordWebhookService.postTestEmbed', () => {
       fail('應擲錯');
     } catch (e) {
       const msg = (e as Error).message;
-      expect(msg).not.toContain('secrettoken');
+      expect(msg).not.toContain('alerttoken');
       expect(msg).not.toContain(WEBHOOK_URL);
     }
   });
@@ -91,14 +99,14 @@ describe('DiscordWebhookService.postTestEmbed', () => {
       fail('應擲錯');
     } catch (e) {
       const msg = (e as Error).message;
-      expect(msg).not.toContain('secrettoken');
+      expect(msg).not.toContain('alerttoken');
       expect(msg).not.toContain(WEBHOOK_URL);
       expect(msg).toContain('網路錯誤');
     }
   });
 });
 
-describe('DiscordWebhookService.send（F7 T003：委派既有 post）', () => {
+describe('DiscordWebhookService.send（依 channel 分流至對應 webhook）', () => {
   let fetchMock: jest.Mock;
 
   beforeEach(() => {
@@ -116,17 +124,28 @@ describe('DiscordWebhookService.send（F7 T003：委派既有 post）', () => {
       username: 'Tech Radar',
       embeds: [{ title: 'cover', color: 0x5865f2 }],
     };
-    await expect(makeService().send(payload)).resolves.toBeUndefined();
+    await expect(makeService().send(payload, 'board')).resolves.toBeUndefined();
     expect(fetchMock).toHaveBeenCalledTimes(1);
     const [url, init] = fetchMock.mock.calls[0];
-    expect(url).toBe(WEBHOOK_URL);
+    expect(url).toBe(BOARD_URL);
     expect(JSON.parse(init.body)).toEqual(payload);
+  });
+
+  it('channel="news" 送到晨報 webhook，channel="board" 送到榜單 webhook', async () => {
+    fetchMock.mockResolvedValue(response(204));
+    const payload = { username: 'Tech Radar', embeds: [] };
+
+    await makeService().send(payload, 'news');
+    expect(fetchMock.mock.calls[0][0]).toBe(NEWS_URL);
+
+    await makeService().send(payload, 'board');
+    expect(fetchMock.mock.calls[1][0]).toBe(BOARD_URL);
   });
 
   it('非 204/429 失敗擲錯（與既有 post 行為一致，不重複實作退避）', async () => {
     fetchMock.mockResolvedValueOnce(response(500));
     await expect(
-      makeService().send({ username: 'Tech Radar', embeds: [] }),
+      makeService().send({ username: 'Tech Radar', embeds: [] }, 'news'),
     ).rejects.toThrow(/500/);
   });
 });

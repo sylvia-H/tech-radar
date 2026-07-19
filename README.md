@@ -17,14 +17,16 @@
 
 ## 環境需求
 
-- Node.js 24 LTS（本機建議 nvm `24.x`；CI 用 `actions/setup-node@v4` `node-version: 24`）
+- Node.js 24 LTS（本機建議 nvm `24.x`；CI 用 `actions/setup-node@v5` `node-version: 24`）
 - npm
 
-## 機密（三項皆必填）
+## 機密（五項皆必填）
 
 | 變數 | 用途 | F1 |
 |------|------|----|
-| `DISCORD_WEBHOOK_URL` | 推播與告警目的地 | 使用 |
+| `DISCORD_NEWS_WEBHOOK_URL` | 每日晨報推播目的地 | 使用 |
+| `DISCORD_BOARD_WEBHOOK_URL` | GitHub repo 榜單推播目的地 | 使用 |
+| `DISCORD_ALERT_WEBHOOK_URL` | 告警訊息目的地（含連通測試） | 使用 |
 | `GH_API_TOKEN` | GitHub API（唯讀 public repo） | 僅驗證存在 |
 | `GEMINI_API_KEY` | Gemini API | 僅驗證存在 |
 
@@ -37,18 +39,22 @@ npm ci
 npm run build
 
 # 以環境變數提供機密（勿寫進檔案）
-DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/…" \
+DISCORD_NEWS_WEBHOOK_URL="https://discord.com/api/webhooks/…" \
+DISCORD_BOARD_WEBHOOK_URL="https://discord.com/api/webhooks/…" \
+DISCORD_ALERT_WEBHOOK_URL="https://discord.com/api/webhooks/…" \
 GH_API_TOKEN="…" \
 GEMINI_API_KEY="…" \
 node dist/main.cli.js
 ```
 
-預期：手機 Discord 頻道收到一則橙色「📡 Tech Radar 連通測試」embed；程序自行結束（exit 0）。缺機密則 1 分鐘內清楚失敗、exit≠0、無推播。
+預期：告警頻道收到一則橙色「📡 Tech Radar 連通測試」embed；程序自行結束（exit 0）。缺機密則 1 分鐘內清楚失敗、exit≠0、無推播。
 
 Windows PowerShell：
 
 ```powershell
-$env:DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/…"
+$env:DISCORD_NEWS_WEBHOOK_URL="https://discord.com/api/webhooks/…"
+$env:DISCORD_BOARD_WEBHOOK_URL="https://discord.com/api/webhooks/…"
+$env:DISCORD_ALERT_WEBHOOK_URL="https://discord.com/api/webhooks/…"
 $env:GH_API_TOKEN="…"; $env:GEMINI_API_KEY="…"
 node dist/main.cli.js
 ```
@@ -63,6 +69,6 @@ npm test
 
 ## GitHub Actions
 
-`.github/workflows/radar.yml`：`workflow_dispatch` + 雙 cron（UTC `7 22 * * *` / `37 22 * * *`＝台北 06:07 / 06:37）。於 repo Settings → Secrets and variables → Actions 設定三項機密後，於 Actions 頁 **Run workflow** 手動驗證。狀態僅在實際變更時由 `radar-bot` commit（no-diff 早退）。
+`.github/workflows/radar.yml`：`workflow_dispatch` + 雙 cron（UTC `7 22 * * *` / `37 22 * * *`＝台北 06:07 / 06:37）。於 repo Settings → Secrets and variables → Actions 設定五項機密後，於 Actions 頁 **Run workflow** 手動驗證。狀態僅在實際變更時由 `radar-bot` commit（no-diff 早退）。
 
 完整驗證步驟見 [specs/001-foundation/quickstart.md](specs/001-foundation/quickstart.md)。
