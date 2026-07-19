@@ -40,6 +40,11 @@ export class DiscordWebhookService {
     await this.post(buildFailureAlert(summary));
   }
 
+  /** F7 公開送出任意 payload（榜單/晨報組版批次）；委派既有 private post，204/429 退避與機密消毒不動。 */
+  async send(payload: DiscordWebhookPayload): Promise<void> {
+    await this.post(payload);
+  }
+
   /**
    * 送出 payload。204 成功；429 有限退避重試；其餘失敗擲錯（不含機密）。
    */

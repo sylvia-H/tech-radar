@@ -2,17 +2,26 @@
 export const COLOR_TEST = 0xf5a623; // 橙：連通測試
 export const COLOR_FAILURE = 0xe74c3c; // 紅：失敗告警
 
-/** 送往 Discord webhook 的訊息 payload（F1 使用子集）。 */
+/** F7 組版色值（research D3；contracts/discord-layout.md L1）。 */
+export const COLOR_BOARD_COVER = 0x5865f2; // 藍：榜單封面
+export const COLOR_DIGEST = 0xf5a623; // 橙：晨報
+export const COLOR_AI = 0x10a37f; // 綠：AI 領域卡
+export const COLOR_FRONTEND_BACKEND = 0xf7df1e; // 黃：前後端領域卡
+
+/** 送往 Discord webhook 的訊息 payload（F1 使用子集；F7 加法擴充）。 */
 export interface DiscordEmbed {
   title: string;
   description?: string;
   color: number;
   timestamp?: string;
+  url?: string;
+  fields?: { name: string; value: string; inline?: boolean }[];
 }
 
 export interface DiscordWebhookPayload {
   username: string;
   embeds: DiscordEmbed[];
+  avatar_url?: string;
 }
 
 export type RunEnv = 'ci' | 'local';

@@ -3,6 +3,11 @@ import {
   buildFailureAlert,
   COLOR_TEST,
   COLOR_FAILURE,
+  COLOR_BOARD_COVER,
+  COLOR_DIGEST,
+  COLOR_AI,
+  COLOR_FRONTEND_BACKEND,
+  DiscordEmbed,
 } from './discord.embed';
 
 describe('buildTestEmbed', () => {
@@ -52,5 +57,34 @@ describe('buildFailureAlert', () => {
   it('空摘要退回預設文字', () => {
     const embed = buildFailureAlert('   ').embeds[0];
     expect(embed.description).toContain('未知錯誤');
+  });
+});
+
+describe('F7 加法擴充：url?/fields? 為可選、既有函式不受影響（T002）', () => {
+  it('buildTestEmbed/buildFailureAlert 輸出不含 url/fields（可選欄位預設不存在）', () => {
+    const testEmbed = buildTestEmbed('2026-07-19T00:00:00.000Z', 'ci').embeds[0];
+    const failureEmbed = buildFailureAlert('x').embeds[0];
+    expect(testEmbed.url).toBeUndefined();
+    expect(testEmbed.fields).toBeUndefined();
+    expect(failureEmbed.url).toBeUndefined();
+    expect(failureEmbed.fields).toBeUndefined();
+  });
+
+  it('DiscordEmbed 可攜帶 url 與 fields（型別層面允許，供 F7 組版使用）', () => {
+    const embed: DiscordEmbed = {
+      title: 'repo',
+      color: COLOR_AI,
+      url: 'https://github.com/owner/name',
+      fields: [{ name: '本週增星', value: '⭐ +100', inline: true }],
+    };
+    expect(embed.url).toBe('https://github.com/owner/name');
+    expect(embed.fields).toHaveLength(1);
+  });
+
+  it('F7 色值常數：封面藍/晨報橙/AI 綠/前後端黃', () => {
+    expect(COLOR_BOARD_COVER).toBe(0x5865f2);
+    expect(COLOR_DIGEST).toBe(0xf5a623);
+    expect(COLOR_AI).toBe(0x10a37f);
+    expect(COLOR_FRONTEND_BACKEND).toBe(0xf7df1e);
   });
 });
