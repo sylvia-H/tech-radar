@@ -85,6 +85,8 @@ export interface BoardRow {
   totalStars: number | null; // F3 決勝第 2 層（CandidateRepo 既有值轉遞，不新增外部呼叫）
   language: string | null; // F3 寫入 BoardEntry.language 所需（CandidateRepo 既有值轉遞）
   sources: SourceTag[];
+  description: string | null; // F7 join 成 IntroInput.description（CandidateRepo 既有值轉遞，research D1）
+  topics: string[]; // F7 join 成 IntroInput.topics（CandidateRepo 既有值轉遞，research D1）
 }
 
 /** 單一領域榜（已排序、≤15）。 */

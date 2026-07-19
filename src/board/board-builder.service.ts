@@ -252,6 +252,8 @@ export function assembleBoards(candidates: readonly CandidateRepo[]): DomainBoar
         totalStars: c.totalStars,
         language: c.language,
         sources: c.sources,
+        description: c.description,
+        topics: c.topics,
       }));
     return { domain, entries };
   });

@@ -97,3 +97,36 @@ describe('DiscordWebhookService.postTestEmbed', () => {
     }
   });
 });
+
+describe('DiscordWebhookService.send（F7 T003：委派既有 post）', () => {
+  let fetchMock: jest.Mock;
+
+  beforeEach(() => {
+    fetchMock = jest.fn();
+    global.fetch = fetchMock as unknown as typeof fetch;
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  it('204 視為成功，送出任意 payload', async () => {
+    fetchMock.mockResolvedValueOnce(response(204));
+    const payload = {
+      username: 'Tech Radar',
+      embeds: [{ title: 'cover', color: 0x5865f2 }],
+    };
+    await expect(makeService().send(payload)).resolves.toBeUndefined();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const [url, init] = fetchMock.mock.calls[0];
+    expect(url).toBe(WEBHOOK_URL);
+    expect(JSON.parse(init.body)).toEqual(payload);
+  });
+
+  it('非 204/429 失敗擲錯（與既有 post 行為一致，不重複實作退避）', async () => {
+    fetchMock.mockResolvedValueOnce(response(500));
+    await expect(
+      makeService().send({ username: 'Tech Radar', embeds: [] }),
+    ).rejects.toThrow(/500/);
+  });
+});

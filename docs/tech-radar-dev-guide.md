@@ -347,7 +347,7 @@ const declined = keysIn(curr).filter(
 - **🔻 下降**：只報綜合名次變化（如 `#3 → #8`），不帶簡介。
 - **掉出 top 10**：**當次靜默**——不推卡、也不列「跌出」提示；簡介快取保留，**日後重回 top 10 即以「🆕 新進」呈現（帶簡介、讀快取）**。
 
-> **卡片張數天然受控**：帶簡介的卡片＝`新進 + 竄升`，因整個視窗僅 10 席故 **≤10 張**；**冷啟動首次推播即 10 張**（全數新進）。穩定態每七天多半 0～數張。Discord 一則訊息 ≤10 embeds，卡片逼近上限時把晨報新聞另送第二則訊息（見 §7.1）。
+> **卡片張數天然受控**：帶簡介的卡片＝`新進 + 竄升`，因整個視窗僅 10 席故 **≤10 張**；**冷啟動首次推播即 10 張**（全數新進）。穩定態每七天多半 0～數張。Discord 一則訊息 ≤10 embeds；榜單段（封面→卡片）與晨報段各自獨立、超過時各自依序 `chunkEmbeds` 切成多則、獨立送出，不合併（見 §7.1／§7.2，不特例處理晨報）。
 
 ---
 
@@ -404,17 +404,19 @@ async function ensureIntro(repo, state) {
 | `url`         | —                            | 設在 embed 上 → 點標題直接開 repo                              |
 | `description` | 4096                         | 放 250 字簡介綽綽有餘；吃遮罩連結、粗體、引言、清單            |
 | `fields`      | ≤25，name ≤256 / value ≤1024 | 放 ⭐增星、語言、名次/領域                                     |
-| 一則訊息      | ≤10 embeds                   | 封面 1 + 卡片（新進+竄升）≤10；冷啟動 10 張卡＋封面超過 10 → 晨報新聞改送第二則訊息 |
+| 一則訊息      | ≤10 embeds                   | 榜單段（封面→卡片）與晨報段**各自獨立**依序 chunk-by-10 通用切分（`chunkEmbeds`，F7）、獨立送出，不合併（維持段間隔離）；冷啟動時榜單段自身封面＋10 卡＝11 個 embeds，一律切成多則，不特例處理晨報 |
 
 可用 Markdown：`**粗體**`、`` `行內碼` ``、`> 引言`、`- 清單`、遮罩連結 `[文字](url)`。
 
 ### 7.2 版面：晨報新聞（每日）+ 榜單卡（榜單日）
 
 ```ts
-const embeds = [];
+// 榜單段與晨報段各自獨立組裝、獨立切分、獨立送出（不合併成同一個陣列/迴圈）——
+// 合併會使一次 Discord 失敗同時波及兩段的 push-then-commit，牴觸段間隔離（憲章 VII、FR-013）。
 
-// —— 榜單日才有：封面（下降）+ 新進/竄升卡 ——（掉出 top 10 靜默、不列封面）
+// —— 榜單段（僅榜單日執行）：封面（下降）+ 新進/竄升卡 ——（掉出 top 10 靜默、不列封面）
 if (isBoardDay) {
+  const boardEmbeds = [];
   const line = (r) => `[${r.fullName}](${r.url})`;
   const parts = [`**本次榜單變化**\n${changeTldr}`]; // Gemini 產生的一句話變化摘要（榜單日一次，見 §10）
   if (declined.length)
@@ -424,7 +426,7 @@ if (isBoardDay) {
           .map((r) => `${line(r)} #${r.prevRank} → #${r.rank}`)
           .join("\n"),
     );
-  embeds.push({
+  boardEmbeds.push({
     title: `📊 榜單變化 · ${dateLabel}`,
     description: parts.join("\n\n"),
     color: 0x5865f2, // 榜單封面藍
@@ -432,7 +434,7 @@ if (isBoardDay) {
 
   for (const r of [...newcomers, ...climbed]) {
     const isNew = !r.prevRank; // 新進榜無前次名次
-    embeds.push({
+    boardEmbeds.push({
       title: `${isNew ? "🆕" : "🔺"} ${r.fullName}`,
       url: r.url, // 點標題開 repo
       description: r.intro, // ← 250 字簡介
@@ -454,26 +456,37 @@ if (isBoardDay) {
       ],
     });
   }
+
+  // 榜單段：封面＋10 卡＝11（冷啟動）已超過單則 10 embeds 上限 → 依序 chunk-by-10 切成多則。
+  for (const batch of chunkEmbeds(boardEmbeds, 10)) {
+    await postWebhook({ username: "Tech Radar", avatar_url: RADAR_ICON, embeds: batch });
+  }
+  // 全批成功才 push-then-commit（榜單快照＋lastBoardPushAt＋本次簡介同次落檔，見 §8）。
 }
 
-// —— 每日晨報固定有：精選 6 則新聞（AI ≥4；DevOps/後端/前端合計 ≤2）——
-embeds.push({
-  title: `📡 Tech Radar 晨報 · ${dateLabel}`,
-  description: newsBlock, // 6 則：每則「[繁中標題 ≤50 字](url)」＋ ≤300 字內容，AI 優先排前
-  color: 0xf5a623, // 晨報橙
-});
+// —— 晨報段（每日執行）：精選 6 則新聞（AI ≥4；DevOps/後端/前端合計 ≤2）——
+const digestEmbeds = [
+  {
+    title: `📡 Tech Radar 晨報 · ${dateLabel}`,
+    description: newsBlock, // 6 則：每則「[繁中標題 ≤50 字](url)」＋ ≤300 字內容，AI 優先排前
+    color: 0xf5a623, // 晨報橙
+  },
+];
 // 6 ×（50+300 字）+ 連結 markdown 約 2,500～3,500 字元，仍在 description 4096 上限內；
-// 逼近上限時把 6 則拆成兩張晨報 embed（同一則訊息內）即可
+// 逼近上限時把 6 則拆成兩張晨報 embed，仍在晨報段自己的 chunkEmbeds 批次內。
 
-// 一則訊息 ≤10 embeds；榜單日卡片多時，新聞晨報可拆到第二則訊息
-await postWebhook({
-  username: "Tech Radar",
-  avatar_url: RADAR_ICON,
-  embeds: embeds.slice(0, 10),
-});
+// 晨報段獨立送出（通常 1 批，穩定態 description 未逼近上限時恰 1 個 embed）。
+for (const batch of chunkEmbeds(digestEmbeds, 10)) {
+  await postWebhook({ username: "Tech Radar", avatar_url: RADAR_ICON, embeds: batch });
+}
+// 成功才 push-then-commit（seenNews＋lastNewsPushAt 同次落檔）。
 ```
 
-> 非榜單日只有一張晨報 embed；榜單日帶簡介的卡片＝「新進 top 10 + 竄升」，因視窗僅 10 席故 ≤10 張。**冷啟動日**（全數新進、10 張卡）＋封面會超過 Discord 單則 10 embeds 上限 → 把榜單區塊（封面＋卡片）留在第一則訊息、**晨報新聞另送第二則**即可。
+> 非榜單日只有一則晨報訊息；榜單日帶簡介的卡片＝「新進 top 10 + 竄升」，因視窗僅 10 席故 ≤10 張。**冷啟動日**（全數新進、10 張卡）＋封面＝**榜單段自身 11 個 embeds**、超過 Discord 單則 10 embeds 上限 → 榜單段依顯示順序切成 2 則（`chunkEmbeds`，F7），不特例處理「晨報改送第二則」——通用切分即可涵蓋，且不會漏送或整批被拒收；晨報段照常獨立送出自己的訊息，**不與榜單段合併**（維持段間隔離，任一段推播失敗不牽連另一段的 push-then-commit）。
+
+> **`dateLabel` 取台北日期（UTC+8）**：晨報／榜單封面標題的 `· ${dateLabel}` 以 `taipeiDateLabel(now)`（`src/pipeline/layout/date-label.ts`）計算，非直接取 `now.toISOString()` 的 UTC 日期。cron 22:xx UTC ＝台北隔日 06:xx，取 UTC 日期會比讀者實際收到的日子慢一天；台灣無夏令時，固定 +8h 位移後取日期即台北當地日期。
+
+> **多批推播非原子（已知有界缺點）**：僅榜單段冷啟動（11 embeds → 10+1）會 >1 批。逐批 `send` 若「前批成功、後批失敗」則該段不提交，下次 cron 整段重跑會**重送前批**（封面＋前 10 卡在 Discord 重複一次）。這是**刻意接受**的取捨——觸發需「冷啟動（一生一次）＋恰在批次間失敗」，機率極低；真正原子化只能壓成單則（犧牲版面／FR-010）或在 `state` 記批次 checkpoint（新增持久化狀態），皆與憲章 I（零維運）／最簡設計不成比例。詳見 `specs/007-pipeline-push/contracts/embed-split.md`。
 
 ### 7.3 呈現後大概長這樣（mock）
 

@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { DiscordWebhookService } from '../discord/discord.webhook.service';
 import { bestEffortFailureAlert } from '../discord/best-effort-alert';
 import { StateStore } from '../state/state.store';
-import { BoardState } from '../state/state.schema';
+import { BoardState, SeenNewsEntry } from '../state/state.schema';
 import { NEWS_SOURCES } from '../config/news-sources';
 import { NewsCandidate, NewsSource, RawItem } from './news.types';
 import { NewsHttp } from './news-http';
@@ -38,11 +38,14 @@ export class NewsIngestService {
   /**
    * 產出階段 A 候選集。`now` 注入以驅動近 7 天口徑、seen 修剪、新鮮度決勝（不依賴真實時間）。
    * `boardRepoNames` 未給時由 `state.board` 建立（空 → 榜單相關性加權安全略過，FR-018）。
+   * `seenNews` 未給時由 `state.seenNews` 取得；F7 pipeline 開頭已 `load()` 過共享 `state`，兩者
+   * 皆傳入即可**免去本服務重複 `stateStore.load()`**（僅在缺任一參數時才回退讀盤）。
    */
   async ingest(
     now: Date = new Date(),
     boardRepoNames?: ReadonlySet<string>,
     sources: readonly NewsSource[] = NEWS_SOURCES,
+    seenNews?: readonly SeenNewsEntry[],
   ): Promise<NewsCandidate[]> {
     const ctx: FetcherContext = { now, http: this.http, parser: this.parser };
     const raw = await this.collect(sources, ctx);
@@ -51,11 +54,17 @@ export class NewsIngestService {
     cands = dedupByTitle(cands, TITLE_JACCARD_THRESHOLD);
     cands = this.resolveDomains(cands);
 
-    const state = await this.stateStore.load();
-    const board = boardRepoNames ?? boardRepoNameSet(state.board);
+    let board = boardRepoNames;
+    let seen = seenNews;
+    if (board === undefined || seen === undefined) {
+      // 只要有任一參數未提供才讀盤（獨立 CLI，state 已在別處 load 時避免重複讀取＋zod 解析）。
+      const state = await this.stateStore.load();
+      board ??= boardRepoNameSet(state.board);
+      seen ??= state.seenNews;
+    }
 
     // 先排除已見（收斂前）：避免已見項佔用漏斗 convergeMax 名額、排擠排名其後的新鮮候選。
-    const pruned = pruneSeenNews(state.seenNews, now);
+    const pruned = pruneSeenNews(seen, now);
     cands = excludeSeen(cands, pruned);
 
     cands = runFunnel(cands, board, DEFAULT_FUNNEL_CONFIG);

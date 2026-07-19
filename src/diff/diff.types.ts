@@ -54,7 +54,9 @@ export interface CadenceDecision {
 }
 
 /**
- * `BoardDiffService.runBoardSegment(now)` 的回傳型別（判別聯集，以 `status` 判別）。
+ * 榜單段執行結果（判別聯集，以 `status` 判別）。原為 `BoardDiffService.runBoardSegment(now)`
+ * 的回傳型別；F7 US3 由 `BoardSegmentService.run(state, now)` 取代薄編排後沿用不動，另見
+ * `BoardSegmentOutcome`（`pipeline/board-segment.service.ts`）疊加 `push-failed` 案例。
  * `status === 'ok'` 時 `diff` 在型別上必定存在，呼叫端不必做非空斷言。
  */
 export type BoardSegmentResult =

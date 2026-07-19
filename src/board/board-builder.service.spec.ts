@@ -309,4 +309,15 @@ describe('assembleBoards（純函式排序穩定性, SC-005）', () => {
     expect(order1).toEqual([2, 5, 9]);
     expect(order2).toEqual(order1);
   });
+
+  it('BoardRow 攜帶 description/topics（F7 T005，供 IntroInput join，research D1）', () => {
+    const withMeta: CandidateRepo = {
+      ...candidate(42, 500, 'ai'),
+      description: 'An LLM framework',
+      topics: ['llm', 'rag'],
+    };
+    const [ai] = assembleBoards([withMeta]);
+    expect(ai.entries[0].description).toBe('An LLM framework');
+    expect(ai.entries[0].topics).toEqual(['llm', 'rag']);
+  });
 });
