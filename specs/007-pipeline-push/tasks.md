@@ -103,8 +103,8 @@ Single project（純自用 CLI）：原始碼於 `src/<domain>/`，測試為旁�
 
 ### Implementation for User Story 4
 
-- [ ] T017 [US4] 於 [src/pipeline/pipeline.service.ts](../../src/pipeline/pipeline.service.ts) `run()` 為兩段各自加 try/catch 隔離：段內擲錯→`bestEffortFailureAlert`（紅色 embed、摘要不含 webhook URL/token/prompt/LLM 回應全文）、**不中止另一段、不回滾**、單段失敗**不再上拋**（避免誤觸 `main.cli.ts` 頂層 catch）；段告警**不寫** `.radar-alert-sent` marker（與頂層 marker 機制並存不互擾）。（contract pipeline-orchestration.md C1/C4；FR-013/014/016；依賴 T015）
-- [ ] T018 [US4] 建 `src/pipeline/pipeline.service.spec.ts` 覆蓋 US4 Acceptance 1~4（mock）：榜單段失敗（build 擲錯/空榜/推播失敗）→晨報段照常推播＋榜單紅色告警；晨報段失敗→已落檔榜單段不回滾＋晨報紅色告警；**榜單段推播失敗＋同 run 晨報段推播成功→晨報段 `save` 後 `board`/`lastBoardPushAt`/`intros` 仍為榜單推播前狀態（榜單段未推出的簡介未經共享 `state` 外溢落檔，C1/FR-011/SC-003）**；best-effort 告警自身擲錯→只記 error log、不再擲錯；單源/單次 LLM 失敗→沿用 F4/F5/F6 降級、pipeline 不整條失敗。斷言 SC-004（連帶中止數 0、無聲失敗數 0）。（憲章 VII/VIII；依賴 T017）
+- [X] T017 [US4] 於 [src/pipeline/pipeline.service.ts](../../src/pipeline/pipeline.service.ts) `run()` 為兩段各自加 try/catch 隔離：段內擲錯→`bestEffortFailureAlert`（紅色 embed、摘要不含 webhook URL/token/prompt/LLM 回應全文）、**不中止另一段、不回滾**、單段失敗**不再上拋**（避免誤觸 `main.cli.ts` 頂層 catch）；段告警**不寫** `.radar-alert-sent` marker（與頂層 marker 機制並存不互擾）。（contract pipeline-orchestration.md C1/C4；FR-013/014/016；依賴 T015）
+- [X] T018 [US4] 建 `src/pipeline/pipeline.service.spec.ts` 覆蓋 US4 Acceptance 1~4（mock）：榜單段失敗（build 擲錯/空榜/推播失敗）→晨報段照常推播＋榜單紅色告警；晨報段失敗→已落檔榜單段不回滾＋晨報紅色告警；**榜單段推播失敗＋同 run 晨報段推播成功→晨報段 `save` 後 `board`/`lastBoardPushAt`/`intros` 仍為榜單推播前狀態（榜單段未推出的簡介未經共享 `state` 外溢落檔，C1/FR-011/SC-003）**；best-effort 告警自身擲錯→只記 error log、不再擲錯；單源/單次 LLM 失敗→沿用 F4/F5/F6 降級、pipeline 不整條失敗。斷言 SC-004（連帶中止數 0、無聲失敗數 0）。（憲章 VII/VIII；依賴 T017）
 
 **Checkpoint**: 兩段硬化為「一段爆炸不波及另一段」。
 
