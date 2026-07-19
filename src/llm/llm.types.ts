@@ -1,5 +1,5 @@
 /** Gemini 免費層 Flash 系型號（憲章 I 釘死；dev-guide §2.4）。 */
-export const GEMINI_MODEL = 'gemini-2.5-flash-lite';
+export const GEMINI_MODEL = 'gemini-3.1-flash-lite';
 
 /** 429/503/網路錯誤最多重試次數（含首次嘗試，research D6）。 */
 export const LLM_MAX_RETRIES = 4;

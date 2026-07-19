@@ -77,8 +77,13 @@
 
 ### 2.4 LLM：Gemini 免費層
 
-- Flash-Lite 系（`gemini-2.5-flash-lite`），~15 RPM / ~1,000 RPD。2026-07-19 由 `gemini-2.5-flash`
-  改用此型號：原型號 RPD 雖較高，但實測更容易撞速率上限，Flash-Lite 額度更穩定足敷本專案低量用途。
+- Flash-Lite 系（`gemini-3.1-flash-lite`），~15 RPM / ~1,000 RPD。
+  - 2026-07-19：由 `gemini-2.5-flash` 改用 `gemini-2.5-flash-lite`，原以為是撞速率上限，
+    後續改用當天即發現該型號回 404 `NOT_FOUND`（"no longer available to new users"）——
+    Google 提前於官方公告的 2026-10-16／07-22 下架日之前就將 `gemini-2.5-flash`／
+    `gemini-2.5-flash-lite` 兩者陸續下線，遂再改用當代继任型號 `gemini-3.1-flash-lite`。
+  - 教訓：Gemini 免費層型號 ID **可能無預警提前下架**，`LlmService` 非可重試錯誤（如 404）
+    務必印出實際狀態碼與訊息（見 `llm.service.ts` `errDetail`），否則會被誤判為速率限制。
 - 用途：每個新進榜 repo 一次 250 字簡介 + 榜單日一段「本次變化」TL;DR + 每日一次新聞策展。穩定態榜單七天才有 0～數個新 repo → 用量極低。
 - ⚠️ 免費層 prompt 可能被拿去改善模型 → 本專案只送公開資料，OK。加 429 指數退避。
 
