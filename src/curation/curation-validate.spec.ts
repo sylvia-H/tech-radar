@@ -75,13 +75,13 @@ describe('validateCuration（US1 合規路徑）', () => {
 });
 
 describe('validateCuration（US3 對抗性違規回應）', () => {
-  it('7 則 → 依重要性序（picks 順序）截前 6、其餘截去（FR-008、SC-003）', () => {
-    const candidates = Array.from({ length: 7 }, (_, i) => makeCandidate({ originalUrl: `https://c${i}.com` }));
+  it('11 則 → 依重要性序（picks 順序）截前 10、其餘截去（FR-008、SC-003）', () => {
+    const candidates = Array.from({ length: 11 }, (_, i) => makeCandidate({ originalUrl: `https://c${i}.com` }));
     const picks: CurationLlmPick[] = candidates.map((_, i) => ({ ref: i, title: `標題${i}`, content: `內容${i}` }));
 
     const result = validateCuration(picks, candidates);
 
-    expect(result).toHaveLength(6);
+    expect(result).toHaveLength(10);
     expect(result.map((it) => it.url)).toEqual([
       'https://c0.com',
       'https://c1.com',
@@ -89,6 +89,10 @@ describe('validateCuration（US3 對抗性違規回應）', () => {
       'https://c3.com',
       'https://c4.com',
       'https://c5.com',
+      'https://c6.com',
+      'https://c7.com',
+      'https://c8.com',
+      'https://c9.com',
     ]);
   });
 
@@ -124,7 +128,7 @@ describe('validateCuration（US3 對抗性違規回應）', () => {
     expect(validateCuration(picks, candidates)).toEqual([]);
   });
 
-  it('AI 僅 3 則但塞了 3 則非 AI → 依領域優先序夾至 ≤2（FR-010、SC-003）', () => {
+  it('AI 僅 3 則但塞了 4 則非 AI → 依領域優先序夾至 ≤3（FR-010、SC-003）', () => {
     const candidates = [
       makeCandidate({ originalUrl: 'https://ai0.com', domain: 'ai' }),
       makeCandidate({ originalUrl: 'https://ai1.com', domain: 'ai' }),
@@ -132,28 +136,36 @@ describe('validateCuration（US3 對抗性違規回應）', () => {
       makeCandidate({ originalUrl: 'https://devops0.com', domain: 'devops' }),
       makeCandidate({ originalUrl: 'https://fe0.com', domain: 'frontend-backend' }),
       makeCandidate({ originalUrl: 'https://fe1.com', domain: 'frontend-backend' }),
+      makeCandidate({ originalUrl: 'https://fe2.com', domain: 'frontend-backend' }),
     ];
     const picks: CurationLlmPick[] = candidates.map((_, i) => ({ ref: i, title: `t${i}`, content: `c${i}` }));
 
     const result = validateCuration(picks, candidates);
 
     const nonAi = result.filter((it) => it.domain !== 'ai');
-    expect(nonAi.length).toBeLessThanOrEqual(2);
-    expect(nonAi.map((it) => it.url)).toEqual(['https://devops0.com', 'https://fe0.com']);
+    expect(nonAi.length).toBeLessThanOrEqual(3);
+    expect(nonAi.map((it) => it.url)).toEqual(['https://devops0.com', 'https://fe0.com', 'https://fe1.com']);
   });
 
-  it('夾制後總數不足 6 時照實輸出較少則數，不從未改寫候選遞補（FR-010、SC-002/003）', () => {
+  it('夾制後總數不足 10 時照實輸出較少則數，不從未改寫候選遞補（FR-010、SC-002/003）', () => {
     const candidates = [
       makeCandidate({ originalUrl: 'https://ai0.com', domain: 'ai' }),
       makeCandidate({ originalUrl: 'https://devops0.com', domain: 'devops' }),
       makeCandidate({ originalUrl: 'https://devops1.com', domain: 'devops' }),
       makeCandidate({ originalUrl: 'https://devops2.com', domain: 'devops' }),
+      makeCandidate({ originalUrl: 'https://devops3.com', domain: 'devops' }),
+      makeCandidate({ originalUrl: 'https://devops4.com', domain: 'devops' }),
     ];
     const picks: CurationLlmPick[] = candidates.map((_, i) => ({ ref: i, title: `t${i}`, content: `c${i}` }));
 
     const result = validateCuration(picks, candidates);
 
-    expect(result).toHaveLength(3);
-    expect(result.map((it) => it.url)).toEqual(['https://ai0.com', 'https://devops0.com', 'https://devops1.com']);
+    expect(result).toHaveLength(4);
+    expect(result.map((it) => it.url)).toEqual([
+      'https://ai0.com',
+      'https://devops0.com',
+      'https://devops1.com',
+      'https://devops2.com',
+    ]);
   });
 });

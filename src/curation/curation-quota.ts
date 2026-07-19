@@ -1,16 +1,16 @@
 import { NewsDomain3 } from '../news/news.types';
 
 /** 精選集總數上限（憲章 III、FR-004）。 */
-export const MAX_ITEMS = 6;
+export const MAX_ITEMS = 10;
 
 /** 非 AI（devops + frontend-backend）合計上限（憲章 III、FR-004）。 */
-export const MAX_NON_AI = 2;
+export const MAX_NON_AI = 3;
 
 /**
  * AI 候選足夠時的軟性下限（僅供 T012 prompt 引用組字樣，程式硬驗證管線不強制填滿，
  * FR-004/005：候選不足照實輸出、不硬湊）。
  */
-export const MIN_AI = 4;
+export const MIN_AI = 5;
 
 /** 是否為 AI 領域（配額分類依 `candidate.domain`，research D4）。 */
 export function isAi(domain: NewsDomain3): boolean {

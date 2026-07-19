@@ -27,7 +27,7 @@ function makeService(generate: jest.Mock): { service: NewsCurationService; gener
 }
 
 describe('NewsCurationService.curate（US1 成功路徑）', () => {
-  it('代表性候選＋合規 mock 回應 → ≤6 則、繁中字數/配額合規、對回候選、只呼叫 LLM 一次（SC-001~005）', async () => {
+  it('代表性候選＋合規 mock 回應 → ≤10 則、繁中字數/配額合規、對回候選、只呼叫 LLM 一次（SC-001~005）', async () => {
     const candidates: NewsCandidate[] = [
       makeCandidate({ originalUrl: 'https://a.com/ai1', domain: 'ai', title: 'AI news 1' }),
       makeCandidate({ originalUrl: 'https://b.com/ai2', domain: 'ai', title: 'AI news 2' }),
@@ -50,13 +50,13 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
     const result = await service.curate(candidates, new Set());
 
     expect(result.degraded).toBe(false);
-    expect(result.items.length).toBeLessThanOrEqual(6);
+    expect(result.items.length).toBeLessThanOrEqual(10);
     for (const item of result.items) {
       expect([...item.title].length).toBeLessThanOrEqual(50);
       expect(item.content && [...item.content].length).toBeLessThanOrEqual(300);
     }
     const nonAiCount = result.items.filter((it) => it.domain !== 'ai').length;
-    expect(nonAiCount).toBeLessThanOrEqual(2);
+    expect(nonAiCount).toBeLessThanOrEqual(3);
     for (const item of result.items) {
       expect(candidates.some((c) => c.originalUrl === item.url)).toBe(true);
     }
@@ -101,7 +101,7 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
     expect(prompt).toContain(candidates[0].title);
   });
 
-  it('候選全為非 AI → 照實輸出非 AI（受 ≤2 約束），不因湊不到 4 則 AI 而失敗（Edge）', async () => {
+  it('候選全為非 AI → 照實輸出非 AI（受 ≤3 約束），不因湊不到 5 則 AI 而失敗（Edge）', async () => {
     const candidates: NewsCandidate[] = [
       makeCandidate({ originalUrl: 'https://devops.com', domain: 'devops', title: 'DevOps only' }),
       makeCandidate({ originalUrl: 'https://fe.com', domain: 'frontend-backend', title: 'Frontend only' }),
