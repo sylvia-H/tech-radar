@@ -129,9 +129,9 @@ Single project（純自用 CLI）：原始碼於 `src/<domain>/`，測試為旁�
 
 **Purpose**: 收尾、回歸、真實來源同步。
 
-- [ ] T021 [P] 更新 [docs/tech-radar-dev-guide.md](../../docs/tech-radar-dev-guide.md) §11.2 F7 條目與 M4 里程碑敘述為「已實作」（§7.1/§7.2 chunk-by-10 已於 `/speckit-tasks` 前複查同步，無需再改）。
-- [ ] T022 驗證 [src/main.cli.ts](../../src/main.cli.ts) 頂層路徑不變仍正確：`NEWS_INGEST_OBSERVE` 除錯旗標（只跑 F4 `ingest` 印候選、不推播）保留、頂層 catch／`tryPostFailureAlert`／`.radar-alert-sent` marker 沿用 F1、正式路徑呼叫 `PipelineService.run()` 走完整兩段。（research D7；FR-016）
-- [ ] T023 執行 quickstart.md 驗證：`npm run build`（strict 零 error）＋`npm test` 全綠，確認既有 `board-cadence`/`board-diff`/`push-board`/`board-commit` 純函式測試**仍全綠**（F7 未動判定純函式），且新增純函式與段服務測試通過。
+- [X] T021 [P] 複查 [docs/tech-radar-dev-guide.md](../../docs/tech-radar-dev-guide.md) §11.2 F7 條目與 M4 里程碑敘述：內容與實際落地一致（本檔不採每 Feature 標記「已實作」的慣例，F1~F6 條目亦同此風格）；§7.1/§7.2/§5.3 已隨 T020 一併修正為「兩段各自獨立切分送出」，無殘留矛盾。
+- [X] T022 驗證 [src/main.cli.ts](../../src/main.cli.ts) 頂層路徑不變仍正確：`NEWS_INGEST_OBSERVE` 除錯旗標（只跑 F4 `ingest` 印候選、不推播）保留、頂層 catch／`tryPostFailureAlert`／`.radar-alert-sent` marker 沿用 F1、正式路徑呼叫 `PipelineService.run()` 走完整兩段。（research D7；FR-016）
+- [X] T023 執行 quickstart.md 驗證：`npm run build`（strict 零 error）＋`npm test` 全綠，確認既有 `board-cadence`/`board-diff`/`push-board`/`board-commit` 純函式測試**仍全綠**（F7 未動判定純函式），且新增純函式與段服務測試通過。
 
 ---
 
