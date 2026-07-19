@@ -24,7 +24,7 @@ Single project（純自用 CLI）：原始碼於 `src/<domain>/`，測試為旁�
 
 **Purpose**: 確立變更前的綠燈基線，避免把既有失敗誤記到 F7。
 
-- [ ] T001 執行 `npm run build`（tsc strict 零 error）與 `npm test`（全綠）確立基線，記錄現有 48 個 `*.spec.ts` 通過；確認 `src/pipeline/layout/` 目錄將由後續任務建立（首個 layout 檔一併建目錄）。
+- [X] T001 執行 `npm run build`（tsc strict 零 error）與 `npm test`（全綠）確立基線，記錄現有 48 個 `*.spec.ts` 通過；確認 `src/pipeline/layout/` 目錄將由後續任務建立（首個 layout 檔一併建目錄）。
 
 **Checkpoint**: 基線綠燈，可開始改動。
 
