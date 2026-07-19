@@ -1,44 +1,43 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.3.1 → 1.3.2
-Bump rationale: PATCH——「技術與安全約束」與「開發流程」之排程 workflow 狀態 commit，由「落在
-  觸發 workflow 的分支（曾是 develop）」改為「落在獨立的 `state` orphan 分支，不落在
-  `develop`/`main`」。屬既有原則 VI（狀態單一權威來源）內的實作細節調整——`state/board.json`
-  仍是唯一權威狀態，只是改變它被 commit 到哪個分支，原則本身未變，故非 MAJOR/MINOR。決策來源：
-  使用者於一般對話中發現排程執行後 `develop` 上多出 bot commit（`chore: update board state`），
-  要求該類 commit 改固定發在獨立分支，2026-07-19。
+Version change: 1.3.2 → 1.4.0
+Bump rationale: MINOR——原則 III 的**新聞晨報配額由「6 則 / AI ≥4 / 非AI ≤2」放寬為
+  「至多 10 則 / AI ≥5 / 非AI ≤3」**。屬既有原則內的參數調整（先例：1.3.0 同樣調整原則 III 的
+  榜單節奏參數，判 MINOR），未移除或重新定義八條原則本身，故非 MAJOR；因調整的是 NON-NEGOTIABLE
+  原則本身的具體數字（非僅技術約束細節），故非 PATCH。決策來源：使用者於一般對話中指出「25 則
+  候選皆已產好簡介／摘要，只推 6 則有點可惜」，明確要求把上限放寬到 ≤10 則，並選定 AI≥5／非AI≤3
+  的新配額分配，2026-07-19。
 
-  動機：bot commit 原本混入 `develop` 的開發歷史，污染 `git log`／`git blame`，且日後
-  `develop`/`main` 分歧或合併時容易在這個高頻變動檔案上產生衝突。獨立分支讓程式碼歷史與自動化
-  狀態更新完全解耦。
-
-  Drive-by：`develop` 上先前已有一筆真實排程執行產生的 bot commit（`ffa01c1b`，含首次冷啟動的
-  真實榜單快照），已將其內容原封不動移至新建的 `state` 分支（root commit），不遺失資料；
-  `develop` 端使用者會自行以 force-push 收斂回不含該 commit 的乾淨歷史（不在本次憲章修訂範圍內）。
+  動機：新聞漏斗（§4.4）每日產出 15～25 則已去重、已具備摘要的候選，原本 6 則的上限相對於候選
+  規模明顯保守，放寬至 10 則能呈現更多有價值內容，仍維持「AI 為主、非 AI 軟性上限」與「寧缺勿濫、
+  不硬湊」的既有精神不變。
 
 Modified sections:
-  - 「技術與安全約束」→ 執行與排程：補充狀態 commit 落在獨立 `state` 分支。
-  - 「開發流程」→ Git 分支策略：「唯一例外」改為「無例外」（bot commit 不再出現在
-    `develop`/`main`）。
+  - 原則 III「只推變化、控制節奏」→ 新聞配額 6 則／AI≥4／非AI≤2 → 至多 10 則／AI≥5／非AI≤3。
+  - 原則 VIII「關鍵邏輯測試優先」→ 必測項「新聞配額」數字同步更新。
 Added sections: 無
 Removed sections: 無
 
 Templates requiring updates:
-  - CLAUDE.md ✅ 已同步（技術釘死之排程段落、SDD 流程與分支段落）
-  - docs/tech-radar-dev-guide.md ✅ 已同步（§0 決策表、§1 架構圖、§2.1/§2.2、§8 workflow 範例
-    YAML 與說明、§11.1 分支策略）
-  - README.md ✅ 已同步（GitHub Actions 段落）
-  - .github/workflows/radar.yml ✅ 已同步（新增 state 分支 checkout/複製/commit 步驟）
-  - .gitignore ✅ 已同步（`state/board.json` 排除，改由 state 分支追蹤）
-  - state 分支 ✅ 已建立並推送 origin（orphan，root commit 含 2026-07-19 首次排程執行的真實資料）
+  - CLAUDE.md ✅ 已同步（硬規則 3 之新聞配額，並記錄 2026-07-19 調整前數字供對照）
+  - docs/tech-radar-dev-guide.md ✅ 已同步（§0 決策表、§3.3 來源判準、§4.4 過濾漏斗與晨報精選、
+    §7 Discord 呈現、§9 組版範例程式碼註解、§11.1 Constitution 摘要段、§13 風險提醒、
+    M4 里程碑、M0→M4 總結、§14 儀表板描述）
+  - src/curation/curation-quota.ts ✅ 已同步（MAX_ITEMS=10、MAX_NON_AI=3、MIN_AI=5；
+    curation-prompt.ts 以模板字串內插這三個常數，無需另改）
+  - 相關測試（curation-quota.spec.ts、curation-fallback.spec.ts、curation-validate.spec.ts、
+    curation.service.spec.ts、digest-embeds.spec.ts）✅ 已同步
+  - specs/004-news-ingest、specs/006-news-curation 之既有 spec/plan/quickstart、以及
+    dev-guide §11.2 F6 條目（「範圍」「驗收」二行，屬 F6 完成當時的驗收紀錄）⚠ 維持原樣不改——
+    歷史 Feature 已驗收合併，屬完成當時的歷史紀錄（沿用本專案「歷史 spec 不回改，只更新真實
+    來源」慣例，見 CLAUDE.md）
 
-Follow-up TODOs:
-  - 使用者需自行將本機 `develop` force-push 至 origin，收斂掉 origin/develop 上已存在的
-    `ffa01c1b` bot commit（其內容已安全保存於 `state` 分支）——此步驟涉及改寫遠端分支歷史，
-    使用者已明確表示要自行處理，不在本次自動化範圍內。
+Follow-up TODOs: 無
 
 Prior history:
+  - 1.3.2（2026-07-19）：PATCH——排程 workflow 狀態 commit 落在獨立的 `state` orphan 分支，不再
+    落在 `develop`/`main`；`state/board.json` 仍是唯一權威狀態，只是改變它被 commit 到哪個分支。
   - 1.3.1（2026-07-19）：PATCH——Discord Secrets 由單一 `DISCORD_WEBHOOK_URL` 拆分為三條獨立
     webhook（`DISCORD_NEWS_WEBHOOK_URL` 晨報／`DISCORD_BOARD_WEBHOOK_URL` 榜單／
     `DISCORD_ALERT_WEBHOOK_URL` 告警），讓三類推播可各自獨立訂閱/靜音。
@@ -95,8 +94,8 @@ Follow-up TODOs（沿自舊版本，仍有效）:
   每週節奏由 `lastBoardPushAt` 計時（非 cron），到期門檻為 **162 小時**（七天 168 小時減
   6 小時寬限，用於吸收排程延遲與雙班抖動，使節奏不單向漂移）。節奏必須與榜單的尺對齊：
   「估算本週增星」是七日指標，短於七天推播等同以**重疊視窗**互比，名次移動即失去意義。
-- **新聞晨報每日固定精選 6 則**，配額為 **AI ≥ 4；DevOps / 後端 / 前端合計 ≤ 2**（軟性上限，
-  寧缺勿濫、不足 6 則不硬湊）。
+- **新聞晨報每日固定精選至多 10 則**，配額為 **AI ≥ 5；DevOps / 後端 / 前端合計 ≤ 3**（軟性上限，
+  寧缺勿濫、不足 10 則不硬湊）。
 - 新聞以**對開發者的重要性排序（非熱度）**；分數僅為提示，非排序主鍵。
 - 每則新聞以**繁體中文**呈現：**標題 ≤ 50 字 + 內容 ≤ 300 字**；repo 簡介 **≤ 250 字**。
 - 領域聚焦：後端只看 **Node.js / Python**、前端以 **TypeScript** 為主（Vue/React 最低），
@@ -148,7 +147,7 @@ Follow-up TODOs（沿自舊版本，仍有效）:
 
 下列關鍵邏輯必須有單元測試，方可視為完成：trending HTML 解析（以快照測試守著改版）、
 **兩領域歸類**、榜單 diff、**target-URL 正規化去重**、**標題近似去重**、簡介快取命中、
-**新聞配額（6 則 / AI ≥ 4 / DevOps+後端+前端 ≤ 2）**、**50 / 300 / 250 字數上限驗證**、
+**新聞配額（至多 10 則 / AI ≥ 5 / DevOps+後端+前端 ≤ 3）**、**50 / 300 / 250 字數上限驗證**、
 **來源清單 schema 驗證與 tier 加權**、**晨報 idempotency guard（`lastNewsPushAt` < ~18h 跳過）**、
 **榜單每週節奏（`lastBoardPushAt` 計時、162 小時門檻）**。外部呼叫（Gemini 策展）以 mock 測試，
 並必須另測「策展失敗時退回純程式排序」的降級備援路徑。
@@ -204,4 +203,4 @@ Follow-up TODOs（沿自舊版本，仍有效）:
 - **來源文件**：執行期與設計細節以 `docs/tech-radar-dev-guide.md` 為準；該指南與本憲章不一致時，
   以本憲章的非協商原則為最高約束，並修訂指南使其一致。
 
-**Version**: 1.3.2 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-19
+**Version**: 1.4.0 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-19

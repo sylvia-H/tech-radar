@@ -20,8 +20,8 @@ function domainOf(it: ResolvedPick): NewsDomain3 {
  * 剔除／重排，永不遞補新候選（FR-005/010）。
  *
  * (1) 剔除幻覺項（`ref` 越界／非整數）＋重複 `ref` 去重（保留第一次出現，即較高重要性者）
- * (2) 依領域優先序夾非 AI ≤2（DevOps 優先，AI 不受限）
- * (3) 依 picks 重要性序截總數 ≤6
+ * (2) 依領域優先序夾非 AI ≤3（DevOps 優先，AI 不受限）
+ * (3) 依 picks 重要性序截總數 ≤10
  * (4) `title`/`content` 收斂至 ≤50/≤300 code points
  *
  * 每則以 `ref` 對回候選附上程式提供的事實（`url`/`domain`/`sourceCount`/`weightedScore`），

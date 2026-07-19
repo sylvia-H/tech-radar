@@ -44,19 +44,20 @@ describe('fallbackDigest（US2 降級路徑）', () => {
     expect([...digest.items[0].title].length).toBe(80);
   });
 
-  it('套同一配額：非 AI 合計 ≤2、總數 ≤6（FR-004/012）', () => {
+  it('套同一配額：非 AI 合計 ≤3、總數 ≤10（FR-004/012）', () => {
     const candidates: NewsCandidate[] = [
-      ...Array.from({ length: 5 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai', weightedScore: 100 - i })),
+      ...Array.from({ length: 8 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai', weightedScore: 100 - i })),
       makeCandidate({ originalUrl: 'https://devops1.com', domain: 'devops', weightedScore: 50 }),
       makeCandidate({ originalUrl: 'https://devops2.com', domain: 'devops', weightedScore: 40 }),
       makeCandidate({ originalUrl: 'https://devops3.com', domain: 'devops', weightedScore: 30 }),
+      makeCandidate({ originalUrl: 'https://devops4.com', domain: 'devops', weightedScore: 20 }),
     ];
 
     const digest = fallbackDigest(candidates);
 
-    expect(digest.items.length).toBeLessThanOrEqual(6);
+    expect(digest.items.length).toBeLessThanOrEqual(10);
     const nonAiCount = digest.items.filter((it) => it.domain !== 'ai').length;
-    expect(nonAiCount).toBeLessThanOrEqual(2);
+    expect(nonAiCount).toBeLessThanOrEqual(3);
   });
 
   it('候選不足時照實輸出，不硬湊（FR-005）', () => {
