@@ -245,6 +245,42 @@ describe('BoardSegmentService.run — US3 Acceptance（榜單日疊加、push-th
     expect(save).not.toHaveBeenCalled();
     expect(postFailureAlert).toHaveBeenCalledWith(expect.stringContaining('榜單推播失敗'));
   });
+
+  it('Acceptance 3b：send 成功但 save 擲錯 → 共享 state 逐位元組還原（board/lastBoardPushAt 未外溢、intros 還原），不外溢至晨報段 save', async () => {
+    const before = makePrevBoardState();
+    const state = JSON.parse(JSON.stringify(before)) as BoardState;
+
+    const build = jest.fn().mockResolvedValue(makeCurrentBoard());
+    const send = jest.fn().mockResolvedValue(undefined); // 推播成功
+    const postFailureAlert = jest.fn().mockResolvedValue(undefined);
+    const ensureIntro = jest.fn().mockImplementation(async (input, s: BoardState): Promise<IntroResult> => {
+      if (input.repoId === 1) {
+        s.intros[String(input.repoId)] = { intro: '已推出但落檔失敗', introAt: NOW.toISOString() };
+        return { status: 'generated', intro: '已推出但落檔失敗', introAt: NOW.toISOString() };
+      }
+      return { status: 'cached', intro: `intro-for-${input.repoId}` };
+    });
+    const summarize = jest.fn().mockResolvedValue({ summary: 'x', degraded: false });
+    const save = jest.fn().mockRejectedValue(new Error('disk full')); // 落檔失敗
+
+    const service = new BoardSegmentService(
+      { build } as unknown as BoardBuilderService,
+      { send, postFailureAlert } as unknown as DiscordWebhookService,
+      { ensureIntro } as unknown as IntroService,
+      { summarize } as unknown as BoardSummaryService,
+      { save } as unknown as StateStore,
+    );
+
+    const result = await service.run(state, NOW);
+
+    expect(result).toEqual({ status: 'push-failed' });
+    // 關鍵：save 擲錯後，共享 state 不得殘留已 commit 的 board/lastBoardPushAt（否則晨報段 save 會把
+    // 這個「未成功落檔的榜單推播」外溢寫入）；intros 亦還原。逐位元組等於 before。
+    expect(state).toEqual(before);
+    expect(state.lastBoardPushAt).toBe(before.lastBoardPushAt);
+    expect(Object.keys(state.board).sort()).toEqual(['2', '3', '4']); // 仍是舊快照，未變成新 ['1','2','3']
+    expect(postFailureAlert).toHaveBeenCalledWith(expect.stringContaining('榜單推播失敗'));
+  });
 });
 
 describe('BoardSegmentService.run — US5 版面整合（T020：冷啟動拆分，段內獨立切分）', () => {

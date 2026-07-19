@@ -16,6 +16,7 @@ import { BoardSummaryService } from '../curation/board-summary.service';
 import { toBoardChangeDigest } from './layout/board-change-digest';
 import { buildCoverEmbed, buildRepoCard } from './layout/board-embeds';
 import { chunkEmbeds } from './layout/embed-split';
+import { taipeiDateLabel } from './layout/date-label';
 
 /** 空榜告警文案（沿用 F3 `board-diff.service.ts` 同文案；該檔於 US3/T015 退役，此處獨立持有純文字）。 */
 const EMPTY_BOARD_ALERT = '榜單為空：上游來源全數失敗或候選全被過濾';
@@ -100,7 +101,7 @@ export class BoardSegmentService {
 
       const summary = await this.boardSummary.summarize(toBoardChangeDigest(diff));
 
-      const dateLabel = now.toISOString().slice(0, 10);
+      const dateLabel = taipeiDateLabel(now);
       const cover = buildCoverEmbed(summary, diff, dateLabel);
       const cards = diff.changes
         .filter((c) => c.needsIntro)
@@ -111,10 +112,13 @@ export class BoardSegmentService {
         await this.discord.send({ username: 'Tech Radar', embeds: batch });
       }
 
-      // push-then-commit：commitBoardPush 為純函式回傳新 BoardState，Object.assign 回寫共享
-      // state，使晨報段（若同 run 執行）的 save 一起帶回（contract C1 步驟 4）。
-      Object.assign(state, commitBoardPush(state, pushBoard, now));
-      await this.stateStore.save(state);
+      // push-then-commit：commitBoardPush 為純函式回傳新 BoardState。順序為「先原子 save→成功後才
+      // Object.assign 回寫共享 state」（而非先回寫再 save）：若 save 擲錯，共享 state 的
+      // board/lastBoardPushAt 尚未被動過，catch 只需還原 intros 即完全回滾——不會讓一個未成功落檔的
+      // 榜單推播經晨報段（若同 run 執行）的 save 外溢落檔。回寫後晨報段的 save 一起帶回（contract C1 步驟 4）。
+      const next = commitBoardPush(state, pushBoard, now);
+      await this.stateStore.save(next);
+      Object.assign(state, next);
 
       return { status: 'ok', diff };
     } catch (err) {

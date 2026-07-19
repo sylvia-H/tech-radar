@@ -6,9 +6,11 @@ import { BoardState } from '../state/state.schema';
 import { NewsIngestService, boardRepoNameSet } from '../news/news-ingest.service';
 import { NewsCurationService } from '../curation/curation.service';
 import { normalizeTargetUrl } from '../news/url-normalize';
+import { pruneSeenNews } from '../news/seen-news';
 import { decideNewsGuard } from './layout/news-guard';
 import { buildDigestEmbeds } from './layout/digest-embeds';
 import { chunkEmbeds } from './layout/embed-split';
+import { taipeiDateLabel } from './layout/date-label';
 
 /** `NewsSegmentService.run()` 的回傳型別（判別聯集，供觀測；F7 內部型別）。 */
 export type NewsSegmentResult =
@@ -43,7 +45,8 @@ export class NewsSegmentService {
     }
 
     const boardRepoNames = boardRepoNameSet(state.board);
-    const candidates = await this.newsIngest.ingest(now, boardRepoNames);
+    // 傳入共享 state 的 seenNews，讓 ingest 免去重複 stateStore.load()（pipeline 開頭已 load 一次）。
+    const candidates = await this.newsIngest.ingest(now, boardRepoNames, undefined, state.seenNews);
     const digest = await this.newsCuration.curate(candidates, boardRepoNames);
 
     if (digest.items.length === 0) {
@@ -51,7 +54,7 @@ export class NewsSegmentService {
       return { status: 'no-content' };
     }
 
-    const dateLabel = now.toISOString().slice(0, 10);
+    const dateLabel = taipeiDateLabel(now);
     const embeds = buildDigestEmbeds(digest, dateLabel);
     const batches = chunkEmbeds(embeds, 10);
 
@@ -65,15 +68,19 @@ export class NewsSegmentService {
     }
 
     // push-then-commit：推播成功後才寫回，seenNews 以 normalized url 記鍵（與 F4 excludeSeen 對齊，research D7）。
-    const seenUrls = new Set(state.seenNews.map((e) => e.url));
+    // 先修剪逾保留期（7 天）的舊紀錄再 append 本次，使**落檔的** seenNews 不無限膨脹（FR-023/SC-008）——
+    // 過去 ingest 只在讀取時記憶體修剪、不寫回，寫回路徑若不修剪則 7 天保留形同虛設。
+    const seen = pruneSeenNews(state.seenNews, now);
+    const seenUrls = new Set(seen.map((e) => e.url));
     const seenAt = now.toISOString();
     for (const item of digest.items) {
       const url = normalizeTargetUrl(item.url);
       if (!seenUrls.has(url)) {
-        state.seenNews.push({ url, seenAt });
+        seen.push({ url, seenAt });
         seenUrls.add(url);
       }
     }
+    state.seenNews = seen;
     state.lastNewsPushAt = seenAt;
     await this.stateStore.save(state);
 

@@ -68,14 +68,17 @@ try 告警。（空榜 `aborted` 於步驟 3 早退、尚未生成簡介，還�
 2. `boardRepoNames = boardRepoNameSet(state.board)` 傳入下游（FR-003）。榜單日榜單段成功 commit 後
    `state.board` 已是**當次新榜**（見 C1 步驟 4 的共享 `state`），故無需另接 `current`；榜單推播失敗或
    非榜單日則 fallback 為上次榜名（等價且更簡，屬已接受的有界邊界）。
-3. `candidates = await newsIngest.ingest(now, boardRepoNames)`（F4）。
+3. `candidates = await newsIngest.ingest(now, boardRepoNames, undefined, state.seenNews)`（F4）。傳入共享
+   `state.seenNews`（第 4 參）使 ingest **免重複 `stateStore.load()`**——pipeline 開頭已 load 一次。
 4. `digest = await newsCuration.curate(candidates, boardRepoNames)`（F6；空候選 F6 短路、失敗 F6 降級）。
    - `digest.items.length === 0` → **不推空晨報、不前進 `lastNewsPushAt`**、早退（FR-006）。
 5. **組版**：`embeds = buildDigestEmbeds(digest, dateLabel)`（1~2 張橙；降級版原文標題＋連結，FR-004）。
 6. **推播**：`for (const batch of chunkEmbeds(embeds, 10)) await discord.send(...)`（晨報獨立於榜單段
    推播時通常 1 批）。
-7. **push-then-commit**：推播成功 → 把本次各則 normalized url 併入 `state.seenNews`（`{url, seenAt:
-   now}`，去重）、`state.lastNewsPushAt = now.toISOString()` → `await stateStore.save(state)`。此
+7. **push-then-commit**：推播成功 → **先 `pruneSeenNews(state.seenNews, now)` 修剪逾 7 天舊紀錄**，再把
+   本次各則 normalized url 併入（`{url, seenAt: now}`，去重）、`state.lastNewsPushAt = now.toISOString()`
+   → `await stateStore.save(state)`。修剪確保**落檔的** `seenNews` 不無限膨脹（FR-023/SC-008）——過去 ingest
+   只在讀取時記憶體修剪、不寫回，寫回路徑不修剪則保留期形同虛設。此
    `state` 即共享累積物件，**已含榜單段（若本 run 有）以 `Object.assign` 回寫的
    `board`/`lastBoardPushAt`/`intros`**，故一次 `save` 帶齊兩段成果、互不覆蓋（C1 步驟 4；SC-003）。
 

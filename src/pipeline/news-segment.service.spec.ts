@@ -87,7 +87,8 @@ describe('NewsSegmentService.run — US1 Acceptance（每日晨報端到端）',
     const result = await service.run(state, NOW);
 
     expect(result).toEqual({ status: 'ok' });
-    expect(ingest).toHaveBeenCalledWith(NOW, expect.any(Set));
+    // ingest 收共享 state 的 seenNews（第 4 參），免其重複 stateStore.load()。
+    expect(ingest).toHaveBeenCalledWith(NOW, expect.any(Set), undefined, expect.any(Array));
     expect(curate).toHaveBeenCalledTimes(1);
     expect(send).toHaveBeenCalledTimes(1);
     const payload = send.mock.calls[0][0];
@@ -100,6 +101,22 @@ describe('NewsSegmentService.run — US1 Acceptance（每日晨報端到端）',
     expect(state.seenNews).toEqual([{ url: 'https://example.com/a', seenAt: NOW.toISOString() }]);
     expect(state.lastNewsPushAt).toBe(NOW.toISOString());
     expect(save).toHaveBeenCalledTimes(1);
+    expect(save).toHaveBeenCalledWith(state);
+  });
+
+  it('落檔前修剪逾 7 天的舊 seenNews：舊紀錄被剔除、本次新項寫入，持久化不無限膨脹（FR-023/SC-008）', async () => {
+    const { service, save } = build();
+    const stale = { url: 'https://old.example.com/x', seenAt: hoursAgo(24 * 8) }; // 8 天前 → 應被剔除
+    const fresh = { url: 'https://recent.example.com/y', seenAt: hoursAgo(24 * 2) }; // 2 天內 → 保留
+    const state = makeState({ lastNewsPushAt: hoursAgo(24), seenNews: [stale, fresh] });
+
+    const result = await service.run(state, NOW);
+
+    expect(result).toEqual({ status: 'ok' });
+    const urls = state.seenNews.map((e) => e.url);
+    expect(urls).not.toContain(stale.url); // 逾保留期被修剪
+    expect(urls).toContain(fresh.url); // 仍在保留期
+    expect(urls).toContain('https://example.com/a'); // 本次推播的 normalized url
     expect(save).toHaveBeenCalledWith(state);
   });
 
