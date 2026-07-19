@@ -69,6 +69,6 @@ npm test
 
 ## GitHub Actions
 
-`.github/workflows/radar.yml`：`workflow_dispatch` + 雙 cron（UTC `7 22 * * *` / `37 22 * * *`＝台北 06:07 / 06:37）。於 repo Settings → Secrets and variables → Actions 設定五項機密後，於 Actions 頁 **Run workflow** 手動驗證。狀態僅在實際變更時由 `radar-bot` commit（no-diff 早退）。
+`.github/workflows/radar.yml`：`workflow_dispatch` + 雙 cron（UTC `7 22 * * *` / `37 22 * * *`＝台北 06:07 / 06:37）。於 repo Settings → Secrets and variables → Actions 設定五項機密後，於 Actions 頁 **Run workflow** 手動驗證。狀態僅在實際變更時由 `radar-bot` commit 到獨立的 `state` 分支（no-diff 早退；`develop`/`main` 不會出現這類 bot commit）。
 
 完整驗證步驟見 [specs/001-foundation/quickstart.md](specs/001-foundation/quickstart.md)。

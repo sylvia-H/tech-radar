@@ -1,48 +1,47 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.3.0 → 1.3.1
-Bump rationale: PATCH——「技術與安全約束」之 Discord Secrets 命名由單一 `DISCORD_WEBHOOK_URL`
-  拆分為三條獨立 webhook：`DISCORD_NEWS_WEBHOOK_URL`（每日晨報）、`DISCORD_BOARD_WEBHOOK_URL`
-  （GitHub repo 榜單）、`DISCORD_ALERT_WEBHOOK_URL`（告警訊息，涵蓋所有
-  `postFailureAlert`/`bestEffortFailureAlert`/`postTestEmbed`）。屬既有原則 I（Discord Channel
-  Webhook 為推播通道）內的實作細節調整——推播通道本身、免費/零維運前提、告警不得無聲皆未變，
-  僅改「幾條」webhook 與其命名，故非 MAJOR/MINOR。決策來源：使用者於一般對話中明確要求「榜單
-  變化、每日晨報、告警訊息各自送不同 Discord webhook」，2026-07-19。
+Version change: 1.3.1 → 1.3.2
+Bump rationale: PATCH——「技術與安全約束」與「開發流程」之排程 workflow 狀態 commit，由「落在
+  觸發 workflow 的分支（曾是 develop）」改為「落在獨立的 `state` orphan 分支，不落在
+  `develop`/`main`」。屬既有原則 VI（狀態單一權威來源）內的實作細節調整——`state/board.json`
+  仍是唯一權威狀態，只是改變它被 commit 到哪個分支，原則本身未變，故非 MAJOR/MINOR。決策來源：
+  使用者於一般對話中發現排程執行後 `develop` 上多出 bot commit（`chore: update board state`），
+  要求該類 commit 改固定發在獨立分支，2026-07-19。
 
-  動機：原單一頻道把榜單週報、每日晨報、告警訊息混在同一處，使用者難以分別靜音/訂閱單一類型
-  通知。三頻道分流後可各自獨立開關，不互相干擾。
+  動機：bot commit 原本混入 `develop` 的開發歷史，污染 `git log`／`git blame`，且日後
+  `develop`/`main` 分歧或合併時容易在這個高頻變動檔案上產生衝突。獨立分支讓程式碼歷史與自動化
+  狀態更新完全解耦。
+
+  Drive-by：`develop` 上先前已有一筆真實排程執行產生的 bot commit（`ffa01c1b`，含首次冷啟動的
+  真實榜單快照），已將其內容原封不動移至新建的 `state` 分支（root commit），不遺失資料；
+  `develop` 端使用者會自行以 force-push 收斂回不含該 commit 的乾淨歷史（不在本次憲章修訂範圍內）。
 
 Modified sections:
-  - 「技術與安全約束」→ Secrets 命名：`DISCORD_WEBHOOK_URL` → 三條
-    `DISCORD_NEWS_WEBHOOK_URL` / `DISCORD_BOARD_WEBHOOK_URL` / `DISCORD_ALERT_WEBHOOK_URL`。
+  - 「技術與安全約束」→ 執行與排程：補充狀態 commit 落在獨立 `state` 分支。
+  - 「開發流程」→ Git 分支策略：「唯一例外」改為「無例外」（bot commit 不再出現在
+    `develop`/`main`）。
 Added sections: 無
 Removed sections: 無
 
 Templates requiring updates:
-  - CLAUDE.md ✅ 已同步（技術約束之 Secrets 命名固定段落）
-  - docs/tech-radar-dev-guide.md ✅ 已同步（§2.3 推播與串接方式改為三頻道表格＋設定步驟、
-    §8 workflow 範例 YAML 之 env 與失敗告警 curl）
-  - README.md ✅ 已同步（機密表格、本機執行環境變數範例、GitHub Actions 段落「三項」→「五項」）
-  - .github/workflows/radar.yml ✅ 已同步（Run Tech Radar 與 Failure alert 兩步驟之 env）
-  - src/config/env.schema.ts、src/discord/discord.webhook.service.ts、
-    src/pipeline/board-segment.service.ts、src/pipeline/news-segment.service.ts ✅ 已同步
-    （實作與呼叫點）
-  - 相關測試（env.schema.spec.ts、discord.webhook.service.spec.ts、board-segment.service.spec.ts、
-    news-segment.service.spec.ts、curation.service.spec.ts 機密洩漏斷言）✅ 已同步
-  - .specify/templates/plan-template.md / spec-template.md / tasks-template.md ✅ 對齊（泛用
-    範本，未硬編 secret 名稱）
-  - specs/001-foundation ~ specs/007-pipeline-push 之既有 spec/plan/quickstart 內 `DISCORD_WEBHOOK_URL`
-    引用 ⚠ 維持原樣不改——各 Feature 已驗收合併，屬完成當時的歷史紀錄（沿用本專案「歷史 spec
-    不回改，只更新真實來源」慣例，見 CLAUDE.md）
+  - CLAUDE.md ✅ 已同步（技術釘死之排程段落、SDD 流程與分支段落）
+  - docs/tech-radar-dev-guide.md ✅ 已同步（§0 決策表、§1 架構圖、§2.1/§2.2、§8 workflow 範例
+    YAML 與說明、§11.1 分支策略）
+  - README.md ✅ 已同步（GitHub Actions 段落）
+  - .github/workflows/radar.yml ✅ 已同步（新增 state 分支 checkout/複製/commit 步驟）
+  - .gitignore ✅ 已同步（`state/board.json` 排除，改由 state 分支追蹤）
+  - state 分支 ✅ 已建立並推送 origin（orphan，root commit 含 2026-07-19 首次排程執行的真實資料）
 
 Follow-up TODOs:
-  - 使用者須自行在 GitHub repo Settings → Secrets and variables → Actions 新增
-    `DISCORD_NEWS_WEBHOOK_URL`、`DISCORD_BOARD_WEBHOOK_URL`，並將原 `DISCORD_WEBHOOK_URL` 的值
-    改放到 `DISCORD_ALERT_WEBHOOK_URL`（或為三者各自建立新的 Discord webhook）——此步驟不在
-    程式碼變更範圍內，需人工於 GitHub 網頁完成。
+  - 使用者需自行將本機 `develop` force-push 至 origin，收斂掉 origin/develop 上已存在的
+    `ffa01c1b` bot commit（其內容已安全保存於 `state` 分支）——此步驟涉及改寫遠端分支歷史，
+    使用者已明確表示要自行處理，不在本次自動化範圍內。
 
 Prior history:
+  - 1.3.1（2026-07-19）：PATCH——Discord Secrets 由單一 `DISCORD_WEBHOOK_URL` 拆分為三條獨立
+    webhook（`DISCORD_NEWS_WEBHOOK_URL` 晨報／`DISCORD_BOARD_WEBHOOK_URL` 榜單／
+    `DISCORD_ALERT_WEBHOOK_URL` 告警），讓三類推播可各自獨立訂閱/靜音。
   - 1.3.0（2026-07-15）：MINOR——原則 III 的榜單推播節奏由「每三天」改為「每七天」，明定到期
     門檻為 162 小時（168h − 6h 寬限），使節奏與「估算本週增星」的七日尺對齊；新聞側完全不受
     影響。Drive-by 一併校正檔尾 Version/Last Amended 漏更、原則 VIII 殘留「三領域」用字。
@@ -163,7 +162,8 @@ Follow-up TODOs（沿自舊版本，仍有效）:
   `cheerio`（爬 Trending）、`rss-parser`、`@google/genai`、`undici`/`fetch`；F8 另加 `feed`。
 - **執行與排程**：GitHub Actions，晨報排雙離峰 cron（`:07` / `:37`，UTC），並以 guard 抗漏跑；
   狀態 commit **僅在 `state/board.json` 實際變更時進行**（沿用開發指南 §8 workflow 的 no-diff 早退，
-  不製造空 commit）。workflow 活性（避免 60 天停用）由正式期每日 `lastNewsPushAt` 變更與開發期
+  不製造空 commit），且落在獨立的 `state` 分支（2026-07-19 起，見開發指南 §2.2/§8），不落在
+  `develop`/`main`。workflow 活性（避免 60 天停用）由正式期每日 `lastNewsPushAt` 變更與開發期
   程式碼 commit 自然維持，不依賴人工心跳 commit。
 - **Secrets 命名**：`GH_API_TOKEN`（不可用 `GITHUB_` 前綴）、`GEMINI_API_KEY`、Discord webhook
   三頻道分流（`DISCORD_NEWS_WEBHOOK_URL` 晨報／`DISCORD_BOARD_WEBHOOK_URL` 榜單／
@@ -183,7 +183,8 @@ Follow-up TODOs（沿自舊版本，仍有效）:
   - `main` **不直接 commit**，只接受來自 `develop` 的合併，保持隨時穩定可回溯。
   - `develop` 為整合分支；所有 Feature 分支從 `develop` 切出，命名沿用 `NNN-feature-name`，
     完成 implement 與驗收後合回 `develop`；驗證穩定後再由 `develop` 合入 `main`。
-  - **唯一例外**：排程 workflow 由 bot 自動 commit 的 `state/board.json`（執行期狀態更新）。
+  - **無例外**：排程 workflow 由 bot 自動 commit 的 `state/board.json`（執行期狀態更新）落在
+    獨立的 `state` 分支（2026-07-19 起），不落在 `develop`/`main`，兩者皆無須為此設例外。
 - **Feature 順序**：依開發指南 §11.2 的 F1 `001-foundation` → F8 `008-pages-publish` 依序執行，
   各 Feature 的驗收即對應里程碑 M0–M5；F8（Pages）為 post-MVP，先完成 M0→M4。
 - **品質閘門**：每個 Feature 的 `plan.md` 須通過 Constitution Check；違反原則者須在
@@ -203,4 +204,4 @@ Follow-up TODOs（沿自舊版本，仍有效）:
 - **來源文件**：執行期與設計細節以 `docs/tech-radar-dev-guide.md` 為準；該指南與本憲章不一致時，
   以本憲章的非協商原則為最高約束，並修訂指南使其一致。
 
-**Version**: 1.3.1 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-19
+**Version**: 1.3.2 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-19
