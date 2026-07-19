@@ -156,3 +156,37 @@ describe('domainColor', () => {
     expect(domainColor('frontend-backend')).toBe(COLOR_FRONTEND_BACKEND);
   });
 });
+
+describe('Discord 欄位上限（T019；contract discord-layout.md L1/§7.1）', () => {
+  it('buildRepoCard：title ≤256、fields ≤25（固定 3 筆）', () => {
+    const c = change({ fullName: 'acme/agent-sandbox' });
+    const intro: IntroResult = { status: 'cached', intro: 'x'.repeat(250) }; // 250 字簡介（憲章 III 上限）
+    const embed = buildRepoCard(c, intro, row());
+    expect(embed.title.length).toBeLessThanOrEqual(256);
+    expect(embed.description!.length).toBeLessThanOrEqual(4096);
+    expect(embed.fields!.length).toBeLessThanOrEqual(25);
+  });
+
+  it('buildCoverEmbed：title ≤256（即使下降清單較長仍在 4096 內）', () => {
+    const declinedItems = Array.from({ length: 10 }, (_, i) =>
+      change({
+        kind: 'declined',
+        repoId: i,
+        fullName: `owner/repo-${i}`,
+        url: `https://github.com/owner/repo-${i}`,
+        previousRank: i + 1,
+        currentRank: i + 5,
+        needsIntro: false,
+      }),
+    );
+    const diff: BoardDiff = {
+      changes: declinedItems,
+      unchanged: false,
+      topEntry: topEntry(),
+      pushBoard: [],
+    };
+    const embed = buildCoverEmbed({ summary: 'x', degraded: false }, diff, '2026-07-19');
+    expect(embed.title.length).toBeLessThanOrEqual(256);
+    expect(embed.description!.length).toBeLessThanOrEqual(4096);
+  });
+});

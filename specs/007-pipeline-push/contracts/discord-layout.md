@@ -53,12 +53,18 @@
 
 ## L5. 顯示順序與訊息組裝
 
-`embeds = [ ...(榜單日 ? [cover, ...cards] : []), ...digestEmbeds ]`（榜單封面 → 卡片 → 晨報）。
-交 `chunkEmbeds(embeds, 10)`（見 `embed-split.md`）逐批 `send`。`payload = { username: 'Tech Radar',
-avatar_url?, embeds: batch }`。
+**榜單段與晨報段各自獨立組裝、獨立切分、獨立送出**（不合併為同一個待切分陣列——合併會使一次 Discord
+失敗同時波及兩段的 push-then-commit，牴觸 FR-013 段間隔離）：
+- 榜單段（僅榜單日執行）：`boardEmbeds = [cover, ...cards]`（榜單封面 → 卡片），交
+  `chunkEmbeds(boardEmbeds, 10)`（見 `embed-split.md`）逐批 `send`。
+- 晨報段（每日執行）：`newsEmbeds = digestEmbeds`（1~2 張），交 `chunkEmbeds(newsEmbeds, 10)` 逐批 `send`
+  （通常僅 1 批）。
+
+兩段皆用 `payload = { username: 'Tech Radar', avatar_url?, embeds: batch }`。
 
 ## L6. 邊界
 
-- 穩定態（封面＋0~數卡＋晨報 ≤10）→ 一則訊息。
-- 冷啟動（封面＋10 卡＝11，＋晨報＝12）→ `chunkEmbeds` 切成 2 則，順序不亂、無遺漏（SC-005）。
-- 非榜單日 → 只有晨報 embed（1~2 張），一則訊息。
+- 穩定態（榜單段封面＋0~數卡 ≤10）→ 榜單段一則訊息；晨報段（1~2 張）另一則訊息。
+- 冷啟動（榜單段封面＋10 卡＝11）→ 榜單段 `chunkEmbeds` 切成 2 則，順序不亂、無遺漏（SC-005）；晨報段
+  仍照常獨立送出自己的 1~2 張（不併入榜單段的切分）。
+- 非榜單日 → 只有晨報段的 embed（1~2 張），一則訊息。

@@ -80,8 +80,10 @@ commit』的觸發點換成『推播回報成功 → commit』，純函式 `comm
 2. **公開送出**：`DiscordWebhookService` 新增 public `async send(payload: DiscordWebhookPayload)`，
    內部委派既有 private `post`（204 成功／429 有限退避／訊息不含機密——**完全不動**）。
 3. **通用切分**（純函式 `embed-split.ts`）：`chunkEmbeds(embeds: DiscordEmbed[], max = 10): DiscordEmbed[][]`
-   依**顯示順序**（榜單封面 → 卡片… → 晨報）每 `max` 個切一批，F7 段服務對每批呼叫一次 `send`。
-   任一批 `length ≤ 10`、順序不亂、無遺漏無重複。
+   依**顯示順序**每 `max` 個切一批。**榜單段與晨報段各自獨立呼叫**（榜單段傳 `[cover, ...cards]`、
+   晨報段傳 `digestEmbeds`，不合併兩段成單一陣列——合併會使一次 Discord 失敗同時波及兩段的
+   push-then-commit，牴觸 FR-013 段間隔離），對每批呼叫一次 `send`。任一批 `length ≤ 10`、順序不亂、
+   無遺漏無重複。
 
 **Rationale**：dev-guide §7.2 的特例敘述（「封面＋10 卡留第一則、晨報送第二則」）在**冷啟動恰 11
 embeds**（封面＋10 卡）時，封面＋10 卡本身即 11 > 10、仍會被 Discord 拒收；**依序 chunk-by-10** 是更

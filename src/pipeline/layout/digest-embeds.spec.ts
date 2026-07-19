@@ -72,4 +72,16 @@ describe('buildDigestEmbeds（research D4；contract discord-layout.md L4）', (
     expect(joined).toContain('[B](');
     expect(joined).toContain('[C](');
   });
+
+  it('T019：title ≤256（含日期標籤）；標準 6 則情境 description 仍 ≤4096', () => {
+    const digest: CuratedDigest = {
+      items: Array.from({ length: 6 }, (_, i) => item({ title: `News ${i}`, url: `https://example.com/${i}` })),
+      degraded: false,
+    };
+    const embeds = buildDigestEmbeds(digest, DATE_LABEL);
+    for (const e of embeds) {
+      expect(e.title.length).toBeLessThanOrEqual(256);
+      expect([...e.description!].length).toBeLessThanOrEqual(4096);
+    }
+  });
 });

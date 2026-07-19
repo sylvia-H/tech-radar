@@ -206,3 +206,27 @@ describe('NewsSegmentService.run — US2 idempotency guard（雙 cron 去重＋�
     expect(send).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('NewsSegmentService.run — US5 版面整合（T020：晨報逼近 4096 拆分，仍段內獨立切分）', () => {
+  it('晨報 6 則逼近 4096 → buildDigestEmbeds 拆兩張橙 embed，仍在晨報段自己的 chunkEmbeds 批次內（一次 send、payload 含 2 個 embeds）', async () => {
+    const { service, curate, send } = build();
+    const longContent = 'x'.repeat(750); // 6 則 × 750+ 字（含連結 markdown）必超過 4096
+    curate.mockResolvedValue({
+      items: Array.from({ length: 6 }, (_, i) =>
+        curatedItem({ title: `News ${i}`, content: longContent, url: `https://example.com/${i}` }),
+      ),
+      degraded: false,
+    } as CuratedDigest);
+    const state = makeState({ lastNewsPushAt: null });
+
+    const result = await service.run(state, NOW);
+
+    expect(result).toEqual({ status: 'ok' });
+    expect(send).toHaveBeenCalledTimes(1); // 2 個晨報 embed 仍 ≤10，一批送出（不與榜單段合併）
+    const payload = send.mock.calls[0][0];
+    expect(payload.embeds.length).toBeGreaterThanOrEqual(2);
+    for (const e of payload.embeds) {
+      expect([...e.description as string].length).toBeLessThanOrEqual(4096);
+    }
+  });
+});

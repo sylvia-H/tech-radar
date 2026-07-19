@@ -246,3 +246,46 @@ describe('BoardSegmentService.run — US3 Acceptance（榜單日疊加、push-th
     expect(postFailureAlert).toHaveBeenCalledWith(expect.stringContaining('榜單推播失敗'));
   });
 });
+
+describe('BoardSegmentService.run — US5 版面整合（T020：冷啟動拆分，段內獨立切分）', () => {
+  it('冷啟動（全數新進，10 張卡）→ 封面＋10 卡＝11 個 embeds → send 呼叫 2 次（10+1），順序保持、無遺漏無重複', async () => {
+    const ai: BoardRow[] = Array.from({ length: 10 }, (_, i) =>
+      row({
+        repoId: i + 1,
+        fullName: `acme/newcomer-${i + 1}`,
+        weeklyStarsEstimate: 10000 - i * 100, // 遞減，決定唯一順序
+        starsThisWeek: 10000 - i * 100,
+        domain: 'ai',
+        description: `desc-${i + 1}`,
+        topics: [],
+        language: 'Rust',
+      }),
+    );
+    const currentBoard: CurrentBoard = {
+      builtAt: NOW.toISOString(),
+      boards: [
+        { domain: 'ai' as Domain, entries: ai },
+        { domain: 'frontend-backend' as Domain, entries: [] },
+      ],
+      apiCalls: { core: 1, search: 0 },
+    };
+    const { service, send } = makeMocks(currentBoard);
+    const state = { ...emptyBoardState(), lastBoardPushAt: null }; // 冷啟動：無時間戳、無 prev board → 全數新進
+
+    const result = await service.run(state, NOW);
+
+    expect(result.status).toBe('ok');
+    expect(send).toHaveBeenCalledTimes(2); // 11 個 embeds → 2 批（10+1）
+
+    const batch1 = send.mock.calls[0][0].embeds;
+    const batch2 = send.mock.calls[1][0].embeds;
+    expect(batch1).toHaveLength(10);
+    expect(batch2).toHaveLength(1);
+
+    // 顯示順序保持：封面在最前，卡片依序（新進以 weeklyStarsEstimate 降序排入 pushBoard）。
+    expect(batch1[0].title).toContain('📊 榜單變化');
+    const allCardTitles = [...batch1.slice(1), ...batch2].map((e: { title: string }) => e.title);
+    expect(allCardTitles).toHaveLength(10); // 10 張卡、無遺漏無重複
+    expect(new Set(allCardTitles).size).toBe(10); // 無重複
+  });
+});

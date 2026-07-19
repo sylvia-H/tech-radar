@@ -118,8 +118,8 @@ Single project（純自用 CLI）：原始碼於 `src/<domain>/`，測試為旁�
 
 ### Implementation for User Story 5
 
-- [ ] T019 [US5] 在 `src/pipeline/layout/board-embeds.ts` 與 `src/pipeline/layout/digest-embeds.ts` 落實並斷言 Discord 欄位上限（`title`≤256、`description`≤4096、`fields`≤25）；於各自 `*.spec.ts` 補上限案例。（contract discord-layout.md L1/§7.1；FR-018）
-- [ ] T020 [US5] 於 `src/pipeline/board-segment.service.spec.ts` 與 `src/pipeline/news-segment.service.spec.ts` 增補版面整合斷言：冷啟動（封面＋10 卡＋晨報＝12）→`send` 呼叫 2 次且各批 ≤10（10+2）、顯示順序 `cover→cards→digest` 保持、embed 總數不增不減；穩定態→`send` 一次；晨報逼近 4096→兩張橙 embed 仍納入切分；卡片依領域上色/封面藍/晨報橙/標題 `url` 可點。（contract discord-layout.md L5/L6；SC-005；依賴 T014/T008/T004）
+- [X] T019 [US5] 在 `src/pipeline/layout/board-embeds.ts` 與 `src/pipeline/layout/digest-embeds.ts` 落實並斷言 Discord 欄位上限（`title`≤256、`description`≤4096、`fields`≤25）；於各自 `*.spec.ts` 補上限案例。（contract discord-layout.md L1/§7.1；FR-018）
+- [X] T020 [US5] **實作期修正**：`/speckit-implement` 執行至此發現 contracts 內部矛盾——`pipeline-orchestration.md` C1-C4（各段獨立 push-then-commit）與 `discord-layout.md` 原 L5/L6（合併兩段 embeds 一次 chunkEmbeds）互斥；合併送出會使一次 Discord 失敗同時波及兩段的 commit，違反 FR-013 段間隔離。經與使用者確認後**維持各自獨立推播**（已同步修訂 spec.md US5/FR-017/SC-005/Assumptions、`contracts/discord-layout.md` L5/L6、`contracts/embed-split.md`、`research.md` D3、`plan.md`、`quickstart.md`、dev-guide §7.1/§7.2/§5.3）。於 `board-segment.service.spec.ts` 增補冷啟動整合斷言：全數新進（10 張卡）→ 封面＋10 卡＝**11 個 embeds**（僅榜單段自身）→`send` 呼叫 2 次（10+1）、順序保持（封面在前）、無遺漏無重複；於 `news-segment.service.spec.ts` 增補晨報逼近 4096→拆兩張橙 embed、仍在晨報段自己的批次內一次 `send`。卡片配色/可點已於 T013 覆蓋。（contract discord-layout.md L5/L6 修訂版；SC-005；依賴 T014/T008/T004）
 
 **Checkpoint**: 所有 User Story 皆獨立可用；冷啟動不再被 Discord 整則拒收。
 

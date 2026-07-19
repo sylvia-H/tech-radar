@@ -36,8 +36,10 @@ webhook）、`zod`（狀態 schema，沿用 F1）。**F7 不新增任何 runtime
 **Project Type**: Single project（純自用 CLI，非 web／mobile）。
 
 **Performance Goals**: N/A（批次 job，無延遲/吞吐目標）。硬約束是**用量**：一次執行 Discord 推播訊息
-數為「⌈總 embeds / 10⌉」（穩定態多為 1，冷啟動 ≤2），**不新增 GitHub API 呼叫、不新增 LLM 呼叫**
-（榜單日 F5 簡介僅對新進/竄升且快取優先、F6 TL;DR 每榜單日 1 次、F6 策展每日 1 次——皆沿用上游）。
+數為榜單段 ⌈boardEmbeds/10⌉（僅榜單日，穩定態 1、冷啟動 2）+ 晨報段 ⌈digestEmbeds/10⌉（每日，通常
+1）——兩段**各自獨立**切分送出、不合併（維持 FR-013 段間隔離），**不新增 GitHub API 呼叫、不新增
+LLM 呼叫**（榜單日 F5 簡介僅對新進/竄升且快取優先、F6 TL;DR 每榜單日 1 次、F6 策展每日 1 次——皆沿用
+上游）。
 
 **Constraints**:
 - **一次執行至多 `load()` 一次、每段推播成功後各 `save()` 一次**（原子寫入，禁止半套；憲章 VI）。
@@ -56,7 +58,7 @@ webhook）、`zod`（狀態 schema，沿用 F1）。**F7 不新增任何 runtime
 
 | 原則 | F7 落地 | 判定 |
 |------|---------|------|
-| **I. 零維運免費基礎設施** | 不新增相依/服務；推播訊息數 = ⌈embeds/10⌉（穩定態 1）；不新增 GitHub/LLM 呼叫 | ✅ Pass |
+| **I. 零維運免費基礎設施** | 不新增相依/服務；推播訊息數 = 榜單段 ⌈boardEmbeds/10⌉（僅榜單日）+ 晨報段 ⌈digestEmbeds/10⌉（每日），各自獨立、穩定態多為 1；不新增 GitHub/LLM 呼叫 | ✅ Pass |
 | **II. 不自存星星歷史** | 不自建星星快照；`IntroInput` 的 metadata 由**當次 build 產物** join（不從 `state.board` 讀回、不另打 `GET /repos`），FR-008 | ✅ Pass |
 | **III. 只推變化、控制節奏** | 榜單 162h（沿用 F3 `decideCadence`）、晨報 <~18h guard（新增 `decideNewsGuard`，門檻與 §8 一致、與榜單獨立）；晨報 ≤6 則、字數上限由 F5/F6 完成 F7 只呈現 | ✅ Pass |
 | **IV. 新聞來源設定即資料** | F7 只呼叫 F4 `ingest`，不碰來源設定與 pipeline 抓取；0 筆告警沿用 F4 | ✅ Pass |

@@ -56,17 +56,19 @@ npm test
 - 單源/單次 LLM 失敗 → 沿用 F4/F5/F6 既有降級，pipeline 不整條失敗。
 
 ### US5 — Discord 版面上限與冷啟動拆分
-- 冷啟動集合（封面＋10 卡＋晨報＝12）→ `chunkEmbeds` 切 **2 則（10+2）**、順序不亂、無遺漏，任一則
-  **不 >10**（SC-005）。
-- 穩定態（4 embeds）→ 一則。
-- 晨報 6 則逼近 4096 → 兩張晨報 embed。
+- 榜單段與晨報段**各自獨立**切分送出（不合併，維持段間隔離）：冷啟動時**榜單段自身**集合（封面＋10 卡＝
+  11）→ `chunkEmbeds` 切 **2 則（10+1）**、順序不亂、無遺漏，任一則**不 >10**（SC-005）；晨報段照常
+  獨立送出自己的 1~2 張。
+- 榜單段穩定態（封面＋0~數卡 ≤10）→ 一則；晨報段（1~2 張）→ 另一則。
+- 晨報 6 則逼近 4096 → 兩張晨報 embed（仍在晨報段自己的批次內）。
 - 配色/可點：卡片依領域上色、封面藍、晨報橙、標題 `url` 可點（Acceptance 4）。
 
 ## 手動煙霧測試（可選，需真實機密；非 CI 必要）
 
 於**臨時 feature 環境**設 `GH_API_TOKEN`/`GEMINI_API_KEY`/`DISCORD_WEBHOOK_URL`（環境變數，勿入庫），
 `node dist/main.cli.js`：
-- 觀察 Discord 是否收到晨報（榜單日另有封面＋卡）；訊息數 = ⌈embeds/10⌉。
+- 觀察 Discord 是否收到晨報（榜單日另有封面＋卡，與晨報分開送出）；訊息數 = 榜單段
+  ⌈boardEmbeds/10⌉（僅榜單日）+ 晨報段 ⌈digestEmbeds/10⌉（每日）。
 - 檢查 `state/board.json`：推播成功後 `lastNewsPushAt`（榜單日另含 `lastBoardPushAt`/`board`/`intros`）
   已更新且為完整（無半套）。
 - `NEWS_INGEST_OBSERVE=1 node dist/main.cli.js` → 只印 F4 候選、不推播（除錯路徑，D7）。
