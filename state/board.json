@@ -1,7 +1,160 @@
 {
-  "board": {},
-  "intros": {},
-  "lastBoardPushAt": null,
-  "lastNewsPushAt": null,
-  "seenNews": []
+  "board": {
+    "357728969": {
+      "domain": "frontend-backend",
+      "firstSeenAt": "2026-07-19T11:16:05.077Z",
+      "fullName": "oven-sh/bun",
+      "language": "Rust",
+      "rank": 9,
+      "starsThisWeek": 671,
+      "url": "https://github.com/oven-sh/bun"
+    },
+    "793375104": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-19T11:16:05.077Z",
+      "fullName": "Shubhamsaboo/awesome-llm-apps",
+      "language": "Python",
+      "rank": 5,
+      "starsThisWeek": 6146,
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps"
+    },
+    "1034478597": {
+      "domain": "frontend-backend",
+      "firstSeenAt": "2026-07-19T11:16:05.077Z",
+      "fullName": "firecrawl/open-lovable",
+      "language": "TypeScript",
+      "rank": 10,
+      "starsThisWeek": 627,
+      "url": "https://github.com/firecrawl/open-lovable"
+    },
+    "1073224795": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-19T11:16:05.077Z",
+      "fullName": "obra/superpowers",
+      "language": "Shell",
+      "rank": 8,
+      "starsThisWeek": 5090,
+      "url": "https://github.com/obra/superpowers"
+    },
+    "1148788086": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-19T11:16:05.077Z",
+      "fullName": "mattpocock/skills",
+      "language": "Shell",
+      "rank": 2,
+      "starsThisWeek": 11131,
+      "url": "https://github.com/mattpocock/skills"
+    },
+    "1183888342": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-19T11:16:05.077Z",
+      "fullName": "stablyai/orca",
+      "language": "TypeScript",
+      "rank": 7,
+      "starsThisWeek": 5520,
+      "url": "https://github.com/stablyai/orca"
+    },
+    "1198306812": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-19T11:16:05.077Z",
+      "fullName": "HKUDS/Vibe-Trading",
+      "language": "Python",
+      "rank": 6,
+      "starsThisWeek": 5635,
+      "url": "https://github.com/HKUDS/Vibe-Trading"
+    },
+    "1200597263": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-19T11:16:05.077Z",
+      "fullName": "Graphify-Labs/graphify",
+      "language": "Python",
+      "rank": 4,
+      "starsThisWeek": 8611,
+      "url": "https://github.com/Graphify-Labs/graphify"
+    },
+    "1222917575": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-19T11:16:05.077Z",
+      "fullName": "Nutlope/hallmark",
+      "language": "CSS",
+      "rank": 3,
+      "starsThisWeek": 8834,
+      "url": "https://github.com/Nutlope/hallmark"
+    },
+    "1300902838": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-19T11:16:05.077Z",
+      "fullName": "xai-org/grok-build",
+      "language": "Rust",
+      "rank": 1,
+      "starsThisWeek": 19652,
+      "url": "https://github.com/xai-org/grok-build"
+    }
+  },
+  "intros": {
+    "357728969": {
+      "intro": "Bun 是一款專為 JavaScript 和 TypeScript 設計的全方位工具套件，旨在解決開發環境冗長與執行效能瓶頸。它使用 Rust 開發，以 JavaScriptCore 為核心，不僅是 Node.js 的高效替代方案，更整合了測試執行器、指令碼執行器及相容 npm 的套件管理工具。Bun 提供極致的啟動速度與記憶體效率，適合追求高性能開發體驗的開發者，在現有 Node.js 專案中即可無縫整合使用。",
+      "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "793375104": {
+      "intro": "此專案提供超過 100 款開源 AI Agent、Agent 技能及 RAG 應用，解決開發者從零構建複雜 AI 流程的痛點。核心特色為模組化設計、支援多種主流模型，且具備端對端測試。無論是想為編碼助理增加實用技能，或是部署金融、研究、自動化等專業級 Agent 團隊，皆可透過簡單指令快速執行與整合，非常適合希望加速 AI 應用開發與落地實踐的開發者。",
+      "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1034478597": {
+      "intro": "Open Lovable 讓你透過 AI 對話即可快速建構 React 應用程式，簡化開發流程。作為 Firecrawl 團隊提供的開源範例，它展示了自動化開發的潛力。適合開發者嘗試快速開發體驗，若需完整的雲端解決方案，可進一步參考 Lovable.dev。",
+      "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1073224795": {
+      "intro": "Superpowers 為 AI 程式代理提供完整的開發方法論，解決 AI 直接編碼導致的規劃缺失。透過「子代理驅動開發」模式，在撰寫程式前強制進行構思、需求確認與細化規劃，並嚴格執行測試驅動開發與自動化審核。適合追求高質量交付、需自主執行長時任務的開發者，透過模組化技能賦予 AI 如 Claude Code、Cursor 等工具強大的工程紀律，確保開發過程規範化且高效。",
+      "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1148788086": {
+      "intro": "這是一套專為真實工程需求設計的 AI 代理技能集，旨在解決與 AI 溝通不良、輸出冗長及代碼品質低落的問題。透過「互動式引導」、「定義領域語言」及「TDD 紅綠重構」等核心技術，協助開發者與 AI 深度對齊、精簡溝通成本。適合追求高質量開發、希望提升 AI 協作效率的工程師使用，支援透過 Shell 安裝或作為 Claude Code 外掛，靈活導入你的開發流程。",
+      "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1183888342": {
+      "intro": "Orca 是一款專為高效開發者打造的 AI 編排工具，解決多個 AI Agent 在不同工作環境下難以統一管理的問題。它支援平行工作樹，讓你同時運行 ClaudeCode、Codex 等多種代理，並透過手機端即時監控與操作。具備 WebGL 終端機、網頁設計模式、GitHub/Linear 原生整合及遠端 SSH 支援，能有效串聯各種 CLI Agent，實現跨環境的高效開發流程，是開發者管理多代理協作的最佳 IDE 輔助利器。",
+      "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1198306812": {
+      "intro": "Vibe-Trading 是一款全方位的 AI 量化交易代理框架。它解決了傳統交易開發中繁瑣的資料串接與回測問題，透過 LLM 與多代理人協作機制，實現自動化金融分析。具備嚴謹的沙盒回測、風險控管及多市場數據整合能力，並支援 MCP 標準。適合量化交易開發者與金融科技研究者，透過單一指令快速部署個人專屬的交易代理，在嚴謹的安全防護下進行策略驗證與實戰。",
+      "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1200597263": {
+      "intro": "Graphify 將專案程式碼、文件與多媒體轉化為知識圖譜，取代傳統 grep 搜尋，讓開發者透過語意查詢獲取精準洞察。其採用 tree-sitter 進行在地化解析，無需依賴模型即可建立確定性關係，並透過 Leiden 演算法劃分子系統。適用於 Claude Code、Cursor 等多種 AI 助手，協助工程師直觀追蹤概念路徑，是管理複雜專案與提升跨檔案理解效率的強力工具。",
+      "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1222917575": {
+      "intro": "Hallmark 是一款專為 Claude Code、Cursor 與 Codex 設計的 AI 設計技能，旨在解決 AI 生成內容千篇一律的「罐頭感」。它透過內建的 57 項防廢話檢測與自我審查機制，確保產出的 CSS 與 HTML 具備獨特宏觀架構與設計美感。本工具提供建構、審計、重設計及分析四大功能，能根據創意需求靈活切換 20 種主題或進行客製化設計，讓不同專案展現截然不同的獨特風貌。",
+      "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1300902838": {
+      "intro": "Grok Build 是 SpaceXAI 開發的終端 AI 程式設計代理。它提供全螢幕 TUI 介面，能深入理解程式碼庫、執行檔案編輯、終端指令、網路搜尋與管理長期任務。該專案透過 Rust 編寫，支援互動式操作、自動化腳本及編輯器嵌入。適合需要高效 AI 輔助開發、CI 自動化或追求終端環境作業流程的開發者使用。",
+      "introAt": "2026-07-19T11:16:05.077Z"
+    }
+  },
+  "lastBoardPushAt": "2026-07-19T11:16:05.077Z",
+  "lastNewsPushAt": "2026-07-19T11:16:05.077Z",
+  "seenNews": [
+    {
+      "seenAt": "2026-07-19T11:16:05.077Z",
+      "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead"
+    },
+    {
+      "seenAt": "2026-07-19T11:16:05.077Z",
+      "url": "https://lmstudio.ai/blog/introducing-lm-studio-bionic"
+    },
+    {
+      "seenAt": "2026-07-19T11:16:05.077Z",
+      "url": "https://github.com/openai/codex/issues/28058"
+    },
+    {
+      "seenAt": "2026-07-19T11:16:05.077Z",
+      "url": "https://github.com/juggler-ai/juggler"
+    },
+    {
+      "seenAt": "2026-07-19T11:16:05.077Z",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook"
+    }
+  ]
 }
