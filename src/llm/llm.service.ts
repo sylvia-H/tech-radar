@@ -58,6 +58,9 @@ export class LlmService {
           throw err;
         }
         if (!this.isRetryable(err)) {
+          // 不重試路徑原本吞掉真實狀態碼/訊息，只留籠統的 'error'，故障時無從排查；
+          // 這裡補印出處（不含 prompt/回應全文，符合憲章 VII）。
+          this.logger.warn(`LLM 呼叫失敗（不重試）：${this.errDetail(err)}`);
           throw new LlmError('error');
         }
         if (attempt < LLM_MAX_RETRIES) {
@@ -76,6 +79,14 @@ export class LlmService {
       return RETRYABLE_STATUS.has(err.status);
     }
     return true;
+  }
+
+  /** 供 log 用的錯誤摘要：ApiError 帶狀態碼，其餘退回 message（不含 prompt/回應全文）。 */
+  private errDetail(err: unknown): string {
+    if (err instanceof ApiError) {
+      return `status=${err.status} ${err.message}`;
+    }
+    return err instanceof Error ? err.message : String(err);
   }
 
   /** 指數退避＋jitter：base × 2^(attempt-1) + [0, base) 隨機，上限 LLM_MAX_BACKOFF_MS。 */
