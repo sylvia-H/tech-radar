@@ -134,7 +134,7 @@
     }
   },
   "lastBoardPushAt": "2026-07-19T11:16:05.077Z",
-  "lastNewsPushAt": "2026-07-19T11:16:05.077Z",
+  "lastNewsPushAt": "2026-07-20T23:07:39.264Z",
   "seenNews": [
     {
       "seenAt": "2026-07-19T11:16:05.077Z",
@@ -155,6 +155,30 @@
     {
       "seenAt": "2026-07-19T11:16:05.077Z",
       "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook"
+    },
+    {
+      "seenAt": "2026-07-20T23:07:39.264Z",
+      "url": "https://github.com/openai/codex/pull/33972/files"
+    },
+    {
+      "seenAt": "2026-07-20T23:07:39.264Z",
+      "url": "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust"
+    },
+    {
+      "seenAt": "2026-07-20T23:07:39.264Z",
+      "url": "https://old.reddit.com/r/math/comments/1uxj3cy/after_openais_cdc_proof_announcement_gpt56_used_a"
+    },
+    {
+      "seenAt": "2026-07-20T23:07:39.264Z",
+      "url": "https://xcancel.com/__alpoge__/status/2079028340955197566"
+    },
+    {
+      "seenAt": "2026-07-20T23:07:39.264Z",
+      "url": "https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing"
+    },
+    {
+      "seenAt": "2026-07-20T23:07:39.264Z",
+      "url": "https://twitter.com/kimi_moonshot/status/2078855608565207130"
     }
   ]
 }
