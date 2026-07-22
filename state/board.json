@@ -134,7 +134,7 @@
     }
   },
   "lastBoardPushAt": "2026-07-19T11:16:05.077Z",
-  "lastNewsPushAt": "2026-07-21T23:04:56.666Z",
+  "lastNewsPushAt": "2026-07-22T23:11:12.319Z",
   "seenNews": [
     {
       "seenAt": "2026-07-19T11:16:05.077Z",
@@ -203,6 +203,30 @@
     {
       "seenAt": "2026-07-21T23:04:56.666Z",
       "url": "https://reddit.com/r/LocalLLaMA/comments/1v2ky1e/anthropic_claims_local_models_are_stealing_from"
+    },
+    {
+      "seenAt": "2026-07-22T23:11:12.319Z",
+      "url": "https://openai.com/index/introducing-openai-presence"
+    },
+    {
+      "seenAt": "2026-07-22T23:11:12.319Z",
+      "url": "https://notion.com/blog/two-years-of-vector-search-at-notion"
+    },
+    {
+      "seenAt": "2026-07-22T23:11:12.319Z",
+      "url": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community"
+    },
+    {
+      "seenAt": "2026-07-22T23:11:12.319Z",
+      "url": "https://openai.com/index/advancing-the-next-era-of-national-science"
+    },
+    {
+      "seenAt": "2026-07-22T23:11:12.319Z",
+      "url": "https://stateofopensource.ai/"
+    },
+    {
+      "seenAt": "2026-07-22T23:11:12.319Z",
+      "url": "https://tech.chrishardie.com/2026/nagios-small-business-infrastructure-monitoring"
     }
   ]
 }
