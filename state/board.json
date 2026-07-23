@@ -134,7 +134,7 @@
     }
   },
   "lastBoardPushAt": "2026-07-19T11:16:05.077Z",
-  "lastNewsPushAt": "2026-07-22T23:11:12.319Z",
+  "lastNewsPushAt": "2026-07-23T23:05:15.411Z",
   "seenNews": [
     {
       "seenAt": "2026-07-19T11:16:05.077Z",
@@ -227,6 +227,26 @@
     {
       "seenAt": "2026-07-22T23:11:12.319Z",
       "url": "https://tech.chrishardie.com/2026/nagios-small-business-infrastructure-monitoring"
+    },
+    {
+      "seenAt": "2026-07-23T23:05:15.411Z",
+      "url": "https://simonwillison.net/2026/Jul/22/openai-cyberattack"
+    },
+    {
+      "seenAt": "2026-07-23T23:05:15.411Z",
+      "url": "https://runtimewire.com/article/jack-dorsey-block-buzz-team-chat-ai-agents-git"
+    },
+    {
+      "seenAt": "2026-07-23T23:05:15.411Z",
+      "url": "https://politico.com/news/2026/07/22/startup-founders-urge-trump-not-to-shut-off-chinese-open-weight-ai-01008992"
+    },
+    {
+      "seenAt": "2026-07-23T23:05:15.411Z",
+      "url": "https://data.stackexchange.com/stackoverflow/query/1953768"
+    },
+    {
+      "seenAt": "2026-07-23T23:05:15.411Z",
+      "url": "https://thenextweb.com/news/ai-advice-suppresses-critical-thinking-wrong-answers-study"
     }
   ]
 }
