@@ -134,7 +134,7 @@
     }
   },
   "lastBoardPushAt": "2026-07-19T11:16:05.077Z",
-  "lastNewsPushAt": "2026-07-23T23:05:15.411Z",
+  "lastNewsPushAt": "2026-07-24T23:10:16.468Z",
   "seenNews": [
     {
       "seenAt": "2026-07-19T11:16:05.077Z",
@@ -247,6 +247,26 @@
     {
       "seenAt": "2026-07-23T23:05:15.411Z",
       "url": "https://thenextweb.com/news/ai-advice-suppresses-critical-thinking-wrong-answers-study"
+    },
+    {
+      "seenAt": "2026-07-24T23:10:16.468Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1v5c3vt/more_than_20_companies_including_nvidia_meta"
+    },
+    {
+      "seenAt": "2026-07-24T23:10:16.468Z",
+      "url": "https://hiraditya.github.io/posts/mlir-dialect-stack-for-ml"
+    },
+    {
+      "seenAt": "2026-07-24T23:10:16.468Z",
+      "url": "https://anthropic.com/news/claude-opus-5"
+    },
+    {
+      "seenAt": "2026-07-24T23:10:16.468Z",
+      "url": "https://apnews.com/article/ai-anthropic-copyright-settlement-claude-books-bartz-74b140444023898aeba8579b6e9f0d63"
+    },
+    {
+      "seenAt": "2026-07-24T23:10:16.468Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1v49zi9/absurd_claim_the_distilled_model_outperforms_the"
     }
   ]
 }
