@@ -134,7 +134,7 @@
     }
   },
   "lastBoardPushAt": "2026-07-19T11:16:05.077Z",
-  "lastNewsPushAt": "2026-07-24T23:10:16.468Z",
+  "lastNewsPushAt": "2026-07-25T23:01:58.815Z",
   "seenNews": [
     {
       "seenAt": "2026-07-19T11:16:05.077Z",
@@ -267,6 +267,26 @@
     {
       "seenAt": "2026-07-24T23:10:16.468Z",
       "url": "https://reddit.com/r/LocalLLaMA/comments/1v49zi9/absurd_claim_the_distilled_model_outperforms_the"
+    },
+    {
+      "seenAt": "2026-07-25T23:01:58.815Z",
+      "url": "https://simonwillison.net/2026/Jul/25/ruff"
+    },
+    {
+      "seenAt": "2026-07-25T23:01:58.815Z",
+      "url": "https://platform.claude.com/cookbook"
+    },
+    {
+      "seenAt": "2026-07-25T23:01:58.815Z",
+      "url": "https://emergingtrajectories.com/lh/frontier-lab-economics"
+    },
+    {
+      "seenAt": "2026-07-25T23:01:58.815Z",
+      "url": "https://openai.com/index/health-in-chatgpt"
+    },
+    {
+      "seenAt": "2026-07-25T23:01:58.815Z",
+      "url": "https://chatgpt.com/share/6a5fdc7a-d6f8-83e8-bbea-8deb42cfed56"
     }
   ]
 }
