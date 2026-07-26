@@ -1,97 +1,101 @@
 {
   "board": {
-    "357728969": {
+    "107286889": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-07-19T11:16:05.077Z",
-      "fullName": "oven-sh/bun",
-      "language": "Rust",
-      "rank": 9,
-      "starsThisWeek": 671,
-      "url": "https://github.com/oven-sh/bun"
-    },
-    "793375104": {
-      "domain": "ai",
-      "firstSeenAt": "2026-07-19T11:16:05.077Z",
-      "fullName": "Shubhamsaboo/awesome-llm-apps",
-      "language": "Python",
-      "rank": 5,
-      "starsThisWeek": 6146,
-      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps"
-    },
-    "1034478597": {
-      "domain": "frontend-backend",
-      "firstSeenAt": "2026-07-19T11:16:05.077Z",
-      "fullName": "firecrawl/open-lovable",
-      "language": "TypeScript",
+      "firstSeenAt": "2026-07-26T23:05:01.196Z",
+      "fullName": "schollz/croc",
+      "language": "Go",
       "rank": 10,
-      "starsThisWeek": 627,
-      "url": "https://github.com/firecrawl/open-lovable"
+      "starsThisWeek": 2849,
+      "url": "https://github.com/schollz/croc"
     },
-    "1073224795": {
-      "domain": "ai",
-      "firstSeenAt": "2026-07-19T11:16:05.077Z",
-      "fullName": "obra/superpowers",
-      "language": "Shell",
+    "997737944": {
+      "domain": "frontend-backend",
+      "firstSeenAt": "2026-07-26T23:05:01.196Z",
+      "fullName": "ruvnet/RuView",
+      "language": "Rust",
       "rank": 8,
-      "starsThisWeek": 5090,
-      "url": "https://github.com/obra/superpowers"
+      "starsThisWeek": 5313,
+      "url": "https://github.com/ruvnet/RuView"
+    },
+    "1035029907": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-26T23:05:01.196Z",
+      "fullName": "earendil-works/pi",
+      "language": "TypeScript",
+      "rank": 9,
+      "starsThisWeek": 5167,
+      "url": "https://github.com/earendil-works/pi"
+    },
+    "1053118194": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-26T23:05:01.196Z",
+      "fullName": "bojieli/ai-agent-book",
+      "language": "Python",
+      "rank": 1,
+      "starsThisWeek": 16579,
+      "url": "https://github.com/bojieli/ai-agent-book"
+    },
+    "1130564872": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-26T23:05:01.196Z",
+      "fullName": "koala73/worldmonitor",
+      "language": "TypeScript",
+      "rank": 2,
+      "starsThisWeek": 12085,
+      "url": "https://github.com/koala73/worldmonitor"
     },
     "1148788086": {
       "domain": "ai",
       "firstSeenAt": "2026-07-19T11:16:05.077Z",
       "fullName": "mattpocock/skills",
       "language": "Shell",
-      "rank": 2,
-      "starsThisWeek": 11131,
+      "rank": 3,
+      "starsThisWeek": 11790,
       "url": "https://github.com/mattpocock/skills"
+    },
+    "1157102282": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-26T23:05:01.196Z",
+      "fullName": "diegosouzapw/OmniRoute",
+      "language": "TypeScript",
+      "rank": 4,
+      "starsThisWeek": 11147,
+      "url": "https://github.com/diegosouzapw/OmniRoute"
+    },
+    "1167788341": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-26T23:05:01.196Z",
+      "fullName": "tirth8205/code-review-graph",
+      "language": "Python",
+      "rank": 7,
+      "starsThisWeek": 6423,
+      "url": "https://github.com/tirth8205/code-review-graph"
+    },
+    "1173848034": {
+      "domain": "ai",
+      "firstSeenAt": "2026-07-26T23:05:01.196Z",
+      "fullName": "oblien/openship",
+      "language": "TypeScript",
+      "rank": 6,
+      "starsThisWeek": 6470,
+      "url": "https://github.com/oblien/openship"
     },
     "1183888342": {
       "domain": "ai",
       "firstSeenAt": "2026-07-19T11:16:05.077Z",
       "fullName": "stablyai/orca",
       "language": "TypeScript",
-      "rank": 7,
-      "starsThisWeek": 5520,
+      "rank": 5,
+      "starsThisWeek": 7327,
       "url": "https://github.com/stablyai/orca"
-    },
-    "1198306812": {
-      "domain": "ai",
-      "firstSeenAt": "2026-07-19T11:16:05.077Z",
-      "fullName": "HKUDS/Vibe-Trading",
-      "language": "Python",
-      "rank": 6,
-      "starsThisWeek": 5635,
-      "url": "https://github.com/HKUDS/Vibe-Trading"
-    },
-    "1200597263": {
-      "domain": "ai",
-      "firstSeenAt": "2026-07-19T11:16:05.077Z",
-      "fullName": "Graphify-Labs/graphify",
-      "language": "Python",
-      "rank": 4,
-      "starsThisWeek": 8611,
-      "url": "https://github.com/Graphify-Labs/graphify"
-    },
-    "1222917575": {
-      "domain": "ai",
-      "firstSeenAt": "2026-07-19T11:16:05.077Z",
-      "fullName": "Nutlope/hallmark",
-      "language": "CSS",
-      "rank": 3,
-      "starsThisWeek": 8834,
-      "url": "https://github.com/Nutlope/hallmark"
-    },
-    "1300902838": {
-      "domain": "ai",
-      "firstSeenAt": "2026-07-19T11:16:05.077Z",
-      "fullName": "xai-org/grok-build",
-      "language": "Rust",
-      "rank": 1,
-      "starsThisWeek": 19652,
-      "url": "https://github.com/xai-org/grok-build"
     }
   },
   "intros": {
+    "107286889": {
+      "intro": "croc 是一款基於 Go 語言的高效能檔案傳輸工具，解決了跨設備傳輸檔案時，需處理複雜網路設定或伺服器架構的困擾。它採用 PAKE 技術實現端對端加密，確保資料傳輸安全性。具備跨平台支援、斷點續傳、IPv6 優先及支援代理伺服器等核心特色。無論是開發者在指令列快速分享檔案，或是一般使用者透過瀏覽器進行傳輸，croc 都能在無須安裝或設定埠轉發的情況下，提供簡易且安全的一對一傳輸體驗。",
+      "introAt": "2026-07-26T23:05:01.196Z"
+    },
     "357728969": {
       "intro": "Bun 是一款專為 JavaScript 和 TypeScript 設計的全方位工具套件，旨在解決開發環境冗長與執行效能瓶頸。它使用 Rust 開發，以 JavaScriptCore 為核心，不僅是 Node.js 的高效替代方案，更整合了測試執行器、指令碼執行器及相容 npm 的套件管理工具。Bun 提供極致的啟動速度與記憶體效率，適合追求高性能開發體驗的開發者，在現有 Node.js 專案中即可無縫整合使用。",
       "introAt": "2026-07-19T11:16:05.077Z"
@@ -100,17 +104,45 @@
       "intro": "此專案提供超過 100 款開源 AI Agent、Agent 技能及 RAG 應用，解決開發者從零構建複雜 AI 流程的痛點。核心特色為模組化設計、支援多種主流模型，且具備端對端測試。無論是想為編碼助理增加實用技能，或是部署金融、研究、自動化等專業級 Agent 團隊，皆可透過簡單指令快速執行與整合，非常適合希望加速 AI 應用開發與落地實踐的開發者。",
       "introAt": "2026-07-19T11:16:05.077Z"
     },
+    "997737944": {
+      "intro": "RuView 透過 ESP32 節點擷取 WiFi 信道狀態資訊（CSI），將無線電波轉化為空間感知系統，實現無需攝影機或穿戴裝置的非接觸式監測。系統能即時偵測人體存在、呼吸心跳、跌倒與活動狀態，精準度高且支援區域映射。完整支援 Home Assistant、Apple Home 及 Matter 生態系，適合居家自動化、安全監控與長照健康管理。所有運算皆在邊緣裝置完成，無需雲端連線，保護個人隱私。",
+      "introAt": "2026-07-26T23:05:01.196Z"
+    },
     "1034478597": {
       "intro": "Open Lovable 讓你透過 AI 對話即可快速建構 React 應用程式，簡化開發流程。作為 Firecrawl 團隊提供的開源範例，它展示了自動化開發的潛力。適合開發者嘗試快速開發體驗，若需完整的雲端解決方案，可進一步參考 Lovable.dev。",
       "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1035029907": {
+      "intro": "Pi Agent Harness 提供一個可自我擴充的程式開發代理框架。核心包含統一的多模型 LLM API、具狀態管理的代理運行時、互動式 CLI 以及終端介面庫。適合需整合多樣 AI 模型、自動化編碼任務或建立開發代理的開發者。專案高度重視供應鏈安全，並鼓勵共享開源開發會話以優化代理效能。可透過容器化或沙盒技術靈活保障執行安全性。",
+      "introAt": "2026-07-26T23:05:01.196Z"
+    },
+    "1053118194": {
+      "intro": "本專案是一本深入探討 AI Agent 的開源技術書，解決了從原理到生產實踐的落地難題。書中圍繞「Agent = LLM + 上下文 + 工具」核心架構，由 10 章內容與 92 個配套實作專案組成。涵蓋 RAG、記憶工程、多 Agent 協作、模型後訓練及多模態交互等關鍵技術。適合希望透過系統化學習與實戰練習，掌握 AI Agent 工程化開發的開發者與架構師。",
+      "introAt": "2026-07-26T23:05:01.196Z"
     },
     "1073224795": {
       "intro": "Superpowers 為 AI 程式代理提供完整的開發方法論，解決 AI 直接編碼導致的規劃缺失。透過「子代理驅動開發」模式，在撰寫程式前強制進行構思、需求確認與細化規劃，並嚴格執行測試驅動開發與自動化審核。適合追求高質量交付、需自主執行長時任務的開發者，透過模組化技能賦予 AI 如 Claude Code、Cursor 等工具強大的工程紀律，確保開發過程規範化且高效。",
       "introAt": "2026-07-19T11:16:05.077Z"
     },
+    "1130564872": {
+      "intro": "World Monitor 是開源的即時全球情報儀表板，透過 AI 整合超過 500 個新聞源與多元數據，協助使用者監控地緣政治、金融市場及關鍵基礎設施。具備 3D 地球儀與 WebGL 平面地圖視覺化，支援本地 AI 運作，並整合 MCP 協議供 AI Agent 調用。適合需進行情勢感知、市場分析或研究的地緣政治觀察者及開發者，透過跨平台桌面應用或 API 獲取即時洞察。",
+      "introAt": "2026-07-26T23:05:01.196Z"
+    },
     "1148788086": {
       "intro": "這是一套專為真實工程需求設計的 AI 代理技能集，旨在解決與 AI 溝通不良、輸出冗長及代碼品質低落的問題。透過「互動式引導」、「定義領域語言」及「TDD 紅綠重構」等核心技術，協助開發者與 AI 深度對齊、精簡溝通成本。適合追求高質量開發、希望提升 AI 協作效率的工程師使用，支援透過 Shell 安裝或作為 Claude Code 外掛，靈活導入你的開發流程。",
       "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1157102282": {
+      "intro": "OmniRoute 是免費的 AI 閘道，整合 43 個供應商與 516 種模型，每月提供約 15 億免費 Token。它能自動切換模型，確保服務不中斷。具備 19 種路由策略與自動化組合引擎，支援主流 AI 編碼工具與 MCP 協定，無需配置即可使用，是開發者優化 AI 使用成本與效能的利器。",
+      "introAt": "2026-07-26T23:05:01.196Z"
+    },
+    "1167788341": {
+      "intro": "AI 程式開發常因重複讀取龐大程式碼而浪費 Token。code-review-graph 利用 Tree-sitter 建立程式碼結構圖，透過增量更新與精準上下文分析，讓 AI 僅讀取必要的關聯檔案，大幅節省成本並提升效率。核心支援多種程式語言、提供 MCP 整合與 CI 風險分析，適合處理大型專案與 Monorepo 的開發者，平均可降低約 82 倍的 Token 使用量，是優化 AI 程式碼審查的利器。",
+      "introAt": "2026-07-26T23:05:01.196Z"
+    },
+    "1173848034": {
+      "intro": "Openship 是一個開源且可自託管的部署平台，能自動化處理應用程式的建置、部署、路由與 TLS 加密，徹底簡化 CI/CD 流程。透過 Desktop App、網頁儀表板或 CLI，即可輕鬆將程式碼發布至伺服器或雲端。無論是個人開發者透過桌面軟體進行快速部署，或是團隊需要持續整合與伺服器自動化維運，Openship 都能提供彈性且高效的託管解決方案。",
+      "introAt": "2026-07-26T23:05:01.196Z"
     },
     "1183888342": {
       "intro": "Orca 是一款專為高效開發者打造的 AI 編排工具，解決多個 AI Agent 在不同工作環境下難以統一管理的問題。它支援平行工作樹，讓你同時運行 ClaudeCode、Codex 等多種代理，並透過手機端即時監控與操作。具備 WebGL 終端機、網頁設計模式、GitHub/Linear 原生整合及遠端 SSH 支援，能有效串聯各種 CLI Agent，實現跨環境的高效開發流程，是開發者管理多代理協作的最佳 IDE 輔助利器。",
@@ -133,29 +165,9 @@
       "introAt": "2026-07-19T11:16:05.077Z"
     }
   },
-  "lastBoardPushAt": "2026-07-19T11:16:05.077Z",
-  "lastNewsPushAt": "2026-07-25T23:01:58.815Z",
+  "lastBoardPushAt": "2026-07-26T23:05:01.196Z",
+  "lastNewsPushAt": "2026-07-26T23:05:01.196Z",
   "seenNews": [
-    {
-      "seenAt": "2026-07-19T11:16:05.077Z",
-      "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead"
-    },
-    {
-      "seenAt": "2026-07-19T11:16:05.077Z",
-      "url": "https://lmstudio.ai/blog/introducing-lm-studio-bionic"
-    },
-    {
-      "seenAt": "2026-07-19T11:16:05.077Z",
-      "url": "https://github.com/openai/codex/issues/28058"
-    },
-    {
-      "seenAt": "2026-07-19T11:16:05.077Z",
-      "url": "https://github.com/juggler-ai/juggler"
-    },
-    {
-      "seenAt": "2026-07-19T11:16:05.077Z",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook"
-    },
     {
       "seenAt": "2026-07-20T23:07:39.264Z",
       "url": "https://github.com/openai/codex/pull/33972/files"
@@ -287,6 +299,26 @@
     {
       "seenAt": "2026-07-25T23:01:58.815Z",
       "url": "https://chatgpt.com/share/6a5fdc7a-d6f8-83e8-bbea-8deb42cfed56"
+    },
+    {
+      "seenAt": "2026-07-26T23:05:01.196Z",
+      "url": "https://tobi.knaup.me/2026-07-25-open-weight-ai-is-having-its-kubernetes-moment"
+    },
+    {
+      "seenAt": "2026-07-26T23:05:01.196Z",
+      "url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models"
+    },
+    {
+      "seenAt": "2026-07-26T23:05:01.196Z",
+      "url": "https://antirez.com/news/170"
+    },
+    {
+      "seenAt": "2026-07-26T23:05:01.196Z",
+      "url": "https://blog.jsbarretto.com/post/languages-as-latent-spaces"
+    },
+    {
+      "seenAt": "2026-07-26T23:05:01.196Z",
+      "url": "https://ziggit.dev/t/buz-a-drop-in-replacement-for-bun-using-modern-zig-with-sub-1s-incremental-builds/16891"
     }
   ]
 }
