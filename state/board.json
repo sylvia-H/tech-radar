@@ -166,32 +166,8 @@
     }
   },
   "lastBoardPushAt": "2026-07-26T23:05:01.196Z",
-  "lastNewsPushAt": "2026-07-26T23:05:01.196Z",
+  "lastNewsPushAt": "2026-07-27T23:13:25.631Z",
   "seenNews": [
-    {
-      "seenAt": "2026-07-20T23:07:39.264Z",
-      "url": "https://github.com/openai/codex/pull/33972/files"
-    },
-    {
-      "seenAt": "2026-07-20T23:07:39.264Z",
-      "url": "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust"
-    },
-    {
-      "seenAt": "2026-07-20T23:07:39.264Z",
-      "url": "https://old.reddit.com/r/math/comments/1uxj3cy/after_openais_cdc_proof_announcement_gpt56_used_a"
-    },
-    {
-      "seenAt": "2026-07-20T23:07:39.264Z",
-      "url": "https://xcancel.com/__alpoge__/status/2079028340955197566"
-    },
-    {
-      "seenAt": "2026-07-20T23:07:39.264Z",
-      "url": "https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing"
-    },
-    {
-      "seenAt": "2026-07-20T23:07:39.264Z",
-      "url": "https://twitter.com/kimi_moonshot/status/2078855608565207130"
-    },
     {
       "seenAt": "2026-07-21T23:04:56.666Z",
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber"
@@ -319,6 +295,30 @@
     {
       "seenAt": "2026-07-26T23:05:01.196Z",
       "url": "https://ziggit.dev/t/buz-a-drop-in-replacement-for-bun-using-modern-zig-with-sub-1s-incremental-builds/16891"
+    },
+    {
+      "seenAt": "2026-07-27T23:13:25.631Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1v7yand/jensen_huang_during_the_hugging_face_incident"
+    },
+    {
+      "seenAt": "2026-07-27T23:13:25.631Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1v8364f/kimi_k3_weights_now_released"
+    },
+    {
+      "seenAt": "2026-07-27T23:13:25.631Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1v72jft/ceo_of_hugging_face_in_the_spirit_of_transparency"
+    },
+    {
+      "seenAt": "2026-07-27T23:13:25.631Z",
+      "url": "https://github.com/slvDev/esp32-ai"
+    },
+    {
+      "seenAt": "2026-07-27T23:13:25.631Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1v770ee/do_you_want_new_gemma"
+    },
+    {
+      "seenAt": "2026-07-27T23:13:25.631Z",
+      "url": "https://lockwood.dev/ai/2026/07/27/how-is-the-bun-rewrite-in-rust-going.html"
     }
   ]
 }
