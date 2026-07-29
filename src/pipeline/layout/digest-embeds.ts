@@ -11,7 +11,7 @@ function codePointLength(s: string): number {
 function formatItem(item: CuratedNewsItem, index: number): string {
   const link = `${index}. [${item.title}](${item.url})`;
   if (item.content === null) {
-    // 降級（單則降級或整份 digest.degraded）：原文標題＋連結，不套 300 字改寫（FR-004）。
+    // 降級（單則降級或整份 digest.degraded）：原文標題＋連結，不套 500 字改寫（FR-004）。
     return link;
   }
   return `${link}\n${item.content}`;

@@ -499,8 +499,9 @@ const digestEmbeds = [
     color: 0xf5a623, // 晨報橙
   },
 ];
-// 6 ×（70+500 字）+ 連結 markdown 約 3,500～4,000 字元，仍在 description 4096 上限內；
-// 逼近上限時把精選拆成兩張晨報 embed，仍在晨報段自己的 chunkEmbeds 批次內。
+// 最多 10 則 ×（70+500 字）+ 連結 markdown，worst case 可達 5,700+ 字元、超過 description 4096
+// 上限；buildDigestEmbeds 以貪婪分組（greedyGroup）自動拆成多張晨報 embed，仍在晨報段自己的
+// chunkEmbeds 批次內（≤10 embeds／批）。
 
 // 晨報段獨立送出（通常 1 批，穩定態 description 未逼近上限時恰 1 個 embed）。
 for (const batch of chunkEmbeds(digestEmbeds, 10)) {
