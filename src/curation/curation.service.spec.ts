@@ -52,8 +52,8 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
     expect(result.degraded).toBe(false);
     expect(result.items.length).toBeLessThanOrEqual(10);
     for (const item of result.items) {
-      expect([...item.title].length).toBeLessThanOrEqual(50);
-      expect(item.content && [...item.content].length).toBeLessThanOrEqual(300);
+      expect([...item.title].length).toBeLessThanOrEqual(70);
+      expect(item.content && [...item.content].length).toBeLessThanOrEqual(500);
     }
     const nonAiCount = result.items.filter((it) => it.domain !== 'ai').length;
     expect(nonAiCount).toBeLessThanOrEqual(3);

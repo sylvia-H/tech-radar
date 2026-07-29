@@ -22,7 +22,7 @@ function domainOf(it: ResolvedPick): NewsDomain3 {
  * (1) 剔除幻覺項（`ref` 越界／非整數）＋重複 `ref` 去重（保留第一次出現，即較高重要性者）
  * (2) 依領域優先序夾非 AI ≤3（DevOps 優先，AI 不受限）
  * (3) 依 picks 重要性序截總數 ≤10
- * (4) `title`/`content` 收斂至 ≤50/≤300 code points
+ * (4) `title`/`content` 收斂至 ≤70/≤500 code points
  *
  * 每則以 `ref` 對回候選附上程式提供的事實（`url`/`domain`/`sourceCount`/`weightedScore`），
  * `degraded:false`（憲章 VI 防幻覺，FR-006/009）。
@@ -48,8 +48,8 @@ export function validateCuration(
   const limited = clamped.slice(0, MAX_ITEMS);
 
   return limited.map((it) => ({
-    title: clampToLimit(it.title, 50),
-    content: clampToLimit(it.content, 300),
+    title: clampToLimit(it.title, 70),
+    content: clampToLimit(it.content, 500),
     url: it.candidate.originalUrl,
     domain: domainOf(it),
     sourceCount: it.candidate.sources.length,

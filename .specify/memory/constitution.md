@@ -1,31 +1,36 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: 1.3.2 → 1.4.0
-Bump rationale: MINOR——原則 III 的**新聞晨報配額由「6 則 / AI ≥4 / 非AI ≤2」放寬為
-  「至多 10 則 / AI ≥5 / 非AI ≤3」**。屬既有原則內的參數調整（先例：1.3.0 同樣調整原則 III 的
-  榜單節奏參數，判 MINOR），未移除或重新定義八條原則本身，故非 MAJOR；因調整的是 NON-NEGOTIABLE
-  原則本身的具體數字（非僅技術約束細節），故非 PATCH。決策來源：使用者於一般對話中指出「25 則
-  候選皆已產好簡介／摘要，只推 6 則有點可惜」，明確要求把上限放寬到 ≤10 則，並選定 AI≥5／非AI≤3
-  的新配額分配，2026-07-19。
+Version change: 1.4.0 → 1.5.0
+Bump rationale: MINOR——原則 III 的**新聞晨報 AI 下限由「≥5」提高為「≥7」，且字數上限由
+  「標題 ≤50 / 內容 ≤300」放寬為「標題 ≤70 / 內容 ≤500」**（repo 簡介 ≤250 不變）。屬既有原則內的
+  參數調整（先例：1.4.0 同樣調整原則 III 的新聞配額參數，判 MINOR），未移除或重新定義八條原則
+  本身，故非 MAJOR；因調整的是 NON-NEGOTIABLE 原則本身的具體數字（非僅技術約束細節），故非 PATCH。
+  決策來源：使用者發現 1.4.0 上線後晨報實際每天仍只收到約 5 則新聞（`MIN_AI=5` 在 prompt 中僅為
+  軟性下限措辭、程式端不強制湊滿），要求把 AI 下限提高到 7 以加重措辭力道；同時認為 300 字內容
+  偏短，要求放寬到 500 字，並一併把標題上限放寬到 70 字（repo 簡介維持 250 字不變），2026-07-29。
 
-  動機：新聞漏斗（§4.4）每日產出 15～25 則已去重、已具備摘要的候選，原本 6 則的上限相對於候選
-  規模明顯保守，放寬至 10 則能呈現更多有價值內容，仍維持「AI 為主、非 AI 軟性上限」與「寧缺勿濫、
-  不硬湊」的既有精神不變。
+  動機：AI 下限調整是「軟性提示」層級的加重，非程式端硬性保證——候選不足或 LLM 判斷不足時仍會
+  照實輸出較少則數，此為既有「寧缺勿濫、不硬湊」精神的延續，不是新的保證。字數放寬則讓每則新聞
+  能更完整交代「發生什麼事＋為何對開發者重要」，尤其對內容較複雜的項目（如新模型/API 發布、
+  breaking change）更有餘裕說明。
 
 Modified sections:
-  - 原則 III「只推變化、控制節奏」→ 新聞配額 6 則／AI≥4／非AI≤2 → 至多 10 則／AI≥5／非AI≤3。
-  - 原則 VIII「關鍵邏輯測試優先」→ 必測項「新聞配額」數字同步更新。
+  - 原則 III「只推變化、控制節奏」→ AI 下限 ≥5 → ≥7；標題 ≤50/內容 ≤300 → 標題 ≤70/內容 ≤500
+    （簡介 ≤250 不變）。
+  - 原則 VIII「關鍵邏輯測試優先」→ 必測項「新聞配額」「字數上限驗證」數字同步更新。
 Added sections: 無
 Removed sections: 無
 
 Templates requiring updates:
-  - CLAUDE.md ✅ 已同步（硬規則 3 之新聞配額，並記錄 2026-07-19 調整前數字供對照）
+  - CLAUDE.md ✅ 已同步（硬規則 3 之新聞配額與字數上限，並記錄 2026-07-29 調整前數字供對照）
   - docs/tech-radar-dev-guide.md ✅ 已同步（§0 決策表、§3.3 來源判準、§4.4 過濾漏斗與晨報精選、
     §7 Discord 呈現、§9 組版範例程式碼註解、§11.1 Constitution 摘要段、§13 風險提醒、
     M4 里程碑、M0→M4 總結、§14 儀表板描述）
-  - src/curation/curation-quota.ts ✅ 已同步（MAX_ITEMS=10、MAX_NON_AI=3、MIN_AI=5；
-    curation-prompt.ts 以模板字串內插這三個常數，無需另改）
+  - src/curation/curation-quota.ts ✅ 已同步（MIN_AI=5→7；MAX_ITEMS=10、MAX_NON_AI=3 不變）
+  - src/curation/curation-validate.ts ✅ 已同步（clampToLimit 上限 50→70、300→500）
+  - src/curation/curation-prompt.ts ✅ 已同步（prompt 內硬編碼的「≤50 字」「≤300 字」字樣同步為
+    「≤70 字」「≤500 字」；MIN_AI 由常數內插，無需另改）
   - 相關測試（curation-quota.spec.ts、curation-fallback.spec.ts、curation-validate.spec.ts、
     curation.service.spec.ts、digest-embeds.spec.ts）✅ 已同步
   - specs/004-news-ingest、specs/006-news-curation 之既有 spec/plan/quickstart、以及
@@ -36,6 +41,8 @@ Templates requiring updates:
 Follow-up TODOs: 無
 
 Prior history:
+  - 1.4.0（2026-07-19）：MINOR——原則 III 的新聞晨報配額由「6 則 / AI ≥4 / 非AI ≤2」放寬為
+    「至多 10 則 / AI ≥5 / 非AI ≤3」。決策來源：候選規模（15～25 則/日）相對於 6 則上限明顯保守。
   - 1.3.2（2026-07-19）：PATCH——排程 workflow 狀態 commit 落在獨立的 `state` orphan 分支，不再
     落在 `develop`/`main`；`state/board.json` 仍是唯一權威狀態，只是改變它被 commit 到哪個分支。
   - 1.3.1（2026-07-19）：PATCH——Discord Secrets 由單一 `DISCORD_WEBHOOK_URL` 拆分為三條獨立
@@ -94,10 +101,10 @@ Follow-up TODOs（沿自舊版本，仍有效）:
   每週節奏由 `lastBoardPushAt` 計時（非 cron），到期門檻為 **162 小時**（七天 168 小時減
   6 小時寬限，用於吸收排程延遲與雙班抖動，使節奏不單向漂移）。節奏必須與榜單的尺對齊：
   「估算本週增星」是七日指標，短於七天推播等同以**重疊視窗**互比，名次移動即失去意義。
-- **新聞晨報每日固定精選至多 10 則**，配額為 **AI ≥ 5；DevOps / 後端 / 前端合計 ≤ 3**（軟性上限，
+- **新聞晨報每日固定精選至多 10 則**，配額為 **AI ≥ 7；DevOps / 後端 / 前端合計 ≤ 3**（軟性上限，
   寧缺勿濫、不足 10 則不硬湊）。
 - 新聞以**對開發者的重要性排序（非熱度）**；分數僅為提示，非排序主鍵。
-- 每則新聞以**繁體中文**呈現：**標題 ≤ 50 字 + 內容 ≤ 300 字**；repo 簡介 **≤ 250 字**。
+- 每則新聞以**繁體中文**呈現：**標題 ≤ 70 字 + 內容 ≤ 500 字**；repo 簡介 **≤ 250 字**。
 - 領域聚焦：後端只看 **Node.js / Python**、前端以 **TypeScript** 為主（Vue/React 最低），
   **CSS 技巧 / 教學一律不收**。
 
@@ -147,7 +154,7 @@ Follow-up TODOs（沿自舊版本，仍有效）:
 
 下列關鍵邏輯必須有單元測試，方可視為完成：trending HTML 解析（以快照測試守著改版）、
 **兩領域歸類**、榜單 diff、**target-URL 正規化去重**、**標題近似去重**、簡介快取命中、
-**新聞配額（至多 10 則 / AI ≥ 5 / DevOps+後端+前端 ≤ 3）**、**50 / 300 / 250 字數上限驗證**、
+**新聞配額（至多 10 則 / AI ≥ 7 / DevOps+後端+前端 ≤ 3）**、**70 / 500 / 250 字數上限驗證**、
 **來源清單 schema 驗證與 tier 加權**、**晨報 idempotency guard（`lastNewsPushAt` < ~18h 跳過）**、
 **榜單每週節奏（`lastBoardPushAt` 計時、162 小時門檻）**。外部呼叫（Gemini 策展）以 mock 測試，
 並必須另測「策展失敗時退回純程式排序」的降級備援路徑。
@@ -203,4 +210,4 @@ Follow-up TODOs（沿自舊版本，仍有效）:
 - **來源文件**：執行期與設計細節以 `docs/tech-radar-dev-guide.md` 為準；該指南與本憲章不一致時，
   以本憲章的非協商原則為最高約束，並修訂指南使其一致。
 
-**Version**: 1.4.0 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-19
+**Version**: 1.5.0 | **Ratified**: 2026-07-11 | **Last Amended**: 2026-07-29

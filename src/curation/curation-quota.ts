@@ -8,9 +8,9 @@ export const MAX_NON_AI = 3;
 
 /**
  * AI 候選足夠時的軟性下限（僅供 T012 prompt 引用組字樣，程式硬驗證管線不強制填滿，
- * FR-004/005：候選不足照實輸出、不硬湊）。
+ * FR-004/005：候選不足照實輸出、不硬湊）。2026-07-29 由 5 調整為 7（憲章 v1.5.0）。
  */
-export const MIN_AI = 5;
+export const MIN_AI = 7;
 
 /** 是否為 AI 領域（配額分類依 `candidate.domain`，research D4）。 */
 export function isAi(domain: NewsDomain3): boolean {
