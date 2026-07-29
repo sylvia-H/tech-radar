@@ -4,7 +4,7 @@ import { CurationItemView } from './curation.types';
 /**
  * 組出送給 LlmService 的每日單次策展 prompt：候選逐行編號呈現（含 `onBoard` 標記，
  * 使榜單相關性脈絡實際進入 prompt，FR-001）；明列「重要 ≠ 熱門」優先類別、主題降噪優先序
- * （FR-004 語意判斷交此次呼叫執行）、配額、繁中 50/300、殘留語意去重，並限定回應格式
+ * （FR-004 語意判斷交此次呼叫執行）、配額、繁中 70/500、殘留語意去重，並限定回應格式
  * （research D1、contracts/llm-response.schema.md）。
  */
 export function buildCurationPrompt(items: readonly CurationItemView[]): string {
@@ -23,7 +23,7 @@ export function buildCurationPrompt(items: readonly CurationItemView[]): string 
 (b) 依「對開發者的重要性」（非熱度）挑出最多 ${MAX_ITEMS} 則——優先會改變開發者做事方式的內容
     （新工具／框架／版本、breaking change、安全通報、重大模型／API 發布、標準變動、重大 deprecation），
     壓低純爆紅口水／drama／純觀點文；分數僅為提示、非排序主鍵；
-(c) 把每則精煉為繁體中文標題（≤50 字）＋內容（≤300 字，說清「發生什麼事＋為何對開發者重要」）。
+(c) 把每則精煉為繁體中文標題（≤70 字）＋內容（≤500 字，說清「發生什麼事＋為何對開發者重要」）。
 
 主題降噪（選擇非 AI 候選時的優先序，DevOps 優先於後端／前端）：
 - DevOps／基礎設施：優先考慮。
@@ -41,7 +41,7 @@ ${lines || '（無候選）'}
 候選標記說明：「★在榜」表示該候選提到目前榜上的 repo，可作為重要性判斷的正面提示（非唯一依據）。
 
 輸出規則：
-- 只回傳單一 JSON 物件：{"picks":[{"ref":<候選索引>,"title":"<繁中標題,≤50字>","content":"<繁中內容,≤300字>"}]}
+- 只回傳單一 JSON 物件：{"picks":[{"ref":<候選索引>,"title":"<繁中標題,≤70字>","content":"<繁中內容,≤500字>"}]}
 - picks 的順序即你判斷的重要性由高到低排序。
 - 不得回傳連結、分數、星數、名次，也不得回傳候選清單中不存在的 ref。
 - 候選不足或無合適候選時，可回傳較少則數甚至空 picks，不得為了湊數選入不重要的內容。

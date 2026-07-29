@@ -96,16 +96,16 @@ describe('validateCuration（US3 對抗性違規回應）', () => {
     ]);
   });
 
-  it('標題 60 字/內容 400 字 → 收斂至 ≤50/≤300（code point 計，FR-008、SC-002）', () => {
+  it('標題 80 字/內容 600 字 → 收斂至 ≤70/≤500（code point 計，FR-008、SC-002）', () => {
     const candidates = [makeCandidate()];
-    const longTitle = '中'.repeat(60);
-    const longContent = '中'.repeat(400);
+    const longTitle = '中'.repeat(80);
+    const longContent = '中'.repeat(600);
     const picks: CurationLlmPick[] = [{ ref: 0, title: longTitle, content: longContent }];
 
     const result = validateCuration(picks, candidates);
 
-    expect([...result[0].title].length).toBeLessThanOrEqual(50);
-    expect([...(result[0].content ?? '')].length).toBeLessThanOrEqual(300);
+    expect([...result[0].title].length).toBeLessThanOrEqual(70);
+    expect([...(result[0].content ?? '')].length).toBeLessThanOrEqual(500);
   });
 
   it('越界 ref（如 99）→ 剔除，不進入輸出（FR-009、SC-005）', () => {

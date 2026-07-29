@@ -10,7 +10,7 @@ function domainOf(c: NewsCandidate): NewsDomain3 {
 /**
  * 策展失敗的降級精選：沿用候選既有 `weightedScore` 序（`CandidateSet` 已排序，**不重寫排序
  * 公式**，FR-012）套同一配額（`clampNonAi`＋截 `MAX_ITEMS`），每則呈現原文標題＋連結，
- * `content:null`、`degraded:true`；原文標題 **不套** 50 字收斂（原文照實呈現，FR-013）。
+ * `content:null`、`degraded:true`；原文標題 **不套** 70 字收斂（原文照實呈現，FR-013）。
  */
 export function fallbackDigest(candidates: readonly NewsCandidate[]): CuratedDigest {
   const clamped = clampNonAi(candidates, domainOf);

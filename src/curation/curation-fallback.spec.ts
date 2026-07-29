@@ -34,7 +34,7 @@ describe('fallbackDigest（US2 降級路徑）', () => {
     ]);
   });
 
-  it('原文標題不套 50 字收斂（原文照實呈現，Edge）', () => {
+  it('原文標題不套 70 字收斂（原文照實呈現，Edge）', () => {
     const longTitle = '中'.repeat(80);
     const candidates: NewsCandidate[] = [makeCandidate({ title: longTitle })];
 

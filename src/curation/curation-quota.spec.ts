@@ -17,10 +17,10 @@ describe('isAi', () => {
 });
 
 describe('常數', () => {
-  it('MAX_ITEMS=10、MAX_NON_AI=3、MIN_AI=5（憲章 III）', () => {
+  it('MAX_ITEMS=10、MAX_NON_AI=3、MIN_AI=7（憲章 III）', () => {
     expect(MAX_ITEMS).toBe(10);
     expect(MAX_NON_AI).toBe(3);
-    expect(MIN_AI).toBe(5);
+    expect(MIN_AI).toBe(7);
   });
 });
 
