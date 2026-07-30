@@ -166,52 +166,8 @@
     }
   },
   "lastBoardPushAt": "2026-07-26T23:05:01.196Z",
-  "lastNewsPushAt": "2026-07-29T23:05:15.434Z",
+  "lastNewsPushAt": "2026-07-30T23:14:02.029Z",
   "seenNews": [
-    {
-      "seenAt": "2026-07-22T23:11:12.319Z",
-      "url": "https://openai.com/index/introducing-openai-presence"
-    },
-    {
-      "seenAt": "2026-07-22T23:11:12.319Z",
-      "url": "https://notion.com/blog/two-years-of-vector-search-at-notion"
-    },
-    {
-      "seenAt": "2026-07-22T23:11:12.319Z",
-      "url": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community"
-    },
-    {
-      "seenAt": "2026-07-22T23:11:12.319Z",
-      "url": "https://openai.com/index/advancing-the-next-era-of-national-science"
-    },
-    {
-      "seenAt": "2026-07-22T23:11:12.319Z",
-      "url": "https://stateofopensource.ai/"
-    },
-    {
-      "seenAt": "2026-07-22T23:11:12.319Z",
-      "url": "https://tech.chrishardie.com/2026/nagios-small-business-infrastructure-monitoring"
-    },
-    {
-      "seenAt": "2026-07-23T23:05:15.411Z",
-      "url": "https://simonwillison.net/2026/Jul/22/openai-cyberattack"
-    },
-    {
-      "seenAt": "2026-07-23T23:05:15.411Z",
-      "url": "https://runtimewire.com/article/jack-dorsey-block-buzz-team-chat-ai-agents-git"
-    },
-    {
-      "seenAt": "2026-07-23T23:05:15.411Z",
-      "url": "https://politico.com/news/2026/07/22/startup-founders-urge-trump-not-to-shut-off-chinese-open-weight-ai-01008992"
-    },
-    {
-      "seenAt": "2026-07-23T23:05:15.411Z",
-      "url": "https://data.stackexchange.com/stackoverflow/query/1953768"
-    },
-    {
-      "seenAt": "2026-07-23T23:05:15.411Z",
-      "url": "https://thenextweb.com/news/ai-advice-suppresses-critical-thinking-wrong-answers-study"
-    },
     {
       "seenAt": "2026-07-24T23:10:16.468Z",
       "url": "https://reddit.com/r/LocalLLaMA/comments/1v5c3vt/more_than_20_companies_including_nvidia_meta"
@@ -347,6 +303,34 @@
     {
       "seenAt": "2026-07-29T23:05:15.434Z",
       "url": "https://openai.com/index/chatgpt-for-academic-researchers"
+    },
+    {
+      "seenAt": "2026-07-30T23:14:02.029Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
+    },
+    {
+      "seenAt": "2026-07-30T23:14:02.029Z",
+      "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6"
+    },
+    {
+      "seenAt": "2026-07-30T23:14:02.029Z",
+      "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline"
+    },
+    {
+      "seenAt": "2026-07-30T23:14:02.029Z",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots"
+    },
+    {
+      "seenAt": "2026-07-30T23:14:02.029Z",
+      "url": "https://status.claude.com/incidents/q2kg8n613kr3"
+    },
+    {
+      "seenAt": "2026-07-30T23:14:02.029Z",
+      "url": "https://llm2human.pages.dev/"
+    },
+    {
+      "seenAt": "2026-07-30T23:14:02.029Z",
+      "url": "https://simonwillison.net/2026/Jul/29/ai-worming-through-word"
     }
   ]
 }
