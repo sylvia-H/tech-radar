@@ -166,28 +166,8 @@
     }
   },
   "lastBoardPushAt": "2026-07-26T23:05:01.196Z",
-  "lastNewsPushAt": "2026-07-30T23:14:02.029Z",
+  "lastNewsPushAt": "2026-07-31T23:10:44.989Z",
   "seenNews": [
-    {
-      "seenAt": "2026-07-24T23:10:16.468Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1v5c3vt/more_than_20_companies_including_nvidia_meta"
-    },
-    {
-      "seenAt": "2026-07-24T23:10:16.468Z",
-      "url": "https://hiraditya.github.io/posts/mlir-dialect-stack-for-ml"
-    },
-    {
-      "seenAt": "2026-07-24T23:10:16.468Z",
-      "url": "https://anthropic.com/news/claude-opus-5"
-    },
-    {
-      "seenAt": "2026-07-24T23:10:16.468Z",
-      "url": "https://apnews.com/article/ai-anthropic-copyright-settlement-claude-books-bartz-74b140444023898aeba8579b6e9f0d63"
-    },
-    {
-      "seenAt": "2026-07-24T23:10:16.468Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1v49zi9/absurd_claim_the_distilled_model_outperforms_the"
-    },
     {
       "seenAt": "2026-07-25T23:01:58.815Z",
       "url": "https://simonwillison.net/2026/Jul/25/ruff"
@@ -331,6 +311,34 @@
     {
       "seenAt": "2026-07-30T23:14:02.029Z",
       "url": "https://simonwillison.net/2026/Jul/29/ai-worming-through-word"
+    },
+    {
+      "seenAt": "2026-07-31T23:10:44.989Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vbidkp/deepseekv4flash_has_been_updated_the_official"
+    },
+    {
+      "seenAt": "2026-07-31T23:10:44.989Z",
+      "url": "https://github.com/baidu/vLLM-Kunlun"
+    },
+    {
+      "seenAt": "2026-07-31T23:10:44.989Z",
+      "url": "https://simonwillison.net/2026/Jul/31/smevals"
+    },
+    {
+      "seenAt": "2026-07-31T23:10:44.989Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vbcmtn/anthropic_our_models_hacked_three_different"
+    },
+    {
+      "seenAt": "2026-07-31T23:10:44.989Z",
+      "url": "https://lwn.net/Articles/1086041"
+    },
+    {
+      "seenAt": "2026-07-31T23:10:44.989Z",
+      "url": "https://simonwillison.net/2026/Jul/30/three-real-world-incidents"
+    },
+    {
+      "seenAt": "2026-07-31T23:10:44.989Z",
+      "url": "https://blog.google/security/chrome-stronger-with-every-update"
     }
   ]
 }
