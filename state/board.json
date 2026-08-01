@@ -166,7 +166,7 @@
     }
   },
   "lastBoardPushAt": "2026-07-26T23:05:01.196Z",
-  "lastNewsPushAt": "2026-07-31T23:10:44.989Z",
+  "lastNewsPushAt": "2026-08-01T23:01:46.764Z",
   "seenNews": [
     {
       "seenAt": "2026-07-25T23:01:58.815Z",
@@ -339,6 +339,34 @@
     {
       "seenAt": "2026-07-31T23:10:44.989Z",
       "url": "https://blog.google/security/chrome-stronger-with-every-update"
+    },
+    {
+      "seenAt": "2026-08-01T23:01:46.764Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vbp7kb/deepseekaideepseekv4flash0731_on_huggingface"
+    },
+    {
+      "seenAt": "2026-08-01T23:01:46.764Z",
+      "url": "https://github.com/yc-software/qm"
+    },
+    {
+      "seenAt": "2026-08-01T23:01:46.764Z",
+      "url": "https://simonwillison.net/2026/Jul/31/stateless-mcp"
+    },
+    {
+      "seenAt": "2026-08-01T23:01:46.764Z",
+      "url": "https://simonwillison.net/2026/Jul/31/llm-mcp-client"
+    },
+    {
+      "seenAt": "2026-08-01T23:01:46.764Z",
+      "url": "https://simonwillison.net/2026/Jul/31/datasette-agent"
+    },
+    {
+      "seenAt": "2026-08-01T23:01:46.764Z",
+      "url": "https://simonwillison.net/2026/Aug/1/datasette-apps"
+    },
+    {
+      "seenAt": "2026-08-01T23:01:46.764Z",
+      "url": "https://github.com/AminBlg/SimpleEnglish"
     }
   ]
 }
