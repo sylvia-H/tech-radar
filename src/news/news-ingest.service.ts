@@ -49,10 +49,18 @@ export class NewsIngestService {
   ): Promise<NewsCandidate[]> {
     const ctx: FetcherContext = { now, http: this.http, parser: this.parser };
     const raw = await this.collect(sources, ctx);
+    this.logger.log(`[漏斗 A] 原始候選：${raw.length} 則`);
 
     let cands = dedupByUrl(raw);
+    this.logger.log(`[漏斗 A] URL 去重後：${cands.length} 則（-${raw.length - cands.length}）`);
+
+    const beforeTitleDedup = cands.length;
     cands = dedupByTitle(cands, TITLE_JACCARD_THRESHOLD);
+    this.logger.log(`[漏斗 A] 標題去重後：${cands.length} 則（-${beforeTitleDedup - cands.length}）`);
+
+    const beforeDomainResolve = cands.length;
     cands = this.resolveDomains(cands);
+    this.logger.log(`[漏斗 A] 領域歸類後：${cands.length} 則（-${beforeDomainResolve - cands.length}）`);
 
     let board = boardRepoNames;
     let seen = seenNews;
@@ -65,9 +73,13 @@ export class NewsIngestService {
 
     // 先排除已見（收斂前）：避免已見項佔用漏斗 convergeMax 名額、排擠排名其後的新鮮候選。
     const pruned = pruneSeenNews(seen, now);
+    const beforeExcluded = cands.length;
     cands = excludeSeen(cands, pruned);
+    this.logger.log(`[漏斗 A] 排除已見後：${cands.length} 則（-${beforeExcluded - cands.length}）`);
 
+    const beforeFunnel = cands.length;
     cands = runFunnel(cands, board, DEFAULT_FUNNEL_CONFIG, now);
+    this.logger.log(`[漏斗 A] 漏斗後最終：${cands.length} 則（-${beforeFunnel - cands.length}）`);
 
     this.logger.log('\n' + formatCandidateSet(cands));
     return cands;
