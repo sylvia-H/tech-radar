@@ -14,7 +14,7 @@ import { validateNewsSources } from './news-source.schema';
  * 無分數者一律以 `nullScoreBaseline = 100` 入池、決勝鍵為 `normalizedUrl ↑`（2026-08-04 起不再
  * 以 `publishedAt` 決勝，見 funnel.ts `compareCandidates`）。無分數候選另有單一來源上限
  * `maxNullScorePerSource`（預設 3，見 `DEFAULT_FUNNEL_CONFIG`）防止量體大的來源吃光
- * `convergeMax = 30` 名額，但單日產出上百筆的來源（如 arXiv 分類 RSS）仍會把候選集塞滿低品質
+ * `convergeMax = 35` 名額，但單日產出上百筆的來源（如 arXiv 分類 RSS）仍會把候選集塞滿低品質
  * 內容、擠壓其餘來源在 3 則上限內的曝光機會，故仍不收這類來源。
  */
 const RAW_NEWS_SOURCES: NewsSource[] = [

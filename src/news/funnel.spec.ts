@@ -86,12 +86,12 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
   });
 
   it('相同輸入多次執行成員與排序 100% 一致 ＋ 收斂取前 N（SC-006/011，各來源不同、不觸發同來源上限）', () => {
-    const many = Array.from({ length: 35 }, (_, i) =>
+    const many = Array.from({ length: 40 }, (_, i) =>
       cand({ normalizedUrl: `u${i}`, sourceId: `s${i}`, sources: [`s${i}`], tier: 2, score: null, publishedAt: null }),
     );
     const r1 = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG);
     const r2 = runFunnel([...many].reverse(), EMPTY, DEFAULT_FUNNEL_CONFIG);
-    expect(r1).toHaveLength(30); // convergeMax=30
+    expect(r1).toHaveLength(35); // convergeMax=35
     expect(r1.map((o) => o.normalizedUrl)).toEqual(r2.map((o) => o.normalizedUrl));
   });
 

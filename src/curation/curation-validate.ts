@@ -1,6 +1,6 @@
 import { NewsCandidate, NewsDomain3 } from '../news/news.types';
 import { clampToLimit } from './curation-length';
-import { clampNonAi, clampSourceDiversity, isAi, MAX_ITEMS } from './curation-quota';
+import { clampNonAi, clampSourceDiversity, effectiveNonAiCap, isAi, MAX_ITEMS } from './curation-quota';
 import { CuratedNewsItem, CurationLlmPick } from './curation.types';
 
 interface ResolvedPick {
@@ -21,7 +21,8 @@ function domainOf(it: ResolvedPick): NewsDomain3 {
  *
  * (1) 剔除幻覺項（`ref` 越界／非整數）＋重複 `ref` 去重（保留第一次出現，即較高重要性者）
  * (2) 非 AI 候選池夠大時，夾非 AI 同來源 ≤2（`clampSourceDiversity`，2026-08-04 新增）
- * (3) 依領域優先序夾非 AI ≤3（DevOps 優先，AI 不受限）
+ * (3) 依領域優先序夾非 AI ≤`effectiveNonAiCap`（DevOps 優先，AI 不受限；預設 ≤3，AI 則數不足 7
+ *     時放寬至 `10 − AI 則數`，2026-08-04 新增，憲章 v1.6.0）
  * (4) 依 picks 重要性序截總數 ≤10
  * (5) `title`/`content` 收斂至 ≤70/≤500 code points
  *
@@ -47,7 +48,8 @@ export function validateCuration(
 
   const nonAiPoolSize = candidates.filter((c) => !isAi(c.domain as NewsDomain3)).length;
   const diversified = clampSourceDiversity(resolved, domainOf, (it) => it.candidate.sources, nonAiPoolSize);
-  const clamped = clampNonAi(diversified, domainOf);
+  const aiCount = diversified.filter((it) => isAi(domainOf(it))).length;
+  const clamped = clampNonAi(diversified, domainOf, effectiveNonAiCap(aiCount));
   const limited = clamped.slice(0, MAX_ITEMS);
 
   return limited.map((it) => ({
