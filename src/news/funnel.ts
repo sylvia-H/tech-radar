@@ -34,7 +34,7 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
   boardRelevanceBoost: 50,
   tierWeight: { 1: 1, 2: 1, 3: 0.5 },
   nullScoreBaseline: 100,
-  convergeMax: 30,
+  convergeMax: 35,
   maxNullScorePerSource: 3,
 };
 
