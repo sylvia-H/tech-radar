@@ -35,7 +35,12 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
  * （無社群分數）→ **不因門檻丟**（SC-005）。
  * 加權：base（分數或無分數基準）× tierWeight ＋ 交叉驗證 ＋ 榜單相關（`boardRepoNames` 空集合
  * 時整段略過，FR-018 Edge）。
- * 排序（全序，SC-011）：`weightedScore ↓ → publishedAt ↓ → normalizedUrl ↑`（末鍵在去重後唯一）。
+ * 排序（全序，SC-011）：`weightedScore ↓ → normalizedUrl ↑`（末鍵在去重後唯一）。**不再以
+ * `publishedAt` 決勝**（2026-08-04 變更，原 FR-020）：Tier 2 一手來源全數無社群分數、統一
+ * `nullScoreBaseline` 同分，若以 `publishedAt` 決勝，發文頻率高的來源（如單日多篇的官方部落格）
+ * 會系統性贏得同分候選在 `convergeMax` 截斷前的排序位置，擠壓發文頻率低但同樣重要的一手來源
+ * （如僅日更一次的官方公告）——非本意的「發文頻率偏誤」。改以與來源身份無關的 `normalizedUrl`
+ * 決勝，同分候選截斷時不再偏袒發文勤的來源。
  * 收斂：取前 `convergeMax`；不足照實輸出（FR-021）。
  */
 export function runFunnel(
@@ -89,15 +94,13 @@ export function mentionsBoardRepo(c: NewsCandidate, board: ReadonlySet<string>):
   return false;
 }
 
-/** 四層全序決勝比較器（SC-011）。 */
+/**
+ * 兩層全序決勝比較器（SC-011）：`weightedScore ↓ → normalizedUrl ↑`。不再以 `publishedAt`
+ * 決勝（2026-08-04 變更，見 `runFunnel` docstring 的發文頻率偏誤說明）。
+ */
 function compareCandidates(a: NewsCandidate, b: NewsCandidate): number {
   if (b.weightedScore !== a.weightedScore) {
     return b.weightedScore - a.weightedScore;
-  }
-  const ta = a.publishedAt ? Date.parse(a.publishedAt) : Number.NEGATIVE_INFINITY;
-  const tb = b.publishedAt ? Date.parse(b.publishedAt) : Number.NEGATIVE_INFINITY;
-  if (tb !== ta) {
-    return tb - ta;
   }
   return a.normalizedUrl < b.normalizedUrl ? -1 : a.normalizedUrl > b.normalizedUrl ? 1 : 0;
 }

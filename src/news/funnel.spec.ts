@@ -71,16 +71,18 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
     expect(out[0].normalizedUrl).toBe('t1');
   });
 
-  it('加權同分時較新者在前（FR-020）', () => {
+  it('加權同分時不再以 publishedAt 決勝，改依 normalizedUrl 字母序（2026-08-04 變更，原 FR-020）', () => {
+    // 'a' 較舊、'z' 較新：若仍依 publishedAt 決勝會是 z 在前；改用 normalizedUrl 後 a 在前，
+    // 證明發文頻率高的來源不會單靠「比較新」贏得同分候選的排序位置。
     const out = runFunnel(
       [
-        cand({ normalizedUrl: 'old', tier: 2, score: null, publishedAt: '2026-07-01T00:00:00Z' }),
-        cand({ normalizedUrl: 'new', tier: 2, score: null, publishedAt: '2026-07-17T00:00:00Z' }),
+        cand({ normalizedUrl: 'z', tier: 2, score: null, publishedAt: '2026-07-17T00:00:00Z' }),
+        cand({ normalizedUrl: 'a', tier: 2, score: null, publishedAt: '2026-07-01T00:00:00Z' }),
       ],
       EMPTY,
       DEFAULT_FUNNEL_CONFIG,
     );
-    expect(out[0].normalizedUrl).toBe('new');
+    expect(out.map((o) => o.normalizedUrl)).toEqual(['a', 'z']);
   });
 
   it('相同輸入多次執行成員與排序 100% 一致 ＋ 收斂取前 N（SC-006/011）', () => {
