@@ -34,7 +34,7 @@ codebase 既有慣例（實作檔與同名 `*.spec.ts` 併排撰寫、隨後即�
 
 **Purpose**: 補齊本 Feature 唯一新增的 runtime 相依。
 
-- [ ] T001 執行 `npm install feed` 新增 `feed` 套件相依（`package.json`／`package-lock.json`；
+- [X] T001 執行 `npm install feed` 新增 `feed` 套件相依（`package.json`／`package-lock.json`；
   憲章/dev-guide §14 已釘死此套件，research D4）
 
 **Checkpoint**：`feed` 套件可被 import，後續 render-feed 任務可開始。
@@ -47,11 +47,11 @@ codebase 既有慣例（實作檔與同名 `*.spec.ts` 併排撰寫、隨後即�
 可見性查詢服務、純函式共用元件。**這個階段完成前，任何 User Story 皆無法獨立測試**（`Publish
 Service` 沒有 schema 可讀、沒有可見性查詢就無法產生任何發佈產物）。
 
-- [ ] T002 [P] 在 `src/config/env.schema.ts` 新增選用欄位 `GITHUB_REPOSITORY: z.string().trim()
+- [X] T002 [P] 在 `src/config/env.schema.ts` 新增選用欄位 `GITHUB_REPOSITORY: z.string().trim()
   .optional()`（非機密，不比照五個必填欄位；供 `RepoVisibilityService` 取得
   `owner/repo`，research D3）。**維持選用、不 fail-fast**：本機執行核心 pipeline 時本就沒有此
   變數，缺值的後果收斂在發佈段內（見 T007 的 `'unknown'` 分支），不得讓核心段因此起不來
-- [ ] T003 在 `src/state/state.schema.ts` 新增 `feedEntrySchema`／`curatedNewsItemSchema`／
+- [X] T003 在 `src/state/state.schema.ts` 新增 `feedEntrySchema`／`curatedNewsItemSchema`／
   `publishNewsSchema`／`publishBoardSummarySchema`／`publishStateSchema`，並將
   `boardStateSchema` 擴充 `publish: publishStateSchema.optional()`（data-model.md §1；
   `curatedNewsItemSchema` 欄位對應 `src/curation/curation.types.ts` 的 `CuratedNewsItem`，
@@ -59,21 +59,21 @@ Service` 沒有 schema 可讀、沒有可見性查詢就無法產生任何發佈
   **`feed` 欄位 MUST NOT 加 `.max(50)`**：schema 在 `StateStore.load()` 時驗證，超限會讓
   `load()` 擲錯而打掛核心推播段（違反 FR-014），上限一律由寫入端的 `trimFeed` 單點保證
   （data-model.md §1「驗證規則」）
-- [ ] T004 [P] 在 `src/state/state.schema.spec.ts` 新增向後相容測試：既有（不含 `publish` 鍵）
+- [X] T004 [P] 在 `src/state/state.schema.spec.ts` 新增向後相容測試：既有（不含 `publish` 鍵）
   的 state fixture 經 `boardStateSchema.safeParse` MUST 成功，且 `result.data.publish ===
   undefined`（contracts/state-write-contract.md C4，對應 FR-014／SC-007，依賴 T003）
-- [ ] T005 [P] 新增 `src/publish/publish.types.ts`：`RepoVisibility = 'public' | 'private' |
+- [X] T005 [P] 新增 `src/publish/publish.types.ts`：`RepoVisibility = 'public' | 'private' |
   'unknown'`（data-model.md §2.1）
-- [ ] T006 [P] 新增 `src/publish/html-escape.ts`（`escapeHtml(text: string): string`，轉義
+- [X] T006 [P] 新增 `src/publish/html-escape.ts`（`escapeHtml(text: string): string`，轉義
   `&`/`<`/`>`/`"`/`'`）與 `src/publish/html-escape.spec.ts`（research D5）
-- [ ] T007 新增 `src/publish/repo-visibility.service.ts`：`RepoVisibilityService.check(): Promise
+- [X] T007 新增 `src/publish/repo-visibility.service.ts`：`RepoVisibilityService.check(): Promise
   <RepoVisibility>`，注入 `GithubHttpService`（`src/github/github-http.ts`）與 `ConfigService`，
   打 `GET /repos/{owner}/{repo}`（`owner/repo` 取自 `GITHUB_REPOSITORY`），`private === false` →
   `'public'`；**`GITHUB_REPOSITORY` 未設定、或格式不含 `/`（拆不出 `owner`/`repo`）→ 不發請求、
   直接回 `'unknown'`**（與其他「無法確認為 public」情形同一出口，不另立靜默分支——見 research D3
   「輸入層級缺失」段）；`private` 缺失/格式不符/請求擲錯（`GithubHttpError`／網路錯誤）→
   `'unknown'`；`private === true` → `'private'`（research D3，依賴 T002/T005）
-- [ ] T008 [P] 新增 `src/publish/repo-visibility.service.spec.ts`：mock
+- [X] T008 [P] 新增 `src/publish/repo-visibility.service.spec.ts`：mock
   `GithubHttpService.getJson` 驗證 public／private／查詢擲錯（含回應格式不符）三分支對應
   `'public'`/`'private'`/`'unknown'`，另加**第四個案例**：`GITHUB_REPOSITORY` 未設定／不含 `/`
   時回 `'unknown'` 且 `getJson` **未被呼叫**（plan.md Testing、quickstart.md 單元測試涵蓋範圍，
@@ -94,23 +94,23 @@ Discord 推播一致的榜單／摘要／新聞；`emptyBoardState()` 重跑仍�
 
 ### Implementation for User Story 1
 
-- [ ] T009 [US1] 擴充 `src/diff/board-commit.ts`：`commitBoardPush` 新增 `summary:
+- [X] T009 [US1] 擴充 `src/diff/board-commit.ts`：`commitBoardPush` 新增 `summary:
   BoardChangeSummary` 參數，回傳的 `BoardState` 加上 `publish: { ...state.publish, boardSummary:
   { summary: summary.summary, generatedAt: pushedAtIso } }`（state-write-contract.md C1 的
   `boardSummary` 部分；`diff` 參數與 `feed` 寫入留待 US2 的 T026 補上，避免此階段引入尚未存在的
   `feed-entry.ts`）
-- [ ] T010 [US1] 更新 `src/diff/board-commit.spec.ts`：既有快照測試補上 `publish.boardSummary`
+- [X] T010 [US1] 更新 `src/diff/board-commit.spec.ts`：既有快照測試補上 `publish.boardSummary`
   正確性（含 `state.publish` 原本為 `undefined` 與已有既存值兩種情形），依賴 T009
-- [ ] T011 [US1] 更新 `src/pipeline/board-segment.service.ts`（~L119 `commitBoardPush` 呼叫點）
+- [X] T011 [US1] 更新 `src/pipeline/board-segment.service.ts`（~L119 `commitBoardPush` 呼叫點）
   傳入既有作用域內已算好的 `summary`（L102），依賴 T009
-- [ ] T012 [US1] 擴充 `src/pipeline/news-segment.service.ts` 既有 push-then-commit 區塊
+- [X] T012 [US1] 擴充 `src/pipeline/news-segment.service.ts` 既有 push-then-commit 區塊
   （`stateStore.save(state)` 之前）：新增 `state.publish = { ...state.publish, news: { items:
   digest.items, generatedAt: seenAt } }`（state-write-contract.md C2 的 `news` 部分；`feed`
   寫入留待 US2 的 T029），依賴 T003
-- [ ] T013 [US1] 更新 `src/pipeline/news-segment.service.spec.ts`：驗證推播成功後
+- [X] T013 [US1] 更新 `src/pipeline/news-segment.service.spec.ts`：驗證推播成功後
   `state.publish.news.items` 與 `digest.items` 為同一參照（feed-page-contract.md C3，對應
   FR-002/009），依賴 T012
-- [ ] T014 [P] [US1] 新增 `src/publish/render-page.ts`：`renderPage(state: BoardState, now: Date)
+- [X] T014 [P] [US1] 新增 `src/publish/render-page.ts`：`renderPage(state: BoardState, now: Date)
   => string`，三區塊固定順序——推播榜（依 `domain` 分 AI／前後端、依 `rank` 升冪，含
   `intros[repoId]?.intro`；`state.board` 為空顯示「尚無榜單資料」）、上次榜單變化摘要
   （`state.publish?.boardSummary`，含 `generatedAt` 換算台北時間「XX 月 XX 日」；不存在顯示
@@ -119,18 +119,18 @@ Discord 推播一致的榜單／摘要／新聞；`emptyBoardState()` 重跑仍�
   區塊，且該則不得被過濾掉**——`CuratedNewsItem.content` 型別為 `string | null`，直接內插會
   印出字面 `null`，過濾掉則會讓網頁與 Discord 推播不一致，見 feed-page-contract.md C1）；
   所有插入文字皆呼叫 `escapeHtml`（feed-page-contract.md C1，依賴 T006）
-- [ ] T015 [P] [US1] 新增 `src/publish/render-page.spec.ts`：快照測試涵蓋（a）完整資料、
+- [X] T015 [P] [US1] 新增 `src/publish/render-page.spec.ts`：快照測試涵蓋（a）完整資料、
   （b）`emptyBoardState()` 空狀態、（c）HTML escape（標題/簡介含 `<`/`&` 等字元）、
   （d）含一則 `content: null` 的降級新聞（斷言輸出不含字面 `null`、該則標題仍在），依賴 T014
-- [ ] T016 [P] [US1] 新增 `src/publish/render-feed.ts`：`renderFeed(state: BoardState, pagesUrl:
+- [X] T016 [P] [US1] 新增 `src/publish/render-feed.ts`：`renderFeed(state: BoardState, pagesUrl:
   string) => string`，以 `feed` 套件 `Feed`／`feed.atom1()` 輸出；讀
   `state.publish?.feed ?? []`（此階段恆為空陣列，entries 由 US2 的 T026/T029 開始填入）並反轉為
   新到舊；feed 層級 `title`＝「Tech Radar」、`id`/`link`＝`pagesUrl`、`updated`＝最新一筆
   `publishedAt`（陣列為空時用 `now`）；空陣列時輸出合法的 0 entries feed，不擲錯
   （feed-page-contract.md C2，data-model.md §2.6）
-- [ ] T017 [P] [US1] 新增 `src/publish/render-feed.spec.ts`：快照測試——0 entries 時仍為合法
+- [X] T017 [P] [US1] 新增 `src/publish/render-feed.spec.ts`：快照測試——0 entries 時仍為合法
   Atom XML，依賴 T016
-- [ ] T018 [US1] 新增 `src/publish/publish.service.ts`：`PublishService.run(): Promise<void>`
+- [X] T018 [US1] 新增 `src/publish/publish.service.ts`：`PublishService.run(): Promise<void>`
   依 contracts/publish-orchestration.md C2 完整流程——
   類別內自備 `private readonly logger = new Logger(PublishService.name)`（`bestEffortFailureAlert`
   的第二個參數需要，比照既有 `BoardSegmentService`／`PipelineService` 慣例）→
@@ -146,22 +146,22 @@ Discord 推播一致的榜單／摘要／新聞；`emptyBoardState()` 重跑仍�
   全無」，不留半份 `public/` 目錄）→
   `catch` 區塊 `bestEffortFailureAlert('發佈失敗：' + err.message)` 並 return；
   整個函式永不 throw（依賴 T007/T014/T016）
-- [ ] T019 [US1] 新增 `src/publish/publish.service.spec.ts`：mock
+- [X] T019 [US1] 新增 `src/publish/publish.service.spec.ts`：mock
   `RepoVisibilityService`/`StateStore`/`fs`，驗證（a）public 成功寫出兩個檔案、（b）
   `emptyBoardState()` 仍正常寫出兩個檔案（US1 AS1/AS2）、（c）`stateStore.load()` 擲錯時
   **不 throw**、發出一則告警、且不寫出任何檔案（FR-017 的讀取失敗分支）、（d）state 帶有
   `publish` 但時間戳為舊值（模擬核心段本次因節奏/guard 跳過）時仍正常寫出兩個檔案並沿用既有
   快照內容（FR-012），依賴 T018
-- [ ] T020 [US1] 新增 `src/publish/publish.module.ts`：`@Module({ imports: [StateModule,
+- [X] T020 [US1] 新增 `src/publish/publish.module.ts`：`@Module({ imports: [StateModule,
   GithubModule, DiscordModule], providers: [RepoVisibilityService, PublishService], exports:
   [PublishService] })`（plan.md Project Structure，依賴 T007/T018；不 import 任何 LLM 模組，
   結構性滿足 FR-010）
-- [ ] T021 [US1] 在 `src/app.module.ts` 的 `imports` 新增 `PublishModule`，依賴 T020
-- [ ] T022 [US1] 在 `src/main.cli.ts` 新增 `PUBLISH_MODE=1` 分派分支（比照既有
+- [X] T021 [US1] 在 `src/app.module.ts` 的 `imports` 新增 `PublishModule`，依賴 T020
+- [X] T022 [US1] 在 `src/main.cli.ts` 新增 `PUBLISH_MODE=1` 分派分支（比照既有
   `NEWS_INGEST_OBSERVE` 慣例）：該分支呼叫 `app.get(PublishService).run()`、不跑
   `PipelineService`，且**一律以 0 結束**（不進入既有 `PipelineService` 失敗路徑的非零 exit 邏輯，
   research D10），依賴 T020
-- [ ] T023 [US1] 在 `.github/workflows/radar.yml` 新增獨立 `publish` job：`needs: radar`、
+- [X] T023 [US1] 在 `.github/workflows/radar.yml` 新增獨立 `publish` job：`needs: radar`、
   `runs-on: ubuntu-latest`、`permissions: { contents: read, pages: write, id-token: write }`
   （**`contents: read` 不可省**——job 層 `permissions` 會整組取代 workflow 層的
   `contents: write`，未列出的 scope 一律為 `none`，兩個 `actions/checkout` 會失去 repo 讀取權；
@@ -255,7 +255,7 @@ exit 0；查詢本身失敗時同樣不產生 `public/`、但收到一則紅色�
 
 ### Implementation for User Story 3
 
-- [ ] T034 [P] [US3] 在 `.github/workflows/radar.yml` 的 `publish` job、`Deploy to GitHub Pages`
+- [X] T034 [P] [US3] 在 `.github/workflows/radar.yml` 的 `publish` job、`Deploy to GitHub Pages`
   步驟之後新增 `Alert on deploy failure` 步驟：`if: failure()`，`curl` 一則固定內容的紅色 embed
   至 `DISCORD_ALERT_WEBHOOK_URL`（不經過 `PublishService`，因為該 process 早已以 exit 0 結束，
   contracts/publish-orchestration.md C5、research D10a；補齊 CHK009/CHK022 缺口）

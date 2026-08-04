@@ -95,3 +95,74 @@ jobs:
             "$DISCORD_ALERT_WEBHOOK_URL"
         env:
           DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
+
+  publish:
+    needs: radar
+    runs-on: ubuntu-latest
+    permissions:
+      # job 層 permissions 會整組取代 workflow 層的 contents: write，未列出的 scope 一律為
+      # none；contents: read 不可省，否則下方兩個 checkout 會失去 repo 讀取權
+      # （contracts/publish-orchestration.md C1）。
+      contents: read
+      pages: write
+      id-token: write
+    environment: github-pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Checkout state branch
+        uses: actions/checkout@v5
+        with:
+          ref: state
+          path: state-branch
+
+      - name: Load state into workspace
+        run: |
+          mkdir -p state
+          cp state-branch/state/board.json state/board.json
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Run publish
+        run: node dist/main.cli.js
+        env:
+          PUBLISH_MODE: '1'
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DISCORD_NEWS_WEBHOOK_URL: ${{ secrets.DISCORD_NEWS_WEBHOOK_URL }}
+          DISCORD_BOARD_WEBHOOK_URL: ${{ secrets.DISCORD_BOARD_WEBHOOK_URL }}
+          DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Upload Pages artifact
+        if: hashFiles('public/index.html') != ''
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        if: hashFiles('public/index.html') != ''
+        uses: actions/deploy-pages@v4
+
+      - name: Alert on deploy failure
+        # PublishService 內部已處理的分支（private 跳過／可見性查詢失敗／渲染寫檔失敗）皆以
+        # exit 0 結束，不會讓 job 進入 failure()；此步只會被上面兩個部署 step 本身的失敗觸發
+        # （research D10a，不經過 PublishService，因為該 process 早已結束）。
+        if: failure()
+        run: |
+          curl -sS -X POST -H "Content-Type: application/json" \
+            -d '{"embeds":[{"title":"⚠️ 發佈部署失敗","color":15548997,"description":"GitHub Pages 部署動作本身失敗，請查看本次 Actions 執行紀錄。"}]}' \
+            "$DISCORD_ALERT_WEBHOOK_URL"
+        env:
+          DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}

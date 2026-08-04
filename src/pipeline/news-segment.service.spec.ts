@@ -105,6 +105,20 @@ describe('NewsSegmentService.run — US1 Acceptance（每日晨報端到端）',
     expect(save).toHaveBeenCalledWith(state);
   });
 
+  it('推播成功後 state.publish.news.items 與 digest.items 為同一參照（feed-page-contract.md C3，FR-002/009）', async () => {
+    const { service, curate } = build();
+    const items = [curatedItem()];
+    const digest: CuratedDigest = { items, degraded: false };
+    curate.mockResolvedValue(digest);
+    const state = makeState({ lastNewsPushAt: hoursAgo(24) });
+
+    const result = await service.run(state, NOW);
+
+    expect(result).toEqual({ status: 'ok' });
+    expect(state.publish?.news?.items).toBe(items);
+    expect(state.publish?.news?.generatedAt).toBe(NOW.toISOString());
+  });
+
   it('落檔前修剪逾 7 天的舊 seenNews：舊紀錄被剔除、本次新項寫入，持久化不無限膨脹（FR-023/SC-008）', async () => {
     const { service, save } = build();
     const stale = { url: 'https://old.example.com/x', seenAt: hoursAgo(24 * 8) }; // 8 天前 → 應被剔除

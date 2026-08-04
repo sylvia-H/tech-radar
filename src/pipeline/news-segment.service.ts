@@ -82,6 +82,10 @@ export class NewsSegmentService {
     }
     state.seenNews = seen;
     state.lastNewsPushAt = seenAt;
+    state.publish = {
+      ...state.publish,
+      news: { items: digest.items, generatedAt: seenAt },
+    };
     await this.stateStore.save(state);
 
     return { status: 'ok' };

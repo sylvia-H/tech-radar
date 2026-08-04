@@ -25,6 +25,9 @@ export const envSchema = z.object({
   DISCORD_ALERT_WEBHOOK_URL: discordWebhookField('DISCORD_ALERT_WEBHOOK_URL'),
   GH_API_TOKEN: z.string().trim().min(1, 'GH_API_TOKEN 必填'),
   GEMINI_API_KEY: z.string().trim().min(1, 'GEMINI_API_KEY 必填'),
+  /** 選用、非機密：供 F8 `RepoVisibilityService` 取得 `owner/repo`。本機執行核心 pipeline 時
+   * 本就沒有此變數，缺值的後果收斂在發佈段內，不 fail-fast（見 research D3）。 */
+  GITHUB_REPOSITORY: z.string().trim().optional(),
 });
 
 export type EnvConfig = z.infer<typeof envSchema>;

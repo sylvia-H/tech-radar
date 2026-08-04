@@ -106,6 +106,17 @@ describe('board 條目層寬鬆載入（FR-024）', () => {
   });
 });
 
+describe('publish 欄位向後相容（F8，FR-014，contracts/state-write-contract.md C4）', () => {
+  it('不含 publish 鍵的既有 state fixture 仍能 safeParse 成功，且 publish 為 undefined', () => {
+    const legacy = emptyBoardState(); // 既有五欄位，不含 publish
+    const result = boardStateSchema.safeParse(legacy);
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.publish).toBeUndefined();
+    }
+  });
+});
+
 describe('子實體 schema 型別', () => {
   it('BoardEntry 完整欄位通過（2-way domain）', () => {
     expect(boardEntrySchema.safeParse(entry({ domain: 'frontend-backend' })).success).toBe(true);
