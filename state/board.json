@@ -186,52 +186,8 @@
     }
   },
   "lastBoardPushAt": "2026-08-02T23:01:29.724Z",
-  "lastNewsPushAt": "2026-08-02T23:01:29.724Z",
+  "lastNewsPushAt": "2026-08-04T09:57:44.931Z",
   "seenNews": [
-    {
-      "seenAt": "2026-07-26T23:05:01.196Z",
-      "url": "https://tobi.knaup.me/2026-07-25-open-weight-ai-is-having-its-kubernetes-moment"
-    },
-    {
-      "seenAt": "2026-07-26T23:05:01.196Z",
-      "url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models"
-    },
-    {
-      "seenAt": "2026-07-26T23:05:01.196Z",
-      "url": "https://antirez.com/news/170"
-    },
-    {
-      "seenAt": "2026-07-26T23:05:01.196Z",
-      "url": "https://blog.jsbarretto.com/post/languages-as-latent-spaces"
-    },
-    {
-      "seenAt": "2026-07-26T23:05:01.196Z",
-      "url": "https://ziggit.dev/t/buz-a-drop-in-replacement-for-bun-using-modern-zig-with-sub-1s-incremental-builds/16891"
-    },
-    {
-      "seenAt": "2026-07-27T23:13:25.631Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1v7yand/jensen_huang_during_the_hugging_face_incident"
-    },
-    {
-      "seenAt": "2026-07-27T23:13:25.631Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1v8364f/kimi_k3_weights_now_released"
-    },
-    {
-      "seenAt": "2026-07-27T23:13:25.631Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1v72jft/ceo_of_hugging_face_in_the_spirit_of_transparency"
-    },
-    {
-      "seenAt": "2026-07-27T23:13:25.631Z",
-      "url": "https://github.com/slvDev/esp32-ai"
-    },
-    {
-      "seenAt": "2026-07-27T23:13:25.631Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1v770ee/do_you_want_new_gemma"
-    },
-    {
-      "seenAt": "2026-07-27T23:13:25.631Z",
-      "url": "https://lockwood.dev/ai/2026/07/27/how-is-the-bun-rewrite-in-rust-going.html"
-    },
     {
       "seenAt": "2026-07-28T23:09:16.254Z",
       "url": "https://simonwillison.net/2026/Jul/28/uv"
@@ -395,6 +351,38 @@
     {
       "seenAt": "2026-08-02T23:01:29.724Z",
       "url": "https://localai.io/blog/why-we-write-our-own-engines"
+    },
+    {
+      "seenAt": "2026-08-04T09:57:44.931Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
+    },
+    {
+      "seenAt": "2026-08-04T09:57:44.931Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1v911as/gemini_distillation_service"
+    },
+    {
+      "seenAt": "2026-08-04T09:57:44.931Z",
+      "url": "https://github.com/python/cpython/releases/tag/v3.15.0b4"
+    },
+    {
+      "seenAt": "2026-08-04T09:57:44.931Z",
+      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration"
+    },
+    {
+      "seenAt": "2026-08-04T09:57:44.931Z",
+      "url": "https://seangoedecke.com/llms-reward-expertise"
+    },
+    {
+      "seenAt": "2026-08-04T09:57:44.931Z",
+      "url": "https://research.jfrog.com/post/sqlite-critical-cves-or-llm-slops"
+    },
+    {
+      "seenAt": "2026-08-04T09:57:44.931Z",
+      "url": "https://ankursethi.com/blog/prevent-cognitive-debt-by-manually-retyping-llm-generated-code"
+    },
+    {
+      "seenAt": "2026-08-04T09:57:44.931Z",
+      "url": "https://bottlenecklabs.com/blog/autonomously-run-businesses"
     }
   ]
 }
