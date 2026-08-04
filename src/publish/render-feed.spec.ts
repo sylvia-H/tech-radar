@@ -58,3 +58,50 @@ describe('renderFeed — 榜單＋新聞混合 entries（US2，feed-page-contrac
     expect(xml).not.toMatch(/star|⭐/i);
   });
 });
+
+describe('renderFeed — Atom 規格必要元素（RFC 4287 §4.1.1／§4.1.2）', () => {
+  it('feed 層有 atom:author（RFC MUST：feed 有 author 時每則 entry 可省略）', () => {
+    const xml = renderFeed(emptyBoardState(), PAGES_URL);
+    expect(xml).toMatch(/<author>[\s\S]*?<name>Tech Radar<\/name>[\s\S]*?<\/author>/);
+  });
+
+  it('feed 層有指向自身的 rel="self" link（RFC SHOULD）', () => {
+    const xml = renderFeed(emptyBoardState(), PAGES_URL);
+    expect(xml).toContain(`rel="self" href="${PAGES_URL}feed.xml"`);
+  });
+
+  it('新聞 entry 的內文輸出為 atom:summary；content 為 null／缺席者整個略過 summary（不印字面 null）', () => {
+    const entries: FeedEntry[] = [
+      {
+        id: 'news:https://example.com/a',
+        type: 'news',
+        title: '有內文的新聞',
+        url: 'https://example.com/a',
+        content: '這則新聞的繁中精煉內容',
+        publishedAt: '2026-08-01T00:00:00.000Z',
+      },
+      {
+        id: 'news:https://example.com/b',
+        type: 'news',
+        title: '降級新聞',
+        url: 'https://example.com/b',
+        content: null,
+        publishedAt: '2026-08-02T00:00:00.000Z',
+      },
+      {
+        id: 'repo:1:new:2026-08-03',
+        type: 'board-new',
+        title: 'o/r1 新進榜',
+        url: 'https://github.com/o/r1',
+        publishedAt: '2026-08-03T00:00:00.000Z',
+      },
+    ];
+    const state: BoardState = { ...emptyBoardState(), publish: { feed: entries } };
+    const xml = renderFeed(state, PAGES_URL);
+
+    expect(xml).toContain('這則新聞的繁中精煉內容');
+    // 三則 entry 只有一則帶 summary，且不得出現字面 null。
+    expect(xml.match(/<summary/g)).toHaveLength(1);
+    expect(xml).not.toContain('>null<');
+  });
+});

@@ -4,6 +4,7 @@ import {
   boardEntrySchema,
   introCacheSchema,
   seenNewsEntrySchema,
+  feedEntrySchema,
   emptyBoardState,
 } from './state.schema';
 
@@ -140,5 +141,43 @@ describe('子實體 schema 型別', () => {
         seenAt: '2026-07-11T22:07:00.000Z',
       }).success,
     ).toBe(true);
+  });
+});
+
+describe('feedEntrySchema — url 不驗證格式、content 選用', () => {
+  function feedEntry(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+    return {
+      id: 'news:https://example.com/a',
+      type: 'news',
+      title: '標題',
+      url: 'https://example.com/a',
+      publishedAt: '2026-07-11T22:07:00.000Z',
+      ...overrides,
+    };
+  }
+
+  it.each([
+    ['相對路徑（來源產生器出錯）', '/posts/foo'],
+    ['漏 scheme 的裸網域', 'example.com/foo'],
+    ['空字串', ''],
+  ])(
+    'url 為 %s 時仍通過驗證——第三方 RSS <link> 全鏈無格式檢查，嚴格驗證會讓推播成功後的 save() 擲錯',
+    (_label, url) => {
+      expect(feedEntrySchema.safeParse(feedEntry({ url })).success).toBe(true);
+    },
+  );
+
+  it('與 seenNewsEntrySchema 對同一份 url 標準一致（同一次 save() 內不得一個接受一個拒絕）', () => {
+    const url = '/posts/foo';
+    expect(seenNewsEntrySchema.safeParse({ url, seenAt: '2026-07-11T22:07:00.000Z' }).success).toBe(
+      feedEntrySchema.safeParse(feedEntry({ url })).success,
+    );
+  });
+
+  it('content 可為字串／null（策展降級）／缺席（榜單事件與 F8 早期舊 state）', () => {
+    expect(feedEntrySchema.safeParse(feedEntry({ content: '內文' })).success).toBe(true);
+    expect(feedEntrySchema.safeParse(feedEntry({ content: null })).success).toBe(true);
+    expect(feedEntrySchema.safeParse(feedEntry()).success).toBe(true);
+    expect(feedEntrySchema.safeParse(feedEntry({ content: 123 })).success).toBe(false);
   });
 });

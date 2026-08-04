@@ -143,6 +143,27 @@ describe('NewsSegmentService.run — US1 Acceptance（每日晨報端到端）',
     expect(state.publish?.feed).toHaveLength(2);
   });
 
+  it('publish.feed 對同 id 取新棄舊：低量日 50 筆視窗跨過 seenNews 7 天保留期時不產生重複 atom:id', async () => {
+    const { service } = build();
+    const staleSameNews = {
+      id: 'news:https://example.com/a', // 與本次精選正規化後同鍵
+      type: 'news' as const,
+      title: '八天前的同一則',
+      url: 'https://example.com/a',
+      publishedAt: hoursAgo(24 * 8),
+    };
+    const state = makeState({
+      lastNewsPushAt: hoursAgo(24),
+      publish: { feed: [staleSameNews] },
+    });
+
+    await service.run(state, NOW);
+
+    const ids = state.publish?.feed?.map((e) => e.id) ?? [];
+    expect(ids.filter((id) => id === 'news:https://example.com/a')).toHaveLength(1);
+    expect(state.publish?.feed?.[0].publishedAt).toBe(NOW.toISOString()); // 取的是新的那筆
+  });
+
   it('落檔前修剪逾 7 天的舊 seenNews：舊紀錄被剔除、本次新項寫入，持久化不無限膨脹（FR-023/SC-008）', async () => {
     const { service, save } = build();
     const stale = { url: 'https://old.example.com/x', seenAt: hoursAgo(24 * 8) }; // 8 天前 → 應被剔除

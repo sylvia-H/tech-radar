@@ -67,6 +67,27 @@ describe('PublishService.run（US1，contracts/publish-orchestration.md C2）', 
     expect(postFailureAlert).not.toHaveBeenCalled();
   });
 
+  it('(a2) index.html MUST 最後寫——workflow 以它為部署 gate，先寫 feed.xml 才不會部署出缺 feed.xml 的站', async () => {
+    const { service } = build('public', emptyBoardState());
+
+    await service.run();
+
+    const paths = writeFile.mock.calls.map((call) => String(call[0]));
+    expect(paths[0].endsWith('feed.xml')).toBe(true);
+    expect(paths[1].endsWith('index.html')).toBe(true);
+  });
+
+  it('(a3) feed.xml 寫入失敗時不留下 index.html（gate 檔缺席 → workflow 不會部署），並發告警', async () => {
+    const { service, postFailureAlert } = build('public', emptyBoardState());
+    writeFile.mockRejectedValueOnce(new Error('disk full'));
+
+    await expect(service.run()).resolves.toBeUndefined();
+
+    const paths = writeFile.mock.calls.map((call) => String(call[0]));
+    expect(paths.some((p) => p.endsWith('index.html'))).toBe(false);
+    expect(postFailureAlert).toHaveBeenCalledTimes(1);
+  });
+
   it('(b) emptyBoardState() 仍正常寫出兩個檔案（US1 AS2 空狀態不擲錯）', async () => {
     const { service } = build('public', emptyBoardState());
 

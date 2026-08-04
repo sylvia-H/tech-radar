@@ -1,4 +1,11 @@
-import { newsFeedId, boardFeedId, makeBoardFeedEntries, makeNewsFeedEntries, trimFeed } from './feed-entry';
+import {
+  newsFeedId,
+  boardFeedId,
+  makeBoardFeedEntries,
+  makeNewsFeedEntries,
+  appendFeedEntries,
+  trimFeed,
+} from './feed-entry';
 import { BoardChange, BoardDiff } from '../diff/diff.types';
 import { CuratedNewsItem } from '../curation/curation.types';
 import { FeedEntry } from '../state/state.schema';
@@ -114,6 +121,64 @@ describe('makeNewsFeedEntries（FR-004，id 正規化落點）', () => {
     ];
     const entries = makeNewsFeedEntries(items, NOW);
     expect(entries[0].id).toBe(entries[1].id);
+  });
+
+  it('content 沿用 CuratedNewsItem.content，降級項的 null 原樣帶入（供 feed 略過 summary）', () => {
+    const entries = makeNewsFeedEntries(
+      [curatedItem({ content: '這是內文' }), curatedItem({ url: 'https://example.com/b', content: null })],
+      NOW,
+    );
+    expect(entries[0].content).toBe('這是內文');
+    expect(entries[1].content).toBeNull();
+  });
+});
+
+describe('appendFeedEntries — 同 id 取新棄舊（避免重複 atom:id）', () => {
+  function newsEntry(id: string, overrides: Partial<FeedEntry> = {}): FeedEntry {
+    return {
+      id,
+      type: 'news',
+      title: id,
+      url: `https://example.com/${id}`,
+      publishedAt: NOW.toISOString(),
+      ...overrides,
+    };
+  }
+
+  it('id 不重複時單純附加在既有 entries 之後（保持由舊到新的寫入順序）', () => {
+    const result = appendFeedEntries([newsEntry('a')], [newsEntry('b')]);
+    expect(result.map((e) => e.id)).toEqual(['a', 'b']);
+  });
+
+  it('同一則新聞跨 seenNews 7 天保留期再次入選時，舊 entry 被取代而非產生重複 id', () => {
+    const older = newsEntry('news:https://example.com/x', {
+      title: '舊標題',
+      publishedAt: '2026-07-20T00:00:00.000Z',
+    });
+    const newer = newsEntry('news:https://example.com/x', { title: '新標題' });
+
+    const result = appendFeedEntries([older, newsEntry('other')], [newer]);
+
+    expect(result.filter((e) => e.id === 'news:https://example.com/x')).toHaveLength(1);
+    expect(result.map((e) => e.id)).toEqual(['other', 'news:https://example.com/x']);
+    expect(result[1].title).toBe('新標題'); // 取新棄舊，並冒到 feed 頂端（輸出時反轉）
+  });
+
+  it('incoming 內部自帶重複 id（等價 URL 正規化後同鍵）也只留最後一筆', () => {
+    const result = appendFeedEntries(
+      [],
+      [newsEntry('dup', { title: '先' }), newsEntry('dup', { title: '後' })],
+    );
+    expect(result).toHaveLength(1);
+    expect(result[0].title).toBe('後');
+  });
+
+  it('併入後仍套用上限修剪', () => {
+    const existing = Array.from({ length: 50 }, (_, i) => newsEntry(`old${i}`));
+    const result = appendFeedEntries(existing, [newsEntry('new')], 50);
+    expect(result).toHaveLength(50);
+    expect(result[49].id).toBe('new');
+    expect(result[0].id).toBe('old1'); // 最舊一筆被擠出
   });
 });
 
