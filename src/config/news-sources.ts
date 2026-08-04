@@ -34,17 +34,22 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // DeepMind 官方未公開宣傳的 basic feed（2026-08-03 實測 200／100 筆），取代原本停用的
   // `blog/rss.xml`。
   { id: 'deepmind-blog', type: 'rss', url: 'https://deepmind.google/blog/feed/basic/', domain: 'ai', tier: 2 },
-  // HF **Blog** 官方 feed（非 Papers）。回溯至 2020 的全站封存（實測 834 筆），但舊文在
-  // `publishedAt ↓` 決勝時自然沉底、不佔 convergeMax 名額，故可收。
-  { id: 'hf-blog', type: 'rss', url: 'https://huggingface.co/blog/feed.xml', domain: 'ai', tier: 2 },
-  // HF Papers 仍無官方 feed，故清單中無此項。**不以 arXiv 分類 RSS 代替**：實測單日 261 筆且
-  // 全為當天，會吃光候選集名額（見檔頭量體說明）。待漏斗補新鮮度視窗後再議。
+  // HF Blog（2026-08-03 曾啟用，2026-08-04 移除）：回溯至 2020 的全站教學封存，標題多為通用 ML
+  // 詞彙（如「Proximal Policy Optimization (PPO)」），量體本身雖靠 `publishedAt ↓` 沉底無害，
+  // 但會在**跨來源標題 Jaccard 去重**（閾值 0.6）上與其他來源的獨立文章誤判為同一則——實測與
+  // openai-blog 一篇同名舊文誤合併，代表項還因 `sourceId` 字典序被 HF 頂替，讓 openai-blog 該篇
+  // 對策展 LLM 完全隱形。內容價值（常青教學文，非「新聞」）本就偏低，不值得為它另外調整去重
+  // 邏輯，直接移除。HF Papers 仍無官方 feed，故清單中無此項。**不以 arXiv 分類 RSS 代替**：
+  // 實測單日 261 筆且全為當天，會吃光候選集名額（見檔頭量體說明）。待漏斗補新鮮度視窗後再議。
   //
   // Anthropic：2026-08-03 覆測 `www.anthropic.com/rss.xml` 仍非公認端點，維持停用。
   { id: 'anthropic-news', type: 'rss', url: 'https://www.anthropic.com/rss.xml', domain: 'ai', tier: 2, enabled: false },
   // 領域補充（2026-08-03 實測皆 200、量體正常）。
   { id: 'vue-blog', type: 'rss', url: 'https://blog.vuejs.org/feed.rss', domain: 'frontend-backend', tier: 2 },
-  { id: 'web-dev', type: 'rss', url: 'https://web.dev/feed.xml', domain: 'frontend-backend', tier: 2 },
+  // web-dev：2026-08-04 複查發現 `lastBuildDate` 停在 2026-05-29（逾兩個月未更新），抓取雖成功
+  // 但形同啞源、對每日候選集無實質貢獻，且不會觸發「解析到 0 筆」告警（非抓取失敗，是內容過期）。
+  // 先停用觀察（§4.3），非移除；日後若確認官方已停更或換了端點再議。
+  { id: 'web-dev', type: 'rss', url: 'https://web.dev/feed.xml', domain: 'frontend-backend', tier: 2, enabled: false },
   { id: 'cloudflare-blog', type: 'rss', url: 'https://blog.cloudflare.com/rss/', domain: 'devops', tier: 2 },
   { id: 'cncf-blog', type: 'rss', url: 'https://www.cncf.io/feed/', domain: 'devops', tier: 2 },
 
