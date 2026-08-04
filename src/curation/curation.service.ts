@@ -30,8 +30,8 @@ export class NewsCurationService {
     try {
       const views = candidates.map((c, ref) => projectItemView(c, ref, boardRepoNames));
       const raw = await this.llm.generate(buildCurationPrompt(views));
-      const { picks } = parseCurationResponse(raw);
-      const items = validateCuration(picks, candidates);
+      const { officialPicks, communityPicks } = parseCurationResponse(raw);
+      const items = validateCuration(officialPicks, communityPicks, candidates);
       const domainDist = items.reduce(
         (acc, it) => {
           acc[it.domain] = (acc[it.domain] ?? 0) + 1;
@@ -41,8 +41,8 @@ export class NewsCurationService {
       );
       const domainStr = Object.entries(domainDist).map(([d, c]) => `${d}:${c}`).join(' / ');
       this.logger.log(
-        `新聞策展完成：${candidates.length} 候選 → LLM 選 ${picks.length} 則 → ` +
-        `驗證後 ${items.length} 則（${domainStr}）`,
+        `新聞策展完成：${candidates.length} 候選 → LLM 選官方 ${officialPicks.length} 則＋社群 ` +
+        `${communityPicks.length} 則 → 驗證後 ${items.length} 則（${domainStr}）`,
       );
       return { items, degraded: false };
     } catch (err) {

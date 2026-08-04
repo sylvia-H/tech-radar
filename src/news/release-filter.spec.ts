@@ -12,6 +12,12 @@ describe('isNoisyRelease（FR-008 / SC-010）', () => {
     expect(isNoisyRelease('1.2.3')).toBe(true);
   });
 
+  it('drop CPython／PEP 440 風格無連字號 pre-release 版號（2026-08-04 新增）', () => {
+    for (const t of ['v3.15.0b4', 'v3.15.0rc1', 'v3.15.0a1', '3.15.0b1']) {
+      expect(isNoisyRelease(t)).toBe(true);
+    }
+  });
+
   it('keep major/minor（z === 0）', () => {
     expect(isNoisyRelease('v20.11.0')).toBe(false);
     expect(isNoisyRelease('v21.0.0')).toBe(false);

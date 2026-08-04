@@ -36,13 +36,13 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
       makeCandidate({ originalUrl: 'https://e.com/devops1', domain: 'devops', title: 'DevOps news' }),
     ];
     const raw = JSON.stringify({
-      picks: [
+      officialPicks: [
         { ref: 0, title: '繁中標題一', content: '繁中內容一' },
         { ref: 1, title: '繁中標題二', content: '繁中內容二' },
         { ref: 2, title: '繁中標題三', content: '繁中內容三' },
         { ref: 3, title: '繁中標題四', content: '繁中內容四' },
-        { ref: 4, title: '繁中標題五', content: '繁中內容五' },
       ],
+      communityPicks: [{ ref: 4, title: '繁中標題五', content: '繁中內容五' }],
     });
     const generate = jest.fn().mockResolvedValue(raw);
     const { service } = makeService(generate);
@@ -68,7 +68,7 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
       makeCandidate({ originalUrl: 'https://a.com/event', domain: 'ai', title: 'Same event via source A' }),
       makeCandidate({ originalUrl: 'https://b.com/event', domain: 'ai', title: 'Same event via source B' }),
     ];
-    const raw = JSON.stringify({ picks: [{ ref: 0, title: '同一事件', content: '內容' }] });
+    const raw = JSON.stringify({ officialPicks: [{ ref: 0, title: '同一事件', content: '內容' }], communityPicks: [] });
     const { service } = makeService(jest.fn().mockResolvedValue(raw));
 
     const result = await service.curate(candidates, new Set());
@@ -87,7 +87,7 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
 
   it('送交 LLM 的 prompt 僅由公開欄位組成、不含機密（C1、FR-007）', async () => {
     const candidates: NewsCandidate[] = [makeCandidate()];
-    const raw = JSON.stringify({ picks: [] });
+    const raw = JSON.stringify({ officialPicks: [], communityPicks: [] });
     const { service, generate } = makeService(jest.fn().mockResolvedValue(raw));
 
     await service.curate(candidates, new Set());
@@ -107,10 +107,11 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
       makeCandidate({ originalUrl: 'https://fe.com', domain: 'frontend-backend', title: 'Frontend only' }),
     ];
     const raw = JSON.stringify({
-      picks: [
+      officialPicks: [
         { ref: 0, title: '繁中 DevOps', content: '內容' },
         { ref: 1, title: '繁中前端', content: '內容' },
       ],
+      communityPicks: [],
     });
     const { service } = makeService(jest.fn().mockResolvedValue(raw));
 

@@ -22,9 +22,10 @@ export function stripJsonFence(raw: string): string {
 }
 
 /**
- * 三步解析：去 code fence → `JSON.parse` → 形狀淺驗證（`picks` 陣列、每項 `ref:number`/
- * `title,content:string`）。任一步失敗擲 `CurationParseError`，不做局部搶救（research D2）。
- * 越界 `ref`／超長字數／配額／重複 `ref` 不在此層判定，交由硬驗證管線收斂（curation-validate.ts）。
+ * 三步解析：去 code fence → `JSON.parse` → 形狀淺驗證（`officialPicks`／`communityPicks` 皆為
+ * 陣列、每項 `ref:number`/`title,content:string`）。任一步失敗擲 `CurationParseError`，不做局部
+ * 搶救（research D2）。越界 `ref`／超長字數／配額／重複 `ref` 不在此層判定，交由硬驗證管線收斂
+ * （curation-validate.ts）。
  */
 export function parseCurationResponse(raw: string): CurationLlmResponse {
   let parsed: unknown;
@@ -34,12 +35,23 @@ export function parseCurationResponse(raw: string): CurationLlmResponse {
     throw new CurationParseError('非合法 JSON');
   }
 
-  if (typeof parsed !== 'object' || parsed === null || !('picks' in parsed)) {
-    throw new CurationParseError('缺少 picks 欄位');
+  if (typeof parsed !== 'object' || parsed === null) {
+    throw new CurationParseError('非合法物件');
   }
-  const picks = (parsed as { picks: unknown }).picks;
+
+  const officialPicks = parsePickArray(parsed, 'officialPicks');
+  const communityPicks = parsePickArray(parsed, 'communityPicks');
+
+  return { officialPicks, communityPicks };
+}
+
+function parsePickArray(parsed: object, key: 'officialPicks' | 'communityPicks'): CurationLlmResponse['officialPicks'] {
+  if (!(key in parsed)) {
+    throw new CurationParseError(`缺少 ${key} 欄位`);
+  }
+  const picks = (parsed as Record<string, unknown>)[key];
   if (!Array.isArray(picks)) {
-    throw new CurationParseError('picks 非陣列');
+    throw new CurationParseError(`${key} 非陣列`);
   }
   for (const pick of picks) {
     if (
@@ -49,9 +61,8 @@ export function parseCurationResponse(raw: string): CurationLlmResponse {
       typeof (pick as { title: unknown }).title !== 'string' ||
       typeof (pick as { content: unknown }).content !== 'string'
     ) {
-      throw new CurationParseError('picks 項目形狀不符');
+      throw new CurationParseError(`${key} 項目形狀不符`);
     }
   }
-
-  return { picks: picks as CurationLlmResponse['picks'] };
+  return picks as CurationLlmResponse['officialPicks'];
 }
