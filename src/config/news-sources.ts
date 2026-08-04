@@ -11,9 +11,10 @@ import { validateNewsSources } from './news-source.schema';
  * 壞掉的 feed 一律以停用／替換設定處理、不動 code。
  *
  * **新增大型 feed 前先確認量體**：漏斗對 Tier 2 不設分數門檻（`scoreThresholds[2] = null`），
- * 無分數者一律以 `nullScoreBaseline = 100` 入池、決勝鍵為 `publishedAt ↓`。單日產出上百筆且
- * 全為當天的來源（如 arXiv 分類 RSS）會吃光 `convergeMax = 25` 名額、擠掉一手公告；在漏斗補上
- * 新鮮度視窗與單一來源入池上限之前，不收這類來源。
+ * 無分數者一律以 `nullScoreBaseline = 100` 入池、決勝鍵為 `normalizedUrl ↑`（2026-08-04 起不再
+ * 以 `publishedAt` 決勝，避免發文頻率高的來源系統性贏得同分候選的排序位置，見 funnel.ts
+ * `compareCandidates`）。單日產出上百筆的來源（如 arXiv 分類 RSS）仍會吃光 `convergeMax = 25`
+ * 名額、擠掉一手公告；在漏斗補上單一來源入池上限之前，不收這類來源。
  */
 const RAW_NEWS_SOURCES: NewsSource[] = [
   // ── Tier 1：常開高訊號（跨領域聚合） ──────────────────────────────────
@@ -35,12 +36,12 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // `blog/rss.xml`。
   { id: 'deepmind-blog', type: 'rss', url: 'https://deepmind.google/blog/feed/basic/', domain: 'ai', tier: 2 },
   // HF Blog（2026-08-03 曾啟用，2026-08-04 移除）：回溯至 2020 的全站教學封存，標題多為通用 ML
-  // 詞彙（如「Proximal Policy Optimization (PPO)」），量體本身雖靠 `publishedAt ↓` 沉底無害，
-  // 但會在**跨來源標題 Jaccard 去重**（閾值 0.6）上與其他來源的獨立文章誤判為同一則——實測與
-  // openai-blog 一篇同名舊文誤合併，代表項還因 `sourceId` 字典序被 HF 頂替，讓 openai-blog 該篇
-  // 對策展 LLM 完全隱形。內容價值（常青教學文，非「新聞」）本就偏低，不值得為它另外調整去重
-  // 邏輯，直接移除。HF Papers 仍無官方 feed，故清單中無此項。**不以 arXiv 分類 RSS 代替**：
-  // 實測單日 261 筆且全為當天，會吃光候選集名額（見檔頭量體說明）。待漏斗補新鮮度視窗後再議。
+  // 詞彙（如「Proximal Policy Optimization (PPO)」），會在**跨來源標題 Jaccard 去重**（閾值 0.6）
+  // 上與其他來源的獨立文章誤判為同一則——實測與 openai-blog 一篇同名舊文誤合併，代表項還因
+  // `sourceId` 字典序被 HF 頂替，讓 openai-blog 該篇對策展 LLM 完全隱形。內容價值（常青教學文，
+  // 非「新聞」）本就偏低，不值得為它另外調整去重邏輯，直接移除。HF Papers 仍無官方 feed，故清單
+  // 中無此項。**不以 arXiv 分類 RSS 代替**：實測單日 261 筆，會吃光候選集名額（見檔頭量體說明）。
+  // 待漏斗補單一來源入池上限後再議。
   //
   // Anthropic：2026-08-03 覆測 `www.anthropic.com/rss.xml` 仍非公認端點，維持停用。
   { id: 'anthropic-news', type: 'rss', url: 'https://www.anthropic.com/rss.xml', domain: 'ai', tier: 2, enabled: false },
