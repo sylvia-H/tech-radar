@@ -155,14 +155,16 @@ jobs:
         if: hashFiles('public/index.html') != ''
         uses: actions/deploy-pages@v4
 
-      - name: Alert on deploy failure
-        # PublishService 內部已處理的分支（private 跳過／可見性查詢失敗／渲染寫檔失敗）皆以
-        # exit 0 結束，不會讓 job 進入 failure()；此步只會被上面兩個部署 step 本身的失敗觸發
-        # （research D10a，不經過 PublishService，因為該 process 早已結束）。
+      - name: Alert on publish job failure
+        # 刻意用裸 failure() 涵蓋本 job 的**任何**失敗——checkout／載入 state／npm ci／build／
+        # 上傳 artifact／部署皆算，寧可多報也不要漏報（與 radar job 的補送告警同一原則）。
+        # 因此訊息 MUST NOT 斷言失敗發生在部署那一步。PublishService 內部已處理的分支
+        # （private 跳過／可見性查詢失敗／渲染寫檔失敗）皆以 exit 0 結束並自行發告警，
+        # 不會走到這裡（research D10a）。
         if: failure()
         run: |
           curl -sS -X POST -H "Content-Type: application/json" \
-            -d '{"embeds":[{"title":"⚠️ 發佈部署失敗","color":15548997,"description":"GitHub Pages 部署動作本身失敗，請查看本次 Actions 執行紀錄。"}]}' \
+            -d '{"embeds":[{"title":"⚠️ 發佈 job 失敗","color":15548997,"description":"Pages 發佈 job 的某個步驟失敗（環境準備、建置、上傳 artifact 或部署），請查看本次 Actions 執行紀錄確認失敗步驟。"}]}' \
             "$DISCORD_ALERT_WEBHOOK_URL"
         env:
           DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
