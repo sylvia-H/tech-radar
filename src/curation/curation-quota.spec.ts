@@ -1,5 +1,5 @@
 import { NewsDomain3 } from '../news/news.types';
-import { clampNonAi, clampSourceDiversity, isAi, MAX_ITEMS, MAX_NON_AI, MAX_PER_SOURCE_NON_AI } from './curation-quota';
+import { clampNonAi, clampSourceDiversity, effectiveNonAiCap, isAi, MAX_ITEMS, MAX_NON_AI, MAX_PER_SOURCE_NON_AI } from './curation-quota';
 
 interface Item {
   id: string;
@@ -79,6 +79,36 @@ describe('clampNonAi', () => {
     const out = clampNonAi(items, domainOf);
     // 非 AI 有 fe1/devops1/fe2/fe3 四則超過 3 → devops1 優先、frontend-backend 依序取 2 則(fe1/fe2)
     expect(out.map((it) => it.id)).toEqual(['fe1', 'ai1', 'devops1', 'fe2']);
+  });
+});
+
+describe('effectiveNonAiCap（2026-08-04 新增，憲章 v1.6.0）', () => {
+  it('AI ≥7 則時等同固定 MAX_NON_AI(3)', () => {
+    expect(effectiveNonAiCap(7)).toBe(3);
+    expect(effectiveNonAiCap(10)).toBe(3);
+  });
+
+  it('AI <7 則時放寬至 10−AI 則數，把未用滿的名額讓給非 AI', () => {
+    expect(effectiveNonAiCap(4)).toBe(6);
+    expect(effectiveNonAiCap(0)).toBe(10);
+  });
+
+  it('AI 剛好等於 7 為邊界：7 → 3（等同靜態上限），6 → 4（開始放寬）', () => {
+    expect(effectiveNonAiCap(7)).toBe(3);
+    expect(effectiveNonAiCap(6)).toBe(4);
+  });
+
+  it('搭配 clampNonAi 使用：AI 較少時非 AI 可保留超過靜態 3 則', () => {
+    const items: Item[] = [
+      { id: 'ai1', domain: 'ai' },
+      { id: 'devops1', domain: 'devops' },
+      { id: 'devops2', domain: 'devops' },
+      { id: 'devops3', domain: 'devops' },
+      { id: 'devops4', domain: 'devops' },
+    ];
+    const aiCount = items.filter((it) => isAi(domainOf(it))).length; // 1
+    const out = clampNonAi(items, domainOf, effectiveNonAiCap(aiCount)); // cap = max(3, 10-1) = 9
+    expect(out).toEqual(items); // 非 AI 只有 4 則、遠低於 9，全數保留
   });
 });
 

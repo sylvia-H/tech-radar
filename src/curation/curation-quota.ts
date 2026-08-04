@@ -18,9 +18,21 @@ export function isAi(domain: NewsDomain3): boolean {
 }
 
 /**
+ * 非 AI 動態上限（憲章 III、2026-08-04 新增）：預設 `MAX_NON_AI`（3），但當日 AI 則數不足以
+ * 撐滿「`MAX_ITEMS − MAX_NON_AI`」（＝7）的隱含額度時，把 AI 未用滿的名額讓給非 AI，上限放寬至
+ * `MAX_ITEMS − aiCount`。AI ≥7 時等同固定 ≤3；AI <7 時等比放寬（例如 AI 僅 4 則時，非 AI 可達
+ * 6 則，兩者合計仍 ≤10）。目的是讓「至多 10 則」盡量被填滿，同時不犧牲「AI 為主」的領域配置
+ * 精神——非 AI 只在 AI 確實供給不足時才獲得額外名額，不是無條件放寬。
+ */
+export function effectiveNonAiCap(aiCount: number, max: number = MAX_NON_AI, totalMax: number = MAX_ITEMS): number {
+  return Math.max(max, totalMax - aiCount);
+}
+
+/**
  * 夾非 AI 合計 ≤`max`：非 AI 數量超過上限時，依領域優先序（DevOps 優先，同領域內保留
  * picks 原順序＝重要性序）保留前 `max` 則、其餘剔除；AI 項目不受此步限制、不改變其相對順序
- * （research D5、FR-010）。
+ * （research D5、FR-010）。`max` 預設固定 `MAX_NON_AI`，呼叫端可傳入 `effectiveNonAiCap()`
+ * 算出的動態值。
  */
 export function clampNonAi<T>(
   items: readonly T[],

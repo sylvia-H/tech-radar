@@ -60,6 +60,21 @@ describe('fallbackDigest（US2 降級路徑）', () => {
     expect(nonAiCount).toBeLessThanOrEqual(3);
   });
 
+  it('AI 候選不足 7 則時，非 AI 上限依 effectiveNonAiCap 動態放寬（2026-08-04 新增，憲章 v1.6.0）', () => {
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ originalUrl: 'https://ai0.com', domain: 'ai', weightedScore: 100 }),
+      ...Array.from({ length: 5 }, (_, i) =>
+        makeCandidate({ originalUrl: `https://devops${i}.com`, domain: 'devops', weightedScore: 50 - i }),
+      ),
+    ];
+    // aiCount=1 → effectiveNonAiCap = max(3, 10-1) = 9；非 AI 只有 5 則，遠低於 9，全數保留。
+    const digest = fallbackDigest(candidates);
+
+    expect(digest.items).toHaveLength(6);
+    const nonAiCount = digest.items.filter((it) => it.domain !== 'ai').length;
+    expect(nonAiCount).toBe(5);
+  });
+
   it('候選不足時照實輸出，不硬湊（FR-005）', () => {
     const candidates: NewsCandidate[] = [makeCandidate()];
     const digest = fallbackDigest(candidates);
