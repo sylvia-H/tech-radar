@@ -1,6 +1,6 @@
 import { NewsCandidate, NewsDomain3 } from '../news/news.types';
 import { clampToLimit } from './curation-length';
-import { clampNonAi, MAX_ITEMS } from './curation-quota';
+import { clampNonAi, clampSourceDiversity, isAi, MAX_ITEMS } from './curation-quota';
 import { CuratedNewsItem, CurationLlmPick } from './curation.types';
 
 interface ResolvedPick {
@@ -20,9 +20,10 @@ function domainOf(it: ResolvedPick): NewsDomain3 {
  * 剔除／重排，永不遞補新候選（FR-005/010）。
  *
  * (1) 剔除幻覺項（`ref` 越界／非整數）＋重複 `ref` 去重（保留第一次出現，即較高重要性者）
- * (2) 依領域優先序夾非 AI ≤3（DevOps 優先，AI 不受限）
- * (3) 依 picks 重要性序截總數 ≤10
- * (4) `title`/`content` 收斂至 ≤70/≤500 code points
+ * (2) 非 AI 候選池夠大時，夾非 AI 同來源 ≤2（`clampSourceDiversity`，2026-08-04 新增）
+ * (3) 依領域優先序夾非 AI ≤3（DevOps 優先，AI 不受限）
+ * (4) 依 picks 重要性序截總數 ≤10
+ * (5) `title`/`content` 收斂至 ≤70/≤500 code points
  *
  * 每則以 `ref` 對回候選附上程式提供的事實（`url`/`domain`/`sourceCount`/`weightedScore`），
  * `degraded:false`（憲章 VI 防幻覺，FR-006/009）。
@@ -44,7 +45,9 @@ export function validateCuration(
     resolved.push({ ref: pick.ref, title: pick.title, content: pick.content, candidate: candidates[pick.ref] });
   }
 
-  const clamped = clampNonAi(resolved, domainOf);
+  const nonAiPoolSize = candidates.filter((c) => !isAi(c.domain as NewsDomain3)).length;
+  const diversified = clampSourceDiversity(resolved, domainOf, (it) => it.candidate.sources, nonAiPoolSize);
+  const clamped = clampNonAi(diversified, domainOf);
   const limited = clamped.slice(0, MAX_ITEMS);
 
   return limited.map((it) => ({

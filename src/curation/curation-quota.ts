@@ -7,10 +7,10 @@ export const MAX_ITEMS = 10;
 export const MAX_NON_AI = 3;
 
 /**
- * AI 候選足夠時的軟性下限（僅供 T012 prompt 引用組字樣，程式硬驗證管線不強制填滿，
- * FR-004/005：候選不足照實輸出、不硬湊）。2026-07-29 由 5 調整為 7（憲章 v1.5.0）。
+ * 非 AI 同一來源最多入選則數（避免候選池夠大時，單一來源吃滿非 AI 名額、排擠其他來源）。
+ * 2026-08-04 新增：起因 cloudflare-blog 主題週單日投稿量大，曾一次佔滿當日非 AI 全部 3 則。
  */
-export const MIN_AI = 7;
+export const MAX_PER_SOURCE_NON_AI = 2;
 
 /** 是否為 AI 領域（配額分類依 `candidate.domain`，research D4）。 */
 export function isAi(domain: NewsDomain3): boolean {
@@ -37,4 +37,40 @@ export function clampNonAi<T>(
   ];
   const kept = new Set(devopsFirst.slice(0, max));
   return items.filter((it) => isAi(domainOf(it)) || kept.has(it));
+}
+
+/**
+ * 非 AI 同來源上限：僅在非 AI **候選池**（`nonAiPoolSize`，指候選集大小、非入選數）大於
+ * `MAX_NON_AI` 時才生效——代表當天存在其他來源可能被排擠，才值得為多樣性犧牲則數；候選池
+ * 本就不足以撐滿非 AI 名額時，不特別限制單一來源（2026-08-04 決策：候選不足時沒必要為了
+ * 多樣性平白減少則數）。生效時依原順序（重要性序）逐一計數，同一 `sourceId` 累計達 `max`
+ * 即剔除該則、不遞補其他候選（比照 `clampNonAi` 的裁切哲學）；AI 項目不受影響。
+ */
+export function clampSourceDiversity<T>(
+  items: readonly T[],
+  domainOf: (item: T) => NewsDomain3,
+  sourcesOf: (item: T) => readonly string[],
+  nonAiPoolSize: number,
+  max: number = MAX_PER_SOURCE_NON_AI,
+): T[] {
+  if (nonAiPoolSize <= MAX_NON_AI) {
+    return [...items];
+  }
+  const countBySource = new Map<string, number>();
+  const kept: T[] = [];
+  for (const it of items) {
+    if (isAi(domainOf(it))) {
+      kept.push(it);
+      continue;
+    }
+    const srcs = sourcesOf(it);
+    if (srcs.some((s) => (countBySource.get(s) ?? 0) >= max)) {
+      continue;
+    }
+    for (const s of srcs) {
+      countBySource.set(s, (countBySource.get(s) ?? 0) + 1);
+    }
+    kept.push(it);
+  }
+  return kept;
 }

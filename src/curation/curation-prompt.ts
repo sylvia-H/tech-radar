@@ -1,4 +1,4 @@
-import { MAX_ITEMS, MAX_NON_AI, MIN_AI } from './curation-quota';
+import { MAX_ITEMS, MAX_NON_AI } from './curation-quota';
 import { CurationItemView } from './curation.types';
 
 /**
@@ -30,10 +30,11 @@ export function buildCurationPrompt(items: readonly CurationItemView[]): string 
 - 後端：只看 Node.js／Python 相關；其他語言生態系降低優先。
 - 前端：以 TypeScript 為主；Vue／React 相關優先度最低；CSS 技巧／教學一律不選。
 
-配額（軟性上限，寧缺勿濫、不足不硬湊）：
-- AI 類別若有 ${MIN_AI} 則以上合格候選，應優先湊到 ${MIN_AI} 則以上；候選不足則照實輸出。
+配額（無 AI 則數目標，上限交由程式硬性把關，不需要你自我設限）：
+- AI 類別不設引導性目標數字：逐一評估每則「是否真的重要」，凡合格皆收錄；不要因為已經湊到
+  「感覺還可以」的數量就提早停手，也不要為了衝數量硬選不重要的內容。
 - DevOps／後端／前端合計最多 ${MAX_NON_AI} 則。
-- 總數最多 ${MAX_ITEMS} 則。
+- 全部類別合計最多 ${MAX_ITEMS} 則。
 
 候選清單（\`[ref]\` 為索引，回應時只需回 ref，不要覆述標題）：
 ${lines || '（無候選）'}
