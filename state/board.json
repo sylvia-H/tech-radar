@@ -186,32 +186,153 @@
     }
   },
   "lastBoardPushAt": "2026-08-02T23:01:29.724Z",
-  "lastNewsPushAt": "2026-08-03T23:01:29.724Z",
+  "lastNewsPushAt": "2026-08-04T23:11:29.585Z",
+  "publish": {
+    "feed": [
+      {
+        "content": "Google 宣布推出 Gemini 3.6 Flash、3.5 Flash-Lite 及 3.5 Flash Cyber 模型。對於開發者而言，這代表在處理多模態任務、輕量化推理及特定應用場景（如資安）有了更多模型選擇，開發者應評估其成本效益與效能，以決定是否遷移至新版本。",
+        "id": "news:https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber",
+        "publishedAt": "2026-08-04T23:11:29.585Z",
+        "title": "Google 發布 Gemini 3.6 Flash 與 3.5 系列模型更新",
+        "type": "news",
+        "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/"
+      },
+      {
+        "content": "Node.js 26.6.0 版本釋出，帶來多項實驗性與實用功能。包括新增 `getCurrentEventLoop` 以改進 FFI 效能監控，以及在測試執行器（test_runner）中新增 `context.log()` 與事件報告功能，能有效提升後端開發者的除錯效率與觀測性。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.6.0",
+        "publishedAt": "2026-08-04T23:11:29.585Z",
+        "title": "Node.js 發布 26.6.0 版本：新增測試與 FFI 追蹤功能",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
+      },
+      {
+        "content": "Lima v2.2 正式支援 Windows 虛擬機運作，並加入 TPM 2.0 模擬功能。這對於需要在 macOS 上進行跨平台開發（Linux, macOS, FreeBSD, Windows）的 DevOps 工程師來說是重大升級，簡化了本地虛擬化環境的基礎設施部署工作。",
+        "id": "news:https://cncf.io/blog/2026/07/28/lima-v2-2-windows-guests-and-tpm-2-0-emulation",
+        "publishedAt": "2026-08-04T23:11:29.585Z",
+        "title": "Lima v2.2 釋出：新增 Windows 客體系統支援與 TPM 2.0 模擬",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/07/28/lima-v2-2-windows-guests-and-tpm-2-0-emulation/"
+      },
+      {
+        "content": "Mistral 推出了 3B 參數的輕量級模型 Shieldstral，專門用於多模態內容的審核。對於需要建構 AI 應用並處理內容過濾的開發者，此模型提供了更高效、可部署於邊緣設備的審核解決方案，降低了對大型模型的依賴。",
+        "id": "news:https://mistral.ai/news/shieldstral",
+        "publishedAt": "2026-08-04T23:11:29.585Z",
+        "title": "Mistral 發布 Shieldstral：3B 多模態內容審核模型",
+        "type": "news",
+        "url": "https://mistral.ai/news/shieldstral/"
+      },
+      {
+        "content": "Cloudflare 推出的 Agents 平台為開發者提供了統一的體驗，用以部署、監控並管理 AI 代理的效能。這是一套針對 AI Agent 開發的基礎設施升級，能協助開發者在規模化場景下監控代理行為並獲取洞察。",
+        "id": "news:https://blog.cloudflare.com/agents-on-cloudflare",
+        "publishedAt": "2026-08-04T23:11:29.585Z",
+        "title": "Cloudflare 推出 Agents 平台，整合代理服務生命週期管理",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/agents-on-cloudflare/"
+      },
+      {
+        "content": "社群討論 AI 生成圖像大量出現在技術部落格的現象，認為這可能導致內容同質化並降低資訊密度。此議題反映了開發者對於技術社群「訊噪比」的憂慮，以及對高品質原創技術內容的需求反彈。",
+        "id": "news:https://nelson.cloud/ai-generated-images-discourage-me-from-reading-your-blog",
+        "publishedAt": "2026-08-04T23:11:29.585Z",
+        "title": "Hacker News 熱議：AI 生成影像是否降低了技術部落格的閱讀價值",
+        "type": "news",
+        "url": "https://nelson.cloud/ai-generated-images-discourage-me-from-reading-your-blog/"
+      },
+      {
+        "content": "開發者社群關注到 AI 領先公司逐漸減少公開研究細節的趨勢。這象徵著 AI 領域從開放科學轉向閉源競爭，開發者在規劃長期技術棧時，需認知到未來可能面臨更少的透明度與更難取得的底層技術細節。",
+        "id": "news:https://science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
+        "publishedAt": "2026-08-04T23:11:29.585Z",
+        "title": "Hacker News 熱議：頂尖 AI 新創公司為何減少發表研究論文",
+        "type": "news",
+        "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research"
+      },
+      {
+        "content": "針對 Apple 前員工涉嫌將機密資料攜至 OpenAI 的法律爭議，社群討論集中於企業內部的資料安全性保護措施。此事件對開發者而言，是關於數據資產歸屬權與公司安全合規政策的一項警示。",
+        "id": "news:https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai",
+        "publishedAt": "2026-08-04T23:11:29.585Z",
+        "title": "Apple 指控 OpenAI 涉及員工洩漏機密資料事件",
+        "type": "news",
+        "url": "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/"
+      }
+    ],
+    "news": {
+      "generatedAt": "2026-08-04T23:11:29.585Z",
+      "items": [
+        {
+          "content": "Google 宣布推出 Gemini 3.6 Flash、3.5 Flash-Lite 及 3.5 Flash Cyber 模型。對於開發者而言，這代表在處理多模態任務、輕量化推理及特定應用場景（如資安）有了更多模型選擇，開發者應評估其成本效益與效能，以決定是否遷移至新版本。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Google 發布 Gemini 3.6 Flash 與 3.5 系列模型更新",
+          "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Node.js 26.6.0 版本釋出，帶來多項實驗性與實用功能。包括新增 `getCurrentEventLoop` 以改進 FFI 效能監控，以及在測試執行器（test_runner）中新增 `context.log()` 與事件報告功能，能有效提升後端開發者的除錯效率與觀測性。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "title": "Node.js 發布 26.6.0 版本：新增測試與 FFI 追蹤功能",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.6.0",
+          "weightedScore": 100
+        },
+        {
+          "content": "Lima v2.2 正式支援 Windows 虛擬機運作，並加入 TPM 2.0 模擬功能。這對於需要在 macOS 上進行跨平台開發（Linux, macOS, FreeBSD, Windows）的 DevOps 工程師來說是重大升級，簡化了本地虛擬化環境的基礎設施部署工作。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Lima v2.2 釋出：新增 Windows 客體系統支援與 TPM 2.0 模擬",
+          "url": "https://www.cncf.io/blog/2026/07/28/lima-v2-2-windows-guests-and-tpm-2-0-emulation/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Mistral 推出了 3B 參數的輕量級模型 Shieldstral，專門用於多模態內容的審核。對於需要建構 AI 應用並處理內容過濾的開發者，此模型提供了更高效、可部署於邊緣設備的審核解決方案，降低了對大型模型的依賴。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Mistral 發布 Shieldstral：3B 多模態內容審核模型",
+          "url": "https://mistral.ai/news/shieldstral/",
+          "weightedScore": 266
+        },
+        {
+          "content": "Cloudflare 推出的 Agents 平台為開發者提供了統一的體驗，用以部署、監控並管理 AI 代理的效能。這是一套針對 AI Agent 開發的基礎設施升級，能協助開發者在規模化場景下監控代理行為並獲取洞察。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Cloudflare 推出 Agents 平台，整合代理服務生命週期管理",
+          "url": "https://blog.cloudflare.com/agents-on-cloudflare/",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群討論 AI 生成圖像大量出現在技術部落格的現象，認為這可能導致內容同質化並降低資訊密度。此議題反映了開發者對於技術社群「訊噪比」的憂慮，以及對高品質原創技術內容的需求反彈。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Hacker News 熱議：AI 生成影像是否降低了技術部落格的閱讀價值",
+          "url": "https://nelson.cloud/ai-generated-images-discourage-me-from-reading-your-blog/",
+          "weightedScore": 719
+        },
+        {
+          "content": "開發者社群關注到 AI 領先公司逐漸減少公開研究細節的趨勢。這象徵著 AI 領域從開放科學轉向閉源競爭，開發者在規劃長期技術棧時，需認知到未來可能面臨更少的透明度與更難取得的底層技術細節。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Hacker News 熱議：頂尖 AI 新創公司為何減少發表研究論文",
+          "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
+          "weightedScore": 617
+        },
+        {
+          "content": "針對 Apple 前員工涉嫌將機密資料攜至 OpenAI 的法律爭議，社群討論集中於企業內部的資料安全性保護措施。此事件對開發者而言，是關於數據資產歸屬權與公司安全合規政策的一項警示。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Apple 指控 OpenAI 涉及員工洩漏機密資料事件",
+          "url": "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/",
+          "weightedScore": 316
+        }
+      ]
+    }
+  },
   "seenNews": [
-    {
-      "seenAt": "2026-07-28T23:09:16.254Z",
-      "url": "https://simonwillison.net/2026/Jul/28/uv"
-    },
-    {
-      "seenAt": "2026-07-28T23:09:16.254Z",
-      "url": "https://github.com/vercel-labs/scriptc"
-    },
-    {
-      "seenAt": "2026-07-28T23:09:16.254Z",
-      "url": "https://simonwillison.net/2026/Jul/28/discovering-cryptographic-weaknesses-with-claude"
-    },
-    {
-      "seenAt": "2026-07-28T23:09:16.254Z",
-      "url": "https://simonwillison.net/2026/Jul/28/anatomy-of-a-frontier-lab-agent-intrusion"
-    },
-    {
-      "seenAt": "2026-07-28T23:09:16.254Z",
-      "url": "https://simonwillison.net/2026/Jul/27/kimi-k3"
-    },
-    {
-      "seenAt": "2026-07-28T23:09:16.254Z",
-      "url": "https://openai.com/index/scientific-computing-agentic-ai"
-    },
     {
       "seenAt": "2026-07-29T23:05:15.434Z",
       "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
@@ -383,6 +504,38 @@
     {
       "seenAt": "2026-08-04T09:57:44.931Z",
       "url": "https://bottlenecklabs.com/blog/autonomously-run-businesses"
+    },
+    {
+      "seenAt": "2026-08-04T23:11:29.585Z",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber"
+    },
+    {
+      "seenAt": "2026-08-04T23:11:29.585Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
+    },
+    {
+      "seenAt": "2026-08-04T23:11:29.585Z",
+      "url": "https://cncf.io/blog/2026/07/28/lima-v2-2-windows-guests-and-tpm-2-0-emulation"
+    },
+    {
+      "seenAt": "2026-08-04T23:11:29.585Z",
+      "url": "https://mistral.ai/news/shieldstral"
+    },
+    {
+      "seenAt": "2026-08-04T23:11:29.585Z",
+      "url": "https://blog.cloudflare.com/agents-on-cloudflare"
+    },
+    {
+      "seenAt": "2026-08-04T23:11:29.585Z",
+      "url": "https://nelson.cloud/ai-generated-images-discourage-me-from-reading-your-blog"
+    },
+    {
+      "seenAt": "2026-08-04T23:11:29.585Z",
+      "url": "https://science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research"
+    },
+    {
+      "seenAt": "2026-08-04T23:11:29.585Z",
+      "url": "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai"
     }
   ]
 }
