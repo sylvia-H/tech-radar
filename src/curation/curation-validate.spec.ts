@@ -133,10 +133,10 @@ describe('validateCuration（US3 對抗性違規回應）', () => {
       makeCandidate({ originalUrl: 'https://ai0.com', domain: 'ai' }),
       makeCandidate({ originalUrl: 'https://ai1.com', domain: 'ai' }),
       makeCandidate({ originalUrl: 'https://ai2.com', domain: 'ai' }),
-      makeCandidate({ originalUrl: 'https://devops0.com', domain: 'devops' }),
-      makeCandidate({ originalUrl: 'https://fe0.com', domain: 'frontend-backend' }),
-      makeCandidate({ originalUrl: 'https://fe1.com', domain: 'frontend-backend' }),
-      makeCandidate({ originalUrl: 'https://fe2.com', domain: 'frontend-backend' }),
+      makeCandidate({ originalUrl: 'https://devops0.com', domain: 'devops', sourceId: 's-devops0', sources: ['s-devops0'] }),
+      makeCandidate({ originalUrl: 'https://fe0.com', domain: 'frontend-backend', sourceId: 's-fe0', sources: ['s-fe0'] }),
+      makeCandidate({ originalUrl: 'https://fe1.com', domain: 'frontend-backend', sourceId: 's-fe1', sources: ['s-fe1'] }),
+      makeCandidate({ originalUrl: 'https://fe2.com', domain: 'frontend-backend', sourceId: 's-fe2', sources: ['s-fe2'] }),
     ];
     const picks: CurationLlmPick[] = candidates.map((_, i) => ({ ref: i, title: `t${i}`, content: `c${i}` }));
 
@@ -147,14 +147,56 @@ describe('validateCuration（US3 對抗性違規回應）', () => {
     expect(nonAi.map((it) => it.url)).toEqual(['https://devops0.com', 'https://fe0.com', 'https://fe1.com']);
   });
 
+  it('非 AI 候選池 >3 時，同來源最多 2 則入選，第 3 則同來源直接剔除、不遞補（2026-08-04 決策）', () => {
+    const candidates = [
+      makeCandidate({ originalUrl: 'https://ai0.com', domain: 'ai' }),
+      makeCandidate({ originalUrl: 'https://cf0.com', domain: 'devops', sourceId: 'cloudflare-blog', sources: ['cloudflare-blog'] }),
+      makeCandidate({ originalUrl: 'https://cf1.com', domain: 'devops', sourceId: 'cloudflare-blog', sources: ['cloudflare-blog'] }),
+      makeCandidate({ originalUrl: 'https://cf2.com', domain: 'devops', sourceId: 'cloudflare-blog', sources: ['cloudflare-blog'] }),
+      makeCandidate({ originalUrl: 'https://cncf0.com', domain: 'devops', sourceId: 'cncf-blog', sources: ['cncf-blog'] }),
+    ];
+    // 非 AI 候選池 = 4（cf0/cf1/cf2/cncf0）> MAX_NON_AI(3) → 同來源上限生效
+    const picks: CurationLlmPick[] = [
+      { ref: 0, title: 'ai', content: 'c' },
+      { ref: 1, title: 'cf0', content: 'c' },
+      { ref: 2, title: 'cf1', content: 'c' },
+      { ref: 3, title: 'cf2', content: 'c' },
+    ];
+
+    const result = validateCuration(picks, candidates);
+
+    // cf2 因 cloudflare-blog 已達上限 2 被剔除；cncf0 未入選（LLM 沒選），依規則不遞補
+    expect(result.map((it) => it.url)).toEqual(['https://ai0.com', 'https://cf0.com', 'https://cf1.com']);
+  });
+
+  it('非 AI 候選池 ≤3 時，同來源上限不生效（候選本就不足，不特別限制）', () => {
+    const candidates = [
+      makeCandidate({ originalUrl: 'https://ai0.com', domain: 'ai' }),
+      makeCandidate({ originalUrl: 'https://cf0.com', domain: 'devops', sourceId: 'cloudflare-blog', sources: ['cloudflare-blog'] }),
+      makeCandidate({ originalUrl: 'https://cf1.com', domain: 'devops', sourceId: 'cloudflare-blog', sources: ['cloudflare-blog'] }),
+      makeCandidate({ originalUrl: 'https://cf2.com', domain: 'devops', sourceId: 'cloudflare-blog', sources: ['cloudflare-blog'] }),
+    ];
+    // 非 AI 候選池 = 3（cf0/cf1/cf2）= MAX_NON_AI，未超過門檻 → 不觸發同來源上限
+    const picks: CurationLlmPick[] = [
+      { ref: 0, title: 'ai', content: 'c' },
+      { ref: 1, title: 'cf0', content: 'c' },
+      { ref: 2, title: 'cf1', content: 'c' },
+      { ref: 3, title: 'cf2', content: 'c' },
+    ];
+
+    const result = validateCuration(picks, candidates);
+
+    expect(result.map((it) => it.url)).toEqual(['https://ai0.com', 'https://cf0.com', 'https://cf1.com', 'https://cf2.com']);
+  });
+
   it('夾制後總數不足 10 時照實輸出較少則數，不從未改寫候選遞補（FR-010、SC-002/003）', () => {
     const candidates = [
       makeCandidate({ originalUrl: 'https://ai0.com', domain: 'ai' }),
-      makeCandidate({ originalUrl: 'https://devops0.com', domain: 'devops' }),
-      makeCandidate({ originalUrl: 'https://devops1.com', domain: 'devops' }),
-      makeCandidate({ originalUrl: 'https://devops2.com', domain: 'devops' }),
-      makeCandidate({ originalUrl: 'https://devops3.com', domain: 'devops' }),
-      makeCandidate({ originalUrl: 'https://devops4.com', domain: 'devops' }),
+      makeCandidate({ originalUrl: 'https://devops0.com', domain: 'devops', sourceId: 's-devops0', sources: ['s-devops0'] }),
+      makeCandidate({ originalUrl: 'https://devops1.com', domain: 'devops', sourceId: 's-devops1', sources: ['s-devops1'] }),
+      makeCandidate({ originalUrl: 'https://devops2.com', domain: 'devops', sourceId: 's-devops2', sources: ['s-devops2'] }),
+      makeCandidate({ originalUrl: 'https://devops3.com', domain: 'devops', sourceId: 's-devops3', sources: ['s-devops3'] }),
+      makeCandidate({ originalUrl: 'https://devops4.com', domain: 'devops', sourceId: 's-devops4', sources: ['s-devops4'] }),
     ];
     const picks: CurationLlmPick[] = candidates.map((_, i) => ({ ref: i, title: `t${i}`, content: `c${i}` }));
 

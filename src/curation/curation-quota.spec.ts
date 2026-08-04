@@ -1,12 +1,17 @@
 import { NewsDomain3 } from '../news/news.types';
-import { clampNonAi, isAi, MAX_ITEMS, MAX_NON_AI, MIN_AI } from './curation-quota';
+import { clampNonAi, clampSourceDiversity, isAi, MAX_ITEMS, MAX_NON_AI, MAX_PER_SOURCE_NON_AI, MIN_AI } from './curation-quota';
 
 interface Item {
   id: string;
   domain: NewsDomain3;
 }
 
+interface SourcedItem extends Item {
+  sources: string[];
+}
+
 const domainOf = (it: Item) => it.domain;
+const sourcesOf = (it: SourcedItem) => it.sources;
 
 describe('isAi', () => {
   it('ai → true；devops/frontend-backend → false（research D4）', () => {
@@ -75,5 +80,57 @@ describe('clampNonAi', () => {
     const out = clampNonAi(items, domainOf);
     // 非 AI 有 fe1/devops1/fe2/fe3 四則超過 3 → devops1 優先、frontend-backend 依序取 2 則(fe1/fe2)
     expect(out.map((it) => it.id)).toEqual(['fe1', 'ai1', 'devops1', 'fe2']);
+  });
+});
+
+describe('常數：MAX_PER_SOURCE_NON_AI', () => {
+  it('MAX_PER_SOURCE_NON_AI=2', () => {
+    expect(MAX_PER_SOURCE_NON_AI).toBe(2);
+  });
+});
+
+describe('clampSourceDiversity', () => {
+  it('非 AI 候選池 ≤MAX_NON_AI 時不生效，同來源再多也原樣返回（2026-08-04 決策：候選不足時不特別限制）', () => {
+    const items: SourcedItem[] = [
+      { id: 'cf1', domain: 'devops', sources: ['cloudflare-blog'] },
+      { id: 'cf2', domain: 'devops', sources: ['cloudflare-blog'] },
+      { id: 'cf3', domain: 'devops', sources: ['cloudflare-blog'] },
+    ];
+    // nonAiPoolSize=3 = MAX_NON_AI，未超過門檻
+    expect(clampSourceDiversity(items, domainOf, sourcesOf, 3)).toEqual(items);
+  });
+
+  it('非 AI 候選池 >MAX_NON_AI 時生效，同一來源累計達上限即剔除多餘者、不遞補', () => {
+    const items: SourcedItem[] = [
+      { id: 'cf1', domain: 'devops', sources: ['cloudflare-blog'] },
+      { id: 'cf2', domain: 'devops', sources: ['cloudflare-blog'] },
+      { id: 'cf3', domain: 'devops', sources: ['cloudflare-blog'] },
+    ];
+    // nonAiPoolSize=4 > MAX_NON_AI(3) → 生效，同來源上限 2
+    const out = clampSourceDiversity(items, domainOf, sourcesOf, 4);
+    expect(out.map((it) => it.id)).toEqual(['cf1', 'cf2']);
+  });
+
+  it('AI 項目不受影響、不計入來源計數', () => {
+    const items: SourcedItem[] = [
+      { id: 'ai1', domain: 'ai', sources: ['cloudflare-blog'] },
+      { id: 'cf1', domain: 'devops', sources: ['cloudflare-blog'] },
+      { id: 'cf2', domain: 'devops', sources: ['cloudflare-blog'] },
+      { id: 'cf3', domain: 'devops', sources: ['cloudflare-blog'] },
+    ];
+    const out = clampSourceDiversity(items, domainOf, sourcesOf, 4);
+    expect(out.map((it) => it.id)).toEqual(['ai1', 'cf1', 'cf2']);
+  });
+
+  it('不同來源各自計數、互不影響，保留原相對順序', () => {
+    const items: SourcedItem[] = [
+      { id: 'cf1', domain: 'devops', sources: ['cloudflare-blog'] },
+      { id: 'cncf1', domain: 'devops', sources: ['cncf-blog'] },
+      { id: 'cf2', domain: 'devops', sources: ['cloudflare-blog'] },
+      { id: 'cf3', domain: 'devops', sources: ['cloudflare-blog'] },
+      { id: 'cncf2', domain: 'devops', sources: ['cncf-blog'] },
+    ];
+    const out = clampSourceDiversity(items, domainOf, sourcesOf, 5);
+    expect(out.map((it) => it.id)).toEqual(['cf1', 'cncf1', 'cf2', 'cncf2']);
   });
 });
