@@ -12,10 +12,14 @@ import { validateNewsSources } from './news-source.schema';
  *
  * **新增大型 feed 前先確認量體**：漏斗對 Tier 2 不設分數門檻（`scoreThresholds[2] = null`），
  * 無分數者一律以 `nullScoreBaseline = 100` 入池、決勝鍵為 `normalizedUrl ↑`（2026-08-04 起不再
- * 以 `publishedAt` 決勝，見 funnel.ts `compareCandidates`）。無分數候選另有單一來源上限
- * `maxNullScorePerSource`（預設 3，見 `DEFAULT_FUNNEL_CONFIG`）防止量體大的來源吃光
- * `convergeMax = 35` 名額，但單日產出上百筆的來源（如 arXiv 分類 RSS）仍會把候選集塞滿低品質
- * 內容、擠壓其餘來源在 3 則上限內的曝光機會，故仍不收這類來源。
+ * 以 `publishedAt` 決勝，見 funnel.ts `compareCandidates`）。無分數候選之間改採**跨來源輪流分配**
+ * （`interleaveNullScoreBySource`，2026-08-04 新增）：每來源每輪最多 1 則、最多 `maxNullScorePerSource`
+ * 輪（預設 3），保證只要候選池（`convergeMax = 50`）扣掉有分數候選後的名額 ≥ 當日活躍來源數，
+ * 每個來源至少有 1 則進候選池，不會因 `normalizedUrl` 字母序偏後就整批出局。另有新鮮度視窗
+ * `freshnessWindowDays`（預設 30 天，`publishedAt` 為原文真實發表日、超出視窗即不入池，避免
+ * 封存舊文被討論區重新提及而混入候選集；HN 不受此視窗限制，見 `DEFAULT_FUNNEL_CONFIG`）。單日
+ * 產出上百筆的來源（如 arXiv 分類 RSS）仍會把候選集塞滿低品質內容、擠壓其餘來源在 3 輪上限內的
+ * 曝光機會，故仍不收這類來源。
  */
 const RAW_NEWS_SOURCES: NewsSource[] = [
   // ── Tier 1：常開高訊號（跨領域聚合） ──────────────────────────────────
@@ -54,12 +58,14 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   { id: 'web-dev', type: 'rss', url: 'https://web.dev/feed.xml', domain: 'frontend-backend', tier: 2, enabled: false },
   { id: 'cloudflare-blog', type: 'rss', url: 'https://blog.cloudflare.com/rss/', domain: 'devops', tier: 2 },
   { id: 'cncf-blog', type: 'rss', url: 'https://www.cncf.io/feed/', domain: 'devops', tier: 2 },
+  // GitHub 官方研究／實驗性功能部落格，屬第一方公告，與 openai-blog/deepmind-blog 同等級
+  // （2026-08-04 由 Tier 3 升級：先前沿用新增時的預設分類，未重新檢視其實為官方一手來源）。
+  { id: 'github-next', type: 'rss', url: 'https://githubnext.com/rss.xml', domain: 'ai', tier: 2 },
 
   // ── Tier 3：選配實驗（更高門檻、更低權重；可隨時砍不動 code） ────────────
   { id: 'gh-vue', type: 'github-releases', url: 'https://github.com/vuejs/core/releases.atom', domain: 'frontend-backend', tier: 3 },
   { id: 'gh-react', type: 'github-releases', url: 'https://github.com/facebook/react/releases.atom', domain: 'frontend-backend', tier: 3 },
   { id: 'thenewstack', type: 'rss', url: 'https://thenewstack.io/feed/', domain: 'devops', tier: 3 },
-  { id: 'github-next', type: 'rss', url: 'https://githubnext.com/rss.xml', domain: 'ai', tier: 3 },
   // 2026-07-19 實測：GitHub Actions runner IP 持續遭 Reddit 擋 403/429（重試 3 次仍失敗），
   // 非單次抖動。四者皆 Tier 3、社群訊號可由其他來源替代，先停用觀察，不刪除設定（§4.3）。
   // 2026-08-03：曾評估改走第三方 Reddit RSS 代理繞過，但候選節點 `pullfeed.co` 實測 DNS 不存在；

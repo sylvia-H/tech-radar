@@ -32,6 +32,18 @@ export class NewsCurationService {
       const raw = await this.llm.generate(buildCurationPrompt(views));
       const { picks } = parseCurationResponse(raw);
       const items = validateCuration(picks, candidates);
+      const domainDist = items.reduce(
+        (acc, it) => {
+          acc[it.domain] = (acc[it.domain] ?? 0) + 1;
+          return acc;
+        },
+        {} as Record<string, number>,
+      );
+      const domainStr = Object.entries(domainDist).map(([d, c]) => `${d}:${c}`).join(' / ');
+      this.logger.log(
+        `新聞策展完成：${candidates.length} 候選 → LLM 選 ${picks.length} 則 → ` +
+        `驗證後 ${items.length} 則（${domainStr}）`,
+      );
       return { items, degraded: false };
     } catch (err) {
       const reason = err instanceof Error ? err.message : String(err);
