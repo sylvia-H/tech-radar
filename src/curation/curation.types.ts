@@ -22,9 +22,18 @@ export interface CurationLlmPick {
   content: string;
 }
 
-/** LLM 回應解析容器（research D1）。 */
+/**
+ * LLM 回應解析容器（2026-08-04 由單一 `picks` 改為 `officialPicks`／`communityPicks` 兩陣列）。
+ * 分成兩陣列是為了把「官方發布優先於社群熱度」的收錄順序做成**結構性保證**，而非只靠 prompt
+ * 敘述指望 LLM 依序執行——單次生成整個回應的 LLM 無法真的「先窮盡評估完一組再看下一組」，純文字
+ * 指示只是軟約束（實測：候選池充足、總數遠低於上限時，LLM 仍會在官方候選還沒選完前納入社群熱度
+ * 候選）。改為兩陣列後，`curation-validate.ts` 在合併時固定以 `officialPicks` 全部排在
+ * `communityPicks` 之前，`slice(MAX_ITEMS)` 時社群熱度天然優先被截掉，優先順序不再依賴 LLM
+ * 是否確實「先做完再做下一步」。
+ */
 export interface CurationLlmResponse {
-  picks: CurationLlmPick[];
+  officialPicks: CurationLlmPick[];
+  communityPicks: CurationLlmPick[];
 }
 
 /**
