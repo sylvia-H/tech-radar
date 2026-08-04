@@ -21,17 +21,19 @@ function build(visibility: RepoVisibility, state: BoardState | (() => Promise<Bo
   const check = jest.fn().mockResolvedValue(visibility);
   const load =
     typeof state === 'function' ? jest.fn(state) : jest.fn().mockResolvedValue(state);
+  const save = jest.fn().mockResolvedValue(undefined);
   const postFailureAlert = jest.fn().mockResolvedValue(undefined);
+  const send = jest.fn().mockResolvedValue(undefined);
 
   const visibilityService = { check } as unknown as RepoVisibilityService;
-  const stateStore = { load } as unknown as StateStore;
-  const discord = { postFailureAlert } as unknown as DiscordWebhookService;
+  const stateStore = { load, save } as unknown as StateStore;
+  const discord = { postFailureAlert, send } as unknown as DiscordWebhookService;
   const config = {
     get: (k: string) => (k === 'GITHUB_REPOSITORY' ? 'owner/repo' : undefined),
   } as unknown as ConfigService;
 
   const service = new PublishService(visibilityService, stateStore, discord, config);
-  return { service, check, load, postFailureAlert };
+  return { service, check, load, save, postFailureAlert, send };
 }
 
 describe('PublishService.run（US1，contracts/publish-orchestration.md C2）', () => {
@@ -120,4 +122,23 @@ describe('PublishService.run（US1，contracts/publish-orchestration.md C2）', 
     expect(postFailureAlert).toHaveBeenCalledTimes(1);
     expect(postFailureAlert.mock.calls[0][0]).toContain('可見性查詢失敗');
   });
+});
+
+describe('PublishService.run — US3 隔離回歸測試（contracts/publish-orchestration.md C1「發佈段對 state 唯讀」）', () => {
+  beforeEach(() => {
+    mkdir.mockClear();
+    writeFile.mockClear();
+  });
+
+  it.each<RepoVisibility>(['private', 'unknown'])(
+    'visibility=%s → stateStore.save()／discord.send() 皆未被呼叫（US3 AS1/AS2）',
+    async (visibility) => {
+      const { service, save, send } = build(visibility, emptyBoardState());
+
+      await service.run();
+
+      expect(save).not.toHaveBeenCalled();
+      expect(send).not.toHaveBeenCalled();
+    },
+  );
 });

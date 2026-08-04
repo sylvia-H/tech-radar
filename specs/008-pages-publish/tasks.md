@@ -259,11 +259,11 @@ exit 0；查詢本身失敗時同樣不產生 `public/`、但收到一則紅色�
   步驟之後新增 `Alert on deploy failure` 步驟：`if: failure()`，`curl` 一則固定內容的紅色 embed
   至 `DISCORD_ALERT_WEBHOOK_URL`（不經過 `PublishService`，因為該 process 早已以 exit 0 結束，
   contracts/publish-orchestration.md C5、research D10a；補齊 CHK009/CHK022 缺口）
-- [ ] T035 [P] [US3] 在 `src/publish/publish.service.spec.ts`（延伸 T019）新增隔離回歸測試：
+- [X] T035 [P] [US3] 在 `src/publish/publish.service.spec.ts`（延伸 T019）新增隔離回歸測試：
   給定 `visibility` 為 `'private'` 或 `'unknown'`，斷言 `stateStore.save()`／
   `discord.send()`（`'news'`/`'board'` channel）**皆未被呼叫**（US3 AS1/AS2、
   contracts/publish-orchestration.md C1「發佈段對 state 唯讀」），依賴 T018
-- [ ] T036 [US3] 依 quickstart.md 情境 3 步驟（3a/3b）手動驗證：private 靜默跳過（無告警）、
+- [X] T036 [US3] 依 quickstart.md 情境 3 步驟（3a/3b）手動驗證：private 靜默跳過（無告警）、
   可見性查詢失敗告警（收到紅色 embed）、且同期間 `state/board.json` 與 Discord
   新聞／榜單頻道完全無動作，依賴 T023/T034/T035
 
