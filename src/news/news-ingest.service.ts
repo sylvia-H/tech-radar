@@ -67,7 +67,7 @@ export class NewsIngestService {
     const pruned = pruneSeenNews(seen, now);
     cands = excludeSeen(cands, pruned);
 
-    cands = runFunnel(cands, board, DEFAULT_FUNNEL_CONFIG);
+    cands = runFunnel(cands, board, DEFAULT_FUNNEL_CONFIG, now);
 
     this.logger.log('\n' + formatCandidateSet(cands));
     return cands;

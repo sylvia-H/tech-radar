@@ -1,5 +1,7 @@
 import { NewsCandidate, NewsTier } from './news.types';
 
+const DAY_MS = 86_400_000;
+
 /**
  * 階段 A 漏斗設定（可調常數表，spec Assumptions「起始值、實測再校」）。門檻與權重集中於此。
  */
@@ -25,6 +27,15 @@ export interface FunnelConfig {
    * 完全消失於候選集）。
    */
   maxNullScorePerSource: number;
+  /**
+   * 無社群分數候選（`score === null`）的新鮮度視窗（天數，2026-08-04 新增）。`publishedAt`
+   * 缺失或早於 `now - 此值` 即不入池。有真實分數者（目前僅 HN）不受限——HN 的 `publishedAt`
+   * 是「提交到 HN 的時間」而非原文發表時間，且 fetcher 本身已有近 7 天口徑，不需要再套一層；
+   * RSS／github-releases 類來源的 `publishedAt` 才是原文真實發表日期，舊文（如封存文章被
+   * 討論區重新提及）可能藉此混入候選池，須另行把關。30 天對照現有來源常態發文節奏（如
+   * CPython alpha 版約 4~6 週一次）留有餘裕，避免誤傷發文較不頻繁的一手來源。
+   */
+  freshnessWindowDays: number;
 }
 
 /** 起始設定（dev-guide §4.4：HN points>100、Lobste.rs>20；Tier 3 更高門檻更低權重）。 */
@@ -36,13 +47,16 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
   nullScoreBaseline: 100,
   convergeMax: 35,
   maxNullScorePerSource: 3,
+  freshnessWindowDays: 30,
 };
 
 /**
  * 階段 A 過濾＋加權＋全序決勝排序＋同來源上限＋收斂（FR-016~021）。純函式。
  *
- * 過濾：`score` 存在且低於該 tier 門檻 → 丟；門檻為 `null`（Tier 2）或 `score === null`
- * （無社群分數）→ **不因門檻丟**（SC-005）。
+ * 過濾：(1) `score` 存在且低於該 tier 門檻 → 丟；門檻為 `null`（Tier 2）或 `score === null`
+ * （無社群分數）→ **不因門檻丟**（SC-005）。(2) `score === null` 者另須通過新鮮度視窗
+ * （`freshnessWindowDays`，2026-08-04 新增）：`publishedAt` 缺失或超出視窗 → 丟；有真實分數者
+ * （HN）不受此步限制。
  * 加權：base（分數或無分數基準）× tierWeight ＋ 交叉驗證 ＋ 榜單相關（`boardRepoNames` 空集合
  * 時整段略過，FR-018 Edge）。
  * 排序（全序，SC-011）：`weightedScore ↓ → normalizedUrl ↑`（末鍵在去重後唯一）。**不再以
@@ -57,13 +71,27 @@ export function runFunnel(
   cands: readonly NewsCandidate[],
   boardRepoNames: ReadonlySet<string>,
   cfg: FunnelConfig,
+  now: Date,
 ): NewsCandidate[] {
   const weighted = cands
     .filter((c) => !belowThreshold(c, cfg))
+    .filter((c) => c.score !== null || isFreshEnough(c, now, cfg.freshnessWindowDays))
     .map((c) => ({ ...c, weightedScore: weightOf(c, boardRepoNames, cfg) }));
   weighted.sort(compareCandidates);
   const capped = capNullScorePerSource(weighted, cfg.maxNullScorePerSource);
   return capped.slice(0, cfg.convergeMax);
+}
+
+/** 新鮮度判定：`publishedAt` 缺失／無法解析，或早於 `now − windowDays` → 不新鮮。 */
+function isFreshEnough(c: NewsCandidate, now: Date, windowDays: number): boolean {
+  if (c.publishedAt === null) {
+    return false;
+  }
+  const published = Date.parse(c.publishedAt);
+  if (Number.isNaN(published)) {
+    return false;
+  }
+  return now.getTime() - published <= windowDays * DAY_MS;
 }
 
 /**

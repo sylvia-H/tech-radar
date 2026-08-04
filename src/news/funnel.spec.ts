@@ -1,6 +1,9 @@
 import { NewsCandidate } from './news.types';
 import { DEFAULT_FUNNEL_CONFIG, runFunnel } from './funnel';
 
+const NOW = new Date('2026-08-04T00:00:00Z');
+const DAY_MS = 86_400_000;
+
 function cand(over: Partial<NewsCandidate>): NewsCandidate {
   return {
     title: 't',
@@ -12,7 +15,7 @@ function cand(over: Partial<NewsCandidate>): NewsCandidate {
     domain: 'ai',
     tier: 1,
     sources: ['s1'],
-    publishedAt: null,
+    publishedAt: new Date(NOW.getTime() - DAY_MS).toISOString(), // 預設 1 天前，落在新鮮度視窗內
     weightedScore: 0,
     ...over,
   };
@@ -31,6 +34,7 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
       ],
       EMPTY,
       DEFAULT_FUNNEL_CONFIG,
+      NOW,
     );
     expect(out.map((o) => o.normalizedUrl).sort()).toEqual(['b', 'c', 'd']);
   });
@@ -43,6 +47,7 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
       ],
       EMPTY,
       DEFAULT_FUNNEL_CONFIG,
+      NOW,
     );
     expect(out[0].normalizedUrl).toBe('multi');
   });
@@ -52,10 +57,10 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
       cand({ normalizedUrl: 'plain', tier: 1, score: 100, title: 'Some tool released' }),
       cand({ normalizedUrl: 'rel', tier: 1, score: 100, title: 'LangChain adds feature' }),
     ];
-    const withBoard = runFunnel(cands, new Set(['langchain']), DEFAULT_FUNNEL_CONFIG);
+    const withBoard = runFunnel(cands, new Set(['langchain']), DEFAULT_FUNNEL_CONFIG, NOW);
     expect(withBoard[0].normalizedUrl).toBe('rel');
 
-    const noBoard = runFunnel(cands, new Set(), DEFAULT_FUNNEL_CONFIG);
+    const noBoard = runFunnel(cands, new Set(), DEFAULT_FUNNEL_CONFIG, NOW);
     expect(noBoard.map((o) => o.normalizedUrl)).toEqual(['plain', 'rel']);
   });
 
@@ -67,30 +72,32 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
       ],
       EMPTY,
       DEFAULT_FUNNEL_CONFIG,
+      NOW,
     );
     expect(out[0].normalizedUrl).toBe('t1');
   });
 
   it('加權同分時不再以 publishedAt 決勝，改依 normalizedUrl 字母序（2026-08-04 變更，原 FR-020）', () => {
     // 'a' 較舊、'z' 較新：若仍依 publishedAt 決勝會是 z 在前；改用 normalizedUrl 後 a 在前，
-    // 證明發文頻率高的來源不會單靠「比較新」贏得同分候選的排序位置。
+    // 證明發文頻率高的來源不會單靠「比較新」贏得同分候選的排序位置。兩則日期皆在新鮮度視窗內。
     const out = runFunnel(
       [
-        cand({ normalizedUrl: 'z', tier: 2, score: null, publishedAt: '2026-07-17T00:00:00Z' }),
-        cand({ normalizedUrl: 'a', tier: 2, score: null, publishedAt: '2026-07-01T00:00:00Z' }),
+        cand({ normalizedUrl: 'z', tier: 2, score: null, publishedAt: new Date(NOW.getTime() - 1 * DAY_MS).toISOString() }),
+        cand({ normalizedUrl: 'a', tier: 2, score: null, publishedAt: new Date(NOW.getTime() - 2 * DAY_MS).toISOString() }),
       ],
       EMPTY,
       DEFAULT_FUNNEL_CONFIG,
+      NOW,
     );
     expect(out.map((o) => o.normalizedUrl)).toEqual(['a', 'z']);
   });
 
   it('相同輸入多次執行成員與排序 100% 一致 ＋ 收斂取前 N（SC-006/011，各來源不同、不觸發同來源上限）', () => {
     const many = Array.from({ length: 40 }, (_, i) =>
-      cand({ normalizedUrl: `u${i}`, sourceId: `s${i}`, sources: [`s${i}`], tier: 2, score: null, publishedAt: null }),
+      cand({ normalizedUrl: `u${i}`, sourceId: `s${i}`, sources: [`s${i}`], tier: 2, score: null }),
     );
-    const r1 = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG);
-    const r2 = runFunnel([...many].reverse(), EMPTY, DEFAULT_FUNNEL_CONFIG);
+    const r1 = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
+    const r2 = runFunnel([...many].reverse(), EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
     expect(r1).toHaveLength(35); // convergeMax=35
     expect(r1.map((o) => o.normalizedUrl)).toEqual(r2.map((o) => o.normalizedUrl));
   });
@@ -100,7 +107,7 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
       cand({ normalizedUrl: `flood-${i}`, sourceId: 'flood', sources: ['flood'], tier: 2, score: null }),
     );
     const other = cand({ normalizedUrl: 'other', sourceId: 'other-src', sources: ['other-src'], tier: 2, score: null });
-    const out = runFunnel([...many, other], EMPTY, DEFAULT_FUNNEL_CONFIG);
+    const out = runFunnel([...many, other], EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
 
     const floodKept = out.filter((o) => o.sourceId === 'flood');
     expect(floodKept).toHaveLength(3); // maxNullScorePerSource=3，其餘 2 則被剔除
@@ -112,7 +119,46 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
     const many = Array.from({ length: 5 }, (_, i) =>
       cand({ normalizedUrl: `hn-${i}`, sourceId: 'hn', sources: ['hn'], tier: 1, score: 200 - i }),
     );
-    const out = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG);
+    const out = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
     expect(out).toHaveLength(5); // 全數保留，不受 maxNullScorePerSource 影響
+  });
+});
+
+describe('runFunnel — 無分數候選新鮮度視窗（2026-08-04 新增，freshnessWindowDays=30）', () => {
+  it('publishedAt 缺失（null）→ 不入池', () => {
+    const out = runFunnel([cand({ normalizedUrl: 'no-date', score: null, publishedAt: null })], EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
+    expect(out).toHaveLength(0);
+  });
+
+  it('publishedAt 超出 30 天視窗（如封存舊文被重新提及）→ 不入池', () => {
+    const stale = new Date(NOW.getTime() - 400 * DAY_MS).toISOString(); // 逾一年
+    const out = runFunnel([cand({ normalizedUrl: 'stale', score: null, publishedAt: stale })], EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
+    expect(out).toHaveLength(0);
+  });
+
+  it('剛好 30 天前 → 仍入池（邊界含）；31 天前 → 不入池', () => {
+    const exactly30 = new Date(NOW.getTime() - 30 * DAY_MS).toISOString();
+    const over31 = new Date(NOW.getTime() - 31 * DAY_MS).toISOString();
+    const out = runFunnel(
+      [
+        cand({ normalizedUrl: 'edge30', score: null, publishedAt: exactly30 }),
+        cand({ normalizedUrl: 'edge31', score: null, publishedAt: over31 }),
+      ],
+      EMPTY,
+      DEFAULT_FUNNEL_CONFIG,
+      NOW,
+    );
+    expect(out.map((o) => o.normalizedUrl)).toEqual(['edge30']);
+  });
+
+  it('有真實分數者（如 HN）不受新鮮度視窗限制，發表已久也保留', () => {
+    const veryOld = '2023-01-01T00:00:00Z'; // HN 的 publishedAt 是提交時間、非原文發表日，此處僅測試「即使很舊也不濾」
+    const out = runFunnel(
+      [cand({ normalizedUrl: 'hn-old', sourceId: 'hn', sources: ['hn'], tier: 1, score: 200, publishedAt: veryOld })],
+      EMPTY,
+      DEFAULT_FUNNEL_CONFIG,
+      NOW,
+    );
+    expect(out.map((o) => o.normalizedUrl)).toEqual(['hn-old']);
   });
 });
