@@ -40,11 +40,20 @@
     - `type === 'board-climbed'`：`「{fullName} 竄升」` 樣式。
   - `link`：`FeedEntry.url`。
   - `date`：`FeedEntry.publishedAt`（`Date` 物件，`feed` 套件要求）。
+  - `description` → `atom:summary`：`FeedEntry.content`（2026-08-04 新增）。`null`（策展降級）
+    或欄位缺席（榜單事件、F8 早期舊 state）時傳 `undefined`，`feed` 套件的 `if (item.description)`
+    即整個略過 `summary` 元素——**MUST NOT** 印出字面 `null` 或「本則未經精煉」之類提示，與 C1 的
+    降級處理精神一致。
 - **MUST NOT** 帶任何星數／週增星等數值欄位（FR-016）——`FeedEntry` schema 本身就沒有這些欄位，
   此規則在型別層面已經是不可能違反，此處僅重申契約意圖。
 - Feed 層級中繼資料：`title`＝「Tech Radar」、`id`/`link`＝
   `https://{owner}.github.io/{repo}/`（由 `GITHUB_REPOSITORY` 推導）、`updated`＝
   `state.publish?.feed` 最新一筆的 `publishedAt`（陣列為空時用 `now`）。
+- **Atom 規格必要元素（2026-08-04 補訂，RFC 4287）**：
+  - `author`＝`{ name: 'Tech Radar' }`。§4.1.2 規定每則 entry **MUST** 有 `atom:author`，但
+    feed 層備有 author 時 entry 可省略——故填一個固定值即滿足全篇。這是「本 feed 的發行者」，
+    與第三方文章的原作者無關（我們沒有那項資料），因此**永遠不會缺值、不會因來源無署名而失敗**。
+  - `feedLinks.atom`＝`{pagesUrl}feed.xml`，使輸出含 §4.1.1 SHOULD 的 `rel="self"` link。
 - `state.publish?.feed` 為 `undefined`／空陣列時，輸出一份 0 entries 的合法 feed（不擲錯，
   對應 US1 Acceptance Scenario 2 的「空狀態不得使發佈流程失敗」延伸到 feed 產物）。
 

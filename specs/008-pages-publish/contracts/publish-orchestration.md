@@ -58,6 +58,12 @@
 `fs.writeFile`。理由：workflow 用 `hashFiles('public/index.html')` 判斷「有沒有東西可以部署」
 （見 C4），若 `feed.xml` 缺席但 `index.html` 存在，會部署出一個訪客點 feed 連結會 404 的網站。
 
+**`index.html` MUST 最後寫（2026-08-04 補訂）**：兩次 `fs.writeFile` 本質上不是原子操作，光是
+「兩份字串都已產出」不足以保證兩個檔案都落地——第二次寫入仍可能失敗。真正的保證來自**順序**：
+把 workflow 的 gate 檔（`index.html`）留到最後寫，等於讓它兼任提交點，任一次寫入失敗都不可能留下
+「有 `index.html` 卻缺 `feed.xml`」的組合，因此不可能部署出既有訂閱者全部 404 的站。順序即保證，
+不需要 tmp+rename。**MUST NOT** 把 `index.html` 移回第一個寫。
+
 ## C4. Workflow 層的部署觸發條件
 
 ```yaml

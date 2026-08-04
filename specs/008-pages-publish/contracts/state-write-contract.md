@@ -21,8 +21,9 @@ Object.assign(state, next);
 next.publish = {
   ...state.publish,
   boardSummary: { summary: summary.summary, generatedAt: pushedAtIso },
-  feed: trimFeed(
-    [...(state.publish?.feed ?? []), ...makeBoardFeedEntries(diff, dateLabel, pushedAt)],
+  feed: appendFeedEntries(
+    state.publish?.feed ?? [],
+    makeBoardFeedEntries(diff, dateLabel, pushedAt),
     50,
   ),
 };
@@ -51,8 +52,9 @@ state.lastNewsPushAt = seenAt;
 state.publish = {
   ...state.publish,
   news: { items: digest.items, generatedAt: seenAt },
-  feed: trimFeed(
-    [...(state.publish?.feed ?? []), ...makeNewsFeedEntries(digest.items, now)],
+  feed: appendFeedEntries(
+    state.publish?.feed ?? [],
+    makeNewsFeedEntries(digest.items, now),
     50,
   ),
 };
@@ -71,6 +73,21 @@ await this.stateStore.save(state);
 1. 榜單段 `commitBoardPush` 回傳的 `next.publish.feed` 已包含（舊 `state.publish.feed` ∪ 本次榜單
    事件），修剪至 50，並透過 `Object.assign(state, next)` 寫回共享 `state`。
 2. 晨報段讀到的 `state.publish?.feed` 已是步驟 1 之後的版本，疊加本次新聞事件，再修剪至 50。
+
+## C5. 併入必須依 `id` 去重（2026-08-04 補訂）
+
+兩段的併入 MUST 走 `appendFeedEntries`（`src/publish/feed-entry.ts`），語意為「同 `id` 者以新的取代
+（移除既有同 id 再 append），最後套 `trimFeed`」，**MUST NOT** 直接用 `[...existing, ...incoming]`
+展開後 `trimFeed`。
+
+**理由（非防呆，是實際可達的狀態）**：`seenNews` 只保留 7 天，而 `feed` 保留 50 筆——低量日（憲章 III
+明確允許每日不足 10 則）50 筆的時間跨度會超過 7 天保留期，同一則新聞得以再次通過 `excludeSeen` 並
+再次入選，若不去重就會在 feed 中產生**重複的 `atom:id`**，訂閱端行為未定義。取新棄舊使重新出現的
+項目帶最新 `publishedAt` 冒到 feed 頂端。`incoming` 內部自帶的重複 id（等價 URL 正規化後同鍵）同樣
+只留最後一筆。
+
+榜單事件的 `id` 含 `dateLabel`，跨天重複本就是**合法的新 id**（data-model.md §2.2 不變式），此規則
+對榜單段而言等同無作用，但為兩段共用同一函式、避免日後改動時只有一段有保護。
 
 **不變式**：無論哪一段獨自成功、跳過、或失敗，另一段永遠讀到「當下共享 `state` 物件的最新值」——
 與既有 `state.board`／`state.intros` 的共用模式完全一致，不需要新的鎖或同步機制（單一 process、

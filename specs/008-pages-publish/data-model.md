@@ -14,7 +14,8 @@ export const feedEntrySchema = z.object({
   id: z.string(),                       // 見 §2.2 GUID 規則（research D9）
   type: z.enum(['news', 'board-new', 'board-climbed']),
   title: z.string(),
-  url: z.string().url(),
+  url: z.string(),                      // 刻意不加 .url()，理由見下方「驗證規則」（2026-08-04 修正）
+  content: z.string().nullable().optional(), // 新聞內文 → atom:summary；榜單事件缺席
   publishedAt: isoDatetime,
 });
 
@@ -66,6 +67,18 @@ Scenario 2「尚無資料」空狀態——渲染層需自行處理 `state.publi
   ——結果是一個純發佈用的選用欄位把整條 pipeline（含 Discord 推播）打掛，正好違反 FR-014
   「MUST NOT 因這些欄位而使核心推播段失敗」。上限的正確守護位置是寫入端：`trimFeed` 加上
   T025／T027／T030 三組測試已覆蓋。
+- `FeedEntry.url` **刻意只用 `z.string()`、不加 `.url()`**（2026-08-04 修正）——與上一條同一類的
+  失敗模式。此值直接來自第三方 RSS 的 `<link>`：`rss.fetcher.ts` 只檢查非空，經 `targetUrl` →
+  `NewsCandidate.originalUrl` → `CuratedNewsItem.url` → `FeedEntry.url` **全鏈無任何格式驗證**，
+  網址也不進 Gemini prompt，因此來源產生器出錯給出的相對路徑／漏 scheme 網址可一路存活。zod
+  `.url()` 的判定就是 `new URL()` 成不成功，與 `normalizeTargetUrl` 同一把尺，而 `seenNews` 對
+  同一份資料只用 `z.string()`——嚴格驗證會讓同一次 `save()` 內兩個欄位標準打架。更關鍵的是
+  `save()` 執行於**推播成功之後**：驗證擲錯 → `lastNewsPushAt` 不落檔 → 補跑 cron 重推同一份晨報，
+  同 run 榜單狀態一併遺失。壞連結的代價（一則新聞的連結點不開，且 Discord 晨報本來就已是同一個
+  壞連結）遠低於重推與狀態遺失。
+- `FeedEntry.content` 為新增的選用欄位（2026-08-04）：新聞類 entry 存 `CuratedNewsItem.content`
+  （可為 `null`＝策展降級），供 `renderFeed` 輸出 `atom:summary`；榜單事件無內文故欄位缺席。
+  `.optional()` 同時保證 F8 早期已寫入、不含 `content` 的 state 仍可載入。
 - 所有新欄位對舊資料 100% 向後相容：`publishStateSchema.optional()` 全鏈可選，任何一層缺席都不
   影響其餘欄位或既有五個根欄位的驗證。
 
@@ -123,8 +136,18 @@ entry 重新出現一次，故以 `feed-entry.spec.ts` 的字面斷言鎖住。
 /** BoardDiff → 榜單類 feed entries（僅 newcomer/climbed，declined 不產生，FR-003）。 */
 export function makeBoardFeedEntries(diff: BoardDiff, dateLabel: string, now: Date): FeedEntry[]
 
-/** CuratedNewsItem[] → 新聞類 feed entries（一則新聞一筆）。 */
+/** CuratedNewsItem[] → 新聞類 feed entries（一則新聞一筆，含 content）。 */
 export function makeNewsFeedEntries(items: CuratedNewsItem[], now: Date): FeedEntry[]
+
+/**
+ * 併入新 entries：同 id 取新棄舊後再 trimFeed。兩個寫入端 MUST 用此函式，
+ * 理由見 contracts/state-write-contract.md C5（2026-08-04 新增）。
+ */
+export function appendFeedEntries(
+  existing: readonly FeedEntry[],
+  incoming: readonly FeedEntry[],
+  limit = 50,
+): FeedEntry[]
 
 /** 上限 50、超出移除最舊（陣列前端），純函式（research D8）。 */
 export function trimFeed(entries: readonly FeedEntry[], limit = 50): FeedEntry[]
