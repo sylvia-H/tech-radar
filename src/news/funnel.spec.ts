@@ -85,13 +85,34 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
     expect(out.map((o) => o.normalizedUrl)).toEqual(['a', 'z']);
   });
 
-  it('相同輸入多次執行成員與排序 100% 一致 ＋ 收斂取前 N（SC-006/011）', () => {
-    const many = Array.from({ length: 30 }, (_, i) =>
-      cand({ normalizedUrl: `u${i}`, tier: 2, score: null, publishedAt: null }),
+  it('相同輸入多次執行成員與排序 100% 一致 ＋ 收斂取前 N（SC-006/011，各來源不同、不觸發同來源上限）', () => {
+    const many = Array.from({ length: 35 }, (_, i) =>
+      cand({ normalizedUrl: `u${i}`, sourceId: `s${i}`, sources: [`s${i}`], tier: 2, score: null, publishedAt: null }),
     );
     const r1 = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG);
     const r2 = runFunnel([...many].reverse(), EMPTY, DEFAULT_FUNNEL_CONFIG);
-    expect(r1).toHaveLength(25);
+    expect(r1).toHaveLength(30); // convergeMax=30
     expect(r1.map((o) => o.normalizedUrl)).toEqual(r2.map((o) => o.normalizedUrl));
+  });
+
+  it('無分數候選同一來源達 maxNullScorePerSource 上限即剔除多餘者、不遞補其他候選', () => {
+    const many = Array.from({ length: 5 }, (_, i) =>
+      cand({ normalizedUrl: `flood-${i}`, sourceId: 'flood', sources: ['flood'], tier: 2, score: null }),
+    );
+    const other = cand({ normalizedUrl: 'other', sourceId: 'other-src', sources: ['other-src'], tier: 2, score: null });
+    const out = runFunnel([...many, other], EMPTY, DEFAULT_FUNNEL_CONFIG);
+
+    const floodKept = out.filter((o) => o.sourceId === 'flood');
+    expect(floodKept).toHaveLength(3); // maxNullScorePerSource=3，其餘 2 則被剔除
+    expect(floodKept.map((o) => o.normalizedUrl)).toEqual(['flood-0', 'flood-1', 'flood-2']); // 依排序後順序保留前段
+    expect(out.map((o) => o.normalizedUrl)).toContain('other'); // 其他來源不受排擠
+  });
+
+  it('有真實分數者（如 HN）不受同來源上限限制', () => {
+    const many = Array.from({ length: 5 }, (_, i) =>
+      cand({ normalizedUrl: `hn-${i}`, sourceId: 'hn', sources: ['hn'], tier: 1, score: 200 - i }),
+    );
+    const out = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG);
+    expect(out).toHaveLength(5); // 全數保留，不受 maxNullScorePerSource 影響
   });
 });
