@@ -93,12 +93,12 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
   });
 
   it('相同輸入多次執行成員與排序 100% 一致 ＋ 收斂取前 N（SC-006/011，各來源不同、不觸發同來源上限）', () => {
-    const many = Array.from({ length: 40 }, (_, i) =>
+    const many = Array.from({ length: 55 }, (_, i) =>
       cand({ normalizedUrl: `u${i}`, sourceId: `s${i}`, sources: [`s${i}`], tier: 2, score: null }),
     );
     const r1 = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
     const r2 = runFunnel([...many].reverse(), EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
-    expect(r1).toHaveLength(35); // convergeMax=35
+    expect(r1).toHaveLength(50); // convergeMax=50
     expect(r1.map((o) => o.normalizedUrl)).toEqual(r2.map((o) => o.normalizedUrl));
   });
 
@@ -121,6 +121,22 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
     );
     const out = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
     expect(out).toHaveLength(5); // 全數保留，不受 maxNullScorePerSource 影響
+  });
+
+  it('跨來源輪流分配：候選池吃緊時，字母序偏後的來源仍至少保有 1 則（2026-08-04 新增，取代舊版全域截斷的字母序偏誤）', () => {
+    // 10 個來源、每源 3 則（共 30 則），convergeMax 刻意調低至 15 製造名額吃緊；若仍是舊版
+    // 「全域排序後截斷」，字母序最後面的來源會被完全擠出候選池。
+    const sourceIds = ['a-src', 'b-src', 'c-src', 'd-src', 'e-src', 'f-src', 'g-src', 'h-src', 'i-src', 'z-src'];
+    const many = sourceIds.flatMap((sourceId) =>
+      Array.from({ length: 3 }, (_, i) => cand({ normalizedUrl: `${sourceId}-${i}`, sourceId, sources: [sourceId], tier: 2, score: null })),
+    );
+    const cfg = { ...DEFAULT_FUNNEL_CONFIG, convergeMax: 15 };
+    const out = runFunnel(many, EMPTY, cfg, NOW);
+
+    expect(out).toHaveLength(15); // 10 來源 × 第 1 輪保底 = 10，剩 5 名額給第 2 輪
+    for (const sourceId of sourceIds) {
+      expect(out.some((o) => o.sourceId === sourceId)).toBe(true); // 每個來源都至少 1 則，含字母序最後的 z-src
+    }
   });
 });
 

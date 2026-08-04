@@ -194,8 +194,8 @@ describe('NewsIngestService.ingest — 過濾後 0 筆不誤告警（Fix 2）', 
 });
 
 describe('NewsIngestService.ingest — 排除已見於收斂之前（Fix 1）', () => {
-  // 分散在 12 個來源（每源 3 篇），避免觸發同來源上限 maxNullScorePerSource=3（2026-08-04 新增）。
-  const sources: NewsSource[] = Array.from({ length: 12 }, (_, i) => ({
+  // 分散在 17 個來源（每源 3 篇），避免觸發同來源上限 maxNullScorePerSource=3（2026-08-04 新增）。
+  const sources: NewsSource[] = Array.from({ length: 17 }, (_, i) => ({
     id: `good-rss-${i}`,
     type: 'rss' as const,
     url: `https://good.example/multi-${i}`,
@@ -203,9 +203,9 @@ describe('NewsIngestService.ingest — 排除已見於收斂之前（Fix 1）', 
     tier: 1 as const,
   }));
 
-  // 36 筆（> convergeMax 35），依 normalizedUrl 遞增天然排序；i=0 最新、i=35 最舊（發文時間本身
+  // 51 筆（> convergeMax 50），依 normalizedUrl 遞增天然排序；i=0 最新、i=50 最舊（發文時間本身
   // 不影響排序，僅供標題/連結區隔）。
-  const thirtySix = Array.from({ length: 36 }, (_, i) => ({
+  const fiftyOne = Array.from({ length: 51 }, (_, i) => ({
     title: `Post number ${i}`,
     link: `https://good.example/p${String(i).padStart(2, '0')}`,
     isoDate: new Date(NOW.getTime() - i * 3_600_000).toISOString(),
@@ -216,10 +216,10 @@ describe('NewsIngestService.ingest — 排除已見於收斂之前（Fix 1）', 
       return { items: [] };
     }
     const idx = Number(match[1]);
-    return { items: thirtySix.slice(idx * 3, idx * 3 + 3) };
+    return { items: fiftyOne.slice(idx * 3, idx * 3 + 3) };
   };
 
-  it('最新一筆已見時：先排除再收斂 → 仍輸出 35 筆，且排名其後的新鮮候選不被排擠', async () => {
+  it('最新一筆已見時：先排除再收斂 → 仍輸出 50 筆，且排名其後的新鮮候選不被排擠', async () => {
     const state: BoardState = {
       ...emptyBoardState(),
       seenNews: [{ url: 'https://good.example/p00', seenAt: '2026-07-17T12:00:00Z' }], // 最新一筆已見
@@ -227,10 +227,10 @@ describe('NewsIngestService.ingest — 排除已見於收斂之前（Fix 1）', 
     const { svc } = makeService({ parse, state });
     const out = await svc.ingest(NOW, new Set(), sources);
 
-    // 先排除已見 p00（剩 35）→ 收斂上限 35 → 全數保留；最舊的 p35 不因先收斂而被排擠掉。
-    expect(out).toHaveLength(35);
+    // 先排除已見 p00（剩 50）→ 收斂上限 50 → 全數保留；最舊的 p50 不因先收斂而被排擠掉。
+    expect(out).toHaveLength(50);
     const urls = out.map((c) => c.normalizedUrl);
     expect(urls).not.toContain(normalizeTargetUrl('https://good.example/p00'));
-    expect(urls).toContain(normalizeTargetUrl('https://good.example/p35'));
+    expect(urls).toContain(normalizeTargetUrl('https://good.example/p50'));
   });
 });

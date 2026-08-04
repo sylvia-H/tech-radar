@@ -21,10 +21,11 @@ export interface FunnelConfig {
   /**
    * 無社群分數候選（`score === null`）單一來源最多可貢獻的候選則數（2026-08-04 新增）。
    * 有真實分數者（目前僅 HN）不受限——它們是靠社群投票個別分出高下，非同分綁在一起，本就該
-   * 憑分數多寡自然決定則數。無分數者全綁在 `nullScoreBaseline` 同分，若不設此上限，量體大或
-   * `normalizedUrl` 字母序占優的單一來源會在 `convergeMax` 截斷前吃光候選池、擠掉其他一手來源
-   * （實測 `blog.cloudflare.com` 字母序偏前，曾單一來源佔候選集 9/25 則，其餘多個一手來源
-   * 完全消失於候選集）。
+   * 憑分數多寡自然決定則數。無分數者全綁在 `nullScoreBaseline` 同分，靠跨來源輪流分配
+   * （`computeInterleaveRanks`，2026-08-04 新增）逐輪各發 1 則來實現，取代原本「全域排序
+   * 後從頭截斷」的做法——後者即使設了此上限，仍可能讓 `normalizedUrl` 字母序偏後的來源在
+   * `convergeMax` 截斷時整批出局、連 1 則都拿不到（實測 `blog.cloudflare.com` 字母序偏前，
+   * 曾單一來源佔候選集 9/25 則，其餘多個一手來源完全消失於候選集）。
    */
   maxNullScorePerSource: number;
   /**
@@ -45,7 +46,7 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
   boardRelevanceBoost: 50,
   tierWeight: { 1: 1, 2: 1, 3: 0.5 },
   nullScoreBaseline: 100,
-  convergeMax: 35,
+  convergeMax: 50,
   maxNullScorePerSource: 3,
   freshnessWindowDays: 30,
 };
@@ -59,12 +60,17 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
  * （HN）不受此步限制。
  * 加權：base（分數或無分數基準）× tierWeight ＋ 交叉驗證 ＋ 榜單相關（`boardRepoNames` 空集合
  * 時整段略過，FR-018 Edge）。
- * 排序（全序，SC-011）：`weightedScore ↓ → normalizedUrl ↑`（末鍵在去重後唯一）。**不再以
- * `publishedAt` 決勝**（2026-08-04 變更，原 FR-020）：改以與來源身份無關的 `normalizedUrl`
- * 決勝，避免「誰發得比較新」系統性決定候選去留。
- * 同來源上限（2026-08-04 新增）：在依序排序後的名單上，`score === null` 的候選逐一計數，
- * 同一來源（`sources[]` 任一命中）累計達 `maxNullScorePerSource` 即剔除，不遞補其他候選——
- * 防止單一來源單靠量體或 `normalizedUrl` 字母序天生占優、擠滿候選池；有真實分數者不受限。
+ * 排序（全序，SC-011）：`weightedScore ↓ → 跨來源輪流分配序 ↓ → normalizedUrl ↑`。**不再單純以
+ * `publishedAt` 或 `normalizedUrl` 決勝**（2026-08-04 兩度變更，原 FR-020）：
+ * (a) 移除 `publishedAt` 決勝，避免「誰發得比較新」系統性決定候選去留；
+ * (b) 同分候選（`score === null`，全綁在 `nullScoreBaseline`）之間，改插入**跨來源輪流分配序**
+ *     作為次要決勝鍵（見 `computeInterleaveRanks`）：依來源分組、逐輪各來源依序各發 1 則、最多
+ *     `maxNullScorePerSource` 輪，輪數即優先序（第 1 輪 < 第 2 輪 < …）。這保證只要
+ *     「`convergeMax` − 有分數候選數」≥ 當日活躍無分數來源數，每個來源至少有 1 則排在
+ *     `convergeMax` 截斷線之前，不會因 `normalizedUrl` 字母序偏後就整批出局——此鍵**必須在
+ *     `slice(convergeMax)` 之前生效**，否則退化為純字母序、前功盡棄（曾誤植：先重排回
+ *     `normalizedUrl` 序才截斷，等於沒修）。同輪內 / 有真實分數者之間，才落回 `normalizedUrl`
+ *     決勝。
  * 收斂：取前 `convergeMax`；不足照實輸出（FR-021）。
  */
 export function runFunnel(
@@ -78,7 +84,11 @@ export function runFunnel(
     .filter((c) => c.score !== null || isFreshEnough(c, now, cfg.freshnessWindowDays))
     .map((c) => ({ ...c, weightedScore: weightOf(c, boardRepoNames, cfg) }));
   weighted.sort(compareCandidates);
-  const capped = capNullScorePerSource(weighted, cfg.maxNullScorePerSource);
+  const interleaveRank = computeInterleaveRanks(weighted, cfg.maxNullScorePerSource);
+  // 硬性同來源上限：無分數候選若不在 interleaveRank 裡（超出 maxNullScorePerSource 輪），直接
+  // 剔除，不只是排序墊底——否則候選稀少、convergeMax 有餘裕時，超額候選仍會原樣存活。
+  const capped = weighted.filter((c) => c.score !== null || interleaveRank.has(c.normalizedUrl));
+  capped.sort((a, b) => compareWithInterleave(a, b, interleaveRank));
   return capped.slice(0, cfg.convergeMax);
 }
 
@@ -95,26 +105,51 @@ function isFreshEnough(c: NewsCandidate, now: Date, windowDays: number): boolean
 }
 
 /**
- * 無分數候選同來源上限（依排序後的順序逐一計數，保留每來源最靠前的 `max` 則）。
- * 有真實分數者（`score !== null`）不受限、原樣保留。
+ * 無分數候選跨來源輪流分配序：依 `sourceId` 分組（組內順序＝傳入時已排序的相對順序，即各來源
+ * 內最佳候選在前），逐輪（0..max-1）各來源依序各取 1 則，回傳 `normalizedUrl → 輪次` 的對照表
+ * （輪次即優先序，越小越優先）。有真實分數者（`score !== null`）不分組、不產生輪次。
  */
-function capNullScorePerSource(sorted: readonly NewsCandidate[], max: number): NewsCandidate[] {
-  const countBySource = new Map<string, number>();
-  const kept: NewsCandidate[] = [];
+function computeInterleaveRanks(sorted: readonly NewsCandidate[], max: number): Map<string, number> {
+  const groups: NewsCandidate[][] = [];
+  const groupIndex = new Map<string, number>();
   for (const c of sorted) {
     if (c.score !== null) {
-      kept.push(c);
       continue;
     }
-    if (c.sources.some((s) => (countBySource.get(s) ?? 0) >= max)) {
-      continue;
+    let idx = groupIndex.get(c.sourceId);
+    if (idx === undefined) {
+      idx = groups.length;
+      groupIndex.set(c.sourceId, idx);
+      groups.push([]);
     }
-    for (const s of c.sources) {
-      countBySource.set(s, (countBySource.get(s) ?? 0) + 1);
-    }
-    kept.push(c);
+    groups[idx].push(c);
   }
-  return kept;
+
+  const rankByUrl = new Map<string, number>();
+  for (let round = 0; round < max; round++) {
+    for (const group of groups) {
+      const candidate = group[round];
+      if (candidate !== undefined) {
+        rankByUrl.set(candidate.normalizedUrl, round);
+      }
+    }
+  }
+  return rankByUrl;
+}
+
+/**
+ * 三層決勝比較器：`weightedScore ↓ → 跨來源輪流分配序 ↑（僅同分無分數候選之間）→ normalizedUrl ↑`。
+ */
+function compareWithInterleave(a: NewsCandidate, b: NewsCandidate, rankByUrl: ReadonlyMap<string, number>): number {
+  if (b.weightedScore !== a.weightedScore) {
+    return b.weightedScore - a.weightedScore;
+  }
+  const ra = rankByUrl.get(a.normalizedUrl);
+  const rb = rankByUrl.get(b.normalizedUrl);
+  if (ra !== undefined && rb !== undefined && ra !== rb) {
+    return ra - rb;
+  }
+  return a.normalizedUrl < b.normalizedUrl ? -1 : a.normalizedUrl > b.normalizedUrl ? 1 : 0;
 }
 
 /** 分數門檻判定（SC-005）：只有「有分數且該 tier 有門檻」才可能被丟。 */
