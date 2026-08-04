@@ -12,9 +12,10 @@ import { validateNewsSources } from './news-source.schema';
  *
  * **新增大型 feed 前先確認量體**：漏斗對 Tier 2 不設分數門檻（`scoreThresholds[2] = null`），
  * 無分數者一律以 `nullScoreBaseline = 100` 入池、決勝鍵為 `normalizedUrl ↑`（2026-08-04 起不再
- * 以 `publishedAt` 決勝，避免發文頻率高的來源系統性贏得同分候選的排序位置，見 funnel.ts
- * `compareCandidates`）。單日產出上百筆的來源（如 arXiv 分類 RSS）仍會吃光 `convergeMax = 25`
- * 名額、擠掉一手公告；在漏斗補上單一來源入池上限之前，不收這類來源。
+ * 以 `publishedAt` 決勝，見 funnel.ts `compareCandidates`）。無分數候選另有單一來源上限
+ * `maxNullScorePerSource`（預設 3，見 `DEFAULT_FUNNEL_CONFIG`）防止量體大的來源吃光
+ * `convergeMax = 25` 名額，但單日產出上百筆的來源（如 arXiv 分類 RSS）仍會把候選集塞滿低品質
+ * 內容、擠壓其餘來源在 3 則上限內的曝光機會，故仍不收這類來源。
  */
 const RAW_NEWS_SOURCES: NewsSource[] = [
   // ── Tier 1：常開高訊號（跨領域聚合） ──────────────────────────────────

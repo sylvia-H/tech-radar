@@ -16,6 +16,15 @@ export interface FunnelConfig {
   nullScoreBaseline: number;
   /** 收斂上限（目標區間上限；候選稀少照實輸出，FR-021）。 */
   convergeMax: number;
+  /**
+   * 無社群分數候選（`score === null`）單一來源最多可貢獻的候選則數（2026-08-04 新增）。
+   * 有真實分數者（目前僅 HN）不受限——它們是靠社群投票個別分出高下，非同分綁在一起，本就該
+   * 憑分數多寡自然決定則數。無分數者全綁在 `nullScoreBaseline` 同分，若不設此上限，量體大或
+   * `normalizedUrl` 字母序占優的單一來源會在 `convergeMax` 截斷前吃光候選池、擠掉其他一手來源
+   * （實測 `blog.cloudflare.com` 字母序偏前，曾單一來源佔候選集 9/25 則，其餘多個一手來源
+   * 完全消失於候選集）。
+   */
+  maxNullScorePerSource: number;
 }
 
 /** 起始設定（dev-guide §4.4：HN points>100、Lobste.rs>20；Tier 3 更高門檻更低權重）。 */
@@ -26,21 +35,22 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
   tierWeight: { 1: 1, 2: 1, 3: 0.5 },
   nullScoreBaseline: 100,
   convergeMax: 25,
+  maxNullScorePerSource: 3,
 };
 
 /**
- * 階段 A 過濾＋加權＋全序決勝排序＋收斂（FR-016~021）。純函式。
+ * 階段 A 過濾＋加權＋全序決勝排序＋同來源上限＋收斂（FR-016~021）。純函式。
  *
  * 過濾：`score` 存在且低於該 tier 門檻 → 丟；門檻為 `null`（Tier 2）或 `score === null`
  * （無社群分數）→ **不因門檻丟**（SC-005）。
  * 加權：base（分數或無分數基準）× tierWeight ＋ 交叉驗證 ＋ 榜單相關（`boardRepoNames` 空集合
  * 時整段略過，FR-018 Edge）。
  * 排序（全序，SC-011）：`weightedScore ↓ → normalizedUrl ↑`（末鍵在去重後唯一）。**不再以
- * `publishedAt` 決勝**（2026-08-04 變更，原 FR-020）：Tier 2 一手來源全數無社群分數、統一
- * `nullScoreBaseline` 同分，若以 `publishedAt` 決勝，發文頻率高的來源（如單日多篇的官方部落格）
- * 會系統性贏得同分候選在 `convergeMax` 截斷前的排序位置，擠壓發文頻率低但同樣重要的一手來源
- * （如僅日更一次的官方公告）——非本意的「發文頻率偏誤」。改以與來源身份無關的 `normalizedUrl`
- * 決勝，同分候選截斷時不再偏袒發文勤的來源。
+ * `publishedAt` 決勝**（2026-08-04 變更，原 FR-020）：改以與來源身份無關的 `normalizedUrl`
+ * 決勝，避免「誰發得比較新」系統性決定候選去留。
+ * 同來源上限（2026-08-04 新增）：在依序排序後的名單上，`score === null` 的候選逐一計數，
+ * 同一來源（`sources[]` 任一命中）累計達 `maxNullScorePerSource` 即剔除，不遞補其他候選——
+ * 防止單一來源單靠量體或 `normalizedUrl` 字母序天生占優、擠滿候選池；有真實分數者不受限。
  * 收斂：取前 `convergeMax`；不足照實輸出（FR-021）。
  */
 export function runFunnel(
@@ -52,7 +62,31 @@ export function runFunnel(
     .filter((c) => !belowThreshold(c, cfg))
     .map((c) => ({ ...c, weightedScore: weightOf(c, boardRepoNames, cfg) }));
   weighted.sort(compareCandidates);
-  return weighted.slice(0, cfg.convergeMax);
+  const capped = capNullScorePerSource(weighted, cfg.maxNullScorePerSource);
+  return capped.slice(0, cfg.convergeMax);
+}
+
+/**
+ * 無分數候選同來源上限（依排序後的順序逐一計數，保留每來源最靠前的 `max` 則）。
+ * 有真實分數者（`score !== null`）不受限、原樣保留。
+ */
+function capNullScorePerSource(sorted: readonly NewsCandidate[], max: number): NewsCandidate[] {
+  const countBySource = new Map<string, number>();
+  const kept: NewsCandidate[] = [];
+  for (const c of sorted) {
+    if (c.score !== null) {
+      kept.push(c);
+      continue;
+    }
+    if (c.sources.some((s) => (countBySource.get(s) ?? 0) >= max)) {
+      continue;
+    }
+    for (const s of c.sources) {
+      countBySource.set(s, (countBySource.get(s) ?? 0) + 1);
+    }
+    kept.push(c);
+  }
+  return kept;
 }
 
 /** 分數門檻判定（SC-005）：只有「有分數且該 tier 有門檻」才可能被丟。 */

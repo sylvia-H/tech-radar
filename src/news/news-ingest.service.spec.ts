@@ -194,15 +194,30 @@ describe('NewsIngestService.ingest — 過濾後 0 筆不誤告警（Fix 2）', 
 });
 
 describe('NewsIngestService.ingest — 排除已見於收斂之前（Fix 1）', () => {
-  const sources: NewsSource[] = [{ id: 'good-rss', type: 'rss', url: 'https://good.example/multi', domain: 'ai', tier: 1 }];
+  // 分散在 9 個來源（每源 ≤3 篇），避免觸發同來源上限 maxNullScorePerSource=3（2026-08-04 新增）。
+  const sources: NewsSource[] = Array.from({ length: 9 }, (_, i) => ({
+    id: `good-rss-${i}`,
+    type: 'rss' as const,
+    url: `https://good.example/multi-${i}`,
+    domain: 'ai' as const,
+    tier: 1 as const,
+  }));
 
-  // 26 筆（> convergeMax 25），依 publishedAt 遞減；i=0 最新、i=25 最舊。
+  // 26 筆（> convergeMax 25），依 normalizedUrl 遞增天然排序；i=0 最新、i=25 最舊（發文時間本身
+  // 不影響排序，僅供標題/連結區隔）。
   const twentySix = Array.from({ length: 26 }, (_, i) => ({
     title: `Post number ${i}`,
     link: `https://good.example/p${String(i).padStart(2, '0')}`,
     isoDate: new Date(NOW.getTime() - i * 3_600_000).toISOString(),
   }));
-  const parse = (xml: string) => (xml.includes('multi') ? { items: twentySix } : { items: [] });
+  const parse = (xml: string) => {
+    const match = xml.match(/multi-(\d+)/);
+    if (!match) {
+      return { items: [] };
+    }
+    const idx = Number(match[1]);
+    return { items: twentySix.slice(idx * 3, idx * 3 + 3) };
+  };
 
   it('最新一筆已見時：先排除再收斂 → 仍輸出 25 筆，且排名其後的新鮮候選不被排擠', async () => {
     const state: BoardState = {
