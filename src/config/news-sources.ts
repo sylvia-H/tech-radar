@@ -58,12 +58,14 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   { id: 'web-dev', type: 'rss', url: 'https://web.dev/feed.xml', domain: 'frontend-backend', tier: 2, enabled: false },
   { id: 'cloudflare-blog', type: 'rss', url: 'https://blog.cloudflare.com/rss/', domain: 'devops', tier: 2 },
   { id: 'cncf-blog', type: 'rss', url: 'https://www.cncf.io/feed/', domain: 'devops', tier: 2 },
+  // GitHub 官方研究／實驗性功能部落格，屬第一方公告，與 openai-blog/deepmind-blog 同等級
+  // （2026-08-04 由 Tier 3 升級：先前沿用新增時的預設分類，未重新檢視其實為官方一手來源）。
+  { id: 'github-next', type: 'rss', url: 'https://githubnext.com/rss.xml', domain: 'ai', tier: 2 },
 
   // ── Tier 3：選配實驗（更高門檻、更低權重；可隨時砍不動 code） ────────────
   { id: 'gh-vue', type: 'github-releases', url: 'https://github.com/vuejs/core/releases.atom', domain: 'frontend-backend', tier: 3 },
   { id: 'gh-react', type: 'github-releases', url: 'https://github.com/facebook/react/releases.atom', domain: 'frontend-backend', tier: 3 },
   { id: 'thenewstack', type: 'rss', url: 'https://thenewstack.io/feed/', domain: 'devops', tier: 3 },
-  { id: 'github-next', type: 'rss', url: 'https://githubnext.com/rss.xml', domain: 'ai', tier: 3 },
   // 2026-07-19 實測：GitHub Actions runner IP 持續遭 Reddit 擋 403/429（重試 3 次仍失敗），
   // 非單次抖動。四者皆 Tier 3、社群訊號可由其他來源替代，先停用觀察，不刪除設定（§4.3）。
   // 2026-08-03：曾評估改走第三方 Reddit RSS 代理繞過，但候選節點 `pullfeed.co` 實測 DNS 不存在；
