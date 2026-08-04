@@ -1,7 +1,7 @@
 import { BoardEntry, BoardState } from '../state/state.schema';
 import { PushBoard, BoardDiff } from './diff.types';
 import { BoardChangeSummary } from '../curation/board-summary.types';
-import { makeBoardFeedEntries, trimFeed } from '../publish/feed-entry';
+import { makeBoardFeedEntries, appendFeedEntries } from '../publish/feed-entry';
 import { taipeiDateLabel } from '../pipeline/layout/date-label';
 
 /**
@@ -14,7 +14,7 @@ import { taipeiDateLabel } from '../pipeline/layout/date-label';
  * - `lastBoardPushAt` ← `pushedAt`（與 `board` 同一次回傳）。
  * - `intros` / `seenNews` / `lastNewsPushAt` ← 原樣帶回（FR-023：掉出者的簡介快取不清除）。
  * - `publish.boardSummary` ← `summary`；`publish.feed` ← 併入本次榜單事件（`newcomer`/`climbed`，
- *   `declined` 不產生）並修剪至 50（F8 state-write-contract.md C1）。
+ *   `declined` 不產生），同 id 取新棄舊後修剪至 50（F8 state-write-contract.md C1）。
  */
 export function commitBoardPush(
   state: BoardState,
@@ -49,8 +49,9 @@ export function commitBoardPush(
     publish: {
       ...state.publish,
       boardSummary: { summary: summary.summary, generatedAt: pushedAtIso },
-      feed: trimFeed(
-        [...(state.publish?.feed ?? []), ...makeBoardFeedEntries(diff, dateLabel, pushedAt)],
+      feed: appendFeedEntries(
+        state.publish?.feed ?? [],
+        makeBoardFeedEntries(diff, dateLabel, pushedAt),
         50,
       ),
     },

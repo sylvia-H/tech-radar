@@ -75,12 +75,25 @@ export const curatedNewsItemSchema = z.object({
   degraded: z.boolean(),
 });
 
-/** 單則 feed entry（新聞或榜單事件，皆不含星數等數值指標，FR-016）。 */
+/**
+ * 單則 feed entry（新聞或榜單事件，皆不含星數等數值指標，FR-016）。
+ *
+ * **`url` 刻意只用 `z.string()`、不加 `.url()`**：此值直接來自第三方 RSS 的 `<link>`
+ * （`rss.fetcher.ts` 只檢查非空，全鏈無格式驗證），來源產生器出錯時可能是相對路徑或漏 scheme。
+ * `.url()` 的判定就是 `new URL()` 成不成功，與 `normalizeTargetUrl` 同一把尺——而 `seenNews`
+ * 對同一份資料只用 `z.string()`。若在此嚴格驗證，`save()`（推播成功之後才執行）會擲錯 →
+ * `lastNewsPushAt` 不落檔 → 補跑 cron 重推同一份晨報、同 run 榜單狀態一併遺失，正是與
+ * 「`feed` 不加 `.max(50)`」（見下方 `publishStateSchema`）同一類的失敗模式。
+ *
+ * `content`：新聞類 entry 的內文（`CuratedNewsItem.content`，可為 `null` 表策展降級）；榜單事件
+ * 無內文故欄位缺席（`.optional()` 亦保證 F8 早期寫入的舊 state 仍可載入）。
+ */
 export const feedEntrySchema = z.object({
   id: z.string(),
   type: z.enum(['news', 'board-new', 'board-climbed']),
   title: z.string(),
-  url: z.string().url(),
+  url: z.string(),
+  content: z.string().nullable().optional(),
   publishedAt: isoDatetime,
 });
 

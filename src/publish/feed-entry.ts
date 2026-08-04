@@ -43,15 +43,38 @@ export function makeBoardFeedEntries(diff: BoardDiff, dateLabel: string, now: Da
   return entries;
 }
 
-/** CuratedNewsItem[] → 新聞類 feed entries（一則新聞一筆）。 */
+/**
+ * CuratedNewsItem[] → 新聞類 feed entries（一則新聞一筆）。`content` 直接沿用
+ * `CuratedNewsItem.content`（含降級時的 `null`），供 feed 輸出 `atom:summary`。
+ */
 export function makeNewsFeedEntries(items: CuratedNewsItem[], now: Date): FeedEntry[] {
   return items.map((item) => ({
     id: newsFeedId(normalizeTargetUrl(item.url)),
     type: 'news',
     title: item.title,
     url: item.url,
+    content: item.content,
     publishedAt: now.toISOString(),
   }));
+}
+
+/**
+ * 併入新 entries 並修剪：**同 `id` 者以新的取代**（先移除既有同 id，再 append），最後套 `trimFeed`。
+ *
+ * 去重是必要的，不是防呆：`seenNews` 只保留 7 天，而 feed 保留 50 筆——低量日（憲章 III 允許每日
+ * 不足 10 則）50 筆的時間跨度會超過 7 天，同一則新聞得以再次入選並產生**重複的 `atom:id`**，
+ * 訂閱端行為未定義。取新棄舊使重新出現的項目以最新 `publishedAt` 冒到 feed 頂端。
+ */
+export function appendFeedEntries(
+  existing: readonly FeedEntry[],
+  incoming: readonly FeedEntry[],
+  limit = 50,
+): FeedEntry[] {
+  // incoming 內部也可能自帶重複 id（等價 URL 正規化後同鍵），一併取最後一筆。
+  const deduped = [...new Map(incoming.map((e) => [e.id, e])).values()];
+  const incomingIds = new Set(deduped.map((e) => e.id));
+  const kept = existing.filter((e) => !incomingIds.has(e.id));
+  return trimFeed([...kept, ...deduped], limit);
 }
 
 /** 上限 50、超出移除最舊（陣列前端），純函式（research D8）。 */

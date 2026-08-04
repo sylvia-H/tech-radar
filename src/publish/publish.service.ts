@@ -53,10 +53,13 @@ export class PublishService {
       const html = renderPage(state, new Date());
       const xml = renderFeed(state, pagesUrl);
 
-      // 全有或全無（C3）：兩份字串皆已成功產出後才依序寫檔，不留半份 public/ 目錄。
+      // 全有或全無（C3）：兩份字串皆已成功產出後才寫檔。**`index.html` MUST 最後寫**——workflow
+      // 的部署 gate 是 `hashFiles('public/index.html') != ''`，把 gate 檔留到最後，等於讓它兼任
+      // 提交點：任一次 writeFile 失敗都不會留下「有 index.html 卻缺 feed.xml」的半套 public/，
+      // 因此不可能部署出一個既有訂閱者全部 404 的站（改順序即可，不需另做 tmp+rename）。
       await fs.mkdir(PUBLIC_DIR, { recursive: true });
-      await fs.writeFile(path.join(PUBLIC_DIR, 'index.html'), html, 'utf-8');
       await fs.writeFile(path.join(PUBLIC_DIR, 'feed.xml'), xml, 'utf-8');
+      await fs.writeFile(path.join(PUBLIC_DIR, 'index.html'), html, 'utf-8');
     } catch (err) {
       await bestEffortFailureAlert(this.discord, this.logger, `發佈失敗：${errMsg(err)}`);
     }

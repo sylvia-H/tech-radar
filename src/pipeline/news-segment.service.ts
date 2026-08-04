@@ -7,7 +7,7 @@ import { NewsIngestService, boardRepoNameSet } from '../news/news-ingest.service
 import { NewsCurationService } from '../curation/curation.service';
 import { normalizeTargetUrl } from '../news/url-normalize';
 import { pruneSeenNews } from '../news/seen-news';
-import { makeNewsFeedEntries, trimFeed } from '../publish/feed-entry';
+import { makeNewsFeedEntries, appendFeedEntries } from '../publish/feed-entry';
 import { decideNewsGuard } from './layout/news-guard';
 import { buildDigestEmbeds } from './layout/digest-embeds';
 import { chunkEmbeds } from './layout/embed-split';
@@ -86,8 +86,9 @@ export class NewsSegmentService {
     state.publish = {
       ...state.publish,
       news: { items: digest.items, generatedAt: seenAt },
-      feed: trimFeed(
-        [...(state.publish?.feed ?? []), ...makeNewsFeedEntries(digest.items, now)],
+      feed: appendFeedEntries(
+        state.publish?.feed ?? [],
+        makeNewsFeedEntries(digest.items, now),
         50,
       ),
     };
