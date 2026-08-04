@@ -275,11 +275,11 @@ exit 0；查詢本身失敗時同樣不產生 `public/`、但收到一則紅色�
 
 **Purpose**：收尾檢查，不引入新行為。
 
-- [ ] T037 [P] 執行 `npm run build && npm test`，確認全專案（含既有 F1-F7 測試）無迴歸
-- [ ] T038 依 quickstart.md 情境 4 人工檢查最終 `.github/workflows/radar.yml`：`publish` job 的
+- [X] T037 [P] 執行 `npm run build && npm test`，確認全專案（含既有 F1-F7 測試）無迴歸
+- [X] T038 依 quickstart.md 情境 4 人工檢查最終 `.github/workflows/radar.yml`：`publish` job 的
   `needs`／`permissions`／`environment`／兩個 `if: hashFiles(...)` 條件／新增的
   `if: failure()` 告警步驟皆存在，且未新增任何寫回 `state` 分支的步驟
-- [ ] T039 [P] 覆核 FR-008：確認 `render-page.ts`／`render-feed.ts`／`publish.service.ts` 三檔
+- [X] T039 [P] 覆核 FR-008：確認 `render-page.ts`／`render-feed.ts`／`publish.service.ts` 三檔
   皆未讀取 `GH_API_TOKEN`／`DISCORD_*_WEBHOOK_URL` 等機密環境變數，僅讀取 `state`（發佈產物不含
   機密的程式邏輯保證）
 
