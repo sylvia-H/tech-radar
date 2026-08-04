@@ -1,5 +1,5 @@
 import { NewsDomain3 } from '../news/news.types';
-import { clampNonAi, clampSourceDiversity, isAi, MAX_ITEMS, MAX_NON_AI, MAX_PER_SOURCE_NON_AI, MIN_AI } from './curation-quota';
+import { clampNonAi, clampSourceDiversity, isAi, MAX_ITEMS, MAX_NON_AI, MAX_PER_SOURCE_NON_AI } from './curation-quota';
 
 interface Item {
   id: string;
@@ -22,10 +22,9 @@ describe('isAi', () => {
 });
 
 describe('常數', () => {
-  it('MAX_ITEMS=10、MAX_NON_AI=3、MIN_AI=7（憲章 III）', () => {
+  it('MAX_ITEMS=10、MAX_NON_AI=3（憲章 III）', () => {
     expect(MAX_ITEMS).toBe(10);
     expect(MAX_NON_AI).toBe(3);
-    expect(MIN_AI).toBe(7);
   });
 });
 
