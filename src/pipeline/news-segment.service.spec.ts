@@ -119,6 +119,30 @@ describe('NewsSegmentService.run — US1 Acceptance（每日晨報端到端）',
     expect(state.publish?.news?.generatedAt).toBe(NOW.toISOString());
   });
 
+  it('publish.feed 正確併入本次新聞 entries，與既有榜單 entries 疊加後修剪至 50（US2）', async () => {
+    const { service, curate } = build();
+    curate.mockResolvedValue({ items: [curatedItem()], degraded: false } as CuratedDigest);
+    const existingBoardEntry = {
+      id: 'repo:1:new:2026-08-01',
+      type: 'board-new' as const,
+      title: 'o/r1 新進榜',
+      url: 'https://github.com/o/r1',
+      publishedAt: hoursAgo(48),
+    };
+    const state = makeState({
+      lastNewsPushAt: hoursAgo(24),
+      publish: { feed: [existingBoardEntry] },
+    });
+
+    const result = await service.run(state, NOW);
+
+    expect(result).toEqual({ status: 'ok' });
+    const ids = state.publish?.feed?.map((e) => e.id) ?? [];
+    expect(ids).toContain(existingBoardEntry.id); // 既有榜單 entry 保留
+    expect(ids).toContain('news:https://example.com/a'); // 本次新聞 entry 併入
+    expect(state.publish?.feed).toHaveLength(2);
+  });
+
   it('落檔前修剪逾 7 天的舊 seenNews：舊紀錄被剔除、本次新項寫入，持久化不無限膨脹（FR-023/SC-008）', async () => {
     const { service, save } = build();
     const stale = { url: 'https://old.example.com/x', seenAt: hoursAgo(24 * 8) }; // 8 天前 → 應被剔除

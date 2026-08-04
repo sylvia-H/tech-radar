@@ -194,7 +194,7 @@ Discord 推播一致的榜單／摘要／新聞；`emptyBoardState()` 重跑仍�
 
 ### Implementation for User Story 2
 
-- [ ] T024 [P] [US2] 新增 `src/publish/feed-entry.ts`：
+- [X] T024 [P] [US2] 新增 `src/publish/feed-entry.ts`：
   `newsFeedId(normalizedUrl): string`（`"news:" + normalizedUrl`）、
   `boardFeedId(repoId, kind, dateLabel): string`（`"repo:" + repoId + ":" + kind + ":" +
   dateLabel`）、
@@ -211,34 +211,34 @@ Discord 推播一致的榜單／摘要／新聞；`emptyBoardState()` 重跑仍�
   **`ChangeKind` → GUID `kind` 的映射固定為 `newcomer → 'new'`、`climbed → 'climbed'`**
   （`declined` 無映射），對應 `FeedEntry.type` 的 `'board-new'`／`'board-climbed'`；此字串一旦
   發佈即為對外契約，**日後不得更名**（改了等於所有既有 entry 在訂閱者的 reader 中重新出現一次）
-- [ ] T025 [P] [US2] 新增 `src/publish/feed-entry.spec.ts`：GUID 格式（`news:`/`repo:` 前綴不
+- [X] T025 [P] [US2] 新增 `src/publish/feed-entry.spec.ts`：GUID 格式（`news:`/`repo:` 前綴不
   碰撞）、**榜單 id 的字面樣式為 `repo:{repoId}:new:{dateLabel}`／`repo:{repoId}:climbed:
   {dateLabel}`**（以字面斷言鎖住 `newcomer → 'new'` 映射，避免日後重構時無聲改名）、
   **同一則新聞的兩個等價原始 URL（例如帶 `?utm_source=` 追蹤參數與不帶）產生同一個 id**
   （驗 `normalizeTargetUrl` 確實被套用）、`declined` 不產生 entry、`trimFeed` 超過 50 筆移除
   最舊、同一 repo 不同 `dateLabel`（跨天重回／再次竄升）產生不同 id，依賴 T024
-- [ ] T026 [US2] 擴充 `src/diff/board-commit.ts`：`commitBoardPush` 再新增 `diff: BoardDiff`
+- [X] T026 [US2] 擴充 `src/diff/board-commit.ts`：`commitBoardPush` 再新增 `diff: BoardDiff`
   參數，`next.publish.feed = trimFeed([...(state.publish?.feed ?? []),
   ...makeBoardFeedEntries(diff, dateLabel, pushedAt)], 50)`（`dateLabel` 用
   `taipeiDateLabel(pushedAt)`，與封面組版同源，state-write-contract.md C1 完整版），
   依賴 T009/T024
-- [ ] T027 [US2] 更新 `src/diff/board-commit.spec.ts`：`publish.feed` 正確併入榜單事件、
+- [X] T027 [US2] 更新 `src/diff/board-commit.spec.ts`：`publish.feed` 正確併入榜單事件、
   `declined` 排除、修剪至 50，依賴 T026
-- [ ] T028 [US2] 更新 `src/pipeline/board-segment.service.ts`（同一 `commitBoardPush` 呼叫點）
+- [X] T028 [US2] 更新 `src/pipeline/board-segment.service.ts`（同一 `commitBoardPush` 呼叫點）
   補傳既有作用域內已算好的 `diff`（L73），依賴 T026
-- [ ] T029 [US2] 擴充 `src/pipeline/news-segment.service.ts` push-then-commit 區塊：
+- [X] T029 [US2] 擴充 `src/pipeline/news-segment.service.ts` push-then-commit 區塊：
   `state.publish.feed = trimFeed([...(state.publish?.feed ?? []),
   ...makeNewsFeedEntries(digest.items, now)], 50)`（state-write-contract.md C2 完整版），
   依賴 T012/T024
-- [ ] T030 [US2] 更新 `src/pipeline/news-segment.service.spec.ts`：`publish.feed` 正確併入新聞
+- [X] T030 [US2] 更新 `src/pipeline/news-segment.service.spec.ts`：`publish.feed` 正確併入新聞
   entries、與既有榜單 entries 疊加後修剪至 50，依賴 T029
-- [ ] T031 [US2] 更新 `src/publish/render-feed.ts`（延伸 T016）：確認 entry 映射——
+- [X] T031 [US2] 更新 `src/publish/render-feed.ts`（延伸 T016）：確認 entry 映射——
   `id`＝`FeedEntry.id`、`title`＝`FeedEntry.title`、`link`＝`FeedEntry.url`、
   `date`＝`FeedEntry.publishedAt`，不帶任何星數欄位（`FeedEntry` schema 本身無此欄位，
   型別層面已排除，feed-page-contract.md C2），依賴 T016/T024
-- [ ] T032 [US2] 更新 `src/publish/render-feed.spec.ts`：填入榜單+新聞混合 entries 的快照
+- [X] T032 [US2] 更新 `src/publish/render-feed.spec.ts`：填入榜單+新聞混合 entries 的快照
   （新到舊排序、三種 title 樣式皆正確），依賴 T031
-- [ ] T033 [US2] 依 quickstart.md 情境 2 步驟 1-5 手動驗證：重跑不重複、重回榜再現、任一
+- [X] T033 [US2] 依 quickstart.md 情境 2 步驟 1-5 手動驗證：重跑不重複、重回榜再現、任一
   RSS/Atom reader 可解析（記錄驗證結果，不產生新程式碼），依賴 T023/T032
 
 **Checkpoint**：US1＋US2 皆可獨立運作——feed 內容正確、去重與重現語意皆成立（SC-002/SC-006）。
