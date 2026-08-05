@@ -57,8 +57,8 @@ describe('renderPage（US1，feed-page-contract.md C1）', () => {
     expect(html).toContain('本次新進 1 個 repo');
     expect(html).toContain('AI News');
     expect(html).toContain('內容摘要');
-    expect(html.indexOf('推播榜')).toBeLessThan(html.indexOf('上次榜單變化摘要'));
-    expect(html.indexOf('上次榜單變化摘要')).toBeLessThan(html.indexOf('今日精選新聞'));
+    expect(html.indexOf('今日精選新聞')).toBeLessThan(html.indexOf('本週熱門 Github Repo 榜單'));
+    expect(html.indexOf('本週熱門 Github Repo 榜單')).toBeLessThan(html.indexOf('上次榜單變化摘要'));
   });
 
   it('emptyBoardState 空狀態：三區塊皆顯示「尚無」文案，不擲錯', () => {

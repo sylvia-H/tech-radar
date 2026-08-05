@@ -4,16 +4,9 @@
 
 ## C1. 儀表板頁面（`index.html`）內容契約
 
-三個區塊，順序固定：
+三個區塊，順序固定（2026-08-05 調整為新聞優先）：
 
-1. **推播榜**（FR-001）：`state.board`（`Record<repoId, BoardEntry>`）依 `domain` 分兩區
-   （AI／前後端），各自依 `rank` 升冪列出；每筆顯示 `fullName`／`url`／`language`／
-   `starsThisWeek`／`state.intros[repoId]?.intro`（簡介快取，若無則不顯示簡介欄）。
-   `state.board` 為空物件時，該區塊顯示「尚無榜單資料」（US1 Acceptance Scenario 2）。
-2. **上次榜單變化摘要**（FR-001）：`state.publish?.boardSummary`。存在則顯示
-   `summary` 文字＋`generatedAt`（換算台北時間標示「XX 月 XX 日」）；不存在（含全新空骨架、或
-   `publish` 欄位不存在的舊 state）顯示「尚無榜單變化紀錄」。
-3. **今日精選新聞**（FR-002/015）：`state.publish?.news`。存在則列出 `items[]`（每則
+1. **今日精選新聞**（FR-002/015）：`state.publish?.news`。存在則列出 `items[]`（每則
    `title`／`content`），並在區塊標題旁標示 `generatedAt`（FR-015：讓訪客分辨是否為當日產出）；
    不存在顯示「尚無新聞精選」。
    **`content === null`（策展降級項，`CuratedNewsItem.content` 型別為 `string | null`）**：
@@ -21,6 +14,14 @@
    之類的提示文字（降級屬內部狀態，沒有必要暴露在公開頁面；與 Discord 降級版面「有什麼就給
    什麼」的處理精神一致）。該則仍**必須呈現**，不得被過濾掉，否則網頁與 Discord 推播內容不再
    一致（FR-002/009）。
+2. **本週熱門 Github Repo 榜單**（FR-001，標題文字 2026-08-05 由「推播榜」改名；區塊定位/資料
+   來源不變，仍指同一份「推播榜」概念）：`state.board`（`Record<repoId, BoardEntry>`）依 `domain`
+   分兩區（AI／前後端），各自依 `rank` 升冪列出；每筆顯示 `fullName`／`url`／`language`／
+   `starsThisWeek`／`state.intros[repoId]?.intro`（簡介快取，若無則不顯示簡介欄）。
+   `state.board` 為空物件時，該區塊顯示「尚無榜單資料」（US1 Acceptance Scenario 2）。
+3. **上次榜單變化摘要**（FR-001）：`state.publish?.boardSummary`。存在則顯示
+   `summary` 文字＋`generatedAt`（換算台北時間標示「XX 月 XX 日」）；不存在（含全新空骨架、或
+   `publish` 欄位不存在的舊 state）顯示「尚無榜單變化紀錄」。
 
 **MUST NOT**：呈現 `state.board` 以外的榜單資料（追蹤深度 top 15 不在此頁）；呈現任何機密欄位
 （state 中本就不存在機密，此為程式邏輯保證的自然結果，非新增檢查）。

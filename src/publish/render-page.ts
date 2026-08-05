@@ -12,7 +12,7 @@ function formatGeneratedAt(iso: string): string {
 function renderBoardSection(state: BoardState): string {
   const entries = Object.entries(state.board);
   if (entries.length === 0) {
-    return '<section><h2>推播榜</h2><p class="empty">尚無榜單資料</p></section>';
+    return '<section><h2>本週熱門 Github Repo 榜單</h2><p class="empty">尚無榜單資料</p></section>';
   }
 
   const groups = DOMAINS.map((domain) => {
@@ -36,7 +36,7 @@ function renderBoardSection(state: BoardState): string {
     return `<h3>${escapeHtml(DOMAIN_LABELS[domain])}</h3><ul>${items}</ul>`;
   }).join('\n');
 
-  return `<section><h2>推播榜</h2>${groups}</section>`;
+  return `<section><h2>本週熱門 Github Repo 榜單</h2>${groups}</section>`;
 }
 
 function renderBoardSummarySection(state: BoardState): string {
@@ -96,9 +96,9 @@ export function renderPage(state: BoardState, now: Date): string {
 </head>
 <body>
 <h1>Tech Radar</h1>
+${renderNewsSection(state)}
 ${renderBoardSection(state)}
 ${renderBoardSummarySection(state)}
-${renderNewsSection(state)}
 <footer><p class="meta">最後更新：${escapeHtml(now.toISOString())}</p></footer>
 </body>
 </html>`;
