@@ -186,7 +186,7 @@
     }
   },
   "lastBoardPushAt": "2026-08-02T23:01:29.724Z",
-  "lastNewsPushAt": "2026-08-04T23:11:29.585Z",
+  "lastNewsPushAt": "2026-08-05T23:10:51.494Z",
   "publish": {
     "feed": [
       {
@@ -252,115 +252,151 @@
         "title": "Apple 指控 OpenAI 涉及員工洩漏機密資料事件",
         "type": "news",
         "url": "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/"
+      },
+      {
+        "content": "Node.js 釋出 Krypton 24.18.1 LTS 更新，主要針對 HTTP/2 標頭記憶體管理、權限節點處理及 HTTPS 身份校驗等問題進行修補。鑑於包含多項 High 等級的 CVE 安全修復，建議開發者務必檢查專案環境並儘速升級，以防範相關漏洞攻擊。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v24.18.1",
+        "publishedAt": "2026-08-05T23:10:51.494Z",
+        "title": "Node.js 發布 24.18.1 LTS 版本：修復多項高風險安全漏洞",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
+      },
+      {
+        "content": "Node.js 發布 24.19.0 LTS 版本，主要功能更新包含實作了 blob.textStream() 以強化串流處理能力，並透過 --experimental-import-text 標誌引入實驗性的文字匯入功能。此外，更新了 OpenSSL 配置以支援壓縮，對後端開發者的資料處理效能與模組化開發有顯著改善。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v24.19.0",
+        "publishedAt": "2026-08-05T23:10:51.494Z",
+        "title": "Node.js 24.19.0 LTS 版本更新：新增 Blob 串流與實驗性文字匯入功能",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
+      },
+      {
+        "content": "CNCF 技術監督委員會已將 K8gb（Kubernetes Global Balancer）納入孵化專案。作為開源的雲原生全域負載平衡方案，K8gb 專為多叢集、跨區域的部署架構設計，能有效強化雲原生應用的高可用性與災害復原能力，是 DevOps 架構師在建置全球性服務時的重要基礎設施工具。",
+        "id": "news:https://cncf.io/announcements/2026/08/05/k8gb-becomes-a-cncf-incubating-project",
+        "publishedAt": "2026-08-05T23:10:51.494Z",
+        "title": "Kubernetes 全球負載平衡器 K8gb 正式成為 CNCF 孵化專案",
+        "type": "news",
+        "url": "https://www.cncf.io/announcements/2026/08/05/k8gb-becomes-a-cncf-incubating-project/"
+      },
+      {
+        "content": "Cloudflare 推出 Cloudflare OS，旨在為 AI Agent、應用程式與工作流提供底層運行環境。此平台將運算原語深度整合，讓開發者能更輕量地構建、部署與維護具備自主性的 AI 應用，是目前雲端架構轉向「Agent-native」的重要訊號。",
+        "id": "news:https://blog.cloudflare.com/cloudflare-os",
+        "publishedAt": "2026-08-05T23:10:51.494Z",
+        "title": "Cloudflare 發布 Cloudflare OS：面向 Agent 與應用程式的開放平台",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/cloudflare-os/"
+      },
+      {
+        "content": "針對 AI Agent 開發節奏快於團隊維護能力的挑戰，Cloudflare 導入了「Agent 開發生命週期」框架。該工具鏈提供了一系列原語，協助開發者解決在部署與維持 Agent 穩定運行時所面臨的 DevOps 挑戰，對自動化工作流有直接助益。",
+        "id": "news:https://blog.cloudflare.com/agent-development-lifecycle",
+        "publishedAt": "2026-08-05T23:10:51.494Z",
+        "title": "Cloudflare 推出 Agent 開發生命週期工具鏈",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/agent-development-lifecycle/"
+      },
+      {
+        "content": "Astro 專案透過在 GitHub Actions 中運行孤立的 AI 子 Agent，成功實現了自動化 bug 重現與補丁驗證，使 Issue 數量減少 85%。此案例展示了將 AI 深度整合進 DevOps 生命週期，減少人工檢測成本的成熟架構模式。",
+        "id": "news:https://blog.cloudflare.com/astro-issue-triage",
+        "publishedAt": "2026-08-05T23:10:51.494Z",
+        "title": "Astro 團隊實踐：利用 AI 子 Agent 實現 GitHub Issue 自動化管理",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/astro-issue-triage/"
+      },
+      {
+        "content": "隨著 GenAI 在開發流程中的滲透，開發者常對其效能與適用性產生誤解。此文針對現行軟體工程實務中的迷思進行剖析，幫助技術決策者釐清 AI 在輔助編碼與系統設計中的真實定位，避免盲目引入導致的維護債務。",
+        "id": "news:https://queue.acm.org/detail.cfm?id=3807963",
+        "publishedAt": "2026-08-05T23:10:51.494Z",
+        "title": "解析軟體工程與生成式 AI 的八大迷思",
+        "type": "news",
+        "url": "https://queue.acm.org/detail.cfm?id=3807963"
+      },
+      {
+        "content": "針對近期 AI 能否取代開發者的熱烈討論，本文強調 AI 生成程式碼與建置「可供生產環境使用的產品」之間的鴻溝。對於專業開發者而言，理解並掌控自動化生成的輸出品質，仍是目前開發流程中無法外包的關鍵環節。",
+        "id": "news:https://weeraman.com/the-prototype-isnt-the-product",
+        "publishedAt": "2026-08-05T23:10:51.494Z",
+        "title": "AI 無法直接產出可用產品，工程實踐仍需回歸核心",
+        "type": "news",
+        "url": "https://weeraman.com/the-prototype-isnt-the-product/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-04T23:11:29.585Z",
+      "generatedAt": "2026-08-05T23:10:51.494Z",
       "items": [
         {
-          "content": "Google 宣布推出 Gemini 3.6 Flash、3.5 Flash-Lite 及 3.5 Flash Cyber 模型。對於開發者而言，這代表在處理多模態任務、輕量化推理及特定應用場景（如資安）有了更多模型選擇，開發者應評估其成本效益與效能，以決定是否遷移至新版本。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Google 發布 Gemini 3.6 Flash 與 3.5 系列模型更新",
-          "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Node.js 26.6.0 版本釋出，帶來多項實驗性與實用功能。包括新增 `getCurrentEventLoop` 以改進 FFI 效能監控，以及在測試執行器（test_runner）中新增 `context.log()` 與事件報告功能，能有效提升後端開發者的除錯效率與觀測性。",
+          "content": "Node.js 釋出 Krypton 24.18.1 LTS 更新，主要針對 HTTP/2 標頭記憶體管理、權限節點處理及 HTTPS 身份校驗等問題進行修補。鑑於包含多項 High 等級的 CVE 安全修復，建議開發者務必檢查專案環境並儘速升級，以防範相關漏洞攻擊。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Node.js 發布 26.6.0 版本：新增測試與 FFI 追蹤功能",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.6.0",
+          "title": "Node.js 發布 24.18.1 LTS 版本：修復多項高風險安全漏洞",
+          "url": "https://github.com/nodejs/node/releases/tag/v24.18.1",
           "weightedScore": 100
         },
         {
-          "content": "Lima v2.2 正式支援 Windows 虛擬機運作，並加入 TPM 2.0 模擬功能。這對於需要在 macOS 上進行跨平台開發（Linux, macOS, FreeBSD, Windows）的 DevOps 工程師來說是重大升級，簡化了本地虛擬化環境的基礎設施部署工作。",
+          "content": "Node.js 發布 24.19.0 LTS 版本，主要功能更新包含實作了 blob.textStream() 以強化串流處理能力，並透過 --experimental-import-text 標誌引入實驗性的文字匯入功能。此外，更新了 OpenSSL 配置以支援壓縮，對後端開發者的資料處理效能與模組化開發有顯著改善。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "title": "Node.js 24.19.0 LTS 版本更新：新增 Blob 串流與實驗性文字匯入功能",
+          "url": "https://github.com/nodejs/node/releases/tag/v24.19.0",
+          "weightedScore": 100
+        },
+        {
+          "content": "CNCF 技術監督委員會已將 K8gb（Kubernetes Global Balancer）納入孵化專案。作為開源的雲原生全域負載平衡方案，K8gb 專為多叢集、跨區域的部署架構設計，能有效強化雲原生應用的高可用性與災害復原能力，是 DevOps 架構師在建置全球性服務時的重要基礎設施工具。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Lima v2.2 釋出：新增 Windows 客體系統支援與 TPM 2.0 模擬",
-          "url": "https://www.cncf.io/blog/2026/07/28/lima-v2-2-windows-guests-and-tpm-2-0-emulation/",
+          "title": "Kubernetes 全球負載平衡器 K8gb 正式成為 CNCF 孵化專案",
+          "url": "https://www.cncf.io/announcements/2026/08/05/k8gb-becomes-a-cncf-incubating-project/",
           "weightedScore": 100
         },
         {
-          "content": "Mistral 推出了 3B 參數的輕量級模型 Shieldstral，專門用於多模態內容的審核。對於需要建構 AI 應用並處理內容過濾的開發者，此模型提供了更高效、可部署於邊緣設備的審核解決方案，降低了對大型模型的依賴。",
+          "content": "Cloudflare 推出 Cloudflare OS，旨在為 AI Agent、應用程式與工作流提供底層運行環境。此平台將運算原語深度整合，讓開發者能更輕量地構建、部署與維護具備自主性的 AI 應用，是目前雲端架構轉向「Agent-native」的重要訊號。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 1,
-          "title": "Mistral 發布 Shieldstral：3B 多模態內容審核模型",
-          "url": "https://mistral.ai/news/shieldstral/",
-          "weightedScore": 266
+          "sourceCount": 2,
+          "title": "Cloudflare 發布 Cloudflare OS：面向 Agent 與應用程式的開放平台",
+          "url": "https://blog.cloudflare.com/cloudflare-os/",
+          "weightedScore": 532
         },
         {
-          "content": "Cloudflare 推出的 Agents 平台為開發者提供了統一的體驗，用以部署、監控並管理 AI 代理的效能。這是一套針對 AI Agent 開發的基礎設施升級，能協助開發者在規模化場景下監控代理行為並獲取洞察。",
+          "content": "針對 AI Agent 開發節奏快於團隊維護能力的挑戰，Cloudflare 導入了「Agent 開發生命週期」框架。該工具鏈提供了一系列原語，協助開發者解決在部署與維持 Agent 穩定運行時所面臨的 DevOps 挑戰，對自動化工作流有直接助益。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出 Agents 平台，整合代理服務生命週期管理",
-          "url": "https://blog.cloudflare.com/agents-on-cloudflare/",
+          "title": "Cloudflare 推出 Agent 開發生命週期工具鏈",
+          "url": "https://blog.cloudflare.com/agent-development-lifecycle/",
           "weightedScore": 100
         },
         {
-          "content": "社群討論 AI 生成圖像大量出現在技術部落格的現象，認為這可能導致內容同質化並降低資訊密度。此議題反映了開發者對於技術社群「訊噪比」的憂慮，以及對高品質原創技術內容的需求反彈。",
+          "content": "Astro 專案透過在 GitHub Actions 中運行孤立的 AI 子 Agent，成功實現了自動化 bug 重現與補丁驗證，使 Issue 數量減少 85%。此案例展示了將 AI 深度整合進 DevOps 生命週期，減少人工檢測成本的成熟架構模式。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "title": "Hacker News 熱議：AI 生成影像是否降低了技術部落格的閱讀價值",
-          "url": "https://nelson.cloud/ai-generated-images-discourage-me-from-reading-your-blog/",
-          "weightedScore": 719
+          "title": "Astro 團隊實踐：利用 AI 子 Agent 實現 GitHub Issue 自動化管理",
+          "url": "https://blog.cloudflare.com/astro-issue-triage/",
+          "weightedScore": 100
         },
         {
-          "content": "開發者社群關注到 AI 領先公司逐漸減少公開研究細節的趨勢。這象徵著 AI 領域從開放科學轉向閉源競爭，開發者在規劃長期技術棧時，需認知到未來可能面臨更少的透明度與更難取得的底層技術細節。",
+          "content": "隨著 GenAI 在開發流程中的滲透，開發者常對其效能與適用性產生誤解。此文針對現行軟體工程實務中的迷思進行剖析，幫助技術決策者釐清 AI 在輔助編碼與系統設計中的真實定位，避免盲目引入導致的維護債務。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Hacker News 熱議：頂尖 AI 新創公司為何減少發表研究論文",
-          "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
-          "weightedScore": 617
+          "title": "解析軟體工程與生成式 AI 的八大迷思",
+          "url": "https://queue.acm.org/detail.cfm?id=3807963",
+          "weightedScore": 279
         },
         {
-          "content": "針對 Apple 前員工涉嫌將機密資料攜至 OpenAI 的法律爭議，社群討論集中於企業內部的資料安全性保護措施。此事件對開發者而言，是關於數據資產歸屬權與公司安全合規政策的一項警示。",
+          "content": "針對近期 AI 能否取代開發者的熱烈討論，本文強調 AI 生成程式碼與建置「可供生產環境使用的產品」之間的鴻溝。對於專業開發者而言，理解並掌控自動化生成的輸出品質，仍是目前開發流程中無法外包的關鍵環節。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Apple 指控 OpenAI 涉及員工洩漏機密資料事件",
-          "url": "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/",
-          "weightedScore": 316
+          "title": "AI 無法直接產出可用產品，工程實踐仍需回歸核心",
+          "url": "https://weeraman.com/the-prototype-isnt-the-product/",
+          "weightedScore": 265
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-07-29T23:05:15.434Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
-    },
-    {
-      "seenAt": "2026-07-29T23:05:15.434Z",
-      "url": "https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word"
-    },
-    {
-      "seenAt": "2026-07-29T23:05:15.434Z",
-      "url": "https://simonwillison.net/2026/Jul/29/mcp-in-claude-and-chatgpt"
-    },
-    {
-      "seenAt": "2026-07-29T23:05:15.434Z",
-      "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores"
-    },
-    {
-      "seenAt": "2026-07-29T23:05:15.434Z",
-      "url": "https://arxiv.org/abs/2607.25398"
-    },
-    {
-      "seenAt": "2026-07-29T23:05:15.434Z",
-      "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency"
-    },
-    {
-      "seenAt": "2026-07-29T23:05:15.434Z",
-      "url": "https://openai.com/index/chatgpt-for-academic-researchers"
-    },
     {
       "seenAt": "2026-07-30T23:14:02.029Z",
       "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
@@ -536,6 +572,38 @@
     {
       "seenAt": "2026-08-04T23:11:29.585Z",
       "url": "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai"
+    },
+    {
+      "seenAt": "2026-08-05T23:10:51.494Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
+    },
+    {
+      "seenAt": "2026-08-05T23:10:51.494Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
+    },
+    {
+      "seenAt": "2026-08-05T23:10:51.494Z",
+      "url": "https://cncf.io/announcements/2026/08/05/k8gb-becomes-a-cncf-incubating-project"
+    },
+    {
+      "seenAt": "2026-08-05T23:10:51.494Z",
+      "url": "https://blog.cloudflare.com/cloudflare-os"
+    },
+    {
+      "seenAt": "2026-08-05T23:10:51.494Z",
+      "url": "https://blog.cloudflare.com/agent-development-lifecycle"
+    },
+    {
+      "seenAt": "2026-08-05T23:10:51.494Z",
+      "url": "https://blog.cloudflare.com/astro-issue-triage"
+    },
+    {
+      "seenAt": "2026-08-05T23:10:51.494Z",
+      "url": "https://queue.acm.org/detail.cfm?id=3807963"
+    },
+    {
+      "seenAt": "2026-08-05T23:10:51.494Z",
+      "url": "https://weeraman.com/the-prototype-isnt-the-product"
     }
   ]
 }
