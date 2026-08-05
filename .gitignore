@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Secrets / local env（機密只走 Actions Secrets，絕不入庫）
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+
+# 執行期產物（CLI 送出失敗告警後的 marker；workflow 據此去重）
+.radar-alert-sent
+state/*.tmp
+
+# 唯一權威狀態改由獨立 state 分支管理（不與程式碼歷史混雜），develop/main 不再追蹤
+state/board.json
+
+# Coverage
+coverage/
+
+# CodeGraph 本機索引（工具產物，不入庫）
+.codegraph/
+
+# OS / editor
+.DS_Store
+Thumbs.db

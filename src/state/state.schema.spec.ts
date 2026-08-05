@@ -1,0 +1,183 @@
+import { Logger } from '@nestjs/common';
+import {
+  boardStateSchema,
+  boardEntrySchema,
+  introCacheSchema,
+  seenNewsEntrySchema,
+  feedEntrySchema,
+  emptyBoardState,
+} from './state.schema';
+
+function entry(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+  return {
+    fullName: 'owner/name',
+    url: 'https://github.com/owner/name',
+    language: 'TypeScript',
+    domain: 'ai',
+    starsThisWeek: 10,
+    rank: 1,
+    firstSeenAt: '2026-07-11T22:07:00.000Z',
+    ...overrides,
+  };
+}
+
+describe('boardStateSchema', () => {
+  it('空骨架含五個頂層欄位且通過驗證', () => {
+    const skeleton = emptyBoardState();
+    expect(Object.keys(skeleton).sort()).toEqual(
+      ['board', 'intros', 'lastBoardPushAt', 'lastNewsPushAt', 'seenNews'].sort(),
+    );
+    expect(() => boardStateSchema.parse(skeleton)).not.toThrow();
+  });
+
+  it('缺任一頂層欄位即不合法', () => {
+    const bad = emptyBoardState() as Record<string, unknown>;
+    delete bad.seenNews;
+    expect(boardStateSchema.safeParse(bad).success).toBe(false);
+  });
+
+  it('時間戳接受 null 或合法 ISO，拒絕非法字串', () => {
+    expect(
+      boardStateSchema.safeParse({
+        ...emptyBoardState(),
+        lastBoardPushAt: '2026-07-11T22:07:00.000Z',
+      }).success,
+    ).toBe(true);
+    expect(
+      boardStateSchema.safeParse({ ...emptyBoardState(), lastBoardPushAt: 'not-a-date' })
+        .success,
+    ).toBe(false);
+  });
+});
+
+describe('board 條目層寬鬆載入（FR-024）', () => {
+  let warnSpy: jest.SpyInstance;
+
+  beforeEach(() => {
+    warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+  });
+
+  afterEach(() => {
+    warnSpy.mockRestore();
+  });
+
+  it('含 domain:"devops" 的舊條目 → 剔除該條目 + 記錄警告、其餘條目照常載入、整份狀態不失效', () => {
+    const parsed = boardStateSchema.parse({
+      ...emptyBoardState(),
+      board: {
+        '111': entry({ domain: 'devops' }), // 舊 4-way 分類，已廢止
+        '222': entry({ domain: 'ai' }),
+        '333': entry({ domain: 'frontend-backend' }),
+      },
+    });
+    expect(Object.keys(parsed.board).sort()).toEqual(['222', '333']);
+    expect(parsed.board['111']).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalledTimes(1);
+    expect(String(warnSpy.mock.calls[0][0])).toContain('111');
+  });
+
+  it('條目缺欄位／型別錯 → 同樣剔除 + warn，不使整份狀態失效', () => {
+    const parsed = boardStateSchema.parse({
+      ...emptyBoardState(),
+      board: {
+        '111': { fullName: 'o/n' }, // 缺多數欄位
+        '222': entry({ domain: 'ai' }),
+      },
+    });
+    expect(Object.keys(parsed.board)).toEqual(['222']);
+    expect(warnSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('全部條目合法 → 不 warn、原樣載入', () => {
+    const parsed = boardStateSchema.parse({
+      ...emptyBoardState(),
+      board: { '222': entry({ domain: 'ai' }), '333': entry({ domain: 'frontend-backend' }) },
+    });
+    expect(Object.keys(parsed.board).sort()).toEqual(['222', '333']);
+    expect(warnSpy).not.toHaveBeenCalled();
+  });
+
+  it('根結構壞檔仍擲錯、不覆寫：board 非物件 → 擲錯（憲章 VI）', () => {
+    expect(
+      boardStateSchema.safeParse({ ...emptyBoardState(), board: 'not-object' }).success,
+    ).toBe(false);
+    expect(
+      boardStateSchema.safeParse({ ...emptyBoardState(), board: null }).success,
+    ).toBe(false);
+  });
+});
+
+describe('publish 欄位向後相容（F8，FR-014，contracts/state-write-contract.md C4）', () => {
+  it('不含 publish 鍵的既有 state fixture 仍能 safeParse 成功，且 publish 為 undefined', () => {
+    const legacy = emptyBoardState(); // 既有五欄位，不含 publish
+    const result = boardStateSchema.safeParse(legacy);
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.publish).toBeUndefined();
+    }
+  });
+});
+
+describe('子實體 schema 型別', () => {
+  it('BoardEntry 完整欄位通過（2-way domain）', () => {
+    expect(boardEntrySchema.safeParse(entry({ domain: 'frontend-backend' })).success).toBe(true);
+    expect(boardEntrySchema.safeParse(entry({ domain: 'ai' })).success).toBe(true);
+  });
+
+  it('BoardEntry domain 僅限 2-way enum 值（舊 devops/frontend/backend 皆不合法）', () => {
+    for (const domain of ['devops', 'frontend', 'backend', 'mobile']) {
+      expect(boardEntrySchema.safeParse(entry({ domain })).success).toBe(false);
+    }
+  });
+
+  it('IntroCache 與 SeenNewsEntry 型別', () => {
+    expect(
+      introCacheSchema.safeParse({ intro: '簡介', introAt: '2026-07-11T22:07:00.000Z' })
+        .success,
+    ).toBe(true);
+    expect(
+      seenNewsEntrySchema.safeParse({
+        url: 'https://example.com/a',
+        seenAt: '2026-07-11T22:07:00.000Z',
+      }).success,
+    ).toBe(true);
+  });
+});
+
+describe('feedEntrySchema — url 不驗證格式、content 選用', () => {
+  function feedEntry(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+    return {
+      id: 'news:https://example.com/a',
+      type: 'news',
+      title: '標題',
+      url: 'https://example.com/a',
+      publishedAt: '2026-07-11T22:07:00.000Z',
+      ...overrides,
+    };
+  }
+
+  it.each([
+    ['相對路徑（來源產生器出錯）', '/posts/foo'],
+    ['漏 scheme 的裸網域', 'example.com/foo'],
+    ['空字串', ''],
+  ])(
+    'url 為 %s 時仍通過驗證——第三方 RSS <link> 全鏈無格式檢查，嚴格驗證會讓推播成功後的 save() 擲錯',
+    (_label, url) => {
+      expect(feedEntrySchema.safeParse(feedEntry({ url })).success).toBe(true);
+    },
+  );
+
+  it('與 seenNewsEntrySchema 對同一份 url 標準一致（同一次 save() 內不得一個接受一個拒絕）', () => {
+    const url = '/posts/foo';
+    expect(seenNewsEntrySchema.safeParse({ url, seenAt: '2026-07-11T22:07:00.000Z' }).success).toBe(
+      feedEntrySchema.safeParse(feedEntry({ url })).success,
+    );
+  });
+
+  it('content 可為字串／null（策展降級）／缺席（榜單事件與 F8 早期舊 state）', () => {
+    expect(feedEntrySchema.safeParse(feedEntry({ content: '內文' })).success).toBe(true);
+    expect(feedEntrySchema.safeParse(feedEntry({ content: null })).success).toBe(true);
+    expect(feedEntrySchema.safeParse(feedEntry()).success).toBe(true);
+    expect(feedEntrySchema.safeParse(feedEntry({ content: 123 })).success).toBe(false);
+  });
+});

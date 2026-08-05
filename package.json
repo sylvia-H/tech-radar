@@ -1,0 +1,35 @@
+{
+  "name": "tech-radar",
+  "version": "0.1.0",
+  "description": "排程型 Tech Radar：打通執行環境到 Discord 私人頻道的推播通道與狀態骨架",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start:cli": "node dist/main.cli.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@google/genai": "^2.12.0",
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/config": "^4.0.0",
+    "@nestjs/core": "^11.0.0",
+    "cheerio": "^1.2.0",
+    "feed": "^4.2.2",
+    "reflect-metadata": "^0.2.2",
+    "rss-parser": "^3.13.0",
+    "rxjs": "^7.8.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^11.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^24.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3"
+  }
+}

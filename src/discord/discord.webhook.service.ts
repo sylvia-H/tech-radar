@@ -1,0 +1,115 @@
+import { Injectable, Logger } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import {
+  buildFailureAlert,
+  buildTestEmbed,
+  DiscordWebhookPayload,
+  RunEnv,
+} from './discord.embed';
+
+const MAX_RETRIES = 3;
+const MAX_BACKOFF_MS = 5000;
+
+/** 三條獨立 Discord webhook（晨報／榜單／告警），互不共用同一頻道。 */
+export type DiscordChannel = 'news' | 'board' | 'alert';
+
+const CHANNEL_ENV_KEY: Record<DiscordChannel, string> = {
+  news: 'DISCORD_NEWS_WEBHOOK_URL',
+  board: 'DISCORD_BOARD_WEBHOOK_URL',
+  alert: 'DISCORD_ALERT_WEBHOOK_URL',
+};
+
+/**
+ * 對 Discord webhook 的唯一出口。只推播、不收訊息。
+ * - 204 判定成功
+ * - 429 依 retry_after 有限次退避（逾次數視為失敗）
+ * - 失敗擲錯；log／錯誤訊息絕不含 webhook URL 或任何機密（憲章 VII）
+ */
+@Injectable()
+export class DiscordWebhookService {
+  private readonly logger = new Logger(DiscordWebhookService.name);
+
+  constructor(private readonly config: ConfigService) {}
+
+  private webhookUrl(channel: DiscordChannel): string {
+    const envKey = CHANNEL_ENV_KEY[channel];
+    const url = this.config.get<string>(envKey);
+    if (!url) {
+      throw new Error(`${envKey} 未設定`);
+    }
+    return url;
+  }
+
+  /** 推一則橙色連通測試 embed（告警頻道）。 */
+  async postTestEmbed(timestamp: string, env: RunEnv): Promise<void> {
+    await this.post(buildTestEmbed(timestamp, env), 'alert');
+  }
+
+  /** 推一則紅色失敗告警 embed（告警頻道；summary 須為不含機密的錯誤摘要）。 */
+  async postFailureAlert(summary: string): Promise<void> {
+    await this.post(buildFailureAlert(summary), 'alert');
+  }
+
+  /** F7 公開送出任意 payload（榜單/晨報組版批次），依 channel 分流至對應 webhook。 */
+  async send(payload: DiscordWebhookPayload, channel: 'news' | 'board'): Promise<void> {
+    await this.post(payload, channel);
+  }
+
+  /**
+   * 送出 payload。204 成功；429 有限退避重試；其餘失敗擲錯（不含機密）。
+   */
+  private async post(payload: DiscordWebhookPayload, channel: DiscordChannel): Promise<void> {
+    const url = this.webhookUrl(channel);
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      let res: Response;
+      try {
+        res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+      } catch {
+        // 網路層錯誤（DNS/連線）：消毒後重擲，絕不夾帶含 token 的 webhook URL（憲章 VII）。
+        throw new Error('Discord webhook 推播失敗：網路錯誤');
+      }
+
+      if (res.status === 204) {
+        return;
+      }
+
+      if (res.status === 429 && attempt < MAX_RETRIES) {
+        const retryAfterMs = await this.parseRetryAfter(res);
+        this.logger.warn(
+          `Discord 回應 429，第 ${attempt}/${MAX_RETRIES} 次退避 ${retryAfterMs}ms`,
+        );
+        await this.delay(retryAfterMs);
+        continue;
+      }
+
+      // 其餘狀態碼或退避耗盡：擲錯，訊息只含狀態碼（不含 URL / body）。
+      throw new Error(`Discord webhook 推播失敗，HTTP ${res.status}`);
+    }
+  }
+
+  private async parseRetryAfter(res: Response): Promise<number> {
+    try {
+      const body = (await res.clone().json()) as { retry_after?: number };
+      if (typeof body.retry_after === 'number') {
+        // Discord 的 retry_after 以秒為單位。
+        return Math.min(Math.ceil(body.retry_after * 1000), MAX_BACKOFF_MS);
+      }
+    } catch {
+      // 忽略解析錯誤，退回 header / 預設。
+    }
+    const header = res.headers.get('retry-after');
+    const seconds = header ? Number(header) : NaN;
+    if (Number.isFinite(seconds)) {
+      return Math.min(Math.ceil(seconds * 1000), MAX_BACKOFF_MS);
+    }
+    return 1000;
+  }
+
+  private delay(ms: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+}
