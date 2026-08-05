@@ -59,6 +59,13 @@
 渲染發生在可見性查詢回 `'public'` 之後，走到該步時 `owner`/`repo` 必定已成功解析，`pagesUrl`
 不需要再處理一次缺值。
 
+**發佈段整體逾時邊界（2026-08-05 補定，原 checklist CHK023）**：本 Feature **不新增**任何發佈段
+專屬的整體逾時規則——可見性查詢沿用 `GithubHttpService` 既有的重試/退避策略（與榜單段共用同一節流
+客戶端），渲染與寫檔皆為同步、無網路 I/O 的純函式／本機檔案操作，唯一可能拖長耗時的是可見性查詢
+本身的重試等待。這是刻意選擇而非疏漏：發佈段本已被 `radar.yml` 的 job timeout（GitHub Actions
+預設 6 小時）與既有節流客戶端的退避上限雙重護欄，另立一套發佈段專屬逾時規則只會與既有機制重複、
+徒增維護面。
+
 **Rationale**：與專案既有「所有 GitHub 呼叫走同一個節流客戶端」的規則一致（`GithubModule` docstring
 明講這是為了共享 rate-limit 節流狀態，憲章 I）；用既有型別化客戶端也讓這段查詢能以 mock 單測
 （憲章 VIII），不必额外引入 `gh` CLI 或裸 `curl` 步驟。
@@ -162,6 +169,13 @@
 - 可見性查詢本身擲錯 → `bestEffortFailureAlert`（沿用既有共用函式）後 return（不 rethrow）。
 - 渲染／寫檔任一步驟擲錯 → 同樣 `bestEffortFailureAlert` 後 return（不 rethrow）。
 - 全數成功 → 寫出 `public/index.html`、`public/feed.xml`。
+
+**告警節流（2026-08-05 補定，原 checklist CHK004）**：可見性查詢失敗時**每次執行皆各自告警，刻意
+不做節流或去重**——即使連續多日失敗（例如 token 權限被收回），每天仍會各發一則告警。這是刻意選擇：
+本專案告警頻道本身就是低頻道（每日至多晨報＋榜單兩則正常推播），連續失敗的告警反而是「問題尚未
+排除」最直接的提醒，節流只會拖慢使用者發現與修復的時間，與憲章 VII「不得無聲失敗」的求穩精神相
+牴觸；且發佈段失敗不影響核心推播段成敗（FR-007），多發的告警不會連帶影響晨報／榜單的送達率，代價
+可接受。
 
 CLI 進入點在 `PUBLISH_MODE=1` 分支**一律以 0 結束**（無論上述哪個分支），不像既有
 `PipelineService` 失敗路徑那樣 rethrow 到頂層造成非零 exit。workflow 用「`public/index.html`
