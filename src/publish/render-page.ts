@@ -81,6 +81,7 @@ const STYLE = `
   .empty { color: #888; }
   ul { list-style: none; padding: 0; }
   li { margin-bottom: 0.8rem; }
+  hr { margin: 0 0 5rem 0; border: none; }
 `;
 
 /** state → 儀表板 HTML（research D5）。state.publish 為 undefined 時渲染空狀態，不擲錯。 */
@@ -97,6 +98,7 @@ export function renderPage(state: BoardState, now: Date): string {
 <body>
 <h1>Tech Radar</h1>
 ${renderNewsSection(state)}
+<hr />
 ${renderBoardSection(state)}
 ${renderBoardSummarySection(state)}
 <footer><p class="meta">最後更新：${escapeHtml(now.toISOString())}</p></footer>
