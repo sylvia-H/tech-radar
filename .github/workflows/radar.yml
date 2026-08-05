@@ -95,3 +95,76 @@ jobs:
             "$DISCORD_ALERT_WEBHOOK_URL"
         env:
           DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
+
+  publish:
+    needs: radar
+    runs-on: ubuntu-latest
+    permissions:
+      # job 層 permissions 會整組取代 workflow 層的 contents: write，未列出的 scope 一律為
+      # none；contents: read 不可省，否則下方兩個 checkout 會失去 repo 讀取權
+      # （contracts/publish-orchestration.md C1）。
+      contents: read
+      pages: write
+      id-token: write
+    environment: github-pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Checkout state branch
+        uses: actions/checkout@v5
+        with:
+          ref: state
+          path: state-branch
+
+      - name: Load state into workspace
+        run: |
+          mkdir -p state
+          cp state-branch/state/board.json state/board.json
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Run publish
+        run: node dist/main.cli.js
+        env:
+          PUBLISH_MODE: '1'
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DISCORD_NEWS_WEBHOOK_URL: ${{ secrets.DISCORD_NEWS_WEBHOOK_URL }}
+          DISCORD_BOARD_WEBHOOK_URL: ${{ secrets.DISCORD_BOARD_WEBHOOK_URL }}
+          DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Upload Pages artifact
+        if: hashFiles('public/index.html') != ''
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        if: hashFiles('public/index.html') != ''
+        uses: actions/deploy-pages@v4
+
+      - name: Alert on publish job failure
+        # 刻意用裸 failure() 涵蓋本 job 的**任何**失敗——checkout／載入 state／npm ci／build／
+        # 上傳 artifact／部署皆算，寧可多報也不要漏報（與 radar job 的補送告警同一原則）。
+        # 因此訊息 MUST NOT 斷言失敗發生在部署那一步。PublishService 內部已處理的分支
+        # （private 跳過／可見性查詢失敗／渲染寫檔失敗）皆以 exit 0 結束並自行發告警，
+        # 不會走到這裡（research D10a）。
+        if: failure()
+        run: |
+          curl -sS -X POST -H "Content-Type: application/json" \
+            -d '{"embeds":[{"title":"⚠️ 發佈 job 失敗","color":15548997,"description":"Pages 發佈 job 的某個步驟失敗（環境準備、建置、上傳 artifact 或部署），請查看本次 Actions 執行紀錄確認失敗步驟。"}]}' \
+            "$DISCORD_ALERT_WEBHOOK_URL"
+        env:
+          DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}

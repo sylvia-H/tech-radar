@@ -843,11 +843,16 @@ bootstrap();
 
 - **僅在 repo 為 public 時啟用**：發佈開始前先查 repo 可見性（GitHub API repo metadata 的 `private` / `visibility`），private 就整段跳過——不產站、不部署。以偵測為準、不靠人工開關，**切成 private 當天自動停用**。
 - **改成 private 必須自動停用發佈、且絕不影響 Discord 推播**。因此發佈是**完全隔離的末段**（獨立 job／最後步驟，`needs` 核心 pipeline）：Discord 推播與 state commit 已在更早、獨立完成；發佈被跳過或失敗都**不得回滾狀態、不得阻斷或把核心標記為失敗**。（延續 Constitution「來源隔離容錯」）
+- **發佈段對 `state/board.json` 唯讀**（2026-08-04 F8 clarify 定案）：發佈所需的一切資料都由**核心推播段**在推播成功後、隨既有狀態寫回一併寫入（見 §14.2），發佈段只讀不寫。這讓「發佈不影響核心」在結構上成立——發佈中途失敗不可能留下半套狀態。
+- **告警規則**（2026-08-04 F8 clarify 定案）：`private` 而跳過屬**預期行為，靜默不告警**（只留 Actions log），否則長期 private 會每天洗一則噪音；**可見性查詢失敗**與**發佈執行失敗**屬異常，一律發紅色告警 embed 到 `DISCORD_ALERT_WEBHOOK_URL`（Constitution VII「不得無聲失敗」）——尤其查詢失敗若靜默，會讓發佈長期停擺而無人知曉。告警本身不得使核心推播被判定失敗。
 
 ### 14.2 產出（重點）
 
-- **儀表板 `index.html`**：目前各領域榜單（top N + 快取簡介）、上次榜單變化摘要、今日精選新聞。build 時由 `state/board.json` 預先渲染，免前端框架、關掉 JS 也能看。
-- **`feed.xml`（Atom/RSS）**：一則 entry 對一個值得訂閱的事件（今日新聞、新進榜、竄升 repo）。用**穩定 GUID**（新聞 = 正規化目標 URL、repo = `repoId`）讓 RSS reader 自動去重；在 state 存一個滾動 `feed` 陣列（上限 ~50，沿用 `seenNews` 修剪模式）讓 feed 有歷史。
+- **儀表板 `index.html`**：呈現 `state.board` 現有的**跨領域綜合 top 10**（即最近一次推去 Discord 的同一份榜）＋快取簡介，版面上依 `domain` 分成 AI／前後端兩區、沿用推播名次；**不呈現追蹤深度（每領域 top 15）中未進榜的 repo**——`commitBoardPush` 本來就只寫 ≤10 筆進 state，非推播日也重建得出來，且與 Discord 內容 100% 一致。另呈現上次榜單變化摘要、今日精選新聞。build 時由 `state/board.json` 預先渲染，免前端框架、關掉 JS 也能看。
+- **新聞區塊須標示該批的產生時間**（可用 `lastNewsPushAt`）：state 存的是「最近一次晨報」而非「今日」，來源全掛的日子頁面會沿用昨天那批，不標時間訪客會誤讀。
+- **`feed.xml`（Atom/RSS）**：一則 entry 對一個值得訂閱的事件（今日新聞、新進榜、竄升 repo）。用**穩定 GUID** 讓 RSS reader 自動去重——新聞 = 正規化目標 URL；**榜單事件 = `repoId` ＋ 事件型別 ＋ 事件日期**（例 `repo:{repoId}:new:2026-08-04`）。⚠️ **GUID 不可只用 `repoId`**（2026-08-04 F8 clarify 修正舊寫法）：Constitution III 明定「repo 掉出推播榜當次靜默、**日後重回即以新進呈現**」，同一 `repoId` 合法地會在不同週再次產生新進／竄升事件，只用 `repoId` 會被 reader 判為已讀而整個吃掉。「重跑不重複」不需要靠 GUID 保證——feed append 發生在核心推播段內，而榜單推播本身已有 162h guard。
+- **feed 歷史存在 state**：滾動 `feed` 陣列（上限 **50**，沿用 `seenNews` 修剪模式）。連同「最近一次晨報的精選新聞全文」「最近一次榜單變化摘要」一併由**核心推播段**寫入（見 §14.1）——非推播日（每週約 6 天無榜單推播、新聞 guard 生效時）才重建得出完整頁面與 feed。⚠️ 新增欄位一律**選用**：`boardStateSchema` 根層目前五欄位皆必填且 `load()` 遇壞檔擲錯不覆寫，漏設 optional 會讓首次部署時整條 pipeline（含 Discord 推播）直接掛掉。
+- **feed entry 不存星數**：50 筆事件各帶當時週增星＝一份事實上的星星時序，逼近 Constitution II 的紅線。只存標題／連結／時間／事件型別。
 - **不增加任何 LLM 呼叫**：發佈重用「推去 Discord 的同一批、已去重且已依開發者重要性挑選」的項目，品質一致。
 - 不畫歷史星星趨勢圖（我們不自存星星歷史，見 §3）。
 

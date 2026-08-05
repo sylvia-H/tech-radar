@@ -3,10 +3,13 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { PipelineService } from './pipeline/pipeline.service';
 import { NewsIngestService } from './news/news-ingest.service';
+import { PublishService } from './publish/publish.service';
 import { tryPostFailureAlert } from './discord/failure-alert';
 
 /** 設為 `1` 時只跑 F4 階段 A 新聞漏斗、印出候選清單觀測（不推播）。 */
 const NEWS_OBSERVE_ENV = 'NEWS_INGEST_OBSERVE';
+/** 設為 `1` 時只跑 F8 發佈段（獨立 `publish` job 用），不跑 `PipelineService`（research D2）。 */
+const PUBLISH_MODE_ENV = 'PUBLISH_MODE';
 
 /**
  * CLI 進入點：建立 application context（不啟 HTTP server）→ 執行 pipeline → 跑完即退。
@@ -26,6 +29,10 @@ async function bootstrap(): Promise<void> {
     if (process.env[NEWS_OBSERVE_ENV] === '1') {
       // F4 觀測模式：只跑階段 A 新聞漏斗、印出候選清單（不推播；正式串接進 pipeline 屬 F7）。
       await app.get(NewsIngestService).ingest();
+    } else if (process.env[PUBLISH_MODE_ENV] === '1') {
+      // F8 發佈段：PublishService.run() 永不 throw（頂層 catch-all，best-effort 告警），
+      // 故此分支自然一律以 exit 0 結束，不進入既有 PipelineService 失敗路徑（research D10）。
+      await app.get(PublishService).run();
     } else {
       await app.get(PipelineService).run();
     }

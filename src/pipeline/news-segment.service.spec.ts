@@ -105,6 +105,65 @@ describe('NewsSegmentService.run — US1 Acceptance（每日晨報端到端）',
     expect(save).toHaveBeenCalledWith(state);
   });
 
+  it('推播成功後 state.publish.news.items 與 digest.items 為同一參照（feed-page-contract.md C3，FR-002/009）', async () => {
+    const { service, curate } = build();
+    const items = [curatedItem()];
+    const digest: CuratedDigest = { items, degraded: false };
+    curate.mockResolvedValue(digest);
+    const state = makeState({ lastNewsPushAt: hoursAgo(24) });
+
+    const result = await service.run(state, NOW);
+
+    expect(result).toEqual({ status: 'ok' });
+    expect(state.publish?.news?.items).toBe(items);
+    expect(state.publish?.news?.generatedAt).toBe(NOW.toISOString());
+  });
+
+  it('publish.feed 正確併入本次新聞 entries，與既有榜單 entries 疊加後修剪至 50（US2）', async () => {
+    const { service, curate } = build();
+    curate.mockResolvedValue({ items: [curatedItem()], degraded: false } as CuratedDigest);
+    const existingBoardEntry = {
+      id: 'repo:1:new:2026-08-01',
+      type: 'board-new' as const,
+      title: 'o/r1 新進榜',
+      url: 'https://github.com/o/r1',
+      publishedAt: hoursAgo(48),
+    };
+    const state = makeState({
+      lastNewsPushAt: hoursAgo(24),
+      publish: { feed: [existingBoardEntry] },
+    });
+
+    const result = await service.run(state, NOW);
+
+    expect(result).toEqual({ status: 'ok' });
+    const ids = state.publish?.feed?.map((e) => e.id) ?? [];
+    expect(ids).toContain(existingBoardEntry.id); // 既有榜單 entry 保留
+    expect(ids).toContain('news:https://example.com/a'); // 本次新聞 entry 併入
+    expect(state.publish?.feed).toHaveLength(2);
+  });
+
+  it('publish.feed 對同 id 取新棄舊：低量日 50 筆視窗跨過 seenNews 7 天保留期時不產生重複 atom:id', async () => {
+    const { service } = build();
+    const staleSameNews = {
+      id: 'news:https://example.com/a', // 與本次精選正規化後同鍵
+      type: 'news' as const,
+      title: '八天前的同一則',
+      url: 'https://example.com/a',
+      publishedAt: hoursAgo(24 * 8),
+    };
+    const state = makeState({
+      lastNewsPushAt: hoursAgo(24),
+      publish: { feed: [staleSameNews] },
+    });
+
+    await service.run(state, NOW);
+
+    const ids = state.publish?.feed?.map((e) => e.id) ?? [];
+    expect(ids.filter((id) => id === 'news:https://example.com/a')).toHaveLength(1);
+    expect(state.publish?.feed?.[0].publishedAt).toBe(NOW.toISOString()); // 取的是新的那筆
+  });
+
   it('落檔前修剪逾 7 天的舊 seenNews：舊紀錄被剔除、本次新項寫入，持久化不無限膨脹（FR-023/SC-008）', async () => {
     const { service, save } = build();
     const stale = { url: 'https://old.example.com/x', seenAt: hoursAgo(24 * 8) }; // 8 天前 → 應被剔除
