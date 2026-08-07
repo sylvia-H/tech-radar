@@ -186,7 +186,7 @@
     }
   },
   "lastBoardPushAt": "2026-08-02T23:01:29.724Z",
-  "lastNewsPushAt": "2026-08-05T23:10:51.494Z",
+  "lastNewsPushAt": "2026-08-07T01:32:06.477Z",
   "publish": {
     "feed": [
       {
@@ -316,115 +316,134 @@
         "title": "AI 無法直接產出可用產品，工程實踐仍需回歸核心",
         "type": "news",
         "url": "https://weeraman.com/the-prototype-isnt-the-product/"
+      },
+      {
+        "content": "Node.js 釋出 22.23.2 LTS 版本，針對 HTTP/2 與 HTTPS 模組中的多個高風險（High）與中風險（Medium）漏洞進行修復。重點包括修復 CVE-2026-56846 與 CVE-2026-56848（關於 HTTP/2 標頭記憶體保留與串流處理），以及權限分配相關的安全更新。建議所有使用 Node.js 的生產環境開發者立即檢查專案依賴並更新，以降低潛在攻擊風險。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v22.23.2",
+        "publishedAt": "2026-08-07T01:32:06.477Z",
+        "title": "Node.js 發布 22.23.2 LTS 安全版本，修復多項高風險 HTTP/2 漏洞",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
+      },
+      {
+        "content": "Node.js 釋出 26.5.0 Current 版本。本次更新包含多項功能增強：在 Buffer 物件實作了 `blob.textStream()`，以及新增 `--experimental-import-text` 旗標以支援 ESM 導入文字檔。同時引入了新的釋出簽署金鑰。這些 API 的更新將影響開發者處理二進位資料與模組載入的方式，建議嘗試新功能的開發者審慎評估其穩定性。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.5.0",
+        "publishedAt": "2026-08-07T01:32:06.477Z",
+        "title": "Node.js 26.5.0 Current 版本釋出，新增實驗性 ESM 文字串流功能",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.5.0"
+      },
+      {
+        "content": "OpenAI 針對近期涉及第三方資安評估的事件進行說明，並公開了加強 AI 模型測試與評估的新防護策略。這對於依賴 OpenAI API 進行應用開發的工程師而言至關重要，因為這意味著官方正強化模型行為的合規性測試與安全邊界，開發者應關注這些防護措施對現有系統整合與安全性要求的潛在影響。",
+        "id": "news:https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+        "publishedAt": "2026-08-07T01:32:06.477Z",
+        "title": "OpenAI 針對 AI 模型安全性評估發布補充說明與防護機制",
+        "type": "news",
+        "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models"
+      },
+      {
+        "content": "Subaru 在 KubeCon+CloudNativeCon 展示了其利用雲端原生基礎設施加速 AI 開發的架構案例，透過優化技術將 AI 容器映像檔拉取速度提升了 60 倍，並實現了駕駛輔助系統的工作流自動化。此案例展示了 DevOps 在處理大規模 AI 模型部署時的實務架構方向，對於從事 AI 基礎設施建設的工程師具備高度參考價值。",
+        "id": "news:https://cncf.io/announcements/2026/07/28/subaru-wins-cncf-end-user-case-study-contest-for-accelerating-ai-development-with-cloud-native-infrastructure",
+        "publishedAt": "2026-08-07T01:32:06.477Z",
+        "title": "Subaru 利用雲端原生架構優化 AI 開發，獲 CNCF 案例獎項",
+        "type": "news",
+        "url": "https://www.cncf.io/announcements/2026/07/28/subaru-wins-cncf-end-user-case-study-contest-for-accelerating-ai-development-with-cloud-native-infrastructure/"
+      },
+      {
+        "content": "社群高度關注 DeepSeek-V4-Flash 的發表，該模型在效能表現上直逼目前市場領先的高階模型（如 GLM-5.2 與 GPT-5.6），同時維持了極具競爭力的成本結構。開發者正密切討論其對現有 AI 應用開發成本與選型策略的影響，社群普遍認為此類高性價比模型的快速迭代將對現有 AI API 市場定價造成顯著壓力。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vbjdby/deepseekv4flash0731_is_going_to_cause_another",
+        "publishedAt": "2026-08-07T01:32:06.477Z",
+        "title": "DeepSeek-V4-Flash 模型發布，挑戰高階模型市場價格與效能邊界",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vbjdby/deepseekv4flash0731_is_going_to_cause_another/"
+      },
+      {
+        "content": "阿里巴巴發布的 Qwen3.8 Max 在 Agentic Index 評測中表現優異，被視為目前的綜合最強模型之一。社群對於其在代理型任務（Agentic tasks）的處理能力表示高度關注。開發者正探討其對企業級自動化應用部署的潛力，以及該模型是否具備取代現有主流閉源模型的運算效能與穩定性。",
+        "id": "news:https://artificialanalysis.ai/?intelligence=agentic-index",
+        "publishedAt": "2026-08-07T01:32:06.477Z",
+        "title": "Qwen3.8 Max 在 Agentic Index 排名躍升，引發業界廣泛討論",
+        "type": "news",
+        "url": "https://artificialanalysis.ai/?intelligence=agentic-index"
+      },
+      {
+        "content": "近期 Hacker News 等社群針對「愛好者程式設計圈為何反對 AI」展開激烈討論。這並非單純的技術偏見，而是反映了開發者對於軟體維護性、知識傳承以及過度依賴 AI 生成程式碼所導致的技能退化憂慮。該討論對於評估 AI 導入企業開發流程的長期風險具有重要參考價值。",
+        "id": "news:https://blog.fogus.me/llm/born-against.html",
+        "publishedAt": "2026-08-07T01:32:06.477Z",
+        "title": "程式設計社群為何對大規模語言模型（LLM）持保留態度？",
+        "type": "news",
+        "url": "https://blog.fogus.me/llm/born-against.html"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-05T23:10:51.494Z",
+      "generatedAt": "2026-08-07T01:32:06.477Z",
       "items": [
         {
-          "content": "Node.js 釋出 Krypton 24.18.1 LTS 更新，主要針對 HTTP/2 標頭記憶體管理、權限節點處理及 HTTPS 身份校驗等問題進行修補。鑑於包含多項 High 等級的 CVE 安全修復，建議開發者務必檢查專案環境並儘速升級，以防範相關漏洞攻擊。",
+          "content": "Node.js 釋出 22.23.2 LTS 版本，針對 HTTP/2 與 HTTPS 模組中的多個高風險（High）與中風險（Medium）漏洞進行修復。重點包括修復 CVE-2026-56846 與 CVE-2026-56848（關於 HTTP/2 標頭記憶體保留與串流處理），以及權限分配相關的安全更新。建議所有使用 Node.js 的生產環境開發者立即檢查專案依賴並更新，以降低潛在攻擊風險。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Node.js 發布 24.18.1 LTS 版本：修復多項高風險安全漏洞",
-          "url": "https://github.com/nodejs/node/releases/tag/v24.18.1",
+          "title": "Node.js 發布 22.23.2 LTS 安全版本，修復多項高風險 HTTP/2 漏洞",
+          "url": "https://github.com/nodejs/node/releases/tag/v22.23.2",
           "weightedScore": 100
         },
         {
-          "content": "Node.js 發布 24.19.0 LTS 版本，主要功能更新包含實作了 blob.textStream() 以強化串流處理能力，並透過 --experimental-import-text 標誌引入實驗性的文字匯入功能。此外，更新了 OpenSSL 配置以支援壓縮，對後端開發者的資料處理效能與模組化開發有顯著改善。",
+          "content": "Node.js 釋出 26.5.0 Current 版本。本次更新包含多項功能增強：在 Buffer 物件實作了 `blob.textStream()`，以及新增 `--experimental-import-text` 旗標以支援 ESM 導入文字檔。同時引入了新的釋出簽署金鑰。這些 API 的更新將影響開發者處理二進位資料與模組載入的方式，建議嘗試新功能的開發者審慎評估其穩定性。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Node.js 24.19.0 LTS 版本更新：新增 Blob 串流與實驗性文字匯入功能",
-          "url": "https://github.com/nodejs/node/releases/tag/v24.19.0",
+          "title": "Node.js 26.5.0 Current 版本釋出，新增實驗性 ESM 文字串流功能",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.5.0",
           "weightedScore": 100
         },
         {
-          "content": "CNCF 技術監督委員會已將 K8gb（Kubernetes Global Balancer）納入孵化專案。作為開源的雲原生全域負載平衡方案，K8gb 專為多叢集、跨區域的部署架構設計，能有效強化雲原生應用的高可用性與災害復原能力，是 DevOps 架構師在建置全球性服務時的重要基礎設施工具。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Kubernetes 全球負載平衡器 K8gb 正式成為 CNCF 孵化專案",
-          "url": "https://www.cncf.io/announcements/2026/08/05/k8gb-becomes-a-cncf-incubating-project/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 推出 Cloudflare OS，旨在為 AI Agent、應用程式與工作流提供底層運行環境。此平台將運算原語深度整合，讓開發者能更輕量地構建、部署與維護具備自主性的 AI 應用，是目前雲端架構轉向「Agent-native」的重要訊號。",
+          "content": "OpenAI 針對近期涉及第三方資安評估的事件進行說明，並公開了加強 AI 模型測試與評估的新防護策略。這對於依賴 OpenAI API 進行應用開發的工程師而言至關重要，因為這意味著官方正強化模型行為的合規性測試與安全邊界，開發者應關注這些防護措施對現有系統整合與安全性要求的潛在影響。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 2,
-          "title": "Cloudflare 發布 Cloudflare OS：面向 Agent 與應用程式的開放平台",
-          "url": "https://blog.cloudflare.com/cloudflare-os/",
-          "weightedScore": 532
+          "title": "OpenAI 針對 AI 模型安全性評估發布補充說明與防護機制",
+          "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+          "weightedScore": 200
         },
         {
-          "content": "針對 AI Agent 開發節奏快於團隊維護能力的挑戰，Cloudflare 導入了「Agent 開發生命週期」框架。該工具鏈提供了一系列原語，協助開發者解決在部署與維持 Agent 穩定運行時所面臨的 DevOps 挑戰，對自動化工作流有直接助益。",
+          "content": "Subaru 在 KubeCon+CloudNativeCon 展示了其利用雲端原生基礎設施加速 AI 開發的架構案例，透過優化技術將 AI 容器映像檔拉取速度提升了 60 倍，並實現了駕駛輔助系統的工作流自動化。此案例展示了 DevOps 在處理大規模 AI 模型部署時的實務架構方向，對於從事 AI 基礎設施建設的工程師具備高度參考價值。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出 Agent 開發生命週期工具鏈",
-          "url": "https://blog.cloudflare.com/agent-development-lifecycle/",
+          "title": "Subaru 利用雲端原生架構優化 AI 開發，獲 CNCF 案例獎項",
+          "url": "https://www.cncf.io/announcements/2026/07/28/subaru-wins-cncf-end-user-case-study-contest-for-accelerating-ai-development-with-cloud-native-infrastructure/",
           "weightedScore": 100
         },
         {
-          "content": "Astro 專案透過在 GitHub Actions 中運行孤立的 AI 子 Agent，成功實現了自動化 bug 重現與補丁驗證，使 Issue 數量減少 85%。此案例展示了將 AI 深度整合進 DevOps 生命週期，減少人工檢測成本的成熟架構模式。",
+          "content": "社群高度關注 DeepSeek-V4-Flash 的發表，該模型在效能表現上直逼目前市場領先的高階模型（如 GLM-5.2 與 GPT-5.6），同時維持了極具競爭力的成本結構。開發者正密切討論其對現有 AI 應用開發成本與選型策略的影響，社群普遍認為此類高性價比模型的快速迭代將對現有 AI API 市場定價造成顯著壓力。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "title": "Astro 團隊實踐：利用 AI 子 Agent 實現 GitHub Issue 自動化管理",
-          "url": "https://blog.cloudflare.com/astro-issue-triage/",
+          "title": "DeepSeek-V4-Flash 模型發布，挑戰高階模型市場價格與效能邊界",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vbjdby/deepseekv4flash0731_is_going_to_cause_another/",
           "weightedScore": 100
         },
         {
-          "content": "隨著 GenAI 在開發流程中的滲透，開發者常對其效能與適用性產生誤解。此文針對現行軟體工程實務中的迷思進行剖析，幫助技術決策者釐清 AI 在輔助編碼與系統設計中的真實定位，避免盲目引入導致的維護債務。",
+          "content": "阿里巴巴發布的 Qwen3.8 Max 在 Agentic Index 評測中表現優異，被視為目前的綜合最強模型之一。社群對於其在代理型任務（Agentic tasks）的處理能力表示高度關注。開發者正探討其對企業級自動化應用部署的潛力，以及該模型是否具備取代現有主流閉源模型的運算效能與穩定性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "解析軟體工程與生成式 AI 的八大迷思",
-          "url": "https://queue.acm.org/detail.cfm?id=3807963",
-          "weightedScore": 279
+          "title": "Qwen3.8 Max 在 Agentic Index 排名躍升，引發業界廣泛討論",
+          "url": "https://artificialanalysis.ai/?intelligence=agentic-index",
+          "weightedScore": 423
         },
         {
-          "content": "針對近期 AI 能否取代開發者的熱烈討論，本文強調 AI 生成程式碼與建置「可供生產環境使用的產品」之間的鴻溝。對於專業開發者而言，理解並掌控自動化生成的輸出品質，仍是目前開發流程中無法外包的關鍵環節。",
+          "content": "近期 Hacker News 等社群針對「愛好者程式設計圈為何反對 AI」展開激烈討論。這並非單純的技術偏見，而是反映了開發者對於軟體維護性、知識傳承以及過度依賴 AI 生成程式碼所導致的技能退化憂慮。該討論對於評估 AI 導入企業開發流程的長期風險具有重要參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "AI 無法直接產出可用產品，工程實踐仍需回歸核心",
-          "url": "https://weeraman.com/the-prototype-isnt-the-product/",
-          "weightedScore": 265
+          "title": "程式設計社群為何對大規模語言模型（LLM）持保留態度？",
+          "url": "https://blog.fogus.me/llm/born-against.html",
+          "weightedScore": 408
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-07-30T23:14:02.029Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
-    },
-    {
-      "seenAt": "2026-07-30T23:14:02.029Z",
-      "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6"
-    },
-    {
-      "seenAt": "2026-07-30T23:14:02.029Z",
-      "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline"
-    },
-    {
-      "seenAt": "2026-07-30T23:14:02.029Z",
-      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots"
-    },
-    {
-      "seenAt": "2026-07-30T23:14:02.029Z",
-      "url": "https://status.claude.com/incidents/q2kg8n613kr3"
-    },
-    {
-      "seenAt": "2026-07-30T23:14:02.029Z",
-      "url": "https://llm2human.pages.dev/"
-    },
-    {
-      "seenAt": "2026-07-30T23:14:02.029Z",
-      "url": "https://simonwillison.net/2026/Jul/29/ai-worming-through-word"
-    },
     {
       "seenAt": "2026-07-31T23:10:44.989Z",
       "url": "https://reddit.com/r/LocalLLaMA/comments/1vbidkp/deepseekv4flash_has_been_updated_the_official"
@@ -604,6 +623,34 @@
     {
       "seenAt": "2026-08-05T23:10:51.494Z",
       "url": "https://weeraman.com/the-prototype-isnt-the-product"
+    },
+    {
+      "seenAt": "2026-08-07T01:32:06.477Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
+    },
+    {
+      "seenAt": "2026-08-07T01:32:06.477Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.5.0"
+    },
+    {
+      "seenAt": "2026-08-07T01:32:06.477Z",
+      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models"
+    },
+    {
+      "seenAt": "2026-08-07T01:32:06.477Z",
+      "url": "https://cncf.io/announcements/2026/07/28/subaru-wins-cncf-end-user-case-study-contest-for-accelerating-ai-development-with-cloud-native-infrastructure"
+    },
+    {
+      "seenAt": "2026-08-07T01:32:06.477Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vbjdby/deepseekv4flash0731_is_going_to_cause_another"
+    },
+    {
+      "seenAt": "2026-08-07T01:32:06.477Z",
+      "url": "https://artificialanalysis.ai/?intelligence=agentic-index"
+    },
+    {
+      "seenAt": "2026-08-07T01:32:06.477Z",
+      "url": "https://blog.fogus.me/llm/born-against.html"
     }
   ]
 }
