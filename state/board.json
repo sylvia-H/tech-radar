@@ -186,7 +186,7 @@
     }
   },
   "lastBoardPushAt": "2026-08-02T23:01:29.724Z",
-  "lastNewsPushAt": "2026-08-07T01:32:06.477Z",
+  "lastNewsPushAt": "2026-08-07T22:47:57.790Z",
   "publish": {
     "feed": [
       {
@@ -372,73 +372,146 @@
         "title": "程式設計社群為何對大規模語言模型（LLM）持保留態度？",
         "type": "news",
         "url": "https://blog.fogus.me/llm/born-against.html"
+      },
+      {
+        "content": "AMD 宣布收購 AI 晶片新創 Taalas。該公司專注於將 AI 模型邏輯直接蝕刻於矽晶片上，而非依賴軟體驅動的通用處理器。對於開發者而言，這代表未來在邊緣運算或資料中心推論時，有望獲得更低的延遲與更高的能源效率，將改變硬體加速層級的架構部署方式。",
+        "id": "news:https://theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344",
+        "publishedAt": "2026-08-07T22:47:57.790Z",
+        "title": "AMD 收購 Taalas 以強化矽晶片層級的 AI 推論效能",
+        "type": "news",
+        "url": "https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344"
+      },
+      {
+        "content": "熱門推論引擎 llama.cpp 正式加入對 DeepSeek V4 Flash 模型的支援，並引入 MTP (Multi-Token Prediction) 與 DSpark 等優化技術。此更新讓開發者能更輕易地在本地端部署高效能模型，顯著提升長文本生成速度與資源運用效率。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for",
+        "publishedAt": "2026-08-07T22:47:57.790Z",
+        "title": "llama.cpp 支援 DeepSeek V4 Flash 的 MTP 與 DSpark 加速",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for/"
+      },
+      {
+        "content": "Cloudflare 發布 AI Search 功能，協助開發者將現有檔案與網站資料轉化為可供 AI 代理檢索的向量索引。該服務無需繁瑣的底層架構縫合，降低了企業建構 RAG（檢索增強生成）系統的門檻，能快速讓代理程式回應基於內部數據的查詢。",
+        "id": "news:https://blog.cloudflare.com/ai-search-easier",
+        "publishedAt": "2026-08-07T22:47:57.790Z",
+        "title": "Cloudflare 推出 AI Search：為 AI 代理提供企業資料檢索功能",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/ai-search-easier/"
+      },
+      {
+        "content": "針對傳統驗證機制多於 Kubernetes API 層級運作的痛點，NRI 提供了一種更底層的運行時驗證方案。開發者可藉此攔截容器執行過程中的異常行為並強制執行安全策略，確保 CI/CD 流程中建立的鏡像在生產環境執行時，仍符合預期的安全簽署與合規性規範。",
+        "id": "news:https://cncf.io/blog/2026/07/30/runtime-supply-chain-verification-using-the-node-resource-interface-nri",
+        "publishedAt": "2026-08-07T22:47:57.790Z",
+        "title": "利用節點資源介面（NRI）實現容器供應鏈運行時驗證",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/07/30/runtime-supply-chain-verification-using-the-node-resource-interface-nri/"
+      },
+      {
+        "content": "Cloudflare 推出一套全新的 CI/CD 解決方案，允許開發者使用 TypeScript 定義工作流，並在 Cloudflare 的沙盒環境中運行。此工具旨在取代複雜的 YAML 配置，提供自癒式的 AI 代理與原生構建管道，適合大規模專案的自動化與部署管理。",
+        "id": "news:https://blog.cloudflare.com/ci-workflows",
+        "publishedAt": "2026-08-07T22:47:57.790Z",
+        "title": "Cloudflare 推出的原生 CI/CD 工作流與 SDK",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/ci-workflows/"
+      },
+      {
+        "content": "Oracle 正式對 OpenJDK 發布政策，禁止直接引入 AI 生成的程式碼。此舉旨在維護 Java 開發工具鏈的安全性與產權合規性。開發者在使用 AI 輔助編寫 Java 專案時，必須注意此政策可能對開源貢獻流程產生的重大規範改變。",
+        "id": "news:https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code",
+        "publishedAt": "2026-08-07T22:47:57.790Z",
+        "title": "Oracle 禁止在 OpenJDK 中使用 AI 生成程式碼",
+        "type": "news",
+        "url": "https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code"
+      },
+      {
+        "content": "歐盟 AI 法案於 2026 年 8 月 2 日正式生效。法案要求所有由 AI 生成的圖片、音訊、影片與文字內容必須明確標註為「AI 生成」。對開發者而言，這意味著在處理媒體與內容發布平台時，必須在系統架構中加入強制性的中繼資料標籤或浮水印檢測機制以符合法規。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vcqpn4/eu_ai_act_takes_effect_tomorrow_august_2_2026",
+        "publishedAt": "2026-08-07T22:47:57.790Z",
+        "title": "歐盟 AI 法案正式生效：強制規範 AI 生成內容標記",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vcqpn4/eu_ai_act_takes_effect_tomorrow_august_2_2026/"
+      },
+      {
+        "content": "一項針對 4 萬次遊戲運行紀錄的研究指出，當人類審核 AI 代理指令時，有高達 1/3 的安全威脅被漏掉。此數據凸顯出『人機迴路（Human-in-the-loop）』在複雜自動化任務中並非絕對安全，開發者在設計 AI 代理架構時，需考量更嚴謹的自動化防禦層。",
+        "id": "news:https://scalex.dev/blog/ai-agent-permissions-stats",
+        "publishedAt": "2026-08-07T22:47:57.790Z",
+        "title": "AI 代理指令審核缺失：研究顯示人類辨識威脅率僅 66%",
+        "type": "news",
+        "url": "https://scalex.dev/blog/ai-agent-permissions-stats/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-07T01:32:06.477Z",
+      "generatedAt": "2026-08-07T22:47:57.790Z",
       "items": [
         {
-          "content": "Node.js 釋出 22.23.2 LTS 版本，針對 HTTP/2 與 HTTPS 模組中的多個高風險（High）與中風險（Medium）漏洞進行修復。重點包括修復 CVE-2026-56846 與 CVE-2026-56848（關於 HTTP/2 標頭記憶體保留與串流處理），以及權限分配相關的安全更新。建議所有使用 Node.js 的生產環境開發者立即檢查專案依賴並更新，以降低潛在攻擊風險。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "Node.js 發布 22.23.2 LTS 安全版本，修復多項高風險 HTTP/2 漏洞",
-          "url": "https://github.com/nodejs/node/releases/tag/v22.23.2",
-          "weightedScore": 100
-        },
-        {
-          "content": "Node.js 釋出 26.5.0 Current 版本。本次更新包含多項功能增強：在 Buffer 物件實作了 `blob.textStream()`，以及新增 `--experimental-import-text` 旗標以支援 ESM 導入文字檔。同時引入了新的釋出簽署金鑰。這些 API 的更新將影響開發者處理二進位資料與模組載入的方式，建議嘗試新功能的開發者審慎評估其穩定性。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "Node.js 26.5.0 Current 版本釋出，新增實驗性 ESM 文字串流功能",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.5.0",
-          "weightedScore": 100
-        },
-        {
-          "content": "OpenAI 針對近期涉及第三方資安評估的事件進行說明，並公開了加強 AI 模型測試與評估的新防護策略。這對於依賴 OpenAI API 進行應用開發的工程師而言至關重要，因為這意味著官方正強化模型行為的合規性測試與安全邊界，開發者應關注這些防護措施對現有系統整合與安全性要求的潛在影響。",
+          "content": "AMD 宣布收購 AI 晶片新創 Taalas。該公司專注於將 AI 模型邏輯直接蝕刻於矽晶片上，而非依賴軟體驅動的通用處理器。對於開發者而言，這代表未來在邊緣運算或資料中心推論時，有望獲得更低的延遲與更高的能源效率，將改變硬體加速層級的架構部署方式。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 2,
-          "title": "OpenAI 針對 AI 模型安全性評估發布補充說明與防護機制",
-          "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
-          "weightedScore": 200
+          "sourceCount": 1,
+          "title": "AMD 收購 Taalas 以強化矽晶片層級的 AI 推論效能",
+          "url": "https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344",
+          "weightedScore": 873
         },
         {
-          "content": "Subaru 在 KubeCon+CloudNativeCon 展示了其利用雲端原生基礎設施加速 AI 開發的架構案例，透過優化技術將 AI 容器映像檔拉取速度提升了 60 倍，並實現了駕駛輔助系統的工作流自動化。此案例展示了 DevOps 在處理大規模 AI 模型部署時的實務架構方向，對於從事 AI 基礎設施建設的工程師具備高度參考價值。",
+          "content": "熱門推論引擎 llama.cpp 正式加入對 DeepSeek V4 Flash 模型的支援，並引入 MTP (Multi-Token Prediction) 與 DSpark 等優化技術。此更新讓開發者能更輕易地在本地端部署高效能模型，顯著提升長文本生成速度與資源運用效率。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "llama.cpp 支援 DeepSeek V4 Flash 的 MTP 與 DSpark 加速",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 發布 AI Search 功能，協助開發者將現有檔案與網站資料轉化為可供 AI 代理檢索的向量索引。該服務無需繁瑣的底層架構縫合，降低了企業建構 RAG（檢索增強生成）系統的門檻，能快速讓代理程式回應基於內部數據的查詢。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Subaru 利用雲端原生架構優化 AI 開發，獲 CNCF 案例獎項",
-          "url": "https://www.cncf.io/announcements/2026/07/28/subaru-wins-cncf-end-user-case-study-contest-for-accelerating-ai-development-with-cloud-native-infrastructure/",
+          "title": "Cloudflare 推出 AI Search：為 AI 代理提供企業資料檢索功能",
+          "url": "https://blog.cloudflare.com/ai-search-easier/",
           "weightedScore": 100
         },
         {
-          "content": "社群高度關注 DeepSeek-V4-Flash 的發表，該模型在效能表現上直逼目前市場領先的高階模型（如 GLM-5.2 與 GPT-5.6），同時維持了極具競爭力的成本結構。開發者正密切討論其對現有 AI 應用開發成本與選型策略的影響，社群普遍認為此類高性價比模型的快速迭代將對現有 AI API 市場定價造成顯著壓力。",
+          "content": "針對傳統驗證機制多於 Kubernetes API 層級運作的痛點，NRI 提供了一種更底層的運行時驗證方案。開發者可藉此攔截容器執行過程中的異常行為並強制執行安全策略，確保 CI/CD 流程中建立的鏡像在生產環境執行時，仍符合預期的安全簽署與合規性規範。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "title": "DeepSeek-V4-Flash 模型發布，挑戰高階模型市場價格與效能邊界",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vbjdby/deepseekv4flash0731_is_going_to_cause_another/",
+          "title": "利用節點資源介面（NRI）實現容器供應鏈運行時驗證",
+          "url": "https://www.cncf.io/blog/2026/07/30/runtime-supply-chain-verification-using-the-node-resource-interface-nri/",
           "weightedScore": 100
         },
         {
-          "content": "阿里巴巴發布的 Qwen3.8 Max 在 Agentic Index 評測中表現優異，被視為目前的綜合最強模型之一。社群對於其在代理型任務（Agentic tasks）的處理能力表示高度關注。開發者正探討其對企業級自動化應用部署的潛力，以及該模型是否具備取代現有主流閉源模型的運算效能與穩定性。",
+          "content": "Cloudflare 推出一套全新的 CI/CD 解決方案，允許開發者使用 TypeScript 定義工作流，並在 Cloudflare 的沙盒環境中運行。此工具旨在取代複雜的 YAML 配置，提供自癒式的 AI 代理與原生構建管道，適合大規模專案的自動化與部署管理。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "title": "Qwen3.8 Max 在 Agentic Index 排名躍升，引發業界廣泛討論",
-          "url": "https://artificialanalysis.ai/?intelligence=agentic-index",
-          "weightedScore": 423
+          "title": "Cloudflare 推出的原生 CI/CD 工作流與 SDK",
+          "url": "https://blog.cloudflare.com/ci-workflows/",
+          "weightedScore": 100
         },
         {
-          "content": "近期 Hacker News 等社群針對「愛好者程式設計圈為何反對 AI」展開激烈討論。這並非單純的技術偏見，而是反映了開發者對於軟體維護性、知識傳承以及過度依賴 AI 生成程式碼所導致的技能退化憂慮。該討論對於評估 AI 導入企業開發流程的長期風險具有重要參考價值。",
+          "content": "Oracle 正式對 OpenJDK 發布政策，禁止直接引入 AI 生成的程式碼。此舉旨在維護 Java 開發工具鏈的安全性與產權合規性。開發者在使用 AI 輔助編寫 Java 專案時，必須注意此政策可能對開源貢獻流程產生的重大規範改變。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "程式設計社群為何對大規模語言模型（LLM）持保留態度？",
-          "url": "https://blog.fogus.me/llm/born-against.html",
-          "weightedScore": 408
+          "title": "Oracle 禁止在 OpenJDK 中使用 AI 生成程式碼",
+          "url": "https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code",
+          "weightedScore": 334
+        },
+        {
+          "content": "歐盟 AI 法案於 2026 年 8 月 2 日正式生效。法案要求所有由 AI 生成的圖片、音訊、影片與文字內容必須明確標註為「AI 生成」。對開發者而言，這意味著在處理媒體與內容發布平台時，必須在系統架構中加入強制性的中繼資料標籤或浮水印檢測機制以符合法規。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "歐盟 AI 法案正式生效：強制規範 AI 生成內容標記",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vcqpn4/eu_ai_act_takes_effect_tomorrow_august_2_2026/",
+          "weightedScore": 100
+        },
+        {
+          "content": "一項針對 4 萬次遊戲運行紀錄的研究指出，當人類審核 AI 代理指令時，有高達 1/3 的安全威脅被漏掉。此數據凸顯出『人機迴路（Human-in-the-loop）』在複雜自動化任務中並非絕對安全，開發者在設計 AI 代理架構時，需考量更嚴謹的自動化防禦層。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "AI 代理指令審核缺失：研究顯示人類辨識威脅率僅 66%",
+          "url": "https://scalex.dev/blog/ai-agent-permissions-stats/",
+          "weightedScore": 329
         }
       ]
     }
@@ -651,6 +724,38 @@
     {
       "seenAt": "2026-08-07T01:32:06.477Z",
       "url": "https://blog.fogus.me/llm/born-against.html"
+    },
+    {
+      "seenAt": "2026-08-07T22:47:57.790Z",
+      "url": "https://theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344"
+    },
+    {
+      "seenAt": "2026-08-07T22:47:57.790Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for"
+    },
+    {
+      "seenAt": "2026-08-07T22:47:57.790Z",
+      "url": "https://blog.cloudflare.com/ai-search-easier"
+    },
+    {
+      "seenAt": "2026-08-07T22:47:57.790Z",
+      "url": "https://cncf.io/blog/2026/07/30/runtime-supply-chain-verification-using-the-node-resource-interface-nri"
+    },
+    {
+      "seenAt": "2026-08-07T22:47:57.790Z",
+      "url": "https://blog.cloudflare.com/ci-workflows"
+    },
+    {
+      "seenAt": "2026-08-07T22:47:57.790Z",
+      "url": "https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code"
+    },
+    {
+      "seenAt": "2026-08-07T22:47:57.790Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vcqpn4/eu_ai_act_takes_effect_tomorrow_august_2_2026"
+    },
+    {
+      "seenAt": "2026-08-07T22:47:57.790Z",
+      "url": "https://scalex.dev/blog/ai-agent-permissions-stats"
     }
   ]
 }
