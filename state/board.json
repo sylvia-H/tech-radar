@@ -186,7 +186,7 @@
     }
   },
   "lastBoardPushAt": "2026-08-02T23:01:29.724Z",
-  "lastNewsPushAt": "2026-08-07T22:47:57.790Z",
+  "lastNewsPushAt": "2026-08-08T22:38:35.737Z",
   "publish": {
     "feed": [
       {
@@ -436,115 +436,185 @@
         "title": "AI 代理指令審核缺失：研究顯示人類辨識威脅率僅 66%",
         "type": "news",
         "url": "https://scalex.dev/blog/ai-agent-permissions-stats/"
+      },
+      {
+        "content": "多個主流 AI 業者聯合推動 Agent Plugins 1.0.0 標準，旨在為 AI 代理建立一個可攜式的套件格式。對於開發者而言，這意味著未來只需編寫一次插件，即可跨平台運行於 OpenAI、AWS、Cursor 及 GitHub 等不同生態中，大幅降低開發代理工具的相容性成本。",
+        "id": "news:https://thenewstack.io/agent-plugins-open-standard",
+        "publishedAt": "2026-08-08T22:38:35.737Z",
+        "title": "OpenAI、AWS 與 GitHub 等科技巨頭發布 Agent Plugins 1.0.0 標準",
+        "type": "news",
+        "url": "https://thenewstack.io/agent-plugins-open-standard/"
+      },
+      {
+        "content": "阿里巴巴正式推出 Qwen3.8 系列模型，包含 27B 參數版本以及更強大的 Max 版本。這為開發者提供了更多高性能開源與閉源選擇，特別是在需要處理複雜任務與長上下文的情境下，進一步擴展了 LLM 的應用範疇。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max",
+        "publishedAt": "2026-08-08T22:38:35.737Z",
+        "title": "阿里雲發布 Qwen3.8-27B 與 Qwen3.8-Max 模型",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max/"
+      },
+      {
+        "content": "開源多租戶擴展存儲方案 Cortex 已完成由 OSTIF 進行的安全性審計。對於依賴 Cortex 處理大規模時序數據的 DevOps 工程師來說，這意味著該系統的基礎架構安全性已得到第三方驗證，是穩定生產環境的重要指標。",
+        "id": "news:https://cncf.io/blog/2026/08/03/cortex-completes-ostif-security-audit",
+        "publishedAt": "2026-08-08T22:38:35.737Z",
+        "title": "Prometheus 與 OpenTelemetry 監控存儲方案 Cortex 完成安全審計",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/08/03/cortex-completes-ostif-security-audit/"
+      },
+      {
+        "content": "在事件驅動的架構中，CPU 或記憶體指標常無法反映實際負載。本文探討如何利用 KEDA 根據 SQS 隊列深度自動調整 K8s Pod 數量，對 DevOps 工程師構建具備彈性與高併發處理能力的後端基礎設施至關重要。",
+        "id": "news:https://cncf.io/blog/2026/07/31/scaling-kubernetes-pods-with-keda-based-on-amazon-sqs-queue-depth",
+        "publishedAt": "2026-08-08T22:38:35.737Z",
+        "title": "如何根據 Amazon SQS 隊列深度自動擴展 Kubernetes Pod",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/07/31/scaling-kubernetes-pods-with-keda-based-on-amazon-sqs-queue-depth/"
+      },
+      {
+        "content": "Evergreen 是一款專為開發者設計的 PR 管理工具，能自動修復 CI 失敗並處理分支合併衝突。透過自動化處理維護與基底分支同步的繁瑣任務，能有效提升團隊開發效率，確保合併流程順暢。",
+        "id": "news:https://githubnext.com/posts/evergreen",
+        "publishedAt": "2026-08-08T22:38:35.737Z",
+        "title": "Evergreen：自動化處理 CI 失敗與合併衝突的開發工具",
+        "type": "news",
+        "url": "https://githubnext.com/posts/evergreen/"
+      },
+      {
+        "content": "社群熱議指出中國新研發的 DFSX 晶片在記憶體頻寬指標上達到 NVIDIA GB200 的兩倍。若此數據屬實，將對 AI 推論與訓練的硬體效能瓶頸帶來潛在的結構性挑戰，開發者應持續關注硬體層面的算力架構演變。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vduej3/chinas_dfsx_offers_2x_the_memory_bandwidth_of",
+        "publishedAt": "2026-08-08T22:38:35.737Z",
+        "title": "中國 DFSX 晶片展現出兩倍於 NVIDIA GB200 的記憶體頻寬",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vduej3/chinas_dfsx_offers_2x_the_memory_bandwidth_of/"
+      },
+      {
+        "content": "社群中針對開源模型在檢索（Retrieval）任務的表現進行了高強度的討論。這顯示了開發者對於「輕量化、高性價比模型」的需求正在攀升，如何在特定垂直領域透過開源模型達到與頂級模型相當的效果，是目前優化 AI 成本的關鍵策略。",
+        "id": "news:https://neon.com/blog/how-castform-neon-beats-frontier-models-on-price-and-efficiency",
+        "publishedAt": "2026-08-08T22:38:35.737Z",
+        "title": "以百倍低廉的開源模型在檢索任務中超越 GPT-5.6 Sol",
+        "type": "news",
+        "url": "https://neon.com/blog/how-castform-neon-beats-frontier-models-on-price-and-efficiency"
+      },
+      {
+        "content": "DeepSeek 最新推出的 V4-Flash 版本在西洋棋邏輯推理基準測試中表現超越了多個熱門模型。此類針對特定領域邏輯能力的測試結果，反映了開發者社群對於模型在規則執行與深度邏輯規劃能力的評估趨勢。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vdq8en/deepseekv4flash0731_surpasses_fable5_sol_kimik3",
+        "publishedAt": "2026-08-08T22:38:35.737Z",
+        "title": "DeepSeek-V4-Flash-0731 在西洋棋基準測試中表現亮眼",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdq8en/deepseekv4flash0731_surpasses_fable5_sol_kimik3/"
+      },
+      {
+        "content": "隨著多代理（Multi-agent）開發模式興起，如何處理多個 Git 工作樹（worktree）與 runtime 環境的協作成為熱議焦點。開發者發現現有的基礎設施在應對多代理並行變更時，常會引發環境混亂，這對 DevOps 的基礎建設規劃提出了新的挑戰。",
+        "id": "news:https://thenewstack.io/agent-native-runtime-branching",
+        "publishedAt": "2026-08-08T22:38:35.737Z",
+        "title": "當多個 AI 代理同時運作時：Git 工作樹管理與執行環境的衝突",
+        "type": "news",
+        "url": "https://thenewstack.io/agent-native-runtime-branching/"
+      },
+      {
+        "content": "社群討論對於 LLM 是否具備真正的「跳躍式邏輯」提出質疑。這類觀點討論提醒開發者，在構建關鍵業務應用時，不能過度依賴 LLM 的推理深度，應針對不同任務場景進行嚴格的邏輯驗證，而非盲目相信模型的生成結果。",
+        "id": "news:https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt",
+        "publishedAt": "2026-08-08T22:38:35.737Z",
+        "title": "LLM 真的能進行跳躍式邏輯思考嗎？社群針對模型推理能力的辯論",
+        "type": "news",
+        "url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-07T22:47:57.790Z",
+      "generatedAt": "2026-08-08T22:38:35.737Z",
       "items": [
         {
-          "content": "AMD 宣布收購 AI 晶片新創 Taalas。該公司專注於將 AI 模型邏輯直接蝕刻於矽晶片上，而非依賴軟體驅動的通用處理器。對於開發者而言，這代表未來在邊緣運算或資料中心推論時，有望獲得更低的延遲與更高的能源效率，將改變硬體加速層級的架構部署方式。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "AMD 收購 Taalas 以強化矽晶片層級的 AI 推論效能",
-          "url": "https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344",
-          "weightedScore": 873
-        },
-        {
-          "content": "熱門推論引擎 llama.cpp 正式加入對 DeepSeek V4 Flash 模型的支援，並引入 MTP (Multi-Token Prediction) 與 DSpark 等優化技術。此更新讓開發者能更輕易地在本地端部署高效能模型，顯著提升長文本生成速度與資源運用效率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "llama.cpp 支援 DeepSeek V4 Flash 的 MTP 與 DSpark 加速",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 發布 AI Search 功能，協助開發者將現有檔案與網站資料轉化為可供 AI 代理檢索的向量索引。該服務無需繁瑣的底層架構縫合，降低了企業建構 RAG（檢索增強生成）系統的門檻，能快速讓代理程式回應基於內部數據的查詢。",
+          "content": "多個主流 AI 業者聯合推動 Agent Plugins 1.0.0 標準，旨在為 AI 代理建立一個可攜式的套件格式。對於開發者而言，這意味著未來只需編寫一次插件，即可跨平台運行於 OpenAI、AWS、Cursor 及 GitHub 等不同生態中，大幅降低開發代理工具的相容性成本。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出 AI Search：為 AI 代理提供企業資料檢索功能",
-          "url": "https://blog.cloudflare.com/ai-search-easier/",
+          "title": "OpenAI、AWS 與 GitHub 等科技巨頭發布 Agent Plugins 1.0.0 標準",
+          "url": "https://thenewstack.io/agent-plugins-open-standard/",
+          "weightedScore": 50
+        },
+        {
+          "content": "阿里巴巴正式推出 Qwen3.8 系列模型，包含 27B 參數版本以及更強大的 Max 版本。這為開發者提供了更多高性能開源與閉源選擇，特別是在需要處理複雜任務與長上下文的情境下，進一步擴展了 LLM 的應用範疇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "阿里雲發布 Qwen3.8-27B 與 Qwen3.8-Max 模型",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max/",
           "weightedScore": 100
         },
         {
-          "content": "針對傳統驗證機制多於 Kubernetes API 層級運作的痛點，NRI 提供了一種更底層的運行時驗證方案。開發者可藉此攔截容器執行過程中的異常行為並強制執行安全策略，確保 CI/CD 流程中建立的鏡像在生產環境執行時，仍符合預期的安全簽署與合規性規範。",
+          "content": "開源多租戶擴展存儲方案 Cortex 已完成由 OSTIF 進行的安全性審計。對於依賴 Cortex 處理大規模時序數據的 DevOps 工程師來說，這意味著該系統的基礎架構安全性已得到第三方驗證，是穩定生產環境的重要指標。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "利用節點資源介面（NRI）實現容器供應鏈運行時驗證",
-          "url": "https://www.cncf.io/blog/2026/07/30/runtime-supply-chain-verification-using-the-node-resource-interface-nri/",
+          "title": "Prometheus 與 OpenTelemetry 監控存儲方案 Cortex 完成安全審計",
+          "url": "https://www.cncf.io/blog/2026/08/03/cortex-completes-ostif-security-audit/",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 推出一套全新的 CI/CD 解決方案，允許開發者使用 TypeScript 定義工作流，並在 Cloudflare 的沙盒環境中運行。此工具旨在取代複雜的 YAML 配置，提供自癒式的 AI 代理與原生構建管道，適合大規模專案的自動化與部署管理。",
+          "content": "在事件驅動的架構中，CPU 或記憶體指標常無法反映實際負載。本文探討如何利用 KEDA 根據 SQS 隊列深度自動調整 K8s Pod 數量，對 DevOps 工程師構建具備彈性與高併發處理能力的後端基礎設施至關重要。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出的原生 CI/CD 工作流與 SDK",
-          "url": "https://blog.cloudflare.com/ci-workflows/",
+          "title": "如何根據 Amazon SQS 隊列深度自動擴展 Kubernetes Pod",
+          "url": "https://www.cncf.io/blog/2026/07/31/scaling-kubernetes-pods-with-keda-based-on-amazon-sqs-queue-depth/",
           "weightedScore": 100
         },
         {
-          "content": "Oracle 正式對 OpenJDK 發布政策，禁止直接引入 AI 生成的程式碼。此舉旨在維護 Java 開發工具鏈的安全性與產權合規性。開發者在使用 AI 輔助編寫 Java 專案時，必須注意此政策可能對開源貢獻流程產生的重大規範改變。",
+          "content": "Evergreen 是一款專為開發者設計的 PR 管理工具，能自動修復 CI 失敗並處理分支合併衝突。透過自動化處理維護與基底分支同步的繁瑣任務，能有效提升團隊開發效率，確保合併流程順暢。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Oracle 禁止在 OpenJDK 中使用 AI 生成程式碼",
-          "url": "https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code",
-          "weightedScore": 334
-        },
-        {
-          "content": "歐盟 AI 法案於 2026 年 8 月 2 日正式生效。法案要求所有由 AI 生成的圖片、音訊、影片與文字內容必須明確標註為「AI 生成」。對開發者而言，這意味著在處理媒體與內容發布平台時，必須在系統架構中加入強制性的中繼資料標籤或浮水印檢測機制以符合法規。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "歐盟 AI 法案正式生效：強制規範 AI 生成內容標記",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vcqpn4/eu_ai_act_takes_effect_tomorrow_august_2_2026/",
+          "title": "Evergreen：自動化處理 CI 失敗與合併衝突的開發工具",
+          "url": "https://githubnext.com/posts/evergreen/",
           "weightedScore": 100
         },
         {
-          "content": "一項針對 4 萬次遊戲運行紀錄的研究指出，當人類審核 AI 代理指令時，有高達 1/3 的安全威脅被漏掉。此數據凸顯出『人機迴路（Human-in-the-loop）』在複雜自動化任務中並非絕對安全，開發者在設計 AI 代理架構時，需考量更嚴謹的自動化防禦層。",
+          "content": "社群熱議指出中國新研發的 DFSX 晶片在記憶體頻寬指標上達到 NVIDIA GB200 的兩倍。若此數據屬實，將對 AI 推論與訓練的硬體效能瓶頸帶來潛在的結構性挑戰，開發者應持續關注硬體層面的算力架構演變。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "AI 代理指令審核缺失：研究顯示人類辨識威脅率僅 66%",
-          "url": "https://scalex.dev/blog/ai-agent-permissions-stats/",
-          "weightedScore": 329
+          "title": "中國 DFSX 晶片展現出兩倍於 NVIDIA GB200 的記憶體頻寬",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vduej3/chinas_dfsx_offers_2x_the_memory_bandwidth_of/",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群中針對開源模型在檢索（Retrieval）任務的表現進行了高強度的討論。這顯示了開發者對於「輕量化、高性價比模型」的需求正在攀升，如何在特定垂直領域透過開源模型達到與頂級模型相當的效果，是目前優化 AI 成本的關鍵策略。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "以百倍低廉的開源模型在檢索任務中超越 GPT-5.6 Sol",
+          "url": "https://neon.com/blog/how-castform-neon-beats-frontier-models-on-price-and-efficiency",
+          "weightedScore": 432
+        },
+        {
+          "content": "DeepSeek 最新推出的 V4-Flash 版本在西洋棋邏輯推理基準測試中表現超越了多個熱門模型。此類針對特定領域邏輯能力的測試結果，反映了開發者社群對於模型在規則執行與深度邏輯規劃能力的評估趨勢。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "DeepSeek-V4-Flash-0731 在西洋棋基準測試中表現亮眼",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdq8en/deepseekv4flash0731_surpasses_fable5_sol_kimik3/",
+          "weightedScore": 100
+        },
+        {
+          "content": "隨著多代理（Multi-agent）開發模式興起，如何處理多個 Git 工作樹（worktree）與 runtime 環境的協作成為熱議焦點。開發者發現現有的基礎設施在應對多代理並行變更時，常會引發環境混亂，這對 DevOps 的基礎建設規劃提出了新的挑戰。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "當多個 AI 代理同時運作時：Git 工作樹管理與執行環境的衝突",
+          "url": "https://thenewstack.io/agent-native-runtime-branching/",
+          "weightedScore": 50
+        },
+        {
+          "content": "社群討論對於 LLM 是否具備真正的「跳躍式邏輯」提出質疑。這類觀點討論提醒開發者，在構建關鍵業務應用時，不能過度依賴 LLM 的推理深度，應針對不同任務場景進行嚴格的邏輯驗證，而非盲目相信模型的生成結果。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "LLM 真的能進行跳躍式邏輯思考嗎？社群針對模型推理能力的辯論",
+          "url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt",
+          "weightedScore": 296
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-07-31T23:10:44.989Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vbidkp/deepseekv4flash_has_been_updated_the_official"
-    },
-    {
-      "seenAt": "2026-07-31T23:10:44.989Z",
-      "url": "https://github.com/baidu/vLLM-Kunlun"
-    },
-    {
-      "seenAt": "2026-07-31T23:10:44.989Z",
-      "url": "https://simonwillison.net/2026/Jul/31/smevals"
-    },
-    {
-      "seenAt": "2026-07-31T23:10:44.989Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vbcmtn/anthropic_our_models_hacked_three_different"
-    },
-    {
-      "seenAt": "2026-07-31T23:10:44.989Z",
-      "url": "https://lwn.net/Articles/1086041"
-    },
-    {
-      "seenAt": "2026-07-31T23:10:44.989Z",
-      "url": "https://simonwillison.net/2026/Jul/30/three-real-world-incidents"
-    },
-    {
-      "seenAt": "2026-07-31T23:10:44.989Z",
-      "url": "https://blog.google/security/chrome-stronger-with-every-update"
-    },
     {
       "seenAt": "2026-08-01T23:01:46.764Z",
       "url": "https://reddit.com/r/LocalLLaMA/comments/1vbp7kb/deepseekaideepseekv4flash0731_on_huggingface"
@@ -756,6 +826,46 @@
     {
       "seenAt": "2026-08-07T22:47:57.790Z",
       "url": "https://scalex.dev/blog/ai-agent-permissions-stats"
+    },
+    {
+      "seenAt": "2026-08-08T22:38:35.737Z",
+      "url": "https://thenewstack.io/agent-plugins-open-standard"
+    },
+    {
+      "seenAt": "2026-08-08T22:38:35.737Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max"
+    },
+    {
+      "seenAt": "2026-08-08T22:38:35.737Z",
+      "url": "https://cncf.io/blog/2026/08/03/cortex-completes-ostif-security-audit"
+    },
+    {
+      "seenAt": "2026-08-08T22:38:35.737Z",
+      "url": "https://cncf.io/blog/2026/07/31/scaling-kubernetes-pods-with-keda-based-on-amazon-sqs-queue-depth"
+    },
+    {
+      "seenAt": "2026-08-08T22:38:35.737Z",
+      "url": "https://githubnext.com/posts/evergreen"
+    },
+    {
+      "seenAt": "2026-08-08T22:38:35.737Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vduej3/chinas_dfsx_offers_2x_the_memory_bandwidth_of"
+    },
+    {
+      "seenAt": "2026-08-08T22:38:35.737Z",
+      "url": "https://neon.com/blog/how-castform-neon-beats-frontier-models-on-price-and-efficiency"
+    },
+    {
+      "seenAt": "2026-08-08T22:38:35.737Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vdq8en/deepseekv4flash0731_surpasses_fable5_sol_kimik3"
+    },
+    {
+      "seenAt": "2026-08-08T22:38:35.737Z",
+      "url": "https://thenewstack.io/agent-native-runtime-branching"
+    },
+    {
+      "seenAt": "2026-08-08T22:38:35.737Z",
+      "url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt"
     }
   ]
 }
