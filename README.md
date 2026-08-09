@@ -34,7 +34,7 @@ repo，並精選當日最值得開發者關注的技術新聞，透過 Discord �
 
 ### 節制 LLM、把「事實」和「敘事」分工清楚
 
-- **新聞策展每日僅呼叫 Gemini 一次**（`gemini-3.1-flash-lite`）；去重完全**零 LLM**（見下）；
+- **新聞策展每日僅呼叫 Gemini 一次**（`gemini-3.5-flash-lite`）；去重完全**零 LLM**（見下）；
   repo 簡介**一生只生成一次並快取**，之後竄升／重新進榜直接讀快取，不重打 API。
 - LLM **不產生任何事實數據**——星數、連結、名次、發佈日期一律由程式提供並直接放進 Discord
   embed／頁面；LLM 只負責「這則新聞為什麼重要」「這個 repo 在做什麼」這類敘事性內容。就算 LLM
@@ -267,7 +267,7 @@ guard、榜單七日節奏（162h 門檻）。外部呼叫（Gemini）一律 moc
 |------|------|
 | 執行環境 | Node.js 24、TypeScript（strict） |
 | 應用框架 | NestJS（`createApplicationContext`，一次性 CLI job） |
-| LLM | `@google/genai`（Gemini 免費層 `gemini-3.1-flash-lite`） |
+| LLM | `@google/genai`（Gemini 免費層 `gemini-3.5-flash-lite`） |
 | HTML 解析 | `cheerio`（GitHub Trending 頁面解析） |
 | RSS/Atom 解析 | `rss-parser` |
 | Atom feed 產生 | `feed` |
