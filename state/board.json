@@ -1,39 +1,39 @@
 {
   "board": {
-    "708266011": {
+    "344190478": {
+      "domain": "ai",
+      "firstSeenAt": "2026-08-09T22:40:29.356Z",
+      "fullName": "microsoft/AI-For-Beginners",
+      "language": "Jupyter Notebook",
+      "rank": 5,
+      "starsThisWeek": 7469,
+      "url": "https://github.com/microsoft/AI-For-Beginners"
+    },
+    "652712035": {
+      "domain": "ai",
+      "firstSeenAt": "2026-08-09T22:40:29.356Z",
+      "fullName": "lyogavin/airllm",
+      "language": "Jupyter Notebook",
+      "rank": 7,
+      "starsThisWeek": 5711,
+      "url": "https://github.com/lyogavin/airllm"
+    },
+    "910422636": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-08-02T23:01:29.724Z",
-      "fullName": "Automattic/harper",
-      "language": "Rust",
-      "rank": 9,
-      "starsThisWeek": 833,
-      "url": "https://github.com/Automattic/harper"
-    },
-    "1035029907": {
-      "domain": "ai",
-      "firstSeenAt": "2026-07-26T23:05:01.196Z",
-      "fullName": "earendil-works/pi",
+      "firstSeenAt": "2026-08-09T22:40:29.356Z",
+      "fullName": "usekaneo/kaneo",
       "language": "TypeScript",
-      "rank": 6,
-      "starsThisWeek": 4518,
-      "url": "https://github.com/earendil-works/pi"
-    },
-    "1053118194": {
-      "domain": "ai",
-      "firstSeenAt": "2026-07-26T23:05:01.196Z",
-      "fullName": "bojieli/ai-agent-book",
-      "language": "Python",
-      "rank": 2,
-      "starsThisWeek": 9298,
-      "url": "https://github.com/bojieli/ai-agent-book"
+      "rank": 10,
+      "starsThisWeek": 2259,
+      "url": "https://github.com/usekaneo/kaneo"
     },
     "1073224795": {
       "domain": "ai",
       "firstSeenAt": "2026-08-02T23:01:29.724Z",
       "fullName": "obra/superpowers",
       "language": "Shell",
-      "rank": 7,
-      "starsThisWeek": 4156,
+      "rank": 9,
+      "starsThisWeek": 4907,
       "url": "https://github.com/obra/superpowers"
     },
     "1148788086": {
@@ -42,53 +42,53 @@
       "fullName": "mattpocock/skills",
       "language": "Shell",
       "rank": 1,
-      "starsThisWeek": 11047,
+      "starsThisWeek": 11344,
       "url": "https://github.com/mattpocock/skills"
+    },
+    "1151702019": {
+      "domain": "frontend-backend",
+      "firstSeenAt": "2026-08-09T22:40:29.356Z",
+      "fullName": "firecrawl/pdf-inspector",
+      "language": "Rust",
+      "rank": 3,
+      "starsThisWeek": 8846,
+      "url": "https://github.com/firecrawl/pdf-inspector"
     },
     "1157102282": {
       "domain": "ai",
       "firstSeenAt": "2026-07-26T23:05:01.196Z",
       "fullName": "diegosouzapw/OmniRoute",
       "language": "TypeScript",
-      "rank": 3,
-      "starsThisWeek": 7259,
+      "rank": 6,
+      "starsThisWeek": 6559,
       "url": "https://github.com/diegosouzapw/OmniRoute"
     },
-    "1212503250": {
+    "1165277268": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-02T23:01:29.724Z",
-      "fullName": "citrolabs/ego-lite",
-      "language": "JavaScript",
+      "firstSeenAt": "2026-08-09T22:40:29.356Z",
+      "fullName": "Panniantong/Agent-Reach",
+      "language": "Python",
       "rank": 8,
-      "starsThisWeek": 4090,
-      "url": "https://github.com/citrolabs/ego-lite"
+      "starsThisWeek": 5183,
+      "url": "https://github.com/Panniantong/Agent-Reach"
     },
-    "1241960226": {
+    "1203558071": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-02T23:01:29.724Z",
-      "fullName": "alibaba/open-code-review",
-      "language": "Go",
-      "rank": 5,
-      "starsThisWeek": 4708,
-      "url": "https://github.com/alibaba/open-code-review"
-    },
-    "1316527318": {
-      "domain": "ai",
-      "firstSeenAt": "2026-08-02T23:01:29.724Z",
-      "fullName": "yc-software/qm",
+      "firstSeenAt": "2026-08-09T22:40:29.356Z",
+      "fullName": "TencentCloud/TencentDB-Agent-Memory",
       "language": "TypeScript",
       "rank": 4,
-      "starsThisWeek": 7092,
-      "url": "https://github.com/yc-software/qm"
+      "starsThisWeek": 8046,
+      "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory"
     },
-    "1317565852": {
-      "domain": "frontend-backend",
-      "firstSeenAt": "2026-08-02T23:01:29.724Z",
-      "fullName": "ddoemonn/interior",
-      "language": "TypeScript",
-      "rank": 10,
-      "starsThisWeek": 422,
-      "url": "https://github.com/ddoemonn/interior"
+    "1237819660": {
+      "domain": "ai",
+      "firstSeenAt": "2026-08-09T22:40:29.356Z",
+      "fullName": "zhaoxuya520/reverse-skill",
+      "language": "PowerShell",
+      "rank": 2,
+      "starsThisWeek": 9635,
+      "url": "https://github.com/zhaoxuya520/reverse-skill"
     }
   },
   "intros": {
@@ -96,9 +96,17 @@
       "intro": "croc 是一款基於 Go 語言的高效能檔案傳輸工具，解決了跨設備傳輸檔案時，需處理複雜網路設定或伺服器架構的困擾。它採用 PAKE 技術實現端對端加密，確保資料傳輸安全性。具備跨平台支援、斷點續傳、IPv6 優先及支援代理伺服器等核心特色。無論是開發者在指令列快速分享檔案，或是一般使用者透過瀏覽器進行傳輸，croc 都能在無須安裝或設定埠轉發的情況下，提供簡易且安全的一對一傳輸體驗。",
       "introAt": "2026-07-26T23:05:01.196Z"
     },
+    "344190478": {
+      "intro": "這是一個為期 12 週、共 24 課的初學者友善人工智慧（AI）免費課程。專案透過 Jupyter Notebook 與 PyTorch、TensorFlow 等主流框架，帶領學習者探索符號式 AI、神經網路、電腦視覺、自然語言處理、GAN 及多代理人系統等核心技術，並涵蓋 AI 倫理。內容提供多國語言支援，適合想從零開始系統化學習 AI 與深度學習的初學者進行實作與練習。",
+      "introAt": "2026-08-09T22:40:29.356Z"
+    },
     "357728969": {
       "intro": "Bun 是一款專為 JavaScript 和 TypeScript 設計的全方位工具套件，旨在解決開發環境冗長與執行效能瓶頸。它使用 Rust 開發，以 JavaScriptCore 為核心，不僅是 Node.js 的高效替代方案，更整合了測試執行器、指令碼執行器及相容 npm 的套件管理工具。Bun 提供極致的啟動速度與記憶體效率，適合追求高性能開發體驗的開發者，在現有 Node.js 專案中即可無縫整合使用。",
       "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "652712035": {
+      "intro": "AirLLM 能大幅降低大型語言模型的推論記憶體需求，讓 70B 等大型模型在單張 4GB GPU 上運行，且不需量化、蒸餾或剪枝。它支援稀疏 MoE 模型以專家分流方式載入，亦支援 DeepSeek、Llama、Qwen 等多款主流開源模型，甚至能在低記憶體設備上執行。適合硬體資源有限、需在消費級顯卡或 MacOS 上運行超大型與中文開源模型的開發者與研究人員。",
+      "introAt": "2026-08-09T22:40:29.356Z"
     },
     "708266011": {
       "intro": "Harper 旨在解決現有英文文法檢查工具過度耗能、速度緩慢及隱私洩漏的問題。其核心特色為極致的效能，不僅記憶體佔用極低，且能實現毫秒級檢查，同時支援 WebAssembly，確保隱私安全。適合重視隱私與操作效率的開發者，可透過多款主流編輯器外掛或 Web 應用使用。",
@@ -107,6 +115,10 @@
     "793375104": {
       "intro": "此專案提供超過 100 款開源 AI Agent、Agent 技能及 RAG 應用，解決開發者從零構建複雜 AI 流程的痛點。核心特色為模組化設計、支援多種主流模型，且具備端對端測試。無論是想為編碼助理增加實用技能，或是部署金融、研究、自動化等專業級 Agent 團隊，皆可透過簡單指令快速執行與整合，非常適合希望加速 AI 應用開發與落地實踐的開發者。",
       "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "910422636": {
+      "intro": "告別繁雜臃腫的專案管理工具！Kaneo 專為追求高效與簡潔的團隊打造，提供極速、清爽且注重隱私的開源協作體驗。\n\n採用 TypeScript 與現代技術棧開發，具備乾淨介面並支援自主架構（Self-hosted）。無論是透過 Docker、Kubernetes 快速部署，或利用內建 MCP 伺服器讓 AI 工具直接管理任務，Kaneo 都能完美融入你的自然工作流，資料永遠掌握在自己手中。",
+      "introAt": "2026-08-09T22:40:29.356Z"
     },
     "997737944": {
       "intro": "RuView 透過 ESP32 節點擷取 WiFi 信道狀態資訊（CSI），將無線電波轉化為空間感知系統，實現無需攝影機或穿戴裝置的非接觸式監測。系統能即時偵測人體存在、呼吸心跳、跌倒與活動狀態，精準度高且支援區域映射。完整支援 Home Assistant、Apple Home 及 Matter 生態系，適合居家自動化、安全監控與長照健康管理。所有運算皆在邊緣裝置完成，無需雲端連線，保護個人隱私。",
@@ -136,9 +148,17 @@
       "intro": "這是一套專為真實工程需求設計的 AI 代理技能集，旨在解決與 AI 溝通不良、輸出冗長及代碼品質低落的問題。透過「互動式引導」、「定義領域語言」及「TDD 紅綠重構」等核心技術，協助開發者與 AI 深度對齊、精簡溝通成本。適合追求高質量開發、希望提升 AI 協作效率的工程師使用，支援透過 Shell 安裝或作為 Claude Code 外掛，靈活導入你的開發流程。",
       "introAt": "2026-07-19T11:16:05.077Z"
     },
+    "1151702019": {
+      "intro": "Firecrawl 開發的高速 Rust PDF 解析與分類庫，無需 OCR 即可在 200 毫秒內完成文字提取並轉為乾淨的 Markdown。具備智慧分類、座標感知提取、多欄排版與表格偵測等功能。提供 Python、Node.js 及瀏覽器 WebAssembly 綁定，是處理原生文字 PDF、研究報告與財務文件的高效本地端首選。",
+      "introAt": "2026-08-09T22:40:29.356Z"
+    },
     "1157102282": {
       "intro": "OmniRoute 是免費的 AI 閘道，整合 43 個供應商與 516 種模型，每月提供約 15 億免費 Token。它能自動切換模型，確保服務不中斷。具備 19 種路由策略與自動化組合引擎，支援主流 AI 編碼工具與 MCP 協定，無需配置即可使用，是開發者優化 AI 使用成本與效能的利器。",
       "introAt": "2026-07-26T23:05:01.196Z"
+    },
+    "1165277268": {
+      "intro": "為 AI Agent 一鍵解鎖網際網路能力，解決各大平台因封鎖、需付費或登入而無法讀取資料的痛點。專案具備自動選型、安裝與「首選+備選」的多後端路由機制，確保接入方式換代時用戶無感；並內建環境診斷與隱私安全保護，Cookie 僅存本機。相容 Claude Code、Cursor、OpenClaw 等主流命令列 Agent，讓你的 AI 輕鬆閱讀網頁、刷推特、看 YouTube、搜 Reddit 與小紅書。",
+      "introAt": "2026-08-09T22:40:29.356Z"
     },
     "1167788341": {
       "intro": "AI 程式開發常因重複讀取龐大程式碼而浪費 Token。code-review-graph 利用 Tree-sitter 建立程式碼結構圖，透過增量更新與精準上下文分析，讓 AI 僅讀取必要的關聯檔案，大幅節省成本並提升效率。核心支援多種程式語言、提供 MCP 整合與 CI 風險分析，適合處理大型專案與 Monorepo 的開發者，平均可降低約 82 倍的 Token 使用量，是優化 AI 程式碼審查的利器。",
@@ -160,6 +180,10 @@
       "intro": "Graphify 將專案程式碼、文件與多媒體轉化為知識圖譜，取代傳統 grep 搜尋，讓開發者透過語意查詢獲取精準洞察。其採用 tree-sitter 進行在地化解析，無需依賴模型即可建立確定性關係，並透過 Leiden 演算法劃分子系統。適用於 Claude Code、Cursor 等多種 AI 助手，協助工程師直觀追蹤概念路徑，是管理複雜專案與提升跨檔案理解效率的強力工具。",
       "introAt": "2026-07-19T11:16:05.077Z"
     },
+    "1203558071": {
+      "intro": "專案解決 AI Agent 每次重啟都需重新學習痛點，將對話、技能與知識沉澱為可攜式資產。核心特色包含自動化資產萃取、支援跨框架的多 Agent 協同、結合文件與程式碼的圖譜檢索，以及具備權限控制的團隊記憶面板。適合追求經驗累積、降低重複溝通成本的個人開發者與 Agent 團隊。",
+      "introAt": "2026-08-09T22:40:29.356Z"
+    },
     "1212503250": {
       "intro": "ego lite 解決了 AI 代理執行網頁自動化時，與用戶搶佔瀏覽器與帳號登入權限的問題。透過獨立工作空間與原生 Chrome 資料整合，讓代理能平行執行任務而不干擾用戶。其核心特色在於直接以 JavaScript 執行指令，相比傳統 CLI 框架速度提升 2.5 倍並節省大量 Token。適用於需要開發與 AI 代理協作自動化任務、追求高效率與順暢工作流的開發者。",
       "introAt": "2026-08-02T23:01:29.724Z"
@@ -167,6 +191,10 @@
     "1222917575": {
       "intro": "Hallmark 是一款專為 Claude Code、Cursor 與 Codex 設計的 AI 設計技能，旨在解決 AI 生成內容千篇一律的「罐頭感」。它透過內建的 57 項防廢話檢測與自我審查機制，確保產出的 CSS 與 HTML 具備獨特宏觀架構與設計美感。本工具提供建構、審計、重設計及分析四大功能，能根據創意需求靈活切換 20 種主題或進行客製化設計，讓不同專案展現截然不同的獨特風貌。",
       "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1237819660": {
+      "intro": "專案旨在解決 AI 代理在處理資安逆向與滲透時，不知該選擇何種工具及工作流程的問題。核心特色為提供一套結構化的技能路由包，包含 41 條路由規則、42 個追蹤模組及 163 個回歸測試案例，確保跨平台執行一致性。適用於讓 Claude Code、Cursor 等 AI 用戶端在面對 APK、二進位檔、前端 JS 加密、CTF 挑戰或惡意軟體分析時，能精準導向對應的方法論與可重複的工作流程。",
+      "introAt": "2026-08-09T22:40:29.356Z"
     },
     "1241960226": {
       "intro": "Open Code Review 是一款由阿里內部實戰淬煉的 AI 程式碼審查 CLI 工具。它解決了通用代理程式審查不全面、定位不準及品質不穩定的痛點，透過確定性工程與代理機制結合，實現精確的檔案分組與深度審查。憑藉極高的精確度、更低的 Token 消耗及處理大規模變更的能力，它是開發團隊進行高效、穩定自動化審查的最佳利器。只需配置模型端點即可快速整合至開發流程。",
@@ -185,66 +213,14 @@
       "introAt": "2026-08-02T23:01:29.724Z"
     }
   },
-  "lastBoardPushAt": "2026-08-02T23:01:29.724Z",
-  "lastNewsPushAt": "2026-08-08T22:38:35.737Z",
+  "lastBoardPushAt": "2026-08-09T22:40:29.356Z",
+  "lastNewsPushAt": "2026-08-09T22:40:29.356Z",
   "publish": {
+    "boardSummary": {
+      "generatedAt": "2026-08-09T22:40:29.356Z",
+      "summary": "本次技術雷達榜單由 mattpocock/skills 奪下 #1，共迎來 7 個新進項目（包含 AI 5 個與前後端 2 個），同時有 2 個項目下降。"
+    },
     "feed": [
-      {
-        "content": "Google 宣布推出 Gemini 3.6 Flash、3.5 Flash-Lite 及 3.5 Flash Cyber 模型。對於開發者而言，這代表在處理多模態任務、輕量化推理及特定應用場景（如資安）有了更多模型選擇，開發者應評估其成本效益與效能，以決定是否遷移至新版本。",
-        "id": "news:https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber",
-        "publishedAt": "2026-08-04T23:11:29.585Z",
-        "title": "Google 發布 Gemini 3.6 Flash 與 3.5 系列模型更新",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/"
-      },
-      {
-        "content": "Node.js 26.6.0 版本釋出，帶來多項實驗性與實用功能。包括新增 `getCurrentEventLoop` 以改進 FFI 效能監控，以及在測試執行器（test_runner）中新增 `context.log()` 與事件報告功能，能有效提升後端開發者的除錯效率與觀測性。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.6.0",
-        "publishedAt": "2026-08-04T23:11:29.585Z",
-        "title": "Node.js 發布 26.6.0 版本：新增測試與 FFI 追蹤功能",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
-      },
-      {
-        "content": "Lima v2.2 正式支援 Windows 虛擬機運作，並加入 TPM 2.0 模擬功能。這對於需要在 macOS 上進行跨平台開發（Linux, macOS, FreeBSD, Windows）的 DevOps 工程師來說是重大升級，簡化了本地虛擬化環境的基礎設施部署工作。",
-        "id": "news:https://cncf.io/blog/2026/07/28/lima-v2-2-windows-guests-and-tpm-2-0-emulation",
-        "publishedAt": "2026-08-04T23:11:29.585Z",
-        "title": "Lima v2.2 釋出：新增 Windows 客體系統支援與 TPM 2.0 模擬",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/07/28/lima-v2-2-windows-guests-and-tpm-2-0-emulation/"
-      },
-      {
-        "content": "Mistral 推出了 3B 參數的輕量級模型 Shieldstral，專門用於多模態內容的審核。對於需要建構 AI 應用並處理內容過濾的開發者，此模型提供了更高效、可部署於邊緣設備的審核解決方案，降低了對大型模型的依賴。",
-        "id": "news:https://mistral.ai/news/shieldstral",
-        "publishedAt": "2026-08-04T23:11:29.585Z",
-        "title": "Mistral 發布 Shieldstral：3B 多模態內容審核模型",
-        "type": "news",
-        "url": "https://mistral.ai/news/shieldstral/"
-      },
-      {
-        "content": "Cloudflare 推出的 Agents 平台為開發者提供了統一的體驗，用以部署、監控並管理 AI 代理的效能。這是一套針對 AI Agent 開發的基礎設施升級，能協助開發者在規模化場景下監控代理行為並獲取洞察。",
-        "id": "news:https://blog.cloudflare.com/agents-on-cloudflare",
-        "publishedAt": "2026-08-04T23:11:29.585Z",
-        "title": "Cloudflare 推出 Agents 平台，整合代理服務生命週期管理",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/agents-on-cloudflare/"
-      },
-      {
-        "content": "社群討論 AI 生成圖像大量出現在技術部落格的現象，認為這可能導致內容同質化並降低資訊密度。此議題反映了開發者對於技術社群「訊噪比」的憂慮，以及對高品質原創技術內容的需求反彈。",
-        "id": "news:https://nelson.cloud/ai-generated-images-discourage-me-from-reading-your-blog",
-        "publishedAt": "2026-08-04T23:11:29.585Z",
-        "title": "Hacker News 熱議：AI 生成影像是否降低了技術部落格的閱讀價值",
-        "type": "news",
-        "url": "https://nelson.cloud/ai-generated-images-discourage-me-from-reading-your-blog/"
-      },
-      {
-        "content": "開發者社群關注到 AI 領先公司逐漸減少公開研究細節的趨勢。這象徵著 AI 領域從開放科學轉向閉源競爭，開發者在規劃長期技術棧時，需認知到未來可能面臨更少的透明度與更難取得的底層技術細節。",
-        "id": "news:https://science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
-        "publishedAt": "2026-08-04T23:11:29.585Z",
-        "title": "Hacker News 熱議：頂尖 AI 新創公司為何減少發表研究論文",
-        "type": "news",
-        "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research"
-      },
       {
         "content": "針對 Apple 前員工涉嫌將機密資料攜至 OpenAI 的法律爭議，社群討論集中於企業內部的資料安全性保護措施。此事件對開發者而言，是關於數據資產歸屬權與公司安全合規政策的一項警示。",
         "id": "news:https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai",
@@ -516,133 +492,217 @@
         "title": "LLM 真的能進行跳躍式邏輯思考嗎？社群針對模型推理能力的辯論",
         "type": "news",
         "url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt"
+      },
+      {
+        "id": "repo:1237819660:new:2026-08-10",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "zhaoxuya520/reverse-skill 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/zhaoxuya520/reverse-skill"
+      },
+      {
+        "id": "repo:1151702019:new:2026-08-10",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "firecrawl/pdf-inspector 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/firecrawl/pdf-inspector"
+      },
+      {
+        "id": "repo:1203558071:new:2026-08-10",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "TencentCloud/TencentDB-Agent-Memory 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory"
+      },
+      {
+        "id": "repo:344190478:new:2026-08-10",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "microsoft/AI-For-Beginners 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/microsoft/AI-For-Beginners"
+      },
+      {
+        "id": "repo:652712035:new:2026-08-10",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "lyogavin/airllm 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/lyogavin/airllm"
+      },
+      {
+        "id": "repo:1165277268:new:2026-08-10",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "Panniantong/Agent-Reach 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/Panniantong/Agent-Reach"
+      },
+      {
+        "id": "repo:910422636:new:2026-08-10",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "usekaneo/kaneo 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/usekaneo/kaneo"
+      },
+      {
+        "content": "OpenCost 1.121.0 正式推出針對 Kubernetes 叢集的 AI 模型推論成本追蹤功能。隨著企業大規模部署 LLM，GPU 帳單與 token 消耗大增，此版本協助平台團隊精準掌握每個 token 與 GPU 資源的實際成本，解決以往在微服務與 AI 混合架構中成本黑盒的問題，對優化基礎設施支出至關重要。",
+        "id": "news:https://cncf.io/blog/2026/08/05/opencost-1-121-0-first-of-a-kind-kubernetes-inference-cost-tracking",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "OpenCost 1.121.0 發布：首次支援 Kubernetes 叢集推論成本追蹤",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/08/05/opencost-1-121-0-first-of-a-kind-kubernetes-inference-cost-tracking/"
+      },
+      {
+        "content": "OpenAI 官方宣佈在 ChatGPT 系統中升級 GPT-5.6 Sol 模型表現，並同步將 GPT-5.6 Luna 的存取權限擴大開放給所有免費使用者。這項更動讓一般與專業開發者能更廣泛地免費測試新一代模型能力，有助於評估其在自動化工作流程與複雜推理上的應用潛力。",
+        "id": "news:https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "ChatGPT 推出 GPT-5.6 Sol 改進版並向免費版擴大開放 GPT-5.6 Luna",
+        "type": "news",
+        "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/"
+      },
+      {
+        "content": "Google 官方推出 Gemini Robotics 2，旨在透過多模態基礎模型賦予機器人更強大的「全身體智慧（Whole body intelligence）」。這項更新讓機器人能更靈巧地整合視覺、語言與肢體動作控制，對從事硬體整合、自動化控制與邊緣 AI 系統開發的工程師而言，提供了全新的視覺與動作對齊基礎能力。",
+        "id": "news:https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "Google 發布 Gemini Robotics 2，為機器人帶來全身體智慧",
+        "type": "news",
+        "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/"
+      },
+      {
+        "content": "Cloudflare 宣布推出更新版的開發者社群計畫（包含大使與社群工程師），並加碼投入 100 萬美元的開源維護者資助基金。此舉旨在長期支持核心開源專案維護者、擴大開發者生態系，對於依賴 Cloudflare 技術堆疊與開源套件的開發者與組織來說，提供了更多實質的資源與社群支持渠道。",
+        "id": "news:https://blog.cloudflare.com/community-program-refresh",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "Cloudflare 推出全新社群計畫並投入 100 萬美元開源資助基金",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/community-program-refresh/"
+      },
+      {
+        "content": "condense-json 1.0 版正式釋出，這是一套專門用於壓縮與精簡 JSON 資料結構的工具。對於需要處理大量 API 傳輸、最佳化頻寬或降低大型語言模型（LLM）上下文 token 消耗的開發者而言，提供了一個實用的輕量化資料處理選擇。",
+        "id": "news:https://simonwillison.net/2026/Aug/2/condense-json",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "condense-json 1.0 正式發布",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Aug/2/condense-json/#atom-everything"
+      },
+      {
+        "content": "Datasette 生態系釋出 datasette-apps 0.2a0 早期預覽版本。此版本進一步擴展了基於 Datasette 快速建構資料導向應用程式的能力，對於經常需要將 SQLite 資料庫快速轉為 Web 介面與內部工具的資料工程師和後端開發者來說，提供更便利的擴充套件選項。",
+        "id": "news:https://simonwillison.net/2026/Aug/1/datasette-apps",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "datasette-apps 0.2a0 釋出：擴充資料探索與應用能力",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Aug/1/datasette-apps/#atom-everything"
+      },
+      {
+        "content": "隨著 AI 程式碼生成工具在工程團隊中普及，API 呼叫與 token 消耗費用快速攀升。社群熱議文章探討如何在組織內部衡量、監控與最佳化 AI Coding 工具的成本效益，避免生產力提升的同時造成雲端與 AI 服務預算失控，對導入 AI 協作的團隊主管與架構師極具參考價值。",
+        "id": "news:https://databricks.com/blog/managing-ai-coding-costs-scale",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "如何在大規模營運下有效控管 AI 輔助編碼成本",
+        "type": "news",
+        "url": "https://www.databricks.com/blog/managing-ai-coding-costs-scale"
+      },
+      {
+        "content": "隨著企業將自主性 AI Agents 投入生產環境，傳統的應用效能監控（APM）往往無法解釋代理程式為何陷入無限迴圈或消耗異常成本。這篇社群熱門文章分享了實務上建構與維運 AI Agent 系統的經驗，強調針對非決定性行為建立專屬可觀測性與除錯機制的必要性。",
+        "id": "news:https://cncf.io/blog/2026/08/04/you-cant-debug-what-you-cant-see-observability-for-ai-agents",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "看不見就無法除錯：生產環境中 AI Agents 的可觀測性挑戰",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/08/04/you-cant-debug-what-you-cant-see-observability-for-ai-agents/"
+      },
+      {
+        "content": "技術社群深入梳理並記錄了 OpenAI 系統近期對 Hugging Face 造成意外流量衝擊與阻斷的事件時間軸。這起事件引發業界對自動化腳本互動、API 安全防護邊界以及大廠系統間無預警連鎖反應的廣泛討論，對系統架構師和資安人員具有高度警惕意義。",
+        "id": "news:https://simonwillison.net/2026/Aug/7/openai-timeline",
+        "publishedAt": "2026-08-09T22:40:29.356Z",
+        "title": "OpenAI 意外攻擊 Hugging Face 事件的時間軸梳理",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-08T22:38:35.737Z",
+      "generatedAt": "2026-08-09T22:40:29.356Z",
       "items": [
         {
-          "content": "多個主流 AI 業者聯合推動 Agent Plugins 1.0.0 標準，旨在為 AI 代理建立一個可攜式的套件格式。對於開發者而言，這意味著未來只需編寫一次插件，即可跨平台運行於 OpenAI、AWS、Cursor 及 GitHub 等不同生態中，大幅降低開發代理工具的相容性成本。",
+          "content": "OpenCost 1.121.0 正式推出針對 Kubernetes 叢集的 AI 模型推論成本追蹤功能。隨著企業大規模部署 LLM，GPU 帳單與 token 消耗大增，此版本協助平台團隊精準掌握每個 token 與 GPU 資源的實際成本，解決以往在微服務與 AI 混合架構中成本黑盒的問題，對優化基礎設施支出至關重要。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "OpenAI、AWS 與 GitHub 等科技巨頭發布 Agent Plugins 1.0.0 標準",
-          "url": "https://thenewstack.io/agent-plugins-open-standard/",
-          "weightedScore": 50
-        },
-        {
-          "content": "阿里巴巴正式推出 Qwen3.8 系列模型，包含 27B 參數版本以及更強大的 Max 版本。這為開發者提供了更多高性能開源與閉源選擇，特別是在需要處理複雜任務與長上下文的情境下，進一步擴展了 LLM 的應用範疇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "阿里雲發布 Qwen3.8-27B 與 Qwen3.8-Max 模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max/",
+          "title": "OpenCost 1.121.0 發布：首次支援 Kubernetes 叢集推論成本追蹤",
+          "url": "https://www.cncf.io/blog/2026/08/05/opencost-1-121-0-first-of-a-kind-kubernetes-inference-cost-tracking/",
           "weightedScore": 100
         },
         {
-          "content": "開源多租戶擴展存儲方案 Cortex 已完成由 OSTIF 進行的安全性審計。對於依賴 Cortex 處理大規模時序數據的 DevOps 工程師來說，這意味著該系統的基礎架構安全性已得到第三方驗證，是穩定生產環境的重要指標。",
+          "content": "OpenAI 官方宣佈在 ChatGPT 系統中升級 GPT-5.6 Sol 模型表現，並同步將 GPT-5.6 Luna 的存取權限擴大開放給所有免費使用者。這項更動讓一般與專業開發者能更廣泛地免費測試新一代模型能力，有助於評估其在自動化工作流程與複雜推理上的應用潛力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "title": "ChatGPT 推出 GPT-5.6 Sol 改進版並向免費版擴大開放 GPT-5.6 Luna",
+          "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/",
+          "weightedScore": 414
+        },
+        {
+          "content": "Google 官方推出 Gemini Robotics 2，旨在透過多模態基礎模型賦予機器人更強大的「全身體智慧（Whole body intelligence）」。這項更新讓機器人能更靈巧地整合視覺、語言與肢體動作控制，對從事硬體整合、自動化控制與邊緣 AI 系統開發的工程師而言，提供了全新的視覺與動作對齊基礎能力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Google 發布 Gemini Robotics 2，為機器人帶來全身體智慧",
+          "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 宣布推出更新版的開發者社群計畫（包含大使與社群工程師），並加碼投入 100 萬美元的開源維護者資助基金。此舉旨在長期支持核心開源專案維護者、擴大開發者生態系，對於依賴 Cloudflare 技術堆疊與開源套件的開發者與組織來說，提供了更多實質的資源與社群支持渠道。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Prometheus 與 OpenTelemetry 監控存儲方案 Cortex 完成安全審計",
-          "url": "https://www.cncf.io/blog/2026/08/03/cortex-completes-ostif-security-audit/",
+          "title": "Cloudflare 推出全新社群計畫並投入 100 萬美元開源資助基金",
+          "url": "https://blog.cloudflare.com/community-program-refresh/",
           "weightedScore": 100
         },
         {
-          "content": "在事件驅動的架構中，CPU 或記憶體指標常無法反映實際負載。本文探討如何利用 KEDA 根據 SQS 隊列深度自動調整 K8s Pod 數量，對 DevOps 工程師構建具備彈性與高併發處理能力的後端基礎設施至關重要。",
+          "content": "condense-json 1.0 版正式釋出，這是一套專門用於壓縮與精簡 JSON 資料結構的工具。對於需要處理大量 API 傳輸、最佳化頻寬或降低大型語言模型（LLM）上下文 token 消耗的開發者而言，提供了一個實用的輕量化資料處理選擇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "condense-json 1.0 正式發布",
+          "url": "https://simonwillison.net/2026/Aug/2/condense-json/#atom-everything",
+          "weightedScore": 100
+        },
+        {
+          "content": "Datasette 生態系釋出 datasette-apps 0.2a0 早期預覽版本。此版本進一步擴展了基於 Datasette 快速建構資料導向應用程式的能力，對於經常需要將 SQLite 資料庫快速轉為 Web 介面與內部工具的資料工程師和後端開發者來說，提供更便利的擴充套件選項。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "datasette-apps 0.2a0 釋出：擴充資料探索與應用能力",
+          "url": "https://simonwillison.net/2026/Aug/1/datasette-apps/#atom-everything",
+          "weightedScore": 100
+        },
+        {
+          "content": "隨著 AI 程式碼生成工具在工程團隊中普及，API 呼叫與 token 消耗費用快速攀升。社群熱議文章探討如何在組織內部衡量、監控與最佳化 AI Coding 工具的成本效益，避免生產力提升的同時造成雲端與 AI 服務預算失控，對導入 AI 協作的團隊主管與架構師極具參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "如何在大規模營運下有效控管 AI 輔助編碼成本",
+          "url": "https://www.databricks.com/blog/managing-ai-coding-costs-scale",
+          "weightedScore": 307
+        },
+        {
+          "content": "隨著企業將自主性 AI Agents 投入生產環境，傳統的應用效能監控（APM）往往無法解釋代理程式為何陷入無限迴圈或消耗異常成本。這篇社群熱門文章分享了實務上建構與維運 AI Agent 系統的經驗，強調針對非決定性行為建立專屬可觀測性與除錯機制的必要性。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "如何根據 Amazon SQS 隊列深度自動擴展 Kubernetes Pod",
-          "url": "https://www.cncf.io/blog/2026/07/31/scaling-kubernetes-pods-with-keda-based-on-amazon-sqs-queue-depth/",
+          "title": "看不見就無法除錯：生產環境中 AI Agents 的可觀測性挑戰",
+          "url": "https://www.cncf.io/blog/2026/08/04/you-cant-debug-what-you-cant-see-observability-for-ai-agents/",
           "weightedScore": 100
         },
         {
-          "content": "Evergreen 是一款專為開發者設計的 PR 管理工具，能自動修復 CI 失敗並處理分支合併衝突。透過自動化處理維護與基底分支同步的繁瑣任務，能有效提升團隊開發效率，確保合併流程順暢。",
+          "content": "技術社群深入梳理並記錄了 OpenAI 系統近期對 Hugging Face 造成意外流量衝擊與阻斷的事件時間軸。這起事件引發業界對自動化腳本互動、API 安全防護邊界以及大廠系統間無預警連鎖反應的廣泛討論，對系統架構師和資安人員具有高度警惕意義。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 1,
-          "title": "Evergreen：自動化處理 CI 失敗與合併衝突的開發工具",
-          "url": "https://githubnext.com/posts/evergreen/",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群熱議指出中國新研發的 DFSX 晶片在記憶體頻寬指標上達到 NVIDIA GB200 的兩倍。若此數據屬實，將對 AI 推論與訓練的硬體效能瓶頸帶來潛在的結構性挑戰，開發者應持續關注硬體層面的算力架構演變。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "中國 DFSX 晶片展現出兩倍於 NVIDIA GB200 的記憶體頻寬",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vduej3/chinas_dfsx_offers_2x_the_memory_bandwidth_of/",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群中針對開源模型在檢索（Retrieval）任務的表現進行了高強度的討論。這顯示了開發者對於「輕量化、高性價比模型」的需求正在攀升，如何在特定垂直領域透過開源模型達到與頂級模型相當的效果，是目前優化 AI 成本的關鍵策略。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "以百倍低廉的開源模型在檢索任務中超越 GPT-5.6 Sol",
-          "url": "https://neon.com/blog/how-castform-neon-beats-frontier-models-on-price-and-efficiency",
-          "weightedScore": 432
-        },
-        {
-          "content": "DeepSeek 最新推出的 V4-Flash 版本在西洋棋邏輯推理基準測試中表現超越了多個熱門模型。此類針對特定領域邏輯能力的測試結果，反映了開發者社群對於模型在規則執行與深度邏輯規劃能力的評估趨勢。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "DeepSeek-V4-Flash-0731 在西洋棋基準測試中表現亮眼",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdq8en/deepseekv4flash0731_surpasses_fable5_sol_kimik3/",
-          "weightedScore": 100
-        },
-        {
-          "content": "隨著多代理（Multi-agent）開發模式興起，如何處理多個 Git 工作樹（worktree）與 runtime 環境的協作成為熱議焦點。開發者發現現有的基礎設施在應對多代理並行變更時，常會引發環境混亂，這對 DevOps 的基礎建設規劃提出了新的挑戰。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "當多個 AI 代理同時運作時：Git 工作樹管理與執行環境的衝突",
-          "url": "https://thenewstack.io/agent-native-runtime-branching/",
-          "weightedScore": 50
-        },
-        {
-          "content": "社群討論對於 LLM 是否具備真正的「跳躍式邏輯」提出質疑。這類觀點討論提醒開發者，在構建關鍵業務應用時，不能過度依賴 LLM 的推理深度，應針對不同任務場景進行嚴格的邏輯驗證，而非盲目相信模型的生成結果。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "LLM 真的能進行跳躍式邏輯思考嗎？社群針對模型推理能力的辯論",
-          "url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt",
-          "weightedScore": 296
+          "sourceCount": 2,
+          "title": "OpenAI 意外攻擊 Hugging Face 事件的時間軸梳理",
+          "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/",
+          "weightedScore": 517
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-01T23:01:46.764Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vbp7kb/deepseekaideepseekv4flash0731_on_huggingface"
-    },
-    {
-      "seenAt": "2026-08-01T23:01:46.764Z",
-      "url": "https://github.com/yc-software/qm"
-    },
-    {
-      "seenAt": "2026-08-01T23:01:46.764Z",
-      "url": "https://simonwillison.net/2026/Jul/31/stateless-mcp"
-    },
-    {
-      "seenAt": "2026-08-01T23:01:46.764Z",
-      "url": "https://simonwillison.net/2026/Jul/31/llm-mcp-client"
-    },
-    {
-      "seenAt": "2026-08-01T23:01:46.764Z",
-      "url": "https://simonwillison.net/2026/Jul/31/datasette-agent"
-    },
-    {
-      "seenAt": "2026-08-01T23:01:46.764Z",
-      "url": "https://simonwillison.net/2026/Aug/1/datasette-apps"
-    },
-    {
-      "seenAt": "2026-08-01T23:01:46.764Z",
-      "url": "https://github.com/AminBlg/SimpleEnglish"
-    },
     {
       "seenAt": "2026-08-02T23:01:29.724Z",
       "url": "https://reddit.com/r/LocalLLaMA/comments/1vchoua/deepseekv4flash0731_models_you_can_run_locally"
@@ -866,6 +926,42 @@
     {
       "seenAt": "2026-08-08T22:38:35.737Z",
       "url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt"
+    },
+    {
+      "seenAt": "2026-08-09T22:40:29.356Z",
+      "url": "https://cncf.io/blog/2026/08/05/opencost-1-121-0-first-of-a-kind-kubernetes-inference-cost-tracking"
+    },
+    {
+      "seenAt": "2026-08-09T22:40:29.356Z",
+      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt"
+    },
+    {
+      "seenAt": "2026-08-09T22:40:29.356Z",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots"
+    },
+    {
+      "seenAt": "2026-08-09T22:40:29.356Z",
+      "url": "https://blog.cloudflare.com/community-program-refresh"
+    },
+    {
+      "seenAt": "2026-08-09T22:40:29.356Z",
+      "url": "https://simonwillison.net/2026/Aug/2/condense-json"
+    },
+    {
+      "seenAt": "2026-08-09T22:40:29.356Z",
+      "url": "https://simonwillison.net/2026/Aug/1/datasette-apps"
+    },
+    {
+      "seenAt": "2026-08-09T22:40:29.356Z",
+      "url": "https://databricks.com/blog/managing-ai-coding-costs-scale"
+    },
+    {
+      "seenAt": "2026-08-09T22:40:29.356Z",
+      "url": "https://cncf.io/blog/2026/08/04/you-cant-debug-what-you-cant-see-observability-for-ai-agents"
+    },
+    {
+      "seenAt": "2026-08-09T22:40:29.356Z",
+      "url": "https://simonwillison.net/2026/Aug/7/openai-timeline"
     }
   ]
 }
