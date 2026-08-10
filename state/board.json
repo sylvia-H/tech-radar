@@ -214,53 +214,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-09T22:40:29.356Z",
-  "lastNewsPushAt": "2026-08-09T22:40:29.356Z",
+  "lastNewsPushAt": "2026-08-10T22:49:00.547Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-09T22:40:29.356Z",
       "summary": "本次技術雷達榜單由 mattpocock/skills 奪下 #1，共迎來 7 個新進項目（包含 AI 5 個與前後端 2 個），同時有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "針對 Apple 前員工涉嫌將機密資料攜至 OpenAI 的法律爭議，社群討論集中於企業內部的資料安全性保護措施。此事件對開發者而言，是關於數據資產歸屬權與公司安全合規政策的一項警示。",
-        "id": "news:https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai",
-        "publishedAt": "2026-08-04T23:11:29.585Z",
-        "title": "Apple 指控 OpenAI 涉及員工洩漏機密資料事件",
-        "type": "news",
-        "url": "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/"
-      },
-      {
-        "content": "Node.js 釋出 Krypton 24.18.1 LTS 更新，主要針對 HTTP/2 標頭記憶體管理、權限節點處理及 HTTPS 身份校驗等問題進行修補。鑑於包含多項 High 等級的 CVE 安全修復，建議開發者務必檢查專案環境並儘速升級，以防範相關漏洞攻擊。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.18.1",
-        "publishedAt": "2026-08-05T23:10:51.494Z",
-        "title": "Node.js 發布 24.18.1 LTS 版本：修復多項高風險安全漏洞",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
-      },
-      {
-        "content": "Node.js 發布 24.19.0 LTS 版本，主要功能更新包含實作了 blob.textStream() 以強化串流處理能力，並透過 --experimental-import-text 標誌引入實驗性的文字匯入功能。此外，更新了 OpenSSL 配置以支援壓縮，對後端開發者的資料處理效能與模組化開發有顯著改善。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.19.0",
-        "publishedAt": "2026-08-05T23:10:51.494Z",
-        "title": "Node.js 24.19.0 LTS 版本更新：新增 Blob 串流與實驗性文字匯入功能",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
-      },
-      {
-        "content": "CNCF 技術監督委員會已將 K8gb（Kubernetes Global Balancer）納入孵化專案。作為開源的雲原生全域負載平衡方案，K8gb 專為多叢集、跨區域的部署架構設計，能有效強化雲原生應用的高可用性與災害復原能力，是 DevOps 架構師在建置全球性服務時的重要基礎設施工具。",
-        "id": "news:https://cncf.io/announcements/2026/08/05/k8gb-becomes-a-cncf-incubating-project",
-        "publishedAt": "2026-08-05T23:10:51.494Z",
-        "title": "Kubernetes 全球負載平衡器 K8gb 正式成為 CNCF 孵化專案",
-        "type": "news",
-        "url": "https://www.cncf.io/announcements/2026/08/05/k8gb-becomes-a-cncf-incubating-project/"
-      },
-      {
-        "content": "Cloudflare 推出 Cloudflare OS，旨在為 AI Agent、應用程式與工作流提供底層運行環境。此平台將運算原語深度整合，讓開發者能更輕量地構建、部署與維護具備自主性的 AI 應用，是目前雲端架構轉向「Agent-native」的重要訊號。",
-        "id": "news:https://blog.cloudflare.com/cloudflare-os",
-        "publishedAt": "2026-08-05T23:10:51.494Z",
-        "title": "Cloudflare 發布 Cloudflare OS：面向 Agent 與應用程式的開放平台",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/cloudflare-os/"
-      },
       {
         "content": "針對 AI Agent 開發節奏快於團隊維護能力的挑戰，Cloudflare 導入了「Agent 開發生命週期」框架。該工具鏈提供了一系列原語，協助開發者解決在部署與維持 Agent 穩定運行時所面臨的 DevOps 挑戰，對自動化工作流有直接助益。",
         "id": "news:https://blog.cloudflare.com/agent-development-lifecycle",
@@ -613,124 +573,100 @@
         "title": "OpenAI 意外攻擊 Hugging Face 事件的時間軸梳理",
         "type": "news",
         "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/"
+      },
+      {
+        "content": "Docker 發布了全新的 Docker Sandboxes 功能，專為 AI 代理程式設計，提供拋棄式且高度隔離的執行環境。隨著越來越多開發者將 AI 代理程式應用於自動化程式碼編寫與執行任務，安全性與環境汙染成為隱憂。此工具讓代理程式能在安全、受控且用完即焚的沙盒中執行命令與測試，對確保 AI 開發流程的安全性與隔離性有重大幫助。",
+        "id": "news:https://docker.com/products/docker-sandboxes",
+        "publishedAt": "2026-08-10T22:49:00.547Z",
+        "title": "Docker 推出沙盒功能：為 AI 代理程式提供拋棄式隔離環境",
+        "type": "news",
+        "url": "https://www.docker.com/products/docker-sandboxes/"
+      },
+      {
+        "content": "記憶體大廠 SK 海力士（SK hynix）與 SanDisk 合作推出全新「高頻寬快閃記憶體（HBF）」標準，頻寬目標高達 3TB/s。這項新標準旨在解決目前 AI 模型在本地推論時面臨的記憶體頻寬瓶頸，未來有望大幅加速大型語言模型及本地端 AI 代理程式的運行效率與反應速度。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vfa3tq/sk_hynix_in_collaboration_with_sandisk_unveils",
+        "publishedAt": "2026-08-10T22:49:00.547Z",
+        "title": "SK 海力士與 SanDisk 聯手推出高頻寬快閃記憶體標準，解決 AI 推論瓶頸",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vfa3tq/sk_hynix_in_collaboration_with_sandisk_unveils/"
+      },
+      {
+        "content": "隨著機器學習與 AI 模型普及，容器映像檔的體積經常膨脹至數 GB 甚至數十 GB，導致部署時的載入延遲成為瓶頸。Amazon EKS 推出全新優化方案，讓開發者與維運團隊能夠在幾秒鐘內拉取超大型容器映像檔，大幅改善雲端原生 AI 應用的部署與擴展效率。",
+        "id": "news:https://thenewstack.io/accelerating-eks-image-pulls",
+        "publishedAt": "2026-08-10T22:49:00.547Z",
+        "title": "Amazon EKS 實現數秒內拉取數十 GB 容器映像檔",
+        "type": "news",
+        "url": "https://thenewstack.io/accelerating-eks-image-pulls/"
+      },
+      {
+        "content": "社群熱議的 Muse Glimmer 是一款擁有 300 億參數的輕量化開源模型，特別針對「常駐型本地端代理程式（always-on local agent workflows）」進行了架構優化。這對希望在本地端部署具備長期運作與自動化互動能力的開發者而言，提供了一個效能與資源消耗取得平衡的新選擇。",
+        "id": "news:https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
+        "publishedAt": "2026-08-10T22:49:00.547Z",
+        "title": "Muse Glimmer：專為常駐本地代理工作流程優化的 30B 參數模型",
+        "type": "news",
+        "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model"
+      },
+      {
+        "content": "作者分享了從零開始自建 Forgejo（輕量級 Git 伺服器替代方案）的完整心路歷程與技術細節。對於想要擺脫大型商業程式碼代管平台、尋求自建 Git 服務與持續整合環境的開發者與基礎設施工程師來說，這是一篇極具參考價值的實戰經驗分享。",
+        "id": "news:https://a.l3x.in/blog/welcome-to-my-forge",
+        "publishedAt": "2026-08-10T22:49:00.547Z",
+        "title": "深入探討個人 Forgejo 伺服器架設經驗與設置心得",
+        "type": "news",
+        "url": "https://a.l3x.in/blog/welcome-to-my-forge/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-09T22:40:29.356Z",
+      "generatedAt": "2026-08-10T22:49:00.547Z",
       "items": [
         {
-          "content": "OpenCost 1.121.0 正式推出針對 Kubernetes 叢集的 AI 模型推論成本追蹤功能。隨著企業大規模部署 LLM，GPU 帳單與 token 消耗大增，此版本協助平台團隊精準掌握每個 token 與 GPU 資源的實際成本，解決以往在微服務與 AI 混合架構中成本黑盒的問題，對優化基礎設施支出至關重要。",
+          "content": "Docker 發布了全新的 Docker Sandboxes 功能，專為 AI 代理程式設計，提供拋棄式且高度隔離的執行環境。隨著越來越多開發者將 AI 代理程式應用於自動化程式碼編寫與執行任務，安全性與環境汙染成為隱憂。此工具讓代理程式能在安全、受控且用完即焚的沙盒中執行命令與測試，對確保 AI 開發流程的安全性與隔離性有重大幫助。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "title": "OpenCost 1.121.0 發布：首次支援 Kubernetes 叢集推論成本追蹤",
-          "url": "https://www.cncf.io/blog/2026/08/05/opencost-1-121-0-first-of-a-kind-kubernetes-inference-cost-tracking/",
+          "title": "Docker 推出沙盒功能：為 AI 代理程式提供拋棄式隔離環境",
+          "url": "https://www.docker.com/products/docker-sandboxes/",
+          "weightedScore": 615
+        },
+        {
+          "content": "記憶體大廠 SK 海力士（SK hynix）與 SanDisk 合作推出全新「高頻寬快閃記憶體（HBF）」標準，頻寬目標高達 3TB/s。這項新標準旨在解決目前 AI 模型在本地推論時面臨的記憶體頻寬瓶頸，未來有望大幅加速大型語言模型及本地端 AI 代理程式的運行效率與反應速度。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "SK 海力士與 SanDisk 聯手推出高頻寬快閃記憶體標準，解決 AI 推論瓶頸",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vfa3tq/sk_hynix_in_collaboration_with_sandisk_unveils/",
           "weightedScore": 100
         },
         {
-          "content": "OpenAI 官方宣佈在 ChatGPT 系統中升級 GPT-5.6 Sol 模型表現，並同步將 GPT-5.6 Luna 的存取權限擴大開放給所有免費使用者。這項更動讓一般與專業開發者能更廣泛地免費測試新一代模型能力，有助於評估其在自動化工作流程與複雜推理上的應用潛力。",
+          "content": "隨著機器學習與 AI 模型普及，容器映像檔的體積經常膨脹至數 GB 甚至數十 GB，導致部署時的載入延遲成為瓶頸。Amazon EKS 推出全新優化方案，讓開發者與維運團隊能夠在幾秒鐘內拉取超大型容器映像檔，大幅改善雲端原生 AI 應用的部署與擴展效率。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Amazon EKS 實現數秒內拉取數十 GB 容器映像檔",
+          "url": "https://thenewstack.io/accelerating-eks-image-pulls/",
+          "weightedScore": 50
+        },
+        {
+          "content": "社群熱議的 Muse Glimmer 是一款擁有 300 億參數的輕量化開源模型，特別針對「常駐型本地端代理程式（always-on local agent workflows）」進行了架構優化。這對希望在本地端部署具備長期運作與自動化互動能力的開發者而言，提供了一個效能與資源消耗取得平衡的新選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 2,
-          "title": "ChatGPT 推出 GPT-5.6 Sol 改進版並向免費版擴大開放 GPT-5.6 Luna",
-          "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/",
-          "weightedScore": 414
+          "title": "Muse Glimmer：專為常駐本地代理工作流程優化的 30B 參數模型",
+          "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
+          "weightedScore": 1066
         },
         {
-          "content": "Google 官方推出 Gemini Robotics 2，旨在透過多模態基礎模型賦予機器人更強大的「全身體智慧（Whole body intelligence）」。這項更新讓機器人能更靈巧地整合視覺、語言與肢體動作控制，對從事硬體整合、自動化控制與邊緣 AI 系統開發的工程師而言，提供了全新的視覺與動作對齊基礎能力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Google 發布 Gemini Robotics 2，為機器人帶來全身體智慧",
-          "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 宣布推出更新版的開發者社群計畫（包含大使與社群工程師），並加碼投入 100 萬美元的開源維護者資助基金。此舉旨在長期支持核心開源專案維護者、擴大開發者生態系，對於依賴 Cloudflare 技術堆疊與開源套件的開發者與組織來說，提供了更多實質的資源與社群支持渠道。",
+          "content": "作者分享了從零開始自建 Forgejo（輕量級 Git 伺服器替代方案）的完整心路歷程與技術細節。對於想要擺脫大型商業程式碼代管平台、尋求自建 Git 服務與持續整合環境的開發者與基礎設施工程師來說，這是一篇極具參考價值的實戰經驗分享。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出全新社群計畫並投入 100 萬美元開源資助基金",
-          "url": "https://blog.cloudflare.com/community-program-refresh/",
+          "title": "深入探討個人 Forgejo 伺服器架設經驗與設置心得",
+          "url": "https://a.l3x.in/blog/welcome-to-my-forge/",
           "weightedScore": 100
-        },
-        {
-          "content": "condense-json 1.0 版正式釋出，這是一套專門用於壓縮與精簡 JSON 資料結構的工具。對於需要處理大量 API 傳輸、最佳化頻寬或降低大型語言模型（LLM）上下文 token 消耗的開發者而言，提供了一個實用的輕量化資料處理選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "condense-json 1.0 正式發布",
-          "url": "https://simonwillison.net/2026/Aug/2/condense-json/#atom-everything",
-          "weightedScore": 100
-        },
-        {
-          "content": "Datasette 生態系釋出 datasette-apps 0.2a0 早期預覽版本。此版本進一步擴展了基於 Datasette 快速建構資料導向應用程式的能力，對於經常需要將 SQLite 資料庫快速轉為 Web 介面與內部工具的資料工程師和後端開發者來說，提供更便利的擴充套件選項。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "datasette-apps 0.2a0 釋出：擴充資料探索與應用能力",
-          "url": "https://simonwillison.net/2026/Aug/1/datasette-apps/#atom-everything",
-          "weightedScore": 100
-        },
-        {
-          "content": "隨著 AI 程式碼生成工具在工程團隊中普及，API 呼叫與 token 消耗費用快速攀升。社群熱議文章探討如何在組織內部衡量、監控與最佳化 AI Coding 工具的成本效益，避免生產力提升的同時造成雲端與 AI 服務預算失控，對導入 AI 協作的團隊主管與架構師極具參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "如何在大規模營運下有效控管 AI 輔助編碼成本",
-          "url": "https://www.databricks.com/blog/managing-ai-coding-costs-scale",
-          "weightedScore": 307
-        },
-        {
-          "content": "隨著企業將自主性 AI Agents 投入生產環境，傳統的應用效能監控（APM）往往無法解釋代理程式為何陷入無限迴圈或消耗異常成本。這篇社群熱門文章分享了實務上建構與維運 AI Agent 系統的經驗，強調針對非決定性行為建立專屬可觀測性與除錯機制的必要性。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "看不見就無法除錯：生產環境中 AI Agents 的可觀測性挑戰",
-          "url": "https://www.cncf.io/blog/2026/08/04/you-cant-debug-what-you-cant-see-observability-for-ai-agents/",
-          "weightedScore": 100
-        },
-        {
-          "content": "技術社群深入梳理並記錄了 OpenAI 系統近期對 Hugging Face 造成意外流量衝擊與阻斷的事件時間軸。這起事件引發業界對自動化腳本互動、API 安全防護邊界以及大廠系統間無預警連鎖反應的廣泛討論，對系統架構師和資安人員具有高度警惕意義。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "title": "OpenAI 意外攻擊 Hugging Face 事件的時間軸梳理",
-          "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/",
-          "weightedScore": 517
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-02T23:01:29.724Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vchoua/deepseekv4flash0731_models_you_can_run_locally"
-    },
-    {
-      "seenAt": "2026-08-02T23:01:29.724Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vd874t/i_pushed_kimi_k3_onto_one_cpu_with_8_gb_of_ram"
-    },
-    {
-      "seenAt": "2026-08-02T23:01:29.724Z",
-      "url": "https://microsoft.github.io/flint-chart"
-    },
-    {
-      "seenAt": "2026-08-02T23:01:29.724Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vdcgpm/setting_up_of_a_16xgb10_dgx_spark_cluster"
-    },
-    {
-      "seenAt": "2026-08-02T23:01:29.724Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vcav6l/me_worn_out_from_all_the_new_model_drops_this"
-    },
-    {
-      "seenAt": "2026-08-02T23:01:29.724Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vbx39u/deepseek_v4_flash_ga_ranks_the_same_as_sonnet_5"
-    },
-    {
-      "seenAt": "2026-08-02T23:01:29.724Z",
-      "url": "https://localai.io/blog/why-we-write-our-own-engines"
-    },
     {
       "seenAt": "2026-08-04T09:57:44.931Z",
       "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
@@ -962,6 +898,26 @@
     {
       "seenAt": "2026-08-09T22:40:29.356Z",
       "url": "https://simonwillison.net/2026/Aug/7/openai-timeline"
+    },
+    {
+      "seenAt": "2026-08-10T22:49:00.547Z",
+      "url": "https://docker.com/products/docker-sandboxes"
+    },
+    {
+      "seenAt": "2026-08-10T22:49:00.547Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vfa3tq/sk_hynix_in_collaboration_with_sandisk_unveils"
+    },
+    {
+      "seenAt": "2026-08-10T22:49:00.547Z",
+      "url": "https://thenewstack.io/accelerating-eks-image-pulls"
+    },
+    {
+      "seenAt": "2026-08-10T22:49:00.547Z",
+      "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model"
+    },
+    {
+      "seenAt": "2026-08-10T22:49:00.547Z",
+      "url": "https://a.l3x.in/blog/welcome-to-my-forge"
     }
   ]
 }
