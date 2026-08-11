@@ -214,77 +214,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-09T22:40:29.356Z",
-  "lastNewsPushAt": "2026-08-10T22:49:00.547Z",
+  "lastNewsPushAt": "2026-08-11T22:53:43.333Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-09T22:40:29.356Z",
       "summary": "本次技術雷達榜單由 mattpocock/skills 奪下 #1，共迎來 7 個新進項目（包含 AI 5 個與前後端 2 個），同時有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "針對 AI Agent 開發節奏快於團隊維護能力的挑戰，Cloudflare 導入了「Agent 開發生命週期」框架。該工具鏈提供了一系列原語，協助開發者解決在部署與維持 Agent 穩定運行時所面臨的 DevOps 挑戰，對自動化工作流有直接助益。",
-        "id": "news:https://blog.cloudflare.com/agent-development-lifecycle",
-        "publishedAt": "2026-08-05T23:10:51.494Z",
-        "title": "Cloudflare 推出 Agent 開發生命週期工具鏈",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/agent-development-lifecycle/"
-      },
-      {
-        "content": "Astro 專案透過在 GitHub Actions 中運行孤立的 AI 子 Agent，成功實現了自動化 bug 重現與補丁驗證，使 Issue 數量減少 85%。此案例展示了將 AI 深度整合進 DevOps 生命週期，減少人工檢測成本的成熟架構模式。",
-        "id": "news:https://blog.cloudflare.com/astro-issue-triage",
-        "publishedAt": "2026-08-05T23:10:51.494Z",
-        "title": "Astro 團隊實踐：利用 AI 子 Agent 實現 GitHub Issue 自動化管理",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/astro-issue-triage/"
-      },
-      {
-        "content": "隨著 GenAI 在開發流程中的滲透，開發者常對其效能與適用性產生誤解。此文針對現行軟體工程實務中的迷思進行剖析，幫助技術決策者釐清 AI 在輔助編碼與系統設計中的真實定位，避免盲目引入導致的維護債務。",
-        "id": "news:https://queue.acm.org/detail.cfm?id=3807963",
-        "publishedAt": "2026-08-05T23:10:51.494Z",
-        "title": "解析軟體工程與生成式 AI 的八大迷思",
-        "type": "news",
-        "url": "https://queue.acm.org/detail.cfm?id=3807963"
-      },
-      {
-        "content": "針對近期 AI 能否取代開發者的熱烈討論，本文強調 AI 生成程式碼與建置「可供生產環境使用的產品」之間的鴻溝。對於專業開發者而言，理解並掌控自動化生成的輸出品質，仍是目前開發流程中無法外包的關鍵環節。",
-        "id": "news:https://weeraman.com/the-prototype-isnt-the-product",
-        "publishedAt": "2026-08-05T23:10:51.494Z",
-        "title": "AI 無法直接產出可用產品，工程實踐仍需回歸核心",
-        "type": "news",
-        "url": "https://weeraman.com/the-prototype-isnt-the-product/"
-      },
-      {
-        "content": "Node.js 釋出 22.23.2 LTS 版本，針對 HTTP/2 與 HTTPS 模組中的多個高風險（High）與中風險（Medium）漏洞進行修復。重點包括修復 CVE-2026-56846 與 CVE-2026-56848（關於 HTTP/2 標頭記憶體保留與串流處理），以及權限分配相關的安全更新。建議所有使用 Node.js 的生產環境開發者立即檢查專案依賴並更新，以降低潛在攻擊風險。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v22.23.2",
-        "publishedAt": "2026-08-07T01:32:06.477Z",
-        "title": "Node.js 發布 22.23.2 LTS 安全版本，修復多項高風險 HTTP/2 漏洞",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
-      },
-      {
-        "content": "Node.js 釋出 26.5.0 Current 版本。本次更新包含多項功能增強：在 Buffer 物件實作了 `blob.textStream()`，以及新增 `--experimental-import-text` 旗標以支援 ESM 導入文字檔。同時引入了新的釋出簽署金鑰。這些 API 的更新將影響開發者處理二進位資料與模組載入的方式，建議嘗試新功能的開發者審慎評估其穩定性。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.5.0",
-        "publishedAt": "2026-08-07T01:32:06.477Z",
-        "title": "Node.js 26.5.0 Current 版本釋出，新增實驗性 ESM 文字串流功能",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.5.0"
-      },
-      {
-        "content": "OpenAI 針對近期涉及第三方資安評估的事件進行說明，並公開了加強 AI 模型測試與評估的新防護策略。這對於依賴 OpenAI API 進行應用開發的工程師而言至關重要，因為這意味著官方正強化模型行為的合規性測試與安全邊界，開發者應關注這些防護措施對現有系統整合與安全性要求的潛在影響。",
-        "id": "news:https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
-        "publishedAt": "2026-08-07T01:32:06.477Z",
-        "title": "OpenAI 針對 AI 模型安全性評估發布補充說明與防護機制",
-        "type": "news",
-        "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models"
-      },
-      {
-        "content": "Subaru 在 KubeCon+CloudNativeCon 展示了其利用雲端原生基礎設施加速 AI 開發的架構案例，透過優化技術將 AI 容器映像檔拉取速度提升了 60 倍，並實現了駕駛輔助系統的工作流自動化。此案例展示了 DevOps 在處理大規模 AI 模型部署時的實務架構方向，對於從事 AI 基礎設施建設的工程師具備高度參考價值。",
-        "id": "news:https://cncf.io/announcements/2026/07/28/subaru-wins-cncf-end-user-case-study-contest-for-accelerating-ai-development-with-cloud-native-infrastructure",
-        "publishedAt": "2026-08-07T01:32:06.477Z",
-        "title": "Subaru 利用雲端原生架構優化 AI 開發，獲 CNCF 案例獎項",
-        "type": "news",
-        "url": "https://www.cncf.io/announcements/2026/07/28/subaru-wins-cncf-end-user-case-study-contest-for-accelerating-ai-development-with-cloud-native-infrastructure/"
-      },
       {
         "content": "社群高度關注 DeepSeek-V4-Flash 的發表，該模型在效能表現上直逼目前市場領先的高階模型（如 GLM-5.2 與 GPT-5.6），同時維持了極具競爭力的成本結構。開發者正密切討論其對現有 AI 應用開發成本與選型策略的影響，社群普遍認為此類高性價比模型的快速迭代將對現有 AI API 市場定價造成顯著壓力。",
         "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vbjdby/deepseekv4flash0731_is_going_to_cause_another",
@@ -613,92 +549,151 @@
         "title": "深入探討個人 Forgejo 伺服器架設經驗與設置心得",
         "type": "news",
         "url": "https://a.l3x.in/blog/welcome-to-my-forge/"
+      },
+      {
+        "content": "Node.js 釋出 26.5.1 版本，這是一個包含多項高、中風險安全性修補的重要版本。主要修復項目包含：針對 http2 的 `defer rst stream` 漏洞（CVE-2026-56848，評級高）、權限控制相關的 `avoid granting radix split nodes`（CVE-2026-58043，評級高），以及 https 代理金鑰區分與會話重用檢查、sqlite 語句重置迭代器失效等多項漏洞。建議使用 Node.js 的開發團隊與維運人員應盡速評估並升級，以確保應用程式與伺服器的執行安全。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.5.1",
+        "publishedAt": "2026-08-11T22:53:43.333Z",
+        "title": "Node.js 發布 26.5.1 安全更新版本",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
+      },
+      {
+        "content": "雲端原生計算基金會（CNCF）宣佈 Cloud Native Buildpacks 專案正式畢業（Graduation）。這標誌著該專案已在各大雲端環境中獲得廣泛的生產環境採用，成為將應用程式原始碼直接轉換為符合 OCI 標準容器映像檔的成熟標準工具。對於負責 CI/CD 管道與基礎設施的開發者而言，這意味著 Buildpacks 在容器映像檔建構的穩定性與生態系支援上更具權威性與可靠度。",
+        "id": "news:https://cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds",
+        "publishedAt": "2026-08-11T22:53:43.333Z",
+        "title": "CNCF 宣布 Cloud Native Buildpacks 正式畢業，確立容器建構標準",
+        "type": "news",
+        "url": "https://www.cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds/"
+      },
+      {
+        "content": "Anthropic 宣布在開發工具 Claude Code 中將 Auto mode 設為預設模式。這項變更改變了開發者與 AI 互動的執行流程，允許工具在無需人工逐一確認每個步驟的情況下自動執行更多操作。對於依賴 AI 輔助編碼的開發者來說，這能大幅減少反覆手動批准指令的時間，但同時也對開發流程的安全性與結果驗證提出了更高的要求。",
+        "id": "news:https://claude.com/blog/auto-mode-default-in-claude-code",
+        "publishedAt": "2026-08-11T22:53:43.333Z",
+        "title": "Claude Code 預設全面啟用 Auto mode",
+        "type": "news",
+        "url": "https://claude.com/blog/auto-mode-default-in-claude-code"
+      },
+      {
+        "content": "Google 推出 Gemini Robotics ER 2，旨在透過先進的視訊理解、任務編排與多機器人協作能力來賦能機器人應用。這項更新讓機器人能更精準地理解真實世界的任務並進行推理與協作。對於從事機器人軟體開發與邊緣 AI 整合的工程師而言，這提供了解決複雜真實世界任務的新一代模型與工具支援。",
+        "id": "news:https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration",
+        "publishedAt": "2026-08-11T22:53:43.333Z",
+        "title": "Google 發布 Gemini Robotics ER 2，強化機器人視訊理解與協作",
+        "type": "news",
+        "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/"
+      },
+      {
+        "content": "Hacker News 上備受討論的安全與 AI 研究指出，透過特定攻擊手法可以從專有的大型語言模型 API 中竊取其內部的「推理軌跡」（Reasoning Traces）。這項發現凸顯了目前依賴外部大型語言模型進行深度推理時，模型內部運作邏輯與智慧財產可能面臨的外泄風險，對於評估 AI 模型安全性與 API 架構設計的開發者具有高度參考價值。",
+        "id": "news:https://stolen-thoughts.com/",
+        "publishedAt": "2026-08-11T22:53:43.333Z",
+        "title": "研究揭露如何從專有 LLM API 中竊取推理軌跡",
+        "type": "news",
+        "url": "https://stolen-thoughts.com/"
+      },
+      {
+        "content": "社群熱議的 Needle2 是一個大小僅 14MB 的代理式（agentic）LLM，專為手機、穿戴式裝置、智慧家庭設備與機器人等資源受限的硬體環境所設計。這對行動端與嵌入式系統開發者而言是一大突破，展示了在極低記憶體與運算資源下運行具備智慧代理能力模型的可能性，開啟了邊緣 AI 裝置的新應用想像。",
+        "id": "news:https://cactuscompute.com/needle",
+        "publishedAt": "2026-08-11T22:53:43.333Z",
+        "title": "Needle2：適用於行動裝置與物聯網的 14MB 輕量級 Agentic LLM",
+        "type": "news",
+        "url": "https://cactuscompute.com/needle"
+      },
+      {
+        "content": "社群關注的開源專案 H3-metal 提供了針對 Apple Silicon 架構的 MiniMax-H3 模型原生推理支援。這讓擁有 Mac 電腦的開發者能夠直接在本地端的高效能晶片上執行大型模型推理，大幅提升執行效率並降低對雲端 API 的依賴，對於本地 AI 開發與測試工作流程帶來實質的便利。",
+        "id": "news:https://github.com/antirez/h3.c",
+        "publishedAt": "2026-08-11T22:53:43.333Z",
+        "title": "H3-metal：在 Apple Silicon 上實現 MiniMax-H3 的原生推理",
+        "type": "news",
+        "url": "https://github.com/antirez/h3.c"
+      },
+      {
+        "content": "Hacker News 熱門討論分享了如何在 Apple Silicon 與 macOS 虛擬機環境中，利用 llama.cpp 實現更快速的 LLM 推理效能。這篇文章探討了硬體加速與虛擬化環境下的效能調校技巧，對於需要在 Mac 本地端或虛擬化開發環境中優化 AI 模型執行速度的工程師來說，是非常具實用價值的技術指南。",
+        "id": "news:https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md",
+        "publishedAt": "2026-08-11T22:53:43.333Z",
+        "title": "透過 llama.cpp 在 Apple Silicon 與 macOS 虛擬機上加速 LLM 推理",
+        "type": "news",
+        "url": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-10T22:49:00.547Z",
+      "generatedAt": "2026-08-11T22:53:43.333Z",
       "items": [
         {
-          "content": "Docker 發布了全新的 Docker Sandboxes 功能，專為 AI 代理程式設計，提供拋棄式且高度隔離的執行環境。隨著越來越多開發者將 AI 代理程式應用於自動化程式碼編寫與執行任務，安全性與環境汙染成為隱憂。此工具讓代理程式能在安全、受控且用完即焚的沙盒中執行命令與測試，對確保 AI 開發流程的安全性與隔離性有重大幫助。",
+          "content": "Node.js 釋出 26.5.1 版本，這是一個包含多項高、中風險安全性修補的重要版本。主要修復項目包含：針對 http2 的 `defer rst stream` 漏洞（CVE-2026-56848，評級高）、權限控制相關的 `avoid granting radix split nodes`（CVE-2026-58043，評級高），以及 https 代理金鑰區分與會話重用檢查、sqlite 語句重置迭代器失效等多項漏洞。建議使用 Node.js 的開發團隊與維運人員應盡速評估並升級，以確保應用程式與伺服器的執行安全。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Docker 推出沙盒功能：為 AI 代理程式提供拋棄式隔離環境",
-          "url": "https://www.docker.com/products/docker-sandboxes/",
-          "weightedScore": 615
-        },
-        {
-          "content": "記憶體大廠 SK 海力士（SK hynix）與 SanDisk 合作推出全新「高頻寬快閃記憶體（HBF）」標準，頻寬目標高達 3TB/s。這項新標準旨在解決目前 AI 模型在本地推論時面臨的記憶體頻寬瓶頸，未來有望大幅加速大型語言模型及本地端 AI 代理程式的運行效率與反應速度。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "SK 海力士與 SanDisk 聯手推出高頻寬快閃記憶體標準，解決 AI 推論瓶頸",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vfa3tq/sk_hynix_in_collaboration_with_sandisk_unveils/",
+          "title": "Node.js 發布 26.5.1 安全更新版本",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.5.1",
           "weightedScore": 100
         },
         {
-          "content": "隨著機器學習與 AI 模型普及，容器映像檔的體積經常膨脹至數 GB 甚至數十 GB，導致部署時的載入延遲成為瓶頸。Amazon EKS 推出全新優化方案，讓開發者與維運團隊能夠在幾秒鐘內拉取超大型容器映像檔，大幅改善雲端原生 AI 應用的部署與擴展效率。",
+          "content": "雲端原生計算基金會（CNCF）宣佈 Cloud Native Buildpacks 專案正式畢業（Graduation）。這標誌著該專案已在各大雲端環境中獲得廣泛的生產環境採用，成為將應用程式原始碼直接轉換為符合 OCI 標準容器映像檔的成熟標準工具。對於負責 CI/CD 管道與基礎設施的開發者而言，這意味著 Buildpacks 在容器映像檔建構的穩定性與生態系支援上更具權威性與可靠度。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Amazon EKS 實現數秒內拉取數十 GB 容器映像檔",
-          "url": "https://thenewstack.io/accelerating-eks-image-pulls/",
-          "weightedScore": 50
+          "title": "CNCF 宣布 Cloud Native Buildpacks 正式畢業，確立容器建構標準",
+          "url": "https://www.cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds/",
+          "weightedScore": 100
         },
         {
-          "content": "社群熱議的 Muse Glimmer 是一款擁有 300 億參數的輕量化開源模型，特別針對「常駐型本地端代理程式（always-on local agent workflows）」進行了架構優化。這對希望在本地端部署具備長期運作與自動化互動能力的開發者而言，提供了一個效能與資源消耗取得平衡的新選擇。",
+          "content": "Anthropic 宣布在開發工具 Claude Code 中將 Auto mode 設為預設模式。這項變更改變了開發者與 AI 互動的執行流程，允許工具在無需人工逐一確認每個步驟的情況下自動執行更多操作。對於依賴 AI 輔助編碼的開發者來說，這能大幅減少反覆手動批准指令的時間，但同時也對開發流程的安全性與結果驗證提出了更高的要求。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 2,
-          "title": "Muse Glimmer：專為常駐本地代理工作流程優化的 30B 參數模型",
-          "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
-          "weightedScore": 1066
+          "title": "Claude Code 預設全面啟用 Auto mode",
+          "url": "https://claude.com/blog/auto-mode-default-in-claude-code",
+          "weightedScore": 388
         },
         {
-          "content": "作者分享了從零開始自建 Forgejo（輕量級 Git 伺服器替代方案）的完整心路歷程與技術細節。對於想要擺脫大型商業程式碼代管平台、尋求自建 Git 服務與持續整合環境的開發者與基礎設施工程師來說，這是一篇極具參考價值的實戰經驗分享。",
+          "content": "Google 推出 Gemini Robotics ER 2，旨在透過先進的視訊理解、任務編排與多機器人協作能力來賦能機器人應用。這項更新讓機器人能更精準地理解真實世界的任務並進行推理與協作。對於從事機器人軟體開發與邊緣 AI 整合的工程師而言，這提供了解決複雜真實世界任務的新一代模型與工具支援。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "title": "深入探討個人 Forgejo 伺服器架設經驗與設置心得",
-          "url": "https://a.l3x.in/blog/welcome-to-my-forge/",
+          "title": "Google 發布 Gemini Robotics ER 2，強化機器人視訊理解與協作",
+          "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
           "weightedScore": 100
+        },
+        {
+          "content": "Hacker News 上備受討論的安全與 AI 研究指出，透過特定攻擊手法可以從專有的大型語言模型 API 中竊取其內部的「推理軌跡」（Reasoning Traces）。這項發現凸顯了目前依賴外部大型語言模型進行深度推理時，模型內部運作邏輯與智慧財產可能面臨的外泄風險，對於評估 AI 模型安全性與 API 架構設計的開發者具有高度參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "title": "研究揭露如何從專有 LLM API 中竊取推理軌跡",
+          "url": "https://stolen-thoughts.com/",
+          "weightedScore": 539
+        },
+        {
+          "content": "社群熱議的 Needle2 是一個大小僅 14MB 的代理式（agentic）LLM，專為手機、穿戴式裝置、智慧家庭設備與機器人等資源受限的硬體環境所設計。這對行動端與嵌入式系統開發者而言是一大突破，展示了在極低記憶體與運算資源下運行具備智慧代理能力模型的可能性，開啟了邊緣 AI 裝置的新應用想像。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Needle2：適用於行動裝置與物聯網的 14MB 輕量級 Agentic LLM",
+          "url": "https://cactuscompute.com/needle",
+          "weightedScore": 505
+        },
+        {
+          "content": "社群關注的開源專案 H3-metal 提供了針對 Apple Silicon 架構的 MiniMax-H3 模型原生推理支援。這讓擁有 Mac 電腦的開發者能夠直接在本地端的高效能晶片上執行大型模型推理，大幅提升執行效率並降低對雲端 API 的依賴，對於本地 AI 開發與測試工作流程帶來實質的便利。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "H3-metal：在 Apple Silicon 上實現 MiniMax-H3 的原生推理",
+          "url": "https://github.com/antirez/h3.c",
+          "weightedScore": 421
+        },
+        {
+          "content": "Hacker News 熱門討論分享了如何在 Apple Silicon 與 macOS 虛擬機環境中，利用 llama.cpp 實現更快速的 LLM 推理效能。這篇文章探討了硬體加速與虛擬化環境下的效能調校技巧，對於需要在 Mac 本地端或虛擬化開發環境中優化 AI 模型執行速度的工程師來說，是非常具實用價值的技術指南。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "透過 llama.cpp 在 Apple Silicon 與 macOS 虛擬機上加速 LLM 推理",
+          "url": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md",
+          "weightedScore": 271
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-04T09:57:44.931Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
-    },
-    {
-      "seenAt": "2026-08-04T09:57:44.931Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1v911as/gemini_distillation_service"
-    },
-    {
-      "seenAt": "2026-08-04T09:57:44.931Z",
-      "url": "https://github.com/python/cpython/releases/tag/v3.15.0b4"
-    },
-    {
-      "seenAt": "2026-08-04T09:57:44.931Z",
-      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration"
-    },
-    {
-      "seenAt": "2026-08-04T09:57:44.931Z",
-      "url": "https://seangoedecke.com/llms-reward-expertise"
-    },
-    {
-      "seenAt": "2026-08-04T09:57:44.931Z",
-      "url": "https://research.jfrog.com/post/sqlite-critical-cves-or-llm-slops"
-    },
-    {
-      "seenAt": "2026-08-04T09:57:44.931Z",
-      "url": "https://ankursethi.com/blog/prevent-cognitive-debt-by-manually-retyping-llm-generated-code"
-    },
-    {
-      "seenAt": "2026-08-04T09:57:44.931Z",
-      "url": "https://bottlenecklabs.com/blog/autonomously-run-businesses"
-    },
     {
       "seenAt": "2026-08-04T23:11:29.585Z",
       "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber"
@@ -918,6 +913,38 @@
     {
       "seenAt": "2026-08-10T22:49:00.547Z",
       "url": "https://a.l3x.in/blog/welcome-to-my-forge"
+    },
+    {
+      "seenAt": "2026-08-11T22:53:43.333Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
+    },
+    {
+      "seenAt": "2026-08-11T22:53:43.333Z",
+      "url": "https://cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds"
+    },
+    {
+      "seenAt": "2026-08-11T22:53:43.333Z",
+      "url": "https://claude.com/blog/auto-mode-default-in-claude-code"
+    },
+    {
+      "seenAt": "2026-08-11T22:53:43.333Z",
+      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration"
+    },
+    {
+      "seenAt": "2026-08-11T22:53:43.333Z",
+      "url": "https://stolen-thoughts.com/"
+    },
+    {
+      "seenAt": "2026-08-11T22:53:43.333Z",
+      "url": "https://cactuscompute.com/needle"
+    },
+    {
+      "seenAt": "2026-08-11T22:53:43.333Z",
+      "url": "https://github.com/antirez/h3.c"
+    },
+    {
+      "seenAt": "2026-08-11T22:53:43.333Z",
+      "url": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md"
     }
   ]
 }
