@@ -214,53 +214,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-09T22:40:29.356Z",
-  "lastNewsPushAt": "2026-08-11T22:53:43.333Z",
+  "lastNewsPushAt": "2026-08-12T22:52:08.595Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-09T22:40:29.356Z",
       "summary": "本次技術雷達榜單由 mattpocock/skills 奪下 #1，共迎來 7 個新進項目（包含 AI 5 個與前後端 2 個），同時有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "社群高度關注 DeepSeek-V4-Flash 的發表，該模型在效能表現上直逼目前市場領先的高階模型（如 GLM-5.2 與 GPT-5.6），同時維持了極具競爭力的成本結構。開發者正密切討論其對現有 AI 應用開發成本與選型策略的影響，社群普遍認為此類高性價比模型的快速迭代將對現有 AI API 市場定價造成顯著壓力。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vbjdby/deepseekv4flash0731_is_going_to_cause_another",
-        "publishedAt": "2026-08-07T01:32:06.477Z",
-        "title": "DeepSeek-V4-Flash 模型發布，挑戰高階模型市場價格與效能邊界",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vbjdby/deepseekv4flash0731_is_going_to_cause_another/"
-      },
-      {
-        "content": "阿里巴巴發布的 Qwen3.8 Max 在 Agentic Index 評測中表現優異，被視為目前的綜合最強模型之一。社群對於其在代理型任務（Agentic tasks）的處理能力表示高度關注。開發者正探討其對企業級自動化應用部署的潛力，以及該模型是否具備取代現有主流閉源模型的運算效能與穩定性。",
-        "id": "news:https://artificialanalysis.ai/?intelligence=agentic-index",
-        "publishedAt": "2026-08-07T01:32:06.477Z",
-        "title": "Qwen3.8 Max 在 Agentic Index 排名躍升，引發業界廣泛討論",
-        "type": "news",
-        "url": "https://artificialanalysis.ai/?intelligence=agentic-index"
-      },
-      {
-        "content": "近期 Hacker News 等社群針對「愛好者程式設計圈為何反對 AI」展開激烈討論。這並非單純的技術偏見，而是反映了開發者對於軟體維護性、知識傳承以及過度依賴 AI 生成程式碼所導致的技能退化憂慮。該討論對於評估 AI 導入企業開發流程的長期風險具有重要參考價值。",
-        "id": "news:https://blog.fogus.me/llm/born-against.html",
-        "publishedAt": "2026-08-07T01:32:06.477Z",
-        "title": "程式設計社群為何對大規模語言模型（LLM）持保留態度？",
-        "type": "news",
-        "url": "https://blog.fogus.me/llm/born-against.html"
-      },
-      {
-        "content": "AMD 宣布收購 AI 晶片新創 Taalas。該公司專注於將 AI 模型邏輯直接蝕刻於矽晶片上，而非依賴軟體驅動的通用處理器。對於開發者而言，這代表未來在邊緣運算或資料中心推論時，有望獲得更低的延遲與更高的能源效率，將改變硬體加速層級的架構部署方式。",
-        "id": "news:https://theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344",
-        "publishedAt": "2026-08-07T22:47:57.790Z",
-        "title": "AMD 收購 Taalas 以強化矽晶片層級的 AI 推論效能",
-        "type": "news",
-        "url": "https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344"
-      },
-      {
-        "content": "熱門推論引擎 llama.cpp 正式加入對 DeepSeek V4 Flash 模型的支援，並引入 MTP (Multi-Token Prediction) 與 DSpark 等優化技術。此更新讓開發者能更輕易地在本地端部署高效能模型，顯著提升長文本生成速度與資源運用效率。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for",
-        "publishedAt": "2026-08-07T22:47:57.790Z",
-        "title": "llama.cpp 支援 DeepSeek V4 Flash 的 MTP 與 DSpark 加速",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for/"
-      },
       {
         "content": "Cloudflare 發布 AI Search 功能，協助開發者將現有檔案與網站資料轉化為可供 AI 代理檢索的向量索引。該服務無需繁瑣的底層架構縫合，降低了企業建構 RAG（檢索增強生成）系統的門檻，能快速讓代理程式回應基於內部數據的查詢。",
         "id": "news:https://blog.cloudflare.com/ai-search-easier",
@@ -613,119 +573,100 @@
         "title": "透過 llama.cpp 在 Apple Silicon 與 macOS 虛擬機上加速 LLM 推理",
         "type": "news",
         "url": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md"
+      },
+      {
+        "content": "Node.js 發布 v26.6.0 版本（Current），帶來多項重要更新。其中包含將 MikeMcC399 加入協作者，並在 ffi 模組中新增 getCurrentEventLoop 方法；在 test_runner 測試框架中則加入 context.log()、test:log 事件以及報告 entryFile 的功能，同時修正了 Map 鍵為 null 時的 TypeError 問題。這些更新有助於改善開發者在模組擴充與測試追蹤時的除錯體驗。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.6.0",
+        "publishedAt": "2026-08-12T22:52:08.595Z",
+        "title": "Node.js v26.6.0 發布：新增 getCurrentEventLoop 與測試日誌 API",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
+      },
+      {
+        "content": "Google 官方宣佈推出多款全新的 Gemini 模型陣容，包含 Gemini 3.6 Flash、3.5 Flash-Lite 以及 3.5 Flash Cyber。這些新模型旨在提供開發者更高效能與更具成本效益的選擇，擴充在各種應用場景中的整合彈性，對於需要調用輕量且快速模型來降低成本的 AI 應用開發者具備重要參考價值。",
+        "id": "news:https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber",
+        "publishedAt": "2026-08-12T22:52:08.595Z",
+        "title": "Google 推出 Gemini 3.6 Flash、3.5 Flash-Lite 與 3.5 Flash Cyber",
+        "type": "news",
+        "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/"
+      },
+      {
+        "content": "根據官方預告與 ModelScope 平台資訊，阿里通義千問團隊的超大型模型 Qwen3.8-2.4T-A95B（又稱 Qwen3.8-Max）將於下週三正式開源發布。這對依賴開源模型進行本地部署或企業級架構微調的開發團隊而言，是一項備受關注的重量級模型更新。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vgx8yu/qwen3824ta95b_aka_qwen38max_open_release_time",
+        "publishedAt": "2026-08-12T22:52:08.595Z",
+        "title": "Qwen3.8-2.4T-A95B（Qwen3.8-Max）預計下週三開源發布",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vgx8yu/qwen3824ta95b_aka_qwen38max_open_release_time/"
+      },
+      {
+        "content": "這篇高討論度的文章探討了隨著 AI 網頁爬蟲與機器人大量抓取並重塑網路內容，傳統網際網路的集體記憶與公開知識生態正逐漸受到侵蝕。對於依賴開源網路資源與技術文檔的開發者來說，這反映了未來知識獲取管道與網路架構可能面臨的結構性轉變。",
+        "id": "news:https://thewalrus.ca/google-search-is-dying",
+        "publishedAt": "2026-08-12T22:52:08.595Z",
+        "title": "當 AI 吞噬網路：探討網際網路集體記憶正在消失的現象",
+        "type": "news",
+        "url": "https://thewalrus.ca/google-search-is-dying/"
+      },
+      {
+        "content": "根據社群熱烈討論與 Artificial Analysis 的最新代理效能評比，Qwen 3.8 Max 在各項指標上已超越 Opus 5，登上整體表現最佳的模型寶座。這顯示開源與閉源模型在代理能力（Agentic Index）上的競爭進入新階段，對開發者在選擇 AI 代理底層模型時提供重要的效能參考指標。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model",
+        "publishedAt": "2026-08-12T22:52:08.595Z",
+        "title": "Qwen 3.8 Max 在 Artificial Analysis 代理指標中超越 Opus 5 成為最佳整體模型",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-11T22:53:43.333Z",
+      "generatedAt": "2026-08-12T22:52:08.595Z",
       "items": [
         {
-          "content": "Node.js 釋出 26.5.1 版本，這是一個包含多項高、中風險安全性修補的重要版本。主要修復項目包含：針對 http2 的 `defer rst stream` 漏洞（CVE-2026-56848，評級高）、權限控制相關的 `avoid granting radix split nodes`（CVE-2026-58043，評級高），以及 https 代理金鑰區分與會話重用檢查、sqlite 語句重置迭代器失效等多項漏洞。建議使用 Node.js 的開發團隊與維運人員應盡速評估並升級，以確保應用程式與伺服器的執行安全。",
+          "content": "Node.js 發布 v26.6.0 版本（Current），帶來多項重要更新。其中包含將 MikeMcC399 加入協作者，並在 ffi 模組中新增 getCurrentEventLoop 方法；在 test_runner 測試框架中則加入 context.log()、test:log 事件以及報告 entryFile 的功能，同時修正了 Map 鍵為 null 時的 TypeError 問題。這些更新有助於改善開發者在模組擴充與測試追蹤時的除錯體驗。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Node.js 發布 26.5.1 安全更新版本",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.5.1",
+          "title": "Node.js v26.6.0 發布：新增 getCurrentEventLoop 與測試日誌 API",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.6.0",
           "weightedScore": 100
         },
         {
-          "content": "雲端原生計算基金會（CNCF）宣佈 Cloud Native Buildpacks 專案正式畢業（Graduation）。這標誌著該專案已在各大雲端環境中獲得廣泛的生產環境採用，成為將應用程式原始碼直接轉換為符合 OCI 標準容器映像檔的成熟標準工具。對於負責 CI/CD 管道與基礎設施的開發者而言，這意味著 Buildpacks 在容器映像檔建構的穩定性與生態系支援上更具權威性與可靠度。",
+          "content": "Google 官方宣佈推出多款全新的 Gemini 模型陣容，包含 Gemini 3.6 Flash、3.5 Flash-Lite 以及 3.5 Flash Cyber。這些新模型旨在提供開發者更高效能與更具成本效益的選擇，擴充在各種應用場景中的整合彈性，對於需要調用輕量且快速模型來降低成本的 AI 應用開發者具備重要參考價值。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "title": "CNCF 宣布 Cloud Native Buildpacks 正式畢業，確立容器建構標準",
-          "url": "https://www.cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds/",
+          "title": "Google 推出 Gemini 3.6 Flash、3.5 Flash-Lite 與 3.5 Flash Cyber",
+          "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/",
           "weightedScore": 100
         },
         {
-          "content": "Anthropic 宣布在開發工具 Claude Code 中將 Auto mode 設為預設模式。這項變更改變了開發者與 AI 互動的執行流程，允許工具在無需人工逐一確認每個步驟的情況下自動執行更多操作。對於依賴 AI 輔助編碼的開發者來說，這能大幅減少反覆手動批准指令的時間，但同時也對開發流程的安全性與結果驗證提出了更高的要求。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "title": "Claude Code 預設全面啟用 Auto mode",
-          "url": "https://claude.com/blog/auto-mode-default-in-claude-code",
-          "weightedScore": 388
-        },
-        {
-          "content": "Google 推出 Gemini Robotics ER 2，旨在透過先進的視訊理解、任務編排與多機器人協作能力來賦能機器人應用。這項更新讓機器人能更精準地理解真實世界的任務並進行推理與協作。對於從事機器人軟體開發與邊緣 AI 整合的工程師而言，這提供了解決複雜真實世界任務的新一代模型與工具支援。",
+          "content": "根據官方預告與 ModelScope 平台資訊，阿里通義千問團隊的超大型模型 Qwen3.8-2.4T-A95B（又稱 Qwen3.8-Max）將於下週三正式開源發布。這對依賴開源模型進行本地部署或企業級架構微調的開發團隊而言，是一項備受關注的重量級模型更新。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Google 發布 Gemini Robotics ER 2，強化機器人視訊理解與協作",
-          "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
+          "title": "Qwen3.8-2.4T-A95B（Qwen3.8-Max）預計下週三開源發布",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vgx8yu/qwen3824ta95b_aka_qwen38max_open_release_time/",
           "weightedScore": 100
         },
         {
-          "content": "Hacker News 上備受討論的安全與 AI 研究指出，透過特定攻擊手法可以從專有的大型語言模型 API 中竊取其內部的「推理軌跡」（Reasoning Traces）。這項發現凸顯了目前依賴外部大型語言模型進行深度推理時，模型內部運作邏輯與智慧財產可能面臨的外泄風險，對於評估 AI 模型安全性與 API 架構設計的開發者具有高度參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "title": "研究揭露如何從專有 LLM API 中竊取推理軌跡",
-          "url": "https://stolen-thoughts.com/",
-          "weightedScore": 539
-        },
-        {
-          "content": "社群熱議的 Needle2 是一個大小僅 14MB 的代理式（agentic）LLM，專為手機、穿戴式裝置、智慧家庭設備與機器人等資源受限的硬體環境所設計。這對行動端與嵌入式系統開發者而言是一大突破，展示了在極低記憶體與運算資源下運行具備智慧代理能力模型的可能性，開啟了邊緣 AI 裝置的新應用想像。",
+          "content": "這篇高討論度的文章探討了隨著 AI 網頁爬蟲與機器人大量抓取並重塑網路內容，傳統網際網路的集體記憶與公開知識生態正逐漸受到侵蝕。對於依賴開源網路資源與技術文檔的開發者來說，這反映了未來知識獲取管道與網路架構可能面臨的結構性轉變。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Needle2：適用於行動裝置與物聯網的 14MB 輕量級 Agentic LLM",
-          "url": "https://cactuscompute.com/needle",
-          "weightedScore": 505
+          "title": "當 AI 吞噬網路：探討網際網路集體記憶正在消失的現象",
+          "url": "https://thewalrus.ca/google-search-is-dying/",
+          "weightedScore": 925
         },
         {
-          "content": "社群關注的開源專案 H3-metal 提供了針對 Apple Silicon 架構的 MiniMax-H3 模型原生推理支援。這讓擁有 Mac 電腦的開發者能夠直接在本地端的高效能晶片上執行大型模型推理，大幅提升執行效率並降低對雲端 API 的依賴，對於本地 AI 開發與測試工作流程帶來實質的便利。",
+          "content": "根據社群熱烈討論與 Artificial Analysis 的最新代理效能評比，Qwen 3.8 Max 在各項指標上已超越 Opus 5，登上整體表現最佳的模型寶座。這顯示開源與閉源模型在代理能力（Agentic Index）上的競爭進入新階段，對開發者在選擇 AI 代理底層模型時提供重要的效能參考指標。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "H3-metal：在 Apple Silicon 上實現 MiniMax-H3 的原生推理",
-          "url": "https://github.com/antirez/h3.c",
-          "weightedScore": 421
-        },
-        {
-          "content": "Hacker News 熱門討論分享了如何在 Apple Silicon 與 macOS 虛擬機環境中，利用 llama.cpp 實現更快速的 LLM 推理效能。這篇文章探討了硬體加速與虛擬化環境下的效能調校技巧，對於需要在 Mac 本地端或虛擬化開發環境中優化 AI 模型執行速度的工程師來說，是非常具實用價值的技術指南。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "透過 llama.cpp 在 Apple Silicon 與 macOS 虛擬機上加速 LLM 推理",
-          "url": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md",
-          "weightedScore": 271
+          "title": "Qwen 3.8 Max 在 Artificial Analysis 代理指標中超越 Opus 5 成為最佳整體模型",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model/",
+          "weightedScore": 100
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-04T23:11:29.585Z",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber"
-    },
-    {
-      "seenAt": "2026-08-04T23:11:29.585Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
-    },
-    {
-      "seenAt": "2026-08-04T23:11:29.585Z",
-      "url": "https://cncf.io/blog/2026/07/28/lima-v2-2-windows-guests-and-tpm-2-0-emulation"
-    },
-    {
-      "seenAt": "2026-08-04T23:11:29.585Z",
-      "url": "https://mistral.ai/news/shieldstral"
-    },
-    {
-      "seenAt": "2026-08-04T23:11:29.585Z",
-      "url": "https://blog.cloudflare.com/agents-on-cloudflare"
-    },
-    {
-      "seenAt": "2026-08-04T23:11:29.585Z",
-      "url": "https://nelson.cloud/ai-generated-images-discourage-me-from-reading-your-blog"
-    },
-    {
-      "seenAt": "2026-08-04T23:11:29.585Z",
-      "url": "https://science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research"
-    },
-    {
-      "seenAt": "2026-08-04T23:11:29.585Z",
-      "url": "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai"
-    },
     {
       "seenAt": "2026-08-05T23:10:51.494Z",
       "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
@@ -945,6 +886,26 @@
     {
       "seenAt": "2026-08-11T22:53:43.333Z",
       "url": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md"
+    },
+    {
+      "seenAt": "2026-08-12T22:52:08.595Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
+    },
+    {
+      "seenAt": "2026-08-12T22:52:08.595Z",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber"
+    },
+    {
+      "seenAt": "2026-08-12T22:52:08.595Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vgx8yu/qwen3824ta95b_aka_qwen38max_open_release_time"
+    },
+    {
+      "seenAt": "2026-08-12T22:52:08.595Z",
+      "url": "https://thewalrus.ca/google-search-is-dying"
+    },
+    {
+      "seenAt": "2026-08-12T22:52:08.595Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model"
     }
   ]
 }
