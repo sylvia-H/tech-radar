@@ -214,93 +214,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-09T22:40:29.356Z",
-  "lastNewsPushAt": "2026-08-12T22:52:08.595Z",
+  "lastNewsPushAt": "2026-08-13T22:54:00.671Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-09T22:40:29.356Z",
       "summary": "本次技術雷達榜單由 mattpocock/skills 奪下 #1，共迎來 7 個新進項目（包含 AI 5 個與前後端 2 個），同時有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "Cloudflare 發布 AI Search 功能，協助開發者將現有檔案與網站資料轉化為可供 AI 代理檢索的向量索引。該服務無需繁瑣的底層架構縫合，降低了企業建構 RAG（檢索增強生成）系統的門檻，能快速讓代理程式回應基於內部數據的查詢。",
-        "id": "news:https://blog.cloudflare.com/ai-search-easier",
-        "publishedAt": "2026-08-07T22:47:57.790Z",
-        "title": "Cloudflare 推出 AI Search：為 AI 代理提供企業資料檢索功能",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/ai-search-easier/"
-      },
-      {
-        "content": "針對傳統驗證機制多於 Kubernetes API 層級運作的痛點，NRI 提供了一種更底層的運行時驗證方案。開發者可藉此攔截容器執行過程中的異常行為並強制執行安全策略，確保 CI/CD 流程中建立的鏡像在生產環境執行時，仍符合預期的安全簽署與合規性規範。",
-        "id": "news:https://cncf.io/blog/2026/07/30/runtime-supply-chain-verification-using-the-node-resource-interface-nri",
-        "publishedAt": "2026-08-07T22:47:57.790Z",
-        "title": "利用節點資源介面（NRI）實現容器供應鏈運行時驗證",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/07/30/runtime-supply-chain-verification-using-the-node-resource-interface-nri/"
-      },
-      {
-        "content": "Cloudflare 推出一套全新的 CI/CD 解決方案，允許開發者使用 TypeScript 定義工作流，並在 Cloudflare 的沙盒環境中運行。此工具旨在取代複雜的 YAML 配置，提供自癒式的 AI 代理與原生構建管道，適合大規模專案的自動化與部署管理。",
-        "id": "news:https://blog.cloudflare.com/ci-workflows",
-        "publishedAt": "2026-08-07T22:47:57.790Z",
-        "title": "Cloudflare 推出的原生 CI/CD 工作流與 SDK",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/ci-workflows/"
-      },
-      {
-        "content": "Oracle 正式對 OpenJDK 發布政策，禁止直接引入 AI 生成的程式碼。此舉旨在維護 Java 開發工具鏈的安全性與產權合規性。開發者在使用 AI 輔助編寫 Java 專案時，必須注意此政策可能對開源貢獻流程產生的重大規範改變。",
-        "id": "news:https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code",
-        "publishedAt": "2026-08-07T22:47:57.790Z",
-        "title": "Oracle 禁止在 OpenJDK 中使用 AI 生成程式碼",
-        "type": "news",
-        "url": "https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code"
-      },
-      {
-        "content": "歐盟 AI 法案於 2026 年 8 月 2 日正式生效。法案要求所有由 AI 生成的圖片、音訊、影片與文字內容必須明確標註為「AI 生成」。對開發者而言，這意味著在處理媒體與內容發布平台時，必須在系統架構中加入強制性的中繼資料標籤或浮水印檢測機制以符合法規。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vcqpn4/eu_ai_act_takes_effect_tomorrow_august_2_2026",
-        "publishedAt": "2026-08-07T22:47:57.790Z",
-        "title": "歐盟 AI 法案正式生效：強制規範 AI 生成內容標記",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vcqpn4/eu_ai_act_takes_effect_tomorrow_august_2_2026/"
-      },
-      {
-        "content": "一項針對 4 萬次遊戲運行紀錄的研究指出，當人類審核 AI 代理指令時，有高達 1/3 的安全威脅被漏掉。此數據凸顯出『人機迴路（Human-in-the-loop）』在複雜自動化任務中並非絕對安全，開發者在設計 AI 代理架構時，需考量更嚴謹的自動化防禦層。",
-        "id": "news:https://scalex.dev/blog/ai-agent-permissions-stats",
-        "publishedAt": "2026-08-07T22:47:57.790Z",
-        "title": "AI 代理指令審核缺失：研究顯示人類辨識威脅率僅 66%",
-        "type": "news",
-        "url": "https://scalex.dev/blog/ai-agent-permissions-stats/"
-      },
-      {
-        "content": "多個主流 AI 業者聯合推動 Agent Plugins 1.0.0 標準，旨在為 AI 代理建立一個可攜式的套件格式。對於開發者而言，這意味著未來只需編寫一次插件，即可跨平台運行於 OpenAI、AWS、Cursor 及 GitHub 等不同生態中，大幅降低開發代理工具的相容性成本。",
-        "id": "news:https://thenewstack.io/agent-plugins-open-standard",
-        "publishedAt": "2026-08-08T22:38:35.737Z",
-        "title": "OpenAI、AWS 與 GitHub 等科技巨頭發布 Agent Plugins 1.0.0 標準",
-        "type": "news",
-        "url": "https://thenewstack.io/agent-plugins-open-standard/"
-      },
-      {
-        "content": "阿里巴巴正式推出 Qwen3.8 系列模型，包含 27B 參數版本以及更強大的 Max 版本。這為開發者提供了更多高性能開源與閉源選擇，特別是在需要處理複雜任務與長上下文的情境下，進一步擴展了 LLM 的應用範疇。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max",
-        "publishedAt": "2026-08-08T22:38:35.737Z",
-        "title": "阿里雲發布 Qwen3.8-27B 與 Qwen3.8-Max 模型",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max/"
-      },
-      {
-        "content": "開源多租戶擴展存儲方案 Cortex 已完成由 OSTIF 進行的安全性審計。對於依賴 Cortex 處理大規模時序數據的 DevOps 工程師來說，這意味著該系統的基礎架構安全性已得到第三方驗證，是穩定生產環境的重要指標。",
-        "id": "news:https://cncf.io/blog/2026/08/03/cortex-completes-ostif-security-audit",
-        "publishedAt": "2026-08-08T22:38:35.737Z",
-        "title": "Prometheus 與 OpenTelemetry 監控存儲方案 Cortex 完成安全審計",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/08/03/cortex-completes-ostif-security-audit/"
-      },
-      {
-        "content": "在事件驅動的架構中，CPU 或記憶體指標常無法反映實際負載。本文探討如何利用 KEDA 根據 SQS 隊列深度自動調整 K8s Pod 數量，對 DevOps 工程師構建具備彈性與高併發處理能力的後端基礎設施至關重要。",
-        "id": "news:https://cncf.io/blog/2026/07/31/scaling-kubernetes-pods-with-keda-based-on-amazon-sqs-queue-depth",
-        "publishedAt": "2026-08-08T22:38:35.737Z",
-        "title": "如何根據 Amazon SQS 隊列深度自動擴展 Kubernetes Pod",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/07/31/scaling-kubernetes-pods-with-keda-based-on-amazon-sqs-queue-depth/"
-      },
       {
         "content": "Evergreen 是一款專為開發者設計的 PR 管理工具，能自動修復 CI 失敗並處理分支合併衝突。透過自動化處理維護與基底分支同步的繁瑣任務，能有效提升團隊開發效率，確保合併流程順暢。",
         "id": "news:https://githubnext.com/posts/evergreen",
@@ -613,92 +533,185 @@
         "title": "Qwen 3.8 Max 在 Artificial Analysis 代理指標中超越 Opus 5 成為最佳整體模型",
         "type": "news",
         "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model/"
+      },
+      {
+        "content": "Google 正式推出 Gemini 3.7 Flash，為開發者帶來更高效能與速度平衡的新一代輕量級 AI 模型。對於需要在應用程式中整合即時回應、處理大量文字與多模態任務的開發者而言，此版本提供了更高的性價比與更低的延遲，有助於優化生產環境中的 AI 工作負載。",
+        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash",
+        "publishedAt": "2026-08-13T22:54:00.671Z",
+        "title": "Google 發布 Gemini 3.7 Flash 模型",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/"
+      },
+      {
+        "content": "OpenAI 宣布於 Linux 桌面版 ChatGPT 中正式推出 Codex 預覽功能。這讓 Linux 開發環境的使用者能直接在桌面應用中調用強大的程式碼生成與除錯能力，改善跨平台的開發者工作流程，提升本地端編碼與 AI 協作的便利性。",
+        "id": "news:https://community.openai.com/t/codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview/1390027",
+        "publishedAt": "2026-08-13T22:54:00.671Z",
+        "title": "ChatGPT Linux 桌面版整合 Codex 進入預覽階段",
+        "type": "news",
+        "url": "https://community.openai.com/t/codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview/1390027"
+      },
+      {
+        "content": "Node.js 釋出 24.18.1 LTS 版本，這是一次重要的安全性更新，修復了多項高風險漏洞。其中包括針對 HTTP/2 會話會計記憶體保留（CVE-2026-56846）、重設串流延遲處理（CVE-2026-56848）以及權限模組分割節點授予（CVE-2026-58043）等高強度漏洞。建議所有使用 LTS 版本的開發者與維運團隊盡快進行安全性升級以降低遭受攻擊的風險。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v24.18.1",
+        "publishedAt": "2026-08-13T22:54:00.671Z",
+        "title": "Node.js 發布 24.18.1 'Krypton' LTS 安全更新",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
+      },
+      {
+        "content": "Node.js 推出 24.19.0 LTS 版本，帶來數項重要功能更新（SEMVER-MINOR）。亮點包括在 buffer 中實作 blob.textStream()、更新 OpenSSL 建構配置以支援壓縮，並將 blockList 穩定性狀態提升至候選發布（RC），同時新增 --experimental-import-text 實驗性旗標，讓模組載入與資料流處理更具彈性。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v24.19.0",
+        "publishedAt": "2026-08-13T22:54:00.671Z",
+        "title": "Node.js 發布 24.19.0 'Krypton' LTS 版本",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
+      },
+      {
+        "content": "Cloudflare 宣布其憑證透明度監控（Certificate Transparency Monitoring）服務正式進入 GA（Generally Available）階段。本次更新的最大改變在於，Cloudflare 將不再對為網域發行的憑證發送常規郵件通知；因此，未來只要收件匣中收到相關警報，即代表有值得資安與維運團隊高度關注的憑證活動，有助於提升憑證管理的精確度與警覺性。",
+        "id": "news:https://blog.cloudflare.com/certificate-transparency-monitoring-ga",
+        "publishedAt": "2026-08-13T22:54:00.671Z",
+        "title": "Cloudflare 憑證透明度監控（CTM）正式全面可用",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/"
+      },
+      {
+        "content": "Hacker News 熱議文章探討 AI 工具普及對軟體工程師就業結構的衝擊。隨著 AI 逐漸能夠處理中階的常規程式碼編寫與架構實作，軟體工程領域的技術職位分工與薪資結構可能面臨重塑，引發開發者社群對自身職涯定位與核心競爭力的深刻反思。",
+        "id": "news:https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
+        "publishedAt": "2026-08-13T22:54:00.671Z",
+        "title": "AI 是否正在淘洗軟體工程的中產階級？",
+        "type": "news",
+        "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html"
+      },
+      {
+        "content": "開發者社群熱烈討論 Claude 在輸出內容中所採用的浮水印與標記機制。這篇文章探討了防範機制在真實開發工作流程中的表現與限制，對於需要辨識、追蹤或過濾 AI 生成程式碼與文字的團隊來說，提供了重要的技術觀察與實務參考。",
+        "id": "news:https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
+        "publishedAt": "2026-08-13T22:54:00.671Z",
+        "title": "深入解析 Claude 如何標記 AI 生成內容",
+        "type": "news",
+        "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
+      },
+      {
+        "content": "資安社群發出通報，指出近期網路上觀測到有惡意攻擊者透過偽裝成 ClaudeBot 等知名 AI 爬蟲與機器人的身份，進行大規模的弱點掃描。這對網站維運與資安防禦團隊敲響了警鐘，提醒開發者必須調整防火牆與日誌分析策略，嚴格驗證來訪流量的真實身份。",
+        "id": "news:https://knownagents.com/insights",
+        "publishedAt": "2026-08-13T22:54:00.671Z",
+        "title": "社群警示：出現偽裝成 ClaudeBot 的大規模漏洞掃描行為",
+        "type": "news",
+        "url": "https://knownagents.com/insights"
+      },
+      {
+        "content": "社群高度關注軟體交付管道中的新型資安威脅——「影子 AI」。隨著各種 AI 工具、擴充功能與代理程式在開發階段被廣泛使用，卻往往缺乏對應的安全架構規範。本文探討了從本地端開發環境一路延伸至 Kubernetes 生產叢集的潛在安全漏洞，對 DevOps 工程師進行安全威脅建模具有高度實務價值。",
+        "id": "news:https://cncf.io/blog/2026/08/07/shadow-ai-in-ci-cd-threat-modeling-the-path-from-developer-laptop-to-kubernetes",
+        "publishedAt": "2026-08-13T22:54:00.671Z",
+        "title": "CI/CD 中的「影子 AI」：從開發者筆電到 Kubernetes 的威脅建模",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/08/07/shadow-ai-in-ci-cd-threat-modeling-the-path-from-developer-laptop-to-kubernetes/"
+      },
+      {
+        "content": "技術社群深入探討 AI 系統從展示環境（Demo）邁向實際生產環境（Production）時隱含的成本爆發問題。由於多數 AI 系統在初期無法精準預估 Token 消耗與運算開銷，導致上線後帳單暴增。本文為後端與架構開發者剖析了生產級 AI 管線的成本優化與監控盲點。",
+        "id": "news:https://thenewstack.io/ai-pipeline-token-optimization",
+        "publishedAt": "2026-08-13T22:54:00.671Z",
+        "title": "為什麼你的 AI 管線在 Demo 之後成本暴增 10 倍？",
+        "type": "news",
+        "url": "https://thenewstack.io/ai-pipeline-token-optimization/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-12T22:52:08.595Z",
+      "generatedAt": "2026-08-13T22:54:00.671Z",
       "items": [
         {
-          "content": "Node.js 發布 v26.6.0 版本（Current），帶來多項重要更新。其中包含將 MikeMcC399 加入協作者，並在 ffi 模組中新增 getCurrentEventLoop 方法；在 test_runner 測試框架中則加入 context.log()、test:log 事件以及報告 entryFile 的功能，同時修正了 Map 鍵為 null 時的 TypeError 問題。這些更新有助於改善開發者在模組擴充與測試追蹤時的除錯體驗。",
+          "content": "Google 正式推出 Gemini 3.7 Flash，為開發者帶來更高效能與速度平衡的新一代輕量級 AI 模型。對於需要在應用程式中整合即時回應、處理大量文字與多模態任務的開發者而言，此版本提供了更高的性價比與更低的延遲，有助於優化生產環境中的 AI 工作負載。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "title": "Google 發布 Gemini 3.7 Flash 模型",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+          "weightedScore": 623
+        },
+        {
+          "content": "OpenAI 宣布於 Linux 桌面版 ChatGPT 中正式推出 Codex 預覽功能。這讓 Linux 開發環境的使用者能直接在桌面應用中調用強大的程式碼生成與除錯能力，改善跨平台的開發者工作流程，提升本地端編碼與 AI 協作的便利性。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "title": "ChatGPT Linux 桌面版整合 Codex 進入預覽階段",
+          "url": "https://community.openai.com/t/codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview/1390027",
+          "weightedScore": 541
+        },
+        {
+          "content": "Node.js 釋出 24.18.1 LTS 版本，這是一次重要的安全性更新，修復了多項高風險漏洞。其中包括針對 HTTP/2 會話會計記憶體保留（CVE-2026-56846）、重設串流延遲處理（CVE-2026-56848）以及權限模組分割節點授予（CVE-2026-58043）等高強度漏洞。建議所有使用 LTS 版本的開發者與維運團隊盡快進行安全性升級以降低遭受攻擊的風險。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Node.js v26.6.0 發布：新增 getCurrentEventLoop 與測試日誌 API",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.6.0",
+          "title": "Node.js 發布 24.18.1 'Krypton' LTS 安全更新",
+          "url": "https://github.com/nodejs/node/releases/tag/v24.18.1",
           "weightedScore": 100
         },
         {
-          "content": "Google 官方宣佈推出多款全新的 Gemini 模型陣容，包含 Gemini 3.6 Flash、3.5 Flash-Lite 以及 3.5 Flash Cyber。這些新模型旨在提供開發者更高效能與更具成本效益的選擇，擴充在各種應用場景中的整合彈性，對於需要調用輕量且快速模型來降低成本的 AI 應用開發者具備重要參考價值。",
+          "content": "Node.js 推出 24.19.0 LTS 版本，帶來數項重要功能更新（SEMVER-MINOR）。亮點包括在 buffer 中實作 blob.textStream()、更新 OpenSSL 建構配置以支援壓縮，並將 blockList 穩定性狀態提升至候選發布（RC），同時新增 --experimental-import-text 實驗性旗標，讓模組載入與資料流處理更具彈性。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Google 推出 Gemini 3.6 Flash、3.5 Flash-Lite 與 3.5 Flash Cyber",
-          "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/",
+          "title": "Node.js 發布 24.19.0 'Krypton' LTS 版本",
+          "url": "https://github.com/nodejs/node/releases/tag/v24.19.0",
           "weightedScore": 100
         },
         {
-          "content": "根據官方預告與 ModelScope 平台資訊，阿里通義千問團隊的超大型模型 Qwen3.8-2.4T-A95B（又稱 Qwen3.8-Max）將於下週三正式開源發布。這對依賴開源模型進行本地部署或企業級架構微調的開發團隊而言，是一項備受關注的重量級模型更新。",
+          "content": "Cloudflare 宣布其憑證透明度監控（Certificate Transparency Monitoring）服務正式進入 GA（Generally Available）階段。本次更新的最大改變在於，Cloudflare 將不再對為網域發行的憑證發送常規郵件通知；因此，未來只要收件匣中收到相關警報，即代表有值得資安與維運團隊高度關注的憑證活動，有助於提升憑證管理的精確度與警覺性。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "title": "Qwen3.8-2.4T-A95B（Qwen3.8-Max）預計下週三開源發布",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vgx8yu/qwen3824ta95b_aka_qwen38max_open_release_time/",
+          "title": "Cloudflare 憑證透明度監控（CTM）正式全面可用",
+          "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/",
           "weightedScore": 100
         },
         {
-          "content": "這篇高討論度的文章探討了隨著 AI 網頁爬蟲與機器人大量抓取並重塑網路內容，傳統網際網路的集體記憶與公開知識生態正逐漸受到侵蝕。對於依賴開源網路資源與技術文檔的開發者來說，這反映了未來知識獲取管道與網路架構可能面臨的結構性轉變。",
+          "content": "Hacker News 熱議文章探討 AI 工具普及對軟體工程師就業結構的衝擊。隨著 AI 逐漸能夠處理中階的常規程式碼編寫與架構實作，軟體工程領域的技術職位分工與薪資結構可能面臨重塑，引發開發者社群對自身職涯定位與核心競爭力的深刻反思。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "當 AI 吞噬網路：探討網際網路集體記憶正在消失的現象",
-          "url": "https://thewalrus.ca/google-search-is-dying/",
-          "weightedScore": 925
+          "title": "AI 是否正在淘洗軟體工程的中產階級？",
+          "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
+          "weightedScore": 959
         },
         {
-          "content": "根據社群熱烈討論與 Artificial Analysis 的最新代理效能評比，Qwen 3.8 Max 在各項指標上已超越 Opus 5，登上整體表現最佳的模型寶座。這顯示開源與閉源模型在代理能力（Agentic Index）上的競爭進入新階段，對開發者在選擇 AI 代理底層模型時提供重要的效能參考指標。",
+          "content": "開發者社群熱烈討論 Claude 在輸出內容中所採用的浮水印與標記機制。這篇文章探討了防範機制在真實開發工作流程中的表現與限制，對於需要辨識、追蹤或過濾 AI 生成程式碼與文字的團隊來說，提供了重要的技術觀察與實務參考。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Qwen 3.8 Max 在 Artificial Analysis 代理指標中超越 Opus 5 成為最佳整體模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model/",
+          "title": "深入解析 Claude 如何標記 AI 生成內容",
+          "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
+          "weightedScore": 446
+        },
+        {
+          "content": "資安社群發出通報，指出近期網路上觀測到有惡意攻擊者透過偽裝成 ClaudeBot 等知名 AI 爬蟲與機器人的身份，進行大規模的弱點掃描。這對網站維運與資安防禦團隊敲響了警鐘，提醒開發者必須調整防火牆與日誌分析策略，嚴格驗證來訪流量的真實身份。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "社群警示：出現偽裝成 ClaudeBot 的大規模漏洞掃描行為",
+          "url": "https://knownagents.com/insights",
+          "weightedScore": 300
+        },
+        {
+          "content": "社群高度關注軟體交付管道中的新型資安威脅——「影子 AI」。隨著各種 AI 工具、擴充功能與代理程式在開發階段被廣泛使用，卻往往缺乏對應的安全架構規範。本文探討了從本地端開發環境一路延伸至 Kubernetes 生產叢集的潛在安全漏洞，對 DevOps 工程師進行安全威脅建模具有高度實務價值。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "CI/CD 中的「影子 AI」：從開發者筆電到 Kubernetes 的威脅建模",
+          "url": "https://www.cncf.io/blog/2026/08/07/shadow-ai-in-ci-cd-threat-modeling-the-path-from-developer-laptop-to-kubernetes/",
           "weightedScore": 100
+        },
+        {
+          "content": "技術社群深入探討 AI 系統從展示環境（Demo）邁向實際生產環境（Production）時隱含的成本爆發問題。由於多數 AI 系統在初期無法精準預估 Token 消耗與運算開銷，導致上線後帳單暴增。本文為後端與架構開發者剖析了生產級 AI 管線的成本優化與監控盲點。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "為什麼你的 AI 管線在 Demo 之後成本暴增 10 倍？",
+          "url": "https://thenewstack.io/ai-pipeline-token-optimization/",
+          "weightedScore": 50
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-05T23:10:51.494Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
-    },
-    {
-      "seenAt": "2026-08-05T23:10:51.494Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
-    },
-    {
-      "seenAt": "2026-08-05T23:10:51.494Z",
-      "url": "https://cncf.io/announcements/2026/08/05/k8gb-becomes-a-cncf-incubating-project"
-    },
-    {
-      "seenAt": "2026-08-05T23:10:51.494Z",
-      "url": "https://blog.cloudflare.com/cloudflare-os"
-    },
-    {
-      "seenAt": "2026-08-05T23:10:51.494Z",
-      "url": "https://blog.cloudflare.com/agent-development-lifecycle"
-    },
-    {
-      "seenAt": "2026-08-05T23:10:51.494Z",
-      "url": "https://blog.cloudflare.com/astro-issue-triage"
-    },
-    {
-      "seenAt": "2026-08-05T23:10:51.494Z",
-      "url": "https://queue.acm.org/detail.cfm?id=3807963"
-    },
-    {
-      "seenAt": "2026-08-05T23:10:51.494Z",
-      "url": "https://weeraman.com/the-prototype-isnt-the-product"
-    },
     {
       "seenAt": "2026-08-07T01:32:06.477Z",
       "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
@@ -906,6 +919,46 @@
     {
       "seenAt": "2026-08-12T22:52:08.595Z",
       "url": "https://reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model"
+    },
+    {
+      "seenAt": "2026-08-13T22:54:00.671Z",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash"
+    },
+    {
+      "seenAt": "2026-08-13T22:54:00.671Z",
+      "url": "https://community.openai.com/t/codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview/1390027"
+    },
+    {
+      "seenAt": "2026-08-13T22:54:00.671Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
+    },
+    {
+      "seenAt": "2026-08-13T22:54:00.671Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
+    },
+    {
+      "seenAt": "2026-08-13T22:54:00.671Z",
+      "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga"
+    },
+    {
+      "seenAt": "2026-08-13T22:54:00.671Z",
+      "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html"
+    },
+    {
+      "seenAt": "2026-08-13T22:54:00.671Z",
+      "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
+    },
+    {
+      "seenAt": "2026-08-13T22:54:00.671Z",
+      "url": "https://knownagents.com/insights"
+    },
+    {
+      "seenAt": "2026-08-13T22:54:00.671Z",
+      "url": "https://cncf.io/blog/2026/08/07/shadow-ai-in-ci-cd-threat-modeling-the-path-from-developer-laptop-to-kubernetes"
+    },
+    {
+      "seenAt": "2026-08-13T22:54:00.671Z",
+      "url": "https://thenewstack.io/ai-pipeline-token-optimization"
     }
   ]
 }
