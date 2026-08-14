@@ -214,68 +214,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-09T22:40:29.356Z",
-  "lastNewsPushAt": "2026-08-13T22:54:00.671Z",
+  "lastNewsPushAt": "2026-08-14T22:32:31.618Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-09T22:40:29.356Z",
       "summary": "本次技術雷達榜單由 mattpocock/skills 奪下 #1，共迎來 7 個新進項目（包含 AI 5 個與前後端 2 個），同時有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "Evergreen 是一款專為開發者設計的 PR 管理工具，能自動修復 CI 失敗並處理分支合併衝突。透過自動化處理維護與基底分支同步的繁瑣任務，能有效提升團隊開發效率，確保合併流程順暢。",
-        "id": "news:https://githubnext.com/posts/evergreen",
-        "publishedAt": "2026-08-08T22:38:35.737Z",
-        "title": "Evergreen：自動化處理 CI 失敗與合併衝突的開發工具",
-        "type": "news",
-        "url": "https://githubnext.com/posts/evergreen/"
-      },
-      {
-        "content": "社群熱議指出中國新研發的 DFSX 晶片在記憶體頻寬指標上達到 NVIDIA GB200 的兩倍。若此數據屬實，將對 AI 推論與訓練的硬體效能瓶頸帶來潛在的結構性挑戰，開發者應持續關注硬體層面的算力架構演變。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vduej3/chinas_dfsx_offers_2x_the_memory_bandwidth_of",
-        "publishedAt": "2026-08-08T22:38:35.737Z",
-        "title": "中國 DFSX 晶片展現出兩倍於 NVIDIA GB200 的記憶體頻寬",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vduej3/chinas_dfsx_offers_2x_the_memory_bandwidth_of/"
-      },
-      {
-        "content": "社群中針對開源模型在檢索（Retrieval）任務的表現進行了高強度的討論。這顯示了開發者對於「輕量化、高性價比模型」的需求正在攀升，如何在特定垂直領域透過開源模型達到與頂級模型相當的效果，是目前優化 AI 成本的關鍵策略。",
-        "id": "news:https://neon.com/blog/how-castform-neon-beats-frontier-models-on-price-and-efficiency",
-        "publishedAt": "2026-08-08T22:38:35.737Z",
-        "title": "以百倍低廉的開源模型在檢索任務中超越 GPT-5.6 Sol",
-        "type": "news",
-        "url": "https://neon.com/blog/how-castform-neon-beats-frontier-models-on-price-and-efficiency"
-      },
-      {
-        "content": "DeepSeek 最新推出的 V4-Flash 版本在西洋棋邏輯推理基準測試中表現超越了多個熱門模型。此類針對特定領域邏輯能力的測試結果，反映了開發者社群對於模型在規則執行與深度邏輯規劃能力的評估趨勢。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vdq8en/deepseekv4flash0731_surpasses_fable5_sol_kimik3",
-        "publishedAt": "2026-08-08T22:38:35.737Z",
-        "title": "DeepSeek-V4-Flash-0731 在西洋棋基準測試中表現亮眼",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdq8en/deepseekv4flash0731_surpasses_fable5_sol_kimik3/"
-      },
-      {
-        "content": "隨著多代理（Multi-agent）開發模式興起，如何處理多個 Git 工作樹（worktree）與 runtime 環境的協作成為熱議焦點。開發者發現現有的基礎設施在應對多代理並行變更時，常會引發環境混亂，這對 DevOps 的基礎建設規劃提出了新的挑戰。",
-        "id": "news:https://thenewstack.io/agent-native-runtime-branching",
-        "publishedAt": "2026-08-08T22:38:35.737Z",
-        "title": "當多個 AI 代理同時運作時：Git 工作樹管理與執行環境的衝突",
-        "type": "news",
-        "url": "https://thenewstack.io/agent-native-runtime-branching/"
-      },
-      {
-        "content": "社群討論對於 LLM 是否具備真正的「跳躍式邏輯」提出質疑。這類觀點討論提醒開發者，在構建關鍵業務應用時，不能過度依賴 LLM 的推理深度，應針對不同任務場景進行嚴格的邏輯驗證，而非盲目相信模型的生成結果。",
-        "id": "news:https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt",
-        "publishedAt": "2026-08-08T22:38:35.737Z",
-        "title": "LLM 真的能進行跳躍式邏輯思考嗎？社群針對模型推理能力的辯論",
-        "type": "news",
-        "url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt"
-      },
-      {
-        "id": "repo:1237819660:new:2026-08-10",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "zhaoxuya520/reverse-skill 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/zhaoxuya520/reverse-skill"
-      },
       {
         "id": "repo:1151702019:new:2026-08-10",
         "publishedAt": "2026-08-09T22:40:29.356Z",
@@ -613,133 +558,134 @@
         "title": "為什麼你的 AI 管線在 Demo 之後成本暴增 10 倍？",
         "type": "news",
         "url": "https://thenewstack.io/ai-pipeline-token-optimization/"
+      },
+      {
+        "content": "Node.js 官方發布最新 LTS 版本 v22.23.2，包含多項重要的安全性修補。本次更新修復了數個高風險（High）與中風險（Medium）的 CVE 漏洞，涵蓋 HTTP/2 標頭記憶體計會計漏洞（CVE-2026-56846、CVE-2026-56848）、權限控制繞過（CVE-2026-58043）以及 HTTPS 憑證和會話重用相關的檢查漏洞。建議所有使用 Node.js v22 LTS 的開發者與維運團隊盡速評估並升級，以確保應用程式的網路傳輸與存取控制安全。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v22.23.2",
+        "publishedAt": "2026-08-14T22:32:31.618Z",
+        "title": "Node.js v22.23.2 (LTS) 'Jod' 安全更新發布",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
+      },
+      {
+        "content": "Mistral AI 官方釋出 Mistral OCR 4.1 版本，帶來更強大的文件光學辨識與結構化提取能力。對於需要處理複雜佈局、手寫文字或多語言 PDF 的開發者而言，新版本在準確度與解析效能上都有顯著升級，能更穩定地將非結構化文件轉換為機器可讀格式，適合整合進企業級的知識庫與資料檢索增強（RAG）管線中。",
+        "id": "news:https://docs.mistral.ai/models/ocr-4-1",
+        "publishedAt": "2026-08-14T22:32:31.618Z",
+        "title": "Mistral OCR 4.1 正式推出",
+        "type": "news",
+        "url": "https://docs.mistral.ai/models/ocr-4-1"
+      },
+      {
+        "content": "針對近期涉及 OpenAI 模型的第三方網路安全評估事件，官方發布詳細說明並推出全新安全防護措施。這些新機制旨在強化 AI 模型在釋出前的安全測試與漏洞評估流程，對關注 AI 供應鏈安全與模型防禦能力的開發者與資安團隊而言，提供了更透明的防護框架與測試標準參考。",
+        "id": "news:https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+        "publishedAt": "2026-08-14T22:32:31.618Z",
+        "title": "OpenAI 公布第三方網路安全評估防護機制",
+        "type": "news",
+        "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models"
+      },
+      {
+        "content": "Google 發表全新的手語轉文字（SL2T）模型，旨在為聾人及聽障使用者提供更即時、準確的手語翻譯功能。這項技術透過突破性的模型架構，將視覺手語動作轉換為文字，為開發者在無障礙網頁與應用程式（Accessibility）的開發上，提供了強大的原生 AI 模型支援與新功能整合選項。",
+        "id": "news:https://deepmind.google/blog/putting-sign-language-ai-into-users-hands",
+        "publishedAt": "2026-08-14T22:32:31.618Z",
+        "title": "Google 推出手語轉文字（SL2T）全新 AI 模型",
+        "type": "news",
+        "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/"
+      },
+      {
+        "content": "在 Hacker News 與開源社群中持續獲得極高討論度的 llama.cpp，是目前開發者在消費級硬體（如 CPU 與 Apple Silicon）上高效執行大型語言模型（LLM）的核心工具。它不依賴大型雲端 GPU，能以極低的資源消耗進行模型量化與推理，對於希望在本地端部署 AI 應用、進行隱私保護或降低 API 成本的開發者而言，是不可或缺的基礎設施級專案。",
+        "id": "news:https://llama.app/",
+        "publishedAt": "2026-08-14T22:32:31.618Z",
+        "title": "llama.cpp：極速在地端執行大語言模型的推理引擎",
+        "type": "news",
+        "url": "https://llama.app"
+      },
+      {
+        "content": "這篇在社群引發熱烈討論的經驗分享，探討了開發者如何把大語言模型作為互動式導師，系統性地攻克不熟悉的技術堆疊、複雜演算法或底層架構。文章提供了一套具體的提示詞策略與學習工作流，對於時常需要快速掌握新技術、轉換技術跑道的軟體工程師來說，具有極高的實用參考價值。",
+        "id": "news:https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn",
+        "publishedAt": "2026-08-14T22:32:31.618Z",
+        "title": "開發者如何利用 LLM 高效學習複雜技術領域",
+        "type": "news",
+        "url": "https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn/"
+      },
+      {
+        "content": "社群近期針對 Go 語言在 AI 輔助開發時代的定位進行了深入討論。由於 Go 具有靜態型別、簡潔的語法、極快的編譯速度以及強大的併發處理能力，使其在建構 AI 代理程式（AI Agents）、微服務基礎設施及自動化工具時展現出獨特優勢。這篇討論為後端與 DevOps 工程師評估 AI 時代的語言技術棧提供了重要視角。",
+        "id": "news:https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering",
+        "publishedAt": "2026-08-14T22:32:31.618Z",
+        "title": "探討 Go 語言為何是 AI 輔助軟體工程的理想選擇",
+        "type": "news",
+        "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-13T22:54:00.671Z",
+      "generatedAt": "2026-08-14T22:32:31.618Z",
       "items": [
         {
-          "content": "Google 正式推出 Gemini 3.7 Flash，為開發者帶來更高效能與速度平衡的新一代輕量級 AI 模型。對於需要在應用程式中整合即時回應、處理大量文字與多模態任務的開發者而言，此版本提供了更高的性價比與更低的延遲，有助於優化生產環境中的 AI 工作負載。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "title": "Google 發布 Gemini 3.7 Flash 模型",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
-          "weightedScore": 623
-        },
-        {
-          "content": "OpenAI 宣布於 Linux 桌面版 ChatGPT 中正式推出 Codex 預覽功能。這讓 Linux 開發環境的使用者能直接在桌面應用中調用強大的程式碼生成與除錯能力，改善跨平台的開發者工作流程，提升本地端編碼與 AI 協作的便利性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "title": "ChatGPT Linux 桌面版整合 Codex 進入預覽階段",
-          "url": "https://community.openai.com/t/codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview/1390027",
-          "weightedScore": 541
-        },
-        {
-          "content": "Node.js 釋出 24.18.1 LTS 版本，這是一次重要的安全性更新，修復了多項高風險漏洞。其中包括針對 HTTP/2 會話會計記憶體保留（CVE-2026-56846）、重設串流延遲處理（CVE-2026-56848）以及權限模組分割節點授予（CVE-2026-58043）等高強度漏洞。建議所有使用 LTS 版本的開發者與維運團隊盡快進行安全性升級以降低遭受攻擊的風險。",
+          "content": "Node.js 官方發布最新 LTS 版本 v22.23.2，包含多項重要的安全性修補。本次更新修復了數個高風險（High）與中風險（Medium）的 CVE 漏洞，涵蓋 HTTP/2 標頭記憶體計會計漏洞（CVE-2026-56846、CVE-2026-56848）、權限控制繞過（CVE-2026-58043）以及 HTTPS 憑證和會話重用相關的檢查漏洞。建議所有使用 Node.js v22 LTS 的開發者與維運團隊盡速評估並升級，以確保應用程式的網路傳輸與存取控制安全。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Node.js 發布 24.18.1 'Krypton' LTS 安全更新",
-          "url": "https://github.com/nodejs/node/releases/tag/v24.18.1",
+          "title": "Node.js v22.23.2 (LTS) 'Jod' 安全更新發布",
+          "url": "https://github.com/nodejs/node/releases/tag/v22.23.2",
           "weightedScore": 100
         },
         {
-          "content": "Node.js 推出 24.19.0 LTS 版本，帶來數項重要功能更新（SEMVER-MINOR）。亮點包括在 buffer 中實作 blob.textStream()、更新 OpenSSL 建構配置以支援壓縮，並將 blockList 穩定性狀態提升至候選發布（RC），同時新增 --experimental-import-text 實驗性旗標，讓模組載入與資料流處理更具彈性。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "Node.js 發布 24.19.0 'Krypton' LTS 版本",
-          "url": "https://github.com/nodejs/node/releases/tag/v24.19.0",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 宣布其憑證透明度監控（Certificate Transparency Monitoring）服務正式進入 GA（Generally Available）階段。本次更新的最大改變在於，Cloudflare 將不再對為網域發行的憑證發送常規郵件通知；因此，未來只要收件匣中收到相關警報，即代表有值得資安與維運團隊高度關注的憑證活動，有助於提升憑證管理的精確度與警覺性。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Cloudflare 憑證透明度監控（CTM）正式全面可用",
-          "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Hacker News 熱議文章探討 AI 工具普及對軟體工程師就業結構的衝擊。隨著 AI 逐漸能夠處理中階的常規程式碼編寫與架構實作，軟體工程領域的技術職位分工與薪資結構可能面臨重塑，引發開發者社群對自身職涯定位與核心競爭力的深刻反思。",
+          "content": "Mistral AI 官方釋出 Mistral OCR 4.1 版本，帶來更強大的文件光學辨識與結構化提取能力。對於需要處理複雜佈局、手寫文字或多語言 PDF 的開發者而言，新版本在準確度與解析效能上都有顯著升級，能更穩定地將非結構化文件轉換為機器可讀格式，適合整合進企業級的知識庫與資料檢索增強（RAG）管線中。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "AI 是否正在淘洗軟體工程的中產階級？",
-          "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
-          "weightedScore": 959
+          "title": "Mistral OCR 4.1 正式推出",
+          "url": "https://docs.mistral.ai/models/ocr-4-1",
+          "weightedScore": 402
         },
         {
-          "content": "開發者社群熱烈討論 Claude 在輸出內容中所採用的浮水印與標記機制。這篇文章探討了防範機制在真實開發工作流程中的表現與限制，對於需要辨識、追蹤或過濾 AI 生成程式碼與文字的團隊來說，提供了重要的技術觀察與實務參考。",
+          "content": "針對近期涉及 OpenAI 模型的第三方網路安全評估事件，官方發布詳細說明並推出全新安全防護措施。這些新機制旨在強化 AI 模型在釋出前的安全測試與漏洞評估流程，對關注 AI 供應鏈安全與模型防禦能力的開發者與資安團隊而言，提供了更透明的防護框架與測試標準參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "title": "OpenAI 公布第三方網路安全評估防護機制",
+          "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+          "weightedScore": 200
+        },
+        {
+          "content": "Google 發表全新的手語轉文字（SL2T）模型，旨在為聾人及聽障使用者提供更即時、準確的手語翻譯功能。這項技術透過突破性的模型架構，將視覺手語動作轉換為文字，為開發者在無障礙網頁與應用程式（Accessibility）的開發上，提供了強大的原生 AI 模型支援與新功能整合選項。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "深入解析 Claude 如何標記 AI 生成內容",
-          "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
-          "weightedScore": 446
-        },
-        {
-          "content": "資安社群發出通報，指出近期網路上觀測到有惡意攻擊者透過偽裝成 ClaudeBot 等知名 AI 爬蟲與機器人的身份，進行大規模的弱點掃描。這對網站維運與資安防禦團隊敲響了警鐘，提醒開發者必須調整防火牆與日誌分析策略，嚴格驗證來訪流量的真實身份。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "社群警示：出現偽裝成 ClaudeBot 的大規模漏洞掃描行為",
-          "url": "https://knownagents.com/insights",
-          "weightedScore": 300
-        },
-        {
-          "content": "社群高度關注軟體交付管道中的新型資安威脅——「影子 AI」。隨著各種 AI 工具、擴充功能與代理程式在開發階段被廣泛使用，卻往往缺乏對應的安全架構規範。本文探討了從本地端開發環境一路延伸至 Kubernetes 生產叢集的潛在安全漏洞，對 DevOps 工程師進行安全威脅建模具有高度實務價值。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "CI/CD 中的「影子 AI」：從開發者筆電到 Kubernetes 的威脅建模",
-          "url": "https://www.cncf.io/blog/2026/08/07/shadow-ai-in-ci-cd-threat-modeling-the-path-from-developer-laptop-to-kubernetes/",
+          "title": "Google 推出手語轉文字（SL2T）全新 AI 模型",
+          "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
           "weightedScore": 100
         },
         {
-          "content": "技術社群深入探討 AI 系統從展示環境（Demo）邁向實際生產環境（Production）時隱含的成本爆發問題。由於多數 AI 系統在初期無法精準預估 Token 消耗與運算開銷，導致上線後帳單暴增。本文為後端與架構開發者剖析了生產級 AI 管線的成本優化與監控盲點。",
+          "content": "在 Hacker News 與開源社群中持續獲得極高討論度的 llama.cpp，是目前開發者在消費級硬體（如 CPU 與 Apple Silicon）上高效執行大型語言模型（LLM）的核心工具。它不依賴大型雲端 GPU，能以極低的資源消耗進行模型量化與推理，對於希望在本地端部署 AI 應用、進行隱私保護或降低 API 成本的開發者而言，是不可或缺的基礎設施級專案。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "title": "為什麼你的 AI 管線在 Demo 之後成本暴增 10 倍？",
-          "url": "https://thenewstack.io/ai-pipeline-token-optimization/",
-          "weightedScore": 50
+          "title": "llama.cpp：極速在地端執行大語言模型的推理引擎",
+          "url": "https://llama.app",
+          "weightedScore": 362
+        },
+        {
+          "content": "這篇在社群引發熱烈討論的經驗分享，探討了開發者如何把大語言模型作為互動式導師，系統性地攻克不熟悉的技術堆疊、複雜演算法或底層架構。文章提供了一套具體的提示詞策略與學習工作流，對於時常需要快速掌握新技術、轉換技術跑道的軟體工程師來說，具有極高的實用參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "開發者如何利用 LLM 高效學習複雜技術領域",
+          "url": "https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn/",
+          "weightedScore": 825
+        },
+        {
+          "content": "社群近期針對 Go 語言在 AI 輔助開發時代的定位進行了深入討論。由於 Go 具有靜態型別、簡潔的語法、極快的編譯速度以及強大的併發處理能力，使其在建構 AI 代理程式（AI Agents）、微服務基礎設施及自動化工具時展現出獨特優勢。這篇討論為後端與 DevOps 工程師評估 AI 時代的語言技術棧提供了重要視角。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "探討 Go 語言為何是 AI 輔助軟體工程的理想選擇",
+          "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
+          "weightedScore": 437
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-07T01:32:06.477Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
-    },
-    {
-      "seenAt": "2026-08-07T01:32:06.477Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v26.5.0"
-    },
-    {
-      "seenAt": "2026-08-07T01:32:06.477Z",
-      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models"
-    },
-    {
-      "seenAt": "2026-08-07T01:32:06.477Z",
-      "url": "https://cncf.io/announcements/2026/07/28/subaru-wins-cncf-end-user-case-study-contest-for-accelerating-ai-development-with-cloud-native-infrastructure"
-    },
-    {
-      "seenAt": "2026-08-07T01:32:06.477Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vbjdby/deepseekv4flash0731_is_going_to_cause_another"
-    },
-    {
-      "seenAt": "2026-08-07T01:32:06.477Z",
-      "url": "https://artificialanalysis.ai/?intelligence=agentic-index"
-    },
-    {
-      "seenAt": "2026-08-07T01:32:06.477Z",
-      "url": "https://blog.fogus.me/llm/born-against.html"
-    },
     {
       "seenAt": "2026-08-07T22:47:57.790Z",
       "url": "https://theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344"
@@ -959,6 +905,34 @@
     {
       "seenAt": "2026-08-13T22:54:00.671Z",
       "url": "https://thenewstack.io/ai-pipeline-token-optimization"
+    },
+    {
+      "seenAt": "2026-08-14T22:32:31.618Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
+    },
+    {
+      "seenAt": "2026-08-14T22:32:31.618Z",
+      "url": "https://docs.mistral.ai/models/ocr-4-1"
+    },
+    {
+      "seenAt": "2026-08-14T22:32:31.618Z",
+      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models"
+    },
+    {
+      "seenAt": "2026-08-14T22:32:31.618Z",
+      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands"
+    },
+    {
+      "seenAt": "2026-08-14T22:32:31.618Z",
+      "url": "https://llama.app/"
+    },
+    {
+      "seenAt": "2026-08-14T22:32:31.618Z",
+      "url": "https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn"
+    },
+    {
+      "seenAt": "2026-08-14T22:32:31.618Z",
+      "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering"
     }
   ]
 }
