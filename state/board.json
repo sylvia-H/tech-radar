@@ -214,48 +214,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-09T22:40:29.356Z",
-  "lastNewsPushAt": "2026-08-14T22:32:31.618Z",
+  "lastNewsPushAt": "2026-08-15T22:31:06.820Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-09T22:40:29.356Z",
       "summary": "本次技術雷達榜單由 mattpocock/skills 奪下 #1，共迎來 7 個新進項目（包含 AI 5 個與前後端 2 個），同時有 2 個項目下降。"
     },
     "feed": [
-      {
-        "id": "repo:1151702019:new:2026-08-10",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "firecrawl/pdf-inspector 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/firecrawl/pdf-inspector"
-      },
-      {
-        "id": "repo:1203558071:new:2026-08-10",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "TencentCloud/TencentDB-Agent-Memory 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory"
-      },
-      {
-        "id": "repo:344190478:new:2026-08-10",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "microsoft/AI-For-Beginners 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/microsoft/AI-For-Beginners"
-      },
-      {
-        "id": "repo:652712035:new:2026-08-10",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "lyogavin/airllm 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/lyogavin/airllm"
-      },
-      {
-        "id": "repo:1165277268:new:2026-08-10",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "Panniantong/Agent-Reach 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/Panniantong/Agent-Reach"
-      },
       {
         "id": "repo:910422636:new:2026-08-10",
         "publishedAt": "2026-08-09T22:40:29.356Z",
@@ -614,110 +579,100 @@
         "title": "探討 Go 語言為何是 AI 輔助軟體工程的理想選擇",
         "type": "news",
         "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/"
+      },
+      {
+        "content": "Google 宣布將同態加密（Homomorphic Encryption）技術應用於 AI 領域，旨在解決隱私保護與雲端運算之間的衝突。這項技術允許系統直接對加密資料進行運算而無需解密，對開發者與企業來說，未來在處理敏感資料或受法規管制的應用程式時，能更安全地整合雲端 AI 服務，兼顧資料隱私與運算效能。",
+        "id": "news:https://blog.google/security/how-google-is-making-private-ai-practical-with-homomorphic-encryption",
+        "publishedAt": "2026-08-15T22:31:06.820Z",
+        "title": "Google 導入同态加密技術，讓隱私 AI 實務應用更可行",
+        "type": "news",
+        "url": "https://blog.google/security/how-google-is-making-private-ai-practical-with-homomorphic-encryption/"
+      },
+      {
+        "content": "Cloudflare 推出全新 AI Search 服務，簡化了資料搜尋引擎的建構流程，開發者無需再自行拼湊多個 Cloudflare 基礎元件。只要將服務指向現有的檔案與網站資料，就能快速為自己的應用程式或 AI 代理（Agents）打造強大的資料搜尋能力，同時官方也預先曝光了全新的計費模式。",
+        "id": "news:https://blog.cloudflare.com/ai-search-easier",
+        "publishedAt": "2026-08-15T22:31:06.820Z",
+        "title": "Cloudflare 推出 AI Search，讓開發者輕鬆為應用程式建立資料搜尋引擎",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/ai-search-easier/"
+      },
+      {
+        "content": "Google 宣布在 Google Flow Music 中推出 Lyria 3.5 模型，在音樂性、歌詞、人聲以及創作控制力上皆有顯著突破。對於開發音樂相關應用、多媒體生成工具或探索生成式 AI 創作邊界的開發者而言，這項更新提供了更高品質且更具細緻操控能力的音樂生成 API 與工具。",
+        "id": "news:https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control",
+        "publishedAt": "2026-08-15T22:31:06.820Z",
+        "title": "Google 推出 Lyria 3.5 音樂生成模型，大幅提升音樂性與創作控制力",
+        "type": "news",
+        "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/"
+      },
+      {
+        "content": "Meta 執行長馬克·祖克柏公開批評封閉式 AI 模型的发展方向，並宣布 Meta 將堅定重返開源 AI 模型的路線。這項產業動態反映了開源與閉源陣營在 AI 生態系中的競合持續白熱化，對依賴開源基礎設施進行開發與部署的工程團隊來說，將直接影響未來模型選擇與技術棧的戰略佈局。",
+        "id": "news:https://ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878",
+        "publishedAt": "2026-08-15T22:31:06.820Z",
+        "title": "Meta 重返開源路線：祖克柏公開抨擊「封閉式」AI 競爭對手",
+        "type": "news",
+        "url": "https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878"
+      },
+      {
+        "content": "針對潛在推理模型（如 Coconut 與 CODI）是否易於解釋的研究顯示，這些模型在處理 PrOntoQA 和 ProsQA 等邏輯任務時，幾乎沒有真正使用其連續隱藏狀態中的推理步驟。實驗發現，即使強制模型提早停止思考，通常仍會吐出相同的答案。這對依賴模型內部狀態進行監控與除錯的開發者來說，提供了重要的行為洞察與安全評估參考。",
+        "id": "news:https://arxiv.org/abs/2604.04902",
+        "publishedAt": "2026-08-15T22:31:06.820Z",
+        "title": "研究指出潛在推理模型在邏輯任務中鮮少真正利用隱藏推理步驟",
+        "type": "news",
+        "url": "https://arxiv.org/abs/2604.04902"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-14T22:32:31.618Z",
+      "generatedAt": "2026-08-15T22:31:06.820Z",
       "items": [
         {
-          "content": "Node.js 官方發布最新 LTS 版本 v22.23.2，包含多項重要的安全性修補。本次更新修復了數個高風險（High）與中風險（Medium）的 CVE 漏洞，涵蓋 HTTP/2 標頭記憶體計會計漏洞（CVE-2026-56846、CVE-2026-56848）、權限控制繞過（CVE-2026-58043）以及 HTTPS 憑證和會話重用相關的檢查漏洞。建議所有使用 Node.js v22 LTS 的開發者與維運團隊盡速評估並升級，以確保應用程式的網路傳輸與存取控制安全。",
+          "content": "Google 宣布將同態加密（Homomorphic Encryption）技術應用於 AI 領域，旨在解決隱私保護與雲端運算之間的衝突。這項技術允許系統直接對加密資料進行運算而無需解密，對開發者與企業來說，未來在處理敏感資料或受法規管制的應用程式時，能更安全地整合雲端 AI 服務，兼顧資料隱私與運算效能。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "ai",
           "sourceCount": 1,
-          "title": "Node.js v22.23.2 (LTS) 'Jod' 安全更新發布",
-          "url": "https://github.com/nodejs/node/releases/tag/v22.23.2",
+          "title": "Google 導入同态加密技術，讓隱私 AI 實務應用更可行",
+          "url": "https://blog.google/security/how-google-is-making-private-ai-practical-with-homomorphic-encryption/",
+          "weightedScore": 477
+        },
+        {
+          "content": "Cloudflare 推出全新 AI Search 服務，簡化了資料搜尋引擎的建構流程，開發者無需再自行拼湊多個 Cloudflare 基礎元件。只要將服務指向現有的檔案與網站資料，就能快速為自己的應用程式或 AI 代理（Agents）打造強大的資料搜尋能力，同時官方也預先曝光了全新的計費模式。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Cloudflare 推出 AI Search，讓開發者輕鬆為應用程式建立資料搜尋引擎",
+          "url": "https://blog.cloudflare.com/ai-search-easier/",
           "weightedScore": 100
         },
         {
-          "content": "Mistral AI 官方釋出 Mistral OCR 4.1 版本，帶來更強大的文件光學辨識與結構化提取能力。對於需要處理複雜佈局、手寫文字或多語言 PDF 的開發者而言，新版本在準確度與解析效能上都有顯著升級，能更穩定地將非結構化文件轉換為機器可讀格式，適合整合進企業級的知識庫與資料檢索增強（RAG）管線中。",
+          "content": "Google 宣布在 Google Flow Music 中推出 Lyria 3.5 模型，在音樂性、歌詞、人聲以及創作控制力上皆有顯著突破。對於開發音樂相關應用、多媒體生成工具或探索生成式 AI 創作邊界的開發者而言，這項更新提供了更高品質且更具細緻操控能力的音樂生成 API 與工具。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Mistral OCR 4.1 正式推出",
-          "url": "https://docs.mistral.ai/models/ocr-4-1",
-          "weightedScore": 402
-        },
-        {
-          "content": "針對近期涉及 OpenAI 模型的第三方網路安全評估事件，官方發布詳細說明並推出全新安全防護措施。這些新機制旨在強化 AI 模型在釋出前的安全測試與漏洞評估流程，對關注 AI 供應鏈安全與模型防禦能力的開發者與資安團隊而言，提供了更透明的防護框架與測試標準參考。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "title": "OpenAI 公布第三方網路安全評估防護機制",
-          "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
-          "weightedScore": 200
-        },
-        {
-          "content": "Google 發表全新的手語轉文字（SL2T）模型，旨在為聾人及聽障使用者提供更即時、準確的手語翻譯功能。這項技術透過突破性的模型架構，將視覺手語動作轉換為文字，為開發者在無障礙網頁與應用程式（Accessibility）的開發上，提供了強大的原生 AI 模型支援與新功能整合選項。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Google 推出手語轉文字（SL2T）全新 AI 模型",
-          "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
+          "title": "Google 推出 Lyria 3.5 音樂生成模型，大幅提升音樂性與創作控制力",
+          "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
           "weightedScore": 100
         },
         {
-          "content": "在 Hacker News 與開源社群中持續獲得極高討論度的 llama.cpp，是目前開發者在消費級硬體（如 CPU 與 Apple Silicon）上高效執行大型語言模型（LLM）的核心工具。它不依賴大型雲端 GPU，能以極低的資源消耗進行模型量化與推理，對於希望在本地端部署 AI 應用、進行隱私保護或降低 API 成本的開發者而言，是不可或缺的基礎設施級專案。",
+          "content": "Meta 執行長馬克·祖克柏公開批評封閉式 AI 模型的发展方向，並宣布 Meta 將堅定重返開源 AI 模型的路線。這項產業動態反映了開源與閉源陣營在 AI 生態系中的競合持續白熱化，對依賴開源基礎設施進行開發與部署的工程團隊來說，將直接影響未來模型選擇與技術棧的戰略佈局。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "llama.cpp：極速在地端執行大語言模型的推理引擎",
-          "url": "https://llama.app",
-          "weightedScore": 362
+          "title": "Meta 重返開源路線：祖克柏公開抨擊「封閉式」AI 競爭對手",
+          "url": "https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878",
+          "weightedScore": 640
         },
         {
-          "content": "這篇在社群引發熱烈討論的經驗分享，探討了開發者如何把大語言模型作為互動式導師，系統性地攻克不熟悉的技術堆疊、複雜演算法或底層架構。文章提供了一套具體的提示詞策略與學習工作流，對於時常需要快速掌握新技術、轉換技術跑道的軟體工程師來說，具有極高的實用參考價值。",
+          "content": "針對潛在推理模型（如 Coconut 與 CODI）是否易於解釋的研究顯示，這些模型在處理 PrOntoQA 和 ProsQA 等邏輯任務時，幾乎沒有真正使用其連續隱藏狀態中的推理步驟。實驗發現，即使強制模型提早停止思考，通常仍會吐出相同的答案。這對依賴模型內部狀態進行監控與除錯的開發者來說，提供了重要的行為洞察與安全評估參考。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "開發者如何利用 LLM 高效學習複雜技術領域",
-          "url": "https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn/",
-          "weightedScore": 825
-        },
-        {
-          "content": "社群近期針對 Go 語言在 AI 輔助開發時代的定位進行了深入討論。由於 Go 具有靜態型別、簡潔的語法、極快的編譯速度以及強大的併發處理能力，使其在建構 AI 代理程式（AI Agents）、微服務基礎設施及自動化工具時展現出獨特優勢。這篇討論為後端與 DevOps 工程師評估 AI 時代的語言技術棧提供了重要視角。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "探討 Go 語言為何是 AI 輔助軟體工程的理想選擇",
-          "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
-          "weightedScore": 437
+          "title": "研究指出潛在推理模型在邏輯任務中鮮少真正利用隱藏推理步驟",
+          "url": "https://arxiv.org/abs/2604.04902",
+          "weightedScore": 100
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-07T22:47:57.790Z",
-      "url": "https://theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344"
-    },
-    {
-      "seenAt": "2026-08-07T22:47:57.790Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for"
-    },
-    {
-      "seenAt": "2026-08-07T22:47:57.790Z",
-      "url": "https://blog.cloudflare.com/ai-search-easier"
-    },
-    {
-      "seenAt": "2026-08-07T22:47:57.790Z",
-      "url": "https://cncf.io/blog/2026/07/30/runtime-supply-chain-verification-using-the-node-resource-interface-nri"
-    },
-    {
-      "seenAt": "2026-08-07T22:47:57.790Z",
-      "url": "https://blog.cloudflare.com/ci-workflows"
-    },
-    {
-      "seenAt": "2026-08-07T22:47:57.790Z",
-      "url": "https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code"
-    },
-    {
-      "seenAt": "2026-08-07T22:47:57.790Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vcqpn4/eu_ai_act_takes_effect_tomorrow_august_2_2026"
-    },
-    {
-      "seenAt": "2026-08-07T22:47:57.790Z",
-      "url": "https://scalex.dev/blog/ai-agent-permissions-stats"
-    },
     {
       "seenAt": "2026-08-08T22:38:35.737Z",
       "url": "https://thenewstack.io/agent-plugins-open-standard"
@@ -933,6 +888,26 @@
     {
       "seenAt": "2026-08-14T22:32:31.618Z",
       "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering"
+    },
+    {
+      "seenAt": "2026-08-15T22:31:06.820Z",
+      "url": "https://blog.google/security/how-google-is-making-private-ai-practical-with-homomorphic-encryption"
+    },
+    {
+      "seenAt": "2026-08-15T22:31:06.820Z",
+      "url": "https://blog.cloudflare.com/ai-search-easier"
+    },
+    {
+      "seenAt": "2026-08-15T22:31:06.820Z",
+      "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control"
+    },
+    {
+      "seenAt": "2026-08-15T22:31:06.820Z",
+      "url": "https://ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878"
+    },
+    {
+      "seenAt": "2026-08-15T22:31:06.820Z",
+      "url": "https://arxiv.org/abs/2604.04902"
     }
   ]
 }
