@@ -1,94 +1,94 @@
 {
   "board": {
-    "344190478": {
-      "domain": "ai",
-      "firstSeenAt": "2026-08-09T22:40:29.356Z",
-      "fullName": "microsoft/AI-For-Beginners",
-      "language": "Jupyter Notebook",
-      "rank": 5,
-      "starsThisWeek": 7469,
-      "url": "https://github.com/microsoft/AI-For-Beginners"
-    },
-    "652712035": {
-      "domain": "ai",
-      "firstSeenAt": "2026-08-09T22:40:29.356Z",
-      "fullName": "lyogavin/airllm",
-      "language": "Jupyter Notebook",
-      "rank": 7,
-      "starsThisWeek": 5711,
-      "url": "https://github.com/lyogavin/airllm"
-    },
-    "910422636": {
+    "667110339": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-08-09T22:40:29.356Z",
-      "fullName": "usekaneo/kaneo",
-      "language": "TypeScript",
+      "firstSeenAt": "2026-08-16T22:30:27.586Z",
+      "fullName": "drawdb-io/drawdb",
+      "language": "JavaScript",
       "rank": 10,
-      "starsThisWeek": 2259,
-      "url": "https://github.com/usekaneo/kaneo"
+      "starsThisWeek": 602,
+      "url": "https://github.com/drawdb-io/drawdb"
     },
-    "1073224795": {
+    "787076358": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-02T23:01:29.724Z",
-      "fullName": "obra/superpowers",
-      "language": "Shell",
-      "rank": 9,
-      "starsThisWeek": 4907,
-      "url": "https://github.com/obra/superpowers"
-    },
-    "1148788086": {
-      "domain": "ai",
-      "firstSeenAt": "2026-07-19T11:16:05.077Z",
-      "fullName": "mattpocock/skills",
-      "language": "Shell",
-      "rank": 1,
-      "starsThisWeek": 11344,
-      "url": "https://github.com/mattpocock/skills"
-    },
-    "1151702019": {
-      "domain": "frontend-backend",
-      "firstSeenAt": "2026-08-09T22:40:29.356Z",
-      "fullName": "firecrawl/pdf-inspector",
-      "language": "Rust",
-      "rank": 3,
-      "starsThisWeek": 8846,
-      "url": "https://github.com/firecrawl/pdf-inspector"
-    },
-    "1157102282": {
-      "domain": "ai",
-      "firstSeenAt": "2026-07-26T23:05:01.196Z",
-      "fullName": "diegosouzapw/OmniRoute",
+      "firstSeenAt": "2026-08-16T22:30:27.586Z",
+      "fullName": "firecrawl/firecrawl",
       "language": "TypeScript",
       "rank": 6,
-      "starsThisWeek": 6559,
-      "url": "https://github.com/diegosouzapw/OmniRoute"
+      "starsThisWeek": 4704,
+      "url": "https://github.com/firecrawl/firecrawl"
     },
-    "1165277268": {
+    "1008304614": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-09T22:40:29.356Z",
-      "fullName": "Panniantong/Agent-Reach",
+      "firstSeenAt": "2026-08-16T22:30:27.586Z",
+      "fullName": "semantica-agi/semantica",
       "language": "Python",
-      "rank": 8,
-      "starsThisWeek": 5183,
-      "url": "https://github.com/Panniantong/Agent-Reach"
+      "rank": 5,
+      "starsThisWeek": 5339,
+      "url": "https://github.com/semantica-agi/semantica"
+    },
+    "1035029907": {
+      "domain": "ai",
+      "firstSeenAt": "2026-08-16T22:30:27.586Z",
+      "fullName": "earendil-works/pi",
+      "language": "TypeScript",
+      "rank": 4,
+      "starsThisWeek": 5422,
+      "url": "https://github.com/earendil-works/pi"
+    },
+    "1075372545": {
+      "domain": "ai",
+      "firstSeenAt": "2026-08-16T22:30:27.586Z",
+      "fullName": "msitarzewski/agency-agents",
+      "language": "Shell",
+      "rank": 2,
+      "starsThisWeek": 6209,
+      "url": "https://github.com/msitarzewski/agency-agents"
+    },
+    "1183888342": {
+      "domain": "ai",
+      "firstSeenAt": "2026-08-16T22:30:27.586Z",
+      "fullName": "stablyai/orca",
+      "language": "TypeScript",
+      "rank": 3,
+      "starsThisWeek": 6054,
+      "url": "https://github.com/stablyai/orca"
     },
     "1203558071": {
       "domain": "ai",
       "firstSeenAt": "2026-08-09T22:40:29.356Z",
       "fullName": "TencentCloud/TencentDB-Agent-Memory",
       "language": "TypeScript",
-      "rank": 4,
-      "starsThisWeek": 8046,
+      "rank": 8,
+      "starsThisWeek": 3956,
       "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory"
     },
-    "1237819660": {
+    "1232493406": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-09T22:40:29.356Z",
-      "fullName": "zhaoxuya520/reverse-skill",
-      "language": "PowerShell",
-      "rank": 2,
-      "starsThisWeek": 9635,
-      "url": "https://github.com/zhaoxuya520/reverse-skill"
+      "firstSeenAt": "2026-08-16T22:30:27.586Z",
+      "fullName": "PrimeIntellect-ai/prime-agent",
+      "language": "TypeScript",
+      "rank": 1,
+      "starsThisWeek": 8488,
+      "url": "https://github.com/PrimeIntellect-ai/prime-agent"
+    },
+    "1266797999": {
+      "domain": "ai",
+      "firstSeenAt": "2026-08-16T22:30:27.586Z",
+      "fullName": "DietrichGebert/ponytail",
+      "language": "JavaScript",
+      "rank": 7,
+      "starsThisWeek": 4652,
+      "url": "https://github.com/DietrichGebert/ponytail"
+    },
+    "1330867309": {
+      "domain": "frontend-backend",
+      "firstSeenAt": "2026-08-16T22:30:27.586Z",
+      "fullName": "shadcn-labs/pdfcn",
+      "language": "TypeScript",
+      "rank": 9,
+      "starsThisWeek": 635,
+      "url": "https://github.com/shadcn-labs/pdfcn"
     }
   },
   "intros": {
@@ -108,9 +108,17 @@
       "intro": "AirLLM 能大幅降低大型語言模型的推論記憶體需求，讓 70B 等大型模型在單張 4GB GPU 上運行，且不需量化、蒸餾或剪枝。它支援稀疏 MoE 模型以專家分流方式載入，亦支援 DeepSeek、Llama、Qwen 等多款主流開源模型，甚至能在低記憶體設備上執行。適合硬體資源有限、需在消費級顯卡或 MacOS 上運行超大型與中文開源模型的開發者與研究人員。",
       "introAt": "2026-08-09T22:40:29.356Z"
     },
+    "667110339": {
+      "intro": "drawDB 是一個免費、簡單且直覺的瀏覽器端資料庫結構編輯器與 SQL 產生器。\n\n它能解決使用者在瀏覽器中快速建立資料庫實體關係圖（ERD）的需求。核心特色包含點擊幾下即可建立圖表、匯出與匯入 SQL 工序指令、產生遷移檔以及自訂編輯器，且無需建立帳號。\n\n適合不需要複雜設定、想要直接在網頁上輕鬆設計資料庫與產生 SQL 的開發者使用。",
+      "introAt": "2026-08-16T22:30:27.586Z"
+    },
     "708266011": {
       "intro": "Harper 旨在解決現有英文文法檢查工具過度耗能、速度緩慢及隱私洩漏的問題。其核心特色為極致的效能，不僅記憶體佔用極低，且能實現毫秒級檢查，同時支援 WebAssembly，確保隱私安全。適合重視隱私與操作效率的開發者，可透過多款主流編輯器外掛或 Web 應用使用。",
       "introAt": "2026-08-02T23:01:29.724Z"
+    },
+    "787076358": {
+      "intro": "Firecrawl 專為 AI 應用與智慧代理設計，能將各類網頁內容（包含 JS 動態頁面）自動轉換為乾淨的 Markdown、結構化 JSON 或截圖。專案具備高可靠性與低延遲，並自動處理反爬蟲、轉向代理與頻率限制。核心提供網頁搜尋、單頁爬取、整站對應、批次抓取及互動操作等 API 端點，亦支援 MCP 客戶端與多種 SDK，協助開發者快速取得網頁數據以建構 AI 應用。",
+      "introAt": "2026-08-16T22:30:27.586Z"
     },
     "793375104": {
       "intro": "此專案提供超過 100 款開源 AI Agent、Agent 技能及 RAG 應用，解決開發者從零構建複雜 AI 流程的痛點。核心特色為模組化設計、支援多種主流模型，且具備端對端測試。無論是想為編碼助理增加實用技能，或是部署金融、研究、自動化等專業級 Agent 團隊，皆可透過簡單指令快速執行與整合，非常適合希望加速 AI 應用開發與落地實踐的開發者。",
@@ -123,6 +131,10 @@
     "997737944": {
       "intro": "RuView 透過 ESP32 節點擷取 WiFi 信道狀態資訊（CSI），將無線電波轉化為空間感知系統，實現無需攝影機或穿戴裝置的非接觸式監測。系統能即時偵測人體存在、呼吸心跳、跌倒與活動狀態，精準度高且支援區域映射。完整支援 Home Assistant、Apple Home 及 Matter 生態系，適合居家自動化、安全監控與長照健康管理。所有運算皆在邊緣裝置完成，無需雲端連線，保護個人隱私。",
       "introAt": "2026-07-26T23:05:01.196Z"
+    },
+    "1008304614": {
+      "intro": "Semantica 專為 AI 代理打造圖譜原生基礎設施，解決傳統黑箱 AI 缺乏可解釋性與稽核軌跡的問題。核心特色包含：建立 Context Graph 與知識圖譜、決策智慧、W3C PROV-O 完整溯源、確定性推理引擎與本體論管理，支援多源資料管線及企業數據平台直連。適合在金融、醫療等高風險受監管領域中，需要嚴格合規、可追溯且具備確定性推理的 AI 平台與合規團隊。",
+      "introAt": "2026-08-16T22:30:27.586Z"
     },
     "1034478597": {
       "intro": "Open Lovable 讓你透過 AI 對話即可快速建構 React 應用程式，簡化開發流程。作為 Firecrawl 團隊提供的開源範例，它展示了自動化開發的潛力。適合開發者嘗試快速開發體驗，若需完整的雲端解決方案，可進一步參考 Lovable.dev。",
@@ -139,6 +151,10 @@
     "1073224795": {
       "intro": "Superpowers 為 AI 程式代理提供完整的開發方法論，解決 AI 直接編碼導致的規劃缺失。透過「子代理驅動開發」模式，在撰寫程式前強制進行構思、需求確認與細化規劃，並嚴格執行測試驅動開發與自動化審核。適合追求高質量交付、需自主執行長時任務的開發者，透過模組化技能賦予 AI 如 Claude Code、Cursor 等工具強大的工程紀律，確保開發過程規範化且高效。",
       "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "1075372545": {
+      "intro": "這是一個精心打造的 AI 專家團隊合集，解決開發者在工作流程中缺乏專業領域指導的問題。專案提供具備獨特個性、實作流程與產出導向的 AI 代理人，涵蓋前端、後端、架構與 DevOps 等多領域。使用者可透過跨平台的桌面應用程式一鍵安裝至 Claude Code、Cursor、Gemini 等主流工具，或直接作為提示詞與工作流程的參考，適合需要快速組建專屬 AI 專家團隊的開發者與團隊。",
+      "introAt": "2026-08-16T22:30:27.586Z"
     },
     "1130564872": {
       "intro": "World Monitor 是開源的即時全球情報儀表板，透過 AI 整合超過 500 個新聞源與多元數據，協助使用者監控地緣政治、金融市場及關鍵基礎設施。具備 3D 地球儀與 WebGL 平面地圖視覺化，支援本地 AI 運作，並整合 MCP 協議供 AI Agent 調用。適合需進行情勢感知、市場分析或研究的地緣政治觀察者及開發者，透過跨平台桌面應用或 API 獲取即時洞察。",
@@ -192,6 +208,10 @@
       "intro": "Hallmark 是一款專為 Claude Code、Cursor 與 Codex 設計的 AI 設計技能，旨在解決 AI 生成內容千篇一律的「罐頭感」。它透過內建的 57 項防廢話檢測與自我審查機制，確保產出的 CSS 與 HTML 具備獨特宏觀架構與設計美感。本工具提供建構、審計、重設計及分析四大功能，能根據創意需求靈活切換 20 種主題或進行客製化設計，讓不同專案展現截然不同的獨特風貌。",
       "introAt": "2026-07-19T11:16:05.077Z"
     },
+    "1232493406": {
+      "intro": "Prime Agent 是一個開源的編碼與研究代理，專為通用與長時間運作的任務設計。它透過遞迴語言模型與持續骨架（Continual Harness），讓背景執行的常駐行程、子代理協同與 IPython 環境跨越單一對話視窗持續運作。核心特色包含程式化控制、動態技能建立、代理間直接通訊與背景守護行程。適合需要長時間運作、自動化評估與複雜研究任務的開發者使用。",
+      "introAt": "2026-08-16T22:30:27.586Z"
+    },
     "1237819660": {
       "intro": "專案旨在解決 AI 代理在處理資安逆向與滲透時，不知該選擇何種工具及工作流程的問題。核心特色為提供一套結構化的技能路由包，包含 41 條路由規則、42 個追蹤模組及 163 個回歸測試案例，確保跨平台執行一致性。適用於讓 Claude Code、Cursor 等 AI 用戶端在面對 APK、二進位檔、前端 JS 加密、CTF 挑戰或惡意軟體分析時，能精準導向對應的方法論與可重複的工作流程。",
       "introAt": "2026-08-09T22:40:29.356Z"
@@ -199,6 +219,10 @@
     "1241960226": {
       "intro": "Open Code Review 是一款由阿里內部實戰淬煉的 AI 程式碼審查 CLI 工具。它解決了通用代理程式審查不全面、定位不準及品質不穩定的痛點，透過確定性工程與代理機制結合，實現精確的檔案分組與深度審查。憑藉極高的精確度、更低的 Token 消耗及處理大規模變更的能力，它是開發團隊進行高效、穩定自動化審查的最佳利器。只需配置模型端點即可快速整合至開發流程。",
       "introAt": "2026-08-02T23:01:29.724Z"
+    },
+    "1266797999": {
+      "intro": "Ponytail 是一款針對 AI 程式碼代理的開發者工具與外掛，旨在解決 AI 過度建構與程式碼臃腫的問題。透過獨特的階梯式規則與技能設計，它能在完全保留安全性、錯誤處理與無障礙設計的前提下，有效減少程式碼行數並降低成本與延遲。適用於 Claude Code、Cursor 等主流 AI 代理工具，讓 AI 寫出精簡且符合實際需求的程式碼。",
+      "introAt": "2026-08-16T22:30:27.586Z"
     },
     "1300902838": {
       "intro": "Grok Build 是 SpaceXAI 開發的終端 AI 程式設計代理。它提供全螢幕 TUI 介面，能深入理解程式碼庫、執行檔案編輯、終端指令、網路搜尋與管理長期任務。該專案透過 Rust 編寫，支援互動式操作、自動化腳本及編輯器嵌入。適合需要高效 AI 輔助開發、CI 自動化或追求終端環境作業流程的開發者使用。",
@@ -211,143 +235,20 @@
     "1317565852": {
       "intro": "本專案致力於修復介面互動中被忽視的細節，解決點擊後瞬間的僵硬、跳動與異常感。提供高度精緻的 React 微互動組件，核心採用 Headless Hook 與 Motion 技術，確保動態符合物理邏輯並支援鍵盤與無障礙操作。適合追求頂尖 UI 細節、希望透過精準動畫提升使用者信任感的開發者，可直接複製原始碼至專案中靈活客製。",
       "introAt": "2026-08-02T23:01:29.724Z"
+    },
+    "1330867309": {
+      "intro": "pdfcn 解決了開發者在 React 中繁瑣製作 PDF 的痛點，提供免費開源且可客製化的 PDF 元件。核心特色包含支援 Takumi 與 Forme 雙渲染引擎、零設定開箱即用、支援文件即時預覽，並完美相容 shadcn/ui 的 CLI 工作流。程式碼完全掌控，適合需要快速打造表格、發票、報表與圖表等文件的 React 開發者。",
+      "introAt": "2026-08-16T22:30:27.586Z"
     }
   },
-  "lastBoardPushAt": "2026-08-09T22:40:29.356Z",
-  "lastNewsPushAt": "2026-08-15T22:31:06.820Z",
+  "lastBoardPushAt": "2026-08-16T22:30:27.586Z",
+  "lastNewsPushAt": "2026-08-16T22:30:27.586Z",
   "publish": {
     "boardSummary": {
-      "generatedAt": "2026-08-09T22:40:29.356Z",
-      "summary": "本次技術雷達榜單由 mattpocock/skills 奪下 #1，共迎來 7 個新進項目（包含 AI 5 個與前後端 2 個），同時有 2 個項目下降。"
+      "generatedAt": "2026-08-16T22:30:27.586Z",
+      "summary": "本次綜合榜 #1 為 PrimeIntellect-ai/prime-agent，共有 9 個新進項目（AI 7 個、前後端 2 個）、0 個竄升項目、1 個下降項目。"
     },
     "feed": [
-      {
-        "id": "repo:910422636:new:2026-08-10",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "usekaneo/kaneo 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/usekaneo/kaneo"
-      },
-      {
-        "content": "OpenCost 1.121.0 正式推出針對 Kubernetes 叢集的 AI 模型推論成本追蹤功能。隨著企業大規模部署 LLM，GPU 帳單與 token 消耗大增，此版本協助平台團隊精準掌握每個 token 與 GPU 資源的實際成本，解決以往在微服務與 AI 混合架構中成本黑盒的問題，對優化基礎設施支出至關重要。",
-        "id": "news:https://cncf.io/blog/2026/08/05/opencost-1-121-0-first-of-a-kind-kubernetes-inference-cost-tracking",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "OpenCost 1.121.0 發布：首次支援 Kubernetes 叢集推論成本追蹤",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/08/05/opencost-1-121-0-first-of-a-kind-kubernetes-inference-cost-tracking/"
-      },
-      {
-        "content": "OpenAI 官方宣佈在 ChatGPT 系統中升級 GPT-5.6 Sol 模型表現，並同步將 GPT-5.6 Luna 的存取權限擴大開放給所有免費使用者。這項更動讓一般與專業開發者能更廣泛地免費測試新一代模型能力，有助於評估其在自動化工作流程與複雜推理上的應用潛力。",
-        "id": "news:https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "ChatGPT 推出 GPT-5.6 Sol 改進版並向免費版擴大開放 GPT-5.6 Luna",
-        "type": "news",
-        "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/"
-      },
-      {
-        "content": "Google 官方推出 Gemini Robotics 2，旨在透過多模態基礎模型賦予機器人更強大的「全身體智慧（Whole body intelligence）」。這項更新讓機器人能更靈巧地整合視覺、語言與肢體動作控制，對從事硬體整合、自動化控制與邊緣 AI 系統開發的工程師而言，提供了全新的視覺與動作對齊基礎能力。",
-        "id": "news:https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "Google 發布 Gemini Robotics 2，為機器人帶來全身體智慧",
-        "type": "news",
-        "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/"
-      },
-      {
-        "content": "Cloudflare 宣布推出更新版的開發者社群計畫（包含大使與社群工程師），並加碼投入 100 萬美元的開源維護者資助基金。此舉旨在長期支持核心開源專案維護者、擴大開發者生態系，對於依賴 Cloudflare 技術堆疊與開源套件的開發者與組織來說，提供了更多實質的資源與社群支持渠道。",
-        "id": "news:https://blog.cloudflare.com/community-program-refresh",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "Cloudflare 推出全新社群計畫並投入 100 萬美元開源資助基金",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/community-program-refresh/"
-      },
-      {
-        "content": "condense-json 1.0 版正式釋出，這是一套專門用於壓縮與精簡 JSON 資料結構的工具。對於需要處理大量 API 傳輸、最佳化頻寬或降低大型語言模型（LLM）上下文 token 消耗的開發者而言，提供了一個實用的輕量化資料處理選擇。",
-        "id": "news:https://simonwillison.net/2026/Aug/2/condense-json",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "condense-json 1.0 正式發布",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Aug/2/condense-json/#atom-everything"
-      },
-      {
-        "content": "Datasette 生態系釋出 datasette-apps 0.2a0 早期預覽版本。此版本進一步擴展了基於 Datasette 快速建構資料導向應用程式的能力，對於經常需要將 SQLite 資料庫快速轉為 Web 介面與內部工具的資料工程師和後端開發者來說，提供更便利的擴充套件選項。",
-        "id": "news:https://simonwillison.net/2026/Aug/1/datasette-apps",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "datasette-apps 0.2a0 釋出：擴充資料探索與應用能力",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Aug/1/datasette-apps/#atom-everything"
-      },
-      {
-        "content": "隨著 AI 程式碼生成工具在工程團隊中普及，API 呼叫與 token 消耗費用快速攀升。社群熱議文章探討如何在組織內部衡量、監控與最佳化 AI Coding 工具的成本效益，避免生產力提升的同時造成雲端與 AI 服務預算失控，對導入 AI 協作的團隊主管與架構師極具參考價值。",
-        "id": "news:https://databricks.com/blog/managing-ai-coding-costs-scale",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "如何在大規模營運下有效控管 AI 輔助編碼成本",
-        "type": "news",
-        "url": "https://www.databricks.com/blog/managing-ai-coding-costs-scale"
-      },
-      {
-        "content": "隨著企業將自主性 AI Agents 投入生產環境，傳統的應用效能監控（APM）往往無法解釋代理程式為何陷入無限迴圈或消耗異常成本。這篇社群熱門文章分享了實務上建構與維運 AI Agent 系統的經驗，強調針對非決定性行為建立專屬可觀測性與除錯機制的必要性。",
-        "id": "news:https://cncf.io/blog/2026/08/04/you-cant-debug-what-you-cant-see-observability-for-ai-agents",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "看不見就無法除錯：生產環境中 AI Agents 的可觀測性挑戰",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/08/04/you-cant-debug-what-you-cant-see-observability-for-ai-agents/"
-      },
-      {
-        "content": "技術社群深入梳理並記錄了 OpenAI 系統近期對 Hugging Face 造成意外流量衝擊與阻斷的事件時間軸。這起事件引發業界對自動化腳本互動、API 安全防護邊界以及大廠系統間無預警連鎖反應的廣泛討論，對系統架構師和資安人員具有高度警惕意義。",
-        "id": "news:https://simonwillison.net/2026/Aug/7/openai-timeline",
-        "publishedAt": "2026-08-09T22:40:29.356Z",
-        "title": "OpenAI 意外攻擊 Hugging Face 事件的時間軸梳理",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/"
-      },
-      {
-        "content": "Docker 發布了全新的 Docker Sandboxes 功能，專為 AI 代理程式設計，提供拋棄式且高度隔離的執行環境。隨著越來越多開發者將 AI 代理程式應用於自動化程式碼編寫與執行任務，安全性與環境汙染成為隱憂。此工具讓代理程式能在安全、受控且用完即焚的沙盒中執行命令與測試，對確保 AI 開發流程的安全性與隔離性有重大幫助。",
-        "id": "news:https://docker.com/products/docker-sandboxes",
-        "publishedAt": "2026-08-10T22:49:00.547Z",
-        "title": "Docker 推出沙盒功能：為 AI 代理程式提供拋棄式隔離環境",
-        "type": "news",
-        "url": "https://www.docker.com/products/docker-sandboxes/"
-      },
-      {
-        "content": "記憶體大廠 SK 海力士（SK hynix）與 SanDisk 合作推出全新「高頻寬快閃記憶體（HBF）」標準，頻寬目標高達 3TB/s。這項新標準旨在解決目前 AI 模型在本地推論時面臨的記憶體頻寬瓶頸，未來有望大幅加速大型語言模型及本地端 AI 代理程式的運行效率與反應速度。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vfa3tq/sk_hynix_in_collaboration_with_sandisk_unveils",
-        "publishedAt": "2026-08-10T22:49:00.547Z",
-        "title": "SK 海力士與 SanDisk 聯手推出高頻寬快閃記憶體標準，解決 AI 推論瓶頸",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vfa3tq/sk_hynix_in_collaboration_with_sandisk_unveils/"
-      },
-      {
-        "content": "隨著機器學習與 AI 模型普及，容器映像檔的體積經常膨脹至數 GB 甚至數十 GB，導致部署時的載入延遲成為瓶頸。Amazon EKS 推出全新優化方案，讓開發者與維運團隊能夠在幾秒鐘內拉取超大型容器映像檔，大幅改善雲端原生 AI 應用的部署與擴展效率。",
-        "id": "news:https://thenewstack.io/accelerating-eks-image-pulls",
-        "publishedAt": "2026-08-10T22:49:00.547Z",
-        "title": "Amazon EKS 實現數秒內拉取數十 GB 容器映像檔",
-        "type": "news",
-        "url": "https://thenewstack.io/accelerating-eks-image-pulls/"
-      },
-      {
-        "content": "社群熱議的 Muse Glimmer 是一款擁有 300 億參數的輕量化開源模型，特別針對「常駐型本地端代理程式（always-on local agent workflows）」進行了架構優化。這對希望在本地端部署具備長期運作與自動化互動能力的開發者而言，提供了一個效能與資源消耗取得平衡的新選擇。",
-        "id": "news:https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
-        "publishedAt": "2026-08-10T22:49:00.547Z",
-        "title": "Muse Glimmer：專為常駐本地代理工作流程優化的 30B 參數模型",
-        "type": "news",
-        "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model"
-      },
-      {
-        "content": "作者分享了從零開始自建 Forgejo（輕量級 Git 伺服器替代方案）的完整心路歷程與技術細節。對於想要擺脫大型商業程式碼代管平台、尋求自建 Git 服務與持續整合環境的開發者與基礎設施工程師來說，這是一篇極具參考價值的實戰經驗分享。",
-        "id": "news:https://a.l3x.in/blog/welcome-to-my-forge",
-        "publishedAt": "2026-08-10T22:49:00.547Z",
-        "title": "深入探討個人 Forgejo 伺服器架設經驗與設置心得",
-        "type": "news",
-        "url": "https://a.l3x.in/blog/welcome-to-my-forge/"
-      },
-      {
-        "content": "Node.js 釋出 26.5.1 版本，這是一個包含多項高、中風險安全性修補的重要版本。主要修復項目包含：針對 http2 的 `defer rst stream` 漏洞（CVE-2026-56848，評級高）、權限控制相關的 `avoid granting radix split nodes`（CVE-2026-58043，評級高），以及 https 代理金鑰區分與會話重用檢查、sqlite 語句重置迭代器失效等多項漏洞。建議使用 Node.js 的開發團隊與維運人員應盡速評估並升級，以確保應用程式與伺服器的執行安全。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.5.1",
-        "publishedAt": "2026-08-11T22:53:43.333Z",
-        "title": "Node.js 發布 26.5.1 安全更新版本",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
-      },
       {
         "content": "雲端原生計算基金會（CNCF）宣佈 Cloud Native Buildpacks 專案正式畢業（Graduation）。這標誌著該專案已在各大雲端環境中獲得廣泛的生產環境採用，成為將應用程式原始碼直接轉換為符合 OCI 標準容器映像檔的成熟標準工具。對於負責 CI/CD 管道與基礎設施的開發者而言，這意味著 Buildpacks 在容器映像檔建構的穩定性與生態系支援上更具權威性與可靠度。",
         "id": "news:https://cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds",
@@ -619,100 +520,197 @@
         "title": "研究指出潛在推理模型在邏輯任務中鮮少真正利用隱藏推理步驟",
         "type": "news",
         "url": "https://arxiv.org/abs/2604.04902"
+      },
+      {
+        "id": "repo:1232493406:new:2026-08-17",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "PrimeIntellect-ai/prime-agent 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/PrimeIntellect-ai/prime-agent"
+      },
+      {
+        "id": "repo:1075372545:new:2026-08-17",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "msitarzewski/agency-agents 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/msitarzewski/agency-agents"
+      },
+      {
+        "id": "repo:1183888342:new:2026-08-17",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "stablyai/orca 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/stablyai/orca"
+      },
+      {
+        "id": "repo:1035029907:new:2026-08-17",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "earendil-works/pi 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/earendil-works/pi"
+      },
+      {
+        "id": "repo:1008304614:new:2026-08-17",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "semantica-agi/semantica 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/semantica-agi/semantica"
+      },
+      {
+        "id": "repo:787076358:new:2026-08-17",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "firecrawl/firecrawl 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/firecrawl/firecrawl"
+      },
+      {
+        "id": "repo:1266797999:new:2026-08-17",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "DietrichGebert/ponytail 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/DietrichGebert/ponytail"
+      },
+      {
+        "id": "repo:1330867309:new:2026-08-17",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "shadcn-labs/pdfcn 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/shadcn-labs/pdfcn"
+      },
+      {
+        "id": "repo:667110339:new:2026-08-17",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "drawdb-io/drawdb 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/drawdb-io/drawdb"
+      },
+      {
+        "content": "Anthropic 正式公開了 Claude 系列模型的內部系統提示詞（System Prompts）。這對於依賴 Claude API 進行開發、建構代理人（AI agents）或需要精準控制模型行為與輸出格式的開發者而言，提供了寶貴的官方參考依據，有助於優化提示詞工程與應用的穩定性。",
+        "id": "news:https://platform.claude.com/docs/en/release-notes/system-prompts",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "Anthropic 公布 Claude 系統提示詞（System Prompts）",
+        "type": "news",
+        "url": "https://platform.claude.com/docs/en/release-notes/system-prompts"
+      },
+      {
+        "content": "OpenAI 宣布調降 GPT-5.6 模型家族中 Luna 與 Terra 的使用價格。這項調整旨在協助企業與開發者在大規模部署 AI 工作流程與自動化應用時，能有效降低營運成本，提升 AI 架構的經濟效益。",
+        "id": "news:https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "OpenAI 調整 GPT-5.6 價格，提升 Luna 與 Terra 性價比",
+        "type": "news",
+        "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6"
+      },
+      {
+        "content": "Cloudflare 結束了其 Agents Week，並在活動中推出了一系列橫跨錢包、網路防護與 Radar 等面向的新工具與功能。這些更新旨在為開發者打造新一代 AI 代理人應用時，提供更完整的基礎設施與安全支援。",
+        "id": "news:https://blog.cloudflare.com/agents-week-review-august-2026",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "Cloudflare 在 Agents Week 期間發布一系列全新開發工具",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/agents-week-review-august-2026/"
+      },
+      {
+        "content": "隨著 Claude Code 等終端 AI 輔助工具普及，社群開始探討如何有效發揮其最大效用。這類討論對於希望將 AI 深度整合進日常命令列工作流程、提升程式碼編寫與除錯效率的開發者來說，提供了實用的實踐經驗與技巧。",
+        "id": "news:https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "如何最大化 Claude Code 開發工作階段的價值",
+        "type": "news",
+        "url": "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions"
+      },
+      {
+        "content": "這篇在開發者社群引發熱議的文章深入剖析了當前大型語言模型在處理數學與邏輯問題時的本質。它指出 AI 的優勢在於覆蓋廣泛的訓練資料與模式匹配（記憶），而非真正的抽象推理，這對開發者在評估 AI 能力邊界時具有重要的參考價值。",
+        "id": "news:https://davidepiffer.com/p/ai-isnt-outthinking-mathematicians",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "AI 模型並非超越數學家的思考，而是擁有更強的記憶能力",
+        "type": "news",
+        "url": "https://davidepiffer.com/p/ai-isnt-outthinking-mathematicians"
+      },
+      {
+        "content": "隨著 AI 代理人逐漸成為軟體開發的一環，社群開始探討在建構與操作這些自主代理時，哪種程式語言能發揮最佳效能。這項討論反映了底層技術棧的轉變，對正在規劃代理人架構的後端與基礎設施工程師極具啟發性。",
+        "id": "news:http://danluu.com/pl-tokens",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "開發 AI 代理人（Coding Agents）最適合使用哪種程式語言？",
+        "type": "news",
+        "url": "http://danluu.com/pl-tokens/"
+      },
+      {
+        "content": "這篇社群熱議文章探討了當軟體工程師開始頻繁使用 AI 工具後，日常工作的本質正從「動手寫程式」轉變為「指派任務與驗證結果」。這反映了現代開發者在工作流程上的心態轉變與新興的工程管理挑戰。",
+        "id": "news:https://allen.bargi.org/notes/working-with-ai-feels-like-leadership",
+        "publishedAt": "2026-08-16T22:30:27.586Z",
+        "title": "與 AI 協作的感覺更像是領導團隊而非單純寫程式",
+        "type": "news",
+        "url": "https://allen.bargi.org/notes/working-with-ai-feels-like-leadership/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-15T22:31:06.820Z",
+      "generatedAt": "2026-08-16T22:30:27.586Z",
       "items": [
         {
-          "content": "Google 宣布將同態加密（Homomorphic Encryption）技術應用於 AI 領域，旨在解決隱私保護與雲端運算之間的衝突。這項技術允許系統直接對加密資料進行運算而無需解密，對開發者與企業來說，未來在處理敏感資料或受法規管制的應用程式時，能更安全地整合雲端 AI 服務，兼顧資料隱私與運算效能。",
+          "content": "Anthropic 正式公開了 Claude 系列模型的內部系統提示詞（System Prompts）。這對於依賴 Claude API 進行開發、建構代理人（AI agents）或需要精準控制模型行為與輸出格式的開發者而言，提供了寶貴的官方參考依據，有助於優化提示詞工程與應用的穩定性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Google 導入同态加密技術，讓隱私 AI 實務應用更可行",
-          "url": "https://blog.google/security/how-google-is-making-private-ai-practical-with-homomorphic-encryption/",
-          "weightedScore": 477
+          "title": "Anthropic 公布 Claude 系統提示詞（System Prompts）",
+          "url": "https://platform.claude.com/docs/en/release-notes/system-prompts",
+          "weightedScore": 464
         },
         {
-          "content": "Cloudflare 推出全新 AI Search 服務，簡化了資料搜尋引擎的建構流程，開發者無需再自行拼湊多個 Cloudflare 基礎元件。只要將服務指向現有的檔案與網站資料，就能快速為自己的應用程式或 AI 代理（Agents）打造強大的資料搜尋能力，同時官方也預先曝光了全新的計費模式。",
+          "content": "OpenAI 宣布調降 GPT-5.6 模型家族中 Luna 與 Terra 的使用價格。這項調整旨在協助企業與開發者在大規模部署 AI 工作流程與自動化應用時，能有效降低營運成本，提升 AI 架構的經濟效益。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "OpenAI 調整 GPT-5.6 價格，提升 Luna 與 Terra 性價比",
+          "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 結束了其 Agents Week，並在活動中推出了一系列橫跨錢包、網路防護與 Radar 等面向的新工具與功能。這些更新旨在為開發者打造新一代 AI 代理人應用時，提供更完整的基礎設施與安全支援。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出 AI Search，讓開發者輕鬆為應用程式建立資料搜尋引擎",
-          "url": "https://blog.cloudflare.com/ai-search-easier/",
+          "title": "Cloudflare 在 Agents Week 期間發布一系列全新開發工具",
+          "url": "https://blog.cloudflare.com/agents-week-review-august-2026/",
           "weightedScore": 100
         },
         {
-          "content": "Google 宣布在 Google Flow Music 中推出 Lyria 3.5 模型，在音樂性、歌詞、人聲以及創作控制力上皆有顯著突破。對於開發音樂相關應用、多媒體生成工具或探索生成式 AI 創作邊界的開發者而言，這項更新提供了更高品質且更具細緻操控能力的音樂生成 API 與工具。",
+          "content": "隨著 Claude Code 等終端 AI 輔助工具普及，社群開始探討如何有效發揮其最大效用。這類討論對於希望將 AI 深度整合進日常命令列工作流程、提升程式碼編寫與除錯效率的開發者來說，提供了實用的實踐經驗與技巧。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Google 推出 Lyria 3.5 音樂生成模型，大幅提升音樂性與創作控制力",
-          "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
-          "weightedScore": 100
+          "title": "如何最大化 Claude Code 開發工作階段的價值",
+          "url": "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions",
+          "weightedScore": 314
         },
         {
-          "content": "Meta 執行長馬克·祖克柏公開批評封閉式 AI 模型的发展方向，並宣布 Meta 將堅定重返開源 AI 模型的路線。這項產業動態反映了開源與閉源陣營在 AI 生態系中的競合持續白熱化，對依賴開源基礎設施進行開發與部署的工程團隊來說，將直接影響未來模型選擇與技術棧的戰略佈局。",
+          "content": "這篇在開發者社群引發熱議的文章深入剖析了當前大型語言模型在處理數學與邏輯問題時的本質。它指出 AI 的優勢在於覆蓋廣泛的訓練資料與模式匹配（記憶），而非真正的抽象推理，這對開發者在評估 AI 能力邊界時具有重要的參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Meta 重返開源路線：祖克柏公開抨擊「封閉式」AI 競爭對手",
-          "url": "https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878",
-          "weightedScore": 640
+          "title": "AI 模型並非超越數學家的思考，而是擁有更強的記憶能力",
+          "url": "https://davidepiffer.com/p/ai-isnt-outthinking-mathematicians",
+          "weightedScore": 578
         },
         {
-          "content": "針對潛在推理模型（如 Coconut 與 CODI）是否易於解釋的研究顯示，這些模型在處理 PrOntoQA 和 ProsQA 等邏輯任務時，幾乎沒有真正使用其連續隱藏狀態中的推理步驟。實驗發現，即使強制模型提早停止思考，通常仍會吐出相同的答案。這對依賴模型內部狀態進行監控與除錯的開發者來說，提供了重要的行為洞察與安全評估參考。",
+          "content": "隨著 AI 代理人逐漸成為軟體開發的一環，社群開始探討在建構與操作這些自主代理時，哪種程式語言能發揮最佳效能。這項討論反映了底層技術棧的轉變，對正在規劃代理人架構的後端與基礎設施工程師極具啟發性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "研究指出潛在推理模型在邏輯任務中鮮少真正利用隱藏推理步驟",
-          "url": "https://arxiv.org/abs/2604.04902",
-          "weightedScore": 100
+          "title": "開發 AI 代理人（Coding Agents）最適合使用哪種程式語言？",
+          "url": "http://danluu.com/pl-tokens/",
+          "weightedScore": 261
+        },
+        {
+          "content": "這篇社群熱議文章探討了當軟體工程師開始頻繁使用 AI 工具後，日常工作的本質正從「動手寫程式」轉變為「指派任務與驗證結果」。這反映了現代開發者在工作流程上的心態轉變與新興的工程管理挑戰。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "與 AI 協作的感覺更像是領導團隊而非單純寫程式",
+          "url": "https://allen.bargi.org/notes/working-with-ai-feels-like-leadership/",
+          "weightedScore": 320
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-08T22:38:35.737Z",
-      "url": "https://thenewstack.io/agent-plugins-open-standard"
-    },
-    {
-      "seenAt": "2026-08-08T22:38:35.737Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max"
-    },
-    {
-      "seenAt": "2026-08-08T22:38:35.737Z",
-      "url": "https://cncf.io/blog/2026/08/03/cortex-completes-ostif-security-audit"
-    },
-    {
-      "seenAt": "2026-08-08T22:38:35.737Z",
-      "url": "https://cncf.io/blog/2026/07/31/scaling-kubernetes-pods-with-keda-based-on-amazon-sqs-queue-depth"
-    },
-    {
-      "seenAt": "2026-08-08T22:38:35.737Z",
-      "url": "https://githubnext.com/posts/evergreen"
-    },
-    {
-      "seenAt": "2026-08-08T22:38:35.737Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vduej3/chinas_dfsx_offers_2x_the_memory_bandwidth_of"
-    },
-    {
-      "seenAt": "2026-08-08T22:38:35.737Z",
-      "url": "https://neon.com/blog/how-castform-neon-beats-frontier-models-on-price-and-efficiency"
-    },
-    {
-      "seenAt": "2026-08-08T22:38:35.737Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vdq8en/deepseekv4flash0731_surpasses_fable5_sol_kimik3"
-    },
-    {
-      "seenAt": "2026-08-08T22:38:35.737Z",
-      "url": "https://thenewstack.io/agent-native-runtime-branching"
-    },
-    {
-      "seenAt": "2026-08-08T22:38:35.737Z",
-      "url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt"
-    },
     {
       "seenAt": "2026-08-09T22:40:29.356Z",
       "url": "https://cncf.io/blog/2026/08/05/opencost-1-121-0-first-of-a-kind-kubernetes-inference-cost-tracking"
@@ -908,6 +906,34 @@
     {
       "seenAt": "2026-08-15T22:31:06.820Z",
       "url": "https://arxiv.org/abs/2604.04902"
+    },
+    {
+      "seenAt": "2026-08-16T22:30:27.586Z",
+      "url": "https://platform.claude.com/docs/en/release-notes/system-prompts"
+    },
+    {
+      "seenAt": "2026-08-16T22:30:27.586Z",
+      "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6"
+    },
+    {
+      "seenAt": "2026-08-16T22:30:27.586Z",
+      "url": "https://blog.cloudflare.com/agents-week-review-august-2026"
+    },
+    {
+      "seenAt": "2026-08-16T22:30:27.586Z",
+      "url": "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions"
+    },
+    {
+      "seenAt": "2026-08-16T22:30:27.586Z",
+      "url": "https://davidepiffer.com/p/ai-isnt-outthinking-mathematicians"
+    },
+    {
+      "seenAt": "2026-08-16T22:30:27.586Z",
+      "url": "http://danluu.com/pl-tokens"
+    },
+    {
+      "seenAt": "2026-08-16T22:30:27.586Z",
+      "url": "https://allen.bargi.org/notes/working-with-ai-feels-like-leadership"
     }
   ]
 }
