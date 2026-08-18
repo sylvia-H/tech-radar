@@ -242,61 +242,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-16T22:30:27.586Z",
-  "lastNewsPushAt": "2026-08-17T22:32:37.643Z",
+  "lastNewsPushAt": "2026-08-18T22:33:07.360Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-16T22:30:27.586Z",
       "summary": "本次綜合榜 #1 為 PrimeIntellect-ai/prime-agent，共有 9 個新進項目（AI 7 個、前後端 2 個）、0 個竄升項目、1 個下降項目。"
     },
     "feed": [
-      {
-        "content": "Hacker News 熱門討論分享了如何在 Apple Silicon 與 macOS 虛擬機環境中，利用 llama.cpp 實現更快速的 LLM 推理效能。這篇文章探討了硬體加速與虛擬化環境下的效能調校技巧，對於需要在 Mac 本地端或虛擬化開發環境中優化 AI 模型執行速度的工程師來說，是非常具實用價值的技術指南。",
-        "id": "news:https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md",
-        "publishedAt": "2026-08-11T22:53:43.333Z",
-        "title": "透過 llama.cpp 在 Apple Silicon 與 macOS 虛擬機上加速 LLM 推理",
-        "type": "news",
-        "url": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md"
-      },
-      {
-        "content": "Node.js 發布 v26.6.0 版本（Current），帶來多項重要更新。其中包含將 MikeMcC399 加入協作者，並在 ffi 模組中新增 getCurrentEventLoop 方法；在 test_runner 測試框架中則加入 context.log()、test:log 事件以及報告 entryFile 的功能，同時修正了 Map 鍵為 null 時的 TypeError 問題。這些更新有助於改善開發者在模組擴充與測試追蹤時的除錯體驗。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.6.0",
-        "publishedAt": "2026-08-12T22:52:08.595Z",
-        "title": "Node.js v26.6.0 發布：新增 getCurrentEventLoop 與測試日誌 API",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
-      },
-      {
-        "content": "Google 官方宣佈推出多款全新的 Gemini 模型陣容，包含 Gemini 3.6 Flash、3.5 Flash-Lite 以及 3.5 Flash Cyber。這些新模型旨在提供開發者更高效能與更具成本效益的選擇，擴充在各種應用場景中的整合彈性，對於需要調用輕量且快速模型來降低成本的 AI 應用開發者具備重要參考價值。",
-        "id": "news:https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber",
-        "publishedAt": "2026-08-12T22:52:08.595Z",
-        "title": "Google 推出 Gemini 3.6 Flash、3.5 Flash-Lite 與 3.5 Flash Cyber",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/"
-      },
-      {
-        "content": "根據官方預告與 ModelScope 平台資訊，阿里通義千問團隊的超大型模型 Qwen3.8-2.4T-A95B（又稱 Qwen3.8-Max）將於下週三正式開源發布。這對依賴開源模型進行本地部署或企業級架構微調的開發團隊而言，是一項備受關注的重量級模型更新。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vgx8yu/qwen3824ta95b_aka_qwen38max_open_release_time",
-        "publishedAt": "2026-08-12T22:52:08.595Z",
-        "title": "Qwen3.8-2.4T-A95B（Qwen3.8-Max）預計下週三開源發布",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vgx8yu/qwen3824ta95b_aka_qwen38max_open_release_time/"
-      },
-      {
-        "content": "這篇高討論度的文章探討了隨著 AI 網頁爬蟲與機器人大量抓取並重塑網路內容，傳統網際網路的集體記憶與公開知識生態正逐漸受到侵蝕。對於依賴開源網路資源與技術文檔的開發者來說，這反映了未來知識獲取管道與網路架構可能面臨的結構性轉變。",
-        "id": "news:https://thewalrus.ca/google-search-is-dying",
-        "publishedAt": "2026-08-12T22:52:08.595Z",
-        "title": "當 AI 吞噬網路：探討網際網路集體記憶正在消失的現象",
-        "type": "news",
-        "url": "https://thewalrus.ca/google-search-is-dying/"
-      },
-      {
-        "content": "根據社群熱烈討論與 Artificial Analysis 的最新代理效能評比，Qwen 3.8 Max 在各項指標上已超越 Opus 5，登上整體表現最佳的模型寶座。這顯示開源與閉源模型在代理能力（Agentic Index）上的競爭進入新階段，對開發者在選擇 AI 代理底層模型時提供重要的效能參考指標。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model",
-        "publishedAt": "2026-08-12T22:52:08.595Z",
-        "title": "Qwen 3.8 Max 在 Artificial Analysis 代理指標中超越 Opus 5 成為最佳整體模型",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model/"
-      },
       {
         "content": "Google 正式推出 Gemini 3.7 Flash，為開發者帶來更高效能與速度平衡的新一代輕量級 AI 模型。對於需要在應用程式中整合即時回應、處理大量文字與多模態任務的開發者而言，此版本提供了更高的性價比與更低的延遲，有助於優化生產環境中的 AI 工作負載。",
         "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash",
@@ -639,89 +591,117 @@
         "title": "利用 AI 生成的 GitHub Copilot「自動修復」竟導致 Jira 遭漏洞利用",
         "type": "news",
         "url": "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug"
+      },
+      {
+        "content": "OpenRouter 宣佈將 GPT-5.6 Sol 模型的 API 呼叫價格調降 50%。這對頻繁呼叫大型語言模型的開發者與團隊而言，能顯著降低開發、測試與生產環境中的營運成本，提高以該模型建構應用的經濟可行性。",
+        "id": "news:https://openrouter.ai/openai/gpt-5.6-sol",
+        "publishedAt": "2026-08-18T22:33:07.360Z",
+        "title": "OpenRouter 上的 GPT-5.6 Sol 調降 50% 價格",
+        "type": "news",
+        "url": "https://openrouter.ai/openai/gpt-5.6-sol"
+      },
+      {
+        "content": "Datasette 擴充套件 datasette-upload-dbs 釋出 0.5a0 版本。此工具允許使用者直接透過網頁介面上傳 SQLite 資料庫至 Datasette 實例中，對於需要快速分享、檢視或管理多個輕量級資料庫的開發者來說，簡化了資料匯入流程。",
+        "id": "news:https://simonwillison.net/2026/Aug/11/datasette-upload-dbs",
+        "publishedAt": "2026-08-18T22:33:07.360Z",
+        "title": "Datasette-upload-dbs 0.5a0 發布",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Aug/11/datasette-upload-dbs/"
+      },
+      {
+        "content": "社群熱烈討論 GPT-5.6 Sol Ultrafast 的效能表現與加速機制。這類模型在速度上的優化，對於需要低延遲即時互動的 AI 應用開發者具備高度參考價值，反映出業界對高效能視覺與文字處理模型的需求。",
+        "id": "news:https://cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai",
+        "publishedAt": "2026-08-18T22:33:07.360Z",
+        "title": "探討 GPT-5.6 Sol Ultrafast 的效能加速與應用",
+        "type": "news",
+        "url": "https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai"
+      },
+      {
+        "content": "Hacker News 與 Reddit 社群深入探討 GPT-5.6 Sol 的視覺處理能力，許多開發者認為這是 OpenAI 至今發布過最好的視覺模型。這項討論突顯了多模態模型在圖像理解任務上的實際表現升級，有助於開發者評估其在視覺相關產品中的應用潛力。",
+        "id": "news:https://blog.roboflow.com/openai-gpt-5-6",
+        "publishedAt": "2026-08-18T22:33:07.360Z",
+        "title": "開發者討論 GPT-5.6 Sol 為 OpenAI 最佳「視覺」模型",
+        "type": "news",
+        "url": "https://blog.roboflow.com/openai-gpt-5-6/"
+      },
+      {
+        "content": "社群文章深入剖析 Kimi Delta Attention 的底層設計邏輯，透過推導過程展示其架構精妙之處。這類文章能幫助機器學習工程師與開發者深入理解新型注意力機制的運作原理，啟發對模型架構優化的思考。",
+        "id": "news:https://blog.doubleword.ai/you-could-have-come-up-with-kimi-delta-attention",
+        "publishedAt": "2026-08-18T22:33:07.360Z",
+        "title": "你本來也可以想出 Kimi Delta Attention 機制",
+        "type": "news",
+        "url": "https://blog.doubleword.ai/you-could-have-come-up-with-kimi-delta-attention"
+      },
+      {
+        "content": "社群熱議關於將人類語言視為設計中的潛在空間（latent spaces）之觀點。這篇文章引導開發者從底層數學與表徵學習的角度，重新思考提示詞工程與模型理解能力之間的本質，對從事 AI 系統設計的人員具有啟發性。",
+        "id": "news:https://blog.jsbarretto.com/post/languages-as-latent-spaces",
+        "publishedAt": "2026-08-18T22:33:07.360Z",
+        "title": "語言作為設計中的潛在空間：探索自然語言與 AI 模型關聯",
+        "type": "news",
+        "url": "https://blog.jsbarretto.com/post/languages-as-latent-spaces"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-17T22:32:37.643Z",
+      "generatedAt": "2026-08-18T22:33:07.360Z",
       "items": [
         {
-          "content": "熱門開源優化工具 Unsloth 正式推出首款桌面應用程式（Unsloth Desktop），支援 Mac、Windows 與 Linux。這是第一個讓開發者能在本地端輕鬆運行與訓練模型的桌面端工具，全面支援 MLX、擴散圖像／影片模型、音訊模型及 GGUF 格式。它不僅能串接 Claude Code 與 Codex 至本地 LLM，還具備具備自癒能力的工具呼叫（Tool Calls）與沙盒程式碼執行，支援 CPU 及 NVIDIA 多 GPU 架構。這對希望在本地端安全且高效執行 AI 開發的工程師是一大重要工具更新。",
+          "content": "OpenRouter 宣佈將 GPT-5.6 Sol 模型的 API 呼叫價格調降 50%。這對頻繁呼叫大型語言模型的開發者與團隊而言，能顯著降低開發、測試與生產環境中的營運成本，提高以該模型建構應用的經濟可行性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Unsloth 推出桌面應用程式：支援本地運行與訓練多模態模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vlj87v/introducing_unsloth_desktop_app/",
+          "title": "OpenRouter 上的 GPT-5.6 Sol 調降 50% 價格",
+          "url": "https://openrouter.ai/openai/gpt-5.6-sol",
+          "weightedScore": 613
+        },
+        {
+          "content": "Datasette 擴充套件 datasette-upload-dbs 釋出 0.5a0 版本。此工具允許使用者直接透過網頁介面上傳 SQLite 資料庫至 Datasette 實例中，對於需要快速分享、檢視或管理多個輕量級資料庫的開發者來說，簡化了資料匯入流程。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Datasette-upload-dbs 0.5a0 發布",
+          "url": "https://simonwillison.net/2026/Aug/11/datasette-upload-dbs/",
           "weightedScore": 100
         },
         {
-          "content": "雲原生計算基金會（CNCF）宣佈 Kubeflow 正式畢業（Graduation），標誌著這項專案在企業界已獲得廣泛採用，成為在 Kubernetes 上自動化端到端 AI 與機器學習生命週期的業界標準。這對建構企業級 MLOps 基礎設施與雲原生 AI 管道的開發者與架構師而言，代表該工具的穩定性與成熟度已獲最高肯定，有助於加速機器學習工作負載的規模化部署。",
+          "content": "社群熱烈討論 GPT-5.6 Sol Ultrafast 的效能表現與加速機制。這類模型在速度上的優化，對於需要低延遲即時互動的 AI 應用開發者具備高度參考價值，反映出業界對高效能視覺與文字處理模型的需求。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "title": "CNCF 宣布 Kubeflow 正式畢業，確立雲原生 AI 運作標準",
-          "url": "https://www.cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations/",
+          "title": "探討 GPT-5.6 Sol Ultrafast 的效能加速與應用",
+          "url": "https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai",
+          "weightedScore": 712
+        },
+        {
+          "content": "Hacker News 與 Reddit 社群深入探討 GPT-5.6 Sol 的視覺處理能力，許多開發者認為這是 OpenAI 至今發布過最好的視覺模型。這項討論突顯了多模態模型在圖像理解任務上的實際表現升級，有助於開發者評估其在視覺相關產品中的應用潛力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "開發者討論 GPT-5.6 Sol 為 OpenAI 最佳「視覺」模型",
+          "url": "https://blog.roboflow.com/openai-gpt-5-6/",
+          "weightedScore": 359
+        },
+        {
+          "content": "社群文章深入剖析 Kimi Delta Attention 的底層設計邏輯，透過推導過程展示其架構精妙之處。這類文章能幫助機器學習工程師與開發者深入理解新型注意力機制的運作原理，啟發對模型架構優化的思考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "你本來也可以想出 Kimi Delta Attention 機制",
+          "url": "https://blog.doubleword.ai/you-could-have-come-up-with-kimi-delta-attention",
           "weightedScore": 100
         },
         {
-          "content": "Google 推出 Gemini Robotics 2，將先進的多模態 AI 能力擴展至機器人領域，實現所謂的「全身智慧」（whole body intelligence）。這項更新讓機器人能更靈巧、精準地理解物理世界並執行複雜動作。對於從事邊緣計算、物聯網與具身智慧（Embodied AI）應用的開發者來說，這提供了更強大的底層視覺與行為推理模型支援。",
+          "content": "社群熱議關於將人類語言視為設計中的潛在空間（latent spaces）之觀點。這篇文章引導開發者從底層數學與表徵學習的角度，重新思考提示詞工程與模型理解能力之間的本質，對從事 AI 系統設計的人員具有啟發性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Google 發布 Gemini Robotics 2，為機器人帶來全身智慧",
-          "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+          "title": "語言作為設計中的潛在空間：探索自然語言與 AI 模型關聯",
+          "url": "https://blog.jsbarretto.com/post/languages-as-latent-spaces",
           "weightedScore": 100
-        },
-        {
-          "content": "最新發布的 AI 氣象預報模型 WeatherNext 在預測氣旋路徑與強度上取得重大技術突破。這項成果展示了機器學習模型在處理複雜物理模擬與高維度時空數據上的實用價值，對於需處理大規模科學計算、環境數據分析與即時預報系統的後端與資料科學團隊具備高度參考與應用潛力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "WeatherNext：AI 氣象模型在熱帶氣旋預報取得重大突破",
-          "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Anthropic 在 Claude 產出的文字中加入隱蔽的浮水印（steganographic watermark），旨在標記 AI 生成內容。此舉在 Hacker News 與各大社群引發熱烈討論與批評，部分開發者與使用者擔憂這可能破壞寫作質感，且實務上已出現誤判（false positives）情況。這反映出業界對於 AI 生成內容溯源與標記技術在實務應用上面臨的倫理與技術挑戰。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Anthropic 在 Claude 引入文字「浮水印」機制引發開發者與寫作者議論",
-          "url": "https://daringfireball.net/2026/08/anthropics_watermark_text_adulteration_in_claude_is_a_perversion_of_writing",
-          "weightedScore": 751
-        },
-        {
-          "content": "安全社群披露了一起重大資安事件：攻擊者利用 AI 生成的 GitHub Copilot「Autofix」功能中的盲點，成功導致 Snowflake 的 Jira 系統遭到妥協。這凸顯了目前自動化程式碼修復與 AI 輔助開發工具在安全性驗證上的隱患，對依賴 AI 工具進行 CI/CD 與安全修補的開發團隊敲響了資安警鐘。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "利用 AI 生成的 GitHub Copilot「自動修復」竟導致 Jira 遭漏洞利用",
-          "url": "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug",
-          "weightedScore": 289
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-10T22:49:00.547Z",
-      "url": "https://docker.com/products/docker-sandboxes"
-    },
-    {
-      "seenAt": "2026-08-10T22:49:00.547Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vfa3tq/sk_hynix_in_collaboration_with_sandisk_unveils"
-    },
-    {
-      "seenAt": "2026-08-10T22:49:00.547Z",
-      "url": "https://thenewstack.io/accelerating-eks-image-pulls"
-    },
-    {
-      "seenAt": "2026-08-10T22:49:00.547Z",
-      "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model"
-    },
-    {
-      "seenAt": "2026-08-10T22:49:00.547Z",
-      "url": "https://a.l3x.in/blog/welcome-to-my-forge"
-    },
     {
       "seenAt": "2026-08-11T22:53:43.333Z",
       "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
@@ -913,6 +893,30 @@
     {
       "seenAt": "2026-08-17T22:32:37.643Z",
       "url": "https://wiz.io/blog/red-agent-snowflake-copilot-cicd-bug"
+    },
+    {
+      "seenAt": "2026-08-18T22:33:07.360Z",
+      "url": "https://openrouter.ai/openai/gpt-5.6-sol"
+    },
+    {
+      "seenAt": "2026-08-18T22:33:07.360Z",
+      "url": "https://simonwillison.net/2026/Aug/11/datasette-upload-dbs"
+    },
+    {
+      "seenAt": "2026-08-18T22:33:07.360Z",
+      "url": "https://cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai"
+    },
+    {
+      "seenAt": "2026-08-18T22:33:07.360Z",
+      "url": "https://blog.roboflow.com/openai-gpt-5-6"
+    },
+    {
+      "seenAt": "2026-08-18T22:33:07.360Z",
+      "url": "https://blog.doubleword.ai/you-could-have-come-up-with-kimi-delta-attention"
+    },
+    {
+      "seenAt": "2026-08-18T22:33:07.360Z",
+      "url": "https://blog.jsbarretto.com/post/languages-as-latent-spaces"
     }
   ]
 }
