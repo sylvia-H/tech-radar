@@ -242,53 +242,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-16T22:30:27.586Z",
-  "lastNewsPushAt": "2026-08-18T22:33:07.360Z",
+  "lastNewsPushAt": "2026-08-19T22:33:23.507Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-16T22:30:27.586Z",
       "summary": "本次綜合榜 #1 為 PrimeIntellect-ai/prime-agent，共有 9 個新進項目（AI 7 個、前後端 2 個）、0 個竄升項目、1 個下降項目。"
     },
     "feed": [
-      {
-        "content": "Google 正式推出 Gemini 3.7 Flash，為開發者帶來更高效能與速度平衡的新一代輕量級 AI 模型。對於需要在應用程式中整合即時回應、處理大量文字與多模態任務的開發者而言，此版本提供了更高的性價比與更低的延遲，有助於優化生產環境中的 AI 工作負載。",
-        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash",
-        "publishedAt": "2026-08-13T22:54:00.671Z",
-        "title": "Google 發布 Gemini 3.7 Flash 模型",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/"
-      },
-      {
-        "content": "OpenAI 宣布於 Linux 桌面版 ChatGPT 中正式推出 Codex 預覽功能。這讓 Linux 開發環境的使用者能直接在桌面應用中調用強大的程式碼生成與除錯能力，改善跨平台的開發者工作流程，提升本地端編碼與 AI 協作的便利性。",
-        "id": "news:https://community.openai.com/t/codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview/1390027",
-        "publishedAt": "2026-08-13T22:54:00.671Z",
-        "title": "ChatGPT Linux 桌面版整合 Codex 進入預覽階段",
-        "type": "news",
-        "url": "https://community.openai.com/t/codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview/1390027"
-      },
-      {
-        "content": "Node.js 釋出 24.18.1 LTS 版本，這是一次重要的安全性更新，修復了多項高風險漏洞。其中包括針對 HTTP/2 會話會計記憶體保留（CVE-2026-56846）、重設串流延遲處理（CVE-2026-56848）以及權限模組分割節點授予（CVE-2026-58043）等高強度漏洞。建議所有使用 LTS 版本的開發者與維運團隊盡快進行安全性升級以降低遭受攻擊的風險。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.18.1",
-        "publishedAt": "2026-08-13T22:54:00.671Z",
-        "title": "Node.js 發布 24.18.1 'Krypton' LTS 安全更新",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
-      },
-      {
-        "content": "Node.js 推出 24.19.0 LTS 版本，帶來數項重要功能更新（SEMVER-MINOR）。亮點包括在 buffer 中實作 blob.textStream()、更新 OpenSSL 建構配置以支援壓縮，並將 blockList 穩定性狀態提升至候選發布（RC），同時新增 --experimental-import-text 實驗性旗標，讓模組載入與資料流處理更具彈性。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.19.0",
-        "publishedAt": "2026-08-13T22:54:00.671Z",
-        "title": "Node.js 發布 24.19.0 'Krypton' LTS 版本",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
-      },
-      {
-        "content": "Cloudflare 宣布其憑證透明度監控（Certificate Transparency Monitoring）服務正式進入 GA（Generally Available）階段。本次更新的最大改變在於，Cloudflare 將不再對為網域發行的憑證發送常規郵件通知；因此，未來只要收件匣中收到相關警報，即代表有值得資安與維運團隊高度關注的憑證活動，有助於提升憑證管理的精確度與警覺性。",
-        "id": "news:https://blog.cloudflare.com/certificate-transparency-monitoring-ga",
-        "publishedAt": "2026-08-13T22:54:00.671Z",
-        "title": "Cloudflare 憑證透明度監控（CTM）正式全面可用",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/"
-      },
       {
         "content": "Hacker News 熱議文章探討 AI 工具普及對軟體工程師就業結構的衝擊。隨著 AI 逐漸能夠處理中階的常規程式碼編寫與架構實作，軟體工程領域的技術職位分工與薪資結構可能面臨重塑，引發開發者社群對自身職涯定位與核心競爭力的深刻反思。",
         "id": "news:https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
@@ -639,101 +599,100 @@
         "title": "語言作為設計中的潛在空間：探索自然語言與 AI 模型關聯",
         "type": "news",
         "url": "https://blog.jsbarretto.com/post/languages-as-latent-spaces"
+      },
+      {
+        "content": "Node.js 官方發布 26.5.1 版本，這是一個重要的安全性更新。此版本修復了多個高風險與中等風險漏洞，包含 http2 模組的串流處理（CVE-2026-56848）、權限模組的 radix split 節點授權問題（CVE-2026-58043），以及 https 模組的憑證鍵與 session 重用繫結問題。這對使用 Node.js 進行後端開發與維運的團隊至關重要，建議所有專案評估並盡速升級以確保系統安全。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.5.1",
+        "publishedAt": "2026-08-19T22:33:23.507Z",
+        "title": "Node.js 發布 26.5.1 安全性更新修復多項高風險漏洞",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
+      },
+      {
+        "content": "雲端原生計算基金會（CNCF）正式宣布 Cloud Native Buildpacks 專案畢業。這標誌著該專案在將應用程式原始碼轉換為 OCI 相容容器映像檔的標準上，已獲得業界廣泛的生產環境採用與成熟生態肯定。對於推動容器化建構流程與 DevOps 自動化的開發團隊而言，這確立了跨雲環境標準容器建構工具的穩定地位。",
+        "id": "news:https://cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds",
+        "publishedAt": "2026-08-19T22:33:23.507Z",
+        "title": "CNCF 宣布 Cloud Native Buildpacks 正式畢業成為頂級專案",
+        "type": "news",
+        "url": "https://www.cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds/"
+      },
+      {
+        "content": "Google 推出 Gemini Robotics ER 2，專為機器人應用設計的強大模型，具備先進的影片理解、任務編排與多機器人協作能力。這項更新讓機器人能更精準地進行現實世界的推理、工具呼叫與協同作業，對從事機器人學與智慧自動化系統開發的工程師提供全新的 AI 驅動能力。",
+        "id": "news:https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration",
+        "publishedAt": "2026-08-19T22:33:23.507Z",
+        "title": "Google 發布 Gemini Robotics ER 2 強化機器人多模態協作",
+        "type": "news",
+        "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/"
+      },
+      {
+        "content": "社群熱議一則開發者實測案例：工程師利用 Claude 成功從零撰寫出一個僅支援 Windows 的冷門 HP 印表機的 macOS 驅動程式。這項討論展示了當前高階程式碼生成模型在處理缺乏規格說明與底層硬體介面開發時的強大除錯與實作能力，引發開發者對 AI 輔助系統級程式設計邊界的廣泛討論。",
+        "id": "news:https://twitter.com/kuberwastaken/status/2089377982536388964",
+        "publishedAt": "2026-08-19T22:33:23.507Z",
+        "title": "開發者使用 Claude 成功為罕見 Windows 專用 HP 印表機編寫 macOS 驅動程式",
+        "type": "news",
+        "url": "https://twitter.com/kuberwastaken/status/2089377982536388964"
+      },
+      {
+        "content": "Hacker News 等高信度社群熱烈討論一項關於從專有大語言模型 API 中提取或反推模型內部推理軌跡（Reasoning Traces）的研究與技術。這項議題觸及了當前前沿 AI 模型在安全防護、提示詞工程保護以及模型行為透明度上的潛在漏洞與資安挑戰，吸引許多開發者與研究人員關注。",
+        "id": "news:https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces",
+        "publishedAt": "2026-08-19T22:33:23.507Z",
+        "title": "研究揭露如何從專有 LLM API 中竊取推理軌跡",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-18T22:33:07.360Z",
+      "generatedAt": "2026-08-19T22:33:23.507Z",
       "items": [
         {
-          "content": "OpenRouter 宣佈將 GPT-5.6 Sol 模型的 API 呼叫價格調降 50%。這對頻繁呼叫大型語言模型的開發者與團隊而言，能顯著降低開發、測試與生產環境中的營運成本，提高以該模型建構應用的經濟可行性。",
+          "content": "Node.js 官方發布 26.5.1 版本，這是一個重要的安全性更新。此版本修復了多個高風險與中等風險漏洞，包含 http2 模組的串流處理（CVE-2026-56848）、權限模組的 radix split 節點授權問題（CVE-2026-58043），以及 https 模組的憑證鍵與 session 重用繫結問題。這對使用 Node.js 進行後端開發與維運的團隊至關重要，建議所有專案評估並盡速升級以確保系統安全。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "OpenRouter 上的 GPT-5.6 Sol 調降 50% 價格",
-          "url": "https://openrouter.ai/openai/gpt-5.6-sol",
-          "weightedScore": 613
-        },
-        {
-          "content": "Datasette 擴充套件 datasette-upload-dbs 釋出 0.5a0 版本。此工具允許使用者直接透過網頁介面上傳 SQLite 資料庫至 Datasette 實例中，對於需要快速分享、檢視或管理多個輕量級資料庫的開發者來說，簡化了資料匯入流程。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Datasette-upload-dbs 0.5a0 發布",
-          "url": "https://simonwillison.net/2026/Aug/11/datasette-upload-dbs/",
+          "title": "Node.js 發布 26.5.1 安全性更新修復多項高風險漏洞",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.5.1",
           "weightedScore": 100
         },
         {
-          "content": "社群熱烈討論 GPT-5.6 Sol Ultrafast 的效能表現與加速機制。這類模型在速度上的優化，對於需要低延遲即時互動的 AI 應用開發者具備高度參考價值，反映出業界對高效能視覺與文字處理模型的需求。",
+          "content": "雲端原生計算基金會（CNCF）正式宣布 Cloud Native Buildpacks 專案畢業。這標誌著該專案在將應用程式原始碼轉換為 OCI 相容容器映像檔的標準上，已獲得業界廣泛的生產環境採用與成熟生態肯定。對於推動容器化建構流程與 DevOps 自動化的開發團隊而言，這確立了跨雲環境標準容器建構工具的穩定地位。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "title": "探討 GPT-5.6 Sol Ultrafast 的效能加速與應用",
-          "url": "https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai",
-          "weightedScore": 712
-        },
-        {
-          "content": "Hacker News 與 Reddit 社群深入探討 GPT-5.6 Sol 的視覺處理能力，許多開發者認為這是 OpenAI 至今發布過最好的視覺模型。這項討論突顯了多模態模型在圖像理解任務上的實際表現升級，有助於開發者評估其在視覺相關產品中的應用潛力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "開發者討論 GPT-5.6 Sol 為 OpenAI 最佳「視覺」模型",
-          "url": "https://blog.roboflow.com/openai-gpt-5-6/",
-          "weightedScore": 359
-        },
-        {
-          "content": "社群文章深入剖析 Kimi Delta Attention 的底層設計邏輯，透過推導過程展示其架構精妙之處。這類文章能幫助機器學習工程師與開發者深入理解新型注意力機制的運作原理，啟發對模型架構優化的思考。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "你本來也可以想出 Kimi Delta Attention 機制",
-          "url": "https://blog.doubleword.ai/you-could-have-come-up-with-kimi-delta-attention",
+          "title": "CNCF 宣布 Cloud Native Buildpacks 正式畢業成為頂級專案",
+          "url": "https://www.cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds/",
           "weightedScore": 100
         },
         {
-          "content": "社群熱議關於將人類語言視為設計中的潛在空間（latent spaces）之觀點。這篇文章引導開發者從底層數學與表徵學習的角度，重新思考提示詞工程與模型理解能力之間的本質，對從事 AI 系統設計的人員具有啟發性。",
+          "content": "Google 推出 Gemini Robotics ER 2，專為機器人應用設計的強大模型，具備先進的影片理解、任務編排與多機器人協作能力。這項更新讓機器人能更精準地進行現實世界的推理、工具呼叫與協同作業，對從事機器人學與智慧自動化系統開發的工程師提供全新的 AI 驅動能力。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "語言作為設計中的潛在空間：探索自然語言與 AI 模型關聯",
-          "url": "https://blog.jsbarretto.com/post/languages-as-latent-spaces",
+          "title": "Google 發布 Gemini Robotics ER 2 強化機器人多模態協作",
+          "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群熱議一則開發者實測案例：工程師利用 Claude 成功從零撰寫出一個僅支援 Windows 的冷門 HP 印表機的 macOS 驅動程式。這項討論展示了當前高階程式碼生成模型在處理缺乏規格說明與底層硬體介面開發時的強大除錯與實作能力，引發開發者對 AI 輔助系統級程式設計邊界的廣泛討論。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "開發者使用 Claude 成功為罕見 Windows 專用 HP 印表機編寫 macOS 驅動程式",
+          "url": "https://twitter.com/kuberwastaken/status/2089377982536388964",
+          "weightedScore": 307
+        },
+        {
+          "content": "Hacker News 等高信度社群熱烈討論一項關於從專有大語言模型 API 中提取或反推模型內部推理軌跡（Reasoning Traces）的研究與技術。這項議題觸及了當前前沿 AI 模型在安全防護、提示詞工程保護以及模型行為透明度上的潛在漏洞與資安挑戰，吸引許多開發者與研究人員關注。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "研究揭露如何從專有 LLM API 中竊取推理軌跡",
+          "url": "https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/",
           "weightedScore": 100
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-11T22:53:43.333Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
-    },
-    {
-      "seenAt": "2026-08-11T22:53:43.333Z",
-      "url": "https://cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds"
-    },
-    {
-      "seenAt": "2026-08-11T22:53:43.333Z",
-      "url": "https://claude.com/blog/auto-mode-default-in-claude-code"
-    },
-    {
-      "seenAt": "2026-08-11T22:53:43.333Z",
-      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration"
-    },
-    {
-      "seenAt": "2026-08-11T22:53:43.333Z",
-      "url": "https://stolen-thoughts.com/"
-    },
-    {
-      "seenAt": "2026-08-11T22:53:43.333Z",
-      "url": "https://cactuscompute.com/needle"
-    },
-    {
-      "seenAt": "2026-08-11T22:53:43.333Z",
-      "url": "https://github.com/antirez/h3.c"
-    },
-    {
-      "seenAt": "2026-08-11T22:53:43.333Z",
-      "url": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md"
-    },
     {
       "seenAt": "2026-08-12T22:52:08.595Z",
       "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
@@ -917,6 +876,26 @@
     {
       "seenAt": "2026-08-18T22:33:07.360Z",
       "url": "https://blog.jsbarretto.com/post/languages-as-latent-spaces"
+    },
+    {
+      "seenAt": "2026-08-19T22:33:23.507Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
+    },
+    {
+      "seenAt": "2026-08-19T22:33:23.507Z",
+      "url": "https://cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds"
+    },
+    {
+      "seenAt": "2026-08-19T22:33:23.507Z",
+      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration"
+    },
+    {
+      "seenAt": "2026-08-19T22:33:23.507Z",
+      "url": "https://twitter.com/kuberwastaken/status/2089377982536388964"
+    },
+    {
+      "seenAt": "2026-08-19T22:33:23.507Z",
+      "url": "https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces"
     }
   ]
 }
