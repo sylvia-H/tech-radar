@@ -242,45 +242,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-16T22:30:27.586Z",
-  "lastNewsPushAt": "2026-08-20T22:36:22.957Z",
+  "lastNewsPushAt": "2026-08-21T22:33:07.827Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-16T22:30:27.586Z",
       "summary": "本次綜合榜 #1 為 PrimeIntellect-ai/prime-agent，共有 9 個新進項目（AI 7 個、前後端 2 個）、0 個竄升項目、1 個下降項目。"
     },
     "feed": [
-      {
-        "content": "這篇在社群引發熱烈討論的經驗分享，探討了開發者如何把大語言模型作為互動式導師，系統性地攻克不熟悉的技術堆疊、複雜演算法或底層架構。文章提供了一套具體的提示詞策略與學習工作流，對於時常需要快速掌握新技術、轉換技術跑道的軟體工程師來說，具有極高的實用參考價值。",
-        "id": "news:https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn",
-        "publishedAt": "2026-08-14T22:32:31.618Z",
-        "title": "開發者如何利用 LLM 高效學習複雜技術領域",
-        "type": "news",
-        "url": "https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn/"
-      },
-      {
-        "content": "社群近期針對 Go 語言在 AI 輔助開發時代的定位進行了深入討論。由於 Go 具有靜態型別、簡潔的語法、極快的編譯速度以及強大的併發處理能力，使其在建構 AI 代理程式（AI Agents）、微服務基礎設施及自動化工具時展現出獨特優勢。這篇討論為後端與 DevOps 工程師評估 AI 時代的語言技術棧提供了重要視角。",
-        "id": "news:https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering",
-        "publishedAt": "2026-08-14T22:32:31.618Z",
-        "title": "探討 Go 語言為何是 AI 輔助軟體工程的理想選擇",
-        "type": "news",
-        "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/"
-      },
-      {
-        "content": "Google 宣布將同態加密（Homomorphic Encryption）技術應用於 AI 領域，旨在解決隱私保護與雲端運算之間的衝突。這項技術允許系統直接對加密資料進行運算而無需解密，對開發者與企業來說，未來在處理敏感資料或受法規管制的應用程式時，能更安全地整合雲端 AI 服務，兼顧資料隱私與運算效能。",
-        "id": "news:https://blog.google/security/how-google-is-making-private-ai-practical-with-homomorphic-encryption",
-        "publishedAt": "2026-08-15T22:31:06.820Z",
-        "title": "Google 導入同态加密技術，讓隱私 AI 實務應用更可行",
-        "type": "news",
-        "url": "https://blog.google/security/how-google-is-making-private-ai-practical-with-homomorphic-encryption/"
-      },
-      {
-        "content": "Cloudflare 推出全新 AI Search 服務，簡化了資料搜尋引擎的建構流程，開發者無需再自行拼湊多個 Cloudflare 基礎元件。只要將服務指向現有的檔案與網站資料，就能快速為自己的應用程式或 AI 代理（Agents）打造強大的資料搜尋能力，同時官方也預先曝光了全新的計費模式。",
-        "id": "news:https://blog.cloudflare.com/ai-search-easier",
-        "publishedAt": "2026-08-15T22:31:06.820Z",
-        "title": "Cloudflare 推出 AI Search，讓開發者輕鬆為應用程式建立資料搜尋引擎",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/ai-search-easier/"
-      },
       {
         "content": "Google 宣布在 Google Flow Music 中推出 Lyria 3.5 模型，在音樂性、歌詞、人聲以及創作控制力上皆有顯著突破。對於開發音樂相關應用、多媒體生成工具或探索生成式 AI 創作邊界的開發者而言，這項更新提供了更高品質且更具細緻操控能力的音樂生成 API 與工具。",
         "id": "news:https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control",
@@ -639,173 +607,83 @@
         "title": "「自然語言文字不存在無損轉換」：探討大模型與文本處理的本質限制",
         "type": "news",
         "url": "https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/"
+      },
+      {
+        "content": "Node.js 官方釋出 22.23.2 (Jod) LTS 版本，包含多項高風險與中風險的安全性修復。主要修復項目包含 CVE-2026-56846（http2 階段的標頭記憶體保留問題）、CVE-2026-56848（http2 請求重設延遲漏洞）以及權限模組與 DNS 相關的安全性調整。對於使用 Node.js 22 LTS 的開發團隊與維運人員，建議盡快評估並升級以確保系統安全。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v22.23.2",
+        "publishedAt": "2026-08-21T22:33:07.827Z",
+        "title": "Node.js 22.23.2 (LTS) 安全性更新發布",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
+      },
+      {
+        "content": "Node.js 官方發布 24.18.1 (Krypton) LTS 版本，此為一項重要的安全性更新。內容涵蓋多項與 Node.js 22 同步的高風險漏洞修復，包含 CVE-2026-56846、CVE-2026-56848、權限節點分配缺陷（CVE-2026-58043）以及 https 代理金鑰與工作階段重複使用相關的安全補強。建議使用該版本的開發者儘速進行修補與部署。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v24.18.1",
+        "publishedAt": "2026-08-21T22:33:07.827Z",
+        "title": "Node.js 24.18.1 (LTS) 安全性更新發布",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
+      },
+      {
+        "content": "Cloudflare 宣布其憑證透明度監控服務（Certificate Transparency Monitoring）正式進入一般可用（GA）階段。此次發布的最大更動為取消針對網域所發行憑證的日常電子郵件通知；未來當信箱收到相關警報時，代表有更高可信度與安全審查價值。對於重視憑證管理與資安監控的基礎設施維運團隊而言，這能有效降低郵件噪音並聚焦於異常憑證的動向。",
+        "id": "news:https://blog.cloudflare.com/certificate-transparency-monitoring-ga",
+        "publishedAt": "2026-08-21T22:33:07.827Z",
+        "title": "Cloudflare 憑證透明度監控（Certificate Transparency Monitoring）正式全面上市",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/"
+      },
+      {
+        "content": "隨著各大 AI 服務與 API 供應商的定價策略與計費模型轉變，「AI 點數轉售經濟」在開發者與企業社群中引發高度討論。這反映出開發者在整合多重 LLM 與雲端 AI 服務時，面臨著成本控管、額度分配以及轉手交易的痛點。對開發團隊而言，理解這類非典型經濟模式有助於更精準地評估 AI 應用的長期營運成本與架構規劃。",
+        "id": "news:https://vectoral.com/blog/who-are-the-token-brokers",
+        "publishedAt": "2026-08-21T22:33:07.827Z",
+        "title": "AI 點數轉售經濟的興起與開發者成本考量",
+        "type": "news",
+        "url": "https://vectoral.com/blog/who-are-the-token-brokers"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-20T22:36:22.957Z",
+      "generatedAt": "2026-08-21T22:33:07.827Z",
       "items": [
         {
-          "content": "Node.js 釋出 v26.6.0 版本，帶來多項重要更新。在 FFI 方面新增了 `getCurrentEventLoop`，讓開發者能更精確掌握事件循環狀態；測試執行器（test_runner）則引入 `context.log()` 與 `test:log` 事件，並支援在 TestStream 事件中回報 `entryFile`，大幅提升非同步與測試場景的可觀測性與除錯效率。",
+          "content": "Node.js 官方釋出 22.23.2 (Jod) LTS 版本，包含多項高風險與中風險的安全性修復。主要修復項目包含 CVE-2026-56846（http2 階段的標頭記憶體保留問題）、CVE-2026-56848（http2 請求重設延遲漏洞）以及權限模組與 DNS 相關的安全性調整。對於使用 Node.js 22 LTS 的開發團隊與維運人員，建議盡快評估並升級以確保系統安全。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Node.js v26.6.0 (Current) 發布：新增 getCurrentEventLoop 與測試日誌 API",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.6.0",
+          "title": "Node.js 22.23.2 (LTS) 安全性更新發布",
+          "url": "https://github.com/nodejs/node/releases/tag/v22.23.2",
           "weightedScore": 100
         },
         {
-          "content": "智譜 AI 官方宣佈推出全新一代大語言模型 GLM 5.3。此版本在基礎架構與模型能力上進行了重大升級，針對複雜推理、程式碼生成及多語言任務提供更強大的效能，對於關注開源或商業大模型落地的開發者與架構師而言是重要的版本更新。",
+          "content": "Node.js 官方發布 24.18.1 (Krypton) LTS 版本，此為一項重要的安全性更新。內容涵蓋多項與 Node.js 22 同步的高風險漏洞修復，包含 CVE-2026-56846、CVE-2026-56848、權限節點分配缺陷（CVE-2026-58043）以及 https 代理金鑰與工作階段重複使用相關的安全補強。建議使用該版本的開發者儘速進行修補與部署。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "智譜 AI 正式發布 GLM 5.3 模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vny9zs/glm_53_released/",
+          "title": "Node.js 24.18.1 (LTS) 安全性更新發布",
+          "url": "https://github.com/nodejs/node/releases/tag/v24.18.1",
           "weightedScore": 100
         },
         {
-          "content": "Google 官方正式發表 Gemini 3.7 Flash，主打極速反應與高效能的平衡。這款新模型針對開發者在即時互動、高吞吐量應用場景下的需求進行了深度優化，讓團隊能在成本與延遲之間取得更好的取捨，適合需要快速推理與自動化代理的應用。",
+          "content": "Cloudflare 宣布其憑證透明度監控服務（Certificate Transparency Monitoring）正式進入一般可用（GA）階段。此次發布的最大更動為取消針對網域所發行憑證的日常電子郵件通知；未來當信箱收到相關警報時，代表有更高可信度與安全審查價值。對於重視憑證管理與資安監控的基礎設施維運團隊而言，這能有效降低郵件噪音並聚焦於異常憑證的動向。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "title": "Google 推出 Gemini 3.7 Flash 模型",
-          "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
+          "title": "Cloudflare 憑證透明度監控（Certificate Transparency Monitoring）正式全面上市",
+          "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/",
           "weightedScore": 100
         },
         {
-          "content": "通義千問系列迎來重大更新，Qwen3.8-27B 模型卡與相關檔案正式在 Hugging Face 上線。作為中大型開源模型，27B 的規模在本地部署與微調性之間取得極佳平衡，為開發者提供了一個強大且具競爭力的新開源模型選擇。",
+          "content": "隨著各大 AI 服務與 API 供應商的定價策略與計費模型轉變，「AI 點數轉售經濟」在開發者與企業社群中引發高度討論。這反映出開發者在整合多重 LLM 與雲端 AI 服務時，面臨著成本控管、額度分配以及轉手交易的痛點。對開發團隊而言，理解這類非典型經濟模式有助於更精準地評估 AI 應用的長期營運成本與架構規劃。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Qwen3.8-27B 模型卡與預覽版正式上線",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vo2iiz/a_preliminary_qwen3827b_model_card_is_live/",
-          "weightedScore": 100
-        },
-        {
-          "content": "在 Hacker News 引發熱烈討論的「AI;DR」現象，反映了當開發者與技術人員面對大量由 AI 自動生成、品質參差不齊的文件、PR 描述與技術文章時，所面臨的審查疲勞與資訊過載危機，凸顯出開發團隊需要更有效的過濾與摘要機制。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "AI;DR (AI; Didn't Read) 探討大模型生成的資訊過載現象",
-          "url": "https://www.rickmanelius.com/p/aidr-ai-didnt-read",
-          "weightedScore": 1097
-        },
-        {
-          "content": "這篇在社群獲得高關注度的文章指出，開發者若未經理解就盲目複製貼上 AI 生成的程式碼，不僅容易引入隱蔽的資安漏洞與技術債，也會破壞程式碼庫的一致性。這對當前全面擁抱 AI 輔助編程的團隊敲響了警鐘，強調人工程式碼審查與架構理解的必要性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "「Don't paste the AI, please」：開發社群反思盲目複製貼上 AI 程式碼的隱患",
-          "url": "https://dontpastetheai.com/",
-          "weightedScore": 981
-        },
-        {
-          "content": "開發社群正高度關注一項關於在專案中引入 `AGENTS.md` 的功能提案。這項提案旨在為 AI Agent 建立統一的專案背景、架構規範與操作指引，讓自動化編程工具能更精準地理解特定專案的規則，提升 AI 協作的效率與準確率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "社群熱議功能請求：為專案原生支援 AGENTS.md 標準",
-          "url": "https://github.com/anthropics/claude-code/issues/6235",
-          "weightedScore": 349
-        },
-        {
-          "content": "社群熱推的輕量級開源專案 `fx` 是一款專為終端機設計的微型原生 coding agent。它擺脫了沉重的依賴與複雜設定，直接在本地為開發者提供高效的程式碼編寫與修改輔助，非常適合喜歡輕量工具鏈的工程師。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "fx：極小、開源且原生的終端機程式碼代理工具",
-          "url": "https://fx.sh",
-          "weightedScore": 309
-        },
-        {
-          "content": "一篇引發底層開發者深思的熱門討論，深入剖析了在高效能 AI 推理場景下，為何部分團隊選擇放棄現成框架、自行從頭打造 C/C++ 推理引擎。內容探討了對記憶體管理、極限延遲控制及硬體指令集最佳化的追求，對系統架構師極具參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "為什麼我們堅持自行編寫 C 與 C++ 推理引擎？",
-          "url": "https://localai.io/blog/why-we-write-our-own-engines/",
-          "weightedScore": 100
-        },
-        {
-          "content": "這篇獲得高信度社群關注的深度討論指出，自然語言在經過多次分詞、嵌入、翻譯或大模型重寫後，本質上不可能進行無損轉換。這對依賴 LLM 進行複雜文本管線、自動化翻譯或結構化萃取的系統設計者來說，提供了重要的理論反思與架構設計限制提醒。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "「自然語言文字不存在無損轉換」：探討大模型與文本處理的本質限制",
-          "url": "https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/",
-          "weightedScore": 100
+          "title": "AI 點數轉售經濟的興起與開發者成本考量",
+          "url": "https://vectoral.com/blog/who-are-the-token-brokers",
+          "weightedScore": 332
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-13T22:54:00.671Z",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash"
-    },
-    {
-      "seenAt": "2026-08-13T22:54:00.671Z",
-      "url": "https://community.openai.com/t/codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview/1390027"
-    },
-    {
-      "seenAt": "2026-08-13T22:54:00.671Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
-    },
-    {
-      "seenAt": "2026-08-13T22:54:00.671Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
-    },
-    {
-      "seenAt": "2026-08-13T22:54:00.671Z",
-      "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga"
-    },
-    {
-      "seenAt": "2026-08-13T22:54:00.671Z",
-      "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html"
-    },
-    {
-      "seenAt": "2026-08-13T22:54:00.671Z",
-      "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
-    },
-    {
-      "seenAt": "2026-08-13T22:54:00.671Z",
-      "url": "https://knownagents.com/insights"
-    },
-    {
-      "seenAt": "2026-08-13T22:54:00.671Z",
-      "url": "https://cncf.io/blog/2026/08/07/shadow-ai-in-ci-cd-threat-modeling-the-path-from-developer-laptop-to-kubernetes"
-    },
-    {
-      "seenAt": "2026-08-13T22:54:00.671Z",
-      "url": "https://thenewstack.io/ai-pipeline-token-optimization"
-    },
-    {
-      "seenAt": "2026-08-14T22:32:31.618Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
-    },
-    {
-      "seenAt": "2026-08-14T22:32:31.618Z",
-      "url": "https://docs.mistral.ai/models/ocr-4-1"
-    },
-    {
-      "seenAt": "2026-08-14T22:32:31.618Z",
-      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models"
-    },
-    {
-      "seenAt": "2026-08-14T22:32:31.618Z",
-      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands"
-    },
-    {
-      "seenAt": "2026-08-14T22:32:31.618Z",
-      "url": "https://llama.app/"
-    },
-    {
-      "seenAt": "2026-08-14T22:32:31.618Z",
-      "url": "https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn"
-    },
-    {
-      "seenAt": "2026-08-14T22:32:31.618Z",
-      "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering"
-    },
     {
       "seenAt": "2026-08-15T22:31:06.820Z",
       "url": "https://blog.google/security/how-google-is-making-private-ai-practical-with-homomorphic-encryption"
@@ -961,6 +839,22 @@
     {
       "seenAt": "2026-08-20T22:36:22.957Z",
       "url": "https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text"
+    },
+    {
+      "seenAt": "2026-08-21T22:33:07.827Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
+    },
+    {
+      "seenAt": "2026-08-21T22:33:07.827Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
+    },
+    {
+      "seenAt": "2026-08-21T22:33:07.827Z",
+      "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga"
+    },
+    {
+      "seenAt": "2026-08-21T22:33:07.827Z",
+      "url": "https://vectoral.com/blog/who-are-the-token-brokers"
     }
   ]
 }
