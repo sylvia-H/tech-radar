@@ -242,72 +242,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-16T22:30:27.586Z",
-  "lastNewsPushAt": "2026-08-21T22:33:07.827Z",
+  "lastNewsPushAt": "2026-08-22T22:30:40.673Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-16T22:30:27.586Z",
       "summary": "本次綜合榜 #1 為 PrimeIntellect-ai/prime-agent，共有 9 個新進項目（AI 7 個、前後端 2 個）、0 個竄升項目、1 個下降項目。"
     },
     "feed": [
-      {
-        "content": "Google 宣布在 Google Flow Music 中推出 Lyria 3.5 模型，在音樂性、歌詞、人聲以及創作控制力上皆有顯著突破。對於開發音樂相關應用、多媒體生成工具或探索生成式 AI 創作邊界的開發者而言，這項更新提供了更高品質且更具細緻操控能力的音樂生成 API 與工具。",
-        "id": "news:https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control",
-        "publishedAt": "2026-08-15T22:31:06.820Z",
-        "title": "Google 推出 Lyria 3.5 音樂生成模型，大幅提升音樂性與創作控制力",
-        "type": "news",
-        "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/"
-      },
-      {
-        "content": "Meta 執行長馬克·祖克柏公開批評封閉式 AI 模型的发展方向，並宣布 Meta 將堅定重返開源 AI 模型的路線。這項產業動態反映了開源與閉源陣營在 AI 生態系中的競合持續白熱化，對依賴開源基礎設施進行開發與部署的工程團隊來說，將直接影響未來模型選擇與技術棧的戰略佈局。",
-        "id": "news:https://ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878",
-        "publishedAt": "2026-08-15T22:31:06.820Z",
-        "title": "Meta 重返開源路線：祖克柏公開抨擊「封閉式」AI 競爭對手",
-        "type": "news",
-        "url": "https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878"
-      },
-      {
-        "content": "針對潛在推理模型（如 Coconut 與 CODI）是否易於解釋的研究顯示，這些模型在處理 PrOntoQA 和 ProsQA 等邏輯任務時，幾乎沒有真正使用其連續隱藏狀態中的推理步驟。實驗發現，即使強制模型提早停止思考，通常仍會吐出相同的答案。這對依賴模型內部狀態進行監控與除錯的開發者來說，提供了重要的行為洞察與安全評估參考。",
-        "id": "news:https://arxiv.org/abs/2604.04902",
-        "publishedAt": "2026-08-15T22:31:06.820Z",
-        "title": "研究指出潛在推理模型在邏輯任務中鮮少真正利用隱藏推理步驟",
-        "type": "news",
-        "url": "https://arxiv.org/abs/2604.04902"
-      },
-      {
-        "id": "repo:1232493406:new:2026-08-17",
-        "publishedAt": "2026-08-16T22:30:27.586Z",
-        "title": "PrimeIntellect-ai/prime-agent 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/PrimeIntellect-ai/prime-agent"
-      },
-      {
-        "id": "repo:1075372545:new:2026-08-17",
-        "publishedAt": "2026-08-16T22:30:27.586Z",
-        "title": "msitarzewski/agency-agents 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/msitarzewski/agency-agents"
-      },
-      {
-        "id": "repo:1183888342:new:2026-08-17",
-        "publishedAt": "2026-08-16T22:30:27.586Z",
-        "title": "stablyai/orca 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/stablyai/orca"
-      },
-      {
-        "id": "repo:1035029907:new:2026-08-17",
-        "publishedAt": "2026-08-16T22:30:27.586Z",
-        "title": "earendil-works/pi 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/earendil-works/pi"
-      },
-      {
-        "id": "repo:1008304614:new:2026-08-17",
-        "publishedAt": "2026-08-16T22:30:27.586Z",
-        "title": "semantica-agi/semantica 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/semantica-agi/semantica"
-      },
       {
         "id": "repo:787076358:new:2026-08-17",
         "publishedAt": "2026-08-16T22:30:27.586Z",
@@ -639,46 +580,146 @@
         "title": "AI 點數轉售經濟的興起與開發者成本考量",
         "type": "news",
         "url": "https://vectoral.com/blog/who-are-the-token-brokers"
+      },
+      {
+        "content": "Cloudflare 推出了全新功能「Bot Preference Sync」，能自動將網站的 robots.txt 檔案與針對搜尋、AI 代理程式及模型訓練的 bot 存取政策進行同步。這讓開發者與網站管理員無需再手動維護靜態檔案，即可輕鬆精準地管理哪些 AI 機器人可以存取網站內容，對於應對日益增加的 AI 爬蟲流量提供更有效率的基礎設施管理方式。",
+        "id": "news:https://blog.cloudflare.com/bot-preference-sync",
+        "publishedAt": "2026-08-22T22:30:40.673Z",
+        "title": "Cloudflare 推出 Bot Preference Sync，自動對齊 robots.txt 與 AI 政策",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/bot-preference-sync/"
+      },
+      {
+        "content": "Node.js 釋出 v24.19.0 長期支援版本（代號 Krypton）。本次更新帶來多項重要變更（Semver-Minor），包含在 buffer 模組中實作 blob.textStream()、更新 OpenSSL 建置設定以支援壓縮，並將 blockList 的穩定度狀態提升至候選發布（Release Candidate），同時標記 stream.compose 正式進入穩定階段，並新增實驗性旗標 --experimental-import-text。對後端開發者而言，這些更新提升了串流與文字處理的效能與便利性。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v24.19.0",
+        "publishedAt": "2026-08-22T22:30:40.673Z",
+        "title": "Node.js v24.19.0 'Krypton' (LTS) 版本發布",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
+      },
+      {
+        "content": "DeepSeek 最新模型版本 DeepSeek V4 Pro 0813 已在 OpenRouter 平台登場。這款備受矚目的模型更新提供了更強大的程式碼生成與推理能力，對需要整合高效能開源或商用大模型的開發者而言，提供了更多樣化且具競爭力的 API 選擇，有助於進一步優化 AI 驅動的應用程式效能。",
+        "id": "news:https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813",
+        "publishedAt": "2026-08-22T22:30:40.673Z",
+        "title": "DeepSeek V4 Pro 0813 於 OpenRouter 上線",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813/"
+      },
+      {
+        "content": "社群熱議一項新研究，指出針對大模型推理進行的強化學習（RL）實際上僅改變了 1% 至 3% 的 Token。研究人員成功在不使用 RL 的情況下，以低約 1000 倍的運算成本複製了相近的效能增長。這項發現對優化大模型訓練流程、降低 AI 開發與微調成本具有重大啟發意義。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of",
+        "publishedAt": "2026-08-22T22:30:40.673Z",
+        "title": "研究指出強化學習對推理僅改變極少 Token 且可以極低成本複製",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of/"
+      },
+      {
+        "content": "專案管理平台 Asana 分享了他們利用 OpenAI Codex 在短短兩週內，成功替換掉過時測試系統的案例。這項原本預估需要花費五年工程時間的龐大任務，最終僅花費約 12,000 美元的成本便告完成。此案例展示了 AI 程式碼代理在處理大型舊系統重構與自動化遷移上的極高實用價值。",
+        "id": "news:https://openai.com/index/asana",
+        "publishedAt": "2026-08-22T22:30:40.673Z",
+        "title": "Asana 透過 OpenAI Codex 在兩週內完成預估五年的工程遷移",
+        "type": "news",
+        "url": "https://openai.com/index/asana"
+      },
+      {
+        "content": "根據近期原始碼提交（Commits）的變更紀錄顯示，Qwen 專案移除了關於 35B 模型的相關內容，引發社群猜測該中型模型可能不會正式釋出。由於 35B MoE 等規格在開發者之間廣泛使用，社群正呼籲相關人員在各大平台上表達對此尺寸模型的需求，以免影響後續開源生態系的選擇。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vpxbm8/newer_commits_removed_the_qwen_35b",
+        "publishedAt": "2026-08-22T22:30:40.673Z",
+        "title": "開發者社群關注 Qwen 35B 模型疑似取消發布的動向",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vpxbm8/newer_commits_removed_the_qwen_35b/"
+      },
+      {
+        "content": "隨著網路上超過一半的請求逐漸來自機器而非人類，網站架構與內容策略正面臨轉變。「Agent Readiness」指標開始受到重視，用於評估 AI 代理程式能否順利發現並讀取網站，而「Answer Engine Optimization (AEO)」則用來追蹤 AI 助理推薦網站的頻率。這為前端與後端開發者在設計 API 及網頁結構時，帶來了全新的SEO與機器可讀性思考維度。",
+        "id": "news:https://blog.cloudflare.com/aeo",
+        "publishedAt": "2026-08-22T22:30:40.673Z",
+        "title": "網站轉型迎合 AI 時代：從傳統排名邁向推薦引擎優化",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/aeo/"
+      },
+      {
+        "content": "基礎設施社群討論了如何利用 Kairos 實現完全自動化、歷時 11 分鐘且無需人工介入的 Kubernetes 控制平臺升級管線。傳統升級需手動 SSH 至各節點並隨時監控 etcd 健康狀態，而這套自動化方案透過自我修復機制大幅降低了維運負擔，對 DevOps 工程師在管理大規模叢日時具有高度參考價值。",
+        "id": "news:https://cncf.io/blog/2026/08/14/eleven-minutes-zero-humans-building-a-self-healing-kubernetes-upgrade-pipeline-on-kairos",
+        "publishedAt": "2026-08-22T22:30:40.673Z",
+        "title": "基於 Kairos 打造零人工介入的自我修復 Kubernetes 升級管線",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/08/14/eleven-minutes-zero-humans-building-a-self-healing-kubernetes-upgrade-pipeline-on-kairos/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-21T22:33:07.827Z",
+      "generatedAt": "2026-08-22T22:30:40.673Z",
       "items": [
         {
-          "content": "Node.js 官方釋出 22.23.2 (Jod) LTS 版本，包含多項高風險與中風險的安全性修復。主要修復項目包含 CVE-2026-56846（http2 階段的標頭記憶體保留問題）、CVE-2026-56848（http2 請求重設延遲漏洞）以及權限模組與 DNS 相關的安全性調整。對於使用 Node.js 22 LTS 的開發團隊與維運人員，建議盡快評估並升級以確保系統安全。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "Node.js 22.23.2 (LTS) 安全性更新發布",
-          "url": "https://github.com/nodejs/node/releases/tag/v22.23.2",
-          "weightedScore": 100
-        },
-        {
-          "content": "Node.js 官方發布 24.18.1 (Krypton) LTS 版本，此為一項重要的安全性更新。內容涵蓋多項與 Node.js 22 同步的高風險漏洞修復，包含 CVE-2026-56846、CVE-2026-56848、權限節點分配缺陷（CVE-2026-58043）以及 https 代理金鑰與工作階段重複使用相關的安全補強。建議使用該版本的開發者儘速進行修補與部署。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "Node.js 24.18.1 (LTS) 安全性更新發布",
-          "url": "https://github.com/nodejs/node/releases/tag/v24.18.1",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 宣布其憑證透明度監控服務（Certificate Transparency Monitoring）正式進入一般可用（GA）階段。此次發布的最大更動為取消針對網域所發行憑證的日常電子郵件通知；未來當信箱收到相關警報時，代表有更高可信度與安全審查價值。對於重視憑證管理與資安監控的基礎設施維運團隊而言，這能有效降低郵件噪音並聚焦於異常憑證的動向。",
+          "content": "Cloudflare 推出了全新功能「Bot Preference Sync」，能自動將網站的 robots.txt 檔案與針對搜尋、AI 代理程式及模型訓練的 bot 存取政策進行同步。這讓開發者與網站管理員無需再手動維護靜態檔案，即可輕鬆精準地管理哪些 AI 機器人可以存取網站內容，對於應對日益增加的 AI 爬蟲流量提供更有效率的基礎設施管理方式。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 憑證透明度監控（Certificate Transparency Monitoring）正式全面上市",
-          "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/",
+          "title": "Cloudflare 推出 Bot Preference Sync，自動對齊 robots.txt 與 AI 政策",
+          "url": "https://blog.cloudflare.com/bot-preference-sync/",
           "weightedScore": 100
         },
         {
-          "content": "隨著各大 AI 服務與 API 供應商的定價策略與計費模型轉變，「AI 點數轉售經濟」在開發者與企業社群中引發高度討論。這反映出開發者在整合多重 LLM 與雲端 AI 服務時，面臨著成本控管、額度分配以及轉手交易的痛點。對開發團隊而言，理解這類非典型經濟模式有助於更精準地評估 AI 應用的長期營運成本與架構規劃。",
+          "content": "Node.js 釋出 v24.19.0 長期支援版本（代號 Krypton）。本次更新帶來多項重要變更（Semver-Minor），包含在 buffer 模組中實作 blob.textStream()、更新 OpenSSL 建置設定以支援壓縮，並將 blockList 的穩定度狀態提升至候選發布（Release Candidate），同時標記 stream.compose 正式進入穩定階段，並新增實驗性旗標 --experimental-import-text。對後端開發者而言，這些更新提升了串流與文字處理的效能與便利性。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "title": "Node.js v24.19.0 'Krypton' (LTS) 版本發布",
+          "url": "https://github.com/nodejs/node/releases/tag/v24.19.0",
+          "weightedScore": 100
+        },
+        {
+          "content": "DeepSeek 最新模型版本 DeepSeek V4 Pro 0813 已在 OpenRouter 平台登場。這款備受矚目的模型更新提供了更強大的程式碼生成與推理能力，對需要整合高效能開源或商用大模型的開發者而言，提供了更多樣化且具競爭力的 API 選擇，有助於進一步優化 AI 驅動的應用程式效能。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "AI 點數轉售經濟的興起與開發者成本考量",
-          "url": "https://vectoral.com/blog/who-are-the-token-brokers",
-          "weightedScore": 332
+          "title": "DeepSeek V4 Pro 0813 於 OpenRouter 上線",
+          "url": "https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813/",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群熱議一項新研究，指出針對大模型推理進行的強化學習（RL）實際上僅改變了 1% 至 3% 的 Token。研究人員成功在不使用 RL 的情況下，以低約 1000 倍的運算成本複製了相近的效能增長。這項發現對優化大模型訓練流程、降低 AI 開發與微調成本具有重大啟發意義。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "研究指出強化學習對推理僅改變極少 Token 且可以極低成本複製",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of/",
+          "weightedScore": 100
+        },
+        {
+          "content": "專案管理平台 Asana 分享了他們利用 OpenAI Codex 在短短兩週內，成功替換掉過時測試系統的案例。這項原本預估需要花費五年工程時間的龐大任務，最終僅花費約 12,000 美元的成本便告完成。此案例展示了 AI 程式碼代理在處理大型舊系統重構與自動化遷移上的極高實用價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Asana 透過 OpenAI Codex 在兩週內完成預估五年的工程遷移",
+          "url": "https://openai.com/index/asana",
+          "weightedScore": 100
+        },
+        {
+          "content": "根據近期原始碼提交（Commits）的變更紀錄顯示，Qwen 專案移除了關於 35B 模型的相關內容，引發社群猜測該中型模型可能不會正式釋出。由於 35B MoE 等規格在開發者之間廣泛使用，社群正呼籲相關人員在各大平台上表達對此尺寸模型的需求，以免影響後續開源生態系的選擇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "開發者社群關注 Qwen 35B 模型疑似取消發布的動向",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vpxbm8/newer_commits_removed_the_qwen_35b/",
+          "weightedScore": 100
+        },
+        {
+          "content": "隨著網路上超過一半的請求逐漸來自機器而非人類，網站架構與內容策略正面臨轉變。「Agent Readiness」指標開始受到重視，用於評估 AI 代理程式能否順利發現並讀取網站，而「Answer Engine Optimization (AEO)」則用來追蹤 AI 助理推薦網站的頻率。這為前端與後端開發者在設計 API 及網頁結構時，帶來了全新的SEO與機器可讀性思考維度。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "網站轉型迎合 AI 時代：從傳統排名邁向推薦引擎優化",
+          "url": "https://blog.cloudflare.com/aeo/",
+          "weightedScore": 100
+        },
+        {
+          "content": "基礎設施社群討論了如何利用 Kairos 實現完全自動化、歷時 11 分鐘且無需人工介入的 Kubernetes 控制平臺升級管線。傳統升級需手動 SSH 至各節點並隨時監控 etcd 健康狀態，而這套自動化方案透過自我修復機制大幅降低了維運負擔，對 DevOps 工程師在管理大規模叢日時具有高度參考價值。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "基於 Kairos 打造零人工介入的自我修復 Kubernetes 升級管線",
+          "url": "https://www.cncf.io/blog/2026/08/14/eleven-minutes-zero-humans-building-a-self-healing-kubernetes-upgrade-pipeline-on-kairos/",
+          "weightedScore": 100
         }
       ]
     }
@@ -855,6 +896,38 @@
     {
       "seenAt": "2026-08-21T22:33:07.827Z",
       "url": "https://vectoral.com/blog/who-are-the-token-brokers"
+    },
+    {
+      "seenAt": "2026-08-22T22:30:40.673Z",
+      "url": "https://blog.cloudflare.com/bot-preference-sync"
+    },
+    {
+      "seenAt": "2026-08-22T22:30:40.673Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
+    },
+    {
+      "seenAt": "2026-08-22T22:30:40.673Z",
+      "url": "https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813"
+    },
+    {
+      "seenAt": "2026-08-22T22:30:40.673Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of"
+    },
+    {
+      "seenAt": "2026-08-22T22:30:40.673Z",
+      "url": "https://openai.com/index/asana"
+    },
+    {
+      "seenAt": "2026-08-22T22:30:40.673Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vpxbm8/newer_commits_removed_the_qwen_35b"
+    },
+    {
+      "seenAt": "2026-08-22T22:30:40.673Z",
+      "url": "https://blog.cloudflare.com/aeo"
+    },
+    {
+      "seenAt": "2026-08-22T22:30:40.673Z",
+      "url": "https://cncf.io/blog/2026/08/14/eleven-minutes-zero-humans-building-a-self-healing-kubernetes-upgrade-pipeline-on-kairos"
     }
   ]
 }
