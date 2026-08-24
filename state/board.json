@@ -274,85 +274,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-23T22:31:11.230Z",
-  "lastNewsPushAt": "2026-08-23T22:31:11.230Z",
+  "lastNewsPushAt": "2026-08-24T22:35:58.302Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-23T22:31:11.230Z",
       "summary": "本次新進 10 個技術，其中 AI 佔 8 個、前後端佔 2 個，綜合榜 #1 為 mattpocock/skills。"
     },
     "feed": [
-      {
-        "content": "Hacker News 與 Reddit 社群深入探討 GPT-5.6 Sol 的視覺處理能力，許多開發者認為這是 OpenAI 至今發布過最好的視覺模型。這項討論突顯了多模態模型在圖像理解任務上的實際表現升級，有助於開發者評估其在視覺相關產品中的應用潛力。",
-        "id": "news:https://blog.roboflow.com/openai-gpt-5-6",
-        "publishedAt": "2026-08-18T22:33:07.360Z",
-        "title": "開發者討論 GPT-5.6 Sol 為 OpenAI 最佳「視覺」模型",
-        "type": "news",
-        "url": "https://blog.roboflow.com/openai-gpt-5-6/"
-      },
-      {
-        "content": "社群文章深入剖析 Kimi Delta Attention 的底層設計邏輯，透過推導過程展示其架構精妙之處。這類文章能幫助機器學習工程師與開發者深入理解新型注意力機制的運作原理，啟發對模型架構優化的思考。",
-        "id": "news:https://blog.doubleword.ai/you-could-have-come-up-with-kimi-delta-attention",
-        "publishedAt": "2026-08-18T22:33:07.360Z",
-        "title": "你本來也可以想出 Kimi Delta Attention 機制",
-        "type": "news",
-        "url": "https://blog.doubleword.ai/you-could-have-come-up-with-kimi-delta-attention"
-      },
-      {
-        "content": "社群熱議關於將人類語言視為設計中的潛在空間（latent spaces）之觀點。這篇文章引導開發者從底層數學與表徵學習的角度，重新思考提示詞工程與模型理解能力之間的本質，對從事 AI 系統設計的人員具有啟發性。",
-        "id": "news:https://blog.jsbarretto.com/post/languages-as-latent-spaces",
-        "publishedAt": "2026-08-18T22:33:07.360Z",
-        "title": "語言作為設計中的潛在空間：探索自然語言與 AI 模型關聯",
-        "type": "news",
-        "url": "https://blog.jsbarretto.com/post/languages-as-latent-spaces"
-      },
-      {
-        "content": "Node.js 官方發布 26.5.1 版本，這是一個重要的安全性更新。此版本修復了多個高風險與中等風險漏洞，包含 http2 模組的串流處理（CVE-2026-56848）、權限模組的 radix split 節點授權問題（CVE-2026-58043），以及 https 模組的憑證鍵與 session 重用繫結問題。這對使用 Node.js 進行後端開發與維運的團隊至關重要，建議所有專案評估並盡速升級以確保系統安全。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.5.1",
-        "publishedAt": "2026-08-19T22:33:23.507Z",
-        "title": "Node.js 發布 26.5.1 安全性更新修復多項高風險漏洞",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
-      },
-      {
-        "content": "雲端原生計算基金會（CNCF）正式宣布 Cloud Native Buildpacks 專案畢業。這標誌著該專案在將應用程式原始碼轉換為 OCI 相容容器映像檔的標準上，已獲得業界廣泛的生產環境採用與成熟生態肯定。對於推動容器化建構流程與 DevOps 自動化的開發團隊而言，這確立了跨雲環境標準容器建構工具的穩定地位。",
-        "id": "news:https://cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds",
-        "publishedAt": "2026-08-19T22:33:23.507Z",
-        "title": "CNCF 宣布 Cloud Native Buildpacks 正式畢業成為頂級專案",
-        "type": "news",
-        "url": "https://www.cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds/"
-      },
-      {
-        "content": "Google 推出 Gemini Robotics ER 2，專為機器人應用設計的強大模型，具備先進的影片理解、任務編排與多機器人協作能力。這項更新讓機器人能更精準地進行現實世界的推理、工具呼叫與協同作業，對從事機器人學與智慧自動化系統開發的工程師提供全新的 AI 驅動能力。",
-        "id": "news:https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration",
-        "publishedAt": "2026-08-19T22:33:23.507Z",
-        "title": "Google 發布 Gemini Robotics ER 2 強化機器人多模態協作",
-        "type": "news",
-        "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/"
-      },
-      {
-        "content": "社群熱議一則開發者實測案例：工程師利用 Claude 成功從零撰寫出一個僅支援 Windows 的冷門 HP 印表機的 macOS 驅動程式。這項討論展示了當前高階程式碼生成模型在處理缺乏規格說明與底層硬體介面開發時的強大除錯與實作能力，引發開發者對 AI 輔助系統級程式設計邊界的廣泛討論。",
-        "id": "news:https://twitter.com/kuberwastaken/status/2089377982536388964",
-        "publishedAt": "2026-08-19T22:33:23.507Z",
-        "title": "開發者使用 Claude 成功為罕見 Windows 專用 HP 印表機編寫 macOS 驅動程式",
-        "type": "news",
-        "url": "https://twitter.com/kuberwastaken/status/2089377982536388964"
-      },
-      {
-        "content": "Hacker News 等高信度社群熱烈討論一項關於從專有大語言模型 API 中提取或反推模型內部推理軌跡（Reasoning Traces）的研究與技術。這項議題觸及了當前前沿 AI 模型在安全防護、提示詞工程保護以及模型行為透明度上的潛在漏洞與資安挑戰，吸引許多開發者與研究人員關注。",
-        "id": "news:https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces",
-        "publishedAt": "2026-08-19T22:33:23.507Z",
-        "title": "研究揭露如何從專有 LLM API 中竊取推理軌跡",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/"
-      },
-      {
-        "content": "Node.js 釋出 v26.6.0 版本，帶來多項重要更新。在 FFI 方面新增了 `getCurrentEventLoop`，讓開發者能更精確掌握事件循環狀態；測試執行器（test_runner）則引入 `context.log()` 與 `test:log` 事件，並支援在 TestStream 事件中回報 `entryFile`，大幅提升非同步與測試場景的可觀測性與除錯效率。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.6.0",
-        "publishedAt": "2026-08-20T22:36:22.957Z",
-        "title": "Node.js v26.6.0 (Current) 發布：新增 getCurrentEventLoop 與測試日誌 API",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
-      },
       {
         "content": "智譜 AI 官方宣佈推出全新一代大語言模型 GLM 5.3。此版本在基礎架構與模型能力上進行了重大升級，針對複雜推理、程式碼生成及多語言任務提供更強大的效能，對於關注開源或商業大模型落地的開發者與架構師而言是重要的版本更新。",
         "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vny9zs/glm_53_released",
@@ -670,129 +598,168 @@
         "title": "為什麼你的地端 LLM 感覺比實際表現還要笨？",
         "type": "news",
         "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917"
+      },
+      {
+        "content": "雲原生計算基金會（CNCF）宣佈 Kubeflow 正式畢業，標誌著該開源專案在企業界獲得廣泛採用，成為在 Kubernetes 上自動化端到端 AI 與機器學習生命週期的業界標準。這對 DevOps 與 AI 基礎設施工程師而言，意味著管理大規模 ML 工作負載有了更成熟、標準化的工具鏈支援，有助於降低維運複雜度並提升生產環境的穩定性。",
+        "id": "news:https://cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations",
+        "publishedAt": "2026-08-24T22:35:58.302Z",
+        "title": "CNCF 宣布 Kubeflow 正式畢業，確立雲原生 AI 營運標準",
+        "type": "news",
+        "url": "https://www.cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations/"
+      },
+      {
+        "content": "Google 發表 Gemini Robotics 2，為機械人系統導入全身智慧（whole body intelligence）能力。這項更新讓機器人能更協調地運用全身各部位進行複雜操作與互動。對從事硬體整合、邊緣運算與機器人控制軟體的開發者而言，這代表著底層感知與動作規劃模型的重大進展，拓展了具身智慧（Embodied AI）應用的邊界。",
+        "id": "news:https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots",
+        "publishedAt": "2026-08-24T22:35:58.302Z",
+        "title": "Gemini Robotics 2 發表，為機器人帶來全身智慧",
+        "type": "news",
+        "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/"
+      },
+      {
+        "content": "Cloudflare 發布 2026 年上半年 DDoS 威脅報告，指出在其網路中偵測到超大容量（hyper-volumetric）DDoS 攻擊激增 519%，主要由 DNS 與 CLDAP 反射向量驅動。這份報告詳細剖析了地緣政治衝突如何重塑全球網路安全威脅格局，對負責基礎設施安全與防禦架構的工程師而言，是評估現代網路攻擊趨勢與調整防禦策略的重要參考。",
+        "id": "news:https://blog.cloudflare.com/ddos-threat-report-2026-h1",
+        "publishedAt": "2026-08-24T22:35:58.302Z",
+        "title": "Cloudflare 發布 2026 上半年 DDoS 威脅報告：超大流量攻擊激增 519%",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1/"
+      },
+      {
+        "content": "有開發者成功透過 llama.cpp 在 4 張 NVIDIA RTX 3060 12GB 顯示卡（總計 48GB VRAM）上，運行約 144 GiB 的 DeepSeek-V4-Flash-0731 UD-Q4_K_XL 量化模型，並維持高達 360k-376k 的巨大上下文視窗，提示詞處理速度達到約每秒 100 token。這展示了在消費級硬體上運行大型混合架構模型的最佳化配置方案，對於希望在本地端部署超大模型或研究硬體極限的開發者極具參考價值。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vrqf4f/running_deepseek_v4_flash_q4_k_xl_at_100_toks",
+        "publishedAt": "2026-08-24T22:35:58.302Z",
+        "title": "在 4 張 RTX 3060 上以每秒百字運行 DeepSeek V4 Flash 4位元量化模型",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vrqf4f/running_deepseek_v4_flash_q4_k_xl_at_100_toks/"
+      },
+      {
+        "content": "Cloudflare 宣佈將官方部落格遷移至自家的 EmDash 架構，藉此在實際大規模生產環境中驗證其技術堆疊。文章分享了他們如何進行效能壓力測試、安全路由生產流量，以及重新設計前端體驗的工程實踐。這對關注大規模網頁效能、流量調度與前端架構演進的開發者來說，提供了寶貴的實戰經驗。",
+        "id": "news:https://blog.cloudflare.com/cloudflare-blog-uses-emdash",
+        "publishedAt": "2026-08-24T22:35:58.302Z",
+        "title": "Cloudflare 部落格遷移至 EmDash：大規模生產環境的效能壓力測試",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash/"
+      },
+      {
+        "content": "市場數據顯示伺服器與高階工作站記憶體價格在過去 12 個月內大幅攀升高達 500%，128GB DDR5 價格飆升至 3,399 美元。這對於需要採購硬體建置本地 AI 訓練叢集、大模型推論節點或高效能運算基礎設施的團隊與開發者而言，成本評估與硬體規劃將面臨重大衝擊與調整。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vrwsfl/memory_prices_climb_500_in_12_months_up_to_10x",
+        "publishedAt": "2026-08-24T22:35:58.302Z",
+        "title": "DDR5 記憶體價格在一年內飆升 500%，128GB 突破 3,399 美元",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vrwsfl/memory_prices_climb_500_in_12_months_up_to_10x/"
+      },
+      {
+        "content": "社群討論分享了一種透過在專案中建立 `agent.md` 規範檔案，來指導 AI 程式碼助理（如 Claude 或 Cursor）維持特定編碼風格、架構原則與測試要求的實踐方法。這有助於解決開發者在日常使用 AI 寫程式時常見的程式碼風格飄移與架構違規問題，對於希望優化 AI協作流程的工程師具高度實用價值。",
+        "id": "news:https://fabiensanglard.net/agent.md/index.html",
+        "publishedAt": "2026-08-24T22:35:58.302Z",
+        "title": "透過 agent.md 檔案規範提升 LLM 輔助編碼的程式碼品質",
+        "type": "news",
+        "url": "https://fabiensanglard.net/agent.md/index.html"
+      },
+      {
+        "content": "社群開發者推出名為 Claudette 的工具，旨在解決 Claude 有時回覆過度使用類似 BuzzFeed 或行銷文章的浮誇口吻、缺乏直接技術乾貨的問題。透過調整系統提示與輸出過濾，讓 AI 的回應更精準、技術導向，對頻繁使用 Claude 進行軟體開發與技術文件撰寫的工程師來說能有效提升工作效率。",
+        "id": "news:https://github.com/adnanakil/nobuzz/blob/main/README.md",
+        "publishedAt": "2026-08-24T22:35:58.302Z",
+        "title": "Claudette：修正 Claude 過度使用行銷口吻的提示詞外掛工具",
+        "type": "news",
+        "url": "https://github.com/adnanakil/nobuzz/blob/main/README.md"
+      },
+      {
+        "content": "針對 LLM 輸出中常夾雜過多冗言贅字或無用 token 的問題，開發者推出了名為 Vomit 的輕量工具，透過另一個小型且高效的 LLM 來清洗與精簡 Claude 的 token 輸出。這對於需要將 AI 回應直接串接至自動化管線、API 或減少 API 成本的開發者而言，提供了一種實用的架構解法。",
+        "id": "news:https://github.com/zachahn/vomit",
+        "publishedAt": "2026-08-24T22:35:58.302Z",
+        "title": "Vomit：使用獨立小型 LLM 清理 Claude Token 輸出的工具",
+        "type": "news",
+        "url": "https://github.com/zachahn/vomit"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-23T22:31:11.230Z",
+      "generatedAt": "2026-08-24T22:35:58.302Z",
       "items": [
         {
-          "content": "Cloudflare 宣布推出 AI Search 服務，讓開發者與企業能直接將其指向自有檔案與網站，為 AI 代理建立專屬的資料搜尋引擎，且無需手動拼湊多個 Cloudflare 基礎元件。此功能大幅簡化了檢索增強生成（RAG）與代理資料存取的建置流程，官方並同步釋出全新的預覽版定價模型，對需要快速為應用程式導入內部知識庫搜尋的團隊是一大助益。",
+          "content": "雲原生計算基金會（CNCF）宣佈 Kubeflow 正式畢業，標誌著該開源專案在企業界獲得廣泛採用，成為在 Kubernetes 上自動化端到端 AI 與機器學習生命週期的業界標準。這對 DevOps 與 AI 基礎設施工程師而言，意味著管理大規模 ML 工作負載有了更成熟、標準化的工具鏈支援，有助於降低維運複雜度並提升生產環境的穩定性。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare AI Search 推出：為 AI 代理提供專屬搜尋引擎",
-          "url": "https://blog.cloudflare.com/ai-search-easier/",
+          "title": "CNCF 宣布 Kubeflow 正式畢業，確立雲原生 AI 營運標準",
+          "url": "https://www.cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations/",
           "weightedScore": 100
         },
         {
-          "content": "OpenAI 宣布推出 GPT-5.6 的全新低價方案，針對 Luna 與 Terra 模型提供更實惠的定價。此舉旨在透過提升模型的運算與成本效率，協助企業在大規模環境下更經濟地部署各類 AI 工作流程與自動化應用，降低開發與維運成本。",
+          "content": "Google 發表 Gemini Robotics 2，為機械人系統導入全身智慧（whole body intelligence）能力。這項更新讓機器人能更協調地運用全身各部位進行複雜操作與互動。對從事硬體整合、邊緣運算與機器人控制軟體的開發者而言，這代表著底層感知與動作規劃模型的重大進展，拓展了具身智慧（Embodied AI）應用的邊界。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "OpenAI 推出 GPT-5.6 降價方案，優化 Luna 與 Terra 模型性價比",
-          "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+          "title": "Gemini Robotics 2 發表，為機器人帶來全身智慧",
+          "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
           "weightedScore": 100
         },
         {
-          "content": "Google 推出全新的手語轉文字（SL2T）模型，旨在為聽障與重聽使用者打造更直覺的手語互動功能。這項技術突破將有助於開發者與無障礙科技領域將手語辨識整合至各類應用中，進一步推動數位包容性與人機互動的無障礙體驗。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Google 發表手語轉文字（SL2T）突破性模型",
-          "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Google 宣布在 Google Flow Music 中推出 Lyria 3.5，帶來音樂性、歌詞創作、人聲表現以及創意控制等多方面的重大升級。這項更新為影音創作者與開發者提供更高品質的 AI 生成音樂工具，提升生成內容的精緻度與可控性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Google 發布 Lyria 3.5：強化 Google Flow Music 的音樂與人聲生成能力",
-          "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 官方的 Agents Week 活動正式落幕，期間發表了從 Web3 錢包到 Cloudflare Radar 等一系列重要更新與工具。這些發布擴展了開發者在邊緣運算與代理網路上的應用潛力，為建構現代化分散式系統提供更多官方支援的基礎設施。",
+          "content": "Cloudflare 發布 2026 年上半年 DDoS 威脅報告，指出在其網路中偵測到超大容量（hyper-volumetric）DDoS 攻擊激增 519%，主要由 DNS 與 CLDAP 反射向量驅動。這份報告詳細剖析了地緣政治衝突如何重塑全球網路安全威脅格局，對負責基礎設施安全與防禦架構的工程師而言，是評估現代網路攻擊趨勢與調整防禦策略的重要參考。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 舉辦 Agents Week 圓滿落幕：統整釋出多項錢包與 Radar 新功能",
-          "url": "https://blog.cloudflare.com/agents-week-review-august-2026/",
+          "title": "Cloudflare 發布 2026 上半年 DDoS 威脅報告：超大流量攻擊激增 519%",
+          "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1/",
           "weightedScore": 100
         },
         {
-          "content": "業界傳出支付巨頭 Stripe 將以超過 70 億美元的高價收購 AI 模型閘道器新創 OpenRouter。這項消息在開發者與投資界引起高度關注，反映出 AI 模型調度、API 聚合與多模型路由服務在現代軟體架構中的戰略價值正急劇攀升。",
+          "content": "有開發者成功透過 llama.cpp 在 4 張 NVIDIA RTX 3060 12GB 顯示卡（總計 48GB VRAM）上，運行約 144 GiB 的 DeepSeek-V4-Flash-0731 UD-Q4_K_XL 量化模型，並維持高達 360k-376k 的巨大上下文視窗，提示詞處理速度達到約每秒 100 token。這展示了在消費級硬體上運行大型混合架構模型的最佳化配置方案，對於希望在本地端部署超大模型或研究硬體極限的開發者極具參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "傳 Stripe 將以超過 70 億美元併購 AI 閘道器新創 OpenRouter",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vqlh98/stripe_will_reportedly_acquire_ai_gateway_startup/",
+          "title": "在 4 張 RTX 3060 上以每秒百字運行 DeepSeek V4 Flash 4位元量化模型",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vrqf4f/running_deepseek_v4_flash_q4_k_xl_at_100_toks/",
           "weightedScore": 100
         },
         {
-          "content": "社群開發者針對 Qwen 3.8 27B 量化版本進行深度測試，發現其在程式碼生成（如 1:1 復刻經典大型電玩）與實際世界知識的運用上表現極佳。透過類似「過度思考」的推理機制，其表現甚至能媲美 Anthropic Claude Sonnet 級別的模型，對尋求開源高效能模型的開發者極具參考價值。",
+          "content": "Cloudflare 宣佈將官方部落格遷移至自家的 EmDash 架構，藉此在實際大規模生產環境中驗證其技術堆疊。文章分享了他們如何進行效能壓力測試、安全路由生產流量，以及重新設計前端體驗的工程實踐。這對關注大規模網頁效能、流量調度與前端架構演進的開發者來說，提供了寶貴的實戰經驗。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "title": "深度評測 Qwen 3.8 27B：展現驚人的真實世界知識與過度思考能力",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vqm51f/long_review_qwen_38_27b_is_very_good_at_tapping/",
+          "title": "Cloudflare 部落格遷移至 EmDash：大規模生產環境的效能壓力測試",
+          "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash/",
           "weightedScore": 100
         },
         {
-          "content": "一項針對 Coconut 與 CODI 等潛在推理模型的研究發現，這些模型在執行邏輯任務（如 PrOntoQA 與 ProsQA）時，幾乎沒有真正利用連續隱藏狀態來進行複雜推理。實驗顯示，即使強制模型提早停止思考，通常也會吐出相同的回應，這揭示了當前 AI 模型在可解釋性與內部推理機制上的盲點，引發社群熱烈討論。",
+          "content": "市場數據顯示伺服器與高階工作站記憶體價格在過去 12 個月內大幅攀升高達 500%，128GB DDR5 價格飆升至 3,399 美元。這對於需要採購硬體建置本地 AI 訓練叢集、大模型推論節點或高效能運算基礎設施的團隊與開發者而言，成本評估與硬體規劃將面臨重大衝擊與調整。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "研究指出：潛在推理模型在邏輯任務中鮮少使用隱藏狀態",
-          "url": "https://arxiv.org/abs/2604.04902",
+          "title": "DDR5 記憶體價格在一年內飆升 500%，128GB 突破 3,399 美元",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vrwsfl/memory_prices_climb_500_in_12_months_up_to_10x/",
           "weightedScore": 100
         },
         {
-          "content": "開發者在 Hacker News 上展示名為 Huzzah 的專案，提出了一種結合 AI 輔助開發的全新工作流程與程式碼編寫方法。該工具在社群獲得高關注度，反映出工程師持續探索更高效、超越傳統 IDE 互動模式的 AI 輔助開發體驗。",
+          "content": "社群討論分享了一種透過在專案中建立 `agent.md` 規範檔案，來指導 AI 程式碼助理（如 Claude 或 Cursor）維持特定編碼風格、架構原則與測試要求的實踐方法。這有助於解決開發者在日常使用 AI 寫程式時常見的程式碼風格飄移與架構違規問題，對於希望優化 AI協作流程的工程師具高度實用價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Show HN：Huzzah – 一種以 AI 進行程式碼編寫的新穎方法",
-          "url": "https://www.danielvaughn.dev/posts/huzzah/",
-          "weightedScore": 379
+          "title": "透過 agent.md 檔案規範提升 LLM 輔助編碼的程式碼品質",
+          "url": "https://fabiensanglard.net/agent.md/index.html",
+          "weightedScore": 392
         },
         {
-          "content": "Hacker News 上的一篇熱門討論深入剖析了為什麼開發者在本地端執行的開源大型語言模型，常給人不如預期聰明的印象。文章探討了量化損失、提示詞工程差異、系統提示設定以及硬體限制等關鍵因素，對想在地端部署 AI 模型的工程師提供寶貴的除錯與優化思路。",
+          "content": "社群開發者推出名為 Claudette 的工具，旨在解決 Claude 有時回覆過度使用類似 BuzzFeed 或行銷文章的浮誇口吻、缺乏直接技術乾貨的問題。透過調整系統提示與輸出過濾，讓 AI 的回應更精準、技術導向，對頻繁使用 Claude 進行軟體開發與技術文件撰寫的工程師來說能有效提升工作效率。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "為什麼你的地端 LLM 感覺比實際表現還要笨？",
-          "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
-          "weightedScore": 417
+          "title": "Claudette：修正 Claude 過度使用行銷口吻的提示詞外掛工具",
+          "url": "https://github.com/adnanakil/nobuzz/blob/main/README.md",
+          "weightedScore": 359
+        },
+        {
+          "content": "針對 LLM 輸出中常夾雜過多冗言贅字或無用 token 的問題，開發者推出了名為 Vomit 的輕量工具，透過另一個小型且高效的 LLM 來清洗與精簡 Claude 的 token 輸出。這對於需要將 AI 回應直接串接至自動化管線、API 或減少 API 成本的開發者而言，提供了一種實用的架構解法。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Vomit：使用獨立小型 LLM 清理 Claude Token 輸出的工具",
+          "url": "https://github.com/zachahn/vomit",
+          "weightedScore": 305
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-17T22:32:37.643Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vlj87v/introducing_unsloth_desktop_app"
-    },
-    {
-      "seenAt": "2026-08-17T22:32:37.643Z",
-      "url": "https://cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations"
-    },
-    {
-      "seenAt": "2026-08-17T22:32:37.643Z",
-      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots"
-    },
-    {
-      "seenAt": "2026-08-17T22:32:37.643Z",
-      "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones"
-    },
-    {
-      "seenAt": "2026-08-17T22:32:37.643Z",
-      "url": "https://daringfireball.net/2026/08/anthropics_watermark_text_adulteration_in_claude_is_a_perversion_of_writing"
-    },
-    {
-      "seenAt": "2026-08-17T22:32:37.643Z",
-      "url": "https://wiz.io/blog/red-agent-snowflake-copilot-cicd-bug"
-    },
     {
       "seenAt": "2026-08-18T22:33:07.360Z",
       "url": "https://openrouter.ai/openai/gpt-5.6-sol"
@@ -964,6 +931,42 @@
     {
       "seenAt": "2026-08-23T22:31:11.230Z",
       "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917"
+    },
+    {
+      "seenAt": "2026-08-24T22:35:58.302Z",
+      "url": "https://cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations"
+    },
+    {
+      "seenAt": "2026-08-24T22:35:58.302Z",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots"
+    },
+    {
+      "seenAt": "2026-08-24T22:35:58.302Z",
+      "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1"
+    },
+    {
+      "seenAt": "2026-08-24T22:35:58.302Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vrqf4f/running_deepseek_v4_flash_q4_k_xl_at_100_toks"
+    },
+    {
+      "seenAt": "2026-08-24T22:35:58.302Z",
+      "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash"
+    },
+    {
+      "seenAt": "2026-08-24T22:35:58.302Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vrwsfl/memory_prices_climb_500_in_12_months_up_to_10x"
+    },
+    {
+      "seenAt": "2026-08-24T22:35:58.302Z",
+      "url": "https://fabiensanglard.net/agent.md/index.html"
+    },
+    {
+      "seenAt": "2026-08-24T22:35:58.302Z",
+      "url": "https://github.com/adnanakil/nobuzz/blob/main/README.md"
+    },
+    {
+      "seenAt": "2026-08-24T22:35:58.302Z",
+      "url": "https://github.com/zachahn/vomit"
     }
   ]
 }
