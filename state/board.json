@@ -274,61 +274,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-23T22:31:11.230Z",
-  "lastNewsPushAt": "2026-08-24T22:35:58.302Z",
+  "lastNewsPushAt": "2026-08-25T22:36:17.256Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-23T22:31:11.230Z",
       "summary": "本次新進 10 個技術，其中 AI 佔 8 個、前後端佔 2 個，綜合榜 #1 為 mattpocock/skills。"
     },
     "feed": [
-      {
-        "content": "智譜 AI 官方宣佈推出全新一代大語言模型 GLM 5.3。此版本在基礎架構與模型能力上進行了重大升級，針對複雜推理、程式碼生成及多語言任務提供更強大的效能，對於關注開源或商業大模型落地的開發者與架構師而言是重要的版本更新。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vny9zs/glm_53_released",
-        "publishedAt": "2026-08-20T22:36:22.957Z",
-        "title": "智譜 AI 正式發布 GLM 5.3 模型",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vny9zs/glm_53_released/"
-      },
-      {
-        "content": "Google 官方正式發表 Gemini 3.7 Flash，主打極速反應與高效能的平衡。這款新模型針對開發者在即時互動、高吞吐量應用場景下的需求進行了深度優化，讓團隊能在成本與延遲之間取得更好的取捨，適合需要快速推理與自動化代理的應用。",
-        "id": "news:https://deepmind.google/blog/introducing-gemini-3-7-flash",
-        "publishedAt": "2026-08-20T22:36:22.957Z",
-        "title": "Google 推出 Gemini 3.7 Flash 模型",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/"
-      },
-      {
-        "content": "通義千問系列迎來重大更新，Qwen3.8-27B 模型卡與相關檔案正式在 Hugging Face 上線。作為中大型開源模型，27B 的規模在本地部署與微調性之間取得極佳平衡，為開發者提供了一個強大且具競爭力的新開源模型選擇。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vo2iiz/a_preliminary_qwen3827b_model_card_is_live",
-        "publishedAt": "2026-08-20T22:36:22.957Z",
-        "title": "Qwen3.8-27B 模型卡與預覽版正式上線",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vo2iiz/a_preliminary_qwen3827b_model_card_is_live/"
-      },
-      {
-        "content": "在 Hacker News 引發熱烈討論的「AI;DR」現象，反映了當開發者與技術人員面對大量由 AI 自動生成、品質參差不齊的文件、PR 描述與技術文章時，所面臨的審查疲勞與資訊過載危機，凸顯出開發團隊需要更有效的過濾與摘要機制。",
-        "id": "news:https://rickmanelius.com/p/aidr-ai-didnt-read",
-        "publishedAt": "2026-08-20T22:36:22.957Z",
-        "title": "AI;DR (AI; Didn't Read) 探討大模型生成的資訊過載現象",
-        "type": "news",
-        "url": "https://www.rickmanelius.com/p/aidr-ai-didnt-read"
-      },
-      {
-        "content": "這篇在社群獲得高關注度的文章指出，開發者若未經理解就盲目複製貼上 AI 生成的程式碼，不僅容易引入隱蔽的資安漏洞與技術債，也會破壞程式碼庫的一致性。這對當前全面擁抱 AI 輔助編程的團隊敲響了警鐘，強調人工程式碼審查與架構理解的必要性。",
-        "id": "news:https://dontpastetheai.com/",
-        "publishedAt": "2026-08-20T22:36:22.957Z",
-        "title": "「Don't paste the AI, please」：開發社群反思盲目複製貼上 AI 程式碼的隱患",
-        "type": "news",
-        "url": "https://dontpastetheai.com/"
-      },
-      {
-        "content": "開發社群正高度關注一項關於在專案中引入 `AGENTS.md` 的功能提案。這項提案旨在為 AI Agent 建立統一的專案背景、架構規範與操作指引，讓自動化編程工具能更精準地理解特定專案的規則，提升 AI 協作的效率與準確率。",
-        "id": "news:https://github.com/anthropics/claude-code/issues/6235",
-        "publishedAt": "2026-08-20T22:36:22.957Z",
-        "title": "社群熱議功能請求：為專案原生支援 AGENTS.md 標準",
-        "type": "news",
-        "url": "https://github.com/anthropics/claude-code/issues/6235"
-      },
       {
         "content": "社群熱推的輕量級開源專案 `fx` 是一款專為終端機設計的微型原生 coding agent。它擺脫了沉重的依賴與複雜設定，直接在本地為開發者提供高效的程式碼編寫與修改輔助，非常適合喜歡輕量工具鏈的工程師。",
         "id": "news:https://fx.sh/",
@@ -670,120 +622,117 @@
         "title": "Vomit：使用獨立小型 LLM 清理 Claude Token 輸出的工具",
         "type": "news",
         "url": "https://github.com/zachahn/vomit"
+      },
+      {
+        "content": "OpenAI 官方宣佈對 GPT 5.6 Sol 模型進行價格調降（優惠至少持續至 11 月 21 日）。這對需要大量調用該模型、進行自動化代理或高頻 API 互動的開發者而言，能有效降低營運成本，有助於加速 AI 應用落地與規模化開發。",
+        "id": "news:https://developers.openai.com/api/docs/pricing",
+        "publishedAt": "2026-08-25T22:36:17.256Z",
+        "title": "OpenAI 宣布 GPT 5.6 Sol 進行價格調降",
+        "type": "news",
+        "url": "https://developers.openai.com/api/docs/pricing"
+      },
+      {
+        "content": "Cloudflare 宣布旗下的 Cloudflare for Government 正式獲得 FedRAMP Class D (High) 認證，並承諾爭取 DoD IL4 授權。這項合規進展對為公共部門或高度受管制的政府機構開發基礎設施與安全性應用的開發者與架構師具有重要參考價值。",
+        "id": "news:https://blog.cloudflare.com/fedramp-class-d-certification",
+        "publishedAt": "2026-08-25T22:36:17.256Z",
+        "title": "Cloudflare for Government 獲 FedRAMP Class D 高標準安全認證",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/fedramp-class-d-certification/"
+      },
+      {
+        "content": "Cloudflare 宣布推出更新後的社群計畫，包含 Cloudflare Ambassadors 與 Community Engineers，並背負 100 萬美元的開源資助計畫。這對依賴開源生態系、尋求維護者支持及參與雲端原生社群的開發者來說，提供更多資源與合作機會。",
+        "id": "news:https://blog.cloudflare.com/community-program-refresh",
+        "publishedAt": "2026-08-25T22:36:17.256Z",
+        "title": "Cloudflare 推出全新社群計畫並投入 100 萬美元開源資金",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/community-program-refresh/"
+      },
+      {
+        "content": "Munder Difflin 是一個代理框架（Agent harness），能夠讓開發者建立多個 AI 分身來組成、模擬並運行一個完整的辦公室。這對探索多代理（Multi-agent）協同工作流程、自動化辦公情境以及打造複雜工作流系統的開發者來說，提供了實用的架構靈感與工具選擇。",
+        "id": "news:https://munderdiffl.in/",
+        "publishedAt": "2026-08-25T22:36:17.256Z",
+        "title": "Munder Difflin：打造能自動運行辦公室的 AI 代理集群",
+        "type": "news",
+        "url": "https://munderdiffl.in/"
+      },
+      {
+        "content": "WikiKB 是一個基於 GitHub 儲存庫 wiki 建立的知識庫層，旨在提供高效、透明且明確策展的知識結構，供人類與 AI 代理共同使用。這對需要為 LLM 應用建構即時、結構化且與版本控制緊密結合的知識庫開發者來說，是一個實用的輕量化解決方案。",
+        "id": "news:https://githubnext.com/posts/wikikb",
+        "publishedAt": "2026-08-25T22:36:17.256Z",
+        "title": "WikiKB：專為人類與 AI 代理打造的快速儲存庫原生知識庫",
+        "type": "news",
+        "url": "https://githubnext.com/posts/wikikb/"
+      },
+      {
+        "content": "隨著企業將 AI 從實驗階段推進至生產環境的自主代理運行，不斷攀升的遙測（Telemetry）開銷成為一項不容忽視的基礎設施難題。本文探討如何利用遙測管線來監控、過濾並控制 AI 代理產生的數據成本，對負責維護大型 AI 系統效能與成本平衡的 DevOps 工程師至關重要。",
+        "id": "news:https://thenewstack.io/agentic-ai-telemetry-costs",
+        "publishedAt": "2026-08-25T22:36:17.256Z",
+        "title": "如何透過遙測管線控制 AI 代理的營運成本",
+        "type": "news",
+        "url": "https://thenewstack.io/agentic-ai-telemetry-costs/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-24T22:35:58.302Z",
+      "generatedAt": "2026-08-25T22:36:17.256Z",
       "items": [
         {
-          "content": "雲原生計算基金會（CNCF）宣佈 Kubeflow 正式畢業，標誌著該開源專案在企業界獲得廣泛採用，成為在 Kubernetes 上自動化端到端 AI 與機器學習生命週期的業界標準。這對 DevOps 與 AI 基礎設施工程師而言，意味著管理大規模 ML 工作負載有了更成熟、標準化的工具鏈支援，有助於降低維運複雜度並提升生產環境的穩定性。",
+          "content": "OpenAI 官方宣佈對 GPT 5.6 Sol 模型進行價格調降（優惠至少持續至 11 月 21 日）。這對需要大量調用該模型、進行自動化代理或高頻 API 互動的開發者而言，能有效降低營運成本，有助於加速 AI 應用落地與規模化開發。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "OpenAI 宣布 GPT 5.6 Sol 進行價格調降",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "weightedScore": 333
+        },
+        {
+          "content": "Cloudflare 宣布旗下的 Cloudflare for Government 正式獲得 FedRAMP Class D (High) 認證，並承諾爭取 DoD IL4 授權。這項合規進展對為公共部門或高度受管制的政府機構開發基礎設施與安全性應用的開發者與架構師具有重要參考價值。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "CNCF 宣布 Kubeflow 正式畢業，確立雲原生 AI 營運標準",
-          "url": "https://www.cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations/",
+          "title": "Cloudflare for Government 獲 FedRAMP Class D 高標準安全認證",
+          "url": "https://blog.cloudflare.com/fedramp-class-d-certification/",
           "weightedScore": 100
         },
         {
-          "content": "Google 發表 Gemini Robotics 2，為機械人系統導入全身智慧（whole body intelligence）能力。這項更新讓機器人能更協調地運用全身各部位進行複雜操作與互動。對從事硬體整合、邊緣運算與機器人控制軟體的開發者而言，這代表著底層感知與動作規劃模型的重大進展，拓展了具身智慧（Embodied AI）應用的邊界。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Gemini Robotics 2 發表，為機器人帶來全身智慧",
-          "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 發布 2026 年上半年 DDoS 威脅報告，指出在其網路中偵測到超大容量（hyper-volumetric）DDoS 攻擊激增 519%，主要由 DNS 與 CLDAP 反射向量驅動。這份報告詳細剖析了地緣政治衝突如何重塑全球網路安全威脅格局，對負責基礎設施安全與防禦架構的工程師而言，是評估現代網路攻擊趨勢與調整防禦策略的重要參考。",
+          "content": "Cloudflare 宣布推出更新後的社群計畫，包含 Cloudflare Ambassadors 與 Community Engineers，並背負 100 萬美元的開源資助計畫。這對依賴開源生態系、尋求維護者支持及參與雲端原生社群的開發者來說，提供更多資源與合作機會。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 發布 2026 上半年 DDoS 威脅報告：超大流量攻擊激增 519%",
-          "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1/",
+          "title": "Cloudflare 推出全新社群計畫並投入 100 萬美元開源資金",
+          "url": "https://blog.cloudflare.com/community-program-refresh/",
           "weightedScore": 100
         },
         {
-          "content": "有開發者成功透過 llama.cpp 在 4 張 NVIDIA RTX 3060 12GB 顯示卡（總計 48GB VRAM）上，運行約 144 GiB 的 DeepSeek-V4-Flash-0731 UD-Q4_K_XL 量化模型，並維持高達 360k-376k 的巨大上下文視窗，提示詞處理速度達到約每秒 100 token。這展示了在消費級硬體上運行大型混合架構模型的最佳化配置方案，對於希望在本地端部署超大模型或研究硬體極限的開發者極具參考價值。",
+          "content": "Munder Difflin 是一個代理框架（Agent harness），能夠讓開發者建立多個 AI 分身來組成、模擬並運行一個完整的辦公室。這對探索多代理（Multi-agent）協同工作流程、自動化辦公情境以及打造複雜工作流系統的開發者來說，提供了實用的架構靈感與工具選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "在 4 張 RTX 3060 上以每秒百字運行 DeepSeek V4 Flash 4位元量化模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vrqf4f/running_deepseek_v4_flash_q4_k_xl_at_100_toks/",
+          "title": "Munder Difflin：打造能自動運行辦公室的 AI 代理集群",
+          "url": "https://munderdiffl.in/",
+          "weightedScore": 311
+        },
+        {
+          "content": "WikiKB 是一個基於 GitHub 儲存庫 wiki 建立的知識庫層，旨在提供高效、透明且明確策展的知識結構，供人類與 AI 代理共同使用。這對需要為 LLM 應用建構即時、結構化且與版本控制緊密結合的知識庫開發者來說，是一個實用的輕量化解決方案。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "WikiKB：專為人類與 AI 代理打造的快速儲存庫原生知識庫",
+          "url": "https://githubnext.com/posts/wikikb/",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 宣佈將官方部落格遷移至自家的 EmDash 架構，藉此在實際大規模生產環境中驗證其技術堆疊。文章分享了他們如何進行效能壓力測試、安全路由生產流量，以及重新設計前端體驗的工程實踐。這對關注大規模網頁效能、流量調度與前端架構演進的開發者來說，提供了寶貴的實戰經驗。",
+          "content": "隨著企業將 AI 從實驗階段推進至生產環境的自主代理運行，不斷攀升的遙測（Telemetry）開銷成為一項不容忽視的基礎設施難題。本文探討如何利用遙測管線來監控、過濾並控制 AI 代理產生的數據成本，對負責維護大型 AI 系統效能與成本平衡的 DevOps 工程師至關重要。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 部落格遷移至 EmDash：大規模生產環境的效能壓力測試",
-          "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash/",
-          "weightedScore": 100
-        },
-        {
-          "content": "市場數據顯示伺服器與高階工作站記憶體價格在過去 12 個月內大幅攀升高達 500%，128GB DDR5 價格飆升至 3,399 美元。這對於需要採購硬體建置本地 AI 訓練叢集、大模型推論節點或高效能運算基礎設施的團隊與開發者而言，成本評估與硬體規劃將面臨重大衝擊與調整。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "DDR5 記憶體價格在一年內飆升 500%，128GB 突破 3,399 美元",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vrwsfl/memory_prices_climb_500_in_12_months_up_to_10x/",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群討論分享了一種透過在專案中建立 `agent.md` 規範檔案，來指導 AI 程式碼助理（如 Claude 或 Cursor）維持特定編碼風格、架構原則與測試要求的實踐方法。這有助於解決開發者在日常使用 AI 寫程式時常見的程式碼風格飄移與架構違規問題，對於希望優化 AI協作流程的工程師具高度實用價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "透過 agent.md 檔案規範提升 LLM 輔助編碼的程式碼品質",
-          "url": "https://fabiensanglard.net/agent.md/index.html",
-          "weightedScore": 392
-        },
-        {
-          "content": "社群開發者推出名為 Claudette 的工具，旨在解決 Claude 有時回覆過度使用類似 BuzzFeed 或行銷文章的浮誇口吻、缺乏直接技術乾貨的問題。透過調整系統提示與輸出過濾，讓 AI 的回應更精準、技術導向，對頻繁使用 Claude 進行軟體開發與技術文件撰寫的工程師來說能有效提升工作效率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Claudette：修正 Claude 過度使用行銷口吻的提示詞外掛工具",
-          "url": "https://github.com/adnanakil/nobuzz/blob/main/README.md",
-          "weightedScore": 359
-        },
-        {
-          "content": "針對 LLM 輸出中常夾雜過多冗言贅字或無用 token 的問題，開發者推出了名為 Vomit 的輕量工具，透過另一個小型且高效的 LLM 來清洗與精簡 Claude 的 token 輸出。這對於需要將 AI 回應直接串接至自動化管線、API 或減少 API 成本的開發者而言，提供了一種實用的架構解法。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Vomit：使用獨立小型 LLM 清理 Claude Token 輸出的工具",
-          "url": "https://github.com/zachahn/vomit",
-          "weightedScore": 305
+          "title": "如何透過遙測管線控制 AI 代理的營運成本",
+          "url": "https://thenewstack.io/agentic-ai-telemetry-costs/",
+          "weightedScore": 50
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-18T22:33:07.360Z",
-      "url": "https://openrouter.ai/openai/gpt-5.6-sol"
-    },
-    {
-      "seenAt": "2026-08-18T22:33:07.360Z",
-      "url": "https://simonwillison.net/2026/Aug/11/datasette-upload-dbs"
-    },
-    {
-      "seenAt": "2026-08-18T22:33:07.360Z",
-      "url": "https://cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai"
-    },
-    {
-      "seenAt": "2026-08-18T22:33:07.360Z",
-      "url": "https://blog.roboflow.com/openai-gpt-5-6"
-    },
-    {
-      "seenAt": "2026-08-18T22:33:07.360Z",
-      "url": "https://blog.doubleword.ai/you-could-have-come-up-with-kimi-delta-attention"
-    },
-    {
-      "seenAt": "2026-08-18T22:33:07.360Z",
-      "url": "https://blog.jsbarretto.com/post/languages-as-latent-spaces"
-    },
     {
       "seenAt": "2026-08-19T22:33:23.507Z",
       "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
@@ -967,6 +916,30 @@
     {
       "seenAt": "2026-08-24T22:35:58.302Z",
       "url": "https://github.com/zachahn/vomit"
+    },
+    {
+      "seenAt": "2026-08-25T22:36:17.256Z",
+      "url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "seenAt": "2026-08-25T22:36:17.256Z",
+      "url": "https://blog.cloudflare.com/fedramp-class-d-certification"
+    },
+    {
+      "seenAt": "2026-08-25T22:36:17.256Z",
+      "url": "https://blog.cloudflare.com/community-program-refresh"
+    },
+    {
+      "seenAt": "2026-08-25T22:36:17.256Z",
+      "url": "https://munderdiffl.in/"
+    },
+    {
+      "seenAt": "2026-08-25T22:36:17.256Z",
+      "url": "https://githubnext.com/posts/wikikb"
+    },
+    {
+      "seenAt": "2026-08-25T22:36:17.256Z",
+      "url": "https://thenewstack.io/agentic-ai-telemetry-costs"
     }
   ]
 }
