@@ -274,69 +274,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-23T22:31:11.230Z",
-  "lastNewsPushAt": "2026-08-25T22:36:17.256Z",
+  "lastNewsPushAt": "2026-08-27T03:03:45.232Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-23T22:31:11.230Z",
       "summary": "本次新進 10 個技術，其中 AI 佔 8 個、前後端佔 2 個，綜合榜 #1 為 mattpocock/skills。"
     },
     "feed": [
-      {
-        "content": "社群熱推的輕量級開源專案 `fx` 是一款專為終端機設計的微型原生 coding agent。它擺脫了沉重的依賴與複雜設定，直接在本地為開發者提供高效的程式碼編寫與修改輔助，非常適合喜歡輕量工具鏈的工程師。",
-        "id": "news:https://fx.sh/",
-        "publishedAt": "2026-08-20T22:36:22.957Z",
-        "title": "fx：極小、開源且原生的終端機程式碼代理工具",
-        "type": "news",
-        "url": "https://fx.sh"
-      },
-      {
-        "content": "一篇引發底層開發者深思的熱門討論，深入剖析了在高效能 AI 推理場景下，為何部分團隊選擇放棄現成框架、自行從頭打造 C/C++ 推理引擎。內容探討了對記憶體管理、極限延遲控制及硬體指令集最佳化的追求，對系統架構師極具參考價值。",
-        "id": "news:https://localai.io/blog/why-we-write-our-own-engines",
-        "publishedAt": "2026-08-20T22:36:22.957Z",
-        "title": "為什麼我們堅持自行編寫 C 與 C++ 推理引擎？",
-        "type": "news",
-        "url": "https://localai.io/blog/why-we-write-our-own-engines/"
-      },
-      {
-        "content": "這篇獲得高信度社群關注的深度討論指出，自然語言在經過多次分詞、嵌入、翻譯或大模型重寫後，本質上不可能進行無損轉換。這對依賴 LLM 進行複雜文本管線、自動化翻譯或結構化萃取的系統設計者來說，提供了重要的理論反思與架構設計限制提醒。",
-        "id": "news:https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text",
-        "publishedAt": "2026-08-20T22:36:22.957Z",
-        "title": "「自然語言文字不存在無損轉換」：探討大模型與文本處理的本質限制",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/"
-      },
-      {
-        "content": "Node.js 官方釋出 22.23.2 (Jod) LTS 版本，包含多項高風險與中風險的安全性修復。主要修復項目包含 CVE-2026-56846（http2 階段的標頭記憶體保留問題）、CVE-2026-56848（http2 請求重設延遲漏洞）以及權限模組與 DNS 相關的安全性調整。對於使用 Node.js 22 LTS 的開發團隊與維運人員，建議盡快評估並升級以確保系統安全。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v22.23.2",
-        "publishedAt": "2026-08-21T22:33:07.827Z",
-        "title": "Node.js 22.23.2 (LTS) 安全性更新發布",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
-      },
-      {
-        "content": "Node.js 官方發布 24.18.1 (Krypton) LTS 版本，此為一項重要的安全性更新。內容涵蓋多項與 Node.js 22 同步的高風險漏洞修復，包含 CVE-2026-56846、CVE-2026-56848、權限節點分配缺陷（CVE-2026-58043）以及 https 代理金鑰與工作階段重複使用相關的安全補強。建議使用該版本的開發者儘速進行修補與部署。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.18.1",
-        "publishedAt": "2026-08-21T22:33:07.827Z",
-        "title": "Node.js 24.18.1 (LTS) 安全性更新發布",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
-      },
-      {
-        "content": "Cloudflare 宣布其憑證透明度監控服務（Certificate Transparency Monitoring）正式進入一般可用（GA）階段。此次發布的最大更動為取消針對網域所發行憑證的日常電子郵件通知；未來當信箱收到相關警報時，代表有更高可信度與安全審查價值。對於重視憑證管理與資安監控的基礎設施維運團隊而言，這能有效降低郵件噪音並聚焦於異常憑證的動向。",
-        "id": "news:https://blog.cloudflare.com/certificate-transparency-monitoring-ga",
-        "publishedAt": "2026-08-21T22:33:07.827Z",
-        "title": "Cloudflare 憑證透明度監控（Certificate Transparency Monitoring）正式全面上市",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/"
-      },
-      {
-        "content": "隨著各大 AI 服務與 API 供應商的定價策略與計費模型轉變，「AI 點數轉售經濟」在開發者與企業社群中引發高度討論。這反映出開發者在整合多重 LLM 與雲端 AI 服務時，面臨著成本控管、額度分配以及轉手交易的痛點。對開發團隊而言，理解這類非典型經濟模式有助於更精準地評估 AI 應用的長期營運成本與架構規劃。",
-        "id": "news:https://vectoral.com/blog/who-are-the-token-brokers",
-        "publishedAt": "2026-08-21T22:33:07.827Z",
-        "title": "AI 點數轉售經濟的興起與開發者成本考量",
-        "type": "news",
-        "url": "https://vectoral.com/blog/who-are-the-token-brokers"
-      },
       {
         "content": "Cloudflare 推出了全新功能「Bot Preference Sync」，能自動將網站的 robots.txt 檔案與針對搜尋、AI 代理程式及模型訓練的 bot 存取政策進行同步。這讓開發者與網站管理員無需再手動維護靜態檔案，即可輕鬆精準地管理哪些 AI 機器人可以存取網站內容，對於應對日益增加的 AI 爬蟲流量提供更有效率的基礎設施管理方式。",
         "id": "news:https://blog.cloudflare.com/bot-preference-sync",
@@ -670,89 +614,134 @@
         "title": "如何透過遙測管線控制 AI 代理的營運成本",
         "type": "news",
         "url": "https://thenewstack.io/agentic-ai-telemetry-costs/"
+      },
+      {
+        "content": "Node.js 官方發布 26.5.1 版本，這是一次包含多項安全修復的重要更新。主要修復內容包含：針對 http2 模組的流重設延遲處理（CVE-2026-56848）、權限模組中避免授權 radix 分割節點（CVE-2026-58043）、https 模組的 PFX 物件陣列代理金鑰區分與會話重用綁定檢查，以及 sqlite 語句重置時使標籤儲存迭代器失效等漏洞。建議開發者與維運團隊儘速評估並升級，以確保應用程式的執行安全。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.5.1",
+        "publishedAt": "2026-08-27T03:03:45.232Z",
+        "title": "Node.js 發布安全性更新版本 26.5.1，修復多項高風險漏洞",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
+      },
+      {
+        "content": "Google 推出 Gemini Robotics ER 2，專為機器人應用打造的升級模型，大幅強化視訊理解、任務編排與多機器人協作能力。這項更新讓機器人能更精確地進行現實世界的推理與問題解決，對開發智慧機器人與自動化控制系統的開發者而言，提供了一套更具備複雜互動與協同作業能力的底層 AI 支援。",
+        "id": "news:https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration",
+        "publishedAt": "2026-08-27T03:03:45.232Z",
+        "title": "Google 發布 Gemini Robotics ER 2，強化多機器人協作與影片理解能力",
+        "type": "news",
+        "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/"
+      },
+      {
+        "content": "Cloudflare 發布全新 AI 驅動工具 Radar Researcher，允許開發者與研究人員透過日常自然語言查詢全球網際網路趨勢與流量數據。該工具完全建構於 Cloudflare 開發者平台上，能直接將文字指令轉化為即時、可互動的圖表。這對於需要分析網路流量、資安趨勢或全球連線狀況的開發者與架構師來說，提供了一種更直覺且省時的資料探索方式。",
+        "id": "news:https://blog.cloudflare.com/introducing-radar-researcher",
+        "publishedAt": "2026-08-27T03:03:45.232Z",
+        "title": "Cloudflare 推出 Radar Researcher，支援以自然語言探索全球網際網路數據",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/introducing-radar-researcher/"
+      },
+      {
+        "content": "Cloudflare Gateway 宣佈透過通訊協定層級的特徵碼（heuristics）識別 MCP（Model Context Protocol）請求。安全團隊可以利用這項訊號來找出隱蔽的 MCP 流量、強制對已核准的伺服器進行入口專屬存取，並封鎖受管網路路徑上的直接連線。這對正在企業環境中導入 MCP 架構的開發與資安團隊而言，提供了一種標準化的流量監控與資安防護手段。",
+        "id": "news:https://blog.cloudflare.com/mcp-security-updates",
+        "publishedAt": "2026-08-27T03:03:45.232Z",
+        "title": "Cloudflare 網關新增 MCP 流量偵測與安全防護機制",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/mcp-security-updates/"
+      },
+      {
+        "content": "有開發者分享了僅花費 250 美元與 50 億去污染 Token，從頭預訓練出一個 1.02 億參數（每 Token 啟動 1.45 億參數）的 Kimi K3 複製版模型。該模型未經過指令微調，單純透過預測下一個 Token 的架構進行訓練，在效能上即超越了經典的 GPT-2（124M）。這項實驗展示了在有限預算下進行小型基底模型研究的可能性，吸引了社群對自製開源模型成本效益的熱烈討論。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vth1c3/i_just_built_a_mini_kimik3_from_scratch_under_250",
+        "publishedAt": "2026-08-27T03:03:45.232Z",
+        "title": "開發者以不到 250 美元從頭訓練出超越 GPT-2 的十億參數模型",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vth1c3/i_just_built_a_mini_kimik3_from_scratch_under_250/"
+      },
+      {
+        "content": "社群開發者在 Hacker News 與 Reddit 上熱烈討論 Qwen3.8-27B 在經過 Q6 量化並運行於雙 GPU（RTX 3090 加 RTX 3060）環境下的表現。測試顯示其在持續 20 小時的高強度代理編程（agentic coding）任務中，能維持每秒約 60 到 63 個 Token 的處理速度，展現出極高的實用價值。這為希望在本地硬體運行強大 coding assistant 的開發者提供了一項極具參考價值的硬體配置與效能指標。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vuotqr/qwen3827b_q6_is_a_beast_at_agentic_coding",
+        "publishedAt": "2026-08-27T03:03:45.232Z",
+        "title": "開發者測試 Qwen3.8-27B Q6 模型在雙 GPU 環境下的強大代理編程表現",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vuotqr/qwen3827b_q6_is_a_beast_at_agentic_coding/"
+      },
+      {
+        "content": "Z.ai 官方確認 Ox Alpha 為其最新的 GLM 系列基礎模型，並明確表示將對外釋出模型權重。這項消息在開源 AI 社群中引起關注，對於依賴開源模型進行本地部署、微調或二次開發的開發者而言，代表又將多一個具競爭力的開源模型可供選擇與評估。",
+        "id": "news:https://bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek",
+        "publishedAt": "2026-08-27T03:03:45.232Z",
+        "title": "Z.ai 確認 Ox Alpha 為全新 GLM 系列模型並將公開其權重",
+        "type": "news",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-25T22:36:17.256Z",
+      "generatedAt": "2026-08-27T03:03:45.232Z",
       "items": [
         {
-          "content": "OpenAI 官方宣佈對 GPT 5.6 Sol 模型進行價格調降（優惠至少持續至 11 月 21 日）。這對需要大量調用該模型、進行自動化代理或高頻 API 互動的開發者而言，能有效降低營運成本，有助於加速 AI 應用落地與規模化開發。",
+          "content": "Node.js 官方發布 26.5.1 版本，這是一次包含多項安全修復的重要更新。主要修復內容包含：針對 http2 模組的流重設延遲處理（CVE-2026-56848）、權限模組中避免授權 radix 分割節點（CVE-2026-58043）、https 模組的 PFX 物件陣列代理金鑰區分與會話重用綁定檢查，以及 sqlite 語句重置時使標籤儲存迭代器失效等漏洞。建議開發者與維運團隊儘速評估並升級，以確保應用程式的執行安全。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "OpenAI 宣布 GPT 5.6 Sol 進行價格調降",
-          "url": "https://developers.openai.com/api/docs/pricing",
-          "weightedScore": 333
-        },
-        {
-          "content": "Cloudflare 宣布旗下的 Cloudflare for Government 正式獲得 FedRAMP Class D (High) 認證，並承諾爭取 DoD IL4 授權。這項合規進展對為公共部門或高度受管制的政府機構開發基礎設施與安全性應用的開發者與架構師具有重要參考價值。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Cloudflare for Government 獲 FedRAMP Class D 高標準安全認證",
-          "url": "https://blog.cloudflare.com/fedramp-class-d-certification/",
+          "title": "Node.js 發布安全性更新版本 26.5.1，修復多項高風險漏洞",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.5.1",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 宣布推出更新後的社群計畫，包含 Cloudflare Ambassadors 與 Community Engineers，並背負 100 萬美元的開源資助計畫。這對依賴開源生態系、尋求維護者支持及參與雲端原生社群的開發者來說，提供更多資源與合作機會。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Cloudflare 推出全新社群計畫並投入 100 萬美元開源資金",
-          "url": "https://blog.cloudflare.com/community-program-refresh/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Munder Difflin 是一個代理框架（Agent harness），能夠讓開發者建立多個 AI 分身來組成、模擬並運行一個完整的辦公室。這對探索多代理（Multi-agent）協同工作流程、自動化辦公情境以及打造複雜工作流系統的開發者來說，提供了實用的架構靈感與工具選擇。",
+          "content": "Google 推出 Gemini Robotics ER 2，專為機器人應用打造的升級模型，大幅強化視訊理解、任務編排與多機器人協作能力。這項更新讓機器人能更精確地進行現實世界的推理與問題解決，對開發智慧機器人與自動化控制系統的開發者而言，提供了一套更具備複雜互動與協同作業能力的底層 AI 支援。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Munder Difflin：打造能自動運行辦公室的 AI 代理集群",
-          "url": "https://munderdiffl.in/",
-          "weightedScore": 311
-        },
-        {
-          "content": "WikiKB 是一個基於 GitHub 儲存庫 wiki 建立的知識庫層，旨在提供高效、透明且明確策展的知識結構，供人類與 AI 代理共同使用。這對需要為 LLM 應用建構即時、結構化且與版本控制緊密結合的知識庫開發者來說，是一個實用的輕量化解決方案。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "WikiKB：專為人類與 AI 代理打造的快速儲存庫原生知識庫",
-          "url": "https://githubnext.com/posts/wikikb/",
+          "title": "Google 發布 Gemini Robotics ER 2，強化多機器人協作與影片理解能力",
+          "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
           "weightedScore": 100
         },
         {
-          "content": "隨著企業將 AI 從實驗階段推進至生產環境的自主代理運行，不斷攀升的遙測（Telemetry）開銷成為一項不容忽視的基礎設施難題。本文探討如何利用遙測管線來監控、過濾並控制 AI 代理產生的數據成本，對負責維護大型 AI 系統效能與成本平衡的 DevOps 工程師至關重要。",
+          "content": "Cloudflare 發布全新 AI 驅動工具 Radar Researcher，允許開發者與研究人員透過日常自然語言查詢全球網際網路趨勢與流量數據。該工具完全建構於 Cloudflare 開發者平台上，能直接將文字指令轉化為即時、可互動的圖表。這對於需要分析網路流量、資安趨勢或全球連線狀況的開發者與架構師來說，提供了一種更直覺且省時的資料探索方式。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "如何透過遙測管線控制 AI 代理的營運成本",
-          "url": "https://thenewstack.io/agentic-ai-telemetry-costs/",
-          "weightedScore": 50
+          "title": "Cloudflare 推出 Radar Researcher，支援以自然語言探索全球網際網路數據",
+          "url": "https://blog.cloudflare.com/introducing-radar-researcher/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare Gateway 宣佈透過通訊協定層級的特徵碼（heuristics）識別 MCP（Model Context Protocol）請求。安全團隊可以利用這項訊號來找出隱蔽的 MCP 流量、強制對已核准的伺服器進行入口專屬存取，並封鎖受管網路路徑上的直接連線。這對正在企業環境中導入 MCP 架構的開發與資安團隊而言，提供了一種標準化的流量監控與資安防護手段。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Cloudflare 網關新增 MCP 流量偵測與安全防護機制",
+          "url": "https://blog.cloudflare.com/mcp-security-updates/",
+          "weightedScore": 100
+        },
+        {
+          "content": "有開發者分享了僅花費 250 美元與 50 億去污染 Token，從頭預訓練出一個 1.02 億參數（每 Token 啟動 1.45 億參數）的 Kimi K3 複製版模型。該模型未經過指令微調，單純透過預測下一個 Token 的架構進行訓練，在效能上即超越了經典的 GPT-2（124M）。這項實驗展示了在有限預算下進行小型基底模型研究的可能性，吸引了社群對自製開源模型成本效益的熱烈討論。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "開發者以不到 250 美元從頭訓練出超越 GPT-2 的十億參數模型",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vth1c3/i_just_built_a_mini_kimik3_from_scratch_under_250/",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群開發者在 Hacker News 與 Reddit 上熱烈討論 Qwen3.8-27B 在經過 Q6 量化並運行於雙 GPU（RTX 3090 加 RTX 3060）環境下的表現。測試顯示其在持續 20 小時的高強度代理編程（agentic coding）任務中，能維持每秒約 60 到 63 個 Token 的處理速度，展現出極高的實用價值。這為希望在本地硬體運行強大 coding assistant 的開發者提供了一項極具參考價值的硬體配置與效能指標。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "開發者測試 Qwen3.8-27B Q6 模型在雙 GPU 環境下的強大代理編程表現",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vuotqr/qwen3827b_q6_is_a_beast_at_agentic_coding/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Z.ai 官方確認 Ox Alpha 為其最新的 GLM 系列基礎模型，並明確表示將對外釋出模型權重。這項消息在開源 AI 社群中引起關注，對於依賴開源模型進行本地部署、微調或二次開發的開發者而言，代表又將多一個具競爭力的開源模型可供選擇與評估。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Z.ai 確認 Ox Alpha 為全新 GLM 系列模型並將公開其權重",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek",
+          "weightedScore": 419
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-19T22:33:23.507Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
-    },
-    {
-      "seenAt": "2026-08-19T22:33:23.507Z",
-      "url": "https://cncf.io/announcements/2026/08/11/cncf-announces-graduation-of-cloud-native-buildpacks-advancing-the-standard-for-container-builds"
-    },
-    {
-      "seenAt": "2026-08-19T22:33:23.507Z",
-      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration"
-    },
-    {
-      "seenAt": "2026-08-19T22:33:23.507Z",
-      "url": "https://twitter.com/kuberwastaken/status/2089377982536388964"
-    },
-    {
-      "seenAt": "2026-08-19T22:33:23.507Z",
-      "url": "https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces"
-    },
     {
       "seenAt": "2026-08-20T22:36:22.957Z",
       "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
@@ -940,6 +929,34 @@
     {
       "seenAt": "2026-08-25T22:36:17.256Z",
       "url": "https://thenewstack.io/agentic-ai-telemetry-costs"
+    },
+    {
+      "seenAt": "2026-08-27T03:03:45.232Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
+    },
+    {
+      "seenAt": "2026-08-27T03:03:45.232Z",
+      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration"
+    },
+    {
+      "seenAt": "2026-08-27T03:03:45.232Z",
+      "url": "https://blog.cloudflare.com/introducing-radar-researcher"
+    },
+    {
+      "seenAt": "2026-08-27T03:03:45.232Z",
+      "url": "https://blog.cloudflare.com/mcp-security-updates"
+    },
+    {
+      "seenAt": "2026-08-27T03:03:45.232Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vth1c3/i_just_built_a_mini_kimik3_from_scratch_under_250"
+    },
+    {
+      "seenAt": "2026-08-27T03:03:45.232Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vuotqr/qwen3827b_q6_is_a_beast_at_agentic_coding"
+    },
+    {
+      "seenAt": "2026-08-27T03:03:45.232Z",
+      "url": "https://bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek"
     }
   ]
 }
