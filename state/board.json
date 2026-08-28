@@ -274,84 +274,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-23T22:31:11.230Z",
-  "lastNewsPushAt": "2026-08-27T03:03:45.232Z",
+  "lastNewsPushAt": "2026-08-28T06:03:56.816Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-23T22:31:11.230Z",
       "summary": "本次新進 10 個技術，其中 AI 佔 8 個、前後端佔 2 個，綜合榜 #1 為 mattpocock/skills。"
     },
     "feed": [
-      {
-        "content": "Cloudflare 推出了全新功能「Bot Preference Sync」，能自動將網站的 robots.txt 檔案與針對搜尋、AI 代理程式及模型訓練的 bot 存取政策進行同步。這讓開發者與網站管理員無需再手動維護靜態檔案，即可輕鬆精準地管理哪些 AI 機器人可以存取網站內容，對於應對日益增加的 AI 爬蟲流量提供更有效率的基礎設施管理方式。",
-        "id": "news:https://blog.cloudflare.com/bot-preference-sync",
-        "publishedAt": "2026-08-22T22:30:40.673Z",
-        "title": "Cloudflare 推出 Bot Preference Sync，自動對齊 robots.txt 與 AI 政策",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/bot-preference-sync/"
-      },
-      {
-        "content": "Node.js 釋出 v24.19.0 長期支援版本（代號 Krypton）。本次更新帶來多項重要變更（Semver-Minor），包含在 buffer 模組中實作 blob.textStream()、更新 OpenSSL 建置設定以支援壓縮，並將 blockList 的穩定度狀態提升至候選發布（Release Candidate），同時標記 stream.compose 正式進入穩定階段，並新增實驗性旗標 --experimental-import-text。對後端開發者而言，這些更新提升了串流與文字處理的效能與便利性。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.19.0",
-        "publishedAt": "2026-08-22T22:30:40.673Z",
-        "title": "Node.js v24.19.0 'Krypton' (LTS) 版本發布",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
-      },
-      {
-        "content": "DeepSeek 最新模型版本 DeepSeek V4 Pro 0813 已在 OpenRouter 平台登場。這款備受矚目的模型更新提供了更強大的程式碼生成與推理能力，對需要整合高效能開源或商用大模型的開發者而言，提供了更多樣化且具競爭力的 API 選擇，有助於進一步優化 AI 驅動的應用程式效能。",
-        "id": "news:https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813",
-        "publishedAt": "2026-08-22T22:30:40.673Z",
-        "title": "DeepSeek V4 Pro 0813 於 OpenRouter 上線",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813/"
-      },
-      {
-        "content": "社群熱議一項新研究，指出針對大模型推理進行的強化學習（RL）實際上僅改變了 1% 至 3% 的 Token。研究人員成功在不使用 RL 的情況下，以低約 1000 倍的運算成本複製了相近的效能增長。這項發現對優化大模型訓練流程、降低 AI 開發與微調成本具有重大啟發意義。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of",
-        "publishedAt": "2026-08-22T22:30:40.673Z",
-        "title": "研究指出強化學習對推理僅改變極少 Token 且可以極低成本複製",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of/"
-      },
-      {
-        "content": "專案管理平台 Asana 分享了他們利用 OpenAI Codex 在短短兩週內，成功替換掉過時測試系統的案例。這項原本預估需要花費五年工程時間的龐大任務，最終僅花費約 12,000 美元的成本便告完成。此案例展示了 AI 程式碼代理在處理大型舊系統重構與自動化遷移上的極高實用價值。",
-        "id": "news:https://openai.com/index/asana",
-        "publishedAt": "2026-08-22T22:30:40.673Z",
-        "title": "Asana 透過 OpenAI Codex 在兩週內完成預估五年的工程遷移",
-        "type": "news",
-        "url": "https://openai.com/index/asana"
-      },
-      {
-        "content": "根據近期原始碼提交（Commits）的變更紀錄顯示，Qwen 專案移除了關於 35B 模型的相關內容，引發社群猜測該中型模型可能不會正式釋出。由於 35B MoE 等規格在開發者之間廣泛使用，社群正呼籲相關人員在各大平台上表達對此尺寸模型的需求，以免影響後續開源生態系的選擇。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vpxbm8/newer_commits_removed_the_qwen_35b",
-        "publishedAt": "2026-08-22T22:30:40.673Z",
-        "title": "開發者社群關注 Qwen 35B 模型疑似取消發布的動向",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vpxbm8/newer_commits_removed_the_qwen_35b/"
-      },
-      {
-        "content": "隨著網路上超過一半的請求逐漸來自機器而非人類，網站架構與內容策略正面臨轉變。「Agent Readiness」指標開始受到重視，用於評估 AI 代理程式能否順利發現並讀取網站，而「Answer Engine Optimization (AEO)」則用來追蹤 AI 助理推薦網站的頻率。這為前端與後端開發者在設計 API 及網頁結構時，帶來了全新的SEO與機器可讀性思考維度。",
-        "id": "news:https://blog.cloudflare.com/aeo",
-        "publishedAt": "2026-08-22T22:30:40.673Z",
-        "title": "網站轉型迎合 AI 時代：從傳統排名邁向推薦引擎優化",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/aeo/"
-      },
-      {
-        "content": "基礎設施社群討論了如何利用 Kairos 實現完全自動化、歷時 11 分鐘且無需人工介入的 Kubernetes 控制平臺升級管線。傳統升級需手動 SSH 至各節點並隨時監控 etcd 健康狀態，而這套自動化方案透過自我修復機制大幅降低了維運負擔，對 DevOps 工程師在管理大規模叢日時具有高度參考價值。",
-        "id": "news:https://cncf.io/blog/2026/08/14/eleven-minutes-zero-humans-building-a-self-healing-kubernetes-upgrade-pipeline-on-kairos",
-        "publishedAt": "2026-08-22T22:30:40.673Z",
-        "title": "基於 Kairos 打造零人工介入的自我修復 Kubernetes 升級管線",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/08/14/eleven-minutes-zero-humans-building-a-self-healing-kubernetes-upgrade-pipeline-on-kairos/"
-      },
-      {
-        "id": "repo:1148788086:new:2026-08-24",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "mattpocock/skills 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/mattpocock/skills"
-      },
       {
         "id": "repo:770153867:new:2026-08-24",
         "publishedAt": "2026-08-23T22:31:11.230Z",
@@ -670,118 +599,168 @@
         "title": "Z.ai 確認 Ox Alpha 為全新 GLM 系列模型並將公開其權重",
         "type": "news",
         "url": "https://www.bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek"
+      },
+      {
+        "content": "Cloudflare 宣佈推出新一代 Model Context Protocol (MCP) 核心，採用無狀態（stateless）設計並完全針對 Workers 優化，能直接在邊緣運算執行。此更新包含協議升級、全新的功能生命週期與 SDK 遷移路徑，讓開發者能更順暢地將 AI 上下文協議導入生產環境中。",
+        "id": "news:https://blog.cloudflare.com/mcp-v2",
+        "publishedAt": "2026-08-28T06:03:56.816Z",
+        "title": "Cloudflare Workers 推出下一代重構版 MCP 核心架構",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/mcp-v2/"
+      },
+      {
+        "content": "Google 推出 Gemini Omni 1.1 Flash，旨在讓開發者在建構多模態與即時互動應用時擁有更高的控制力。此版本強化了模型的回應精細度與開發者介面的微調能力，有助於降低延遲並提升即時音視訊應用的穩定性與效能。",
+        "id": "news:https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control",
+        "publishedAt": "2026-08-28T06:03:56.816Z",
+        "title": "Google 發布 Gemini Omni 1.1 Flash 提升開發掌控度",
+        "type": "news",
+        "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/"
+      },
+      {
+        "content": "Google 推出全新的 Gemini 3.5 Transcribe，提供更具備上下文理解與智慧化能力的語音轉文字（Speech-to-Text）服務。對需要處理複雜語音資料、多語系交雜或專業術語轉錄的後端與 AI 應用開發者而言，能大幅提升辨識準確率。",
+        "id": "news:https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe",
+        "publishedAt": "2026-08-28T06:03:56.816Z",
+        "title": "Google 發布 Gemini 3.5 Transcribe 提供智慧語音轉文字",
+        "type": "news",
+        "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/"
+      },
+      {
+        "content": "Node.js 發布 v26.6.0 (Current) 版本，帶來多項重要更新。其中包含在 ffi 模組中新增 `getCurrentEventLoop`，以及在 test_runner 中加入 `context.log()` 與 `test:log` 事件支援，同時修復了 Map 鍵值為 null 時的 TypeError，有助於提升測試框架與底層擴充的開發體驗。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.6.0",
+        "publishedAt": "2026-08-28T06:03:56.816Z",
+        "title": "Node.js v26.6.0 發布：新增 getCurrentEventLoop 與 test:log 支援",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
+      },
+      {
+        "content": "Python 生態系中熱門的 SQLite 資料庫命令列工具與 Python 庫 sqlite-utils 發布 4.2.1 版本。此版本修復了若幹穩定性問題並優化查詢效能，對使用 SQLite 進行資料探勘、輕量級資料庫管理或自動化指令碼開發的工程師是實用的維護更新。",
+        "id": "news:https://simonwillison.net/2026/Aug/13/sqlite-utils-2",
+        "publishedAt": "2026-08-28T06:03:56.816Z",
+        "title": "sqlite-utils 4.2.1 版本發布",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils-2/"
+      },
+      {
+        "content": "Cloudflare 調整其網站防禦策略，將傳統「時間點風險評估（Risk assessment）」升級為「持續性信任評估（Trust evaluation）」。透過 BotBase 與 Precursor 等系統持續分析流量與行為特徵（包含模擬游標軌跡），對開發者與維運人員而言，這改變了辨識與阻擋自動化代理與機器人的架構設計方式。",
+        "id": "news:https://blog.cloudflare.com/good-and-bad-agentic-behaviors",
+        "publishedAt": "2026-08-28T06:03:56.816Z",
+        "title": "Cloudflare 將 Bot 防禦機制從時間點評估轉為持續性信任評估",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/good-and-bad-agentic-behaviors/"
+      },
+      {
+        "content": "社群熱烈討論關於 Claude 模型在生成回應時的關鍵詞彙傾向與行為慣性（Load-bearing vocabulary）。這類研究對提示詞工程師（Prompt Engineer）和 LLM 應用開發者具高度參考價值，有助於理解如何透過特定語彙引導模型輸出更穩定的結構化結果。",
+        "id": "news:https://louisabraham.github.io/load-bearing",
+        "publishedAt": "2026-08-28T06:03:56.816Z",
+        "title": "Hacker News 熱議：Claude 的「承重詞彙」研究",
+        "type": "news",
+        "url": "https://louisabraham.github.io/load-bearing/"
+      },
+      {
+        "content": "根據最新技術社群分析，當不同的 AI 程式輔助工具（如 Aider、Claude Code 等）執行完全相同的底層模型時，其背景 Token 的消耗量竟然可以相差高達 70 倍。這對於評估 AI 開發工具成本、設計代理工作流程的架構師而言，是必須正視的效率警訊。",
+        "id": "news:https://thenewstack.io/agent-harness-token-costs",
+        "publishedAt": "2026-08-28T06:03:56.816Z",
+        "title": "Aider、Claude Code 與 OpenClaw 執行相同模型的 Token 消耗量差異高達 70 倍",
+        "type": "news",
+        "url": "https://thenewstack.io/agent-harness-token-costs/"
+      },
+      {
+        "content": "社群與技術媒體深入分析 Anthropic 將 Files API 與電腦使用工具集移出 Beta 的實際影響。雖然新 API 能大幅簡化開發者傳遞大型文件與建構瀏覽器自動化工具的流程，但在 Token 運算與 API 呼叫成本上並未享有折扣，開發者在架構設計時需權衡效率與開銷。",
+        "id": "news:https://thenewstack.io/anthropic-files-api-costs",
+        "publishedAt": "2026-08-28T06:03:56.816Z",
+        "title": "Anthropic 檔案 API 上線：能省下時間，但無法省下成本",
+        "type": "news",
+        "url": "https://thenewstack.io/anthropic-files-api-costs/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-27T03:03:45.232Z",
+      "generatedAt": "2026-08-28T06:03:56.816Z",
       "items": [
         {
-          "content": "Node.js 官方發布 26.5.1 版本，這是一次包含多項安全修復的重要更新。主要修復內容包含：針對 http2 模組的流重設延遲處理（CVE-2026-56848）、權限模組中避免授權 radix 分割節點（CVE-2026-58043）、https 模組的 PFX 物件陣列代理金鑰區分與會話重用綁定檢查，以及 sqlite 語句重置時使標籤儲存迭代器失效等漏洞。建議開發者與維運團隊儘速評估並升級，以確保應用程式的執行安全。",
+          "content": "Cloudflare 宣佈推出新一代 Model Context Protocol (MCP) 核心，採用無狀態（stateless）設計並完全針對 Workers 優化，能直接在邊緣運算執行。此更新包含協議升級、全新的功能生命週期與 SDK 遷移路徑，讓開發者能更順暢地將 AI 上下文協議導入生產環境中。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Cloudflare Workers 推出下一代重構版 MCP 核心架構",
+          "url": "https://blog.cloudflare.com/mcp-v2/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Google 推出 Gemini Omni 1.1 Flash，旨在讓開發者在建構多模態與即時互動應用時擁有更高的控制力。此版本強化了模型的回應精細度與開發者介面的微調能力，有助於降低延遲並提升即時音視訊應用的穩定性與效能。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Google 發布 Gemini Omni 1.1 Flash 提升開發掌控度",
+          "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Google 推出全新的 Gemini 3.5 Transcribe，提供更具備上下文理解與智慧化能力的語音轉文字（Speech-to-Text）服務。對需要處理複雜語音資料、多語系交雜或專業術語轉錄的後端與 AI 應用開發者而言，能大幅提升辨識準確率。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Google 發布 Gemini 3.5 Transcribe 提供智慧語音轉文字",
+          "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Node.js 發布 v26.6.0 (Current) 版本，帶來多項重要更新。其中包含在 ffi 模組中新增 `getCurrentEventLoop`，以及在 test_runner 中加入 `context.log()` 與 `test:log` 事件支援，同時修復了 Map 鍵值為 null 時的 TypeError，有助於提升測試框架與底層擴充的開發體驗。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Node.js 發布安全性更新版本 26.5.1，修復多項高風險漏洞",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.5.1",
+          "title": "Node.js v26.6.0 發布：新增 getCurrentEventLoop 與 test:log 支援",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.6.0",
           "weightedScore": 100
         },
         {
-          "content": "Google 推出 Gemini Robotics ER 2，專為機器人應用打造的升級模型，大幅強化視訊理解、任務編排與多機器人協作能力。這項更新讓機器人能更精確地進行現實世界的推理與問題解決，對開發智慧機器人與自動化控制系統的開發者而言，提供了一套更具備複雜互動與協同作業能力的底層 AI 支援。",
+          "content": "Python 生態系中熱門的 SQLite 資料庫命令列工具與 Python 庫 sqlite-utils 發布 4.2.1 版本。此版本修復了若幹穩定性問題並優化查詢效能，對使用 SQLite 進行資料探勘、輕量級資料庫管理或自動化指令碼開發的工程師是實用的維護更新。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Google 發布 Gemini Robotics ER 2，強化多機器人協作與影片理解能力",
-          "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
+          "title": "sqlite-utils 4.2.1 版本發布",
+          "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils-2/",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 發布全新 AI 驅動工具 Radar Researcher，允許開發者與研究人員透過日常自然語言查詢全球網際網路趨勢與流量數據。該工具完全建構於 Cloudflare 開發者平台上，能直接將文字指令轉化為即時、可互動的圖表。這對於需要分析網路流量、資安趨勢或全球連線狀況的開發者與架構師來說，提供了一種更直覺且省時的資料探索方式。",
+          "content": "Cloudflare 調整其網站防禦策略，將傳統「時間點風險評估（Risk assessment）」升級為「持續性信任評估（Trust evaluation）」。透過 BotBase 與 Precursor 等系統持續分析流量與行為特徵（包含模擬游標軌跡），對開發者與維運人員而言，這改變了辨識與阻擋自動化代理與機器人的架構設計方式。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出 Radar Researcher，支援以自然語言探索全球網際網路數據",
-          "url": "https://blog.cloudflare.com/introducing-radar-researcher/",
+          "title": "Cloudflare 將 Bot 防禦機制從時間點評估轉為持續性信任評估",
+          "url": "https://blog.cloudflare.com/good-and-bad-agentic-behaviors/",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare Gateway 宣佈透過通訊協定層級的特徵碼（heuristics）識別 MCP（Model Context Protocol）請求。安全團隊可以利用這項訊號來找出隱蔽的 MCP 流量、強制對已核准的伺服器進行入口專屬存取，並封鎖受管網路路徑上的直接連線。這對正在企業環境中導入 MCP 架構的開發與資安團隊而言，提供了一種標準化的流量監控與資安防護手段。",
+          "content": "社群熱烈討論關於 Claude 模型在生成回應時的關鍵詞彙傾向與行為慣性（Load-bearing vocabulary）。這類研究對提示詞工程師（Prompt Engineer）和 LLM 應用開發者具高度參考價值，有助於理解如何透過特定語彙引導模型輸出更穩定的結構化結果。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Hacker News 熱議：Claude 的「承重詞彙」研究",
+          "url": "https://louisabraham.github.io/load-bearing/",
+          "weightedScore": 432
+        },
+        {
+          "content": "根據最新技術社群分析，當不同的 AI 程式輔助工具（如 Aider、Claude Code 等）執行完全相同的底層模型時，其背景 Token 的消耗量竟然可以相差高達 70 倍。這對於評估 AI 開發工具成本、設計代理工作流程的架構師而言，是必須正視的效率警訊。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 網關新增 MCP 流量偵測與安全防護機制",
-          "url": "https://blog.cloudflare.com/mcp-security-updates/",
-          "weightedScore": 100
+          "title": "Aider、Claude Code 與 OpenClaw 執行相同模型的 Token 消耗量差異高達 70 倍",
+          "url": "https://thenewstack.io/agent-harness-token-costs/",
+          "weightedScore": 50
         },
         {
-          "content": "有開發者分享了僅花費 250 美元與 50 億去污染 Token，從頭預訓練出一個 1.02 億參數（每 Token 啟動 1.45 億參數）的 Kimi K3 複製版模型。該模型未經過指令微調，單純透過預測下一個 Token 的架構進行訓練，在效能上即超越了經典的 GPT-2（124M）。這項實驗展示了在有限預算下進行小型基底模型研究的可能性，吸引了社群對自製開源模型成本效益的熱烈討論。",
+          "content": "社群與技術媒體深入分析 Anthropic 將 Files API 與電腦使用工具集移出 Beta 的實際影響。雖然新 API 能大幅簡化開發者傳遞大型文件與建構瀏覽器自動化工具的流程，但在 Token 運算與 API 呼叫成本上並未享有折扣，開發者在架構設計時需權衡效率與開銷。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "title": "開發者以不到 250 美元從頭訓練出超越 GPT-2 的十億參數模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vth1c3/i_just_built_a_mini_kimik3_from_scratch_under_250/",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群開發者在 Hacker News 與 Reddit 上熱烈討論 Qwen3.8-27B 在經過 Q6 量化並運行於雙 GPU（RTX 3090 加 RTX 3060）環境下的表現。測試顯示其在持續 20 小時的高強度代理編程（agentic coding）任務中，能維持每秒約 60 到 63 個 Token 的處理速度，展現出極高的實用價值。這為希望在本地硬體運行強大 coding assistant 的開發者提供了一項極具參考價值的硬體配置與效能指標。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "開發者測試 Qwen3.8-27B Q6 模型在雙 GPU 環境下的強大代理編程表現",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vuotqr/qwen3827b_q6_is_a_beast_at_agentic_coding/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Z.ai 官方確認 Ox Alpha 為其最新的 GLM 系列基礎模型，並明確表示將對外釋出模型權重。這項消息在開源 AI 社群中引起關注，對於依賴開源模型進行本地部署、微調或二次開發的開發者而言，代表又將多一個具競爭力的開源模型可供選擇與評估。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Z.ai 確認 Ox Alpha 為全新 GLM 系列模型並將公開其權重",
-          "url": "https://www.bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek",
-          "weightedScore": 419
+          "title": "Anthropic 檔案 API 上線：能省下時間，但無法省下成本",
+          "url": "https://thenewstack.io/anthropic-files-api-costs/",
+          "weightedScore": 50
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-20T22:36:22.957Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
-    },
-    {
-      "seenAt": "2026-08-20T22:36:22.957Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vny9zs/glm_53_released"
-    },
-    {
-      "seenAt": "2026-08-20T22:36:22.957Z",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash"
-    },
-    {
-      "seenAt": "2026-08-20T22:36:22.957Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vo2iiz/a_preliminary_qwen3827b_model_card_is_live"
-    },
-    {
-      "seenAt": "2026-08-20T22:36:22.957Z",
-      "url": "https://rickmanelius.com/p/aidr-ai-didnt-read"
-    },
-    {
-      "seenAt": "2026-08-20T22:36:22.957Z",
-      "url": "https://dontpastetheai.com/"
-    },
-    {
-      "seenAt": "2026-08-20T22:36:22.957Z",
-      "url": "https://github.com/anthropics/claude-code/issues/6235"
-    },
-    {
-      "seenAt": "2026-08-20T22:36:22.957Z",
-      "url": "https://fx.sh/"
-    },
-    {
-      "seenAt": "2026-08-20T22:36:22.957Z",
-      "url": "https://localai.io/blog/why-we-write-our-own-engines"
-    },
-    {
-      "seenAt": "2026-08-20T22:36:22.957Z",
-      "url": "https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text"
-    },
     {
       "seenAt": "2026-08-21T22:33:07.827Z",
       "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
@@ -957,6 +936,42 @@
     {
       "seenAt": "2026-08-27T03:03:45.232Z",
       "url": "https://bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek"
+    },
+    {
+      "seenAt": "2026-08-28T06:03:56.816Z",
+      "url": "https://blog.cloudflare.com/mcp-v2"
+    },
+    {
+      "seenAt": "2026-08-28T06:03:56.816Z",
+      "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control"
+    },
+    {
+      "seenAt": "2026-08-28T06:03:56.816Z",
+      "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe"
+    },
+    {
+      "seenAt": "2026-08-28T06:03:56.816Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
+    },
+    {
+      "seenAt": "2026-08-28T06:03:56.816Z",
+      "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils-2"
+    },
+    {
+      "seenAt": "2026-08-28T06:03:56.816Z",
+      "url": "https://blog.cloudflare.com/good-and-bad-agentic-behaviors"
+    },
+    {
+      "seenAt": "2026-08-28T06:03:56.816Z",
+      "url": "https://louisabraham.github.io/load-bearing"
+    },
+    {
+      "seenAt": "2026-08-28T06:03:56.816Z",
+      "url": "https://thenewstack.io/agent-harness-token-costs"
+    },
+    {
+      "seenAt": "2026-08-28T06:03:56.816Z",
+      "url": "https://thenewstack.io/anthropic-files-api-costs"
     }
   ]
 }
