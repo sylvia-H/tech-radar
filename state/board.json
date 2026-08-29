@@ -274,55 +274,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-23T22:31:11.230Z",
-  "lastNewsPushAt": "2026-08-28T06:03:56.816Z",
+  "lastNewsPushAt": "2026-08-29T03:38:37.622Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-23T22:31:11.230Z",
       "summary": "本次新進 10 個技術，其中 AI 佔 8 個、前後端佔 2 個，綜合榜 #1 為 mattpocock/skills。"
     },
     "feed": [
-      {
-        "id": "repo:770153867:new:2026-08-24",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "harry0703/MoneyPrinterTurbo 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/harry0703/MoneyPrinterTurbo"
-      },
-      {
-        "id": "repo:965415649:new:2026-08-24",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "openai/codex 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/openai/codex"
-      },
-      {
-        "id": "repo:1032808806:new:2026-08-24",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "usestrix/strix 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/usestrix/strix"
-      },
-      {
-        "id": "repo:1073224795:new:2026-08-24",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "obra/superpowers 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/obra/superpowers"
-      },
-      {
-        "id": "repo:1201476594:new:2026-08-24",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "santifer/career-ops 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/santifer/career-ops"
-      },
-      {
-        "id": "repo:1128123594:new:2026-08-24",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "volcengine/OpenViking 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/volcengine/OpenViking"
-      },
       {
         "id": "repo:493376588:new:2026-08-24",
         "publishedAt": "2026-08-23T22:31:11.230Z",
@@ -671,112 +629,117 @@
         "title": "Anthropic 檔案 API 上線：能省下時間，但無法省下成本",
         "type": "news",
         "url": "https://thenewstack.io/anthropic-files-api-costs/"
+      },
+      {
+        "content": "Google 正式推出 Gemini 3.7 Flash 模型，進一步擴展其輕量且高效能的 AI 模型陣容。這項更新對開發者至關重要，提供了更低的延遲與優化的成本效益，適合需要大規模調用、即時反應以及高頻率文字與多模態處理的應用場景。",
+        "id": "news:https://deepmind.google/blog/introducing-gemini-3-7-flash",
+        "publishedAt": "2026-08-29T03:38:37.622Z",
+        "title": "Google 發布 Gemini 3.7 Flash 核心模型更新",
+        "type": "news",
+        "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/"
+      },
+      {
+        "content": "Kubernetes 釋出 v1.37.0 最新版本，包含多項功能改進、錯誤修復與內部組件升級。對於依賴雲原生基礎設施的 DevOps 開發者而言，定期追蹤並升級版本有助於確保叢集穩定性、安全性及獲得最新的功能支援。",
+        "id": "news:https://github.com/kubernetes/kubernetes/releases/tag/v1.37.0",
+        "publishedAt": "2026-08-29T03:38:37.622Z",
+        "title": "Kubernetes 發布 v1.37.0 正式版本",
+        "type": "news",
+        "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.37.0"
+      },
+      {
+        "content": "Cloudflare 在儀表板推出 BotBase for Operators，讓機器人與 AI 代理的營運商能夠集中管理提交狀態、編輯內容，並設定行為模型。這對開發爬蟲或自動化代理程式的工程師是一項重要更新，能更清晰地宣告其內容使用方式。",
+        "id": "news:https://blog.cloudflare.com/botbase-for-operators",
+        "publishedAt": "2026-08-29T03:38:37.622Z",
+        "title": "Cloudflare 推出 BotBase for Operators 目錄管理功能",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/botbase-for-operators/"
+      },
+      {
+        "content": "Cloudflare 宣布憑證透明度監控（Certificate Transparency Monitoring）正式全面可用（GA）。最大改變在於取消了對 Cloudflare 自行發行憑證的通知信，讓收件匣中收到的每一則憑證警報都更具調查價值，提升憑證安全管理的效率。",
+        "id": "news:https://blog.cloudflare.com/certificate-transparency-monitoring-ga",
+        "publishedAt": "2026-08-29T03:38:37.622Z",
+        "title": "Cloudflare 憑證透明度監控（CTM）正式全面可用",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/"
+      },
+      {
+        "content": "美國法院裁定前川普政府將 AI 公司 Anthropic 列入黑名單的行政處分屬違法行為。這起法律訴訟引發社群高度關注，對了解政府監管與 AI 產業合規、供應鏈安全及企業權益具有重大風向指標意義。",
+        "id": "news:https://nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html",
+        "publishedAt": "2026-08-29T03:38:37.622Z",
+        "title": "美國法官裁定川普政府將 Anthropic 列入黑名單違法",
+        "type": "news",
+        "url": "https://www.nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html"
+      },
+      {
+        "content": "社群開發者深入測試開源的 Qwen 3.8 27B 模型，發現其程式碼生成能力與 OCR（光學字元辨識）品質表現極佳，甚至在部分指標上超越既有的主流商業輕量模型。對於尋求落地自建模型、降低高昂 API 成本的團隊而言，這被視為具備實用價值的重大里程碑。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vvyacg/qwen_38_27b_is_a_game_changer",
+        "publishedAt": "2026-08-29T03:38:37.622Z",
+        "title": "開發者實測 Qwen 3.8 27B：程式碼能力與 OCR 表現亮眼",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vvyacg/qwen_38_27b_is_a_game_changer/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-28T06:03:56.816Z",
+      "generatedAt": "2026-08-29T03:38:37.622Z",
       "items": [
         {
-          "content": "Cloudflare 宣佈推出新一代 Model Context Protocol (MCP) 核心，採用無狀態（stateless）設計並完全針對 Workers 優化，能直接在邊緣運算執行。此更新包含協議升級、全新的功能生命週期與 SDK 遷移路徑，讓開發者能更順暢地將 AI 上下文協議導入生產環境中。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Cloudflare Workers 推出下一代重構版 MCP 核心架構",
-          "url": "https://blog.cloudflare.com/mcp-v2/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Google 推出 Gemini Omni 1.1 Flash，旨在讓開發者在建構多模態與即時互動應用時擁有更高的控制力。此版本強化了模型的回應精細度與開發者介面的微調能力，有助於降低延遲並提升即時音視訊應用的穩定性與效能。",
+          "content": "Google 正式推出 Gemini 3.7 Flash 模型，進一步擴展其輕量且高效能的 AI 模型陣容。這項更新對開發者至關重要，提供了更低的延遲與優化的成本效益，適合需要大規模調用、即時反應以及高頻率文字與多模態處理的應用場景。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Google 發布 Gemini Omni 1.1 Flash 提升開發掌控度",
-          "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
+          "title": "Google 發布 Gemini 3.7 Flash 核心模型更新",
+          "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
           "weightedScore": 100
         },
         {
-          "content": "Google 推出全新的 Gemini 3.5 Transcribe，提供更具備上下文理解與智慧化能力的語音轉文字（Speech-to-Text）服務。對需要處理複雜語音資料、多語系交雜或專業術語轉錄的後端與 AI 應用開發者而言，能大幅提升辨識準確率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Google 發布 Gemini 3.5 Transcribe 提供智慧語音轉文字",
-          "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Node.js 發布 v26.6.0 (Current) 版本，帶來多項重要更新。其中包含在 ffi 模組中新增 `getCurrentEventLoop`，以及在 test_runner 中加入 `context.log()` 與 `test:log` 事件支援，同時修復了 Map 鍵值為 null 時的 TypeError，有助於提升測試框架與底層擴充的開發體驗。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "Node.js v26.6.0 發布：新增 getCurrentEventLoop 與 test:log 支援",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.6.0",
-          "weightedScore": 100
-        },
-        {
-          "content": "Python 生態系中熱門的 SQLite 資料庫命令列工具與 Python 庫 sqlite-utils 發布 4.2.1 版本。此版本修復了若幹穩定性問題並優化查詢效能，對使用 SQLite 進行資料探勘、輕量級資料庫管理或自動化指令碼開發的工程師是實用的維護更新。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "sqlite-utils 4.2.1 版本發布",
-          "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils-2/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 調整其網站防禦策略，將傳統「時間點風險評估（Risk assessment）」升級為「持續性信任評估（Trust evaluation）」。透過 BotBase 與 Precursor 等系統持續分析流量與行為特徵（包含模擬游標軌跡），對開發者與維運人員而言，這改變了辨識與阻擋自動化代理與機器人的架構設計方式。",
+          "content": "Kubernetes 釋出 v1.37.0 最新版本，包含多項功能改進、錯誤修復與內部組件升級。對於依賴雲原生基礎設施的 DevOps 開發者而言，定期追蹤並升級版本有助於確保叢集穩定性、安全性及獲得最新的功能支援。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 將 Bot 防禦機制從時間點評估轉為持續性信任評估",
-          "url": "https://blog.cloudflare.com/good-and-bad-agentic-behaviors/",
+          "title": "Kubernetes 發布 v1.37.0 正式版本",
+          "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.37.0",
           "weightedScore": 100
         },
         {
-          "content": "社群熱烈討論關於 Claude 模型在生成回應時的關鍵詞彙傾向與行為慣性（Load-bearing vocabulary）。這類研究對提示詞工程師（Prompt Engineer）和 LLM 應用開發者具高度參考價值，有助於理解如何透過特定語彙引導模型輸出更穩定的結構化結果。",
+          "content": "Cloudflare 在儀表板推出 BotBase for Operators，讓機器人與 AI 代理的營運商能夠集中管理提交狀態、編輯內容，並設定行為模型。這對開發爬蟲或自動化代理程式的工程師是一項重要更新，能更清晰地宣告其內容使用方式。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Cloudflare 推出 BotBase for Operators 目錄管理功能",
+          "url": "https://blog.cloudflare.com/botbase-for-operators/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 宣布憑證透明度監控（Certificate Transparency Monitoring）正式全面可用（GA）。最大改變在於取消了對 Cloudflare 自行發行憑證的通知信，讓收件匣中收到的每一則憑證警報都更具調查價值，提升憑證安全管理的效率。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Cloudflare 憑證透明度監控（CTM）正式全面可用",
+          "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/",
+          "weightedScore": 100
+        },
+        {
+          "content": "美國法院裁定前川普政府將 AI 公司 Anthropic 列入黑名單的行政處分屬違法行為。這起法律訴訟引發社群高度關注，對了解政府監管與 AI 產業合規、供應鏈安全及企業權益具有重大風向指標意義。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Hacker News 熱議：Claude 的「承重詞彙」研究",
-          "url": "https://louisabraham.github.io/load-bearing/",
-          "weightedScore": 432
+          "title": "美國法官裁定川普政府將 Anthropic 列入黑名單違法",
+          "url": "https://www.nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html",
+          "weightedScore": 554
         },
         {
-          "content": "根據最新技術社群分析，當不同的 AI 程式輔助工具（如 Aider、Claude Code 等）執行完全相同的底層模型時，其背景 Token 的消耗量竟然可以相差高達 70 倍。這對於評估 AI 開發工具成本、設計代理工作流程的架構師而言，是必須正視的效率警訊。",
+          "content": "社群開發者深入測試開源的 Qwen 3.8 27B 模型，發現其程式碼生成能力與 OCR（光學字元辨識）品質表現極佳，甚至在部分指標上超越既有的主流商業輕量模型。對於尋求落地自建模型、降低高昂 API 成本的團隊而言，這被視為具備實用價值的重大里程碑。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "title": "Aider、Claude Code 與 OpenClaw 執行相同模型的 Token 消耗量差異高達 70 倍",
-          "url": "https://thenewstack.io/agent-harness-token-costs/",
-          "weightedScore": 50
-        },
-        {
-          "content": "社群與技術媒體深入分析 Anthropic 將 Files API 與電腦使用工具集移出 Beta 的實際影響。雖然新 API 能大幅簡化開發者傳遞大型文件與建構瀏覽器自動化工具的流程，但在 Token 運算與 API 呼叫成本上並未享有折扣，開發者在架構設計時需權衡效率與開銷。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Anthropic 檔案 API 上線：能省下時間，但無法省下成本",
-          "url": "https://thenewstack.io/anthropic-files-api-costs/",
-          "weightedScore": 50
+          "title": "開發者實測 Qwen 3.8 27B：程式碼能力與 OCR 表現亮眼",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vvyacg/qwen_38_27b_is_a_game_changer/",
+          "weightedScore": 100
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-21T22:33:07.827Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
-    },
-    {
-      "seenAt": "2026-08-21T22:33:07.827Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v24.18.1"
-    },
-    {
-      "seenAt": "2026-08-21T22:33:07.827Z",
-      "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga"
-    },
-    {
-      "seenAt": "2026-08-21T22:33:07.827Z",
-      "url": "https://vectoral.com/blog/who-are-the-token-brokers"
-    },
     {
       "seenAt": "2026-08-22T22:30:40.673Z",
       "url": "https://blog.cloudflare.com/bot-preference-sync"
@@ -972,6 +935,30 @@
     {
       "seenAt": "2026-08-28T06:03:56.816Z",
       "url": "https://thenewstack.io/anthropic-files-api-costs"
+    },
+    {
+      "seenAt": "2026-08-29T03:38:37.622Z",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash"
+    },
+    {
+      "seenAt": "2026-08-29T03:38:37.622Z",
+      "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.37.0"
+    },
+    {
+      "seenAt": "2026-08-29T03:38:37.622Z",
+      "url": "https://blog.cloudflare.com/botbase-for-operators"
+    },
+    {
+      "seenAt": "2026-08-29T03:38:37.622Z",
+      "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga"
+    },
+    {
+      "seenAt": "2026-08-29T03:38:37.622Z",
+      "url": "https://nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html"
+    },
+    {
+      "seenAt": "2026-08-29T03:38:37.622Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vvyacg/qwen_38_27b_is_a_game_changer"
     }
   ]
 }
