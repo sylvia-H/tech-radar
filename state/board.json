@@ -274,74 +274,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-23T22:31:11.230Z",
-  "lastNewsPushAt": "2026-08-29T03:38:37.622Z",
+  "lastNewsPushAt": "2026-08-30T00:07:15.441Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-23T22:31:11.230Z",
       "summary": "本次新進 10 個技術，其中 AI 佔 8 個、前後端佔 2 個，綜合榜 #1 為 mattpocock/skills。"
     },
     "feed": [
-      {
-        "id": "repo:493376588:new:2026-08-24",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "cordiverse/cordis 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/cordiverse/cordis"
-      },
-      {
-        "id": "repo:1336933337:new:2026-08-24",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "yetone/cumora 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/yetone/cumora"
-      },
-      {
-        "id": "repo:1341759590:new:2026-08-24",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "MengTo/threeui 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/MengTo/threeui"
-      },
-      {
-        "content": "Cloudflare 宣布推出 AI Search 服務，讓開發者與企業能直接將其指向自有檔案與網站，為 AI 代理建立專屬的資料搜尋引擎，且無需手動拼湊多個 Cloudflare 基礎元件。此功能大幅簡化了檢索增強生成（RAG）與代理資料存取的建置流程，官方並同步釋出全新的預覽版定價模型，對需要快速為應用程式導入內部知識庫搜尋的團隊是一大助益。",
-        "id": "news:https://blog.cloudflare.com/ai-search-easier",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "Cloudflare AI Search 推出：為 AI 代理提供專屬搜尋引擎",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/ai-search-easier/"
-      },
-      {
-        "content": "OpenAI 宣布推出 GPT-5.6 的全新低價方案，針對 Luna 與 Terra 模型提供更實惠的定價。此舉旨在透過提升模型的運算與成本效率，協助企業在大規模環境下更經濟地部署各類 AI 工作流程與自動化應用，降低開發與維運成本。",
-        "id": "news:https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "OpenAI 推出 GPT-5.6 降價方案，優化 Luna 與 Terra 模型性價比",
-        "type": "news",
-        "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6"
-      },
-      {
-        "content": "Google 推出全新的手語轉文字（SL2T）模型，旨在為聽障與重聽使用者打造更直覺的手語互動功能。這項技術突破將有助於開發者與無障礙科技領域將手語辨識整合至各類應用中，進一步推動數位包容性與人機互動的無障礙體驗。",
-        "id": "news:https://deepmind.google/blog/putting-sign-language-ai-into-users-hands",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "Google 發表手語轉文字（SL2T）突破性模型",
-        "type": "news",
-        "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/"
-      },
-      {
-        "content": "Google 宣布在 Google Flow Music 中推出 Lyria 3.5，帶來音樂性、歌詞創作、人聲表現以及創意控制等多方面的重大升級。這項更新為影音創作者與開發者提供更高品質的 AI 生成音樂工具，提升生成內容的精緻度與可控性。",
-        "id": "news:https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "Google 發布 Lyria 3.5：強化 Google Flow Music 的音樂與人聲生成能力",
-        "type": "news",
-        "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/"
-      },
-      {
-        "content": "Cloudflare 官方的 Agents Week 活動正式落幕，期間發表了從 Web3 錢包到 Cloudflare Radar 等一系列重要更新與工具。這些發布擴展了開發者在邊緣運算與代理網路上的應用潛力，為建構現代化分散式系統提供更多官方支援的基礎設施。",
-        "id": "news:https://blog.cloudflare.com/agents-week-review-august-2026",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "Cloudflare 舉辦 Agents Week 圓滿落幕：統整釋出多項錢包與 Radar 新功能",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/agents-week-review-august-2026/"
-      },
       {
         "content": "業界傳出支付巨頭 Stripe 將以超過 70 億美元的高價收購 AI 模型閘道器新創 OpenRouter。這項消息在開發者與投資界引起高度關注，反映出 AI 模型調度、API 聚合與多模型路由服務在現代軟體架構中的戰略價值正急劇攀升。",
         "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vqlh98/stripe_will_reportedly_acquire_ai_gateway_startup",
@@ -677,101 +616,151 @@
         "title": "開發者實測 Qwen 3.8 27B：程式碼能力與 OCR 表現亮眼",
         "type": "news",
         "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vvyacg/qwen_38_27b_is_a_game_changer/"
+      },
+      {
+        "content": "Node.js 釋出最新長期支援版本 v24.19.0（代號 Krypton）。此版本帶來多項重要更新與實驗性功能，包含在 buffer 模組中實作 blob.textStream()、更新 OpenSSL 建置設定以支援壓縮、將 blockList 穩定度狀態提升至候選發布（RC）、將 stream.compose 標記為穩定，並新增 `--experimental-import-text` 旗標以支援 ESM 匯入文字。這些更新提升了效能與開發體驗，對 Node.js 開發者來說是重要的維護與版本升級參考。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v24.19.0",
+        "publishedAt": "2026-08-30T00:07:15.441Z",
+        "title": "Node.js v24.19.0 'Krypton' (LTS) 發布",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
+      },
+      {
+        "content": "Cloudflare 推出全新功能「Bot Preference Sync」，能自動將網站的 robots.txt 檔案與針對搜尋引擎、AI 代理（Agent）及模型訓練的 AI 機器人政策進行對齊。開發者與網站管理者無需再手動維護靜態的 robots.txt 檔案，即可輕鬆管理哪些 AI 爬蟲或機器人能存取網站內容，簡化了存取控制與現代化流量管理的流程。",
+        "id": "news:https://blog.cloudflare.com/bot-preference-sync",
+        "publishedAt": "2026-08-30T00:07:15.441Z",
+        "title": "Cloudflare 推出 Bot Preference Sync 自動化對齊機器人政策",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/bot-preference-sync/"
+      },
+      {
+        "content": "近日有執行長因全面導入 AI 而開除團隊開發者，引發技術社群熱烈討論與諷刺，甚至有開發者因此動手打造開源的「AI CEO」。這類新聞反映出當前產業對 AI 取代工程職能的焦慮與極端嘗試，凸顯了 AI 工具對軟體開發組織結構帶來的衝擊與省思。",
+        "id": "news:https://github.com/SenteLabsAI/OpenExecutive",
+        "publishedAt": "2026-08-30T00:07:15.441Z",
+        "title": "CEO 因導入 AI 開除開發者，引發開源社群反思與諷刺",
+        "type": "news",
+        "url": "https://github.com/SenteLabsAI/OpenExecutive"
+      },
+      {
+        "content": "大型多人線上遊戲 EVE Online 經歷多年運營後，正式宣佈將其龐大且複雜的後端系統遷移至 Python 3。這對長期依賴大型 Python 架構的後端與遊戲開發者而言，是一項具有指標性意義的架構升級里程碑，展現了老牌系統在現代化轉型上的實踐。",
+        "id": "news:https://eveonline.com/news/view/the-move-to-python-3-begins",
+        "publishedAt": "2026-08-30T00:07:15.441Z",
+        "title": "經典太空網游 EVE Online 宣布全面遷移至 Python 3",
+        "type": "news",
+        "url": "https://www.eveonline.com/news/view/the-move-to-python-3-begins"
+      },
+      {
+        "content": "針對檢索增強生成（RAG）在實務上的複雜迷思，社群熱議文章指出 RAG 的本質其實非常單純，不需過度工程化。這篇文章對正在導入 LLM 應用的開發者提供了解耦與簡化系統架構的指引，有助於降低維護成本並提高檢索效率。",
+        "id": "news:https://lighthousenewsletter.com/p/rag-is-simpler-than-you-think",
+        "publishedAt": "2026-08-30T00:07:15.441Z",
+        "title": "RAG 架構其實比想像中簡單：開發者應掌握的核心概念",
+        "type": "news",
+        "url": "https://www.lighthousenewsletter.com/p/rag-is-simpler-than-you-think"
+      },
+      {
+        "content": "著名的 Linux 發行版 Debian 社群經投票表決，正式決定允許在軟體開發與維護流程中「負責任地使用生成式 AI」。此舉為開源專案如何規範與整合 AI 工具開了先例，對開源社群及參與貢獻的開發者在工具使用規範上有深遠影響。",
+        "id": "news:https://lwn.net/Articles/1091231",
+        "publishedAt": "2026-08-30T00:07:15.441Z",
+        "title": "Debian 投票通過允許在專案中「負責任地使用生成式 AI」",
+        "type": "news",
+        "url": "https://lwn.net/Articles/1091231/"
+      },
+      {
+        "content": "Google 推出的 Gemini-3.5-Transcribe 在開發者社群中受到高度關注。該模型在語音轉文字的精確度與處理速度上有顯著表現，為需要整合高效能、低延遲語音處理功能的應用開發者提供了強大的新選擇。",
+        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe",
+        "publishedAt": "2026-08-30T00:07:15.441Z",
+        "title": "Gemini-3.5-Transcribe 語音辨識模型引發關注",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/"
+      },
+      {
+        "content": "Asana 分享了他們利用 OpenAI Codex 在短短兩週內，成功替換過舊測試系統的案例。這項原本預估需要耗費五年工程時間的工作僅花費約 12,000 美元，在開發者社群中掀起關於 AI 代理重構大型程式碼庫極限與成本效益的熱烈討論。",
+        "id": "news:https://openai.com/index/asana",
+        "publishedAt": "2026-08-30T00:07:15.441Z",
+        "title": "Asana 藉助 AI 程式碼工具在兩週內完成預估五年的工程重構",
+        "type": "news",
+        "url": "https://openai.com/index/asana"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-29T03:38:37.622Z",
+      "generatedAt": "2026-08-30T00:07:15.441Z",
       "items": [
         {
-          "content": "Google 正式推出 Gemini 3.7 Flash 模型，進一步擴展其輕量且高效能的 AI 模型陣容。這項更新對開發者至關重要，提供了更低的延遲與優化的成本效益，適合需要大規模調用、即時反應以及高頻率文字與多模態處理的應用場景。",
+          "content": "Node.js 釋出最新長期支援版本 v24.19.0（代號 Krypton）。此版本帶來多項重要更新與實驗性功能，包含在 buffer 模組中實作 blob.textStream()、更新 OpenSSL 建置設定以支援壓縮、將 blockList 穩定度狀態提升至候選發布（RC）、將 stream.compose 標記為穩定，並新增 `--experimental-import-text` 旗標以支援 ESM 匯入文字。這些更新提升了效能與開發體驗，對 Node.js 開發者來說是重要的維護與版本升級參考。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "Google 發布 Gemini 3.7 Flash 核心模型更新",
-          "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
+          "title": "Node.js v24.19.0 'Krypton' (LTS) 發布",
+          "url": "https://github.com/nodejs/node/releases/tag/v24.19.0",
           "weightedScore": 100
         },
         {
-          "content": "Kubernetes 釋出 v1.37.0 最新版本，包含多項功能改進、錯誤修復與內部組件升級。對於依賴雲原生基礎設施的 DevOps 開發者而言，定期追蹤並升級版本有助於確保叢集穩定性、安全性及獲得最新的功能支援。",
+          "content": "Cloudflare 推出全新功能「Bot Preference Sync」，能自動將網站的 robots.txt 檔案與針對搜尋引擎、AI 代理（Agent）及模型訓練的 AI 機器人政策進行對齊。開發者與網站管理者無需再手動維護靜態的 robots.txt 檔案，即可輕鬆管理哪些 AI 爬蟲或機器人能存取網站內容，簡化了存取控制與現代化流量管理的流程。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Kubernetes 發布 v1.37.0 正式版本",
-          "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.37.0",
+          "title": "Cloudflare 推出 Bot Preference Sync 自動化對齊機器人政策",
+          "url": "https://blog.cloudflare.com/bot-preference-sync/",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 在儀表板推出 BotBase for Operators，讓機器人與 AI 代理的營運商能夠集中管理提交狀態、編輯內容，並設定行為模型。這對開發爬蟲或自動化代理程式的工程師是一項重要更新，能更清晰地宣告其內容使用方式。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Cloudflare 推出 BotBase for Operators 目錄管理功能",
-          "url": "https://blog.cloudflare.com/botbase-for-operators/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 宣布憑證透明度監控（Certificate Transparency Monitoring）正式全面可用（GA）。最大改變在於取消了對 Cloudflare 自行發行憑證的通知信，讓收件匣中收到的每一則憑證警報都更具調查價值，提升憑證安全管理的效率。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Cloudflare 憑證透明度監控（CTM）正式全面可用",
-          "url": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/",
-          "weightedScore": 100
-        },
-        {
-          "content": "美國法院裁定前川普政府將 AI 公司 Anthropic 列入黑名單的行政處分屬違法行為。這起法律訴訟引發社群高度關注，對了解政府監管與 AI 產業合規、供應鏈安全及企業權益具有重大風向指標意義。",
+          "content": "近日有執行長因全面導入 AI 而開除團隊開發者，引發技術社群熱烈討論與諷刺，甚至有開發者因此動手打造開源的「AI CEO」。這類新聞反映出當前產業對 AI 取代工程職能的焦慮與極端嘗試，凸顯了 AI 工具對軟體開發組織結構帶來的衝擊與省思。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "美國法官裁定川普政府將 Anthropic 列入黑名單違法",
-          "url": "https://www.nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html",
-          "weightedScore": 554
+          "title": "CEO 因導入 AI 開除開發者，引發開源社群反思與諷刺",
+          "url": "https://github.com/SenteLabsAI/OpenExecutive",
+          "weightedScore": 1022
         },
         {
-          "content": "社群開發者深入測試開源的 Qwen 3.8 27B 模型，發現其程式碼生成能力與 OCR（光學字元辨識）品質表現極佳，甚至在部分指標上超越既有的主流商業輕量模型。對於尋求落地自建模型、降低高昂 API 成本的團隊而言，這被視為具備實用價值的重大里程碑。",
+          "content": "大型多人線上遊戲 EVE Online 經歷多年運營後，正式宣佈將其龐大且複雜的後端系統遷移至 Python 3。這對長期依賴大型 Python 架構的後端與遊戲開發者而言，是一項具有指標性意義的架構升級里程碑，展現了老牌系統在現代化轉型上的實踐。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "title": "經典太空網游 EVE Online 宣布全面遷移至 Python 3",
+          "url": "https://www.eveonline.com/news/view/the-move-to-python-3-begins",
+          "weightedScore": 292
+        },
+        {
+          "content": "針對檢索增強生成（RAG）在實務上的複雜迷思，社群熱議文章指出 RAG 的本質其實非常單純，不需過度工程化。這篇文章對正在導入 LLM 應用的開發者提供了解耦與簡化系統架構的指引，有助於降低維護成本並提高檢索效率。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "開發者實測 Qwen 3.8 27B：程式碼能力與 OCR 表現亮眼",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vvyacg/qwen_38_27b_is_a_game_changer/",
+          "title": "RAG 架構其實比想像中簡單：開發者應掌握的核心概念",
+          "url": "https://www.lighthousenewsletter.com/p/rag-is-simpler-than-you-think",
+          "weightedScore": 507
+        },
+        {
+          "content": "著名的 Linux 發行版 Debian 社群經投票表決，正式決定允許在軟體開發與維護流程中「負責任地使用生成式 AI」。此舉為開源專案如何規範與整合 AI 工具開了先例，對開源社群及參與貢獻的開發者在工具使用規範上有深遠影響。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Debian 投票通過允許在專案中「負責任地使用生成式 AI」",
+          "url": "https://lwn.net/Articles/1091231/",
+          "weightedScore": 470
+        },
+        {
+          "content": "Google 推出的 Gemini-3.5-Transcribe 在開發者社群中受到高度關注。該模型在語音轉文字的精確度與處理速度上有顯著表現，為需要整合高效能、低延遲語音處理功能的應用開發者提供了強大的新選擇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "title": "Gemini-3.5-Transcribe 語音辨識模型引發關注",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/",
+          "weightedScore": 460
+        },
+        {
+          "content": "Asana 分享了他們利用 OpenAI Codex 在短短兩週內，成功替換過舊測試系統的案例。這項原本預估需要耗費五年工程時間的工作僅花費約 12,000 美元，在開發者社群中掀起關於 AI 代理重構大型程式碼庫極限與成本效益的熱烈討論。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Asana 藉助 AI 程式碼工具在兩週內完成預估五年的工程重構",
+          "url": "https://openai.com/index/asana",
           "weightedScore": 100
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-22T22:30:40.673Z",
-      "url": "https://blog.cloudflare.com/bot-preference-sync"
-    },
-    {
-      "seenAt": "2026-08-22T22:30:40.673Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
-    },
-    {
-      "seenAt": "2026-08-22T22:30:40.673Z",
-      "url": "https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813"
-    },
-    {
-      "seenAt": "2026-08-22T22:30:40.673Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of"
-    },
-    {
-      "seenAt": "2026-08-22T22:30:40.673Z",
-      "url": "https://openai.com/index/asana"
-    },
-    {
-      "seenAt": "2026-08-22T22:30:40.673Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vpxbm8/newer_commits_removed_the_qwen_35b"
-    },
-    {
-      "seenAt": "2026-08-22T22:30:40.673Z",
-      "url": "https://blog.cloudflare.com/aeo"
-    },
-    {
-      "seenAt": "2026-08-22T22:30:40.673Z",
-      "url": "https://cncf.io/blog/2026/08/14/eleven-minutes-zero-humans-building-a-self-healing-kubernetes-upgrade-pipeline-on-kairos"
-    },
     {
       "seenAt": "2026-08-23T22:31:11.230Z",
       "url": "https://blog.cloudflare.com/ai-search-easier"
@@ -959,6 +948,38 @@
     {
       "seenAt": "2026-08-29T03:38:37.622Z",
       "url": "https://reddit.com/r/LocalLLaMA/comments/1vvyacg/qwen_38_27b_is_a_game_changer"
+    },
+    {
+      "seenAt": "2026-08-30T00:07:15.441Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
+    },
+    {
+      "seenAt": "2026-08-30T00:07:15.441Z",
+      "url": "https://blog.cloudflare.com/bot-preference-sync"
+    },
+    {
+      "seenAt": "2026-08-30T00:07:15.441Z",
+      "url": "https://github.com/SenteLabsAI/OpenExecutive"
+    },
+    {
+      "seenAt": "2026-08-30T00:07:15.441Z",
+      "url": "https://eveonline.com/news/view/the-move-to-python-3-begins"
+    },
+    {
+      "seenAt": "2026-08-30T00:07:15.441Z",
+      "url": "https://lighthousenewsletter.com/p/rag-is-simpler-than-you-think"
+    },
+    {
+      "seenAt": "2026-08-30T00:07:15.441Z",
+      "url": "https://lwn.net/Articles/1091231"
+    },
+    {
+      "seenAt": "2026-08-30T00:07:15.441Z",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe"
+    },
+    {
+      "seenAt": "2026-08-30T00:07:15.441Z",
+      "url": "https://openai.com/index/asana"
     }
   ]
 }
