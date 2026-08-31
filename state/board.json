@@ -1,94 +1,94 @@
 {
   "board": {
-    "493376588": {
+    "568098118": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-08-23T22:31:11.230Z",
-      "fullName": "cordiverse/cordis",
+      "firstSeenAt": "2026-08-31T00:24:16.184Z",
+      "fullName": "makeplane/plane",
       "language": "TypeScript",
-      "rank": 8,
-      "starsThisWeek": 3364,
-      "url": "https://github.com/cordiverse/cordis"
+      "rank": 10,
+      "starsThisWeek": 1124,
+      "url": "https://github.com/makeplane/plane"
     },
-    "770153867": {
-      "domain": "ai",
-      "firstSeenAt": "2026-08-23T22:31:11.230Z",
-      "fullName": "harry0703/MoneyPrinterTurbo",
+    "718741813": {
+      "domain": "frontend-backend",
+      "firstSeenAt": "2026-08-31T00:24:16.184Z",
+      "fullName": "abi/screenshot-to-code",
       "language": "Python",
-      "rank": 2,
-      "starsThisWeek": 10953,
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo"
+      "rank": 9,
+      "starsThisWeek": 1909,
+      "url": "https://github.com/abi/screenshot-to-code"
     },
     "965415649": {
       "domain": "ai",
       "firstSeenAt": "2026-08-23T22:31:11.230Z",
       "fullName": "openai/codex",
       "language": "Rust",
-      "rank": 3,
-      "starsThisWeek": 6673,
+      "rank": 4,
+      "starsThisWeek": 5510,
       "url": "https://github.com/openai/codex"
     },
-    "1032808806": {
+    "1079456184": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-23T22:31:11.230Z",
-      "fullName": "usestrix/strix",
-      "language": "Python",
-      "rank": 4,
-      "starsThisWeek": 4754,
-      "url": "https://github.com/usestrix/strix"
-    },
-    "1073224795": {
-      "domain": "ai",
-      "firstSeenAt": "2026-08-23T22:31:11.230Z",
-      "fullName": "obra/superpowers",
-      "language": "Shell",
-      "rank": 5,
-      "starsThisWeek": 4085,
-      "url": "https://github.com/obra/superpowers"
-    },
-    "1128123594": {
-      "domain": "ai",
-      "firstSeenAt": "2026-08-23T22:31:11.230Z",
-      "fullName": "volcengine/OpenViking",
+      "firstSeenAt": "2026-08-31T00:24:16.184Z",
+      "fullName": "K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "rank": 7,
-      "starsThisWeek": 3447,
-      "url": "https://github.com/volcengine/OpenViking"
+      "starsThisWeek": 4309,
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
     },
-    "1148788086": {
+    "1185389803": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-23T22:31:11.230Z",
-      "fullName": "mattpocock/skills",
-      "language": "Shell",
-      "rank": 1,
-      "starsThisWeek": 13992,
-      "url": "https://github.com/mattpocock/skills"
+      "firstSeenAt": "2026-08-31T00:24:16.184Z",
+      "fullName": "MadsLorentzen/ai-job-search",
+      "language": "Python",
+      "rank": 5,
+      "starsThisWeek": 5348,
+      "url": "https://github.com/MadsLorentzen/ai-job-search"
     },
-    "1201476594": {
+    "1185590488": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-23T22:31:11.230Z",
-      "fullName": "santifer/career-ops",
-      "language": "JavaScript",
+      "firstSeenAt": "2026-08-31T00:24:16.184Z",
+      "fullName": "rohitg00/ai-engineering-from-scratch",
+      "language": "Python",
+      "rank": 8,
+      "starsThisWeek": 3720,
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch"
+    },
+    "1195360525": {
+      "domain": "ai",
+      "firstSeenAt": "2026-08-31T00:24:16.184Z",
+      "fullName": "calesthio/OpenMontage",
+      "language": "Python",
       "rank": 6,
-      "starsThisWeek": 3963,
-      "url": "https://github.com/santifer/career-ops"
+      "starsThisWeek": 4974,
+      "url": "https://github.com/calesthio/OpenMontage"
     },
-    "1336933337": {
+    "1211139949": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-23T22:31:11.230Z",
-      "fullName": "yetone/cumora",
-      "language": "TypeScript",
-      "rank": 9,
-      "starsThisWeek": 2945,
-      "url": "https://github.com/yetone/cumora"
+      "firstSeenAt": "2026-08-31T00:24:16.184Z",
+      "fullName": "tt-a1i/archify",
+      "language": "JavaScript",
+      "rank": 1,
+      "starsThisWeek": 18103,
+      "url": "https://github.com/tt-a1i/archify"
     },
-    "1341759590": {
-      "domain": "frontend-backend",
-      "firstSeenAt": "2026-08-23T22:31:11.230Z",
-      "fullName": "MengTo/threeui",
-      "language": "HTML",
-      "rank": 10,
-      "starsThisWeek": 2827,
-      "url": "https://github.com/MengTo/threeui"
+    "1220744720": {
+      "domain": "ai",
+      "firstSeenAt": "2026-08-31T00:24:16.184Z",
+      "fullName": "freestylefly/awesome-gpt-image-2",
+      "language": "JavaScript",
+      "rank": 2,
+      "starsThisWeek": 13413,
+      "url": "https://github.com/freestylefly/awesome-gpt-image-2"
+    },
+    "1266797999": {
+      "domain": "ai",
+      "firstSeenAt": "2026-08-31T00:24:16.184Z",
+      "fullName": "DietrichGebert/ponytail",
+      "language": "JavaScript",
+      "rank": 3,
+      "starsThisWeek": 8493,
+      "url": "https://github.com/DietrichGebert/ponytail"
     }
   },
   "intros": {
@@ -108,6 +108,10 @@
       "intro": "Cordis 是一個時空可組合性的元框架，旨在提供全新的程式設計範式。其核心特色基於 TypeScript 開發，結合 Effect、Plugin 與 Node.js 生態系，實現高度模組化的架構。目前正處於活躍開發階段，API 尚未穩定。適合對時空可組合性與框架設計有興趣的開發者進行研究與應用。",
       "introAt": "2026-08-23T22:31:11.230Z"
     },
+    "568098118": {
+      "intro": "Plane 是一個開源的現代化專案管理工具，旨在幫助團隊追蹤問題、規劃循環衝刺與管理產品藍圖，擺脫繁瑣工具維護的混亂。\n\n核心特色包含：支援豐富文字編輯與檔案上傳的工作項目、追蹤進度的循環功能、簡化複雜專案的模組、自訂工作流程的檢視畫面、具備 AI 能力的筆記頁面，以及提供即時數據洞察的分析工具。\n\n適合追求資料自主權、偏好自行架設伺服器的團隊，或直接使用雲端服務，輕鬆高效地管理各類專案與產品開發。",
+      "introAt": "2026-08-31T00:24:16.184Z"
+    },
     "652712035": {
       "intro": "AirLLM 能大幅降低大型語言模型的推論記憶體需求，讓 70B 等大型模型在單張 4GB GPU 上運行，且不需量化、蒸餾或剪枝。它支援稀疏 MoE 模型以專家分流方式載入，亦支援 DeepSeek、Llama、Qwen 等多款主流開源模型，甚至能在低記憶體設備上執行。適合硬體資源有限、需在消費級顯卡或 MacOS 上運行超大型與中文開源模型的開發者與研究人員。",
       "introAt": "2026-08-09T22:40:29.356Z"
@@ -119,6 +123,10 @@
     "708266011": {
       "intro": "Harper 旨在解決現有英文文法檢查工具過度耗能、速度緩慢及隱私洩漏的問題。其核心特色為極致的效能，不僅記憶體佔用極低，且能實現毫秒級檢查，同時支援 WebAssembly，確保隱私安全。適合重視隱私與操作效率的開發者，可透過多款主流編輯器外掛或 Web 應用使用。",
       "introAt": "2026-08-02T23:01:29.724Z"
+    },
+    "718741813": {
+      "intro": "這個專案能將截圖、Figma 設計稿、網頁錄影自動轉為乾淨且具互動功能的程式碼。核心特色支援 HTML、React、Vue、Bootstrap 等主流框架，並結合 Gemini、GPT、Claude 等 AI 模型進行程式碼生成、圖像編輯與真實素材萃取。適合需要快速將介面設計轉換為前端原型的開發者與設計師使用。",
+      "introAt": "2026-08-31T00:24:16.184Z"
     },
     "770153867": {
       "intro": "MoneyPrinterTurbo 是一款一站式 AI 短影片生成工具，只需提供主題或關鍵字，即可自動完成腳本撰寫、素材匹配、字幕與背景音樂生成，並合成高清短影片。\n\n核心特色包含：\n- 支援 AI 代理、WebUI、API 與 CLI 多種使用方式。\n- 整合主流大語言模型與多模態服務，並支援 AI 文生影片與多種語音合成。\n- 支援橫直屏多種尺寸與批次生成，並可一鍵發布至 TikTok、Instagram 與 YouTube Shorts。\n\n…",
@@ -172,6 +180,10 @@
       "intro": "這是一個精心打造的 AI 專家團隊合集，解決開發者在工作流程中缺乏專業領域指導的問題。專案提供具備獨特個性、實作流程與產出導向的 AI 代理人，涵蓋前端、後端、架構與 DevOps 等多領域。使用者可透過跨平台的桌面應用程式一鍵安裝至 Claude Code、Cursor、Gemini 等主流工具，或直接作為提示詞與工作流程的參考，適合需要快速組建專屬 AI 專家團隊的開發者與團隊。",
       "introAt": "2026-08-16T22:30:27.586Z"
     },
+    "1079456184": {
+      "intro": "此專案提供 163 個開源科學與研究技能，讓支援開放 Agent Skills 標準的 AI 代理（如 Cursor、Claude Code）轉化為專業研究助理。核心特色涵蓋生物資訊、藥物發現、臨床研究、機器學習、材料科學及科學視覺化等跨領域工作流程，並包含 78 個以上科學資料庫與工具的策展文件。適合科學家、工程師與研究團隊執行複雜的多步驟科學運算與資料分析任務。",
+      "introAt": "2026-08-31T00:24:16.184Z"
+    },
     "1128123594": {
       "intro": "OpenViking 是專為 AI 代理設計的開源上下文資料庫，將記憶、資源與技能統一納入 `viking://` 虛擬檔案系統中，解決傳統黑箱向量檢索的問題。其核心特色包含三層載取機制（L0 摘要、L1 總覽、L2 細節）以減少 Token 消耗、支援目錄遞歸檢索與具備可視化的檢索軌跡，並能在對話結束後自動將會話轉為長期記憶。適用於需精準管理 AI 上下文、降低查詢延遲並串接各大主流 AI 代理與開發工具的開發者。",
       "introAt": "2026-08-23T22:31:11.230Z"
@@ -208,6 +220,18 @@
       "intro": "Orca 是一款專為高效開發者打造的 AI 編排工具，解決多個 AI Agent 在不同工作環境下難以統一管理的問題。它支援平行工作樹，讓你同時運行 ClaudeCode、Codex 等多種代理，並透過手機端即時監控與操作。具備 WebGL 終端機、網頁設計模式、GitHub/Linear 原生整合及遠端 SSH 支援，能有效串聯各種 CLI Agent，實現跨環境的高效開發流程，是開發者管理多代理協作的最佳 IDE 輔助利器。",
       "introAt": "2026-07-19T11:16:05.077Z"
     },
+    "1185389803": {
+      "intro": "這是一個基於 Claude Code 的本機 AI 求職自動化框架，幫你解決耗時的履歷修改與求職信撰寫。核心特色包含職缺評估、履歷與求職信客製化、ATS 解析度檢查及面試準備。適合想要透過 AI 智慧化管理求職流程、自動化產出量身打造申請資料的求職者。",
+      "introAt": "2026-08-31T00:24:16.184Z"
+    },
+    "1185590488": {
+      "intro": "這是一套彌合 AI 工具使用落差的開源完整課程，解決學生雖使用 AI 工具卻缺乏專業準備的問題。包含 523 個課程、20 個階段與約 342 小時內容，涵蓋 Python、TypeScript、Rust 與 Julia，每堂課皆產出實用產出物。適合想從零建立 AI 基礎、打造生產級 LLM 應用、開發 AI 代理人或學習模型上下文協議（MCP）的學習者。",
+      "introAt": "2026-08-31T00:24:16.184Z"
+    },
+    "1195360525": {
+      "intro": "OpenMontage 是一個開源的 Agent 式影片製作系統，將 AI 程式助理轉化為完整的製片廠。只要用自然語言描述需求，或貼上參考影片，Agent 就會自動處理研究、腳本、素材生成、剪輯與最終合成。支援真實影片素材庫剪輯與 AI 生成影片，並具備 Backlot 即時動態分鏡看板與審核機制，適合開發者與創作者打造低成本、高效率的自動化影音工作流。",
+      "introAt": "2026-08-31T00:24:16.184Z"
+    },
     "1198306812": {
       "intro": "Vibe-Trading 是一款全方位的 AI 量化交易代理框架。它解決了傳統交易開發中繁瑣的資料串接與回測問題，透過 LLM 與多代理人協作機制，實現自動化金融分析。具備嚴謹的沙盒回測、風險控管及多市場數據整合能力，並支援 MCP 標準。適合量化交易開發者與金融科技研究者，透過單一指令快速部署個人專屬的交易代理，在嚴謹的安全防護下進行策略驗證與實戰。",
       "introAt": "2026-07-19T11:16:05.077Z"
@@ -224,9 +248,17 @@
       "intro": "專案解決 AI Agent 每次重啟都需重新學習痛點，將對話、技能與知識沉澱為可攜式資產。核心特色包含自動化資產萃取、支援跨框架的多 Agent 協同、結合文件與程式碼的圖譜檢索，以及具備權限控制的團隊記憶面板。適合追求經驗累積、降低重複溝通成本的個人開發者與 Agent 團隊。",
       "introAt": "2026-08-09T22:40:29.356Z"
     },
+    "1211139949": {
+      "intro": "Archify 透過 AI 聊天或程式碼庫，將系統描述轉為精美、互動的架構圖。專案由 Agent 產出型別化 JSON IR，並由 Node.js 進行確定性編譯，產生包含深淺色主題、多種圖表類型與動態效果的獨立 HTML。適用於架構變更審查、互動式系統探索與圖表匯出，支援 Cursor、Claude Code、Codex CLI 等開發工具。",
+      "introAt": "2026-08-31T00:24:16.184Z"
+    },
     "1212503250": {
       "intro": "ego lite 解決了 AI 代理執行網頁自動化時，與用戶搶佔瀏覽器與帳號登入權限的問題。透過獨立工作空間與原生 Chrome 資料整合，讓代理能平行執行任務而不干擾用戶。其核心特色在於直接以 JavaScript 執行指令，相比傳統 CLI 框架速度提升 2.5 倍並節省大量 Token。適用於需要開發與 AI 代理協作自動化任務、追求高效率與順暢工作流的開發者。",
       "introAt": "2026-08-02T23:01:29.724Z"
+    },
+    "1220744720": {
+      "intro": "這是一個將分散的 AI 影像案例轉為結構化 Prompt-as-Code 的工業級提示詞引擎與模板庫。專案提供原子化綱要與結構化控制，將主體、光影與版面等視覺細節模組化，解決 AI 影像生成難以穩定控制與重複使用的问题。非常適合代理程式、自動化腳本及生產工作流，方便使用者進行批次生成、套用工業級模板與構建視覺資產。",
+      "introAt": "2026-08-31T00:24:16.184Z"
     },
     "1222917575": {
       "intro": "Hallmark 是一款專為 Claude Code、Cursor 與 Codex 設計的 AI 設計技能，旨在解決 AI 生成內容千篇一律的「罐頭感」。它透過內建的 57 項防廢話檢測與自我審查機制，確保產出的 CSS 與 HTML 具備獨特宏觀架構與設計美感。本工具提供建構、審計、重設計及分析四大功能，能根據創意需求靈活切換 20 種主題或進行客製化設計，讓不同專案展現截然不同的獨特風貌。",
@@ -273,150 +305,14 @@
       "introAt": "2026-08-23T22:31:11.230Z"
     }
   },
-  "lastBoardPushAt": "2026-08-23T22:31:11.230Z",
-  "lastNewsPushAt": "2026-08-30T00:07:15.441Z",
+  "lastBoardPushAt": "2026-08-31T00:24:16.184Z",
+  "lastNewsPushAt": "2026-08-31T00:24:16.184Z",
   "publish": {
     "boardSummary": {
-      "generatedAt": "2026-08-23T22:31:11.230Z",
-      "summary": "本次新進 10 個技術，其中 AI 佔 8 個、前後端佔 2 個，綜合榜 #1 為 mattpocock/skills。"
+      "generatedAt": "2026-08-31T00:24:16.184Z",
+      "summary": "本次技術雷達榜單由 tt-a1i/archify 奪得 #1，共有 9 個新進項目（AI 佔 7 個、前後端佔 2 個）以及 1 個下降項目。"
     },
     "feed": [
-      {
-        "content": "業界傳出支付巨頭 Stripe 將以超過 70 億美元的高價收購 AI 模型閘道器新創 OpenRouter。這項消息在開發者與投資界引起高度關注，反映出 AI 模型調度、API 聚合與多模型路由服務在現代軟體架構中的戰略價值正急劇攀升。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vqlh98/stripe_will_reportedly_acquire_ai_gateway_startup",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "傳 Stripe 將以超過 70 億美元併購 AI 閘道器新創 OpenRouter",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vqlh98/stripe_will_reportedly_acquire_ai_gateway_startup/"
-      },
-      {
-        "content": "社群開發者針對 Qwen 3.8 27B 量化版本進行深度測試，發現其在程式碼生成（如 1:1 復刻經典大型電玩）與實際世界知識的運用上表現極佳。透過類似「過度思考」的推理機制，其表現甚至能媲美 Anthropic Claude Sonnet 級別的模型，對尋求開源高效能模型的開發者極具參考價值。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vqm51f/long_review_qwen_38_27b_is_very_good_at_tapping",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "深度評測 Qwen 3.8 27B：展現驚人的真實世界知識與過度思考能力",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vqm51f/long_review_qwen_38_27b_is_very_good_at_tapping/"
-      },
-      {
-        "content": "一項針對 Coconut 與 CODI 等潛在推理模型的研究發現，這些模型在執行邏輯任務（如 PrOntoQA 與 ProsQA）時，幾乎沒有真正利用連續隱藏狀態來進行複雜推理。實驗顯示，即使強制模型提早停止思考，通常也會吐出相同的回應，這揭示了當前 AI 模型在可解釋性與內部推理機制上的盲點，引發社群熱烈討論。",
-        "id": "news:https://arxiv.org/abs/2604.04902",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "研究指出：潛在推理模型在邏輯任務中鮮少使用隱藏狀態",
-        "type": "news",
-        "url": "https://arxiv.org/abs/2604.04902"
-      },
-      {
-        "content": "開發者在 Hacker News 上展示名為 Huzzah 的專案，提出了一種結合 AI 輔助開發的全新工作流程與程式碼編寫方法。該工具在社群獲得高關注度，反映出工程師持續探索更高效、超越傳統 IDE 互動模式的 AI 輔助開發體驗。",
-        "id": "news:https://danielvaughn.dev/posts/huzzah",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "Show HN：Huzzah – 一種以 AI 進行程式碼編寫的新穎方法",
-        "type": "news",
-        "url": "https://www.danielvaughn.dev/posts/huzzah/"
-      },
-      {
-        "content": "Hacker News 上的一篇熱門討論深入剖析了為什麼開發者在本地端執行的開源大型語言模型，常給人不如預期聰明的印象。文章探討了量化損失、提示詞工程差異、系統提示設定以及硬體限制等關鍵因素，對想在地端部署 AI 模型的工程師提供寶貴的除錯與優化思路。",
-        "id": "news:https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
-        "publishedAt": "2026-08-23T22:31:11.230Z",
-        "title": "為什麼你的地端 LLM 感覺比實際表現還要笨？",
-        "type": "news",
-        "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917"
-      },
-      {
-        "content": "雲原生計算基金會（CNCF）宣佈 Kubeflow 正式畢業，標誌著該開源專案在企業界獲得廣泛採用，成為在 Kubernetes 上自動化端到端 AI 與機器學習生命週期的業界標準。這對 DevOps 與 AI 基礎設施工程師而言，意味著管理大規模 ML 工作負載有了更成熟、標準化的工具鏈支援，有助於降低維運複雜度並提升生產環境的穩定性。",
-        "id": "news:https://cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations",
-        "publishedAt": "2026-08-24T22:35:58.302Z",
-        "title": "CNCF 宣布 Kubeflow 正式畢業，確立雲原生 AI 營運標準",
-        "type": "news",
-        "url": "https://www.cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations/"
-      },
-      {
-        "content": "Google 發表 Gemini Robotics 2，為機械人系統導入全身智慧（whole body intelligence）能力。這項更新讓機器人能更協調地運用全身各部位進行複雜操作與互動。對從事硬體整合、邊緣運算與機器人控制軟體的開發者而言，這代表著底層感知與動作規劃模型的重大進展，拓展了具身智慧（Embodied AI）應用的邊界。",
-        "id": "news:https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots",
-        "publishedAt": "2026-08-24T22:35:58.302Z",
-        "title": "Gemini Robotics 2 發表，為機器人帶來全身智慧",
-        "type": "news",
-        "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/"
-      },
-      {
-        "content": "Cloudflare 發布 2026 年上半年 DDoS 威脅報告，指出在其網路中偵測到超大容量（hyper-volumetric）DDoS 攻擊激增 519%，主要由 DNS 與 CLDAP 反射向量驅動。這份報告詳細剖析了地緣政治衝突如何重塑全球網路安全威脅格局，對負責基礎設施安全與防禦架構的工程師而言，是評估現代網路攻擊趨勢與調整防禦策略的重要參考。",
-        "id": "news:https://blog.cloudflare.com/ddos-threat-report-2026-h1",
-        "publishedAt": "2026-08-24T22:35:58.302Z",
-        "title": "Cloudflare 發布 2026 上半年 DDoS 威脅報告：超大流量攻擊激增 519%",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1/"
-      },
-      {
-        "content": "有開發者成功透過 llama.cpp 在 4 張 NVIDIA RTX 3060 12GB 顯示卡（總計 48GB VRAM）上，運行約 144 GiB 的 DeepSeek-V4-Flash-0731 UD-Q4_K_XL 量化模型，並維持高達 360k-376k 的巨大上下文視窗，提示詞處理速度達到約每秒 100 token。這展示了在消費級硬體上運行大型混合架構模型的最佳化配置方案，對於希望在本地端部署超大模型或研究硬體極限的開發者極具參考價值。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vrqf4f/running_deepseek_v4_flash_q4_k_xl_at_100_toks",
-        "publishedAt": "2026-08-24T22:35:58.302Z",
-        "title": "在 4 張 RTX 3060 上以每秒百字運行 DeepSeek V4 Flash 4位元量化模型",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vrqf4f/running_deepseek_v4_flash_q4_k_xl_at_100_toks/"
-      },
-      {
-        "content": "Cloudflare 宣佈將官方部落格遷移至自家的 EmDash 架構，藉此在實際大規模生產環境中驗證其技術堆疊。文章分享了他們如何進行效能壓力測試、安全路由生產流量，以及重新設計前端體驗的工程實踐。這對關注大規模網頁效能、流量調度與前端架構演進的開發者來說，提供了寶貴的實戰經驗。",
-        "id": "news:https://blog.cloudflare.com/cloudflare-blog-uses-emdash",
-        "publishedAt": "2026-08-24T22:35:58.302Z",
-        "title": "Cloudflare 部落格遷移至 EmDash：大規模生產環境的效能壓力測試",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash/"
-      },
-      {
-        "content": "市場數據顯示伺服器與高階工作站記憶體價格在過去 12 個月內大幅攀升高達 500%，128GB DDR5 價格飆升至 3,399 美元。這對於需要採購硬體建置本地 AI 訓練叢集、大模型推論節點或高效能運算基礎設施的團隊與開發者而言，成本評估與硬體規劃將面臨重大衝擊與調整。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vrwsfl/memory_prices_climb_500_in_12_months_up_to_10x",
-        "publishedAt": "2026-08-24T22:35:58.302Z",
-        "title": "DDR5 記憶體價格在一年內飆升 500%，128GB 突破 3,399 美元",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vrwsfl/memory_prices_climb_500_in_12_months_up_to_10x/"
-      },
-      {
-        "content": "社群討論分享了一種透過在專案中建立 `agent.md` 規範檔案，來指導 AI 程式碼助理（如 Claude 或 Cursor）維持特定編碼風格、架構原則與測試要求的實踐方法。這有助於解決開發者在日常使用 AI 寫程式時常見的程式碼風格飄移與架構違規問題，對於希望優化 AI協作流程的工程師具高度實用價值。",
-        "id": "news:https://fabiensanglard.net/agent.md/index.html",
-        "publishedAt": "2026-08-24T22:35:58.302Z",
-        "title": "透過 agent.md 檔案規範提升 LLM 輔助編碼的程式碼品質",
-        "type": "news",
-        "url": "https://fabiensanglard.net/agent.md/index.html"
-      },
-      {
-        "content": "社群開發者推出名為 Claudette 的工具，旨在解決 Claude 有時回覆過度使用類似 BuzzFeed 或行銷文章的浮誇口吻、缺乏直接技術乾貨的問題。透過調整系統提示與輸出過濾，讓 AI 的回應更精準、技術導向，對頻繁使用 Claude 進行軟體開發與技術文件撰寫的工程師來說能有效提升工作效率。",
-        "id": "news:https://github.com/adnanakil/nobuzz/blob/main/README.md",
-        "publishedAt": "2026-08-24T22:35:58.302Z",
-        "title": "Claudette：修正 Claude 過度使用行銷口吻的提示詞外掛工具",
-        "type": "news",
-        "url": "https://github.com/adnanakil/nobuzz/blob/main/README.md"
-      },
-      {
-        "content": "針對 LLM 輸出中常夾雜過多冗言贅字或無用 token 的問題，開發者推出了名為 Vomit 的輕量工具，透過另一個小型且高效的 LLM 來清洗與精簡 Claude 的 token 輸出。這對於需要將 AI 回應直接串接至自動化管線、API 或減少 API 成本的開發者而言，提供了一種實用的架構解法。",
-        "id": "news:https://github.com/zachahn/vomit",
-        "publishedAt": "2026-08-24T22:35:58.302Z",
-        "title": "Vomit：使用獨立小型 LLM 清理 Claude Token 輸出的工具",
-        "type": "news",
-        "url": "https://github.com/zachahn/vomit"
-      },
-      {
-        "content": "OpenAI 官方宣佈對 GPT 5.6 Sol 模型進行價格調降（優惠至少持續至 11 月 21 日）。這對需要大量調用該模型、進行自動化代理或高頻 API 互動的開發者而言，能有效降低營運成本，有助於加速 AI 應用落地與規模化開發。",
-        "id": "news:https://developers.openai.com/api/docs/pricing",
-        "publishedAt": "2026-08-25T22:36:17.256Z",
-        "title": "OpenAI 宣布 GPT 5.6 Sol 進行價格調降",
-        "type": "news",
-        "url": "https://developers.openai.com/api/docs/pricing"
-      },
-      {
-        "content": "Cloudflare 宣布旗下的 Cloudflare for Government 正式獲得 FedRAMP Class D (High) 認證，並承諾爭取 DoD IL4 授權。這項合規進展對為公共部門或高度受管制的政府機構開發基礎設施與安全性應用的開發者與架構師具有重要參考價值。",
-        "id": "news:https://blog.cloudflare.com/fedramp-class-d-certification",
-        "publishedAt": "2026-08-25T22:36:17.256Z",
-        "title": "Cloudflare for Government 獲 FedRAMP Class D 高標準安全認證",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/fedramp-class-d-certification/"
-      },
-      {
-        "content": "Cloudflare 宣布推出更新後的社群計畫，包含 Cloudflare Ambassadors 與 Community Engineers，並背負 100 萬美元的開源資助計畫。這對依賴開源生態系、尋求維護者支持及參與雲端原生社群的開發者來說，提供更多資源與合作機會。",
-        "id": "news:https://blog.cloudflare.com/community-program-refresh",
-        "publishedAt": "2026-08-25T22:36:17.256Z",
-        "title": "Cloudflare 推出全新社群計畫並投入 100 萬美元開源資金",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/community-program-refresh/"
-      },
       {
         "content": "Munder Difflin 是一個代理框架（Agent harness），能夠讓開發者建立多個 AI 分身來組成、模擬並運行一個完整的辦公室。這對探索多代理（Multi-agent）協同工作流程、自動化辦公情境以及打造複雜工作流系統的開發者來說，提供了實用的架構靈感與工具選擇。",
         "id": "news:https://munderdiffl.in/",
@@ -680,127 +576,214 @@
         "title": "Asana 藉助 AI 程式碼工具在兩週內完成預估五年的工程重構",
         "type": "news",
         "url": "https://openai.com/index/asana"
+      },
+      {
+        "id": "repo:1211139949:new:2026-08-31",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "tt-a1i/archify 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/tt-a1i/archify"
+      },
+      {
+        "id": "repo:1220744720:new:2026-08-31",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "freestylefly/awesome-gpt-image-2 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/freestylefly/awesome-gpt-image-2"
+      },
+      {
+        "id": "repo:1266797999:new:2026-08-31",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "DietrichGebert/ponytail 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/DietrichGebert/ponytail"
+      },
+      {
+        "id": "repo:1185389803:new:2026-08-31",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "MadsLorentzen/ai-job-search 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/MadsLorentzen/ai-job-search"
+      },
+      {
+        "id": "repo:1195360525:new:2026-08-31",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "calesthio/OpenMontage 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/calesthio/OpenMontage"
+      },
+      {
+        "id": "repo:1079456184:new:2026-08-31",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "K-Dense-AI/scientific-agent-skills 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
+      },
+      {
+        "id": "repo:1185590488:new:2026-08-31",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "rohitg00/ai-engineering-from-scratch 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/rohitg00/ai-engineering-from-scratch"
+      },
+      {
+        "id": "repo:718741813:new:2026-08-31",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "abi/screenshot-to-code 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/abi/screenshot-to-code"
+      },
+      {
+        "id": "repo:568098118:new:2026-08-31",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "makeplane/plane 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/makeplane/plane"
+      },
+      {
+        "content": "Google 官方正式發布 Gemini Omni 1.1 Flash，這是一款針對即時互動與高吞吐量應用所設計的輕量級多模態模型。對於開發者而言，此版本在維持低延遲與經濟成本的同時，進一步強化了語音、文字與視覺的原生整合能力，適合用於建構即時語音助理與高互動性的 AI 應用程式。",
+        "id": "news:https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "Google 發布 Gemini Omni 1.1 Flash 輕量多模態模型",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/"
+      },
+      {
+        "content": "Cloudflare 宣布推出全新服務「AI Search」，讓開發者能夠直接將其檔案與網站資料轉化為可供 AI 代理（Agents）使用的強大搜尋引擎，且無需手動拼接多個底層基礎設施。官方同時預告了全新的定價模式，大幅降低在邊緣端整合智慧搜尋與 RAG 架構的門檻。",
+        "id": "news:https://blog.cloudflare.com/ai-search-easier",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "Cloudflare 推出 AI Search：為開發者代理提供資料搜尋引擎",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/ai-search-easier/"
+      },
+      {
+        "content": "OpenAI 官方發表全新的「SL2T」（Sign-Language-to-Text）突破性模型，旨在將手語即時轉化為文字。這項技術將直接賦能開發者與無障礙產品設計師，在其應用程式中原生整合手語辨識功能，為聽障與重聽使用者打造更包容的互動體驗。",
+        "id": "news:https://deepmind.google/blog/putting-sign-language-ai-into-users-hands",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "OpenAI 推出手語轉文字（SL2T）模型以支援聽覺障礙使用者",
+        "type": "news",
+        "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/"
+      },
+      {
+        "content": "Cloudflare 團隊針對旗下 Workers 隔離環境進行了新一輪的遠端 Spectre 攻擊安全性重估，並公布了最新的攻擊基元（如 Spectre gadgets、遠端計時器與同址共居策略）防禦細節。這項安全通報揭露了邊緣運算多租戶架構下的底層威脅演進，並展示了進一步強化隔離安全性的防禦修補。",
+        "id": "news:https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "Cloudflare 公布 Cloudflare Workers 遠端 Spectre 攻擊防禦重估報告",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers/"
+      },
+      {
+        "content": "社群上高度討論 OpenAI 內部流出或展示的全新硬體與架構代號「Jalapeño」，其宣稱的效能與運算效率超越了 Nvidia 的 Blackwell 架構。這項傳聞引起開發者與 AI 硬體領域的廣泛關注，反映出算力競賽與專用 AI 晶片架構的最新風向。",
+        "id": "news:https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "OpenAI Jalapeño 效能表現引發熱議：號稱超越 Nvidia Blackwell",
+        "type": "news",
+        "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia"
+      },
+      {
+        "content": "美國聯邦法官作出重要裁決，認定國防部（五角大廈）先前將 AI 公司 Anthropic 列入黑名單的決定並不合法。此法律訴訟案牽涉到政府機關、國防採購與前沿 AI 實驗室之間的合規與合作關係，引起科技社群與政策觀察家的高度關注。",
+        "id": "news:https://reuters.com/legal/government/us-judge-blocks-pentagons-anthropic-blacklisting-2026-08-28",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "美國法官裁定五角大廈將 Anthropic 列入黑名單的行為違法",
+        "type": "news",
+        "url": "https://www.reuters.com/legal/government/us-judge-blocks-pentagons-anthropic-blacklisting-2026-08-28/"
+      },
+      {
+        "content": "Hacker News 熱議一項針對潛在推理模型（如 Coconut 與 CODI）的研究，發現這些模型在處理如 PrOntoQA 等邏輯任務時，幾乎沒有真正利用其連續隱藏狀態中的推理步驟。實驗顯示，即便強制模型提早結束思考，其輸出結果也幾乎不受影響，這挑戰了目前業界對大模型「內部隱含推理」機制的認知。",
+        "id": "news:https://arxiv.org/abs/2604.04902",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "研究指出潛在推理模型在邏輯任務中並未充分利用其隱藏推理步驟",
+        "type": "news",
+        "url": "https://arxiv.org/abs/2604.04902"
+      },
+      {
+        "content": "知名開源沙盒遊戲引擎 Luanti（原 Minetest）遭到 Google Play 無端下架，起因是一則毫無根據的 AI 版權侵權舉報。此事件在開發者社群引發強烈反響，突顯目前主流應用商店的自動化審查機制與版權申訴流程對開源專案造成的嚴重衝擊。",
+        "id": "news:https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai",
+        "publishedAt": "2026-08-31T00:24:16.184Z",
+        "title": "開源遊戲引擎 Luanti 因無根據的 AI 版權聲明遭 Google Play 下架",
+        "type": "news",
+        "url": "https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-30T00:07:15.441Z",
+      "generatedAt": "2026-08-31T00:24:16.184Z",
       "items": [
         {
-          "content": "Node.js 釋出最新長期支援版本 v24.19.0（代號 Krypton）。此版本帶來多項重要更新與實驗性功能，包含在 buffer 模組中實作 blob.textStream()、更新 OpenSSL 建置設定以支援壓縮、將 blockList 穩定度狀態提升至候選發布（RC）、將 stream.compose 標記為穩定，並新增 `--experimental-import-text` 旗標以支援 ESM 匯入文字。這些更新提升了效能與開發體驗，對 Node.js 開發者來說是重要的維護與版本升級參考。",
+          "content": "Google 官方正式發布 Gemini Omni 1.1 Flash，這是一款針對即時互動與高吞吐量應用所設計的輕量級多模態模型。對於開發者而言，此版本在維持低延遲與經濟成本的同時，進一步強化了語音、文字與視覺的原生整合能力，適合用於建構即時語音助理與高互動性的 AI 應用程式。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "ai",
           "sourceCount": 1,
-          "title": "Node.js v24.19.0 'Krypton' (LTS) 發布",
-          "url": "https://github.com/nodejs/node/releases/tag/v24.19.0",
-          "weightedScore": 100
+          "title": "Google 發布 Gemini Omni 1.1 Flash 輕量多模態模型",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
+          "weightedScore": 296
         },
         {
-          "content": "Cloudflare 推出全新功能「Bot Preference Sync」，能自動將網站的 robots.txt 檔案與針對搜尋引擎、AI 代理（Agent）及模型訓練的 AI 機器人政策進行對齊。開發者與網站管理者無需再手動維護靜態的 robots.txt 檔案，即可輕鬆管理哪些 AI 爬蟲或機器人能存取網站內容，簡化了存取控制與現代化流量管理的流程。",
+          "content": "Cloudflare 宣布推出全新服務「AI Search」，讓開發者能夠直接將其檔案與網站資料轉化為可供 AI 代理（Agents）使用的強大搜尋引擎，且無需手動拼接多個底層基礎設施。官方同時預告了全新的定價模式，大幅降低在邊緣端整合智慧搜尋與 RAG 架構的門檻。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出 Bot Preference Sync 自動化對齊機器人政策",
-          "url": "https://blog.cloudflare.com/bot-preference-sync/",
+          "title": "Cloudflare 推出 AI Search：為開發者代理提供資料搜尋引擎",
+          "url": "https://blog.cloudflare.com/ai-search-easier/",
           "weightedScore": 100
         },
         {
-          "content": "近日有執行長因全面導入 AI 而開除團隊開發者，引發技術社群熱烈討論與諷刺，甚至有開發者因此動手打造開源的「AI CEO」。這類新聞反映出當前產業對 AI 取代工程職能的焦慮與極端嘗試，凸顯了 AI 工具對軟體開發組織結構帶來的衝擊與省思。",
+          "content": "OpenAI 官方發表全新的「SL2T」（Sign-Language-to-Text）突破性模型，旨在將手語即時轉化為文字。這項技術將直接賦能開發者與無障礙產品設計師，在其應用程式中原生整合手語辨識功能，為聽障與重聽使用者打造更包容的互動體驗。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "CEO 因導入 AI 開除開發者，引發開源社群反思與諷刺",
-          "url": "https://github.com/SenteLabsAI/OpenExecutive",
-          "weightedScore": 1022
-        },
-        {
-          "content": "大型多人線上遊戲 EVE Online 經歷多年運營後，正式宣佈將其龐大且複雜的後端系統遷移至 Python 3。這對長期依賴大型 Python 架構的後端與遊戲開發者而言，是一項具有指標性意義的架構升級里程碑，展現了老牌系統在現代化轉型上的實踐。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "經典太空網游 EVE Online 宣布全面遷移至 Python 3",
-          "url": "https://www.eveonline.com/news/view/the-move-to-python-3-begins",
-          "weightedScore": 292
-        },
-        {
-          "content": "針對檢索增強生成（RAG）在實務上的複雜迷思，社群熱議文章指出 RAG 的本質其實非常單純，不需過度工程化。這篇文章對正在導入 LLM 應用的開發者提供了解耦與簡化系統架構的指引，有助於降低維護成本並提高檢索效率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "RAG 架構其實比想像中簡單：開發者應掌握的核心概念",
-          "url": "https://www.lighthousenewsletter.com/p/rag-is-simpler-than-you-think",
-          "weightedScore": 507
-        },
-        {
-          "content": "著名的 Linux 發行版 Debian 社群經投票表決，正式決定允許在軟體開發與維護流程中「負責任地使用生成式 AI」。此舉為開源專案如何規範與整合 AI 工具開了先例，對開源社群及參與貢獻的開發者在工具使用規範上有深遠影響。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Debian 投票通過允許在專案中「負責任地使用生成式 AI」",
-          "url": "https://lwn.net/Articles/1091231/",
-          "weightedScore": 470
-        },
-        {
-          "content": "Google 推出的 Gemini-3.5-Transcribe 在開發者社群中受到高度關注。該模型在語音轉文字的精確度與處理速度上有顯著表現，為需要整合高效能、低延遲語音處理功能的應用開發者提供了強大的新選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "title": "Gemini-3.5-Transcribe 語音辨識模型引發關注",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/",
-          "weightedScore": 460
-        },
-        {
-          "content": "Asana 分享了他們利用 OpenAI Codex 在短短兩週內，成功替換過舊測試系統的案例。這項原本預估需要耗費五年工程時間的工作僅花費約 12,000 美元，在開發者社群中掀起關於 AI 代理重構大型程式碼庫極限與成本效益的熱烈討論。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Asana 藉助 AI 程式碼工具在兩週內完成預估五年的工程重構",
-          "url": "https://openai.com/index/asana",
+          "title": "OpenAI 推出手語轉文字（SL2T）模型以支援聽覺障礙使用者",
+          "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
           "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 團隊針對旗下 Workers 隔離環境進行了新一輪的遠端 Spectre 攻擊安全性重估，並公布了最新的攻擊基元（如 Spectre gadgets、遠端計時器與同址共居策略）防禦細節。這項安全通報揭露了邊緣運算多租戶架構下的底層威脅演進，並展示了進一步強化隔離安全性的防禦修補。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Cloudflare 公布 Cloudflare Workers 遠端 Spectre 攻擊防禦重估報告",
+          "url": "https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers/",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群上高度討論 OpenAI 內部流出或展示的全新硬體與架構代號「Jalapeño」，其宣稱的效能與運算效率超越了 Nvidia 的 Blackwell 架構。這項傳聞引起開發者與 AI 硬體領域的廣泛關注，反映出算力競賽與專用 AI 晶片架構的最新風向。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "OpenAI Jalapeño 效能表現引發熱議：號稱超越 Nvidia Blackwell",
+          "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+          "weightedScore": 584
+        },
+        {
+          "content": "美國聯邦法官作出重要裁決，認定國防部（五角大廈）先前將 AI 公司 Anthropic 列入黑名單的決定並不合法。此法律訴訟案牽涉到政府機關、國防採購與前沿 AI 實驗室之間的合規與合作關係，引起科技社群與政策觀察家的高度關注。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "美國法官裁定五角大廈將 Anthropic 列入黑名單的行為違法",
+          "url": "https://www.reuters.com/legal/government/us-judge-blocks-pentagons-anthropic-blacklisting-2026-08-28/",
+          "weightedScore": 325
+        },
+        {
+          "content": "Hacker News 熱議一項針對潛在推理模型（如 Coconut 與 CODI）的研究，發現這些模型在處理如 PrOntoQA 等邏輯任務時，幾乎沒有真正利用其連續隱藏狀態中的推理步驟。實驗顯示，即便強制模型提早結束思考，其輸出結果也幾乎不受影響，這挑戰了目前業界對大模型「內部隱含推理」機制的認知。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "研究指出潛在推理模型在邏輯任務中並未充分利用其隱藏推理步驟",
+          "url": "https://arxiv.org/abs/2604.04902",
+          "weightedScore": 100
+        },
+        {
+          "content": "知名開源沙盒遊戲引擎 Luanti（原 Minetest）遭到 Google Play 無端下架，起因是一則毫無根據的 AI 版權侵權舉報。此事件在開發者社群引發強烈反響，突顯目前主流應用商店的自動化審查機制與版權申訴流程對開源專案造成的嚴重衝擊。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "開源遊戲引擎 Luanti 因無根據的 AI 版權聲明遭 Google Play 下架",
+          "url": "https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai/",
+          "weightedScore": 521
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-23T22:31:11.230Z",
-      "url": "https://blog.cloudflare.com/ai-search-easier"
-    },
-    {
-      "seenAt": "2026-08-23T22:31:11.230Z",
-      "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6"
-    },
-    {
-      "seenAt": "2026-08-23T22:31:11.230Z",
-      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands"
-    },
-    {
-      "seenAt": "2026-08-23T22:31:11.230Z",
-      "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control"
-    },
-    {
-      "seenAt": "2026-08-23T22:31:11.230Z",
-      "url": "https://blog.cloudflare.com/agents-week-review-august-2026"
-    },
-    {
-      "seenAt": "2026-08-23T22:31:11.230Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vqlh98/stripe_will_reportedly_acquire_ai_gateway_startup"
-    },
-    {
-      "seenAt": "2026-08-23T22:31:11.230Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vqm51f/long_review_qwen_38_27b_is_very_good_at_tapping"
-    },
-    {
-      "seenAt": "2026-08-23T22:31:11.230Z",
-      "url": "https://arxiv.org/abs/2604.04902"
-    },
-    {
-      "seenAt": "2026-08-23T22:31:11.230Z",
-      "url": "https://danielvaughn.dev/posts/huzzah"
-    },
-    {
-      "seenAt": "2026-08-23T22:31:11.230Z",
-      "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917"
-    },
     {
       "seenAt": "2026-08-24T22:35:58.302Z",
       "url": "https://cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations"
@@ -980,6 +963,38 @@
     {
       "seenAt": "2026-08-30T00:07:15.441Z",
       "url": "https://openai.com/index/asana"
+    },
+    {
+      "seenAt": "2026-08-31T00:24:16.184Z",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash"
+    },
+    {
+      "seenAt": "2026-08-31T00:24:16.184Z",
+      "url": "https://blog.cloudflare.com/ai-search-easier"
+    },
+    {
+      "seenAt": "2026-08-31T00:24:16.184Z",
+      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands"
+    },
+    {
+      "seenAt": "2026-08-31T00:24:16.184Z",
+      "url": "https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers"
+    },
+    {
+      "seenAt": "2026-08-31T00:24:16.184Z",
+      "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia"
+    },
+    {
+      "seenAt": "2026-08-31T00:24:16.184Z",
+      "url": "https://reuters.com/legal/government/us-judge-blocks-pentagons-anthropic-blacklisting-2026-08-28"
+    },
+    {
+      "seenAt": "2026-08-31T00:24:16.184Z",
+      "url": "https://arxiv.org/abs/2604.04902"
+    },
+    {
+      "seenAt": "2026-08-31T00:24:16.184Z",
+      "url": "https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai"
     }
   ]
 }
