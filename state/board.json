@@ -306,61 +306,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-31T00:24:16.184Z",
-  "lastNewsPushAt": "2026-08-31T00:24:16.184Z",
+  "lastNewsPushAt": "2026-09-01T01:12:33.196Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-31T00:24:16.184Z",
       "summary": "本次技術雷達榜單由 tt-a1i/archify 奪得 #1，共有 9 個新進項目（AI 佔 7 個、前後端佔 2 個）以及 1 個下降項目。"
     },
     "feed": [
-      {
-        "content": "Munder Difflin 是一個代理框架（Agent harness），能夠讓開發者建立多個 AI 分身來組成、模擬並運行一個完整的辦公室。這對探索多代理（Multi-agent）協同工作流程、自動化辦公情境以及打造複雜工作流系統的開發者來說，提供了實用的架構靈感與工具選擇。",
-        "id": "news:https://munderdiffl.in/",
-        "publishedAt": "2026-08-25T22:36:17.256Z",
-        "title": "Munder Difflin：打造能自動運行辦公室的 AI 代理集群",
-        "type": "news",
-        "url": "https://munderdiffl.in/"
-      },
-      {
-        "content": "WikiKB 是一個基於 GitHub 儲存庫 wiki 建立的知識庫層，旨在提供高效、透明且明確策展的知識結構，供人類與 AI 代理共同使用。這對需要為 LLM 應用建構即時、結構化且與版本控制緊密結合的知識庫開發者來說，是一個實用的輕量化解決方案。",
-        "id": "news:https://githubnext.com/posts/wikikb",
-        "publishedAt": "2026-08-25T22:36:17.256Z",
-        "title": "WikiKB：專為人類與 AI 代理打造的快速儲存庫原生知識庫",
-        "type": "news",
-        "url": "https://githubnext.com/posts/wikikb/"
-      },
-      {
-        "content": "隨著企業將 AI 從實驗階段推進至生產環境的自主代理運行，不斷攀升的遙測（Telemetry）開銷成為一項不容忽視的基礎設施難題。本文探討如何利用遙測管線來監控、過濾並控制 AI 代理產生的數據成本，對負責維護大型 AI 系統效能與成本平衡的 DevOps 工程師至關重要。",
-        "id": "news:https://thenewstack.io/agentic-ai-telemetry-costs",
-        "publishedAt": "2026-08-25T22:36:17.256Z",
-        "title": "如何透過遙測管線控制 AI 代理的營運成本",
-        "type": "news",
-        "url": "https://thenewstack.io/agentic-ai-telemetry-costs/"
-      },
-      {
-        "content": "Node.js 官方發布 26.5.1 版本，這是一次包含多項安全修復的重要更新。主要修復內容包含：針對 http2 模組的流重設延遲處理（CVE-2026-56848）、權限模組中避免授權 radix 分割節點（CVE-2026-58043）、https 模組的 PFX 物件陣列代理金鑰區分與會話重用綁定檢查，以及 sqlite 語句重置時使標籤儲存迭代器失效等漏洞。建議開發者與維運團隊儘速評估並升級，以確保應用程式的執行安全。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.5.1",
-        "publishedAt": "2026-08-27T03:03:45.232Z",
-        "title": "Node.js 發布安全性更新版本 26.5.1，修復多項高風險漏洞",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
-      },
-      {
-        "content": "Google 推出 Gemini Robotics ER 2，專為機器人應用打造的升級模型，大幅強化視訊理解、任務編排與多機器人協作能力。這項更新讓機器人能更精確地進行現實世界的推理與問題解決，對開發智慧機器人與自動化控制系統的開發者而言，提供了一套更具備複雜互動與協同作業能力的底層 AI 支援。",
-        "id": "news:https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration",
-        "publishedAt": "2026-08-27T03:03:45.232Z",
-        "title": "Google 發布 Gemini Robotics ER 2，強化多機器人協作與影片理解能力",
-        "type": "news",
-        "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/"
-      },
-      {
-        "content": "Cloudflare 發布全新 AI 驅動工具 Radar Researcher，允許開發者與研究人員透過日常自然語言查詢全球網際網路趨勢與流量數據。該工具完全建構於 Cloudflare 開發者平台上，能直接將文字指令轉化為即時、可互動的圖表。這對於需要分析網路流量、資安趨勢或全球連線狀況的開發者與架構師來說，提供了一種更直覺且省時的資料探索方式。",
-        "id": "news:https://blog.cloudflare.com/introducing-radar-researcher",
-        "publishedAt": "2026-08-27T03:03:45.232Z",
-        "title": "Cloudflare 推出 Radar Researcher，支援以自然語言探索全球網際網路數據",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/introducing-radar-researcher/"
-      },
       {
         "content": "Cloudflare Gateway 宣佈透過通訊協定層級的特徵碼（heuristics）識別 MCP（Model Context Protocol）請求。安全團隊可以利用這項訊號來找出隱蔽的 MCP 流量、強制對已核准的伺服器進行入口專屬存取，並封鎖受管網路路徑上的直接連線。這對正在企業環境中導入 MCP 架構的開發與資安團隊而言，提供了一種標準化的流量監控與資安防護手段。",
         "id": "news:https://blog.cloudflare.com/mcp-security-updates",
@@ -703,123 +655,117 @@
         "title": "開源遊戲引擎 Luanti 因無根據的 AI 版權聲明遭 Google Play 下架",
         "type": "news",
         "url": "https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai/"
+      },
+      {
+        "content": "OpenAI 官方釋出針對 GPT-5.6 的開發者指南，展示新創團隊如何利用 GPT-5.6 建構更具成本效益的 AI 代理。內容重點包含智慧模型選擇機制以及全新 Responses API 的功能應用，協助開發者在複雜的代理工作流程中提升執行效率並降低成本。這對於正準備將大型語言模型整合至生產環境的後端與 AI 開發者而言，是掌握新 API 特性與優化架構的重要參考。",
+        "id": "news:https://openai.com/index/builders-guide-to-gpt-5-6",
+        "publishedAt": "2026-09-01T01:12:33.196Z",
+        "title": "OpenAI 發布 GPT-5.6 建構指南，支援高效 AI 代理開發",
+        "type": "news",
+        "url": "https://openai.com/index/builders-guide-to-gpt-5-6"
+      },
+      {
+        "content": "Cloudflare 宣布將其官方部落格遷移至 EmDash 堆疊，藉此在極大規模的生產環境中證明該技術的穩定性與效能。官方團隊詳細分享了遷移過程中的效能壓力測試、生產流量的安全路由策略，以及前端體驗的重新設計細節。這項技術實踐為需要處理巨量流量與高可用性需求的 DevOps 及前端架構師，提供了寶貴的實戰數據與架構演練經驗。",
+        "id": "news:https://blog.cloudflare.com/cloudflare-blog-uses-emdash",
+        "publishedAt": "2026-09-01T01:12:33.196Z",
+        "title": "Cloudflare 部落格全面遷移至 EmDash 架構，驗證超大規模生產環境效能",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash/"
+      },
+      {
+        "content": "Apple 官方正式發表全新 Mac Studio，搭載最新的 M5 Max 與 M5 Ultra 晶片，並提供高達 512GB 的統一記憶體配置。對於需要在本地端運行大語言模型、進行大規模資料處理或編譯大型專案的開發者而言，更龐大的統一記憶體容量與頻寬升級，能顯著提升本地 AI 推論與重度運算任務的執行效率。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vxzg6v/apple_introduces_new_mac_studio_with_m5_max_and",
+        "publishedAt": "2026-09-01T01:12:33.196Z",
+        "title": "Apple 推出搭載 M5 Max 與 M5 Ultra 晶片的新款 Mac Studio，支援高達 512GB 統一記憶體",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vxzg6v/apple_introduces_new_mac_studio_with_m5_max_and/"
+      },
+      {
+        "content": "本篇官方技術文章探討如何利用 OpenTelemetry 解決緩慢資料庫查詢所導致的使用者體驗下降及系統連鎖故障。文章指出傳統收集大量遙測資料往往只會增加觀察負擔而非理解深度，並提出如何透過有效指標將慢速查詢轉化為可落實的可靠性監控。對於負責系統穩定性與效能調校的 DevOps 與後端工程師來說，這提供了解決分散式系統效能瓶頸的清晰方法論。",
+        "id": "news:https://cncf.io/blog/2026/08/21/how-to-turn-slow-queries-into-actionable-reliability-metrics-with-opentelemetry",
+        "publishedAt": "2026-09-01T01:12:33.196Z",
+        "title": "透過 OpenTelemetry 將緩慢 SQL 查詢轉化為可操作的可靠性指標",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/08/21/how-to-turn-slow-queries-into-actionable-reliability-metrics-with-opentelemetry/"
+      },
+      {
+        "content": "隨著 Qwen 3.8 Flash 的推出，社群熱烈討論 Unsloth 迅速提供 Day 0 支援的消息。開發者們紛紛提醒彼此注意硬碟空間需求，以因應新模型的本地測試與微調準備。這對於關注開源模型微調效率與本地部署的 AI 開發者而言，是掌握最新工具鏈更新的重要實用資訊。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vxybmy/qwen_38_flash_next_day_0_support_from_unsloth",
+        "publishedAt": "2026-09-01T01:12:33.196Z",
+        "title": "Unsloth 宣佈對 Qwen 3.8 Flash 進行 Day 0 支援",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vxybmy/qwen_38_flash_next_day_0_support_from_unsloth/"
+      },
+      {
+        "content": "Hacker News 與社群討論指出，Qwen 3.8 27B 模型在各項基準測試中表現極佳，但在實際互動時常出現「過度思考（overthinking）」的傾向。開發者正熱烈交流如何透過提示詞調整與參數設定來修正此行為，以在推理深度與回應效率之間取得平衡。這對於在應用程式中導入該模型的開發者極具參考價值。",
+        "id": "news:https://simonwillison.net/2026/Aug/16/qwen-38-27b",
+        "publishedAt": "2026-09-01T01:12:33.196Z",
+        "title": "開發者熱議 Qwen 3.8 27B 效能優異但預設傾向過度思考",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/"
       }
     ],
     "news": {
-      "generatedAt": "2026-08-31T00:24:16.184Z",
+      "generatedAt": "2026-09-01T01:12:33.196Z",
       "items": [
         {
-          "content": "Google 官方正式發布 Gemini Omni 1.1 Flash，這是一款針對即時互動與高吞吐量應用所設計的輕量級多模態模型。對於開發者而言，此版本在維持低延遲與經濟成本的同時，進一步強化了語音、文字與視覺的原生整合能力，適合用於建構即時語音助理與高互動性的 AI 應用程式。",
+          "content": "OpenAI 官方釋出針對 GPT-5.6 的開發者指南，展示新創團隊如何利用 GPT-5.6 建構更具成本效益的 AI 代理。內容重點包含智慧模型選擇機制以及全新 Responses API 的功能應用，協助開發者在複雜的代理工作流程中提升執行效率並降低成本。這對於正準備將大型語言模型整合至生產環境的後端與 AI 開發者而言，是掌握新 API 特性與優化架構的重要參考。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Google 發布 Gemini Omni 1.1 Flash 輕量多模態模型",
-          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
-          "weightedScore": 296
+          "title": "OpenAI 發布 GPT-5.6 建構指南，支援高效 AI 代理開發",
+          "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
+          "weightedScore": 100
         },
         {
-          "content": "Cloudflare 宣布推出全新服務「AI Search」，讓開發者能夠直接將其檔案與網站資料轉化為可供 AI 代理（Agents）使用的強大搜尋引擎，且無需手動拼接多個底層基礎設施。官方同時預告了全新的定價模式，大幅降低在邊緣端整合智慧搜尋與 RAG 架構的門檻。",
+          "content": "Cloudflare 宣布將其官方部落格遷移至 EmDash 堆疊，藉此在極大規模的生產環境中證明該技術的穩定性與效能。官方團隊詳細分享了遷移過程中的效能壓力測試、生產流量的安全路由策略，以及前端體驗的重新設計細節。這項技術實踐為需要處理巨量流量與高可用性需求的 DevOps 及前端架構師，提供了寶貴的實戰數據與架構演練經驗。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出 AI Search：為開發者代理提供資料搜尋引擎",
-          "url": "https://blog.cloudflare.com/ai-search-easier/",
+          "title": "Cloudflare 部落格全面遷移至 EmDash 架構，驗證超大規模生產環境效能",
+          "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash/",
           "weightedScore": 100
         },
         {
-          "content": "OpenAI 官方發表全新的「SL2T」（Sign-Language-to-Text）突破性模型，旨在將手語即時轉化為文字。這項技術將直接賦能開發者與無障礙產品設計師，在其應用程式中原生整合手語辨識功能，為聽障與重聽使用者打造更包容的互動體驗。",
+          "content": "Apple 官方正式發表全新 Mac Studio，搭載最新的 M5 Max 與 M5 Ultra 晶片，並提供高達 512GB 的統一記憶體配置。對於需要在本地端運行大語言模型、進行大規模資料處理或編譯大型專案的開發者而言，更龐大的統一記憶體容量與頻寬升級，能顯著提升本地 AI 推論與重度運算任務的執行效率。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "OpenAI 推出手語轉文字（SL2T）模型以支援聽覺障礙使用者",
-          "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
+          "title": "Apple 推出搭載 M5 Max 與 M5 Ultra 晶片的新款 Mac Studio，支援高達 512GB 統一記憶體",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vxzg6v/apple_introduces_new_mac_studio_with_m5_max_and/",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 團隊針對旗下 Workers 隔離環境進行了新一輪的遠端 Spectre 攻擊安全性重估，並公布了最新的攻擊基元（如 Spectre gadgets、遠端計時器與同址共居策略）防禦細節。這項安全通報揭露了邊緣運算多租戶架構下的底層威脅演進，並展示了進一步強化隔離安全性的防禦修補。",
+          "content": "本篇官方技術文章探討如何利用 OpenTelemetry 解決緩慢資料庫查詢所導致的使用者體驗下降及系統連鎖故障。文章指出傳統收集大量遙測資料往往只會增加觀察負擔而非理解深度，並提出如何透過有效指標將慢速查詢轉化為可落實的可靠性監控。對於負責系統穩定性與效能調校的 DevOps 與後端工程師來說，這提供了解決分散式系統效能瓶頸的清晰方法論。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 公布 Cloudflare Workers 遠端 Spectre 攻擊防禦重估報告",
-          "url": "https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers/",
+          "title": "透過 OpenTelemetry 將緩慢 SQL 查詢轉化為可操作的可靠性指標",
+          "url": "https://www.cncf.io/blog/2026/08/21/how-to-turn-slow-queries-into-actionable-reliability-metrics-with-opentelemetry/",
           "weightedScore": 100
         },
         {
-          "content": "社群上高度討論 OpenAI 內部流出或展示的全新硬體與架構代號「Jalapeño」，其宣稱的效能與運算效率超越了 Nvidia 的 Blackwell 架構。這項傳聞引起開發者與 AI 硬體領域的廣泛關注，反映出算力競賽與專用 AI 晶片架構的最新風向。",
+          "content": "隨著 Qwen 3.8 Flash 的推出，社群熱烈討論 Unsloth 迅速提供 Day 0 支援的消息。開發者們紛紛提醒彼此注意硬碟空間需求，以因應新模型的本地測試與微調準備。這對於關注開源模型微調效率與本地部署的 AI 開發者而言，是掌握最新工具鏈更新的重要實用資訊。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "OpenAI Jalapeño 效能表現引發熱議：號稱超越 Nvidia Blackwell",
-          "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
-          "weightedScore": 584
-        },
-        {
-          "content": "美國聯邦法官作出重要裁決，認定國防部（五角大廈）先前將 AI 公司 Anthropic 列入黑名單的決定並不合法。此法律訴訟案牽涉到政府機關、國防採購與前沿 AI 實驗室之間的合規與合作關係，引起科技社群與政策觀察家的高度關注。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "美國法官裁定五角大廈將 Anthropic 列入黑名單的行為違法",
-          "url": "https://www.reuters.com/legal/government/us-judge-blocks-pentagons-anthropic-blacklisting-2026-08-28/",
-          "weightedScore": 325
-        },
-        {
-          "content": "Hacker News 熱議一項針對潛在推理模型（如 Coconut 與 CODI）的研究，發現這些模型在處理如 PrOntoQA 等邏輯任務時，幾乎沒有真正利用其連續隱藏狀態中的推理步驟。實驗顯示，即便強制模型提早結束思考，其輸出結果也幾乎不受影響，這挑戰了目前業界對大模型「內部隱含推理」機制的認知。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "研究指出潛在推理模型在邏輯任務中並未充分利用其隱藏推理步驟",
-          "url": "https://arxiv.org/abs/2604.04902",
+          "title": "Unsloth 宣佈對 Qwen 3.8 Flash 進行 Day 0 支援",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vxybmy/qwen_38_flash_next_day_0_support_from_unsloth/",
           "weightedScore": 100
         },
         {
-          "content": "知名開源沙盒遊戲引擎 Luanti（原 Minetest）遭到 Google Play 無端下架，起因是一則毫無根據的 AI 版權侵權舉報。此事件在開發者社群引發強烈反響，突顯目前主流應用商店的自動化審查機制與版權申訴流程對開源專案造成的嚴重衝擊。",
+          "content": "Hacker News 與社群討論指出，Qwen 3.8 27B 模型在各項基準測試中表現極佳，但在實際互動時常出現「過度思考（overthinking）」的傾向。開發者正熱烈交流如何透過提示詞調整與參數設定來修正此行為，以在推理深度與回應效率之間取得平衡。這對於在應用程式中導入該模型的開發者極具參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "開源遊戲引擎 Luanti 因無根據的 AI 版權聲明遭 Google Play 下架",
-          "url": "https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai/",
-          "weightedScore": 521
+          "title": "開發者熱議 Qwen 3.8 27B 效能優異但預設傾向過度思考",
+          "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
+          "weightedScore": 100
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-24T22:35:58.302Z",
-      "url": "https://cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations"
-    },
-    {
-      "seenAt": "2026-08-24T22:35:58.302Z",
-      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots"
-    },
-    {
-      "seenAt": "2026-08-24T22:35:58.302Z",
-      "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1"
-    },
-    {
-      "seenAt": "2026-08-24T22:35:58.302Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vrqf4f/running_deepseek_v4_flash_q4_k_xl_at_100_toks"
-    },
-    {
-      "seenAt": "2026-08-24T22:35:58.302Z",
-      "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash"
-    },
-    {
-      "seenAt": "2026-08-24T22:35:58.302Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vrwsfl/memory_prices_climb_500_in_12_months_up_to_10x"
-    },
-    {
-      "seenAt": "2026-08-24T22:35:58.302Z",
-      "url": "https://fabiensanglard.net/agent.md/index.html"
-    },
-    {
-      "seenAt": "2026-08-24T22:35:58.302Z",
-      "url": "https://github.com/adnanakil/nobuzz/blob/main/README.md"
-    },
-    {
-      "seenAt": "2026-08-24T22:35:58.302Z",
-      "url": "https://github.com/zachahn/vomit"
-    },
     {
       "seenAt": "2026-08-25T22:36:17.256Z",
       "url": "https://developers.openai.com/api/docs/pricing"
@@ -995,6 +941,30 @@
     {
       "seenAt": "2026-08-31T00:24:16.184Z",
       "url": "https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai"
+    },
+    {
+      "seenAt": "2026-09-01T01:12:33.196Z",
+      "url": "https://openai.com/index/builders-guide-to-gpt-5-6"
+    },
+    {
+      "seenAt": "2026-09-01T01:12:33.196Z",
+      "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash"
+    },
+    {
+      "seenAt": "2026-09-01T01:12:33.196Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vxzg6v/apple_introduces_new_mac_studio_with_m5_max_and"
+    },
+    {
+      "seenAt": "2026-09-01T01:12:33.196Z",
+      "url": "https://cncf.io/blog/2026/08/21/how-to-turn-slow-queries-into-actionable-reliability-metrics-with-opentelemetry"
+    },
+    {
+      "seenAt": "2026-09-01T01:12:33.196Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1vxybmy/qwen_38_flash_next_day_0_support_from_unsloth"
+    },
+    {
+      "seenAt": "2026-09-01T01:12:33.196Z",
+      "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b"
     }
   ]
 }
