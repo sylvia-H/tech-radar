@@ -306,69 +306,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-31T00:24:16.184Z",
-  "lastNewsPushAt": "2026-09-01T01:12:33.196Z",
+  "lastNewsPushAt": "2026-09-01T23:58:45.362Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-31T00:24:16.184Z",
       "summary": "本次技術雷達榜單由 tt-a1i/archify 奪得 #1，共有 9 個新進項目（AI 佔 7 個、前後端佔 2 個）以及 1 個下降項目。"
     },
     "feed": [
-      {
-        "content": "Cloudflare Gateway 宣佈透過通訊協定層級的特徵碼（heuristics）識別 MCP（Model Context Protocol）請求。安全團隊可以利用這項訊號來找出隱蔽的 MCP 流量、強制對已核准的伺服器進行入口專屬存取，並封鎖受管網路路徑上的直接連線。這對正在企業環境中導入 MCP 架構的開發與資安團隊而言，提供了一種標準化的流量監控與資安防護手段。",
-        "id": "news:https://blog.cloudflare.com/mcp-security-updates",
-        "publishedAt": "2026-08-27T03:03:45.232Z",
-        "title": "Cloudflare 網關新增 MCP 流量偵測與安全防護機制",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/mcp-security-updates/"
-      },
-      {
-        "content": "有開發者分享了僅花費 250 美元與 50 億去污染 Token，從頭預訓練出一個 1.02 億參數（每 Token 啟動 1.45 億參數）的 Kimi K3 複製版模型。該模型未經過指令微調，單純透過預測下一個 Token 的架構進行訓練，在效能上即超越了經典的 GPT-2（124M）。這項實驗展示了在有限預算下進行小型基底模型研究的可能性，吸引了社群對自製開源模型成本效益的熱烈討論。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vth1c3/i_just_built_a_mini_kimik3_from_scratch_under_250",
-        "publishedAt": "2026-08-27T03:03:45.232Z",
-        "title": "開發者以不到 250 美元從頭訓練出超越 GPT-2 的十億參數模型",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vth1c3/i_just_built_a_mini_kimik3_from_scratch_under_250/"
-      },
-      {
-        "content": "社群開發者在 Hacker News 與 Reddit 上熱烈討論 Qwen3.8-27B 在經過 Q6 量化並運行於雙 GPU（RTX 3090 加 RTX 3060）環境下的表現。測試顯示其在持續 20 小時的高強度代理編程（agentic coding）任務中，能維持每秒約 60 到 63 個 Token 的處理速度，展現出極高的實用價值。這為希望在本地硬體運行強大 coding assistant 的開發者提供了一項極具參考價值的硬體配置與效能指標。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vuotqr/qwen3827b_q6_is_a_beast_at_agentic_coding",
-        "publishedAt": "2026-08-27T03:03:45.232Z",
-        "title": "開發者測試 Qwen3.8-27B Q6 模型在雙 GPU 環境下的強大代理編程表現",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vuotqr/qwen3827b_q6_is_a_beast_at_agentic_coding/"
-      },
-      {
-        "content": "Z.ai 官方確認 Ox Alpha 為其最新的 GLM 系列基礎模型，並明確表示將對外釋出模型權重。這項消息在開源 AI 社群中引起關注，對於依賴開源模型進行本地部署、微調或二次開發的開發者而言，代表又將多一個具競爭力的開源模型可供選擇與評估。",
-        "id": "news:https://bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek",
-        "publishedAt": "2026-08-27T03:03:45.232Z",
-        "title": "Z.ai 確認 Ox Alpha 為全新 GLM 系列模型並將公開其權重",
-        "type": "news",
-        "url": "https://www.bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek"
-      },
-      {
-        "content": "Cloudflare 宣佈推出新一代 Model Context Protocol (MCP) 核心，採用無狀態（stateless）設計並完全針對 Workers 優化，能直接在邊緣運算執行。此更新包含協議升級、全新的功能生命週期與 SDK 遷移路徑，讓開發者能更順暢地將 AI 上下文協議導入生產環境中。",
-        "id": "news:https://blog.cloudflare.com/mcp-v2",
-        "publishedAt": "2026-08-28T06:03:56.816Z",
-        "title": "Cloudflare Workers 推出下一代重構版 MCP 核心架構",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/mcp-v2/"
-      },
-      {
-        "content": "Google 推出 Gemini Omni 1.1 Flash，旨在讓開發者在建構多模態與即時互動應用時擁有更高的控制力。此版本強化了模型的回應精細度與開發者介面的微調能力，有助於降低延遲並提升即時音視訊應用的穩定性與效能。",
-        "id": "news:https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control",
-        "publishedAt": "2026-08-28T06:03:56.816Z",
-        "title": "Google 發布 Gemini Omni 1.1 Flash 提升開發掌控度",
-        "type": "news",
-        "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/"
-      },
-      {
-        "content": "Google 推出全新的 Gemini 3.5 Transcribe，提供更具備上下文理解與智慧化能力的語音轉文字（Speech-to-Text）服務。對需要處理複雜語音資料、多語系交雜或專業術語轉錄的後端與 AI 應用開發者而言，能大幅提升辨識準確率。",
-        "id": "news:https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe",
-        "publishedAt": "2026-08-28T06:03:56.816Z",
-        "title": "Google 發布 Gemini 3.5 Transcribe 提供智慧語音轉文字",
-        "type": "news",
-        "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/"
-      },
       {
         "content": "Node.js 發布 v26.6.0 (Current) 版本，帶來多項重要更新。其中包含在 ffi 模組中新增 `getCurrentEventLoop`，以及在 test_runner 中加入 `context.log()` 與 `test:log` 事件支援，同時修復了 Map 鍵值為 null 時的 TypeError，有助於提升測試框架與底層擴充的開發體驗。",
         "id": "news:https://github.com/nodejs/node/releases/tag/v26.6.0",
@@ -703,93 +647,134 @@
         "title": "開發者熱議 Qwen 3.8 27B 效能優異但預設傾向過度思考",
         "type": "news",
         "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/"
+      },
+      {
+        "content": "專為人工智慧與高效能運算設計的程式語言 Mojo 正式宣佈開源。這項轉變對開發者而言意義重大，意味著社群可以更深入參與該語言的底層架構、貢獻程式碼，並加速其在高效能系統與 AI 開發工具鏈中的普及與應用。",
+        "id": "news:https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source",
+        "publishedAt": "2026-09-01T23:58:45.362Z",
+        "title": "程式語言 Mojo 正式宣佈開源",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source/"
+      },
+      {
+        "content": "Google 替 Gemini 模型推出具備代理式（agentic）能力的影片理解功能。這項更新讓 AI 不僅能被動分析影片內容，更能主動拆解、理解複雜的動態畫面與任務流程，為開發者在打造多模態互動與自動化影音工作流程時，解鎖了全新的應用場景。",
+        "id": "news:https://deepmind.google/blog/introducing-agentic-video-in-gemini",
+        "publishedAt": "2026-09-01T23:58:45.362Z",
+        "title": "Google Gemini 推出全新代理式影片理解功能",
+        "type": "news",
+        "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/"
+      },
+      {
+        "content": "Cloudflare 分享了他們如何在快取系統中導入 Zstandard 壓縮技術與 Pingora 架構，藉此在相同硬體成本下大幅節省 PB 級的快取儲存空間。這對從事大型分散式系統與邊緣運算架構的開發者來說，提供了極具參考價值的底層效能優化與資源管理實作思路。",
+        "id": "news:https://blog.cloudflare.com/cache-transcoding",
+        "publishedAt": "2026-09-01T23:58:45.362Z",
+        "title": "Cloudflare 透過 Zstandard 與 Pingora 探索快取儲存空間最佳化",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/cache-transcoding/"
+      },
+      {
+        "content": "Atlassian 針對分散於多區域的數百個微服務架構，分享了解決雲原生環境海量遙測數據痛點的自動化方案。透過多重訊號關聯分析（Multi-signal correlation）自動進行根本原因分析（RCA），減少人工充當關聯引擎的負擔，對維運與基礎設施開發者在提升可觀測性與事件回應效率上有重大助益。",
+        "id": "news:https://cncf.io/blog/2026/08/24/automating-root-cause-analysis-at-scale-multi-signal-correlation-for-cloud-native-incident-response",
+        "publishedAt": "2026-09-01T23:58:45.362Z",
+        "title": "Atlassian 發表雲原生規模化事件回應的多重訊號關聯分析技術",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/08/24/automating-root-cause-analysis-at-scale-multi-signal-correlation-for-cloud-native-incident-response/"
+      },
+      {
+        "content": "阿里雲開源的 Qwen 3.8 27B 模型在最新的「人工分析智慧指數」（Artificial Analysis Intelligence Index）中取得了 52 分的評測表現。對於尋求在中大型模型中平衡成本、部署靈活性與強大推理能力的開發者而言，這提供了一個極具競爭力的開源模型選擇。",
+        "id": "news:https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52",
+        "publishedAt": "2026-09-01T23:58:45.362Z",
+        "title": "Qwen 3.8 27B 於人工分析智慧指數獲得 52 分高評價",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52/"
+      },
+      {
+        "content": "一位開發者分享其僅花費 1.5 小時就成功訓練出小型 Transformer 模型的實作經驗，且該模型在效能表現上擊敗了許多現有的大型語言模型。這在 Hacker News 上引發熱烈討論，對探索輕量化模型訓練、自訂架構與模型效率極限的開發者極具啟發性。",
+        "id": "news:https://mvakde.github.io/blog/44-on-arc-1",
+        "publishedAt": "2026-09-01T23:58:45.362Z",
+        "title": "開發者僅用 1.5 小時訓練小型 Transformer 模型並擊敗多款 LLM",
+        "type": "news",
+        "url": "https://mvakde.github.io/blog/44-on-arc-1/"
+      },
+      {
+        "content": "Hacker News 上一篇熱門討論指出，有開發者在無意間將大型語言模型的記憶機制轉化為程式碼分析工具。這項有趣的發現引發了社群對於如何利用 LLM 進行靜態分析、狀態追蹤及自動化程式碼檢視的新思考方向。",
+        "id": "news:https://pwning.systems/posts/llm-memory-program-analysis",
+        "publishedAt": "2026-09-01T23:58:45.362Z",
+        "title": "意外將 LLM 記憶轉化為程式分析的實作討論",
+        "type": "news",
+        "url": "https://pwning.systems/posts/llm-memory-program-analysis/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-01T01:12:33.196Z",
+      "generatedAt": "2026-09-01T23:58:45.362Z",
       "items": [
         {
-          "content": "OpenAI 官方釋出針對 GPT-5.6 的開發者指南，展示新創團隊如何利用 GPT-5.6 建構更具成本效益的 AI 代理。內容重點包含智慧模型選擇機制以及全新 Responses API 的功能應用，協助開發者在複雜的代理工作流程中提升執行效率並降低成本。這對於正準備將大型語言模型整合至生產環境的後端與 AI 開發者而言，是掌握新 API 特性與優化架構的重要參考。",
+          "content": "專為人工智慧與高效能運算設計的程式語言 Mojo 正式宣佈開源。這項轉變對開發者而言意義重大，意味著社群可以更深入參與該語言的底層架構、貢獻程式碼，並加速其在高效能系統與 AI 開發工具鏈中的普及與應用。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "OpenAI 發布 GPT-5.6 建構指南，支援高效 AI 代理開發",
-          "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
+          "title": "程式語言 Mojo 正式宣佈開源",
+          "url": "https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source/",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 宣布將其官方部落格遷移至 EmDash 堆疊，藉此在極大規模的生產環境中證明該技術的穩定性與效能。官方團隊詳細分享了遷移過程中的效能壓力測試、生產流量的安全路由策略，以及前端體驗的重新設計細節。這項技術實踐為需要處理巨量流量與高可用性需求的 DevOps 及前端架構師，提供了寶貴的實戰數據與架構演練經驗。",
+          "content": "Google 替 Gemini 模型推出具備代理式（agentic）能力的影片理解功能。這項更新讓 AI 不僅能被動分析影片內容，更能主動拆解、理解複雜的動態畫面與任務流程，為開發者在打造多模態互動與自動化影音工作流程時，解鎖了全新的應用場景。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Google Gemini 推出全新代理式影片理解功能",
+          "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 分享了他們如何在快取系統中導入 Zstandard 壓縮技術與 Pingora 架構，藉此在相同硬體成本下大幅節省 PB 級的快取儲存空間。這對從事大型分散式系統與邊緣運算架構的開發者來說，提供了極具參考價值的底層效能優化與資源管理實作思路。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 部落格全面遷移至 EmDash 架構，驗證超大規模生產環境效能",
-          "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash/",
+          "title": "Cloudflare 透過 Zstandard 與 Pingora 探索快取儲存空間最佳化",
+          "url": "https://blog.cloudflare.com/cache-transcoding/",
           "weightedScore": 100
         },
         {
-          "content": "Apple 官方正式發表全新 Mac Studio，搭載最新的 M5 Max 與 M5 Ultra 晶片，並提供高達 512GB 的統一記憶體配置。對於需要在本地端運行大語言模型、進行大規模資料處理或編譯大型專案的開發者而言，更龐大的統一記憶體容量與頻寬升級，能顯著提升本地 AI 推論與重度運算任務的執行效率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Apple 推出搭載 M5 Max 與 M5 Ultra 晶片的新款 Mac Studio，支援高達 512GB 統一記憶體",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vxzg6v/apple_introduces_new_mac_studio_with_m5_max_and/",
-          "weightedScore": 100
-        },
-        {
-          "content": "本篇官方技術文章探討如何利用 OpenTelemetry 解決緩慢資料庫查詢所導致的使用者體驗下降及系統連鎖故障。文章指出傳統收集大量遙測資料往往只會增加觀察負擔而非理解深度，並提出如何透過有效指標將慢速查詢轉化為可落實的可靠性監控。對於負責系統穩定性與效能調校的 DevOps 與後端工程師來說，這提供了解決分散式系統效能瓶頸的清晰方法論。",
+          "content": "Atlassian 針對分散於多區域的數百個微服務架構，分享了解決雲原生環境海量遙測數據痛點的自動化方案。透過多重訊號關聯分析（Multi-signal correlation）自動進行根本原因分析（RCA），減少人工充當關聯引擎的負擔，對維運與基礎設施開發者在提升可觀測性與事件回應效率上有重大助益。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "透過 OpenTelemetry 將緩慢 SQL 查詢轉化為可操作的可靠性指標",
-          "url": "https://www.cncf.io/blog/2026/08/21/how-to-turn-slow-queries-into-actionable-reliability-metrics-with-opentelemetry/",
+          "title": "Atlassian 發表雲原生規模化事件回應的多重訊號關聯分析技術",
+          "url": "https://www.cncf.io/blog/2026/08/24/automating-root-cause-analysis-at-scale-multi-signal-correlation-for-cloud-native-incident-response/",
           "weightedScore": 100
         },
         {
-          "content": "隨著 Qwen 3.8 Flash 的推出，社群熱烈討論 Unsloth 迅速提供 Day 0 支援的消息。開發者們紛紛提醒彼此注意硬碟空間需求，以因應新模型的本地測試與微調準備。這對於關注開源模型微調效率與本地部署的 AI 開發者而言，是掌握最新工具鏈更新的重要實用資訊。",
+          "content": "阿里雲開源的 Qwen 3.8 27B 模型在最新的「人工分析智慧指數」（Artificial Analysis Intelligence Index）中取得了 52 分的評測表現。對於尋求在中大型模型中平衡成本、部署靈活性與強大推理能力的開發者而言，這提供了一個極具競爭力的開源模型選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Unsloth 宣佈對 Qwen 3.8 Flash 進行 Day 0 支援",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vxybmy/qwen_38_flash_next_day_0_support_from_unsloth/",
+          "title": "Qwen 3.8 27B 於人工分析智慧指數獲得 52 分高評價",
+          "url": "https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52/",
           "weightedScore": 100
         },
         {
-          "content": "Hacker News 與社群討論指出，Qwen 3.8 27B 模型在各項基準測試中表現極佳，但在實際互動時常出現「過度思考（overthinking）」的傾向。開發者正熱烈交流如何透過提示詞調整與參數設定來修正此行為，以在推理深度與回應效率之間取得平衡。這對於在應用程式中導入該模型的開發者極具參考價值。",
+          "content": "一位開發者分享其僅花費 1.5 小時就成功訓練出小型 Transformer 模型的實作經驗，且該模型在效能表現上擊敗了許多現有的大型語言模型。這在 Hacker News 上引發熱烈討論，對探索輕量化模型訓練、自訂架構與模型效率極限的開發者極具啟發性。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "title": "開發者僅用 1.5 小時訓練小型 Transformer 模型並擊敗多款 LLM",
+          "url": "https://mvakde.github.io/blog/44-on-arc-1/",
+          "weightedScore": 652
+        },
+        {
+          "content": "Hacker News 上一篇熱門討論指出，有開發者在無意間將大型語言模型的記憶機制轉化為程式碼分析工具。這項有趣的發現引發了社群對於如何利用 LLM 進行靜態分析、狀態追蹤及自動化程式碼檢視的新思考方向。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "開發者熱議 Qwen 3.8 27B 效能優異但預設傾向過度思考",
-          "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
-          "weightedScore": 100
+          "title": "意外將 LLM 記憶轉化為程式分析的實作討論",
+          "url": "https://pwning.systems/posts/llm-memory-program-analysis/",
+          "weightedScore": 302
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-25T22:36:17.256Z",
-      "url": "https://developers.openai.com/api/docs/pricing"
-    },
-    {
-      "seenAt": "2026-08-25T22:36:17.256Z",
-      "url": "https://blog.cloudflare.com/fedramp-class-d-certification"
-    },
-    {
-      "seenAt": "2026-08-25T22:36:17.256Z",
-      "url": "https://blog.cloudflare.com/community-program-refresh"
-    },
-    {
-      "seenAt": "2026-08-25T22:36:17.256Z",
-      "url": "https://munderdiffl.in/"
-    },
-    {
-      "seenAt": "2026-08-25T22:36:17.256Z",
-      "url": "https://githubnext.com/posts/wikikb"
-    },
-    {
-      "seenAt": "2026-08-25T22:36:17.256Z",
-      "url": "https://thenewstack.io/agentic-ai-telemetry-costs"
-    },
     {
       "seenAt": "2026-08-27T03:03:45.232Z",
       "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
@@ -965,6 +950,34 @@
     {
       "seenAt": "2026-09-01T01:12:33.196Z",
       "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b"
+    },
+    {
+      "seenAt": "2026-09-01T23:58:45.362Z",
+      "url": "https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source"
+    },
+    {
+      "seenAt": "2026-09-01T23:58:45.362Z",
+      "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini"
+    },
+    {
+      "seenAt": "2026-09-01T23:58:45.362Z",
+      "url": "https://blog.cloudflare.com/cache-transcoding"
+    },
+    {
+      "seenAt": "2026-09-01T23:58:45.362Z",
+      "url": "https://cncf.io/blog/2026/08/24/automating-root-cause-analysis-at-scale-multi-signal-correlation-for-cloud-native-incident-response"
+    },
+    {
+      "seenAt": "2026-09-01T23:58:45.362Z",
+      "url": "https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52"
+    },
+    {
+      "seenAt": "2026-09-01T23:58:45.362Z",
+      "url": "https://mvakde.github.io/blog/44-on-arc-1"
+    },
+    {
+      "seenAt": "2026-09-01T23:58:45.362Z",
+      "url": "https://pwning.systems/posts/llm-memory-program-analysis"
     }
   ]
 }
