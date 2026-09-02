@@ -39,6 +39,19 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
     expect(out.map((o) => o.normalizedUrl).sort()).toEqual(['b', 'c', 'd']);
   });
 
+  it('交叉驗證候選（sources ≥ 2）豁免分數門檻：官方文章被低分 HN 投稿合併後不再連帶被丟（2026-09-02）', () => {
+    const out = runFunnel(
+      [
+        cand({ normalizedUrl: 'merged', tier: 1, score: 40, sourceId: 'hn', sources: ['hn', 'openai-blog'] }), // 代表項是 40 分的 HN → 豁免
+        cand({ normalizedUrl: 'lonely', tier: 1, score: 40, sourceId: 'hn', sources: ['hn'] }), // 單一來源低分 → 仍丟
+      ],
+      EMPTY,
+      DEFAULT_FUNNEL_CONFIG,
+      NOW,
+    );
+    expect(out.map((o) => o.normalizedUrl)).toEqual(['merged']);
+  });
+
   it('交叉驗證（sources ≥ 2）加權高於同分單一來源（FR-017）', () => {
     const out = runFunnel(
       [
@@ -77,19 +90,42 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
     expect(out[0].normalizedUrl).toBe('t1');
   });
 
-  it('加權同分時不再以 publishedAt 決勝，改依 normalizedUrl 字母序（2026-08-04 變更，原 FR-020）', () => {
-    // 'a' 較舊、'z' 較新：若仍依 publishedAt 決勝會是 z 在前；改用 normalizedUrl 後 a 在前，
-    // 證明發文頻率高的來源不會單靠「比較新」贏得同分候選的排序位置。兩則日期皆在新鮮度視窗內。
+  it('跨來源加權同分時不以 publishedAt 決勝，改依 normalizedUrl 字母序（2026-08-04 變更，原 FR-020）', () => {
+    // 不同來源、同輪次：'a' 較舊、'z' 較新，若仍依 publishedAt 決勝會是 z 在前；改用 normalizedUrl 後
+    // a 在前，證明發文頻率高的來源不會單靠「比較新」贏得同分候選的排序位置。兩則日期皆在新鮮度視窗內。
+    // （同來源組內自 2026-09-02 起改依日期降冪，見下一個測試；此處刻意用不同來源驗證跨來源規則不變。）
     const out = runFunnel(
       [
-        cand({ normalizedUrl: 'z', tier: 2, score: null, publishedAt: new Date(NOW.getTime() - 1 * DAY_MS).toISOString() }),
-        cand({ normalizedUrl: 'a', tier: 2, score: null, publishedAt: new Date(NOW.getTime() - 2 * DAY_MS).toISOString() }),
+        cand({ normalizedUrl: 'z', sourceId: 's2', sources: ['s2'], tier: 2, score: null, publishedAt: new Date(NOW.getTime() - 1 * DAY_MS).toISOString() }),
+        cand({ normalizedUrl: 'a', sourceId: 's1', sources: ['s1'], tier: 2, score: null, publishedAt: new Date(NOW.getTime() - 2 * DAY_MS).toISOString() }),
       ],
       EMPTY,
       DEFAULT_FUNNEL_CONFIG,
       NOW,
     );
     expect(out.map((o) => o.normalizedUrl)).toEqual(['a', 'z']);
+  });
+
+  it('同來源組內依 publishedAt 降冪決定「留哪 3 則」，不再由 URL 字母序決定（2026-09-02 新增）', () => {
+    // 五則同來源、URL 字母序與日期順序刻意相反：舊版留字母序前三（aug-old/aug-older/aug-oldest），
+    // 新版留最新三則（sep-newest/sep-new/sep-newer），且輪次＝新舊序（最新第 1 輪）。
+    const daysAgo = (d: number) => new Date(NOW.getTime() - d * DAY_MS).toISOString();
+    const many = [
+      cand({ normalizedUrl: 'blog/2026/aug/old', sourceId: 'blog', sources: ['blog'], tier: 2, publishedAt: daysAgo(10) }),
+      cand({ normalizedUrl: 'blog/2026/aug/older', sourceId: 'blog', sources: ['blog'], tier: 2, publishedAt: daysAgo(20) }),
+      cand({ normalizedUrl: 'blog/2026/aug/oldest', sourceId: 'blog', sources: ['blog'], tier: 2, publishedAt: daysAgo(25) }),
+      cand({ normalizedUrl: 'blog/2026/sep/new', sourceId: 'blog', sources: ['blog'], tier: 2, publishedAt: daysAgo(1) }),
+      cand({ normalizedUrl: 'blog/2026/sep/newer', sourceId: 'blog', sources: ['blog'], tier: 2, publishedAt: daysAgo(2) }),
+      cand({ normalizedUrl: 'blog/2026/sep/newest', sourceId: 'blog', sources: ['blog'], tier: 2, publishedAt: daysAgo(0) }),
+    ];
+    const out = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
+    expect(out.map((o) => o.normalizedUrl)).toEqual(['blog/2026/sep/newest', 'blog/2026/sep/new', 'blog/2026/sep/newer']);
+  });
+
+  it('同來源組內 publishedAt 相同時落回 normalizedUrl 升冪，結果仍為全序', () => {
+    const same = ['b', 'a', 'c'].map((u) => cand({ normalizedUrl: u, sourceId: 'x', sources: ['x'], tier: 2 }));
+    const out = runFunnel(same, EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
+    expect(out.map((o) => o.normalizedUrl)).toEqual(['a', 'b', 'c']);
   });
 
   it('相同輸入多次執行成員與排序 100% 一致 ＋ 收斂取前 N（SC-006/011，各來源不同、不觸發同來源上限）', () => {
