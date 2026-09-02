@@ -105,6 +105,9 @@
     `gemini-2.5-flash-lite` 兩者陸續下線，遂再改用當代继任型號 `gemini-3.1-flash-lite`。
   - 2026-08-09：Google 於 2026-07-21 發佈 `gemini-3.5-flash-lite`，遂由 `gemini-3.1-flash-lite`
     升級至該型號。
+  - 2026-09-02：曾升級至 2026-08-14 發佈的 `gemini-3.7-flash`（無 Flash-Lite 版本），同日實測
+    **觸及免費層上限**（Flash 與 Flash-Lite 的免費配額不同級），當天改回 `gemini-3.5-flash-lite`。
+    教訓：換型號前先在 AI Studio 儀表板確認該型號的免費層配額，Flash 系不等於 Flash-Lite 系。
   - 教訓：Gemini 免費層型號 ID **可能無預警提前下架**，`LlmService` 非可重試錯誤（如 404）
     務必印出實際狀態碼與訊息（見 `llm.service.ts` `errDetail`），否則會被誤判為速率限制。
 - 用途：每個新進榜 repo 一次 250 字簡介 + 榜單日一段「本次變化」TL;DR + 每日一次新聞策展。穩定態榜單七天才有 0～數個新 repo → 用量極低。
