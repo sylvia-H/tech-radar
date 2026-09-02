@@ -30,13 +30,19 @@ import { CurationItemView } from './curation.types';
  * 對的陣列（一個遠比「記得執行順序」簡單的任務），「官方優先」則交給 `curation-validate.ts`
  * 合併時固定把 `officialPicks` 排在 `communityPicks` 之前來保證——即使 LLM 在各陣列內部的判斷
  * 不完美，只要分類正確，官方發布就不會被截斷在社群熱度之後。
+ *
+ * 發表天齡（2026-09-02 新增）：投影原本沒有任何時間資訊，LLM 分不出三週前與今天的文章；配合
+ * `seenNews` 保留期改為 45 天後，候選池裡合法存在最多 30 天的舊文，需要讓 LLM 在「重要性相當」
+ * 時偏好較新者。沿用絕對判準錨點的寫法，明示天齡不改變是否重大，避免 LLM 把新鮮度當硬規則
+ * 刷掉重要舊聞、或反過來因為新就收錄不重要的內容。
  */
 export function buildCurationPrompt(items: readonly CurationItemView[]): string {
   const lines = items
     .map((it) => {
       const boardMark = it.onBoard ? '★在榜 ' : '';
       const scoreLabel = it.score !== null ? `分數 ${it.score}` : '分數 無';
-      return `[${it.ref}] ${boardMark}(${it.domain}/tier${it.tier}/${scoreLabel}/${it.sourceCount} 來源) ${it.title}${
+      const ageLabel = it.ageDays !== null ? `${it.ageDays} 天前` : '日期不明';
+      return `[${it.ref}] ${boardMark}(${it.domain}/tier${it.tier}/${scoreLabel}/${it.sourceCount} 來源/${ageLabel}) ${it.title}${
         it.summaryExcerpt ? `\n    摘要：${it.summaryExcerpt}` : ''
       }`;
     })
@@ -64,6 +70,10 @@ export function buildCurationPrompt(items: readonly CurationItemView[]): string 
   - CSS 教學
 不要因為候選池今天特別多，就覺得某則內容「感覺沒那麼特別」而不選；也不要因為候選池特別少，
 就放寬標準硬湊數量。
+
+新鮮度：每則候選標示發表天齡（「N 天前」）。重要性相當時優先較新者；但天齡不改變一則內容
+是否重大——只要命中上述判準，即使發表已數週仍應收錄，不得只因較舊就刷掉；也不得只因較新
+就收錄不重要的內容。
 
 【官方發布】的技術事實不該被【社群熱度】文章擠掉名額——社群討論會隨話題退燒而失去參考價值，
 官方發布是穩定的事實紀錄。因此輸出時把兩者分開放進兩個陣列（見下方輸出規則），程式端會保證

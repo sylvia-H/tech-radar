@@ -55,7 +55,10 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
  * 階段 A 過濾＋加權＋全序決勝排序＋同來源上限＋收斂（FR-016~021）。純函式。
  *
  * 過濾：(1) `score` 存在且低於該 tier 門檻 → 丟；門檻為 `null`（Tier 2）或 `score === null`
- * （無社群分數）→ **不因門檻丟**（SC-005）。(2) `score === null` 者另須通過新鮮度視窗
+ * （無社群分數）→ **不因門檻丟**（SC-005）；`sources.length >= 2`（交叉驗證）者**豁免門檻**
+ * （2026-09-02 新增）：去重代表項取分數最高者，官方文章若與一則低於門檻的 HN 投稿合併，代表項
+ * 會是 HN（tier 1、有分數），原本單獨可無門檻入池的官方文章會被連帶丟掉；交叉驗證本身已是
+ * 強訊號（下方還加 `crossValidationBoost`），再用門檻丟它自相矛盾。(2) `score === null` 者另須通過新鮮度視窗
  * （`freshnessWindowDays`，2026-08-04 新增）：`publishedAt` 缺失或超出視窗 → 丟；有真實分數者
  * （HN）不受此步限制。
  * 加權：base（分數或無分數基準）× tierWeight ＋ 交叉驗證 ＋ 榜單相關（`boardRepoNames` 空集合
@@ -71,6 +74,11 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
  *     `slice(convergeMax)` 之前生效**，否則退化為純字母序、前功盡棄（曾誤植：先重排回
  *     `normalizedUrl` 序才截斷，等於沒修）。同輪內 / 有真實分數者之間，才落回 `normalizedUrl`
  *     決勝。
+ * (c) 同一來源**組內**改依 `publishedAt` 降冪決定輪次（2026-09-02 新增）：(b) 的組內順序原沿用
+ *     全域排序＝`normalizedUrl` 字母序，等於「留哪 3 則」由 URL 字面決定——路徑帶月份英文縮寫的
+ *     來源（`/2026/Aug/…` 排在 `/2026/Sep/…` 前）會讓舊文長期壓過新文，slug 隨機的來源則純屬
+ *     隨機。改為組內最新者先發，跨來源的公平輪流不受影響，也不會重新引入 (a) 移除的跨來源發文
+ *     頻率偏誤（只在同來源內比新舊，不同來源之間仍以輪次公平分配）。
  * 收斂：取前 `convergeMax`；不足照實輸出（FR-021）。
  */
 export function runFunnel(
@@ -105,9 +113,10 @@ function isFreshEnough(c: NewsCandidate, now: Date, windowDays: number): boolean
 }
 
 /**
- * 無分數候選跨來源輪流分配序：依 `sourceId` 分組（組內順序＝傳入時已排序的相對順序，即各來源
- * 內最佳候選在前），逐輪（0..max-1）各來源依序各取 1 則，回傳 `normalizedUrl → 輪次` 的對照表
- * （輪次即優先序，越小越優先）。有真實分數者（`score !== null`）不分組、不產生輪次。
+ * 無分數候選跨來源輪流分配序：依 `sourceId` 分組（分組順序＝傳入時已排序的相對順序），**組內依
+ * `publishedAt` 降冪**（最新先發；同日期或無法解析者落回 `normalizedUrl` 升冪，2026-09-02 起，
+ * 先前沿用全域字母序），逐輪（0..max-1）各來源依序各取 1 則，回傳 `normalizedUrl → 輪次` 的
+ * 對照表（輪次即優先序，越小越優先）。有真實分數者（`score !== null`）不分組、不產生輪次。
  */
 function computeInterleaveRanks(sorted: readonly NewsCandidate[], max: number): Map<string, number> {
   const groups: NewsCandidate[][] = [];
@@ -123,6 +132,9 @@ function computeInterleaveRanks(sorted: readonly NewsCandidate[], max: number): 
       groups.push([]);
     }
     groups[idx].push(c);
+  }
+  for (const group of groups) {
+    group.sort(compareNewestFirst);
   }
 
   const rankByUrl = new Map<string, number>();
@@ -152,10 +164,28 @@ function compareWithInterleave(a: NewsCandidate, b: NewsCandidate, rankByUrl: Re
   return a.normalizedUrl < b.normalizedUrl ? -1 : a.normalizedUrl > b.normalizedUrl ? 1 : 0;
 }
 
-/** 分數門檻判定（SC-005）：只有「有分數且該 tier 有門檻」才可能被丟。 */
+/**
+ * 組內「最新先發」比較器：`publishedAt` 降冪，無法解析者視為最舊；同刻落回 `normalizedUrl` 升冪
+ * 使結果為全序、不依賴 sort 穩定性。
+ */
+function compareNewestFirst(a: NewsCandidate, b: NewsCandidate): number {
+  const ta = a.publishedAt === null ? Number.NaN : Date.parse(a.publishedAt);
+  const tb = b.publishedAt === null ? Number.NaN : Date.parse(b.publishedAt);
+  const va = Number.isNaN(ta) ? -Infinity : ta;
+  const vb = Number.isNaN(tb) ? -Infinity : tb;
+  if (va !== vb) {
+    return vb - va;
+  }
+  return a.normalizedUrl < b.normalizedUrl ? -1 : a.normalizedUrl > b.normalizedUrl ? 1 : 0;
+}
+
+/**
+ * 分數門檻判定（SC-005）：只有「有分數且該 tier 有門檻」才可能被丟；交叉驗證（`sources.length >= 2`）
+ * 者豁免（2026-09-02，見 `runFunnel` docstring 過濾 (1)）。
+ */
 function belowThreshold(c: NewsCandidate, cfg: FunnelConfig): boolean {
   const threshold = cfg.scoreThresholds[c.tier];
-  if (threshold === null || c.score === null) {
+  if (threshold === null || c.score === null || c.sources.length >= 2) {
     return false;
   }
   return c.score < threshold;

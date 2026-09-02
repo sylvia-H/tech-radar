@@ -101,6 +101,24 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
     expect(prompt).toContain(candidates[0].title);
   });
 
+  it('prompt 為每則候選標示發表天齡（依注入的 now 計算；缺 publishedAt 標「日期不明」，2026-09-02）', async () => {
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ normalizedUrl: 'example.com/aged', publishedAt: '2026-07-18T06:00:00.000Z' }), // 3 天又 18 小時前 → 3 天
+      makeCandidate({ normalizedUrl: 'example.com/undated', publishedAt: null }),
+      makeCandidate({ normalizedUrl: 'example.com/future', publishedAt: '2026-07-30T00:00:00.000Z' }), // 未來 → 夾 0
+    ];
+    const raw = JSON.stringify({ officialPicks: [], communityPicks: [] });
+    const { service, generate } = makeService(jest.fn().mockResolvedValue(raw));
+
+    await service.curate(candidates, new Set(), new Date('2026-07-22T00:00:00.000Z'));
+
+    const prompt: string = generate.mock.calls[0][0];
+    expect(prompt).toContain('/3 天前)');
+    expect(prompt).toContain('/日期不明)');
+    expect(prompt).toContain('/0 天前)');
+    expect(prompt).toContain('重要性相當時優先較新者');
+  });
+
   it('候選全為非 AI → 照實輸出非 AI（受 ≤3 約束），不因湊不到 5 則 AI 而失敗（Edge）', async () => {
     const candidates: NewsCandidate[] = [
       makeCandidate({ originalUrl: 'https://devops.com', domain: 'devops', title: 'DevOps only' }),
