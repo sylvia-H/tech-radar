@@ -22,13 +22,17 @@ export class NewsCurationService {
 
   constructor(private readonly llm: LlmService) {}
 
-  async curate(candidates: readonly NewsCandidate[], boardRepoNames: ReadonlySet<string>): Promise<CuratedDigest> {
+  async curate(
+    candidates: readonly NewsCandidate[],
+    boardRepoNames: ReadonlySet<string>,
+    now: Date = new Date(),
+  ): Promise<CuratedDigest> {
     if (candidates.length === 0) {
       return { items: [], degraded: false };
     }
 
     try {
-      const views = candidates.map((c, ref) => projectItemView(c, ref, boardRepoNames));
+      const views = candidates.map((c, ref) => projectItemView(c, ref, boardRepoNames, now));
       const raw = await this.llm.generate(buildCurationPrompt(views));
       const { officialPicks, communityPicks } = parseCurationResponse(raw);
       const items = validateCuration(officialPicks, communityPicks, candidates);
@@ -58,7 +62,12 @@ export class NewsCurationService {
  * `domain`：F4 `CandidateSet` 輸出不變式 `domain !== 'cross'`（I1 決策 B，信任已驗收上游契約、
  * 不另加執行期防衛過濾；若不變式破壞，`cross` 落 `isAi()=false` → 計非 AI，屬已知有界缺點）。
  */
-function projectItemView(c: NewsCandidate, ref: number, boardRepoNames: ReadonlySet<string>): CurationItemView {
+function projectItemView(
+  c: NewsCandidate,
+  ref: number,
+  boardRepoNames: ReadonlySet<string>,
+  now: Date,
+): CurationItemView {
   return {
     ref,
     title: c.title,
@@ -68,5 +77,20 @@ function projectItemView(c: NewsCandidate, ref: number, boardRepoNames: Readonly
     sourceCount: c.sources.length,
     onBoard: mentionsBoardRepo(c, boardRepoNames),
     summaryExcerpt: c.summary,
+    ageDays: ageInDays(c.publishedAt, now),
   };
+}
+
+const DAY_MS = 86_400_000;
+
+/** 發表天齡：整數天、未來時間夾為 0；缺失或無法解析回 `null`（不回 0，0 會被誤讀為「今天」）。 */
+function ageInDays(publishedAt: string | null, now: Date): number | null {
+  if (publishedAt === null) {
+    return null;
+  }
+  const t = Date.parse(publishedAt);
+  if (Number.isNaN(t)) {
+    return null;
+  }
+  return Math.max(0, Math.floor((now.getTime() - t) / DAY_MS));
 }

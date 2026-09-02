@@ -1,6 +1,7 @@
 import { NewsCandidate } from './news.types';
 import { SeenNewsEntry } from '../state/state.schema';
-import { excludeSeen, pruneSeenNews } from './seen-news';
+import { DEFAULT_FUNNEL_CONFIG } from './funnel';
+import { excludeSeen, pruneSeenNews, SEEN_NEWS_RETENTION_DAYS } from './seen-news';
 import { normalizeTargetUrl } from './url-normalize';
 
 const now = new Date('2026-07-18T00:00:00Z');
@@ -22,13 +23,19 @@ function candWith(url: string): NewsCandidate {
 }
 
 describe('pruneSeenNews（FR-023 / SC-008）', () => {
-  it('剔除逾 7 天、保留期內留存', () => {
+  it('剔除逾保留期（45 天）、保留期內留存（含 45 天邊界）', () => {
     const entries: SeenNewsEntry[] = [
       { url: 'https://a.com', seenAt: '2026-07-17T00:00:00Z' }, // 1 天前 → 留
-      { url: 'https://b.com', seenAt: '2026-07-01T00:00:00Z' }, // 17 天前 → 剔
-      { url: 'https://c.com', seenAt: '2026-07-11T00:00:01Z' }, // 保留期內 → 留
+      { url: 'https://b.com', seenAt: '2026-05-01T00:00:00Z' }, // 78 天前 → 剔
+      { url: 'https://c.com', seenAt: '2026-07-01T00:00:00Z' }, // 17 天前 → 舊版 7 天會剔，45 天保留
+      { url: 'https://d.com', seenAt: '2026-06-03T00:00:01Z' }, // 45 天內差 1 秒 → 留
+      { url: 'https://e.com', seenAt: '2026-06-02T23:59:59Z' }, // 逾 45 天 1 秒 → 剔
     ];
-    expect(pruneSeenNews(entries, now).map((e) => e.url)).toEqual(['https://a.com', 'https://c.com']);
+    expect(pruneSeenNews(entries, now).map((e) => e.url)).toEqual(['https://a.com', 'https://c.com', 'https://d.com']);
+  });
+
+  it('保留天數必須 ≥ 漏斗新鮮度視窗，否則舊文會在修剪後重新入池被再推一次（2026-09-02 重推缺陷根因）', () => {
+    expect(SEEN_NEWS_RETENTION_DAYS).toBeGreaterThanOrEqual(DEFAULT_FUNNEL_CONFIG.freshnessWindowDays);
   });
 
   it('無法解析的 seenAt 一併剔除', () => {

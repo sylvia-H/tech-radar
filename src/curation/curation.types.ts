@@ -13,6 +13,12 @@ export interface CurationItemView {
   sourceCount: number;
   onBoard: boolean;
   summaryExcerpt: string | null;
+  /**
+   * 發表天齡（整數天，`floor((now − publishedAt) / 1 天)`，未來時間夾為 0；`publishedAt` 缺失或
+   * 無法解析為 `null`，2026-09-02 新增）。此前投影完全沒有時間資訊，LLM 分不出三週前與今天的
+   * 文章；prompt 以「重要性相當時優先較新者、但天齡不改變是否重大」的軟性偏好使用此欄位。
+   */
+  ageDays: number | null;
 }
 
 /** `parseCurationResponse()` 解析出的單則（形狀淺驗證後、硬驗證前，research D2）。 */

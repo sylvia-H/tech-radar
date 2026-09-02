@@ -55,7 +55,7 @@ export const introCacheSchema = z.object({
   introAt: isoDatetime,
 });
 
-/** 已推播新聞紀錄，含時間戳供 7 天修剪。 */
+/** 已推播新聞紀錄，含時間戳供保留期修剪（`SEEN_NEWS_RETENTION_DAYS`，45 天）。 */
 export const seenNewsEntrySchema = z.object({
   url: z.string(),
   seenAt: isoDatetime,
