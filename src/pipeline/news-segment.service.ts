@@ -69,8 +69,8 @@ export class NewsSegmentService {
     }
 
     // push-then-commit：推播成功後才寫回，seenNews 以 normalized url 記鍵（與 F4 excludeSeen 對齊，research D7）。
-    // 先修剪逾保留期（7 天）的舊紀錄再 append 本次，使**落檔的** seenNews 不無限膨脹（FR-023/SC-008）——
-    // 過去 ingest 只在讀取時記憶體修剪、不寫回，寫回路徑若不修剪則 7 天保留形同虛設。
+    // 先修剪逾保留期（SEEN_NEWS_RETENTION_DAYS，45 天）的舊紀錄再 append 本次，使**落檔的** seenNews
+    // 不無限膨脹（FR-023/SC-008）——過去 ingest 只在讀取時記憶體修剪、不寫回，寫回路徑若不修剪則保留期形同虛設。
     const seen = pruneSeenNews(state.seenNews, now);
     const seenUrls = new Set(seen.map((e) => e.url));
     const seenAt = now.toISOString();
