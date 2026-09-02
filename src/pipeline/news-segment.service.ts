@@ -48,7 +48,7 @@ export class NewsSegmentService {
     const boardRepoNames = boardRepoNameSet(state.board);
     // 傳入共享 state 的 seenNews，讓 ingest 免去重複 stateStore.load()（pipeline 開頭已 load 一次）。
     const candidates = await this.newsIngest.ingest(now, boardRepoNames, undefined, state.seenNews);
-    const digest = await this.newsCuration.curate(candidates, boardRepoNames);
+    const digest = await this.newsCuration.curate(candidates, boardRepoNames, now);
 
     if (digest.items.length === 0) {
       // 空精選：不推空晨報、不前進 lastNewsPushAt，同日補跑/隔日重試（FR-006）。
