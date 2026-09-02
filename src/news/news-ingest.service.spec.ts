@@ -123,12 +123,12 @@ describe('NewsIngestService.ingest — 榜單相關性 ＋ 跨天排除（US3/US
         }
       : { items: [] };
 
-  it('已見（保留期內）排除；逾 7 天已見被修剪、不再排除（SC-007/008）', async () => {
+  it('已見（保留期內）排除；逾保留期（45 天）已見被修剪、不再排除（SC-007/008）', async () => {
     const state: BoardState = {
       ...emptyBoardState(),
       seenNews: [
         { url: 'https://good.example/a', seenAt: '2026-07-17T00:00:00Z' }, // 保留期內 → 排除 a
-        { url: 'https://good.example/b', seenAt: '2026-07-01T00:00:00Z' }, // 逾 7 天 → 修剪 → 不排除 b
+        { url: 'https://good.example/b', seenAt: '2026-05-01T00:00:00Z' }, // 78 天前，逾 45 天 → 修剪 → 不排除 b
       ],
     };
     const { svc } = makeService({ parse: twoPosts, state });

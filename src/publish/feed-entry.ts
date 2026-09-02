@@ -61,9 +61,10 @@ export function makeNewsFeedEntries(items: CuratedNewsItem[], now: Date): FeedEn
 /**
  * 併入新 entries 並修剪：**同 `id` 者以新的取代**（先移除既有同 id，再 append），最後套 `trimFeed`。
  *
- * 去重是必要的，不是防呆：`seenNews` 只保留 7 天，而 feed 保留 50 筆——低量日（憲章 III 允許每日
- * 不足 10 則）50 筆的時間跨度會超過 7 天，同一則新聞得以再次入選並產生**重複的 `atom:id`**，
- * 訂閱端行為未定義。取新棄舊使重新出現的項目以最新 `publishedAt` 冒到 feed 頂端。
+ * 同 id 取代的由來：`seenNews` 原只保留 7 天而 feed 保留 50 筆，低量日 50 筆的時間跨度會超過 7 天，
+ * 同一則新聞得以再次入選並產生**重複的 `atom:id`**（訂閱端行為未定義）。2026-09-02 保留期改為
+ * 45 天後，此情況在正常量體下不再發生（50 筆約 7 天），此處退居防呆：若仍有同 id 重現，取新
+ * 棄舊使其以最新 `publishedAt` 冒到 feed 頂端而非留下兩筆。
  */
 export function appendFeedEntries(
   existing: readonly FeedEntry[],
