@@ -306,85 +306,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-31T00:24:16.184Z",
-  "lastNewsPushAt": "2026-09-01T23:58:45.362Z",
+  "lastNewsPushAt": "2026-09-03T00:01:55.579Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-31T00:24:16.184Z",
       "summary": "本次技術雷達榜單由 tt-a1i/archify 奪得 #1，共有 9 個新進項目（AI 佔 7 個、前後端佔 2 個）以及 1 個下降項目。"
     },
     "feed": [
-      {
-        "content": "Node.js 發布 v26.6.0 (Current) 版本，帶來多項重要更新。其中包含在 ffi 模組中新增 `getCurrentEventLoop`，以及在 test_runner 中加入 `context.log()` 與 `test:log` 事件支援，同時修復了 Map 鍵值為 null 時的 TypeError，有助於提升測試框架與底層擴充的開發體驗。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.6.0",
-        "publishedAt": "2026-08-28T06:03:56.816Z",
-        "title": "Node.js v26.6.0 發布：新增 getCurrentEventLoop 與 test:log 支援",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
-      },
-      {
-        "content": "Python 生態系中熱門的 SQLite 資料庫命令列工具與 Python 庫 sqlite-utils 發布 4.2.1 版本。此版本修復了若幹穩定性問題並優化查詢效能，對使用 SQLite 進行資料探勘、輕量級資料庫管理或自動化指令碼開發的工程師是實用的維護更新。",
-        "id": "news:https://simonwillison.net/2026/Aug/13/sqlite-utils-2",
-        "publishedAt": "2026-08-28T06:03:56.816Z",
-        "title": "sqlite-utils 4.2.1 版本發布",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils-2/"
-      },
-      {
-        "content": "Cloudflare 調整其網站防禦策略，將傳統「時間點風險評估（Risk assessment）」升級為「持續性信任評估（Trust evaluation）」。透過 BotBase 與 Precursor 等系統持續分析流量與行為特徵（包含模擬游標軌跡），對開發者與維運人員而言，這改變了辨識與阻擋自動化代理與機器人的架構設計方式。",
-        "id": "news:https://blog.cloudflare.com/good-and-bad-agentic-behaviors",
-        "publishedAt": "2026-08-28T06:03:56.816Z",
-        "title": "Cloudflare 將 Bot 防禦機制從時間點評估轉為持續性信任評估",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/good-and-bad-agentic-behaviors/"
-      },
-      {
-        "content": "社群熱烈討論關於 Claude 模型在生成回應時的關鍵詞彙傾向與行為慣性（Load-bearing vocabulary）。這類研究對提示詞工程師（Prompt Engineer）和 LLM 應用開發者具高度參考價值，有助於理解如何透過特定語彙引導模型輸出更穩定的結構化結果。",
-        "id": "news:https://louisabraham.github.io/load-bearing",
-        "publishedAt": "2026-08-28T06:03:56.816Z",
-        "title": "Hacker News 熱議：Claude 的「承重詞彙」研究",
-        "type": "news",
-        "url": "https://louisabraham.github.io/load-bearing/"
-      },
-      {
-        "content": "根據最新技術社群分析，當不同的 AI 程式輔助工具（如 Aider、Claude Code 等）執行完全相同的底層模型時，其背景 Token 的消耗量竟然可以相差高達 70 倍。這對於評估 AI 開發工具成本、設計代理工作流程的架構師而言，是必須正視的效率警訊。",
-        "id": "news:https://thenewstack.io/agent-harness-token-costs",
-        "publishedAt": "2026-08-28T06:03:56.816Z",
-        "title": "Aider、Claude Code 與 OpenClaw 執行相同模型的 Token 消耗量差異高達 70 倍",
-        "type": "news",
-        "url": "https://thenewstack.io/agent-harness-token-costs/"
-      },
-      {
-        "content": "社群與技術媒體深入分析 Anthropic 將 Files API 與電腦使用工具集移出 Beta 的實際影響。雖然新 API 能大幅簡化開發者傳遞大型文件與建構瀏覽器自動化工具的流程，但在 Token 運算與 API 呼叫成本上並未享有折扣，開發者在架構設計時需權衡效率與開銷。",
-        "id": "news:https://thenewstack.io/anthropic-files-api-costs",
-        "publishedAt": "2026-08-28T06:03:56.816Z",
-        "title": "Anthropic 檔案 API 上線：能省下時間，但無法省下成本",
-        "type": "news",
-        "url": "https://thenewstack.io/anthropic-files-api-costs/"
-      },
-      {
-        "content": "Google 正式推出 Gemini 3.7 Flash 模型，進一步擴展其輕量且高效能的 AI 模型陣容。這項更新對開發者至關重要，提供了更低的延遲與優化的成本效益，適合需要大規模調用、即時反應以及高頻率文字與多模態處理的應用場景。",
-        "id": "news:https://deepmind.google/blog/introducing-gemini-3-7-flash",
-        "publishedAt": "2026-08-29T03:38:37.622Z",
-        "title": "Google 發布 Gemini 3.7 Flash 核心模型更新",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/"
-      },
-      {
-        "content": "Kubernetes 釋出 v1.37.0 最新版本，包含多項功能改進、錯誤修復與內部組件升級。對於依賴雲原生基礎設施的 DevOps 開發者而言，定期追蹤並升級版本有助於確保叢集穩定性、安全性及獲得最新的功能支援。",
-        "id": "news:https://github.com/kubernetes/kubernetes/releases/tag/v1.37.0",
-        "publishedAt": "2026-08-29T03:38:37.622Z",
-        "title": "Kubernetes 發布 v1.37.0 正式版本",
-        "type": "news",
-        "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.37.0"
-      },
-      {
-        "content": "Cloudflare 在儀表板推出 BotBase for Operators，讓機器人與 AI 代理的營運商能夠集中管理提交狀態、編輯內容，並設定行為模型。這對開發爬蟲或自動化代理程式的工程師是一項重要更新，能更清晰地宣告其內容使用方式。",
-        "id": "news:https://blog.cloudflare.com/botbase-for-operators",
-        "publishedAt": "2026-08-29T03:38:37.622Z",
-        "title": "Cloudflare 推出 BotBase for Operators 目錄管理功能",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/botbase-for-operators/"
-      },
       {
         "content": "Cloudflare 宣布憑證透明度監控（Certificate Transparency Monitoring）正式全面可用（GA）。最大改變在於取消了對 Cloudflare 自行發行憑證的通知信，讓收件匣中收到的每一則憑證警報都更具調查價值，提升憑證安全管理的效率。",
         "id": "news:https://blog.cloudflare.com/certificate-transparency-monitoring-ga",
@@ -703,73 +631,163 @@
         "title": "意外將 LLM 記憶轉化為程式分析的實作討論",
         "type": "news",
         "url": "https://pwning.systems/posts/llm-memory-program-analysis/"
+      },
+      {
+        "content": "Google 官方正式發布 Gemini 3.8 Flash 及其衍生版本 3.8 Flash Cyber。此更新針對速度與特定資安防護場景進行最佳化，大幅縮短模型推論延遲，並加強在惡意流量分析與自動化防禦方面的表現。對於需將大語言模型直接整合至高頻率 API 或即時安全管道的開發者而言，這款輕量且高效的模型能提供更低成本的邊緣與雲端部署選擇。",
+        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber",
+        "publishedAt": "2026-09-03T00:01:55.579Z",
+        "title": "Google 發布 Gemini 3.8 Flash 與 3.8 Flash Cyber 具備更強即時反應能力",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/"
+      },
+      {
+        "content": "OpenAI 官方發布技術報告指出，新模型 Astra 是首款達到其「預備框架」（Preparedness Framework）所定義之重大網路安全能力門檻的模型。為了因應這項突破，該模型在發布時伴隨了更嚴格的邊界防護與程式碼執行隔離機制。這對依賴 OpenAI API 進行自動化程式碼編寫與漏洞檢測的開發者來說，意味著在享受更強大能力之餘，必須適應更嚴格的安全審查與API行為限制。",
+        "id": "news:https://openai.com/index/path-to-astra",
+        "publishedAt": "2026-09-03T00:01:55.579Z",
+        "title": "OpenAI 揭露 Astra 模型首度達到預備框架的重大資安防護門檻",
+        "type": "news",
+        "url": "https://openai.com/index/path-to-astra"
+      },
+      {
+        "content": "Cloudflare 宣布其 OAuth 服務正式支援選擇性範圍（optional scopes），允許使用者在授權時精確控制第三方應用程式可存取的資源權限。這項更新有助於開發者打造符合最低權限原則（Principle of Least Privilege）的更安全驗證流程，針對特定任務請求剛好所需的權限，降低憑證外洩時的衝擊範圍。",
+        "id": "news:https://blog.cloudflare.com/task-based-oauth-consent",
+        "publishedAt": "2026-09-03T00:01:55.579Z",
+        "title": "Cloudflare 擴充 OAuth 支援任務級精細同意授權與選用範圍",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/task-based-oauth-consent/"
+      },
+      {
+        "content": "Cloudflare 推出全新 Adaptive Intelligence 引擎，透過自主學習即時流量的中繼訊號（meta-signals）來動態部署免洗防禦規則。傳統靜態防禦規則常面臨遭低成本代理伺服器繞過的問題，而此機制能反轉經濟效益，讓自動化網路攻擊的成本大幅提高。對維運與後端開發者而言，這提供了一種無需手動維護複雜規則的強固防 bot 方案。",
+        "id": "news:https://blog.cloudflare.com/introducing-adaptive-intelligence",
+        "publishedAt": "2026-09-03T00:01:55.579Z",
+        "title": "Cloudflare 推出 Adaptive Intelligence 引擎以自動化阻斷自動化機器人攻擊",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/introducing-adaptive-intelligence/"
+      },
+      {
+        "content": "命令列工具 llm-gemini 釋出 0.34 版本。此更新跟進了 Google Gemini 最新 API 的異動，修復了多項相容性問題，並優化了終端機環境下的多模態輸入與輸出處理效率。對習慣在終端機直接呼叫 Gemini 進行腳本編寫、文件摘要或程式碼生成的開發者來說，這是一次必要的穩定性升級。",
+        "id": "news:https://simonwillison.net/2026/Sep/2/llm-gemini",
+        "publishedAt": "2026-09-03T00:01:55.579Z",
+        "title": "llm-gemini 0.34 版本釋出帶來最新 Gemini API 支援",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Sep/2/llm-gemini/"
+      },
+      {
+        "content": "開發者在檢視 ChatGPT 與 Codex 桌面應用程式的套件結構時，發現其中竟然完整打包了一份 LibreOffice 的二進位複本。這在 Hacker News 引發熱烈討論，焦點集中在 Electron 類或原生封裝應用程式為了處理檔案轉換或辦公文件解析，不惜以犧牲體積代價直接嵌入大型開源軟體的工程實踐與臃腫趨勢。",
+        "id": "news:https://simonwillison.net/2026/Sep/1/codex-libreoffice",
+        "publishedAt": "2026-09-03T00:01:55.579Z",
+        "title": "ChatGPT 與 Codex 桌面應用程式被發現內部綑綁完整 LibreOffice 複本",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Sep/1/codex-libreoffice/"
+      },
+      {
+        "content": "OpenTelemetry (OTel) 官方宣佈正式自 CNCF 畢業，與 Kubernetes 和 Prometheus 等頂級開源專案並列。社群隨之展開熱烈討論，探討在觀測性標準大致底定後，開發者在多語言微服務架構中落實分散式追蹤與效能指標收集的實際痛點，以及未來工具鏈生態系的演進方向。",
+        "id": "news:https://cncf.io/blog/2026/08/31/opentelemetry-has-graduated-now-what-2",
+        "publishedAt": "2026-09-03T00:01:55.579Z",
+        "title": "OpenTelemetry 正式達到 CNCF 畢業專案地位後的下一步挑戰",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/08/31/opentelemetry-has-graduated-now-what-2/"
+      },
+      {
+        "content": "針對部分採用 Tauri 的公司重新回頭使用 Electron 的現象，Hacker News 與前端社群展開了深度討論。討論聚焦於 Tauri 的 Rust 後端與 Webview 架構雖然大幅減小了應用程式體積與記憶體開銷，但在跨平台原生 API 一致性、打包複雜度及企業級生態系支援上，與 Electron 相比仍存在哪些實際取捨。",
+        "id": "news:https://lobste.rs/s/vji9aj/any_true_alternatives_electron",
+        "publishedAt": "2026-09-03T00:01:55.579Z",
+        "title": "開發者社群熱議：是否存在真正能取代 Electron 的 JavaScript 桌面端方案？",
+        "type": "news",
+        "url": "https://lobste.rs/s/vji9aj/any_true_alternatives_electron"
+      },
+      {
+        "content": "社群近期關注名為 Ahab 的 Bazel 氣密性分析工具（Hermeticity Analyzer）。在大型軟體專案中，確保建構過程的完全氣密與可重現性（Reproducibility）極具挑戰。該工具能協助開發者偵測 Bazel 目標中隱含的外部依賴與非決定性行為，對於追求極致建構效能與可靠度的 DevOps 工程師具有高度參考價值。",
+        "id": "news:https://markkarpov.com/post/announcing-ahab",
+        "publishedAt": "2026-09-03T00:01:55.579Z",
+        "title": "Ahab：針對 Bazel 建構系統的氣密性分析工具引發關注",
+        "type": "news",
+        "url": "https://markkarpov.com/post/announcing-ahab"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-01T23:58:45.362Z",
+      "generatedAt": "2026-09-03T00:01:55.579Z",
       "items": [
         {
-          "content": "專為人工智慧與高效能運算設計的程式語言 Mojo 正式宣佈開源。這項轉變對開發者而言意義重大，意味著社群可以更深入參與該語言的底層架構、貢獻程式碼，並加速其在高效能系統與 AI 開發工具鏈中的普及與應用。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "程式語言 Mojo 正式宣佈開源",
-          "url": "https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Google 替 Gemini 模型推出具備代理式（agentic）能力的影片理解功能。這項更新讓 AI 不僅能被動分析影片內容，更能主動拆解、理解複雜的動態畫面與任務流程，為開發者在打造多模態互動與自動化影音工作流程時，解鎖了全新的應用場景。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Google Gemini 推出全新代理式影片理解功能",
-          "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 分享了他們如何在快取系統中導入 Zstandard 壓縮技術與 Pingora 架構，藉此在相同硬體成本下大幅節省 PB 級的快取儲存空間。這對從事大型分散式系統與邊緣運算架構的開發者來說，提供了極具參考價值的底層效能優化與資源管理實作思路。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Cloudflare 透過 Zstandard 與 Pingora 探索快取儲存空間最佳化",
-          "url": "https://blog.cloudflare.com/cache-transcoding/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Atlassian 針對分散於多區域的數百個微服務架構，分享了解決雲原生環境海量遙測數據痛點的自動化方案。透過多重訊號關聯分析（Multi-signal correlation）自動進行根本原因分析（RCA），減少人工充當關聯引擎的負擔，對維運與基礎設施開發者在提升可觀測性與事件回應效率上有重大助益。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Atlassian 發表雲原生規模化事件回應的多重訊號關聯分析技術",
-          "url": "https://www.cncf.io/blog/2026/08/24/automating-root-cause-analysis-at-scale-multi-signal-correlation-for-cloud-native-incident-response/",
-          "weightedScore": 100
-        },
-        {
-          "content": "阿里雲開源的 Qwen 3.8 27B 模型在最新的「人工分析智慧指數」（Artificial Analysis Intelligence Index）中取得了 52 分的評測表現。對於尋求在中大型模型中平衡成本、部署靈活性與強大推理能力的開發者而言，這提供了一個極具競爭力的開源模型選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Qwen 3.8 27B 於人工分析智慧指數獲得 52 分高評價",
-          "url": "https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52/",
-          "weightedScore": 100
-        },
-        {
-          "content": "一位開發者分享其僅花費 1.5 小時就成功訓練出小型 Transformer 模型的實作經驗，且該模型在效能表現上擊敗了許多現有的大型語言模型。這在 Hacker News 上引發熱烈討論，對探索輕量化模型訓練、自訂架構與模型效率極限的開發者極具啟發性。",
+          "content": "Google 官方正式發布 Gemini 3.8 Flash 及其衍生版本 3.8 Flash Cyber。此更新針對速度與特定資安防護場景進行最佳化，大幅縮短模型推論延遲，並加強在惡意流量分析與自動化防禦方面的表現。對於需將大語言模型直接整合至高頻率 API 或即時安全管道的開發者而言，這款輕量且高效的模型能提供更低成本的邊緣與雲端部署選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 2,
-          "title": "開發者僅用 1.5 小時訓練小型 Transformer 模型並擊敗多款 LLM",
-          "url": "https://mvakde.github.io/blog/44-on-arc-1/",
-          "weightedScore": 652
+          "title": "Google 發布 Gemini 3.8 Flash 與 3.8 Flash Cyber 具備更強即時反應能力",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+          "weightedScore": 893
         },
         {
-          "content": "Hacker News 上一篇熱門討論指出，有開發者在無意間將大型語言模型的記憶機制轉化為程式碼分析工具。這項有趣的發現引發了社群對於如何利用 LLM 進行靜態分析、狀態追蹤及自動化程式碼檢視的新思考方向。",
+          "content": "OpenAI 官方發布技術報告指出，新模型 Astra 是首款達到其「預備框架」（Preparedness Framework）所定義之重大網路安全能力門檻的模型。為了因應這項突破，該模型在發布時伴隨了更嚴格的邊界防護與程式碼執行隔離機制。這對依賴 OpenAI API 進行自動化程式碼編寫與漏洞檢測的開發者來說，意味著在享受更強大能力之餘，必須適應更嚴格的安全審查與API行為限制。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "意外將 LLM 記憶轉化為程式分析的實作討論",
-          "url": "https://pwning.systems/posts/llm-memory-program-analysis/",
-          "weightedScore": 302
+          "title": "OpenAI 揭露 Astra 模型首度達到預備框架的重大資安防護門檻",
+          "url": "https://openai.com/index/path-to-astra",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 宣布其 OAuth 服務正式支援選擇性範圍（optional scopes），允許使用者在授權時精確控制第三方應用程式可存取的資源權限。這項更新有助於開發者打造符合最低權限原則（Principle of Least Privilege）的更安全驗證流程，針對特定任務請求剛好所需的權限，降低憑證外洩時的衝擊範圍。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Cloudflare 擴充 OAuth 支援任務級精細同意授權與選用範圍",
+          "url": "https://blog.cloudflare.com/task-based-oauth-consent/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 推出全新 Adaptive Intelligence 引擎，透過自主學習即時流量的中繼訊號（meta-signals）來動態部署免洗防禦規則。傳統靜態防禦規則常面臨遭低成本代理伺服器繞過的問題，而此機制能反轉經濟效益，讓自動化網路攻擊的成本大幅提高。對維運與後端開發者而言，這提供了一種無需手動維護複雜規則的強固防 bot 方案。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Cloudflare 推出 Adaptive Intelligence 引擎以自動化阻斷自動化機器人攻擊",
+          "url": "https://blog.cloudflare.com/introducing-adaptive-intelligence/",
+          "weightedScore": 100
+        },
+        {
+          "content": "命令列工具 llm-gemini 釋出 0.34 版本。此更新跟進了 Google Gemini 最新 API 的異動，修復了多項相容性問題，並優化了終端機環境下的多模態輸入與輸出處理效率。對習慣在終端機直接呼叫 Gemini 進行腳本編寫、文件摘要或程式碼生成的開發者來說，這是一次必要的穩定性升級。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "llm-gemini 0.34 版本釋出帶來最新 Gemini API 支援",
+          "url": "https://simonwillison.net/2026/Sep/2/llm-gemini/",
+          "weightedScore": 100
+        },
+        {
+          "content": "開發者在檢視 ChatGPT 與 Codex 桌面應用程式的套件結構時，發現其中竟然完整打包了一份 LibreOffice 的二進位複本。這在 Hacker News 引發熱烈討論，焦點集中在 Electron 類或原生封裝應用程式為了處理檔案轉換或辦公文件解析，不惜以犧牲體積代價直接嵌入大型開源軟體的工程實踐與臃腫趨勢。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "title": "ChatGPT 與 Codex 桌面應用程式被發現內部綑綁完整 LibreOffice 複本",
+          "url": "https://simonwillison.net/2026/Sep/1/codex-libreoffice/",
+          "weightedScore": 580
+        },
+        {
+          "content": "OpenTelemetry (OTel) 官方宣佈正式自 CNCF 畢業，與 Kubernetes 和 Prometheus 等頂級開源專案並列。社群隨之展開熱烈討論，探討在觀測性標準大致底定後，開發者在多語言微服務架構中落實分散式追蹤與效能指標收集的實際痛點，以及未來工具鏈生態系的演進方向。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "OpenTelemetry 正式達到 CNCF 畢業專案地位後的下一步挑戰",
+          "url": "https://www.cncf.io/blog/2026/08/31/opentelemetry-has-graduated-now-what-2/",
+          "weightedScore": 100
+        },
+        {
+          "content": "針對部分採用 Tauri 的公司重新回頭使用 Electron 的現象，Hacker News 與前端社群展開了深度討論。討論聚焦於 Tauri 的 Rust 後端與 Webview 架構雖然大幅減小了應用程式體積與記憶體開銷，但在跨平台原生 API 一致性、打包複雜度及企業級生態系支援上，與 Electron 相比仍存在哪些實際取捨。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "title": "開發者社群熱議：是否存在真正能取代 Electron 的 JavaScript 桌面端方案？",
+          "url": "https://lobste.rs/s/vji9aj/any_true_alternatives_electron",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群近期關注名為 Ahab 的 Bazel 氣密性分析工具（Hermeticity Analyzer）。在大型軟體專案中，確保建構過程的完全氣密與可重現性（Reproducibility）極具挑戰。該工具能協助開發者偵測 Bazel 目標中隱含的外部依賴與非決定性行為，對於追求極致建構效能與可靠度的 DevOps 工程師具有高度參考價值。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Ahab：針對 Bazel 建構系統的氣密性分析工具引發關注",
+          "url": "https://markkarpov.com/post/announcing-ahab",
+          "weightedScore": 100
         }
       ]
     }
@@ -978,6 +996,42 @@
     {
       "seenAt": "2026-09-01T23:58:45.362Z",
       "url": "https://pwning.systems/posts/llm-memory-program-analysis"
+    },
+    {
+      "seenAt": "2026-09-03T00:01:55.579Z",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber"
+    },
+    {
+      "seenAt": "2026-09-03T00:01:55.579Z",
+      "url": "https://openai.com/index/path-to-astra"
+    },
+    {
+      "seenAt": "2026-09-03T00:01:55.579Z",
+      "url": "https://blog.cloudflare.com/task-based-oauth-consent"
+    },
+    {
+      "seenAt": "2026-09-03T00:01:55.579Z",
+      "url": "https://blog.cloudflare.com/introducing-adaptive-intelligence"
+    },
+    {
+      "seenAt": "2026-09-03T00:01:55.579Z",
+      "url": "https://simonwillison.net/2026/Sep/2/llm-gemini"
+    },
+    {
+      "seenAt": "2026-09-03T00:01:55.579Z",
+      "url": "https://simonwillison.net/2026/Sep/1/codex-libreoffice"
+    },
+    {
+      "seenAt": "2026-09-03T00:01:55.579Z",
+      "url": "https://cncf.io/blog/2026/08/31/opentelemetry-has-graduated-now-what-2"
+    },
+    {
+      "seenAt": "2026-09-03T00:01:55.579Z",
+      "url": "https://lobste.rs/s/vji9aj/any_true_alternatives_electron"
+    },
+    {
+      "seenAt": "2026-09-03T00:01:55.579Z",
+      "url": "https://markkarpov.com/post/announcing-ahab"
     }
   ]
 }
