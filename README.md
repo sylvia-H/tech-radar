@@ -36,7 +36,7 @@ Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github
 | 排程 | 雙離峰 cron（台北 06:07 主班、06:37 補班）＋ 時間戳 guard |
 | 常駐服務／資料庫 | 0 |
 | 月費 | $0 |
-| 單元測試 | 488 個、62 個測試套件 |
+| 單元測試 | 493 個、62 個測試套件 |
 
 三條輸出流：
 
@@ -251,7 +251,9 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 
 保留天數原為 7 天，2026-09-02 改為 45 天：保留期必須大於等於一則新聞最久還能當候選的時間，而無分數
 來源的新鮮度視窗是 30 天，官方 feed 又常把同一篇掛上數週。原本每隔 8 天同一則就會再推一次，實測
-310 則推播中有 46 則是重複；單元測試現在斷言保留期 ≥ 新鮮度視窗，兩個常數不會再各自漂移。
+310 則推播中有 46 則是重複；單元測試現在斷言保留期 ≥ 新鮮度視窗，兩個常數不會再各自漂移。代價是
+`seenNews` 由約 50 筆膨脹到約 320 筆（40 KB），但每日 diff 量不變；feed 的「同 id 取新棄舊」也因此
+從必要機制退居防呆。
 
 ### 第 6 關：Stage A 漏斗（`src/news/funnel.ts`）
 
@@ -471,13 +473,19 @@ LLM 只能用索引指涉候選、只回敘事文字；星數、連結、名次�
 |------|------|
 | 執行環境 | Node.js 24、TypeScript（strict） |
 | 應用框架 | NestJS 11（`createApplicationContext`，一次性 CLI job） |
-| LLM | `@google/genai`（Gemini 免費層 `gemini-3.5-flash-lite`） |
+| LLM | `@google/genai`（Gemini 免費層 `gemini-3.5-flash-lite`，見下方型號說明） |
 | HTML／RSS 解析 | `cheerio`、`rss-parser` |
 | Atom 產生 | `feed` |
 | 驗證 | `zod`（env、來源清單、狀態檔、GitHub API 回應） |
 | 排程與部署 | GitHub Actions（`workflow_dispatch` ＋ 雙 cron）、GitHub Pages |
 | 推播 | Discord Channel Webhook，三頻道分流 |
 | 測試 | Jest、ts-jest |
+
+Gemini 型號只認 Flash-Lite 系。免費層型號 ID 曾無預警提前下架（`gemini-2.5-flash` 與 `2.5-flash-lite`
+在官方公告日前即回 404，先後改用 `3.1-flash-lite`、`3.5-flash-lite`），所以 `LlmService` 對非可重試
+錯誤一律印出實際狀態碼與訊息，避免 404 被誤判成速率限制。
+2026-09-02 曾升級到沒有 Lite 版的 `gemini-3.7-flash`，當天就觸及免費層上限而改回 `3.5-flash-lite`：
+Flash 與 Flash-Lite 的免費配額不同級，換型號前先在 AI Studio 儀表板確認該型號的免費層配額。
 
 ### 機密（五項皆必填，只走環境變數／Actions Secrets，絕不入庫）
 
@@ -522,7 +530,7 @@ node dist/main.cli.js
 npm test
 ```
 
-488 個單元測試、62 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
+493 個單元測試、62 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
 快照）、兩領域歸類、榜單 diff 與決勝、URL／標題去重、簡介快取命中、新聞配額與字數上限、來源
 schema 與 tier 加權、晨報 18h guard、榜單 162h 節奏、狀態原子寫入。Gemini 一律 mock，並另測降級路徑。
 
