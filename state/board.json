@@ -306,67 +306,13 @@
     }
   },
   "lastBoardPushAt": "2026-08-31T00:24:16.184Z",
-  "lastNewsPushAt": "2026-09-03T23:59:41.494Z",
+  "lastNewsPushAt": "2026-09-04T23:55:51.688Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-08-31T00:24:16.184Z",
       "summary": "本次技術雷達榜單由 tt-a1i/archify 奪得 #1，共有 9 個新進項目（AI 佔 7 個、前後端佔 2 個）以及 1 個下降項目。"
     },
     "feed": [
-      {
-        "content": "大型多人線上遊戲 EVE Online 經歷多年運營後，正式宣佈將其龐大且複雜的後端系統遷移至 Python 3。這對長期依賴大型 Python 架構的後端與遊戲開發者而言，是一項具有指標性意義的架構升級里程碑，展現了老牌系統在現代化轉型上的實踐。",
-        "id": "news:https://eveonline.com/news/view/the-move-to-python-3-begins",
-        "publishedAt": "2026-08-30T00:07:15.441Z",
-        "title": "經典太空網游 EVE Online 宣布全面遷移至 Python 3",
-        "type": "news",
-        "url": "https://www.eveonline.com/news/view/the-move-to-python-3-begins"
-      },
-      {
-        "content": "針對檢索增強生成（RAG）在實務上的複雜迷思，社群熱議文章指出 RAG 的本質其實非常單純，不需過度工程化。這篇文章對正在導入 LLM 應用的開發者提供了解耦與簡化系統架構的指引，有助於降低維護成本並提高檢索效率。",
-        "id": "news:https://lighthousenewsletter.com/p/rag-is-simpler-than-you-think",
-        "publishedAt": "2026-08-30T00:07:15.441Z",
-        "title": "RAG 架構其實比想像中簡單：開發者應掌握的核心概念",
-        "type": "news",
-        "url": "https://www.lighthousenewsletter.com/p/rag-is-simpler-than-you-think"
-      },
-      {
-        "content": "著名的 Linux 發行版 Debian 社群經投票表決，正式決定允許在軟體開發與維護流程中「負責任地使用生成式 AI」。此舉為開源專案如何規範與整合 AI 工具開了先例，對開源社群及參與貢獻的開發者在工具使用規範上有深遠影響。",
-        "id": "news:https://lwn.net/Articles/1091231",
-        "publishedAt": "2026-08-30T00:07:15.441Z",
-        "title": "Debian 投票通過允許在專案中「負責任地使用生成式 AI」",
-        "type": "news",
-        "url": "https://lwn.net/Articles/1091231/"
-      },
-      {
-        "content": "Google 推出的 Gemini-3.5-Transcribe 在開發者社群中受到高度關注。該模型在語音轉文字的精確度與處理速度上有顯著表現，為需要整合高效能、低延遲語音處理功能的應用開發者提供了強大的新選擇。",
-        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe",
-        "publishedAt": "2026-08-30T00:07:15.441Z",
-        "title": "Gemini-3.5-Transcribe 語音辨識模型引發關注",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/"
-      },
-      {
-        "content": "Asana 分享了他們利用 OpenAI Codex 在短短兩週內，成功替換過舊測試系統的案例。這項原本預估需要耗費五年工程時間的工作僅花費約 12,000 美元，在開發者社群中掀起關於 AI 代理重構大型程式碼庫極限與成本效益的熱烈討論。",
-        "id": "news:https://openai.com/index/asana",
-        "publishedAt": "2026-08-30T00:07:15.441Z",
-        "title": "Asana 藉助 AI 程式碼工具在兩週內完成預估五年的工程重構",
-        "type": "news",
-        "url": "https://openai.com/index/asana"
-      },
-      {
-        "id": "repo:1211139949:new:2026-08-31",
-        "publishedAt": "2026-08-31T00:24:16.184Z",
-        "title": "tt-a1i/archify 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/tt-a1i/archify"
-      },
-      {
-        "id": "repo:1220744720:new:2026-08-31",
-        "publishedAt": "2026-08-31T00:24:16.184Z",
-        "title": "freestylefly/awesome-gpt-image-2 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/freestylefly/awesome-gpt-image-2"
-      },
       {
         "id": "repo:1266797999:new:2026-08-31",
         "publishedAt": "2026-08-31T00:24:16.184Z",
@@ -703,64 +649,129 @@
         "title": "ChatGPT 經歷短暫斷線後已完全恢復正常",
         "type": "news",
         "url": "https://chatgpt.com/"
+      },
+      {
+        "content": "OpenAI 官方正式宣佈開始全面推出新一代旗艦模型 GPT-6 Astra，並在推出後不久向多數付費用戶開放。此版本帶來了顯著的基準測試效能提升與工作流程優化，包含金融審閱、遊戲原型開發等應用案例皆顯示出更高的執行效率與更低的錯誤率。這對開發者與企業用戶而言，是評估與導入新一代 AI 模型介面與能力的重要里程碑。",
+        "id": "news:https://cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html",
+        "publishedAt": "2026-09-04T23:55:51.688Z",
+        "title": "OpenAI 開始向付費用戶全面推出 GPT-6 Astra 模型",
+        "type": "news",
+        "url": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html"
+      },
+      {
+        "content": "OpenAI 官方宣佈投入 10 億美元資金推出 Daybreak for Frontline Defenders 計畫，旨在擴大前線網路安全 AI 工具、專業培訓與技術支援的取得管道，保護政府與企業等關鍵基礎設施。這項重大宣佈反映了 AI 技術在資安防禦與關鍵服務保護上的角色正快速提升，對從事基礎設施與資安防護的開發者具有深遠影響。",
+        "id": "news:https://openai.com/index/daybreak-for-frontline-defenders",
+        "publishedAt": "2026-09-04T23:55:51.688Z",
+        "title": "OpenAI 推出 10 億美元「Daybreak」計畫保護關鍵基礎設施",
+        "type": "news",
+        "url": "https://openai.com/index/daybreak-for-frontline-defenders"
+      },
+      {
+        "content": "Cloudflare 官方推出全新功能 Cloudflare Access for Workers，允許開發者直接將存取控制策略附加至 Cloudflare Worker 中。此策略能自動套用到該 Worker 運行所有位置，包含路由、自訂網域、workers.dev 及預覽環境。這大幅簡化了邊緣運算與內部應用程式的安全防護架構，對 DevOps 與後端開發者是一項重要的生產力與安全更新。",
+        "id": "news:https://blog.cloudflare.com/workers-protected-by-access",
+        "publishedAt": "2026-09-04T23:55:51.688Z",
+        "title": "Cloudflare 推出 Cloudflare Access for Workers，一鍵保護內部應用",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/workers-protected-by-access/"
+      },
+      {
+        "content": "有開發者在開源社群分享成功將一個 90M 參數的對話型大型語言模型（LLM）移植到 2004 年發售的 Sony PSP 硬體上運行。儘管受限於硬體效能，推論速度僅約每秒 0.5 到 0.6 個 Token，回覆一次需時數分鐘，但這項極限邊緣運算的嘗試展現了在極端資源受限裝置上運行 AI 模型的可行性，引起社群高度關注與熱烈討論。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1w78ztg/you_can_now_run_a_90m_conversational_llm_on_the",
+        "publishedAt": "2026-09-04T23:55:51.688Z",
+        "title": "開發者成功在 2004 年 Sony PSP 手持主機上運行 90M 本地端 LLM",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w78ztg/you_can_now_run_a_90m_conversational_llm_on_the/"
+      },
+      {
+        "content": "開發者分享了利用大型語言模型（LLM）來閱讀與分析 68000 組合語言，協助將一款 1993 年的經典 Amiga 遊戲成功移植到 Godot 引擎的經驗。這篇在 Hacker News 獲得高熱度討論的案例，展示了 AI 在解讀遺留程式碼（Legacy Code）與跨平台遊戲重構上的實際應用潛力。",
+        "id": "news:https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot",
+        "publishedAt": "2026-09-04T23:55:51.688Z",
+        "title": "使用 LLM 閱讀 68000 組合語言，將 1993 年 Amiga 遊戲移植至 Godot",
+        "type": "news",
+        "url": "https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot/"
+      },
+      {
+        "content": "社群與網路工程領域深入追蹤 RFC 9234（BGP Roles and Only to Customer attribute）的實際部署狀況。該標準允許路由器自行拒絕路由洩漏。然而，一項針對網路部署現況的測量發現，部分大型 Tier 1 網路意外地剝離了 OTC 屬性。這對負責底層網路架構與 DevOps 的團隊而言，是評估全球網路路由安全標準落地的重要技術觀察。",
+        "id": "news:https://blog.cloudflare.com/rfc9234-bgp-role-model",
+        "publishedAt": "2026-09-04T23:55:51.688Z",
+        "title": "BGP Role 模型與 RFC 9234 採用追蹤：路由洩漏防禦的新進展",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/rfc9234-bgp-role-model/"
+      },
+      {
+        "content": "開發者社群發現 Anthropic 的 Claude 模型在更新系統提示詞後，對於重現知名歌曲歌詞的限制變得極為嚴格。這引發了關於 AI 模型在版權內容處理、安全性邊界以及提示詞工程行為變化的廣泛討論與關注，對依賴特定文本生成行為的開發者具有參考價值。",
+        "id": "news:https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt",
+        "publishedAt": "2026-09-04T23:55:51.688Z",
+        "title": "Claude 新版系統提示詞（System Prompt）引發社群關於版權與歌詞重現的討論",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-03T23:59:41.494Z",
+      "generatedAt": "2026-09-04T23:55:51.688Z",
       "items": [
         {
-          "content": "OpenAI 正式推出新一代旗艦模型 GPT-6 Astra，在多項基準測試與實際應用中展現突破性效能。此版本大幅提升了複雜邏輯推理、程式碼生成以及多模態處理能力，並在金融審閱、遊戲原型開發等實務工作流程中顯著降低了手動修正率，對開發者在建構高階 AI 應用時帶來更強大的底層支援。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 3,
-          "title": "OpenAI 發布全新 GPT-6 Astra 模型",
-          "url": "https://openai.com/index/gpt-6-astra/",
-          "weightedScore": 1279
-        },
-        {
-          "content": "Anthropic 官方發布了全新版本的 Claude Fable 5.1 與 Claude Mythos 5.1 模型。此更新針對內容生成、創意表達及多媒體互動（如動畫製作）進行了深度優化，提供開發者更精細的控制能力與更流暢的互動體驗。",
+          "content": "OpenAI 官方正式宣佈開始全面推出新一代旗艦模型 GPT-6 Astra，並在推出後不久向多數付費用戶開放。此版本帶來了顯著的基準測試效能提升與工作流程優化，包含金融審閱、遊戲原型開發等應用案例皆顯示出更高的執行效率與更低的錯誤率。這對開發者與企業用戶而言，是評估與導入新一代 AI 模型介面與能力的重要里程碑。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Anthropic 推出 Claude Fable 5.1 與 Claude Mythos 5.1 模型",
-          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
-          "weightedScore": 1404
+          "title": "OpenAI 開始向付費用戶全面推出 GPT-6 Astra 模型",
+          "url": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html",
+          "weightedScore": 275
         },
         {
-          "content": "Google 推出迄今最先進、最準確的全球氣象 AI 模型 WeatherNext 3。該模型大幅提升了氣象預測的解析度與運算效率，為需要處理環境數據與預測分析的開發者和研究人員提供強大的工具。",
+          "content": "OpenAI 官方宣佈投入 10 億美元資金推出 Daybreak for Frontline Defenders 計畫，旨在擴大前線網路安全 AI 工具、專業培訓與技術支援的取得管道，保護政府與企業等關鍵基礎設施。這項重大宣佈反映了 AI 技術在資安防禦與關鍵服務保護上的角色正快速提升，對從事基礎設施與資安防護的開發者具有深遠影響。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Google 發布 WeatherNext 3 全球氣象 AI 模型",
-          "url": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
+          "title": "OpenAI 推出 10 億美元「Daybreak」計畫保護關鍵基礎設施",
+          "url": "https://openai.com/index/daybreak-for-frontline-defenders",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare Managed Defense 整合 OpenAI Daybreak 模型，推出具備內文感知能力的漏洞發現與修復系統。透過結合實際流量與安全訊號，系統能自動優先處理最關鍵威脅、在邊緣網路準備緩解措施，並主動提出程式碼修補建議，協助開發與資安團隊提升防禦效率。",
+          "content": "Cloudflare 官方推出全新功能 Cloudflare Access for Workers，允許開發者直接將存取控制策略附加至 Cloudflare Worker 中。此策略能自動套用到該 Worker 運行所有位置，包含路由、自訂網域、workers.dev 及預覽環境。這大幅簡化了邊緣運算與內部應用程式的安全防護架構，對 DevOps 與後端開發者是一項重要的生產力與安全更新。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出結合 OpenAI Daybreak 的智慧漏洞發現與修復功能",
-          "url": "https://blog.cloudflare.com/vulnerability-discovery-remediation/",
+          "title": "Cloudflare 推出 Cloudflare Access for Workers，一鍵保護內部應用",
+          "url": "https://blog.cloudflare.com/workers-protected-by-access/",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 團隊分享了針對 DNS 快取底層架構進行的五項 Rust 層級記憶體最佳化。此改進將每個項目的記憶體開銷削減了 56%，在其全球基礎設施中總計釋放約 100 TB 的記憶體，對於從事大型分散式系統與高效能後端開發的工程師極具參考價值。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Cloudflare 透過最佳化 DNS 快取節省 100TB 記憶體",
-          "url": "https://blog.cloudflare.com/dns-cache-memory-optimization-1111/",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群回報 OpenAI 的 ChatGPT 服務稍早發生全球性中斷，隨後官方確認問題已修復並全面恢復正常運作。這類主流 AI 服務的突發性中斷也引發了開發者對於高度依賴外部 LLM API 的架構韌性與備援機制的討論。",
+          "content": "有開發者在開源社群分享成功將一個 90M 參數的對話型大型語言模型（LLM）移植到 2004 年發售的 Sony PSP 硬體上運行。儘管受限於硬體效能，推論速度僅約每秒 0.5 到 0.6 個 Token，回覆一次需時數分鐘，但這項極限邊緣運算的嘗試展現了在極端資源受限裝置上運行 AI 模型的可行性，引起社群高度關注與熱烈討論。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "ChatGPT 經歷短暫斷線後已完全恢復正常",
-          "url": "https://chatgpt.com/",
-          "weightedScore": 361
+          "title": "開發者成功在 2004 年 Sony PSP 手持主機上運行 90M 本地端 LLM",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w78ztg/you_can_now_run_a_90m_conversational_llm_on_the/",
+          "weightedScore": 100
+        },
+        {
+          "content": "開發者分享了利用大型語言模型（LLM）來閱讀與分析 68000 組合語言，協助將一款 1993 年的經典 Amiga 遊戲成功移植到 Godot 引擎的經驗。這篇在 Hacker News 獲得高熱度討論的案例，展示了 AI 在解讀遺留程式碼（Legacy Code）與跨平台遊戲重構上的實際應用潛力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "使用 LLM 閱讀 68000 組合語言，將 1993 年 Amiga 遊戲移植至 Godot",
+          "url": "https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot/",
+          "weightedScore": 364
+        },
+        {
+          "content": "社群與網路工程領域深入追蹤 RFC 9234（BGP Roles and Only to Customer attribute）的實際部署狀況。該標準允許路由器自行拒絕路由洩漏。然而，一項針對網路部署現況的測量發現，部分大型 Tier 1 網路意外地剝離了 OTC 屬性。這對負責底層網路架構與 DevOps 的團隊而言，是評估全球網路路由安全標準落地的重要技術觀察。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "BGP Role 模型與 RFC 9234 採用追蹤：路由洩漏防禦的新進展",
+          "url": "https://blog.cloudflare.com/rfc9234-bgp-role-model/",
+          "weightedScore": 100
+        },
+        {
+          "content": "開發者社群發現 Anthropic 的 Claude 模型在更新系統提示詞後，對於重現知名歌曲歌詞的限制變得極為嚴格。這引發了關於 AI 模型在版權內容處理、安全性邊界以及提示詞工程行為變化的廣泛討論與關注，對依賴特定文本生成行為的開發者具有參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Claude 新版系統提示詞（System Prompt）引發社群關於版權與歌詞重現的討論",
+          "url": "https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/",
+          "weightedScore": 100
         }
       ]
     }
@@ -1029,6 +1040,34 @@
     {
       "seenAt": "2026-09-03T23:59:41.494Z",
       "url": "https://chatgpt.com/"
+    },
+    {
+      "seenAt": "2026-09-04T23:55:51.688Z",
+      "url": "https://cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html"
+    },
+    {
+      "seenAt": "2026-09-04T23:55:51.688Z",
+      "url": "https://openai.com/index/daybreak-for-frontline-defenders"
+    },
+    {
+      "seenAt": "2026-09-04T23:55:51.688Z",
+      "url": "https://blog.cloudflare.com/workers-protected-by-access"
+    },
+    {
+      "seenAt": "2026-09-04T23:55:51.688Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1w78ztg/you_can_now_run_a_90m_conversational_llm_on_the"
+    },
+    {
+      "seenAt": "2026-09-04T23:55:51.688Z",
+      "url": "https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot"
+    },
+    {
+      "seenAt": "2026-09-04T23:55:51.688Z",
+      "url": "https://blog.cloudflare.com/rfc9234-bgp-role-model"
+    },
+    {
+      "seenAt": "2026-09-04T23:55:51.688Z",
+      "url": "https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt"
     }
   ]
 }
