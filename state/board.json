@@ -326,69 +326,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-06T23:45:03.614Z",
-  "lastNewsPushAt": "2026-09-06T23:45:03.614Z",
+  "lastNewsPushAt": "2026-09-08T00:10:50.507Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-06T23:45:03.614Z",
       "summary": "本次榜單新進 6 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 1 個，綜合榜 #1 為 tt-a1i/archify。"
     },
     "feed": [
-      {
-        "content": "隨著 Qwen 3.8 Flash 的推出，社群熱烈討論 Unsloth 迅速提供 Day 0 支援的消息。開發者們紛紛提醒彼此注意硬碟空間需求，以因應新模型的本地測試與微調準備。這對於關注開源模型微調效率與本地部署的 AI 開發者而言，是掌握最新工具鏈更新的重要實用資訊。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1vxybmy/qwen_38_flash_next_day_0_support_from_unsloth",
-        "publishedAt": "2026-09-01T01:12:33.196Z",
-        "title": "Unsloth 宣佈對 Qwen 3.8 Flash 進行 Day 0 支援",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vxybmy/qwen_38_flash_next_day_0_support_from_unsloth/"
-      },
-      {
-        "content": "Hacker News 與社群討論指出，Qwen 3.8 27B 模型在各項基準測試中表現極佳，但在實際互動時常出現「過度思考（overthinking）」的傾向。開發者正熱烈交流如何透過提示詞調整與參數設定來修正此行為，以在推理深度與回應效率之間取得平衡。這對於在應用程式中導入該模型的開發者極具參考價值。",
-        "id": "news:https://simonwillison.net/2026/Aug/16/qwen-38-27b",
-        "publishedAt": "2026-09-01T01:12:33.196Z",
-        "title": "開發者熱議 Qwen 3.8 27B 效能優異但預設傾向過度思考",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/"
-      },
-      {
-        "content": "專為人工智慧與高效能運算設計的程式語言 Mojo 正式宣佈開源。這項轉變對開發者而言意義重大，意味著社群可以更深入參與該語言的底層架構、貢獻程式碼，並加速其在高效能系統與 AI 開發工具鏈中的普及與應用。",
-        "id": "news:https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source",
-        "publishedAt": "2026-09-01T23:58:45.362Z",
-        "title": "程式語言 Mojo 正式宣佈開源",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source/"
-      },
-      {
-        "content": "Google 替 Gemini 模型推出具備代理式（agentic）能力的影片理解功能。這項更新讓 AI 不僅能被動分析影片內容，更能主動拆解、理解複雜的動態畫面與任務流程，為開發者在打造多模態互動與自動化影音工作流程時，解鎖了全新的應用場景。",
-        "id": "news:https://deepmind.google/blog/introducing-agentic-video-in-gemini",
-        "publishedAt": "2026-09-01T23:58:45.362Z",
-        "title": "Google Gemini 推出全新代理式影片理解功能",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/"
-      },
-      {
-        "content": "Cloudflare 分享了他們如何在快取系統中導入 Zstandard 壓縮技術與 Pingora 架構，藉此在相同硬體成本下大幅節省 PB 級的快取儲存空間。這對從事大型分散式系統與邊緣運算架構的開發者來說，提供了極具參考價值的底層效能優化與資源管理實作思路。",
-        "id": "news:https://blog.cloudflare.com/cache-transcoding",
-        "publishedAt": "2026-09-01T23:58:45.362Z",
-        "title": "Cloudflare 透過 Zstandard 與 Pingora 探索快取儲存空間最佳化",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/cache-transcoding/"
-      },
-      {
-        "content": "Atlassian 針對分散於多區域的數百個微服務架構，分享了解決雲原生環境海量遙測數據痛點的自動化方案。透過多重訊號關聯分析（Multi-signal correlation）自動進行根本原因分析（RCA），減少人工充當關聯引擎的負擔，對維運與基礎設施開發者在提升可觀測性與事件回應效率上有重大助益。",
-        "id": "news:https://cncf.io/blog/2026/08/24/automating-root-cause-analysis-at-scale-multi-signal-correlation-for-cloud-native-incident-response",
-        "publishedAt": "2026-09-01T23:58:45.362Z",
-        "title": "Atlassian 發表雲原生規模化事件回應的多重訊號關聯分析技術",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/08/24/automating-root-cause-analysis-at-scale-multi-signal-correlation-for-cloud-native-incident-response/"
-      },
-      {
-        "content": "阿里雲開源的 Qwen 3.8 27B 模型在最新的「人工分析智慧指數」（Artificial Analysis Intelligence Index）中取得了 52 分的評測表現。對於尋求在中大型模型中平衡成本、部署靈活性與強大推理能力的開發者而言，這提供了一個極具競爭力的開源模型選擇。",
-        "id": "news:https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52",
-        "publishedAt": "2026-09-01T23:58:45.362Z",
-        "title": "Qwen 3.8 27B 於人工分析智慧指數獲得 52 分高評價",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52/"
-      },
       {
         "content": "一位開發者分享其僅花費 1.5 小時就成功訓練出小型 Transformer 模型的實作經驗，且該模型在效能表現上擊敗了許多現有的大型語言模型。這在 Hacker News 上引發熱烈討論，對探索輕量化模型訓練、自訂架構與模型效率極限的開發者極具啟發性。",
         "id": "news:https://mvakde.github.io/blog/44-on-arc-1",
@@ -725,46 +669,129 @@
         "title": "OpenAI、Claude 與 Grok 同時發生全球性當機事件",
         "type": "news",
         "url": "https://news.ycombinator.com/item?id=49551096"
+      },
+      {
+        "content": "探討在真實生產環境中，AI 工作負載絕非僅在 GPU 上運行。從資料預處理、推論前後的管道處理到系統整合，AI 平台工程本質上是一個結合 CPU 與 GPU 的異構基礎設施挑戰。對於架構師與 DevOps 工程師而言，理解如何有效平衡 CPU 與 GPU 的資源調度與資料流，是建構高效、可擴展 AI 系統的關鍵。",
+        "id": "news:https://cncf.io/blog/2026/09/04/cpu-gpu-why-ai-platform-engineering-is-a-heterogeneous-infrastructure-problem",
+        "publishedAt": "2026-09-08T00:10:50.507Z",
+        "title": "CPU 與 GPU 協同：為什麼 AI 平台工程是異構基礎設施問題",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/09/04/cpu-gpu-why-ai-platform-engineering-is-a-heterogeneous-infrastructure-problem/"
+      },
+      {
+        "content": "Cloudflare 發布 2026 年上半年 DDoS 威脅報告，指出超大容量（hyper-volumetric）DDoS 攻擊暴增 519%，主要由 DNS 與 CLDAP 反射攻擊向量驅動，地緣政治衝突徹底重塑全球網路安全態勢。這對負責基礎設施與網路安全的開發者與維運團隊敲響警鐘，必須重新審視防禦架構與流量清洗策略。",
+        "id": "news:https://blog.cloudflare.com/ddos-threat-report-2026-h1",
+        "publishedAt": "2026-09-08T00:10:50.507Z",
+        "title": "Cloudflare 2026 上半年 DDoS 威脅報告：1 Tbps 級攻擊激增與地緣政治衝擊",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1/"
+      },
+      {
+        "content": "針對中小型、非資安專focus的專案維護者，提供一套標準化的漏洞回報處理流程指南。有別於高風險專案所需的複雜架構，這份食譜協助開發者建立清晰的漏洞接收與回應機制，對提升開源專案與小型團隊的安全性具有實務價值。",
+        "id": "news:https://cncf.io/blog/2026/09/07/handling-vulnerability-reports-recipe-card",
+        "publishedAt": "2026-09-08T00:10:50.507Z",
+        "title": "資安漏洞回報處理食譜：中小型專案的實用指南",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/09/07/handling-vulnerability-reports-recipe-card/"
+      },
+      {
+        "content": "推出一項名為 The Struggle Bench 的創新基準測試：受測 AI 被賦予一臺伺服器、一間中價位公寓與一個銀行帳戶，必須透過支付房租和電費來「生存」一個月，且若被偵測到進行網路犯罪就會被關閉。這種將 AI 放入真實經濟與法律約束中的測試方式，為評估自主代理（Agent）的長期穩定性與實際應用帶來全新的視角。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1w9dlf1/new_benchmark_the_struggle_bench",
+        "publishedAt": "2026-09-08T00:10:50.507Z",
+        "title": "全新基準測試 The Struggle Bench：考驗 AI 在現實世界中賺錢生存的能力",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w9dlf1/new_benchmark_the_struggle_bench/"
+      },
+      {
+        "content": "探討 OpenAI 最新旗艦模型 GPT-6 Astra 的成本效益。儘管 Astra 的單一 token 價格比前一代高出 2.5 倍，但因其推理能力與任務執行效率大幅提升，開發者在完成複雜任務時反而能減少重複調用與除錯次數，最終達到節省整體開銷的效果。這對評估 AI 導入成本的架構師極具參考價值。",
+        "id": "news:https://thenewstack.io/astra-reasoning-effort-cost",
+        "publishedAt": "2026-09-08T00:10:50.507Z",
+        "title": "OpenAI 新模型 Astra 每 Token 成本高出 2.5 倍，為何開發者反而能省錢？",
+        "type": "news",
+        "url": "https://thenewstack.io/astra-reasoning-effort-cost/"
+      },
+      {
+        "content": "社群針對 Hugging Face 上多款透過 abliteration 技術處理的開源模型進行大規模基準測試，耗費 167 小時 GPU 運算時間，透過權重比較、KL 散度測量與 HarmBench 400 拒絕測試，檢驗這些未審查模型的實際表現。這為依賴開源大模型的開發者提供了珍貴的技術評估與品質驗證數據。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1w8vx6w/8_uncensored_qwen_38_27b_variants_one_base_167",
+        "publishedAt": "2026-09-08T00:10:50.507Z",
+        "title": "8 款未審查 Qwen 3.8 27B 變體模型評測：歷時 167 小時 GPU 運算的深度分析",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w8vx6w/8_uncensored_qwen_38_27b_variants_one_base_167/"
+      },
+      {
+        "content": "開發者在極度嚴苛的大小限制下（僅 1024 bytes），成功從頭實作一個 Python 直譯器。這篇文章展現了深厚的程式碼優化技巧與虛擬機底層運作原理，對想深入理解語言直譯器設計與字節碼執行的工程師來說，是一場精湛的技術展示。",
+        "id": "news:https://austinhenley.com/blog/python1024.html",
+        "publishedAt": "2026-09-08T00:10:50.507Z",
+        "title": "如何在 1024 位元組內用 Python 實作一個直譯器",
+        "type": "news",
+        "url": "https://austinhenley.com/blog/python1024.html"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-06T23:45:03.614Z",
+      "generatedAt": "2026-09-08T00:10:50.507Z",
       "items": [
         {
-          "content": "高效能資料處理庫 Polars 推出 2.0 預發布版本，帶來高達 5 倍的查詢速度提升。然而，這次更新可能伴隨著資料列順序（row order）的變更。對於依賴特定排序或進行流式運算的開發者而言，這是一項重要的 breaking change，升級前務必進行相容性與正確性測試。",
+          "content": "探討在真實生產環境中，AI 工作負載絕非僅在 GPU 上運行。從資料預處理、推論前後的管道處理到系統整合，AI 平台工程本質上是一個結合 CPU 與 GPU 的異構基礎設施挑戰。對於架構師與 DevOps 工程師而言，理解如何有效平衡 CPU 與 GPU 的資源調度與資料流，是建構高效、可擴展 AI 系統的關鍵。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Polars 2.0 預發布版效能提升 5 倍，但須注意資料列順序變更",
-          "url": "https://thenewstack.io/polars-streaming-row-order/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Cloudflare 的政府專用服務正式取得 FedRAMP Class D (High) 認證，並宣佈將進一步取得美國國防部 DoD IL4 授權。這項資安與合規標準的提升，讓公部門與高安全性需求的企業開發者能更放心地在基礎設施中導入 Cloudflare 的邊緣安全與開發者產品。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Cloudflare for Government 獲 FedRAMP High 認證",
-          "url": "https://blog.cloudflare.com/fedramp-class-d-certification/",
+          "title": "CPU 與 GPU 協同：為什麼 AI 平台工程是異構基礎設施問題",
+          "url": "https://www.cncf.io/blog/2026/09/04/cpu-gpu-why-ai-platform-engineering-is-a-heterogeneous-infrastructure-problem/",
           "weightedScore": 100
         },
         {
-          "content": "在最新的人機對弈中，圍棋大師 Shin 成功在兩子讓子的條件下擊敗了知名 AI 圍棋引擎 KataGo。這項結果引發開發者與 AI 研究社群對目前深度學習模型在特定戰術與長距離規劃盲點的熱烈討論。",
+          "content": "Cloudflare 發布 2026 年上半年 DDoS 威脅報告，指出超大容量（hyper-volumetric）DDoS 攻擊暴增 519%，主要由 DNS 與 CLDAP 反射攻擊向量驅動，地緣政治衝突徹底重塑全球網路安全態勢。這對負責基礎設施與網路安全的開發者與維運團隊敲響警鐘，必須重新審視防禦架構與流量清洗策略。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "title": "圍棋名手 Shin 透過兩子讓子擊敗 AI KataGo",
-          "url": "https://www.kedglobal.com/artificial-intelligence/newsView/ked202607210007",
-          "weightedScore": 467
+          "title": "Cloudflare 2026 上半年 DDoS 威脅報告：1 Tbps 級攻擊激增與地緣政治衝擊",
+          "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1/",
+          "weightedScore": 100
         },
         {
-          "content": "三大主流 AI 服務 OpenAI、Claude 與 Grok 在同時間無預警同時發生大規模中斷，引發 Hacker News 等社群的高度關注與討論。這突顯了現代軟體架構對少數幾家大型 AI 基礎設施供應商的高度依賴，以及多雲備援機制的迫切性。",
+          "content": "針對中小型、非資安專focus的專案維護者，提供一套標準化的漏洞回報處理流程指南。有別於高風險專案所需的複雜架構，這份食譜協助開發者建立清晰的漏洞接收與回應機制，對提升開源專案與小型團隊的安全性具有實務價值。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "資安漏洞回報處理食譜：中小型專案的實用指南",
+          "url": "https://www.cncf.io/blog/2026/09/07/handling-vulnerability-reports-recipe-card/",
+          "weightedScore": 100
+        },
+        {
+          "content": "推出一項名為 The Struggle Bench 的創新基準測試：受測 AI 被賦予一臺伺服器、一間中價位公寓與一個銀行帳戶，必須透過支付房租和電費來「生存」一個月，且若被偵測到進行網路犯罪就會被關閉。這種將 AI 放入真實經濟與法律約束中的測試方式，為評估自主代理（Agent）的長期穩定性與實際應用帶來全新的視角。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "OpenAI、Claude 與 Grok 同時發生全球性當機事件",
-          "url": "https://news.ycombinator.com/item?id=49551096",
-          "weightedScore": 400
+          "title": "全新基準測試 The Struggle Bench：考驗 AI 在現實世界中賺錢生存的能力",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w9dlf1/new_benchmark_the_struggle_bench/",
+          "weightedScore": 100
+        },
+        {
+          "content": "探討 OpenAI 最新旗艦模型 GPT-6 Astra 的成本效益。儘管 Astra 的單一 token 價格比前一代高出 2.5 倍，但因其推理能力與任務執行效率大幅提升，開發者在完成複雜任務時反而能減少重複調用與除錯次數，最終達到節省整體開銷的效果。這對評估 AI 導入成本的架構師極具參考價值。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "OpenAI 新模型 Astra 每 Token 成本高出 2.5 倍，為何開發者反而能省錢？",
+          "url": "https://thenewstack.io/astra-reasoning-effort-cost/",
+          "weightedScore": 50
+        },
+        {
+          "content": "社群針對 Hugging Face 上多款透過 abliteration 技術處理的開源模型進行大規模基準測試，耗費 167 小時 GPU 運算時間，透過權重比較、KL 散度測量與 HarmBench 400 拒絕測試，檢驗這些未審查模型的實際表現。這為依賴開源大模型的開發者提供了珍貴的技術評估與品質驗證數據。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "8 款未審查 Qwen 3.8 27B 變體模型評測：歷時 167 小時 GPU 運算的深度分析",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w8vx6w/8_uncensored_qwen_38_27b_variants_one_base_167/",
+          "weightedScore": 100
+        },
+        {
+          "content": "開發者在極度嚴苛的大小限制下（僅 1024 bytes），成功從頭實作一個 Python 直譯器。這篇文章展現了深厚的程式碼優化技巧與虛擬機底層運作原理，對想深入理解語言直譯器設計與字節碼執行的工程師來說，是一場精湛的技術展示。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "title": "如何在 1024 位元組內用 Python 實作一個直譯器",
+          "url": "https://austinhenley.com/blog/python1024.html",
+          "weightedScore": 307
         }
       ]
     }
@@ -1109,6 +1136,34 @@
     {
       "seenAt": "2026-09-06T23:45:03.614Z",
       "url": "https://news.ycombinator.com/item?id=49551096"
+    },
+    {
+      "seenAt": "2026-09-08T00:10:50.507Z",
+      "url": "https://cncf.io/blog/2026/09/04/cpu-gpu-why-ai-platform-engineering-is-a-heterogeneous-infrastructure-problem"
+    },
+    {
+      "seenAt": "2026-09-08T00:10:50.507Z",
+      "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1"
+    },
+    {
+      "seenAt": "2026-09-08T00:10:50.507Z",
+      "url": "https://cncf.io/blog/2026/09/07/handling-vulnerability-reports-recipe-card"
+    },
+    {
+      "seenAt": "2026-09-08T00:10:50.507Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1w9dlf1/new_benchmark_the_struggle_bench"
+    },
+    {
+      "seenAt": "2026-09-08T00:10:50.507Z",
+      "url": "https://thenewstack.io/astra-reasoning-effort-cost"
+    },
+    {
+      "seenAt": "2026-09-08T00:10:50.507Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1w8vx6w/8_uncensored_qwen_38_27b_variants_one_base_167"
+    },
+    {
+      "seenAt": "2026-09-08T00:10:50.507Z",
+      "url": "https://austinhenley.com/blog/python1024.html"
     }
   ]
 }
