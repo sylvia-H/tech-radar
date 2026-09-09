@@ -326,45 +326,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-06T23:45:03.614Z",
-  "lastNewsPushAt": "2026-09-08T00:10:50.507Z",
+  "lastNewsPushAt": "2026-09-09T00:02:21.880Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-06T23:45:03.614Z",
       "summary": "本次榜單新進 6 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 1 個，綜合榜 #1 為 tt-a1i/archify。"
     },
     "feed": [
-      {
-        "content": "一位開發者分享其僅花費 1.5 小時就成功訓練出小型 Transformer 模型的實作經驗，且該模型在效能表現上擊敗了許多現有的大型語言模型。這在 Hacker News 上引發熱烈討論，對探索輕量化模型訓練、自訂架構與模型效率極限的開發者極具啟發性。",
-        "id": "news:https://mvakde.github.io/blog/44-on-arc-1",
-        "publishedAt": "2026-09-01T23:58:45.362Z",
-        "title": "開發者僅用 1.5 小時訓練小型 Transformer 模型並擊敗多款 LLM",
-        "type": "news",
-        "url": "https://mvakde.github.io/blog/44-on-arc-1/"
-      },
-      {
-        "content": "Hacker News 上一篇熱門討論指出，有開發者在無意間將大型語言模型的記憶機制轉化為程式碼分析工具。這項有趣的發現引發了社群對於如何利用 LLM 進行靜態分析、狀態追蹤及自動化程式碼檢視的新思考方向。",
-        "id": "news:https://pwning.systems/posts/llm-memory-program-analysis",
-        "publishedAt": "2026-09-01T23:58:45.362Z",
-        "title": "意外將 LLM 記憶轉化為程式分析的實作討論",
-        "type": "news",
-        "url": "https://pwning.systems/posts/llm-memory-program-analysis/"
-      },
-      {
-        "content": "Google 官方正式發布 Gemini 3.8 Flash 及其衍生版本 3.8 Flash Cyber。此更新針對速度與特定資安防護場景進行最佳化，大幅縮短模型推論延遲，並加強在惡意流量分析與自動化防禦方面的表現。對於需將大語言模型直接整合至高頻率 API 或即時安全管道的開發者而言，這款輕量且高效的模型能提供更低成本的邊緣與雲端部署選擇。",
-        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber",
-        "publishedAt": "2026-09-03T00:01:55.579Z",
-        "title": "Google 發布 Gemini 3.8 Flash 與 3.8 Flash Cyber 具備更強即時反應能力",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/"
-      },
-      {
-        "content": "OpenAI 官方發布技術報告指出，新模型 Astra 是首款達到其「預備框架」（Preparedness Framework）所定義之重大網路安全能力門檻的模型。為了因應這項突破，該模型在發布時伴隨了更嚴格的邊界防護與程式碼執行隔離機制。這對依賴 OpenAI API 進行自動化程式碼編寫與漏洞檢測的開發者來說，意味著在享受更強大能力之餘，必須適應更嚴格的安全審查與API行為限制。",
-        "id": "news:https://openai.com/index/path-to-astra",
-        "publishedAt": "2026-09-03T00:01:55.579Z",
-        "title": "OpenAI 揭露 Astra 模型首度達到預備框架的重大資安防護門檻",
-        "type": "news",
-        "url": "https://openai.com/index/path-to-astra"
-      },
       {
         "content": "Cloudflare 宣布其 OAuth 服務正式支援選擇性範圍（optional scopes），允許使用者在授權時精確控制第三方應用程式可存取的資源權限。這項更新有助於開發者打造符合最低權限原則（Principle of Least Privilege）的更安全驗證流程，針對特定任務請求剛好所需的權限，降低憑證外洩時的衝擊範圍。",
         "id": "news:https://blog.cloudflare.com/task-based-oauth-consent",
@@ -725,73 +693,78 @@
         "title": "如何在 1024 位元組內用 Python 實作一個直譯器",
         "type": "news",
         "url": "https://austinhenley.com/blog/python1024.html"
+      },
+      {
+        "content": "Cloudflare 宣佈推出「Automatic Key Exchange」，能主動探測支援 TLS 1.3 的客戶端來源，識別其支援的金鑰協議演算法，並在連線時優先採用最具安全性的後量子密碼學演算法。這項更新涵蓋每日高達 450 億次的連線，對開發者與基礎設施維運人員而言，不需修改應用程式碼即可無縫升級網路傳輸的安全性，防範未來的量子計算威脅。",
+        "id": "news:https://blog.cloudflare.com/automatic-key-exchange-for-origins",
+        "publishedAt": "2026-09-09T00:02:21.880Z",
+        "title": "Cloudflare 推出自動金鑰交換，全面提升 450 億次連線的後量子安全",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/automatic-key-exchange-for-origins/"
+      },
+      {
+        "content": "雲端原生運算基金會（CNCF）正式宣布多叢集、多雲 Kubernetes 協調專案 Karmada 達到畢業狀態（Graduation）。隨著全球企業在混合基礎設施上大規模擴展 AI 訓練與推論，Karmada 提供成熟的生產級多叢集管理能力。這對從事 DevOps 與雲端架構的開發者來說，意味著在跨叢集部署與調度應用程式時，有了更穩定且標準化的官方解決方案。",
+        "id": "news:https://cncf.io/announcements/2026/09/07/cloud-native-computing-foundation-announces-karmada-graduation",
+        "publishedAt": "2026-09-09T00:02:21.880Z",
+        "title": "CNCF 宣布 Karmada 正式畢業，成為多叢集 Kubernetes 協調標準",
+        "type": "news",
+        "url": "https://www.cncf.io/announcements/2026/09/07/cloud-native-computing-foundation-announces-karmada-graduation/"
+      },
+      {
+        "content": "兩名數學家花費一年時間攻克數學難題，並將研究草稿輸入至 Codex 中。然而，在他們準備發表前夕，OpenAI 突然發表了相同的解答，且面對模型是否訓練自其私人對話的質疑時未正面回應。此事件在開發者社群引發高度關注，再次突顯開發者在使用雲端 AI 工具時，對於私有程式碼、資料隱私以及智慧財產權保護的嚴重隱憂。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wapjaw/openai_alleged_of_stealing_mathematicians_work",
+        "publishedAt": "2026-09-09T00:02:21.880Z",
+        "title": "OpenAI 被控利用私人草稿竊取數學家研究成果",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wapjaw/openai_alleged_of_stealing_mathematicians_work/"
+      },
+      {
+        "content": "針對 GitHub Actions 在企業內部規模化擴展後，普遍面臨的可視性不足、工作流程緩慢與佇列阻塞等痛點，社群討論了一種無需修改任何 workflow 檔案即可實現 CI 管線分散式追蹤的新方法。這對 DevOps 工程師而言是一大福音，能更有效率地監控與診斷 CI/CD 效能瓶頸，提升開發維運效率。",
+        "id": "news:https://cncf.io/blog/2026/09/08/distributed-tracing-for-ci-pipelines-without-touching-a-single-workflow-file",
+        "publishedAt": "2026-09-09T00:02:21.880Z",
+        "title": "無需修改 Workflow 檔案即可實現 CI 管線的分散式追蹤",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/09/08/distributed-tracing-for-ci-pipelines-without-touching-a-single-workflow-file/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-08T00:10:50.507Z",
+      "generatedAt": "2026-09-09T00:02:21.880Z",
       "items": [
         {
-          "content": "探討在真實生產環境中，AI 工作負載絕非僅在 GPU 上運行。從資料預處理、推論前後的管道處理到系統整合，AI 平台工程本質上是一個結合 CPU 與 GPU 的異構基礎設施挑戰。對於架構師與 DevOps 工程師而言，理解如何有效平衡 CPU 與 GPU 的資源調度與資料流，是建構高效、可擴展 AI 系統的關鍵。",
+          "content": "Cloudflare 宣佈推出「Automatic Key Exchange」，能主動探測支援 TLS 1.3 的客戶端來源，識別其支援的金鑰協議演算法，並在連線時優先採用最具安全性的後量子密碼學演算法。這項更新涵蓋每日高達 450 億次的連線，對開發者與基礎設施維運人員而言，不需修改應用程式碼即可無縫升級網路傳輸的安全性，防範未來的量子計算威脅。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "CPU 與 GPU 協同：為什麼 AI 平台工程是異構基礎設施問題",
-          "url": "https://www.cncf.io/blog/2026/09/04/cpu-gpu-why-ai-platform-engineering-is-a-heterogeneous-infrastructure-problem/",
+          "title": "Cloudflare 推出自動金鑰交換，全面提升 450 億次連線的後量子安全",
+          "url": "https://blog.cloudflare.com/automatic-key-exchange-for-origins/",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 發布 2026 年上半年 DDoS 威脅報告，指出超大容量（hyper-volumetric）DDoS 攻擊暴增 519%，主要由 DNS 與 CLDAP 反射攻擊向量驅動，地緣政治衝突徹底重塑全球網路安全態勢。這對負責基礎設施與網路安全的開發者與維運團隊敲響警鐘，必須重新審視防禦架構與流量清洗策略。",
+          "content": "雲端原生運算基金會（CNCF）正式宣布多叢集、多雲 Kubernetes 協調專案 Karmada 達到畢業狀態（Graduation）。隨著全球企業在混合基礎設施上大規模擴展 AI 訓練與推論，Karmada 提供成熟的生產級多叢集管理能力。這對從事 DevOps 與雲端架構的開發者來說，意味著在跨叢集部署與調度應用程式時，有了更穩定且標準化的官方解決方案。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 2026 上半年 DDoS 威脅報告：1 Tbps 級攻擊激增與地緣政治衝擊",
-          "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1/",
+          "title": "CNCF 宣布 Karmada 正式畢業，成為多叢集 Kubernetes 協調標準",
+          "url": "https://www.cncf.io/announcements/2026/09/07/cloud-native-computing-foundation-announces-karmada-graduation/",
           "weightedScore": 100
         },
         {
-          "content": "針對中小型、非資安專focus的專案維護者，提供一套標準化的漏洞回報處理流程指南。有別於高風險專案所需的複雜架構，這份食譜協助開發者建立清晰的漏洞接收與回應機制，對提升開源專案與小型團隊的安全性具有實務價值。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "資安漏洞回報處理食譜：中小型專案的實用指南",
-          "url": "https://www.cncf.io/blog/2026/09/07/handling-vulnerability-reports-recipe-card/",
-          "weightedScore": 100
-        },
-        {
-          "content": "推出一項名為 The Struggle Bench 的創新基準測試：受測 AI 被賦予一臺伺服器、一間中價位公寓與一個銀行帳戶，必須透過支付房租和電費來「生存」一個月，且若被偵測到進行網路犯罪就會被關閉。這種將 AI 放入真實經濟與法律約束中的測試方式，為評估自主代理（Agent）的長期穩定性與實際應用帶來全新的視角。",
+          "content": "兩名數學家花費一年時間攻克數學難題，並將研究草稿輸入至 Codex 中。然而，在他們準備發表前夕，OpenAI 突然發表了相同的解答，且面對模型是否訓練自其私人對話的質疑時未正面回應。此事件在開發者社群引發高度關注，再次突顯開發者在使用雲端 AI 工具時，對於私有程式碼、資料隱私以及智慧財產權保護的嚴重隱憂。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "全新基準測試 The Struggle Bench：考驗 AI 在現實世界中賺錢生存的能力",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w9dlf1/new_benchmark_the_struggle_bench/",
+          "title": "OpenAI 被控利用私人草稿竊取數學家研究成果",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wapjaw/openai_alleged_of_stealing_mathematicians_work/",
           "weightedScore": 100
         },
         {
-          "content": "探討 OpenAI 最新旗艦模型 GPT-6 Astra 的成本效益。儘管 Astra 的單一 token 價格比前一代高出 2.5 倍，但因其推理能力與任務執行效率大幅提升，開發者在完成複雜任務時反而能減少重複調用與除錯次數，最終達到節省整體開銷的效果。這對評估 AI 導入成本的架構師極具參考價值。",
+          "content": "針對 GitHub Actions 在企業內部規模化擴展後，普遍面臨的可視性不足、工作流程緩慢與佇列阻塞等痛點，社群討論了一種無需修改任何 workflow 檔案即可實現 CI 管線分散式追蹤的新方法。這對 DevOps 工程師而言是一大福音，能更有效率地監控與診斷 CI/CD 效能瓶頸，提升開發維運效率。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "OpenAI 新模型 Astra 每 Token 成本高出 2.5 倍，為何開發者反而能省錢？",
-          "url": "https://thenewstack.io/astra-reasoning-effort-cost/",
-          "weightedScore": 50
-        },
-        {
-          "content": "社群針對 Hugging Face 上多款透過 abliteration 技術處理的開源模型進行大規模基準測試，耗費 167 小時 GPU 運算時間，透過權重比較、KL 散度測量與 HarmBench 400 拒絕測試，檢驗這些未審查模型的實際表現。這為依賴開源大模型的開發者提供了珍貴的技術評估與品質驗證數據。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "8 款未審查 Qwen 3.8 27B 變體模型評測：歷時 167 小時 GPU 運算的深度分析",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w8vx6w/8_uncensored_qwen_38_27b_variants_one_base_167/",
+          "title": "無需修改 Workflow 檔案即可實現 CI 管線的分散式追蹤",
+          "url": "https://www.cncf.io/blog/2026/09/08/distributed-tracing-for-ci-pipelines-without-touching-a-single-workflow-file/",
           "weightedScore": 100
-        },
-        {
-          "content": "開發者在極度嚴苛的大小限制下（僅 1024 bytes），成功從頭實作一個 Python 直譯器。這篇文章展現了深厚的程式碼優化技巧與虛擬機底層運作原理，對想深入理解語言直譯器設計與字節碼執行的工程師來說，是一場精湛的技術展示。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "如何在 1024 位元組內用 Python 實作一個直譯器",
-          "url": "https://austinhenley.com/blog/python1024.html",
-          "weightedScore": 307
         }
       ]
     }
@@ -1164,6 +1137,22 @@
     {
       "seenAt": "2026-09-08T00:10:50.507Z",
       "url": "https://austinhenley.com/blog/python1024.html"
+    },
+    {
+      "seenAt": "2026-09-09T00:02:21.880Z",
+      "url": "https://blog.cloudflare.com/automatic-key-exchange-for-origins"
+    },
+    {
+      "seenAt": "2026-09-09T00:02:21.880Z",
+      "url": "https://cncf.io/announcements/2026/09/07/cloud-native-computing-foundation-announces-karmada-graduation"
+    },
+    {
+      "seenAt": "2026-09-09T00:02:21.880Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wapjaw/openai_alleged_of_stealing_mathematicians_work"
+    },
+    {
+      "seenAt": "2026-09-09T00:02:21.880Z",
+      "url": "https://cncf.io/blog/2026/09/08/distributed-tracing-for-ci-pipelines-without-touching-a-single-workflow-file"
     }
   ]
 }
