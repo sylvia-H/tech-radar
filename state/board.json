@@ -326,69 +326,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-06T23:45:03.614Z",
-  "lastNewsPushAt": "2026-09-09T00:02:21.880Z",
+  "lastNewsPushAt": "2026-09-10T00:03:46.530Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-06T23:45:03.614Z",
       "summary": "本次榜單新進 6 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 1 個，綜合榜 #1 為 tt-a1i/archify。"
     },
     "feed": [
-      {
-        "content": "Cloudflare 宣布其 OAuth 服務正式支援選擇性範圍（optional scopes），允許使用者在授權時精確控制第三方應用程式可存取的資源權限。這項更新有助於開發者打造符合最低權限原則（Principle of Least Privilege）的更安全驗證流程，針對特定任務請求剛好所需的權限，降低憑證外洩時的衝擊範圍。",
-        "id": "news:https://blog.cloudflare.com/task-based-oauth-consent",
-        "publishedAt": "2026-09-03T00:01:55.579Z",
-        "title": "Cloudflare 擴充 OAuth 支援任務級精細同意授權與選用範圍",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/task-based-oauth-consent/"
-      },
-      {
-        "content": "Cloudflare 推出全新 Adaptive Intelligence 引擎，透過自主學習即時流量的中繼訊號（meta-signals）來動態部署免洗防禦規則。傳統靜態防禦規則常面臨遭低成本代理伺服器繞過的問題，而此機制能反轉經濟效益，讓自動化網路攻擊的成本大幅提高。對維運與後端開發者而言，這提供了一種無需手動維護複雜規則的強固防 bot 方案。",
-        "id": "news:https://blog.cloudflare.com/introducing-adaptive-intelligence",
-        "publishedAt": "2026-09-03T00:01:55.579Z",
-        "title": "Cloudflare 推出 Adaptive Intelligence 引擎以自動化阻斷自動化機器人攻擊",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/introducing-adaptive-intelligence/"
-      },
-      {
-        "content": "命令列工具 llm-gemini 釋出 0.34 版本。此更新跟進了 Google Gemini 最新 API 的異動，修復了多項相容性問題，並優化了終端機環境下的多模態輸入與輸出處理效率。對習慣在終端機直接呼叫 Gemini 進行腳本編寫、文件摘要或程式碼生成的開發者來說，這是一次必要的穩定性升級。",
-        "id": "news:https://simonwillison.net/2026/Sep/2/llm-gemini",
-        "publishedAt": "2026-09-03T00:01:55.579Z",
-        "title": "llm-gemini 0.34 版本釋出帶來最新 Gemini API 支援",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Sep/2/llm-gemini/"
-      },
-      {
-        "content": "開發者在檢視 ChatGPT 與 Codex 桌面應用程式的套件結構時，發現其中竟然完整打包了一份 LibreOffice 的二進位複本。這在 Hacker News 引發熱烈討論，焦點集中在 Electron 類或原生封裝應用程式為了處理檔案轉換或辦公文件解析，不惜以犧牲體積代價直接嵌入大型開源軟體的工程實踐與臃腫趨勢。",
-        "id": "news:https://simonwillison.net/2026/Sep/1/codex-libreoffice",
-        "publishedAt": "2026-09-03T00:01:55.579Z",
-        "title": "ChatGPT 與 Codex 桌面應用程式被發現內部綑綁完整 LibreOffice 複本",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Sep/1/codex-libreoffice/"
-      },
-      {
-        "content": "OpenTelemetry (OTel) 官方宣佈正式自 CNCF 畢業，與 Kubernetes 和 Prometheus 等頂級開源專案並列。社群隨之展開熱烈討論，探討在觀測性標準大致底定後，開發者在多語言微服務架構中落實分散式追蹤與效能指標收集的實際痛點，以及未來工具鏈生態系的演進方向。",
-        "id": "news:https://cncf.io/blog/2026/08/31/opentelemetry-has-graduated-now-what-2",
-        "publishedAt": "2026-09-03T00:01:55.579Z",
-        "title": "OpenTelemetry 正式達到 CNCF 畢業專案地位後的下一步挑戰",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/08/31/opentelemetry-has-graduated-now-what-2/"
-      },
-      {
-        "content": "針對部分採用 Tauri 的公司重新回頭使用 Electron 的現象，Hacker News 與前端社群展開了深度討論。討論聚焦於 Tauri 的 Rust 後端與 Webview 架構雖然大幅減小了應用程式體積與記憶體開銷，但在跨平台原生 API 一致性、打包複雜度及企業級生態系支援上，與 Electron 相比仍存在哪些實際取捨。",
-        "id": "news:https://lobste.rs/s/vji9aj/any_true_alternatives_electron",
-        "publishedAt": "2026-09-03T00:01:55.579Z",
-        "title": "開發者社群熱議：是否存在真正能取代 Electron 的 JavaScript 桌面端方案？",
-        "type": "news",
-        "url": "https://lobste.rs/s/vji9aj/any_true_alternatives_electron"
-      },
-      {
-        "content": "社群近期關注名為 Ahab 的 Bazel 氣密性分析工具（Hermeticity Analyzer）。在大型軟體專案中，確保建構過程的完全氣密與可重現性（Reproducibility）極具挑戰。該工具能協助開發者偵測 Bazel 目標中隱含的外部依賴與非決定性行為，對於追求極致建構效能與可靠度的 DevOps 工程師具有高度參考價值。",
-        "id": "news:https://markkarpov.com/post/announcing-ahab",
-        "publishedAt": "2026-09-03T00:01:55.579Z",
-        "title": "Ahab：針對 Bazel 建構系統的氣密性分析工具引發關注",
-        "type": "news",
-        "url": "https://markkarpov.com/post/announcing-ahab"
-      },
       {
         "content": "OpenAI 正式推出新一代旗艦模型 GPT-6 Astra，在多項基準測試與實際應用中展現突破性效能。此版本大幅提升了複雜邏輯推理、程式碼生成以及多模態處理能力，並在金融審閱、遊戲原型開發等實務工作流程中顯著降低了手動修正率，對開發者在建構高階 AI 應用時帶來更強大的底層支援。",
         "id": "news:https://openai.com/index/gpt-6-astra",
@@ -725,46 +669,129 @@
         "title": "無需修改 Workflow 檔案即可實現 CI 管線的分散式追蹤",
         "type": "news",
         "url": "https://www.cncf.io/blog/2026/09/08/distributed-tracing-for-ci-pipelines-without-touching-a-single-workflow-file/"
+      },
+      {
+        "content": "React 發布 19.3 版本，其中一項重大更新是引入了 `<ViewTransition />` 組件以及 `addTransitionType` API，讓開發者能夠在 React 應用程式中直接支援並控制瀏覽器的 View Transition 動畫效果。這對於追求流暢頁面轉換與現代前端體驗的開發者來說，提供了原生且標準化的實作解法。",
+        "id": "news:https://github.com/react/react/releases/tag/v19.3.0",
+        "publishedAt": "2026-09-10T00:03:46.530Z",
+        "title": "React 19.3 正式發布：引入原生 ViewTransition 與新轉場 API",
+        "type": "news",
+        "url": "https://github.com/react/react/releases/tag/v19.3.0"
+      },
+      {
+        "content": "Cloudflare 宣佈重構 Workers 的模組註冊表，使 Node.js 相容性成為預設選項，並支援高達 64 MiB 的應用程式。此次更新新增基於 URL 的模組註冊表、`import.meta` 支援、延遲編譯（lazy compilation）、共用程式碼快取及更清晰的錯誤訊息。這大幅降低了將現有 Node.js 服務搬遷至邊緣運算環境的門檻。",
+        "id": "news:https://blog.cloudflare.com/workers-module-registry-nodejs",
+        "publishedAt": "2026-09-10T00:03:46.530Z",
+        "title": "Cloudflare Workers 重構模組註冊表以全面支援 Node.js 相容性",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/workers-module-registry-nodejs/"
+      },
+      {
+        "content": "Node.js 發布 26.8.2 版本，主要變動包含在 `node:net` 模組中正式將 `Server.prototype._listen2` 標記為棄用（deprecate），精進實驗性功能的安全漏洞防護姿態，同時將 Undici 更新至 8.10.2、OpenSSL 更新至 3.5.8。這對維護 Node.js 後端穩定性與安全性的開發者是重要的維護版本。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.8.2",
+        "publishedAt": "2026-09-10T00:03:46.530Z",
+        "title": "Node.js 26.8.2 發布：標記 _listen2 棄用並更新安全與依賴項",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.8.2"
+      },
+      {
+        "content": "Google 官方推出 Gemini 3.8 Flash 及其資安專用版本 3.8 Flash Cyber。作為輕量化且反應迅速的模型系列，這能協助開發者在成本與延遲受限的生產環境中，部署更具效率的文字與領域特定推理任務。",
+        "id": "news:https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber",
+        "publishedAt": "2026-09-10T00:03:46.530Z",
+        "title": "Google 推出 Gemini 3.8 Flash 與 3.8 Flash Cyber 輕量模型",
+        "type": "news",
+        "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/"
+      },
+      {
+        "content": "Meta 推出了名為 Muse 的個人 AI 代理（Personal AI Agent），在開發者與社群中引起高度關注。這標示著大型科技公司正積極將 AI 代理從企業與程式輔助場景，進一步推向個人化日常應用的前沿趨勢。",
+        "id": "news:https://ai.meta.com/muse",
+        "publishedAt": "2026-09-10T00:03:46.530Z",
+        "title": "Meta 發表 Muse：專為個人打造的 AI 代理工具",
+        "type": "news",
+        "url": "https://ai.meta.com/muse/"
+      },
+      {
+        "content": "開源社群熱議 Qwen 釋出的 Qwen-Drive-1.0-4B（完整 Bf16 權重達 9B）微調模型與相關技術報告。這是中國 AI 實驗室跨足自動駕駛領域的重要開源進展，為自駕車視覺語言基礎模型的研究提供了高價值的開放權重參考。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wauxg9/qwenqwendrive104b_hugging_face",
+        "publishedAt": "2026-09-10T00:03:46.530Z",
+        "title": "Qwen 開源自動駕駛視覺語言模型 Qwen-Drive-1.0-4B",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wauxg9/qwenqwendrive104b_hugging_face/"
+      },
+      {
+        "content": "根據報導，OpenAI 現在讓自動化 AI 安全審查模型具備直接封鎖內部工程師 Pull Request 的權限。這項實踐引起開發者社群對「AI 自主治理」與軟體供應鏈安全的熱烈討論，展示了 AI 在大型軟體工程組織中更深度的權力下放。",
+        "id": "news:https://thenewstack.io/openai-ai-code-review",
+        "publishedAt": "2026-09-10T00:03:46.530Z",
+        "title": "OpenAI 授權 AI 模型自動審查並攔截工程師的程式碼變更",
+        "type": "news",
+        "url": "https://thenewstack.io/openai-ai-code-review/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-09T00:02:21.880Z",
+      "generatedAt": "2026-09-10T00:03:46.530Z",
       "items": [
         {
-          "content": "Cloudflare 宣佈推出「Automatic Key Exchange」，能主動探測支援 TLS 1.3 的客戶端來源，識別其支援的金鑰協議演算法，並在連線時優先採用最具安全性的後量子密碼學演算法。這項更新涵蓋每日高達 450 億次的連線，對開發者與基礎設施維運人員而言，不需修改應用程式碼即可無縫升級網路傳輸的安全性，防範未來的量子計算威脅。",
+          "content": "React 發布 19.3 版本，其中一項重大更新是引入了 `<ViewTransition />` 組件以及 `addTransitionType` API，讓開發者能夠在 React 應用程式中直接支援並控制瀏覽器的 View Transition 動畫效果。這對於追求流暢頁面轉換與現代前端體驗的開發者來說，提供了原生且標準化的實作解法。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "title": "React 19.3 正式發布：引入原生 ViewTransition 與新轉場 API",
+          "url": "https://github.com/react/react/releases/tag/v19.3.0",
+          "weightedScore": 50
+        },
+        {
+          "content": "Cloudflare 宣佈重構 Workers 的模組註冊表，使 Node.js 相容性成為預設選項，並支援高達 64 MiB 的應用程式。此次更新新增基於 URL 的模組註冊表、`import.meta` 支援、延遲編譯（lazy compilation）、共用程式碼快取及更清晰的錯誤訊息。這大幅降低了將現有 Node.js 服務搬遷至邊緣運算環境的門檻。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 推出自動金鑰交換，全面提升 450 億次連線的後量子安全",
-          "url": "https://blog.cloudflare.com/automatic-key-exchange-for-origins/",
+          "title": "Cloudflare Workers 重構模組註冊表以全面支援 Node.js 相容性",
+          "url": "https://blog.cloudflare.com/workers-module-registry-nodejs/",
           "weightedScore": 100
         },
         {
-          "content": "雲端原生運算基金會（CNCF）正式宣布多叢集、多雲 Kubernetes 協調專案 Karmada 達到畢業狀態（Graduation）。隨著全球企業在混合基礎設施上大規模擴展 AI 訓練與推論，Karmada 提供成熟的生產級多叢集管理能力。這對從事 DevOps 與雲端架構的開發者來說，意味著在跨叢集部署與調度應用程式時，有了更穩定且標準化的官方解決方案。",
+          "content": "Node.js 發布 26.8.2 版本，主要變動包含在 `node:net` 模組中正式將 `Server.prototype._listen2` 標記為棄用（deprecate），精進實驗性功能的安全漏洞防護姿態，同時將 Undici 更新至 8.10.2、OpenSSL 更新至 3.5.8。這對維護 Node.js 後端穩定性與安全性的開發者是重要的維護版本。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "title": "CNCF 宣布 Karmada 正式畢業，成為多叢集 Kubernetes 協調標準",
-          "url": "https://www.cncf.io/announcements/2026/09/07/cloud-native-computing-foundation-announces-karmada-graduation/",
+          "title": "Node.js 26.8.2 發布：標記 _listen2 棄用並更新安全與依賴項",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.8.2",
           "weightedScore": 100
         },
         {
-          "content": "兩名數學家花費一年時間攻克數學難題，並將研究草稿輸入至 Codex 中。然而，在他們準備發表前夕，OpenAI 突然發表了相同的解答，且面對模型是否訓練自其私人對話的質疑時未正面回應。此事件在開發者社群引發高度關注，再次突顯開發者在使用雲端 AI 工具時，對於私有程式碼、資料隱私以及智慧財產權保護的嚴重隱憂。",
+          "content": "Google 官方推出 Gemini 3.8 Flash 及其資安專用版本 3.8 Flash Cyber。作為輕量化且反應迅速的模型系列，這能協助開發者在成本與延遲受限的生產環境中，部署更具效率的文字與領域特定推理任務。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "OpenAI 被控利用私人草稿竊取數學家研究成果",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wapjaw/openai_alleged_of_stealing_mathematicians_work/",
+          "title": "Google 推出 Gemini 3.8 Flash 與 3.8 Flash Cyber 輕量模型",
+          "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
           "weightedScore": 100
         },
         {
-          "content": "針對 GitHub Actions 在企業內部規模化擴展後，普遍面臨的可視性不足、工作流程緩慢與佇列阻塞等痛點，社群討論了一種無需修改任何 workflow 檔案即可實現 CI 管線分散式追蹤的新方法。這對 DevOps 工程師而言是一大福音，能更有效率地監控與診斷 CI/CD 效能瓶頸，提升開發維運效率。",
+          "content": "Meta 推出了名為 Muse 的個人 AI 代理（Personal AI Agent），在開發者與社群中引起高度關注。這標示著大型科技公司正積極將 AI 代理從企業與程式輔助場景，進一步推向個人化日常應用的前沿趨勢。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Meta 發表 Muse：專為個人打造的 AI 代理工具",
+          "url": "https://ai.meta.com/muse/",
+          "weightedScore": 636
+        },
+        {
+          "content": "開源社群熱議 Qwen 釋出的 Qwen-Drive-1.0-4B（完整 Bf16 權重達 9B）微調模型與相關技術報告。這是中國 AI 實驗室跨足自動駕駛領域的重要開源進展，為自駕車視覺語言基礎模型的研究提供了高價值的開放權重參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Qwen 開源自動駕駛視覺語言模型 Qwen-Drive-1.0-4B",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wauxg9/qwenqwendrive104b_hugging_face/",
+          "weightedScore": 100
+        },
+        {
+          "content": "根據報導，OpenAI 現在讓自動化 AI 安全審查模型具備直接封鎖內部工程師 Pull Request 的權限。這項實踐引起開發者社群對「AI 自主治理」與軟體供應鏈安全的熱烈討論，展示了 AI 在大型軟體工程組織中更深度的權力下放。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "無需修改 Workflow 檔案即可實現 CI 管線的分散式追蹤",
-          "url": "https://www.cncf.io/blog/2026/09/08/distributed-tracing-for-ci-pipelines-without-touching-a-single-workflow-file/",
-          "weightedScore": 100
+          "title": "OpenAI 授權 AI 模型自動審查並攔截工程師的程式碼變更",
+          "url": "https://thenewstack.io/openai-ai-code-review/",
+          "weightedScore": 50
         }
       ]
     }
@@ -1153,6 +1180,34 @@
     {
       "seenAt": "2026-09-09T00:02:21.880Z",
       "url": "https://cncf.io/blog/2026/09/08/distributed-tracing-for-ci-pipelines-without-touching-a-single-workflow-file"
+    },
+    {
+      "seenAt": "2026-09-10T00:03:46.530Z",
+      "url": "https://github.com/react/react/releases/tag/v19.3.0"
+    },
+    {
+      "seenAt": "2026-09-10T00:03:46.530Z",
+      "url": "https://blog.cloudflare.com/workers-module-registry-nodejs"
+    },
+    {
+      "seenAt": "2026-09-10T00:03:46.530Z",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.8.2"
+    },
+    {
+      "seenAt": "2026-09-10T00:03:46.530Z",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber"
+    },
+    {
+      "seenAt": "2026-09-10T00:03:46.530Z",
+      "url": "https://ai.meta.com/muse"
+    },
+    {
+      "seenAt": "2026-09-10T00:03:46.530Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wauxg9/qwenqwendrive104b_hugging_face"
+    },
+    {
+      "seenAt": "2026-09-10T00:03:46.530Z",
+      "url": "https://thenewstack.io/openai-ai-code-review"
     }
   ]
 }
