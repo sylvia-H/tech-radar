@@ -326,61 +326,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-06T23:45:03.614Z",
-  "lastNewsPushAt": "2026-09-10T00:03:46.530Z",
+  "lastNewsPushAt": "2026-09-10T23:59:28.349Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-06T23:45:03.614Z",
       "summary": "本次榜單新進 6 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 1 個，綜合榜 #1 為 tt-a1i/archify。"
     },
     "feed": [
-      {
-        "content": "OpenAI 正式推出新一代旗艦模型 GPT-6 Astra，在多項基準測試與實際應用中展現突破性效能。此版本大幅提升了複雜邏輯推理、程式碼生成以及多模態處理能力，並在金融審閱、遊戲原型開發等實務工作流程中顯著降低了手動修正率，對開發者在建構高階 AI 應用時帶來更強大的底層支援。",
-        "id": "news:https://openai.com/index/gpt-6-astra",
-        "publishedAt": "2026-09-03T23:59:41.494Z",
-        "title": "OpenAI 發布全新 GPT-6 Astra 模型",
-        "type": "news",
-        "url": "https://openai.com/index/gpt-6-astra/"
-      },
-      {
-        "content": "Anthropic 官方發布了全新版本的 Claude Fable 5.1 與 Claude Mythos 5.1 模型。此更新針對內容生成、創意表達及多媒體互動（如動畫製作）進行了深度優化，提供開發者更精細的控制能力與更流暢的互動體驗。",
-        "id": "news:https://anthropic.com/claude-fable-and-mythos-5-1",
-        "publishedAt": "2026-09-03T23:59:41.494Z",
-        "title": "Anthropic 推出 Claude Fable 5.1 與 Claude Mythos 5.1 模型",
-        "type": "news",
-        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
-      },
-      {
-        "content": "Google 推出迄今最先進、最準確的全球氣象 AI 模型 WeatherNext 3。該模型大幅提升了氣象預測的解析度與運算效率，為需要處理環境數據與預測分析的開發者和研究人員提供強大的工具。",
-        "id": "news:https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model",
-        "publishedAt": "2026-09-03T23:59:41.494Z",
-        "title": "Google 發布 WeatherNext 3 全球氣象 AI 模型",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/"
-      },
-      {
-        "content": "Cloudflare Managed Defense 整合 OpenAI Daybreak 模型，推出具備內文感知能力的漏洞發現與修復系統。透過結合實際流量與安全訊號，系統能自動優先處理最關鍵威脅、在邊緣網路準備緩解措施，並主動提出程式碼修補建議，協助開發與資安團隊提升防禦效率。",
-        "id": "news:https://blog.cloudflare.com/vulnerability-discovery-remediation",
-        "publishedAt": "2026-09-03T23:59:41.494Z",
-        "title": "Cloudflare 推出結合 OpenAI Daybreak 的智慧漏洞發現與修復功能",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/vulnerability-discovery-remediation/"
-      },
-      {
-        "content": "Cloudflare 團隊分享了針對 DNS 快取底層架構進行的五項 Rust 層級記憶體最佳化。此改進將每個項目的記憶體開銷削減了 56%，在其全球基礎設施中總計釋放約 100 TB 的記憶體，對於從事大型分散式系統與高效能後端開發的工程師極具參考價值。",
-        "id": "news:https://blog.cloudflare.com/dns-cache-memory-optimization-1111",
-        "publishedAt": "2026-09-03T23:59:41.494Z",
-        "title": "Cloudflare 透過最佳化 DNS 快取節省 100TB 記憶體",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/dns-cache-memory-optimization-1111/"
-      },
-      {
-        "content": "社群回報 OpenAI 的 ChatGPT 服務稍早發生全球性中斷，隨後官方確認問題已修復並全面恢復正常運作。這類主流 AI 服務的突發性中斷也引發了開發者對於高度依賴外部 LLM API 的架構韌性與備援機制的討論。",
-        "id": "news:https://chatgpt.com/",
-        "publishedAt": "2026-09-03T23:59:41.494Z",
-        "title": "ChatGPT 經歷短暫斷線後已完全恢復正常",
-        "type": "news",
-        "url": "https://chatgpt.com/"
-      },
       {
         "content": "OpenAI 官方正式宣佈開始全面推出新一代旗艦模型 GPT-6 Astra，並在推出後不久向多數付費用戶開放。此版本帶來了顯著的基準測試效能提升與工作流程優化，包含金融審閱、遊戲原型開發等應用案例皆顯示出更高的執行效率與更低的錯誤率。這對開發者與企業用戶而言，是評估與導入新一代 AI 模型介面與能力的重要里程碑。",
         "id": "news:https://cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html",
@@ -725,73 +677,112 @@
         "title": "OpenAI 授權 AI 模型自動審查並攔截工程師的程式碼變更",
         "type": "news",
         "url": "https://thenewstack.io/openai-ai-code-review/"
+      },
+      {
+        "content": "Cloudflare 宣布其 1.1.1.1 DNS 服務開始使用 NIST 的後量子 ML-DSA-44 演算法來驗證 DNSSEC 簽章。這項更新展示了在處理高達 2,420 位元組的大型後量子簽章時，網路基礎設施如何在大規模下管理降級風險與傳輸效能，對推動網際網路基礎設施的後量子密碼學升級具備重要示範意義。",
+        "id": "news:https://blog.cloudflare.com/post-quantum-dnssec-1111",
+        "publishedAt": "2026-09-10T23:59:28.349Z",
+        "title": "Cloudflare 1.1.1.1 支援後量子 DNSSEC",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/post-quantum-dnssec-1111/"
+      },
+      {
+        "content": "OpenAI 推出 ChatGPT Work 的全新資料代理程式（Data agent），允許使用者透過自然語言連接企業內部資料、挖掘商業洞察，並直接建構互動式儀表板。這項更新讓非技術人員也能快速將企業資料投入實際應用，簡化了數據分析與視覺化流程。",
+        "id": "news:https://openai.com/index/put-data-to-work",
+        "publishedAt": "2026-09-10T23:59:28.349Z",
+        "title": "ChatGPT Work 推出內建資料分析代理程式",
+        "type": "news",
+        "url": "https://openai.com/index/put-data-to-work"
+      },
+      {
+        "content": "Amazon Web Services (AWS) 開源釋出名為 Pizza Bot 的應用程式，為背景執行的 AI 代理提供類似電子郵件收件匣的介面。這項工具幫助開發者更好地管理、檢視與互動非同步執行的代理程式任務，解決多代理系統在背景運作時的通訊與狀態追蹤難題。",
+        "id": "news:https://thenewstack.io/aws-pizza-bot-agent-inbox",
+        "publishedAt": "2026-09-10T23:59:28.349Z",
+        "title": "AWS 開源釋出 Pizza Bot：供背景 AI 代理使用的信件式收件匣",
+        "type": "news",
+        "url": "https://thenewstack.io/aws-pizza-bot-agent-inbox/"
+      },
+      {
+        "content": "Salesforce 正式發表 Enterprise AI Harness，將六種主流的 AI 測試與開發工具框架進行形式化整合。這項工具為企業開發者提供標準化的 AI 評估與協作環境，協助團隊在複雜的應用場景中更有效率地串接與管理多個 AI 模型。",
+        "id": "news:https://thenewstack.io/salesforce-enterprise-ai-harness",
+        "publishedAt": "2026-09-10T23:59:28.349Z",
+        "title": "Salesforce 推出 Enterprise AI Harness 整合開發框架",
+        "type": "news",
+        "url": "https://thenewstack.io/salesforce-enterprise-ai-harness/"
+      },
+      {
+        "content": "電商巨頭 Shopify 宣佈將行動應用程式從 React Native 遷移回 Swift 和 Kotlin 等原生技術堆疊。此舉反映出大型團隊在追求極致效能與原生體驗時，對跨平台框架的重新評估，對行動端技術選型具有指標性影響。",
+        "id": "news:https://shopify.engineering/back-to-native",
+        "publishedAt": "2026-09-10T23:59:28.349Z",
+        "title": "Shopify 放棄 React Native 宣佈全面回歸 Swift 與 Kotlin 原生開發",
+        "type": "news",
+        "url": "https://shopify.engineering/back-to-native"
+      },
+      {
+        "content": "Cognition 推出全新的 SWE-2 軟體工程模型，宣稱其效能可與 Fable 5.1 及 GPT-Astra 等頂尖系統匹敵。這顯示出專注於自動化軟體工程的 AI 代理正快速演進，對開發者的日常協作與程式碼生成工作流程帶來持續且深遠的變革。",
+        "id": "news:https://cognition.com/blog/swe-2",
+        "publishedAt": "2026-09-10T23:59:28.349Z",
+        "title": "Cognition 發表全新 SWE-2 模型挑戰頂級 AI 程式碼代理",
+        "type": "news",
+        "url": "https://cognition.com/blog/swe-2"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-10T00:03:46.530Z",
+      "generatedAt": "2026-09-10T23:59:28.349Z",
       "items": [
         {
-          "content": "React 發布 19.3 版本，其中一項重大更新是引入了 `<ViewTransition />` 組件以及 `addTransitionType` API，讓開發者能夠在 React 應用程式中直接支援並控制瀏覽器的 View Transition 動畫效果。這對於追求流暢頁面轉換與現代前端體驗的開發者來說，提供了原生且標準化的實作解法。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "React 19.3 正式發布：引入原生 ViewTransition 與新轉場 API",
-          "url": "https://github.com/react/react/releases/tag/v19.3.0",
-          "weightedScore": 50
-        },
-        {
-          "content": "Cloudflare 宣佈重構 Workers 的模組註冊表，使 Node.js 相容性成為預設選項，並支援高達 64 MiB 的應用程式。此次更新新增基於 URL 的模組註冊表、`import.meta` 支援、延遲編譯（lazy compilation）、共用程式碼快取及更清晰的錯誤訊息。這大幅降低了將現有 Node.js 服務搬遷至邊緣運算環境的門檻。",
+          "content": "Cloudflare 宣布其 1.1.1.1 DNS 服務開始使用 NIST 的後量子 ML-DSA-44 演算法來驗證 DNSSEC 簽章。這項更新展示了在處理高達 2,420 位元組的大型後量子簽章時，網路基礎設施如何在大規模下管理降級風險與傳輸效能，對推動網際網路基礎設施的後量子密碼學升級具備重要示範意義。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare Workers 重構模組註冊表以全面支援 Node.js 相容性",
-          "url": "https://blog.cloudflare.com/workers-module-registry-nodejs/",
+          "title": "Cloudflare 1.1.1.1 支援後量子 DNSSEC",
+          "url": "https://blog.cloudflare.com/post-quantum-dnssec-1111/",
           "weightedScore": 100
         },
         {
-          "content": "Node.js 發布 26.8.2 版本，主要變動包含在 `node:net` 模組中正式將 `Server.prototype._listen2` 標記為棄用（deprecate），精進實驗性功能的安全漏洞防護姿態，同時將 Undici 更新至 8.10.2、OpenSSL 更新至 3.5.8。這對維護 Node.js 後端穩定性與安全性的開發者是重要的維護版本。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "Node.js 26.8.2 發布：標記 _listen2 棄用並更新安全與依賴項",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.8.2",
-          "weightedScore": 100
-        },
-        {
-          "content": "Google 官方推出 Gemini 3.8 Flash 及其資安專用版本 3.8 Flash Cyber。作為輕量化且反應迅速的模型系列，這能協助開發者在成本與延遲受限的生產環境中，部署更具效率的文字與領域特定推理任務。",
+          "content": "OpenAI 推出 ChatGPT Work 的全新資料代理程式（Data agent），允許使用者透過自然語言連接企業內部資料、挖掘商業洞察，並直接建構互動式儀表板。這項更新讓非技術人員也能快速將企業資料投入實際應用，簡化了數據分析與視覺化流程。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Google 推出 Gemini 3.8 Flash 與 3.8 Flash Cyber 輕量模型",
-          "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
+          "title": "ChatGPT Work 推出內建資料分析代理程式",
+          "url": "https://openai.com/index/put-data-to-work",
           "weightedScore": 100
         },
         {
-          "content": "Meta 推出了名為 Muse 的個人 AI 代理（Personal AI Agent），在開發者與社群中引起高度關注。這標示著大型科技公司正積極將 AI 代理從企業與程式輔助場景，進一步推向個人化日常應用的前沿趨勢。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Meta 發表 Muse：專為個人打造的 AI 代理工具",
-          "url": "https://ai.meta.com/muse/",
-          "weightedScore": 636
-        },
-        {
-          "content": "開源社群熱議 Qwen 釋出的 Qwen-Drive-1.0-4B（完整 Bf16 權重達 9B）微調模型與相關技術報告。這是中國 AI 實驗室跨足自動駕駛領域的重要開源進展，為自駕車視覺語言基礎模型的研究提供了高價值的開放權重參考。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "title": "Qwen 開源自動駕駛視覺語言模型 Qwen-Drive-1.0-4B",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wauxg9/qwenqwendrive104b_hugging_face/",
-          "weightedScore": 100
-        },
-        {
-          "content": "根據報導，OpenAI 現在讓自動化 AI 安全審查模型具備直接封鎖內部工程師 Pull Request 的權限。這項實踐引起開發者社群對「AI 自主治理」與軟體供應鏈安全的熱烈討論，展示了 AI 在大型軟體工程組織中更深度的權力下放。",
+          "content": "Amazon Web Services (AWS) 開源釋出名為 Pizza Bot 的應用程式，為背景執行的 AI 代理提供類似電子郵件收件匣的介面。這項工具幫助開發者更好地管理、檢視與互動非同步執行的代理程式任務，解決多代理系統在背景運作時的通訊與狀態追蹤難題。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "OpenAI 授權 AI 模型自動審查並攔截工程師的程式碼變更",
-          "url": "https://thenewstack.io/openai-ai-code-review/",
+          "title": "AWS 開源釋出 Pizza Bot：供背景 AI 代理使用的信件式收件匣",
+          "url": "https://thenewstack.io/aws-pizza-bot-agent-inbox/",
           "weightedScore": 50
+        },
+        {
+          "content": "Salesforce 正式發表 Enterprise AI Harness，將六種主流的 AI 測試與開發工具框架進行形式化整合。這項工具為企業開發者提供標準化的 AI 評估與協作環境，協助團隊在複雜的應用場景中更有效率地串接與管理多個 AI 模型。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "Salesforce 推出 Enterprise AI Harness 整合開發框架",
+          "url": "https://thenewstack.io/salesforce-enterprise-ai-harness/",
+          "weightedScore": 50
+        },
+        {
+          "content": "電商巨頭 Shopify 宣佈將行動應用程式從 React Native 遷移回 Swift 和 Kotlin 等原生技術堆疊。此舉反映出大型團隊在追求極致效能與原生體驗時，對跨平台框架的重新評估，對行動端技術選型具有指標性影響。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "title": "Shopify 放棄 React Native 宣佈全面回歸 Swift 與 Kotlin 原生開發",
+          "url": "https://shopify.engineering/back-to-native",
+          "weightedScore": 703
+        },
+        {
+          "content": "Cognition 推出全新的 SWE-2 軟體工程模型，宣稱其效能可與 Fable 5.1 及 GPT-Astra 等頂尖系統匹敵。這顯示出專注於自動化軟體工程的 AI 代理正快速演進，對開發者的日常協作與程式碼生成工作流程帶來持續且深遠的變革。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "Cognition 發表全新 SWE-2 模型挑戰頂級 AI 程式碼代理",
+          "url": "https://cognition.com/blog/swe-2",
+          "weightedScore": 341
         }
       ]
     }
@@ -1208,6 +1199,30 @@
     {
       "seenAt": "2026-09-10T00:03:46.530Z",
       "url": "https://thenewstack.io/openai-ai-code-review"
+    },
+    {
+      "seenAt": "2026-09-10T23:59:28.349Z",
+      "url": "https://blog.cloudflare.com/post-quantum-dnssec-1111"
+    },
+    {
+      "seenAt": "2026-09-10T23:59:28.349Z",
+      "url": "https://openai.com/index/put-data-to-work"
+    },
+    {
+      "seenAt": "2026-09-10T23:59:28.349Z",
+      "url": "https://thenewstack.io/aws-pizza-bot-agent-inbox"
+    },
+    {
+      "seenAt": "2026-09-10T23:59:28.349Z",
+      "url": "https://thenewstack.io/salesforce-enterprise-ai-harness"
+    },
+    {
+      "seenAt": "2026-09-10T23:59:28.349Z",
+      "url": "https://shopify.engineering/back-to-native"
+    },
+    {
+      "seenAt": "2026-09-10T23:59:28.349Z",
+      "url": "https://cognition.com/blog/swe-2"
     }
   ]
 }
