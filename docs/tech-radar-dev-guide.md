@@ -17,7 +17,7 @@
 | repo 簡介  | 首次進榜時抓 README → Gemini 產 ≤250 字簡介 → **按 repoId 快取（獨立於榜單快照）**                     | 只生成一次，省額度、內容穩定；跌出榜再進榜也不重生成，且天然只介紹「有變化」的 repo。   |
 | 狀態存放   | **commit 到獨立 `state` 分支的 `state/board.json`**（榜單快照 + 簡介快取 + 已推新聞紀錄）               | 「只看變化」需要跨執行的狀態；committed JSON 零外部依賴，順帶替排程保活（§2.1）；獨立分支使 bot commit 不混入 `develop`/`main` 開發歷史（§2.2、§8）。 |
 | 推播       | **Discord Channel Webhook**（HTTP POST）                                                               | 只推播不收訊息 → 不需要 bot、gateway、Message Content Intent。                          |
-| LLM        | **Gemini 免費層，依資料流分兩型號**：榜單簡介／TL;DR 用 Flash-Lite（`GEMINI_MODEL_BOARD`），每日晨報策展用 Flash（`GEMINI_MODEL_NEWS`） | Lite 用量極低（七天 0～數次）；Flash 每日 1 次，免費層配額待於 AI Studio 確認（§2.4）。 |
+| LLM        | **Gemini 免費層，依資料流分兩型號**：榜單簡介／TL;DR 用 Flash-Lite（`GEMINI_MODEL_BOARD`），每日晨報策展用 Flash（`GEMINI_MODEL_NEWS`） | Lite 用量極低（七天 0～數次）；Flash 免費層 5 RPM／20 RPD（2026-09-12 AI Studio 確認），每日 1 次、含退避最多 4 次 HTTP 嘗試，餘裕充足（§2.4）。 |
 | DB（歷史） | 不用                                                                                                   | MVP 不需要通用資料庫；星星歷史不自存（見 §3）。                                         |
 
 > **NestJS 的角色**：用 `NestFactory.createApplicationContext()` 跑成一次性 CLI job（保留 DI/模組結構、不啟 HTTP server、跑完即退），完美契合 Actions。
@@ -120,9 +120,12 @@
       務必印出實際狀態碼與訊息（見 `llm.service.ts` `errDetail`），否則會被誤判為速率限制。
   - **Flash（`GEMINI_MODEL_NEWS` = `gemini-3.8-flash`）**：每日晨報策展，每日僅 1 次呼叫，但要對
     50 則候選做語意去重、三類判準逐則核對與繁中改寫，判斷品質直接決定晨報內容，值得用較強的
-    Flash。**免費層配額（RPM／RPD／TPD）待於 AI Studio 確認（2026-09-12 上線時未確認；程式端查
-    不到，只能讀儀表板）**，確認後補回本節。若配額不足或觀察窗內連續撞限，把策展改回
-    `GEMINI_MODEL_BOARD` 即可（只改常數）。
+    Flash。**免費層配額：5 RPM／20 RPD（2026-09-12 於 AI Studio 確認）**。用量估算：正式排程每日
+    1 次策展；`LlmService` 退避最多 4 次 HTTP 嘗試（1s／2s／4s＋jitter，總計約 10 秒內）仍在 5 RPM
+    之下；補班 cron 由 guard 擋住不呼叫。最壞情況每日 4 次，對 20 RPD 仍有 5 倍餘裕。**本機手動
+    執行也吃同一份 RPD**：一天本機跑超過十幾次就會把正式排程的額度用光——這正是 09-02 撞限最
+    合理的解釋（見下）。若撞限，降級路徑會改用 Lite（見下），連續撞限則把策展改回
+    `GEMINI_MODEL_BOARD`（只改常數）。
 - **降級路徑（2026-09-12 起）**：策展以 Flash 呼叫失敗（`LlmError` 不論原因：429 重試耗盡、型號 404
   等不可重試錯誤、空回應——空回應也換型號，不同型號的截斷／安全過濾行為可能不同）
   → 以 Lite（`GEMINI_MODEL_BOARD`）用**同一 prompt 單次重試** → 仍失敗才退回純程式排序的原文標題版
@@ -131,7 +134,7 @@
   Gemini 一次」的語意；成功日仍恰 1 次。
 - **觀察窗（上線後兩週）**：留意告警頻道的 429／型號 404／「晨報策展降級」紅色 embed，以及
   Actions log 中 `LLM 呼叫失敗（<型號>）` 的型號字樣（`gemini-3.8-flash` 為 Flash 側、
-  `gemini-3.5-flash-lite` 為 Lite 側）；同一期間到 AI Studio 儀表板讀出 Flash 的免費層配額補回本節。
+  `gemini-3.5-flash-lite` 為 Lite 側）。本機測試前先看當日已用的 Flash 次數（RPD 僅 20）。
 - 用途：每個新進榜 repo 一次 250 字簡介 + 榜單日一段「本次變化」TL;DR（皆 Lite）+ 每日一次新聞策展（Flash）。穩定態榜單七天才有 0～數個新 repo → 用量極低。
 - ⚠️ 免費層 prompt 可能被拿去改善模型 → 本專案只送公開資料，OK。加 429 指數退避。
 
@@ -460,7 +463,7 @@ async function ensureIntro(repo, state) {
 
 ### 6.3 額度與品質
 
-- **快取是關鍵**：只在首次**進 top 10** 生成（簡介僅推播榜成員才需要）。穩定態每七天才有 0～數個新 repo → 遠低於 Lite 免費層 RPD（§2.4）；晨報每日一次策展呼叫走 Flash（配額待確認，§2.4），Lite 側用量依舊極低。**冷啟動首次推播最多 10 個新進（≤10 次呼叫）**，也在免費額度內。
+- **快取是關鍵**：只在首次**進 top 10** 生成（簡介僅推播榜成員才需要）。穩定態每七天才有 0～數個新 repo → 遠低於 Lite 免費層 RPD（§2.4）；晨報每日一次策展呼叫走 Flash（5 RPM／20 RPD，§2.4），Lite 側用量依舊極低。**冷啟動首次推播最多 10 個新進（≤10 次呼叫）**，也在免費額度內。
 - README 截斷到 ~6k 字元即可涵蓋多數專案重點，控制 token 又保品質。
 
 ---
@@ -856,7 +859,7 @@ bootstrap();
 - **prompt 內具體數字會讓 LLM 錨定（anchoring）**：2026-08-04 實測發現，prompt 裡寫「AI 下限 N 則」，模型會把它當成目標產出量而非下限——`MIN_AI` 從 5 調到 7 後連續 5 天逐日精確命中 7、一則不差，10 則上限形同虛設。教訓：配額類指示避免在 prompt 中放入具體數字，改用定性描述（「合格皆收、不要提早停手」），數量上下限交給程式端的硬驗證管線把關。
 - **狀態一致性**：diff 前後對同一份狀態讀寫；job 失敗時不要寫入半套狀態（成功推播後才存回）。新聞推播成功後盡快 commit `lastNewsPushAt`，縮小補跑 cron 重推的風險窗（見 §8）。
 - **簡介幻覺**：嚴格「只依 README」；星數/連結不經 LLM。
-- **Gemini**：429 退避；只送公開資料。型號依資料流分流（榜單簡介／TL;DR 走 Flash-Lite、每日策展走 Flash，§2.4）——**Flash 側免費層配額 2026-09-12 上線時未於 AI Studio 確認**，屬待確認項，觀察窗兩週；策展 Flash 失敗先以 Lite 同 prompt 單次重試，仍失敗才退回純程式排序取前 10（2026-07-19 起配額 10）並發紅色降級告警（此前降級無告警），不阻斷晨報；型號 ID 可能無預警下架，404 須印出狀態碼，勿誤判為 429。
+- **Gemini**：429 退避；只送公開資料。型號依資料流分流（榜單簡介／TL;DR 走 Flash-Lite、每日策展走 Flash，§2.4）——**Flash 側免費層僅 5 RPM／20 RPD**（2026-09-12 確認），正式排程每日 1～4 次呼叫餘裕充足，但本機手動執行吃同一份 RPD、一天十幾次就用光（09-02 撞限的合理解釋），觀察窗兩週；策展 Flash 失敗先以 Lite 同 prompt 單次重試，仍失敗才退回純程式排序取前 10（2026-07-19 起配額 10）並發紅色降級告警（此前降級無告警），不阻斷晨報；型號 ID 可能無預警下架，404 須印出狀態碼，勿誤判為 429。
 - **Actions cron UTC 且可能延遲/跳過 / 60 天停用**：對照表要正確；晨報排**雙離峰 cron（`:07`/`:37`）**＋`lastNewsPushAt` guard 抗漏跑（見 §8）；每次 commit 狀態保活。
 - **RSS 路徑會變**：上線前逐一確認；抓取帶 User-Agent 與條件式請求。來源集中在 `news-sources.ts`（§4.2），feed 壞掉時停用/替換只改設定檔；「解析到 0 筆」發告警並帶來源 `id`。官方公告類 feed（如 Anthropic）不一定有穩定 RSS，上線前逐一驗證、沒有就先不收。
 

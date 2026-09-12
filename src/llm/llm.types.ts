@@ -7,8 +7,10 @@
  *   逐則核對與繁中改寫，判斷品質直接決定晨報內容，值得用較強的 Flash；每日僅 1 次呼叫。
  *
  * 教訓：2026-09-02 曾把**全部**呼叫升到 `gemini-3.7-flash`，當天觸及免費層上限而改回 Lite
- * （Flash 與 Flash-Lite 的免費配額不同級）。這次只讓每日 1 次的策展走 Flash，簡介與 TL;DR 留在
- * Lite；上線後前幾天須留意 429／告警，若再撞上限則策展改回 `GEMINI_MODEL_BOARD` 即可（只改此檔）。
+ * （Flash 與 Flash-Lite 的免費配額不同級：`gemini-3.8-flash` 免費層僅 **5 RPM／20 RPD**，2026-09-12
+ * 於 AI Studio 確認，本機手動執行吃同一份 RPD）。這次只讓每日 1 次的策展走 Flash（含退避最多 4 次
+ * HTTP 嘗試，仍在 5 RPM 之下、對 20 RPD 有 5 倍餘裕），簡介與 TL;DR 留在 Lite；Flash 失敗會先以 Lite
+ * 重試一次（`NewsCurationService`），若連續撞上限則策展改回 `GEMINI_MODEL_BOARD` 即可（只改此檔）。
  */
 export const GEMINI_MODEL_BOARD = 'gemini-3.5-flash-lite';
 export const GEMINI_MODEL_NEWS = 'gemini-3.8-flash';
