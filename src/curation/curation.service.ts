@@ -1,5 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { LlmService } from '../llm/llm.service';
+import { GEMINI_MODEL_BOARD, GEMINI_MODEL_NEWS, GeminiModel, LlmError } from '../llm/llm.types';
 import { mentionsBoardRepo } from '../news/funnel';
 import { NewsCandidate, NewsDomain3 } from '../news/news.types';
 import { fallbackDigest } from './curation-fallback';
@@ -7,6 +8,13 @@ import { buildCurationPrompt } from './curation-prompt';
 import { describeIgnoredKeys, parseCurationResponse } from './curation-parse';
 import { validateCuration } from './curation-validate';
 import { CuratedDigest, CurationItemView } from './curation.types';
+
+/** `generateWithModelFallback()` 的結果：LLM 原文、實際成功的型號、是否經 Flash 失敗後降級為 Lite。 */
+interface ModelFallbackResult {
+  raw: string;
+  model: GeminiModel;
+  fellBack: boolean;
+}
 
 /**
  * 每日單次策展服務（階段 B，FR-001~020）：把 F4 候選集投影為公開脈絡視圖，以**單一**
@@ -33,7 +41,9 @@ export class NewsCurationService {
 
     try {
       const views = candidates.map((c, ref) => projectItemView(c, ref, boardRepoNames, now));
-      const raw = await this.llm.generate(buildCurationPrompt(views));
+      // 每日晨報策展改用 Flash（`GEMINI_MODEL_NEWS`，2026-09-12 起）；簡介與榜單 TL;DR 仍走預設 Lite。
+      // Flash 擲 `LlmError` 時改以 Lite 重試一次（見 `generateWithModelFallback`）。
+      const { raw, model, fellBack } = await this.generateWithModelFallback(buildCurationPrompt(views));
       const { officialPicks, communityPicks, ignoredKeys } = parseCurationResponse(raw);
       if (ignoredKeys.length > 0) {
         // 防禦：LLM 自創鍵（如 externalPicks）會被解析器靜默忽略而無聲少推；只警示鍵名與陣列長度，
@@ -51,15 +61,48 @@ export class NewsCurationService {
         {} as Record<string, number>,
       );
       const domainStr = Object.entries(domainDist).map(([d, c]) => `${d}:${c}`).join(' / ');
+      const modelStr = fellBack ? `${model}，Flash 失敗後降級` : model;
       this.logger.log(
         `新聞策展完成：${candidates.length} 候選 → LLM 選官方 ${officialPicks.length} 則＋社群 ` +
-        `${communityPicks.length} 則 → 驗證後 ${items.length} 則（${domainStr}）`,
+        `${communityPicks.length} 則 → 驗證後 ${items.length} 則（${domainStr}）（${modelStr}）`,
       );
       return { items, degraded: false };
     } catch (err) {
       const reason = err instanceof Error ? err.message : String(err);
       this.logger.warn(`新聞策展失敗，退回降級路徑：${reason}（候選數 ${candidates.length}）`);
       return fallbackDigest(candidates);
+    }
+  }
+
+  /**
+   * 以 Flash（`GEMINI_MODEL_NEWS`）送出策展 prompt；若擲 `LlmError`（不論 `reason`：`exhausted`＝429
+   * 退避耗盡、`error`＝型號 404 下架等不可重試錯誤、`empty`＝空回應），記 warn 後改以 Lite
+   * （`GEMINI_MODEL_BOARD`）重送**同一 prompt 一次**；第二次仍失敗才把錯誤拋給呼叫端走降級。
+   *
+   * 為何換型號而非同型號再退避：Gemini 免費層配額**按型號分開計算**，Flash 429 耗盡時同型號的
+   * 指數退避只是白等，換 Lite 才有機會在當日成功；另本專案已兩度遇到型號無預警下架（404），
+   * 該情況同型號重試永遠失敗、也只有換型號有解。
+   *
+   * 與憲章 V「新聞策展每日僅呼叫 Gemini 一次」的關係：該原則指的是**策展邏輯上一次**（同一
+   * prompt、同一份候選），`LlmService.generate()` 既有的退避本就是多次 HTTP 嘗試；失敗日多 1 次
+   * Lite 呼叫屬同一策展的重試，不是第二次策展（2026-09-12）。成功日仍嚴格只有 1 次呼叫。
+   *
+   * 只攔 `LlmError`：解析／驗證失敗（`CurationParseError` 等）發生在本方法回傳之後，不觸發換型號
+   * ——那是回應內容問題，不是型號問題。
+   */
+  private async generateWithModelFallback(prompt: string): Promise<ModelFallbackResult> {
+    try {
+      const raw = await this.llm.generate(prompt, { model: GEMINI_MODEL_NEWS });
+      return { raw, model: GEMINI_MODEL_NEWS, fellBack: false };
+    } catch (err) {
+      if (!(err instanceof LlmError)) {
+        throw err;
+      }
+      this.logger.warn(
+        `Flash 策展失敗（${err.reason}，${GEMINI_MODEL_NEWS}），改以 Lite（${GEMINI_MODEL_BOARD}）重試一次`,
+      );
+      const raw = await this.llm.generate(prompt, { model: GEMINI_MODEL_BOARD });
+      return { raw, model: GEMINI_MODEL_BOARD, fellBack: true };
     }
   }
 }

@@ -2,11 +2,12 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ApiError, GoogleGenAI } from '@google/genai';
 import {
-  GEMINI_MODEL,
+  GEMINI_MODEL_BOARD,
   LLM_BACKOFF_BASE_MS,
   LLM_MAX_BACKOFF_MS,
   LLM_MAX_RETRIES,
   LlmError,
+  LlmGenerateOptions,
 } from './llm.types';
 
 /** 觸發退避重試的暫時性 HTTP 狀態碼（速率/額度限制、暫時不可用，research D6）。 */
@@ -31,19 +32,22 @@ export class LlmService {
   }
 
   /**
-   * 對 Gemini Flash 送一段 prompt 生成文字（trim 後非空）。
+   * 對 Gemini Flash 系送一段 prompt 生成文字（trim 後非空）。`options.model` 未給即用
+   * `GEMINI_MODEL_BOARD`（Flash-Lite）；每日晨報策展傳 `GEMINI_MODEL_NEWS`（2026-09-12 起，見
+   * `llm.types.ts`）。退避、錯誤分類與 log 對兩個型號一視同仁，log 會帶型號以利對帳配額。
    * @throws LlmError 空 prompt／空回應（`'empty'`，不重試）、重試耗盡（`'exhausted'`）、
    *   不可重試的用戶端錯誤（`'error'`，如 400/401/403）。
    */
-  async generate(prompt: string): Promise<string> {
+  async generate(prompt: string, options: LlmGenerateOptions = {}): Promise<string> {
     if (!prompt.trim()) {
       throw new LlmError('empty');
     }
+    const model = options.model ?? GEMINI_MODEL_BOARD;
 
     for (let attempt = 1; attempt <= LLM_MAX_RETRIES; attempt++) {
       try {
         const response = await this.client.models.generateContent({
-          model: GEMINI_MODEL,
+          model,
           contents: prompt,
         });
         const text = (response.text ?? '').trim();
@@ -60,12 +64,12 @@ export class LlmService {
         if (!this.isRetryable(err)) {
           // 不重試路徑原本吞掉真實狀態碼/訊息，只留籠統的 'error'，故障時無從排查；
           // 這裡補印出處（不含 prompt/回應全文，符合憲章 VII）。
-          this.logger.warn(`LLM 呼叫失敗（不重試）：${this.errDetail(err)}`);
+          this.logger.warn(`LLM 呼叫失敗（不重試，${model}）：${this.errDetail(err)}`);
           throw new LlmError('error');
         }
         if (attempt < LLM_MAX_RETRIES) {
           const wait = this.backoffMs(attempt);
-          this.logger.warn(`LLM 呼叫失敗，第 ${attempt}/${LLM_MAX_RETRIES} 次退避 ${wait}ms 後重試`);
+          this.logger.warn(`LLM 呼叫失敗（${model}），第 ${attempt}/${LLM_MAX_RETRIES} 次退避 ${wait}ms 後重試`);
           await this.delay(wait);
         }
       }

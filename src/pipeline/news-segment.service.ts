@@ -55,6 +55,19 @@ export class NewsSegmentService {
       return { status: 'no-content' };
     }
 
+    if (digest.degraded) {
+      // 策展降級告警（2026-09-12 新增，憲章 VII「失敗須發紅色告警、不得無聲」）：`curate()` 在
+      // LLM 呼叫失敗（Flash 與 Lite 皆失敗或解析失敗）時回 `degraded:true` 的原文標題版 digest，
+      // 此前照常推播卻無任何 Discord 告警，唯一訊號是 Actions log 與晨報內容變樣。晨報主線改用
+      // Flash 型號後，型號風險從簡介卡搬到整份晨報，降級須可見。best-effort：告警自身失敗只記
+      // log、不阻斷後續推播與落檔（降級晨報仍有價值，寧推原文版也不空手）。
+      await bestEffortFailureAlert(
+        this.discord,
+        this.logger,
+        `晨報策展降級：LLM 呼叫失敗（Flash 與 Lite 皆失敗或解析失敗），本日以原文標題推播 ${digest.items.length} 則`,
+      );
+    }
+
     const dateLabel = taipeiDateLabel(now);
     const embeds = buildDigestEmbeds(digest, dateLabel);
     const batches = chunkEmbeds(embeds, 10);

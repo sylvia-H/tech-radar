@@ -58,6 +58,8 @@ describe('BoardSummaryService.summarize（US4）', () => {
     await service.summarize(digest);
 
     const prompt: string = generate.mock.calls[0][0];
+    // 榜單 TL;DR 走預設型號（Flash-Lite）：不傳 model 選項。
+    expect(generate).toHaveBeenCalledWith(expect.any(String));
     expect(prompt).toContain('5');
     expect(prompt).toContain('foo/bar');
   });
