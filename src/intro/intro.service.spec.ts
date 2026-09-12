@@ -88,6 +88,8 @@ describe('IntroService.ensureIntro', () => {
 
     expect(result.status).toBe('generated');
     expect(llm.generate).toHaveBeenCalledTimes(1);
+    // 簡介走預設型號（Flash-Lite）：不傳 model 選項（2026-09-12 起晨報策展才傳 Flash）。
+    expect(llm.generate).toHaveBeenCalledWith(expect.any(String));
   });
 
   it('同一 repo 於同次執行被請求多次仍只生成一次（Edge Case）', async () => {
