@@ -4,6 +4,7 @@ import {
   boardEntrySchema,
   introCacheSchema,
   seenNewsEntrySchema,
+  curatedNewsItemSchema,
   feedEntrySchema,
   emptyBoardState,
 } from './state.schema';
@@ -141,6 +142,115 @@ describe('子實體 schema 型別', () => {
         seenAt: '2026-07-11T22:07:00.000Z',
       }).success,
     ).toBe(true);
+  });
+});
+
+describe('seenNewsEntrySchema — sourceId／sources／domain 選用欄位向後相容（2026-09-12 新增）', () => {
+  const SEEN_AT = '2026-07-11T22:07:00.000Z';
+
+  it('舊格式條目（只有 url＋seenAt）仍可載入，三個新欄位為 undefined', () => {
+    const result = seenNewsEntrySchema.safeParse({ url: 'https://example.com/a', seenAt: SEEN_AT });
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.sourceId).toBeUndefined();
+      expect(result.data.sources).toBeUndefined();
+      expect(result.data.domain).toBeUndefined();
+    }
+  });
+
+  it('帶 sourceId 與 domain 的條目可載入且原值保留', () => {
+    const entry = { url: 'https://example.com/a', seenAt: SEEN_AT, sourceId: 'openai-blog', domain: 'ai' };
+    const result = seenNewsEntrySchema.safeParse(entry);
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data).toEqual(entry);
+    }
+  });
+
+  it('帶 sources（完整來源清單，含被合併的次要來源）的條目可載入且原值保留；無 sources 仍可載入', () => {
+    const withSources = { url: 'https://example.com/a', seenAt: SEEN_AT, sourceId: 'hn', sources: ['hn', 'lobsters'], domain: 'ai' };
+    const parsed = seenNewsEntrySchema.safeParse(withSources);
+    expect(parsed.success).toBe(true);
+    if (parsed.success) {
+      expect(parsed.data).toEqual(withSources);
+      expect(parsed.data.sources).toEqual(['hn', 'lobsters']);
+    }
+
+    const withoutSources = { url: 'https://example.com/a', seenAt: SEEN_AT, sourceId: 'hn', domain: 'ai' };
+    const parsedWithout = seenNewsEntrySchema.safeParse(withoutSources);
+    expect(parsedWithout.success).toBe(true);
+    if (parsedWithout.success) {
+      expect(parsedWithout.data.sources).toBeUndefined();
+    }
+
+    expect(seenNewsEntrySchema.safeParse({ url: 'u', seenAt: SEEN_AT, sources: 'hn' }).success).toBe(false); // 非陣列不合法
+    expect(seenNewsEntrySchema.safeParse({ url: 'u', seenAt: SEEN_AT, sources: [1] }).success).toBe(false); // 元素非字串不合法
+  });
+
+  it('domain 限新聞三桶（含 devops；與榜單 2-way domainSchema 刻意不同），其他值／型別錯不合法', () => {
+    for (const domain of ['ai', 'devops', 'frontend-backend']) {
+      expect(seenNewsEntrySchema.safeParse({ url: 'u', seenAt: SEEN_AT, domain }).success).toBe(true);
+    }
+    expect(seenNewsEntrySchema.safeParse({ url: 'u', seenAt: SEEN_AT, domain: 'cross' }).success).toBe(false);
+    expect(seenNewsEntrySchema.safeParse({ url: 'u', seenAt: SEEN_AT, sourceId: 123 }).success).toBe(false);
+  });
+
+  it('整份 state 混合新舊格式的 seenNews 仍能載入（舊 state 升級後保留期內即為此狀態）', () => {
+    const result = boardStateSchema.safeParse({
+      ...emptyBoardState(),
+      seenNews: [
+        { url: 'https://example.com/old', seenAt: SEEN_AT },
+        { url: 'https://example.com/new', seenAt: SEEN_AT, sourceId: 'hn', domain: 'frontend-backend' },
+      ],
+    });
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.seenNews).toHaveLength(2);
+      expect(result.data.seenNews[0].sourceId).toBeUndefined();
+      expect(result.data.seenNews[1].sourceId).toBe('hn');
+      expect(result.data.seenNews[1].domain).toBe('frontend-backend');
+    }
+  });
+});
+
+describe('curatedNewsItemSchema — sourceId／sources 選用（publish.news 舊 state 向後相容，2026-09-12 新增）', () => {
+  function curated(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+    return {
+      title: '標題',
+      content: '內容',
+      url: 'https://example.com/a',
+      domain: 'ai',
+      sourceCount: 1,
+      weightedScore: 100,
+      degraded: false,
+      ...overrides,
+    };
+  }
+
+  it('2026-09-12 前落檔的 publish.news.items（無 sourceId／sources）仍可載入——嚴格要求會讓 load() 擲錯打掛 pipeline', () => {
+    const result = curatedNewsItemSchema.safeParse(curated());
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.sourceId).toBeUndefined();
+      expect(result.data.sources).toBeUndefined();
+    }
+  });
+
+  it('帶 sourceId 可載入且原值保留', () => {
+    const result = curatedNewsItemSchema.safeParse(curated({ sourceId: 'openai-blog' }));
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.sourceId).toBe('openai-blog');
+    }
+  });
+
+  it('帶 sources 可載入且原值保留；非字串陣列不合法', () => {
+    const result = curatedNewsItemSchema.safeParse(curated({ sourceId: 'hn', sources: ['hn', 'lobsters'], sourceCount: 2 }));
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.sources).toEqual(['hn', 'lobsters']);
+    }
+    expect(curatedNewsItemSchema.safeParse(curated({ sources: 'hn' })).success).toBe(false);
   });
 });
 

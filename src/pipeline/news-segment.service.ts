@@ -71,13 +71,15 @@ export class NewsSegmentService {
     // push-then-commit：推播成功後才寫回，seenNews 以 normalized url 記鍵（與 F4 excludeSeen 對齊，research D7）。
     // 先修剪逾保留期（SEEN_NEWS_RETENTION_DAYS，45 天）的舊紀錄再 append 本次，使**落檔的** seenNews
     // 不無限膨脹（FR-023/SC-008）——過去 ingest 只在讀取時記憶體修剪、不寫回，寫回路徑若不修剪則保留期形同虛設。
+    // 每條同時帶代表項 sourceId、合併後全部來源 sources 與 domain（2026-09-12 新增），供事後按來源／領域
+    // 統計，不再靠 host 反推；sources 讓被合併為次要來源的 RSS 一手來源也能被計入。
     const seen = pruneSeenNews(state.seenNews, now);
     const seenUrls = new Set(seen.map((e) => e.url));
     const seenAt = now.toISOString();
     for (const item of digest.items) {
       const url = normalizeTargetUrl(item.url);
       if (!seenUrls.has(url)) {
-        seen.push({ url, seenAt });
+        seen.push({ url, seenAt, sourceId: item.sourceId, sources: item.sources, domain: item.domain });
         seenUrls.add(url);
       }
     }

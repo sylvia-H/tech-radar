@@ -20,7 +20,7 @@ function makeCandidate(overrides: Partial<NewsCandidate> = {}): NewsCandidate {
 }
 
 describe('validateCuration（US1 合規路徑）', () => {
-  it('以 ref 對回候選附上程式提供的 url/domain/sourceCount/weightedScore（FR-006/009）', () => {
+  it('以 ref 對回候選附上程式提供的 url/domain/sourceId/sources/sourceCount/weightedScore（FR-006/009）', () => {
     const candidates = [makeCandidate({ originalUrl: 'https://a.com', sources: ['hn', 'reddit'], weightedScore: 200 })];
     const officialPicks: CurationLlmPick[] = [{ ref: 0, title: '標題', content: '內容' }];
 
@@ -32,11 +32,41 @@ describe('validateCuration（US1 合規路徑）', () => {
         content: '內容',
         url: 'https://a.com',
         domain: 'ai',
+        sourceId: 'hn',
+        sources: ['hn', 'reddit'],
         sourceCount: 2,
         weightedScore: 200,
         degraded: false,
       },
     ]);
+  });
+
+  it('多來源合併時 sourceId 只記代表項、sources 為完整來源清單、sourceCount === sources.length（2026-09-12 新增）', () => {
+    const candidates = [
+      makeCandidate({ originalUrl: 'https://a.com', sourceId: 'openai-blog', sources: ['openai-blog', 'hn'] }),
+      makeCandidate({ originalUrl: 'https://b.com', sourceId: 'cncf-blog', sources: ['cncf-blog'], domain: 'devops' }),
+    ];
+    const officialPicks: CurationLlmPick[] = [
+      { ref: 1, title: 'B', content: '內容 B' },
+      { ref: 0, title: 'A', content: '內容 A' },
+    ];
+
+    const result = validateCuration(officialPicks, [], candidates);
+
+    expect(result.map((it) => it.sourceId)).toEqual(['cncf-blog', 'openai-blog']);
+    expect(result.map((it) => it.sources)).toEqual([['cncf-blog'], ['openai-blog', 'hn']]);
+    expect(result[1].sourceCount).toBe(2);
+    expect(result[1].sourceCount).toBe(result[1].sources.length);
+  });
+
+  it('sources 為候選陣列的淺拷貝，不與候選共用參照（2026-09-12 新增）', () => {
+    const candidate = makeCandidate({ sourceId: 'openai-blog', sources: ['openai-blog', 'hn'] });
+    const officialPicks: CurationLlmPick[] = [{ ref: 0, title: 'A', content: '內容 A' }];
+
+    const result = validateCuration(officialPicks, [], [candidate]);
+
+    expect(result[0].sources).toEqual(candidate.sources);
+    expect(result[0].sources).not.toBe(candidate.sources);
   });
 
   it('重複參照同一候選者去重為一則（保留第一次出現）', () => {

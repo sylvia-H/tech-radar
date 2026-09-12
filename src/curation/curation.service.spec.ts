@@ -157,7 +157,7 @@ describe('NewsCurationService.curate（US2 降級路徑）', () => {
 
     expect(result.degraded).toBe(true);
     expect(result.items).toEqual([
-      { title: 'Original Title', content: null, url: 'https://a.com', domain: 'ai', sourceCount: 1, weightedScore: 200, degraded: true },
+      { title: 'Original Title', content: null, url: 'https://a.com', domain: 'ai', sourceId: 'hn', sources: ['hn'], sourceCount: 1, weightedScore: 200, degraded: true },
     ]);
     expect(warnSpy).toHaveBeenCalled();
     const warnMessage = warnSpy.mock.calls[0][0] as string;

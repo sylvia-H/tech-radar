@@ -44,14 +44,28 @@ export interface CurationLlmResponse {
 
 /**
  * 精選輸出的一則。成功策展為繁中精煉版（`degraded:false`）；策展失敗降級為原文版
- * （`degraded:true`，`content:null`）。`url`/`domain`/`sourceCount`/`weightedScore` 皆為
- * 程式對回候選附上的事實，非 LLM 產生（憲章 VI）。
+ * （`degraded:true`，`content:null`）。`url`/`domain`/`sourceId`/`sources`/`sourceCount`/
+ * `weightedScore` 皆為程式對回候選附上的事實，非 LLM 產生（憲章 VI）。
  */
 export interface CuratedNewsItem {
   title: string;
   content: string | null;
   url: string;
   domain: NewsDomain3;
+  /**
+   * 代表項來源 id（`NewsCandidate.sourceId`，多來源合併時為代表項所屬來源，2026-09-12 新增）。
+   * 程式提供的事實、非 LLM 產生（憲章 VI）；隨推播寫入 `seenNews` 供事後按來源／領域統計，
+   * 不再靠 host 反推來源。
+   */
+  sourceId: string;
+  /**
+   * 合併後的全部來源 id（`NewsCandidate.sources`，含代表項與被合併的次要來源，2026-09-12 新增）。
+   * 程式提供的事實、非 LLM 產生（憲章 VI）。只記 `sourceId` 會系統性低估 RSS 一手來源——HN 是
+   * 唯一帶分數的來源，凡交叉驗證項代表項一律是 hn，一手來源全被計成次要——故隨推播一併寫入
+   * `seenNews`，供「哪些來源值得留」的統計把被合併者也算進去。與 `sourceCount` 的關係：
+   * `sourceCount === sources.length`；`sourceCount` 保留不動以免影響既有讀取端。
+   */
+  sources: string[];
   sourceCount: number;
   weightedScore: number;
   degraded: boolean;

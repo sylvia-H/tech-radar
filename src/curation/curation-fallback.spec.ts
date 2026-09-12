@@ -29,9 +29,22 @@ describe('fallbackDigest（US2 降級路徑）', () => {
 
     expect(digest.degraded).toBe(true);
     expect(digest.items).toEqual([
-      { title: 'Title A', content: null, url: 'https://a.com', domain: 'ai', sourceCount: 2, weightedScore: 300, degraded: true },
-      { title: 'Title B', content: null, url: 'https://b.com', domain: 'ai', sourceCount: 1, weightedScore: 200, degraded: true },
+      { title: 'Title A', content: null, url: 'https://a.com', domain: 'ai', sourceId: 'hn', sources: ['hn', 'lobsters'], sourceCount: 2, weightedScore: 300, degraded: true },
+      { title: 'Title B', content: null, url: 'https://b.com', domain: 'ai', sourceId: 'hn', sources: ['hn'], sourceCount: 1, weightedScore: 200, degraded: true },
     ]);
+  });
+
+  it('sourceId 取自候選代表項、sources 為完整來源清單，與主路徑 validateCuration 一致（2026-09-12 新增）', () => {
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ originalUrl: 'https://a.com', sourceId: 'openai-blog', sources: ['openai-blog', 'hn'], weightedScore: 300 }),
+      makeCandidate({ originalUrl: 'https://b.com', sourceId: 'lobsters', sources: ['lobsters'], weightedScore: 200 }),
+    ];
+
+    const digest = fallbackDigest(candidates);
+
+    expect(digest.items.map((it) => it.sourceId)).toEqual(['openai-blog', 'lobsters']);
+    expect(digest.items.map((it) => it.sources)).toEqual([['openai-blog', 'hn'], ['lobsters']]);
+    expect(digest.items[0].sources).not.toBe(candidates[0].sources); // 淺拷貝，不共用參照
   });
 
   it('原文標題不套 70 字收斂（原文照實呈現，Edge）', () => {

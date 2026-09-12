@@ -23,6 +23,8 @@ export function fallbackDigest(candidates: readonly NewsCandidate[]): CuratedDig
     content: null,
     url: c.originalUrl,
     domain: domainOf(c),
+    sourceId: c.sourceId,
+    sources: [...c.sources], // 與主路徑 validateCuration 一致（2026-09-12 新增）
     sourceCount: c.sources.length,
     weightedScore: c.weightedScore,
     degraded: true,

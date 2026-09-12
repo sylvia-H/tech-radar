@@ -41,6 +41,8 @@ function curatedItem(overrides: Partial<CuratedNewsItem> = {}): CuratedNewsItem 
     content: '內容摘要',
     url: 'https://example.com/a?utm_source=x',
     domain: 'ai',
+    sourceId: 'src1',
+    sources: ['src1'],
     sourceCount: 1,
     weightedScore: 100,
     degraded: false,
@@ -99,7 +101,9 @@ describe('NewsSegmentService.run — US1 Acceptance（每日晨報端到端）',
     expect(stateAtSendTime!.seenNews).toEqual([]);
     expect(stateAtSendTime!.lastNewsPushAt).toBe(hoursAgo(24));
 
-    expect(state.seenNews).toEqual([{ url: 'https://example.com/a', seenAt: NOW.toISOString() }]);
+    expect(state.seenNews).toEqual([
+      { url: 'https://example.com/a', seenAt: NOW.toISOString(), sourceId: 'src1', sources: ['src1'], domain: 'ai' },
+    ]);
     expect(state.lastNewsPushAt).toBe(NOW.toISOString());
     expect(save).toHaveBeenCalledTimes(1);
     expect(save).toHaveBeenCalledWith(state);
@@ -178,6 +182,31 @@ describe('NewsSegmentService.run — US1 Acceptance（每日晨報端到端）',
     expect(urls).toContain(fresh.url); // 仍在保留期
     expect(urls).toContain('https://example.com/a'); // 本次推播的 normalized url
     expect(save).toHaveBeenCalledWith(state);
+  });
+
+  it('推播成功後寫回的 seenNews 逐條帶代表項 sourceId、完整來源 sources 與 domain（2026-09-12 新增，供事後按來源／領域統計）；既有舊格式條目不被改寫', async () => {
+    const { service, curate } = build();
+    curate.mockResolvedValue({
+      items: [
+        curatedItem({ url: 'https://ai.example.com/x', sourceId: 'openai-blog', sources: ['openai-blog'], domain: 'ai' }),
+        curatedItem({ url: 'https://ops.example.com/y', sourceId: 'cncf-blog', sources: ['cncf-blog'], domain: 'devops' }),
+        // 交叉驗證項：代表項是 hn，但 RSS 一手來源 lobsters 也須被記入 sources，統計時才不被低估
+        curatedItem({ url: 'https://fe.example.com/z', sourceId: 'hn', sources: ['hn', 'lobsters'], sourceCount: 2, domain: 'frontend-backend' }),
+      ],
+      degraded: false,
+    } as CuratedDigest);
+    const legacy = { url: 'https://recent.example.com/old', seenAt: hoursAgo(24 * 2) }; // 舊格式條目（無新欄位）
+    const state = makeState({ lastNewsPushAt: hoursAgo(24), seenNews: [legacy] });
+
+    const result = await service.run(state, NOW);
+
+    expect(result).toEqual({ status: 'ok' });
+    expect(state.seenNews).toEqual([
+      legacy, // 舊條目原樣保留，不補欄位
+      { url: 'https://ai.example.com/x', seenAt: NOW.toISOString(), sourceId: 'openai-blog', sources: ['openai-blog'], domain: 'ai' },
+      { url: 'https://ops.example.com/y', seenAt: NOW.toISOString(), sourceId: 'cncf-blog', sources: ['cncf-blog'], domain: 'devops' },
+      { url: 'https://fe.example.com/z', seenAt: NOW.toISOString(), sourceId: 'hn', sources: ['hn', 'lobsters'], domain: 'frontend-backend' },
+    ]);
   });
 
   it('Acceptance 2：降級（degraded=true, content=null）→ 照樣組版推播、晨報不中斷；各則仍寫回 seenNews', async () => {
