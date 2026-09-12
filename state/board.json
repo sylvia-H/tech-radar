@@ -326,77 +326,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-06T23:45:03.614Z",
-  "lastNewsPushAt": "2026-09-10T23:59:28.349Z",
+  "lastNewsPushAt": "2026-09-12T00:07:16.756Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-06T23:45:03.614Z",
       "summary": "本次榜單新進 6 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 1 個，綜合榜 #1 為 tt-a1i/archify。"
     },
     "feed": [
-      {
-        "content": "OpenAI 官方正式宣佈開始全面推出新一代旗艦模型 GPT-6 Astra，並在推出後不久向多數付費用戶開放。此版本帶來了顯著的基準測試效能提升與工作流程優化，包含金融審閱、遊戲原型開發等應用案例皆顯示出更高的執行效率與更低的錯誤率。這對開發者與企業用戶而言，是評估與導入新一代 AI 模型介面與能力的重要里程碑。",
-        "id": "news:https://cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html",
-        "publishedAt": "2026-09-04T23:55:51.688Z",
-        "title": "OpenAI 開始向付費用戶全面推出 GPT-6 Astra 模型",
-        "type": "news",
-        "url": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html"
-      },
-      {
-        "content": "OpenAI 官方宣佈投入 10 億美元資金推出 Daybreak for Frontline Defenders 計畫，旨在擴大前線網路安全 AI 工具、專業培訓與技術支援的取得管道，保護政府與企業等關鍵基礎設施。這項重大宣佈反映了 AI 技術在資安防禦與關鍵服務保護上的角色正快速提升，對從事基礎設施與資安防護的開發者具有深遠影響。",
-        "id": "news:https://openai.com/index/daybreak-for-frontline-defenders",
-        "publishedAt": "2026-09-04T23:55:51.688Z",
-        "title": "OpenAI 推出 10 億美元「Daybreak」計畫保護關鍵基礎設施",
-        "type": "news",
-        "url": "https://openai.com/index/daybreak-for-frontline-defenders"
-      },
-      {
-        "content": "Cloudflare 官方推出全新功能 Cloudflare Access for Workers，允許開發者直接將存取控制策略附加至 Cloudflare Worker 中。此策略能自動套用到該 Worker 運行所有位置，包含路由、自訂網域、workers.dev 及預覽環境。這大幅簡化了邊緣運算與內部應用程式的安全防護架構，對 DevOps 與後端開發者是一項重要的生產力與安全更新。",
-        "id": "news:https://blog.cloudflare.com/workers-protected-by-access",
-        "publishedAt": "2026-09-04T23:55:51.688Z",
-        "title": "Cloudflare 推出 Cloudflare Access for Workers，一鍵保護內部應用",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/workers-protected-by-access/"
-      },
-      {
-        "content": "有開發者在開源社群分享成功將一個 90M 參數的對話型大型語言模型（LLM）移植到 2004 年發售的 Sony PSP 硬體上運行。儘管受限於硬體效能，推論速度僅約每秒 0.5 到 0.6 個 Token，回覆一次需時數分鐘，但這項極限邊緣運算的嘗試展現了在極端資源受限裝置上運行 AI 模型的可行性，引起社群高度關注與熱烈討論。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1w78ztg/you_can_now_run_a_90m_conversational_llm_on_the",
-        "publishedAt": "2026-09-04T23:55:51.688Z",
-        "title": "開發者成功在 2004 年 Sony PSP 手持主機上運行 90M 本地端 LLM",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w78ztg/you_can_now_run_a_90m_conversational_llm_on_the/"
-      },
-      {
-        "content": "開發者分享了利用大型語言模型（LLM）來閱讀與分析 68000 組合語言，協助將一款 1993 年的經典 Amiga 遊戲成功移植到 Godot 引擎的經驗。這篇在 Hacker News 獲得高熱度討論的案例，展示了 AI 在解讀遺留程式碼（Legacy Code）與跨平台遊戲重構上的實際應用潛力。",
-        "id": "news:https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot",
-        "publishedAt": "2026-09-04T23:55:51.688Z",
-        "title": "使用 LLM 閱讀 68000 組合語言，將 1993 年 Amiga 遊戲移植至 Godot",
-        "type": "news",
-        "url": "https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot/"
-      },
-      {
-        "content": "社群與網路工程領域深入追蹤 RFC 9234（BGP Roles and Only to Customer attribute）的實際部署狀況。該標準允許路由器自行拒絕路由洩漏。然而，一項針對網路部署現況的測量發現，部分大型 Tier 1 網路意外地剝離了 OTC 屬性。這對負責底層網路架構與 DevOps 的團隊而言，是評估全球網路路由安全標準落地的重要技術觀察。",
-        "id": "news:https://blog.cloudflare.com/rfc9234-bgp-role-model",
-        "publishedAt": "2026-09-04T23:55:51.688Z",
-        "title": "BGP Role 模型與 RFC 9234 採用追蹤：路由洩漏防禦的新進展",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/rfc9234-bgp-role-model/"
-      },
-      {
-        "content": "開發者社群發現 Anthropic 的 Claude 模型在更新系統提示詞後，對於重現知名歌曲歌詞的限制變得極為嚴格。這引發了關於 AI 模型在版權內容處理、安全性邊界以及提示詞工程行為變化的廣泛討論與關注，對依賴特定文本生成行為的開發者具有參考價值。",
-        "id": "news:https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt",
-        "publishedAt": "2026-09-04T23:55:51.688Z",
-        "title": "Claude 新版系統提示詞（System Prompt）引發社群關於版權與歌詞重現的討論",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/"
-      },
-      {
-        "content": "OpenAI 在發表後的一天內，正式向多數付費使用者開放了全新模型 GPT-6 Astra。這項更新對開發者與企業使用者而言，標誌著新一代 AI 能力已直接進入主流應用階段，帶來更強的推理與多模態整合表現，有助於加速各類智慧應用的落地開發。",
-        "id": "news:https://thenewstack.io/gpt6-astra-developer-access-delayed",
-        "publishedAt": "2026-09-05T23:46:00.661Z",
-        "title": "OpenAI 推出 GPT-6 Astra 並向多數付費使用者開放",
-        "type": "news",
-        "url": "https://thenewstack.io/gpt6-astra-developer-access-delayed/"
-      },
       {
         "content": "Anthropic 推出 Claude Fable 5.1，官方宣稱這是其針對程式編寫與知識工作打造的最先進模型。這對開發者極具價值，因為它直接關係到日常 AI 輔助編寫程式、自動化工作流程及複雜重構任務的成效與準確度提升。",
         "id": "news:https://thenewstack.io/claude-fable-upgrade-tested",
@@ -725,64 +661,146 @@
         "title": "Cognition 發表全新 SWE-2 模型挑戰頂級 AI 程式碼代理",
         "type": "news",
         "url": "https://cognition.com/blog/swe-2"
+      },
+      {
+        "content": "Cloudflare 宣布在開發者平台上直接內建自動化修復政策引擎。資安團隊現在可以針對 SaaS 風險設計事件驅動的邏輯（event-driven logic），在不需人工介入的情況下，自動撤銷具風險的檔案共用權限並觸發 Webhook，有效提升企業雲端資安的響應速度與自動化防護能力。",
+        "id": "news:https://blog.cloudflare.com/casb-policies",
+        "publishedAt": "2026-09-12T00:07:16.756Z",
+        "title": "Cloudflare CASB 推出原生自動化修復政策引擎",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/casb-policies/"
+      },
+      {
+        "content": "OpenAI 正式推出 Agents API 的公開 beta 測試，將背後支援 Codex 等工具的強大代理後端能力開放給所有開發者。這項新 API 讓開發者能夠直接在應用程式中建構、部署與管理自動化 AI 代理執行任務，大幅降低了打造複雜 AI 代理工作流程的門檻。",
+        "id": "news:https://developers.openai.com/api/docs/guides/agents-api/overview",
+        "publishedAt": "2026-09-12T00:07:16.756Z",
+        "title": "OpenAI 推出 Agents API 公開測試版",
+        "type": "news",
+        "url": "https://developers.openai.com/api/docs/guides/agents-api/overview"
+      },
+      {
+        "content": "OpenAI 技術團隊分享了線上儲存系統 Habitat 的架構演進史。該系統最初只是一個 Python 庫，如今已成長為支援全球超過 10 億 ChatGPT 用戶、每秒處理高達 2,200 萬次請求的分散式儲存平台。這篇文章對需要處理超大規模流量與分散式儲存架構的後端與基礎設施工程師而言，具有極高的參考價值。",
+        "id": "news:https://openai.com/index/scaling-storage-one-billion-users-part-one",
+        "publishedAt": "2026-09-12T00:07:16.756Z",
+        "title": "OpenAI 如何將 Habitat 從 Python 庫演進為支援 10 億用戶的全球分散式儲存平台",
+        "type": "news",
+        "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one"
+      },
+      {
+        "content": "本文探討 Kubernetes 叢集在實際維運中常見的災難復原痛點，並指出「擁有備份」與「能夠成功還原」是兩碼事。作者透過三個可在筆電上完整重現的實驗室失敗情境，提供具體的架構 guidance 與防範建議，幫助平台與 DevOps 工程師驗證並提升 Kubernetes 叢集的強韌度。",
+        "id": "news:https://cncf.io/blog/2026/09/10/kubernetes-disaster-recovery-guidance-from-three-reproducible-failure-scenarios",
+        "publishedAt": "2026-09-12T00:07:16.756Z",
+        "title": "Kubernetes 災難復原：從三個可重現的失敗情境中學習",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/09/10/kubernetes-disaster-recovery-guidance-from-three-reproducible-failure-scenarios/"
+      },
+      {
+        "content": "針對開發者在日常使用 AI 程式碼生成與代理工具時，常遭遇輸出內容過度冗長、將真正解法淹沒在大量文字中的痛點，社群熱議並分享了名為 I-have-ADHD 的實用技巧與技能設定。這有助於改善 AI 代理的互動效率，讓開發者能更快擷取核心資訊。",
+        "id": "news:https://github.com/ayghri/i-have-adhd",
+        "publishedAt": "2026-09-12T00:07:16.756Z",
+        "title": "I-have-ADHD：防止編碼代理程式淹沒關鍵答案的技巧",
+        "type": "news",
+        "url": "https://github.com/ayghri/i-have-adhd"
+      },
+      {
+        "content": "有開發者因為厭倦多數 LLM 過度客套、排版完美且充滿 AI 助理腔調的制式回應，使用超過 12 萬筆真實對話資料集微調了 Qwen 模型，打造出能像真實人類般自然聊天的版本。這反映了社群對於改善 AI 人機互動體驗與擺脫機械式對話風格的強烈需求與實踐嘗試。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wdl2qa/qwen3827bhumanlikechat_a_model_i_tuned_to_imitate",
+        "publishedAt": "2026-09-12T00:07:16.756Z",
+        "title": "開發者微調 Qwen 模型以實現告別 AI 官腔的自然人類對話",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wdl2qa/qwen3827bhumanlikechat_a_model_i_tuned_to_imitate/"
+      },
+      {
+        "content": "社群開發者成功在 Qwen 模型的 KV 快取（KV cache）上實作了類似 V4.1 Flash 的快速預填（fast prefill）近似技術，並開源了對應的專案與專案示範。這項研究與開源嘗試對於想在資源受限環境下優化大型語言模型推理速度與快取效率的開發者來說，提供了極具價值的實作參考。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wd4xxv/someone_apparently_managed_to_kind_of_replicate",
+        "publishedAt": "2026-09-12T00:07:16.756Z",
+        "title": "社群開發者實作 Qwen 模型的 KV 快取近似與快速預填技術",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wd4xxv/someone_apparently_managed_to_kind_of_replicate/"
+      },
+      {
+        "content": "面對企業內部昂貴的 GPU 成本與雲端帳單檢視會議，平台團隊如何精準追蹤 GPU 的實際使用率？本文探討如何在多租戶 Kubernetes 環境中建立安全且具備自助式服務的 GPU 監控指標，解決資源歸屬與成本分攤的痛點，對 DevOps 與基礎設施管理極具實用性。",
+        "id": "news:https://cncf.io/blog/2026/09/09/whose-gpus-are-these-anyway-secure-self-service-metrics-for-multi-tenant-kubernetes",
+        "publishedAt": "2026-09-12T00:07:16.756Z",
+        "title": "多租戶 Kubernetes 叢集中安全且自助式的 GPU 指標監控",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/09/09/whose-gpus-are-these-anyway-secure-self-service-metrics-for-multi-tenant-kubernetes/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-10T23:59:28.349Z",
+      "generatedAt": "2026-09-12T00:07:16.756Z",
       "items": [
         {
-          "content": "Cloudflare 宣布其 1.1.1.1 DNS 服務開始使用 NIST 的後量子 ML-DSA-44 演算法來驗證 DNSSEC 簽章。這項更新展示了在處理高達 2,420 位元組的大型後量子簽章時，網路基礎設施如何在大規模下管理降級風險與傳輸效能，對推動網際網路基礎設施的後量子密碼學升級具備重要示範意義。",
+          "content": "Cloudflare 宣布在開發者平台上直接內建自動化修復政策引擎。資安團隊現在可以針對 SaaS 風險設計事件驅動的邏輯（event-driven logic），在不需人工介入的情況下，自動撤銷具風險的檔案共用權限並觸發 Webhook，有效提升企業雲端資安的響應速度與自動化防護能力。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "Cloudflare 1.1.1.1 支援後量子 DNSSEC",
-          "url": "https://blog.cloudflare.com/post-quantum-dnssec-1111/",
+          "title": "Cloudflare CASB 推出原生自動化修復政策引擎",
+          "url": "https://blog.cloudflare.com/casb-policies/",
           "weightedScore": 100
         },
         {
-          "content": "OpenAI 推出 ChatGPT Work 的全新資料代理程式（Data agent），允許使用者透過自然語言連接企業內部資料、挖掘商業洞察，並直接建構互動式儀表板。這項更新讓非技術人員也能快速將企業資料投入實際應用，簡化了數據分析與視覺化流程。",
+          "content": "OpenAI 正式推出 Agents API 的公開 beta 測試，將背後支援 Codex 等工具的強大代理後端能力開放給所有開發者。這項新 API 讓開發者能夠直接在應用程式中建構、部署與管理自動化 AI 代理執行任務，大幅降低了打造複雜 AI 代理工作流程的門檻。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "title": "OpenAI 推出 Agents API 公開測試版",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/overview",
+          "weightedScore": 438
+        },
+        {
+          "content": "OpenAI 技術團隊分享了線上儲存系統 Habitat 的架構演進史。該系統最初只是一個 Python 庫，如今已成長為支援全球超過 10 億 ChatGPT 用戶、每秒處理高達 2,200 萬次請求的分散式儲存平台。這篇文章對需要處理超大規模流量與分散式儲存架構的後端與基礎設施工程師而言，具有極高的參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "ChatGPT Work 推出內建資料分析代理程式",
-          "url": "https://openai.com/index/put-data-to-work",
+          "title": "OpenAI 如何將 Habitat 從 Python 庫演進為支援 10 億用戶的全球分散式儲存平台",
+          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
           "weightedScore": 100
         },
         {
-          "content": "Amazon Web Services (AWS) 開源釋出名為 Pizza Bot 的應用程式，為背景執行的 AI 代理提供類似電子郵件收件匣的介面。這項工具幫助開發者更好地管理、檢視與互動非同步執行的代理程式任務，解決多代理系統在背景運作時的通訊與狀態追蹤難題。",
+          "content": "本文探討 Kubernetes 叢集在實際維運中常見的災難復原痛點，並指出「擁有備份」與「能夠成功還原」是兩碼事。作者透過三個可在筆電上完整重現的實驗室失敗情境，提供具體的架構 guidance 與防範建議，幫助平台與 DevOps 工程師驗證並提升 Kubernetes 叢集的強韌度。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "title": "AWS 開源釋出 Pizza Bot：供背景 AI 代理使用的信件式收件匣",
-          "url": "https://thenewstack.io/aws-pizza-bot-agent-inbox/",
-          "weightedScore": 50
+          "title": "Kubernetes 災難復原：從三個可重現的失敗情境中學習",
+          "url": "https://www.cncf.io/blog/2026/09/10/kubernetes-disaster-recovery-guidance-from-three-reproducible-failure-scenarios/",
+          "weightedScore": 100
         },
         {
-          "content": "Salesforce 正式發表 Enterprise AI Harness，將六種主流的 AI 測試與開發工具框架進行形式化整合。這項工具為企業開發者提供標準化的 AI 評估與協作環境，協助團隊在複雜的應用場景中更有效率地串接與管理多個 AI 模型。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "title": "Salesforce 推出 Enterprise AI Harness 整合開發框架",
-          "url": "https://thenewstack.io/salesforce-enterprise-ai-harness/",
-          "weightedScore": 50
-        },
-        {
-          "content": "電商巨頭 Shopify 宣佈將行動應用程式從 React Native 遷移回 Swift 和 Kotlin 等原生技術堆疊。此舉反映出大型團隊在追求極致效能與原生體驗時，對跨平台框架的重新評估，對行動端技術選型具有指標性影響。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "title": "Shopify 放棄 React Native 宣佈全面回歸 Swift 與 Kotlin 原生開發",
-          "url": "https://shopify.engineering/back-to-native",
-          "weightedScore": 703
-        },
-        {
-          "content": "Cognition 推出全新的 SWE-2 軟體工程模型，宣稱其效能可與 Fable 5.1 及 GPT-Astra 等頂尖系統匹敵。這顯示出專注於自動化軟體工程的 AI 代理正快速演進，對開發者的日常協作與程式碼生成工作流程帶來持續且深遠的變革。",
+          "content": "針對開發者在日常使用 AI 程式碼生成與代理工具時，常遭遇輸出內容過度冗長、將真正解法淹沒在大量文字中的痛點，社群熱議並分享了名為 I-have-ADHD 的實用技巧與技能設定。這有助於改善 AI 代理的互動效率，讓開發者能更快擷取核心資訊。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "title": "Cognition 發表全新 SWE-2 模型挑戰頂級 AI 程式碼代理",
-          "url": "https://cognition.com/blog/swe-2",
-          "weightedScore": 341
+          "title": "I-have-ADHD：防止編碼代理程式淹沒關鍵答案的技巧",
+          "url": "https://github.com/ayghri/i-have-adhd",
+          "weightedScore": 535
+        },
+        {
+          "content": "有開發者因為厭倦多數 LLM 過度客套、排版完美且充滿 AI 助理腔調的制式回應，使用超過 12 萬筆真實對話資料集微調了 Qwen 模型，打造出能像真實人類般自然聊天的版本。這反映了社群對於改善 AI 人機互動體驗與擺脫機械式對話風格的強烈需求與實踐嘗試。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "開發者微調 Qwen 模型以實現告別 AI 官腔的自然人類對話",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wdl2qa/qwen3827bhumanlikechat_a_model_i_tuned_to_imitate/",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群開發者成功在 Qwen 模型的 KV 快取（KV cache）上實作了類似 V4.1 Flash 的快速預填（fast prefill）近似技術，並開源了對應的專案與專案示範。這項研究與開源嘗試對於想在資源受限環境下優化大型語言模型推理速度與快取效率的開發者來說，提供了極具價值的實作參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "title": "社群開發者實作 Qwen 模型的 KV 快取近似與快速預填技術",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wd4xxv/someone_apparently_managed_to_kind_of_replicate/",
+          "weightedScore": 100
+        },
+        {
+          "content": "面對企業內部昂貴的 GPU 成本與雲端帳單檢視會議，平台團隊如何精準追蹤 GPU 的實際使用率？本文探討如何在多租戶 Kubernetes 環境中建立安全且具備自助式服務的 GPU 監控指標，解決資源歸屬與成本分攤的痛點，對 DevOps 與基礎設施管理極具實用性。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "title": "多租戶 Kubernetes 叢集中安全且自助式的 GPU 指標監控",
+          "url": "https://www.cncf.io/blog/2026/09/09/whose-gpus-are-these-anyway-secure-self-service-metrics-for-multi-tenant-kubernetes/",
+          "weightedScore": 100
         }
       ]
     }
@@ -1223,6 +1241,38 @@
     {
       "seenAt": "2026-09-10T23:59:28.349Z",
       "url": "https://cognition.com/blog/swe-2"
+    },
+    {
+      "seenAt": "2026-09-12T00:07:16.756Z",
+      "url": "https://blog.cloudflare.com/casb-policies"
+    },
+    {
+      "seenAt": "2026-09-12T00:07:16.756Z",
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/overview"
+    },
+    {
+      "seenAt": "2026-09-12T00:07:16.756Z",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one"
+    },
+    {
+      "seenAt": "2026-09-12T00:07:16.756Z",
+      "url": "https://cncf.io/blog/2026/09/10/kubernetes-disaster-recovery-guidance-from-three-reproducible-failure-scenarios"
+    },
+    {
+      "seenAt": "2026-09-12T00:07:16.756Z",
+      "url": "https://github.com/ayghri/i-have-adhd"
+    },
+    {
+      "seenAt": "2026-09-12T00:07:16.756Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wdl2qa/qwen3827bhumanlikechat_a_model_i_tuned_to_imitate"
+    },
+    {
+      "seenAt": "2026-09-12T00:07:16.756Z",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wd4xxv/someone_apparently_managed_to_kind_of_replicate"
+    },
+    {
+      "seenAt": "2026-09-12T00:07:16.756Z",
+      "url": "https://cncf.io/blog/2026/09/09/whose-gpus-are-these-anyway-secure-self-service-metrics-for-multi-tenant-kubernetes"
     }
   ]
 }
