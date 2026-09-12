@@ -55,21 +55,42 @@ export const introCacheSchema = z.object({
   introAt: isoDatetime,
 });
 
-/** 已推播新聞紀錄，含時間戳供保留期修剪（`SEEN_NEWS_RETENTION_DAYS`，45 天）。 */
+/**
+ * 已推播新聞紀錄，含時間戳供保留期修剪（`SEEN_NEWS_RETENTION_DAYS`，45 天）。
+ *
+ * `sourceId`／`domain` 為 2026-09-12 新增的統計欄位（推播時自 `CuratedNewsItem` 帶入代表項來源
+ * 與領域），供月度回顧按來源／領域統計，取代先前以 host 反推的做法。兩者皆 `.optional()`：
+ * 此前寫入的舊條目沒有這兩欄，仍須能載入（`load()` 遇壞檔擲錯不覆寫，憲章 VI）；去重只用 `url`，
+ * 缺席不影響 `excludeSeen`／`pruneSeenNews`。`domain` 沿用新聞三桶（與 `curatedNewsItemSchema` 同），
+ * 刻意不用榜單的 2-way `domainSchema`（兩條獨立資料流）。
+ *
+ * `sources` 為合併後的全部來源 id（`CuratedNewsItem.sources`，同日 2026-09-12 新增），月度統計時
+ * 含被合併為次要來源者，`sourceId` 則為代表項——只記代表項會系統性低估 RSS 一手來源（交叉驗證項
+ * 代表項一律是 hn）。同樣 `.optional()`，理由同上。
+ */
 export const seenNewsEntrySchema = z.object({
   url: z.string(),
   seenAt: isoDatetime,
+  sourceId: z.string().optional(),
+  sources: z.array(z.string()).optional(),
+  domain: z.enum(['ai', 'devops', 'frontend-backend']).optional(),
 });
 
 /**
  * `CuratedNewsItem`（`src/curation/curation.types.ts`）的持久化橋接 schema（F8 首次持久化，
  * data-model.md §1）。欄位逐一對應該 TS interface，interface 本身不動。
+ *
+ * `sourceId`／`sources` 於 interface 為必填（2026-09-12 新增），此處刻意 `.optional()`：2026-09-12 前
+ * 落檔的 `publish.news.items` 沒有這兩欄，嚴格要求會讓舊 state `load()` 擲錯而打掛整條 pipeline（FR-014，
+ * 同下方 `publishStateSchema` 的 `feed` 不加 `.max(50)` 之理由）。讀取端（`render-page.ts`）不使用這兩欄，缺席無影響。
  */
 export const curatedNewsItemSchema = z.object({
   title: z.string(),
   content: z.string().nullable(),
   url: z.string(),
   domain: z.enum(['ai', 'devops', 'frontend-backend']),
+  sourceId: z.string().optional(),
+  sources: z.array(z.string()).optional(),
   sourceCount: z.number().int().min(0),
   weightedScore: z.number(),
   degraded: z.boolean(),

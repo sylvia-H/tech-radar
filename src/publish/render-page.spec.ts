@@ -10,6 +10,8 @@ function curatedItem(overrides: Partial<CuratedNewsItem> = {}): CuratedNewsItem 
     content: '內容摘要',
     url: 'https://example.com/a',
     domain: 'ai',
+    sourceId: 'hn',
+    sources: ['hn'],
     sourceCount: 1,
     weightedScore: 100,
     degraded: false,

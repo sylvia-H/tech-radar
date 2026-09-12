@@ -11,13 +11,16 @@ import { normalizeTargetUrl } from './url-normalize';
 import { dedupByTitle, dedupByUrl } from './dedup';
 import { TITLE_JACCARD_THRESHOLD } from './title-similarity';
 import { classifyCross } from './news-classify';
-import { DEFAULT_FUNNEL_CONFIG, runFunnel } from './funnel';
+import { DEFAULT_FUNNEL_CONFIG, isFreshEnough, runFunnel } from './funnel';
 import { excludeSeen, pruneSeenNews } from './seen-news';
 import { formatCandidateSet } from './news-log';
+import { isSocialPlatformUrl } from './social-hosts';
 
 /**
- * 階段 A 編排器（@Injectable）：載入設定 → 逐源隔離抓取＋正規化 → URL 去重 → 標題 Jaccard 去重
- * → `cross` 歸類 → 排除 seen → 漏斗過濾/加權/排序/收斂 → 候選集＋觀測 log。
+ * 階段 A 編排器（@Injectable）：載入設定 → 逐源隔離抓取＋正規化 → 社群平台連結過濾
+ * （2026-09-12 起，於 URL 去重前）→ URL 去重 → 新鮮度視窗
+ * （無分數者，2026-09-12 起提前至標題去重前）→ 標題 Jaccard 去重 → `cross` 歸類 → 排除 seen →
+ * 漏斗過濾/加權/排序/收斂 → 候選集＋觀測 log。
  * （排除 seen 於收斂前，避免已見項佔用 `convergeMax` 名額而排擠新鮮候選。）
  *
  * **邊界（本 Feature）**：只產出候選供觀測，**不呼叫 LLM、不推播、不寫回 `seenNews`**
@@ -36,7 +39,8 @@ export class NewsIngestService {
   ) {}
 
   /**
-   * 產出階段 A 候選集。`now` 注入以驅動近 7 天口徑、seen 修剪、新鮮度決勝（不依賴真實時間）。
+   * 產出階段 A 候選集。`now` 注入以驅動各 fetcher 的時間視窗（HN 近 4 天，2026-09-12 起）、
+   * seen 修剪、新鮮度決勝（不依賴真實時間）。
    * `boardRepoNames` 未給時由 `state.board` 建立（空 → 榜單相關性加權安全略過，FR-018）。
    * `seenNews` 未給時由 `state.seenNews` 取得；F7 pipeline 開頭已 `load()` 過共享 `state`，兩者
    * 皆傳入即可**免去本服務重複 `stateStore.load()`**（僅在缺任一參數時才回退讀盤）。
@@ -51,8 +55,25 @@ export class NewsIngestService {
     const raw = await this.collect(sources, ctx);
     this.logger.log(`[漏斗 A] 原始候選：${raw.length} 則`);
 
-    let cands = dedupByUrl(raw);
-    this.logger.log(`[漏斗 A] URL 去重後：${cands.length} 則（-${raw.length - cands.length}）`);
+    // 社群平台連結（twitter／x／bsky／mastodon 實例…）於 URL 去重前直接丟（2026-09-12）：貼文本身
+    // 多為個人動態、非技術內容，且 HN／RSS 皆無摘要、LLM 只能憑標題判斷。放在去重前的理由：這類
+    // URL 不會與任何一手來源同 URL，先丟不影響交叉驗證。清單見 `social-hosts.ts`（資料檔）。
+    let cands = raw.filter((c) => !isSocialPlatformUrl(c.originalUrl));
+    this.logger.log(`[漏斗 A] 社群平台連結過濾後：${cands.length} 則（-${raw.length - cands.length}）`);
+
+    const beforeUrlDedup = cands.length;
+    cands = dedupByUrl(cands);
+    this.logger.log(`[漏斗 A] URL 去重後：${cands.length} 則（-${beforeUrlDedup - cands.length}）`);
+
+    // 新鮮度視窗提前至標題去重之前、但在 URL 去重之後（2026-09-12）：無分數者（`score === null`）
+    // `publishedAt` 缺失或超出 `freshnessWindowDays` 即丟；有分數者（HN）豁免。否則封存舊文（如
+    // openai-blog feed 含整站 1192 篇）會在標題 Jaccard 去重時吞掉其他來源的新文章，代表項落在
+    // 舊文後再被漏斗內視窗整則丟掉。放在 URL 去重之後的理由：URL 精確比對合併的必是同一篇文章、
+    // 不可能誤吞，先合併才能讓「低分 HN 投稿 ＋ 同 URL 官方舊文」以有分數的 HN 為代表項通過本步，
+    // 再靠交叉驗證豁免門檻入池；若提前到 URL 去重前，官方舊文先被丟、HN 單筆再被門檻丟，整則消失。
+    const beforeFresh = cands.length;
+    cands = cands.filter((c) => c.score !== null || isFreshEnough(c, now, DEFAULT_FUNNEL_CONFIG.freshnessWindowDays));
+    this.logger.log(`[漏斗 A] 新鮮度視窗後：${cands.length} 則（-${beforeFresh - cands.length}）`);
 
     const beforeTitleDedup = cands.length;
     cands = dedupByTitle(cands, TITLE_JACCARD_THRESHOLD);
@@ -103,6 +124,8 @@ export class NewsIngestService {
         await this.alert(source.id, `抓取失敗：${errMsg(err)}`);
         continue;
       }
+      // 逐源對帳 log 置於 0 筆早退之前，讓壞掉／空的來源也出現在對帳清單（2026-09-12）。
+      this.logger.log(`[來源 ${source.id}] 解析 ${result.parsedCount} 則 → 過濾後 ${result.items.length} 則`);
       if (result.parsedCount === 0) {
         await this.alert(source.id, '解析到 0 筆');
         continue;

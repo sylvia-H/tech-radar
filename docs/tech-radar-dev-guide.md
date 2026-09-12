@@ -17,7 +17,7 @@
 | repo 簡介  | 首次進榜時抓 README → Gemini 產 ≤250 字簡介 → **按 repoId 快取（獨立於榜單快照）**                     | 只生成一次，省額度、內容穩定；跌出榜再進榜也不重生成，且天然只介紹「有變化」的 repo。   |
 | 狀態存放   | **commit 到獨立 `state` 分支的 `state/board.json`**（榜單快照 + 簡介快取 + 已推新聞紀錄）               | 「只看變化」需要跨執行的狀態；committed JSON 零外部依賴，順帶替排程保活（§2.1）；獨立分支使 bot commit 不混入 `develop`/`main` 開發歷史（§2.2、§8）。 |
 | 推播       | **Discord Channel Webhook**（HTTP POST）                                                               | 只推播不收訊息 → 不需要 bot、gateway、Message Content Intent。                          |
-| LLM        | **Gemini 免費層（Flash 系）**                                                                          | 簡介 + 摘要用量遠低於 ~1,500 RPD 免費上限。                                             |
+| LLM        | **Gemini 免費層，依資料流分兩型號**：榜單簡介／TL;DR 用 Flash-Lite（`GEMINI_MODEL_BOARD`），每日晨報策展用 Flash（`GEMINI_MODEL_NEWS`） | Lite 用量極低（七天 0～數次）；Flash 免費層 5 RPM／20 RPD（2026-09-12 AI Studio 確認），每日 1 次、含退避最多 4 次 HTTP 嘗試，餘裕充足（§2.4）。 |
 | DB（歷史） | 不用                                                                                                   | MVP 不需要通用資料庫；星星歷史不自存（見 §3）。                                         |
 
 > **NestJS 的角色**：用 `NestFactory.createApplicationContext()` 跑成一次性 CLI job（保留 DI/模組結構、不啟 HTTP server、跑完即退），完美契合 Actions。
@@ -98,19 +98,44 @@
 
 ### 2.4 LLM：Gemini 免費層
 
-- Flash-Lite 系（`gemini-3.5-flash-lite`），~15 RPM / ~1,000 RPD。
-  - 2026-07-19：由 `gemini-2.5-flash` 改用 `gemini-2.5-flash-lite`，原以為是撞速率上限，
-    後續改用當天即發現該型號回 404 `NOT_FOUND`（"no longer available to new users"）——
-    Google 提前於官方公告的 2026-10-16／07-22 下架日之前就將 `gemini-2.5-flash`／
-    `gemini-2.5-flash-lite` 兩者陸續下線，遂再改用當代继任型號 `gemini-3.1-flash-lite`。
-  - 2026-08-09：Google 於 2026-07-21 發佈 `gemini-3.5-flash-lite`，遂由 `gemini-3.1-flash-lite`
-    升級至該型號。
-  - 2026-09-02：曾升級至 2026-08-14 發佈的 `gemini-3.7-flash`（無 Flash-Lite 版本），同日實測
-    **觸及免費層上限**（Flash 與 Flash-Lite 的免費配額不同級），當天改回 `gemini-3.5-flash-lite`。
-    教訓：換型號前先在 AI Studio 儀表板確認該型號的免費層配額，Flash 系不等於 Flash-Lite 系。
-  - 教訓：Gemini 免費層型號 ID **可能無預警提前下架**，`LlmService` 非可重試錯誤（如 404）
-    務必印出實際狀態碼與訊息（見 `llm.service.ts` `errDetail`），否則會被誤判為速率限制。
-- 用途：每個新進榜 repo 一次 250 字簡介 + 榜單日一段「本次變化」TL;DR + 每日一次新聞策展。穩定態榜單七天才有 0～數個新 repo → 用量極低。
+- **依資料流分兩個型號（2026-09-12 起，`src/llm/llm.types.ts`）**，共用同一把 `GEMINI_API_KEY`
+  與同一套退避／錯誤分類，log 一律帶型號以利對帳：
+  - **Flash-Lite 系（`GEMINI_MODEL_BOARD` = `gemini-3.5-flash-lite`）**：榜單週報——repo 250 字簡介
+    （每新進 repo 一生一次並快取）與榜單日一句話 TL;DR；`LlmService.generate` 未指定型號時的預設。
+    免費層約 ~15 RPM / ~1,000 RPD；穩定態榜單七天才有 0～數個新 repo，用量極低。
+    - 2026-07-19：由 `gemini-2.5-flash` 改用 `gemini-2.5-flash-lite`，原以為是撞速率上限，
+      後續改用當天即發現該型號回 404 `NOT_FOUND`（"no longer available to new users"）——
+      Google 提前於官方公告的 2026-10-16／07-22 下架日之前就將 `gemini-2.5-flash`／
+      `gemini-2.5-flash-lite` 兩者陸續下線，遂再改用當代继任型號 `gemini-3.1-flash-lite`。
+    - 2026-08-09：Google 於 2026-07-21 發佈 `gemini-3.5-flash-lite`，遂由 `gemini-3.1-flash-lite`
+      升級至該型號。
+    - 2026-09-02：曾在本機把**全部**呼叫升級至 2026-08-14 發佈的 `gemini-3.7-flash`（無 Flash-Lite
+      版本），同日撞到免費層上限而改回 `gemini-3.5-flash-lite`。2026-09-12 review 查證：
+      `gemini-3.7-flash` **從未進庫**（`git log -S` 無任何 commit），當日正式排程只有 1 次策展呼叫
+      （`state` 分支 d1cb413 只動 `lastNewsPushAt`），撞限**可能**來自本機反覆手動執行而非「每日
+      1 次就會爆」，且未量化到 RPM／RPD 哪一項——此事件既不證明 Flash「每日 1 次」安全、也不證明
+      危險。仍成立的教訓：Flash 與 Flash-Lite 的免費配額不同級，換型號前先在 AI Studio 儀表板確認
+      該型號的免費層配額。
+    - 教訓：Gemini 免費層型號 ID **可能無預警提前下架**，`LlmService` 非可重試錯誤（如 404）
+      務必印出實際狀態碼與訊息（見 `llm.service.ts` `errDetail`），否則會被誤判為速率限制。
+  - **Flash（`GEMINI_MODEL_NEWS` = `gemini-3.8-flash`）**：每日晨報策展，每日僅 1 次呼叫，但要對
+    50 則候選做語意去重、三類判準逐則核對與繁中改寫，判斷品質直接決定晨報內容，值得用較強的
+    Flash。**免費層配額：5 RPM／20 RPD（2026-09-12 於 AI Studio 確認）**。用量估算：正式排程每日
+    1 次策展；`LlmService` 退避最多 4 次 HTTP 嘗試（1s／2s／4s＋jitter，總計約 10 秒內）仍在 5 RPM
+    之下；補班 cron 由 guard 擋住不呼叫。最壞情況每日 4 次，對 20 RPD 仍有 5 倍餘裕。**本機手動
+    執行也吃同一份 RPD**：一天本機跑超過十幾次就會把正式排程的額度用光——這正是 09-02 撞限最
+    合理的解釋（見下）。若撞限，降級路徑會改用 Lite（見下），連續撞限則把策展改回
+    `GEMINI_MODEL_BOARD`（只改常數）。
+- **降級路徑（2026-09-12 起）**：策展以 Flash 呼叫失敗（`LlmError` 不論原因：429 重試耗盡、型號 404
+  等不可重試錯誤、空回應——空回應也換型號，不同型號的截斷／安全過濾行為可能不同）
+  → 以 Lite（`GEMINI_MODEL_BOARD`）用**同一 prompt 單次重試** → 仍失敗才退回純程式排序的原文標題版
+  晨報（§10），並發 Discord 紅色告警（此前降級**無**告警，唯一訊號是 Actions log 與晨報內容變樣）。
+  失敗日多出的 1 次 Lite 呼叫是同一次策展的重試、不是第二次策展，不違反憲章 V「新聞策展每日僅呼叫
+  Gemini 一次」的語意；成功日仍恰 1 次。
+- **觀察窗（上線後兩週）**：留意告警頻道的 429／型號 404／「晨報策展降級」紅色 embed，以及
+  Actions log 中 `LLM 呼叫失敗（<型號>）` 的型號字樣（`gemini-3.8-flash` 為 Flash 側、
+  `gemini-3.5-flash-lite` 為 Lite 側）。本機測試前先看當日已用的 Flash 次數（RPD 僅 20）。
+- 用途：每個新進榜 repo 一次 250 字簡介 + 榜單日一段「本次變化」TL;DR（皆 Lite）+ 每日一次新聞策展（Flash）。穩定態榜單七天才有 0～數個新 repo → 用量極低。
 - ⚠️ 免費層 prompt 可能被拿去改善模型 → 本專案只送公開資料，OK。加 429 指數退避。
 
 ### 2.5 GitHub API：Personal Access Token
@@ -156,7 +181,7 @@ GET /search/repositories?q=(nextjs OR react OR svelte OR nodejs OR golang) creat
 
 - 回傳是**當前總星數**，配合 `created:>7天前` 即等於「一週內誕生且已累積不少星」=「新崛起」，零狀態。
 
-> **榜單為何沒有 DevOps 組**（2026-07-15 移除，F2 M1 驗收實測）：DevOps 榜的候選幾乎只靠 `docker` 命中，而 `docker` 是**部署方式**標籤、不是領域標籤——self-hosted 應用幾乎都貼，導致 `docker-steam-headless`（Steam 遊戲容器）、`docker-mailserver`（郵件伺服器）、`teledrive`（React+FastAPI 檔案管理器，還因 DevOps 優先序較高而被自前後端榜錯置）全數誤收，**歸類正確率 0/3**；且其週增星僅 259/136/25，對比 AI 榜的 13,195/7,129 根本排不上號。僅收窄 `docker` 不足以解決（`docker-mailserver` 真的貼了 `kubernetes`；「能跑在 k8s 上」與「是 k8s 工具」在零 LLM 的純關鍵字分類下無法區分），故直接移除領域。**此決策僅限榜單——§4 的新聞 DevOps 配額與三個專屬來源全數保留**，因為「DevOps 沒有爆紅 repo」不等於「沒有值得讀的 DevOps 消息」。
+> **榜單為何沒有 DevOps 組**（2026-07-15 移除，F2 M1 驗收實測）：DevOps 榜的候選幾乎只靠 `docker` 命中，而 `docker` 是**部署方式**標籤、不是領域標籤——self-hosted 應用幾乎都貼，導致 `docker-steam-headless`（Steam 遊戲容器）、`docker-mailserver`（郵件伺服器）、`teledrive`（React+FastAPI 檔案管理器，還因 DevOps 優先序較高而被自前後端榜錯置）全數誤收，**歸類正確率 0/3**；且其週增星僅 259/136/25，對比 AI 榜的 13,195/7,129 根本排不上號。僅收窄 `docker` 不足以解決（`docker-mailserver` 真的貼了 `kubernetes`；「能跑在 k8s 上」與「是 k8s 工具」在零 LLM 的純關鍵字分類下無法區分），故直接移除領域。**此決策僅限榜單——§4 的新聞 DevOps 配額與專屬來源（至少三個，2026-09-12 起 6 個啟用）全數保留**，因為「DevOps 沒有爆紅 repo」不等於「沒有值得讀的 DevOps 消息」。
 
 ### 3.3 合併與排名
 
@@ -192,7 +217,7 @@ GET /search/repositories?q=(nextjs OR react OR svelte OR nodejs OR golang) creat
 
 ### 4.2 來源清單：單一設定檔集中管理
 
-所有新聞來源**集中於一個設定檔**（`src/config/news-sources.ts`），pipeline 只讀這份清單抓取——**日後增刪修來源只改這個檔案，不動任何 pipeline 程式碼**。
+所有新聞來源**集中於一個設定檔**（`src/config/news-sources.ts`），pipeline 只讀這份清單抓取——**日後增刪修來源只改這個檔案，不動任何 pipeline 程式碼**。本節只保留分層設計理由與取法；**逐項清單、tier 與啟用狀態以設定檔本身與 README「目前清單」為準**（live registry），本節表格不另行逐項維護。
 
 ```ts
 // src/config/news-sources.ts — 新聞來源的唯一清單（增刪修只改這裡）
@@ -213,19 +238,23 @@ export const NEWS_SOURCES: NewsSource[] = [
 
 | 來源                       | 取法                                                                                                                                     | domain | 為什麼值得                                               |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------------------------------------------------------- |
-| **Hacker News**（Algolia） | `https://hn.algolia.com/api/v1/search?tags=front_page`；週熱門用 `search?tags=story&numericFilters=created_at_i>{7天前unix}` 取高 points | cross  | 開發圈單一最高訊號源，含分數可排序。                     |
+| **Hacker News**（Algolia） | `https://hn.algolia.com/api/v1/search?tags=front_page`；週熱門用 `search?tags=story&numericFilters=created_at_i>{4天前unix}` 取高 points（2026-09-12 由 7 天改，見 §4.3） | cross  | 開發圈單一最高訊號源，含分數可排序。                     |
 | **Lobste.rs 標籤 .rss**    | `https://lobste.rs/t/ai.rss`、`/t/devops.rss`、`/t/programming.rss`                                                                      | 各自   | 訊噪比比 HN 高、偏技術深度。                             |
 | **Reddit r/LocalLLaMA**    | `https://www.reddit.com/r/LocalLLaMA/top/.rss?t=week`                                                                                    | ai     | 「本週實戰派在意什麼」的最佳指標，對齊週視角、免費穩定。 |
-| **Simon Willison 部落格**  | RSS（`simonwillison.net`）                                                                                                               | ai     | AI 領域高訊號個人策展，穩定命中重要事件。                |
+| **Simon Willison 部落格**  | `https://simonwillison.net/atom/entries/`（純文章 feed，每週約 2 篇；2026-09-12 由 `atom/everything/` 改來——原 feed 含 blogmark／quotation，連結指向 simonwillison.net 自身而非原文，URL 去重接不上，造成同一件事兩推） | ai     | AI 領域高訊號個人策展，穩定命中重要事件；重要 blogmark 的原文幾乎都同時在 HN 上，預期改 entries 不失訊號（待驗證）。代價：量體由每週十餘則降到約 2 則，AI 候選組成往一手廠商公告偏移；觀察兩週，若本來源趨近 0 且重要事件僅靠 HN 命中，再評估回退或在 fetcher 層抽 blogmark 原文 URL。 |
 
 #### Tier 2 — 高精準一手（直接對應重要性分類）
 
 | 來源                            | 取法                                                                                                                                                      | domain | 為什麼值得                                                                                       |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------| ------ | ------------------------------------------------------------------------------------------------ |
 | **GitHub Releases feeds**       | `https://github.com/{owner}/{repo}/releases.atom`：`nodejs/node`、`python/cpython`、`microsoft/TypeScript`、`kubernetes/kubernetes`；（低權重）`vuejs/core`、`facebook/react` | 各自   | 官方、穩定、幾乎零雜訊；精準命中第一順位重要性——**新版本 / breaking change / deprecation**。     |
-| **官方 AI/模型公告**            | OpenAI、Anthropic、Google DeepMind 官方 blog/news RSS                                                                                                     | ai     | 一手公告取代二手報導，精準抓「重大模型/API 發布」。                                              |
-| **Hugging Face Daily Papers**   | `huggingface.co/papers`                                                                                                                                   | ai     | AI 論文動向的高密度精選。                                                                        |
+| **官方 AI/模型公告**            | OpenAI、Google DeepMind 官方 blog/news RSS（Anthropic 無官方 feed，`anthropic-news` 停用中）                                                                | ai     | 一手公告取代二手報導，精準抓「重大模型/API 發布」。                                              |
+| **Hugging Face Daily Papers**   | `huggingface.co/papers`（規劃項，尚未納入 `news-sources.ts`）                                                                                             | ai     | AI 論文動向的高密度精選。                                                                        |
+| **GitHub Changelog（Copilot 標籤）** | `https://github.blog/changelog/label/copilot/feed/`（2026-09-12 新增）                                                                               | ai     | GitHub 官方 Changelog 的 Copilot 標籤，每週約 6 篇，一手、直接命中「新工具／能力更新」。          |
+| **Kubernetes 官方 blog**        | `https://kubernetes.io/feed.xml`（2026-09-12 新增）                                                                                                       | devops | 每週約 4 篇版本功能文章；既有 `kubernetes/kubernetes` releases 經 pre-release／patch 過濾後每月僅約 1 則，補上一手功能說明。 |
 
+> **Tier 2 停用中的項目**：`vue-blog`（2026-09-12 停用：feed 最新一篇為 741 天前，比照同樣停用的 `web-dev` 停用觀察、非移除）。代價：前後端啟用來源自此全為 GitHub Releases feed，文章類供給改由 `cross` 來源關鍵字歸類承擔，觀察兩週後決定是否補一個前後端文章來源。逐項狀態見 README「目前清單」。
+>
 > **安全通報的折衷**：GitHub 至今**沒有官方整站 security advisory RSS**。最省事的做法是讓上列 `releases.atom` **兼當安全訊號**（安全修補通常伴隨 release）；日後要強化，再往清單加生態系 advisory feed 即可——只改設定檔。另外 releases feed 建議在抓取端**過濾 pre-release 與純 patch**（只留 major/minor 或安全修補），避免版本噪音灌爆候選池。
 
 #### Tier 3 — 選配實驗（可隨時砍，不動 code）
@@ -236,10 +265,13 @@ export const NEWS_SOURCES: NewsSource[] = [
 | **Reddit r/devops**         | `/r/devops/top/.rss?t=week`                              | devops   | 社群風向。                         |
 | **Reddit r/node、r/python** | `/r/node/top/.rss?t=week`、`/r/Python/top/.rss?t=week`   | frontend-backend | 對齊後端聚焦 Node.js / Python。    |
 | **Reddit r/reactjs**        | `/r/reactjs/top/.rss?t=week`                             | frontend-backend | 抓前端社群風向用，低權重。         |
+| **Cloudflare 官方 blog**    | `https://blog.cloudflare.com/rss/`                       | devops   | 2026-09-12 由 Tier 2 降級：2026-08-27～09-12 推播 117 則中佔 24 則（20%），且含 FedRAMP 認證、日食流量報告、blog 改用 em-dash 等公關文。實際效果：加權 100 × 0.5 = 50 排在所有 Tier 1/2 無分數候選之後，供給充足日（候選池達 50）進不了 LLM、**近似停用**，供給不足日才以 tier3 標籤進池；重要文章要靠與 HN 同 URL 合併由 HN 代表項帶入（Tier 權重乘在無分數基準分上的已知後果，同樣適用於 The New Stack、`gh-vue`、`gh-react`）。 |
+
+> **2026-09-12 覆測：不再添加來源**。實測 30 餘個候補 feed，除上表新增的兩個外皆不合格：**量體失控**（arXiv 分類 feed 每週 273 篇、AWS ML blog 每週 20 篇行銷文、`llama.cpp` releases 版號如 `b10930` 無法解析會全數保留）、**會被 release-filter 濾光**（codex／gemini-cli 全為 alpha／nightly、claude-code 全為 patch）、或**二手／公關內容**（Latent Space、blog.google、Grafana、HashiCorp）；Anthropic 五個候選端點皆 404，維持不收。
 
 ### 4.3 實作要點
 
-- **統一「本週」口徑**：Reddit `t=week`、HN 過濾近 7 天、GitHub trending weekly，讓整份摘要時間軸一致。
+- **時間口徑**：HN 過濾**近 4 天**（`HN_WINDOW_DAYS = 4`，2026-09-12 由 7 天改）、Reddit `t=week`、GitHub trending weekly。榜單維持**週視角**（每七天推一次、只呈現差異，週增星本就是七天量）；新聞則是**每日增量**視角——pipeline 每日執行、已推者記入 `seenNews`，候選只需涵蓋「上次執行以來新出現」的內容加上少量緩衝即可。原本 HN 也用 7 天是為了與榜單對齊，但實測 7 天視窗讓同一批未入選的 HN 候選被 LLM **重複評估最多 7 次**，且 2026-09-12 候選池 50 席中 24 席為 HN、排擠其他來源；HN 熱度多在 48 小時內定型，4 天仍接得住慢熱文。Reddit 因 RSS 只提供 `t=week` 端點維持週口徑。
 - **歸類與去重**：正規化成 `{ title, url, summary, source, score, domain, tier }`——`domain` 列舉為 `ai | devops | frontend-backend | cross`（**前後端合併**，F4 clarify 2026-07-16），`domain` 與 `tier` 直接取自 `news-sources.ts` 的來源設定（releases 的 nodejs/cpython/typescript/vue/react、r/node、r/python、r/reactjs 皆標 `frontend-backend`），**只有 `cross` 來源（HN、Lobste.rs programming）需要用關鍵字歸類**（前後端相關項一律歸入 `frontend-backend`）；`summary` 為 feed 的摘要/描述節錄（截 ~500 字，供 §4.4 階段 B 產出 300 字內容的素材）。以 `url` 去重、以 `score`/新鮮度排序。
 - 新聞同樣走「只推新出現」邏輯：記住上次推過的 url（見 §5.1 `seenNews`），只留**新出現**的討論，再交給 §4.4 漏斗篩選。
 
@@ -258,17 +290,20 @@ Gemini 一次、不用向量檢索/embeddings）、**選重要而非選熱門**�
 
 #### 階段 A — 零 LLM 結構性去重與過濾（主力）
 
+0. **來源層雜訊過濾**（2026-09-12 新增，兩者皆在第 1 步 URL 去重之前、零 LLM）：
+   - **HN 舊年份尾綴**：HN 慣例在重貼舊文時於標題尾綴「(YYYY)」（尾綴後可再接零到多個 HN 格式標籤如 `[pdf]`／`[video]`，例：「A Mathematical Theory of Communication (1948) [pdf]」）；`hn-algolia.fetcher` 依注入的 `now` 比對，**該年份 12/31 距今超過 30 天才算舊文**（`OLD_YEAR_GRACE_DAYS = 30`，與非 HN 來源的 30 天新鮮度視窗同一把尺；不用「YYYY 早於當年」是因為 1 月會誤殺上年度的年度報告，例：2027-01-02 投稿的「State of JS (2026)」）。HN 豁免第 7 步的新鮮度視窗（其 `publishedAt` 是投稿時間、非原文發表日），舊文只能靠此慣例把關——2026-09-06 曾推出 7 月舊文、09-12 候選池含 2025 年文章。
+   - **社群平台連結**：目標 URL 的 host 為 twitter.com／x.com／bsky.app／threads.net、常見 Mastodon 實例或符合 `mastodon.*`／`mstdn.*` pattern 者，於 `NewsIngestService.ingest()` 原始候選階段丟棄（log 名稱 `[漏斗 A] 社群平台連結過濾後`）。理由：貼文無摘要（`summary === null`）、LLM 只能憑標題判斷，且多為個人動態而非技術內容（09-12 候選池 3 則）。清單獨立為資料檔 `src/news/social-hosts.ts`，**增刪 host 只改該檔、不動過濾邏輯**（比照 `news-domain-keywords.ts`）；短網址（`t.co` 等）不解址故不列，交後段處理。**代價**：僅在 X／Mastodon 發布的一手公告（模型上線、API 變更、事故說明），若 HN 投稿指向該貼文是唯一入口，會在漏斗最前端整則消失——已知且接受，觀察兩週。**逃生門**：過濾套用於**全部來源**的候選、不限 HN；日後若在 `news-sources.ts` 新增以這些 host 為目標連結的來源，會被無聲全滅（症狀：來源解析 N 則、社群過濾後大量減少），屆時於 `social-hosts.ts` 加 allowlist 或把過濾限定於 `hn`。
 1. **target-URL 正規化去重（跨來源殺手鐧）**：HN / Reddit / Lobste.rs 對同一則新聞的討論，指向的是**同一個外部連結**。因此對每則抽出其**目標 URL**（新聞本體的連結，而非討論頁 permalink）並正規化後去重：
    - 小寫化 protocol 與 host、去 `www.`、去 `#fragment`、統一結尾斜線（根路徑除外）；
    - 砍掉追蹤參數（`utm_*`、`mc_*` 前綴，以及 `ref`、`ref_src`、`fbclid`、`gclid`、`igshid`、`ncid`、`spm`、`cmpid`），其餘 query 依 key、value 排序；
    - **不解短網址／轉址**（需額外網路請求，`url-normalize.ts` 刻意不做）；殘留的 `t.co`／`bit.ly` 重複交階段 B 的 LLM 語意去重補漏。
    - 以正規化後的目標 URL 為 key 合併：**同一則跨來源只留一筆**，保留分數最高者為代表，其餘來源記入 `sources[]`（供第 4 步交叉驗證計數）。這一步不花任何 LLM，就能殺掉絕大多數跨來源重複。
-2. **標題近似去重（補漏）**：沒有共同目標 URL 的情況（例如兩篇不同部落格報同一件事），用便宜的字串相似度補一刀：標題正規化（去符號、小寫、去 stop words）後算 token 集合 **Jaccard**，超過門檻（起始 ~0.6–0.7，依實際校）即視為同一則、合併。仍是零 LLM。
+2. **標題近似去重（補漏）**：沒有共同目標 URL 的情況（例如兩篇不同部落格報同一件事），用便宜的字串相似度補一刀：標題正規化（去符號、小寫、去 stop words）後算 token 集合 **Jaccard**，超過門檻（起始 ~0.6–0.7，依實際校）即視為同一則、合併。仍是零 LLM。**發表日期差 ≤ 14 天才可合併**（`TITLE_MERGE_MAX_GAP_DAYS`，2026-09-12 新增）：Jaccard 把版本號當普通 token，「Introducing ChatGPT Images 2.0」（144 天前）與「…Images 2.5」（4 天前）相似度 0.67 曾被合併、新文整則消失；HN「OpenAI Agents API」也曾與 2020 年「OpenAI API」合併並得到不實的交叉驗證加分。同一件事的多篇報導不會相差數月，故加日期差上限；候選缺日期或無法解析者維持可合併（向後相容）。比對對象是**群組的最早／最晚日期範圍**（只由有日期的成員維護、缺日期成員不清空範圍），而非當前代表項的日期：代表項會隨分數或 `sourceId` 字典序換人，若只比代表項，無日期的高分 HN 項會把群組日期抹掉、三則相似標題也能鏈式漂移出 28 天跨度。
 3. **品質門檻（絕對下限）＋ tier 加權**：有社群分數者低於該 tier 門檻即丟（Tier 1 ≥100、Tier 3 ≥150、Tier 2 無門檻）。**目前只有 HN 帶社群分數**：Reddit／Lobste.rs 走 RSS、不帶分數，與 Tier 2 同樣以基準分 100 入池（原規劃的 Reddit upvotes > 300、Lobste.rs score > 20 門檻因此未實作；Tier 3 的 150 門檻目前也無來源觸發）。Tier 權重 1／1／0.5。**交叉驗證（`sources ≥ 2`）者豁免門檻**（2026-09-02）：去重代表項取分數最高者，官方文章若與一則低分 HN 投稿合併，代表項變成 HN 而被門檻連帶丟掉，與第 4 步「交叉驗證是強訊號」自相矛盾。
 4. **交叉驗證加權**：第 1 步合併後 `sources.length ≥ 2`（同事件出現在 ≥2 來源）→ 視為強訊號、優先入選（通常比任何單一分數更準）。Tier 2 項目即使只有單一來源，也**天然視為強訊號**（官方發布本身即是事實確認）。
 5. **榜單相關性加權**：新聞內容**提到當前 repo 榜上的專案** → 加權，讓新聞服務於「你已在追的東西」。
 6. **去歷史重複**：已在 `seenNews` 出現過的目標 URL 直接排除（見 §5.1），避免跨天重複回報。**保留期 45 天**（2026-09-02 由 7 天改為 45 天）：保留期必須 ≥ 候選最久還能入池的時間，否則修剪後的舊文與從未推過的新聞無法區分。無分數來源的新鮮度視窗是 30 天、官方 feed 常把同一篇掛上數週，原本 7 天只涵蓋 HN 口徑——實測 2026-07-19～09-01 的 310 則推播中 46 則重複（15%），相鄰重推間隔 46 次有 38 次落在 7～8 天。45 天 = 30 天視窗 + 15 天緩衝（吸收 Atom `updated` 事後編修、同 URL 重新投稿 HN），單元測試斷言保留期 ≥ 新鮮度視窗。代價：`seenNews` 約 320 筆／40 KB（原 50 筆／7 KB），每日 diff 量不變。
-7. **新鮮度視窗、同分決勝與同來源上限**（2026-08-04 新增、2026-09-02 修訂）：無分數候選須在 30 天新鮮度視窗內（`publishedAt` 為原文真實發表日；HN 豁免，其 `publishedAt` 是投稿時間且 fetcher 已限 7 天）。排序鍵 `加權分數 ↓ → 跨來源輪流分配序 ↑ → normalizedUrl ↑`，`publishedAt` 刻意不當跨來源決勝鍵（避免發文頻率高的來源系統性勝出）。無分數候選全綁在基準分 100，改依來源分組、逐輪各發 1 則、最多 3 輪，超過 3 輪者直接剔除；**組內依發表日期降冪**決定留哪 3 則（2026-09-02 起；先前沿用全域 URL 字母序，路徑帶月份縮寫的來源會讓 `/Aug/` 長期壓過 `/Sep/`，slug 隨機者則純屬隨機）。
+7. **新鮮度視窗、同分決勝與同來源上限**（2026-08-04 新增、2026-09-02／09-12 修訂）：無分數候選須在 30 天新鮮度視窗內（`publishedAt` 為原文真實發表日；HN 豁免，其 `publishedAt` 是投稿時間且 fetcher 已限近 4 天——2026-09-12 由 7 天改，見 §4.3——舊文重貼則靠第 0 步的「(YYYY)」舊年份尾綴把關）。**此視窗自 2026-09-12 起於第 1 步 URL 去重之後、第 2 步標題去重之前先套用一次**（`NewsIngestService.ingest()`；對象為合併後 `score === null` 的代表項），漏斗內同一檢查保留為結構性保險（同一判定、目前不可達）：原本只在漏斗末端套用，標題去重時封存舊文仍在場（openai-blog feed 含整站 1192 篇），會吞掉其他來源的新文章、代表項落在舊文後再被視窗整則丟掉；提前後進入標題去重的候選由約 1690 則降至約 300 則。放在 URL 去重之後而非之前，是因為 URL 精確合併不可能誤吞，且低分 HN 投稿與同 URL 官方舊文合併後的交叉驗證豁免（第 3 步）須保留。另 `collect()` 逐來源印出「解析 N 則 → 過濾後 M 則」觀測 log。排序鍵 `加權分數 ↓ → 跨來源輪流分配序 ↑ → normalizedUrl ↑`，`publishedAt` 刻意不當跨來源決勝鍵（避免發文頻率高的來源系統性勝出）。無分數候選全綁在基準分 100，改依來源分組、逐輪各發 1 則、最多 3 輪，超過 3 輪者直接剔除；**組內依發表日期降冪**決定留哪 3 則（2026-09-02 起；先前沿用全域 URL 字母序，路徑帶月份縮寫的來源會讓 `/Aug/` 長期壓過 `/Sep/`，slug 隨機者則純屬隨機）。
 
 > 經過階段 A，候選收斂至**上限 50 則**（`convergeMax`，2026-08-04 由 25 → 30 → 35 → 50 逐步調高以緩解同來源上限的排擠效應；早期文件寫的 15～25 則已不適用），才進入唯一一次 LLM 呼叫。
 
@@ -278,7 +313,10 @@ Gemini 一次、不用向量檢索/embeddings）、**選重要而非選熱門**�
 
 - **殘留語意去重**：Gemini 一次看到全部標題，能認出階段 A（純結構/字串）漏掉的「其實是同一件事」並丟掉——這就替代了 embeddings 想做的事，不必另建向量檢索與快取。
 - **依「開發者重要性」挑至多 10 則**：明確要求 **重要 ≠ 熱門**——優先「會改變開發者怎麼做事」的內容：新工具/框架/版本釋出、breaking change、安全通報（CVE/advisory）、重大模型或 API 發布、標準與規範變動、重大 deprecation；壓低純爆紅的口水、drama、純觀點文。**分數只是提示、不是排序主鍵。** 發表天齡為軟性偏好：重要性相當時優先較新者，但天齡不改變一則內容是否重大（2026-09-02 新增，避免 LLM 把新鮮度當硬規則）。配額：**AI 不設下限與上限（2026-08-04 起，固定下限會讓 LLM 錨定）；DevOps/後端/前端預設合計 ≤3、AI 不足 7 則時放寬至 `10 − AI 則數`；非 AI 同一來源 ≤2**（程式端硬驗證，見上）。非 AI 的取捨依領域優先序（§4 開頭）：DevOps 優先，後端只看 **Node.js / Python**，前端以 **TypeScript** 為主（Vue/React 重要性最低）；**CSS 技巧/教學文一律不選**。
-- **每則精煉為繁中 70/500 格式**：以繁體中文輸出**標題 ≤70 字＋內容 ≤500 字**。內容須說清楚「發生什麼事＋為什麼對開發者重要」，**只依提供的 `title` 與 `summary` 節錄改寫，不得補充來源沒有的事實**。
+  - **判準結構（2026-09-12 限縮）**：prompt 把「算重大、應收錄」分成三類，要求 LLM 對每則候選各自核對（絕對判準，與候選池大小無關）——(1)【官方發布】新模型／新工具／新版本或重大能力更新、breaking change、安全通報、標準變動、重大 deprecation；(2)【技術深度內容】對某工具、模型、架構、工程實務的深入評測、實作經驗、架構或效能分析、技術爭論——**技術深度是必要條件、社群熱度是加分訊號**：來自 HN／Lobste.rs／Reddit 等高信度社群且分數或討論熱度異常高，只是「開發者關注度」的正面提示，無分數的一手部落格深文只要夠有技術深度也算；反過來，熱門而非技術的內容（純觀點、drama、業界八卦）即使分數再高也不算（同日 review 指正後由【社群熱度】改名：若把高熱度當必要條件，無分數的一手部落格深文三類皆不命中、又緊鄰「無分數純觀點文」排除句，會被系統性刷掉）；(3)【影響開發者的外部事件】監管政策／法規變動、主要服務或 API 的當機／事故與其事後報告——**即使沒有技術細節也算重大**，因為直接改變開發者可用的服務或必須遵守的規則（使用者決策 2026-09-12：**監管政策與服務當機刻意不排除**）。陣列歸屬：**`officialPicks`＝(1)＋(3)、`communityPicks`＝(2) 技術深度內容**——(1) 與 (3) 都是穩定的事實紀錄，不該被會隨話題退燒的社群內容擠掉名額；prompt 並明示**同時命中 (2) 或排除清單時以 (3) 為準**，否則 HN 高分帶入的當機事故會落入 `communityPicks`、在總數截斷時被丟掉（`curation-validate.ts` 合併時固定 `officialPicks` 在前，見 `curation.types.ts` `CurationLlmResponse` docstring 與 README 工程亮點第 1 點）。回應**只能有 `officialPicks` 與 `communityPicks` 兩個鍵、不得新增其他鍵**（三類判準對兩個陣列，防 LLM 自創 `externalPicks` 放第 (3) 類；`curation-parse.ts` 對額外鍵不擲錯、只回報鍵名，由 `NewsCurationService.curate()` 以 `logger.warn` 揭露）。
+  - **排除清單（不算重大、不應收錄）**：純活動／系列文預告或開場導言、純社群統計／公關類報告；廠商認證／合規公告、廠商的統計或威脅報告、行銷公關文；公司募資／估值、人事異動；訴訟／指控的提起與進行中進展不收，**已生效判決**若改變開發者可用的工具、授權或 API 則依 (3) 收錄；與軟體開發無關的趣聞（遊戲作品／玩法／移植、棋類、消費性硬體的銷售／需求／供應鏈、一般科技產業或商業新聞），即使在社群很熱門——遊戲引擎、圖形／效能等開發技術與硬體的技術評測／效能實測不在此列；低分數或無分數來源的純觀點文（有技術深度者屬 (2)）；CSS 教學。
+  - **限縮緣由**：2026-08-04 把「高信度社群任何形式內容（含觀點文、評論、討論串）」列為重大後，實測推出 OpenAI 被控竊取數學家成果、三家模型同時當機、Amiga 遊戲移植 Godot、Apple Mac Mini 需求、Bloomberg／CNBC 商業報導、圍棋名手擊敗 KataGo 等「熱門非重要」內容（§12 早已警告的風險）；其中「三家模型同時當機」依新判準仍算重大，屬第 (3) 類。prompt 仍**不加任何數字錨點**（§12 anchoring 教訓）；`curation-prompt.spec.ts` 斷言三類判準與排除清單的措辭存在，並斷言配額段除上限 10 外不含任何數字。
+- **每則精煉為繁中 70/500 格式**：以繁體中文輸出**標題 ≤70 字＋內容 ≤500 字**。內容須說清楚「發生什麼事＋為什麼對開發者重要」，**只依提供的 `title` 與 `summary` 節錄改寫，不得補充來源沒有的事實**（2026-09-12 起 prompt 明文要求，含「素材不足時寫短一點、不為湊字數推測」；先前僅文件宣稱、prompt 未寫——第 (3) 類候選常只有標題無摘要，幻覺面較大）。
 
 > 本步**只做選擇、去重與改寫摘要，不得產生或竄改連結/數字**（連結與分數一律由程式帶）。整個新聞流程對 LLM 的用量固定為「每日 1 次」，與候選數無關。
 
@@ -316,7 +354,7 @@ Gemini 一次、不用向量檢索/embeddings）、**選重要而非選熱門**�
     "123456789": { "intro": "……250 字簡介……", "introAt": "2026-07-08T22:00:05Z" },
   },
   "seenNews": [
-    { "url": "https://…", "seenAt": "2026-07-09T05:00:00Z" }, // 帶時間戳才能按保留期修剪
+    { "url": "https://…", "seenAt": "2026-07-09T05:00:00Z", "sourceId": "hn", "sources": ["hn", "openai-blog"], "domain": "ai" }, // 帶時間戳才能按保留期修剪；sourceId（代表項）／sources（合併後全部來源，避免交叉驗證項一律記給 hn 而低估一手來源）／domain 為選用欄位（2026-09-12 新增，供月度統計；舊條目無此欄仍可載入、不回填，去重仍只比 url）
   ], // 已推過的討論；載入與寫回時皆剔除 seenAt 超過 45 天者（2026-09-02 由 7 天改為 45 天，見 §4.4 第 6 步），避免陣列無限膨脹
 }
 ```
@@ -425,7 +463,7 @@ async function ensureIntro(repo, state) {
 
 ### 6.3 額度與品質
 
-- **快取是關鍵**：只在首次**進 top 10** 生成（簡介僅推播榜成員才需要）。穩定態每七天才有 0～數個新 repo → 遠低於 1,500 RPD；加上晨報每日一次策展呼叫，用量依舊極低。**冷啟動首次推播最多 10 個新進（≤10 次呼叫）**，也在免費額度內。
+- **快取是關鍵**：只在首次**進 top 10** 生成（簡介僅推播榜成員才需要）。穩定態每七天才有 0～數個新 repo → 遠低於 Lite 免費層 RPD（§2.4）；晨報每日一次策展呼叫走 Flash（5 RPM／20 RPD，§2.4），Lite 側用量依舊極低。**冷啟動首次推播最多 10 個新進（≤10 次呼叫）**，也在免費額度內。
 - README 截斷到 ~6k 字元即可涵蓋多數專案重點，控制 token 又保品質。
 
 ---
@@ -696,11 +734,11 @@ bootstrap();
 
 ## 10. LLM 使用（Gemini）
 
-- **三種呼叫**：(1) 每個**新進榜** repo 一次 250 字簡介（生成後快取，竄升時重用、不重呼叫）；(2) **榜單日**一段「本次變化」TL;DR（一句話變化摘要，放封面 embed）；(3) **每日新聞策展一次**（見 §4.4 階段 B）——在同一次呼叫內完成殘留語意去重 + 依「開發者重要性」挑至多 10 則 + 每則精煉為**繁中標題（≤70 字）＋內容（≤500 字）**（素材為程式帶入的 title 與 feed 摘要節錄）。
+- **三種呼叫**（型號分流見 §2.4）：(1) 每個**新進榜** repo 一次 250 字簡介（`GEMINI_MODEL_BOARD`，Flash-Lite；生成後快取，竄升時重用、不重呼叫）；(2) **榜單日**一段「本次變化」TL;DR（`GEMINI_MODEL_BOARD`，Flash-Lite；一句話變化摘要，放封面 embed）；(3) **每日新聞策展一次**（`GEMINI_MODEL_NEWS`，Flash；見 §4.4 階段 B）——在同一次呼叫內完成殘留語意去重 + 依「開發者重要性」挑至多 10 則 + 每則精煉為**繁中標題（≤70 字）＋內容（≤500 字）**（素材為程式帶入的 title 與 feed 摘要節錄）。
 - **新聞策展固定每日 1 次、不用 embeddings**：跨來源去重主力是零 LLM 的 target-URL 正規化（§4.4 階段 A）；殘留重複交給那唯一一次策展呼叫順手處理。**不建向量檢索/embeddings**——素材小、context-stuffing 即可，一次看到全部候選標題就能做完 embeddings 想做的事。用量與候選數無關。
 - **選重要而非選熱門**：策展 prompt 明講「重要 ≠ 熱門」，優先會改變開發者做事方式的內容（新工具/版本、breaking change、安全通報、重大模型/API 發布、deprecation），壓低純爆紅口水/觀點文；分數只當提示、非排序主鍵。
 - **防幻覺**：prompt 明確要求「只依提供資料、不得杜撰數字/連結」；星數與連結一律由程式提供、不經 LLM（新聞策展同理，只選擇/去重/依 title+summary 改寫繁中摘要，不造連結、分數或來源沒有的事實）。
-- **退避**：429 用指數退避 + jitter；單一 repo 簡介失敗不阻斷整批（該卡改顯示 description 當備援）；策展呼叫失敗時退回「純程式排序（分數 + 交叉驗證/tier + 榜單相關性）取前 10」當備援，不阻斷晨報——此時每則僅有「原文標題＋連結」（無繁中 70/500 改寫），屬可接受的降級。
+- **退避**：429 用指數退避 + jitter；單一 repo 簡介失敗不阻斷整批（該卡改顯示 description 當備援）；策展 Flash 呼叫失敗時先以 Lite 用同一 prompt 單次重試（§2.4），仍失敗才退回「純程式排序（分數 + 交叉驗證/tier + 榜單相關性）取前 10」當備援並發紅色降級告警，不阻斷晨報——此時每則僅有「原文標題＋連結」（無繁中 70/500 改寫），屬可接受的降級。
 
 ---
 
@@ -778,8 +816,8 @@ bootstrap();
 
 **F4 `004-news-ingest` — 新聞來源與零 LLM 漏斗（階段 A）**
 
-- 範圍：`news-sources.ts` 設定檔 + schema 驗證 + tier 加權、四種抓取器（`hn-algolia` / `reddit-weekly` / `rss` / `github-releases`，含 User-Agent/條件式請求/0 筆告警、releases 過濾 pre-release 與純 patch）、正規化為統一結構、階段 A 漏斗（**target-URL 正規化去重、標題 Jaccard 補漏**、分數門檻、交叉驗證、榜單相關性加權、`seenNews` 7 天修剪）；上線前逐一驗證 feed URL 可用（§12）。
-- **本 Feature 待定已定案（F4 clarify 2026-07-16）**：新聞領域分類法**比照榜單合併前後端**——新聞 `domain` 收斂為 `ai | devops | frontend-backend | cross`（**保留 `devops`**：配額與三個 DevOps 專屬來源不變，憲章 Scope note）。`cross` 來源關鍵字歸類的前後端項一律歸入單一 `frontend-backend` 桶，不再細分 backend/frontend。決策全文見 `specs/004-news-ingest/spec.md` Clarifications Session 2026-07-16 與 FR-027／FR-028。
+- 範圍：`news-sources.ts` 設定檔 + schema 驗證 + tier 加權、四種抓取器（`hn-algolia` / `reddit-weekly` / `rss` / `github-releases`，含 User-Agent/條件式請求/0 筆告警、releases 過濾 pre-release 與純 patch）、正規化為統一結構、階段 A 漏斗（**target-URL 正規化去重、標題 Jaccard 補漏**、分數門檻、交叉驗證、榜單相關性加權、`seenNews` 修剪（原 7 天，2026-09-02 起 45 天））；上線前逐一驗證 feed URL 可用（§12）。
+- **本 Feature 待定已定案（F4 clarify 2026-07-16）**：新聞領域分類法**比照榜單合併前後端**——新聞 `domain` 收斂為 `ai | devops | frontend-backend | cross`（**保留 `devops`**：配額不變、DevOps 專屬來源至少三個，憲章 Scope note）。`cross` 來源關鍵字歸類的前後端項一律歸入單一 `frontend-backend` 桶，不再細分 backend/frontend。決策全文見 `specs/004-news-ingest/spec.md` Clarifications Session 2026-07-16 與 FR-027／FR-028。
   > **主題降噪規則歸屬**：「後端只收 Node.js/Python、前端以 TypeScript 為主、不收 CSS 技巧/教學」等**不對稱降噪規則**留在**階段 B（F6 單次 LLM 策展）外顯執行**（§4.4 階段 B 已明列），本 Feature 階段 A **不以關鍵字硬篩內容主題**——語意判斷交 LLM 更準（避免把重要的 CSS 引擎/框架 release 誤殺），且不擴大 F4 範圍。前後端內容於階段 A 一律先歸入 `frontend-backend` 候選，交由階段 B 依開發者重要性取捨。
   > **憲章 III 配額措辭審視結論：不需修訂**。合併僅改**內部 `domain` 列舉與 `cross` 歸類目標**（實作細節，憲章未列舉）；使用者可見的**配額「AI ≥4；DevOps／後端／前端合計 ≤2」與領域聚焦內容政策皆不變**（前後端仍是內容層面的真實類別、降噪續由 §4.4 階段 B 外顯執行），故無語意矛盾、無需版本升版。§4.2 型別與 Tier 3 標記、§4.3 歸類說明已同步為 `frontend-backend`。
 - 驗收（F3 + F4 = M2）：跨來源同一則新聞只出現一筆（`sources[]` 正確合併）；候選收斂至約 15～25 則。
@@ -816,11 +854,12 @@ bootstrap();
 - **週指標變化慢**：正好用七天節奏推榜單——尺是七日指標，節奏亦取七天，兩次比較的視窗不重疊，且避免每天微幅洗牌洗版。（洗版控制主要靠**七天節奏**與**視窗僅 10 席**；`RANK_JUMP_THRESHOLD` 已定為 1，見 §5.2，故它本身幾乎不濾任何移動。）
 - **節奏解耦**：榜單七天一次由 `lastBoardPushAt` 計時（非 cron，門檻 162h），漏跑下次補推即可；新聞每日晨報由雙 cron + `lastNewsPushAt` guard 保證「每日恰一次」。
 - **晨報跨來源重複**：主力去重是 **target-URL 正規化**，正確性取決於目標 URL 抽取與轉址處理（`t.co`/短網址/UTM）——這幾處要有測試；無法歸一的殘留重複，交由每日唯一那次策展呼叫清除。避免「同一則新聞被 HN + Reddit 各報一次」。
-- **晨報只挑熱門的風險**：策展 prompt 要明確「重要 ≠ 熱門」，否則會被高分口水文洗版；分數只當提示。定期回看選出的新聞是否真的對開發者有用，據以調 prompt。
+- **晨報只挑熱門的風險**：策展 prompt 要明確「重要 ≠ 熱門」，否則會被高分口水文洗版；分數只當提示。定期回看選出的新聞是否真的對開發者有用，據以調 prompt。2026-09-12 依實測限縮判準（第 (2) 類改為【技術深度內容】：技術深度是必要條件、社群熱度只是加分訊號；明列排除清單；監管政策與服務當機另立第 (3) 類「影響開發者的外部事件」，與官方發布同歸 `officialPicks`、同時命中 (2) 時以 (3) 為準），見 §4.4 階段 B。
+- **社群平台過濾是全域規則**：§4.4 第 0 點 (b) 的 host 過濾套用於全部來源的候選、不限 HN。僅在 X／Mastodon 發布的一手公告若只由 HN 投稿帶入，會在漏斗最前端整則消失（已知且接受，觀察兩週）；日後若新增以這些 host 為目標連結的來源會被無聲全滅——逐來源 log 若出現「解析 N 則、社群過濾後大量減少」，就到 `social-hosts.ts` 加 allowlist 或把過濾限定於 `hn`。
 - **prompt 內具體數字會讓 LLM 錨定（anchoring）**：2026-08-04 實測發現，prompt 裡寫「AI 下限 N 則」，模型會把它當成目標產出量而非下限——`MIN_AI` 從 5 調到 7 後連續 5 天逐日精確命中 7、一則不差，10 則上限形同虛設。教訓：配額類指示避免在 prompt 中放入具體數字，改用定性描述（「合格皆收、不要提早停手」），數量上下限交給程式端的硬驗證管線把關。
 - **狀態一致性**：diff 前後對同一份狀態讀寫；job 失敗時不要寫入半套狀態（成功推播後才存回）。新聞推播成功後盡快 commit `lastNewsPushAt`，縮小補跑 cron 重推的風險窗（見 §8）。
 - **簡介幻覺**：嚴格「只依 README」；星數/連結不經 LLM。
-- **Gemini**：429 退避；只送公開資料；策展呼叫失敗退回純程式排序取前 6，不阻斷晨報。
+- **Gemini**：429 退避；只送公開資料。型號依資料流分流（榜單簡介／TL;DR 走 Flash-Lite、每日策展走 Flash，§2.4）——**Flash 側免費層僅 5 RPM／20 RPD**（2026-09-12 確認），正式排程每日 1～4 次呼叫餘裕充足，但本機手動執行吃同一份 RPD、一天十幾次就用光（09-02 撞限的合理解釋），觀察窗兩週；策展 Flash 失敗先以 Lite 同 prompt 單次重試，仍失敗才退回純程式排序取前 10（2026-07-19 起配額 10）並發紅色降級告警（此前降級無告警），不阻斷晨報；型號 ID 可能無預警下架，404 須印出狀態碼，勿誤判為 429。
 - **Actions cron UTC 且可能延遲/跳過 / 60 天停用**：對照表要正確；晨報排**雙離峰 cron（`:07`/`:37`）**＋`lastNewsPushAt` guard 抗漏跑（見 §8）；每次 commit 狀態保活。
 - **RSS 路徑會變**：上線前逐一確認；抓取帶 User-Agent 與條件式請求。來源集中在 `news-sources.ts`（§4.2），feed 壞掉時停用/替換只改設定檔；「解析到 0 筆」發告警並帶來源 `id`。官方公告類 feed（如 Anthropic）不一定有穩定 RSS，上線前逐一驗證、沒有就先不收。
 

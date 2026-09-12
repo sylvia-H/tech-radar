@@ -1,6 +1,6 @@
 import { Logger } from '@nestjs/common';
 import { LlmService } from '../llm/llm.service';
-import { LlmError } from '../llm/llm.types';
+import { GEMINI_MODEL_BOARD, GEMINI_MODEL_NEWS, LlmError } from '../llm/llm.types';
 import { NewsCandidate } from '../news/news.types';
 import { NewsCurationService } from './curation.service';
 
@@ -61,6 +61,8 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
       expect(candidates.some((c) => c.originalUrl === item.url)).toBe(true);
     }
     expect(generate).toHaveBeenCalledTimes(1);
+    // 每日晨報策展指定 Flash 型號（2026-09-12 起）；簡介與榜單 TL;DR 不傳 model、走預設 Lite。
+    expect(generate).toHaveBeenCalledWith(expect.any(String), { model: GEMINI_MODEL_NEWS });
   });
 
   it('殘留語意重複輸入＋mock 只選一次 → 最終該事件 ≤1（SC-006）', async () => {
@@ -139,29 +141,152 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
     expect(result.items).toHaveLength(2);
     expect(result.items.every((it) => it.domain !== 'ai')).toBe(true);
   });
-});
 
-describe('NewsCurationService.curate（US2 降級路徑）', () => {
-  const cases: Array<[string, () => Promise<string>]> = [
-    ['LlmError(exhausted)', () => Promise.reject(new LlmError('exhausted'))],
-    ['LlmError(empty)', () => Promise.reject(new LlmError('empty'))],
-    ['不可解析內容', () => Promise.resolve('這不是 JSON')],
-  ];
-
-  it.each(cases)('%s → 回 degraded:true digest、未擲錯、logger.warn 被呼叫（FR-011/014、SC-004）', async (_label, mockImpl) => {
+  it('回應含額外鍵 externalPicks → logger.warn 含鍵名與長度、不降級、只回兩鍵內的項目（2026-09-12 防禦）', async () => {
     const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
-    const candidates: NewsCandidate[] = [makeCandidate({ originalUrl: 'https://a.com', weightedScore: 200 })];
-    const { service } = makeService(jest.fn().mockImplementation(mockImpl));
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ originalUrl: 'https://a.com/official', domain: 'ai', title: 'Official' }),
+      makeCandidate({ originalUrl: 'https://b.com/external', domain: 'ai', title: 'External event' }),
+    ];
+    const raw = JSON.stringify({
+      officialPicks: [{ ref: 0, title: '官方發布', content: '內容' }],
+      communityPicks: [],
+      externalPicks: [{ ref: 1, title: '外部事件', content: '內容' }],
+    });
+    const { service } = makeService(jest.fn().mockResolvedValue(raw));
 
     const result = await service.curate(candidates, new Set());
 
+    expect(result.degraded).toBe(false);
+    expect(result.items.map((it) => it.url)).toEqual(['https://a.com/official']);
+    expect(warnSpy).toHaveBeenCalledTimes(1);
+    const warnMessage = warnSpy.mock.calls[0][0] as string;
+    expect(warnMessage).toContain('externalPicks');
+    expect(warnMessage).toContain('1 則');
+    expect(warnMessage).not.toContain('外部事件');
+    warnSpy.mockRestore();
+  });
+});
+
+describe('NewsCurationService.curate（US2 降級路徑）', () => {
+  // 第三欄：預期 generate 呼叫次數——LlmError 會先換 Lite 重試一次（兩次皆失敗才降級，2026-09-12），
+  // 解析失敗則不換型號、只呼叫一次。
+  const cases: Array<[string, () => Promise<string>, number]> = [
+    ['LlmError(exhausted)', () => Promise.reject(new LlmError('exhausted')), 2],
+    ['LlmError(empty)', () => Promise.reject(new LlmError('empty')), 2],
+    ['不可解析內容', () => Promise.resolve('這不是 JSON'), 1],
+  ];
+
+  it.each(cases)('%s → 回 degraded:true digest、未擲錯、logger.warn 被呼叫（FR-011/014、SC-004）', async (_label, mockImpl, expectedCalls) => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const candidates: NewsCandidate[] = [makeCandidate({ originalUrl: 'https://a.com', weightedScore: 200 })];
+    const { service, generate } = makeService(jest.fn().mockImplementation(mockImpl));
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(generate).toHaveBeenCalledTimes(expectedCalls);
     expect(result.degraded).toBe(true);
     expect(result.items).toEqual([
-      { title: 'Original Title', content: null, url: 'https://a.com', domain: 'ai', sourceCount: 1, weightedScore: 200, degraded: true },
+      { title: 'Original Title', content: null, url: 'https://a.com', domain: 'ai', sourceId: 'hn', sources: ['hn'], sourceCount: 1, weightedScore: 200, degraded: true },
     ]);
     expect(warnSpy).toHaveBeenCalled();
     const warnMessage = warnSpy.mock.calls[0][0] as string;
     expect(warnMessage).not.toMatch(/這不是 JSON|prompt/i);
+    warnSpy.mockRestore();
+  });
+});
+
+describe('NewsCurationService.curate（型號降級重試：Flash 失敗改以 Lite 重試一次，2026-09-12）', () => {
+  const candidates: NewsCandidate[] = [
+    makeCandidate({ originalUrl: 'https://a.com/ai1', domain: 'ai', title: 'AI news 1', weightedScore: 200 }),
+  ];
+  const okRaw = JSON.stringify({ officialPicks: [{ ref: 0, title: '繁中標題', content: '繁中內容' }], communityPicks: [] });
+
+  const llmErrorCases: Array<[string, LlmError]> = [
+    ['exhausted（429 退避耗盡）', new LlmError('exhausted')],
+    ['error（型號 404 下架等不可重試錯誤）', new LlmError('error')],
+  ];
+
+  it.each(llmErrorCases)(
+    'Flash 擲 LlmError(%s)、Lite 成功 → degraded:false、同一 prompt 依序送 Flash→Lite、warn 與成功 log 帶 Lite 型號',
+    async (_label, llmError) => {
+      const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+      const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+      const generate = jest.fn().mockRejectedValueOnce(llmError).mockResolvedValueOnce(okRaw);
+      const { service } = makeService(generate);
+
+      const result = await service.curate(candidates, new Set());
+
+      expect(result.degraded).toBe(false);
+      expect(result.items.map((it) => it.url)).toEqual(['https://a.com/ai1']);
+      expect(generate).toHaveBeenCalledTimes(2);
+      expect(generate.mock.calls[0][1]).toEqual({ model: GEMINI_MODEL_NEWS });
+      expect(generate.mock.calls[1][1]).toEqual({ model: GEMINI_MODEL_BOARD });
+      expect(generate.mock.calls[1][0]).toBe(generate.mock.calls[0][0]);
+      expect(warnSpy).toHaveBeenCalledTimes(1);
+      const warnMessage = warnSpy.mock.calls[0][0] as string;
+      expect(warnMessage).toContain('Lite');
+      expect(warnMessage).toContain(GEMINI_MODEL_BOARD);
+      expect(warnMessage).toContain(llmError.reason);
+      const successLog = logSpy.mock.calls.map((c) => c[0] as string).find((m) => m.includes('新聞策展完成'));
+      expect(successLog).toBeDefined();
+      expect(successLog).toContain(GEMINI_MODEL_BOARD);
+      expect(successLog).toContain('降級');
+      warnSpy.mockRestore();
+      logSpy.mockRestore();
+    },
+  );
+
+  it('Flash 與 Lite 皆擲 LlmError → degraded:true（fallbackDigest）、generate 呼叫 2 次', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generate = jest.fn()
+      .mockRejectedValueOnce(new LlmError('exhausted'))
+      .mockRejectedValueOnce(new LlmError('exhausted'));
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(true);
+    expect(result.items).toHaveLength(1);
+    expect(result.items[0].degraded).toBe(true);
+    expect(generate).toHaveBeenCalledTimes(2);
+    expect(generate.mock.calls[0][1]).toEqual({ model: GEMINI_MODEL_NEWS });
+    expect(generate.mock.calls[1][1]).toEqual({ model: GEMINI_MODEL_BOARD });
+    expect(warnSpy).toHaveBeenCalledTimes(2);
+    warnSpy.mockRestore();
+  });
+
+  it('Flash 成功 → generate 只呼叫 1 次（Flash 型號）、不 warn、成功 log 帶 Flash 型號且無「降級」', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+    const generate = jest.fn().mockResolvedValue(okRaw);
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(false);
+    expect(generate).toHaveBeenCalledTimes(1);
+    expect(generate).toHaveBeenCalledWith(expect.any(String), { model: GEMINI_MODEL_NEWS });
+    expect(warnSpy).not.toHaveBeenCalled();
+    const successLog = logSpy.mock.calls.map((c) => c[0] as string).find((m) => m.includes('新聞策展完成'));
+    expect(successLog).toContain(GEMINI_MODEL_NEWS);
+    expect(successLog).not.toContain('降級');
+    warnSpy.mockRestore();
+    logSpy.mockRestore();
+  });
+
+  it('Flash 回非 JSON（解析失敗）→ generate 只呼叫 1 次、直接降級，不因解析失敗換型號', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generate = jest.fn().mockResolvedValue('這不是 JSON');
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(true);
+    expect(generate).toHaveBeenCalledTimes(1);
+    expect(generate).toHaveBeenCalledWith(expect.any(String), { model: GEMINI_MODEL_NEWS });
+    expect(warnSpy).toHaveBeenCalledTimes(1);
+    expect(warnSpy.mock.calls[0][0] as string).not.toContain('Lite');
     warnSpy.mockRestore();
   });
 });
