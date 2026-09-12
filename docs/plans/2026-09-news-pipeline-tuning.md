@@ -43,15 +43,16 @@
 
 ## 分支 2：`chore/news-sources-2026-09`（純設定檔）
 
-- [ ] 停用 `vue-blog`（feed 最新 741 天前，比照 web-dev 註記「停用觀察」）。
-- [ ] `simonwillison` URL 改 `https://simonwillison.net/atom/entries/`（註記 blogmark 重複推播證據：
+- [x] 停用 `vue-blog`（feed 最新 741 天前，比照 web-dev 註記「停用觀察」）。
+- [x] `simonwillison` URL 改 `https://simonwillison.net/atom/entries/`（註記 blogmark 重複推播證據：
       2026-09-05 collusion.wiki 與 rogue-agent-wikis 同事兩推）。
-- [ ] `cloudflare-blog` tier 2 → 3（註記：117 則推播中佔 24 則、含公關文）。
-- [ ] 新增 `github-changelog-copilot`（`https://github.blog/changelog/label/copilot/feed/`，ai，tier 2）。
-- [ ] 新增 `kubernetes-blog`（`https://kubernetes.io/feed.xml`，devops，tier 2）。
-- [ ] 上線前以 `NewsHttp` 同一 UA 實測兩個新 feed 200 且量體正常；`news-source.schema.spec` 通過。
-- [ ] dev-guide §4.2 三層表格同步；一個來源一個 commit。
-- [ ] Opus review → merge --no-ff → push。
+- [x] `cloudflare-blog` tier 2 → 3（註記：117 則推播中佔 24 則、含公關文）。review 指出 Tier 3 無分數候選加權 50 排在所有
+      Tier 1/2 之後，候選池滿時整批截掉、近似停用；已據實改寫設定檔註解、dev-guide 與 README。
+- [x] 新增 `github-changelog-copilot`（`https://github.blog/changelog/label/copilot/feed/`，ai，tier 2）。
+- [x] 新增 `kubernetes-blog`（`https://kubernetes.io/feed.xml`，devops，tier 2）。
+- [x] 上線前以 `NewsHttp` 同一 UA 實測兩個新 feed 200 且量體正常（copilot 10 筆、k8s 50 筆、simon entries 15 筆）；`news-source.schema.spec` 通過。
+- [x] dev-guide §4.2 三層表格同步；一個來源一個 commit。
+- [x] Opus review（10 findings：F1 Tier 3 實際效果、F2 前後端文章來源歸零、F3 simon 代價未記，餘為文件一致性）→ 全部採納、以文件與註解修正 → merge --no-ff → push。
 
 ## 分支 3：`fix/hn-noise`（HN 候選品質）
 
@@ -64,6 +65,8 @@ twitter/mastodon 貼文（摘要 null）、2 則 Ask/Tell HN；同一批未入�
       Mastodon 實例（`mathstodon.xyz`、`fosstodon.org`、`hachyderm.io`、`mastodon.social`）→ 丟；
       清單獨立為資料檔（比照 `news-domain-keywords.ts`，增刪不動邏輯）。
 - [ ] 單元測試：舊年份尾綴、社群 host、視窗邊界。
+- [ ] 回測第 1 輪保底：HN 席數是唯一變數（目前 19 個無分數來源 → HN ≤ 31 席才成立，09-12 實測 24 席）；視窗
+      縮到 4 天後以逐來源 log 確認 HN 席數下降、Tier 3 來源是否重新可見。
 - [ ] dev-guide §4.3／§4.4 同步。
 - [ ] Opus review → merge --no-ff → push。
 

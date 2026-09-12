@@ -4,7 +4,8 @@ import { validateNewsSources } from './news-source.schema';
 /**
  * 新聞來源的**唯一清單**（憲章 IV、FR-001）。增、刪、修來源**只改此檔**，不動任何抓取／
  * 漏斗程式碼。初始清單依 dev-guide §4.2 三層來源；前後端已合併為 `frontend-backend`
- * （F4 clarify 2026-07-16），保留三個 DevOps 專屬來源（憲章 v1.2.0 Scope note）。
+ * （F4 clarify 2026-07-16），保留**至少三個** DevOps 專屬來源（憲章 v1.2.0 Scope note 的下限；
+ * 2026-09-12 起為 6 個啟用，`news-source.schema.spec` 斷言的也是「至少三個」）。
  *
  * DeepMind 已改用官方 basic feed 啟用；Anthropic 仍無公認官方 RSS，維持 `enabled: false`
  * （dev-guide §12「沒有就先不收」——不以第三方社群中轉站替代，避免把不可控節點放進每日關鍵路徑）。
@@ -15,7 +16,10 @@ import { validateNewsSources } from './news-source.schema';
  * 以 `publishedAt` 決勝，見 funnel.ts `compareCandidates`）。無分數候選之間改採**跨來源輪流分配**
  * （`interleaveNullScoreBySource`，2026-08-04 新增）：每來源每輪最多 1 則、最多 `maxNullScorePerSource`
  * 輪（預設 3），保證只要候選池（`convergeMax = 50`）扣掉有分數候選後的名額 ≥ 當日活躍來源數，
- * 每個來源至少有 1 則進候選池，不會因 `normalizedUrl` 字母序偏後就整批出局。另有新鮮度視窗
+ * 每個來源至少有 1 則進候選池，不會因 `normalizedUrl` 字母序偏後就整批出局（此保證僅在**同 tier
+ * 權重**的無分數來源之間成立：Tier 3 加權後為 100 × 0.5 = 50，主排序鍵 `weightedScore ↓` 會把它們排在
+ * 所有 Tier 1/2 無分數候選之後，供給充足的日子會被 `convergeMax` 整批截掉；HN 席數則是第 1 輪保底
+ * 的唯一變數，目前 19 個無分數來源 → HN ≤ 31 席才成立）。另有新鮮度視窗
  * `freshnessWindowDays`（預設 30 天，`publishedAt` 為原文真實發表日、超出視窗即不入池，避免
  * 封存舊文被討論區重新提及而混入候選集；HN 不受此視窗限制，見 `DEFAULT_FUNNEL_CONFIG`）。單日
  * 產出上百筆的來源（如 arXiv 分類 RSS）仍會把候選集塞滿低品質內容、擠壓其餘來源在 3 輪上限內的
@@ -29,13 +33,25 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   { id: 'lobsters-devops', type: 'rss', url: 'https://lobste.rs/t/devops.rss', domain: 'devops', tier: 1 },
   { id: 'lobsters-programming', type: 'rss', url: 'https://lobste.rs/t/programming.rss', domain: 'cross', tier: 1 },
   { id: 'reddit-localllama', type: 'reddit-weekly', url: 'https://www.reddit.com/r/LocalLLaMA/top/.rss?t=week', domain: 'ai', tier: 1 },
-  { id: 'simonwillison', type: 'rss', url: 'https://simonwillison.net/atom/everything/', domain: 'ai', tier: 1 },
+  // simonwillison：2026-09-12 由 `atom/everything/` 改為 `atom/entries/`（純文章，每週約 2 篇）。everything
+  // feed 含 blogmark 與 quotation，`link` 指向 simonwillison.net 自身而非原文，URL 去重接不上其他來源的同一
+  // 篇，造成同一件事兩推（2026-09-05 晨報同時推了 collusion.wiki 與 Simon 的 rogue-agent-wikis blogmark；
+  // 09-12 候選池 reddit「Hugging Face security.txt」與 Simon「Quoting huggingface.co/security.txt」亦並存）。
+  // 重要 blogmark 的原文幾乎都同時在 HN 上，預期不損失訊號（待驗證假設）。代價：量體由每週十餘則降到
+  // 約 2 則、扣掉 30 天視窗內重複供給後新候選約每月 8 則，AI 側候選組成往一手廠商公告偏移。覆測時點：
+  // 觀察兩週，若 AI 候選中本來源趨近 0 且重要事件僅靠 HN 命中，再評估回退或在 fetcher 層抽 blogmark 的
+  // 原文 URL。
+  { id: 'simonwillison', type: 'rss', url: 'https://simonwillison.net/atom/entries/', domain: 'ai', tier: 1 },
 
   // ── Tier 2：高精準一手（無社群分數 → 漏斗不設分數門檻） ─────────────────
   { id: 'gh-nodejs', type: 'github-releases', url: 'https://github.com/nodejs/node/releases.atom', domain: 'frontend-backend', tier: 2 },
   { id: 'gh-cpython', type: 'github-releases', url: 'https://github.com/python/cpython/releases.atom', domain: 'frontend-backend', tier: 2 },
   { id: 'gh-typescript', type: 'github-releases', url: 'https://github.com/microsoft/TypeScript/releases.atom', domain: 'frontend-backend', tier: 2 },
   { id: 'gh-kubernetes', type: 'github-releases', url: 'https://github.com/kubernetes/kubernetes/releases.atom', domain: 'devops', tier: 2 },
+  // Kubernetes 官方 blog（2026-09-12 新增，實測 200／50 筆、每週約 4 篇）：版本功能文章（如 v1.37 各
+  // feature graduation），與 gh-kubernetes releases 互補——releases 經 pre-release／patch 過濾後每月僅約
+  // 1 則，blog 才有「哪些能力改變了」的內容。
+  { id: 'kubernetes-blog', type: 'rss', url: 'https://kubernetes.io/feed.xml', domain: 'devops', tier: 2 },
   { id: 'openai-blog', type: 'rss', url: 'https://openai.com/news/rss.xml', domain: 'ai', tier: 2 },
   // DeepMind 官方未公開宣傳的 basic feed（2026-08-03 實測 200／100 筆），取代原本停用的
   // `blog/rss.xml`。
@@ -50,22 +66,34 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   //
   // Anthropic：2026-08-03 覆測 `www.anthropic.com/rss.xml` 仍非公認端點，維持停用。
   { id: 'anthropic-news', type: 'rss', url: 'https://www.anthropic.com/rss.xml', domain: 'ai', tier: 2, enabled: false },
-  // 領域補充（2026-08-03 實測皆 200、量體正常）。
-  { id: 'vue-blog', type: 'rss', url: 'https://blog.vuejs.org/feed.rss', domain: 'frontend-backend', tier: 2 },
+  // vue-blog：2026-09-12 實測 feed 最新一篇為 741 天前（`feed.xml`、`news.vuejs.org` 替代端點皆不可用），
+  // 抓取成功但形同啞源、不觸發 0 筆告警，與 web-dev 同型。先停用觀察（§4.3），非移除。代價：前後端啟用
+  // 來源自此全為 GitHub Releases feed（gh-vue 為 Tier 3，供給充足時進不了候選池，見檔頭），文章類供給改由
+  // hn／lobsters-programming 的 cross 關鍵字歸類承擔；觀察兩週後決定是否補一個前後端文章來源。
+  { id: 'vue-blog', type: 'rss', url: 'https://blog.vuejs.org/feed.rss', domain: 'frontend-backend', tier: 2, enabled: false },
   // web-dev：2026-08-04 複查發現 `lastBuildDate` 停在 2026-05-29（逾兩個月未更新），抓取雖成功
   // 但形同啞源、對每日候選集無實質貢獻，且不會觸發「解析到 0 筆」告警（非抓取失敗，是內容過期）。
   // 先停用觀察（§4.3），非移除；日後若確認官方已停更或換了端點再議。
   { id: 'web-dev', type: 'rss', url: 'https://web.dev/feed.xml', domain: 'frontend-backend', tier: 2, enabled: false },
-  { id: 'cloudflare-blog', type: 'rss', url: 'https://blog.cloudflare.com/rss/', domain: 'devops', tier: 2 },
   { id: 'cncf-blog', type: 'rss', url: 'https://www.cncf.io/feed/', domain: 'devops', tier: 2 },
   // GitHub 官方研究／實驗性功能部落格，屬第一方公告，與 openai-blog/deepmind-blog 同等級
   // （2026-08-04 由 Tier 3 升級：先前沿用新增時的預設分類，未重新檢視其實為官方一手來源）。
   { id: 'github-next', type: 'rss', url: 'https://githubnext.com/rss.xml', domain: 'ai', tier: 2 },
+  // GitHub 官方 Changelog 的 Copilot 標籤（2026-09-12 新增，實測 200／10 筆、每週約 6 篇）：一手、直接
+  // 命中「新工具／能力更新」（Copilot code review、agents、usage metrics）。2026-09-12 覆測 30 餘個候補
+  // feed 後唯二值得加入者之一（另一為 kubernetes-blog）；Anthropic 五個候選端點皆 404，維持不收。
+  { id: 'github-changelog-copilot', type: 'rss', url: 'https://github.blog/changelog/label/copilot/feed/', domain: 'ai', tier: 2 },
 
   // ── Tier 3：選配實驗（更高門檻、更低權重；可隨時砍不動 code） ────────────
   { id: 'gh-vue', type: 'github-releases', url: 'https://github.com/vuejs/core/releases.atom', domain: 'frontend-backend', tier: 3 },
   { id: 'gh-react', type: 'github-releases', url: 'https://github.com/facebook/react/releases.atom', domain: 'frontend-backend', tier: 3 },
   { id: 'thenewstack', type: 'rss', url: 'https://thenewstack.io/feed/', domain: 'devops', tier: 3 },
+  // cloudflare-blog：2026-09-12 由 Tier 2 降級。2026-08-27～09-12 推播 117 則中佔 24 則（20%），內含 FedRAMP
+  // 認證、日食流量報告、blog 改用 em-dash 等公關文；它是廠商 blog 而非官方標準／版本發布，與 openai-blog
+  // 同基準分並不合理。降 Tier 3 的實際效果：加權 100 × 0.5 = 50，排在所有 Tier 1/2 無分數候選之後，
+  // 供給充足的日子（候選池達 convergeMax）進不了 LLM、**近似停用**；供給不足的日子才以 tier3 標籤進池。
+  // Workers／後量子等真正重要的文章要靠與 HN 投稿同 URL 合併、由 HN 代表項（Tier 1）帶進候選池。
+  { id: 'cloudflare-blog', type: 'rss', url: 'https://blog.cloudflare.com/rss/', domain: 'devops', tier: 3 },
   // 2026-07-19 實測：GitHub Actions runner IP 持續遭 Reddit 擋 403/429（重試 3 次仍失敗），
   // 非單次抖動。四者皆 Tier 3、社群訊號可由其他來源替代，先停用觀察，不刪除設定（§4.3）。
   // 2026-08-03：曾評估改走第三方 Reddit RSS 代理繞過，但候選節點 `pullfeed.co` 實測 DNS 不存在；

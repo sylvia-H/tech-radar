@@ -156,7 +156,7 @@ GET /search/repositories?q=(nextjs OR react OR svelte OR nodejs OR golang) creat
 
 - 回傳是**當前總星數**，配合 `created:>7天前` 即等於「一週內誕生且已累積不少星」=「新崛起」，零狀態。
 
-> **榜單為何沒有 DevOps 組**（2026-07-15 移除，F2 M1 驗收實測）：DevOps 榜的候選幾乎只靠 `docker` 命中，而 `docker` 是**部署方式**標籤、不是領域標籤——self-hosted 應用幾乎都貼，導致 `docker-steam-headless`（Steam 遊戲容器）、`docker-mailserver`（郵件伺服器）、`teledrive`（React+FastAPI 檔案管理器，還因 DevOps 優先序較高而被自前後端榜錯置）全數誤收，**歸類正確率 0/3**；且其週增星僅 259/136/25，對比 AI 榜的 13,195/7,129 根本排不上號。僅收窄 `docker` 不足以解決（`docker-mailserver` 真的貼了 `kubernetes`；「能跑在 k8s 上」與「是 k8s 工具」在零 LLM 的純關鍵字分類下無法區分），故直接移除領域。**此決策僅限榜單——§4 的新聞 DevOps 配額與三個專屬來源全數保留**，因為「DevOps 沒有爆紅 repo」不等於「沒有值得讀的 DevOps 消息」。
+> **榜單為何沒有 DevOps 組**（2026-07-15 移除，F2 M1 驗收實測）：DevOps 榜的候選幾乎只靠 `docker` 命中，而 `docker` 是**部署方式**標籤、不是領域標籤——self-hosted 應用幾乎都貼，導致 `docker-steam-headless`（Steam 遊戲容器）、`docker-mailserver`（郵件伺服器）、`teledrive`（React+FastAPI 檔案管理器，還因 DevOps 優先序較高而被自前後端榜錯置）全數誤收，**歸類正確率 0/3**；且其週增星僅 259/136/25，對比 AI 榜的 13,195/7,129 根本排不上號。僅收窄 `docker` 不足以解決（`docker-mailserver` 真的貼了 `kubernetes`；「能跑在 k8s 上」與「是 k8s 工具」在零 LLM 的純關鍵字分類下無法區分），故直接移除領域。**此決策僅限榜單——§4 的新聞 DevOps 配額與專屬來源（至少三個，2026-09-12 起 6 個啟用）全數保留**，因為「DevOps 沒有爆紅 repo」不等於「沒有值得讀的 DevOps 消息」。
 
 ### 3.3 合併與排名
 
@@ -192,7 +192,7 @@ GET /search/repositories?q=(nextjs OR react OR svelte OR nodejs OR golang) creat
 
 ### 4.2 來源清單：單一設定檔集中管理
 
-所有新聞來源**集中於一個設定檔**（`src/config/news-sources.ts`），pipeline 只讀這份清單抓取——**日後增刪修來源只改這個檔案，不動任何 pipeline 程式碼**。
+所有新聞來源**集中於一個設定檔**（`src/config/news-sources.ts`），pipeline 只讀這份清單抓取——**日後增刪修來源只改這個檔案，不動任何 pipeline 程式碼**。本節只保留分層設計理由與取法；**逐項清單、tier 與啟用狀態以設定檔本身與 README「目前清單」為準**（live registry），本節表格不另行逐項維護。
 
 ```ts
 // src/config/news-sources.ts — 新聞來源的唯一清單（增刪修只改這裡）
@@ -216,16 +216,20 @@ export const NEWS_SOURCES: NewsSource[] = [
 | **Hacker News**（Algolia） | `https://hn.algolia.com/api/v1/search?tags=front_page`；週熱門用 `search?tags=story&numericFilters=created_at_i>{7天前unix}` 取高 points | cross  | 開發圈單一最高訊號源，含分數可排序。                     |
 | **Lobste.rs 標籤 .rss**    | `https://lobste.rs/t/ai.rss`、`/t/devops.rss`、`/t/programming.rss`                                                                      | 各自   | 訊噪比比 HN 高、偏技術深度。                             |
 | **Reddit r/LocalLLaMA**    | `https://www.reddit.com/r/LocalLLaMA/top/.rss?t=week`                                                                                    | ai     | 「本週實戰派在意什麼」的最佳指標，對齊週視角、免費穩定。 |
-| **Simon Willison 部落格**  | RSS（`simonwillison.net`）                                                                                                               | ai     | AI 領域高訊號個人策展，穩定命中重要事件。                |
+| **Simon Willison 部落格**  | `https://simonwillison.net/atom/entries/`（純文章 feed，每週約 2 篇；2026-09-12 由 `atom/everything/` 改來——原 feed 含 blogmark／quotation，連結指向 simonwillison.net 自身而非原文，URL 去重接不上，造成同一件事兩推） | ai     | AI 領域高訊號個人策展，穩定命中重要事件；重要 blogmark 的原文幾乎都同時在 HN 上，預期改 entries 不失訊號（待驗證）。代價：量體由每週十餘則降到約 2 則，AI 候選組成往一手廠商公告偏移；觀察兩週，若本來源趨近 0 且重要事件僅靠 HN 命中，再評估回退或在 fetcher 層抽 blogmark 原文 URL。 |
 
 #### Tier 2 — 高精準一手（直接對應重要性分類）
 
 | 來源                            | 取法                                                                                                                                                      | domain | 為什麼值得                                                                                       |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------| ------ | ------------------------------------------------------------------------------------------------ |
 | **GitHub Releases feeds**       | `https://github.com/{owner}/{repo}/releases.atom`：`nodejs/node`、`python/cpython`、`microsoft/TypeScript`、`kubernetes/kubernetes`；（低權重）`vuejs/core`、`facebook/react` | 各自   | 官方、穩定、幾乎零雜訊；精準命中第一順位重要性——**新版本 / breaking change / deprecation**。     |
-| **官方 AI/模型公告**            | OpenAI、Anthropic、Google DeepMind 官方 blog/news RSS                                                                                                     | ai     | 一手公告取代二手報導，精準抓「重大模型/API 發布」。                                              |
-| **Hugging Face Daily Papers**   | `huggingface.co/papers`                                                                                                                                   | ai     | AI 論文動向的高密度精選。                                                                        |
+| **官方 AI/模型公告**            | OpenAI、Google DeepMind 官方 blog/news RSS（Anthropic 無官方 feed，`anthropic-news` 停用中）                                                                | ai     | 一手公告取代二手報導，精準抓「重大模型/API 發布」。                                              |
+| **Hugging Face Daily Papers**   | `huggingface.co/papers`（規劃項，尚未納入 `news-sources.ts`）                                                                                             | ai     | AI 論文動向的高密度精選。                                                                        |
+| **GitHub Changelog（Copilot 標籤）** | `https://github.blog/changelog/label/copilot/feed/`（2026-09-12 新增）                                                                               | ai     | GitHub 官方 Changelog 的 Copilot 標籤，每週約 6 篇，一手、直接命中「新工具／能力更新」。          |
+| **Kubernetes 官方 blog**        | `https://kubernetes.io/feed.xml`（2026-09-12 新增）                                                                                                       | devops | 每週約 4 篇版本功能文章；既有 `kubernetes/kubernetes` releases 經 pre-release／patch 過濾後每月僅約 1 則，補上一手功能說明。 |
 
+> **Tier 2 停用中的項目**：`vue-blog`（2026-09-12 停用：feed 最新一篇為 741 天前，比照同樣停用的 `web-dev` 停用觀察、非移除）。代價：前後端啟用來源自此全為 GitHub Releases feed，文章類供給改由 `cross` 來源關鍵字歸類承擔，觀察兩週後決定是否補一個前後端文章來源。逐項狀態見 README「目前清單」。
+>
 > **安全通報的折衷**：GitHub 至今**沒有官方整站 security advisory RSS**。最省事的做法是讓上列 `releases.atom` **兼當安全訊號**（安全修補通常伴隨 release）；日後要強化，再往清單加生態系 advisory feed 即可——只改設定檔。另外 releases feed 建議在抓取端**過濾 pre-release 與純 patch**（只留 major/minor 或安全修補），避免版本噪音灌爆候選池。
 
 #### Tier 3 — 選配實驗（可隨時砍，不動 code）
@@ -236,6 +240,9 @@ export const NEWS_SOURCES: NewsSource[] = [
 | **Reddit r/devops**         | `/r/devops/top/.rss?t=week`                              | devops   | 社群風向。                         |
 | **Reddit r/node、r/python** | `/r/node/top/.rss?t=week`、`/r/Python/top/.rss?t=week`   | frontend-backend | 對齊後端聚焦 Node.js / Python。    |
 | **Reddit r/reactjs**        | `/r/reactjs/top/.rss?t=week`                             | frontend-backend | 抓前端社群風向用，低權重。         |
+| **Cloudflare 官方 blog**    | `https://blog.cloudflare.com/rss/`                       | devops   | 2026-09-12 由 Tier 2 降級：2026-08-27～09-12 推播 117 則中佔 24 則（20%），且含 FedRAMP 認證、日食流量報告、blog 改用 em-dash 等公關文。實際效果：加權 100 × 0.5 = 50 排在所有 Tier 1/2 無分數候選之後，供給充足日（候選池達 50）進不了 LLM、**近似停用**，供給不足日才以 tier3 標籤進池；重要文章要靠與 HN 同 URL 合併由 HN 代表項帶入（Tier 權重乘在無分數基準分上的已知後果，同樣適用於 The New Stack、`gh-vue`、`gh-react`）。 |
+
+> **2026-09-12 覆測：不再添加來源**。實測 30 餘個候補 feed，除上表新增的兩個外皆不合格：**量體失控**（arXiv 分類 feed 每週 273 篇、AWS ML blog 每週 20 篇行銷文、`llama.cpp` releases 版號如 `b10930` 無法解析會全數保留）、**會被 release-filter 濾光**（codex／gemini-cli 全為 alpha／nightly、claude-code 全為 patch）、或**二手／公關內容**（Latent Space、blog.google、Grafana、HashiCorp）；Anthropic 五個候選端點皆 404，維持不收。
 
 ### 4.3 實作要點
 
@@ -779,7 +786,7 @@ bootstrap();
 **F4 `004-news-ingest` — 新聞來源與零 LLM 漏斗（階段 A）**
 
 - 範圍：`news-sources.ts` 設定檔 + schema 驗證 + tier 加權、四種抓取器（`hn-algolia` / `reddit-weekly` / `rss` / `github-releases`，含 User-Agent/條件式請求/0 筆告警、releases 過濾 pre-release 與純 patch）、正規化為統一結構、階段 A 漏斗（**target-URL 正規化去重、標題 Jaccard 補漏**、分數門檻、交叉驗證、榜單相關性加權、`seenNews` 修剪（原 7 天，2026-09-02 起 45 天））；上線前逐一驗證 feed URL 可用（§12）。
-- **本 Feature 待定已定案（F4 clarify 2026-07-16）**：新聞領域分類法**比照榜單合併前後端**——新聞 `domain` 收斂為 `ai | devops | frontend-backend | cross`（**保留 `devops`**：配額與三個 DevOps 專屬來源不變，憲章 Scope note）。`cross` 來源關鍵字歸類的前後端項一律歸入單一 `frontend-backend` 桶，不再細分 backend/frontend。決策全文見 `specs/004-news-ingest/spec.md` Clarifications Session 2026-07-16 與 FR-027／FR-028。
+- **本 Feature 待定已定案（F4 clarify 2026-07-16）**：新聞領域分類法**比照榜單合併前後端**——新聞 `domain` 收斂為 `ai | devops | frontend-backend | cross`（**保留 `devops`**：配額不變、DevOps 專屬來源至少三個，憲章 Scope note）。`cross` 來源關鍵字歸類的前後端項一律歸入單一 `frontend-backend` 桶，不再細分 backend/frontend。決策全文見 `specs/004-news-ingest/spec.md` Clarifications Session 2026-07-16 與 FR-027／FR-028。
   > **主題降噪規則歸屬**：「後端只收 Node.js/Python、前端以 TypeScript 為主、不收 CSS 技巧/教學」等**不對稱降噪規則**留在**階段 B（F6 單次 LLM 策展）外顯執行**（§4.4 階段 B 已明列），本 Feature 階段 A **不以關鍵字硬篩內容主題**——語意判斷交 LLM 更準（避免把重要的 CSS 引擎/框架 release 誤殺），且不擴大 F4 範圍。前後端內容於階段 A 一律先歸入 `frontend-backend` 候選，交由階段 B 依開發者重要性取捨。
   > **憲章 III 配額措辭審視結論：不需修訂**。合併僅改**內部 `domain` 列舉與 `cross` 歸類目標**（實作細節，憲章未列舉）；使用者可見的**配額「AI ≥4；DevOps／後端／前端合計 ≤2」與領域聚焦內容政策皆不變**（前後端仍是內容層面的真實類別、降噪續由 §4.4 階段 B 外顯執行），故無語意矛盾、無需版本升版。§4.2 型別與 Tier 3 標記、§4.3 歸類說明已同步為 `frontend-backend`。
 - 驗收（F3 + F4 = M2）：跨來源同一則新聞只出現一筆（`sources[]` 正確合併）；候選收斂至約 15～25 則。
