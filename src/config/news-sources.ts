@@ -29,7 +29,12 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   { id: 'lobsters-devops', type: 'rss', url: 'https://lobste.rs/t/devops.rss', domain: 'devops', tier: 1 },
   { id: 'lobsters-programming', type: 'rss', url: 'https://lobste.rs/t/programming.rss', domain: 'cross', tier: 1 },
   { id: 'reddit-localllama', type: 'reddit-weekly', url: 'https://www.reddit.com/r/LocalLLaMA/top/.rss?t=week', domain: 'ai', tier: 1 },
-  { id: 'simonwillison', type: 'rss', url: 'https://simonwillison.net/atom/everything/', domain: 'ai', tier: 1 },
+  // simonwillison：2026-09-12 由 `atom/everything/` 改為 `atom/entries/`（純文章，每週約 2 篇）。everything
+  // feed 含 blogmark 與 quotation，`link` 指向 simonwillison.net 自身而非原文，URL 去重接不上其他來源的同一
+  // 篇，造成同一件事兩推（2026-09-05 晨報同時推了 collusion.wiki 與 Simon 的 rogue-agent-wikis blogmark；
+  // 09-12 候選池 reddit「Hugging Face security.txt」與 Simon「Quoting huggingface.co/security.txt」亦並存）。
+  // 重要 blogmark 的原文幾乎都同時在 HN 上，改用 entries 不損失訊號。
+  { id: 'simonwillison', type: 'rss', url: 'https://simonwillison.net/atom/entries/', domain: 'ai', tier: 1 },
 
   // ── Tier 2：高精準一手（無社群分數 → 漏斗不設分數門檻） ─────────────────
   { id: 'gh-nodejs', type: 'github-releases', url: 'https://github.com/nodejs/node/releases.atom', domain: 'frontend-backend', tier: 2 },
