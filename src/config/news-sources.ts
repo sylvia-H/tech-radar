@@ -67,6 +67,10 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // GitHub 官方研究／實驗性功能部落格，屬第一方公告，與 openai-blog/deepmind-blog 同等級
   // （2026-08-04 由 Tier 3 升級：先前沿用新增時的預設分類，未重新檢視其實為官方一手來源）。
   { id: 'github-next', type: 'rss', url: 'https://githubnext.com/rss.xml', domain: 'ai', tier: 2 },
+  // GitHub 官方 Changelog 的 Copilot 標籤（2026-09-12 新增，實測 200／10 筆、每週約 6 篇）：一手、直接
+  // 命中「新工具／能力更新」（Copilot code review、agents、usage metrics）。2026-09-12 覆測 30 餘個候補
+  // feed 後唯二值得加入者之一（另一為 kubernetes-blog）；Anthropic 五個候選端點皆 404，維持不收。
+  { id: 'github-changelog-copilot', type: 'rss', url: 'https://github.blog/changelog/label/copilot/feed/', domain: 'ai', tier: 2 },
 
   // ── Tier 3：選配實驗（更高門檻、更低權重；可隨時砍不動 code） ────────────
   { id: 'gh-vue', type: 'github-releases', url: 'https://github.com/vuejs/core/releases.atom', domain: 'frontend-backend', tier: 3 },
