@@ -19,9 +19,11 @@ function domainOf(it: ResolvedPick): NewsDomain3 {
  * 硬驗證管線（FR-008~010，固定順序，research D5）：只在「LLM 已選且已繁中改寫」的集合內
  * 剔除／重排，永不遞補新候選（FR-005/010）。
  *
- * (0) 合併 `officialPicks`＋`communityPicks`（官方發布固定排在社群熱度之前，2026-08-04 新增
- *     ——見 `curation.types.ts` `CurationLlmResponse` docstring：這是把「官方優先」從純 prompt
- *     敘述指示，改為合併順序的結構性保證，不再只靠 LLM 自行依序執行）
+ * (0) 合併 `officialPicks`＋`communityPicks`（`officialPicks` 固定排在 `communityPicks` 之前，
+ *     2026-08-04 新增——見 `curation.types.ts` `CurationLlmResponse` docstring：這是把「官方優先」
+ *     從純 prompt 敘述指示，改為合併順序的結構性保證，不再只靠 LLM 自行依序執行。兩陣列歸屬
+ *     2026-09-12 起：`officialPicks`＝(1) 官方發布＋(3) 影響開發者的外部事件；`communityPicks`＝
+ *     (2) 技術深度內容（先前稱社群熱度）；合併順序不變）
  * (1) 剔除幻覺項（`ref` 越界／非整數）＋重複 `ref` 去重（保留第一次出現，即較高重要性者）
  * (2) 非 AI 候選池夠大時，夾非 AI 同來源 ≤2（`clampSourceDiversity`，2026-08-04 新增）
  * (3) 依領域優先序夾非 AI ≤`effectiveNonAiCap`（DevOps 優先，AI 不受限；預設 ≤3，AI 則數不足 7

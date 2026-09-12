@@ -21,11 +21,17 @@ export function stripJsonFence(raw: string): string {
   return fenced ? fenced[1] : raw;
 }
 
+const KNOWN_KEYS: ReadonlySet<string> = new Set(['officialPicks', 'communityPicks']);
+
 /**
  * 三步解析：去 code fence → `JSON.parse` → 形狀淺驗證（`officialPicks`／`communityPicks` 皆為
  * 陣列、每項 `ref:number`/`title,content:string`）。任一步失敗擲 `CurationParseError`，不做局部
  * 搶救（research D2）。越界 `ref`／超長字數／配額／重複 `ref` 不在此層判定，交由硬驗證管線收斂
  * （curation-validate.ts）。
+ *
+ * 兩個必要鍵以外的其他頂層鍵（如 LLM 自創的 `externalPicks`）**不擲錯、不解析內容**，只把鍵名
+ * 收進 `ignoredKeys` 交呼叫端告警（2026-09-12 新增）——兩個必要鍵仍合法時整份降級反而會全部退回
+ * 原文標題，寧可少幾則。
  */
 export function parseCurationResponse(raw: string): CurationLlmResponse {
   let parsed: unknown;
@@ -41,8 +47,31 @@ export function parseCurationResponse(raw: string): CurationLlmResponse {
 
   const officialPicks = parsePickArray(parsed, 'officialPicks');
   const communityPicks = parsePickArray(parsed, 'communityPicks');
+  const ignoredKeys = Object.keys(parsed).filter((key) => !KNOWN_KEYS.has(key));
 
-  return { officialPicks, communityPicks };
+  return { officialPicks, communityPicks, ignoredKeys };
+}
+
+/**
+ * 把 `ignoredKeys` 組成 log 用的簡述：每鍵附「若為陣列則長度、否則型別」，例
+ * `externalPicks(陣列 2 則), note(string)`。只重新解析已由 `parseCurationResponse` 驗證通過的 `raw`
+ * 取長度，不回傳回應內容本身（憲章 VII：log 不含回應全文）。`raw` 若意外不可解析回純鍵名清單。
+ */
+export function describeIgnoredKeys(raw: string, ignoredKeys: readonly string[]): string {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(stripJsonFence(raw));
+  } catch {
+    return ignoredKeys.join(', ');
+  }
+  const record: Record<string, unknown> =
+    typeof parsed === 'object' && parsed !== null ? (parsed as Record<string, unknown>) : {};
+  return ignoredKeys
+    .map((key) => {
+      const value = record[key];
+      return Array.isArray(value) ? `${key}(陣列 ${value.length} 則)` : `${key}(${typeof value})`;
+    })
+    .join(', ');
 }
 
 function parsePickArray(parsed: object, key: 'officialPicks' | 'communityPicks'): CurationLlmResponse['officialPicks'] {
