@@ -4,7 +4,7 @@ import { mentionsBoardRepo } from '../news/funnel';
 import { NewsCandidate, NewsDomain3 } from '../news/news.types';
 import { fallbackDigest } from './curation-fallback';
 import { buildCurationPrompt } from './curation-prompt';
-import { parseCurationResponse } from './curation-parse';
+import { describeIgnoredKeys, parseCurationResponse } from './curation-parse';
 import { validateCuration } from './curation-validate';
 import { CuratedDigest, CurationItemView } from './curation.types';
 
@@ -34,7 +34,14 @@ export class NewsCurationService {
     try {
       const views = candidates.map((c, ref) => projectItemView(c, ref, boardRepoNames, now));
       const raw = await this.llm.generate(buildCurationPrompt(views));
-      const { officialPicks, communityPicks } = parseCurationResponse(raw);
+      const { officialPicks, communityPicks, ignoredKeys } = parseCurationResponse(raw);
+      if (ignoredKeys.length > 0) {
+        // 防禦：LLM 自創鍵（如 externalPicks）會被解析器靜默忽略而無聲少推；只警示鍵名與陣列長度，
+        // 不含回應全文（憲章 VII），流程照常繼續、不降級（2026-09-12 新增）
+        this.logger.warn(
+          `策展回應含未知頂層鍵，已忽略（可能無聲少推）：${describeIgnoredKeys(raw, ignoredKeys)}`,
+        );
+      }
       const items = validateCuration(officialPicks, communityPicks, candidates);
       const domainDist = items.reduce(
         (acc, it) => {

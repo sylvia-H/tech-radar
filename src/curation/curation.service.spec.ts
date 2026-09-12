@@ -139,6 +139,31 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
     expect(result.items).toHaveLength(2);
     expect(result.items.every((it) => it.domain !== 'ai')).toBe(true);
   });
+
+  it('回應含額外鍵 externalPicks → logger.warn 含鍵名與長度、不降級、只回兩鍵內的項目（2026-09-12 防禦）', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ originalUrl: 'https://a.com/official', domain: 'ai', title: 'Official' }),
+      makeCandidate({ originalUrl: 'https://b.com/external', domain: 'ai', title: 'External event' }),
+    ];
+    const raw = JSON.stringify({
+      officialPicks: [{ ref: 0, title: '官方發布', content: '內容' }],
+      communityPicks: [],
+      externalPicks: [{ ref: 1, title: '外部事件', content: '內容' }],
+    });
+    const { service } = makeService(jest.fn().mockResolvedValue(raw));
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(false);
+    expect(result.items.map((it) => it.url)).toEqual(['https://a.com/official']);
+    expect(warnSpy).toHaveBeenCalledTimes(1);
+    const warnMessage = warnSpy.mock.calls[0][0] as string;
+    expect(warnMessage).toContain('externalPicks');
+    expect(warnMessage).toContain('1 則');
+    expect(warnMessage).not.toContain('外部事件');
+    warnSpy.mockRestore();
+  });
 });
 
 describe('NewsCurationService.curate（US2 降級路徑）', () => {
