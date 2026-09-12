@@ -1,6 +1,6 @@
 {
   "name": "tech-radar",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "排程型 Tech Radar：打通執行環境到 Discord 私人頻道的推播通道與狀態骨架",
   "private": true,
   "type": "commonjs",
