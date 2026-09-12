@@ -1,7 +1,7 @@
 # Tech Radar
 
 排程型、純自用、全免費、零維運的每日技術晨報。每天台北時間早上六點，自動掃描近一週最受關注、
-新崛起的 GitHub repo，並從 19 個技術新聞來源精選當日最值得開發者關注的消息，翻成繁體中文推播到
+新崛起的 GitHub repo，並從 20 個技術新聞來源精選當日最值得開發者關注的消息，翻成繁體中文推播到
 Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github.io/tech-radar/) 與
 [Atom feed](https://sylvia-h.github.io/tech-radar/feed.xml)，供隨時查閱與訂閱閱讀器追蹤。
 
@@ -28,7 +28,7 @@ Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github
 
 | 項目 | 數字 |
 |------|------|
-| 新聞來源 | 25 個設定項、19 個啟用（AI 6／DevOps 5／前後端 6／跨領域 2） |
+| 新聞來源 | 27 個設定項、20 個啟用（AI 7／DevOps 6／前後端 5／跨領域 2） |
 | 每日新聞 | 至多 10 則，AI 為主、非 AI 預設 ≤3（動態放寬） |
 | LLM 呼叫 | 新聞策展每日 1 次；repo 簡介一生 1 次並快取；榜單日多 1 次一句話 TL;DR |
 | 榜單 | 每領域追蹤 top 15，推播綜合 top 10，每 7 天只推變化 |
@@ -111,7 +111,7 @@ GitHub Actions 雙離峰 cron（UTC 22:07 / 22:37 ＝ 台北 06:07 / 06:37）
 │   │
 │   ├─ 晨報段（NewsSegmentService）—— 每日
 │   │   ├─ lastNewsPushAt 距今 < 18h → 整段跳過
-│   │   ├─ 19 個來源抓取（RSS/Atom、HN Algolia、Reddit weekly、GitHub Releases），各自容錯
+│   │   ├─ 20 個來源抓取（RSS/Atom、HN Algolia、Reddit weekly、GitHub Releases），各自容錯
 │   │   ├─ 零 LLM 去重：URL 正規化合併 → 標題 Jaccard ≥0.6 補漏
 │   │   ├─ 跨領域來源關鍵字歸類；剔除 45 天內已推播者
 │   │   ├─ Stage A 漏斗：分數門檻 → 30 天新鮮度 → 加權 → 三層決勝排序 → 收斂至 50 則
@@ -145,7 +145,7 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | 2 | 官方一手來源 | 無 | ×1.0 | 沒有社群分數，一律以基準分 100 入池，天然視為強訊號 |
 | 3 | 選配實驗 | 150 | ×0.5 | 更高門檻、一半權重，可隨時停用 |
 
-### 目前清單（25 項、19 啟用）
+### 目前清單（27 項、20 啟用）
 
 **Tier 1：常開高訊號**
 
@@ -156,7 +156,7 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | `lobsters-devops` | RSS | DevOps | Lobste.rs `devops` tag |
 | `lobsters-programming` | RSS | 跨領域 | Lobste.rs `programming` tag |
 | `reddit-localllama` | Reddit weekly RSS | AI | r/LocalLLaMA 週熱門 |
-| `simonwillison` | RSS | AI | Simon Willison 全文 feed |
+| `simonwillison` | RSS | AI | Simon Willison 純文章 feed（`atom/entries/`；2026-09-12 由 `atom/everything/` 改來，原 feed 的 blogmark 連結指向自站而非原文，URL 去重接不上會與原文兩推；代價是量體由每週十餘則降到約 2 則，觀察兩週再評估） |
 
 **Tier 2：官方一手來源**
 
@@ -165,14 +165,15 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | `openai-blog` | RSS | AI | 啟用 | OpenAI 官方 news |
 | `deepmind-blog` | RSS | AI | 啟用 | DeepMind 官方 basic feed |
 | `github-next` | RSS | AI | 啟用 | GitHub Next 官方實驗性功能部落格 |
+| `github-changelog-copilot` | RSS | AI | 啟用 | GitHub 官方 Changelog 的 Copilot 標籤，每週約 6 篇，直接命中新工具／能力更新（2026-09-12 新增） |
 | `anthropic-news` | RSS | AI | 停用 | 無公認官方 RSS 端點，不以第三方中轉站替代 |
 | `gh-nodejs` | GitHub Releases | 前後端 | 啟用 | Node.js 官方發佈 |
 | `gh-cpython` | GitHub Releases | 前後端 | 啟用 | CPython 官方發佈 |
 | `gh-typescript` | GitHub Releases | 前後端 | 啟用 | TypeScript 官方發佈 |
-| `vue-blog` | RSS | 前後端 | 啟用 | Vue.js 官方 blog |
+| `vue-blog` | RSS | 前後端 | 停用 | feed 最新一篇為 741 天前（2026-09-12 實測），比照 `web-dev` 停用觀察 |
 | `web-dev` | RSS | 前後端 | 停用 | feed 自 2026-05-29 起停更，形同啞源 |
 | `gh-kubernetes` | GitHub Releases | DevOps | 啟用 | Kubernetes 官方發佈 |
-| `cloudflare-blog` | RSS | DevOps | 啟用 | Cloudflare 官方 blog |
+| `kubernetes-blog` | RSS | DevOps | 啟用 | Kubernetes 官方 blog，每週約 4 篇版本功能文章；releases 經過濾後每月僅約 1 則，補上一手功能說明（2026-09-12 新增） |
 | `cncf-blog` | RSS | DevOps | 啟用 | CNCF 官方 blog |
 
 **Tier 3：選配實驗**
@@ -182,6 +183,7 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | `gh-vue` | GitHub Releases | 前後端 | 啟用 | Vue core 發佈 |
 | `gh-react` | GitHub Releases | 前後端 | 啟用 | React 發佈 |
 | `thenewstack` | RSS | DevOps | 啟用 | The New Stack |
+| `cloudflare-blog` | RSS | DevOps | 啟用 | Cloudflare 官方 blog；2026-09-12 由 Tier 2 降級——117 則推播中佔 24 則（20%），且含認證、流量報告等公關文。Tier 3 無分數候選加權 50、排在所有 Tier 1/2 之後，候選池滿時進不了 LLM，近似停用 |
 | `reddit-devops` | Reddit weekly RSS | DevOps | 停用 | GitHub Actions runner IP 遭 Reddit 持續 403/429 |
 | `reddit-node` | Reddit weekly RSS | 前後端 | 停用 | 同上 |
 | `reddit-python` | Reddit weekly RSS | 前後端 | 停用 | 同上 |
@@ -197,6 +199,15 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
   實測單日 261 筆）會擠壓其他來源在 50 則收斂上限內的曝光，不予收錄。Hugging Face Blog 曾啟用
   一天即移除：其回溯至 2020 年的常青教學文，標題多為通用 ML 詞彙，在跨來源標題去重時與
   OpenAI 一篇同名文章誤合併，讓後者對策展 LLM 完全隱形。
+- **Tier 3 的真實效果**：Tier 權重乘在無分數基準分上（100 × 0.5 = 50），主排序鍵是加權分，所以 Tier 3
+  無分數候選排在所有 Tier 1/2 之後；候選池滿的日子整批被截掉、等於停用，供給不足的日子才進池。降
+  Tier 3 是「候選池有餘裕才看」，不是單純降權。
+- **前後端文章類來源目前為零**：`vue-blog` 停用後前後端啟用來源全為 GitHub Releases，文章類供給改由
+  `hn`／`lobsters-programming` 關鍵字歸類承擔；觀察兩週後決定是否補一個前後端文章來源。
+- **不再添加來源**：2026-09-12 覆測 30 餘個候補 feed 後決定只補 GitHub Changelog（Copilot）與
+  Kubernetes blog 兩個，其餘不是量體失控（arXiv、AWS ML blog、`llama.cpp` releases）、會被
+  release-filter 濾光（codex／gemini-cli／claude-code 全為 pre-release 或 patch），就是二手／公關
+  內容（Latent Space、blog.google、Grafana、HashiCorp）；Anthropic 五個候選端點皆 404，維持不收。
 - **0 筆必告警**：「解析到 0 筆」一定發帶來源 `id` 的紅色告警，不會無聲略過；但計數取**過濾前**
   的筆數，所以 GitHub Releases 整批被版本噪音過濾掉不會誤報。
 
