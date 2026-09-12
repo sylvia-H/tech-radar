@@ -59,16 +59,17 @@
 證據：今日候選池 24/50 席為 HN，含 1 則 2025 舊文（標題尾綴「(2025)」，HN 豁免新鮮度）、3 則
 twitter/mastodon 貼文（摘要 null）、2 則 Ask/Tell HN；同一批未入選候選被 LLM 重複評估最多 7 次。
 
-- [ ] HN 視窗 7 天 → 4 天（`hn-algolia.fetcher`，dev-guide §4.3「本週口徑」需改寫說明）。
-- [ ] HN 標題尾綴 `(YYYY)` 且 YYYY < 當年 → 丟（fetcher 層，`now` 注入）。
-- [ ] 社群平台 host 過濾：`twitter.com`／`x.com`／`bsky.app`／`threads.net`／`*.mastodon.*` 與已知
+- [x] HN 視窗 7 天 → 4 天（`hn-algolia.fetcher`，dev-guide §4.3「本週口徑」需改寫說明）。
+- [x] HN 標題尾綴 `(YYYY)` 且 YYYY < 當年 → 丟（fetcher 層，`now` 注入）。
+- [x] 社群平台 host 過濾：`twitter.com`／`x.com`／`bsky.app`／`threads.net`／`*.mastodon.*` 與已知
       Mastodon 實例（`mathstodon.xyz`、`fosstodon.org`、`hachyderm.io`、`mastodon.social`）→ 丟；
       清單獨立為資料檔（比照 `news-domain-keywords.ts`，增刪不動邏輯）。
-- [ ] 單元測試：舊年份尾綴、社群 host、視窗邊界。
-- [ ] 回測第 1 輪保底：HN 席數是唯一變數（目前 19 個無分數來源 → HN ≤ 31 席才成立，09-12 實測 24 席）；視窗
-      縮到 4 天後以逐來源 log 確認 HN 席數下降、Tier 3 來源是否重新可見。
-- [ ] dev-guide §4.3／§4.4 同步。
-- [ ] Opus review → merge --no-ff → push。
+- [x] 單元測試：舊年份尾綴、社群 host、視窗邊界。
+- [ ] （合併後觀察）回測第 1 輪保底：HN 席數是唯一變數（目前 19 個無分數來源 → HN ≤ 31 席才成立，09-12 實測 24 席）；視窗
+      縮到 4 天後以逐來源 log 確認 HN 席數下降、Tier 3 來源是否重新可見；並確認 Tier 3／低權重來源是否因 HN 同 URL
+      合併機會減少（視窗 4 天）而反向變差。
+- [x] dev-guide §4.3／§4.4 同步。
+- [x] Opus review（9 findings，全部採納）→ 修正 → merge --no-ff → push。
 
 ## 分支 4：`feat/curation-community-criteria`（策展判準）
 
@@ -76,7 +77,8 @@ twitter/mastodon 貼文（摘要 null）、2 則 Ask/Tell HN；同一批未入�
 Apple Mac Mini 需求等「熱門非重要」內容（dev-guide §12 已警告的風險）。
 
 - [ ] prompt「(2)【社群熱度】」限縮為「社群熱度**且**內容具技術／實作／工具面向」；明列排除：
-      募資、人事、訴訟、監管政策、服務當機、非開發領域趣聞（除非改變開發者可用的服務或 API）。
+      募資、人事、訴訟、非開發領域趣聞。**監管政策與服務當機不排除**（使用者決策 2026-09-12：兩者對
+      開發者有實際影響，prompt 明示為可收錄類型）。
 - [ ] 「不算重大」清單加入：廠商認證／合規公告、統計或威脅報告、公關文（對應 cloudflare 類內容）。
 - [ ] prompt 不加入任何數字（憲章 §12 錨定教訓）。
 - [ ] `curation.service.spec`／prompt 快照測試同步。

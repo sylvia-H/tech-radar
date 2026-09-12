@@ -36,7 +36,7 @@ Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github
 | 排程 | 雙離峰 cron（台北 06:07 主班、06:37 補班）＋ 時間戳 guard |
 | 常駐服務／資料庫 | 0 |
 | 月費 | $0 |
-| 單元測試 | 523 個、62 個測試套件 |
+| 單元測試 | 553 個、63 個測試套件 |
 
 三條輸出流：
 
@@ -151,7 +151,7 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 
 | 來源 id | 類型 | 領域 | 說明 |
 |---------|------|------|------|
-| `hn` | HN Algolia API | 跨領域 | Hacker News 近 7 天 story，唯一帶社群分數的來源 |
+| `hn` | HN Algolia API | 跨領域 | Hacker News 近 4 天 story（2026-09-12 由 7 天改），唯一帶社群分數的來源 |
 | `lobsters-ai` | RSS | AI | Lobste.rs `ai` tag |
 | `lobsters-devops` | RSS | DevOps | Lobste.rs `devops` tag |
 | `lobsters-programming` | RSS | 跨領域 | Lobste.rs `programming` tag |
@@ -221,7 +221,7 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 
 | 類型 | 做法 | 分數 |
 |------|------|------|
-| `hn-algolia` | 附 `created_at_i > 7 天前` 與 `hitsPerPage=100`，客戶端再核對一次 7 天口徑；Ask HN 無外連時以 HN item 頁為去重鍵 | `points` |
+| `hn-algolia` | 附 `created_at_i > 4 天前` 與 `hitsPerPage=100`，客戶端再核對一次 4 天口徑（2026-09-12 由 7 天改：pipeline 每日執行，7 天視窗使同一批未入選候選被 LLM 重複評估最多 7 次，且 HN 曾佔候選池 24/50 席；HN 熱度多在 48 小時內定型）；丟棄標題尾綴「(YYYY)」（後可接 `[pdf]`／`[video]` 標籤）且該年份 12/31 距今超過 30 天者（`OLD_YEAR_GRACE_DAYS`，與新鮮度視窗同一把尺，避免 1 月誤殺上年度年度報告；HN 重貼舊文慣例，HN 豁免新鮮度視窗故靠此把關）；Ask HN 無外連時以 HN item 頁為去重鍵 | `points` |
 | `rss` | `rss-parser`，缺標題或連結即丟棄 | 無 |
 | `reddit-weekly` | 同 RSS，Reddit RSS 不帶 upvote | 無 |
 | `github-releases` | 同 RSS，再經**版本噪音過濾** | 無 |
@@ -232,6 +232,16 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 
 抓取禮貌：自訂 User-Agent、429/5xx/網路錯誤指數退避＋jitter（最多 3 次、上限 8 秒）、尊重
 `Retry-After`；其他 4xx 立即放棄。每個來源獨立 try/catch，失敗只影響自己。
+
+社群平台連結過濾（`src/news/social-hosts.ts`，2026-09-12 新增）：抓取完成、進入 URL 去重之前，
+目標 URL 的 host 為 `twitter.com`／`x.com`／`bsky.app`／`threads.net`、常見 Mastodon 實例或符合
+`mastodon.*`／`mstdn.*` pattern 者直接丟棄（log `[漏斗 A] 社群平台連結過濾後`）。貼文沒有摘要、
+LLM 只能憑標題判斷，且多為個人動態而非技術內容（09-12 候選池 3 則）。清單是獨立資料檔，增刪
+host 只改該檔、不動過濾邏輯；短網址（`t.co` 等）不解址故不列。代價：僅在 X／Mastodon 發布的
+一手公告（模型上線、API 變更、事故說明），若 HN 投稿指向該貼文是唯一入口，會在漏斗最前端整則
+消失——已知且接受，觀察兩週。過濾套用於全部來源的候選、不限 HN；日後若在 `news-sources.ts`
+新增以這些 host 為目標連結的來源會被無聲全滅（症狀：來源解析 N 則、社群過濾後大量減少），屆時
+於 `social-hosts.ts` 加 allowlist 或把過濾限定於 `hn`。
 
 ### 第 2 關：URL 正規化去重（`src/news/url-normalize.ts`、`dedup.ts`）
 
@@ -552,7 +562,7 @@ node dist/main.cli.js
 npm test
 ```
 
-523 個單元測試、62 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
+553 個單元測試、63 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
 快照）、兩領域歸類、榜單 diff 與決勝、URL／標題去重、簡介快取命中、新聞配額與字數上限、來源
 schema 與 tier 加權、晨報 18h guard、榜單 162h 節奏、狀態原子寫入。Gemini 一律 mock，並另測降級路徑。
 

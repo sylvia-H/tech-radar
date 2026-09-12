@@ -213,7 +213,7 @@ export const NEWS_SOURCES: NewsSource[] = [
 
 | 來源                       | 取法                                                                                                                                     | domain | 為什麼值得                                               |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------------------------------------------------------- |
-| **Hacker News**（Algolia） | `https://hn.algolia.com/api/v1/search?tags=front_page`；週熱門用 `search?tags=story&numericFilters=created_at_i>{7天前unix}` 取高 points | cross  | 開發圈單一最高訊號源，含分數可排序。                     |
+| **Hacker News**（Algolia） | `https://hn.algolia.com/api/v1/search?tags=front_page`；週熱門用 `search?tags=story&numericFilters=created_at_i>{4天前unix}` 取高 points（2026-09-12 由 7 天改，見 §4.3） | cross  | 開發圈單一最高訊號源，含分數可排序。                     |
 | **Lobste.rs 標籤 .rss**    | `https://lobste.rs/t/ai.rss`、`/t/devops.rss`、`/t/programming.rss`                                                                      | 各自   | 訊噪比比 HN 高、偏技術深度。                             |
 | **Reddit r/LocalLLaMA**    | `https://www.reddit.com/r/LocalLLaMA/top/.rss?t=week`                                                                                    | ai     | 「本週實戰派在意什麼」的最佳指標，對齊週視角、免費穩定。 |
 | **Simon Willison 部落格**  | `https://simonwillison.net/atom/entries/`（純文章 feed，每週約 2 篇；2026-09-12 由 `atom/everything/` 改來——原 feed 含 blogmark／quotation，連結指向 simonwillison.net 自身而非原文，URL 去重接不上，造成同一件事兩推） | ai     | AI 領域高訊號個人策展，穩定命中重要事件；重要 blogmark 的原文幾乎都同時在 HN 上，預期改 entries 不失訊號（待驗證）。代價：量體由每週十餘則降到約 2 則，AI 候選組成往一手廠商公告偏移；觀察兩週，若本來源趨近 0 且重要事件僅靠 HN 命中，再評估回退或在 fetcher 層抽 blogmark 原文 URL。 |
@@ -246,7 +246,7 @@ export const NEWS_SOURCES: NewsSource[] = [
 
 ### 4.3 實作要點
 
-- **統一「本週」口徑**：Reddit `t=week`、HN 過濾近 7 天、GitHub trending weekly，讓整份摘要時間軸一致。
+- **時間口徑**：HN 過濾**近 4 天**（`HN_WINDOW_DAYS = 4`，2026-09-12 由 7 天改）、Reddit `t=week`、GitHub trending weekly。榜單維持**週視角**（每七天推一次、只呈現差異，週增星本就是七天量）；新聞則是**每日增量**視角——pipeline 每日執行、已推者記入 `seenNews`，候選只需涵蓋「上次執行以來新出現」的內容加上少量緩衝即可。原本 HN 也用 7 天是為了與榜單對齊，但實測 7 天視窗讓同一批未入選的 HN 候選被 LLM **重複評估最多 7 次**，且 2026-09-12 候選池 50 席中 24 席為 HN、排擠其他來源；HN 熱度多在 48 小時內定型，4 天仍接得住慢熱文。Reddit 因 RSS 只提供 `t=week` 端點維持週口徑。
 - **歸類與去重**：正規化成 `{ title, url, summary, source, score, domain, tier }`——`domain` 列舉為 `ai | devops | frontend-backend | cross`（**前後端合併**，F4 clarify 2026-07-16），`domain` 與 `tier` 直接取自 `news-sources.ts` 的來源設定（releases 的 nodejs/cpython/typescript/vue/react、r/node、r/python、r/reactjs 皆標 `frontend-backend`），**只有 `cross` 來源（HN、Lobste.rs programming）需要用關鍵字歸類**（前後端相關項一律歸入 `frontend-backend`）；`summary` 為 feed 的摘要/描述節錄（截 ~500 字，供 §4.4 階段 B 產出 300 字內容的素材）。以 `url` 去重、以 `score`/新鮮度排序。
 - 新聞同樣走「只推新出現」邏輯：記住上次推過的 url（見 §5.1 `seenNews`），只留**新出現**的討論，再交給 §4.4 漏斗篩選。
 
@@ -265,6 +265,9 @@ Gemini 一次、不用向量檢索/embeddings）、**選重要而非選熱門**�
 
 #### 階段 A — 零 LLM 結構性去重與過濾（主力）
 
+0. **來源層雜訊過濾**（2026-09-12 新增，兩者皆在第 1 步 URL 去重之前、零 LLM）：
+   - **HN 舊年份尾綴**：HN 慣例在重貼舊文時於標題尾綴「(YYYY)」（尾綴後可再接零到多個 HN 格式標籤如 `[pdf]`／`[video]`，例：「A Mathematical Theory of Communication (1948) [pdf]」）；`hn-algolia.fetcher` 依注入的 `now` 比對，**該年份 12/31 距今超過 30 天才算舊文**（`OLD_YEAR_GRACE_DAYS = 30`，與非 HN 來源的 30 天新鮮度視窗同一把尺；不用「YYYY 早於當年」是因為 1 月會誤殺上年度的年度報告，例：2027-01-02 投稿的「State of JS (2026)」）。HN 豁免第 7 步的新鮮度視窗（其 `publishedAt` 是投稿時間、非原文發表日），舊文只能靠此慣例把關——2026-09-06 曾推出 7 月舊文、09-12 候選池含 2025 年文章。
+   - **社群平台連結**：目標 URL 的 host 為 twitter.com／x.com／bsky.app／threads.net、常見 Mastodon 實例或符合 `mastodon.*`／`mstdn.*` pattern 者，於 `NewsIngestService.ingest()` 原始候選階段丟棄（log 名稱 `[漏斗 A] 社群平台連結過濾後`）。理由：貼文無摘要（`summary === null`）、LLM 只能憑標題判斷，且多為個人動態而非技術內容（09-12 候選池 3 則）。清單獨立為資料檔 `src/news/social-hosts.ts`，**增刪 host 只改該檔、不動過濾邏輯**（比照 `news-domain-keywords.ts`）；短網址（`t.co` 等）不解址故不列，交後段處理。**代價**：僅在 X／Mastodon 發布的一手公告（模型上線、API 變更、事故說明），若 HN 投稿指向該貼文是唯一入口，會在漏斗最前端整則消失——已知且接受，觀察兩週。**逃生門**：過濾套用於**全部來源**的候選、不限 HN；日後若在 `news-sources.ts` 新增以這些 host 為目標連結的來源，會被無聲全滅（症狀：來源解析 N 則、社群過濾後大量減少），屆時於 `social-hosts.ts` 加 allowlist 或把過濾限定於 `hn`。
 1. **target-URL 正規化去重（跨來源殺手鐧）**：HN / Reddit / Lobste.rs 對同一則新聞的討論，指向的是**同一個外部連結**。因此對每則抽出其**目標 URL**（新聞本體的連結，而非討論頁 permalink）並正規化後去重：
    - 小寫化 protocol 與 host、去 `www.`、去 `#fragment`、統一結尾斜線（根路徑除外）；
    - 砍掉追蹤參數（`utm_*`、`mc_*` 前綴，以及 `ref`、`ref_src`、`fbclid`、`gclid`、`igshid`、`ncid`、`spm`、`cmpid`），其餘 query 依 key、value 排序；
@@ -275,7 +278,7 @@ Gemini 一次、不用向量檢索/embeddings）、**選重要而非選熱門**�
 4. **交叉驗證加權**：第 1 步合併後 `sources.length ≥ 2`（同事件出現在 ≥2 來源）→ 視為強訊號、優先入選（通常比任何單一分數更準）。Tier 2 項目即使只有單一來源，也**天然視為強訊號**（官方發布本身即是事實確認）。
 5. **榜單相關性加權**：新聞內容**提到當前 repo 榜上的專案** → 加權，讓新聞服務於「你已在追的東西」。
 6. **去歷史重複**：已在 `seenNews` 出現過的目標 URL 直接排除（見 §5.1），避免跨天重複回報。**保留期 45 天**（2026-09-02 由 7 天改為 45 天）：保留期必須 ≥ 候選最久還能入池的時間，否則修剪後的舊文與從未推過的新聞無法區分。無分數來源的新鮮度視窗是 30 天、官方 feed 常把同一篇掛上數週，原本 7 天只涵蓋 HN 口徑——實測 2026-07-19～09-01 的 310 則推播中 46 則重複（15%），相鄰重推間隔 46 次有 38 次落在 7～8 天。45 天 = 30 天視窗 + 15 天緩衝（吸收 Atom `updated` 事後編修、同 URL 重新投稿 HN），單元測試斷言保留期 ≥ 新鮮度視窗。代價：`seenNews` 約 320 筆／40 KB（原 50 筆／7 KB），每日 diff 量不變。
-7. **新鮮度視窗、同分決勝與同來源上限**（2026-08-04 新增、2026-09-02／09-12 修訂）：無分數候選須在 30 天新鮮度視窗內（`publishedAt` 為原文真實發表日；HN 豁免，其 `publishedAt` 是投稿時間且 fetcher 已限 7 天）。**此視窗自 2026-09-12 起於第 1 步 URL 去重之後、第 2 步標題去重之前先套用一次**（`NewsIngestService.ingest()`；對象為合併後 `score === null` 的代表項），漏斗內同一檢查保留為結構性保險（同一判定、目前不可達）：原本只在漏斗末端套用，標題去重時封存舊文仍在場（openai-blog feed 含整站 1192 篇），會吞掉其他來源的新文章、代表項落在舊文後再被視窗整則丟掉；提前後進入標題去重的候選由約 1690 則降至約 300 則。放在 URL 去重之後而非之前，是因為 URL 精確合併不可能誤吞，且低分 HN 投稿與同 URL 官方舊文合併後的交叉驗證豁免（第 3 步）須保留。另 `collect()` 逐來源印出「解析 N 則 → 過濾後 M 則」觀測 log。排序鍵 `加權分數 ↓ → 跨來源輪流分配序 ↑ → normalizedUrl ↑`，`publishedAt` 刻意不當跨來源決勝鍵（避免發文頻率高的來源系統性勝出）。無分數候選全綁在基準分 100，改依來源分組、逐輪各發 1 則、最多 3 輪，超過 3 輪者直接剔除；**組內依發表日期降冪**決定留哪 3 則（2026-09-02 起；先前沿用全域 URL 字母序，路徑帶月份縮寫的來源會讓 `/Aug/` 長期壓過 `/Sep/`，slug 隨機者則純屬隨機）。
+7. **新鮮度視窗、同分決勝與同來源上限**（2026-08-04 新增、2026-09-02／09-12 修訂）：無分數候選須在 30 天新鮮度視窗內（`publishedAt` 為原文真實發表日；HN 豁免，其 `publishedAt` 是投稿時間且 fetcher 已限近 4 天——2026-09-12 由 7 天改，見 §4.3——舊文重貼則靠第 0 步的「(YYYY)」舊年份尾綴把關）。**此視窗自 2026-09-12 起於第 1 步 URL 去重之後、第 2 步標題去重之前先套用一次**（`NewsIngestService.ingest()`；對象為合併後 `score === null` 的代表項），漏斗內同一檢查保留為結構性保險（同一判定、目前不可達）：原本只在漏斗末端套用，標題去重時封存舊文仍在場（openai-blog feed 含整站 1192 篇），會吞掉其他來源的新文章、代表項落在舊文後再被視窗整則丟掉；提前後進入標題去重的候選由約 1690 則降至約 300 則。放在 URL 去重之後而非之前，是因為 URL 精確合併不可能誤吞，且低分 HN 投稿與同 URL 官方舊文合併後的交叉驗證豁免（第 3 步）須保留。另 `collect()` 逐來源印出「解析 N 則 → 過濾後 M 則」觀測 log。排序鍵 `加權分數 ↓ → 跨來源輪流分配序 ↑ → normalizedUrl ↑`，`publishedAt` 刻意不當跨來源決勝鍵（避免發文頻率高的來源系統性勝出）。無分數候選全綁在基準分 100，改依來源分組、逐輪各發 1 則、最多 3 輪，超過 3 輪者直接剔除；**組內依發表日期降冪**決定留哪 3 則（2026-09-02 起；先前沿用全域 URL 字母序，路徑帶月份縮寫的來源會讓 `/Aug/` 長期壓過 `/Sep/`，slug 隨機者則純屬隨機）。
 
 > 經過階段 A，候選收斂至**上限 50 則**（`convergeMax`，2026-08-04 由 25 → 30 → 35 → 50 逐步調高以緩解同來源上限的排擠效應；早期文件寫的 15～25 則已不適用），才進入唯一一次 LLM 呼叫。
 
@@ -824,6 +827,7 @@ bootstrap();
 - **節奏解耦**：榜單七天一次由 `lastBoardPushAt` 計時（非 cron，門檻 162h），漏跑下次補推即可；新聞每日晨報由雙 cron + `lastNewsPushAt` guard 保證「每日恰一次」。
 - **晨報跨來源重複**：主力去重是 **target-URL 正規化**，正確性取決於目標 URL 抽取與轉址處理（`t.co`/短網址/UTM）——這幾處要有測試；無法歸一的殘留重複，交由每日唯一那次策展呼叫清除。避免「同一則新聞被 HN + Reddit 各報一次」。
 - **晨報只挑熱門的風險**：策展 prompt 要明確「重要 ≠ 熱門」，否則會被高分口水文洗版；分數只當提示。定期回看選出的新聞是否真的對開發者有用，據以調 prompt。
+- **社群平台過濾是全域規則**：§4.4 第 0 點 (b) 的 host 過濾套用於全部來源的候選、不限 HN。僅在 X／Mastodon 發布的一手公告若只由 HN 投稿帶入，會在漏斗最前端整則消失（已知且接受，觀察兩週）；日後若新增以這些 host 為目標連結的來源會被無聲全滅——逐來源 log 若出現「解析 N 則、社群過濾後大量減少」，就到 `social-hosts.ts` 加 allowlist 或把過濾限定於 `hn`。
 - **prompt 內具體數字會讓 LLM 錨定（anchoring）**：2026-08-04 實測發現，prompt 裡寫「AI 下限 N 則」，模型會把它當成目標產出量而非下限——`MIN_AI` 從 5 調到 7 後連續 5 天逐日精確命中 7、一則不差，10 則上限形同虛設。教訓：配額類指示避免在 prompt 中放入具體數字，改用定性描述（「合格皆收、不要提早停手」），數量上下限交給程式端的硬驗證管線把關。
 - **狀態一致性**：diff 前後對同一份狀態讀寫；job 失敗時不要寫入半套狀態（成功推播後才存回）。新聞推播成功後盡快 commit `lastNewsPushAt`，縮小補跑 cron 重推的風險窗（見 §8）。
 - **簡介幻覺**：嚴格「只依 README」；星數/連結不經 LLM。

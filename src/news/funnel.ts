@@ -31,7 +31,8 @@ export interface FunnelConfig {
   /**
    * 無社群分數候選（`score === null`）的新鮮度視窗（天數，2026-08-04 新增）。`publishedAt`
    * 缺失或早於 `now - 此值` 即不入池。有真實分數者（目前僅 HN）不受限——HN 的 `publishedAt`
-   * 是「提交到 HN 的時間」而非原文發表時間，且 fetcher 本身已有近 7 天口徑，不需要再套一層；
+   * 是「提交到 HN 的時間」而非原文發表時間，且 fetcher 本身已有近 4 天口徑（2026-09-12 起，
+   * 舊文重貼另由 fetcher 以標題尾綴「(YYYY)」舊年份把關），不需要再套一層；
    * RSS／github-releases 類來源的 `publishedAt` 才是原文真實發表日期，舊文（如封存文章被
    * 討論區重新提及）可能藉此混入候選池，須另行把關。30 天對照現有來源常態發文節奏（如
    * CPython alpha 版約 4~6 週一次）留有餘裕，避免誤傷發文較不頻繁的一手來源。

@@ -9,7 +9,8 @@ import { NewsSource } from './news.types';
 import { normalizeTargetUrl } from './url-normalize';
 
 const NOW = new Date('2026-07-18T00:00:00Z');
-const WEEK_AGO_I = Math.floor(NOW.getTime() / 1000) - 6 * 24 * 3600;
+// HN 投稿時間：2 天前（HN 視窗 2026-09-12 由 7 天縮為 4 天，fixture 須落在視窗內）。
+const RECENT_HN_I = Math.floor(NOW.getTime() / 1000) - 2 * 24 * 3600;
 
 interface Opts {
   json?: (url: string) => unknown;
@@ -94,7 +95,7 @@ describe('NewsIngestService.ingest — 跨來源去重（US2, SC-001）', () => 
     const { svc } = makeService({
       json: (url) =>
         url.includes('hn.algolia')
-          ? { hits: [{ objectID: '9', title: 'Dup story about AI', url: 'https://dup.example/x', points: 200, created_at_i: WEEK_AGO_I }] }
+          ? { hits: [{ objectID: '9', title: 'Dup story about AI', url: 'https://dup.example/x', points: 200, created_at_i: RECENT_HN_I }] }
           : { hits: [] },
       parse: (xml) =>
         xml.includes('dup')
@@ -273,7 +274,7 @@ describe('NewsIngestService.ingest — 新鮮度視窗提前至標題去重之�
   });
 
   it('(b) 有分數者（HN）即使 publishedAt 缺失／不新鮮也不因此步被丟', async () => {
-    // HN fetcher 自有近 7 天 guard，無法餵入「很舊的 created_at_i」；改以缺 `created_at_i`
+    // HN fetcher 自有近 4 天 guard，無法餵入「很舊的 created_at_i」；改以缺 `created_at_i`
     // （publishedAt=null，isFreshEnough 同樣判為不新鮮）驗證豁免路徑。
     const sources: NewsSource[] = [
       { id: 'hn', type: 'hn-algolia', url: 'https://hn.algolia.com/api/v1/search?tags=story', domain: 'ai', tier: 1 },
@@ -341,7 +342,7 @@ describe('NewsIngestService.ingest — 新鮮度視窗提前至標題去重之�
     const { svc } = makeService({
       json: (url) =>
         url.includes('hn.algolia')
-          ? { hits: [{ objectID: '7', title: 'Official deep dive on AI agents', url: 'https://official.example/deep-dive', points: 60, created_at_i: WEEK_AGO_I }] }
+          ? { hits: [{ objectID: '7', title: 'Official deep dive on AI agents', url: 'https://official.example/deep-dive', points: 60, created_at_i: RECENT_HN_I }] }
           : { hits: [] },
       parse: (xml) =>
         xml.includes('official')
@@ -390,5 +391,43 @@ describe('NewsIngestService.collect — 0 筆來源仍出現在逐源對帳 log�
     expect(lines).toContain('[來源 good-rss] 解析 1 則 → 過濾後 1 則');
     const alerts = postFailureAlert.mock.calls.map((c) => String(c[0]));
     expect(alerts.some((m) => m.includes('[dead-rss]') && m.includes('0 筆'))).toBe(true); // 仍照舊告警
+  });
+});
+
+describe('NewsIngestService.ingest — 社群平台連結於 URL 去重前過濾（2026-09-12，分支 3）', () => {
+  // 以 1 天前的 created_at_i 餵 HN，避免受 HN fetcher 視窗（近 4 天，2026-09-12 起）影響。
+  const DAY_AGO_I = Math.floor(NOW.getTime() / 1000) - 24 * 3600;
+  const sources: NewsSource[] = [
+    { id: 'hn', type: 'hn-algolia', url: 'https://hn.algolia.com/api/v1/search?tags=story', domain: 'ai', tier: 1 },
+  ];
+
+  let logSpy: jest.SpyInstance;
+  beforeEach(() => {
+    logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+  });
+  afterEach(() => {
+    logSpy.mockRestore();
+  });
+
+  it('HN 高分 twitter／mastodon 連結被丟、log 含過濾行；非社群連結保留，URL 去重 -M 以過濾後為基準', async () => {
+    const { svc } = makeService({
+      json: (url) =>
+        url.includes('hn.algolia')
+          ? {
+              hits: [
+                { objectID: '1', title: 'I resigned from Anthropic today', url: 'https://twitter.com/someone/status/1', points: 900, created_at_i: DAY_AGO_I },
+                { objectID: '2', title: 'A thread about AI math', url: 'https://mathstodon.xyz/@tao/1', points: 500, created_at_i: DAY_AGO_I },
+                { objectID: '3', title: 'Deep dive on AI agents', url: 'https://blog.example/agents', points: 300, created_at_i: DAY_AGO_I },
+              ],
+            }
+          : { hits: [] },
+    });
+    const out = await svc.ingest(NOW, new Set(), sources, []);
+
+    expect(out.map((c) => c.normalizedUrl)).toEqual([normalizeTargetUrl('https://blog.example/agents')]);
+    const lines = logSpy.mock.calls.map((c) => String(c[0]));
+    expect(lines).toContain('[漏斗 A] 原始候選：3 則');
+    expect(lines).toContain('[漏斗 A] 社群平台連結過濾後：1 則（-2）');
+    expect(lines).toContain('[漏斗 A] URL 去重後：1 則（-0）'); // 基準為過濾後的 1 則、非原始 3 則
   });
 });
