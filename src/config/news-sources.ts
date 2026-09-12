@@ -63,7 +63,6 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // 但形同啞源、對每日候選集無實質貢獻，且不會觸發「解析到 0 筆」告警（非抓取失敗，是內容過期）。
   // 先停用觀察（§4.3），非移除；日後若確認官方已停更或換了端點再議。
   { id: 'web-dev', type: 'rss', url: 'https://web.dev/feed.xml', domain: 'frontend-backend', tier: 2, enabled: false },
-  { id: 'cloudflare-blog', type: 'rss', url: 'https://blog.cloudflare.com/rss/', domain: 'devops', tier: 2 },
   { id: 'cncf-blog', type: 'rss', url: 'https://www.cncf.io/feed/', domain: 'devops', tier: 2 },
   // GitHub 官方研究／實驗性功能部落格，屬第一方公告，與 openai-blog/deepmind-blog 同等級
   // （2026-08-04 由 Tier 3 升級：先前沿用新增時的預設分類，未重新檢視其實為官方一手來源）。
@@ -73,6 +72,11 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   { id: 'gh-vue', type: 'github-releases', url: 'https://github.com/vuejs/core/releases.atom', domain: 'frontend-backend', tier: 3 },
   { id: 'gh-react', type: 'github-releases', url: 'https://github.com/facebook/react/releases.atom', domain: 'frontend-backend', tier: 3 },
   { id: 'thenewstack', type: 'rss', url: 'https://thenewstack.io/feed/', domain: 'devops', tier: 3 },
+  // cloudflare-blog：2026-09-12 由 Tier 2 降級。2026-08-27～09-12 推播 117 則中佔 24 則（20%），內含 FedRAMP
+  // 認證、日食流量報告、blog 改用 em-dash 等公關文；它是廠商 blog 而非官方標準／版本發布，與 openai-blog
+  // 同基準分並不合理。降 Tier 3 後權重 0.5，LLM 也看得到 tier3 標籤；Workers／後量子等真正重要的文章
+  // 仍會經 HN 交叉驗證浮上。
+  { id: 'cloudflare-blog', type: 'rss', url: 'https://blog.cloudflare.com/rss/', domain: 'devops', tier: 3 },
   // 2026-07-19 實測：GitHub Actions runner IP 持續遭 Reddit 擋 403/429（重試 3 次仍失敗），
   // 非單次抖動。四者皆 Tier 3、社群訊號可由其他來源替代，先停用觀察，不刪除設定（§4.3）。
   // 2026-08-03：曾評估改走第三方 Reddit RSS 代理繞過，但候選節點 `pullfeed.co` 實測 DNS 不存在；
