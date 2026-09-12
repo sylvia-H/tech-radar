@@ -50,8 +50,10 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   //
   // Anthropic：2026-08-03 覆測 `www.anthropic.com/rss.xml` 仍非公認端點，維持停用。
   { id: 'anthropic-news', type: 'rss', url: 'https://www.anthropic.com/rss.xml', domain: 'ai', tier: 2, enabled: false },
-  // 領域補充（2026-08-03 實測皆 200、量體正常）。
-  { id: 'vue-blog', type: 'rss', url: 'https://blog.vuejs.org/feed.rss', domain: 'frontend-backend', tier: 2 },
+  // vue-blog：2026-09-12 實測 feed 最新一篇為 741 天前（`feed.xml`、`news.vuejs.org` 替代端點皆不可用），
+  // 抓取成功但形同啞源、不觸發 0 筆告警，與 web-dev 同型。先停用觀察（§4.3），非移除；gh-vue releases
+  // 仍涵蓋 Vue 版本發布。
+  { id: 'vue-blog', type: 'rss', url: 'https://blog.vuejs.org/feed.rss', domain: 'frontend-backend', tier: 2, enabled: false },
   // web-dev：2026-08-04 複查發現 `lastBuildDate` 停在 2026-05-29（逾兩個月未更新），抓取雖成功
   // 但形同啞源、對每日候選集無實質貢獻，且不會觸發「解析到 0 筆」告警（非抓取失敗，是內容過期）。
   // 先停用觀察（§4.3），非移除；日後若確認官方已停更或換了端點再議。
