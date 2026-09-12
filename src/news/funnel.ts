@@ -35,6 +35,11 @@ export interface FunnelConfig {
    * RSS／github-releases 類來源的 `publishedAt` 才是原文真實發表日期，舊文（如封存文章被
    * 討論區重新提及）可能藉此混入候選池，須另行把關。30 天對照現有來源常態發文節奏（如
    * CPython alpha 版約 4~6 週一次）留有餘裕，避免誤傷發文較不頻繁的一手來源。
+   *
+   * 2026-09-12 起此視窗於 `NewsIngestService.ingest()` 的 URL 去重**之後**、標題去重**之前**先
+   * 套用一次（同一 `isFreshEnough` 判定），漏斗內的檢查保留為結構性保險：避免封存舊文（如
+   * openai-blog feed 含整站 1192 篇）在標題 Jaccard 去重時吞掉其他來源的新文章、再連同代表項一起
+   * 被視窗丟掉。
    */
   freshnessWindowDays: number;
 }
@@ -60,7 +65,8 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
  * 會是 HN（tier 1、有分數），原本單獨可無門檻入池的官方文章會被連帶丟掉；交叉驗證本身已是
  * 強訊號（下方還加 `crossValidationBoost`），再用門檻丟它自相矛盾。(2) `score === null` 者另須通過新鮮度視窗
  * （`freshnessWindowDays`，2026-08-04 新增）：`publishedAt` 缺失或超出視窗 → 丟；有真實分數者
- * （HN）不受此步限制。
+ * （HN）不受此步限制。**2026-09-12 起同一視窗已在 ingest 的 URL 去重後、標題去重前先套用一次**
+ * （見 `NewsIngestService.ingest()`），此處為結構性保險——避免封存舊文在標題去重時吞掉新文章。
  * 加權：base（分數或無分數基準）× tierWeight ＋ 交叉驗證 ＋ 榜單相關（`boardRepoNames` 空集合
  * 時整段略過，FR-018 Edge）。
  * 排序（全序，SC-011）：`weightedScore ↓ → 跨來源輪流分配序 ↓ → normalizedUrl ↑`。**不再單純以
@@ -89,6 +95,8 @@ export function runFunnel(
 ): NewsCandidate[] {
   const weighted = cands
     .filter((c) => !belowThreshold(c, cfg))
+    // 與 ingest 前置為同一判定（同 `now`、同視窗、同函式；標題去重代表項必為存活候選之一），
+    // 目前不可達，保留為未來重排順序時的結構性保險（2026-09-12）。
     .filter((c) => c.score !== null || isFreshEnough(c, now, cfg.freshnessWindowDays))
     .map((c) => ({ ...c, weightedScore: weightOf(c, boardRepoNames, cfg) }));
   weighted.sort(compareCandidates);
@@ -100,8 +108,12 @@ export function runFunnel(
   return capped.slice(0, cfg.convergeMax);
 }
 
-/** 新鮮度判定：`publishedAt` 缺失／無法解析，或早於 `now − windowDays` → 不新鮮。 */
-function isFreshEnough(c: NewsCandidate, now: Date, windowDays: number): boolean {
+/**
+ * 新鮮度判定：`publishedAt` 缺失／無法解析，或早於 `now − windowDays` → 不新鮮。
+ * 2026-09-12 起 export 供 `NewsIngestService.ingest()` 於 URL 去重後、標題去重前先套用一次（見
+ * `FunnelConfig.freshnessWindowDays`）；語意不變，兩處共用同一判定避免漂移。
+ */
+export function isFreshEnough(c: NewsCandidate, now: Date, windowDays: number): boolean {
   if (c.publishedAt === null) {
     return false;
   }
