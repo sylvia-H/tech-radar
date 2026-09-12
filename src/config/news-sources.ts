@@ -41,6 +41,10 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   { id: 'gh-cpython', type: 'github-releases', url: 'https://github.com/python/cpython/releases.atom', domain: 'frontend-backend', tier: 2 },
   { id: 'gh-typescript', type: 'github-releases', url: 'https://github.com/microsoft/TypeScript/releases.atom', domain: 'frontend-backend', tier: 2 },
   { id: 'gh-kubernetes', type: 'github-releases', url: 'https://github.com/kubernetes/kubernetes/releases.atom', domain: 'devops', tier: 2 },
+  // Kubernetes 官方 blog（2026-09-12 新增，實測 200／50 筆、每週約 4 篇）：版本功能文章（如 v1.37 各
+  // feature graduation），與 gh-kubernetes releases 互補——releases 經 pre-release／patch 過濾後每月僅約
+  // 1 則，blog 才有「哪些能力改變了」的內容。
+  { id: 'kubernetes-blog', type: 'rss', url: 'https://kubernetes.io/feed.xml', domain: 'devops', tier: 2 },
   { id: 'openai-blog', type: 'rss', url: 'https://openai.com/news/rss.xml', domain: 'ai', tier: 2 },
   // DeepMind 官方未公開宣傳的 basic feed（2026-08-03 實測 200／100 筆），取代原本停用的
   // `blog/rss.xml`。
