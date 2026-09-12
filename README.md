@@ -30,13 +30,13 @@ Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github
 |------|------|
 | 新聞來源 | 27 個設定項、20 個啟用（AI 7／DevOps 6／前後端 5／跨領域 2） |
 | 每日新聞 | 至多 10 則，AI 為主、非 AI 預設 ≤3（動態放寬） |
-| LLM 呼叫 | 新聞策展每日 1 次；repo 簡介一生 1 次並快取；榜單日多 1 次一句話 TL;DR |
+| LLM 呼叫 | 新聞策展每日 1 次（`gemini-3.8-flash`）；repo 簡介一生 1 次並快取、榜單日多 1 次一句話 TL;DR（皆 `gemini-3.5-flash-lite`） |
 | 榜單 | 每領域追蹤 top 15，推播綜合 top 10，每 7 天只推變化 |
 | 榜單資料 | GitHub Trending weekly 6 個頁面 ＋ Search API 2 條查詢，不自存星星歷史 |
 | 排程 | 雙離峰 cron（台北 06:07 主班、06:37 補班）＋ 時間戳 guard |
 | 常駐服務／資料庫 | 0 |
 | 月費 | $0 |
-| 單元測試 | 573 個、64 個測試套件 |
+| 單元測試 | 582 個、64 個測試套件 |
 
 三條輸出流：
 
@@ -351,9 +351,11 @@ Prompt 內幾個實測後的關鍵設計，見[工程亮點](#工程亮點踩坑
   （上限 50 筆）同步更新，Discord 與 Pages 保證是同一份資料。
 - **18 小時 guard**：距上次推播不足 18h（24h − 6h 寬限）整段跳過，抵抗 06:37 補班 cron 重推；
   時間戳落在未來視為時鐘異常，保守跳過；空內容不推播也**不**推進時間戳，讓補班或隔天重試。
-- **降級而非開天窗**：LLM 重試耗盡、空回應或 JSON 解析失敗時，改以 Stage A 的加權分數順序取
-  候選，套用相同的配額與總數規則，以 `content: null`、`degraded: true` 推播（只有原文標題與連結）。
-  不會推出未經驗證的 LLM 原文，也不會整天沒有晨報。
+- **降級而非開天窗**：策展以 Flash 呼叫失敗（429 重試耗盡、型號 404、空回應）時，先以 Lite
+  （`gemini-3.5-flash-lite`）用同一 prompt 單次重試（2026-09-12 起，仍屬同一次策展；空回應也換型號，
+  因為不同型號對同一 prompt 的截斷／安全過濾行為可能不同）；Lite 也失敗、或 JSON 解析失敗時，改以 Stage A 的加權分數順序取候選，套用相同的配額與總數規則，以
+  `content: null`、`degraded: true` 推播（只有原文標題與連結），並發 Discord 紅色降級告警（此前降級
+  無告警）。不會推出未經驗證的 LLM 原文，也不會整天沒有晨報。
 
 ## 榜單機制
 
@@ -527,7 +529,7 @@ LLM 只能用索引指涉候選、只回敘事文字；星數、連結、名次�
 |------|------|
 | 執行環境 | Node.js 24、TypeScript（strict） |
 | 應用框架 | NestJS 11（`createApplicationContext`，一次性 CLI job） |
-| LLM | `@google/genai`（Gemini 免費層 `gemini-3.5-flash-lite`，見下方型號說明） |
+| LLM | `@google/genai`（Gemini 免費層：晨報策展 `gemini-3.8-flash`、簡介與榜單 TL;DR `gemini-3.5-flash-lite`，見下方型號說明） |
 | HTML／RSS 解析 | `cheerio`、`rss-parser` |
 | Atom 產生 | `feed` |
 | 驗證 | `zod`（env、來源清單、狀態檔、GitHub API 回應） |
@@ -535,11 +537,21 @@ LLM 只能用索引指涉候選、只回敘事文字；星數、連結、名次�
 | 推播 | Discord Channel Webhook，三頻道分流 |
 | 測試 | Jest、ts-jest |
 
-Gemini 型號只認 Flash-Lite 系。免費層型號 ID 曾無預警提前下架（`gemini-2.5-flash` 與 `2.5-flash-lite`
-在官方公告日前即回 404，先後改用 `3.1-flash-lite`、`3.5-flash-lite`），所以 `LlmService` 對非可重試
-錯誤一律印出實際狀態碼與訊息，避免 404 被誤判成速率限制。
-2026-09-02 曾升級到沒有 Lite 版的 `gemini-3.7-flash`，當天就觸及免費層上限而改回 `3.5-flash-lite`：
-Flash 與 Flash-Lite 的免費配額不同級，換型號前先在 AI Studio 儀表板確認該型號的免費層配額。
+Gemini 型號依資料流分兩個（2026-09-12 起，`src/llm/llm.types.ts`）：榜單週報的簡介與 TL;DR 用
+`gemini-3.5-flash-lite`（`LlmService.generate` 的預設；免費層約 15 RPM／1,000 RPD，用量極低），每日
+晨報那一次策展呼叫用 `gemini-3.8-flash`，因為它要對 50 則候選做語意去重、三類判準核對與改寫，判斷
+品質直接決定晨報內容。**`gemini-3.8-flash` 的免費層配額（RPM／RPD／TPD）尚未在 AI Studio 確認**
+（程式端查不到，只能讀儀表板），屬待確認項；策展以 Flash 失敗時先以 Lite 同 prompt 單次重試，仍失敗
+才降級為原文標題並發告警（見第 9 關），若確認配額不足，把策展改回 Lite 只需改一個常數。免費層型號 ID
+曾無預警提前下架（`gemini-2.5-flash` 與 `2.5-flash-lite` 在官方公告日前即回 404，先後改用
+`3.1-flash-lite`、`3.5-flash-lite`），所以 `LlmService` 對非可重試錯誤一律印出實際狀態碼與訊息，
+避免 404 被誤判成速率限制。
+2026-09-02 曾在本機把**全部**呼叫升級到沒有 Lite 版的 `gemini-3.7-flash`，當天撞到免費層上限而改回
+`3.5-flash-lite`（該型號從未進庫）；事後查證當日正式排程只有 1 次策展呼叫，撞限可能來自本機反覆手動
+執行、也未量化到哪一項配額，不能據此推論「每日 1 次就會爆」，但「Flash 與 Flash-Lite 的免費配額不同級，
+換型號前先在 AI Studio 儀表板確認」的教訓仍成立。這次只讓每日 1 次的策展走 Flash；上線後兩週的可觀測
+訊號是告警頻道的「晨報策展降級」紅色 embed（含 429／型號 404）與 Actions log 中 `LLM 呼叫失敗（<型號>）`
+的型號字樣，而不是被動等 429 浮現。
 
 ### 機密（五項皆必填，只走環境變數／Actions Secrets，絕不入庫）
 
@@ -584,7 +596,7 @@ node dist/main.cli.js
 npm test
 ```
 
-573 個單元測試、64 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
+582 個單元測試、64 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
 快照）、兩領域歸類、榜單 diff 與決勝、URL／標題去重、簡介快取命中、新聞配額與字數上限、來源
 schema 與 tier 加權、晨報 18h guard、榜單 162h 節奏、狀態原子寫入。Gemini 一律 mock，並另測降級路徑。
 
