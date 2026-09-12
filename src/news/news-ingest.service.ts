@@ -11,13 +11,14 @@ import { normalizeTargetUrl } from './url-normalize';
 import { dedupByTitle, dedupByUrl } from './dedup';
 import { TITLE_JACCARD_THRESHOLD } from './title-similarity';
 import { classifyCross } from './news-classify';
-import { DEFAULT_FUNNEL_CONFIG, runFunnel } from './funnel';
+import { DEFAULT_FUNNEL_CONFIG, isFreshEnough, runFunnel } from './funnel';
 import { excludeSeen, pruneSeenNews } from './seen-news';
 import { formatCandidateSet } from './news-log';
 
 /**
- * 階段 A 編排器（@Injectable）：載入設定 → 逐源隔離抓取＋正規化 → URL 去重 → 標題 Jaccard 去重
- * → `cross` 歸類 → 排除 seen → 漏斗過濾/加權/排序/收斂 → 候選集＋觀測 log。
+ * 階段 A 編排器（@Injectable）：載入設定 → 逐源隔離抓取＋正規化 → URL 去重 → 新鮮度視窗
+ * （無分數者，2026-09-12 起提前至標題去重前）→ 標題 Jaccard 去重 → `cross` 歸類 → 排除 seen →
+ * 漏斗過濾/加權/排序/收斂 → 候選集＋觀測 log。
  * （排除 seen 於收斂前，避免已見項佔用 `convergeMax` 名額而排擠新鮮候選。）
  *
  * **邊界（本 Feature）**：只產出候選供觀測，**不呼叫 LLM、不推播、不寫回 `seenNews`**
@@ -53,6 +54,16 @@ export class NewsIngestService {
 
     let cands = dedupByUrl(raw);
     this.logger.log(`[漏斗 A] URL 去重後：${cands.length} 則（-${raw.length - cands.length}）`);
+
+    // 新鮮度視窗提前至標題去重之前、但在 URL 去重之後（2026-09-12）：無分數者（`score === null`）
+    // `publishedAt` 缺失或超出 `freshnessWindowDays` 即丟；有分數者（HN）豁免。否則封存舊文（如
+    // openai-blog feed 含整站 1192 篇）會在標題 Jaccard 去重時吞掉其他來源的新文章，代表項落在
+    // 舊文後再被漏斗內視窗整則丟掉。放在 URL 去重之後的理由：URL 精確比對合併的必是同一篇文章、
+    // 不可能誤吞，先合併才能讓「低分 HN 投稿 ＋ 同 URL 官方舊文」以有分數的 HN 為代表項通過本步，
+    // 再靠交叉驗證豁免門檻入池；若提前到 URL 去重前，官方舊文先被丟、HN 單筆再被門檻丟，整則消失。
+    const beforeFresh = cands.length;
+    cands = cands.filter((c) => c.score !== null || isFreshEnough(c, now, DEFAULT_FUNNEL_CONFIG.freshnessWindowDays));
+    this.logger.log(`[漏斗 A] 新鮮度視窗後：${cands.length} 則（-${beforeFresh - cands.length}）`);
 
     const beforeTitleDedup = cands.length;
     cands = dedupByTitle(cands, TITLE_JACCARD_THRESHOLD);
@@ -103,6 +114,8 @@ export class NewsIngestService {
         await this.alert(source.id, `抓取失敗：${errMsg(err)}`);
         continue;
       }
+      // 逐源對帳 log 置於 0 筆早退之前，讓壞掉／空的來源也出現在對帳清單（2026-09-12）。
+      this.logger.log(`[來源 ${source.id}] 解析 ${result.parsedCount} 則 → 過濾後 ${result.items.length} 則`);
       if (result.parsedCount === 0) {
         await this.alert(source.id, '解析到 0 筆');
         continue;

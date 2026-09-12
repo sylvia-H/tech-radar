@@ -1,3 +1,4 @@
+import { Logger } from '@nestjs/common';
 import { NewsIngestService, boardRepoNameSet } from './news-ingest.service';
 import { NewsHttp } from './news-http';
 import { NewsRssParser } from './fetchers/fetcher';
@@ -232,5 +233,162 @@ describe('NewsIngestService.ingest — 排除已見於收斂之前（Fix 1）', 
     const urls = out.map((c) => c.normalizedUrl);
     expect(urls).not.toContain(normalizeTargetUrl('https://good.example/p00'));
     expect(urls).toContain(normalizeTargetUrl('https://good.example/p50'));
+  });
+});
+
+describe('NewsIngestService.ingest — 新鮮度視窗提前至標題去重之前、URL 去重之後（2026-09-12，分支 1 T1 / F3）', () => {
+  const DAY_MS = 86_400_000;
+  const daysAgo = (d: number) => new Date(NOW.getTime() - d * DAY_MS).toISOString();
+
+  let logSpy: jest.SpyInstance;
+  beforeEach(() => {
+    logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+  });
+  afterEach(() => {
+    logSpy.mockRestore();
+  });
+  const logLines = () => logSpy.mock.calls.map((c) => String(c[0]));
+
+  it('(a) 無分數且 publishedAt 逾 30 天的候選於標題去重前即被丟、不出現在最終候選', async () => {
+    const sources: NewsSource[] = [{ id: 'arch-rss', type: 'rss', url: 'https://arch.example/feed', domain: 'ai', tier: 2 }];
+    const parse = (xml: string) =>
+      xml.includes('arch')
+        ? {
+            items: [
+              { title: 'Fresh AI post', link: 'https://arch.example/fresh', isoDate: daysAgo(2) },
+              { title: 'Archived AI post', link: 'https://arch.example/stale', isoDate: daysAgo(144) },
+            ],
+          }
+        : { items: [] };
+    const { svc } = makeService({ parse });
+    const out = await svc.ingest(NOW, new Set(), sources, []);
+
+    expect(out.map((c) => c.normalizedUrl)).toEqual([normalizeTargetUrl('https://arch.example/fresh')]);
+    // 觀測 log 證明順序為「URL 去重（-0）→ 新鮮度視窗（-1）→ 標題去重（-0）」：在標題去重前
+    // 丟掉、而非等到漏斗末端才丟。
+    const lines = logLines();
+    expect(lines).toContain('[漏斗 A] URL 去重後：2 則（-0）');
+    expect(lines).toContain('[漏斗 A] 新鮮度視窗後：1 則（-1）');
+    expect(lines).toContain('[漏斗 A] 標題去重後：1 則（-0）');
+  });
+
+  it('(b) 有分數者（HN）即使 publishedAt 缺失／不新鮮也不因此步被丟', async () => {
+    // HN fetcher 自有近 7 天 guard，無法餵入「很舊的 created_at_i」；改以缺 `created_at_i`
+    // （publishedAt=null，isFreshEnough 同樣判為不新鮮）驗證豁免路徑。
+    const sources: NewsSource[] = [
+      { id: 'hn', type: 'hn-algolia', url: 'https://hn.algolia.com/api/v1/search?tags=story', domain: 'ai', tier: 1 },
+      { id: 'arch-rss', type: 'rss', url: 'https://arch.example/feed', domain: 'ai', tier: 2 },
+    ];
+    const { svc } = makeService({
+      json: (url) =>
+        url.includes('hn.algolia')
+          ? { hits: [{ objectID: '1', title: 'Scored HN story', url: 'https://hn.example/story', points: 200 }] }
+          : { hits: [] },
+      parse: (xml) =>
+        xml.includes('arch')
+          ? { items: [{ title: 'Archived AI post', link: 'https://arch.example/stale', isoDate: daysAgo(144) }] }
+          : { items: [] },
+    });
+    const out = await svc.ingest(NOW, new Set(), sources, []);
+
+    expect(out.map((c) => c.normalizedUrl)).toEqual([normalizeTargetUrl('https://hn.example/story')]);
+    expect(out[0].publishedAt).toBeNull();
+    expect(out[0].score).toBe(200);
+    const lines = logLines();
+    expect(lines).toContain('[漏斗 A] URL 去重後：2 則（-0）'); // 兩者 URL 不同、不合併
+    expect(lines).toContain('[漏斗 A] 新鮮度視窗後：1 則（-1）'); // 只丟 RSS 舊文，HN 豁免
+  });
+
+  it('(c) 新文與封存舊文標題近似（Jaccard ≥ 0.6）：舊文先被視窗丟掉，新文完整存活且 sources 不含舊文來源', async () => {
+    // 實證案例：Simon Willison 4 天前「Introducing ChatGPT Images 2.5」曾被 openai-blog 144 天前
+    // 「Introducing ChatGPT Images 2.0」以標題合併吞掉——兩者皆無分數，代表項依 sourceId 字典序落在
+    // `openai-blog`（舊文），再被漏斗內視窗整則丟掉。視窗提前後舊文根本不參與去重。
+    const sources: NewsSource[] = [
+      { id: 'openai-blog', type: 'rss', url: 'https://openai.example/feed', domain: 'ai', tier: 2 },
+      { id: 'simon', type: 'rss', url: 'https://simon.example/feed', domain: 'ai', tier: 2 },
+    ];
+    const parse = (xml: string) => {
+      if (xml.includes('openai')) {
+        return { items: [{ title: 'Introducing ChatGPT Images 2.0', link: 'https://openai.example/images-2-0', isoDate: daysAgo(144) }] };
+      }
+      if (xml.includes('simon')) {
+        return { items: [{ title: 'Introducing ChatGPT Images 2.5', link: 'https://simon.example/images-2-5', isoDate: daysAgo(4) }] };
+      }
+      return { items: [] };
+    };
+    const { svc } = makeService({ parse });
+    const out = await svc.ingest(NOW, new Set(), sources, []);
+
+    expect(out).toHaveLength(1);
+    expect(out[0].title).toBe('Introducing ChatGPT Images 2.5');
+    expect(out[0].normalizedUrl).toBe(normalizeTargetUrl('https://simon.example/images-2-5'));
+    expect(out[0].sourceId).toBe('simon');
+    expect(out[0].sources).toEqual(['simon']); // 不含 openai-blog：舊文未參與標題去重、無不實交叉驗證
+    const lines = logLines();
+    expect(lines).toContain('[漏斗 A] URL 去重後：2 則（-0）'); // URL 不同、不合併
+    expect(lines).toContain('[漏斗 A] 新鮮度視窗後：1 則（-1）'); // 舊文於此被丟
+    expect(lines).toContain('[漏斗 A] 標題去重後：1 則（-0）');
+  });
+
+  it('(iii) F3 回歸：低分 HN 投稿與同 URL 的 tier 2 官方舊文先以 URL 合併、代表項為 HN，靠交叉驗證豁免門檻入池', async () => {
+    // 若新鮮度視窗放在 URL 去重之前：官方舊文（35 天前、無分數）先被丟，HN 單筆（60 < 門檻 100）
+    // 再被漏斗門檻丟掉，整則消失。正確順序下 URL 精確合併必為同一篇文章、不可能誤吞：合併後代表項
+    // 為有分數的 HN、通過視窗，`sources.length >= 2` 交叉驗證豁免門檻。
+    const sources: NewsSource[] = [
+      { id: 'hn', type: 'hn-algolia', url: 'https://hn.algolia.com/api/v1/search?tags=story', domain: 'ai', tier: 1 },
+      { id: 'official-blog', type: 'rss', url: 'https://official.example/feed', domain: 'ai', tier: 2 },
+    ];
+    const { svc } = makeService({
+      json: (url) =>
+        url.includes('hn.algolia')
+          ? { hits: [{ objectID: '7', title: 'Official deep dive on AI agents', url: 'https://official.example/deep-dive', points: 60, created_at_i: WEEK_AGO_I }] }
+          : { hits: [] },
+      parse: (xml) =>
+        xml.includes('official')
+          ? { items: [{ title: 'Official deep dive on AI agents', link: 'https://official.example/deep-dive', isoDate: daysAgo(35) }] }
+          : { items: [] },
+    });
+    const out = await svc.ingest(NOW, new Set(), sources, []);
+
+    expect(out).toHaveLength(1);
+    expect(out[0].normalizedUrl).toBe(normalizeTargetUrl('https://official.example/deep-dive'));
+    expect(out[0].sourceId).toBe('hn'); // 代表項＝有分數者
+    expect(out[0].score).toBe(60); // 低於 tier 1 門檻 100，但交叉驗證豁免
+    expect(out[0].sources).toEqual(['hn', 'official-blog']);
+    const lines = logLines();
+    expect(lines).toContain('[漏斗 A] URL 去重後：1 則（-1）'); // 先合併
+    expect(lines).toContain('[漏斗 A] 新鮮度視窗後：1 則（-0）'); // 代表項有分數 → 豁免
+    expect(lines).toContain('[漏斗 A] 漏斗後最終：1 則（-0）'); // 門檻豁免、未被丟
+  });
+});
+
+describe('NewsIngestService.collect — 0 筆來源仍出現在逐源對帳 log（2026-09-12，F4）', () => {
+  const sources: NewsSource[] = [
+    { id: 'good-rss', type: 'rss', url: 'https://good.example/feed', domain: 'ai', tier: 1 },
+    { id: 'dead-rss', type: 'rss', url: 'https://dead.example/feed', domain: 'ai', tier: 2 },
+  ];
+  const parse = (xml: string) =>
+    xml.includes('good')
+      ? { items: [{ title: 'Good AI post', link: 'https://good.example/a', isoDate: '2026-07-17T00:00:00Z' }] }
+      : { items: [] };
+
+  let logSpy: jest.SpyInstance;
+  beforeEach(() => {
+    logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+  });
+  afterEach(() => {
+    logSpy.mockRestore();
+  });
+
+  it('parsedCount === 0 的來源：log 含「解析 0 則 → 過濾後 0 則」且仍發帶 id 告警', async () => {
+    const { svc, postFailureAlert } = makeService({ parse });
+    const out = await svc.ingest(NOW, new Set(), sources, []);
+
+    expect(out).toHaveLength(1);
+    const lines = logSpy.mock.calls.map((c) => String(c[0]));
+    expect(lines).toContain('[來源 dead-rss] 解析 0 則 → 過濾後 0 則');
+    expect(lines).toContain('[來源 good-rss] 解析 1 則 → 過濾後 1 則');
+    const alerts = postFailureAlert.mock.calls.map((c) => String(c[0]));
+    expect(alerts.some((m) => m.includes('[dead-rss]') && m.includes('0 筆'))).toBe(true); // 仍照舊告警
   });
 });

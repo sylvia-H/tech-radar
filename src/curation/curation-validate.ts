@@ -30,8 +30,8 @@ function domainOf(it: ResolvedPick): NewsDomain3 {
  *     社群熱度會在這步被完全截掉，這正是結構性保證的體現
  * (5) `title`/`content` 收斂至 ≤70/≤500 code points
  *
- * 每則以 `ref` 對回候選附上程式提供的事實（`url`/`domain`/`sourceCount`/`weightedScore`），
- * `degraded:false`（憲章 VI 防幻覺，FR-006/009）。
+ * 每則以 `ref` 對回候選附上程式提供的事實（`url`/`domain`/`sourceId`/`sources`/`sourceCount`/
+ * `weightedScore`），`degraded:false`（憲章 VI 防幻覺，FR-006/009）。
  */
 export function validateCuration(
   officialPicks: readonly CurationLlmPick[],
@@ -63,6 +63,8 @@ export function validateCuration(
     content: clampToLimit(it.content, 500),
     url: it.candidate.originalUrl,
     domain: domainOf(it),
+    sourceId: it.candidate.sourceId,
+    sources: [...it.candidate.sources], // 淺拷貝：精選項落檔後不與候選陣列共用參照（2026-09-12 新增）
     sourceCount: it.candidate.sources.length,
     weightedScore: it.candidate.weightedScore,
     degraded: false,

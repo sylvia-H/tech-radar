@@ -1,5 +1,5 @@
 import { NewsCandidate } from './news.types';
-import { DEFAULT_FUNNEL_CONFIG, runFunnel } from './funnel';
+import { DEFAULT_FUNNEL_CONFIG, isFreshEnough, runFunnel } from './funnel';
 
 const NOW = new Date('2026-08-04T00:00:00Z');
 const DAY_MS = 86_400_000;
@@ -212,5 +212,24 @@ describe('runFunnel — 無分數候選新鮮度視窗（2026-08-04 新增，fre
       NOW,
     );
     expect(out.map((o) => o.normalizedUrl)).toEqual(['hn-old']);
+  });
+});
+
+describe('isFreshEnough（2026-09-12 export，供 ingest 去重前與漏斗內共用同一判定）', () => {
+  const WINDOW = DEFAULT_FUNNEL_CONFIG.freshnessWindowDays;
+
+  it('視窗內（5 天前）→ 新鮮；剛好 30 天 → 仍新鮮（邊界含）', () => {
+    expect(isFreshEnough(cand({ publishedAt: new Date(NOW.getTime() - 5 * DAY_MS).toISOString() }), NOW, WINDOW)).toBe(true);
+    expect(isFreshEnough(cand({ publishedAt: new Date(NOW.getTime() - 30 * DAY_MS).toISOString() }), NOW, WINDOW)).toBe(true);
+  });
+
+  it('視窗外（31 天前／144 天前封存舊文）→ 不新鮮', () => {
+    expect(isFreshEnough(cand({ publishedAt: new Date(NOW.getTime() - 31 * DAY_MS).toISOString() }), NOW, WINDOW)).toBe(false);
+    expect(isFreshEnough(cand({ publishedAt: new Date(NOW.getTime() - 144 * DAY_MS).toISOString() }), NOW, WINDOW)).toBe(false);
+  });
+
+  it('publishedAt 缺失（null）或無法解析 → 一律視為不新鮮', () => {
+    expect(isFreshEnough(cand({ publishedAt: null }), NOW, WINDOW)).toBe(false);
+    expect(isFreshEnough(cand({ publishedAt: 'not-a-date' }), NOW, WINDOW)).toBe(false);
   });
 });

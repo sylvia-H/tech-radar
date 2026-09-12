@@ -51,6 +51,8 @@ function curatedItem(overrides: Partial<CuratedNewsItem> = {}): CuratedNewsItem 
     content: 'content',
     url: 'https://example.com/a',
     domain: 'ai',
+    sourceId: 'hn',
+    sources: ['hn'],
     sourceCount: 1,
     weightedScore: 100,
     degraded: false,

@@ -174,6 +174,8 @@ describe('PipelineService.run — 整合：榜單段推播失敗＋同 run 晨�
           content: '內容',
           url: 'https://example.com/a',
           domain: 'ai',
+          sourceId: 'hn',
+          sources: ['hn'],
           sourceCount: 1,
           weightedScore: 100,
           degraded: false,
@@ -196,7 +198,9 @@ describe('PipelineService.run — 整合：榜單段推播失敗＋同 run 晨�
     expect(state.intros).toEqual(before.intros);
     // 晨報段推播成功：seenNews/lastNewsPushAt 正常前進。
     expect(state.lastNewsPushAt).toBe(now.toISOString());
-    expect(state.seenNews).toEqual([{ url: 'https://example.com/a', seenAt: now.toISOString() }]);
+    expect(state.seenNews).toEqual([
+      { url: 'https://example.com/a', seenAt: now.toISOString(), sourceId: 'hn', sources: ['hn'], domain: 'ai' },
+    ]);
     // save 只被呼叫一次（晨報段），且帶著同一個累積 state（未被榜單段的失敗污染 seenNews 欄位）。
     expect(save).toHaveBeenCalledTimes(1);
     expect(save).toHaveBeenCalledWith(state);
