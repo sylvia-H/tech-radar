@@ -27,7 +27,7 @@ import { validateNewsSources } from './news-source.schema';
  */
 const RAW_NEWS_SOURCES: NewsSource[] = [
   // ── Tier 1：常開高訊號（跨領域聚合） ──────────────────────────────────
-  // HN 週熱門：fetcher 依 `now` 補上 `numericFilters=created_at_i>{7天前}`（近 7 天口徑）。
+  // HN 熱門：fetcher 依 `now` 補上 `numericFilters=created_at_i>{4天前}`（近 4 天口徑，2026-09-12 由 7 天改，見 fetcher docstring）。
   { id: 'hn', type: 'hn-algolia', url: 'https://hn.algolia.com/api/v1/search?tags=story', domain: 'cross', tier: 1 },
   { id: 'lobsters-ai', type: 'rss', url: 'https://lobste.rs/t/ai.rss', domain: 'ai', tier: 1 },
   { id: 'lobsters-devops', type: 'rss', url: 'https://lobste.rs/t/devops.rss', domain: 'devops', tier: 1 },
