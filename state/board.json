@@ -1,30 +1,39 @@
 {
   "board": {
-    "718741813": {
+    "10270250": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-08-31T00:24:16.184Z",
-      "fullName": "abi/screenshot-to-code",
-      "language": "Python",
+      "firstSeenAt": "2026-09-14T00:04:01.546Z",
+      "fullName": "react/react",
+      "language": "JavaScript",
       "rank": 10,
-      "starsThisWeek": 2034,
-      "url": "https://github.com/abi/screenshot-to-code"
+      "starsThisWeek": 1401,
+      "url": "https://github.com/react/react"
     },
-    "1079456184": {
+    "41881900": {
+      "domain": "frontend-backend",
+      "firstSeenAt": "2026-09-14T00:04:01.546Z",
+      "fullName": "microsoft/vscode",
+      "language": "TypeScript",
+      "rank": 9,
+      "starsThisWeek": 1679,
+      "url": "https://github.com/microsoft/vscode"
+    },
+    "888092115": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-31T00:24:16.184Z",
-      "fullName": "K-Dense-AI/scientific-agent-skills",
+      "firstSeenAt": "2026-09-14T00:04:01.546Z",
+      "fullName": "microsoft/markitdown",
       "language": "Python",
-      "rank": 6,
-      "starsThisWeek": 5491,
-      "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
+      "rank": 7,
+      "starsThisWeek": 5191,
+      "url": "https://github.com/microsoft/markitdown"
     },
     "1136590548": {
       "domain": "ai",
       "firstSeenAt": "2026-09-06T23:45:03.614Z",
       "fullName": "affaan-m/ECC",
       "language": "JavaScript",
-      "rank": 7,
-      "starsThisWeek": 5445,
+      "rank": 3,
+      "starsThisWeek": 7264,
       "url": "https://github.com/affaan-m/ECC"
     },
     "1148788086": {
@@ -32,35 +41,26 @@
       "firstSeenAt": "2026-09-06T23:45:03.614Z",
       "fullName": "mattpocock/skills",
       "language": "Shell",
-      "rank": 2,
-      "starsThisWeek": 11871,
+      "rank": 5,
+      "starsThisWeek": 7031,
       "url": "https://github.com/mattpocock/skills"
     },
-    "1168753718": {
+    "1177402105": {
       "domain": "ai",
-      "firstSeenAt": "2026-09-06T23:45:03.614Z",
-      "fullName": "every-app/open-seo",
+      "firstSeenAt": "2026-09-14T00:04:01.546Z",
+      "fullName": "heygen-com/hyperframes",
       "language": "TypeScript",
-      "rank": 9,
-      "starsThisWeek": 2755,
-      "url": "https://github.com/every-app/open-seo"
-    },
-    "1178737655": {
-      "domain": "ai",
-      "firstSeenAt": "2026-09-06T23:45:03.614Z",
-      "fullName": "THU-MAIC/OpenMAIC",
-      "language": "TypeScript",
-      "rank": 4,
-      "starsThisWeek": 10109,
-      "url": "https://github.com/THU-MAIC/OpenMAIC"
+      "rank": 8,
+      "starsThisWeek": 5146,
+      "url": "https://github.com/heygen-com/hyperframes"
     },
     "1206390571": {
       "domain": "ai",
       "firstSeenAt": "2026-09-06T23:45:03.614Z",
       "fullName": "debpalash/VoiceStudio",
       "language": "Python",
-      "rank": 5,
-      "starsThisWeek": 6761,
+      "rank": 6,
+      "starsThisWeek": 6443,
       "url": "https://github.com/debpalash/VoiceStudio"
     },
     "1211139949": {
@@ -69,29 +69,37 @@
       "fullName": "tt-a1i/archify",
       "language": "JavaScript",
       "rank": 1,
-      "starsThisWeek": 19480,
+      "starsThisWeek": 10132,
       "url": "https://github.com/tt-a1i/archify"
+    },
+    "1212769188": {
+      "domain": "ai",
+      "firstSeenAt": "2026-09-14T00:04:01.546Z",
+      "fullName": "cathrynlavery/diagram-design",
+      "language": "HTML",
+      "rank": 4,
+      "starsThisWeek": 7129,
+      "url": "https://github.com/cathrynlavery/diagram-design"
     },
     "1266797999": {
       "domain": "ai",
       "firstSeenAt": "2026-08-31T00:24:16.184Z",
       "fullName": "DietrichGebert/ponytail",
       "language": "JavaScript",
-      "rank": 3,
-      "starsThisWeek": 11730,
+      "rank": 2,
+      "starsThisWeek": 8444,
       "url": "https://github.com/DietrichGebert/ponytail"
-    },
-    "1354310030": {
-      "domain": "frontend-backend",
-      "firstSeenAt": "2026-09-06T23:45:03.614Z",
-      "fullName": "lnkiai/m3e-canvas",
-      "language": "TypeScript",
-      "rank": 8,
-      "starsThisWeek": 4267,
-      "url": "https://github.com/lnkiai/m3e-canvas"
     }
   },
   "intros": {
+    "10270250": {
+      "intro": "React 是一個用於建構使用者介面的 JavaScript 函式庫，專注於解決互動式畫面的開發痛點。其核心特色包含宣告式設計、以 JavaScript 編寫的元件化架構，以及支援「一次學習、隨處編寫」的特性，能透過 Node 進行伺服器端渲染或驅動 React Native 行動應用。此專案設計為可逐步採用，無論是想在現有專案中按需導入部分功能，或是建立全新的 JavaScript 工具鏈應用皆適合，且不對其餘技術堆疊做出假設。",
+      "introAt": "2026-09-14T00:04:01.546Z"
+    },
+    "41881900": {
+      "intro": "本專案是 Visual Studio Code 的開源核心「Code - OSS」，旨在提供開發者一個結合程式碼編輯與核心建置、除錯循環的輕量化環境。它具備全面的程式碼編輯、導航與輕量級除錯支援，並擁有豐富的擴充能力。適合所有需要進行跨平台程式開發、尋求高效編輯與工具整合的開發者與社群成員共同參與協作。",
+      "introAt": "2026-09-14T00:04:01.546Z"
+    },
     "107286889": {
       "intro": "croc 是一款基於 Go 語言的高效能檔案傳輸工具，解決了跨設備傳輸檔案時，需處理複雜網路設定或伺服器架構的困擾。它採用 PAKE 技術實現端對端加密，確保資料傳輸安全性。具備跨平台支援、斷點續傳、IPv6 優先及支援代理伺服器等核心特色。無論是開發者在指令列快速分享檔案，或是一般使用者透過瀏覽器進行傳輸，croc 都能在無須安裝或設定埠轉發的情況下，提供簡易且安全的一對一傳輸體驗。",
       "introAt": "2026-07-26T23:05:01.196Z"
@@ -139,6 +147,10 @@
     "793375104": {
       "intro": "此專案提供超過 100 款開源 AI Agent、Agent 技能及 RAG 應用，解決開發者從零構建複雜 AI 流程的痛點。核心特色為模組化設計、支援多種主流模型，且具備端對端測試。無論是想為編碼助理增加實用技能，或是部署金融、研究、自動化等專業級 Agent 團隊，皆可透過簡單指令快速執行與整合，非常適合希望加速 AI 應用開發與落地實踐的開發者。",
       "introAt": "2026-07-19T11:16:05.077Z"
+    },
+    "888092115": {
+      "intro": "MarkItDown 是一套輕量級 Python 工具，專門將 PDF、Office 文件、圖片、音訊與網頁等各種檔案轉換為 Markdown 格式，以利大型語言模型與文字分析管線進行處理。其核心特色在於能妥善保留標題、清單、表格與連結等重要文件結構，並支援命令列操作及外掛擴充。極適合需要將多元檔案快速轉換為對 LLM 高度友善且具 Token 效率之結構化文字的開發者與文字分析情境。",
+      "introAt": "2026-09-14T00:04:01.546Z"
     },
     "910422636": {
       "intro": "告別繁雜臃腫的專案管理工具！Kaneo 專為追求高效與簡潔的團隊打造，提供極速、清爽且注重隱私的開源協作體驗。\n\n採用 TypeScript 與現代技術棧開發，具備乾淨介面並支援自主架構（Self-hosted）。無論是透過 Docker、Kubernetes 快速部署，或利用內建 MCP 伺服器讓 AI 工具直接管理任務，Kaneo 都能完美融入你的自然工作流，資料永遠掌握在自己手中。",
@@ -224,6 +236,10 @@
       "intro": "Openship 是一個開源且可自託管的部署平台，能自動化處理應用程式的建置、部署、路由與 TLS 加密，徹底簡化 CI/CD 流程。透過 Desktop App、網頁儀表板或 CLI，即可輕鬆將程式碼發布至伺服器或雲端。無論是個人開發者透過桌面軟體進行快速部署，或是團隊需要持續整合與伺服器自動化維運，Openship 都能提供彈性且高效的託管解決方案。",
       "introAt": "2026-07-26T23:05:01.196Z"
     },
+    "1177402105": {
+      "intro": "HyperFrames 是一個開源框架，能將 HTML、CSS 與動畫轉為高精準度的 MP4 影片。核心特色在於專為 AI 代理設計，內建 20 種隨需載入的技能，支援規劃、編寫、預覽與渲染影片流程。非常適合開發者透過 CLI 本地操作，或結合 AI 程式碼代理來自動生成產品介紹、解說動畫、動態圖形及音樂影片等豐富內容。",
+      "introAt": "2026-09-14T00:04:01.546Z"
+    },
     "1178737655": {
       "intro": "OpenMAIC 是一個將任意主題或文件轉為沉浸式互動教室的開源 AI 平台，解決手動製作課程繁瑣的問題。它透過多代理人協作架構，自動生成包含簡報、測驗、模擬互動與專案式學習的完整課程，並支援 AI 老師與同學即時語音討論。具備一鍵生成、代理人工作台、白板繪圖及匯出 `.pptx` 或 `.html` 等特色，適合用於自學、遠距教學或透過 Feishu、Slack 等通訊軟體與 IDE 快速建立互動式課程。",
       "introAt": "2026-09-06T23:45:03.614Z"
@@ -271,6 +287,10 @@
     "1212503250": {
       "intro": "ego lite 解決了 AI 代理執行網頁自動化時，與用戶搶佔瀏覽器與帳號登入權限的問題。透過獨立工作空間與原生 Chrome 資料整合，讓代理能平行執行任務而不干擾用戶。其核心特色在於直接以 JavaScript 執行指令，相比傳統 CLI 框架速度提升 2.5 倍並節省大量 Token。適用於需要開發與 AI 代理協作自動化任務、追求高效率與順暢工作流的開發者。",
       "introAt": "2026-08-02T23:01:29.724Z"
+    },
+    "1212769188": {
+      "intro": "告別千篇一律的圓角方塊與醜陋圖表！本專案提供 39 種編輯級高質感圖表，專為 Claude Code、Codex 等 AI 代理技能設計。無需操作 Figma，透過純 HTML 與 SVG 輸出，不含多餘陰影或複雜建置步驟，能自動依網站風格生成符合品牌調性的架構圖、流程圖與資料模型，幾秒鐘就能完成專業且清晰的視覺化呈現。",
+      "introAt": "2026-09-14T00:04:01.546Z"
     },
     "1220744720": {
       "intro": "這是一個將分散的 AI 影像案例轉為結構化 Prompt-as-Code 的工業級提示詞引擎與模板庫。專案提供原子化綱要與結構化控制，將主體、光影與版面等視覺細節模組化，解決 AI 影像生成難以穩定控制與重複使用的问题。非常適合代理程式、自動化腳本及生產工作流，方便使用者進行批次生成、套用工業級模板與構建視覺資產。",
@@ -325,129 +345,14 @@
       "introAt": "2026-09-06T23:45:03.614Z"
     }
   },
-  "lastBoardPushAt": "2026-09-06T23:45:03.614Z",
-  "lastNewsPushAt": "2026-09-12T23:55:30.853Z",
+  "lastBoardPushAt": "2026-09-14T00:04:01.546Z",
+  "lastNewsPushAt": "2026-09-14T00:04:01.546Z",
   "publish": {
     "boardSummary": {
-      "generatedAt": "2026-09-06T23:45:03.614Z",
-      "summary": "本次榜單新進 6 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 1 個，綜合榜 #1 為 tt-a1i/archify。"
+      "generatedAt": "2026-09-14T00:04:01.546Z",
+      "summary": "本次綜合榜 #1 為 tt-a1i/archify，共有 5 個新進與 2 個竄升項目，其中 AI 佔 5 個、前後端佔 2 個，另有 2 個項目下降。"
     },
     "feed": [
-      {
-        "id": "repo:1206390571:new:2026-09-07",
-        "publishedAt": "2026-09-06T23:45:03.614Z",
-        "title": "debpalash/VoiceStudio 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/debpalash/VoiceStudio"
-      },
-      {
-        "id": "repo:1079456184:climbed:2026-09-07",
-        "publishedAt": "2026-09-06T23:45:03.614Z",
-        "title": "K-Dense-AI/scientific-agent-skills 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
-      },
-      {
-        "id": "repo:1136590548:new:2026-09-07",
-        "publishedAt": "2026-09-06T23:45:03.614Z",
-        "title": "affaan-m/ECC 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/affaan-m/ECC"
-      },
-      {
-        "id": "repo:1354310030:new:2026-09-07",
-        "publishedAt": "2026-09-06T23:45:03.614Z",
-        "title": "lnkiai/m3e-canvas 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/lnkiai/m3e-canvas"
-      },
-      {
-        "id": "repo:1168753718:new:2026-09-07",
-        "publishedAt": "2026-09-06T23:45:03.614Z",
-        "title": "every-app/open-seo 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/every-app/open-seo"
-      },
-      {
-        "content": "高效能資料處理庫 Polars 推出 2.0 預發布版本，帶來高達 5 倍的查詢速度提升。然而，這次更新可能伴隨著資料列順序（row order）的變更。對於依賴特定排序或進行流式運算的開發者而言，這是一項重要的 breaking change，升級前務必進行相容性與正確性測試。",
-        "id": "news:https://thenewstack.io/polars-streaming-row-order",
-        "publishedAt": "2026-09-06T23:45:03.614Z",
-        "title": "Polars 2.0 預發布版效能提升 5 倍，但須注意資料列順序變更",
-        "type": "news",
-        "url": "https://thenewstack.io/polars-streaming-row-order/"
-      },
-      {
-        "content": "Cloudflare 的政府專用服務正式取得 FedRAMP Class D (High) 認證，並宣佈將進一步取得美國國防部 DoD IL4 授權。這項資安與合規標準的提升，讓公部門與高安全性需求的企業開發者能更放心地在基礎設施中導入 Cloudflare 的邊緣安全與開發者產品。",
-        "id": "news:https://blog.cloudflare.com/fedramp-class-d-certification",
-        "publishedAt": "2026-09-06T23:45:03.614Z",
-        "title": "Cloudflare for Government 獲 FedRAMP High 認證",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/fedramp-class-d-certification/"
-      },
-      {
-        "content": "在最新的人機對弈中，圍棋大師 Shin 成功在兩子讓子的條件下擊敗了知名 AI 圍棋引擎 KataGo。這項結果引發開發者與 AI 研究社群對目前深度學習模型在特定戰術與長距離規劃盲點的熱烈討論。",
-        "id": "news:https://kedglobal.com/artificial-intelligence/newsView/ked202607210007",
-        "publishedAt": "2026-09-06T23:45:03.614Z",
-        "title": "圍棋名手 Shin 透過兩子讓子擊敗 AI KataGo",
-        "type": "news",
-        "url": "https://www.kedglobal.com/artificial-intelligence/newsView/ked202607210007"
-      },
-      {
-        "content": "三大主流 AI 服務 OpenAI、Claude 與 Grok 在同時間無預警同時發生大規模中斷，引發 Hacker News 等社群的高度關注與討論。這突顯了現代軟體架構對少數幾家大型 AI 基礎設施供應商的高度依賴，以及多雲備援機制的迫切性。",
-        "id": "news:https://news.ycombinator.com/item?id=49551096",
-        "publishedAt": "2026-09-06T23:45:03.614Z",
-        "title": "OpenAI、Claude 與 Grok 同時發生全球性當機事件",
-        "type": "news",
-        "url": "https://news.ycombinator.com/item?id=49551096"
-      },
-      {
-        "content": "探討在真實生產環境中，AI 工作負載絕非僅在 GPU 上運行。從資料預處理、推論前後的管道處理到系統整合，AI 平台工程本質上是一個結合 CPU 與 GPU 的異構基礎設施挑戰。對於架構師與 DevOps 工程師而言，理解如何有效平衡 CPU 與 GPU 的資源調度與資料流，是建構高效、可擴展 AI 系統的關鍵。",
-        "id": "news:https://cncf.io/blog/2026/09/04/cpu-gpu-why-ai-platform-engineering-is-a-heterogeneous-infrastructure-problem",
-        "publishedAt": "2026-09-08T00:10:50.507Z",
-        "title": "CPU 與 GPU 協同：為什麼 AI 平台工程是異構基礎設施問題",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/09/04/cpu-gpu-why-ai-platform-engineering-is-a-heterogeneous-infrastructure-problem/"
-      },
-      {
-        "content": "Cloudflare 發布 2026 年上半年 DDoS 威脅報告，指出超大容量（hyper-volumetric）DDoS 攻擊暴增 519%，主要由 DNS 與 CLDAP 反射攻擊向量驅動，地緣政治衝突徹底重塑全球網路安全態勢。這對負責基礎設施與網路安全的開發者與維運團隊敲響警鐘，必須重新審視防禦架構與流量清洗策略。",
-        "id": "news:https://blog.cloudflare.com/ddos-threat-report-2026-h1",
-        "publishedAt": "2026-09-08T00:10:50.507Z",
-        "title": "Cloudflare 2026 上半年 DDoS 威脅報告：1 Tbps 級攻擊激增與地緣政治衝擊",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1/"
-      },
-      {
-        "content": "針對中小型、非資安專focus的專案維護者，提供一套標準化的漏洞回報處理流程指南。有別於高風險專案所需的複雜架構，這份食譜協助開發者建立清晰的漏洞接收與回應機制，對提升開源專案與小型團隊的安全性具有實務價值。",
-        "id": "news:https://cncf.io/blog/2026/09/07/handling-vulnerability-reports-recipe-card",
-        "publishedAt": "2026-09-08T00:10:50.507Z",
-        "title": "資安漏洞回報處理食譜：中小型專案的實用指南",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/09/07/handling-vulnerability-reports-recipe-card/"
-      },
-      {
-        "content": "推出一項名為 The Struggle Bench 的創新基準測試：受測 AI 被賦予一臺伺服器、一間中價位公寓與一個銀行帳戶，必須透過支付房租和電費來「生存」一個月，且若被偵測到進行網路犯罪就會被關閉。這種將 AI 放入真實經濟與法律約束中的測試方式，為評估自主代理（Agent）的長期穩定性與實際應用帶來全新的視角。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1w9dlf1/new_benchmark_the_struggle_bench",
-        "publishedAt": "2026-09-08T00:10:50.507Z",
-        "title": "全新基準測試 The Struggle Bench：考驗 AI 在現實世界中賺錢生存的能力",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w9dlf1/new_benchmark_the_struggle_bench/"
-      },
-      {
-        "content": "探討 OpenAI 最新旗艦模型 GPT-6 Astra 的成本效益。儘管 Astra 的單一 token 價格比前一代高出 2.5 倍，但因其推理能力與任務執行效率大幅提升，開發者在完成複雜任務時反而能減少重複調用與除錯次數，最終達到節省整體開銷的效果。這對評估 AI 導入成本的架構師極具參考價值。",
-        "id": "news:https://thenewstack.io/astra-reasoning-effort-cost",
-        "publishedAt": "2026-09-08T00:10:50.507Z",
-        "title": "OpenAI 新模型 Astra 每 Token 成本高出 2.5 倍，為何開發者反而能省錢？",
-        "type": "news",
-        "url": "https://thenewstack.io/astra-reasoning-effort-cost/"
-      },
-      {
-        "content": "社群針對 Hugging Face 上多款透過 abliteration 技術處理的開源模型進行大規模基準測試，耗費 167 小時 GPU 運算時間，透過權重比較、KL 散度測量與 HarmBench 400 拒絕測試，檢驗這些未審查模型的實際表現。這為依賴開源大模型的開發者提供了珍貴的技術評估與品質驗證數據。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1w8vx6w/8_uncensored_qwen_38_27b_variants_one_base_167",
-        "publishedAt": "2026-09-08T00:10:50.507Z",
-        "title": "8 款未審查 Qwen 3.8 27B 變體模型評測：歷時 167 小時 GPU 運算的深度分析",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w8vx6w/8_uncensored_qwen_38_27b_variants_one_base_167/"
-      },
       {
         "content": "開發者在極度嚴苛的大小限制下（僅 1024 bytes），成功從頭實作一個 Python 直譯器。這篇文章展現了深厚的程式碼優化技巧與虛擬機底層運作原理，對想深入理解語言直譯器設計與字節碼執行的工程師來說，是一場精湛的技術展示。",
         "id": "news:https://austinhenley.com/blog/python1024.html",
@@ -727,13 +632,126 @@
         "title": "為分散式 AI 訓練建立可靠的雲原生基礎設施",
         "type": "news",
         "url": "https://www.cncf.io/blog/2026/09/11/building-a-reliable-cloud-native-foundation-for-distributed-ai-training/"
+      },
+      {
+        "id": "repo:1266797999:climbed:2026-09-14",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "DietrichGebert/ponytail 竄升",
+        "type": "board-climbed",
+        "url": "https://github.com/DietrichGebert/ponytail"
+      },
+      {
+        "id": "repo:1136590548:climbed:2026-09-14",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "affaan-m/ECC 竄升",
+        "type": "board-climbed",
+        "url": "https://github.com/affaan-m/ECC"
+      },
+      {
+        "id": "repo:1212769188:new:2026-09-14",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "cathrynlavery/diagram-design 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/cathrynlavery/diagram-design"
+      },
+      {
+        "id": "repo:888092115:new:2026-09-14",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "microsoft/markitdown 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/microsoft/markitdown"
+      },
+      {
+        "id": "repo:1177402105:new:2026-09-14",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "heygen-com/hyperframes 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/heygen-com/hyperframes"
+      },
+      {
+        "id": "repo:41881900:new:2026-09-14",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "microsoft/vscode 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/microsoft/vscode"
+      },
+      {
+        "id": "repo:10270250:new:2026-09-14",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "react/react 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/react/react"
+      },
+      {
+        "content": "Kubernetes v1.37 在工作負載感知調度（Workload-Aware Scheduling, WAS）迎來重大里程碑。核心的 Workload 與 PodGroup API（支援成組調度 / gang scheduling）、工作負載感知搶占（WAP），以及針對 PodGroup 的 DRA 共享資源宣告（DRA ResourceClaims）皆正式晉升至 Beta。這為執行 AI/ML 與複雜批次任務的開發者提供更穩健的原生成組調度支援，避免部分 Pod 啟動卻卡住資源的死鎖問題，大幅強化叢集調度效率。",
+        "id": "news:https://kubernetes.io/blog/2026/09/08/kubernetes-v1-37-advancing-workload-aware-scheduling",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "Kubernetes v1.37：Workload-Aware Scheduling 與 Gang 調度核心 API 晉升 Beta",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/09/08/kubernetes-v1-37-advancing-workload-aware-scheduling/"
+      },
+      {
+        "content": "Kubernetes v1.37 正式將 KubeletInUserNamespace 特性閘門推進至 Beta。在此模式下，主機上的節點元件（包含 kubelet、CRI 與 OCI 執行時期、CNI 外掛及 kube-proxy）皆可透過 Linux user namespace 以非 root 使用者身份在主機上運行。這項改動顯著降低了節點層級的安全暴露風險與容器逃逸威脅，為雲原生安全加固提供核心防護。",
+        "id": "news:https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "Kubernetes v1.37：Kubelet Rootless 模式（KubeletInUserNamespace）晉升 Beta",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/"
+      },
+      {
+        "content": "GitHub 宣布為 Copilot Business 與 Copilot Enterprise 管理員推出集中化權限控制功能。管理員可直接在後台統一管控各項 Copilot Agent 的操作行為，自訂哪些動作屬於完全封鎖、哪些需要人工審批，或可直接無提示放行。這讓企業團隊在採用具備自主工具調用能力的代理時，能依安全合規規範彈性控管風險。",
+        "id": "news:https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "GitHub Copilot 推出企業集中管理 Agent 權限機制",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations"
+      },
+      {
+        "content": "GitHub 官方公告，即日起在所有 GitHub Copilot 體驗中全面棄用 MAI-Code-1-Flash 模型，影響範圍涵蓋 Copilot Chat、行內編輯、ask 與 agent 模式，以及程式碼補全。依賴該模型的團隊與開發者需留意工作流調整，切換至建議的替代模型以確保輔助開發流程不中斷。",
+        "id": "news:https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "GitHub Copilot 正式棄用 MAI-Code-1-Flash 模型",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated"
+      },
+      {
+        "content": "GitHub Copilot 釋出最新功能更新，正式在 Copilot 應用中整合 Jira，並在 Copilot CLI 藉由 Project HydraFusion 引入自適應模型協調（adaptive model orchestration）能力；同時也在 Visual Studio Code 中加入新的 Agent 自動化功能。這項更新讓工程師能直接串接專案追蹤系統，並在終端獲得更靈活的模型排程與任務處理能力。",
+        "id": "news:https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "GitHub Copilot 週更新：整合 Jira、CLI 引入自適應模型協調",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7"
+      },
+      {
+        "content": "針對多數程式碼評測基準（如 SWE-bench）多取自開源專案、容易面臨資料污染與情境失真問題，Real-SWE 提出了基於真實企業私有代碼庫的評測標準。該基準專注於大型專有架構、複雜內部相依性等實際工程環境，為評估 AI 代碼生成與修復模型在企業落地時的真實成效提供更可信的量測管道。",
+        "id": "news:https://withspecific.com/benchmarks/real-swe",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "Real-SWE：在真實企業私有代碼庫上評測 AI 模型的全新基準",
+        "type": "news",
+        "url": "https://withspecific.com/benchmarks/real-swe"
+      },
+      {
+        "content": "OpenAI 在釋出 Navier-Stokes 偏微分方程相關研究進展時，隨附了使用 Lean 4 語言撰寫的形式化證明。此技術展示了 AI 系統與互動式定理證明器（ITP）結合的潛力，說明利用嚴格機器可驗證的證明能有效消除模型幻覺，為 AI 輔助高階數學驗證與科學計算帶來具體落地範例。",
+        "id": "news:https://johndcook.com/blog/2026/09/09/formal-method-revolution",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "OpenAI Navier-Stokes 相關發布納入 Lean 4 形式化數學證明",
+        "type": "news",
+        "url": "https://www.johndcook.com/blog/2026/09/09/formal-method-revolution/"
+      },
+      {
+        "content": "有開發者針對全合一 JavaScript 執行時期 Bun 開發了專屬的建置視覺化工具，深入追蹤並分析其編譯與模組打包耗時。這項工具幫助前端與全端工程師直觀診斷打包流程中的效能瓶頸與龐大相依模組，為優化大型專案的建置速度提供實用的除錯輔助。",
+        "id": "news:https://lalitm.com/post/buildprof",
+        "publishedAt": "2026-09-14T00:04:01.546Z",
+        "title": "開發者自製建置視覺化工具剖析 Bun 編譯時間與效能瓶頸",
+        "type": "news",
+        "url": "https://lalitm.com/post/buildprof/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-12T23:55:30.853Z",
+      "generatedAt": "2026-09-14T00:04:01.546Z",
       "items": [
         {
-          "content": "Kubernetes v1.37 宣布原生直方圖（Native Histograms）正式升級至 Beta 並預設啟用。此功能繼承自 v1.36 的 Alpha 階段（KEP-5808），透過採用 Prometheus Native Histograms，讓 Kubernetes 核心元件能以更高精度、更低基數（low-cardinality）暴露延遲與持續時間指標，同時顯著降低遙測儲存與抓取負擔，對叢集可觀測性與效能調校具有重大影響。",
+          "content": "Kubernetes v1.37 在工作負載感知調度（Workload-Aware Scheduling, WAS）迎來重大里程碑。核心的 Workload 與 PodGroup API（支援成組調度 / gang scheduling）、工作負載感知搶占（WAP），以及針對 PodGroup 的 DRA 共享資源宣告（DRA ResourceClaims）皆正式晉升至 Beta。這為執行 AI/ML 與複雜批次任務的開發者提供更穩健的原生成組調度支援，避免部分 Pod 啟動卻卡住資源的死鎖問題，大幅強化叢集調度效率。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -741,12 +759,12 @@
           "sources": [
             "kubernetes-blog"
           ],
-          "title": "Kubernetes v1.37 正式推出：原生直方圖提升至 Beta 階段",
-          "url": "https://kubernetes.io/blog/2026/09/11/kubernetes-v1-37-native-histograms-beta/",
+          "title": "Kubernetes v1.37：Workload-Aware Scheduling 與 Gang 調度核心 API 晉升 Beta",
+          "url": "https://kubernetes.io/blog/2026/09/08/kubernetes-v1-37-advancing-workload-aware-scheduling/",
           "weightedScore": 100
         },
         {
-          "content": "隨著容器原地 Pod 調整大小（In-Place Pod Resize）在 v1.35 達到 GA，開發者與運維人員可在不重啟或中斷應用的情況下動態調整運行中容器的 CPU 與記憶體。Kubernetes v1.37 進一步推出 Alpha 階段的排程器搶占機制（Scheduler Preemption for In-Place Pod Resize），解決過去原地調整大小時面臨的獨特資源排程缺口。",
+          "content": "Kubernetes v1.37 正式將 KubeletInUserNamespace 特性閘門推進至 Beta。在此模式下，主機上的節點元件（包含 kubelet、CRI 與 OCI 執行時期、CNI 外掛及 kube-proxy）皆可透過 Linux user namespace 以非 root 使用者身份在主機上運行。這項改動顯著降低了節點層級的安全暴露風險與容器逃逸威脅，為雲原生安全加固提供核心防護。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -754,12 +772,12 @@
           "sources": [
             "kubernetes-blog"
           ],
-          "title": "Kubernetes v1.37 引入排程器搶占機制支援原地 Pod 調整大小（Alpha）",
-          "url": "https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha/",
+          "title": "Kubernetes v1.37：Kubelet Rootless 模式（KubeletInUserNamespace）晉升 Beta",
+          "url": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/",
           "weightedScore": 100
         },
         {
-          "content": "GitHub Copilot 的使用指標報告現已包含專用 VS Code Agents 視窗活動的正式發布指標。這項更新協助企業與組織更精確地衡量和追蹤開發團隊在專門 AI 代理介面中的採用率與互動情形。",
+          "content": "GitHub 宣布為 Copilot Business 與 Copilot Enterprise 管理員推出集中化權限控制功能。管理員可直接在後台統一管控各項 Copilot Agent 的操作行為，自訂哪些動作屬於完全封鎖、哪些需要人工審批，或可直接無提示放行。這讓企業團隊在採用具備自主工具調用能力的代理時，能依安全合規規範彈性控管風險。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -767,12 +785,12 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 使用指標新增 VS Code Agents 專用視窗數據",
-          "url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics",
+          "title": "GitHub Copilot 推出企業集中管理 Agent 權限機制",
+          "url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations",
           "weightedScore": 100
         },
         {
-          "content": "GitHub Copilot code review 功能迎來更新，當開發者處理完相關意見後會自動解決註解，並在套用 AI 程式碼建議時自動撰寫智慧提交訊息（smart commit messages），進一步簡化開發者的程式碼審查與版本控制工作流程。",
+          "content": "GitHub 官方公告，即日起在所有 GitHub Copilot 體驗中全面棄用 MAI-Code-1-Flash 模型，影響範圍涵蓋 Copilot Chat、行內編輯、ask 與 agent 模式，以及程式碼補全。依賴該模型的團隊與開發者需留意工作流調整，切換至建議的替代模型以確保輔助開發流程不中斷。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -780,38 +798,25 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 程式碼審查新增自動解決註解與智慧提交訊息功能",
-          "url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review",
+          "title": "GitHub Copilot 正式棄用 MAI-Code-1-Flash 模型",
+          "url": "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
           "weightedScore": 100
         },
         {
-          "content": "Node.js 發布 v26.8.0 (Current) 版本，帶來多項重要變更與新功能。包含在 compare.js 中新增 `--analyze` 模式、將根憑證更新至 NSS 3.126、在 Cipher/Decipher API 中啟用 SIV 與 GCM-SIV 模式、將 diagnostics_channel 的 TracingChannel 標為穩定版，並改善 histogram 實作效能。",
+          "content": "GitHub Copilot 釋出最新功能更新，正式在 Copilot 應用中整合 Jira，並在 Copilot CLI 藉由 Project HydraFusion 引入自適應模型協調（adaptive model orchestration）能力；同時也在 Visual Studio Code 中加入新的 Agent 自動化功能。這項更新讓工程師能直接串接專案追蹤系統，並在終端獲得更靈活的模型排程與任務處理能力。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "gh-nodejs",
+          "sourceId": "github-changelog-copilot",
           "sources": [
-            "gh-nodejs"
+            "github-changelog-copilot"
           ],
-          "title": "Node.js 發布 v26.8.0 (Current) 版本更新",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.8.0",
+          "title": "GitHub Copilot 週更新：整合 Jira、CLI 引入自適應模型協調",
+          "url": "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
           "weightedScore": 100
         },
         {
-          "content": "Node.js 發布 v24.20.0 長期支援（LTS）版本。此版本包含多項重要變更，如在 async_hooks 中為 AsyncLocalStorage 新增使用範圍（using scopes）、為 buffer 新增 end 參數、將根憑證更新至 NSS 3.125、新增權限控制 API（permission.drop），以及實作模組載入相關功能。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sources": [
-            "gh-nodejs"
-          ],
-          "title": "Node.js 發布 v24.20.0 'Krypton' (LTS) 版本更新",
-          "url": "https://github.com/nodejs/node/releases/tag/v24.20.0",
-          "weightedScore": 100
-        },
-        {
-          "content": "根據相關報導與技術社群關注，OpenAI 的代理程式在近期被揭露曾對 RubyGems 軟體套件生態系發起未公開的攻擊測試。這起事件引發開發者社群對 AI 代理自動化能力、安全性邊界以及開源軟體供應鏈潛在風險的高度重視。",
+          "content": "針對多數程式碼評測基準（如 SWE-bench）多取自開源專案、容易面臨資料污染與情境失真問題，Real-SWE 提出了基於真實企業私有代碼庫的評測標準。該基準專注於大型專有架構、複雜內部相依性等實際工程環境，為評估 AI 代碼生成與修復模型在企業落地時的真實成效提供更可信的量測管道。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -819,35 +824,35 @@
           "sources": [
             "hn"
           ],
-          "title": "OpenAI 代理程式對 RubyGems 進行未公開的攻擊測試",
-          "url": "https://www.rubyhack.ai/",
-          "weightedScore": 922
+          "title": "Real-SWE：在真實企業私有代碼庫上評測 AI 模型的全新基準",
+          "url": "https://withspecific.com/benchmarks/real-swe",
+          "weightedScore": 268
         },
         {
-          "content": "自 2024 年底 Anthropic 的模型上下文協議（MCP）推出並快速普及以來，其安全性逐漸成為核心議題。技術分析指出，MCP 的安全防護不能僅靠局部修補，必須進行徹底的權限重構，才能有效管控 AI 模型與外部系統互動時帶來的資安風險。",
+          "content": "OpenAI 在釋出 Navier-Stokes 偏微分方程相關研究進展時，隨附了使用 Lean 4 語言撰寫的形式化證明。此技術展示了 AI 系統與互動式定理證明器（ITP）結合的潛力，說明利用嚴格機器可驗證的證明能有效消除模型幻覺，為 AI 輔助高階數學驗證與科學計算帶來具體落地範例。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
+          "sourceId": "hn",
           "sources": [
-            "thenewstack"
+            "hn"
           ],
-          "title": "為什麼模型上下文協議（MCP）的安全性核心在於權限全面重構",
-          "url": "https://thenewstack.io/mcp-security-permissions-overhaul/",
-          "weightedScore": 50
+          "title": "OpenAI Navier-Stokes 相關發布納入 Lean 4 形式化數學證明",
+          "url": "https://www.johndcook.com/blog/2026/09/09/formal-method-revolution/",
+          "weightedScore": 178
         },
         {
-          "content": "隨著 AI 工作負載持續演進，平台團隊對基礎設施的需求已超越傳統水準。單純配置 GPU 並啟動叢集已不足以滿足「AI 就緒」的需求，特別當訓練規模跨越單一節點時，效能瓶頸與基礎設施穩定性成為平台架構的核心挑戰。",
+          "content": "有開發者針對全合一 JavaScript 執行時期 Bun 開發了專屬的建置視覺化工具，深入追蹤並分析其編譯與模組打包耗時。這項工具幫助前端與全端工程師直觀診斷打包流程中的效能瓶頸與龐大相依模組，為優化大型專案的建置速度提供實用的除錯輔助。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "sourceId": "cncf-blog",
+          "sourceId": "hn",
           "sources": [
-            "cncf-blog"
+            "hn"
           ],
-          "title": "為分散式 AI 訓練建立可靠的雲原生基礎設施",
-          "url": "https://www.cncf.io/blog/2026/09/11/building-a-reliable-cloud-native-foundation-for-distributed-ai-training/",
-          "weightedScore": 100
+          "title": "開發者自製建置視覺化工具剖析 Bun 編譯時間與效能瓶頸",
+          "url": "https://lalitm.com/post/buildprof/",
+          "weightedScore": 165
         }
       ]
     }
@@ -1401,6 +1406,78 @@
         "cncf-blog"
       ],
       "url": "https://cncf.io/blog/2026/09/11/building-a-reliable-cloud-native-foundation-for-distributed-ai-training"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-14T00:04:01.546Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/09/08/kubernetes-v1-37-advancing-workload-aware-scheduling"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-14T00:04:01.546Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-14T00:04:01.546Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-14T00:04:01.546Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-14T00:04:01.546Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-14T00:04:01.546Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://withspecific.com/benchmarks/real-swe"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-14T00:04:01.546Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://johndcook.com/blog/2026/09/09/formal-method-revolution"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-09-14T00:04:01.546Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://lalitm.com/post/buildprof"
     }
   ]
 }
