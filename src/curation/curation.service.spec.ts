@@ -290,3 +290,44 @@ describe('NewsCurationService.curate（型號降級重試：Flash 失敗改以 L
     warnSpy.mockRestore();
   });
 });
+
+describe('NewsCurationService.curate（驗證剔除 warn，2026-09-14 新增）', () => {
+  it('ref 越界＋重複 ref → 一行 logger.warn 含階段、ref、來源與截短標題；不降級、正常項照常回傳', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ originalUrl: 'https://a.com', domain: 'ai', sourceId: 'hn', title: 'Valid' }),
+    ];
+    const raw = JSON.stringify({
+      officialPicks: [
+        { ref: 0, title: '正常項', content: '內容' },
+        { ref: 42, title: '幻覺項標題', content: '內容' },
+      ],
+      communityPicks: [{ ref: 0, title: '重複項標題', content: '內容' }],
+    });
+    const { service } = makeService(jest.fn().mockResolvedValue(raw));
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(false);
+    expect(result.items.map((it) => it.url)).toEqual(['https://a.com']);
+    expect(warnSpy).toHaveBeenCalledTimes(1);
+    const msg = warnSpy.mock.calls[0][0] as string;
+    expect(msg).toContain('策展驗證剔除 2 則');
+    expect(msg).toContain('[invalid-ref ref=42「幻覺項標題」]');
+    expect(msg).toContain('[duplicate-ref ref=0 hn/ai「重複項標題」]');
+    expect(msg).not.toContain('內容');
+    warnSpy.mockRestore();
+  });
+
+  it('無剔除 → 不發 warn', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const candidates: NewsCandidate[] = [makeCandidate()];
+    const raw = JSON.stringify({ officialPicks: [{ ref: 0, title: 't', content: 'c' }], communityPicks: [] });
+    const { service } = makeService(jest.fn().mockResolvedValue(raw));
+
+    await service.curate(candidates, new Set());
+
+    expect(warnSpy).not.toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+});

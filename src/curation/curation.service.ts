@@ -6,7 +6,7 @@ import { NewsCandidate, NewsDomain3 } from '../news/news.types';
 import { fallbackDigest } from './curation-fallback';
 import { buildCurationPrompt } from './curation-prompt';
 import { describeIgnoredKeys, parseCurationResponse } from './curation-parse';
-import { validateCuration } from './curation-validate';
+import { CurationDrop, validateCuration } from './curation-validate';
 import { CuratedDigest, CurationItemView } from './curation.types';
 
 /** `generateWithModelFallback()` 的結果：LLM 原文、實際成功的型號、是否經 Flash 失敗後降級為 Lite。 */
@@ -52,7 +52,14 @@ export class NewsCurationService {
           `策展回應含未知頂層鍵，已忽略（可能無聲少推）：${describeIgnoredKeys(raw, ignoredKeys)}`,
         );
       }
-      const items = validateCuration(officialPicks, communityPicks, candidates);
+      const drops: CurationDrop[] = [];
+      const items = validateCuration(officialPicks, communityPicks, candidates, (d) => drops.push(d));
+      if (drops.length > 0) {
+        // 驗證剔除揭露（2026-09-14 新增）：此前 ref 越界／重複、來源分散、非 AI 上限、總數截斷的剔除
+        // 全無 log，實測連兩日「選 N → 驗證後 N−1」無從判斷是幻覺還是配額夾掉。只印階段、ref、
+        // 來源與截短標題，不含回應全文（憲章 VII）；流程照常繼續、不降級。
+        this.logger.warn(`策展驗證剔除 ${drops.length} 則：${describeDrops(drops)}`);
+      }
       const domainDist = items.reduce(
         (acc, it) => {
           acc[it.domain] = (acc[it.domain] ?? 0) + 1;
@@ -143,4 +150,23 @@ function ageInDays(publishedAt: string | null, now: Date): number | null {
     return null;
   }
   return Math.max(0, Math.floor((now.getTime() - t) / DAY_MS));
+}
+
+/**
+ * 驗證剔除的 log 摘要（2026-09-14 新增）：每則「階段 ref=N 來源／領域「截短標題」」，標題截 30 code
+ * points 只為辨識，不含回應全文（憲章 VII）。`invalid-ref` 無法對回候選，只印 ref 與標題。
+ */
+export function describeDrops(drops: readonly CurationDrop[]): string {
+  return drops
+    .map((d) => {
+      const title = d.title ? `「${clampTitle(d.title)}」` : '';
+      const origin = d.sourceId ? ` ${d.sourceId}/${d.domain}` : '';
+      return `[${d.stage} ref=${d.ref}${origin}${title}]`;
+    })
+    .join(' ');
+}
+
+function clampTitle(title: string): string {
+  const cps = Array.from(title);
+  return cps.length <= 30 ? title : `${cps.slice(0, 30).join('')}…`;
 }

@@ -10,9 +10,50 @@ interface ResolvedPick {
   candidate: NewsCandidate;
 }
 
+/**
+ * 驗證管線剔除一則的階段（2026-09-14 新增）：
+ * - `invalid-ref`：`ref` 非整數／越界（幻覺項）
+ * - `duplicate-ref`：同一 `ref` 重複出現（保留第一次）
+ * - `source-diversity`：非 AI 同來源 >2 被夾掉
+ * - `non-ai-cap`：非 AI 超過 `effectiveNonAiCap` 被夾掉
+ * - `max-items`：總數截 ≤10 被截掉
+ */
+export type CurationDropStage = 'invalid-ref' | 'duplicate-ref' | 'source-diversity' | 'non-ai-cap' | 'max-items';
+
+/** 驗證管線剔除的一則：`ref` 為 LLM 回傳值（`invalid-ref` 時可能越界）；其餘欄位僅在 `ref` 可對回候選時提供。 */
+export interface CurationDrop {
+  stage: CurationDropStage;
+  ref: number;
+  sourceId?: string;
+  domain?: NewsDomain3;
+  title?: string;
+}
+
 /** F4 `CandidateSet` 輸出不變式：`domain !== 'cross'`（I1 決策 B，信任已驗收上游契約、不另加執行期防衛過濾）。 */
 function domainOf(it: ResolvedPick): NewsDomain3 {
   return it.candidate.domain as NewsDomain3;
+}
+
+function toDrop(stage: CurationDropStage, it: ResolvedPick): CurationDrop {
+  return { stage, ref: it.ref, sourceId: it.candidate.sourceId, domain: domainOf(it), title: it.title };
+}
+
+/** 回報 `before` 中不在 `after` 裡的項目（依 `ref` 判定）為該階段的剔除。 */
+function reportRemoved(
+  stage: CurationDropStage,
+  before: readonly ResolvedPick[],
+  after: readonly ResolvedPick[],
+  onDrop: ((drop: CurationDrop) => void) | undefined,
+): void {
+  if (!onDrop || before.length === after.length) {
+    return;
+  }
+  const kept = new Set(after.map((it) => it.ref));
+  for (const it of before) {
+    if (!kept.has(it.ref)) {
+      onDrop(toDrop(stage, it));
+    }
+  }
 }
 
 /**
@@ -34,20 +75,27 @@ function domainOf(it: ResolvedPick): NewsDomain3 {
  *
  * 每則以 `ref` 對回候選附上程式提供的事實（`url`/`domain`/`sourceId`/`sources`/`sourceCount`/
  * `weightedScore`），`degraded:false`（憲章 VI 防幻覺，FR-006/009）。
+ *
+ * `onDrop`（選填，2026-09-14 新增）：每剔除一則即回呼一次並標明階段。此前 (1)～(4) 的剔除全無
+ * 訊號，實測連兩日「LLM 選 N 則 → 驗證後 N−1 則」卻無從判斷是幻覺、重複還是配額夾掉；呼叫端
+ * （`NewsCurationService`）彙整成一行 warn。本函式維持純函式，不直接持有 logger。
  */
 export function validateCuration(
   officialPicks: readonly CurationLlmPick[],
   communityPicks: readonly CurationLlmPick[],
   candidates: readonly NewsCandidate[],
+  onDrop?: (drop: CurationDrop) => void,
 ): CuratedNewsItem[] {
   const picks = [...officialPicks, ...communityPicks];
   const seenRefs = new Set<number>();
   const resolved: ResolvedPick[] = [];
   for (const pick of picks) {
     if (!Number.isInteger(pick.ref) || pick.ref < 0 || pick.ref >= candidates.length) {
+      onDrop?.({ stage: 'invalid-ref', ref: pick.ref, title: pick.title });
       continue;
     }
     if (seenRefs.has(pick.ref)) {
+      onDrop?.(toDrop('duplicate-ref', { ref: pick.ref, title: pick.title, content: pick.content, candidate: candidates[pick.ref] }));
       continue;
     }
     seenRefs.add(pick.ref);
@@ -56,9 +104,12 @@ export function validateCuration(
 
   const nonAiPoolSize = candidates.filter((c) => !isAi(c.domain as NewsDomain3)).length;
   const diversified = clampSourceDiversity(resolved, domainOf, (it) => it.candidate.sources, nonAiPoolSize);
+  reportRemoved('source-diversity', resolved, diversified, onDrop);
   const aiCount = diversified.filter((it) => isAi(domainOf(it))).length;
   const clamped = clampNonAi(diversified, domainOf, effectiveNonAiCap(aiCount));
+  reportRemoved('non-ai-cap', diversified, clamped, onDrop);
   const limited = clamped.slice(0, MAX_ITEMS);
+  reportRemoved('max-items', clamped, limited, onDrop);
 
   return limited.map((it) => ({
     title: clampToLimit(it.title, 70),

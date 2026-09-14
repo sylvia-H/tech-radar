@@ -15,11 +15,11 @@ import { validateNewsSources } from './news-source.schema';
  * 無分數者一律以 `nullScoreBaseline = 100` 入池、決勝鍵為 `normalizedUrl ↑`（2026-08-04 起不再
  * 以 `publishedAt` 決勝，見 funnel.ts `compareCandidates`）。無分數候選之間改採**跨來源輪流分配**
  * （`interleaveNullScoreBySource`，2026-08-04 新增）：每來源每輪最多 1 則、最多 `maxNullScorePerSource`
- * 輪（預設 3），保證只要候選池（`convergeMax = 50`）扣掉有分數候選後的名額 ≥ 當日活躍來源數，
- * 每個來源至少有 1 則進候選池，不會因 `normalizedUrl` 字母序偏後就整批出局（此保證僅在**同 tier
- * 權重**的無分數來源之間成立：Tier 3 加權後為 100 × 0.5 = 50，主排序鍵 `weightedScore ↓` 會把它們排在
- * 所有 Tier 1/2 無分數候選之後，供給充足的日子會被 `convergeMax` 整批截掉；HN 席數則是第 1 輪保底
- * 的唯一變數，目前 19 個無分數來源 → HN ≤ 31 席才成立）。另有新鮮度視窗
+ * 輪（預設 3），保證只要候選池（`convergeMax = 60`，2026-09-14 由 50 調高）扣掉有分數候選後的名額
+ * ≥ 當日活躍來源數，每個來源至少有 1 則進候選池，不會因 `normalizedUrl` 字母序偏後就整批出局（此保證
+ * 僅在**同 tier 權重**的無分數來源之間成立：Tier 3 加權後為 100 × 0.5 = 50，主排序鍵 `weightedScore ↓`
+ * 會把它們排在所有 Tier 1/2 無分數候選之後，供給充足的日子會被 `convergeMax` 整批截掉；HN 席數則是
+ * 第 1 輪保底的唯一變數，目前 22 個無分數來源 → HN ≤ 38 席才成立，實測 HN 常態 14～17 席）。另有新鮮度視窗
  * `freshnessWindowDays`（預設 30 天，`publishedAt` 為原文真實發表日、超出視窗即不入池，避免
  * 封存舊文被討論區重新提及而混入候選集；HN 不受此視窗限制，見 `DEFAULT_FUNNEL_CONFIG`）。單日
  * 產出上百筆的來源（如 arXiv 分類 RSS）仍會把候選集塞滿低品質內容、擠壓其餘來源在 3 輪上限內的
@@ -56,15 +56,33 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // DeepMind 官方未公開宣傳的 basic feed（2026-08-03 實測 200／100 筆），取代原本停用的
   // `blog/rss.xml`。
   { id: 'deepmind-blog', type: 'rss', url: 'https://deepmind.google/blog/feed/basic/', domain: 'ai', tier: 2 },
-  // HF Blog（2026-08-03 曾啟用，2026-08-04 移除）：回溯至 2020 的全站教學封存，標題多為通用 ML
-  // 詞彙（如「Proximal Policy Optimization (PPO)」），會在**跨來源標題 Jaccard 去重**（閾值 0.6）
-  // 上與其他來源的獨立文章誤判為同一則——實測與 openai-blog 一篇同名舊文誤合併，代表項還因
-  // `sourceId` 字典序被 HF 頂替，讓 openai-blog 該篇對策展 LLM 完全隱形。內容價值（常青教學文，
-  // 非「新聞」）本就偏低，不值得為它另外調整去重邏輯，直接移除。HF Papers 仍無官方 feed，故清單
-  // 中無此項。**不以 arXiv 分類 RSS 代替**：實測單日 261 筆，會吃光候選集名額（見檔頭量體說明）。
-  // 待漏斗補單一來源入池上限後再議。
+  // HF Blog（2026-08-03 曾啟用，2026-08-04 移除，2026-09-14 以停用項列回清單、暫不啟用）：08-04 移除的
+  // 原因是 feed 回溯至 2020 的全站教學封存（實測 861 筆），標題多為通用 ML 詞彙，在**跨來源標題 Jaccard
+  // 去重**上與 openai-blog 一篇同名舊文誤合併、讓後者對策展 LLM 隱形。2026-09-12 起新鮮度視窗已提前到
+  // 標題去重**之前**（`NewsIngestService.ingest()`），該問題技術上已不存在；09-14 實測 30 天內約 20 篇
+  // fine-tuning／GRPO／TRL／agent memory 實作文。使用者 2026-09-14 決定先不重新啟用（量體每月約 20 篇、
+  // 常青教學性質偏高），先觀察下方三個新來源的效果再議；依「停用不刪除」原則以 `enabled: false` 保留
+  // 決策紀錄。HF Papers 仍無官方 feed。**不以 arXiv 分類 RSS 代替**：實測單日 261 筆，會吃光候選集名額
+  // （見檔頭量體說明）。
+  { id: 'huggingface-blog', type: 'rss', url: 'https://huggingface.co/blog/feed.xml', domain: 'ai', tier: 2, enabled: false },
+  // 2026-09-14 新增三個 AI 技術深度一手來源（22 個候補 feed 實測後入選者；依據：2026-08-25～09-14 共 20 次
+  // 晨報 AI 入選平均 3.7 則、最高 6 則、從未達 7，AI 池 30 則中多為 HN 輿論與廠商行銷，補技術深度來源優先
+  // 於放寬策展判準 (2)）：
+  // - Ahead of AI（Sebastian Raschka）：實測 200／20 筆、30 天內 3 篇，架構解析與實作教學，純 (2) 類。
+  // - Interconnects（Nathan Lambert）：實測 200／20 筆、30 天內 5 篇，開放模型與 RL 分析，少量評論。
+  // - Ollama blog：實測 200／58 筆、30 天內 2 篇，官方發布（本地模型開發者相關），屬 (1) 類。
+  // 落選者與原因：mistral.ai/news（募資、合作 PR 為主）、research.google／microsoft research（學術研究，
+  // 開發者相關度低）、blog.google AI（Search 行銷）、latent.space（AINews 彙整，與去重互撞）、importai
+  // （政策電子報）、github.blog/ai-and-ml（與 changelog-copilot 重疊，暫緩）、claude-code releases（每日多筆
+  // 純 changelog）；anthropic.com 的 `rss.xml`／`news/rss.xml` 覆測仍 404。
+  // 席次影響：每個無分數來源佔 3 席，三個來源共 +9 席；為避免擠掉 Tier 3（thenewstack 09-13 有入選）與
+  // 低分 HN，`convergeMax` 同步 50 → 60（funnel.ts）。觀察一週：AI 入選是否由平均 3.7 上升、
+  // communityPicks 是否由 3 上升、thenewstack 與 HN 席次是否維持；若 AI 仍不到 5 再動 prompt。
+  { id: 'raschka-ahead-of-ai', type: 'rss', url: 'https://magazine.sebastianraschka.com/feed', domain: 'ai', tier: 2 },
+  { id: 'interconnects', type: 'rss', url: 'https://www.interconnects.ai/feed', domain: 'ai', tier: 2 },
+  { id: 'ollama-blog', type: 'rss', url: 'https://ollama.com/blog/rss.xml', domain: 'ai', tier: 2 },
   //
-  // Anthropic：2026-08-03 覆測 `www.anthropic.com/rss.xml` 仍非公認端點，維持停用。
+  // Anthropic：2026-08-03 覆測 `www.anthropic.com/rss.xml` 仍非公認端點，維持停用（2026-09-14 覆測仍 404）。
   { id: 'anthropic-news', type: 'rss', url: 'https://www.anthropic.com/rss.xml', domain: 'ai', tier: 2, enabled: false },
   // vue-blog：2026-09-12 實測 feed 最新一篇為 741 天前（`feed.xml`、`news.vuejs.org` 替代端點皆不可用），
   // 抓取成功但形同啞源、不觸發 0 筆告警，與 web-dev 同型。先停用觀察（§4.3），非移除。代價：前後端啟用
