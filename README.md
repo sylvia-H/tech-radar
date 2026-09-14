@@ -1,7 +1,7 @@
 # Tech Radar
 
 排程型、純自用、全免費、零維運的每日技術晨報。每天台北時間早上六點，自動掃描近一週最受關注、
-新崛起的 GitHub repo，並從 20 個技術新聞來源精選當日最值得開發者關注的消息，翻成繁體中文推播到
+新崛起的 GitHub repo，並從 23 個技術新聞來源精選當日最值得開發者關注的消息，翻成繁體中文推播到
 Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github.io/tech-radar/) 與
 [Atom feed](https://sylvia-h.github.io/tech-radar/feed.xml)，供隨時查閱與訂閱閱讀器追蹤。
 
@@ -28,7 +28,7 @@ Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github
 
 | 項目 | 數字 |
 |------|------|
-| 新聞來源 | 27 個設定項、20 個啟用（AI 7／DevOps 6／前後端 5／跨領域 2） |
+| 新聞來源 | 31 個設定項、23 個啟用（AI 10／DevOps 6／前後端 5／跨領域 2） |
 | 每日新聞 | 至多 10 則，AI 為主、非 AI 預設 ≤3（動態放寬） |
 | LLM 呼叫 | 新聞策展每日 1 次（`gemini-3.8-flash`）；repo 簡介一生 1 次並快取、榜單日多 1 次一句話 TL;DR（皆 `gemini-3.5-flash-lite`） |
 | 榜單 | 每領域追蹤 top 15，推播綜合 top 10，每 7 天只推變化 |
@@ -36,7 +36,7 @@ Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github
 | 排程 | 雙離峰 cron（台北 06:07 主班、06:37 補班）＋ 時間戳 guard |
 | 常駐服務／資料庫 | 0 |
 | 月費 | $0 |
-| 單元測試 | 582 個、64 個測試套件 |
+| 單元測試 | 589 個、64 個測試套件 |
 
 三條輸出流：
 
@@ -111,10 +111,10 @@ GitHub Actions 雙離峰 cron（UTC 22:07 / 22:37 ＝ 台北 06:07 / 06:37）
 │   │
 │   ├─ 晨報段（NewsSegmentService）—— 每日
 │   │   ├─ lastNewsPushAt 距今 < 18h → 整段跳過
-│   │   ├─ 20 個來源抓取（RSS/Atom、HN Algolia、Reddit weekly、GitHub Releases），各自容錯
+│   │   ├─ 23 個來源抓取（RSS/Atom、HN Algolia、Reddit weekly、GitHub Releases），各自容錯
 │   │   ├─ 零 LLM 去重：URL 正規化合併 → 標題 Jaccard ≥0.6 補漏
 │   │   ├─ 跨領域來源關鍵字歸類；剔除 45 天內已推播者
-│   │   ├─ Stage A 漏斗：分數門檻 → 30 天新鮮度 → 加權 → 三層決勝排序 → 收斂至 50 則
+│   │   ├─ Stage A 漏斗：分數門檻 → 30 天新鮮度 → 加權 → 三層決勝排序 → 收斂至 60 則
 │   │   ├─ Stage B 策展：唯一一次 Gemini 呼叫 → officialPicks / communityPicks
 │   │   ├─ 硬驗證：幻覺剔除 → 單一來源 ≤2 → 非 AI 動態上限 → 總數 ≤10 → 字數收斂
 │   │   ├─ 推播新聞頻道
@@ -145,7 +145,7 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | 2 | 官方一手來源 | 無 | ×1.0 | 沒有社群分數，一律以基準分 100 入池，天然視為強訊號 |
 | 3 | 選配實驗 | 150 | ×0.5 | 更高門檻、一半權重，可隨時停用 |
 
-### 目前清單（27 項、20 啟用）
+### 目前清單（31 項、23 啟用）
 
 **Tier 1：常開高訊號**
 
@@ -166,7 +166,11 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | `deepmind-blog` | RSS | AI | 啟用 | DeepMind 官方 basic feed |
 | `github-next` | RSS | AI | 啟用 | GitHub Next 官方實驗性功能部落格 |
 | `github-changelog-copilot` | RSS | AI | 啟用 | GitHub 官方 Changelog 的 Copilot 標籤，每週約 6 篇，直接命中新工具／能力更新（2026-09-12 新增） |
-| `anthropic-news` | RSS | AI | 停用 | 無公認官方 RSS 端點，不以第三方中轉站替代 |
+| `huggingface-blog` | RSS | AI | 停用 | Hugging Face 官方 blog，30 天內約 20 篇 fine-tuning／TRL／agent 實作文；08-04 移除，09-14 以停用項列回（新鮮度視窗已提前、舊文不再干擾去重，但量體與常青教學性質偏高，先觀察其他新來源再議） |
+| `raschka-ahead-of-ai` | RSS | AI | 啟用 | Sebastian Raschka「Ahead of AI」，約 2 篇／月，架構解析與實作教學（2026-09-14 新增） |
+| `interconnects` | RSS | AI | 啟用 | Nathan Lambert「Interconnects」，約 3 篇／週，開放模型與 RL 分析（2026-09-14 新增） |
+| `ollama-blog` | RSS | AI | 啟用 | Ollama 官方 blog，約 2 篇／月，本地模型相關發布（2026-09-14 新增） |
+| `anthropic-news` | RSS | AI | 停用 | 無公認官方 RSS 端點，不以第三方中轉站替代（2026-09-14 覆測仍 404） |
 | `gh-nodejs` | GitHub Releases | 前後端 | 啟用 | Node.js 官方發佈 |
 | `gh-cpython` | GitHub Releases | 前後端 | 啟用 | CPython 官方發佈 |
 | `gh-typescript` | GitHub Releases | 前後端 | 啟用 | TypeScript 官方發佈 |
@@ -196,9 +200,12 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 - **不引入不可控中轉**：Reddit 被擋後曾評估第三方 RSS 代理，因候選節點 DNS 不存在且違反零維運
   取向而放棄；Anthropic 無官方 feed 就先不收。
 - **新增前先量體**：漏斗每來源每輪最多 1 則、最多 3 輪；單日產出上百筆的來源（如 arXiv 分類 RSS
-  實測單日 261 筆）會擠壓其他來源在 50 則收斂上限內的曝光，不予收錄。Hugging Face Blog 曾啟用
-  一天即移除：其回溯至 2020 年的常青教學文，標題多為通用 ML 詞彙，在跨來源標題去重時與
-  OpenAI 一篇同名文章誤合併，讓後者對策展 LLM 完全隱形。
+  實測單日 261 筆）會擠壓其他來源在 60 則收斂上限（2026-09-14 由 50 調高）內的曝光，不予收錄。
+  Hugging Face Blog 曾於 2026-08-04 移除：其回溯至 2020 年的常青教學文在跨來源標題去重時與
+  OpenAI 一篇同名文章誤合併，讓後者對策展 LLM 完全隱形；09-12 新鮮度視窗提前到標題去重之前後
+  該問題消失，09-14 以停用項列回清單、暫不啟用。
+- **每加一個無分數來源就多 3 席**：2026-09-14 新增 3 個 AI 技術深度來源（+9 席）時同步把收斂上限
+  由 50 提到 60，否則 Tier 3 與低分 HN 會被整批擠掉。
 - **Tier 3 的真實效果**：Tier 權重乘在無分數基準分上（100 × 0.5 = 50），主排序鍵是加權分，所以 Tier 3
   無分數候選排在所有 Tier 1/2 之後；候選池滿的日子整批被截掉、等於停用，供給不足的日子才進池。降
   Tier 3 是「候選池有餘裕才看」，不是單純降權。
