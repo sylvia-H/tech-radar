@@ -52,7 +52,8 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
   boardRelevanceBoost: 50,
   tierWeight: { 1: 1, 2: 1, 3: 0.5 },
   nullScoreBaseline: 100,
-  convergeMax: 50,
+  // 2026-09-14 由 50 → 60：新增 3 個 AI 無分數來源（+9 席），不提高上限會把 Tier 3 與低分 HN 整批擠掉。
+  convergeMax: 60,
   maxNullScorePerSource: 3,
   freshnessWindowDays: 30,
 };

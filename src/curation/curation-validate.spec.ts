@@ -1,5 +1,5 @@
 import { NewsCandidate } from '../news/news.types';
-import { validateCuration } from './curation-validate';
+import { CurationDrop, validateCuration } from './curation-validate';
 import { CurationLlmPick } from './curation.types';
 
 function makeCandidate(overrides: Partial<NewsCandidate> = {}): NewsCandidate {
@@ -343,5 +343,86 @@ describe('validateCuration（US3 對抗性違規回應）', () => {
 
     expect(result).toHaveLength(3);
     expect(result.map((it) => it.url)).toEqual(['https://ai0.com', 'https://devops0.com', 'https://devops1.com']);
+  });
+});
+
+describe('validateCuration（onDrop 剔除回呼，2026-09-14 新增）', () => {
+  function collect(): { drops: CurationDrop[]; onDrop: (d: CurationDrop) => void } {
+    const drops: CurationDrop[] = [];
+    return { drops, onDrop: (d) => drops.push(d) };
+  }
+
+  it('ref 越界／非整數 → invalid-ref（帶 LLM 標題、無來源）；重複 ref → duplicate-ref（帶來源）', () => {
+    const candidates = [makeCandidate({ sourceId: 'hn', domain: 'ai' })];
+    const officialPicks: CurationLlmPick[] = [
+      { ref: 0, title: '正常', content: 'c' },
+      { ref: 7, title: '幻覺', content: 'c' },
+      { ref: 1.5, title: '非整數', content: 'c' },
+    ];
+    const communityPicks: CurationLlmPick[] = [{ ref: 0, title: '重複', content: 'c' }];
+    const { drops, onDrop } = collect();
+
+    const result = validateCuration(officialPicks, communityPicks, candidates, onDrop);
+
+    expect(result).toHaveLength(1);
+    expect(drops).toEqual([
+      { stage: 'invalid-ref', ref: 7, title: '幻覺' },
+      { stage: 'invalid-ref', ref: 1.5, title: '非整數' },
+      { stage: 'duplicate-ref', ref: 0, sourceId: 'hn', domain: 'ai', title: '重複' },
+    ]);
+  });
+
+  it('非 AI 同來源第 3 則 → source-diversity；非 AI 超過上限 → non-ai-cap；總數 >10 → max-items', () => {
+    // 5 則 AI（上限 = max(3, 10−5) = 5）＋ 3 則同來源 devops ＋ 3 則不同來源 devops → 共 11 則
+    const ai = Array.from({ length: 5 }, (_, i) =>
+      makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai', sourceId: 'hn', sources: ['hn'] }),
+    );
+    const k8s = Array.from({ length: 3 }, (_, i) =>
+      makeCandidate({ originalUrl: `https://k8s${i}.com`, domain: 'devops', sourceId: 'kubernetes-blog', sources: ['kubernetes-blog'] }),
+    );
+    const others = ['cncf-blog', 'lobsters-devops', 'thenewstack'].map((s, i) =>
+      makeCandidate({ originalUrl: `https://o${i}.com`, domain: 'devops', sourceId: s, sources: [s] }),
+    );
+    const candidates = [...ai, ...k8s, ...others];
+    const officialPicks: CurationLlmPick[] = candidates.map((_, i) => ({ ref: i, title: `t${i}`, content: 'c' }));
+    const { drops, onDrop } = collect();
+
+    const result = validateCuration(officialPicks, [], candidates, onDrop);
+
+    expect(result).toHaveLength(10);
+    expect(drops.map((d) => d.stage)).toEqual(['source-diversity']);
+    expect(drops[0]).toEqual({ stage: 'source-diversity', ref: 7, sourceId: 'kubernetes-blog', domain: 'devops', title: 't7' });
+  });
+
+  it('AI 只有 2 則、非 AI 9 則 → 上限 8，第 9 則非 AI → non-ai-cap；再超過 10 則 → max-items', () => {
+    const ai = Array.from({ length: 2 }, (_, i) =>
+      makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai', sourceId: 'hn', sources: ['hn'] }),
+    );
+    const nonAi = Array.from({ length: 9 }, (_, i) =>
+      makeCandidate({ originalUrl: `https://d${i}.com`, domain: 'devops', sourceId: `src${i}`, sources: [`src${i}`] }),
+    );
+    const candidates = [...ai, ...nonAi];
+    const officialPicks: CurationLlmPick[] = candidates.map((_, i) => ({ ref: i, title: `t${i}`, content: 'c' }));
+    const { drops, onDrop } = collect();
+
+    const result = validateCuration(officialPicks, [], candidates, onDrop);
+
+    expect(result).toHaveLength(10);
+    expect(drops.map((d) => [d.stage, d.ref])).toEqual([['non-ai-cap', 10]]);
+  });
+
+  it('11 則全 AI → 第 11 則 max-items', () => {
+    const candidates = Array.from({ length: 11 }, (_, i) => makeCandidate({ originalUrl: `https://c${i}.com` }));
+    const officialPicks: CurationLlmPick[] = candidates.map((_, i) => ({ ref: i, title: `t${i}`, content: 'c' }));
+    const { drops, onDrop } = collect();
+
+    validateCuration(officialPicks, [], candidates, onDrop);
+
+    expect(drops.map((d) => [d.stage, d.ref])).toEqual([['max-items', 10]]);
+  });
+
+  it('未傳 onDrop 時行為不變、不擲錯', () => {
+    const officialPicks: CurationLlmPick[] = [{ ref: 5, title: '幻覺', content: 'c' }];
+    expect(validateCuration(officialPicks, [], [makeCandidate()])).toEqual([]);
   });
 });

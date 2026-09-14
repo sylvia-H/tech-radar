@@ -104,3 +104,26 @@ twitter/mastodon 貼文（摘要 null）、2 則 Ask/Tell HN；同一批未入�
 
 - 非 AI 動態放寬上限 7 → 5：維持 7，待四支分支上線觀察兩週後再議。
 - 科技／科學新聞晨報（第二資料流）：需先修憲章 III／V 再開 Feature 009，暫緩。
+
+## 2026-09-14 追加：AI 技術深度來源＋收斂上限（使用者決策）
+
+依 1.1.0 上線後兩日觀察（09-13 Flash 首次呼叫失敗退 Lite、09-14 Flash 正常）與 08-25～09-14 共 20 次晨報統計：
+平均 7.0 則／日、AI 入選平均 3.7 則、最高 6 則、**從未達 7**，非 AI 動態上限從未夾到任何一則；AI 池約 30 則中
+多為 HN 輿論與廠商行銷（AI 入選率 12%，三領域最低）。結論：問題在供給品質而非配額，**補技術深度一手來源優先
+於放寬策展判準 (2)**（來源只改設定檔、可逐一開關、效果可歸因；prompt 放寬須回測且有錨定風險）。
+
+- [x] 實測 22 個候補 AI feed（curl 狀態碼／筆數／最新日期＋專案 rss-parser 解析）。
+      入選：`raschka-ahead-of-ai`、`interconnects`、
+      `ollama-blog`，皆 ai／tier 2。`huggingface-blog` 技術上可重啟（08-04 移除原因已因 09-12 新鮮度視窗提前而消失），
+      使用者 09-14 決定先不啟用、以停用項列回清單。落選與原因記於 `news-sources.ts` 註解（mistral PR 為主、google／microsoft
+      research 學術、blog.google 行銷、latent.space 彙整、importai 政策、github ai-and-ml 與 changelog 重疊、
+      claude-code releases 純 changelog；anthropic 兩端點仍 404）。
+- [x] `convergeMax` 50 → 60：3 個無分數來源 +9 席，不調高會把 Tier 3（thenewstack 09-13 有入選）與低分 HN
+      整批擠掉；`funnel.spec`／`news-ingest.service.spec` 對應調整。
+- [x] 同步 dev-guide §4.2 Tier 2 表、§4.4 收斂段；README 一眼看懂／架構圖／來源表／治理原則。
+- [x] 同支變更另含：`validateCuration` 剔除回呼＋`NewsCurationService` 一行 warn（連兩日「選 N → 驗證後 N−1」
+      無 log 可判）。
+- [ ] （合併後觀察一週）AI 入選是否由平均 3.7 上升、`communityPicks` 是否由 3 上升、thenewstack 與 HN 席次
+      是否維持（HN 常態 14～17 席）、新來源是否被同來源 3 輪上限或 30 天視窗擋成啞源；若 AI 仍不到 5，
+      再動 prompt，第一刀只加「tier 與分數反映來源信度、不反映內容深度」。
+- 前後端供給（候選池平均 2.3 則、常有 0 則）另案：`vercel.com/atom` 可用但 1,574 筆多為 changelog，需另評估。
