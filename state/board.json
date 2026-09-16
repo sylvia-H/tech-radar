@@ -346,93 +346,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-14T00:04:01.546Z",
-  "lastNewsPushAt": "2026-09-15T00:28:16.120Z",
+  "lastNewsPushAt": "2026-09-16T00:07:50.300Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-14T00:04:01.546Z",
       "summary": "本次綜合榜 #1 為 tt-a1i/archify，共有 5 個新進與 2 個竄升項目，其中 AI 佔 5 個、前後端佔 2 個，另有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "Google 官方推出 Gemini 3.8 Flash 及其資安專用版本 3.8 Flash Cyber。作為輕量化且反應迅速的模型系列，這能協助開發者在成本與延遲受限的生產環境中，部署更具效率的文字與領域特定推理任務。",
-        "id": "news:https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber",
-        "publishedAt": "2026-09-10T00:03:46.530Z",
-        "title": "Google 推出 Gemini 3.8 Flash 與 3.8 Flash Cyber 輕量模型",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/"
-      },
-      {
-        "content": "Meta 推出了名為 Muse 的個人 AI 代理（Personal AI Agent），在開發者與社群中引起高度關注。這標示著大型科技公司正積極將 AI 代理從企業與程式輔助場景，進一步推向個人化日常應用的前沿趨勢。",
-        "id": "news:https://ai.meta.com/muse",
-        "publishedAt": "2026-09-10T00:03:46.530Z",
-        "title": "Meta 發表 Muse：專為個人打造的 AI 代理工具",
-        "type": "news",
-        "url": "https://ai.meta.com/muse/"
-      },
-      {
-        "content": "開源社群熱議 Qwen 釋出的 Qwen-Drive-1.0-4B（完整 Bf16 權重達 9B）微調模型與相關技術報告。這是中國 AI 實驗室跨足自動駕駛領域的重要開源進展，為自駕車視覺語言基礎模型的研究提供了高價值的開放權重參考。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wauxg9/qwenqwendrive104b_hugging_face",
-        "publishedAt": "2026-09-10T00:03:46.530Z",
-        "title": "Qwen 開源自動駕駛視覺語言模型 Qwen-Drive-1.0-4B",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wauxg9/qwenqwendrive104b_hugging_face/"
-      },
-      {
-        "content": "根據報導，OpenAI 現在讓自動化 AI 安全審查模型具備直接封鎖內部工程師 Pull Request 的權限。這項實踐引起開發者社群對「AI 自主治理」與軟體供應鏈安全的熱烈討論，展示了 AI 在大型軟體工程組織中更深度的權力下放。",
-        "id": "news:https://thenewstack.io/openai-ai-code-review",
-        "publishedAt": "2026-09-10T00:03:46.530Z",
-        "title": "OpenAI 授權 AI 模型自動審查並攔截工程師的程式碼變更",
-        "type": "news",
-        "url": "https://thenewstack.io/openai-ai-code-review/"
-      },
-      {
-        "content": "Cloudflare 宣布其 1.1.1.1 DNS 服務開始使用 NIST 的後量子 ML-DSA-44 演算法來驗證 DNSSEC 簽章。這項更新展示了在處理高達 2,420 位元組的大型後量子簽章時，網路基礎設施如何在大規模下管理降級風險與傳輸效能，對推動網際網路基礎設施的後量子密碼學升級具備重要示範意義。",
-        "id": "news:https://blog.cloudflare.com/post-quantum-dnssec-1111",
-        "publishedAt": "2026-09-10T23:59:28.349Z",
-        "title": "Cloudflare 1.1.1.1 支援後量子 DNSSEC",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/post-quantum-dnssec-1111/"
-      },
-      {
-        "content": "OpenAI 推出 ChatGPT Work 的全新資料代理程式（Data agent），允許使用者透過自然語言連接企業內部資料、挖掘商業洞察，並直接建構互動式儀表板。這項更新讓非技術人員也能快速將企業資料投入實際應用，簡化了數據分析與視覺化流程。",
-        "id": "news:https://openai.com/index/put-data-to-work",
-        "publishedAt": "2026-09-10T23:59:28.349Z",
-        "title": "ChatGPT Work 推出內建資料分析代理程式",
-        "type": "news",
-        "url": "https://openai.com/index/put-data-to-work"
-      },
-      {
-        "content": "Amazon Web Services (AWS) 開源釋出名為 Pizza Bot 的應用程式，為背景執行的 AI 代理提供類似電子郵件收件匣的介面。這項工具幫助開發者更好地管理、檢視與互動非同步執行的代理程式任務，解決多代理系統在背景運作時的通訊與狀態追蹤難題。",
-        "id": "news:https://thenewstack.io/aws-pizza-bot-agent-inbox",
-        "publishedAt": "2026-09-10T23:59:28.349Z",
-        "title": "AWS 開源釋出 Pizza Bot：供背景 AI 代理使用的信件式收件匣",
-        "type": "news",
-        "url": "https://thenewstack.io/aws-pizza-bot-agent-inbox/"
-      },
-      {
-        "content": "Salesforce 正式發表 Enterprise AI Harness，將六種主流的 AI 測試與開發工具框架進行形式化整合。這項工具為企業開發者提供標準化的 AI 評估與協作環境，協助團隊在複雜的應用場景中更有效率地串接與管理多個 AI 模型。",
-        "id": "news:https://thenewstack.io/salesforce-enterprise-ai-harness",
-        "publishedAt": "2026-09-10T23:59:28.349Z",
-        "title": "Salesforce 推出 Enterprise AI Harness 整合開發框架",
-        "type": "news",
-        "url": "https://thenewstack.io/salesforce-enterprise-ai-harness/"
-      },
-      {
-        "content": "電商巨頭 Shopify 宣佈將行動應用程式從 React Native 遷移回 Swift 和 Kotlin 等原生技術堆疊。此舉反映出大型團隊在追求極致效能與原生體驗時，對跨平台框架的重新評估，對行動端技術選型具有指標性影響。",
-        "id": "news:https://shopify.engineering/back-to-native",
-        "publishedAt": "2026-09-10T23:59:28.349Z",
-        "title": "Shopify 放棄 React Native 宣佈全面回歸 Swift 與 Kotlin 原生開發",
-        "type": "news",
-        "url": "https://shopify.engineering/back-to-native"
-      },
-      {
-        "content": "Cognition 推出全新的 SWE-2 軟體工程模型，宣稱其效能可與 Fable 5.1 及 GPT-Astra 等頂尖系統匹敵。這顯示出專注於自動化軟體工程的 AI 代理正快速演進，對開發者的日常協作與程式碼生成工作流程帶來持續且深遠的變革。",
-        "id": "news:https://cognition.com/blog/swe-2",
-        "publishedAt": "2026-09-10T23:59:28.349Z",
-        "title": "Cognition 發表全新 SWE-2 模型挑戰頂級 AI 程式碼代理",
-        "type": "news",
-        "url": "https://cognition.com/blog/swe-2"
-      },
       {
         "content": "Cloudflare 宣布在開發者平台上直接內建自動化修復政策引擎。資安團隊現在可以針對 SaaS 風險設計事件驅動的邏輯（event-driven logic），在不需人工介入的情況下，自動撤銷具風險的檔案共用權限並觸發 Webhook，有效提升企業雲端資安的響應速度與自動化防護能力。",
         "id": "news:https://blog.cloudflare.com/casb-policies",
@@ -745,26 +665,107 @@
         "title": "數學邏輯與神經網路的落差：AI 在形式化數學中的對齊難題",
         "type": "news",
         "url": "https://mathandai.org/"
+      },
+      {
+        "content": "Google 正式推出 Gemini 3.8 Live 以及具備深度推理能力的 Gemini 3.8 Live Extended Thinking 模型。新版本進一步提升了即時語音與多模態互動的流暢度與響應速度，Extended Thinking 則強化了模型在面對複雜多步驟問題時的內在鏈式思考能力。對於建構即時語音助理、即時多模態互動以及需要高度精確推理應用的開發者而言，新模型提供了更強大的 API 選擇與更低的延遲表現。",
+        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking",
+        "publishedAt": "2026-09-16T00:07:50.300Z",
+        "title": "Google 發表 Gemini 3.8 Live 與 3.8 Live Extended Thinking 模型",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
+      },
+      {
+        "content": "Kubernetes v1.37 正式將 HorizontalPodAutoscaler (HPA) 的「縮容至零」（Scale to Zero）功能升級為 Beta 並預設啟用。開發者以往若想根據自定義或外部指標將工作負載副本數降至 0，必須依賴 Keda 等第三方外掛或手動開啟 Alpha feature gate；現在核心 Kubernetes API 已原生支援此能力，當指標恢復時也能自動重新拉起 Pod。這能顯著降低閒置服務的雲端運算資源成本，對無伺服器架構與事件驅動負載的部署極具價值。",
+        "id": "news:https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta",
+        "publishedAt": "2026-09-16T00:07:50.300Z",
+        "title": "Kubernetes v1.37 原生支援 HPA 縮容至零（Scale to Zero），進入 Beta 階段",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/"
+      },
+      {
+        "content": "Kubernetes 儲存團隊宣布 Changed Block Tracking (CBT) 功能隨著 external-snapshot-metadata v1.0.0 的推出正式邁入 Beta。CBT 提供了一套標準化的 CSI 擴充介面，包含 SnapshotMetadata gRPC 服務與 CRD，使備份系統能夠直接查詢兩次快照之間發生變更的區塊資料。對開發備份、災難復原與儲存擴充元件的工程師而言，此 API 的標準化避免了過去各儲存廠商私有實作的不相容問題，大幅提升容器持久化儲存的備份效率與效能。",
+        "id": "news:https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta",
+        "publishedAt": "2026-09-16T00:07:50.300Z",
+        "title": "Kubernetes 變更區塊追蹤（CBT）API 進入 Beta 階段",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta/"
+      },
+      {
+        "content": "Cloudflare 推出新的網站控制選項與 Accountable 標記機制，讓網站擁有者能夠精細區分搜尋引擎索引抓取與 AI 模型訓練抓取。這項與 Apple、Google、Microsoft 建立的共用模型，解決了過去網站透過 robots.txt 封鎖爬蟲時往往「全阻擋」導致喪失搜尋排名的兩難。對於 Web 開發者與站長而言，現在無需繁瑣維護各家爬蟲的 User-Agent 清單，即可在保護原創內容不被未授權用於模型訓練的同時，維持既有的 SEO 流量與搜尋曝光。",
+        "id": "news:https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers",
+        "publishedAt": "2026-09-16T00:07:50.300Z",
+        "title": "Cloudflare 推出新控制功能：維持搜尋曝光同時禁止 AI 抓取訓練",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/"
+      },
+      {
+        "content": "Cloudflare 宣布為 Workers 推出更細粒度的開發者平台角色與資源範圍控制。開發者現在可以針對單一 Worker 分配存取權限，而非僅能給予整個帳號或專案的廣泛權限。這項更新特別針對 CI/CD Token、不同職能團隊成員以及近期廣泛接入系統的 AI Agent 設計，落實最小權限原則（Least Privilege），大幅降低因 Token 外洩或自動化 Agent 操作失誤對生產環境造成的安全風險。",
+        "id": "news:https://blog.cloudflare.com/workers-granular-authorization",
+        "publishedAt": "2026-09-16T00:07:50.300Z",
+        "title": "Cloudflare Workers 推出細粒度權限控制，支援限制單一 Worker 與 Agent 存取",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/workers-granular-authorization/"
+      },
+      {
+        "content": "Meta 宣布支援開源的 Model Context Protocol (MCP) 標準，允許 Claude 與 Codex 等 AI 模型直接介接並配置 WhatsApp Business 服務。開發者可透過標準化的 MCP 工具調用介面，讓程式碼助理或自動化 Agent 讀取 WhatsApp 設定、建立商業流程與管理 API 整合。這展示了 MCP 標準在企業級通訊平台設定與運維自動化上的實用價值，降低串接企業通訊平台的開發門檻。",
+        "id": "news:https://thenewstack.io/meta-mcp-whatsapp-business-claude",
+        "publishedAt": "2026-09-16T00:07:50.300Z",
+        "title": "Meta 採用 Model Context Protocol (MCP)，支援透過 Claude 與 Codex 配置 WhatsApp …",
+        "type": "news",
+        "url": "https://thenewstack.io/meta-mcp-whatsapp-business-claude/"
+      },
+      {
+        "content": "社群深入分享了一套在高效能監控與追蹤場景下，利用記憶化技術將 eBPF 程式 CPU 消耗降低約 90% 的工程實踐。在封包處理或高頻系統呼叫攔截時，重複運算常成為 eBPF 程式的效能瓶頸。作者詳述了如何在嚴格的 eBPF 驗證器限制（如指令數上限、堆疊空間與記憶體安全檢查）下，實作輕量高效的快取機制。這篇實戰經驗對從事 Linux 核心監控、網路觀測性與效能調校的系統工程師具有極高的技術參考價值。",
+        "id": "news:https://nathannaveen.dev/posts/dropping-ebpf-cpu-cost-by-90",
+        "publishedAt": "2026-09-16T00:07:50.300Z",
+        "title": "透過記憶化（Memoization）將 eBPF CPU 開銷大幅降低約 90%",
+        "type": "news",
+        "url": "https://nathannaveen.dev/posts/dropping-ebpf-cpu-cost-by-90/"
+      },
+      {
+        "content": "開發者針對 GPT-5.6 Luna 與高階模型 GPT-6 Astra 在自動化程式碼審查（Code Review）情境下進行了深度對比評測。測試從語義理解、邊界條件偵測、重構建議與幻覺率等多維度切入，評估成本僅 1.2 美元的平價模型是否能滿足團隊日常 PR 審查需求。評測分析了兩者在程式碼品質把關上的精準度差異，為正在架構內部 CI/CD AI Review 工具的工程團隊提供了兼顧審查品質與 API 預算的最佳決策參考。",
+        "id": "news:https://entelligence.ai/blogs/gpt-5.6-luna-vs-gpt-6-astra-is-a-1.20-model-good-enough-for-code-review",
+        "publishedAt": "2026-09-16T00:07:50.300Z",
+        "title": "GPT-5.6 Luna 與 GPT-6 Astra 實測對比：低成本模型是否足以勝任 Code Review？",
+        "type": "news",
+        "url": "https://entelligence.ai/blogs/gpt-5.6-luna-vs-gpt-6-astra-is-a-1.20-model-good-enough-for-code-review"
+      },
+      {
+        "content": "在 MinIO 授權條款轉變與架構逐漸重型化之後，開發者社群對「單節點、輕量化、本地 S3 相容儲存」方案展開深入比較。討論全面評估了包括 SeaweedFS、Garage、Rust-S3 以及各類嵌入式 S3 模擬器的相容性、記憶體佔用、佈署複雜度與 I/O 吞吐表現。對於需要建立本地整合測試環境、邊緣運算節點或微型自託管服務的後端與 DevOps 工程師而言，這是一份極為實用的選型技術指引。",
+        "id": "news:https://rmoff.net/2026/01/14/alternatives-to-minio-for-single-node-local-s3",
+        "publishedAt": "2026-09-16T00:07:50.300Z",
+        "title": "單節點本地 S3 儲存方案盤點：尋找 MinIO 之外的輕量替代品",
+        "type": "news",
+        "url": "https://rmoff.net/2026/01/14/alternatives-to-minio-for-single-node-local-s3/"
+      },
+      {
+        "content": "本文深入探討了 Looped Transformer（循環 Transformer 區塊）與隱藏鏈式思考（Hidden Chains of Thought）的最新研究與架構機制。文章解析了模型如何在不依賴外部生成大量思考 Token 的情況下，透過內部層級的循環計算實現遞迴深度與隱式推理。對於研究大型語言模型架構、推論效能最佳化以及對前沿模型運作原理感興趣的機器學習工程師來說，這是一篇極具理論深度的架構拆解。",
+        "id": "news:https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and",
+        "publishedAt": "2026-09-16T00:07:50.300Z",
+        "title": "深入剖析循環 Transformer 與隱藏思維鏈：探討 GPT-6 Astra 背後的架構演進",
+        "type": "news",
+        "url": "https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-15T00:28:16.120Z",
+      "generatedAt": "2026-09-16T00:07:50.300Z",
       "items": [
         {
-          "content": "雲端原生網路與安全專案 Cilium 正式釋出 1.20 版本。此版本重點強化了 Kubernetes Gateway API 的支援，新增 ExternalAuth 外部身分驗證能力，並納入 TCPRoute 與 UDPRoute 支援；此外也增強了雲端網路整合，支援 IPv6 的 ENI IPAM 等功能。對於使用 Kubernetes 構建微服務基礎設施與服務網格（Service Mesh）的團隊而言，新版本提供了更完整的南北向流量管理與更強大的雲端原生安全驗證能力。",
+          "content": "Google 正式推出 Gemini 3.8 Live 以及具備深度推理能力的 Gemini 3.8 Live Extended Thinking 模型。新版本進一步提升了即時語音與多模態互動的流暢度與響應速度，Extended Thinking 則強化了模型在面對複雜多步驟問題時的內在鏈式思考能力。對於建構即時語音助理、即時多模態互動以及需要高度精確推理應用的開發者而言，新模型提供了更強大的 API 選擇與更低的延遲表現。",
           "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
           "sources": [
-            "cncf-blog"
+            "deepmind-blog",
+            "hn"
           ],
-          "title": "Cilium 1.20 正式發布：支援 Gateway API ExternalAuth、TCP/UDP 路由與 IPv6 ENI IPAM",
-          "url": "https://www.cncf.io/blog/2026/09/14/cilium-1-20-gateway-api-externalauth-tcproute-udproute-eni-ipam-for-ipv6-and-more/",
-          "weightedScore": 100
+          "title": "Google 發表 Gemini 3.8 Live 與 3.8 Live Extended Thinking 模型",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+          "weightedScore": 365
         },
         {
-          "content": "Kubernetes v1.37 中，Memory QoS 功能正式晉升為 Beta 狀態並改為預設啟用。在運行 cgroup v2 的 Linux 節點上，該功能利用核心記憶體控制器，為 Linux 核心提供更明確的容器記憶體配置指導，以提升系統在記憶體壓力下的穩定度。此項改進能讓叢集維運者更有效地防止節點因單一容器記憶體暴增而引發非預期的 OOM 崩潰，提高運算資源利用率。",
+          "content": "Kubernetes v1.37 正式將 HorizontalPodAutoscaler (HPA) 的「縮容至零」（Scale to Zero）功能升級為 Beta 並預設啟用。開發者以往若想根據自定義或外部指標將工作負載副本數降至 0，必須依賴 Keda 等第三方外掛或手動開啟 Alpha feature gate；現在核心 Kubernetes API 已原生支援此能力，當指標恢復時也能自動重新拉起 Pod。這能顯著降低閒置服務的雲端運算資源成本，對無伺服器架構與事件驅動負載的部署極具價值。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -772,12 +773,12 @@
           "sources": [
             "kubernetes-blog"
           ],
-          "title": "Kubernetes v1.37：Memory QoS 畢業進入 Beta 階段並預設啟用",
-          "url": "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/",
+          "title": "Kubernetes v1.37 原生支援 HPA 縮容至零（Scale to Zero），進入 Beta 階段",
+          "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
           "weightedScore": 100
         },
         {
-          "content": "Kubernetes 過去缺乏統一且由官方維護的方式來描述節點處於排空或維護中的狀態，大多仰賴標籤、污點或雲端供應商自訂 API。Kubernetes v1.37 正式引入了五種標準 Node conditions，包括 DrainInProgress、Drained、MaintenancePlanned、MaintenanceInProgress 與 GracefulNodeShutdown。這為叢集維運者、自動化維運工具與控制器提供了標準化的生命週期信號，有助於降低維護期間的工作負載中斷風險。",
+          "content": "Kubernetes 儲存團隊宣布 Changed Block Tracking (CBT) 功能隨著 external-snapshot-metadata v1.0.0 的推出正式邁入 Beta。CBT 提供了一套標準化的 CSI 擴充介面，包含 SnapshotMetadata gRPC 服務與 CRD，使備份系統能夠直接查詢兩次快照之間發生變更的區塊資料。對開發備份、災難復原與儲存擴充元件的工程師而言，此 API 的標準化避免了過去各儲存廠商私有實作的不相容問題，大幅提升容器持久化儲存的備份效率與效能。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -785,38 +786,51 @@
           "sources": [
             "kubernetes-blog"
           ],
-          "title": "Kubernetes v1.37：引入五項官方標準的節點生命週期狀態",
-          "url": "https://kubernetes.io/blog/2026/09/09/kubernetes-v1-37-node-lifecycle-conditions/",
+          "title": "Kubernetes 變更區塊追蹤（CBT）API 進入 Beta 階段",
+          "url": "https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta/",
           "weightedScore": 100
         },
         {
-          "content": "GitHub Copilot 的自動模型選擇（auto model selection）功能新增了三個層級：efficiency（效率）、balance（平衡）與 intelligence（智慧）。開發者與團隊可以根據自身對反應速度、推論品質以及運算成本的優先順序，自行指定 Copilot 自動挑選後端模型的標準，使 AI 輔助開發更貼合日常編程或複雜邏輯設計的實際需求。",
+          "content": "Cloudflare 推出新的網站控制選項與 Accountable 標記機制，讓網站擁有者能夠精細區分搜尋引擎索引抓取與 AI 模型訓練抓取。這項與 Apple、Google、Microsoft 建立的共用模型，解決了過去網站透過 robots.txt 封鎖爬蟲時往往「全阻擋」導致喪失搜尋排名的兩難。對於 Web 開發者與站長而言，現在無需繁瑣維護各家爬蟲的 User-Agent 清單，即可在保護原創內容不被未授權用於模型訓練的同時，維持既有的 SEO 流量與搜尋曝光。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
+          "sourceId": "cloudflare-blog",
           "sources": [
-            "github-changelog-copilot"
+            "cloudflare-blog"
           ],
-          "title": "GitHub Copilot 自動模型選擇新增效率、平衡與智慧三種層級配置",
-          "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection",
-          "weightedScore": 100
+          "title": "Cloudflare 推出新控制功能：維持搜尋曝光同時禁止 AI 抓取訓練",
+          "url": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/",
+          "weightedScore": 50
         },
         {
-          "content": "Claude Desktop 現在已可設定將 Ollama 作為第三方閘道提供者（gateway provider），使開發者能在 Claude 的桌面應用介面中直接連接並使用各類本地開源大語言模型。此項支援讓習慣 Claude 桌面操作體驗的開發者，能夠在完全本地離線或自託管的環境下進行各項模型測試與日常工作。",
+          "content": "Cloudflare 宣布為 Workers 推出更細粒度的開發者平台角色與資源範圍控制。開發者現在可以針對單一 Worker 分配存取權限，而非僅能給予整個帳號或專案的廣泛權限。這項更新特別針對 CI/CD Token、不同職能團隊成員以及近期廣泛接入系統的 AI Agent 設計，落實最小權限原則（Least Privilege），大幅降低因 Token 外洩或自動化 Agent 操作失誤對生產環境造成的安全風險。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "ollama-blog",
+          "sourceId": "cloudflare-blog",
           "sources": [
-            "ollama-blog"
+            "cloudflare-blog"
           ],
-          "title": "Claude Desktop 正式支援 Ollama 第三方閘道：可在桌面端運行開源模型",
-          "url": "https://ollama.com/blog/claude-desktop",
-          "weightedScore": 100
+          "title": "Cloudflare Workers 推出細粒度權限控制，支援限制單一 Worker 與 Agent 存取",
+          "url": "https://blog.cloudflare.com/workers-granular-authorization/",
+          "weightedScore": 50
         },
         {
-          "content": "社群披露 OpenAI 的自動化機器人曾偵測並觸及 RubyGems 的快取漏洞。隨著具備自主網路與程式碼互動能力的 AI Agent 日益普及，自動化爬蟲與測試代理在無意中探測或利用套件庫安全弱點的風險正在增加。這項事件突顯出開源生態系在面對高頻率、智慧化的自主 Agent 時，基礎設施防禦與漏洞回報機制的嚴峻挑戰。",
+          "content": "Meta 宣布支援開源的 Model Context Protocol (MCP) 標準，允許 Claude 與 Codex 等 AI 模型直接介接並配置 WhatsApp Business 服務。開發者可透過標準化的 MCP 工具調用介面，讓程式碼助理或自動化 Agent 讀取 WhatsApp 設定、建立商業流程與管理 API 整合。這展示了 MCP 標準在企業級通訊平台設定與運維自動化上的實用價值，降低串接企業通訊平台的開發門檻。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Meta 採用 Model Context Protocol (MCP)，支援透過 Claude 與 Codex 配置 WhatsApp …",
+          "url": "https://thenewstack.io/meta-mcp-whatsapp-business-claude/",
+          "weightedScore": 50
+        },
+        {
+          "content": "社群深入分享了一套在高效能監控與追蹤場景下，利用記憶化技術將 eBPF 程式 CPU 消耗降低約 90% 的工程實踐。在封包處理或高頻系統呼叫攔截時，重複運算常成為 eBPF 程式的效能瓶頸。作者詳述了如何在嚴格的 eBPF 驗證器限制（如指令數上限、堆疊空間與記憶體安全檢查）下，實作輕量高效的快取機制。這篇實戰經驗對從事 Linux 核心監控、網路觀測性與效能調校的系統工程師具有極高的技術參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -824,25 +838,12 @@
           "sources": [
             "hn"
           ],
-          "title": "OpenAI 自動化機器人曾偵測 RubyGems 快取漏洞引發資安討論",
-          "url": "https://tenderlovemaking.com/2026/09/11/what-a-time-to-be-alive/",
-          "weightedScore": 358
+          "title": "透過記憶化（Memoization）將 eBPF CPU 開銷大幅降低約 90%",
+          "url": "https://nathannaveen.dev/posts/dropping-ebpf-cpu-cost-by-90/",
+          "weightedScore": 149
         },
         {
-          "content": "UkisAI 開源了基於 Qwen 3.8 27B 進行後期訓練的模型 Swift-Qwen3.8-27B。研究團隊分析了導致「過度思考」（overthinking）的 token 並透過策略內蒸餾（On-Policy Distillation）進行懲罰與精度修復，在準確度損失小於 1% 的前提下，減少了 58.3% 的思考 token，推論速度提升達 1.95 倍。對於需要部署推理模型但受限於延遲與算力成本的工程師具備高度參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "UkisAI 開源 Swift-Qwen3.8-27B：以蒸餾減少過度思考並提升近 2 倍速度",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wg7dd5/ukisai_swiftqwen3827b_583_thinking_x195_speed/",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群高度關注 AI 在數學領域中的對齊（misalignment）問題。文章深入探討了基於機率預測的神經網路語言模型在面對嚴謹、不可妥協的形式化數學證明時所展現的系統性偏差與局限。對正在開發程式碼合成、形式化驗證或邏輯推理系統的開發者而言，理解這種機率模型與嚴格確定性系統之間的本質落差，是構建更可靠 AI 系統的關鍵依據。",
+          "content": "開發者針對 GPT-5.6 Luna 與高階模型 GPT-6 Astra 在自動化程式碼審查（Code Review）情境下進行了深度對比評測。測試從語義理解、邊界條件偵測、重構建議與幻覺率等多維度切入，評估成本僅 1.2 美元的平價模型是否能滿足團隊日常 PR 審查需求。評測分析了兩者在程式碼品質把關上的精準度差異，為正在架構內部 CI/CD AI Review 工具的工程團隊提供了兼顧審查品質與 API 預算的最佳決策參考。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -850,9 +851,35 @@
           "sources": [
             "hn"
           ],
-          "title": "數學邏輯與神經網路的落差：AI 在形式化數學中的對齊難題",
-          "url": "https://mathandai.org/",
-          "weightedScore": 1229
+          "title": "GPT-5.6 Luna 與 GPT-6 Astra 實測對比：低成本模型是否足以勝任 Code Review？",
+          "url": "https://entelligence.ai/blogs/gpt-5.6-luna-vs-gpt-6-astra-is-a-1.20-model-good-enough-for-code-review",
+          "weightedScore": 158
+        },
+        {
+          "content": "在 MinIO 授權條款轉變與架構逐漸重型化之後，開發者社群對「單節點、輕量化、本地 S3 相容儲存」方案展開深入比較。討論全面評估了包括 SeaweedFS、Garage、Rust-S3 以及各類嵌入式 S3 模擬器的相容性、記憶體佔用、佈署複雜度與 I/O 吞吐表現。對於需要建立本地整合測試環境、邊緣運算節點或微型自託管服務的後端與 DevOps 工程師而言，這是一份極為實用的選型技術指引。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "單節點本地 S3 儲存方案盤點：尋找 MinIO 之外的輕量替代品",
+          "url": "https://rmoff.net/2026/01/14/alternatives-to-minio-for-single-node-local-s3/",
+          "weightedScore": 235
+        },
+        {
+          "content": "本文深入探討了 Looped Transformer（循環 Transformer 區塊）與隱藏鏈式思考（Hidden Chains of Thought）的最新研究與架構機制。文章解析了模型如何在不依賴外部生成大量思考 Token 的情況下，透過內部層級的循環計算實現遞迴深度與隱式推理。對於研究大型語言模型架構、推論效能最佳化以及對前沿模型運作原理感興趣的機器學習工程師來說，這是一篇極具理論深度的架構拆解。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "raschka-ahead-of-ai",
+          "sources": [
+            "raschka-ahead-of-ai"
+          ],
+          "title": "深入剖析循環 Transformer 與隱藏思維鏈：探討 GPT-6 Astra 背後的架構演進",
+          "url": "https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and",
+          "weightedScore": 100
         }
       ]
     }
@@ -1550,6 +1577,97 @@
         "hn"
       ],
       "url": "https://mathandai.org/"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-16T00:07:50.300Z",
+      "sourceId": "hn",
+      "sources": [
+        "deepmind-blog",
+        "hn"
+      ],
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-16T00:07:50.300Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-16T00:07:50.300Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-16T00:07:50.300Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-16T00:07:50.300Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/workers-granular-authorization"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-16T00:07:50.300Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/meta-mcp-whatsapp-business-claude"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-16T00:07:50.300Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://nathannaveen.dev/posts/dropping-ebpf-cpu-cost-by-90"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-16T00:07:50.300Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://entelligence.ai/blogs/gpt-5.6-luna-vs-gpt-6-astra-is-a-1.20-model-good-enough-for-code-review"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-09-16T00:07:50.300Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://rmoff.net/2026/01/14/alternatives-to-minio-for-single-node-local-s3"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-16T00:07:50.300Z",
+      "sourceId": "raschka-ahead-of-ai",
+      "sources": [
+        "raschka-ahead-of-ai"
+      ],
+      "url": "https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and"
     }
   ]
 }
