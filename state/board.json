@@ -346,85 +346,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-14T00:04:01.546Z",
-  "lastNewsPushAt": "2026-09-16T00:07:50.300Z",
+  "lastNewsPushAt": "2026-09-17T00:18:25.022Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-14T00:04:01.546Z",
       "summary": "本次綜合榜 #1 為 tt-a1i/archify，共有 5 個新進與 2 個竄升項目，其中 AI 佔 5 個、前後端佔 2 個，另有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "Cloudflare 宣布在開發者平台上直接內建自動化修復政策引擎。資安團隊現在可以針對 SaaS 風險設計事件驅動的邏輯（event-driven logic），在不需人工介入的情況下，自動撤銷具風險的檔案共用權限並觸發 Webhook，有效提升企業雲端資安的響應速度與自動化防護能力。",
-        "id": "news:https://blog.cloudflare.com/casb-policies",
-        "publishedAt": "2026-09-12T00:07:16.756Z",
-        "title": "Cloudflare CASB 推出原生自動化修復政策引擎",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/casb-policies/"
-      },
-      {
-        "content": "OpenAI 正式推出 Agents API 的公開 beta 測試，將背後支援 Codex 等工具的強大代理後端能力開放給所有開發者。這項新 API 讓開發者能夠直接在應用程式中建構、部署與管理自動化 AI 代理執行任務，大幅降低了打造複雜 AI 代理工作流程的門檻。",
-        "id": "news:https://developers.openai.com/api/docs/guides/agents-api/overview",
-        "publishedAt": "2026-09-12T00:07:16.756Z",
-        "title": "OpenAI 推出 Agents API 公開測試版",
-        "type": "news",
-        "url": "https://developers.openai.com/api/docs/guides/agents-api/overview"
-      },
-      {
-        "content": "OpenAI 技術團隊分享了線上儲存系統 Habitat 的架構演進史。該系統最初只是一個 Python 庫，如今已成長為支援全球超過 10 億 ChatGPT 用戶、每秒處理高達 2,200 萬次請求的分散式儲存平台。這篇文章對需要處理超大規模流量與分散式儲存架構的後端與基礎設施工程師而言，具有極高的參考價值。",
-        "id": "news:https://openai.com/index/scaling-storage-one-billion-users-part-one",
-        "publishedAt": "2026-09-12T00:07:16.756Z",
-        "title": "OpenAI 如何將 Habitat 從 Python 庫演進為支援 10 億用戶的全球分散式儲存平台",
-        "type": "news",
-        "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one"
-      },
-      {
-        "content": "本文探討 Kubernetes 叢集在實際維運中常見的災難復原痛點，並指出「擁有備份」與「能夠成功還原」是兩碼事。作者透過三個可在筆電上完整重現的實驗室失敗情境，提供具體的架構 guidance 與防範建議，幫助平台與 DevOps 工程師驗證並提升 Kubernetes 叢集的強韌度。",
-        "id": "news:https://cncf.io/blog/2026/09/10/kubernetes-disaster-recovery-guidance-from-three-reproducible-failure-scenarios",
-        "publishedAt": "2026-09-12T00:07:16.756Z",
-        "title": "Kubernetes 災難復原：從三個可重現的失敗情境中學習",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/09/10/kubernetes-disaster-recovery-guidance-from-three-reproducible-failure-scenarios/"
-      },
-      {
-        "content": "針對開發者在日常使用 AI 程式碼生成與代理工具時，常遭遇輸出內容過度冗長、將真正解法淹沒在大量文字中的痛點，社群熱議並分享了名為 I-have-ADHD 的實用技巧與技能設定。這有助於改善 AI 代理的互動效率，讓開發者能更快擷取核心資訊。",
-        "id": "news:https://github.com/ayghri/i-have-adhd",
-        "publishedAt": "2026-09-12T00:07:16.756Z",
-        "title": "I-have-ADHD：防止編碼代理程式淹沒關鍵答案的技巧",
-        "type": "news",
-        "url": "https://github.com/ayghri/i-have-adhd"
-      },
-      {
-        "content": "有開發者因為厭倦多數 LLM 過度客套、排版完美且充滿 AI 助理腔調的制式回應，使用超過 12 萬筆真實對話資料集微調了 Qwen 模型，打造出能像真實人類般自然聊天的版本。這反映了社群對於改善 AI 人機互動體驗與擺脫機械式對話風格的強烈需求與實踐嘗試。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wdl2qa/qwen3827bhumanlikechat_a_model_i_tuned_to_imitate",
-        "publishedAt": "2026-09-12T00:07:16.756Z",
-        "title": "開發者微調 Qwen 模型以實現告別 AI 官腔的自然人類對話",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wdl2qa/qwen3827bhumanlikechat_a_model_i_tuned_to_imitate/"
-      },
-      {
-        "content": "社群開發者成功在 Qwen 模型的 KV 快取（KV cache）上實作了類似 V4.1 Flash 的快速預填（fast prefill）近似技術，並開源了對應的專案與專案示範。這項研究與開源嘗試對於想在資源受限環境下優化大型語言模型推理速度與快取效率的開發者來說，提供了極具價值的實作參考。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wd4xxv/someone_apparently_managed_to_kind_of_replicate",
-        "publishedAt": "2026-09-12T00:07:16.756Z",
-        "title": "社群開發者實作 Qwen 模型的 KV 快取近似與快速預填技術",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wd4xxv/someone_apparently_managed_to_kind_of_replicate/"
-      },
-      {
-        "content": "面對企業內部昂貴的 GPU 成本與雲端帳單檢視會議，平台團隊如何精準追蹤 GPU 的實際使用率？本文探討如何在多租戶 Kubernetes 環境中建立安全且具備自助式服務的 GPU 監控指標，解決資源歸屬與成本分攤的痛點，對 DevOps 與基礎設施管理極具實用性。",
-        "id": "news:https://cncf.io/blog/2026/09/09/whose-gpus-are-these-anyway-secure-self-service-metrics-for-multi-tenant-kubernetes",
-        "publishedAt": "2026-09-12T00:07:16.756Z",
-        "title": "多租戶 Kubernetes 叢集中安全且自助式的 GPU 指標監控",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/09/09/whose-gpus-are-these-anyway-secure-self-service-metrics-for-multi-tenant-kubernetes/"
-      },
-      {
-        "content": "Kubernetes v1.37 宣布原生直方圖（Native Histograms）正式升級至 Beta 並預設啟用。此功能繼承自 v1.36 的 Alpha 階段（KEP-5808），透過採用 Prometheus Native Histograms，讓 Kubernetes 核心元件能以更高精度、更低基數（low-cardinality）暴露延遲與持續時間指標，同時顯著降低遙測儲存與抓取負擔，對叢集可觀測性與效能調校具有重大影響。",
-        "id": "news:https://kubernetes.io/blog/2026/09/11/kubernetes-v1-37-native-histograms-beta",
-        "publishedAt": "2026-09-12T23:55:30.853Z",
-        "title": "Kubernetes v1.37 正式推出：原生直方圖提升至 Beta 階段",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/09/11/kubernetes-v1-37-native-histograms-beta/"
-      },
       {
         "content": "隨著容器原地 Pod 調整大小（In-Place Pod Resize）在 v1.35 達到 GA，開發者與運維人員可在不重啟或中斷應用的情況下動態調整運行中容器的 CPU 與記憶體。Kubernetes v1.37 進一步推出 Alpha 階段的排程器搶占機制（Scheduler Preemption for In-Place Pod Resize），解決過去原地調整大小時面臨的獨特資源排程缺口。",
         "id": "news:https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha",
@@ -745,131 +673,150 @@
         "title": "深入剖析循環 Transformer 與隱藏思維鏈：探討 GPT-6 Astra 背後的架構演進",
         "type": "news",
         "url": "https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and"
+      },
+      {
+        "content": "Node.js 釋出 26.9.0 版本，帶來多項核心能力更新：crypto 模組新增通用 MAC API，並支援從 OpenSSL 提供者探索密碼與雜湊；FFI 模組改為預設啟用；內建函式庫正式引入 node:bench 基準測試模組，並針對 perf_hooks 進行改進。對 Node.js 開發者而言，原生基準測試工具與預設啟用的外部函式呼叫介面（FFI）大幅降低了依賴第三方套件的需求，使效能評測與原生程式碼整合更加順暢。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.9.0",
+        "publishedAt": "2026-09-17T00:18:25.022Z",
+        "title": "Node.js 26.9.0 發布：預設啟用 FFI、新增 node:bench 模組與通用 MAC API",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.9.0"
+      },
+      {
+        "content": "Kubernetes v1.37 引入了 emptyDir 權限模式與 bind mount 選項兩項重要儲存安全功能。這項改動讓開發者與維運人員能直接透過 Kubernetes 原生規範實施嚴格的安全策略，例如防止跨容器檔案刪除，或是直接禁止在可寫入的 Volume 上執行任意二進位檔案，無需依賴複雜的外圍繞道手段即可強化容器儲存邊界。",
+        "id": "news:https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage",
+        "publishedAt": "2026-09-17T00:18:25.022Z",
+        "title": "Kubernetes v1.37 強化容器儲存安全：支援 Bind Mount 選項與 emptyDir 權限設定",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/"
+      },
+      {
+        "content": "在 Kubernetes 1.37 中，動態資源配置（Dynamic Resource Allocation, DRA）的 Extended Resource 支援正式畢業至 GA（General Availability）穩定階段，標誌著該功能歷經多個版本的演進已成熟。對於在 K8s 上調度 GPU 等特殊硬體加速資源的平臺工程師與 AI/ML 團隊而言，這項更新使 DRA 驅動的硬體配置更加穩定可靠。",
+        "id": "news:https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates",
+        "publishedAt": "2026-09-17T00:18:25.022Z",
+        "title": "Kubernetes v1.37 動態資源配置（DRA）擴充資源支援正式邁入 GA",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates/"
+      },
+      {
+        "content": "OpenAI 宣布推出一套用於追蹤、調查與揭露模型 misalignment（非對齊）的官方框架，並同步公開了六份關於模型意外或令人擔憂行為的調查報告。對於基於大語言模型構建應用的架構師與安全工程師而言，該框架與案例提供了排查 Agent 或模型異常輸出時的系統化評估方法與風險參照。",
+        "id": "news:https://openai.com/index/model-misalignment-reporting-framework",
+        "publishedAt": "2026-09-17T00:18:25.022Z",
+        "title": "OpenAI 發布模型非對齊行為回報框架與首批調查案例",
+        "type": "news",
+        "url": "https://openai.com/index/model-misalignment-reporting-framework"
+      },
+      {
+        "content": "Mistral 與 Mozilla 達成合作，共同探索兼顧本機隱私保護與多語言支援的 AI 瀏覽功能。對於關注隱私合規與客戶端 AI 應用的網頁開發者而言，這項合作顯示出瀏覽器端 AI 整合正朝向保護使用者資料隱私與跨語言本機推論的方向演進。",
+        "id": "news:https://mistral.ai/news/mistral-x-mozilla",
+        "publishedAt": "2026-09-17T00:18:25.022Z",
+        "title": "Mistral 與 Mozilla 合作推進隱私導向的多語言 AI 瀏覽體驗",
+        "type": "news",
+        "url": "https://mistral.ai/news/mistral-x-mozilla/"
+      },
+      {
+        "content": "這份技術解析詳盡展示了 Claude 在文字生成過程中嵌入數位浮水印的底層技術原理，涵蓋 Token 採樣策略、浮水印演算法設計、偵測流程以及潛在的去除方式。對於從事 LLM 內容生成檢測、模型安全研究與防偽架構的工程師而言，深入理解此機制有助於評估生成內容的溯源能力與安全性。",
+        "id": "news:https://magazine.sebastianraschka.com/p/claude-watermarking",
+        "publishedAt": "2026-09-17T00:18:25.022Z",
+        "title": "深度剖析 Claude AI 文字浮水印技術：Token 採樣、偵測與移除機制",
+        "type": "news",
+        "url": "https://magazine.sebastianraschka.com/p/claude-watermarking"
+      },
+      {
+        "content": "技術社群分享了在 Kubernetes 環境中利用 Linux 基金會的 OpenBao（HashiCorp Vault 的開源分支）搭配 CloudNativePG PostgreSQL 實作金鑰管理的實戰架構。此方案展現了具備自我修復能力且無商業授權綁定的機密管理部署方式，為尋求 Vault 替代方案的 DevOps 與 SRE 團隊提供了具體的實作範例。",
+        "id": "news:https://cncf.io/blog/2026/09/16/running-openbao-on-kubernetes-with-a-cloudnativepg-postgresql-backend",
+        "publishedAt": "2026-09-17T00:18:25.022Z",
+        "title": "在 Kubernetes 上運用 CloudNativePG 與 OpenBao 建構無廠商綁定的金鑰管理架構",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/09/16/running-openbao-on-kubernetes-with-a-cloudnativepg-postgresql-backend/"
+      },
+      {
+        "content": "逆向工程分析顯示，Apple 系統程式碼已具備將 Siri 背後 AI 引擎切換為 Claude 或 ChatGPT 等不同模型的結構設計。這項技術架構發現意味著系統層級的助理介面已朝向可抽換的大模型後端整合設計演進，為關心 Apple 生態系智慧功能整合的開發者提供了底層架構走向的線索。",
+        "id": "news:https://macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude",
+        "publishedAt": "2026-09-17T00:18:25.022Z",
+        "title": "程式碼逆向揭露 Apple Siri 底層架構具備接入 ChatGPT 與 Claude 的切換設計",
+        "type": "news",
+        "url": "https://www.macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude/"
+      },
+      {
+        "content": "Perplexity 揭露了因 DynamoDB 成本與讀取延遲掌控度考量，轉而利用 AI Agent 協助撰寫與構建自研資料庫的實務經驗；然而在權限架構上，系統嚴格限制 Agent 直接在線上環境運行。此案例對於考量將 AI 生成程式碼應用於核心儲存基礎設施的架構師而言，在效能自控與安全隔離設計上具有重要的實踐參考價值。",
+        "id": "news:https://thenewstack.io/perplexity-cobbledb-ai-database",
+        "publishedAt": "2026-09-17T00:18:25.022Z",
+        "title": "Perplexity 實戰案例：運用 AI Agent 協作自建資料庫以取代 DynamoDB",
+        "type": "news",
+        "url": "https://thenewstack.io/perplexity-cobbledb-ai-database/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-16T00:07:50.300Z",
+      "generatedAt": "2026-09-17T00:18:25.022Z",
       "items": [
         {
-          "content": "Google 正式推出 Gemini 3.8 Live 以及具備深度推理能力的 Gemini 3.8 Live Extended Thinking 模型。新版本進一步提升了即時語音與多模態互動的流暢度與響應速度，Extended Thinking 則強化了模型在面對複雜多步驟問題時的內在鏈式思考能力。對於建構即時語音助理、即時多模態互動以及需要高度精確推理應用的開發者而言，新模型提供了更強大的 API 選擇與更低的延遲表現。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sources": [
-            "deepmind-blog",
-            "hn"
-          ],
-          "title": "Google 發表 Gemini 3.8 Live 與 3.8 Live Extended Thinking 模型",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
-          "weightedScore": 365
-        },
-        {
-          "content": "Kubernetes v1.37 正式將 HorizontalPodAutoscaler (HPA) 的「縮容至零」（Scale to Zero）功能升級為 Beta 並預設啟用。開發者以往若想根據自定義或外部指標將工作負載副本數降至 0，必須依賴 Keda 等第三方外掛或手動開啟 Alpha feature gate；現在核心 Kubernetes API 已原生支援此能力，當指標恢復時也能自動重新拉起 Pod。這能顯著降低閒置服務的雲端運算資源成本，對無伺服器架構與事件驅動負載的部署極具價值。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "kubernetes-blog",
-          "sources": [
-            "kubernetes-blog"
-          ],
-          "title": "Kubernetes v1.37 原生支援 HPA 縮容至零（Scale to Zero），進入 Beta 階段",
-          "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Kubernetes 儲存團隊宣布 Changed Block Tracking (CBT) 功能隨著 external-snapshot-metadata v1.0.0 的推出正式邁入 Beta。CBT 提供了一套標準化的 CSI 擴充介面，包含 SnapshotMetadata gRPC 服務與 CRD，使備份系統能夠直接查詢兩次快照之間發生變更的區塊資料。對開發備份、災難復原與儲存擴充元件的工程師而言，此 API 的標準化避免了過去各儲存廠商私有實作的不相容問題，大幅提升容器持久化儲存的備份效率與效能。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "kubernetes-blog",
-          "sources": [
-            "kubernetes-blog"
-          ],
-          "title": "Kubernetes 變更區塊追蹤（CBT）API 進入 Beta 階段",
-          "url": "https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 推出新的網站控制選項與 Accountable 標記機制，讓網站擁有者能夠精細區分搜尋引擎索引抓取與 AI 模型訓練抓取。這項與 Apple、Google、Microsoft 建立的共用模型，解決了過去網站透過 robots.txt 封鎖爬蟲時往往「全阻擋」導致喪失搜尋排名的兩難。對於 Web 開發者與站長而言，現在無需繁瑣維護各家爬蟲的 User-Agent 清單，即可在保護原創內容不被未授權用於模型訓練的同時，維持既有的 SEO 流量與搜尋曝光。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 推出新控制功能：維持搜尋曝光同時禁止 AI 抓取訓練",
-          "url": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Cloudflare 宣布為 Workers 推出更細粒度的開發者平台角色與資源範圍控制。開發者現在可以針對單一 Worker 分配存取權限，而非僅能給予整個帳號或專案的廣泛權限。這項更新特別針對 CI/CD Token、不同職能團隊成員以及近期廣泛接入系統的 AI Agent 設計，落實最小權限原則（Least Privilege），大幅降低因 Token 外洩或自動化 Agent 操作失誤對生產環境造成的安全風險。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare Workers 推出細粒度權限控制，支援限制單一 Worker 與 Agent 存取",
-          "url": "https://blog.cloudflare.com/workers-granular-authorization/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Meta 宣布支援開源的 Model Context Protocol (MCP) 標準，允許 Claude 與 Codex 等 AI 模型直接介接並配置 WhatsApp Business 服務。開發者可透過標準化的 MCP 工具調用介面，讓程式碼助理或自動化 Agent 讀取 WhatsApp 設定、建立商業流程與管理 API 整合。這展示了 MCP 標準在企業級通訊平台設定與運維自動化上的實用價值，降低串接企業通訊平台的開發門檻。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Meta 採用 Model Context Protocol (MCP)，支援透過 Claude 與 Codex 配置 WhatsApp …",
-          "url": "https://thenewstack.io/meta-mcp-whatsapp-business-claude/",
-          "weightedScore": 50
-        },
-        {
-          "content": "社群深入分享了一套在高效能監控與追蹤場景下，利用記憶化技術將 eBPF 程式 CPU 消耗降低約 90% 的工程實踐。在封包處理或高頻系統呼叫攔截時，重複運算常成為 eBPF 程式的效能瓶頸。作者詳述了如何在嚴格的 eBPF 驗證器限制（如指令數上限、堆疊空間與記憶體安全檢查）下，實作輕量高效的快取機制。這篇實戰經驗對從事 Linux 核心監控、網路觀測性與效能調校的系統工程師具有極高的技術參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "透過記憶化（Memoization）將 eBPF CPU 開銷大幅降低約 90%",
-          "url": "https://nathannaveen.dev/posts/dropping-ebpf-cpu-cost-by-90/",
-          "weightedScore": 149
-        },
-        {
-          "content": "開發者針對 GPT-5.6 Luna 與高階模型 GPT-6 Astra 在自動化程式碼審查（Code Review）情境下進行了深度對比評測。測試從語義理解、邊界條件偵測、重構建議與幻覺率等多維度切入，評估成本僅 1.2 美元的平價模型是否能滿足團隊日常 PR 審查需求。評測分析了兩者在程式碼品質把關上的精準度差異，為正在架構內部 CI/CD AI Review 工具的工程團隊提供了兼顧審查品質與 API 預算的最佳決策參考。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "GPT-5.6 Luna 與 GPT-6 Astra 實測對比：低成本模型是否足以勝任 Code Review？",
-          "url": "https://entelligence.ai/blogs/gpt-5.6-luna-vs-gpt-6-astra-is-a-1.20-model-good-enough-for-code-review",
-          "weightedScore": 158
-        },
-        {
-          "content": "在 MinIO 授權條款轉變與架構逐漸重型化之後，開發者社群對「單節點、輕量化、本地 S3 相容儲存」方案展開深入比較。討論全面評估了包括 SeaweedFS、Garage、Rust-S3 以及各類嵌入式 S3 模擬器的相容性、記憶體佔用、佈署複雜度與 I/O 吞吐表現。對於需要建立本地整合測試環境、邊緣運算節點或微型自託管服務的後端與 DevOps 工程師而言，這是一份極為實用的選型技術指引。",
+          "content": "Node.js 釋出 26.9.0 版本，帶來多項核心能力更新：crypto 模組新增通用 MAC API，並支援從 OpenSSL 提供者探索密碼與雜湊；FFI 模組改為預設啟用；內建函式庫正式引入 node:bench 基準測試模組，並針對 perf_hooks 進行改進。對 Node.js 開發者而言，原生基準測試工具與預設啟用的外部函式呼叫介面（FFI）大幅降低了依賴第三方套件的需求，使效能評測與原生程式碼整合更加順暢。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
+          "sourceId": "gh-nodejs",
+          "sources": [
+            "gh-nodejs"
+          ],
+          "title": "Node.js 26.9.0 發布：預設啟用 FFI、新增 node:bench 模組與通用 MAC API",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.9.0",
+          "weightedScore": 100
+        },
+        {
+          "content": "Kubernetes v1.37 引入了 emptyDir 權限模式與 bind mount 選項兩項重要儲存安全功能。這項改動讓開發者與維運人員能直接透過 Kubernetes 原生規範實施嚴格的安全策略，例如防止跨容器檔案刪除，或是直接禁止在可寫入的 Volume 上執行任意二進位檔案，無需依賴複雜的外圍繞道手段即可強化容器儲存邊界。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "kubernetes-blog",
+          "sources": [
+            "kubernetes-blog"
+          ],
+          "title": "Kubernetes v1.37 強化容器儲存安全：支援 Bind Mount 選項與 emptyDir 權限設定",
+          "url": "https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/",
+          "weightedScore": 100
+        },
+        {
+          "content": "在 Kubernetes 1.37 中，動態資源配置（Dynamic Resource Allocation, DRA）的 Extended Resource 支援正式畢業至 GA（General Availability）穩定階段，標誌著該功能歷經多個版本的演進已成熟。對於在 K8s 上調度 GPU 等特殊硬體加速資源的平臺工程師與 AI/ML 團隊而言，這項更新使 DRA 驅動的硬體配置更加穩定可靠。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "kubernetes-blog",
+          "sources": [
+            "kubernetes-blog"
+          ],
+          "title": "Kubernetes v1.37 動態資源配置（DRA）擴充資源支援正式邁入 GA",
+          "url": "https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates/",
+          "weightedScore": 100
+        },
+        {
+          "content": "OpenAI 宣布推出一套用於追蹤、調查與揭露模型 misalignment（非對齊）的官方框架，並同步公開了六份關於模型意外或令人擔憂行為的調查報告。對於基於大語言模型構建應用的架構師與安全工程師而言，該框架與案例提供了排查 Agent 或模型異常輸出時的系統化評估方法與風險參照。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sources": [
+            "openai-blog"
+          ],
+          "title": "OpenAI 發布模型非對齊行為回報框架與首批調查案例",
+          "url": "https://openai.com/index/model-misalignment-reporting-framework",
+          "weightedScore": 100
+        },
+        {
+          "content": "Mistral 與 Mozilla 達成合作，共同探索兼顧本機隱私保護與多語言支援的 AI 瀏覽功能。對於關注隱私合規與客戶端 AI 應用的網頁開發者而言，這項合作顯示出瀏覽器端 AI 整合正朝向保護使用者資料隱私與跨語言本機推論的方向演進。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
           "sourceId": "hn",
           "sources": [
             "hn"
           ],
-          "title": "單節點本地 S3 儲存方案盤點：尋找 MinIO 之外的輕量替代品",
-          "url": "https://rmoff.net/2026/01/14/alternatives-to-minio-for-single-node-local-s3/",
-          "weightedScore": 235
+          "title": "Mistral 與 Mozilla 合作推進隱私導向的多語言 AI 瀏覽體驗",
+          "url": "https://mistral.ai/news/mistral-x-mozilla/",
+          "weightedScore": 522
         },
         {
-          "content": "本文深入探討了 Looped Transformer（循環 Transformer 區塊）與隱藏鏈式思考（Hidden Chains of Thought）的最新研究與架構機制。文章解析了模型如何在不依賴外部生成大量思考 Token 的情況下，透過內部層級的循環計算實現遞迴深度與隱式推理。對於研究大型語言模型架構、推論效能最佳化以及對前沿模型運作原理感興趣的機器學習工程師來說，這是一篇極具理論深度的架構拆解。",
+          "content": "這份技術解析詳盡展示了 Claude 在文字生成過程中嵌入數位浮水印的底層技術原理，涵蓋 Token 採樣策略、浮水印演算法設計、偵測流程以及潛在的去除方式。對於從事 LLM 內容生成檢測、模型安全研究與防偽架構的工程師而言，深入理解此機制有助於評估生成內容的溯源能力與安全性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -877,9 +824,48 @@
           "sources": [
             "raschka-ahead-of-ai"
           ],
-          "title": "深入剖析循環 Transformer 與隱藏思維鏈：探討 GPT-6 Astra 背後的架構演進",
-          "url": "https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and",
+          "title": "深度剖析 Claude AI 文字浮水印技術：Token 採樣、偵測與移除機制",
+          "url": "https://magazine.sebastianraschka.com/p/claude-watermarking",
           "weightedScore": 100
+        },
+        {
+          "content": "技術社群分享了在 Kubernetes 環境中利用 Linux 基金會的 OpenBao（HashiCorp Vault 的開源分支）搭配 CloudNativePG PostgreSQL 實作金鑰管理的實戰架構。此方案展現了具備自我修復能力且無商業授權綁定的機密管理部署方式，為尋求 Vault 替代方案的 DevOps 與 SRE 團隊提供了具體的實作範例。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "在 Kubernetes 上運用 CloudNativePG 與 OpenBao 建構無廠商綁定的金鑰管理架構",
+          "url": "https://www.cncf.io/blog/2026/09/16/running-openbao-on-kubernetes-with-a-cloudnativepg-postgresql-backend/",
+          "weightedScore": 100
+        },
+        {
+          "content": "逆向工程分析顯示，Apple 系統程式碼已具備將 Siri 背後 AI 引擎切換為 Claude 或 ChatGPT 等不同模型的結構設計。這項技術架構發現意味著系統層級的助理介面已朝向可抽換的大模型後端整合設計演進，為關心 Apple 生態系智慧功能整合的開發者提供了底層架構走向的線索。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "程式碼逆向揭露 Apple Siri 底層架構具備接入 ChatGPT 與 Claude 的切換設計",
+          "url": "https://www.macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude/",
+          "weightedScore": 225
+        },
+        {
+          "content": "Perplexity 揭露了因 DynamoDB 成本與讀取延遲掌控度考量，轉而利用 AI Agent 協助撰寫與構建自研資料庫的實務經驗；然而在權限架構上，系統嚴格限制 Agent 直接在線上環境運行。此案例對於考量將 AI 生成程式碼應用於核心儲存基礎設施的架構師而言，在效能自控與安全隔離設計上具有重要的實踐參考價值。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Perplexity 實戰案例：運用 AI Agent 協作自建資料庫以取代 DynamoDB",
+          "url": "https://thenewstack.io/perplexity-cobbledb-ai-database/",
+          "weightedScore": 50
         }
       ]
     }
@@ -1668,6 +1654,87 @@
         "raschka-ahead-of-ai"
       ],
       "url": "https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-09-17T00:18:25.022Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "url": "https://github.com/nodejs/node/releases/tag/v26.9.0"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-17T00:18:25.022Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-17T00:18:25.022Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-17T00:18:25.022Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "url": "https://openai.com/index/model-misalignment-reporting-framework"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-17T00:18:25.022Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://mistral.ai/news/mistral-x-mozilla"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-17T00:18:25.022Z",
+      "sourceId": "raschka-ahead-of-ai",
+      "sources": [
+        "raschka-ahead-of-ai"
+      ],
+      "url": "https://magazine.sebastianraschka.com/p/claude-watermarking"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-17T00:18:25.022Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "url": "https://cncf.io/blog/2026/09/16/running-openbao-on-kubernetes-with-a-cloudnativepg-postgresql-backend"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-17T00:18:25.022Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-17T00:18:25.022Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/perplexity-cobbledb-ai-database"
     }
   ]
 }
