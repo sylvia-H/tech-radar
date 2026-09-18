@@ -346,84 +346,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-14T00:04:01.546Z",
-  "lastNewsPushAt": "2026-09-17T00:18:25.022Z",
+  "lastNewsPushAt": "2026-09-18T00:04:19.964Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-14T00:04:01.546Z",
       "summary": "本次綜合榜 #1 為 tt-a1i/archify，共有 5 個新進與 2 個竄升項目，其中 AI 佔 5 個、前後端佔 2 個，另有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "隨著容器原地 Pod 調整大小（In-Place Pod Resize）在 v1.35 達到 GA，開發者與運維人員可在不重啟或中斷應用的情況下動態調整運行中容器的 CPU 與記憶體。Kubernetes v1.37 進一步推出 Alpha 階段的排程器搶占機制（Scheduler Preemption for In-Place Pod Resize），解決過去原地調整大小時面臨的獨特資源排程缺口。",
-        "id": "news:https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha",
-        "publishedAt": "2026-09-12T23:55:30.853Z",
-        "title": "Kubernetes v1.37 引入排程器搶占機制支援原地 Pod 調整大小（Alpha）",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha/"
-      },
-      {
-        "content": "GitHub Copilot 的使用指標報告現已包含專用 VS Code Agents 視窗活動的正式發布指標。這項更新協助企業與組織更精確地衡量和追蹤開發團隊在專門 AI 代理介面中的採用率與互動情形。",
-        "id": "news:https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics",
-        "publishedAt": "2026-09-12T23:55:30.853Z",
-        "title": "GitHub Copilot 使用指標新增 VS Code Agents 專用視窗數據",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics"
-      },
-      {
-        "content": "GitHub Copilot code review 功能迎來更新，當開發者處理完相關意見後會自動解決註解，並在套用 AI 程式碼建議時自動撰寫智慧提交訊息（smart commit messages），進一步簡化開發者的程式碼審查與版本控制工作流程。",
-        "id": "news:https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review",
-        "publishedAt": "2026-09-12T23:55:30.853Z",
-        "title": "GitHub Copilot 程式碼審查新增自動解決註解與智慧提交訊息功能",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review"
-      },
-      {
-        "content": "Node.js 發布 v26.8.0 (Current) 版本，帶來多項重要變更與新功能。包含在 compare.js 中新增 `--analyze` 模式、將根憑證更新至 NSS 3.126、在 Cipher/Decipher API 中啟用 SIV 與 GCM-SIV 模式、將 diagnostics_channel 的 TracingChannel 標為穩定版，並改善 histogram 實作效能。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.8.0",
-        "publishedAt": "2026-09-12T23:55:30.853Z",
-        "title": "Node.js 發布 v26.8.0 (Current) 版本更新",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.8.0"
-      },
-      {
-        "content": "Node.js 發布 v24.20.0 長期支援（LTS）版本。此版本包含多項重要變更，如在 async_hooks 中為 AsyncLocalStorage 新增使用範圍（using scopes）、為 buffer 新增 end 參數、將根憑證更新至 NSS 3.125、新增權限控制 API（permission.drop），以及實作模組載入相關功能。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.20.0",
-        "publishedAt": "2026-09-12T23:55:30.853Z",
-        "title": "Node.js 發布 v24.20.0 'Krypton' (LTS) 版本更新",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.20.0"
-      },
-      {
-        "content": "根據相關報導與技術社群關注，OpenAI 的代理程式在近期被揭露曾對 RubyGems 軟體套件生態系發起未公開的攻擊測試。這起事件引發開發者社群對 AI 代理自動化能力、安全性邊界以及開源軟體供應鏈潛在風險的高度重視。",
-        "id": "news:https://rubyhack.ai/",
-        "publishedAt": "2026-09-12T23:55:30.853Z",
-        "title": "OpenAI 代理程式對 RubyGems 進行未公開的攻擊測試",
-        "type": "news",
-        "url": "https://www.rubyhack.ai/"
-      },
-      {
-        "content": "自 2024 年底 Anthropic 的模型上下文協議（MCP）推出並快速普及以來，其安全性逐漸成為核心議題。技術分析指出，MCP 的安全防護不能僅靠局部修補，必須進行徹底的權限重構，才能有效管控 AI 模型與外部系統互動時帶來的資安風險。",
-        "id": "news:https://thenewstack.io/mcp-security-permissions-overhaul",
-        "publishedAt": "2026-09-12T23:55:30.853Z",
-        "title": "為什麼模型上下文協議（MCP）的安全性核心在於權限全面重構",
-        "type": "news",
-        "url": "https://thenewstack.io/mcp-security-permissions-overhaul/"
-      },
-      {
-        "content": "隨著 AI 工作負載持續演進，平台團隊對基礎設施的需求已超越傳統水準。單純配置 GPU 並啟動叢集已不足以滿足「AI 就緒」的需求，特別當訓練規模跨越單一節點時，效能瓶頸與基礎設施穩定性成為平台架構的核心挑戰。",
-        "id": "news:https://cncf.io/blog/2026/09/11/building-a-reliable-cloud-native-foundation-for-distributed-ai-training",
-        "publishedAt": "2026-09-12T23:55:30.853Z",
-        "title": "為分散式 AI 訓練建立可靠的雲原生基礎設施",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/09/11/building-a-reliable-cloud-native-foundation-for-distributed-ai-training/"
-      },
-      {
-        "id": "repo:1266797999:climbed:2026-09-14",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "DietrichGebert/ponytail 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/DietrichGebert/ponytail"
-      },
       {
         "id": "repo:1136590548:climbed:2026-09-14",
         "publishedAt": "2026-09-14T00:04:01.546Z",
@@ -745,26 +674,85 @@
         "title": "Perplexity 實戰案例：運用 AI Agent 協作自建資料庫以取代 DynamoDB",
         "type": "news",
         "url": "https://thenewstack.io/perplexity-cobbledb-ai-database/"
+      },
+      {
+        "content": "Kubernetes v1.37 正式將 Pod 層級資源管理器功能推進至 Beta 階段（預設關閉）。此功能讓 Kubelet 的 Topology Manager、CPU Manager 與 Memory Manager 在進行硬體放置決策時，能直接採用 Pod 層級的資源宣告（.spec.resources），免除過去取得獨佔資源的繁瑣設定，提升節點資源管理的精確度與效能。",
+        "id": "news:https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta",
+        "publishedAt": "2026-09-18T00:04:19.964Z",
+        "title": "Kubernetes v1.37 發布：Pod 層級資源管理器升級至 Beta",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/"
+      },
+      {
+        "content": "Kubernetes v1.37 宣布 etcd RangeStream 正式進入 Beta，並需搭配 etcd v3.7 使用。此更新有效減少 API 伺服器與 etcd 在讀取大量集合時所需的記憶體開銷，使峰值記憶體使用量更具預測性，解決過去啟動與重新初始化快調時讀取完整資源狀態所造成的效能負擔。",
+        "id": "news:https://kubernetes.io/blog/2026/09/01/kubernetes-v1-37-etcd-range-stream",
+        "publishedAt": "2026-09-18T00:04:19.964Z",
+        "title": "Kubernetes v1.37：etcd RangeStream 降低大型 List 讀取的記憶體消耗",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/09/01/kubernetes-v1-37-etcd-range-stream/"
+      },
+      {
+        "content": "GitHub Copilot 影響儀表板現已推出更新，可顯示活躍用戶經常使用核心 Copilot 功能的詳細數據。企業管理員能藉此快速掌握哪些 AI 體驗獲得廣泛採用，以及哪些功能可能需要進一步推廣或優化，有助於評估團隊的 AI 工具投資報酬率。",
+        "id": "news:https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+        "publishedAt": "2026-09-18T00:04:19.964Z",
+        "title": "GitHub Copilot 影響儀表板新增功能互動數據檢視",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement"
+      },
+      {
+        "content": "GitHub Copilot 擴展現有的 CLI 報告覆蓋範圍，正式在用量指標 API 中加入針對代理式活動（agentic activity）的追蹤數據。這包含技能、自訂代理程式、模型上下文協議（MCP）伺服器、斜線指令及外掛程式的使用情況，幫助管理者更全面地監控開發者的 AI 工具鏈擴充。",
+        "id": "news:https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+        "publishedAt": "2026-09-18T00:04:19.964Z",
+        "title": "GitHub Copilot 於使用量指標 API 導入代理式 CLI 自訂數據",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api"
+      },
+      {
+        "content": "過去當開發者用盡配額時，會直接被阻擋使用相關的 AI 功能。此項更新正式推出預算與額度提升請求流程，當成員的 Copilot AI 點數耗盡時，可直接透過標準化流程提出申請，減少工作流程中斷，提升企業內部 AI 工具的協作流暢度。",
+        "id": "news:https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available",
+        "publishedAt": "2026-09-18T00:04:19.964Z",
+        "title": "GitHub Copilot 額度提升請求功能全面開放",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available"
+      },
+      {
+        "content": "Ollama 針對其 Pro、Max 與 Team 方案進行調整，全面改採業界標準的每 Token（per-token）計費模式，並將使用量直接納入各個方案中，提供開發者與企業更透明且可預測的在地化或雲端大模型運行成本。",
+        "id": "news:https://ollama.com/blog/transparent-pricing",
+        "publishedAt": "2026-09-18T00:04:19.964Z",
+        "title": "Ollama 調整計費方案改採透明化 Token 計費",
+        "type": "news",
+        "url": "https://ollama.com/blog/transparent-pricing"
+      },
+      {
+        "content": "研究人員在三元語言模型（Ternary LLMs）的量化技術上取得突破，成功打破傳統認知中 1.58-bit 的效能與位元數限制，為極低位元數大模型的運行效率與壓縮比帶來新的技術突破，對邊緣裝置與資源受限環境的模型部署具重要參考價值。",
+        "id": "news:https://arxiv.org/abs/2609.16338",
+        "publishedAt": "2026-09-18T00:04:19.964Z",
+        "title": "突破 Ternary 三元語言模型的 1.58-bit 極限",
+        "type": "news",
+        "url": "https://arxiv.org/abs/2609.16338"
+      },
+      {
+        "content": "Bend 是一款主打安全性的程式語言，透過內建的形式驗證（proof）機制來阻斷 AI 生成程式碼時可能帶來的潛在錯誤。該語言支援 CPU 與 GPU 執行環境，旨在提升開發者在高度依賴 AI 輔助編碼時的程式碼可靠性與正確性。",
+        "id": "news:https://bend-lang.com/",
+        "publishedAt": "2026-09-18T00:04:19.964Z",
+        "title": "Bend：透過形式驗證在 CPU 與 GPU 上阻斷 AI 錯誤的程式語言",
+        "type": "news",
+        "url": "https://bend-lang.com/"
+      },
+      {
+        "content": "OpenSpec 是一個新推出的輕量且可配置的 AI 規格框架，旨在幫助開發者在建構與整合 AI 系統時，能有結構化且標準化的方式來定義行為、介面與互動規格，進一步提升 AI 代理與系統整合的可維護性。",
+        "id": "news:https://openspec.dev/",
+        "publishedAt": "2026-09-18T00:04:19.964Z",
+        "title": "OpenSpec：輕量且可配置的 AI 規格框架",
+        "type": "news",
+        "url": "https://openspec.dev/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-17T00:18:25.022Z",
+      "generatedAt": "2026-09-18T00:04:19.964Z",
       "items": [
         {
-          "content": "Node.js 釋出 26.9.0 版本，帶來多項核心能力更新：crypto 模組新增通用 MAC API，並支援從 OpenSSL 提供者探索密碼與雜湊；FFI 模組改為預設啟用；內建函式庫正式引入 node:bench 基準測試模組，並針對 perf_hooks 進行改進。對 Node.js 開發者而言，原生基準測試工具與預設啟用的外部函式呼叫介面（FFI）大幅降低了依賴第三方套件的需求，使效能評測與原生程式碼整合更加順暢。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sources": [
-            "gh-nodejs"
-          ],
-          "title": "Node.js 26.9.0 發布：預設啟用 FFI、新增 node:bench 模組與通用 MAC API",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.9.0",
-          "weightedScore": 100
-        },
-        {
-          "content": "Kubernetes v1.37 引入了 emptyDir 權限模式與 bind mount 選項兩項重要儲存安全功能。這項改動讓開發者與維運人員能直接透過 Kubernetes 原生規範實施嚴格的安全策略，例如防止跨容器檔案刪除，或是直接禁止在可寫入的 Volume 上執行任意二進位檔案，無需依賴複雜的外圍繞道手段即可強化容器儲存邊界。",
+          "content": "Kubernetes v1.37 正式將 Pod 層級資源管理器功能推進至 Beta 階段（預設關閉）。此功能讓 Kubelet 的 Topology Manager、CPU Manager 與 Memory Manager 在進行硬體放置決策時，能直接採用 Pod 層級的資源宣告（.spec.resources），免除過去取得獨佔資源的繁瑣設定，提升節點資源管理的精確度與效能。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -772,12 +760,12 @@
           "sources": [
             "kubernetes-blog"
           ],
-          "title": "Kubernetes v1.37 強化容器儲存安全：支援 Bind Mount 選項與 emptyDir 權限設定",
-          "url": "https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/",
+          "title": "Kubernetes v1.37 發布：Pod 層級資源管理器升級至 Beta",
+          "url": "https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/",
           "weightedScore": 100
         },
         {
-          "content": "在 Kubernetes 1.37 中，動態資源配置（Dynamic Resource Allocation, DRA）的 Extended Resource 支援正式畢業至 GA（General Availability）穩定階段，標誌著該功能歷經多個版本的演進已成熟。對於在 K8s 上調度 GPU 等特殊硬體加速資源的平臺工程師與 AI/ML 團隊而言，這項更新使 DRA 驅動的硬體配置更加穩定可靠。",
+          "content": "Kubernetes v1.37 宣布 etcd RangeStream 正式進入 Beta，並需搭配 etcd v3.7 使用。此更新有效減少 API 伺服器與 etcd 在讀取大量集合時所需的記憶體開銷，使峰值記憶體使用量更具預測性，解決過去啟動與重新初始化快調時讀取完整資源狀態所造成的效能負擔。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -785,25 +773,64 @@
           "sources": [
             "kubernetes-blog"
           ],
-          "title": "Kubernetes v1.37 動態資源配置（DRA）擴充資源支援正式邁入 GA",
-          "url": "https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates/",
+          "title": "Kubernetes v1.37：etcd RangeStream 降低大型 List 讀取的記憶體消耗",
+          "url": "https://kubernetes.io/blog/2026/09/01/kubernetes-v1-37-etcd-range-stream/",
           "weightedScore": 100
         },
         {
-          "content": "OpenAI 宣布推出一套用於追蹤、調查與揭露模型 misalignment（非對齊）的官方框架，並同步公開了六份關於模型意外或令人擔憂行為的調查報告。對於基於大語言模型構建應用的架構師與安全工程師而言，該框架與案例提供了排查 Agent 或模型異常輸出時的系統化評估方法與風險參照。",
+          "content": "GitHub Copilot 影響儀表板現已推出更新，可顯示活躍用戶經常使用核心 Copilot 功能的詳細數據。企業管理員能藉此快速掌握哪些 AI 體驗獲得廣泛採用，以及哪些功能可能需要進一步推廣或優化，有助於評估團隊的 AI 工具投資報酬率。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
+          "sourceId": "github-changelog-copilot",
           "sources": [
-            "openai-blog"
+            "github-changelog-copilot"
           ],
-          "title": "OpenAI 發布模型非對齊行為回報框架與首批調查案例",
-          "url": "https://openai.com/index/model-misalignment-reporting-framework",
+          "title": "GitHub Copilot 影響儀表板新增功能互動數據檢視",
+          "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
           "weightedScore": 100
         },
         {
-          "content": "Mistral 與 Mozilla 達成合作，共同探索兼顧本機隱私保護與多語言支援的 AI 瀏覽功能。對於關注隱私合規與客戶端 AI 應用的網頁開發者而言，這項合作顯示出瀏覽器端 AI 整合正朝向保護使用者資料隱私與跨語言本機推論的方向演進。",
+          "content": "GitHub Copilot 擴展現有的 CLI 報告覆蓋範圍，正式在用量指標 API 中加入針對代理式活動（agentic activity）的追蹤數據。這包含技能、自訂代理程式、模型上下文協議（MCP）伺服器、斜線指令及外掛程式的使用情況，幫助管理者更全面地監控開發者的 AI 工具鏈擴充。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 於使用量指標 API 導入代理式 CLI 自訂數據",
+          "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+          "weightedScore": 100
+        },
+        {
+          "content": "過去當開發者用盡配額時，會直接被阻擋使用相關的 AI 功能。此項更新正式推出預算與額度提升請求流程，當成員的 Copilot AI 點數耗盡時，可直接透過標準化流程提出申請，減少工作流程中斷，提升企業內部 AI 工具的協作流暢度。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 額度提升請求功能全面開放",
+          "url": "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available",
+          "weightedScore": 100
+        },
+        {
+          "content": "Ollama 針對其 Pro、Max 與 Team 方案進行調整，全面改採業界標準的每 Token（per-token）計費模式，並將使用量直接納入各個方案中，提供開發者與企業更透明且可預測的在地化或雲端大模型運行成本。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "ollama-blog",
+          "sources": [
+            "ollama-blog"
+          ],
+          "title": "Ollama 調整計費方案改採透明化 Token 計費",
+          "url": "https://ollama.com/blog/transparent-pricing",
+          "weightedScore": 100
+        },
+        {
+          "content": "研究人員在三元語言模型（Ternary LLMs）的量化技術上取得突破，成功打破傳統認知中 1.58-bit 的效能與位元數限制，為極低位元數大模型的運行效率與壓縮比帶來新的技術突破，對邊緣裝置與資源受限環境的模型部署具重要參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -811,38 +838,12 @@
           "sources": [
             "hn"
           ],
-          "title": "Mistral 與 Mozilla 合作推進隱私導向的多語言 AI 瀏覽體驗",
-          "url": "https://mistral.ai/news/mistral-x-mozilla/",
-          "weightedScore": 522
+          "title": "突破 Ternary 三元語言模型的 1.58-bit 極限",
+          "url": "https://arxiv.org/abs/2609.16338",
+          "weightedScore": 235
         },
         {
-          "content": "這份技術解析詳盡展示了 Claude 在文字生成過程中嵌入數位浮水印的底層技術原理，涵蓋 Token 採樣策略、浮水印演算法設計、偵測流程以及潛在的去除方式。對於從事 LLM 內容生成檢測、模型安全研究與防偽架構的工程師而言，深入理解此機制有助於評估生成內容的溯源能力與安全性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "raschka-ahead-of-ai",
-          "sources": [
-            "raschka-ahead-of-ai"
-          ],
-          "title": "深度剖析 Claude AI 文字浮水印技術：Token 採樣、偵測與移除機制",
-          "url": "https://magazine.sebastianraschka.com/p/claude-watermarking",
-          "weightedScore": 100
-        },
-        {
-          "content": "技術社群分享了在 Kubernetes 環境中利用 Linux 基金會的 OpenBao（HashiCorp Vault 的開源分支）搭配 CloudNativePG PostgreSQL 實作金鑰管理的實戰架構。此方案展現了具備自我修復能力且無商業授權綁定的機密管理部署方式，為尋求 Vault 替代方案的 DevOps 與 SRE 團隊提供了具體的實作範例。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "在 Kubernetes 上運用 CloudNativePG 與 OpenBao 建構無廠商綁定的金鑰管理架構",
-          "url": "https://www.cncf.io/blog/2026/09/16/running-openbao-on-kubernetes-with-a-cloudnativepg-postgresql-backend/",
-          "weightedScore": 100
-        },
-        {
-          "content": "逆向工程分析顯示，Apple 系統程式碼已具備將 Siri 背後 AI 引擎切換為 Claude 或 ChatGPT 等不同模型的結構設計。這項技術架構發現意味著系統層級的助理介面已朝向可抽換的大模型後端整合設計演進，為關心 Apple 生態系智慧功能整合的開發者提供了底層架構走向的線索。",
+          "content": "Bend 是一款主打安全性的程式語言，透過內建的形式驗證（proof）機制來阻斷 AI 生成程式碼時可能帶來的潛在錯誤。該語言支援 CPU 與 GPU 執行環境，旨在提升開發者在高度依賴 AI 輔助編碼時的程式碼可靠性與正確性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -850,22 +851,22 @@
           "sources": [
             "hn"
           ],
-          "title": "程式碼逆向揭露 Apple Siri 底層架構具備接入 ChatGPT 與 Claude 的切換設計",
-          "url": "https://www.macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude/",
+          "title": "Bend：透過形式驗證在 CPU 與 GPU 上阻斷 AI 錯誤的程式語言",
+          "url": "https://bend-lang.com/",
           "weightedScore": 225
         },
         {
-          "content": "Perplexity 揭露了因 DynamoDB 成本與讀取延遲掌控度考量，轉而利用 AI Agent 協助撰寫與構建自研資料庫的實務經驗；然而在權限架構上，系統嚴格限制 Agent 直接在線上環境運行。此案例對於考量將 AI 生成程式碼應用於核心儲存基礎設施的架構師而言，在效能自控與安全隔離設計上具有重要的實踐參考價值。",
+          "content": "OpenSpec 是一個新推出的輕量且可配置的 AI 規格框架，旨在幫助開發者在建構與整合 AI 系統時，能有結構化且標準化的方式來定義行為、介面與互動規格，進一步提升 AI 代理與系統整合的可維護性。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
+          "sourceId": "hn",
           "sources": [
-            "thenewstack"
+            "hn"
           ],
-          "title": "Perplexity 實戰案例：運用 AI Agent 協作自建資料庫以取代 DynamoDB",
-          "url": "https://thenewstack.io/perplexity-cobbledb-ai-database/",
-          "weightedScore": 50
+          "title": "OpenSpec：輕量且可配置的 AI 規格框架",
+          "url": "https://openspec.dev/",
+          "weightedScore": 189
         }
       ]
     }
@@ -1735,6 +1736,87 @@
         "thenewstack"
       ],
       "url": "https://thenewstack.io/perplexity-cobbledb-ai-database"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-18T00:04:19.964Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-18T00:04:19.964Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/09/01/kubernetes-v1-37-etcd-range-stream"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-18T00:04:19.964Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-18T00:04:19.964Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-18T00:04:19.964Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-18T00:04:19.964Z",
+      "sourceId": "ollama-blog",
+      "sources": [
+        "ollama-blog"
+      ],
+      "url": "https://ollama.com/blog/transparent-pricing"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-18T00:04:19.964Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://arxiv.org/abs/2609.16338"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-18T00:04:19.964Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://bend-lang.com/"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-18T00:04:19.964Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://openspec.dev/"
     }
   ]
 }
