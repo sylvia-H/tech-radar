@@ -346,79 +346,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-14T00:04:01.546Z",
-  "lastNewsPushAt": "2026-09-18T00:04:19.964Z",
+  "lastNewsPushAt": "2026-09-19T00:09:05.240Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-14T00:04:01.546Z",
       "summary": "本次綜合榜 #1 為 tt-a1i/archify，共有 5 個新進與 2 個竄升項目，其中 AI 佔 5 個、前後端佔 2 個，另有 2 個項目下降。"
     },
     "feed": [
-      {
-        "id": "repo:1136590548:climbed:2026-09-14",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "affaan-m/ECC 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/affaan-m/ECC"
-      },
-      {
-        "id": "repo:1212769188:new:2026-09-14",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "cathrynlavery/diagram-design 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/cathrynlavery/diagram-design"
-      },
-      {
-        "id": "repo:888092115:new:2026-09-14",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "microsoft/markitdown 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/microsoft/markitdown"
-      },
-      {
-        "id": "repo:1177402105:new:2026-09-14",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "heygen-com/hyperframes 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/heygen-com/hyperframes"
-      },
-      {
-        "id": "repo:41881900:new:2026-09-14",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "microsoft/vscode 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/microsoft/vscode"
-      },
-      {
-        "id": "repo:10270250:new:2026-09-14",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "react/react 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/react/react"
-      },
-      {
-        "content": "Kubernetes v1.37 在工作負載感知調度（Workload-Aware Scheduling, WAS）迎來重大里程碑。核心的 Workload 與 PodGroup API（支援成組調度 / gang scheduling）、工作負載感知搶占（WAP），以及針對 PodGroup 的 DRA 共享資源宣告（DRA ResourceClaims）皆正式晉升至 Beta。這為執行 AI/ML 與複雜批次任務的開發者提供更穩健的原生成組調度支援，避免部分 Pod 啟動卻卡住資源的死鎖問題，大幅強化叢集調度效率。",
-        "id": "news:https://kubernetes.io/blog/2026/09/08/kubernetes-v1-37-advancing-workload-aware-scheduling",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "Kubernetes v1.37：Workload-Aware Scheduling 與 Gang 調度核心 API 晉升 Beta",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/09/08/kubernetes-v1-37-advancing-workload-aware-scheduling/"
-      },
-      {
-        "content": "Kubernetes v1.37 正式將 KubeletInUserNamespace 特性閘門推進至 Beta。在此模式下，主機上的節點元件（包含 kubelet、CRI 與 OCI 執行時期、CNI 外掛及 kube-proxy）皆可透過 Linux user namespace 以非 root 使用者身份在主機上運行。這項改動顯著降低了節點層級的安全暴露風險與容器逃逸威脅，為雲原生安全加固提供核心防護。",
-        "id": "news:https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "Kubernetes v1.37：Kubelet Rootless 模式（KubeletInUserNamespace）晉升 Beta",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/"
-      },
-      {
-        "content": "GitHub 宣布為 Copilot Business 與 Copilot Enterprise 管理員推出集中化權限控制功能。管理員可直接在後台統一管控各項 Copilot Agent 的操作行為，自訂哪些動作屬於完全封鎖、哪些需要人工審批，或可直接無提示放行。這讓企業團隊在採用具備自主工具調用能力的代理時，能依安全合規規範彈性控管風險。",
-        "id": "news:https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "GitHub Copilot 推出企業集中管理 Agent 權限機制",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations"
-      },
       {
         "content": "GitHub 官方公告，即日起在所有 GitHub Copilot 體驗中全面棄用 MAI-Code-1-Flash 模型，影響範圍涵蓋 Copilot Chat、行內編輯、ask 與 agent 模式，以及程式碼補全。依賴該模型的團隊與開發者需留意工作流調整，切換至建議的替代模型以確保輔助開發流程不中斷。",
         "id": "news:https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
@@ -746,13 +680,98 @@
         "title": "OpenSpec：輕量且可配置的 AI 規格框架",
         "type": "news",
         "url": "https://openspec.dev/"
+      },
+      {
+        "content": "GitHub 發布官方公告，宣布將於 2026 年 10 月 19 日在所有 GitHub Copilot 體驗中淘汰特定模型，涵蓋 Copilot Chat、行內編輯、ask 與 agent 模式以及程式碼自動補全。這項變更將直接影響依賴特定舊版模型進行程式碼輔助或自動化流程的開發者與企業團隊，開發團隊需提前檢視目前專案配置，評估並遷移至支援的新模型以避免開發工作流程中斷。",
+        "id": "news:https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+        "publishedAt": "2026-09-19T00:09:05.240Z",
+        "title": "GitHub 宣布將於 10 月中旬淘汰部分 Copilot 模型",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october"
+      },
+      {
+        "content": "Kubernetes 官方宣布在 v1.37 中將 metrics.k8s.io API 正式晉升至穩定版本（v1）。該 API 負責提供節點與 Pod 的 CPU 及記憶體使用量數據，是 kubectl top 指令與基於資源指標的自動擴展（HPA）底層核心。本次升級帶來 Kubernetes 穩定 API 的相容性與穩定度保證，資源類型與欄位維持與 v1beta1 一致，讓叢集維運者與應用開發者能放心依賴該標準 API 進行監控與彈性擴縮管線整合。",
+        "id": "news:https://kubernetes.io/blog/2026/08/27/kubernetes-v1-37-metrics-api-ga",
+        "publishedAt": "2026-09-19T00:09:05.240Z",
+        "title": "Kubernetes v1.37 將 Metrics API 晉升為正式穩定版（v1）",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/08/27/kubernetes-v1-37-metrics-api-ga/"
+      },
+      {
+        "content": "在經歷多個版本的迭代測試後，Kubernetes 官方宣布 Storage Version Migration（SVM）在 v1.37 正式晉升至通用可用性（GA）階段。內建的 StorageVersionMigration API（storagemigration.k8s.io/v1）與控制平面控制器現已在所有 v1.37 叢集中預設啟用。該機制解決了 Kubernetes 內部 etcd 儲存資源架構版本過舊的問題，協助維運人員在 API 版本演進時自動完成底層物件儲存格式的遷移。",
+        "id": "news:https://kubernetes.io/blog/2026/08/31/kubernetes-v1-37-storage-version-migration-ga",
+        "publishedAt": "2026-09-19T00:09:05.240Z",
+        "title": "Kubernetes v1.37 儲存版本遷移（SVM）正式 GA 並預設啟用",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/08/31/kubernetes-v1-37-storage-version-migration-ga/"
+      },
+      {
+        "content": "Anthropic 旗下的指令列工具 Claude Code 更新設定載入邏輯：當專案目錄中不存在專屬的 Claude.md 時，系統將自動回退讀取 AGENTS.md 作為代理設定引導。此項更新提升了跨代理工具的通用性，開發者可以採用更通用的標準規格定義專案背景與指令規則，無需重複維護針對各家工具的特定設定檔，簡化了多 Agent 協作下的儲存庫維護成本。",
+        "id": "news:https://code.claude.com/docs/en/changelog",
+        "publishedAt": "2026-09-19T00:09:05.240Z",
+        "title": "Claude Code 新增支援讀取 AGENTS.md 設定檔",
+        "type": "news",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "content": "資安研究社群公開了一篇技術實錄，詳細說明如何結合通用圖片函式庫中的堆疊溢位（heap overflow）記憶體損壞漏洞，以及單一簽入（SSO）機制的設定缺陷，成功取得 OpenAI 內部儲存庫存取權限。該漏洞分析展示了先進軟體供應鏈攻擊鏈路，對大型 AI 基礎設施在外部依賴管理、記憶體安全防護與企業身分驗證權限隔離方面提供了具體的實務檢視與借鏡價值。",
+        "id": "news:https://hacktron.ai/blog/hacking-openai",
+        "publishedAt": "2026-09-19T00:09:05.240Z",
+        "title": "深入剖析：利用堆疊溢位與 SSO 設定缺陷滲透 OpenAI 內部儲存庫",
+        "type": "news",
+        "url": "https://www.hacktron.ai/blog/hacking-openai"
+      },
+      {
+        "content": "GLM 團隊分享了其如何從底層打造專屬大規模 AI 模型推論基礎設施的工程實務。文章深入探討了大規模模型佈署時面臨的推論延遲、GPU 吞吐最佳化、動態批處理調度與叢集資源分配等關鍵瓶頸，並提供具體的架構設計決策。對於正在自建或最佳化私有化大型語言模型服務架構的後端與架構工程師來說，具備高度參考價值。",
+        "id": "news:https://z.ai/blog/glm-built-its-inference-infrastructure",
+        "publishedAt": "2026-09-19T00:09:05.240Z",
+        "title": "架構解析：GLM 團隊自建大規模推論基礎設施的工程實踐",
+        "type": "news",
+        "url": "https://z.ai/blog/glm-built-its-inference-infrastructure"
+      },
+      {
+        "content": "開發者社群揭發 GLM 旗下的編碼代理工具 ZCode 在執行過程中，會在未經明確提示與授權的情況下，靜默將本機儲存庫的完整 Git 歷史記錄上傳至遠端伺服器。這項發現引發了嚴重的軟體供應鏈隱私與機密外洩疑慮；開發者常將敏感資訊（如過往提交中的憑證或內部程式碼架構）留存於歷史紀錄中，使用此類第三方 AI 輔助開發工具時需嚴加審核其網路外傳行為與外掛權限。",
+        "id": "news:https://tokenstead.ai/guides/zcode-silent-git-history-upload",
+        "publishedAt": "2026-09-19T00:09:05.240Z",
+        "title": "資安警訊：GLM 編碼代理 ZCode 被揭露靜默上傳使用者 Git 完整歷史",
+        "type": "news",
+        "url": "https://tokenstead.ai/guides/zcode-silent-git-history-upload"
+      },
+      {
+        "content": "一項針對程式碼生成代理（Coding Agent）的實證研究探討了「測試 Harness 設計」對模型基準評測結果的巨大影響。研究指出不同框架封裝與執行環境細微的提示詞、環境隔離、回饋機制差異，會顯著改變模型在相同基準下的評分與解題表現。該研究為開發與評估自主軟體工程代理的團隊提供了重要基準架構洞見，提醒開發者評估 Agent 能力時應謹慎區分模型本體與 Harness 的貢獻。",
+        "id": "news:https://harnesstax.github.io/",
+        "publishedAt": "2026-09-19T00:09:05.240Z",
+        "title": "HarnessTax 研究：深入評測測試 Harness 設計對程式碼 Agent 的關鍵影響",
+        "type": "news",
+        "url": "https://harnesstax.github.io/"
+      },
+      {
+        "content": "工程團隊分享了將大規模監控指標架構由維護近十年的 gostatsd 遷移至 OpenTelemetry 的完整實踐經驗。文章詳述了在承載巨量節點 Sidecar 指標管線的環境下，如何規劃零停機無縫切換、調校採集效能以及解決資料格式轉換的挑戰。對於正著手推動可觀測性標準化與現代化架構演進的 DevOps 及維運團隊而言，是一篇深具實務價值的參考範例。",
+        "id": "news:https://cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale",
+        "publishedAt": "2026-09-19T00:09:05.240Z",
+        "title": "大規模指標平台遷移：從 gostatsd 全面轉向 OpenTelemetry 的工程實踐",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-18T00:04:19.964Z",
+      "generatedAt": "2026-09-19T00:09:05.240Z",
       "items": [
         {
-          "content": "Kubernetes v1.37 正式將 Pod 層級資源管理器功能推進至 Beta 階段（預設關閉）。此功能讓 Kubelet 的 Topology Manager、CPU Manager 與 Memory Manager 在進行硬體放置決策時，能直接採用 Pod 層級的資源宣告（.spec.resources），免除過去取得獨佔資源的繁瑣設定，提升節點資源管理的精確度與效能。",
+          "content": "GitHub 發布官方公告，宣布將於 2026 年 10 月 19 日在所有 GitHub Copilot 體驗中淘汰特定模型，涵蓋 Copilot Chat、行內編輯、ask 與 agent 模式以及程式碼自動補全。這項變更將直接影響依賴特定舊版模型進行程式碼輔助或自動化流程的開發者與企業團隊，開發團隊需提前檢視目前專案配置，評估並遷移至支援的新模型以避免開發工作流程中斷。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub 宣布將於 10 月中旬淘汰部分 Copilot 模型",
+          "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+          "weightedScore": 100
+        },
+        {
+          "content": "Kubernetes 官方宣布在 v1.37 中將 metrics.k8s.io API 正式晉升至穩定版本（v1）。該 API 負責提供節點與 Pod 的 CPU 及記憶體使用量數據，是 kubectl top 指令與基於資源指標的自動擴展（HPA）底層核心。本次升級帶來 Kubernetes 穩定 API 的相容性與穩定度保證，資源類型與欄位維持與 v1beta1 一致，讓叢集維運者與應用開發者能放心依賴該標準 API 進行監控與彈性擴縮管線整合。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -760,12 +779,12 @@
           "sources": [
             "kubernetes-blog"
           ],
-          "title": "Kubernetes v1.37 發布：Pod 層級資源管理器升級至 Beta",
-          "url": "https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/",
+          "title": "Kubernetes v1.37 將 Metrics API 晉升為正式穩定版（v1）",
+          "url": "https://kubernetes.io/blog/2026/08/27/kubernetes-v1-37-metrics-api-ga/",
           "weightedScore": 100
         },
         {
-          "content": "Kubernetes v1.37 宣布 etcd RangeStream 正式進入 Beta，並需搭配 etcd v3.7 使用。此更新有效減少 API 伺服器與 etcd 在讀取大量集合時所需的記憶體開銷，使峰值記憶體使用量更具預測性，解決過去啟動與重新初始化快調時讀取完整資源狀態所造成的效能負擔。",
+          "content": "在經歷多個版本的迭代測試後，Kubernetes 官方宣布 Storage Version Migration（SVM）在 v1.37 正式晉升至通用可用性（GA）階段。內建的 StorageVersionMigration API（storagemigration.k8s.io/v1）與控制平面控制器現已在所有 v1.37 叢集中預設啟用。該機制解決了 Kubernetes 內部 etcd 儲存資源架構版本過舊的問題，協助維運人員在 API 版本演進時自動完成底層物件儲存格式的遷移。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -773,64 +792,12 @@
           "sources": [
             "kubernetes-blog"
           ],
-          "title": "Kubernetes v1.37：etcd RangeStream 降低大型 List 讀取的記憶體消耗",
-          "url": "https://kubernetes.io/blog/2026/09/01/kubernetes-v1-37-etcd-range-stream/",
+          "title": "Kubernetes v1.37 儲存版本遷移（SVM）正式 GA 並預設啟用",
+          "url": "https://kubernetes.io/blog/2026/08/31/kubernetes-v1-37-storage-version-migration-ga/",
           "weightedScore": 100
         },
         {
-          "content": "GitHub Copilot 影響儀表板現已推出更新，可顯示活躍用戶經常使用核心 Copilot 功能的詳細數據。企業管理員能藉此快速掌握哪些 AI 體驗獲得廣泛採用，以及哪些功能可能需要進一步推廣或優化，有助於評估團隊的 AI 工具投資報酬率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 影響儀表板新增功能互動數據檢視",
-          "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub Copilot 擴展現有的 CLI 報告覆蓋範圍，正式在用量指標 API 中加入針對代理式活動（agentic activity）的追蹤數據。這包含技能、自訂代理程式、模型上下文協議（MCP）伺服器、斜線指令及外掛程式的使用情況，幫助管理者更全面地監控開發者的 AI 工具鏈擴充。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 於使用量指標 API 導入代理式 CLI 自訂數據",
-          "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
-          "weightedScore": 100
-        },
-        {
-          "content": "過去當開發者用盡配額時，會直接被阻擋使用相關的 AI 功能。此項更新正式推出預算與額度提升請求流程，當成員的 Copilot AI 點數耗盡時，可直接透過標準化流程提出申請，減少工作流程中斷，提升企業內部 AI 工具的協作流暢度。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 額度提升請求功能全面開放",
-          "url": "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available",
-          "weightedScore": 100
-        },
-        {
-          "content": "Ollama 針對其 Pro、Max 與 Team 方案進行調整，全面改採業界標準的每 Token（per-token）計費模式，並將使用量直接納入各個方案中，提供開發者與企業更透明且可預測的在地化或雲端大模型運行成本。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "ollama-blog",
-          "sources": [
-            "ollama-blog"
-          ],
-          "title": "Ollama 調整計費方案改採透明化 Token 計費",
-          "url": "https://ollama.com/blog/transparent-pricing",
-          "weightedScore": 100
-        },
-        {
-          "content": "研究人員在三元語言模型（Ternary LLMs）的量化技術上取得突破，成功打破傳統認知中 1.58-bit 的效能與位元數限制，為極低位元數大模型的運行效率與壓縮比帶來新的技術突破，對邊緣裝置與資源受限環境的模型部署具重要參考價值。",
+          "content": "Anthropic 旗下的指令列工具 Claude Code 更新設定載入邏輯：當專案目錄中不存在專屬的 Claude.md 時，系統將自動回退讀取 AGENTS.md 作為代理設定引導。此項更新提升了跨代理工具的通用性，開發者可以採用更通用的標準規格定義專案背景與指令規則，無需重複維護針對各家工具的特定設定檔，簡化了多 Agent 協作下的儲存庫維護成本。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -838,12 +805,12 @@
           "sources": [
             "hn"
           ],
-          "title": "突破 Ternary 三元語言模型的 1.58-bit 極限",
-          "url": "https://arxiv.org/abs/2609.16338",
-          "weightedScore": 235
+          "title": "Claude Code 新增支援讀取 AGENTS.md 設定檔",
+          "url": "https://code.claude.com/docs/en/changelog",
+          "weightedScore": 444
         },
         {
-          "content": "Bend 是一款主打安全性的程式語言，透過內建的形式驗證（proof）機制來阻斷 AI 生成程式碼時可能帶來的潛在錯誤。該語言支援 CPU 與 GPU 執行環境，旨在提升開發者在高度依賴 AI 輔助編碼時的程式碼可靠性與正確性。",
+          "content": "資安研究社群公開了一篇技術實錄，詳細說明如何結合通用圖片函式庫中的堆疊溢位（heap overflow）記憶體損壞漏洞，以及單一簽入（SSO）機制的設定缺陷，成功取得 OpenAI 內部儲存庫存取權限。該漏洞分析展示了先進軟體供應鏈攻擊鏈路，對大型 AI 基礎設施在外部依賴管理、記憶體安全防護與企業身分驗證權限隔離方面提供了具體的實務檢視與借鏡價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -851,22 +818,61 @@
           "sources": [
             "hn"
           ],
-          "title": "Bend：透過形式驗證在 CPU 與 GPU 上阻斷 AI 錯誤的程式語言",
-          "url": "https://bend-lang.com/",
+          "title": "深入剖析：利用堆疊溢位與 SSO 設定缺陷滲透 OpenAI 內部儲存庫",
+          "url": "https://www.hacktron.ai/blog/hacking-openai",
+          "weightedScore": 468
+        },
+        {
+          "content": "GLM 團隊分享了其如何從底層打造專屬大規模 AI 模型推論基礎設施的工程實務。文章深入探討了大規模模型佈署時面臨的推論延遲、GPU 吞吐最佳化、動態批處理調度與叢集資源分配等關鍵瓶頸，並提供具體的架構設計決策。對於正在自建或最佳化私有化大型語言模型服務架構的後端與架構工程師來說，具備高度參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "架構解析：GLM 團隊自建大規模推論基礎設施的工程實踐",
+          "url": "https://z.ai/blog/glm-built-its-inference-infrastructure",
+          "weightedScore": 400
+        },
+        {
+          "content": "開發者社群揭發 GLM 旗下的編碼代理工具 ZCode 在執行過程中，會在未經明確提示與授權的情況下，靜默將本機儲存庫的完整 Git 歷史記錄上傳至遠端伺服器。這項發現引發了嚴重的軟體供應鏈隱私與機密外洩疑慮；開發者常將敏感資訊（如過往提交中的憑證或內部程式碼架構）留存於歷史紀錄中，使用此類第三方 AI 輔助開發工具時需嚴加審核其網路外傳行為與外掛權限。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "資安警訊：GLM 編碼代理 ZCode 被揭露靜默上傳使用者 Git 完整歷史",
+          "url": "https://tokenstead.ai/guides/zcode-silent-git-history-upload",
+          "weightedScore": 258
+        },
+        {
+          "content": "一項針對程式碼生成代理（Coding Agent）的實證研究探討了「測試 Harness 設計」對模型基準評測結果的巨大影響。研究指出不同框架封裝與執行環境細微的提示詞、環境隔離、回饋機制差異，會顯著改變模型在相同基準下的評分與解題表現。該研究為開發與評估自主軟體工程代理的團隊提供了重要基準架構洞見，提醒開發者評估 Agent 能力時應謹慎區分模型本體與 Harness 的貢獻。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "HarnessTax 研究：深入評測測試 Harness 設計對程式碼 Agent 的關鍵影響",
+          "url": "https://harnesstax.github.io/",
           "weightedScore": 225
         },
         {
-          "content": "OpenSpec 是一個新推出的輕量且可配置的 AI 規格框架，旨在幫助開發者在建構與整合 AI 系統時，能有結構化且標準化的方式來定義行為、介面與互動規格，進一步提升 AI 代理與系統整合的可維護性。",
+          "content": "工程團隊分享了將大規模監控指標架構由維護近十年的 gostatsd 遷移至 OpenTelemetry 的完整實踐經驗。文章詳述了在承載巨量節點 Sidecar 指標管線的環境下，如何規劃零停機無縫切換、調校採集效能以及解決資料格式轉換的挑戰。對於正著手推動可觀測性標準化與現代化架構演進的 DevOps 及維運團隊而言，是一篇深具實務價值的參考範例。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "hn",
+          "sourceId": "cncf-blog",
           "sources": [
-            "hn"
+            "cncf-blog"
           ],
-          "title": "OpenSpec：輕量且可配置的 AI 規格框架",
-          "url": "https://openspec.dev/",
-          "weightedScore": 189
+          "title": "大規模指標平台遷移：從 gostatsd 全面轉向 OpenTelemetry 的工程實踐",
+          "url": "https://www.cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale/",
+          "weightedScore": 100
         }
       ]
     }
@@ -1817,6 +1823,87 @@
         "hn"
       ],
       "url": "https://openspec.dev/"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-19T00:09:05.240Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-19T00:09:05.240Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/08/27/kubernetes-v1-37-metrics-api-ga"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-19T00:09:05.240Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/08/31/kubernetes-v1-37-storage-version-migration-ga"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-19T00:09:05.240Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://code.claude.com/docs/en/changelog"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-19T00:09:05.240Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://hacktron.ai/blog/hacking-openai"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-19T00:09:05.240Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://z.ai/blog/glm-built-its-inference-infrastructure"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-19T00:09:05.240Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://tokenstead.ai/guides/zcode-silent-git-history-upload"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-19T00:09:05.240Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://harnesstax.github.io/"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-19T00:09:05.240Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "url": "https://cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale"
     }
   ]
 }
