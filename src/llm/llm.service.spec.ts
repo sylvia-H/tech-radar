@@ -131,3 +131,40 @@ describe('LlmService 型號選擇（2026-09-12 依資料流分流）', () => {
     expect(GEMINI_MODEL_NEWS).toMatch(/flash$/);
   });
 });
+
+describe('LlmService.generate — 重試路徑 warn 帶狀態碼與訊息（2026-09-20 補）', () => {
+  it('429 退避重試與耗盡時，warn 皆含 status 與訊息，不含 prompt', async () => {
+    const { Logger } = await import('@nestjs/common');
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generateContent = jest
+      .fn()
+      .mockRejectedValue(new ApiError({ message: 'Service Unavailable', status: 503 }));
+    const svc = makeService(generateContent);
+
+    await expect(svc.generate('這是不該出現在 log 的 prompt')).rejects.toMatchObject({ reason: 'exhausted' });
+
+    const msgs = warnSpy.mock.calls.map((c) => String(c[0]));
+    expect(msgs).toHaveLength(LLM_MAX_RETRIES);
+    expect(msgs[0]).toContain('status=503 Service Unavailable');
+    expect(msgs[0]).toContain(`第 1/${LLM_MAX_RETRIES} 次退避`);
+    expect(msgs[LLM_MAX_RETRIES - 1]).toContain('重試耗盡');
+    expect(msgs[LLM_MAX_RETRIES - 1]).toContain('status=503');
+    expect(msgs.join('\n')).not.toContain('不該出現在 log');
+    warnSpy.mockRestore();
+  });
+
+  it('網路層錯誤（無 status）warn 含 message', async () => {
+    const { Logger } = await import('@nestjs/common');
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generateContent = jest
+      .fn()
+      .mockRejectedValueOnce(new Error('fetch failed'))
+      .mockResolvedValueOnce({ text: '正常' });
+    const svc = makeService(generateContent);
+
+    await svc.generate('請生成');
+
+    expect(String(warnSpy.mock.calls[0][0])).toContain('fetch failed');
+    warnSpy.mockRestore();
+  });
+});

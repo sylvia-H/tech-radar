@@ -26,11 +26,16 @@ export interface LlmGenerateOptions {
 /** 429/503/網路錯誤最多重試次數（含首次嘗試，research D6）。 */
 export const LLM_MAX_RETRIES = 4;
 
-/** 指數退避基準毫秒數（research D6）。 */
-export const LLM_BACKOFF_BASE_MS = 1000;
+/**
+ * 指數退避基準毫秒數（research D6；2026-09-20 由 1000 → 10000，使用者決策）。1.1.0 上線後
+ * gemini-3.8-flash 連續六天首次呼叫皆失敗（每次失敗耗時 5～45 秒，疑為 503 過載），原本 1s／2s／4s
+ * 的退避對伺服器端排隊太短、一天四次耗盡退 Lite。改為 10s／20s／40s＋jitter，四次嘗試等待總計約
+ * 70～100 秒，四次呼叫落在約兩分鐘內、仍在 5 RPM 之下；對每日一次的排程最壞多約 1.5 分鐘。
+ */
+export const LLM_BACKOFF_BASE_MS = 10000;
 
-/** 指數退避上限毫秒數（research D6）。 */
-export const LLM_MAX_BACKOFF_MS = 8000;
+/** 指數退避上限毫秒數（research D6；2026-09-20 由 8000 → 60000，配合基準調整，第三次退避 40s＋jitter 不被夾）。 */
+export const LLM_MAX_BACKOFF_MS = 60000;
 
 /**
  * `LlmService.generate` 失敗時擲出，供 `IntroService` catch 後降級（FR-014）。
