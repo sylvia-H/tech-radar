@@ -116,7 +116,9 @@ export function buildCurationPrompt(items: readonly CurationItemView[]): string 
 事故時長）；素材不足時寫短一點即可，不要為了湊到字數上限而推測。
 
 主題降噪（選擇非 AI 候選時的優先序，DevOps 優先於後端／前端）：
-- DevOps／基礎設施：優先考慮。
+- DevOps／基礎設施：優先考慮。但同一版本的系列功能文（如 Kubernetes 某一版發布前後逐篇介紹各功能
+  晉升 Alpha／Beta／GA 的官方 blog 系列）只擇最重要的一篇，其餘不選；該版本的正式發布公告本身仍
+  依 (1) 收錄。
 - 後端：只看 Node.js／Python 相關；其他語言生態系降低優先。
 - 前端：以 TypeScript 為主；Vue／React 相關優先度最低；CSS 技巧／教學一律不選。
 

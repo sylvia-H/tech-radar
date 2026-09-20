@@ -67,10 +67,16 @@ export class LlmService {
           this.logger.warn(`LLM 呼叫失敗（不重試，${model}）：${this.errDetail(err)}`);
           throw new LlmError('error');
         }
+        // 重試路徑同樣印出處（2026-09-20 補）：1.1.0 上線後 gemini-3.8-flash 連續六天首次呼叫皆失敗重試、
+        // 一天耗盡退 Lite，卻因這裡只印「呼叫失敗」而無法分辨 429／503／網路層錯誤，成因懸置一週。
+        // 只印狀態碼與訊息，不含 prompt／回應全文（憲章 VII）。
+        const detail = this.errDetail(err);
         if (attempt < LLM_MAX_RETRIES) {
           const wait = this.backoffMs(attempt);
-          this.logger.warn(`LLM 呼叫失敗（${model}），第 ${attempt}/${LLM_MAX_RETRIES} 次退避 ${wait}ms 後重試`);
+          this.logger.warn(`LLM 呼叫失敗（${model}，${detail}），第 ${attempt}/${LLM_MAX_RETRIES} 次退避 ${wait}ms 後重試`);
           await this.delay(wait);
+        } else {
+          this.logger.warn(`LLM 呼叫失敗（${model}，${detail}），第 ${attempt}/${LLM_MAX_RETRIES} 次，重試耗盡`);
         }
       }
     }
