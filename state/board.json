@@ -346,85 +346,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-14T00:04:01.546Z",
-  "lastNewsPushAt": "2026-09-19T00:09:05.240Z",
+  "lastNewsPushAt": "2026-09-20T00:03:22.470Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-14T00:04:01.546Z",
       "summary": "本次綜合榜 #1 為 tt-a1i/archify，共有 5 個新進與 2 個竄升項目，其中 AI 佔 5 個、前後端佔 2 個，另有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "GitHub 官方公告，即日起在所有 GitHub Copilot 體驗中全面棄用 MAI-Code-1-Flash 模型，影響範圍涵蓋 Copilot Chat、行內編輯、ask 與 agent 模式，以及程式碼補全。依賴該模型的團隊與開發者需留意工作流調整，切換至建議的替代模型以確保輔助開發流程不中斷。",
-        "id": "news:https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "GitHub Copilot 正式棄用 MAI-Code-1-Flash 模型",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated"
-      },
-      {
-        "content": "GitHub Copilot 釋出最新功能更新，正式在 Copilot 應用中整合 Jira，並在 Copilot CLI 藉由 Project HydraFusion 引入自適應模型協調（adaptive model orchestration）能力；同時也在 Visual Studio Code 中加入新的 Agent 自動化功能。這項更新讓工程師能直接串接專案追蹤系統，並在終端獲得更靈活的模型排程與任務處理能力。",
-        "id": "news:https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "GitHub Copilot 週更新：整合 Jira、CLI 引入自適應模型協調",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7"
-      },
-      {
-        "content": "針對多數程式碼評測基準（如 SWE-bench）多取自開源專案、容易面臨資料污染與情境失真問題，Real-SWE 提出了基於真實企業私有代碼庫的評測標準。該基準專注於大型專有架構、複雜內部相依性等實際工程環境，為評估 AI 代碼生成與修復模型在企業落地時的真實成效提供更可信的量測管道。",
-        "id": "news:https://withspecific.com/benchmarks/real-swe",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "Real-SWE：在真實企業私有代碼庫上評測 AI 模型的全新基準",
-        "type": "news",
-        "url": "https://withspecific.com/benchmarks/real-swe"
-      },
-      {
-        "content": "OpenAI 在釋出 Navier-Stokes 偏微分方程相關研究進展時，隨附了使用 Lean 4 語言撰寫的形式化證明。此技術展示了 AI 系統與互動式定理證明器（ITP）結合的潛力，說明利用嚴格機器可驗證的證明能有效消除模型幻覺，為 AI 輔助高階數學驗證與科學計算帶來具體落地範例。",
-        "id": "news:https://johndcook.com/blog/2026/09/09/formal-method-revolution",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "OpenAI Navier-Stokes 相關發布納入 Lean 4 形式化數學證明",
-        "type": "news",
-        "url": "https://www.johndcook.com/blog/2026/09/09/formal-method-revolution/"
-      },
-      {
-        "content": "有開發者針對全合一 JavaScript 執行時期 Bun 開發了專屬的建置視覺化工具，深入追蹤並分析其編譯與模組打包耗時。這項工具幫助前端與全端工程師直觀診斷打包流程中的效能瓶頸與龐大相依模組，為優化大型專案的建置速度提供實用的除錯輔助。",
-        "id": "news:https://lalitm.com/post/buildprof",
-        "publishedAt": "2026-09-14T00:04:01.546Z",
-        "title": "開發者自製建置視覺化工具剖析 Bun 編譯時間與效能瓶頸",
-        "type": "news",
-        "url": "https://lalitm.com/post/buildprof/"
-      },
-      {
-        "content": "雲端原生網路與安全專案 Cilium 正式釋出 1.20 版本。此版本重點強化了 Kubernetes Gateway API 的支援，新增 ExternalAuth 外部身分驗證能力，並納入 TCPRoute 與 UDPRoute 支援；此外也增強了雲端網路整合，支援 IPv6 的 ENI IPAM 等功能。對於使用 Kubernetes 構建微服務基礎設施與服務網格（Service Mesh）的團隊而言，新版本提供了更完整的南北向流量管理與更強大的雲端原生安全驗證能力。",
-        "id": "news:https://cncf.io/blog/2026/09/14/cilium-1-20-gateway-api-externalauth-tcproute-udproute-eni-ipam-for-ipv6-and-more",
-        "publishedAt": "2026-09-15T00:28:16.120Z",
-        "title": "Cilium 1.20 正式發布：支援 Gateway API ExternalAuth、TCP/UDP 路由與 IPv6 ENI IPAM",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/09/14/cilium-1-20-gateway-api-externalauth-tcproute-udproute-eni-ipam-for-ipv6-and-more/"
-      },
-      {
-        "content": "Kubernetes v1.37 中，Memory QoS 功能正式晉升為 Beta 狀態並改為預設啟用。在運行 cgroup v2 的 Linux 節點上，該功能利用核心記憶體控制器，為 Linux 核心提供更明確的容器記憶體配置指導，以提升系統在記憶體壓力下的穩定度。此項改進能讓叢集維運者更有效地防止節點因單一容器記憶體暴增而引發非預期的 OOM 崩潰，提高運算資源利用率。",
-        "id": "news:https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta",
-        "publishedAt": "2026-09-15T00:28:16.120Z",
-        "title": "Kubernetes v1.37：Memory QoS 畢業進入 Beta 階段並預設啟用",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/"
-      },
-      {
-        "content": "Kubernetes 過去缺乏統一且由官方維護的方式來描述節點處於排空或維護中的狀態，大多仰賴標籤、污點或雲端供應商自訂 API。Kubernetes v1.37 正式引入了五種標準 Node conditions，包括 DrainInProgress、Drained、MaintenancePlanned、MaintenanceInProgress 與 GracefulNodeShutdown。這為叢集維運者、自動化維運工具與控制器提供了標準化的生命週期信號，有助於降低維護期間的工作負載中斷風險。",
-        "id": "news:https://kubernetes.io/blog/2026/09/09/kubernetes-v1-37-node-lifecycle-conditions",
-        "publishedAt": "2026-09-15T00:28:16.120Z",
-        "title": "Kubernetes v1.37：引入五項官方標準的節點生命週期狀態",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/09/09/kubernetes-v1-37-node-lifecycle-conditions/"
-      },
-      {
-        "content": "GitHub Copilot 的自動模型選擇（auto model selection）功能新增了三個層級：efficiency（效率）、balance（平衡）與 intelligence（智慧）。開發者與團隊可以根據自身對反應速度、推論品質以及運算成本的優先順序，自行指定 Copilot 自動挑選後端模型的標準，使 AI 輔助開發更貼合日常編程或複雜邏輯設計的實際需求。",
-        "id": "news:https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection",
-        "publishedAt": "2026-09-15T00:28:16.120Z",
-        "title": "GitHub Copilot 自動模型選擇新增效率、平衡與智慧三種層級配置",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection"
-      },
       {
         "content": "Claude Desktop 現在已可設定將 Ollama 作為第三方閘道提供者（gateway provider），使開發者能在 Claude 的桌面應用介面中直接連接並使用各類本地開源大語言模型。此項支援讓習慣 Claude 桌面操作體驗的開發者，能夠在完全本地離線或自託管的環境下進行各項模型測試與日常工作。",
         "id": "news:https://ollama.com/blog/claude-desktop",
@@ -752,13 +680,125 @@
         "title": "大規模指標平台遷移：從 gostatsd 全面轉向 OpenTelemetry 的工程實踐",
         "type": "news",
         "url": "https://www.cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale/"
+      },
+      {
+        "content": "Kubernetes 團隊正式釋出 v1.37 版本（代號 Garhwal）。本次更新共包含 67 項增強功能，其中 16 項功能正式畢業晉升為穩定版（Stable），23 項進入測試版（Beta），27 項處於 Alpha 階段。新版本持續強化叢集生產環境的工作負載安全性、可靠性與身分認證機制，為維運人員與雲原生開發者提供更穩固的基礎設施支援。",
+        "id": "news:https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release",
+        "publishedAt": "2026-09-20T00:03:22.470Z",
+        "title": "Kubernetes v1.37 正式發布：帶來 67 項增強功能與多項關鍵特性晉升",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release/"
+      },
+      {
+        "content": "Python 跨平台應用開發框架 Flet 正式迎來 1.0 里程碑版本。Flet 讓 Python 開發者能夠使用熟悉的語言生態系，輕鬆構建支援多平台的桌面、Web 與行動裝置前端應用，大幅降低跨平台軟體的開發門檻與全端技術棧切換成本。",
+        "id": "news:https://flet.dev/",
+        "publishedAt": "2026-09-20T00:03:22.470Z",
+        "title": "Flet 1.0 正式釋出：以 Python 打造跨平台應用程式",
+        "type": "news",
+        "url": "https://flet.dev/"
+      },
+      {
+        "content": "Vercel 宣布調整免費 Hobby 方案政策。官方指出過往休眠未啟用的部署持續消耗大量儲存資源，因此現已開始針對免費用戶中未受保護的舊有部署進行立即刪除。仰賴 Vercel 免費層託管專案或歷史測試環境的開發者，需特別留意檢查部署保護設定，以防重要歷史版本或測試站台遭到清除。",
+        "id": "news:https://thenewstack.io/vercel-hobby-deployment-retention",
+        "publishedAt": "2026-09-20T00:03:22.470Z",
+        "title": "Vercel 收緊免費方案規則：即刻自動清理未受保護的休眠部署",
+        "type": "news",
+        "url": "https://thenewstack.io/vercel-hobby-deployment-retention/"
+      },
+      {
+        "content": "GitHub Copilot 釋出每週功能更新，正式加入新的模型選擇選項，並升級程式碼審查（Code Review）體驗，包含改進建議自動解決與自動產生 commit 訊息。此外，Copilot 應用程式現已整合 Sentry 錯誤追蹤工具，並針對管理員控制項與 Agent 新功能進行了全方位擴充，進一步優化開發者的輔助編程流程。",
+        "id": "news:https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
+        "publishedAt": "2026-09-20T00:03:22.470Z",
+        "title": "GitHub Copilot 發布多項更新：新增模型選擇、程式碼審查強化與 Sentry 整合",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14"
+      },
+      {
+        "content": "阿里巴巴正式開源其研發的醫療 AI 模型，該模型具備識別癌症及近 150 種各類醫療狀況與疾病的檢測能力。此舉為醫療科技與開源 AI 社群提供了高度專業領域的開源模型資產，有助於推進健康醫療應用的二次開發與實證研究。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wk9fag/alibaba_opensources_medical_ai_model_that_can",
+        "publishedAt": "2026-09-20T00:03:22.470Z",
+        "title": "阿里巴巴開源醫療 AI 模型：支援癌症與近 150 種疾病篩檢",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wk9fag/alibaba_opensources_medical_ai_model_that_can/"
+      },
+      {
+        "content": "一項針對寫程式代理（Coding Agents）運行環境與測試基底（Harness）設計的實證研究引起社群關注。研究深入探討如何透過嚴謹的 harness 架構設計來約束、評估並增強 AI 代理在實際軟體工程任務中的表現與可靠性，為打造高自主度 AI 開發工具的團隊提供了實用的架構評估指南。",
+        "id": "news:https://arxiv.org/abs/2609.20804",
+        "publishedAt": "2026-09-20T00:03:22.470Z",
+        "title": "Coding Agent Harness 設計實證研究：探索程式碼代理架構之關鍵評估基底",
+        "type": "news",
+        "url": "https://arxiv.org/abs/2609.20804"
+      },
+      {
+        "content": "技術社群提出名為「無限參數 LLM」（Infinite-Parameter LLMs）的新架構探索，研究如何擺脫固定參數規模的限制，改由即時資料動態生成並適應模型權重。這項研究為語言模型在持續學習、動態領域適應與推論架構設計上提供了嶄新的思路。",
+        "id": "news:https://arxiv.org/abs/2609.18842",
+        "publishedAt": "2026-09-20T00:03:22.470Z",
+        "title": "無限參數 LLM：利用即時數據生成與動態調整權重架構",
+        "type": "news",
+        "url": "https://arxiv.org/abs/2609.18842"
+      },
+      {
+        "content": "OpenAI 分享了其利用自身大型語言模型輔助設計內部 Jalapeño 晶片的工程實作與經驗。內容揭示了 LLM 如何被深度整合至晶片邏輯設計與硬體驗證工作流中，展現出生成式 AI 跨足硬體工程與 EDA（電子設計自動化）領域的實戰價值與架構潛力。",
+        "id": "news:https://spectrum.ieee.org/llms-for-chip-design",
+        "publishedAt": "2026-09-20T00:03:22.470Z",
+        "title": "OpenAI 揭露內部實作經驗：如何利用自研 LLM 輔助設計 Jalapeño 晶片",
+        "type": "news",
+        "url": "https://spectrum.ieee.org/llms-for-chip-design"
+      },
+      {
+        "content": "前 Cursor 與 Meta 工程師分享在 Grok 團隊的極限開發實踐，達成單月向生產環境合併 2,000 個 Pull Request 的紀錄。其核心關鍵不在於生成更多程式碼，而在於建立高度自動化且嚴格的驗證（Verification）體系，為身處 AI 輔助開發時代、面臨海量程式碼審查與品質把關挑戰的工程團隊提供了極具價值的管線設計參考。",
+        "id": "news:https://thenewstack.io/agentic-verification-distributed-systems",
+        "publishedAt": "2026-09-20T00:03:22.470Z",
+        "title": "單月向生產環境交付 2,000 個 PR 的工程實踐：嚴格驗證是唯一關鍵",
+        "type": "news",
+        "url": "https://thenewstack.io/agentic-verification-distributed-systems/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-19T00:09:05.240Z",
+      "generatedAt": "2026-09-20T00:03:22.470Z",
       "items": [
         {
-          "content": "GitHub 發布官方公告，宣布將於 2026 年 10 月 19 日在所有 GitHub Copilot 體驗中淘汰特定模型，涵蓋 Copilot Chat、行內編輯、ask 與 agent 模式以及程式碼自動補全。這項變更將直接影響依賴特定舊版模型進行程式碼輔助或自動化流程的開發者與企業團隊，開發團隊需提前檢視目前專案配置，評估並遷移至支援的新模型以避免開發工作流程中斷。",
+          "content": "Kubernetes 團隊正式釋出 v1.37 版本（代號 Garhwal）。本次更新共包含 67 項增強功能，其中 16 項功能正式畢業晉升為穩定版（Stable），23 項進入測試版（Beta），27 項處於 Alpha 階段。新版本持續強化叢集生產環境的工作負載安全性、可靠性與身分認證機制，為維運人員與雲原生開發者提供更穩固的基礎設施支援。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "kubernetes-blog",
+          "sources": [
+            "kubernetes-blog"
+          ],
+          "title": "Kubernetes v1.37 正式發布：帶來 67 項增強功能與多項關鍵特性晉升",
+          "url": "https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Python 跨平台應用開發框架 Flet 正式迎來 1.0 里程碑版本。Flet 讓 Python 開發者能夠使用熟悉的語言生態系，輕鬆構建支援多平台的桌面、Web 與行動裝置前端應用，大幅降低跨平台軟體的開發門檻與全端技術棧切換成本。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sources": [
+            "hn",
+            "lobsters-programming"
+          ],
+          "title": "Flet 1.0 正式釋出：以 Python 打造跨平台應用程式",
+          "url": "https://flet.dev/",
+          "weightedScore": 263
+        },
+        {
+          "content": "Vercel 宣布調整免費 Hobby 方案政策。官方指出過往休眠未啟用的部署持續消耗大量儲存資源，因此現已開始針對免費用戶中未受保護的舊有部署進行立即刪除。仰賴 Vercel 免費層託管專案或歷史測試環境的開發者，需特別留意檢查部署保護設定，以防重要歷史版本或測試站台遭到清除。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Vercel 收緊免費方案規則：即刻自動清理未受保護的休眠部署",
+          "url": "https://thenewstack.io/vercel-hobby-deployment-retention/",
+          "weightedScore": 50
+        },
+        {
+          "content": "GitHub Copilot 釋出每週功能更新，正式加入新的模型選擇選項，並升級程式碼審查（Code Review）體驗，包含改進建議自動解決與自動產生 commit 訊息。此外，Copilot 應用程式現已整合 Sentry 錯誤追蹤工具，並針對管理員控制項與 Agent 新功能進行了全方位擴充，進一步優化開發者的輔助編程流程。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -766,113 +806,75 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub 宣布將於 10 月中旬淘汰部分 Copilot 模型",
-          "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+          "title": "GitHub Copilot 發布多項更新：新增模型選擇、程式碼審查強化與 Sentry 整合",
+          "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
           "weightedScore": 100
         },
         {
-          "content": "Kubernetes 官方宣布在 v1.37 中將 metrics.k8s.io API 正式晉升至穩定版本（v1）。該 API 負責提供節點與 Pod 的 CPU 及記憶體使用量數據，是 kubectl top 指令與基於資源指標的自動擴展（HPA）底層核心。本次升級帶來 Kubernetes 穩定 API 的相容性與穩定度保證，資源類型與欄位維持與 v1beta1 一致，讓叢集維運者與應用開發者能放心依賴該標準 API 進行監控與彈性擴縮管線整合。",
+          "content": "阿里巴巴正式開源其研發的醫療 AI 模型，該模型具備識別癌症及近 150 種各類醫療狀況與疾病的檢測能力。此舉為醫療科技與開源 AI 社群提供了高度專業領域的開源模型資產，有助於推進健康醫療應用的二次開發與實證研究。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "阿里巴巴開源醫療 AI 模型：支援癌症與近 150 種疾病篩檢",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wk9fag/alibaba_opensources_medical_ai_model_that_can/",
+          "weightedScore": 100
+        },
+        {
+          "content": "一項針對寫程式代理（Coding Agents）運行環境與測試基底（Harness）設計的實證研究引起社群關注。研究深入探討如何透過嚴謹的 harness 架構設計來約束、評估並增強 AI 代理在實際軟體工程任務中的表現與可靠性，為打造高自主度 AI 開發工具的團隊提供了實用的架構評估指南。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "Coding Agent Harness 設計實證研究：探索程式碼代理架構之關鍵評估基底",
+          "url": "https://arxiv.org/abs/2609.20804",
+          "weightedScore": 217
+        },
+        {
+          "content": "技術社群提出名為「無限參數 LLM」（Infinite-Parameter LLMs）的新架構探索，研究如何擺脫固定參數規模的限制，改由即時資料動態生成並適應模型權重。這項研究為語言模型在持續學習、動態領域適應與推論架構設計上提供了嶄新的思路。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "無限參數 LLM：利用即時數據生成與動態調整權重架構",
+          "url": "https://arxiv.org/abs/2609.18842",
+          "weightedScore": 156
+        },
+        {
+          "content": "OpenAI 分享了其利用自身大型語言模型輔助設計內部 Jalapeño 晶片的工程實作與經驗。內容揭示了 LLM 如何被深度整合至晶片邏輯設計與硬體驗證工作流中，展現出生成式 AI 跨足硬體工程與 EDA（電子設計自動化）領域的實戰價值與架構潛力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sources": [
+            "hn",
+            "lobsters-ai"
+          ],
+          "title": "OpenAI 揭露內部實作經驗：如何利用自研 LLM 輔助設計 Jalapeño 晶片",
+          "url": "https://spectrum.ieee.org/llms-for-chip-design",
+          "weightedScore": 296
+        },
+        {
+          "content": "前 Cursor 與 Meta 工程師分享在 Grok 團隊的極限開發實踐，達成單月向生產環境合併 2,000 個 Pull Request 的紀錄。其核心關鍵不在於生成更多程式碼，而在於建立高度自動化且嚴格的驗證（Verification）體系，為身處 AI 輔助開發時代、面臨海量程式碼審查與品質把關挑戰的工程團隊提供了極具價值的管線設計參考。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "kubernetes-blog",
+          "sourceId": "thenewstack",
           "sources": [
-            "kubernetes-blog"
+            "thenewstack"
           ],
-          "title": "Kubernetes v1.37 將 Metrics API 晉升為正式穩定版（v1）",
-          "url": "https://kubernetes.io/blog/2026/08/27/kubernetes-v1-37-metrics-api-ga/",
-          "weightedScore": 100
-        },
-        {
-          "content": "在經歷多個版本的迭代測試後，Kubernetes 官方宣布 Storage Version Migration（SVM）在 v1.37 正式晉升至通用可用性（GA）階段。內建的 StorageVersionMigration API（storagemigration.k8s.io/v1）與控制平面控制器現已在所有 v1.37 叢集中預設啟用。該機制解決了 Kubernetes 內部 etcd 儲存資源架構版本過舊的問題，協助維運人員在 API 版本演進時自動完成底層物件儲存格式的遷移。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "kubernetes-blog",
-          "sources": [
-            "kubernetes-blog"
-          ],
-          "title": "Kubernetes v1.37 儲存版本遷移（SVM）正式 GA 並預設啟用",
-          "url": "https://kubernetes.io/blog/2026/08/31/kubernetes-v1-37-storage-version-migration-ga/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Anthropic 旗下的指令列工具 Claude Code 更新設定載入邏輯：當專案目錄中不存在專屬的 Claude.md 時，系統將自動回退讀取 AGENTS.md 作為代理設定引導。此項更新提升了跨代理工具的通用性，開發者可以採用更通用的標準規格定義專案背景與指令規則，無需重複維護針對各家工具的特定設定檔，簡化了多 Agent 協作下的儲存庫維護成本。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "Claude Code 新增支援讀取 AGENTS.md 設定檔",
-          "url": "https://code.claude.com/docs/en/changelog",
-          "weightedScore": 444
-        },
-        {
-          "content": "資安研究社群公開了一篇技術實錄，詳細說明如何結合通用圖片函式庫中的堆疊溢位（heap overflow）記憶體損壞漏洞，以及單一簽入（SSO）機制的設定缺陷，成功取得 OpenAI 內部儲存庫存取權限。該漏洞分析展示了先進軟體供應鏈攻擊鏈路，對大型 AI 基礎設施在外部依賴管理、記憶體安全防護與企業身分驗證權限隔離方面提供了具體的實務檢視與借鏡價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "深入剖析：利用堆疊溢位與 SSO 設定缺陷滲透 OpenAI 內部儲存庫",
-          "url": "https://www.hacktron.ai/blog/hacking-openai",
-          "weightedScore": 468
-        },
-        {
-          "content": "GLM 團隊分享了其如何從底層打造專屬大規模 AI 模型推論基礎設施的工程實務。文章深入探討了大規模模型佈署時面臨的推論延遲、GPU 吞吐最佳化、動態批處理調度與叢集資源分配等關鍵瓶頸，並提供具體的架構設計決策。對於正在自建或最佳化私有化大型語言模型服務架構的後端與架構工程師來說，具備高度參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "架構解析：GLM 團隊自建大規模推論基礎設施的工程實踐",
-          "url": "https://z.ai/blog/glm-built-its-inference-infrastructure",
-          "weightedScore": 400
-        },
-        {
-          "content": "開發者社群揭發 GLM 旗下的編碼代理工具 ZCode 在執行過程中，會在未經明確提示與授權的情況下，靜默將本機儲存庫的完整 Git 歷史記錄上傳至遠端伺服器。這項發現引發了嚴重的軟體供應鏈隱私與機密外洩疑慮；開發者常將敏感資訊（如過往提交中的憑證或內部程式碼架構）留存於歷史紀錄中，使用此類第三方 AI 輔助開發工具時需嚴加審核其網路外傳行為與外掛權限。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "資安警訊：GLM 編碼代理 ZCode 被揭露靜默上傳使用者 Git 完整歷史",
-          "url": "https://tokenstead.ai/guides/zcode-silent-git-history-upload",
-          "weightedScore": 258
-        },
-        {
-          "content": "一項針對程式碼生成代理（Coding Agent）的實證研究探討了「測試 Harness 設計」對模型基準評測結果的巨大影響。研究指出不同框架封裝與執行環境細微的提示詞、環境隔離、回饋機制差異，會顯著改變模型在相同基準下的評分與解題表現。該研究為開發與評估自主軟體工程代理的團隊提供了重要基準架構洞見，提醒開發者評估 Agent 能力時應謹慎區分模型本體與 Harness 的貢獻。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "HarnessTax 研究：深入評測測試 Harness 設計對程式碼 Agent 的關鍵影響",
-          "url": "https://harnesstax.github.io/",
-          "weightedScore": 225
-        },
-        {
-          "content": "工程團隊分享了將大規模監控指標架構由維護近十年的 gostatsd 遷移至 OpenTelemetry 的完整實踐經驗。文章詳述了在承載巨量節點 Sidecar 指標管線的環境下，如何規劃零停機無縫切換、調校採集效能以及解決資料格式轉換的挑戰。對於正著手推動可觀測性標準化與現代化架構演進的 DevOps 及維運團隊而言，是一篇深具實務價值的參考範例。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "大規模指標平台遷移：從 gostatsd 全面轉向 OpenTelemetry 的工程實踐",
-          "url": "https://www.cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale/",
-          "weightedScore": 100
+          "title": "單月向生產環境交付 2,000 個 PR 的工程實踐：嚴格驗證是唯一關鍵",
+          "url": "https://thenewstack.io/agentic-verification-distributed-systems/",
+          "weightedScore": 50
         }
       ]
     }
@@ -1904,6 +1906,89 @@
         "cncf-blog"
       ],
       "url": "https://cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-20T00:03:22.470Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-09-20T00:03:22.470Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-programming"
+      ],
+      "url": "https://flet.dev/"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-20T00:03:22.470Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/vercel-hobby-deployment-retention"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-20T00:03:22.470Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-20T00:03:22.470Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wk9fag/alibaba_opensources_medical_ai_model_that_can"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-20T00:03:22.470Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://arxiv.org/abs/2609.20804"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-20T00:03:22.470Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://arxiv.org/abs/2609.18842"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-20T00:03:22.470Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-ai"
+      ],
+      "url": "https://spectrum.ieee.org/llms-for-chip-design"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-20T00:03:22.470Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/agentic-verification-distributed-systems"
     }
   ]
 }
