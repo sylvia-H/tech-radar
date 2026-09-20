@@ -207,3 +207,14 @@ describe('buildCurationPrompt（格式約束）', () => {
     expect(prompt).toContain('不得回傳連結');
   });
 });
+
+describe('buildCurationPrompt — DevOps 系列功能文擇一（2026-09-20 新增）', () => {
+  it('主題降噪的 DevOps 段要求同一版本的系列功能文只擇最重要一篇，且正式發布公告仍依 (1) 收錄', () => {
+    const prompt = buildCurationPrompt([]);
+    const section = prompt.slice(prompt.indexOf('主題降噪（'), prompt.indexOf('配額（'));
+    expect(section).toContain('同一版本的系列功能文');
+    expect(section).toContain('只擇最重要的一篇');
+    expect(section).toContain('正式發布公告本身仍');
+    expect(section.replace(/\(\d\)/g, '')).not.toMatch(/\d/); // 類別標記 (1) 以外不引入阿拉伯數字（錨定教訓）
+  });
+});
