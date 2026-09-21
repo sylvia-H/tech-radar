@@ -67,7 +67,10 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // 常青教學性質偏高），先觀察下方三個新來源的效果再議；依「停用不刪除」原則以 `enabled: false` 保留
   // 決策紀錄。HF Papers 仍無官方 feed。**不以 arXiv 分類 RSS 代替**：實測單日 261 筆，會吃光候選集名額
   // （見檔頭量體說明）。
-  { id: 'huggingface-blog', type: 'rss', url: 'https://huggingface.co/blog/feed.xml', domain: 'ai', tier: 2, enabled: false },
+  // 2026-09-21 重新啟用（使用者決策）：09-14 新增的三個來源觀察一週，raschka 2 則、ollama 2 則、interconnects
+  // 0 則（已停用）；09-13～09-21 AI 入選平均 5.0 則／日，其中 HN 佔一半，一手技術深度供給仍薄。實測 30 天內
+  // 15 篇（GRPO／LoRA 訓練、agent 可靠度評測、coding agent 記憶等），屬 (2)【技術深度內容】。
+  { id: 'huggingface-blog', type: 'rss', url: 'https://huggingface.co/blog/feed.xml', domain: 'ai', tier: 2 },
   // 2026-09-14 新增三個 AI 技術深度一手來源（22 個候補 feed 實測後入選者；依據：2026-08-25～09-14 共 20 次
   // 晨報 AI 入選平均 3.7 則、最高 6 則、從未達 7，AI 池 30 則中多為 HN 輿論與廠商行銷，補技術深度來源優先
   // 於放寬策展判準 (2)）：
@@ -106,6 +109,11 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // 命中「新工具／能力更新」（Copilot code review、agents、usage metrics）。2026-09-12 覆測 30 餘個候補
   // feed 後唯二值得加入者之一（另一為 kubernetes-blog）；Anthropic 五個候選端點皆 404，維持不收。
   { id: 'github-changelog-copilot', type: 'rss', url: 'https://github.blog/changelog/label/copilot/feed/', domain: 'ai', tier: 2 },
+  // GitHub Blog「AI & ML」分類（2026-09-21 新增，使用者決策；09-14 曾因疑與 changelog-copilot 重疊而暫緩）：
+  // 實測 200／10 筆、30 天內 10 篇。與 changelog 不同，是工程實作文（Copilot runtime 改寫成 Rust、多模型
+  // 協作、AI coding 降本做法），屬 (2) 類；另含新手教學與行銷維運文，交由策展判準過濾。URL 與 changelog
+  // 不同路徑，不會互相去重。
+  { id: 'github-blog-ai-ml', type: 'rss', url: 'https://github.blog/ai-and-ml/feed/', domain: 'ai', tier: 2 },
 
   // ── Tier 3：選配實驗（更高門檻、更低權重；可隨時砍不動 code） ────────────
   { id: 'gh-vue', type: 'github-releases', url: 'https://github.com/vuejs/core/releases.atom', domain: 'frontend-backend', tier: 3 },
