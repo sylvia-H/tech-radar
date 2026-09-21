@@ -145,7 +145,7 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | 2 | 官方一手來源 | 無 | ×1.0 | 沒有社群分數，一律以基準分 100 入池，天然視為強訊號 |
 | 3 | 選配實驗 | 150 | ×0.5 | 更高門檻、一半權重，可隨時停用 |
 
-### 目前清單（31 項、22 啟用）
+### 目前清單（32 項、24 啟用）
 
 **Tier 1：常開高訊號**
 
@@ -166,7 +166,8 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | `deepmind-blog` | RSS | AI | 啟用 | DeepMind 官方 basic feed |
 | `github-next` | RSS | AI | 啟用 | GitHub Next 官方實驗性功能部落格 |
 | `github-changelog-copilot` | RSS | AI | 啟用 | GitHub 官方 Changelog 的 Copilot 標籤，每週約 6 篇，直接命中新工具／能力更新（2026-09-12 新增） |
-| `huggingface-blog` | RSS | AI | 停用 | Hugging Face 官方 blog，30 天內約 20 篇 fine-tuning／TRL／agent 實作文；08-04 移除，09-14 以停用項列回（新鮮度視窗已提前、舊文不再干擾去重，但量體與常青教學性質偏高，先觀察其他新來源再議） |
+| `github-blog-ai-ml` | RSS | AI | 啟用 | GitHub Blog「AI & ML」分類，30 天內約 10 篇工程實作文（Copilot runtime、多模型協作、AI coding 降本），與 changelog 互補（2026-09-21 新增） |
+| `huggingface-blog` | RSS | AI | 啟用 | Hugging Face 官方 blog，30 天內約 15 篇 fine-tuning／TRL／agent 實作文；08-04 移除，09-14 以停用項列回，09-21 重新啟用（AI 入選平均 5.0 則、一手技術深度供給仍薄） |
 | `raschka-ahead-of-ai` | RSS | AI | 啟用 | Sebastian Raschka「Ahead of AI」，約 2 篇／月，架構解析與實作教學（2026-09-14 新增） |
 | `interconnects` | RSS | AI | 停用 | Nathan Lambert「Interconnects」，約 3 篇／週，開放模型與 RL 分析（2026-09-14 新增；09-21 停用：09-15～09-21 每日 3～4 席進候選池、7 天 0 入選） |
 | `ollama-blog` | RSS | AI | 啟用 | Ollama 官方 blog，約 2 篇／月，本地模型相關發布（2026-09-14 新增） |

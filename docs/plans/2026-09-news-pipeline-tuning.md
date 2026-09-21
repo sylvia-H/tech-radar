@@ -139,3 +139,16 @@ k8s v1.37 系列 09-12～09-21 共推 15 篇、每日滴一兩篇，09-20／09-2
 - [x] 同步 README 來源表／治理原則／測試數、dev-guide §4.2 來源表與 §4.4 第 7 步。
 - [ ] （合併後觀察）k8s-blog 是否停止滴舊文、仍能在發文 10 天內入選新系列；退避參數維持 10s／60s，觀察一週
       Flash 成功落在第幾次嘗試再議。
+
+### 同日追加：AI 來源補強（使用者決策）
+
+09-13～09-21 AI 入選 40 則／8 天（HN 21、changelog-copilot 10，官方 blog 類極少）；候選池 AI 約 36 則但多為 HN
+輿論與廠商公關，瓶頸在合格供給而非配額（「7」只是非 AI 放寬門檻，不是 AI 目標；重新引入 AI 下限會重演 08-04
+錨定）。實測 29 個候補 feed 後，使用者選定：
+
+- [x] `huggingface-blog` 重新啟用（30 天 15 篇）、新增 `github-blog-ai-ml`（30 天 10 篇），皆 ai／tier 2。
+      席次：+6、扣 interconnects −3，淨 +3；近一週候選池 48～56 則，可能觸及 `convergeMax` 60。
+- 落選：Google Developers Blog（item 無日期，會被新鮮度視窗全丟）、AWS ML／together.ai（廠商文）、
+  r/MachineLearning（學術閒聊）、openai/codex releases（alpha 洪流）、多個個人 blog 30 天 0 篇、pytorch／vllm／
+  anthropic engineering／meta AI 404／403、langchain feed 解析失敗。Cursor changelog、InfoQ AI 為候補。
+- [ ] （合併後觀察一週）AI 入選是否由平均 5.0 上升、兩新來源入選數、候選池是否觸頂 60 而擠掉 thenewstack 與低分 HN。
