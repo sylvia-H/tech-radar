@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { DEFAULT_FUNNEL_CONFIG } from '../news/funnel';
 import { NewsSource } from '../news/news.types';
 
 /**
@@ -11,6 +12,8 @@ export const newsSourceSchema = z.object({
   domain: z.enum(['ai', 'devops', 'frontend-backend', 'cross']),
   tier: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   enabled: z.boolean().optional(),
+  // 只能縮短預設視窗（見 `NewsSource.freshnessWindowDays`）。
+  freshnessWindowDays: z.number().int().min(1).max(DEFAULT_FUNNEL_CONFIG.freshnessWindowDays).optional(),
 });
 
 /**

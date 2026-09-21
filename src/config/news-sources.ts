@@ -51,7 +51,10 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // Kubernetes 官方 blog（2026-09-12 新增，實測 200／50 筆、每週約 4 篇）：版本功能文章（如 v1.37 各
   // feature graduation），與 gh-kubernetes releases 互補——releases 經 pre-release／patch 過濾後每月僅約
   // 1 則，blog 才有「哪些能力改變了」的內容。
-  { id: 'kubernetes-blog', type: 'rss', url: 'https://kubernetes.io/feed.xml', domain: 'devops', tier: 2 },
+  // 新鮮度視窗 10 天（2026-09-21，預設 30 天）：v1.37 系列 08-26～09-16 共十餘篇，策展 prompt 的「同版本
+  // 系列擇一」只在單日候選池內生效，已見排除又讓每天補上下一篇，09-12～09-21 共推 15 篇，09-20／09-21
+  // 推的是 08-26 release 公告與 08-28 功能文（晚了三週多）。縮短視窗讓系列只在發文後 10 天內可入選。
+  { id: 'kubernetes-blog', type: 'rss', url: 'https://kubernetes.io/feed.xml', domain: 'devops', tier: 2, freshnessWindowDays: 10 },
   { id: 'openai-blog', type: 'rss', url: 'https://openai.com/news/rss.xml', domain: 'ai', tier: 2 },
   // DeepMind 官方未公開宣傳的 basic feed（2026-08-03 實測 200／100 筆），取代原本停用的
   // `blog/rss.xml`。
@@ -79,7 +82,9 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // 低分 HN，`convergeMax` 同步 50 → 60（funnel.ts）。觀察一週：AI 入選是否由平均 3.7 上升、
   // communityPicks 是否由 3 上升、thenewstack 與 HN 席次是否維持；若 AI 仍不到 5 再動 prompt。
   { id: 'raschka-ahead-of-ai', type: 'rss', url: 'https://magazine.sebastianraschka.com/feed', domain: 'ai', tier: 2 },
-  { id: 'interconnects', type: 'rss', url: 'https://www.interconnects.ai/feed', domain: 'ai', tier: 2 },
+  // interconnects：2026-09-21 停用。09-15～09-21 每日 3～4 席進候選池、7 天 0 入選（多為 AI 產業評論，
+  // 策展判準的技術深度不足），徒佔候選席次。
+  { id: 'interconnects', type: 'rss', url: 'https://www.interconnects.ai/feed', domain: 'ai', tier: 2, enabled: false },
   { id: 'ollama-blog', type: 'rss', url: 'https://ollama.com/blog/rss.xml', domain: 'ai', tier: 2 },
   //
   // Anthropic：2026-08-03 覆測 `www.anthropic.com/rss.xml` 仍非公認端點，維持停用（2026-09-14 覆測仍 404）。
