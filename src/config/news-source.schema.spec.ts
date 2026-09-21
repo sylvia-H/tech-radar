@@ -21,6 +21,13 @@ describe('validateNewsSources（FR-002）', () => {
     expect(() => validateNewsSources([{ ...valid, id: 'd', domain: 'crypto' }])).toThrow(/\[d\]/);
   });
 
+  it('freshnessWindowDays（2026-09-21）：1～30 的整數通過；0、非整數、超過預設 30 天 → 擲帶 id 錯誤', () => {
+    expect(validateNewsSources([{ ...valid, freshnessWindowDays: 10 }])[0].freshnessWindowDays).toBe(10);
+    expect(() => validateNewsSources([{ ...valid, id: 'e', freshnessWindowDays: 0 }])).toThrow(/[e]/);
+    expect(() => validateNewsSources([{ ...valid, id: 'f', freshnessWindowDays: 2.5 }])).toThrow(/[f]/);
+    expect(() => validateNewsSources([{ ...valid, id: 'g', freshnessWindowDays: 31 }])).toThrow(/[g]/);
+  });
+
   it('非陣列 → 擲錯', () => {
     expect(() => validateNewsSources({} as unknown)).toThrow(/必須是陣列/);
   });

@@ -431,3 +431,44 @@ describe('NewsIngestService.ingest — 社群平台連結於 URL 去重前過濾
     expect(lines).toContain('[漏斗 A] URL 去重後：1 則（-0）'); // 基準為過濾後的 1 則、非原始 3 則
   });
 });
+
+describe('NewsIngestService.ingest — 逐來源新鮮度視窗（2026-09-21）', () => {
+  const DAY_MS = 86_400_000;
+  const daysAgo = (d: number) => new Date(NOW.getTime() - d * DAY_MS).toISOString();
+  const sources: NewsSource[] = [
+    { id: 'short-rss', type: 'rss', url: 'https://short.example/feed', domain: 'devops', tier: 2, freshnessWindowDays: 10 },
+    { id: 'default-rss', type: 'rss', url: 'https://default.example/feed', domain: 'devops', tier: 2 },
+  ];
+
+  it('設了 10 天的來源丟 12 天前的文章；未設者沿用 30 天，同樣 12 天前的文章保留', async () => {
+    const parse = (xml: string) =>
+      xml.includes('short')
+        ? {
+            items: [
+              { title: 'Kubernetes feature A graduates', link: 'https://short.example/a', isoDate: daysAgo(9) },
+              { title: 'Kubernetes feature B graduates', link: 'https://short.example/b', isoDate: daysAgo(12) },
+            ],
+          }
+        : xml.includes('default')
+          ? { items: [{ title: 'Cloud native storage deep dive', link: 'https://default.example/c', isoDate: daysAgo(12) }] }
+          : { items: [] };
+    const { svc } = makeService({ parse });
+    const out = await svc.ingest(NOW, new Set(), sources, []);
+
+    expect(out.map((c) => c.normalizedUrl).sort()).toEqual(
+      [normalizeTargetUrl('https://short.example/a'), normalizeTargetUrl('https://default.example/c')].sort(),
+    );
+  });
+
+  it('URL 合併的候選取各來源視窗最大值：另一來源（30 天）也收錄時，12 天前的文章保留', async () => {
+    const parse = (xml: string) =>
+      xml.includes('short') || xml.includes('default')
+        ? { items: [{ title: 'Kubernetes feature B graduates', link: 'https://k8s.example/b', isoDate: daysAgo(12) }] }
+        : { items: [] };
+    const { svc } = makeService({ parse });
+    const out = await svc.ingest(NOW, new Set(), sources, []);
+
+    expect(out).toHaveLength(1);
+    expect(out[0].sources.sort()).toEqual(['default-rss', 'short-rss']);
+  });
+});

@@ -71,8 +71,11 @@ export class NewsIngestService {
     // 舊文後再被漏斗內視窗整則丟掉。放在 URL 去重之後的理由：URL 精確比對合併的必是同一篇文章、
     // 不可能誤吞，先合併才能讓「低分 HN 投稿 ＋ 同 URL 官方舊文」以有分數的 HN 為代表項通過本步，
     // 再靠交叉驗證豁免門檻入池；若提前到 URL 去重前，官方舊文先被丟、HN 單筆再被門檻丟，整則消失。
+    // 視窗依來源而定（2026-09-21）：`freshnessWindowDays` 可逐來源縮短；URL 合併的候選取其各來源視窗的
+    // **最大值**——另一來源也收錄同一篇，代表它仍有討論價值，不應被較短的視窗丟掉。
+    const windowOf = sourceWindowLookup(sources);
     const beforeFresh = cands.length;
-    cands = cands.filter((c) => c.score !== null || isFreshEnough(c, now, DEFAULT_FUNNEL_CONFIG.freshnessWindowDays));
+    cands = cands.filter((c) => c.score !== null || isFreshEnough(c, now, windowOf(c)));
     this.logger.log(`[漏斗 A] 新鮮度視窗後：${cands.length} 則（-${beforeFresh - cands.length}）`);
 
     const beforeTitleDedup = cands.length;
@@ -208,4 +211,14 @@ export function boardRepoNameSet(board: BoardState['board']): Set<string> {
 
 function errMsg(err: unknown): string {
   return err instanceof Error ? err.message : String(err);
+}
+
+/**
+ * 候選 → 新鮮度視窗天數：各 `sources` 的 `freshnessWindowDays`（未設者用預設值）取最大值（2026-09-21）。
+ * 不在清單中的來源 id 視同預設值（保守：不因查無設定而縮短視窗）。
+ */
+function sourceWindowLookup(sources: readonly NewsSource[]): (c: NewsCandidate) => number {
+  const def = DEFAULT_FUNNEL_CONFIG.freshnessWindowDays;
+  const byId = new Map(sources.map((s) => [s.id, s.freshnessWindowDays ?? def]));
+  return (c) => Math.max(...c.sources.map((id) => byId.get(id) ?? def));
 }
