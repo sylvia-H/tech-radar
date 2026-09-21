@@ -51,7 +51,10 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // Kubernetes 官方 blog（2026-09-12 新增，實測 200／50 筆、每週約 4 篇）：版本功能文章（如 v1.37 各
   // feature graduation），與 gh-kubernetes releases 互補——releases 經 pre-release／patch 過濾後每月僅約
   // 1 則，blog 才有「哪些能力改變了」的內容。
-  { id: 'kubernetes-blog', type: 'rss', url: 'https://kubernetes.io/feed.xml', domain: 'devops', tier: 2 },
+  // 新鮮度視窗 10 天（2026-09-21，預設 30 天）：v1.37 系列 08-26～09-16 共十餘篇，策展 prompt 的「同版本
+  // 系列擇一」只在單日候選池內生效，已見排除又讓每天補上下一篇，09-12～09-21 共推 15 篇，09-20／09-21
+  // 推的是 08-26 release 公告與 08-28 功能文（晚了三週多）。縮短視窗讓系列只在發文後 10 天內可入選。
+  { id: 'kubernetes-blog', type: 'rss', url: 'https://kubernetes.io/feed.xml', domain: 'devops', tier: 2, freshnessWindowDays: 10 },
   { id: 'openai-blog', type: 'rss', url: 'https://openai.com/news/rss.xml', domain: 'ai', tier: 2 },
   // DeepMind 官方未公開宣傳的 basic feed（2026-08-03 實測 200／100 筆），取代原本停用的
   // `blog/rss.xml`。
@@ -64,7 +67,10 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // 常青教學性質偏高），先觀察下方三個新來源的效果再議；依「停用不刪除」原則以 `enabled: false` 保留
   // 決策紀錄。HF Papers 仍無官方 feed。**不以 arXiv 分類 RSS 代替**：實測單日 261 筆，會吃光候選集名額
   // （見檔頭量體說明）。
-  { id: 'huggingface-blog', type: 'rss', url: 'https://huggingface.co/blog/feed.xml', domain: 'ai', tier: 2, enabled: false },
+  // 2026-09-21 重新啟用（使用者決策）：09-14 新增的三個來源觀察一週，raschka 2 則、ollama 2 則、interconnects
+  // 0 則（已停用）；09-13～09-21 AI 入選平均 5.0 則／日，其中 HN 佔一半，一手技術深度供給仍薄。實測 30 天內
+  // 15 篇（GRPO／LoRA 訓練、agent 可靠度評測、coding agent 記憶等），屬 (2)【技術深度內容】。
+  { id: 'huggingface-blog', type: 'rss', url: 'https://huggingface.co/blog/feed.xml', domain: 'ai', tier: 2 },
   // 2026-09-14 新增三個 AI 技術深度一手來源（22 個候補 feed 實測後入選者；依據：2026-08-25～09-14 共 20 次
   // 晨報 AI 入選平均 3.7 則、最高 6 則、從未達 7，AI 池 30 則中多為 HN 輿論與廠商行銷，補技術深度來源優先
   // 於放寬策展判準 (2)）：
@@ -79,7 +85,9 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // 低分 HN，`convergeMax` 同步 50 → 60（funnel.ts）。觀察一週：AI 入選是否由平均 3.7 上升、
   // communityPicks 是否由 3 上升、thenewstack 與 HN 席次是否維持；若 AI 仍不到 5 再動 prompt。
   { id: 'raschka-ahead-of-ai', type: 'rss', url: 'https://magazine.sebastianraschka.com/feed', domain: 'ai', tier: 2 },
-  { id: 'interconnects', type: 'rss', url: 'https://www.interconnects.ai/feed', domain: 'ai', tier: 2 },
+  // interconnects：2026-09-21 停用。09-15～09-21 每日 3～4 席進候選池、7 天 0 入選（多為 AI 產業評論，
+  // 策展判準的技術深度不足），徒佔候選席次。
+  { id: 'interconnects', type: 'rss', url: 'https://www.interconnects.ai/feed', domain: 'ai', tier: 2, enabled: false },
   { id: 'ollama-blog', type: 'rss', url: 'https://ollama.com/blog/rss.xml', domain: 'ai', tier: 2 },
   //
   // Anthropic：2026-08-03 覆測 `www.anthropic.com/rss.xml` 仍非公認端點，維持停用（2026-09-14 覆測仍 404）。
@@ -101,6 +109,11 @@ const RAW_NEWS_SOURCES: NewsSource[] = [
   // 命中「新工具／能力更新」（Copilot code review、agents、usage metrics）。2026-09-12 覆測 30 餘個候補
   // feed 後唯二值得加入者之一（另一為 kubernetes-blog）；Anthropic 五個候選端點皆 404，維持不收。
   { id: 'github-changelog-copilot', type: 'rss', url: 'https://github.blog/changelog/label/copilot/feed/', domain: 'ai', tier: 2 },
+  // GitHub Blog「AI & ML」分類（2026-09-21 新增，使用者決策；09-14 曾因疑與 changelog-copilot 重疊而暫緩）：
+  // 實測 200／10 筆、30 天內 10 篇。與 changelog 不同，是工程實作文（Copilot runtime 改寫成 Rust、多模型
+  // 協作、AI coding 降本做法），屬 (2) 類；另含新手教學與行銷維運文，交由策展判準過濾。URL 與 changelog
+  // 不同路徑，不會互相去重。
+  { id: 'github-blog-ai-ml', type: 'rss', url: 'https://github.blog/ai-and-ml/feed/', domain: 'ai', tier: 2 },
 
   // ── Tier 3：選配實驗（更高門檻、更低權重；可隨時砍不動 code） ────────────
   { id: 'gh-vue', type: 'github-releases', url: 'https://github.com/vuejs/core/releases.atom', domain: 'frontend-backend', tier: 3 },

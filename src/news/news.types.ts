@@ -32,6 +32,12 @@ export interface NewsSource {
   tier: NewsTier;
   /** 預設 `true`（`!== false` 即啟用）；停用者完全略過（FR-003）。 */
   enabled?: boolean;
+  /**
+   * 該來源專屬的新鮮度視窗（天數，2026-09-21 新增）；省略即沿用 `DEFAULT_FUNNEL_CONFIG.freshnessWindowDays`
+   * （30 天）。只能縮短、不能超過預設值（schema 把關）：漏斗內的結構性保險仍以預設值檢查，放寬會被它丟掉。
+   * 用於「同一系列文章在 feed 上掛數週、每日滴一兩篇舊文」的來源（如 kubernetes-blog 版本功能系列）。
+   */
+  freshnessWindowDays?: number;
 }
 
 /** 抓取器統一輸出（正規化前的中間結構）。 */

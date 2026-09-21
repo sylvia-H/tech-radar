@@ -36,7 +36,7 @@ Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github
 | 排程 | 雙離峰 cron（台北 06:07 主班、06:37 補班）＋ 時間戳 guard |
 | 常駐服務／資料庫 | 0 |
 | 月費 | $0 |
-| 單元測試 | 592 個、64 個測試套件 |
+| 單元測試 | 595 個、64 個測試套件 |
 
 三條輸出流：
 
@@ -145,7 +145,7 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | 2 | 官方一手來源 | 無 | ×1.0 | 沒有社群分數，一律以基準分 100 入池，天然視為強訊號 |
 | 3 | 選配實驗 | 150 | ×0.5 | 更高門檻、一半權重，可隨時停用 |
 
-### 目前清單（31 項、23 啟用）
+### 目前清單（32 項、24 啟用）
 
 **Tier 1：常開高訊號**
 
@@ -166,9 +166,10 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | `deepmind-blog` | RSS | AI | 啟用 | DeepMind 官方 basic feed |
 | `github-next` | RSS | AI | 啟用 | GitHub Next 官方實驗性功能部落格 |
 | `github-changelog-copilot` | RSS | AI | 啟用 | GitHub 官方 Changelog 的 Copilot 標籤，每週約 6 篇，直接命中新工具／能力更新（2026-09-12 新增） |
-| `huggingface-blog` | RSS | AI | 停用 | Hugging Face 官方 blog，30 天內約 20 篇 fine-tuning／TRL／agent 實作文；08-04 移除，09-14 以停用項列回（新鮮度視窗已提前、舊文不再干擾去重，但量體與常青教學性質偏高，先觀察其他新來源再議） |
+| `github-blog-ai-ml` | RSS | AI | 啟用 | GitHub Blog「AI & ML」分類，30 天內約 10 篇工程實作文（Copilot runtime、多模型協作、AI coding 降本），與 changelog 互補（2026-09-21 新增） |
+| `huggingface-blog` | RSS | AI | 啟用 | Hugging Face 官方 blog，30 天內約 15 篇 fine-tuning／TRL／agent 實作文；08-04 移除，09-14 以停用項列回，09-21 重新啟用（AI 入選平均 5.0 則、一手技術深度供給仍薄） |
 | `raschka-ahead-of-ai` | RSS | AI | 啟用 | Sebastian Raschka「Ahead of AI」，約 2 篇／月，架構解析與實作教學（2026-09-14 新增） |
-| `interconnects` | RSS | AI | 啟用 | Nathan Lambert「Interconnects」，約 3 篇／週，開放模型與 RL 分析（2026-09-14 新增） |
+| `interconnects` | RSS | AI | 停用 | Nathan Lambert「Interconnects」，約 3 篇／週，開放模型與 RL 分析（2026-09-14 新增；09-21 停用：09-15～09-21 每日 3～4 席進候選池、7 天 0 入選） |
 | `ollama-blog` | RSS | AI | 啟用 | Ollama 官方 blog，約 2 篇／月，本地模型相關發布（2026-09-14 新增） |
 | `anthropic-news` | RSS | AI | 停用 | 無公認官方 RSS 端點，不以第三方中轉站替代（2026-09-14 覆測仍 404） |
 | `gh-nodejs` | GitHub Releases | 前後端 | 啟用 | Node.js 官方發佈 |
@@ -177,7 +178,7 @@ try/catch 只是未預期例外的安全網，任一段炸掉不會中止另一�
 | `vue-blog` | RSS | 前後端 | 停用 | feed 最新一篇為 741 天前（2026-09-12 實測），比照 `web-dev` 停用觀察 |
 | `web-dev` | RSS | 前後端 | 停用 | feed 自 2026-05-29 起停更，形同啞源 |
 | `gh-kubernetes` | GitHub Releases | DevOps | 啟用 | Kubernetes 官方發佈 |
-| `kubernetes-blog` | RSS | DevOps | 啟用 | Kubernetes 官方 blog，每週約 4 篇版本功能文章；releases 經過濾後每月僅約 1 則，補上一手功能說明（2026-09-12 新增） |
+| `kubernetes-blog` | RSS | DevOps | 啟用 | Kubernetes 官方 blog，每週約 4 篇版本功能文章；releases 經過濾後每月僅約 1 則，補上一手功能說明（2026-09-12 新增）；新鮮度視窗縮為 10 天（2026-09-21：版本系列文在 feed 上掛數週，每天滴一兩篇三週前的舊文） |
 | `cncf-blog` | RSS | DevOps | 啟用 | CNCF 官方 blog |
 
 **Tier 3：選配實驗**
@@ -298,7 +299,7 @@ host 只改該檔、不動過濾邏輯；短網址（`t.co` 等）不解址故�
 | 步驟 | 規則 |
 |------|------|
 | 分數門檻 | 只對**有**分數者生效：Tier 1 ≥100、Tier 3 ≥150；Tier 2 無門檻；被 ≥2 來源交叉驗證者豁免（避免官方文章被低分 HN 投稿合併後連帶出局） |
-| 新鮮度 | 無分數者需在 30 天內發表（`publishedAt` 為原文真實日期），避免封存舊文被討論區重新提及混入；HN 因 `publishedAt` 是投稿時間而豁免 |
+| 新鮮度 | 無分數者需在 30 天內發表（`publishedAt` 為原文真實日期），避免封存舊文被討論區重新提及混入；HN 因 `publishedAt` 是投稿時間而豁免。來源可在 `news-sources.ts` 以 `freshnessWindowDays` 縮短（只能 ≤ 30，目前僅 `kubernetes-blog` 設 10 天），URL 合併的候選取各來源視窗最大值 |
 | 加權 | `base × tierWeight ＋ 交叉驗證加權 100（sources ≥ 2）＋ 榜單相關性加權 50（提到目前榜上 repo）`，無分數者 `base = 100` |
 | 排序 | `加權分數 ↓ → 跨來源輪流分配序 ↑ → normalizedUrl ↑`；`publishedAt` 刻意不當跨來源決勝鍵，只在同來源組內決定先後 |
 | 收斂 | 取前 **50** 則送 LLM |
@@ -604,7 +605,7 @@ node dist/main.cli.js
 npm test
 ```
 
-582 個單元測試、64 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
+595 個單元測試、64 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
 快照）、兩領域歸類、榜單 diff 與決勝、URL／標題去重、簡介快取命中、新聞配額與字數上限、來源
 schema 與 tier 加權、晨報 18h guard、榜單 162h 節奏、狀態原子寫入。Gemini 一律 mock，並另測降級路徑。
 

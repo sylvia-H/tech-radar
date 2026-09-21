@@ -127,3 +127,28 @@ twitter/mastodon 貼文（摘要 null）、2 則 Ask/Tell HN；同一批未入�
       是否維持（HN 常態 14～17 席）、新來源是否被同來源 3 輪上限或 30 天視窗擋成啞源；若 AI 仍不到 5，
       再動 prompt，第一刀只加「tier 與分數反映來源信度、不反映內容深度」。
 - 前後端供給（候選池平均 2.3 則、常有 0 則）另案：`vercel.com/atom` 可用但 1,574 筆多為 changelog，需另評估。
+
+## 2026-09-21 追加：逐來源新鮮度視窗、停用 interconnects（使用者決策）
+
+依 09-21 晨報（第二批修正上線首日）檢視：Flash 失敗成因確證為 503 UNAVAILABLE，新退避下第 3 次成功；
+k8s v1.37 系列 09-12～09-21 共推 15 篇、每日滴一兩篇，09-20／09-21 推的是 08-26／08-28 舊文。
+
+- [x] `NewsSource.freshnessWindowDays`（選填、1～30 整數，schema 把關只能縮短）；`NewsIngestService` 新鮮度步驟
+      依候選各來源視窗取最大值；`kubernetes-blog` 設 10 天。測試：schema 邊界、逐來源丟棄、URL 合併取最大值。
+- [x] `interconnects` 停用（09-15～09-21 每日 3～4 席、0 入選）。
+- [x] 同步 README 來源表／治理原則／測試數、dev-guide §4.2 來源表與 §4.4 第 7 步。
+- [ ] （合併後觀察）k8s-blog 是否停止滴舊文、仍能在發文 10 天內入選新系列；退避參數維持 10s／60s，觀察一週
+      Flash 成功落在第幾次嘗試再議。
+
+### 同日追加：AI 來源補強（使用者決策）
+
+09-13～09-21 AI 入選 40 則／8 天（HN 21、changelog-copilot 10，官方 blog 類極少）；候選池 AI 約 36 則但多為 HN
+輿論與廠商公關，瓶頸在合格供給而非配額（「7」只是非 AI 放寬門檻，不是 AI 目標；重新引入 AI 下限會重演 08-04
+錨定）。實測 29 個候補 feed 後，使用者選定：
+
+- [x] `huggingface-blog` 重新啟用（30 天 15 篇）、新增 `github-blog-ai-ml`（30 天 10 篇），皆 ai／tier 2。
+      席次：+6、扣 interconnects −3，淨 +3；近一週候選池 48～56 則，可能觸及 `convergeMax` 60。
+- 落選：Google Developers Blog（item 無日期，會被新鮮度視窗全丟）、AWS ML／together.ai（廠商文）、
+  r/MachineLearning（學術閒聊）、openai/codex releases（alpha 洪流）、多個個人 blog 30 天 0 篇、pytorch／vllm／
+  anthropic engineering／meta AI 404／403、langchain feed 解析失敗。Cursor changelog、InfoQ AI 為候補。
+- [ ] （合併後觀察一週）AI 入選是否由平均 5.0 上升、兩新來源入選數、候選池是否觸頂 60 而擠掉 thenewstack 與低分 HN。
