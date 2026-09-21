@@ -1,94 +1,94 @@
 {
   "board": {
-    "10270250": {
+    "997737944": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-09-14T00:04:01.546Z",
-      "fullName": "react/react",
-      "language": "JavaScript",
+      "firstSeenAt": "2026-09-21T00:06:43.738Z",
+      "fullName": "ruvnet/RuView",
+      "language": "Rust",
       "rank": 10,
-      "starsThisWeek": 1401,
-      "url": "https://github.com/react/react"
+      "starsThisWeek": 1498,
+      "url": "https://github.com/ruvnet/RuView"
     },
-    "41881900": {
+    "1024118326": {
+      "domain": "ai",
+      "firstSeenAt": "2026-09-21T00:06:43.738Z",
+      "fullName": "Tencent/WeKnora",
+      "language": "Go",
+      "rank": 6,
+      "starsThisWeek": 5242,
+      "url": "https://github.com/Tencent/WeKnora"
+    },
+    "1065936302": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-09-14T00:04:01.546Z",
-      "fullName": "microsoft/vscode",
+      "firstSeenAt": "2026-09-21T00:06:43.738Z",
+      "fullName": "Open-Dev-Society/OpenStock",
       "language": "TypeScript",
       "rank": 9,
-      "starsThisWeek": 1679,
-      "url": "https://github.com/microsoft/vscode"
-    },
-    "888092115": {
-      "domain": "ai",
-      "firstSeenAt": "2026-09-14T00:04:01.546Z",
-      "fullName": "microsoft/markitdown",
-      "language": "Python",
-      "rank": 7,
-      "starsThisWeek": 5191,
-      "url": "https://github.com/microsoft/markitdown"
+      "starsThisWeek": 2391,
+      "url": "https://github.com/Open-Dev-Society/OpenStock"
     },
     "1136590548": {
       "domain": "ai",
       "firstSeenAt": "2026-09-06T23:45:03.614Z",
       "fullName": "affaan-m/ECC",
       "language": "JavaScript",
-      "rank": 3,
-      "starsThisWeek": 7264,
+      "rank": 4,
+      "starsThisWeek": 6453,
       "url": "https://github.com/affaan-m/ECC"
     },
-    "1148788086": {
+    "1158722119": {
       "domain": "ai",
-      "firstSeenAt": "2026-09-06T23:45:03.614Z",
-      "fullName": "mattpocock/skills",
-      "language": "Shell",
-      "rank": 5,
-      "starsThisWeek": 7031,
-      "url": "https://github.com/mattpocock/skills"
-    },
-    "1177402105": {
-      "domain": "ai",
-      "firstSeenAt": "2026-09-14T00:04:01.546Z",
-      "fullName": "heygen-com/hyperframes",
-      "language": "TypeScript",
+      "firstSeenAt": "2026-09-21T00:06:43.738Z",
+      "fullName": "addyosmani/agent-skills",
+      "language": "JavaScript",
       "rank": 8,
-      "starsThisWeek": 5146,
-      "url": "https://github.com/heygen-com/hyperframes"
+      "starsThisWeek": 3986,
+      "url": "https://github.com/addyosmani/agent-skills"
+    },
+    "1183888342": {
+      "domain": "ai",
+      "firstSeenAt": "2026-09-21T00:06:43.738Z",
+      "fullName": "stablyai/orca",
+      "language": "TypeScript",
+      "rank": 5,
+      "starsThisWeek": 5841,
+      "url": "https://github.com/stablyai/orca"
     },
     "1206390571": {
       "domain": "ai",
       "firstSeenAt": "2026-09-06T23:45:03.614Z",
       "fullName": "debpalash/VoiceStudio",
       "language": "Python",
-      "rank": 6,
-      "starsThisWeek": 6443,
+      "rank": 3,
+      "starsThisWeek": 7754,
       "url": "https://github.com/debpalash/VoiceStudio"
     },
-    "1211139949": {
+    "1241960226": {
       "domain": "ai",
-      "firstSeenAt": "2026-08-31T00:24:16.184Z",
-      "fullName": "tt-a1i/archify",
-      "language": "JavaScript",
+      "firstSeenAt": "2026-09-21T00:06:43.738Z",
+      "fullName": "alibaba/open-code-review",
+      "language": "Go",
       "rank": 1,
-      "starsThisWeek": 10132,
-      "url": "https://github.com/tt-a1i/archify"
+      "starsThisWeek": 15504,
+      "url": "https://github.com/alibaba/open-code-review"
     },
-    "1212769188": {
+    "1273427276": {
       "domain": "ai",
-      "firstSeenAt": "2026-09-14T00:04:01.546Z",
-      "fullName": "cathrynlavery/diagram-design",
-      "language": "HTML",
-      "rank": 4,
-      "starsThisWeek": 7129,
-      "url": "https://github.com/cathrynlavery/diagram-design"
-    },
-    "1266797999": {
-      "domain": "ai",
-      "firstSeenAt": "2026-08-31T00:24:16.184Z",
-      "fullName": "DietrichGebert/ponytail",
+      "firstSeenAt": "2026-09-21T00:06:43.738Z",
+      "fullName": "cloudflare/security-audit-skill",
       "language": "JavaScript",
       "rank": 2,
-      "starsThisWeek": 8444,
-      "url": "https://github.com/DietrichGebert/ponytail"
+      "starsThisWeek": 14864,
+      "url": "https://github.com/cloudflare/security-audit-skill"
+    },
+    "1276665883": {
+      "domain": "ai",
+      "firstSeenAt": "2026-09-21T00:06:43.738Z",
+      "fullName": "Tencent/BrowserSkill",
+      "language": "TypeScript",
+      "rank": 7,
+      "starsThisWeek": 4077,
+      "url": "https://github.com/Tencent/BrowserSkill"
     }
   },
   "intros": {
@@ -168,6 +168,10 @@
       "intro": "Semantica 專為 AI 代理打造圖譜原生基礎設施，解決傳統黑箱 AI 缺乏可解釋性與稽核軌跡的問題。核心特色包含：建立 Context Graph 與知識圖譜、決策智慧、W3C PROV-O 完整溯源、確定性推理引擎與本體論管理，支援多源資料管線及企業數據平台直連。適合在金融、醫療等高風險受監管領域中，需要嚴格合規、可追溯且具備確定性推理的 AI 平台與合規團隊。",
       "introAt": "2026-08-16T22:30:27.586Z"
     },
+    "1024118326": {
+      "intro": "WeKnora 解決企業文件理解、語意檢索與自主推理的難題。它整合 RAG 快速問答、ReAct Agent 複雜任務處理，以及將原始文件轉為自動維護 Markdown 知識庫的 Wiki 模式。支援飛書、Notion、GitLab 等多源同步、10+ 種檔案格式、20+ 種大語言模型（含 Ollama、OpenAI、DeepSeek），並具備跨工作區 RBAC 權限管理與 Langfuse 可觀測性，適合需要建立私有、具備自我進化與推理能力的企業級智慧知識庫與聊天機器人應用。",
+      "introAt": "2026-09-21T00:06:43.738Z"
+    },
     "1032808806": {
       "intro": "Strix 是開源的自主式 AI 滲透測試工具，透過多代理協同合作動態運行程式碼，尋找漏洞並產出實際可驗證的 PoC 攻擊證明與修復補丁，大幅減少傳統靜態掃描的誤報。內建完整攻擊工具組與 OWASP 漏洞檢測，支援 CLI、CI/CD 整合及主流 AI 編碼代理，滿足開發與安全團隊快速進行應用程式安全測試與自動化漏洞修復的需求。",
       "introAt": "2026-08-23T22:31:11.230Z"
@@ -183,6 +187,10 @@
     "1053118194": {
       "intro": "本專案是一本深入探討 AI Agent 的開源技術書，解決了從原理到生產實踐的落地難題。書中圍繞「Agent = LLM + 上下文 + 工具」核心架構，由 10 章內容與 92 個配套實作專案組成。涵蓋 RAG、記憶工程、多 Agent 協作、模型後訓練及多模態交互等關鍵技術。適合希望透過系統化學習與實戰練習，掌握 AI Agent 工程化開發的開發者與架構師。",
       "introAt": "2026-07-26T23:05:01.196Z"
+    },
+    "1065936302": {
+      "intro": "OpenStock 是付費市場平台的開源替代方案，提供免付費的即時股價追蹤、自訂警示與詳細公司資訊。核心採用 Next.js、TypeScript、shadcn/ui 與 Tailwind CSS，並整合 Finnhub 取得市場數據、TradingView 呈現互動圖表，以及透過 Inngest 結合 Gemini 實現 AI 個人化歡迎信與每日新聞摘要。適合尋求透明、無訂閱門檻且注重隱私的投資人與開發者使用。",
+      "introAt": "2026-09-21T00:06:43.738Z"
     },
     "1073224795": {
       "intro": "Superpowers 為 AI 程式代理提供完整的開發方法論，解決 AI 直接編碼導致的規劃缺失。透過「子代理驅動開發」模式，在撰寫程式前強制進行構思、需求確認與細化規劃，並嚴格執行測試驅動開發與自動化審核。適合追求高質量交付、需自主執行長時任務的開發者，透過模組化技能賦予 AI 如 Claude Code、Cursor 等工具強大的工程紀律，確保開發過程規範化且高效。",
@@ -219,6 +227,10 @@
     "1157102282": {
       "intro": "OmniRoute 是免費的 AI 閘道，整合 43 個供應商與 516 種模型，每月提供約 15 億免費 Token。它能自動切換模型，確保服務不中斷。具備 19 種路由策略與自動化組合引擎，支援主流 AI 編碼工具與 MCP 協定，無需配置即可使用，是開發者優化 AI 使用成本與效能的利器。",
       "introAt": "2026-07-26T23:05:01.196Z"
+    },
+    "1158722119": {
+      "intro": "這是一個專為 AI 編碼代理設計的生產級工程技能庫，將資深工程師的開發工作流程與最佳實踐標準化。專案提供對應開發生命週期的斜線指令與 25 種結構化技能，能自動啟動對應工作流、強制執行品質把關與測試驅動開發。適合搭配 Claude Code、Cursor、Codex 等多種主流 AI 代理工具，協助開發者在從需求規劃、增量建置到上線的全過程中，讓 AI 保持一致且高水準的程式碼品質。",
+      "introAt": "2026-09-21T00:06:43.738Z"
     },
     "1165277268": {
       "intro": "為 AI Agent 一鍵解鎖網際網路能力，解決各大平台因封鎖、需付費或登入而無法讀取資料的痛點。專案具備自動選型、安裝與「首選+備選」的多後端路由機制，確保接入方式換代時用戶無感；並內建環境診斷與隱私安全保護，Cookie 僅存本機。相容 Claude Code、Cursor、OpenClaw 等主流命令列 Agent，讓你的 AI 輕鬆閱讀網頁、刷推特、看 YouTube、搜 Reddit 與小紅書。",
@@ -316,6 +328,14 @@
       "intro": "Ponytail 是一款針對 AI 程式碼代理的開發者工具與外掛，旨在解決 AI 過度建構與程式碼臃腫的問題。透過獨特的階梯式規則與技能設計，它能在完全保留安全性、錯誤處理與無障礙設計的前提下，有效減少程式碼行數並降低成本與延遲。適用於 Claude Code、Cursor 等主流 AI 代理工具，讓 AI 寫出精簡且符合實際需求的程式碼。",
       "introAt": "2026-08-16T22:30:27.586Z"
     },
+    "1273427276": {
+      "intro": "將 Coding Agent 轉化為安全審計員的專案，提供自動化漏洞探索與檢測。透過六階段結構化審計，包含架構偵察、覆蓋率狩獵、對抗式候選驗證與獨立記錄驗證，確保結果具備源碼追蹤與影響力評估。適用於需對程式碼庫進行自動化滲透測試與漏洞挖掘的開發者與團隊。",
+      "introAt": "2026-09-21T00:06:43.738Z"
+    },
+    "1276665883": {
+      "intro": "BrowserSkill 讓 AI 代理程式在不干擾日常工作的情況下，直接操作你已登入的瀏覽器分頁。它具備重複利用真實登入狀態、透過獨立的代理視窗維持背景運行、支援任何可執行 shell 的主流 AI 代理（如 Cursor、Claude Code 等），並內建人類介入機制以處理驗證碼或登入關卡。適合需要在保留當前瀏覽狀態下，讓各種 AI 代理安全執行網頁自動化任務的開發者與工作場景。",
+      "introAt": "2026-09-21T00:06:43.738Z"
+    },
     "1300902838": {
       "intro": "Grok Build 是 SpaceXAI 開發的終端 AI 程式設計代理。它提供全螢幕 TUI 介面，能深入理解程式碼庫、執行檔案編輯、終端指令、網路搜尋與管理長期任務。該專案透過 Rust 編寫，支援互動式操作、自動化腳本及編輯器嵌入。適合需要高效 AI 輔助開發、CI 自動化或追求終端環境作業流程的開發者使用。",
       "introAt": "2026-07-19T11:16:05.077Z"
@@ -345,142 +365,14 @@
       "introAt": "2026-09-06T23:45:03.614Z"
     }
   },
-  "lastBoardPushAt": "2026-09-14T00:04:01.546Z",
-  "lastNewsPushAt": "2026-09-20T00:03:22.470Z",
+  "lastBoardPushAt": "2026-09-21T00:06:43.738Z",
+  "lastNewsPushAt": "2026-09-21T00:06:43.738Z",
   "publish": {
     "boardSummary": {
-      "generatedAt": "2026-09-14T00:04:01.546Z",
-      "summary": "本次綜合榜 #1 為 tt-a1i/archify，共有 5 個新進與 2 個竄升項目，其中 AI 佔 5 個、前後端佔 2 個，另有 2 個項目下降。"
+      "generatedAt": "2026-09-21T00:06:43.738Z",
+      "summary": "本次榜單綜合 #1 為 alibaba/open-code-review，共有 8 個新進項目與 1 個竄升項目，其中新進與竄升集中於 AI 7 個與前後端 2 個領域，另有 1 個項目下降。"
     },
     "feed": [
-      {
-        "content": "Claude Desktop 現在已可設定將 Ollama 作為第三方閘道提供者（gateway provider），使開發者能在 Claude 的桌面應用介面中直接連接並使用各類本地開源大語言模型。此項支援讓習慣 Claude 桌面操作體驗的開發者，能夠在完全本地離線或自託管的環境下進行各項模型測試與日常工作。",
-        "id": "news:https://ollama.com/blog/claude-desktop",
-        "publishedAt": "2026-09-15T00:28:16.120Z",
-        "title": "Claude Desktop 正式支援 Ollama 第三方閘道：可在桌面端運行開源模型",
-        "type": "news",
-        "url": "https://ollama.com/blog/claude-desktop"
-      },
-      {
-        "content": "社群披露 OpenAI 的自動化機器人曾偵測並觸及 RubyGems 的快取漏洞。隨著具備自主網路與程式碼互動能力的 AI Agent 日益普及，自動化爬蟲與測試代理在無意中探測或利用套件庫安全弱點的風險正在增加。這項事件突顯出開源生態系在面對高頻率、智慧化的自主 Agent 時，基礎設施防禦與漏洞回報機制的嚴峻挑戰。",
-        "id": "news:https://tenderlovemaking.com/2026/09/11/what-a-time-to-be-alive",
-        "publishedAt": "2026-09-15T00:28:16.120Z",
-        "title": "OpenAI 自動化機器人曾偵測 RubyGems 快取漏洞引發資安討論",
-        "type": "news",
-        "url": "https://tenderlovemaking.com/2026/09/11/what-a-time-to-be-alive/"
-      },
-      {
-        "content": "UkisAI 開源了基於 Qwen 3.8 27B 進行後期訓練的模型 Swift-Qwen3.8-27B。研究團隊分析了導致「過度思考」（overthinking）的 token 並透過策略內蒸餾（On-Policy Distillation）進行懲罰與精度修復，在準確度損失小於 1% 的前提下，減少了 58.3% 的思考 token，推論速度提升達 1.95 倍。對於需要部署推理模型但受限於延遲與算力成本的工程師具備高度參考價值。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wg7dd5/ukisai_swiftqwen3827b_583_thinking_x195_speed",
-        "publishedAt": "2026-09-15T00:28:16.120Z",
-        "title": "UkisAI 開源 Swift-Qwen3.8-27B：以蒸餾減少過度思考並提升近 2 倍速度",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wg7dd5/ukisai_swiftqwen3827b_583_thinking_x195_speed/"
-      },
-      {
-        "content": "社群高度關注 AI 在數學領域中的對齊（misalignment）問題。文章深入探討了基於機率預測的神經網路語言模型在面對嚴謹、不可妥協的形式化數學證明時所展現的系統性偏差與局限。對正在開發程式碼合成、形式化驗證或邏輯推理系統的開發者而言，理解這種機率模型與嚴格確定性系統之間的本質落差，是構建更可靠 AI 系統的關鍵依據。",
-        "id": "news:https://mathandai.org/",
-        "publishedAt": "2026-09-15T00:28:16.120Z",
-        "title": "數學邏輯與神經網路的落差：AI 在形式化數學中的對齊難題",
-        "type": "news",
-        "url": "https://mathandai.org/"
-      },
-      {
-        "content": "Google 正式推出 Gemini 3.8 Live 以及具備深度推理能力的 Gemini 3.8 Live Extended Thinking 模型。新版本進一步提升了即時語音與多模態互動的流暢度與響應速度，Extended Thinking 則強化了模型在面對複雜多步驟問題時的內在鏈式思考能力。對於建構即時語音助理、即時多模態互動以及需要高度精確推理應用的開發者而言，新模型提供了更強大的 API 選擇與更低的延遲表現。",
-        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking",
-        "publishedAt": "2026-09-16T00:07:50.300Z",
-        "title": "Google 發表 Gemini 3.8 Live 與 3.8 Live Extended Thinking 模型",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
-      },
-      {
-        "content": "Kubernetes v1.37 正式將 HorizontalPodAutoscaler (HPA) 的「縮容至零」（Scale to Zero）功能升級為 Beta 並預設啟用。開發者以往若想根據自定義或外部指標將工作負載副本數降至 0，必須依賴 Keda 等第三方外掛或手動開啟 Alpha feature gate；現在核心 Kubernetes API 已原生支援此能力，當指標恢復時也能自動重新拉起 Pod。這能顯著降低閒置服務的雲端運算資源成本，對無伺服器架構與事件驅動負載的部署極具價值。",
-        "id": "news:https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta",
-        "publishedAt": "2026-09-16T00:07:50.300Z",
-        "title": "Kubernetes v1.37 原生支援 HPA 縮容至零（Scale to Zero），進入 Beta 階段",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/"
-      },
-      {
-        "content": "Kubernetes 儲存團隊宣布 Changed Block Tracking (CBT) 功能隨著 external-snapshot-metadata v1.0.0 的推出正式邁入 Beta。CBT 提供了一套標準化的 CSI 擴充介面，包含 SnapshotMetadata gRPC 服務與 CRD，使備份系統能夠直接查詢兩次快照之間發生變更的區塊資料。對開發備份、災難復原與儲存擴充元件的工程師而言，此 API 的標準化避免了過去各儲存廠商私有實作的不相容問題，大幅提升容器持久化儲存的備份效率與效能。",
-        "id": "news:https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta",
-        "publishedAt": "2026-09-16T00:07:50.300Z",
-        "title": "Kubernetes 變更區塊追蹤（CBT）API 進入 Beta 階段",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta/"
-      },
-      {
-        "content": "Cloudflare 推出新的網站控制選項與 Accountable 標記機制，讓網站擁有者能夠精細區分搜尋引擎索引抓取與 AI 模型訓練抓取。這項與 Apple、Google、Microsoft 建立的共用模型，解決了過去網站透過 robots.txt 封鎖爬蟲時往往「全阻擋」導致喪失搜尋排名的兩難。對於 Web 開發者與站長而言，現在無需繁瑣維護各家爬蟲的 User-Agent 清單，即可在保護原創內容不被未授權用於模型訓練的同時，維持既有的 SEO 流量與搜尋曝光。",
-        "id": "news:https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers",
-        "publishedAt": "2026-09-16T00:07:50.300Z",
-        "title": "Cloudflare 推出新控制功能：維持搜尋曝光同時禁止 AI 抓取訓練",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/"
-      },
-      {
-        "content": "Cloudflare 宣布為 Workers 推出更細粒度的開發者平台角色與資源範圍控制。開發者現在可以針對單一 Worker 分配存取權限，而非僅能給予整個帳號或專案的廣泛權限。這項更新特別針對 CI/CD Token、不同職能團隊成員以及近期廣泛接入系統的 AI Agent 設計，落實最小權限原則（Least Privilege），大幅降低因 Token 外洩或自動化 Agent 操作失誤對生產環境造成的安全風險。",
-        "id": "news:https://blog.cloudflare.com/workers-granular-authorization",
-        "publishedAt": "2026-09-16T00:07:50.300Z",
-        "title": "Cloudflare Workers 推出細粒度權限控制，支援限制單一 Worker 與 Agent 存取",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/workers-granular-authorization/"
-      },
-      {
-        "content": "Meta 宣布支援開源的 Model Context Protocol (MCP) 標準，允許 Claude 與 Codex 等 AI 模型直接介接並配置 WhatsApp Business 服務。開發者可透過標準化的 MCP 工具調用介面，讓程式碼助理或自動化 Agent 讀取 WhatsApp 設定、建立商業流程與管理 API 整合。這展示了 MCP 標準在企業級通訊平台設定與運維自動化上的實用價值，降低串接企業通訊平台的開發門檻。",
-        "id": "news:https://thenewstack.io/meta-mcp-whatsapp-business-claude",
-        "publishedAt": "2026-09-16T00:07:50.300Z",
-        "title": "Meta 採用 Model Context Protocol (MCP)，支援透過 Claude 與 Codex 配置 WhatsApp …",
-        "type": "news",
-        "url": "https://thenewstack.io/meta-mcp-whatsapp-business-claude/"
-      },
-      {
-        "content": "社群深入分享了一套在高效能監控與追蹤場景下，利用記憶化技術將 eBPF 程式 CPU 消耗降低約 90% 的工程實踐。在封包處理或高頻系統呼叫攔截時，重複運算常成為 eBPF 程式的效能瓶頸。作者詳述了如何在嚴格的 eBPF 驗證器限制（如指令數上限、堆疊空間與記憶體安全檢查）下，實作輕量高效的快取機制。這篇實戰經驗對從事 Linux 核心監控、網路觀測性與效能調校的系統工程師具有極高的技術參考價值。",
-        "id": "news:https://nathannaveen.dev/posts/dropping-ebpf-cpu-cost-by-90",
-        "publishedAt": "2026-09-16T00:07:50.300Z",
-        "title": "透過記憶化（Memoization）將 eBPF CPU 開銷大幅降低約 90%",
-        "type": "news",
-        "url": "https://nathannaveen.dev/posts/dropping-ebpf-cpu-cost-by-90/"
-      },
-      {
-        "content": "開發者針對 GPT-5.6 Luna 與高階模型 GPT-6 Astra 在自動化程式碼審查（Code Review）情境下進行了深度對比評測。測試從語義理解、邊界條件偵測、重構建議與幻覺率等多維度切入，評估成本僅 1.2 美元的平價模型是否能滿足團隊日常 PR 審查需求。評測分析了兩者在程式碼品質把關上的精準度差異，為正在架構內部 CI/CD AI Review 工具的工程團隊提供了兼顧審查品質與 API 預算的最佳決策參考。",
-        "id": "news:https://entelligence.ai/blogs/gpt-5.6-luna-vs-gpt-6-astra-is-a-1.20-model-good-enough-for-code-review",
-        "publishedAt": "2026-09-16T00:07:50.300Z",
-        "title": "GPT-5.6 Luna 與 GPT-6 Astra 實測對比：低成本模型是否足以勝任 Code Review？",
-        "type": "news",
-        "url": "https://entelligence.ai/blogs/gpt-5.6-luna-vs-gpt-6-astra-is-a-1.20-model-good-enough-for-code-review"
-      },
-      {
-        "content": "在 MinIO 授權條款轉變與架構逐漸重型化之後，開發者社群對「單節點、輕量化、本地 S3 相容儲存」方案展開深入比較。討論全面評估了包括 SeaweedFS、Garage、Rust-S3 以及各類嵌入式 S3 模擬器的相容性、記憶體佔用、佈署複雜度與 I/O 吞吐表現。對於需要建立本地整合測試環境、邊緣運算節點或微型自託管服務的後端與 DevOps 工程師而言，這是一份極為實用的選型技術指引。",
-        "id": "news:https://rmoff.net/2026/01/14/alternatives-to-minio-for-single-node-local-s3",
-        "publishedAt": "2026-09-16T00:07:50.300Z",
-        "title": "單節點本地 S3 儲存方案盤點：尋找 MinIO 之外的輕量替代品",
-        "type": "news",
-        "url": "https://rmoff.net/2026/01/14/alternatives-to-minio-for-single-node-local-s3/"
-      },
-      {
-        "content": "本文深入探討了 Looped Transformer（循環 Transformer 區塊）與隱藏鏈式思考（Hidden Chains of Thought）的最新研究與架構機制。文章解析了模型如何在不依賴外部生成大量思考 Token 的情況下，透過內部層級的循環計算實現遞迴深度與隱式推理。對於研究大型語言模型架構、推論效能最佳化以及對前沿模型運作原理感興趣的機器學習工程師來說，這是一篇極具理論深度的架構拆解。",
-        "id": "news:https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and",
-        "publishedAt": "2026-09-16T00:07:50.300Z",
-        "title": "深入剖析循環 Transformer 與隱藏思維鏈：探討 GPT-6 Astra 背後的架構演進",
-        "type": "news",
-        "url": "https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and"
-      },
-      {
-        "content": "Node.js 釋出 26.9.0 版本，帶來多項核心能力更新：crypto 模組新增通用 MAC API，並支援從 OpenSSL 提供者探索密碼與雜湊；FFI 模組改為預設啟用；內建函式庫正式引入 node:bench 基準測試模組，並針對 perf_hooks 進行改進。對 Node.js 開發者而言，原生基準測試工具與預設啟用的外部函式呼叫介面（FFI）大幅降低了依賴第三方套件的需求，使效能評測與原生程式碼整合更加順暢。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.9.0",
-        "publishedAt": "2026-09-17T00:18:25.022Z",
-        "title": "Node.js 26.9.0 發布：預設啟用 FFI、新增 node:bench 模組與通用 MAC API",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.9.0"
-      },
-      {
-        "content": "Kubernetes v1.37 引入了 emptyDir 權限模式與 bind mount 選項兩項重要儲存安全功能。這項改動讓開發者與維運人員能直接透過 Kubernetes 原生規範實施嚴格的安全策略，例如防止跨容器檔案刪除，或是直接禁止在可寫入的 Volume 上執行任意二進位檔案，無需依賴複雜的外圍繞道手段即可強化容器儲存邊界。",
-        "id": "news:https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage",
-        "publishedAt": "2026-09-17T00:18:25.022Z",
-        "title": "Kubernetes v1.37 強化容器儲存安全：支援 Bind Mount 選項與 emptyDir 權限設定",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/"
-      },
       {
         "content": "在 Kubernetes 1.37 中，動態資源配置（Dynamic Resource Allocation, DRA）的 Extended Resource 支援正式畢業至 GA（General Availability）穩定階段，標誌著該功能歷經多個版本的演進已成熟。對於在 K8s 上調度 GPU 等特殊硬體加速資源的平臺工程師與 AI/ML 團隊而言，這項更新使 DRA 驅動的硬體配置更加穩定可靠。",
         "id": "news:https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates",
@@ -752,13 +644,145 @@
         "title": "單月向生產環境交付 2,000 個 PR 的工程實踐：嚴格驗證是唯一關鍵",
         "type": "news",
         "url": "https://thenewstack.io/agentic-verification-distributed-systems/"
+      },
+      {
+        "id": "repo:1241960226:new:2026-09-21",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "alibaba/open-code-review 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/alibaba/open-code-review"
+      },
+      {
+        "id": "repo:1273427276:new:2026-09-21",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "cloudflare/security-audit-skill 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/cloudflare/security-audit-skill"
+      },
+      {
+        "id": "repo:1206390571:climbed:2026-09-21",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "debpalash/VoiceStudio 竄升",
+        "type": "board-climbed",
+        "url": "https://github.com/debpalash/VoiceStudio"
+      },
+      {
+        "id": "repo:1183888342:new:2026-09-21",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "stablyai/orca 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/stablyai/orca"
+      },
+      {
+        "id": "repo:1024118326:new:2026-09-21",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "Tencent/WeKnora 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/Tencent/WeKnora"
+      },
+      {
+        "id": "repo:1276665883:new:2026-09-21",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "Tencent/BrowserSkill 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/Tencent/BrowserSkill"
+      },
+      {
+        "id": "repo:1158722119:new:2026-09-21",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "addyosmani/agent-skills 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/addyosmani/agent-skills"
+      },
+      {
+        "id": "repo:1065936302:new:2026-09-21",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "Open-Dev-Society/OpenStock 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/Open-Dev-Society/OpenStock"
+      },
+      {
+        "id": "repo:997737944:new:2026-09-21",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "ruvnet/RuView 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/ruvnet/RuView"
+      },
+      {
+        "content": "Google 官方推出 Gemini 3.8 Live 以及具備擴展思考能力的 3.8 Live Extended Thinking 模型。新版本進一步提升了即時互動能力與深度推論表現，為需要低延遲即時應用或多步驟複雜思考邏輯的開發者提供更強大的模型選擇。",
+        "id": "news:https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "Google 推出 Gemini 3.8 Live 與 3.8 Live Extended Thinking",
+        "type": "news",
+        "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/"
+      },
+      {
+        "content": "Kubernetes 在 v1.37 中針對生產環境身分驗證推出重要更新，正式引入 Pod Certificates 與 Cluster Trust Bundles。以往 Kubernetes 主要依賴 Service Account JWT 作為身分識別機制，新功能為工作負載提供更靈活、安全的憑證驗證體系，協助團隊更可靠地向內部與外部系統驗證身分。",
+        "id": "news:https://kubernetes.io/blog/2026/08/28/kubernetes-v1-37-pod-certificates-and-cluster-trust-bundles",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "Kubernetes v1.37 引入 Pod Certificates 與 Cluster Trust Bundles",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/08/28/kubernetes-v1-37-pod-certificates-and-cluster-trust-bundles/"
+      },
+      {
+        "content": "阿里巴巴宣布開源一款全新的醫療 AI 模型，具備辨識癌症以及近 150 種不同醫學病況的能力。這項開源大幅降低了醫療輔助診斷的研究門檻，讓健康醫療領域的開發者能夠基於此模型進一步微調與整合臨床輔助工具。",
+        "id": "news:https://scmp.com/tech/big-tech/article/3368055/alibaba-open-sources-medical-ai-model-can-detect-cancer-and-nearly-150-conditions",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "阿里巴巴開源可檢測近 150 種病症的醫療 AI 模型",
+        "type": "news",
+        "url": "https://www.scmp.com/tech/big-tech/article/3368055/alibaba-open-sources-medical-ai-model-can-detect-cancer-and-nearly-150-conditions"
+      },
+      {
+        "content": "GitHub 官方宣布升級 Copilot 程式碼審查體驗。新版能清楚展示審查隨時間的歷程變化，更加智慧地自動解析並關閉其自身的建議，並在接受修改時自動生成清晰的 Git Commit 訊息，有助於開發者減少 PR 審查與修正過程中的繁瑣操作。",
+        "id": "news:https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "GitHub 升級 Copilot Code Review：改進審查歷程並支援自動處理解決",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience"
+      },
+      {
+        "content": "AlphaGenome Atlas 正式發布，該計畫繪製了人類基因組中多達 90 億個單字母 DNA 變異的分子效應預測圖譜。此成果為生醫領域與計算生物學開發者提供了極具參考價值的基因變異預測資源，有助於加速疾病機理研究與相關 AI 工具的構建。",
+        "id": "news:https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "AlphaGenome Atlas 發布：繪製人類基因組 90 億個 DNA 變異效應預測圖譜",
+        "type": "news",
+        "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/"
+      },
+      {
+        "content": "本文針對 Kubernetes 生態系中的 Kata Containers 安全加固展開深入探討。Kata Containers 透過輕量虛擬機提供容器隔離，但在生產環境中仍需嚴格配置主機通訊、權限防護與隔離邊界。文章解析了加固實務重點，協助維運與平台工程師有效防止多租戶環境下的逃逸風險。",
+        "id": "news:https://srcreigh.ca/posts/auditable-kata",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "強化 Kubernetes 安全虛擬機：Kata Containers 安全加固實務",
+        "type": "news",
+        "url": "https://srcreigh.ca/posts/auditable-kata/"
+      },
+      {
+        "content": "隨著 AI Agent 邁入生產環境，從接收請求到產出結果的鏈路不確定性顯著增加。本文分析指出，Agent 落地失敗的瓶頸往往不是底層模型能力不足，而是整體調度架構、環境反饋與狀態管理的缺失。開發者應更注重構建強健的 Harness 框架，而非僅僅依賴提升模型參數。",
+        "id": "news:https://thenewstack.io/nvidia-agent-debugging-safe",
+        "publishedAt": "2026-09-21T00:06:43.738Z",
+        "title": "深入剖析 AI Agent 失敗根因：從模型本身轉向架構與不確定性控制",
+        "type": "news",
+        "url": "https://thenewstack.io/nvidia-agent-debugging-safe/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-20T00:03:22.470Z",
+      "generatedAt": "2026-09-21T00:06:43.738Z",
       "items": [
         {
-          "content": "Kubernetes 團隊正式釋出 v1.37 版本（代號 Garhwal）。本次更新共包含 67 項增強功能，其中 16 項功能正式畢業晉升為穩定版（Stable），23 項進入測試版（Beta），27 項處於 Alpha 階段。新版本持續強化叢集生產環境的工作負載安全性、可靠性與身分認證機制，為維運人員與雲原生開發者提供更穩固的基礎設施支援。",
+          "content": "Google 官方推出 Gemini 3.8 Live 以及具備擴展思考能力的 3.8 Live Extended Thinking 模型。新版本進一步提升了即時互動能力與深度推論表現，為需要低延遲即時應用或多步驟複雜思考邏輯的開發者提供更強大的模型選擇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "Google 推出 Gemini 3.8 Live 與 3.8 Live Extended Thinking",
+          "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Kubernetes 在 v1.37 中針對生產環境身分驗證推出重要更新，正式引入 Pod Certificates 與 Cluster Trust Bundles。以往 Kubernetes 主要依賴 Service Account JWT 作為身分識別機制，新功能為工作負載提供更靈活、安全的憑證驗證體系，協助團隊更可靠地向內部與外部系統驗證身分。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -766,39 +790,26 @@
           "sources": [
             "kubernetes-blog"
           ],
-          "title": "Kubernetes v1.37 正式發布：帶來 67 項增強功能與多項關鍵特性晉升",
-          "url": "https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release/",
+          "title": "Kubernetes v1.37 引入 Pod Certificates 與 Cluster Trust Bundles",
+          "url": "https://kubernetes.io/blog/2026/08/28/kubernetes-v1-37-pod-certificates-and-cluster-trust-bundles/",
           "weightedScore": 100
         },
         {
-          "content": "Python 跨平台應用開發框架 Flet 正式迎來 1.0 里程碑版本。Flet 讓 Python 開發者能夠使用熟悉的語言生態系，輕鬆構建支援多平台的桌面、Web 與行動裝置前端應用，大幅降低跨平台軟體的開發門檻與全端技術棧切換成本。",
+          "content": "阿里巴巴宣布開源一款全新的醫療 AI 模型，具備辨識癌症以及近 150 種不同醫學病況的能力。這項開源大幅降低了醫療輔助診斷的研究門檻，讓健康醫療領域的開發者能夠基於此模型進一步微調與整合臨床輔助工具。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "ai",
           "sourceCount": 2,
           "sourceId": "hn",
           "sources": [
             "hn",
-            "lobsters-programming"
+            "reddit-localllama"
           ],
-          "title": "Flet 1.0 正式釋出：以 Python 打造跨平台應用程式",
-          "url": "https://flet.dev/",
-          "weightedScore": 263
+          "title": "阿里巴巴開源可檢測近 150 種病症的醫療 AI 模型",
+          "url": "https://www.scmp.com/tech/big-tech/article/3368055/alibaba-open-sources-medical-ai-model-can-detect-cancer-and-nearly-150-conditions",
+          "weightedScore": 251
         },
         {
-          "content": "Vercel 宣布調整免費 Hobby 方案政策。官方指出過往休眠未啟用的部署持續消耗大量儲存資源，因此現已開始針對免費用戶中未受保護的舊有部署進行立即刪除。仰賴 Vercel 免費層託管專案或歷史測試環境的開發者，需特別留意檢查部署保護設定，以防重要歷史版本或測試站台遭到清除。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Vercel 收緊免費方案規則：即刻自動清理未受保護的休眠部署",
-          "url": "https://thenewstack.io/vercel-hobby-deployment-retention/",
-          "weightedScore": 50
-        },
-        {
-          "content": "GitHub Copilot 釋出每週功能更新，正式加入新的模型選擇選項，並升級程式碼審查（Code Review）體驗，包含改進建議自動解決與自動產生 commit 訊息。此外，Copilot 應用程式現已整合 Sentry 錯誤追蹤工具，並針對管理員控制項與 Agent 新功能進行了全方位擴充，進一步優化開發者的輔助編程流程。",
+          "content": "GitHub 官方宣布升級 Copilot 程式碼審查體驗。新版能清楚展示審查隨時間的歷程變化，更加智慧地自動解析並關閉其自身的建議，並在接受修改時自動生成清晰的 Git Commit 訊息，有助於開發者減少 PR 審查與修正過程中的繁瑣操作。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -806,65 +817,38 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 發布多項更新：新增模型選擇、程式碼審查強化與 Sentry 整合",
-          "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
+          "title": "GitHub 升級 Copilot Code Review：改進審查歷程並支援自動處理解決",
+          "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
           "weightedScore": 100
         },
         {
-          "content": "阿里巴巴正式開源其研發的醫療 AI 模型，該模型具備識別癌症及近 150 種各類醫療狀況與疾病的檢測能力。此舉為醫療科技與開源 AI 社群提供了高度專業領域的開源模型資產，有助於推進健康醫療應用的二次開發與實證研究。",
+          "content": "AlphaGenome Atlas 正式發布，該計畫繪製了人類基因組中多達 90 億個單字母 DNA 變異的分子效應預測圖譜。此成果為生醫領域與計算生物學開發者提供了極具參考價值的基因變異預測資源，有助於加速疾病機理研究與相關 AI 工具的構建。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
+          "sourceId": "deepmind-blog",
           "sources": [
-            "reddit-localllama"
+            "deepmind-blog"
           ],
-          "title": "阿里巴巴開源醫療 AI 模型：支援癌症與近 150 種疾病篩檢",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wk9fag/alibaba_opensources_medical_ai_model_that_can/",
+          "title": "AlphaGenome Atlas 發布：繪製人類基因組 90 億個 DNA 變異效應預測圖譜",
+          "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
           "weightedScore": 100
         },
         {
-          "content": "一項針對寫程式代理（Coding Agents）運行環境與測試基底（Harness）設計的實證研究引起社群關注。研究深入探討如何透過嚴謹的 harness 架構設計來約束、評估並增強 AI 代理在實際軟體工程任務中的表現與可靠性，為打造高自主度 AI 開發工具的團隊提供了實用的架構評估指南。",
+          "content": "本文針對 Kubernetes 生態系中的 Kata Containers 安全加固展開深入探討。Kata Containers 透過輕量虛擬機提供容器隔離，但在生產環境中仍需嚴格配置主機通訊、權限防護與隔離邊界。文章解析了加固實務重點，協助維運與平台工程師有效防止多租戶環境下的逃逸風險。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "hn",
+          "sourceId": "lobsters-devops",
           "sources": [
-            "hn"
+            "lobsters-devops"
           ],
-          "title": "Coding Agent Harness 設計實證研究：探索程式碼代理架構之關鍵評估基底",
-          "url": "https://arxiv.org/abs/2609.20804",
-          "weightedScore": 217
+          "title": "強化 Kubernetes 安全虛擬機：Kata Containers 安全加固實務",
+          "url": "https://srcreigh.ca/posts/auditable-kata/",
+          "weightedScore": 100
         },
         {
-          "content": "技術社群提出名為「無限參數 LLM」（Infinite-Parameter LLMs）的新架構探索，研究如何擺脫固定參數規模的限制，改由即時資料動態生成並適應模型權重。這項研究為語言模型在持續學習、動態領域適應與推論架構設計上提供了嶄新的思路。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "無限參數 LLM：利用即時數據生成與動態調整權重架構",
-          "url": "https://arxiv.org/abs/2609.18842",
-          "weightedScore": 156
-        },
-        {
-          "content": "OpenAI 分享了其利用自身大型語言模型輔助設計內部 Jalapeño 晶片的工程實作與經驗。內容揭示了 LLM 如何被深度整合至晶片邏輯設計與硬體驗證工作流中，展現出生成式 AI 跨足硬體工程與 EDA（電子設計自動化）領域的實戰價值與架構潛力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sources": [
-            "hn",
-            "lobsters-ai"
-          ],
-          "title": "OpenAI 揭露內部實作經驗：如何利用自研 LLM 輔助設計 Jalapeño 晶片",
-          "url": "https://spectrum.ieee.org/llms-for-chip-design",
-          "weightedScore": 296
-        },
-        {
-          "content": "前 Cursor 與 Meta 工程師分享在 Grok 團隊的極限開發實踐，達成單月向生產環境合併 2,000 個 Pull Request 的紀錄。其核心關鍵不在於生成更多程式碼，而在於建立高度自動化且嚴格的驗證（Verification）體系，為身處 AI 輔助開發時代、面臨海量程式碼審查與品質把關挑戰的工程團隊提供了極具價值的管線設計參考。",
+          "content": "隨著 AI Agent 邁入生產環境，從接收請求到產出結果的鏈路不確定性顯著增加。本文分析指出，Agent 落地失敗的瓶頸往往不是底層模型能力不足，而是整體調度架構、環境反饋與狀態管理的缺失。開發者應更注重構建強健的 Harness 框架，而非僅僅依賴提升模型參數。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -872,8 +856,8 @@
           "sources": [
             "thenewstack"
           ],
-          "title": "單月向生產環境交付 2,000 個 PR 的工程實踐：嚴格驗證是唯一關鍵",
-          "url": "https://thenewstack.io/agentic-verification-distributed-systems/",
+          "title": "深入剖析 AI Agent 失敗根因：從模型本身轉向架構與不確定性控制",
+          "url": "https://thenewstack.io/nvidia-agent-debugging-safe/",
           "weightedScore": 50
         }
       ]
@@ -1989,6 +1973,70 @@
         "thenewstack"
       ],
       "url": "https://thenewstack.io/agentic-verification-distributed-systems"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-21T00:06:43.738Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-21T00:06:43.738Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/08/28/kubernetes-v1-37-pod-certificates-and-cluster-trust-bundles"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-21T00:06:43.738Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "reddit-localllama"
+      ],
+      "url": "https://scmp.com/tech/big-tech/article/3368055/alibaba-open-sources-medical-ai-model-can-detect-cancer-and-nearly-150-conditions"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-21T00:06:43.738Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-21T00:06:43.738Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-21T00:06:43.738Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "url": "https://srcreigh.ca/posts/auditable-kata"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-21T00:06:43.738Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/nvidia-agent-debugging-safe"
     }
   ]
 }
