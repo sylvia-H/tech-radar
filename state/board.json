@@ -366,53 +366,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-21T00:06:43.738Z",
-  "lastNewsPushAt": "2026-09-23T00:16:51.773Z",
+  "lastNewsPushAt": "2026-09-24T00:23:57.015Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-21T00:06:43.738Z",
       "summary": "本次榜單綜合 #1 為 alibaba/open-code-review，共有 8 個新進項目與 1 個竄升項目，其中新進與竄升集中於 AI 7 個與前後端 2 個領域，另有 1 個項目下降。"
     },
     "feed": [
-      {
-        "content": "Anthropic 旗下的指令列工具 Claude Code 更新設定載入邏輯：當專案目錄中不存在專屬的 Claude.md 時，系統將自動回退讀取 AGENTS.md 作為代理設定引導。此項更新提升了跨代理工具的通用性，開發者可以採用更通用的標準規格定義專案背景與指令規則，無需重複維護針對各家工具的特定設定檔，簡化了多 Agent 協作下的儲存庫維護成本。",
-        "id": "news:https://code.claude.com/docs/en/changelog",
-        "publishedAt": "2026-09-19T00:09:05.240Z",
-        "title": "Claude Code 新增支援讀取 AGENTS.md 設定檔",
-        "type": "news",
-        "url": "https://code.claude.com/docs/en/changelog"
-      },
-      {
-        "content": "資安研究社群公開了一篇技術實錄，詳細說明如何結合通用圖片函式庫中的堆疊溢位（heap overflow）記憶體損壞漏洞，以及單一簽入（SSO）機制的設定缺陷，成功取得 OpenAI 內部儲存庫存取權限。該漏洞分析展示了先進軟體供應鏈攻擊鏈路，對大型 AI 基礎設施在外部依賴管理、記憶體安全防護與企業身分驗證權限隔離方面提供了具體的實務檢視與借鏡價值。",
-        "id": "news:https://hacktron.ai/blog/hacking-openai",
-        "publishedAt": "2026-09-19T00:09:05.240Z",
-        "title": "深入剖析：利用堆疊溢位與 SSO 設定缺陷滲透 OpenAI 內部儲存庫",
-        "type": "news",
-        "url": "https://www.hacktron.ai/blog/hacking-openai"
-      },
-      {
-        "content": "GLM 團隊分享了其如何從底層打造專屬大規模 AI 模型推論基礎設施的工程實務。文章深入探討了大規模模型佈署時面臨的推論延遲、GPU 吞吐最佳化、動態批處理調度與叢集資源分配等關鍵瓶頸，並提供具體的架構設計決策。對於正在自建或最佳化私有化大型語言模型服務架構的後端與架構工程師來說，具備高度參考價值。",
-        "id": "news:https://z.ai/blog/glm-built-its-inference-infrastructure",
-        "publishedAt": "2026-09-19T00:09:05.240Z",
-        "title": "架構解析：GLM 團隊自建大規模推論基礎設施的工程實踐",
-        "type": "news",
-        "url": "https://z.ai/blog/glm-built-its-inference-infrastructure"
-      },
-      {
-        "content": "開發者社群揭發 GLM 旗下的編碼代理工具 ZCode 在執行過程中，會在未經明確提示與授權的情況下，靜默將本機儲存庫的完整 Git 歷史記錄上傳至遠端伺服器。這項發現引發了嚴重的軟體供應鏈隱私與機密外洩疑慮；開發者常將敏感資訊（如過往提交中的憑證或內部程式碼架構）留存於歷史紀錄中，使用此類第三方 AI 輔助開發工具時需嚴加審核其網路外傳行為與外掛權限。",
-        "id": "news:https://tokenstead.ai/guides/zcode-silent-git-history-upload",
-        "publishedAt": "2026-09-19T00:09:05.240Z",
-        "title": "資安警訊：GLM 編碼代理 ZCode 被揭露靜默上傳使用者 Git 完整歷史",
-        "type": "news",
-        "url": "https://tokenstead.ai/guides/zcode-silent-git-history-upload"
-      },
-      {
-        "content": "一項針對程式碼生成代理（Coding Agent）的實證研究探討了「測試 Harness 設計」對模型基準評測結果的巨大影響。研究指出不同框架封裝與執行環境細微的提示詞、環境隔離、回饋機制差異，會顯著改變模型在相同基準下的評分與解題表現。該研究為開發與評估自主軟體工程代理的團隊提供了重要基準架構洞見，提醒開發者評估 Agent 能力時應謹慎區分模型本體與 Harness 的貢獻。",
-        "id": "news:https://harnesstax.github.io/",
-        "publishedAt": "2026-09-19T00:09:05.240Z",
-        "title": "HarnessTax 研究：深入評測測試 Harness 設計對程式碼 Agent 的關鍵影響",
-        "type": "news",
-        "url": "https://harnesstax.github.io/"
-      },
       {
         "content": "工程團隊分享了將大規模監控指標架構由維護近十年的 gostatsd 遷移至 OpenTelemetry 的完整實踐經驗。文章詳述了在承載巨量節點 Sidecar 指標管線的環境下，如何規劃零停機無縫切換、調校採集效能以及解決資料格式轉換的挑戰。對於正著手推動可觀測性標準化與現代化架構演進的 DevOps 及維運團隊而言，是一篇深具實務價值的參考範例。",
         "id": "news:https://cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale",
@@ -763,66 +723,105 @@
         "title": "AI 輔助寫 code 造成 CI 堵塞？開發團隊重構 CI 管線打破交付瓶頸",
         "type": "news",
         "url": "https://linear.app/now/ci-bottleneck-reworked"
+      },
+      {
+        "content": "GitHub 官方宣佈擴大支援 Copilot 程式碼審查（Code Review）的方案範圍，並推出專屬的個人化設定與企業級預設管理功能。這讓開發者與團隊能更靈活地配置審查規則與請求方式，進一步提升程式碼品質與協作效率。",
+        "id": "news:https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
+        "publishedAt": "2026-09-24T00:23:57.015Z",
+        "title": "GitHub Copilot 程式碼審查新增個人化設定與企業預設選項",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews"
+      },
+      {
+        "content": "GitHub 針對 Copilot App 推出本機沙箱（Local sandboxing）功能，透過限制對本機檔案、網路資源與認證資料的存取，降低意外指令帶來的潛在資安風險，讓開發者在本地執行工具時更有安全保障。",
+        "id": "news:https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app",
+        "publishedAt": "2026-09-24T00:23:57.015Z",
+        "title": "GitHub Copilot App 推出本機沙箱功能以提升安全性",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app"
+      },
+      {
+        "content": "GitHub 宣佈 Copilot App 現已透過企業管理設定支援 OpenTelemetry (OTel)。這項更新讓開發者能更透明地掌握 Copilot 代理程式（Agents）的運作效能及其與模型、工具的互動狀況，有助於系統除錯與監控。",
+        "id": "news:https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+        "publishedAt": "2026-09-24T00:23:57.015Z",
+        "title": "GitHub Copilot App 正式支援 OpenTelemetry 觀測性框架",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app"
+      },
+      {
+        "content": "官方宣佈為個人 AI 的 Private AI Compute 導入安全、伺服器端的記憶體機制，在確保隱私的同時，拓展個人化人工智慧應用的運算與資料處理能力。",
+        "id": "news:https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory",
+        "publishedAt": "2026-09-24T00:23:57.015Z",
+        "title": "Private AI Compute 推出具備安全伺服器端記憶體的個人化 AI 運算",
+        "type": "news",
+        "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/"
+      },
+      {
+        "content": "Cloudflare 技術團隊分享如何運用統計學與 Rust 語言，大幅削減基於 Pingora 架構的服務之記憶體用量。這篇文章深入探討了在大規模分散式系統中，透過數學方法優化記憶體足跡的實際工程經驗與效能調校。",
+        "id": "news:https://blog.cloudflare.com/saving-100-tb-of-ram-with-math",
+        "publishedAt": "2026-09-24T00:23:57.015Z",
+        "title": "透過數學與 Rust 演算法為 Cloudflare 節省 100TB 的 RAM",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-23T00:16:51.773Z",
+      "generatedAt": "2026-09-24T00:23:57.015Z",
       "items": [
         {
-          "content": "Anthropic 正式推出 Claude Opus 5.5，作為家族中最頂級的旗艦模型，專注於長任務自主代理（Agentic Coding）與複雜知識工作。該模型在程式碼生成、端到端任務執行與架構規劃能力上均有顯著升級，旨在幫助開發者完成完整的工程任務，而不僅限於代碼片段補全。",
+          "content": "GitHub 官方宣佈擴大支援 Copilot 程式碼審查（Code Review）的方案範圍，並推出專屬的個人化設定與企業級預設管理功能。這讓開發者與團隊能更靈活地配置審查規則與請求方式，進一步提升程式碼品質與協作效率。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
+          "sourceId": "github-changelog-copilot",
           "sources": [
-            "hn"
+            "github-changelog-copilot"
           ],
-          "title": "Anthropic 發布新一代旗艦模型 Claude Opus 5.5",
-          "url": "https://www.anthropic.com/claude-opus-5-5",
-          "weightedScore": 1131
-        },
-        {
-          "content": "OpenAI 正式擴充 GPT-6 系列，推出 GPT-6 Sol 與 GPT-6 Luna 兩款新模型。Sol 主打在大幅降低推論成本（僅約 Astra 的五分之一）的同時，縮減與頂級旗艦對齊能力的差距；Luna 則為針對輕量、低延遲場景優化的版本。這項更新讓開發團隊能在成本控管與高品質推論之間取得更靈活的架構配置。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sources": [
-            "hn",
-            "openai-blog"
-          ],
-          "title": "OpenAI 推出 GPT-6 Sol 與 GPT-6 Luna 兩款新模型",
-          "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
-          "weightedScore": 1199
-        },
-        {
-          "content": "Node.js 發布 26.10.0 版本，帶來數項重要功能更新：crypto 模組新增 crypto.parsePKCS12() 以簡化憑證管理；ffi 模組支援直接從掛載的虛擬檔案系統（VFS）載入函式庫；fs 模組加入 openAsBlobSync；net 模組則支援將 BoundSocket 傳遞至背景執行緒與子行程，進一步強化跨執行緒網路連線的靈活性。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sources": [
-            "gh-nodejs"
-          ],
-          "title": "Node.js 26.10.0 發布：新增 PKCS#12 解析與 VFS 函式庫載入",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.10.0",
+          "title": "GitHub Copilot 程式碼審查新增個人化設定與企業預設選項",
+          "url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
           "weightedScore": 100
         },
         {
-          "content": "Hugging Face Transformers 正式整合 llama.cpp 量化格式（GGUF 等），開發者現在可以直接在標準 Transformers 生態系中執行經過 llama.cpp 量化的模型權重。這項改進降低了低硬體資源環境下的部署門檻，省去跨框架轉換的繁瑣流程，有助於邊緣端或本機推論應用的整合。",
+          "content": "GitHub 針對 Copilot App 推出本機沙箱（Local sandboxing）功能，透過限制對本機檔案、網路資源與認證資料的存取，降低意外指令帶來的潛在資安風險，讓開發者在本地執行工具時更有安全保障。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "huggingface-blog",
+          "sourceId": "github-changelog-copilot",
           "sources": [
-            "huggingface-blog"
+            "github-changelog-copilot"
           ],
-          "title": "Hugging Face Transformers 宣布原生支援 llama.cpp 量化模型",
-          "url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
+          "title": "GitHub Copilot App 推出本機沙箱功能以提升安全性",
+          "url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 發布 Worker Previews，為每個分支或 AI Agent 所產生的變更提供獨立的 URL、設定、狀態與可觀測性。這讓開發團隊與自動化 Coding Agent 能夠在不干擾生產環境的前提下平行驗證測試，解決了多 Agent 與多人協同開發時預覽環境互相覆蓋的問題。",
+          "content": "GitHub 宣佈 Copilot App 現已透過企業管理設定支援 OpenTelemetry (OTel)。這項更新讓開發者能更透明地掌握 Copilot 代理程式（Agents）的運作效能及其與模型、工具的互動狀況，有助於系統除錯與監控。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot App 正式支援 OpenTelemetry 觀測性框架",
+          "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+          "weightedScore": 100
+        },
+        {
+          "content": "官方宣佈為個人 AI 的 Private AI Compute 導入安全、伺服器端的記憶體機制，在確保隱私的同時，拓展個人化人工智慧應用的運算與資料處理能力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "Private AI Compute 推出具備安全伺服器端記憶體的個人化 AI 運算",
+          "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 技術團隊分享如何運用統計學與 Rust 語言，大幅削減基於 Pingora 架構的服務之記憶體用量。這篇文章深入探討了在大規模分散式系統中，透過數學方法優化記憶體足跡的實際工程經驗與效能調校。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -830,61 +829,9 @@
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "Cloudflare 推出 Worker Previews：為 AI Agent 與分支提供隔離預覽環境",
-          "url": "https://blog.cloudflare.com/worker-previews/",
+          "title": "透過數學與 Rust 演算法為 Cloudflare 節省 100TB 的 RAM",
+          "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/",
           "weightedScore": 50
-        },
-        {
-          "content": "Apache Solr 的原作者宣布推出全新開源搜尋引擎 Luxir。該專案採用 C++ 撰寫，強調極致效能，同時整合了全文檢索、向量搜尋、Faceting 與分析功能。這為尋求現代化、高輸送量且同時支援傳統與向量檢索架構的團隊提供了 Elasticsearch 和 Solr 之外的新選擇。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "lobsters-devops",
-          "sources": [
-            "lobsters-devops"
-          ],
-          "title": "Apache Solr 創作者發布全新高效能開源搜尋引擎 Luxir",
-          "url": "https://yonik.com/blog/introducing-luxir/",
-          "weightedScore": 100
-        },
-        {
-          "content": "OpenAI 針對 GPT-6 系列改進了 Prompt Caching 機制。新機制帶來更高的快取命中率、詳細的診斷資訊，並導入顯式斷點（explicit breakpoints）與控制項。這讓經常傳遞大量背景脈絡、系統提示詞或長篇代碼庫的開發者能有效降低 API 呼叫延遲與 token 成本。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sources": [
-            "openai-blog"
-          ],
-          "title": "OpenAI 升級 GPT-6 Prompt Caching：提高命中率並新增顯式斷點",
-          "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 宣布在所有方案的 Cache Rules 中全面支援 HTTP Vary 標頭。開發者現在可以標準化已知的協商標頭（如編碼、語系）、在微小差異至關重要時將標頭值直接透傳至源站，或在標頭變動過大時主動繞過快取，解決了邊緣快取長年以來難以精準處理內容協商的難題。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare Cache Rules 正式支援 HTTP Vary 標頭",
-          "url": "https://blog.cloudflare.com/vary-support/",
-          "weightedScore": 50
-        },
-        {
-          "content": "隨著 AI Coding 普及，程式碼產出速度大幅躍升，但傳統 CI/CD 流程反而成為交付的關鍵瓶頸。一線開發團隊分享了他們重構 CI 的實務架構，包括平行化測試分流、快取策略與智慧型測試選取等方法，以追上 AI 時代激增的 Pull Request 速度，為遭遇類似 CI 瓶頸的團隊提供解方。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "AI 輔助寫 code 造成 CI 堵塞？開發團隊重構 CI 管線打破交付瓶頸",
-          "url": "https://linear.app/now/ci-bottleneck-reworked",
-          "weightedScore": 308
         }
       ]
     }
@@ -2236,6 +2183,51 @@
         "hn"
       ],
       "url": "https://linear.app/now/ci-bottleneck-reworked"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-24T00:23:57.015Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-24T00:23:57.015Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-24T00:23:57.015Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-24T00:23:57.015Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-24T00:23:57.015Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math"
     }
   ]
 }
