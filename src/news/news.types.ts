@@ -12,7 +12,10 @@ export type NewsSourceType = 'hn-algolia' | 'reddit-weekly' | 'rss' | 'github-re
 /** 來源設定的領域列舉：`cross` 交由關鍵字歸類，其餘直接沿用（FR-006/027）。 */
 export type NewsDomain = 'ai' | 'devops' | 'frontend-backend' | 'cross';
 
-/** 候選輸出的領域列舉：`cross` 歸類後落定為三桶之一，輸出不留 `cross`（data-model 不變式）。 */
+/**
+ * 精選輸出的領域列舉（三桶）。候選集（`CandidateSet`）自 2026-09-25 起**可能含 `cross`**：關鍵字無命中但
+ * 高熱度的「未歸類」候選以 `cross` 進入策展，由 LLM 回填三桶之一；`CuratedNewsItem.domain` 仍恆為三桶。
+ */
 export type NewsDomain3 = 'ai' | 'devops' | 'frontend-backend';
 
 /** 來源層級：漏斗門檻與權重差異化（FR-016/019）。 */
@@ -56,8 +59,10 @@ export interface RawItem {
 /**
  * 新聞候選（正規化後的統一結構，FR-005）。
  *
- * `domain` 於管線中段可能仍為 `cross`（來源設定值）——經 `classifyCross` 後落定為三桶之一，
- * 或（無命中時）該候選被丟棄；故**輸出集合的不變式**是 `domain !== 'cross'`（data-model）。
+ * `domain` 於管線中段可能仍為 `cross`（來源設定值）——經 `classifyCross` 後落定為三桶之一；無命中時
+ * 該候選被丟棄，**或**（2026-09-25 起）有真實分數且達 `unresolvedMinScore` 者以 `cross` 保留為「未歸類
+ * 高熱度」候選進入策展（見 `funnel.ts`）。故候選集**不再保證** `domain !== 'cross'`；讀取端以
+ * `isUnresolved()` 判別，精選輸出的 `domain` 由策展層落定為三桶。
  * `weightedScore` 為漏斗加權後的排序輔助分（記憶體計算，非事實數據；憲章 VI）。
  */
 export interface NewsCandidate {

@@ -52,14 +52,28 @@ import { CurationItemView } from './curation.types';
  * `seenNews` 保留期改為 45 天後，候選池裡合法存在最多 30 天的舊文，需要讓 LLM 在「重要性相當」
  * 時偏好較新者。沿用絕對判準錨點的寫法，明示天齡不改變是否重大，避免 LLM 把新鮮度當硬規則
  * 刷掉重要舊聞、或反過來因為新就收錄不重要的內容。
+ *
+ * 「未歸類」候選與「同題」標記（2026-09-25 新增，使用者原則：高熱度但關鍵字歸類不到的候選不是雜訊，
+ * 而是晨報最核心的價值——「我不知道、但應該關注」的資訊）：候選集自此可含 `domain === 'cross'` 的
+ * 「未歸類高熱度」候選（見 `funnel.ts` `FunnelConfig.unresolvedMinScore`），投影時領域欄顯示「未歸類」；
+ * prompt 給的是**正向先驗**而非中性標記——明示這類候選可能是 LLM 訓練資料裡沒有的新事物、不得因名字
+ * 陌生就視為不重要，並要求選入時回填 `domain`（程式端 `curation-validate.ts` 以之落定領域，未回填預設
+ * `ai`）。另以零 LLM 的「同題群集」（`topic-cluster.ts`：同一罕見詞跨多來源多則出現）標記「🔥同題」，
+ * 讓 LLM 把「多方同時討論同一陌生名詞」讀成新崛起訊號。實例：2026-09-15 Jev 發布後 HN 1979 分的官方
+ * 公告被關鍵字閘門丟掉，其後四天進入候選池的 Jev 分析文（simonwillison、HN、reddit、lobsters）LLM
+ * 一則未選——單看一則陌生標題無從判斷輕重。標記文字刻意不含阿拉伯數字（錨定防線）。
  */
 export function buildCurationPrompt(items: readonly CurationItemView[]): string {
   const lines = items
     .map((it) => {
       const boardMark = it.onBoard ? '★在榜 ' : '';
+      const clusterMark = it.cluster
+        ? `🔥同題「${it.cluster.token}」×${it.cluster.count}（${it.cluster.sourceCount} 來源） `
+        : '';
+      const domainLabel = it.domain === 'cross' ? '未歸類' : it.domain;
       const scoreLabel = it.score !== null ? `分數 ${it.score}` : '分數 無';
       const ageLabel = it.ageDays !== null ? `${it.ageDays} 天前` : '日期不明';
-      return `[${it.ref}] ${boardMark}(${it.domain}/tier${it.tier}/${scoreLabel}/${it.sourceCount} 來源/${ageLabel}) ${it.title}${
+      return `[${it.ref}] ${boardMark}${clusterMark}(${domainLabel}/tier${it.tier}/${scoreLabel}/${it.sourceCount} 來源/${ageLabel}) ${it.title}${
         it.summaryExcerpt ? `\n    摘要：${it.summaryExcerpt}` : ''
       }`;
     })
@@ -104,6 +118,19 @@ export function buildCurationPrompt(items: readonly CurationItemView[]): string 
 是否重大——只要命中上述判準，即使發表已數週仍應收錄，不得只因較舊就刷掉；也不得只因較新
 就收錄不重要的內容。
 
+「未歸類」候選：領域欄顯示「未歸類」者，來自 Hacker News 等跨領域來源、社群熱度極高、但關鍵字歸類
+無法辨識其領域。這正是本晨報最想捕捉的訊號——「我還不認識、但應該關注」的新事物：新公司或新團隊
+首次發布的模型、工具、架構或概念，名字本來就不會出現在任何關鍵字表裡，你的訓練資料也可能沒有它。
+請這樣處理：
+- 不要因為名字陌生、或你不認識它就視為不重要；只要標題（與摘要）暗示新模型／新工具／新框架／新概念
+  的發布、開源實作、評測或重大技術討論，就依 (1) 或 (2) 收錄，並在該則回應多帶「domain」（值為
+  ai、devops、frontend-backend 三者之一，依內容判斷；與 AI／機器學習模型有關者填 ai）。
+- 若明顯與軟體開發無關（政治、社會、消費性硬體、趣聞、一般商業新聞），一律不選——熱度再高也不選。
+「同題」標記：候選前綴「🔥同題「X」×N（M 來源）」表示同一個罕見詞當日同時出現在 N 則不同候選、
+M 個不同來源的標題裡。多個來源同時討論同一個陌生名詞，通常代表一個正在崛起的新模型、新工具或新事件
+——請把它視為重要性的正面訊號（比單一高分更強），在同題候選中優先收錄最一手的那則（官方發布 >
+深度分析 > 二手報導），其餘依 (a) 視為同一件事的重複而略過，或確有不同面向時另行收錄。
+
 \`officialPicks\`（【官方發布】與【影響開發者的外部事件】）的事實紀錄不該被 \`communityPicks\`
 （【技術深度內容】）擠掉名額——社群討論會隨話題退燒而失去參考價值，官方發布與外部事件是穩定的
 事實紀錄。因此輸出時把兩者分開放進兩個陣列（見下方輸出規則），程式端會保證 \`officialPicks\`
@@ -131,16 +158,20 @@ export function buildCurationPrompt(items: readonly CurationItemView[]): string 
 候選清單（\`[ref]\` 為索引，回應時只需回 ref，不要覆述標題）：
 ${lines || '（無候選）'}
 
-候選標記說明：「★在榜」表示該候選提到目前榜上的 repo，可作為重要性判斷的正面提示（非唯一依據）。
+候選標記說明：「★在榜」表示該候選提到目前榜上的 repo，可作為重要性判斷的正面提示（非唯一依據）；
+領域欄「未歸類」與前綴「🔥同題」的意義見上文。
 
 輸出規則：
 - 只回傳單一 JSON 物件，分成兩個陣列：
-  {"officialPicks":[{"ref":<候選索引>,"title":"<繁中標題,≤70字>","content":"<繁中內容,≤500字>"}],
-   "communityPicks":[{"ref":<候選索引>,"title":"<繁中標題,≤70字>","content":"<繁中內容,≤500字>"}]}
+  {"officialPicks":[{"ref":<候選索引>,"title":"<繁中標題,≤70字>","content":"<繁中內容,≤500字>","domain":"<僅「未歸類」候選必填：ai|devops|frontend-backend>"}],
+   "communityPicks":[{"ref":<候選索引>,"title":"<繁中標題,≤70字>","content":"<繁中內容,≤500字>","domain":"<僅「未歸類」候選必填>"}]}
 - 陣列歸屬：(1)【官方發布】與 (3)【影響開發者的外部事件】放進 \`officialPicks\`；(2)【技術深度內容】
   放進 \`communityPicks\`。
 - 只能有 \`officialPicks\` 與 \`communityPicks\` 這兩個鍵，兩個鍵都必須存在，不得新增其他鍵
   （例如 \`externalPicks\`）；沒有的類別回空陣列 \`[]\`。
+- 上一條限制的是頂層鍵。每則物件的鍵為 "ref"、"title"、"content"；領域欄為「未歸類」的候選若被選入，
+  該則物件必須多帶 "domain" 鍵（值為 ai、devops、frontend-backend 三者之一），其餘候選不需要 "domain"、
+  帶了也會被忽略。
 - 各陣列內部的順序即你判斷的重要性由高到低排序；兩陣列合計最多 ${MAX_ITEMS} 則。
 - 不得回傳連結、分數、星數、名次，也不得回傳候選清單中不存在的 ref。
 - 候選不足或無合適候選時，該陣列可回傳較少則數甚至空陣列，不得為了湊數選入不重要的內容。

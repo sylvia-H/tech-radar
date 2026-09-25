@@ -4,14 +4,14 @@ import { bestEffortFailureAlert } from '../discord/best-effort-alert';
 import { StateStore } from '../state/state.store';
 import { BoardState, SeenNewsEntry } from '../state/state.schema';
 import { NEWS_SOURCES } from '../config/news-sources';
-import { NewsCandidate, NewsSource, RawItem } from './news.types';
+import { NewsCandidate, NewsDomain3, NewsSource, RawItem } from './news.types';
 import { NewsHttp } from './news-http';
 import { FetcherContext, FetchResult, FETCHERS, NewsRssParser } from './fetchers/fetcher';
 import { normalizeTargetUrl } from './url-normalize';
 import { dedupByTitle, dedupByUrl } from './dedup';
 import { TITLE_JACCARD_THRESHOLD } from './title-similarity';
 import { classifyCross } from './news-classify';
-import { DEFAULT_FUNNEL_CONFIG, isFreshEnough, runFunnel } from './funnel';
+import { DEFAULT_FUNNEL_CONFIG, isFreshEnough, isUnresolved, runFunnel } from './funnel';
 import { excludeSeen, pruneSeenNews } from './seen-news';
 import { formatCandidateSet } from './news-log';
 import { isSocialPlatformUrl } from './social-hosts';
@@ -19,8 +19,8 @@ import { isSocialPlatformUrl } from './social-hosts';
 /**
  * 階段 A 編排器（@Injectable）：載入設定 → 逐源隔離抓取＋正規化 → 社群平台連結過濾
  * （2026-09-12 起，於 URL 去重前）→ URL 去重 → 新鮮度視窗
- * （無分數者，2026-09-12 起提前至標題去重前）→ 標題 Jaccard 去重 → `cross` 歸類 → 排除 seen →
- * 漏斗過濾/加權/排序/收斂 → 候選集＋觀測 log。
+ * （無分數者，2026-09-12 起提前至標題去重前）→ 標題 Jaccard 去重 → `cross` 歸類（無命中但高熱度者
+ * 以 `cross` 保留，2026-09-25 起）→ 排除 seen → 漏斗過濾/加權/排序/收斂 → 候選集＋觀測 log。
  * （排除 seen 於收斂前，避免已見項佔用 `convergeMax` 名額而排擠新鮮候選。）
  *
  * **邊界（本 Feature）**：只產出候選供觀測，**不呼叫 LLM、不推播、不寫回 `seenNews`**
@@ -83,7 +83,7 @@ export class NewsIngestService {
     this.logger.log(`[漏斗 A] 標題去重後：${cands.length} 則（-${beforeTitleDedup - cands.length}）`);
 
     const beforeDomainResolve = cands.length;
-    cands = this.resolveDomains(cands);
+    cands = this.resolveDomains(cands, sources);
     this.logger.log(`[漏斗 A] 領域歸類後：${cands.length} 則（-${beforeDomainResolve - cands.length}）`);
 
     let board = boardRepoNames;
@@ -102,8 +102,14 @@ export class NewsIngestService {
     this.logger.log(`[漏斗 A] 排除已見後：${cands.length} 則（-${beforeExcluded - cands.length}）`);
 
     const beforeFunnel = cands.length;
+    const unresolvedBeforeFunnel = cands.filter(isUnresolved).length;
     cands = runFunnel(cands, board, DEFAULT_FUNNEL_CONFIG, now);
     this.logger.log(`[漏斗 A] 漏斗後最終：${cands.length} 則（-${beforeFunnel - cands.length}）`);
+    const unresolvedAdmitted = cands.filter(isUnresolved).length;
+    this.logger.log(
+      `[漏斗 A] 未歸類高熱度入池：${unresolvedAdmitted} 則（名額 ${DEFAULT_FUNNEL_CONFIG.unresolvedMaxCount}，` +
+        `名額外剔除 ${unresolvedBeforeFunnel - unresolvedAdmitted} 則）`,
+    );
 
     this.logger.log('\n' + formatCandidateSet(cands));
     return cands;
@@ -141,22 +147,48 @@ export class NewsIngestService {
   }
 
   /**
-   * `cross` 來源以關鍵字歸類落定領域（FR-006）：無命中 → 丟（離題，寧缺勿濫，與榜單同精神）；
-   * 非 `cross` 來源直接沿用設定 `domain`、不重新歸類。
+   * `cross` 來源以關鍵字歸類落定領域（FR-006）；非 `cross` 來源直接沿用設定 `domain`、不重新歸類。
+   * 關鍵字**無命中**時依序（2026-09-25 起，此前一律丟棄）：
+   * (a) 該候選已在 URL 去重時與非 `cross` 來源合併（`sources` 含之）→ 沿用該來源的設定領域——代表項
+   *     是高分 HN、標題沒有關鍵字，但另一來源本身已表明領域，原本會連同一手來源一起被丟；
+   * (b) 有真實社群分數且 ≥ `unresolvedMinScore` → 以 `domain: 'cross'` **保留**為「未歸類高熱度」候選，
+   *     交策展 LLM 判定領域與重要性（每日名額由 `runFunnel` 把關，見 `FunnelConfig.unresolvedMinScore`）；
+   * (c) 其餘 → 丟（離題，寧缺勿濫）。
+   * 關鍵字表只負責正向命中、不再有否決高分項目的權力：陌生的新名字正是晨報最想捕捉的訊號。
    */
-  private resolveDomains(cands: readonly NewsCandidate[]): NewsCandidate[] {
+  private resolveDomains(cands: readonly NewsCandidate[], sources: readonly NewsSource[]): NewsCandidate[] {
+    const sourceDomain = new Map(sources.map((s) => [s.id, s.domain] as const));
+    const minScore = DEFAULT_FUNNEL_CONFIG.unresolvedMinScore;
     const out: NewsCandidate[] = [];
+    let inherited = 0;
+    let unresolved = 0;
     for (const c of cands) {
       if (c.domain !== 'cross') {
         out.push(c);
         continue;
       }
       const domain = classifyCross(`${c.title} ${c.summary ?? ''}`);
-      if (domain === null) {
+      if (domain !== null) {
+        out.push({ ...c, domain });
         continue;
       }
-      out.push({ ...c, domain });
+      const merged = c.sources
+        .map((id) => sourceDomain.get(id))
+        .find((d): d is NewsDomain3 => d !== undefined && d !== 'cross');
+      if (merged !== undefined) {
+        out.push({ ...c, domain: merged });
+        inherited++;
+        continue;
+      }
+      if (c.score !== null && c.score >= minScore) {
+        out.push(c);
+        unresolved++;
+      }
     }
+    this.logger.log(
+      `[漏斗 A] 未歸類高熱度保留：${unresolved} 則（關鍵字無命中、分數 ≥${minScore}，交策展 LLM 判定領域）；` +
+        `沿用合併來源領域：${inherited} 則`,
+    );
     return out;
   }
 

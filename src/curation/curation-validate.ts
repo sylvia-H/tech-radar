@@ -7,6 +7,8 @@ interface ResolvedPick {
   ref: number;
   title: string;
   content: string;
+  /** LLM 回填的領域（僅「未歸類」候選需要，2026-09-25 新增；其餘候選帶了也忽略）。 */
+  domain?: NewsDomain3;
   candidate: NewsCandidate;
 }
 
@@ -29,9 +31,17 @@ export interface CurationDrop {
   title?: string;
 }
 
-/** F4 `CandidateSet` 輸出不變式：`domain !== 'cross'`（I1 決策 B，信任已驗收上游契約、不另加執行期防衛過濾）。 */
+/**
+ * 領域落定：候選為「未歸類」（`domain === 'cross'`，2026-09-25 起候選集可含，見 `funnel.ts`）時採 LLM
+ * 回填的 `domain`，未回填則預設 `ai`（未歸類通道的設計目標是 AI 側的新崛起事物，且 AI 不受配額上限、
+ * 不會因預設值誤佔非 AI 名額）；其餘候選沿用程式歸類的領域，LLM 帶的 `domain` 一律忽略（憲章 VI：
+ * 程式已知的事實不交 LLM 覆寫）。
+ */
 function domainOf(it: ResolvedPick): NewsDomain3 {
-  return it.candidate.domain as NewsDomain3;
+  if (it.candidate.domain === 'cross') {
+    return it.domain ?? 'ai';
+  }
+  return it.candidate.domain;
 }
 
 function toDrop(stage: CurationDropStage, it: ResolvedPick): CurationDrop {
@@ -67,9 +77,9 @@ function reportRemoved(
  *     (2) 技術深度內容（先前稱社群熱度）；合併順序不變）
  * (1) 剔除幻覺項（`ref` 越界／非整數）＋重複 `ref` 去重（保留第一次出現，即較高重要性者）
  * (2) 非 AI 候選池夠大時，夾非 AI 同來源 ≤2（`clampSourceDiversity`，2026-08-04 新增）
- * (3) 依領域優先序夾非 AI ≤`effectiveNonAiCap`（DevOps 優先，AI 不受限；預設 ≤3，AI 則數不足 7
- *     時放寬至 `10 − AI 則數`，2026-08-04 新增，憲章 v1.6.0）
- * (4) 依合併後順序（官方優先、各組內保留重要性序）截總數 ≤10——官方候選若本身已達 10 則，
+ * (3) 依領域優先序夾非 AI ≤`effectiveNonAiCap`（DevOps 優先，AI 不受限；預設 ≤5，AI 則數不足 10
+ *     時放寬至 `15 − AI 則數`，2026-08-04 新增，憲章 v1.6.0；2026-09-25 憲章 v1.7.0 由 3／7／10 調整）
+ * (4) 依合併後順序（官方優先、各組內保留重要性序）截總數 ≤15——官方候選若本身已達 15 則，
  *     社群熱度會在這步被完全截掉，這正是結構性保證的體現
  * (5) `title`/`content` 收斂至 ≤70/≤500 code points
  *
@@ -79,12 +89,17 @@ function reportRemoved(
  * `onDrop`（選填，2026-09-14 新增）：每剔除一則即回呼一次並標明階段。此前 (1)～(4) 的剔除全無
  * 訊號，實測連兩日「LLM 選 N 則 → 驗證後 N−1 則」卻無從判斷是幻覺、重複還是配額夾掉；呼叫端
  * （`NewsCurationService`）彙整成一行 warn。本函式維持純函式，不直接持有 logger。
+ *
+ * `onDomainDefaulted`（選填，2026-09-25 新增）：「未歸類」候選被選入但 LLM 未回填合法 `domain`、
+ * 程式以 `ai` 補上時回呼一次（`domainOf`），供呼叫端 warn——prompt 已要求回填，靜默補值會讓 prompt
+ * 失效無感。
  */
 export function validateCuration(
   officialPicks: readonly CurationLlmPick[],
   communityPicks: readonly CurationLlmPick[],
   candidates: readonly NewsCandidate[],
   onDrop?: (drop: CurationDrop) => void,
+  onDomainDefaulted?: (ref: number, title: string) => void,
 ): CuratedNewsItem[] {
   const picks = [...officialPicks, ...communityPicks];
   const seenRefs = new Set<number>();
@@ -99,7 +114,11 @@ export function validateCuration(
       continue;
     }
     seenRefs.add(pick.ref);
-    resolved.push({ ref: pick.ref, title: pick.title, content: pick.content, candidate: candidates[pick.ref] });
+    const candidate = candidates[pick.ref];
+    if (candidate.domain === 'cross' && pick.domain === undefined) {
+      onDomainDefaulted?.(pick.ref, pick.title);
+    }
+    resolved.push({ ref: pick.ref, title: pick.title, content: pick.content, domain: pick.domain, candidate });
   }
 
   const nonAiPoolSize = candidates.filter((c) => !isAi(c.domain as NewsDomain3)).length;

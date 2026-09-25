@@ -43,6 +43,20 @@ export interface FunnelConfig {
    * 被視窗丟掉。
    */
   freshnessWindowDays: number;
+  /**
+   * 「未歸類高熱度」通道（2026-09-25 新增）：`cross` 來源（HN、Lobste.rs programming）經關鍵字歸類
+   * **無命中**的候選，原本一律視為離題丟棄；但有真實社群分數且分數極高者，正是「還不認識、卻該關注」
+   * 的新事物——新公司／新團隊首次發布的模型、工具、概念，名字本來就不會在任何關鍵字表裡（實例：
+   * 2026-09-15 TypeSafe「Introducing System One Models and Jev」HN 1979 分，四天視窗內每日被抓到、每日
+   * 被歸類丟棄，晨報全程無感；同期 MiMo v2.6 1126 分、OpenJev 721 分、Grok 4.7 607 分同樣被丟）。
+   * 關鍵字自此只負責**正向命中**、不再有否決權：`score >= unresolvedMinScore` 者以 `domain: 'cross'`
+   * 保留入池，交策展 LLM 判定領域與重要性（prompt 明示這類候選是「可能不認識的新事物」，回應須回填
+   * `domain`）。每日至多 `unresolvedMaxCount` 則（依 `score` 降冪取前 N）：重播 2026-09-16 的 HN top 100，
+   * ≥300 分的未歸類候選有 53 則、多為政治／消費硬體／趣聞，不設名額會把 Tier 2／3 整批擠出 `convergeMax`。
+   * 無分數的 `cross` 候選（lobsters-programming）沒有熱度可判，仍照舊丟棄。
+   */
+  unresolvedMinScore: number;
+  unresolvedMaxCount: number;
 }
 
 /** 起始設定（dev-guide §4.4：HN points>100、Lobste.rs>20；Tier 3 更高門檻更低權重）。 */
@@ -53,9 +67,13 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
   tierWeight: { 1: 1, 2: 1, 3: 0.5 },
   nullScoreBaseline: 100,
   // 2026-09-14 由 50 → 60：新增 3 個 AI 無分數來源（+9 席），不提高上限會把 Tier 3 與低分 HN 整批擠掉。
-  convergeMax: 60,
+  // 2026-09-25 由 60 → 70：未歸類高熱度通道最多 +10 席（皆有真實分數、排在所有無分數候選之前），不提高
+  // 上限會把 Tier 3 與尾端 Tier 2 整批擠掉。
+  convergeMax: 70,
   maxNullScorePerSource: 3,
   freshnessWindowDays: 30,
+  unresolvedMinScore: 300,
+  unresolvedMaxCount: 10,
 };
 
 /**
@@ -87,6 +105,9 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
  *     來源（`/2026/Aug/…` 排在 `/2026/Sep/…` 前）會讓舊文長期壓過新文，slug 隨機的來源則純屬
  *     隨機。改為組內最新者先發，跨來源的公平輪流不受影響，也不會重新引入 (a) 移除的跨來源發文
  *     頻率偏誤（只在同來源內比新舊，不同來源之間仍以輪次公平分配）。
+ * 未歸類名額（2026-09-25）：`domain === 'cross'` 者須有分數且 ≥ `unresolvedMinScore`，並只取分數最高的
+ * 前 `unresolvedMaxCount` 則、其餘剔除（見 `FunnelConfig.unresolvedMinScore`）；此步在 `convergeMax` 截斷
+ * 之前生效，ingest 端已先以同門檻篩過一次、此處為結構性把關。
  * 收斂：取前 `convergeMax`；不足照實輸出（FR-021）。
  */
 export function runFunnel(
@@ -107,7 +128,36 @@ export function runFunnel(
   // 剔除，不只是排序墊底——否則候選稀少、convergeMax 有餘裕時，超額候選仍會原樣存活。
   const capped = weighted.filter((c) => c.score !== null || interleaveRank.has(c.normalizedUrl));
   capped.sort((a, b) => compareWithInterleave(a, b, interleaveRank));
-  return capped.slice(0, cfg.convergeMax);
+  const unresolvedKept = topUnresolvedUrls(capped, cfg);
+  const admitted = capped.filter((c) => !isUnresolved(c) || unresolvedKept.has(c.normalizedUrl));
+  return admitted.slice(0, cfg.convergeMax);
+}
+
+/** 是否為「未歸類」候選：`cross` 來源經關鍵字歸類無命中、以高熱度保留者（2026-09-25）。 */
+export function isUnresolved(c: NewsCandidate): boolean {
+  return c.domain === 'cross';
+}
+
+/** 未歸類候選是否達入池門檻：有真實社群分數且 ≥ `minScore`（無分數者無熱度可判，不入池）。 */
+export function qualifiesAsUnresolved(c: NewsCandidate, minScore: number): boolean {
+  return isUnresolved(c) && c.score !== null && c.score >= minScore;
+}
+
+/**
+ * 未歸類候選的每日名額：達門檻者依 `score` 降冪（同分落回 `normalizedUrl` 升冪，全序）取前
+ * `unresolvedMaxCount` 則，回傳其 `normalizedUrl` 集合；未達門檻或超出名額者不在集合內、由呼叫端剔除。
+ */
+function topUnresolvedUrls(cands: readonly NewsCandidate[], cfg: FunnelConfig): Set<string> {
+  const pool = cands.filter((c) => qualifiesAsUnresolved(c, cfg.unresolvedMinScore));
+  pool.sort((a, b) => {
+    const sa = a.score ?? 0;
+    const sb = b.score ?? 0;
+    if (sb !== sa) {
+      return sb - sa;
+    }
+    return a.normalizedUrl < b.normalizedUrl ? -1 : a.normalizedUrl > b.normalizedUrl ? 1 : 0;
+  });
+  return new Set(pool.slice(0, cfg.unresolvedMaxCount).map((c) => c.normalizedUrl));
 }
 
 /**

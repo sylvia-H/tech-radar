@@ -1,5 +1,5 @@
 import { NewsCandidate } from './news.types';
-import { DEFAULT_FUNNEL_CONFIG, isFreshEnough, runFunnel } from './funnel';
+import { DEFAULT_FUNNEL_CONFIG, isFreshEnough, isUnresolved, qualifiesAsUnresolved, runFunnel } from './funnel';
 
 const NOW = new Date('2026-08-04T00:00:00Z');
 const DAY_MS = 86_400_000;
@@ -129,12 +129,12 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
   });
 
   it('相同輸入多次執行成員與排序 100% 一致 ＋ 收斂取前 N（SC-006/011，各來源不同、不觸發同來源上限）', () => {
-    const many = Array.from({ length: 65 }, (_, i) =>
+    const many = Array.from({ length: 75 }, (_, i) =>
       cand({ normalizedUrl: `u${i}`, sourceId: `s${i}`, sources: [`s${i}`], tier: 2, score: null }),
     );
     const r1 = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
     const r2 = runFunnel([...many].reverse(), EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
-    expect(r1).toHaveLength(DEFAULT_FUNNEL_CONFIG.convergeMax); // convergeMax=60（2026-09-14 由 50 調高）
+    expect(r1).toHaveLength(DEFAULT_FUNNEL_CONFIG.convergeMax); // convergeMax=70（2026-09-25 由 60 調高）
     expect(r1.map((o) => o.normalizedUrl)).toEqual(r2.map((o) => o.normalizedUrl));
   });
 
@@ -173,6 +173,50 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
     for (const sourceId of sourceIds) {
       expect(out.some((o) => o.sourceId === sourceId)).toBe(true); // 每個來源都至少 1 則，含字母序最後的 z-src
     }
+  });
+});
+
+describe('runFunnel — 未歸類高熱度名額（2026-09-25，unresolvedMinScore=300／unresolvedMaxCount=10）', () => {
+  it('預設值：門檻 300、名額 10、convergeMax 70', () => {
+    expect(DEFAULT_FUNNEL_CONFIG.unresolvedMinScore).toBe(300);
+    expect(DEFAULT_FUNNEL_CONFIG.unresolvedMaxCount).toBe(10);
+    expect(DEFAULT_FUNNEL_CONFIG.convergeMax).toBe(70);
+  });
+
+  it('cross 候選達門檻者保留（domain 仍為 cross、排在無分數候選之前）；低於門檻或無分數者剔除', () => {
+    const jev = cand({ normalizedUrl: 'jev', domain: 'cross', score: 1979, sourceId: 'hn', sources: ['hn'] });
+    const low = cand({ normalizedUrl: 'low', domain: 'cross', score: 250, sourceId: 'hn', sources: ['hn'] });
+    const noScore = cand({ normalizedUrl: 'lobsters', domain: 'cross', score: null, sourceId: 'lobsters-programming', sources: ['lobsters-programming'] });
+    const official = cand({ normalizedUrl: 'official', domain: 'ai', tier: 2, score: null, sourceId: 'openai-blog', sources: ['openai-blog'] });
+
+    const out = runFunnel([official, noScore, low, jev], EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
+
+    expect(out.map((o) => o.normalizedUrl)).toEqual(['jev', 'official']);
+    expect(out[0].domain).toBe('cross');
+    expect(isUnresolved(out[0])).toBe(true);
+    expect(isUnresolved(out[1])).toBe(false);
+  });
+
+  it('未歸類候選每日至多 unresolvedMaxCount 則：依分數降冪取前 10、其餘剔除；已歸類候選不受影響', () => {
+    const unresolved = Array.from({ length: 12 }, (_, i) =>
+      cand({ normalizedUrl: `x${String(i).padStart(2, '0')}`, domain: 'cross', score: 300 + i, sourceId: 'hn', sources: ['hn'] }),
+    );
+    const classified = Array.from({ length: 5 }, (_, i) =>
+      cand({ normalizedUrl: `ai${i}`, domain: 'ai', score: 120, sourceId: 'hn', sources: ['hn'] }),
+    );
+
+    const out = runFunnel([...unresolved, ...classified], EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
+
+    const keptUnresolved = out.filter(isUnresolved).map((o) => o.score);
+    expect(keptUnresolved).toEqual([311, 310, 309, 308, 307, 306, 305, 304, 303, 302]);
+    expect(out.filter((o) => !isUnresolved(o))).toHaveLength(5);
+  });
+
+  it('qualifiesAsUnresolved：cross 且有分數且 ≥ 門檻才成立', () => {
+    expect(qualifiesAsUnresolved(cand({ domain: 'cross', score: 300 }), 300)).toBe(true);
+    expect(qualifiesAsUnresolved(cand({ domain: 'cross', score: 299 }), 300)).toBe(false);
+    expect(qualifiesAsUnresolved(cand({ domain: 'cross', score: null }), 300)).toBe(false);
+    expect(qualifiesAsUnresolved(cand({ domain: 'ai', score: 5000 }), 300)).toBe(false);
   });
 });
 

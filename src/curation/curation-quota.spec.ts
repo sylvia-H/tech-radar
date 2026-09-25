@@ -22,9 +22,9 @@ describe('isAi', () => {
 });
 
 describe('常數', () => {
-  it('MAX_ITEMS=10、MAX_NON_AI=3（憲章 III）', () => {
-    expect(MAX_ITEMS).toBe(10);
-    expect(MAX_NON_AI).toBe(3);
+  it('MAX_ITEMS=15、MAX_NON_AI=5（憲章 III，2026-09-25 v1.7.0 由 10／3 調整）', () => {
+    expect(MAX_ITEMS).toBe(15);
+    expect(MAX_NON_AI).toBe(5);
   });
 });
 
@@ -44,7 +44,7 @@ describe('clampNonAi', () => {
     expect(clampNonAi(items, domainOf)).toEqual(items);
   });
 
-  it('依領域優先序（DevOps 優先）保留前 3、其餘剔除，AI 不受影響（FR-004/010）', () => {
+  it('依領域優先序（DevOps 優先）保留前 max（此處 3）、其餘剔除，AI 不受影響（FR-004/010）', () => {
     const items: Item[] = [
       { id: 'ai1', domain: 'ai' },
       { id: 'fe1', domain: 'frontend-backend' },
@@ -52,19 +52,19 @@ describe('clampNonAi', () => {
       { id: 'fe2', domain: 'frontend-backend' },
       { id: 'devops2', domain: 'devops' },
     ];
-    const out = clampNonAi(items, domainOf);
+    const out = clampNonAi(items, domainOf, 3);
     // DevOps 優先 → devops1/devops2 保留，第 3 名額給 frontend-backend 依序取 fe1；fe2 剔除（3 名額已滿）
     expect(out.map((it) => it.id)).toEqual(['ai1', 'fe1', 'devops1', 'devops2']);
   });
 
-  it('devops 本身超過上限時，同領域內依原順序（重要性序）只保留前 3', () => {
+  it('devops 本身超過上限時，同領域內依原順序（重要性序）只保留前 max（此處 3）', () => {
     const items: Item[] = [
       { id: 'devops1', domain: 'devops' },
       { id: 'devops2', domain: 'devops' },
       { id: 'devops3', domain: 'devops' },
       { id: 'devops4', domain: 'devops' },
     ];
-    const out = clampNonAi(items, domainOf);
+    const out = clampNonAi(items, domainOf, 3);
     expect(out.map((it) => it.id)).toEqual(['devops1', 'devops2', 'devops3']);
   });
 
@@ -76,26 +76,26 @@ describe('clampNonAi', () => {
       { id: 'fe2', domain: 'frontend-backend' },
       { id: 'fe3', domain: 'frontend-backend' },
     ];
-    const out = clampNonAi(items, domainOf);
+    const out = clampNonAi(items, domainOf, 3);
     // 非 AI 有 fe1/devops1/fe2/fe3 四則超過 3 → devops1 優先、frontend-backend 依序取 2 則(fe1/fe2)
     expect(out.map((it) => it.id)).toEqual(['fe1', 'ai1', 'devops1', 'fe2']);
   });
 });
 
 describe('effectiveNonAiCap（2026-08-04 新增，憲章 v1.6.0）', () => {
-  it('AI ≥7 則時等同固定 MAX_NON_AI(3)', () => {
-    expect(effectiveNonAiCap(7)).toBe(3);
-    expect(effectiveNonAiCap(10)).toBe(3);
+  it('AI ≥10 則時等同固定 MAX_NON_AI(5)（2026-09-25 v1.7.0：由 7／3 調整）', () => {
+    expect(effectiveNonAiCap(10)).toBe(5);
+    expect(effectiveNonAiCap(15)).toBe(5);
   });
 
-  it('AI <7 則時放寬至 10−AI 則數，把未用滿的名額讓給非 AI', () => {
-    expect(effectiveNonAiCap(4)).toBe(6);
-    expect(effectiveNonAiCap(0)).toBe(10);
+  it('AI <10 則時放寬至 15−AI 則數，把未用滿的名額讓給非 AI', () => {
+    expect(effectiveNonAiCap(4)).toBe(11);
+    expect(effectiveNonAiCap(0)).toBe(15);
   });
 
-  it('AI 剛好等於 7 為邊界：7 → 3（等同靜態上限），6 → 4（開始放寬）', () => {
-    expect(effectiveNonAiCap(7)).toBe(3);
-    expect(effectiveNonAiCap(6)).toBe(4);
+  it('AI 剛好等於 10 為邊界：10 → 5（等同靜態上限），9 → 6（開始放寬）', () => {
+    expect(effectiveNonAiCap(10)).toBe(5);
+    expect(effectiveNonAiCap(9)).toBe(6);
   });
 
   it('搭配 clampNonAi 使用：AI 較少時非 AI 可保留超過靜態 3 則', () => {
@@ -107,8 +107,8 @@ describe('effectiveNonAiCap（2026-08-04 新增，憲章 v1.6.0）', () => {
       { id: 'devops4', domain: 'devops' },
     ];
     const aiCount = items.filter((it) => isAi(domainOf(it))).length; // 1
-    const out = clampNonAi(items, domainOf, effectiveNonAiCap(aiCount)); // cap = max(3, 10-1) = 9
-    expect(out).toEqual(items); // 非 AI 只有 4 則、遠低於 9，全數保留
+    const out = clampNonAi(items, domainOf, effectiveNonAiCap(aiCount)); // cap = max(5, 15-1) = 14
+    expect(out).toEqual(items); // 非 AI 只有 4 則、遠低於 14，全數保留
   });
 });
 
@@ -125,8 +125,8 @@ describe('clampSourceDiversity', () => {
       { id: 'cf2', domain: 'devops', sources: ['cloudflare-blog'] },
       { id: 'cf3', domain: 'devops', sources: ['cloudflare-blog'] },
     ];
-    // nonAiPoolSize=3 = MAX_NON_AI，未超過門檻
-    expect(clampSourceDiversity(items, domainOf, sourcesOf, 3)).toEqual(items);
+    // nonAiPoolSize=5 = MAX_NON_AI，未超過門檻
+    expect(clampSourceDiversity(items, domainOf, sourcesOf, 5)).toEqual(items);
   });
 
   it('非 AI 候選池 >MAX_NON_AI 時生效，同一來源累計達上限即剔除多餘者、不遞補', () => {
@@ -135,8 +135,8 @@ describe('clampSourceDiversity', () => {
       { id: 'cf2', domain: 'devops', sources: ['cloudflare-blog'] },
       { id: 'cf3', domain: 'devops', sources: ['cloudflare-blog'] },
     ];
-    // nonAiPoolSize=4 > MAX_NON_AI(3) → 生效，同來源上限 2
-    const out = clampSourceDiversity(items, domainOf, sourcesOf, 4);
+    // nonAiPoolSize=6 > MAX_NON_AI(5) → 生效，同來源上限 2
+    const out = clampSourceDiversity(items, domainOf, sourcesOf, 6);
     expect(out.map((it) => it.id)).toEqual(['cf1', 'cf2']);
   });
 
@@ -147,7 +147,7 @@ describe('clampSourceDiversity', () => {
       { id: 'cf2', domain: 'devops', sources: ['cloudflare-blog'] },
       { id: 'cf3', domain: 'devops', sources: ['cloudflare-blog'] },
     ];
-    const out = clampSourceDiversity(items, domainOf, sourcesOf, 4);
+    const out = clampSourceDiversity(items, domainOf, sourcesOf, 6);
     expect(out.map((it) => it.id)).toEqual(['ai1', 'cf1', 'cf2']);
   });
 
@@ -159,7 +159,7 @@ describe('clampSourceDiversity', () => {
       { id: 'cf3', domain: 'devops', sources: ['cloudflare-blog'] },
       { id: 'cncf2', domain: 'devops', sources: ['cncf-blog'] },
     ];
-    const out = clampSourceDiversity(items, domainOf, sourcesOf, 5);
+    const out = clampSourceDiversity(items, domainOf, sourcesOf, 6);
     expect(out.map((it) => it.id)).toEqual(['cf1', 'cncf1', 'cf2', 'cncf2']);
   });
 });

@@ -57,30 +57,40 @@ describe('fallbackDigest（US2 降級路徑）', () => {
     expect([...digest.items[0].title].length).toBe(80);
   });
 
-  it('套同一配額：非 AI 合計 ≤3、總數 ≤10（FR-004/012）', () => {
+  it('套同一配額：非 AI 合計 ≤5、總數 ≤15（FR-004/012；2026-09-25 v1.7.0 由 3／10 調整）', () => {
     const candidates: NewsCandidate[] = [
-      ...Array.from({ length: 8 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai', weightedScore: 100 - i })),
-      makeCandidate({ originalUrl: 'https://devops1.com', domain: 'devops', weightedScore: 50 }),
-      makeCandidate({ originalUrl: 'https://devops2.com', domain: 'devops', weightedScore: 40 }),
-      makeCandidate({ originalUrl: 'https://devops3.com', domain: 'devops', weightedScore: 30 }),
-      makeCandidate({ originalUrl: 'https://devops4.com', domain: 'devops', weightedScore: 20 }),
+      ...Array.from({ length: 12 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai', weightedScore: 100 - i })),
+      ...Array.from({ length: 6 }, (_, i) => makeCandidate({ originalUrl: `https://devops${i}.com`, domain: 'devops', weightedScore: 50 - i })),
     ];
 
     const digest = fallbackDigest(candidates);
 
-    expect(digest.items.length).toBeLessThanOrEqual(10);
+    expect(digest.items.length).toBeLessThanOrEqual(15);
     const nonAiCount = digest.items.filter((it) => it.domain !== 'ai').length;
-    expect(nonAiCount).toBeLessThanOrEqual(3);
+    expect(nonAiCount).toBeLessThanOrEqual(5);
   });
 
-  it('AI 候選不足 7 則時，非 AI 上限依 effectiveNonAiCap 動態放寬（2026-08-04 新增，憲章 v1.6.0）', () => {
+  it('「未歸類」候選（domain cross）即使加權分最高也一律排除：降級路徑沒有 LLM 判斷其是否與開發相關（2026-09-25）', () => {
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ originalUrl: 'https://birds.com', title: 'E-ink frame that draws birds', domain: 'cross', score: 2390, weightedScore: 2390 }),
+      makeCandidate({ originalUrl: 'https://jev.com', title: 'Introducing System One Models and Jev', domain: 'cross', score: 1979, weightedScore: 1979 }),
+      makeCandidate({ originalUrl: 'https://ai0.com', domain: 'ai', weightedScore: 300 }),
+      makeCandidate({ originalUrl: 'https://devops0.com', domain: 'devops', weightedScore: 100 }),
+    ];
+
+    const digest = fallbackDigest(candidates);
+
+    expect(digest.items.map((it) => it.url)).toEqual(['https://ai0.com', 'https://devops0.com']);
+  });
+
+  it('AI 候選不足 10 則時，非 AI 上限依 effectiveNonAiCap 動態放寬（2026-08-04 新增，憲章 v1.6.0）', () => {
     const candidates: NewsCandidate[] = [
       makeCandidate({ originalUrl: 'https://ai0.com', domain: 'ai', weightedScore: 100 }),
       ...Array.from({ length: 5 }, (_, i) =>
         makeCandidate({ originalUrl: `https://devops${i}.com`, domain: 'devops', weightedScore: 50 - i }),
       ),
     ];
-    // aiCount=1 → effectiveNonAiCap = max(3, 10-1) = 9；非 AI 只有 5 則，遠低於 9，全數保留。
+    // aiCount=1 → effectiveNonAiCap = max(5, 15-1) = 14；非 AI 只有 5 則，遠低於 14，全數保留。
     const digest = fallbackDigest(candidates);
 
     expect(digest.items).toHaveLength(6);
