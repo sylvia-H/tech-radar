@@ -13,6 +13,7 @@ function makeView(overrides: Partial<CurationItemView> = {}): CurationItemView {
     onBoard: false,
     summaryExcerpt: null,
     ageDays: 1,
+    cluster: null,
     ...overrides,
   };
 }
@@ -96,6 +97,60 @@ describe('buildCurationPrompt（候選投影）', () => {
 
     expect(prompt).toContain('（無候選）');
     expect(prompt).not.toMatch(/^\[\d+\] /m);
+  });
+});
+
+describe('buildCurationPrompt（未歸類候選與同題標記，2026-09-25）', () => {
+  it('domain 為 cross 的候選領域欄顯示「未歸類」；同題群集投影為「🔥同題「token」×N（M 來源）」前綴', () => {
+    const prompt = buildCurationPrompt([
+      makeView({ ref: 0, title: 'Introducing System One Models and Jev', domain: 'cross', score: 1979 }),
+      makeView({
+        ref: 1,
+        title: 'Jev in 25 Lines of Python',
+        domain: 'frontend-backend',
+        score: 672,
+        cluster: { token: 'jev', count: 5, sourceCount: 3 },
+      }),
+      makeView({ ref: 2, title: 'Plain AI post', domain: 'ai' }),
+    ]);
+
+    expect(prompt).toContain('[0] (未歸類/tier1/分數 1979/1 來源/1 天前) Introducing System One Models and Jev');
+    expect(prompt).toContain('[1] 🔥同題「jev」×5（3 來源） (frontend-backend/tier1/分數 672/1 來源/1 天前) Jev in 25 Lines of Python');
+    expect(prompt).toContain('[2] (ai/tier1/分數 100/1 來源/1 天前) Plain AI post');
+    expect(prompt).not.toContain('cross/');
+  });
+
+  it('指令本文給未歸類候選正向先驗：不因名字陌生就視為不重要、要求回填 domain、與開發無關者不選', () => {
+    const prompt = buildCurationPrompt([makeView()]);
+    const body = withoutProjection(prompt) ?? '';
+
+    expect(body).toContain('「未歸類」候選');
+    expect(body).toContain('不要因為名字陌生');
+    expect(body).toContain('多帶「domain」');
+    expect(body).toContain('若明顯與軟體開發無關');
+    expect(body).toContain('「同題」標記');
+    expect(body).toContain('正在崛起');
+  });
+
+  it('輸出規則要求未歸類候選回填 "domain"（ai／devops／frontend-backend），其餘候選帶了也忽略', () => {
+    const rules = buildCurationPrompt([makeView()]);
+    const out = outputRules(rules) ?? '';
+
+    expect(out).toContain('必須多帶 "domain" 鍵');
+    expect(out).toContain('ai、devops、frontend-backend');
+    expect(out).toContain('帶了也會被忽略');
+    expect(out).toContain('"domain":"<僅「未歸類」候選必填');
+  });
+
+  it('未歸類／同題的說明文字不含阿拉伯數字（錨定防線；標記本身只在投影區出現）', () => {
+    const prompt = buildCurationPrompt([
+      makeView({ domain: 'cross', cluster: { token: 'jev', count: 5, sourceCount: 3 } }),
+    ]);
+    const body = (withoutProjection(prompt) ?? '').replace(/\(\d+\)/g, '');
+    const numbers = body.match(/\d+/g) ?? [];
+    for (const n of numbers) {
+      expect(['70', '500', String(MAX_ITEMS)]).toContain(n);
+    }
   });
 });
 

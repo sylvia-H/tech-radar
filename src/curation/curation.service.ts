@@ -1,15 +1,16 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { LlmService } from '../llm/llm.service';
 import { GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK, GeminiModel, LlmError } from '../llm/llm.types';
-import { mentionsBoardRepo } from '../news/funnel';
-import { NewsCandidate, NewsDomain3 } from '../news/news.types';
+import { isUnresolved, mentionsBoardRepo } from '../news/funnel';
+import { NewsCandidate } from '../news/news.types';
+import { detectTopicClusters, summarizeClusters, TopicCluster } from '../news/topic-cluster';
 import { fallbackDigest } from './curation-fallback';
 import { buildCurationPrompt } from './curation-prompt';
 import { describeIgnoredKeys, parseCurationResponse } from './curation-parse';
 import { CurationDrop, validateCuration } from './curation-validate';
 import { CuratedDigest, CurationItemView } from './curation.types';
 
-/** `generateWithModelFallback()` 的結果：LLM 原文、實際成功的型號、是否經 Flash 失敗後降級為 Lite。 */
+/** `generateWithModelFallback()` 的結果：LLM 原文、實際成功的型號、是否經主型號失敗後降級為備援型號。 */
 interface ModelFallbackResult {
   raw: string;
   model: GeminiModel;
@@ -40,9 +41,23 @@ export class NewsCurationService {
     }
 
     try {
-      const views = candidates.map((c, ref) => projectItemView(c, ref, boardRepoNames, now));
-      // 每日晨報策展改用 Flash（`GEMINI_MODEL_NEWS`，2026-09-12 起）；簡介與榜單 TL;DR 仍走預設 Lite。
-      // Flash 擲 `LlmError` 時改以 Lite 重試一次（見 `generateWithModelFallback`）。
+      // 同題群集（零 LLM，2026-09-25）：同一罕見詞跨來源多則出現 → 投影為「🔥同題」前綴，配合「未歸類」
+      // 候選讓 LLM 把「多方同時討論同一陌生名詞」讀成新崛起訊號（見 `topic-cluster.ts`）。
+      const clusters = detectTopicClusters(candidates);
+      const views = candidates.map((c, ref) =>
+        projectItemView(c, ref, boardRepoNames, now, clusters.get(c.normalizedUrl) ?? null),
+      );
+      const clusterSummary = summarizeClusters(clusters);
+      const clusterStr =
+        clusterSummary.length > 0
+          ? `（${clusterSummary.map((k) => `「${k.token}」×${k.count}/${k.sourceCount} 來源`).join('、')}）`
+          : '';
+      this.logger.log(
+        `策展輸入：${candidates.length} 候選，未歸類高熱度 ${candidates.filter(isUnresolved).length} 則，` +
+          `同題群集 ${clusterSummary.length} 組${clusterStr}`,
+      );
+      // 每日晨報策展走 `GEMINI_MODEL_NEWS`（2026-09-25 起為 gemini-3.5-flash-lite，見 `llm.types.ts`）；
+      // 主型號擲 `LlmError` 時改以備援型號重試一次（見 `generateWithModelFallback`）。
       const { raw, model, fellBack } = await this.generateWithModelFallback(buildCurationPrompt(views));
       const { officialPicks, communityPicks, ignoredKeys } = parseCurationResponse(raw);
       if (ignoredKeys.length > 0) {
@@ -53,7 +68,18 @@ export class NewsCurationService {
         );
       }
       const drops: CurationDrop[] = [];
-      const items = validateCuration(officialPicks, communityPicks, candidates, (d) => drops.push(d));
+      const defaulted: string[] = [];
+      const items = validateCuration(
+        officialPicks,
+        communityPicks,
+        candidates,
+        (d) => drops.push(d),
+        (ref, title) => defaulted.push(`ref=${ref}「${clampTitle(title)}」`),
+      );
+      if (defaulted.length > 0) {
+        // 未歸類候選被選入但 LLM 未回填合法 domain（2026-09-25）：程式已預設 ai，這裡只揭露、不降級。
+        this.logger.warn(`未歸類候選未回填 domain、預設 ai：${defaulted.join(' ')}`);
+      }
       if (drops.length > 0) {
         // 驗證剔除揭露（2026-09-14 新增）：此前 ref 越界／重複、來源分散、非 AI 上限、總數截斷的剔除
         // 全無 log，實測連兩日「選 N → 驗證後 N−1」無從判斷是幻覺還是配額夾掉。只印階段、ref、
@@ -68,7 +94,7 @@ export class NewsCurationService {
         {} as Record<string, number>,
       );
       const domainStr = Object.entries(domainDist).map(([d, c]) => `${d}:${c}`).join(' / ');
-      const modelStr = fellBack ? `${model}，Flash 失敗後降級` : model;
+      const modelStr = fellBack ? `${model}，主型號失敗後降級至備援` : model;
       this.logger.log(
         `新聞策展完成：${candidates.length} 候選 → LLM 選官方 ${officialPicks.length} 則＋社群 ` +
         `${communityPicks.length} 則 → 驗證後 ${items.length} 則（${domainStr}）（${modelStr}）`,
@@ -118,25 +144,28 @@ export class NewsCurationService {
 
 /**
  * 投影候選為公開脈絡視圖（只含公開資料，FR-007）。
- * `domain`：F4 `CandidateSet` 輸出不變式 `domain !== 'cross'`（I1 決策 B，信任已驗收上游契約、
- * 不另加執行期防衛過濾；若不變式破壞，`cross` 落 `isAi()=false` → 計非 AI，屬已知有界缺點）。
+ * `domain`：三桶之一，或 `cross`＝「未歸類高熱度」候選（2026-09-25 起候選集可含，見 `funnel.ts`；
+ * prompt 顯示為「未歸類」、由 LLM 回填領域，`curation-validate.ts` 落定）。
+ * `cluster`：同題群集資訊（`topic-cluster.ts`），無則 `null`。
  */
 function projectItemView(
   c: NewsCandidate,
   ref: number,
   boardRepoNames: ReadonlySet<string>,
   now: Date,
+  cluster: TopicCluster | null,
 ): CurationItemView {
   return {
     ref,
     title: c.title,
-    domain: c.domain as NewsDomain3,
+    domain: c.domain,
     tier: c.tier,
     score: c.score,
     sourceCount: c.sources.length,
     onBoard: mentionsBoardRepo(c, boardRepoNames),
     summaryExcerpt: c.summary,
     ageDays: ageInDays(c.publishedAt, now),
+    cluster,
   };
 }
 

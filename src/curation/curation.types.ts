@@ -1,4 +1,5 @@
-import { NewsDomain3 } from '../news/news.types';
+import { NewsDomain, NewsDomain3 } from '../news/news.types';
+import { TopicCluster } from '../news/topic-cluster';
 
 /**
  * 送交 LLM 的候選公開脈絡投影（策展輸入投影，只含公開資料，FR-007）。`ref` 為候選在送入
@@ -7,7 +8,11 @@ import { NewsDomain3 } from '../news/news.types';
 export interface CurationItemView {
   ref: number;
   title: string;
-  domain: NewsDomain3;
+  /**
+   * 三桶之一，或 `cross`＝「未歸類高熱度」候選（2026-09-25 起候選集可含，見 `funnel.ts`）：投影時
+   * 顯示為「未歸類」，由 LLM 判定領域並在回應回填 `domain`。
+   */
+  domain: NewsDomain;
   tier: 1 | 2 | 3;
   score: number | null;
   sourceCount: number;
@@ -19,6 +24,11 @@ export interface CurationItemView {
    * 文章；prompt 以「重要性相當時優先較新者、但天齡不改變是否重大」的軟性偏好使用此欄位。
    */
   ageDays: number | null;
+  /**
+   * 同題群集（零 LLM，2026-09-25 新增，見 `topic-cluster.ts`）：該候選標題含當日跨來源多則同時出現的
+   * 罕見詞時為其群集資訊，否則 `null`。投影為「🔥同題「X」×N（M 來源）」前綴，作為新崛起訊號提示。
+   */
+  cluster: TopicCluster | null;
 }
 
 /** `parseCurationResponse()` 解析出的單則（形狀淺驗證後、硬驗證前，research D2）。 */
@@ -26,6 +36,11 @@ export interface CurationLlmPick {
   ref: number;
   title: string;
   content: string;
+  /**
+   * LLM 回填的領域（2026-09-25 新增）：僅「未歸類」候選需要；解析器只在值為三桶之一時保留，
+   * 其餘（缺席／非法值）一律不帶。硬驗證層對非未歸類候選忽略此欄。
+   */
+  domain?: NewsDomain3;
 }
 
 /**

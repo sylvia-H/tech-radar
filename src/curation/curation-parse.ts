@@ -1,3 +1,4 @@
+import { NewsDomain3 } from '../news/news.types';
 import { CurationLlmResponse } from './curation.types';
 
 /**
@@ -22,6 +23,11 @@ export function stripJsonFence(raw: string): string {
 }
 
 const KNOWN_KEYS: ReadonlySet<string> = new Set(['officialPicks', 'communityPicks']);
+const DOMAIN3_VALUES: ReadonlySet<string> = new Set(['ai', 'devops', 'frontend-backend']);
+
+function isNewsDomain3(value: unknown): value is NewsDomain3 {
+  return typeof value === 'string' && DOMAIN3_VALUES.has(value);
+}
 
 /**
  * 三步解析：去 code fence → `JSON.parse` → 形狀淺驗證（`officialPicks`／`communityPicks` 皆為
@@ -93,5 +99,12 @@ function parsePickArray(parsed: object, key: 'officialPicks' | 'communityPicks')
       throw new CurationParseError(`${key} 項目形狀不符`);
     }
   }
-  return picks as CurationLlmResponse['officialPicks'];
+  // `domain`（2026-09-25 新增，僅「未歸類」候選需要）：合法值才保留，缺席或非法值一律不帶、不擲錯
+  // ——其餘欄位已合規時不該為一個選填欄位整份退回原文標題降級；是否為未歸類候選由硬驗證層判斷。
+  return picks.map((pick) => {
+    const p = pick as { ref: number; title: string; content: string; domain?: unknown };
+    return isNewsDomain3(p.domain)
+      ? { ref: p.ref, title: p.title, content: p.content, domain: p.domain }
+      : { ref: p.ref, title: p.title, content: p.content };
+  });
 }

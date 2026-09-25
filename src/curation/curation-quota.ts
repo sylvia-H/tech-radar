@@ -1,10 +1,17 @@
 import { NewsDomain3 } from '../news/news.types';
 
-/** 精選集總數上限（憲章 III、FR-004）。 */
-export const MAX_ITEMS = 10;
+/**
+ * 精選集總數上限（憲章 III、FR-004）。2026-09-25 由 10 → 15（憲章 v1.7.0）：「未歸類高熱度」通道與
+ * 「同題群集」訊號上線後，預期會有更多高價值候選同日入選；上限是天花板不是目標（prompt 不設任何
+ * 下限、LLM 逐一評選），候選不足時自然少推、沒有硬湊的損失。
+ */
+export const MAX_ITEMS = 15;
 
-/** 非 AI（devops + frontend-backend）合計上限（憲章 III、FR-004）。 */
-export const MAX_NON_AI = 3;
+/**
+ * 非 AI（devops + frontend-backend）合計預設上限（憲章 III、FR-004）。2026-09-25 由 3 → 5（憲章 v1.7.0）：
+ * 與總數等比放寬，AI 隱含額度由 7 → 10（`MAX_ITEMS − MAX_NON_AI`）。
+ */
+export const MAX_NON_AI = 5;
 
 /**
  * 非 AI 同一來源最多入選則數（避免候選池夠大時，單一來源吃滿非 AI 名額、排擠其他來源）。
@@ -18,11 +25,12 @@ export function isAi(domain: NewsDomain3): boolean {
 }
 
 /**
- * 非 AI 動態上限（憲章 III、2026-08-04 新增）：預設 `MAX_NON_AI`（3），但當日 AI 則數不足以
- * 撐滿「`MAX_ITEMS − MAX_NON_AI`」（＝7）的隱含額度時，把 AI 未用滿的名額讓給非 AI，上限放寬至
- * `MAX_ITEMS − aiCount`。AI ≥7 時等同固定 ≤3；AI <7 時等比放寬（例如 AI 僅 4 則時，非 AI 可達
- * 6 則，兩者合計仍 ≤10）。目的是讓「至多 10 則」盡量被填滿，同時不犧牲「AI 為主」的領域配置
- * 精神——非 AI 只在 AI 確實供給不足時才獲得額外名額，不是無條件放寬。
+ * 非 AI 動態上限（憲章 III、2026-08-04 新增）：預設 `MAX_NON_AI`（5），但當日 AI 則數不足以
+ * 撐滿「`MAX_ITEMS − MAX_NON_AI`」（＝10）的隱含額度時，把 AI 未用滿的名額讓給非 AI，上限放寬至
+ * `MAX_ITEMS − aiCount`。AI ≥10 時等同固定 ≤5；AI <10 時等比放寬（例如 AI 僅 4 則時，非 AI 可達
+ * 11 則，兩者合計仍 ≤15）。目的是讓「至多 15 則」盡量被填滿，同時不犧牲「AI 為主」的領域配置
+ * 精神——非 AI 只在 AI 確實供給不足時才獲得額外名額，不是無條件放寬。（2026-09-25 憲章 v1.7.0
+ * 由 3／7／10 調整為 5／10／15，公式不變。）
  */
 export function effectiveNonAiCap(aiCount: number, max: number = MAX_NON_AI, totalMax: number = MAX_ITEMS): number {
   return Math.max(max, totalMax - aiCount);
