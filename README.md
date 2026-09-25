@@ -30,7 +30,7 @@ Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github
 |------|------|
 | 新聞來源 | 31 個設定項、23 個啟用（AI 10／DevOps 6／前後端 5／跨領域 2） |
 | 每日新聞 | 至多 10 則，AI 為主、非 AI 預設 ≤3（動態放寬） |
-| LLM 呼叫 | 新聞策展每日 1 次（`gemini-3.7-flash`）；repo 簡介一生 1 次並快取、榜單日多 1 次一句話 TL;DR（皆 `gemini-3.5-flash-lite`） |
+| LLM 呼叫 | 新聞策展每日 1 次（`gemini-3.5-flash-lite`，備援 `gemini-3.1-flash-lite`）；repo 簡介一生 1 次並快取、榜單日多 1 次一句話 TL;DR（皆 `gemini-3.5-flash-lite`） |
 | 榜單 | 每領域追蹤 top 15，推播綜合 top 10，每 7 天只推變化 |
 | 榜單資料 | GitHub Trending weekly 6 個頁面 ＋ Search API 2 條查詢，不自存星星歷史 |
 | 排程 | 雙離峰 cron（台北 06:07 主班、06:37 補班）＋ 時間戳 guard |
@@ -537,7 +537,7 @@ LLM 只能用索引指涉候選、只回敘事文字；星數、連結、名次�
 |------|------|
 | 執行環境 | Node.js 24、TypeScript（strict） |
 | 應用框架 | NestJS 11（`createApplicationContext`，一次性 CLI job） |
-| LLM | `@google/genai`（Gemini 免費層：晨報策展 `gemini-3.7-flash`、簡介與榜單 TL;DR `gemini-3.5-flash-lite`，見下方型號說明） |
+| LLM | `@google/genai`（Gemini 免費層：晨報策展 `gemini-3.5-flash-lite`／備援 `gemini-3.1-flash-lite`、簡介與榜單 TL;DR `gemini-3.5-flash-lite`，見下方型號說明） |
 | HTML／RSS 解析 | `cheerio`、`rss-parser` |
 | Atom 產生 | `feed` |
 | 驗證 | `zod`（env、來源清單、狀態檔、GitHub API 回應） |
@@ -547,9 +547,9 @@ LLM 只能用索引指涉候選、只回敘事文字；星數、連結、名次�
 
 Gemini 型號依資料流分兩個（2026-09-12 起，`src/llm/llm.types.ts`）：榜單週報的簡介與 TL;DR 用
 `gemini-3.5-flash-lite`（`LlmService.generate` 的預設；免費層約 15 RPM／1,000 RPD，用量極低），每日
-晨報那一次策展呼叫用 Flash 系型號，因為它要對 50 則候選做語意去重、三類判準核對與改寫，判斷
-品質直接決定晨報內容；2026-09-25 由 `gemini-3.8-flash` 改為 `gemini-3.7-flash`（見本節末）。
-`gemini-3.8-flash` 免費層為 **5 RPM／20 RPD**（2026-09-12 於
+晨報那一次策展呼叫曾走較強的 Flash 系（要對整份候選做語意去重、判準核對與改寫，判斷品質直接決定
+晨報內容），2026-09-25 起改為與榜單同型號的 `gemini-3.5-flash-lite`、備援 `gemini-3.1-flash-lite`
+（見本節末）。Flash 系的 `gemini-3.8-flash` 免費層為 **5 RPM／20 RPD**（2026-09-12 於
 AI Studio 確認）：正式排程每日 1 次、含退避最多 4 次 HTTP 嘗試，餘裕充足；但本機手動執行吃同一份
 RPD，一天十幾次就會用光。策展以 Flash 失敗時先以 Lite 同 prompt 單次重試，仍失敗才降級為原文標題並
 發告警（見第 9 關），若連續撞限，把策展改回 Lite 只需改一個常數。免費層型號 ID
@@ -557,11 +557,16 @@ RPD，一天十幾次就會用光。策展以 Flash 失敗時先以 Lite 同 pro
 `3.1-flash-lite`、`3.5-flash-lite`），所以 `LlmService` 對非可重試錯誤一律印出實際狀態碼與訊息，
 避免 404 被誤判成速率限制。
 
-2026-09-25 起策展型號改為 `gemini-3.7-flash`（使用者決策，試穩定性）：09-13～09-25 的 13 天裡
-`gemini-3.8-flash` 幾乎每天首次呼叫即回 503 UNAVAILABLE（high demand），09-18／09-24／09-25 四次重試
-全數耗盡而退 Lite，Lite 當日只選出 5 則與 7 則（Flash 成功日為 10 則、9 則）。503 屬該型號伺服器端容量
-問題，退避拉長也只橫跨約 1.5 分鐘、跨不過尖峰，故改試熱度較低的前一代 Flash；分流與降級機制不變。
-`gemini-3.7-flash` 無 Flash-Lite 版本、配額級別未於儀表板覆核，需留意 log 是否由 503 轉為 429。
+2026-09-25 起**策展主備型號皆為 Flash-Lite 系**（使用者決策）：主型號 `gemini-3.5-flash-lite`（與榜單
+同型號）、備援 `gemini-3.1-flash-lite`。起因是 09-13～09-25 的 13 天裡 `gemini-3.8-flash` 幾乎每天首次
+呼叫即回 503 UNAVAILABLE（high demand），09-18／09-24／09-25 四次重試全數耗盡而退 Lite，Lite 當日只選出
+5 則與 7 則（Flash 成功日為 10 則、9 則）；503 屬型號伺服器端容量問題，退避拉長也只橫跨約 1.5 分鐘、
+跨不過尖峰。加上新篩選邏輯把候選池放大到 70 則、每日輸出至多 15 則，prompt 與回應都變長，Flash 系的
+5 RPM／20 RPD 餘裕與過載風險都不划算，故整段改用額度高一級的 Lite（約 15 RPM／1,000 RPD）。備援刻意
+用**不同**型號（配額按型號分開計算，同型號重試對 429 與型號 404 都無解）；`gemini-3.1-flash-lite` 官方
+公告的 shutdown 日為 **2027-05-07**（2026-09-25 覆核 deprecations 頁），到期前須更換備援。品質風險：
+Lite 策展日的則數變異較大，若連續一週明顯偏低、或「未歸類高熱度」候選全數不選，就改回 Flash 系
+（只改 `llm.types.ts` 常數）。
 2026-09-02 曾在本機把**全部**呼叫升級到沒有 Lite 版的 `gemini-3.7-flash`，當天撞到免費層上限而改回
 `3.5-flash-lite`（該型號從未進庫）；事後查證當日正式排程只有 1 次策展呼叫，撞限可能來自本機反覆手動
 執行、也未量化到哪一項配額，不能據此推論「每日 1 次就會爆」，但「Flash 與 Flash-Lite 的免費配額不同級，

@@ -161,6 +161,13 @@ k8s v1.37 系列 09-12～09-21 共推 15 篇、每日滴一兩篇，09-20／09-2
 四次重試全撞 503，退 Lite 策展，Lite 只選 5／7 則。
 
 - [x] `GEMINI_MODEL_NEWS`：`gemini-3.8-flash` → `gemini-3.7-flash`（只改常數，分流與降級機制不動）。
+      **同日再次改動、取代此項**：策展主備型號皆改 Flash-Lite 系——主 `gemini-3.5-flash-lite`、新增常數
+      `GEMINI_MODEL_NEWS_FALLBACK` = `gemini-3.1-flash-lite` 作備援（`generateWithModelFallback` 改用它，
+      log 字樣由「Flash／Lite」改為「主型號／備援型號」）。理由：新篩選邏輯候選池 60→70、每日輸出至多
+      15 則，Flash 系 5 RPM／20 RPD 餘裕與 503 過載風險都不划算，Lite 額度高一級。3.1-flash-lite 官方公告
+      shutdown 2027-05-07（2026-09-25 覆核），到期前須換。
 - 使用者同時決定：Flash→Lite 降級**不加** Discord 告警（維持只寫 log）。
-- [ ] （觀察）3.7-flash 首次呼叫是否仍 503、是否改成 429（配額級別未覆核）、Lite 降級日是否減少、則數是否
-      回到 9～10；若 3.7 同樣不穩，再議「放棄分流、全部用 Flash-Lite」（使用者 09-25 一度提出，暫緩）。
+- [ ] （觀察）主型號 Lite 首次呼叫是否還會失敗、錯誤碼是 503 還是 429、備援 3.1-flash-lite 是否真的可用
+      （目前只憑官方 deprecations 頁覆核，本機無 GEMINI_API_KEY 無法 ListModels）；**品質面**：Lite 策展日
+      則數變異較大（09-13～09-25 四個 Lite 日 9／9／5／7 則），若連續一週明顯偏低、或新 prompt 的「未歸類
+      高熱度」候選全數不選，就改回 Flash 系（只改 `llm.types.ts` 常數）。
