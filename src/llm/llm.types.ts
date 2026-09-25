@@ -11,9 +11,17 @@
  * 於 AI Studio 確認，本機手動執行吃同一份 RPD）。這次只讓每日 1 次的策展走 Flash（含退避最多 4 次
  * HTTP 嘗試，仍在 5 RPM 之下、對 20 RPD 有 5 倍餘裕），簡介與 TL;DR 留在 Lite；Flash 失敗會先以 Lite
  * 重試一次（`NewsCurationService`），若連續撞上限則策展改回 `GEMINI_MODEL_BOARD` 即可（只改此檔）。
+ *
+ * 2026-09-25：`GEMINI_MODEL_NEWS` 由 `gemini-3.8-flash` 改為 `gemini-3.7-flash`（使用者決策，試型號穩定性）。
+ * 理由：09-13～09-25 的 13 天裡，3.8-flash 幾乎每天首次呼叫就回 **503 UNAVAILABLE（high demand）**，
+ * 09-18／09-24／09-25 更是 4 次重試全數耗盡、退 Lite 策展，而 Lite 選出的則數明顯偏少（09-24 五則、
+ * 09-25 七則，對照 Flash 成功日的 09-22 十則、09-23 九則）。503 是該型號的伺服器端容量問題，退避拉長
+ * （10s／20s／40s）也只橫跨約 1.5 分鐘、跨不過尖峰，故改試熱度較低的前一代 Flash。分流與降級機制不變
+ * （Flash 失敗仍以 Lite 單次重試）。注意 3.7-flash 無 Flash-Lite 版本，配額級別與 3.8 可能不同，
+ * 觀察 Actions log 的型號字樣與是否改成 429。
  */
 export const GEMINI_MODEL_BOARD = 'gemini-3.5-flash-lite';
-export const GEMINI_MODEL_NEWS = 'gemini-3.8-flash';
+export const GEMINI_MODEL_NEWS = 'gemini-3.7-flash';
 
 /** 可用型號的聯集（避免呼叫端打錯字串）。 */
 export type GeminiModel = typeof GEMINI_MODEL_BOARD | typeof GEMINI_MODEL_NEWS;
