@@ -10,7 +10,7 @@ import { pruneSeenNews } from '../news/seen-news';
 import { makeNewsFeedEntries, appendFeedEntries } from '../publish/feed-entry';
 import { decideNewsGuard } from './layout/news-guard';
 import { buildDigestEmbeds } from './layout/digest-embeds';
-import { chunkEmbeds } from './layout/embed-split';
+import { chunkEmbedsByBudget } from './layout/embed-split';
 import { taipeiDateLabel } from './layout/date-label';
 
 /** `NewsSegmentService.run()` 的回傳型別（判別聯集，供觀測；F7 內部型別）。 */
@@ -70,7 +70,9 @@ export class NewsSegmentService {
 
     const dateLabel = taipeiDateLabel(now);
     const embeds = buildDigestEmbeds(digest, dateLabel);
-    const batches = chunkEmbeds(embeds, 10);
+    // 張數 ≤10 之外再受單則訊息 6,000 字元預算約束（2026-09-25，晨報放寬至 15 則後多張近 4,096 的 embed
+    // 合計會超過 Discord 訊息上限；見 `chunkEmbedsByBudget`）。
+    const batches = chunkEmbedsByBudget(embeds);
 
     try {
       for (const batch of batches) {

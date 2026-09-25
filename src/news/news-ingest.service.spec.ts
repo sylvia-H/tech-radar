@@ -472,3 +472,57 @@ describe('NewsIngestService.ingest — 逐來源新鮮度視窗（2026-09-21）'
     expect(out[0].sources.sort()).toEqual(['default-rss', 'short-rss']);
   });
 });
+
+describe('NewsIngestService.ingest — 未歸類高熱度候選保留與沿用合併來源領域（2026-09-25）', () => {
+  const sources: NewsSource[] = [
+    { id: 'hn', type: 'hn-algolia', url: 'https://hn.algolia.com/api/v1/search?tags=story', domain: 'cross', tier: 1 },
+    { id: 'official', type: 'rss', url: 'https://official.example/feed', domain: 'ai', tier: 2 },
+  ];
+  const hits = [
+    // 關鍵字無命中、1979 分 → 以 cross 保留（Jev 官方公告情境）
+    { objectID: '1', title: 'Introducing System One Models and Jev', url: 'https://typesafe.example/blog/jev', points: 1979, created_at_i: RECENT_HN_I },
+    // 關鍵字無命中、150 分（< 300）→ 丟
+    { objectID: '2', title: 'Papua New Guinea travel notes', url: 'https://travel.example/png', points: 150, created_at_i: RECENT_HN_I },
+    // 關鍵字無命中、50 分（連 tier 1 門檻都不到），但與 official 來源同 URL 合併 → 沿用 ai
+    { objectID: '3', title: 'Jev', url: 'https://official.example/jev', points: 50, created_at_i: RECENT_HN_I },
+    // 有關鍵字 → 照舊歸類
+    { objectID: '4', title: 'Running LLM agents in production', url: 'https://blog.example/agents', points: 120, created_at_i: RECENT_HN_I },
+  ];
+  const json = (url: string) => (url.includes('algolia') ? { hits } : { hits: [] });
+  const parse = (xml: string) =>
+    xml.includes('official')
+      ? { items: [{ title: 'Jev', link: 'https://official.example/jev', contentSnippet: 's', isoDate: '2026-07-17T00:00:00Z' }] }
+      : { items: [] };
+
+  it('高分無關鍵字者以 domain cross 入池；低分無關鍵字者丟棄；與一手來源同 URL 者沿用該來源領域', async () => {
+    const { svc } = makeService({ json, parse });
+    const out = await svc.ingest(NOW, new Set(), sources, []);
+
+    const byUrl = new Map(out.map((c) => [c.normalizedUrl, c]));
+    const jev = byUrl.get(normalizeTargetUrl('https://typesafe.example/blog/jev'));
+    expect(jev?.domain).toBe('cross');
+    expect(jev?.score).toBe(1979);
+
+    expect(byUrl.has(normalizeTargetUrl('https://travel.example/png'))).toBe(false);
+
+    const merged = byUrl.get(normalizeTargetUrl('https://official.example/jev'));
+    expect(merged?.domain).toBe('ai');
+    expect([...(merged?.sources ?? [])].sort()).toEqual(['hn', 'official']);
+
+    expect(byUrl.get(normalizeTargetUrl('https://blog.example/agents'))?.domain).toBe('ai');
+    expect(out).toHaveLength(3);
+  });
+
+  it('log 揭露未歸類保留數與入池數', async () => {
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+    try {
+      const { svc } = makeService({ json, parse });
+      await svc.ingest(NOW, new Set(), sources, []);
+      const lines = logSpy.mock.calls.map((c) => String(c[0]));
+      expect(lines.some((l) => l.includes('未歸類高熱度保留：1 則') && l.includes('沿用合併來源領域：1 則'))).toBe(true);
+      expect(lines.some((l) => l.includes('未歸類高熱度入池：1 則'))).toBe(true);
+    } finally {
+      logSpy.mockRestore();
+    }
+  });
+});

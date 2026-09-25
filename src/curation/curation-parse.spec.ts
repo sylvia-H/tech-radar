@@ -26,6 +26,20 @@ describe('parseCurationResponse', () => {
     expect(result.communityPicks).toEqual([]);
   });
 
+  it('domain 為三桶之一時保留；缺席、非法值或非字串一律不帶（2026-09-25，未歸類候選回填）', () => {
+    const raw =
+      '{"officialPicks":[{"ref":0,"title":"a","content":"c","domain":"devops"},{"ref":1,"title":"b","content":"c","domain":"gaming"},{"ref":2,"title":"d","content":"c","domain":3}],' +
+      '"communityPicks":[{"ref":3,"title":"e","content":"c"}]}';
+    const result = parseCurationResponse(raw);
+    expect(result.officialPicks).toEqual([
+      { ref: 0, title: 'a', content: 'c', domain: 'devops' },
+      { ref: 1, title: 'b', content: 'c' },
+      { ref: 2, title: 'd', content: 'c' },
+    ]);
+    expect('domain' in result.officialPicks[1]).toBe(false);
+    expect(result.communityPicks).toEqual([{ ref: 3, title: 'e', content: 'c' }]);
+  });
+
   it('合法 JSON（不含 fence）→ 正確 officialPicks/communityPicks', () => {
     const raw =
       '{"officialPicks":[],"communityPicks":[{"ref":1,"title":"標題2","content":"內容2"}]}';

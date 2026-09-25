@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { ApiError, GoogleGenAI } from '@google/genai';
+import { ApiError, GenerateContentResponse, GoogleGenAI } from '@google/genai';
 import {
   GEMINI_MODEL_BOARD,
   LLM_BACKOFF_BASE_MS,
@@ -51,11 +51,17 @@ export class LlmService {
           contents: prompt,
         });
         const text = (response.text ?? '').trim();
+        // 用量與結束原因（2026-09-25 新增）：候選池 60 → 70、晨報 10 → 15 則後，「prompt 太大容易失敗」
+        // 只能猜——此前既不記 token 數也不記 finishReason，輸出被 MAX_TOKENS 截斷只會以 reason=empty
+        // 現身。只印數字與型號，不含 prompt／回應全文（憲章 VII）。
+        const usage = describeUsage(response, prompt.length);
         if (!text) {
           // 空回應（多為 MAX_TOKENS 截斷或安全過濾）刻意不重試：重送同一 prompt 通常仍空，
           // 重試只會白白多燒一次 Gemini 免費層配額（憲章 I／V 節制 LLM）；交由呼叫端降級。
+          this.logger.warn(`LLM 回應為空（${model}，${usage}）`);
           throw new LlmError('empty');
         }
+        this.logger.log(`LLM 用量（${model}，${usage}，回應 ${text.length} 字元）`);
         return text;
       } catch (err) {
         if (err instanceof LlmError) {
@@ -109,4 +115,19 @@ export class LlmService {
   private delay(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
+}
+
+/**
+ * 供 log 用的用量摘要：prompt 字元數、Gemini 回傳的 `usageMetadata`（輸入／輸出／思考／合計 tokens；
+ * 缺席者印「?」）與第一個候選的 `finishReason`（正常為 STOP，輸出截斷為 MAX_TOKENS，安全過濾為 SAFETY；
+ * 缺席印「?」）。純函式、不含任何 prompt／回應內容。
+ */
+export function describeUsage(response: GenerateContentResponse, promptChars: number): string {
+  const u = response.usageMetadata;
+  const n = (v: number | undefined): string => (typeof v === 'number' ? String(v) : '?');
+  const finish = response.candidates?.[0]?.finishReason ?? '?';
+  return (
+    `prompt ${promptChars} 字元，tokens 輸入 ${n(u?.promptTokenCount)}／輸出 ${n(u?.candidatesTokenCount)}` +
+    `／思考 ${n(u?.thoughtsTokenCount)}／合計 ${n(u?.totalTokenCount)}，finishReason=${finish}`
+  );
 }
