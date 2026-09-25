@@ -152,3 +152,15 @@ k8s v1.37 系列 09-12～09-21 共推 15 篇、每日滴一兩篇，09-20／09-2
   r/MachineLearning（學術閒聊）、openai/codex releases（alpha 洪流）、多個個人 blog 30 天 0 篇、pytorch／vllm／
   anthropic engineering／meta AI 404／403、langchain feed 解析失敗。Cursor changelog、InfoQ AI 為候補。
 - [ ] （合併後觀察一週）AI 入選是否由平均 5.0 上升、兩新來源入選數、候選池是否觸頂 60 而擠掉 thenewstack 與低分 HN。
+
+## 2026-09-25 追加：策展型號改 gemini-3.7-flash（使用者決策）
+
+09-22～09-25 四日回顧：則數 10／9／5／7、AI 6／5／4／6；候選池 49／60／54／59，各來源席次健康
+（thenewstack 每天 3 席、kubernetes-blog 每天 1 席且都在 10 天視窗內 → 逐來源視窗有效）。新來源合計入選
+6／31（github-blog-ai-ml 4、huggingface-blog 2）。**則數大減與來源無關**：09-24／09-25 兩天 `gemini-3.8-flash`
+四次重試全撞 503，退 Lite 策展，Lite 只選 5／7 則。
+
+- [x] `GEMINI_MODEL_NEWS`：`gemini-3.8-flash` → `gemini-3.7-flash`（只改常數，分流與降級機制不動）。
+- 使用者同時決定：Flash→Lite 降級**不加** Discord 告警（維持只寫 log）。
+- [ ] （觀察）3.7-flash 首次呼叫是否仍 503、是否改成 429（配額級別未覆核）、Lite 降級日是否減少、則數是否
+      回到 9～10；若 3.7 同樣不穩，再議「放棄分流、全部用 Flash-Lite」（使用者 09-25 一度提出，暫緩）。
