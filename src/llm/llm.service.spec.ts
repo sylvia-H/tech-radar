@@ -1,7 +1,13 @@
 import { ConfigService } from '@nestjs/config';
 import { ApiError, GoogleGenAI } from '@google/genai';
 import { LlmService } from './llm.service';
-import { GEMINI_MODEL_BOARD, GEMINI_MODEL_NEWS, LlmError, LLM_MAX_RETRIES } from './llm.types';
+import {
+  GEMINI_MODEL_BOARD,
+  GEMINI_MODEL_NEWS,
+  GEMINI_MODEL_NEWS_FALLBACK,
+  LlmError,
+  LLM_MAX_RETRIES,
+} from './llm.types';
 
 jest.mock('@google/genai', () => {
   const actual = jest.requireActual('@google/genai');
@@ -118,17 +124,21 @@ describe('LlmService 型號選擇（2026-09-12 依資料流分流）', () => {
     expect(generateContent).toHaveBeenCalledWith({ model: GEMINI_MODEL_BOARD, contents: '請生成' });
   });
 
-  it('指定 model: GEMINI_MODEL_NEWS → 送 Flash（每日晨報策展）', async () => {
+  it('指定 model: GEMINI_MODEL_NEWS → 送策展主型號（每日晨報策展）', async () => {
     const generateContent = jest.fn().mockResolvedValue({ text: 'ok' });
     const svc = makeService(generateContent);
     await svc.generate('請策展', { model: GEMINI_MODEL_NEWS });
     expect(generateContent).toHaveBeenCalledWith({ model: GEMINI_MODEL_NEWS, contents: '請策展' });
   });
 
-  it('兩個型號常數不相同，且晨報用的是非 Lite 的 Flash', () => {
-    expect(GEMINI_MODEL_BOARD).not.toBe(GEMINI_MODEL_NEWS);
-    expect(GEMINI_MODEL_BOARD).toMatch(/flash-lite$/);
-    expect(GEMINI_MODEL_NEWS).toMatch(/flash$/);
+  it('三個型號常數皆為 Flash-Lite 系，且策展備援與主型號不同（2026-09-25 起）', () => {
+    // 2026-09-25 起策展主備型號皆為 Lite（見 llm.types docstring）：主型號與榜單型號同一個，備援刻意
+    // 換不同型號——免費配額按型號分開計算，同型號重試對 429／型號 404 都無解。
+    for (const model of [GEMINI_MODEL_BOARD, GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK]) {
+      expect(model).toMatch(/flash-lite$/);
+    }
+    expect(GEMINI_MODEL_NEWS).toBe(GEMINI_MODEL_BOARD);
+    expect(GEMINI_MODEL_NEWS_FALLBACK).not.toBe(GEMINI_MODEL_NEWS);
   });
 });
 

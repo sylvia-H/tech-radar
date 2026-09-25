@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { LlmService } from '../llm/llm.service';
-import { GEMINI_MODEL_BOARD, GEMINI_MODEL_NEWS, GeminiModel, LlmError } from '../llm/llm.types';
+import { GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK, GeminiModel, LlmError } from '../llm/llm.types';
 import { mentionsBoardRepo } from '../news/funnel';
 import { NewsCandidate, NewsDomain3 } from '../news/news.types';
 import { fallbackDigest } from './curation-fallback';
@@ -82,12 +82,14 @@ export class NewsCurationService {
   }
 
   /**
-   * 以 Flash（`GEMINI_MODEL_NEWS`）送出策展 prompt；若擲 `LlmError`（不論 `reason`：`exhausted`＝429
-   * 退避耗盡、`error`＝型號 404 下架等不可重試錯誤、`empty`＝空回應），記 warn 後改以 Lite
-   * （`GEMINI_MODEL_BOARD`）重送**同一 prompt 一次**；第二次仍失敗才把錯誤拋給呼叫端走降級。
+   * 以主型號（`GEMINI_MODEL_NEWS`）送出策展 prompt；若擲 `LlmError`（不論 `reason`：`exhausted`＝429
+   * 退避耗盡、`error`＝型號 404 下架等不可重試錯誤、`empty`＝空回應），記 warn 後改以備援型號
+   * （`GEMINI_MODEL_NEWS_FALLBACK`）重送**同一 prompt 一次**；第二次仍失敗才把錯誤拋給呼叫端走降級。
+   * 2026-09-25 起兩者皆為 Flash-Lite 系（主 `gemini-3.5-flash-lite`、備援 `gemini-3.1-flash-lite`），
+   * 此前為 Flash → Lite。
    *
-   * 為何換型號而非同型號再退避：Gemini 免費層配額**按型號分開計算**，Flash 429 耗盡時同型號的
-   * 指數退避只是白等，換 Lite 才有機會在當日成功；另本專案已兩度遇到型號無預警下架（404），
+   * 為何換型號而非同型號再退避：Gemini 免費層配額**按型號分開計算**，主型號 429 耗盡時同型號的
+   * 指數退避只是白等，換型號才有機會在當日成功；另本專案已兩度遇到型號無預警下架（404），
    * 該情況同型號重試永遠失敗、也只有換型號有解。
    *
    * 與憲章 V「新聞策展每日僅呼叫 Gemini 一次」的關係：該原則指的是**策展邏輯上一次**（同一
@@ -106,10 +108,10 @@ export class NewsCurationService {
         throw err;
       }
       this.logger.warn(
-        `Flash 策展失敗（${err.reason}，${GEMINI_MODEL_NEWS}），改以 Lite（${GEMINI_MODEL_BOARD}）重試一次`,
+        `策展主型號失敗（${err.reason}，${GEMINI_MODEL_NEWS}），改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`,
       );
-      const raw = await this.llm.generate(prompt, { model: GEMINI_MODEL_BOARD });
-      return { raw, model: GEMINI_MODEL_BOARD, fellBack: true };
+      const raw = await this.llm.generate(prompt, { model: GEMINI_MODEL_NEWS_FALLBACK });
+      return { raw, model: GEMINI_MODEL_NEWS_FALLBACK, fellBack: true };
     }
   }
 }
