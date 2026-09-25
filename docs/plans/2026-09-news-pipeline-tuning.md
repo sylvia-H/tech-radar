@@ -171,3 +171,33 @@ k8s v1.37 系列 09-12～09-21 共推 15 篇、每日滴一兩篇，09-20／09-2
       （目前只憑官方 deprecations 頁覆核，本機無 GEMINI_API_KEY 無法 ListModels）；**品質面**：Lite 策展日
       則數變異較大（09-13～09-25 四個 Lite 日 9／9／5／7 則），若連續一週明顯偏低、或新 prompt 的「未歸類
       高熱度」候選全數不選，就改回 Flash 系（只改 `llm.types.ts` 常數）。
+
+## 2026-09-25 追加：未歸類高熱度通道、同題群集、晨報上限 15（使用者決策）
+
+起因：使用者反映 09-15 起 Jev（TypeSafe AI 的 System One 決策模型）崛起、晨報全無。診斷（Actions log 重放
+09-15～09-25 十一次執行＋Algolia 重播四天 HN top 100）：HN「Introducing System One Models and Jev」1979 分在
+四天視窗內每日被抓到、每日被 `cross` 關鍵字歸類（標題無 AI 關鍵字）靜默丟棄，log 只有「領域歸類後 -96」計數；
+關鍵字歸類每日丟 72～85% 的 HN top 100，≥300 分被丟者 38～53 則，含 MiMo v2.6（1126）、OpenJev（721）、
+Grok 4.7（607）、Qwen 3.8 Omni Flash（346）。進到候選池的 Jev 二手內容（simonwillison 連 4 天、arcturus-labs
+251～323 分、reddit、lobsters、thenewstack T3）LLM 全未選；「Jev in 25 Lines of Python」因只命中 python 被歸
+前後端、且 09-24／25 皆為 Lite 降級日。TypeSafe 官方 blog 無 RSS（5 個端點 404），新玩家事件只能靠 HN／Reddit／
+Lobsters 偵測。**使用者原則：高熱度但關鍵字歸類不到的候選不是雜訊，而是「我不知道、但應該關注」的新聞本身。**
+
+- [x] 未歸類高熱度通道：`resolveDomains` 無命中時 (a) 沿用 URL 合併來源領域 (b) 分數 ≥300 者以 `cross` 保留
+      (c) 其餘丟；`runFunnel` 依分數取前 10 則（`unresolvedMinScore`／`unresolvedMaxCount`）、`convergeMax` 60 → 70；
+      `fallbackDigest` 排除未歸類；log 揭露保留數／入池數／名額外剔除數。
+- [x] 同題群集（`topic-cluster.ts`）：同一罕見 token 跨 ≥2 來源 ≥3 則 → 投影前綴「🔥同題「X」×N（M 來源）」；
+      停用清單含泛用詞、三桶關鍵字、人人皆知的產品名。
+- [x] prompt：領域欄「未歸類」、正向先驗段落、同題段落、輸出規則要求未歸類候選回填 `domain`（文字不含阿拉伯數字）；
+      `curation-parse` 只保留合法 domain；`curation-validate` 落定領域、未回填預設 ai 並 warn（`onDomainDefaulted`）。
+- [x] 配額：`MAX_ITEMS` 10 → 15、`MAX_NON_AI` 3 → 5（AI 隱含 7 → 10），憲章 1.7.0、CLAUDE.md、dev-guide、README 同步。
+      上限是天花板不是目標，prompt 仍無任何下限。
+- [x] Discord：`chunkEmbedsByBudget`（張數 ≤10 且合計 ≤6,000 字元）取代晨報段的 chunk-by-10——15 則可拆成三張近
+      4,096 的 embed，合計會被 Discord 整則拒收。
+- [x] 測試 579 → 625（funnel／ingest／topic-cluster／prompt／parse／validate／fallback／embed-split）。
+- 未做（有意）：不擴充關鍵字表（治標；OpenJev／Astra／Dario 類專有名詞仍救不到）；不加 TypeSafe 來源（無 RSS）。
+- [ ] （合併後觀察一週，至 10-02）每日「未歸類高熱度入池 K 則」與其中入選數；同題群集是否命中真實新事件、是否被
+      泛用詞污染（若某 token 天天出現請加進 `CLUSTER_STOP_TOKENS`）；未歸類候選被 LLM 選入時 `domain` 回填率
+      （「未歸類候選未回填 domain」warn 次數）；則數是否上升到 10～15、非 AI 是否被夾到 5；候選池是否觸頂 70
+      擠掉 thenewstack；Lite 主型號（見同日型號段落）在 70 候選／15 則輸出下是否出現輸出截斷（`LlmError('empty')`
+      不重試、直接換備援）或則數偏低——若連續一週偏低或未歸類候選全數不選，回 Flash 系。
