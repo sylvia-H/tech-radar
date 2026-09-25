@@ -201,3 +201,17 @@ Lobsters 偵測。**使用者原則：高熱度但關鍵字歸類不到的候選
       （「未歸類候選未回填 domain」warn 次數）；則數是否上升到 10～15、非 AI 是否被夾到 5；候選池是否觸頂 70
       擠掉 thenewstack；Lite 主型號（見同日型號段落）在 70 候選／15 則輸出下是否出現輸出截斷（`LlmError('empty')`
       不重試、直接換備援）或則數偏低——若連續一週偏低或未歸類候選全數不選，回 Flash 系。
+
+### 同日追加：LLM 用量 log（使用者決策，回應「候選池變大是否該分三批送」）
+
+估算 worst case（70 候選、每則摘要 500 字）prompt 約 47k 字元 ≈ 14k tokens、回應 15 則約 8.5k 字 ≈ 9.4k tokens，
+離 Flash-Lite 的 1M context／65k 輸出上限甚遠；過去失敗皆為 503 過載、非大小。拆批會破壞未歸類通道（候選尚無領域）、
+同題群集與殘留去重（需一次看全池）、非 AI 動態上限（需先知 AI 則數），並讓 503 曝險倍增且違反憲章 V「每日僅呼叫一次」，
+故**不拆批**；先補可觀測性，用數據判斷。
+
+- [x] `LlmService.generate` 成功時 log「LLM 用量（型號，prompt N 字元，tokens 輸入／輸出／思考／合計，finishReason=…，
+      回應 M 字元）」；空回應時 warn 同一組數字後才擲 `LlmError('empty')`（此前只有 reason=empty，看不出是否 MAX_TOKENS）。
+      只印數字，不含 prompt／回應內容。
+- [ ] （觀察一週）策展呼叫的 promptTokenCount 常態值與最大值、thoughtsTokenCount 是否吃掉可觀輸出額度、是否出現
+      finishReason=MAX_TOKENS。若出現截斷，第一刀是投影摘要由 500 字截 250 字（prompt −37%），其次降 `convergeMax`；
+      拆批列為最後手段且須先修憲章 V。
