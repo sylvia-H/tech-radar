@@ -366,69 +366,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-21T00:06:43.738Z",
-  "lastNewsPushAt": "2026-09-24T00:23:57.015Z",
+  "lastNewsPushAt": "2026-09-25T00:27:04.206Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-21T00:06:43.738Z",
       "summary": "本次榜單綜合 #1 為 alibaba/open-code-review，共有 8 個新進項目與 1 個竄升項目，其中新進與竄升集中於 AI 7 個與前後端 2 個領域，另有 1 個項目下降。"
     },
     "feed": [
-      {
-        "content": "工程團隊分享了將大規模監控指標架構由維護近十年的 gostatsd 遷移至 OpenTelemetry 的完整實踐經驗。文章詳述了在承載巨量節點 Sidecar 指標管線的環境下，如何規劃零停機無縫切換、調校採集效能以及解決資料格式轉換的挑戰。對於正著手推動可觀測性標準化與現代化架構演進的 DevOps 及維運團隊而言，是一篇深具實務價值的參考範例。",
-        "id": "news:https://cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale",
-        "publishedAt": "2026-09-19T00:09:05.240Z",
-        "title": "大規模指標平台遷移：從 gostatsd 全面轉向 OpenTelemetry 的工程實踐",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale/"
-      },
-      {
-        "content": "Kubernetes 團隊正式釋出 v1.37 版本（代號 Garhwal）。本次更新共包含 67 項增強功能，其中 16 項功能正式畢業晉升為穩定版（Stable），23 項進入測試版（Beta），27 項處於 Alpha 階段。新版本持續強化叢集生產環境的工作負載安全性、可靠性與身分認證機制，為維運人員與雲原生開發者提供更穩固的基礎設施支援。",
-        "id": "news:https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release",
-        "publishedAt": "2026-09-20T00:03:22.470Z",
-        "title": "Kubernetes v1.37 正式發布：帶來 67 項增強功能與多項關鍵特性晉升",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release/"
-      },
-      {
-        "content": "Python 跨平台應用開發框架 Flet 正式迎來 1.0 里程碑版本。Flet 讓 Python 開發者能夠使用熟悉的語言生態系，輕鬆構建支援多平台的桌面、Web 與行動裝置前端應用，大幅降低跨平台軟體的開發門檻與全端技術棧切換成本。",
-        "id": "news:https://flet.dev/",
-        "publishedAt": "2026-09-20T00:03:22.470Z",
-        "title": "Flet 1.0 正式釋出：以 Python 打造跨平台應用程式",
-        "type": "news",
-        "url": "https://flet.dev/"
-      },
-      {
-        "content": "Vercel 宣布調整免費 Hobby 方案政策。官方指出過往休眠未啟用的部署持續消耗大量儲存資源，因此現已開始針對免費用戶中未受保護的舊有部署進行立即刪除。仰賴 Vercel 免費層託管專案或歷史測試環境的開發者，需特別留意檢查部署保護設定，以防重要歷史版本或測試站台遭到清除。",
-        "id": "news:https://thenewstack.io/vercel-hobby-deployment-retention",
-        "publishedAt": "2026-09-20T00:03:22.470Z",
-        "title": "Vercel 收緊免費方案規則：即刻自動清理未受保護的休眠部署",
-        "type": "news",
-        "url": "https://thenewstack.io/vercel-hobby-deployment-retention/"
-      },
-      {
-        "content": "GitHub Copilot 釋出每週功能更新，正式加入新的模型選擇選項，並升級程式碼審查（Code Review）體驗，包含改進建議自動解決與自動產生 commit 訊息。此外，Copilot 應用程式現已整合 Sentry 錯誤追蹤工具，並針對管理員控制項與 Agent 新功能進行了全方位擴充，進一步優化開發者的輔助編程流程。",
-        "id": "news:https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
-        "publishedAt": "2026-09-20T00:03:22.470Z",
-        "title": "GitHub Copilot 發布多項更新：新增模型選擇、程式碼審查強化與 Sentry 整合",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14"
-      },
-      {
-        "content": "阿里巴巴正式開源其研發的醫療 AI 模型，該模型具備識別癌症及近 150 種各類醫療狀況與疾病的檢測能力。此舉為醫療科技與開源 AI 社群提供了高度專業領域的開源模型資產，有助於推進健康醫療應用的二次開發與實證研究。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wk9fag/alibaba_opensources_medical_ai_model_that_can",
-        "publishedAt": "2026-09-20T00:03:22.470Z",
-        "title": "阿里巴巴開源醫療 AI 模型：支援癌症與近 150 種疾病篩檢",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wk9fag/alibaba_opensources_medical_ai_model_that_can/"
-      },
-      {
-        "content": "一項針對寫程式代理（Coding Agents）運行環境與測試基底（Harness）設計的實證研究引起社群關注。研究深入探討如何透過嚴謹的 harness 架構設計來約束、評估並增強 AI 代理在實際軟體工程任務中的表現與可靠性，為打造高自主度 AI 開發工具的團隊提供了實用的架構評估指南。",
-        "id": "news:https://arxiv.org/abs/2609.20804",
-        "publishedAt": "2026-09-20T00:03:22.470Z",
-        "title": "Coding Agent Harness 設計實證研究：探索程式碼代理架構之關鍵評估基底",
-        "type": "news",
-        "url": "https://arxiv.org/abs/2609.20804"
-      },
       {
         "content": "技術社群提出名為「無限參數 LLM」（Infinite-Parameter LLMs）的新架構探索，研究如何擺脫固定參數規模的限制，改由即時資料動態生成並適應模型權重。這項研究為語言模型在持續學習、動態領域適應與推論架構設計上提供了嶄新的思路。",
         "id": "news:https://arxiv.org/abs/2609.18842",
@@ -763,65 +707,69 @@
         "title": "透過數學與 Rust 演算法為 Cloudflare 節省 100TB 的 RAM",
         "type": "news",
         "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/"
+      },
+      {
+        "content": "Cloudflare 發布安全公告，說明外部安全研究人員在 Cloudflare Containers 中發現一項漏洞，該漏洞可能導致前一個工作負載的殘留磁碟資料遭到跨租戶暴露。官方已詳細說明問題成因、調查過程以及採取的修復步驟。這對依賴該雲端服務與容器隔離安全性的開發者與維運團隊至關重要。",
+        "id": "news:https://blog.cloudflare.com/containers-cross-tenant-vulnerability",
+        "publishedAt": "2026-09-25T00:27:04.206Z",
+        "title": "Cloudflare 修復 Containers 跨租戶資料暴露漏洞",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/containers-cross-tenant-vulnerability/"
+      },
+      {
+        "content": "Anthropic 最新推出的 Opus 5.5 模型已正式整合至 GitHub Copilot 中。開發者現在可以在 Copilot 環境中使用該模型來執行代理式編碼（agentic coding）、長時間運行的代理任務以及各類知識工作，為開發者帶來更強大的 AI 輔助寫程式與自動化能力。",
+        "id": "news:https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
+        "publishedAt": "2026-09-25T00:27:04.206Z",
+        "title": "Claude Opus 5.5 現已正式在 GitHub Copilot 中提供",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot"
+      },
+      {
+        "content": "GitHub 發布 JetBrains 版 Copilot 1.18.0 更新，帶來全新的 AI 輔助工具審批機制、更細緻的代理對話控制權，以及支援組織共用的技能與指令。這些新功能讓使用 JetBrains IDE 的開發者能更安全、精準地控管 AI 代理在工作流程中的行為。",
+        "id": "news:https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
+        "publishedAt": "2026-09-25T00:27:04.206Z",
+        "title": "GitHub Copilot for JetBrains 1.18.0 發布：新增工具審批與代理控制",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains"
+      },
+      {
+        "content": "GitHub 宣布 Copilot CLI 的 C++ 程式碼智慧功能獲得重大升級，透過支援整 codebase（程式碼庫）索引，大幅提升 C++ 程式碼的分析速度。對於管理包含數百萬行程式碼與複雜相依來源檔案之大型 C++ 儲存庫的團隊而言，這能有效改善開發工具的互動響應與效率。",
+        "id": "news:https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing",
+        "publishedAt": "2026-09-25T00:27:04.206Z",
+        "title": "GitHub Copilot CLI 推出整份程式碼庫索引，加速 C++ 程式碼智慧分析",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing"
+      },
+      {
+        "content": "GitHub Security Lab 發布了一篇技術文章，介紹如何利用全新的 Taskflow Agent AI 框架來執行自動化模糊測試（fusing）。這項技術將 AI 結合安全漏洞探測流程，有助於開發人員與資安團隊在軟體開發生命週期中更主動、自動化地找出潛在安全風險。",
+        "id": "news:https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent",
+        "publishedAt": "2026-09-25T00:27:04.206Z",
+        "title": "透過 GitHub Security Lab Taskflow Agent 實現 AI 驅動的模糊測試",
+        "type": "news",
+        "url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/"
+      },
+      {
+        "content": "GitHub 官方團隊發表技術觀點文章，探討當開發者在面對比單純對話框（chat box）更具體、複雜的任務需求時，應當如何應對。文章深入探討了以「Canvas（畫布）」作為互動介面的設計思維，為未來開發者工具與 AI 協作介面的互動模式提供了解決方案。",
+        "id": "news:https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui",
+        "publishedAt": "2026-09-25T00:27:04.206Z",
+        "title": "當聊天介面不再適用時：GitHub 探討 Canvas 畫布介面",
+        "type": "news",
+        "url": "https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui/"
+      },
+      {
+        "content": "GitHub 工程團隊撰文分享他們如何重構 GitHub Copilot App 中的 diff 呈現介面，以順暢開啟包含數百萬行程式碼與數百則行內審查評論的巨大 Pull Request。這對需處理大型程式碼變更與高效能前端/介面渲染的工程師深具參考價值。",
+        "id": "news:https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app",
+        "publishedAt": "2026-09-25T00:27:04.206Z",
+        "title": "GitHub Copilot App 如何渲染百萬行、帶有大量評註的巨大 Pull Request",
+        "type": "news",
+        "url": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-24T00:23:57.015Z",
+      "generatedAt": "2026-09-25T00:27:04.206Z",
       "items": [
         {
-          "content": "GitHub 官方宣佈擴大支援 Copilot 程式碼審查（Code Review）的方案範圍，並推出專屬的個人化設定與企業級預設管理功能。這讓開發者與團隊能更靈活地配置審查規則與請求方式，進一步提升程式碼品質與協作效率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 程式碼審查新增個人化設定與企業預設選項",
-          "url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 針對 Copilot App 推出本機沙箱（Local sandboxing）功能，透過限制對本機檔案、網路資源與認證資料的存取，降低意外指令帶來的潛在資安風險，讓開發者在本地執行工具時更有安全保障。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot App 推出本機沙箱功能以提升安全性",
-          "url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 宣佈 Copilot App 現已透過企業管理設定支援 OpenTelemetry (OTel)。這項更新讓開發者能更透明地掌握 Copilot 代理程式（Agents）的運作效能及其與模型、工具的互動狀況，有助於系統除錯與監控。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot App 正式支援 OpenTelemetry 觀測性框架",
-          "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
-          "weightedScore": 100
-        },
-        {
-          "content": "官方宣佈為個人 AI 的 Private AI Compute 導入安全、伺服器端的記憶體機制，在確保隱私的同時，拓展個人化人工智慧應用的運算與資料處理能力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "deepmind-blog",
-          "sources": [
-            "deepmind-blog"
-          ],
-          "title": "Private AI Compute 推出具備安全伺服器端記憶體的個人化 AI 運算",
-          "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 技術團隊分享如何運用統計學與 Rust 語言，大幅削減基於 Pingora 架構的服務之記憶體用量。這篇文章深入探討了在大規模分散式系統中，透過數學方法優化記憶體足跡的實際工程經驗與效能調校。",
+          "content": "Cloudflare 發布安全公告，說明外部安全研究人員在 Cloudflare Containers 中發現一項漏洞，該漏洞可能導致前一個工作負載的殘留磁碟資料遭到跨租戶暴露。官方已詳細說明問題成因、調查過程以及採取的修復步驟。這對依賴該雲端服務與容器隔離安全性的開發者與維運團隊至關重要。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -829,9 +777,87 @@
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "透過數學與 Rust 演算法為 Cloudflare 節省 100TB 的 RAM",
-          "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/",
+          "title": "Cloudflare 修復 Containers 跨租戶資料暴露漏洞",
+          "url": "https://blog.cloudflare.com/containers-cross-tenant-vulnerability/",
           "weightedScore": 50
+        },
+        {
+          "content": "Anthropic 最新推出的 Opus 5.5 模型已正式整合至 GitHub Copilot 中。開發者現在可以在 Copilot 環境中使用該模型來執行代理式編碼（agentic coding）、長時間運行的代理任務以及各類知識工作，為開發者帶來更強大的 AI 輔助寫程式與自動化能力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "Claude Opus 5.5 現已正式在 GitHub Copilot 中提供",
+          "url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 發布 JetBrains 版 Copilot 1.18.0 更新，帶來全新的 AI 輔助工具審批機制、更細緻的代理對話控制權，以及支援組織共用的技能與指令。這些新功能讓使用 JetBrains IDE 的開發者能更安全、精準地控管 AI 代理在工作流程中的行為。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot for JetBrains 1.18.0 發布：新增工具審批與代理控制",
+          "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 宣布 Copilot CLI 的 C++ 程式碼智慧功能獲得重大升級，透過支援整 codebase（程式碼庫）索引，大幅提升 C++ 程式碼的分析速度。對於管理包含數百萬行程式碼與複雜相依來源檔案之大型 C++ 儲存庫的團隊而言，這能有效改善開發工具的互動響應與效率。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot CLI 推出整份程式碼庫索引，加速 C++ 程式碼智慧分析",
+          "url": "https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub Security Lab 發布了一篇技術文章，介紹如何利用全新的 Taskflow Agent AI 框架來執行自動化模糊測試（fusing）。這項技術將 AI 結合安全漏洞探測流程，有助於開發人員與資安團隊在軟體開發生命週期中更主動、自動化地找出潛在安全風險。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-blog-ai-ml",
+          "sources": [
+            "github-blog-ai-ml"
+          ],
+          "title": "透過 GitHub Security Lab Taskflow Agent 實現 AI 驅動的模糊測試",
+          "url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 官方團隊發表技術觀點文章，探討當開發者在面對比單純對話框（chat box）更具體、複雜的任務需求時，應當如何應對。文章深入探討了以「Canvas（畫布）」作為互動介面的設計思維，為未來開發者工具與 AI 協作介面的互動模式提供了解決方案。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-blog-ai-ml",
+          "sources": [
+            "github-blog-ai-ml"
+          ],
+          "title": "當聊天介面不再適用時：GitHub 探討 Canvas 畫布介面",
+          "url": "https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui/",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 工程團隊撰文分享他們如何重構 GitHub Copilot App 中的 diff 呈現介面，以順暢開啟包含數百萬行程式碼與數百則行內審查評論的巨大 Pull Request。這對需處理大型程式碼變更與高效能前端/介面渲染的工程師深具參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-blog-ai-ml",
+          "sources": [
+            "github-blog-ai-ml"
+          ],
+          "title": "GitHub Copilot App 如何渲染百萬行、帶有大量評註的巨大 Pull Request",
+          "url": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/",
+          "weightedScore": 100
         }
       ]
     }
@@ -2228,6 +2254,69 @@
         "cloudflare-blog"
       ],
       "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-25T00:27:04.206Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/containers-cross-tenant-vulnerability"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-25T00:27:04.206Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-25T00:27:04.206Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-25T00:27:04.206Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-25T00:27:04.206Z",
+      "sourceId": "github-blog-ai-ml",
+      "sources": [
+        "github-blog-ai-ml"
+      ],
+      "url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-25T00:27:04.206Z",
+      "sourceId": "github-blog-ai-ml",
+      "sources": [
+        "github-blog-ai-ml"
+      ],
+      "url": "https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-25T00:27:04.206Z",
+      "sourceId": "github-blog-ai-ml",
+      "sources": [
+        "github-blog-ai-ml"
+      ],
+      "url": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app"
     }
   ]
 }
