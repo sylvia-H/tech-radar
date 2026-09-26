@@ -236,7 +236,8 @@ Lobsters 偵測。**使用者原則：高熱度但關鍵字歸類不到的候選
       領域 `general`、不計入非 AI 配額；`backfill-scope`／`backfill-full` 剔除階段；parse 缺鍵視為空陣列。
 - [x] `NewsDigestDomain`；state 的 seenNews／publish.news domain 列舉加 `general`（只加值）。
 - [x] 憲章 1.8.0、CLAUDE.md、dev-guide §4.4、README 同步；測試 629 → 642。
-- [ ] （觀察）每日補位則數與內容；(a) 類是否曾因未歸類入池名額（依分數取前 10）被高分 (b)(c)(e) 擠出候選池——
-      若有，擴大 `unresolvedMaxCount`（輸入 token 只約 6.6k，成本很低）。
+- [x] 未歸類入池名額 `unresolvedMaxCount` 10 → 20、`convergeMax` 70 → 80（使用者決策）：入池依分數取、分不出 (a) 與
+      (b)(c)(e)，首日前 10 名皆 ≥539 分，較低分的 AI 新事物會被擠出池；多 10 則標題約 +1k tokens。
+- [ ] （觀察）每日補位則數與內容；20 席是否足以讓 (a) 類進池、候選池 80 是否觸頂擠掉 Tier 3；輸入 tokens 常態值。
 - Lite 漏選疑慮（首日）：上訴法院維持 Anthropic 供應鏈風險認定（366，第 (3) 類）、Claude Code AGENTS.md 修正（481）
   未入選；Lite 三天則數 5／7／7。持續觀察，連續偏低即切回 Flash 系。
