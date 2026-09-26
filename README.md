@@ -33,7 +33,7 @@ Discord；同時發佈公開的 [GitHub Pages 儀表板](https://sylvia-h.github
 | LLM 呼叫 | 新聞策展每日 1 次（`gemini-3.5-flash-lite`，備援 `gemini-3.1-flash-lite`）；repo 簡介一生 1 次並快取、榜單日多 1 次一句話 TL;DR（皆 `gemini-3.5-flash-lite`） |
 | 榜單 | 每領域追蹤 top 15，推播綜合 top 10，每 7 天只推變化 |
 | 榜單資料 | GitHub Trending weekly 6 個頁面 ＋ Search API 2 條查詢，不自存星星歷史 |
-| 排程 | 雙離峰 cron（台北 06:07 主班、06:37 補班）＋ 時間戳 guard |
+| 排程 | 雙離峰 cron（台北 04:07 主班、04:37 補班）＋ 時間戳 guard |
 | 常駐服務／資料庫 | 0 |
 | 月費 | $0 |
 | 單元測試 | 642 個、65 個測試套件 |
@@ -94,7 +94,7 @@ croc 是一款基於 Go 語言的高效能檔案傳輸工具，解決了跨設�
 server），由 `radar.yml` 內兩個 job 依序執行：
 
 ```
-GitHub Actions 雙離峰 cron（UTC 22:07 / 22:37 ＝ 台北 06:07 / 06:37）
+GitHub Actions 雙離峰 cron（UTC 20:07 / 20:37 ＝ 台北 04:07 / 04:37）
 │
 ├─ radar job
 │   ├─ 從獨立 state 分支載入 state/board.json（唯一權威狀態）
@@ -380,7 +380,7 @@ Prompt 內幾個實測後的關鍵設計，見[工程亮點](#工程亮點踩坑
   逾 Discord 單則訊息 6,000 字元上限；`chunkEmbedsByBudget` 同時受「≤10 張」與「合計 ≤6,000」約束，超出就
   拆成下一則訊息，不靜默丟內容。降級路徑（LLM 失敗）一律排除「未歸類」候選——沒有 LLM 判斷時它們會以高分
   佔滿降級晨報。
-- **18 小時 guard**：距上次推播不足 18h（24h − 6h 寬限）整段跳過，抵抗 06:37 補班 cron 重推；
+- **18 小時 guard**：距上次推播不足 18h（24h − 6h 寬限）整段跳過，抵抗 04:37 補班 cron 重推；
   時間戳落在未來視為時鐘異常，保守跳過；空內容不推播也**不**推進時間戳，讓補班或隔天重試。
 - **降級而非開天窗**：策展以 Flash 呼叫失敗（429 重試耗盡、型號 404、空回應）時，先以 Lite
   （`gemini-3.5-flash-lite`）用同一 prompt 單次重試（2026-09-12 起，仍屬同一次策展；空回應也換型號，
@@ -663,7 +663,7 @@ schema 與 tier 加權、晨報 18h guard、榜單 162h 節奏、狀態原子寫
 
 ### GitHub Actions
 
-`.github/workflows/radar.yml`：`workflow_dispatch` ＋ cron `7 22 * * *`、`37 22 * * *`（UTC），
+`.github/workflows/radar.yml`：`workflow_dispatch` ＋ cron `7 20 * * *`、`37 20 * * *`（UTC），
 `concurrency` 排隊不取消。`radar` job 從 `state` 分支載入狀態、執行、僅在有 diff 時由 `radar-bot`
 commit 回 `state` 分支（push 失敗重試 3 次）；`publish` job `needs: radar`，以 job 層級最小權限
 部署 Pages。設定方式：Settings → Secrets and variables → Actions 填五項機密；Settings → Pages 把
