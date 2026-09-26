@@ -69,11 +69,15 @@ export const DEFAULT_FUNNEL_CONFIG: FunnelConfig = {
   // 2026-09-14 由 50 → 60：新增 3 個 AI 無分數來源（+9 席），不提高上限會把 Tier 3 與低分 HN 整批擠掉。
   // 2026-09-25 由 60 → 70：未歸類高熱度通道最多 +10 席（皆有真實分數、排在所有無分數候選之前），不提高
   // 上限會把 Tier 3 與尾端 Tier 2 整批擠掉。
-  convergeMax: 70,
+  // 2026-09-26 由 70 → 80：未歸類名額 10 → 20，同理同步調高。
+  convergeMax: 80,
   maxNullScorePerSource: 3,
   freshnessWindowDays: 30,
   unresolvedMinScore: 300,
-  unresolvedMaxCount: 10,
+  // 2026-09-26 由 10 → 20（使用者決策）：入池時還不知道一則屬 (a) AI 新事物或 (b)(c)(e)，名額依分數取；上線首日
+  // 38 則合格、前 10 名皆 ≥539 分，350 分的 AI 新模型會被高分的資安／一般軟體工程／趣聞擠出池、LLM 看不到。
+  // 成本：首日 70 候選的 prompt 僅 6,662 tokens，多 10 則只有標題的候選約 +1k tokens。
+  unresolvedMaxCount: 20,
 };
 
 /**

@@ -1,4 +1,4 @@
-import { NewsDomain, NewsDomain3 } from '../news/news.types';
+import { NewsDigestDomain, NewsDomain, NewsDomain3 } from '../news/news.types';
 import { TopicCluster } from '../news/topic-cluster';
 
 /**
@@ -58,6 +58,11 @@ export interface CurationLlmResponse {
   officialPicks: CurationLlmPick[];
   communityPicks: CurationLlmPick[];
   /**
+   * 補位項（2026-09-26 新增，憲章 1.8.0）：「未歸類」候選中的資安事件與一般軟體工程新聞。程式只在
+   * 前兩陣列驗證後未滿 `MAX_ITEMS` 時依序補入、領域記為 `general`；回應缺此鍵視為空陣列（不降級）。
+   */
+  backfillPicks: CurationLlmPick[];
+  /**
    * 回應中除 `officialPicks`／`communityPicks` 以外、被解析器忽略的其他頂層鍵（無則為空陣列，
    * 2026-09-12 新增）。用途是防禦性可觀測性：prompt 已要求「只能有兩個鍵」，但三類判準對兩個陣列
    * 時 LLM 仍可能自創 `externalPicks` 之類的鍵放第 (3) 類，若靜默忽略會無聲少推。解析器只記錄鍵名、
@@ -76,7 +81,8 @@ export interface CuratedNewsItem {
   title: string;
   content: string | null;
   url: string;
-  domain: NewsDomain3;
+  /** 三桶之一，或 `general`＝資安與一般軟體工程補位項（2026-09-26 起，見 `NewsDigestDomain`）。 */
+  domain: NewsDigestDomain;
   /**
    * 代表項來源 id（`NewsCandidate.sourceId`，多來源合併時為代表項所屬來源，2026-09-12 新增）。
    * 程式提供的事實、非 LLM 產生（憲章 VI）；隨推播寫入 `seenNews` 供事後按來源／領域統計，

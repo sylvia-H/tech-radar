@@ -73,7 +73,8 @@ export const seenNewsEntrySchema = z.object({
   seenAt: isoDatetime,
   sourceId: z.string().optional(),
   sources: z.array(z.string()).optional(),
-  domain: z.enum(['ai', 'devops', 'frontend-backend']).optional(),
+  // `general`（2026-09-26）：資安與一般軟體工程補位項。只加列舉值，舊 state 照常載入。
+  domain: z.enum(['ai', 'devops', 'frontend-backend', 'general']).optional(),
 });
 
 /**
@@ -88,7 +89,8 @@ export const curatedNewsItemSchema = z.object({
   title: z.string(),
   content: z.string().nullable(),
   url: z.string(),
-  domain: z.enum(['ai', 'devops', 'frontend-backend']),
+  // `general`（2026-09-26）：資安與一般軟體工程補位項（見 `NewsDigestDomain`）。
+  domain: z.enum(['ai', 'devops', 'frontend-backend', 'general']),
   sourceId: z.string().optional(),
   sources: z.array(z.string()).optional(),
   sourceCount: z.number().int().min(0),
