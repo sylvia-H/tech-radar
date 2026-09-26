@@ -366,65 +366,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-21T00:06:43.738Z",
-  "lastNewsPushAt": "2026-09-25T00:27:04.206Z",
+  "lastNewsPushAt": "2026-09-26T00:30:24.073Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-21T00:06:43.738Z",
       "summary": "本次榜單綜合 #1 為 alibaba/open-code-review，共有 8 個新進項目與 1 個竄升項目，其中新進與竄升集中於 AI 7 個與前後端 2 個領域，另有 1 個項目下降。"
     },
     "feed": [
-      {
-        "content": "技術社群提出名為「無限參數 LLM」（Infinite-Parameter LLMs）的新架構探索，研究如何擺脫固定參數規模的限制，改由即時資料動態生成並適應模型權重。這項研究為語言模型在持續學習、動態領域適應與推論架構設計上提供了嶄新的思路。",
-        "id": "news:https://arxiv.org/abs/2609.18842",
-        "publishedAt": "2026-09-20T00:03:22.470Z",
-        "title": "無限參數 LLM：利用即時數據生成與動態調整權重架構",
-        "type": "news",
-        "url": "https://arxiv.org/abs/2609.18842"
-      },
-      {
-        "content": "OpenAI 分享了其利用自身大型語言模型輔助設計內部 Jalapeño 晶片的工程實作與經驗。內容揭示了 LLM 如何被深度整合至晶片邏輯設計與硬體驗證工作流中，展現出生成式 AI 跨足硬體工程與 EDA（電子設計自動化）領域的實戰價值與架構潛力。",
-        "id": "news:https://spectrum.ieee.org/llms-for-chip-design",
-        "publishedAt": "2026-09-20T00:03:22.470Z",
-        "title": "OpenAI 揭露內部實作經驗：如何利用自研 LLM 輔助設計 Jalapeño 晶片",
-        "type": "news",
-        "url": "https://spectrum.ieee.org/llms-for-chip-design"
-      },
-      {
-        "content": "前 Cursor 與 Meta 工程師分享在 Grok 團隊的極限開發實踐，達成單月向生產環境合併 2,000 個 Pull Request 的紀錄。其核心關鍵不在於生成更多程式碼，而在於建立高度自動化且嚴格的驗證（Verification）體系，為身處 AI 輔助開發時代、面臨海量程式碼審查與品質把關挑戰的工程團隊提供了極具價值的管線設計參考。",
-        "id": "news:https://thenewstack.io/agentic-verification-distributed-systems",
-        "publishedAt": "2026-09-20T00:03:22.470Z",
-        "title": "單月向生產環境交付 2,000 個 PR 的工程實踐：嚴格驗證是唯一關鍵",
-        "type": "news",
-        "url": "https://thenewstack.io/agentic-verification-distributed-systems/"
-      },
-      {
-        "id": "repo:1241960226:new:2026-09-21",
-        "publishedAt": "2026-09-21T00:06:43.738Z",
-        "title": "alibaba/open-code-review 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/alibaba/open-code-review"
-      },
-      {
-        "id": "repo:1273427276:new:2026-09-21",
-        "publishedAt": "2026-09-21T00:06:43.738Z",
-        "title": "cloudflare/security-audit-skill 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/cloudflare/security-audit-skill"
-      },
-      {
-        "id": "repo:1206390571:climbed:2026-09-21",
-        "publishedAt": "2026-09-21T00:06:43.738Z",
-        "title": "debpalash/VoiceStudio 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/debpalash/VoiceStudio"
-      },
-      {
-        "id": "repo:1183888342:new:2026-09-21",
-        "publishedAt": "2026-09-21T00:06:43.738Z",
-        "title": "stablyai/orca 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/stablyai/orca"
-      },
       {
         "id": "repo:1024118326:new:2026-09-21",
         "publishedAt": "2026-09-21T00:06:43.738Z",
@@ -763,26 +711,69 @@
         "title": "GitHub Copilot App 如何渲染百萬行、帶有大量評註的巨大 Pull Request",
         "type": "news",
         "url": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/"
+      },
+      {
+        "content": "GitHub 針對企業託管設定（Enterprise managed settings）推出全新內建驗證器功能。該驗證器能自動偵測格式錯誤的 JSON、不支援的組態、無效的團隊對應（team mappings）以及其他可能導致設定失敗的錯誤，協助管理者在產品介面內即時修正，避免因組態錯誤影響組織運作。",
+        "id": "news:https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator",
+        "publishedAt": "2026-09-26T00:30:24.073Z",
+        "title": "GitHub 企業託管設定推出產品內建驗證器",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator"
+      },
+      {
+        "content": "GitHub 的企業與組織儲存庫層級 Copilot 使用量指標報告，現在新增了追蹤 Pull Request 在各個審查階段停留時間的功能。透過在每筆 repos-1-day 記錄中加入全新的 `pull_request_review_times` 陣列，開發團隊與管理者可以更精準地評估程式碼審查的瓶頸與效率。",
+        "id": "news:https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages",
+        "publishedAt": "2026-09-26T00:30:24.073Z",
+        "title": "GitHub Copilot 使用量指標 API 新增 Pull Request 審查階段拆解",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages"
+      },
+      {
+        "content": "GitHub 的 Agentic autofix 功能已正式整合 Copilot Memory。當開發者啟用該功能時，它會主動審查先前的記憶（memories）以取得額外上下文，藉此協助解決安全警報。這項更新讓自動修復機制能更貼合專案的歷史設定與開發習慣。",
+        "id": "news:https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+        "publishedAt": "2026-09-26T00:30:24.073Z",
+        "title": "GitHub 智慧自動修復（Agentic autofix）現已整合 Copilot Memory",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory"
+      },
+      {
+        "content": "開發者分享使用 Qwen-3.8-27B 本地模型的實測心得。在適當的量化設定（Q4_K_S 配合 Q8_0 上下文）下，該模型展現出極佳的自主性，能夠在無需人工過度干預的情況下，順利完成複雜的程式碼重構與多步驟任務，對於追求隱私或成本考量的開發者而言，已具備替代雲端 API 的實用價值。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wp0z3i/qwen3827b_is_good_enough_that_i_stopped_using_api",
+        "publishedAt": "2026-09-26T00:30:24.073Z",
+        "title": "Qwen-3.8-27B 實測：表現足夠強大，足以取代 API 呼叫",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wp0z3i/qwen3827b_is_good_enough_that_i_stopped_using_api/"
+      },
+      {
+        "content": "社群討論指出名為 CLM（Contrastive Language Models）的全新投影頭（projection head）技術正在崛起，旨在為 Qwen3-8B 等模型提供不同於 JEV 的替代方案。在 API 與功能介面上，CLM 支援 JEV 的所有功能，但在泛化能力、上下文規模與底層架構上具有不同的效能權衡，為本地大模型架構提供新的選擇。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wouby6/jev_almost_dead_clm_vs_jev",
+        "publishedAt": "2026-09-26T00:30:24.073Z",
+        "title": "對比式語言模型 CLM 挑戰 JEV 架構，提供更完整的介面與權衡",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wouby6/jev_almost_dead_clm_vs_jev/"
+      },
+      {
+        "content": "技術社群流傳一段關於 Qwen 3.8 27B 在執行大型程式碼庫任務時的內部思考與隨性獨白（stream-of-consciousness）。內容展現了模型在面對複雜重構與測試套件執行時的決策過程，突顯出新一代具備強大自主代理能力的開源模型，在處理工程任務時的行為模式與思考深度。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wpdho8/qwen_38_27b_be_like",
+        "publishedAt": "2026-09-26T00:30:24.073Z",
+        "title": "Qwen 3.8 27B 內部運作與自主測試流露真實開發日常",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wpdho8/qwen_38_27b_be_like/"
+      },
+      {
+        "content": "有開發者成功在僅配備 8GB VRAM 的一般筆記型電腦上，以批次串流資料（batch-1 stream of data）從頭訓練（train from scratch）一個具備持續學習能力的機器學習模型。這項實作展示了輕量化訓練與邊緣運算的實用突破，對於資源受限環境下的 AI 模型微調與實驗具備高度參考價值。",
+        "id": "news:https://github.com/volotat/mini-AGI",
+        "publishedAt": "2026-09-26T00:30:24.073Z",
+        "title": "開發者實現在 8GB VRAM 筆電上從頭訓練具備持續學習能力的模型",
+        "type": "news",
+        "url": "https://github.com/volotat/mini-AGI/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-25T00:27:04.206Z",
+      "generatedAt": "2026-09-26T00:30:24.073Z",
       "items": [
         {
-          "content": "Cloudflare 發布安全公告，說明外部安全研究人員在 Cloudflare Containers 中發現一項漏洞，該漏洞可能導致前一個工作負載的殘留磁碟資料遭到跨租戶暴露。官方已詳細說明問題成因、調查過程以及採取的修復步驟。這對依賴該雲端服務與容器隔離安全性的開發者與維運團隊至關重要。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 修復 Containers 跨租戶資料暴露漏洞",
-          "url": "https://blog.cloudflare.com/containers-cross-tenant-vulnerability/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Anthropic 最新推出的 Opus 5.5 模型已正式整合至 GitHub Copilot 中。開發者現在可以在 Copilot 環境中使用該模型來執行代理式編碼（agentic coding）、長時間運行的代理任務以及各類知識工作，為開發者帶來更強大的 AI 輔助寫程式與自動化能力。",
+          "content": "GitHub 針對企業託管設定（Enterprise managed settings）推出全新內建驗證器功能。該驗證器能自動偵測格式錯誤的 JSON、不支援的組態、無效的團隊對應（team mappings）以及其他可能導致設定失敗的錯誤，協助管理者在產品介面內即時修正，避免因組態錯誤影響組織運作。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -790,12 +781,12 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "Claude Opus 5.5 現已正式在 GitHub Copilot 中提供",
-          "url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
+          "title": "GitHub 企業託管設定推出產品內建驗證器",
+          "url": "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 發布 JetBrains 版 Copilot 1.18.0 更新，帶來全新的 AI 輔助工具審批機制、更細緻的代理對話控制權，以及支援組織共用的技能與指令。這些新功能讓使用 JetBrains IDE 的開發者能更安全、精準地控管 AI 代理在工作流程中的行為。",
+          "content": "GitHub 的企業與組織儲存庫層級 Copilot 使用量指標報告，現在新增了追蹤 Pull Request 在各個審查階段停留時間的功能。透過在每筆 repos-1-day 記錄中加入全新的 `pull_request_review_times` 陣列，開發團隊與管理者可以更精準地評估程式碼審查的瓶頸與效率。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -803,12 +794,12 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot for JetBrains 1.18.0 發布：新增工具審批與代理控制",
-          "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
+          "title": "GitHub Copilot 使用量指標 API 新增 Pull Request 審查階段拆解",
+          "url": "https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 宣布 Copilot CLI 的 C++ 程式碼智慧功能獲得重大升級，透過支援整 codebase（程式碼庫）索引，大幅提升 C++ 程式碼的分析速度。對於管理包含數百萬行程式碼與複雜相依來源檔案之大型 C++ 儲存庫的團隊而言，這能有效改善開發工具的互動響應與效率。",
+          "content": "GitHub 的 Agentic autofix 功能已正式整合 Copilot Memory。當開發者啟用該功能時，它會主動審查先前的記憶（memories）以取得額外上下文，藉此協助解決安全警報。這項更新讓自動修復機制能更貼合專案的歷史設定與開發習慣。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -816,47 +807,60 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot CLI 推出整份程式碼庫索引，加速 C++ 程式碼智慧分析",
-          "url": "https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing",
+          "title": "GitHub 智慧自動修復（Agentic autofix）現已整合 Copilot Memory",
+          "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
           "weightedScore": 100
         },
         {
-          "content": "GitHub Security Lab 發布了一篇技術文章，介紹如何利用全新的 Taskflow Agent AI 框架來執行自動化模糊測試（fusing）。這項技術將 AI 結合安全漏洞探測流程，有助於開發人員與資安團隊在軟體開發生命週期中更主動、自動化地找出潛在安全風險。",
+          "content": "開發者分享使用 Qwen-3.8-27B 本地模型的實測心得。在適當的量化設定（Q4_K_S 配合 Q8_0 上下文）下，該模型展現出極佳的自主性，能夠在無需人工過度干預的情況下，順利完成複雜的程式碼重構與多步驟任務，對於追求隱私或成本考量的開發者而言，已具備替代雲端 API 的實用價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
+          "sourceId": "reddit-localllama",
           "sources": [
-            "github-blog-ai-ml"
+            "reddit-localllama"
           ],
-          "title": "透過 GitHub Security Lab Taskflow Agent 實現 AI 驅動的模糊測試",
-          "url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/",
+          "title": "Qwen-3.8-27B 實測：表現足夠強大，足以取代 API 呼叫",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wp0z3i/qwen3827b_is_good_enough_that_i_stopped_using_api/",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 官方團隊發表技術觀點文章，探討當開發者在面對比單純對話框（chat box）更具體、複雜的任務需求時，應當如何應對。文章深入探討了以「Canvas（畫布）」作為互動介面的設計思維，為未來開發者工具與 AI 協作介面的互動模式提供了解決方案。",
+          "content": "社群討論指出名為 CLM（Contrastive Language Models）的全新投影頭（projection head）技術正在崛起，旨在為 Qwen3-8B 等模型提供不同於 JEV 的替代方案。在 API 與功能介面上，CLM 支援 JEV 的所有功能，但在泛化能力、上下文規模與底層架構上具有不同的效能權衡，為本地大模型架構提供新的選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
+          "sourceId": "reddit-localllama",
           "sources": [
-            "github-blog-ai-ml"
+            "reddit-localllama"
           ],
-          "title": "當聊天介面不再適用時：GitHub 探討 Canvas 畫布介面",
-          "url": "https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui/",
+          "title": "對比式語言模型 CLM 挑戰 JEV 架構，提供更完整的介面與權衡",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wouby6/jev_almost_dead_clm_vs_jev/",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 工程團隊撰文分享他們如何重構 GitHub Copilot App 中的 diff 呈現介面，以順暢開啟包含數百萬行程式碼與數百則行內審查評論的巨大 Pull Request。這對需處理大型程式碼變更與高效能前端/介面渲染的工程師深具參考價值。",
+          "content": "技術社群流傳一段關於 Qwen 3.8 27B 在執行大型程式碼庫任務時的內部思考與隨性獨白（stream-of-consciousness）。內容展現了模型在面對複雜重構與測試套件執行時的決策過程，突顯出新一代具備強大自主代理能力的開源模型，在處理工程任務時的行為模式與思考深度。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
+          "sourceId": "reddit-localllama",
           "sources": [
-            "github-blog-ai-ml"
+            "reddit-localllama"
           ],
-          "title": "GitHub Copilot App 如何渲染百萬行、帶有大量評註的巨大 Pull Request",
-          "url": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/",
+          "title": "Qwen 3.8 27B 內部運作與自主測試流露真實開發日常",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wpdho8/qwen_38_27b_be_like/",
+          "weightedScore": 100
+        },
+        {
+          "content": "有開發者成功在僅配備 8GB VRAM 的一般筆記型電腦上，以批次串流資料（batch-1 stream of data）從頭訓練（train from scratch）一個具備持續學習能力的機器學習模型。這項實作展示了輕量化訓練與邊緣運算的實用突破，對於資源受限環境下的 AI 模型微調與實驗具備高度參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "開發者實現在 8GB VRAM 筆電上從頭訓練具備持續學習能力的模型",
+          "url": "https://github.com/volotat/mini-AGI/",
           "weightedScore": 100
         }
       ]
@@ -2317,6 +2321,69 @@
         "github-blog-ai-ml"
       ],
       "url": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T00:30:24.073Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T00:30:24.073Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T00:30:24.073Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T00:30:24.073Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wp0z3i/qwen3827b_is_good_enough_that_i_stopped_using_api"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T00:30:24.073Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wouby6/jev_almost_dead_clm_vs_jev"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T00:30:24.073Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wpdho8/qwen_38_27b_be_like"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T00:30:24.073Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "url": "https://github.com/volotat/mini-AGI"
     }
   ]
 }
