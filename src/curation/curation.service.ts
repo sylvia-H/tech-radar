@@ -59,7 +59,7 @@ export class NewsCurationService {
       // 每日晨報策展走 `GEMINI_MODEL_NEWS`（2026-09-25 起為 gemini-3.5-flash-lite，見 `llm.types.ts`）；
       // 主型號擲 `LlmError` 時改以備援型號重試一次（見 `generateWithModelFallback`）。
       const { raw, model, fellBack } = await this.generateWithModelFallback(buildCurationPrompt(views));
-      const { officialPicks, communityPicks, ignoredKeys } = parseCurationResponse(raw);
+      const { officialPicks, communityPicks, backfillPicks, ignoredKeys } = parseCurationResponse(raw);
       if (ignoredKeys.length > 0) {
         // 防禦：LLM 自創鍵（如 externalPicks）會被解析器靜默忽略而無聲少推；只警示鍵名與陣列長度，
         // 不含回應全文（憲章 VII），流程照常繼續、不降級（2026-09-12 新增）
@@ -75,6 +75,7 @@ export class NewsCurationService {
         candidates,
         (d) => drops.push(d),
         (ref, title) => defaulted.push(`ref=${ref}「${clampTitle(title)}」`),
+        backfillPicks,
       );
       if (defaulted.length > 0) {
         // 未歸類候選被選入但 LLM 未回填合法 domain（2026-09-25）：程式已預設 ai，這裡只揭露、不降級。
@@ -97,7 +98,7 @@ export class NewsCurationService {
       const modelStr = fellBack ? `${model}，主型號失敗後降級至備援` : model;
       this.logger.log(
         `新聞策展完成：${candidates.length} 候選 → LLM 選官方 ${officialPicks.length} 則＋社群 ` +
-        `${communityPicks.length} 則 → 驗證後 ${items.length} 則（${domainStr}）（${modelStr}）`,
+        `${communityPicks.length} 則＋補位 ${backfillPicks.length} 則 → 驗證後 ${items.length} 則（${domainStr}）（${modelStr}）`,
       );
       return { items, degraded: false };
     } catch (err) {

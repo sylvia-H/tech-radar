@@ -481,3 +481,106 @@ describe('validateCuration（「未歸類」候選的領域落定，2026-09-25�
     expect(result).toHaveLength(15);
   });
 });
+
+describe('validateCuration（補位 backfillPicks，2026-09-26，憲章 1.8.0）', () => {
+  function collect(): { drops: CurationDrop[]; onDrop: (d: CurationDrop) => void } {
+    const drops: CurationDrop[] = [];
+    return { drops, onDrop: (d) => drops.push(d) };
+  }
+
+  it('三桶精選未滿 15 時補入未歸類候選、領域記為 general、排在最後（首日情境：7 則 AI ＋ F-Droid／FBI）', () => {
+    const ai = Array.from({ length: 7 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai' }));
+    const fdroid = makeCandidate({ originalUrl: 'https://f-droid.org/2.0', domain: 'cross', score: 1435, title: 'F-Droid 2.0' });
+    const fbi = makeCandidate({ originalUrl: 'https://404media.co/fbi', domain: 'cross', score: 811 });
+    const candidates = [...ai, fdroid, fbi];
+    const officialPicks: CurationLlmPick[] = ai.map((_, i) => ({ ref: i, title: `t${i}`, content: 'c' }));
+    const backfillPicks: CurationLlmPick[] = [
+      { ref: 7, title: 'F-Droid 2.0 發布', content: 'c' },
+      { ref: 8, title: 'FBI 資料外洩', content: 'c' },
+    ];
+
+    const result = validateCuration(officialPicks, [], candidates, undefined, undefined, backfillPicks);
+
+    expect(result).toHaveLength(9);
+    expect(result.slice(0, 7).every((it) => it.domain === 'ai')).toBe(true);
+    expect(result.slice(7).map((it) => [it.domain, it.url])).toEqual([
+      ['general', 'https://f-droid.org/2.0'],
+      ['general', 'https://404media.co/fbi'],
+    ]);
+  });
+
+  it('只補到總數 15：主精選 14 則時只補 1 則，其餘以 backfill-full 剔除', () => {
+    const ai = Array.from({ length: 14 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai' }));
+    const x = Array.from({ length: 3 }, (_, i) => makeCandidate({ originalUrl: `https://x${i}.com`, domain: 'cross', score: 500 }));
+    const candidates = [...ai, ...x];
+    const officialPicks: CurationLlmPick[] = ai.map((_, i) => ({ ref: i, title: `t${i}`, content: 'c' }));
+    const backfillPicks: CurationLlmPick[] = x.map((_, i) => ({ ref: 14 + i, title: `x${i}`, content: 'c' }));
+    const { drops, onDrop } = collect();
+
+    const result = validateCuration(officialPicks, [], candidates, onDrop, undefined, backfillPicks);
+
+    expect(result).toHaveLength(15);
+    expect(result[14].url).toBe('https://x0.com');
+    expect(drops.map((d) => [d.stage, d.ref])).toEqual([
+      ['backfill-full', 15],
+      ['backfill-full', 16],
+    ]);
+  });
+
+  it('主精選已滿 15 → 補位全數不入（三桶精選永遠優先）', () => {
+    const ai = Array.from({ length: 15 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai' }));
+    const x = makeCandidate({ originalUrl: 'https://x.com', domain: 'cross', score: 900 });
+    const officialPicks: CurationLlmPick[] = ai.map((_, i) => ({ ref: i, title: `t${i}`, content: 'c' }));
+
+    const result = validateCuration(officialPicks, [], [...ai, x], undefined, undefined, [{ ref: 15, title: 'x', content: 'c' }]);
+
+    expect(result).toHaveLength(15);
+    expect(result.some((it) => it.domain === 'general')).toBe(false);
+  });
+
+  it('已歸類候選放進補位 → backfill-scope 剔除；與前兩陣列重複 → duplicate-ref；越界 → invalid-ref', () => {
+    const a = makeCandidate({ originalUrl: 'https://a.com', domain: 'ai' });
+    const d = makeCandidate({ originalUrl: 'https://d.com', domain: 'devops', sourceId: 'cncf-blog', sources: ['cncf-blog'] });
+    const x = makeCandidate({ originalUrl: 'https://x.com', domain: 'cross', score: 400 });
+    const { drops, onDrop } = collect();
+
+    const result = validateCuration(
+      [{ ref: 0, title: 'a', content: 'c' }],
+      [],
+      [a, d, x],
+      onDrop,
+      undefined,
+      [
+        { ref: 1, title: 'devops', content: 'c' },
+        { ref: 0, title: 'dup', content: 'c' },
+        { ref: 9, title: 'ghost', content: 'c' },
+        { ref: 2, title: 'ok', content: 'c' },
+      ],
+    );
+
+    expect(result.map((it) => [it.url, it.domain])).toEqual([
+      ['https://a.com', 'ai'],
+      ['https://x.com', 'general'],
+    ]);
+    expect(drops.map((dr) => dr.stage)).toEqual(['backfill-scope', 'duplicate-ref', 'invalid-ref']);
+  });
+
+  it('補位項不計入非 AI 配額：AI 10 則＋非 AI 5 則已滿時，補位不入；AI 4＋非 AI 0 時補位可補到 15', () => {
+    const ai = Array.from({ length: 4 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai' }));
+    const x = Array.from({ length: 12 }, (_, i) => makeCandidate({ originalUrl: `https://x${i}.com`, domain: 'cross', score: 400 }));
+    const officialPicks: CurationLlmPick[] = ai.map((_, i) => ({ ref: i, title: `t${i}`, content: 'c' }));
+    const backfillPicks: CurationLlmPick[] = x.map((_, i) => ({ ref: 4 + i, title: `x${i}`, content: 'c' }));
+
+    const result = validateCuration(officialPicks, [], [...ai, ...x], undefined, undefined, backfillPicks);
+
+    expect(result).toHaveLength(15);
+    expect(result.filter((it) => it.domain === 'general')).toHaveLength(11);
+  });
+
+  it('title／content 同樣收斂至 ≤70／≤500', () => {
+    const x = makeCandidate({ originalUrl: 'https://x.com', domain: 'cross', score: 400 });
+    const result = validateCuration([], [], [x], undefined, undefined, [{ ref: 0, title: '中'.repeat(80), content: '中'.repeat(600) }]);
+    expect([...result[0].title].length).toBeLessThanOrEqual(70);
+    expect([...(result[0].content ?? '')].length).toBeLessThanOrEqual(500);
+  });
+});

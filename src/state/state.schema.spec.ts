@@ -291,3 +291,12 @@ describe('feedEntrySchema — url 不驗證格式、content 選用', () => {
     expect(feedEntrySchema.safeParse(feedEntry({ content: 123 })).success).toBe(false);
   });
 });
+
+describe('新聞 domain 列舉含 general（資安與一般軟體工程補位項，2026-09-26）', () => {
+  it('seenNewsEntrySchema 與 curatedNewsItemSchema 接受 general；其他未知值仍拒收', () => {
+    expect(seenNewsEntrySchema.safeParse({ url: 'u', seenAt: '2026-09-26T00:00:00.000Z', domain: 'general' }).success).toBe(true);
+    const item = { title: 't', content: 'c', url: 'u', domain: 'general', sourceCount: 1, weightedScore: 1, degraded: false };
+    expect(curatedNewsItemSchema.safeParse(item).success).toBe(true);
+    expect(curatedNewsItemSchema.safeParse({ ...item, domain: 'security' }).success).toBe(false);
+  });
+});

@@ -18,6 +18,13 @@ export type NewsDomain = 'ai' | 'devops' | 'frontend-backend' | 'cross';
  */
 export type NewsDomain3 = 'ai' | 'devops' | 'frontend-backend';
 
+/**
+ * 晨報精選輸出的領域（2026-09-26 新增，憲章 1.8.0）：三桶之外多一個 `general`＝「資安與一般軟體工程」
+ * 補位項——只來自「未歸類高熱度」候選、只在三桶精選未滿 `MAX_ITEMS` 時補入（見 `curation-validate.ts`）。
+ * 不參與非 AI 配額計算；配額、歸類、候選流程仍只認三桶。
+ */
+export type NewsDigestDomain = NewsDomain3 | 'general';
+
 /** 來源層級：漏斗門檻與權重差異化（FR-016/019）。 */
 export type NewsTier = 1 | 2 | 3;
 

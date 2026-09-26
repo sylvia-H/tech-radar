@@ -197,11 +197,12 @@ describe('buildCurationPrompt（判準措辭，2026-09-12 社群熱度限縮）'
     expect(rules).toMatch(/\(2\)[\s\S]{0,120}`communityPicks`/);
   });
 
-  it('輸出規則：只能有兩個鍵、兩個鍵都必須存在、不得新增其他鍵', () => {
+  it('輸出規則：只能有三個鍵、三個鍵都必須存在、不得新增其他鍵（2026-09-26 加 backfillPicks）', () => {
     const rules = outputRules(prompt);
     expect(rules).not.toBeNull();
 
-    expect(rules).toContain('兩個鍵都必須存在');
+    expect(rules).toContain('三個鍵都必須存在');
+    expect(rules).toContain('`backfillPicks`');
     expect(rules).toContain('不得新增其他鍵');
   });
 
@@ -271,5 +272,27 @@ describe('buildCurationPrompt — DevOps 系列功能文擇一（2026-09-20 新�
     expect(section).toContain('只擇最重要的一篇');
     expect(section).toContain('正式發布公告本身仍');
     expect(section.replace(/\(\d\)/g, '')).not.toMatch(/\d/); // 類別標記 (1) 以外不引入阿拉伯數字（錨定教訓）
+  });
+});
+
+describe('buildCurationPrompt（補位陣列 backfillPicks，2026-09-26）', () => {
+  const prompt = buildCurationPrompt([makeView()]);
+  const body = withoutProjection(prompt) ?? '';
+
+  it('補位只從「未歸類」候選挑資安與一般軟體工程，且明示只在前兩陣列未滿時補入、永遠排在最後', () => {
+    expect(body).toContain('補位（`backfillPicks`）：只從「未歸類」候選中挑');
+    expect(body).toContain('【資安】');
+    expect(body).toContain('【一般軟體工程】');
+    expect(body).toContain('前兩個陣列的精選未滿上限時才依序補入、永遠排在最後');
+    expect(body).toContain('不要把三桶範圍內的內容放進這裡');
+  });
+
+  it('未歸類段引導資安／一般軟體工程改放 backfillPicks，與開發無關者仍不選', () => {
+    expect(body).toContain('不要硬塞進前兩個陣列');
+    expect(body).toContain('若明顯與軟體開發無關');
+  });
+
+  it('輸出範例含 backfillPicks 且不要求 domain', () => {
+    expect(outputRules(prompt) ?? '').toContain('"backfillPicks":[{"ref":<「未歸類」候選索引>,"title"');
   });
 });

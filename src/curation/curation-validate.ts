@@ -1,4 +1,4 @@
-import { NewsCandidate, NewsDomain3 } from '../news/news.types';
+import { NewsCandidate, NewsDigestDomain, NewsDomain3 } from '../news/news.types';
 import { clampToLimit } from './curation-length';
 import { clampNonAi, clampSourceDiversity, effectiveNonAiCap, isAi, MAX_ITEMS } from './curation-quota';
 import { CuratedNewsItem, CurationLlmPick } from './curation.types';
@@ -20,7 +20,14 @@ interface ResolvedPick {
  * - `non-ai-cap`：非 AI 超過 `effectiveNonAiCap` 被夾掉
  * - `max-items`：總數截 ≤10 被截掉
  */
-export type CurationDropStage = 'invalid-ref' | 'duplicate-ref' | 'source-diversity' | 'non-ai-cap' | 'max-items';
+export type CurationDropStage =
+  | 'invalid-ref'
+  | 'duplicate-ref'
+  | 'source-diversity'
+  | 'non-ai-cap'
+  | 'max-items'
+  | 'backfill-scope'
+  | 'backfill-full';
 
 /** 驗證管線剔除的一則：`ref` 為 LLM 回傳值（`invalid-ref` 時可能越界）；其餘欄位僅在 `ref` 可對回候選時提供。 */
 export interface CurationDrop {
@@ -93,6 +100,12 @@ function reportRemoved(
  * `onDomainDefaulted`（選填，2026-09-25 新增）：「未歸類」候選被選入但 LLM 未回填合法 `domain`、
  * 程式以 `ai` 補上時回呼一次（`domainOf`），供呼叫端 warn——prompt 已要求回填，靜默補值會讓 prompt
  * 失效無感。
+ *
+ * (6) `backfillPicks`（選填，2026-09-26 新增，憲章 1.8.0）：「資安與一般軟體工程」補位項，在 (1)～(5)
+ *     完成**之後**才處理，只補到總數 `MAX_ITEMS` 為止，領域一律記為 `general`、不計入非 AI 配額。
+ *     只接受「未歸類」候選（`domain === 'cross'`）：已歸類候選屬三桶範圍，該走前兩陣列，放進補位陣列者
+ *     以 `backfill-scope` 剔除；ref 越界／與前兩陣列重複同 (1) 處理；名額已滿者以 `backfill-full` 剔除。
+ *     因補位項永遠排在最後，三桶精選不會被它擠掉——這是「AI 為主」的結構性保證。
  */
 export function validateCuration(
   officialPicks: readonly CurationLlmPick[],
@@ -100,6 +113,7 @@ export function validateCuration(
   candidates: readonly NewsCandidate[],
   onDrop?: (drop: CurationDrop) => void,
   onDomainDefaulted?: (ref: number, title: string) => void,
+  backfillPicks: readonly CurationLlmPick[] = [],
 ): CuratedNewsItem[] {
   const picks = [...officialPicks, ...communityPicks];
   const seenRefs = new Set<number>();
@@ -130,15 +144,44 @@ export function validateCuration(
   const limited = clamped.slice(0, MAX_ITEMS);
   reportRemoved('max-items', clamped, limited, onDrop);
 
-  return limited.map((it) => ({
+  const main = limited.map((it) => toItem(it, domainOf(it)));
+  const backfill: CuratedNewsItem[] = [];
+  for (const pick of backfillPicks) {
+    if (!Number.isInteger(pick.ref) || pick.ref < 0 || pick.ref >= candidates.length) {
+      onDrop?.({ stage: 'invalid-ref', ref: pick.ref, title: pick.title });
+      continue;
+    }
+    const candidate = candidates[pick.ref];
+    const it: ResolvedPick = { ref: pick.ref, title: pick.title, content: pick.content, candidate };
+    if (seenRefs.has(pick.ref)) {
+      onDrop?.(toDrop('duplicate-ref', it));
+      continue;
+    }
+    seenRefs.add(pick.ref);
+    if (candidate.domain !== 'cross') {
+      onDrop?.(toDrop('backfill-scope', it));
+      continue;
+    }
+    if (main.length + backfill.length >= MAX_ITEMS) {
+      onDrop?.({ ...toDrop('backfill-full', it), domain: undefined });
+      continue;
+    }
+    backfill.push(toItem(it, 'general'));
+  }
+  return [...main, ...backfill];
+}
+
+/** 解析後的單則 → 精選輸出（事實欄位由程式自候選帶入，憲章 VI）。 */
+function toItem(it: ResolvedPick, domain: NewsDigestDomain): CuratedNewsItem {
+  return {
     title: clampToLimit(it.title, 70),
     content: clampToLimit(it.content, 500),
     url: it.candidate.originalUrl,
-    domain: domainOf(it),
+    domain,
     sourceId: it.candidate.sourceId,
     sources: [...it.candidate.sources], // 淺拷貝：精選項落檔後不與候選陣列共用參照（2026-09-12 新增）
     sourceCount: it.candidate.sources.length,
     weightedScore: it.candidate.weightedScore,
     degraded: false,
-  }));
+  };
 }
