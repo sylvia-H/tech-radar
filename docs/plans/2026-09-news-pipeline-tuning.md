@@ -224,3 +224,19 @@ Lobsters 偵測。**使用者原則：高熱度但關鍵字歸類不到的候選
 - [ ] （觀察一週）策展呼叫的 promptTokenCount 常態值與最大值、thoughtsTokenCount 是否吃掉可觀輸出額度、是否出現
       finishReason=MAX_TOKENS。若出現截斷，第一刀是投影摘要由 500 字截 250 字（prompt −37%），其次降 `convergeMax`；
       拆批列為最後手段且須先修憲章 V。
+
+## 2026-09-26 追加：資安與一般軟體工程補位（使用者決策，憲章 1.8.0）
+
+上線首日（run 36205081802）：機制正常（未歸類保留 38、入池 10、同題 jev×4／astra×3、Lite 首次成功，輸入 6,662／
+輸出 975 tokens、STOP），但只推 7 則且全 AI。未歸類 10 則 0 入選：F-Droid 2.0、Snapdragon 支援 Linux、荷蘭 NixOS
+（c）、FBI 被駭（b），其餘（e）。使用者定位：(b)(c) 本質上就是「未歸類高熱度」，則數偏低且無 (a) 類時可補位；
+(a) 類優先度較高。
+
+- [x] 回應第三陣列 `backfillPicks`（只收未歸類候選的資安／一般軟體工程）；validate 在三桶精選後補到 15、排最後、
+      領域 `general`、不計入非 AI 配額；`backfill-scope`／`backfill-full` 剔除階段；parse 缺鍵視為空陣列。
+- [x] `NewsDigestDomain`；state 的 seenNews／publish.news domain 列舉加 `general`（只加值）。
+- [x] 憲章 1.8.0、CLAUDE.md、dev-guide §4.4、README 同步；測試 629 → 642。
+- [ ] （觀察）每日補位則數與內容；(a) 類是否曾因未歸類入池名額（依分數取前 10）被高分 (b)(c)(e) 擠出候選池——
+      若有，擴大 `unresolvedMaxCount`（輸入 token 只約 6.6k，成本很低）。
+- Lite 漏選疑慮（首日）：上訴法院維持 Anthropic 供應鏈風險認定（366，第 (3) 類）、Claude Code AGENTS.md 修正（481）
+  未入選；Lite 三天則數 5／7／7。持續觀察，連續偏低即切回 Flash 系。
