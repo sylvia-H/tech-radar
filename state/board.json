@@ -366,56 +366,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-21T00:06:43.738Z",
-  "lastNewsPushAt": "2026-09-26T00:30:24.073Z",
+  "lastNewsPushAt": "2026-09-26T22:41:18.589Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-21T00:06:43.738Z",
       "summary": "本次榜單綜合 #1 為 alibaba/open-code-review，共有 8 個新進項目與 1 個竄升項目，其中新進與竄升集中於 AI 7 個與前後端 2 個領域，另有 1 個項目下降。"
     },
     "feed": [
-      {
-        "id": "repo:1024118326:new:2026-09-21",
-        "publishedAt": "2026-09-21T00:06:43.738Z",
-        "title": "Tencent/WeKnora 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/Tencent/WeKnora"
-      },
-      {
-        "id": "repo:1276665883:new:2026-09-21",
-        "publishedAt": "2026-09-21T00:06:43.738Z",
-        "title": "Tencent/BrowserSkill 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/Tencent/BrowserSkill"
-      },
-      {
-        "id": "repo:1158722119:new:2026-09-21",
-        "publishedAt": "2026-09-21T00:06:43.738Z",
-        "title": "addyosmani/agent-skills 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/addyosmani/agent-skills"
-      },
-      {
-        "id": "repo:1065936302:new:2026-09-21",
-        "publishedAt": "2026-09-21T00:06:43.738Z",
-        "title": "Open-Dev-Society/OpenStock 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/Open-Dev-Society/OpenStock"
-      },
-      {
-        "id": "repo:997737944:new:2026-09-21",
-        "publishedAt": "2026-09-21T00:06:43.738Z",
-        "title": "ruvnet/RuView 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/ruvnet/RuView"
-      },
-      {
-        "content": "Google 官方推出 Gemini 3.8 Live 以及具備擴展思考能力的 3.8 Live Extended Thinking 模型。新版本進一步提升了即時互動能力與深度推論表現，為需要低延遲即時應用或多步驟複雜思考邏輯的開發者提供更強大的模型選擇。",
-        "id": "news:https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking",
-        "publishedAt": "2026-09-21T00:06:43.738Z",
-        "title": "Google 推出 Gemini 3.8 Live 與 3.8 Live Extended Thinking",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/"
-      },
       {
         "content": "Kubernetes 在 v1.37 中針對生產環境身分驗證推出重要更新，正式引入 Pod Certificates 與 Cluster Trust Bundles。以往 Kubernetes 主要依賴 Service Account JWT 作為身分識別機制，新功能為工作負載提供更靈活、安全的憑證驗證體系，協助團隊更可靠地向內部與外部系統驗證身分。",
         "id": "news:https://kubernetes.io/blog/2026/08/28/kubernetes-v1-37-pod-certificates-and-cluster-trust-bundles",
@@ -767,13 +724,61 @@
         "title": "開發者實現在 8GB VRAM 筆電上從頭訓練具備持續學習能力的模型",
         "type": "news",
         "url": "https://github.com/volotat/mini-AGI/"
+      },
+      {
+        "content": "GitHub 宣佈針對 Copilot Business 與 Enterprise 用戶，在企業與組織設定中對一般可用的 Copilot 功能及支援的客戶端能力引入新的全域預設政策。管理者有 28 天的時間可以進行調整或審視此變更，這將影響企業環境中預設的 AI 開發工具存取行為。",
+        "id": "news:https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
+        "publishedAt": "2026-09-26T22:41:18.589Z",
+        "title": "GitHub 宣佈針對企業與組織預設啟用 Copilot 功能",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise"
+      },
+      {
+        "content": "GitHub 發佈了 Copilot 每週更新，此次改版為 Copilot 加入了新模型，並在 Copilot App 中引入本地沙盒（local sandboxing），同時更新了在 Slack、Microsoft Teams、JetBrains 及 VS Code 中的整合體驗，提供開發者更多元的工具支援。",
+        "id": "news:https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+        "publishedAt": "2026-09-26T22:41:18.589Z",
+        "title": "GitHub Copilot 發佈多項更新：加入新模型與本地沙盒",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21"
+      },
+      {
+        "content": "近期社群熱議的 Jev 被視為一種不同於傳統自回歸生成的新型態 LLM（稱為 System One 或決策模型）。它專注於在受限制的選項上輸出機率、不以自回歸方式生成、無法輸出無效類別，且能在推論時動態定義標籤，類似於進階的分類器行為，引發開發者對其技術定位與行銷方式的廣泛討論。",
+        "id": "news:https://simonwillison.net/2026/Sep/21/jev",
+        "publishedAt": "2026-09-26T22:41:18.589Z",
+        "title": "Jev 介紹一種新型態的大型語言模型：System One 即決策模型",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Sep/21/jev/"
+      },
+      {
+        "content": "開發者分享了對 Ling 3.0 Tiny（80 億參數的 MoE 模型，活躍參數 10 億）的實際體驗。在沒有 VRAM 或獨立 GPU、僅配備 2017 年舊款 i5 與 8GB 記憶體的舊筆電上，透過 llama.cpp 成功運行，並能執行區域網路模型掃描等腳本，展示了輕量化模型在邊緣與低規硬體上的實用潛力。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wqcrly/ling_tiny_30_is_a_glimpse_of_the_future",
+        "publishedAt": "2026-09-26T22:41:18.589Z",
+        "title": "Ling Tiny 3.0：在 2017 年舊筆電上以 llama.cpp 運行的 80 億參數混合專家模型",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wqcrly/ling_tiny_30_is_a_glimpse_of_the_future/"
+      },
+      {
+        "content": "研究指出 Claude 協助發現了一個具備 CRISPR 樣重複序列的新型酵素系統。這顯示先進 AI 模型在生物資訊與科學研究領域中，除了程式碼生成外，也能應用於複雜的生物學資料分析與新發現。",
+        "id": "news:https://anthropic.com/news/claude-discovers-novel-enzyme-system",
+        "publishedAt": "2026-09-26T22:41:18.589Z",
+        "title": "Claude 發現具備 CRISPR 樣重複序列的新型酵素系統",
+        "type": "news",
+        "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"
+      },
+      {
+        "content": "在 Anthropic 發布 Claude Opus 5.5 後，技術社群與分析指出，新版本宣稱成本較 Opus 5 降低 40% 且速度更快，但在特定複雜推理任務上的表現並未顯著超越前一代，提供開發者在選擇模型時的效能與成本評估參考。",
+        "id": "news:https://thenewstack.io/claude-opus-5-5-vs-opus-5",
+        "publishedAt": "2026-09-26T22:41:18.589Z",
+        "title": "Claude Opus 5.5 與 Opus 5 推理任務對比：成本更低、速度更快但表現未超越",
+        "type": "news",
+        "url": "https://thenewstack.io/claude-opus-5-5-vs-opus-5/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-26T00:30:24.073Z",
+      "generatedAt": "2026-09-26T22:41:18.589Z",
       "items": [
         {
-          "content": "GitHub 針對企業託管設定（Enterprise managed settings）推出全新內建驗證器功能。該驗證器能自動偵測格式錯誤的 JSON、不支援的組態、無效的團隊對應（team mappings）以及其他可能導致設定失敗的錯誤，協助管理者在產品介面內即時修正，避免因組態錯誤影響組織運作。",
+          "content": "GitHub 宣佈針對 Copilot Business 與 Enterprise 用戶，在企業與組織設定中對一般可用的 Copilot 功能及支援的客戶端能力引入新的全域預設政策。管理者有 28 天的時間可以進行調整或審視此變更，這將影響企業環境中預設的 AI 開發工具存取行為。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -781,12 +786,12 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub 企業託管設定推出產品內建驗證器",
-          "url": "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator",
+          "title": "GitHub 宣佈針對企業與組織預設啟用 Copilot 功能",
+          "url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 的企業與組織儲存庫層級 Copilot 使用量指標報告，現在新增了追蹤 Pull Request 在各個審查階段停留時間的功能。透過在每筆 repos-1-day 記錄中加入全新的 `pull_request_review_times` 陣列，開發團隊與管理者可以更精準地評估程式碼審查的瓶頸與效率。",
+          "content": "GitHub 發佈了 Copilot 每週更新，此次改版為 Copilot 加入了新模型，並在 Copilot App 中引入本地沙盒（local sandboxing），同時更新了在 Slack、Microsoft Teams、JetBrains 及 VS Code 中的整合體驗，提供開發者更多元的工具支援。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -794,38 +799,25 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 使用量指標 API 新增 Pull Request 審查階段拆解",
-          "url": "https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages",
+          "title": "GitHub Copilot 發佈多項更新：加入新模型與本地沙盒",
+          "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 的 Agentic autofix 功能已正式整合 Copilot Memory。當開發者啟用該功能時，它會主動審查先前的記憶（memories）以取得額外上下文，藉此協助解決安全警報。這項更新讓自動修復機制能更貼合專案的歷史設定與開發習慣。",
+          "content": "近期社群熱議的 Jev 被視為一種不同於傳統自回歸生成的新型態 LLM（稱為 System One 或決策模型）。它專注於在受限制的選項上輸出機率、不以自回歸方式生成、無法輸出無效類別，且能在推論時動態定義標籤，類似於進階的分類器行為，引發開發者對其技術定位與行銷方式的廣泛討論。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
+          "sourceId": "simonwillison",
           "sources": [
-            "github-changelog-copilot"
+            "simonwillison"
           ],
-          "title": "GitHub 智慧自動修復（Agentic autofix）現已整合 Copilot Memory",
-          "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+          "title": "Jev 介紹一種新型態的大型語言模型：System One 即決策模型",
+          "url": "https://simonwillison.net/2026/Sep/21/jev/",
           "weightedScore": 100
         },
         {
-          "content": "開發者分享使用 Qwen-3.8-27B 本地模型的實測心得。在適當的量化設定（Q4_K_S 配合 Q8_0 上下文）下，該模型展現出極佳的自主性，能夠在無需人工過度干預的情況下，順利完成複雜的程式碼重構與多步驟任務，對於追求隱私或成本考量的開發者而言，已具備替代雲端 API 的實用價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "Qwen-3.8-27B 實測：表現足夠強大，足以取代 API 呼叫",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wp0z3i/qwen3827b_is_good_enough_that_i_stopped_using_api/",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群討論指出名為 CLM（Contrastive Language Models）的全新投影頭（projection head）技術正在崛起，旨在為 Qwen3-8B 等模型提供不同於 JEV 的替代方案。在 API 與功能介面上，CLM 支援 JEV 的所有功能，但在泛化能力、上下文規模與底層架構上具有不同的效能權衡，為本地大模型架構提供新的選擇。",
+          "content": "開發者分享了對 Ling 3.0 Tiny（80 億參數的 MoE 模型，活躍參數 10 億）的實際體驗。在沒有 VRAM 或獨立 GPU、僅配備 2017 年舊款 i5 與 8GB 記憶體的舊筆電上，透過 llama.cpp 成功運行，並能執行區域網路模型掃描等腳本，展示了輕量化模型在邊緣與低規硬體上的實用潛力。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -833,35 +825,35 @@
           "sources": [
             "reddit-localllama"
           ],
-          "title": "對比式語言模型 CLM 挑戰 JEV 架構，提供更完整的介面與權衡",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wouby6/jev_almost_dead_clm_vs_jev/",
+          "title": "Ling Tiny 3.0：在 2017 年舊筆電上以 llama.cpp 運行的 80 億參數混合專家模型",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wqcrly/ling_tiny_30_is_a_glimpse_of_the_future/",
           "weightedScore": 100
         },
         {
-          "content": "技術社群流傳一段關於 Qwen 3.8 27B 在執行大型程式碼庫任務時的內部思考與隨性獨白（stream-of-consciousness）。內容展現了模型在面對複雜重構與測試套件執行時的決策過程，突顯出新一代具備強大自主代理能力的開源模型，在處理工程任務時的行為模式與思考深度。",
+          "content": "研究指出 Claude 協助發現了一個具備 CRISPR 樣重複序列的新型酵素系統。這顯示先進 AI 模型在生物資訊與科學研究領域中，除了程式碼生成外，也能應用於複雜的生物學資料分析與新發現。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
+          "sourceId": "hn",
           "sources": [
-            "reddit-localllama"
+            "hn"
           ],
-          "title": "Qwen 3.8 27B 內部運作與自主測試流露真實開發日常",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wpdho8/qwen_38_27b_be_like/",
-          "weightedScore": 100
+          "title": "Claude 發現具備 CRISPR 樣重複序列的新型酵素系統",
+          "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+          "weightedScore": 776
         },
         {
-          "content": "有開發者成功在僅配備 8GB VRAM 的一般筆記型電腦上，以批次串流資料（batch-1 stream of data）從頭訓練（train from scratch）一個具備持續學習能力的機器學習模型。這項實作展示了輕量化訓練與邊緣運算的實用突破，對於資源受限環境下的 AI 模型微調與實驗具備高度參考價值。",
+          "content": "在 Anthropic 發布 Claude Opus 5.5 後，技術社群與分析指出，新版本宣稱成本較 Opus 5 降低 40% 且速度更快，但在特定複雜推理任務上的表現並未顯著超越前一代，提供開發者在選擇模型時的效能與成本評估參考。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "lobsters-ai",
+          "sourceId": "thenewstack",
           "sources": [
-            "lobsters-ai"
+            "thenewstack"
           ],
-          "title": "開發者實現在 8GB VRAM 筆電上從頭訓練具備持續學習能力的模型",
-          "url": "https://github.com/volotat/mini-AGI/",
-          "weightedScore": 100
+          "title": "Claude Opus 5.5 與 Opus 5 推理任務對比：成本更低、速度更快但表現未超越",
+          "url": "https://thenewstack.io/claude-opus-5-5-vs-opus-5/",
+          "weightedScore": 50
         }
       ]
     }
@@ -2384,6 +2376,60 @@
         "lobsters-ai"
       ],
       "url": "https://github.com/volotat/mini-AGI"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T22:41:18.589Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T22:41:18.589Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T22:41:18.589Z",
+      "sourceId": "simonwillison",
+      "sources": [
+        "simonwillison"
+      ],
+      "url": "https://simonwillison.net/2026/Sep/21/jev"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T22:41:18.589Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wqcrly/ling_tiny_30_is_a_glimpse_of_the_future"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-26T22:41:18.589Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://anthropic.com/news/claude-discovers-novel-enzyme-system"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-26T22:41:18.589Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/claude-opus-5-5-vs-opus-5"
     }
   ]
 }
