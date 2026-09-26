@@ -3,10 +3,10 @@ name: Tech Radar
 on:
   workflow_dispatch:
   schedule:
-    # UTC 22:07 → 台北 06:07（主排）
-    - cron: '7 22 * * *'
-    # UTC 22:37 → 台北 06:37（補跑）
-    - cron: '37 22 * * *'
+    # UTC 20:07 → 台北 04:07（主排；2026-09-26 由 22:07 提前 2h，抵銷 Actions 排程約 2h 延遲）
+    - cron: '7 20 * * *'
+    # UTC 20:37 → 台北 04:37（補跑）
+    - cron: '37 20 * * *'
 
 concurrency:
   group: tech-radar

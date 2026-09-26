@@ -638,8 +638,10 @@ for (const batch of chunkEmbeds(digestEmbeds, 10)) {
 
 | 台北  | UTC             | cron          | 角色           |
 | ----- | --------------- | ------------- | -------------- |
-| 06:07 | 22:07（前一日） | `7 22 * * *`  | 主排           |
-| 06:37 | 22:37（前一日） | `37 22 * * *` | 補跑（漏跑時） |
+| 04:07 | 20:07（前一日） | `7 20 * * *`  | 主排           |
+| 04:37 | 20:37（前一日） | `37 20 * * *` | 補跑（漏跑時） |
+
+> **2026-09-26 由 22:07 / 22:37 提前 2 小時**：8 月底起 Actions 排程實際觸發普遍晚約 2–2.5 小時（run 全數成功、非重試所致），晨報多在台北 08:00 後才送達。提前後預期約 06:00–07:00 送達；平台延遲縮短時可能提早到 04 點多，屬可接受。18h guard 不受影響（切換日距前次推播仍 >18h）。
 
 > **為什麼兩個 cron？** GitHub Actions 的排程 cron 並不可靠：尖峰可延遲數十分鐘、偶爾整次被跳過。整點（`0`）尤其容易塞車，故取 `:07`、`:37` 這類離峰分鐘。晨報靠 `state.lastNewsPushAt` 做 **idempotency guard**：每次執行開頭，若「距 `lastNewsPushAt` < ~18h」就**跳過新聞段**。正常日主排推完、`lastNewsPushAt` 更新，補跑那次自動跳過（不重複推）；主排若被 Actions 跳過，補跑那次因距上次已 ~24h 而正常補推。等於**雙 cron 去重 + 漏跑補推**一次搞定，也順帶當 keep-alive。
 >
@@ -662,8 +664,8 @@ for (const batch of chunkEmbeds(digestEmbeds, 10)) {
 name: tech-radar
 on:
   schedule:
-    - cron: "7 22 * * *" # 06:07 台北 · 每日晨報（主排）
-    - cron: "37 22 * * *" # 06:37 台北 · 補跑（主排被 Actions 跳過時遞補；靠 lastNewsPushAt guard 去重）
+    - cron: "7 20 * * *" # 04:07 台北 · 每日晨報（主排）
+    - cron: "37 20 * * *" # 04:37 台北 · 補跑（主排被 Actions 跳過時遞補；靠 lastNewsPushAt guard 去重）
   workflow_dispatch: {}
 permissions:
   contents: write # 為了 commit state 分支上的 state/board.json
