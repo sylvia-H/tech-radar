@@ -22,7 +22,7 @@ export function stripJsonFence(raw: string): string {
   return fenced ? fenced[1] : raw;
 }
 
-const KNOWN_KEYS: ReadonlySet<string> = new Set(['officialPicks', 'communityPicks']);
+const KNOWN_KEYS: ReadonlySet<string> = new Set(['officialPicks', 'communityPicks', 'backfillPicks']);
 const DOMAIN3_VALUES: ReadonlySet<string> = new Set(['ai', 'devops', 'frontend-backend']);
 
 function isNewsDomain3(value: unknown): value is NewsDomain3 {
@@ -53,9 +53,11 @@ export function parseCurationResponse(raw: string): CurationLlmResponse {
 
   const officialPicks = parsePickArray(parsed, 'officialPicks');
   const communityPicks = parsePickArray(parsed, 'communityPicks');
+  // `backfillPicks`（2026-09-26）：選填——缺席視為空陣列，不因一個補位用的鍵整份降級；存在時形狀同前兩者。
+  const backfillPicks = 'backfillPicks' in parsed ? parsePickArray(parsed, 'backfillPicks') : [];
   const ignoredKeys = Object.keys(parsed).filter((key) => !KNOWN_KEYS.has(key));
 
-  return { officialPicks, communityPicks, ignoredKeys };
+  return { officialPicks, communityPicks, backfillPicks, ignoredKeys };
 }
 
 /**
@@ -80,7 +82,10 @@ export function describeIgnoredKeys(raw: string, ignoredKeys: readonly string[])
     .join(', ');
 }
 
-function parsePickArray(parsed: object, key: 'officialPicks' | 'communityPicks'): CurationLlmResponse['officialPicks'] {
+function parsePickArray(
+  parsed: object,
+  key: 'officialPicks' | 'communityPicks' | 'backfillPicks',
+): CurationLlmResponse['officialPicks'] {
   if (!(key in parsed)) {
     throw new CurationParseError(`缺少 ${key} 欄位`);
   }

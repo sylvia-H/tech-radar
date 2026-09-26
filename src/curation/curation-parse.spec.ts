@@ -128,3 +128,21 @@ describe('describeIgnoredKeys', () => {
     expect(describeIgnoredKeys('不是 JSON', ['externalPicks'])).toBe('externalPicks');
   });
 });
+
+describe('parseCurationResponse — backfillPicks（2026-09-26）', () => {
+  it('存在時解析同前兩陣列；不列入 ignoredKeys', () => {
+    const raw = '{"officialPicks":[],"communityPicks":[],"backfillPicks":[{"ref":2,"title":"F-Droid 2.0","content":"c"}]}';
+    const result = parseCurationResponse(raw);
+    expect(result.backfillPicks).toEqual([{ ref: 2, title: 'F-Droid 2.0', content: 'c' }]);
+    expect(result.ignoredKeys).toEqual([]);
+  });
+
+  it('缺席視為空陣列、不擲錯（不因補位鍵整份降級）', () => {
+    const result = parseCurationResponse('{"officialPicks":[],"communityPicks":[]}');
+    expect(result.backfillPicks).toEqual([]);
+  });
+
+  it('存在但非陣列 → 擲 CurationParseError', () => {
+    expect(() => parseCurationResponse('{"officialPicks":[],"communityPicks":[],"backfillPicks":{}}')).toThrow(CurationParseError);
+  });
+});

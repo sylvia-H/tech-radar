@@ -129,12 +129,12 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
   });
 
   it('相同輸入多次執行成員與排序 100% 一致 ＋ 收斂取前 N（SC-006/011，各來源不同、不觸發同來源上限）', () => {
-    const many = Array.from({ length: 75 }, (_, i) =>
+    const many = Array.from({ length: 85 }, (_, i) =>
       cand({ normalizedUrl: `u${i}`, sourceId: `s${i}`, sources: [`s${i}`], tier: 2, score: null }),
     );
     const r1 = runFunnel(many, EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
     const r2 = runFunnel([...many].reverse(), EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
-    expect(r1).toHaveLength(DEFAULT_FUNNEL_CONFIG.convergeMax); // convergeMax=70（2026-09-25 由 60 調高）
+    expect(r1).toHaveLength(DEFAULT_FUNNEL_CONFIG.convergeMax); // convergeMax=80（2026-09-26 由 70 調高）
     expect(r1.map((o) => o.normalizedUrl)).toEqual(r2.map((o) => o.normalizedUrl));
   });
 
@@ -176,11 +176,11 @@ describe('runFunnel（FR-016~021, SC-005/006/011）', () => {
   });
 });
 
-describe('runFunnel — 未歸類高熱度名額（2026-09-25，unresolvedMinScore=300／unresolvedMaxCount=10）', () => {
-  it('預設值：門檻 300、名額 10、convergeMax 70', () => {
+describe('runFunnel — 未歸類高熱度名額（2026-09-25 起；2026-09-26 名額 10→20、convergeMax 70→80）', () => {
+  it('預設值：門檻 300、名額 20、convergeMax 80', () => {
     expect(DEFAULT_FUNNEL_CONFIG.unresolvedMinScore).toBe(300);
-    expect(DEFAULT_FUNNEL_CONFIG.unresolvedMaxCount).toBe(10);
-    expect(DEFAULT_FUNNEL_CONFIG.convergeMax).toBe(70);
+    expect(DEFAULT_FUNNEL_CONFIG.unresolvedMaxCount).toBe(20);
+    expect(DEFAULT_FUNNEL_CONFIG.convergeMax).toBe(80);
   });
 
   it('cross 候選達門檻者保留（domain 仍為 cross、排在無分數候選之前）；低於門檻或無分數者剔除', () => {
@@ -197,8 +197,8 @@ describe('runFunnel — 未歸類高熱度名額（2026-09-25，unresolvedMinSco
     expect(isUnresolved(out[1])).toBe(false);
   });
 
-  it('未歸類候選每日至多 unresolvedMaxCount 則：依分數降冪取前 10、其餘剔除；已歸類候選不受影響', () => {
-    const unresolved = Array.from({ length: 12 }, (_, i) =>
+  it('未歸類候選每日至多 unresolvedMaxCount 則：依分數降冪取前 20、其餘剔除；已歸類候選不受影響', () => {
+    const unresolved = Array.from({ length: 22 }, (_, i) =>
       cand({ normalizedUrl: `x${String(i).padStart(2, '0')}`, domain: 'cross', score: 300 + i, sourceId: 'hn', sources: ['hn'] }),
     );
     const classified = Array.from({ length: 5 }, (_, i) =>
@@ -208,7 +208,7 @@ describe('runFunnel — 未歸類高熱度名額（2026-09-25，unresolvedMinSco
     const out = runFunnel([...unresolved, ...classified], EMPTY, DEFAULT_FUNNEL_CONFIG, NOW);
 
     const keptUnresolved = out.filter(isUnresolved).map((o) => o.score);
-    expect(keptUnresolved).toEqual([311, 310, 309, 308, 307, 306, 305, 304, 303, 302]);
+    expect(keptUnresolved).toEqual(Array.from({ length: 20 }, (_, i) => 321 - i));
     expect(out.filter((o) => !isUnresolved(o))).toHaveLength(5);
   });
 
