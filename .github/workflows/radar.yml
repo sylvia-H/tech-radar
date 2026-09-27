@@ -2,6 +2,11 @@ name: Tech Radar
 
 on:
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '晨報乾跑：跳過 18h guard、照常抓取與策展（消耗 1 次策展配額），結果推到告警頻道；不推晨報頻道、不寫狀態、不跑榜單段、不發佈 Pages'
+        type: boolean
+        default: false
   schedule:
     # UTC 20:07 → 台北 04:07（主排；2026-09-26 由 22:07 提前 2h，抵銷 Actions 排程約 2h 延遲）
     - cron: '7 20 * * *'
@@ -49,6 +54,8 @@ jobs:
         id: run-app
         run: node dist/main.cli.js
         env:
+          # schedule 觸發時 inputs.dry_run 為空 → '0'；只有手動勾選才是 '1'
+          NEWS_DRY_RUN: ${{ inputs.dry_run == true && '1' || '0' }}
           DISCORD_NEWS_WEBHOOK_URL: ${{ secrets.DISCORD_NEWS_WEBHOOK_URL }}
           DISCORD_BOARD_WEBHOOK_URL: ${{ secrets.DISCORD_BOARD_WEBHOOK_URL }}
           DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
@@ -57,7 +64,8 @@ jobs:
 
       - name: Commit state (on change only)
         # 狀態只 commit 到獨立的 state 分支，develop/main 不再出現 bot commit（見
-        # dev-guide §8）。
+        # dev-guide §8）。乾跑不寫狀態，整步跳過。
+        if: ${{ inputs.dry_run != true }}
         run: |
           cp state/board.json state-branch/state/board.json
           cd state-branch
@@ -98,6 +106,8 @@ jobs:
 
   publish:
     needs: radar
+    # 乾跑不改狀態，無需重新發佈 Pages
+    if: ${{ inputs.dry_run != true }}
     runs-on: ubuntu-latest
     permissions:
       # job 層 permissions 會整組取代 workflow 層的 contents: write，未列出的 scope 一律為
