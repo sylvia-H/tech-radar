@@ -233,7 +233,7 @@ Lobsters 偵測。**使用者原則：高熱度但關鍵字歸類不到的候選
 (a) 類優先度較高。
 
 - [x] 回應第三陣列 `backfillPicks`（只收未歸類候選的資安／一般軟體工程）；validate 在三桶精選後補到 15、排最後、
-      領域 `general`、不計入非 AI 配額；`backfill-scope`／`backfill-full` 剔除階段；parse 缺鍵視為空陣列。
+      領域 `general`、不計入非 AI 配額；`backfill-scope`／`backfill-full` 剔除階段（`backfill-scope` 於 09-27 改為回流主桶，見下）；parse 缺鍵視為空陣列。
 - [x] `NewsDigestDomain`；state 的 seenNews／publish.news domain 列舉加 `general`（只加值）。
 - [x] 憲章 1.8.0、CLAUDE.md、dev-guide §4.4、README 同步；測試 629 → 642。
 - [x] 未歸類入池名額 `unresolvedMaxCount` 10 → 20、`convergeMax` 70 → 80（使用者決策）：入池依分數取、分不出 (a) 與
@@ -241,3 +241,26 @@ Lobsters 偵測。**使用者原則：高熱度但關鍵字歸類不到的候選
 - [ ] （觀察）每日補位則數與內容；20 席是否足以讓 (a) 類進池、候選池 80 是否觸頂擠掉 Tier 3；輸入 tokens 常態值。
 - Lite 漏選疑慮（首日）：上訴法院維持 Anthropic 供應鏈風險認定（366，第 (3) 類）、Claude Code AGENTS.md 修正（481）
   未入選；Lite 三天則數 5／7／7。持續觀察，連續偏低即切回 Flash 系。
+
+## 2026-09-27 追加：補位回流、策展開 thinking、改回 Flash 主／Lite 備援、入選清單 log（使用者決策）
+
+補位上線首日（run 36277068067）：候選 79（未歸類入池 20）、Lite 一次成功（輸入 7,420／輸出 969 tokens、STOP、
+「思考 ?」＝完全沒有思考 token）。LLM 選官方 2＋社群 4＋補位 1 → **6 則**（比前一日更少）。唯一補位項是 ref 47
+Node.js v24.21.0 LTS（前後端、合格 (1)）被 `backfill-scope` 剔除；20 則未歸類中明顯屬 (c) 的 F-Droid 2.0（1451）、
+Go 官方 SIMD、Whiteboard 開源 IDE、Snapdragon X2 Linux 一則未補；已歸類 AI 中 Gemini 3.8 TTS（官方＋HN）、Anthropic
+供應鏈風險上訴判決、OpenAI agent 駭澳洲政府網站、Turnstile Spin 全漏。結論：補位機制本身正常，根因是 Lite 整體選太少
+（四天 5／7／7／6 vs Flash 日 9～10），退場條件成立。使用者拍板四項全做：
+
+- [x] `backfill-scope` 剔除改為**回流主桶**：已歸類候選被放進 `backfillPicks` 時視同 `communityPicks` 尾端併入主桶、
+      照常套去重／來源多樣性／非 AI 配額／總數截斷（仍只在 LLM 已選集合內重排），`onBackfillRerouted` 回呼 → service
+      一行 warn「補位陣列含已歸類候選，已回流主桶套配額」。與前兩陣列重複者仍走 duplicate-ref、不算回流。
+- [x] `LlmGenerateOptions.thinkingLevel`（low／medium／high → SDK `ThinkingLevel`）；策展主備呼叫皆帶
+      `NEWS_THINKING_LEVEL = 'high'`；帶 thinking 且 400 → warn 後同 prompt 不帶 thinking 重送一次（防型號不支援參數
+      導致整條降級）；用量 log 標 `thinking=high`。簡介／TL;DR 請求體不變。
+- [x] `GEMINI_MODEL_NEWS` = `gemini-3.8-flash`、`GEMINI_MODEL_NEWS_FALLBACK` = `gemini-3.5-flash-lite`（`3.1-flash-lite`
+      退場，從未在正式排程成功過）。503 退避與 Flash→Lite 路徑不變。
+- [x] 成功路徑多印「策展入選 N 則：[領域 來源「截短標題」]…」，不必再翻 state 分支 seenNews 對照。
+- [x] dev-guide §2.4／§4.4、README、llm.types docstring 同步；測試 654 全過（+12）。
+- [ ] （觀察至 10-04）Flash 首次呼叫 503 頻率與是否仍每日退 Lite；「思考 N」常態值、是否出現 finishReason=MAX_TOKENS；
+      則數是否回到 9～10 以上；補位是否開始出現 general 項、回流 warn 是否天天出現（若是，prompt 的補位段要再收緊）；
+      「LLM 拒絕 thinking 設定」warn 若出現代表型號不吃 `thinkingLevel`，改試 `thinkingBudget`。
