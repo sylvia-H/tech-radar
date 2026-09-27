@@ -72,5 +72,6 @@ npm test
 - 檢查 `state/board.json`：推播成功後 `lastNewsPushAt`（榜單日另含 `lastBoardPushAt`/`board`/`intros`）
   已更新且為完整（無半套）。
 - `NEWS_INGEST_OBSERVE=1 node dist/main.cli.js` → 只印 F4 候選、不推播（除錯路徑，D7）。
+- `NEWS_DRY_RUN=1 node dist/main.cli.js` → 晨報乾跑：跳過 guard、真策展、推到告警頻道、不寫狀態（2026-09-27，dev-guide §8.x）。
 
 > 注意：手動測試會真的推 Discord 與打 GitHub/Gemini；自用低頻，勿在 `develop`/`main` 直接跑。

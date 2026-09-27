@@ -264,3 +264,15 @@ Go 官方 SIMD、Whiteboard 開源 IDE、Snapdragon X2 Linux 一則未補；已�
 - [ ] （觀察至 10-04）Flash 首次呼叫 503 頻率與是否仍每日退 Lite；「思考 N」常態值、是否出現 finishReason=MAX_TOKENS；
       則數是否回到 9～10 以上；補位是否開始出現 general 項、回流 warn 是否天天出現（若是，prompt 的補位段要再收緊）；
       「LLM 拒絕 thinking 設定」warn 若出現代表型號不吃 `thinkingLevel`，改試 `thinkingBudget`。
+
+### 同日追加：晨報乾跑模式（使用者決策，回應「能不能現在手動觸發一則」）
+
+純 `workflow_dispatch` 會被 18h guard 擋（上次推播 UTC 09-26 22:41）；手動改 state 分支違反憲章 VI 且會讓隔日排程被
+guard 擋。使用者選「乾跑＋推到告警頻道」。
+
+- [x] `NEWS_DRY_RUN=1` → `PipelineService.runNewsDryRun()` → `NewsSegmentService.dryRun()`：跳過 guard、真抓取＋真策展、
+      推到 `alert` 頻道（標「乾跑」）、不 save、不跑榜單段；`DiscordWebhookService.send` 頻道型別放寬到 `alert`。
+- [x] workflow `dry_run` boolean 輸入 → `NEWS_DRY_RUN`；乾跑時跳過 state commit 步驟與 `publish` job。
+- [x] dev-guide §8.x、README、007 quickstart 同步。
+- [ ] 合併後手動勾 `dry_run` 觸發一次，檢查 log：`thinking=high` 與「思考 N」、「策展入選 N 則」、回流 warn、是否出現
+      「LLM 拒絕 thinking 設定」；告警頻道收到乾跑晨報 embed。
