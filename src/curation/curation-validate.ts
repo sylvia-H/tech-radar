@@ -18,7 +18,11 @@ interface ResolvedPick {
  * - `duplicate-ref`：同一 `ref` 重複出現（保留第一次）
  * - `source-diversity`：非 AI 同來源 >2 被夾掉
  * - `non-ai-cap`：非 AI 超過 `effectiveNonAiCap` 被夾掉
- * - `max-items`：總數截 ≤10 被截掉
+ * - `max-items`：總數截 ≤15 被截掉
+ * - `backfill-full`：補位項在總數已達上限時被略過
+ *
+ * （`backfill-scope` 已於 2026-09-27 移除：已歸類候選被放進補位陣列時不再剔除，改回流主桶，見
+ * `validateCuration` (6)。）
  */
 export type CurationDropStage =
   | 'invalid-ref'
@@ -26,7 +30,6 @@ export type CurationDropStage =
   | 'source-diversity'
   | 'non-ai-cap'
   | 'max-items'
-  | 'backfill-scope'
   | 'backfill-full';
 
 /** 驗證管線剔除的一則：`ref` 為 LLM 回傳值（`invalid-ref` 時可能越界）；其餘欄位僅在 `ref` 可對回候選時提供。 */
@@ -103,9 +106,17 @@ function reportRemoved(
  *
  * (6) `backfillPicks`（選填，2026-09-26 新增，憲章 1.8.0）：「資安與一般軟體工程」補位項，在 (1)～(5)
  *     完成**之後**才處理，只補到總數 `MAX_ITEMS` 為止，領域一律記為 `general`、不計入非 AI 配額。
- *     只接受「未歸類」候選（`domain === 'cross'`）：已歸類候選屬三桶範圍，該走前兩陣列，放進補位陣列者
- *     以 `backfill-scope` 剔除；ref 越界／與前兩陣列重複同 (1) 處理；名額已滿者以 `backfill-full` 剔除。
- *     因補位項永遠排在最後，三桶精選不會被它擠掉——這是「AI 為主」的結構性保證。
+ *     只接受「未歸類」候選（`domain === 'cross'`）；ref 越界／與前兩陣列重複同 (1) 處理；名額已滿者以
+ *     `backfill-full` 剔除。因補位項永遠排在最後，三桶精選不會被它擠掉——這是「AI 為主」的結構性保證。
+ *
+ *     **已歸類候選被放進補位陣列 → 回流主桶**（2026-09-27，取代原 `backfill-scope` 剔除）：補位上線首日
+ *     LLM 把 Node.js v24.21.0 LTS 發布（`frontend-backend`，合格的【官方發布】）放進 `backfillPicks`，
+ *     `backfill-scope` 把它整則丟掉，當日 7 選 → 6 推。這類項目是 LLM **已選、已改寫繁中**的三桶範圍候選，
+ *     放錯陣列是分類錯誤而非入選錯誤；改為視同 `communityPicks` 尾端（最低優先）併入主桶，照常走
+ *     (1)～(5) 的去重、來源多樣性、非 AI 配額與總數截斷——仍只在 LLM 已選集合內重排、不遞補新候選
+ *     （FR-005/010），領域沿用程式歸類（LLM 帶的 `domain` 一律忽略）。每則回流呼叫一次
+ *     `onBackfillRerouted`（選填）供呼叫端 warn：prompt 明示「不要把三桶範圍內的內容放進補位」，回流是
+ *     防線不是常態，靜默回流會讓 prompt 失效無感。
  */
 export function validateCuration(
   officialPicks: readonly CurationLlmPick[],
@@ -114,12 +125,27 @@ export function validateCuration(
   onDrop?: (drop: CurationDrop) => void,
   onDomainDefaulted?: (ref: number, title: string) => void,
   backfillPicks: readonly CurationLlmPick[] = [],
+  onBackfillRerouted?: (ref: number, title: string) => void,
 ): CuratedNewsItem[] {
-  const picks = [...officialPicks, ...communityPicks];
+  const isValidRef = (ref: number): boolean => Number.isInteger(ref) && ref >= 0 && ref < candidates.length;
+  // 補位陣列先分流：已歸類候選回流主桶（見 (6)），其餘（未歸類／越界／與前兩陣列重複者）留給補位段處理
+  // ——重複 ref 不算回流，該以 duplicate-ref 剔除，不觸發 onBackfillRerouted。
+  const mainRefs = new Set([...officialPicks, ...communityPicks].map((p) => p.ref));
+  const rerouted: CurationLlmPick[] = [];
+  const backfillOnly: CurationLlmPick[] = [];
+  for (const pick of backfillPicks) {
+    if (isValidRef(pick.ref) && !mainRefs.has(pick.ref) && candidates[pick.ref].domain !== 'cross') {
+      rerouted.push(pick);
+      onBackfillRerouted?.(pick.ref, pick.title);
+    } else {
+      backfillOnly.push(pick);
+    }
+  }
+  const picks = [...officialPicks, ...communityPicks, ...rerouted];
   const seenRefs = new Set<number>();
   const resolved: ResolvedPick[] = [];
   for (const pick of picks) {
-    if (!Number.isInteger(pick.ref) || pick.ref < 0 || pick.ref >= candidates.length) {
+    if (!isValidRef(pick.ref)) {
       onDrop?.({ stage: 'invalid-ref', ref: pick.ref, title: pick.title });
       continue;
     }
@@ -146,8 +172,8 @@ export function validateCuration(
 
   const main = limited.map((it) => toItem(it, domainOf(it)));
   const backfill: CuratedNewsItem[] = [];
-  for (const pick of backfillPicks) {
-    if (!Number.isInteger(pick.ref) || pick.ref < 0 || pick.ref >= candidates.length) {
+  for (const pick of backfillOnly) {
+    if (!isValidRef(pick.ref)) {
       onDrop?.({ stage: 'invalid-ref', ref: pick.ref, title: pick.title });
       continue;
     }
@@ -158,10 +184,6 @@ export function validateCuration(
       continue;
     }
     seenRefs.add(pick.ref);
-    if (candidate.domain !== 'cross') {
-      onDrop?.(toDrop('backfill-scope', it));
-      continue;
-    }
     if (main.length + backfill.length >= MAX_ITEMS) {
       onDrop?.({ ...toDrop('backfill-full', it), domain: undefined });
       continue;
