@@ -1,6 +1,6 @@
 import { Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { ApiError, GoogleGenAI } from '@google/genai';
+import { ApiError, GoogleGenAI, ThinkingLevel } from '@google/genai';
 import { describeUsage, LlmService } from './llm.service';
 import {
   GEMINI_MODEL_BOARD,
@@ -8,6 +8,7 @@ import {
   GEMINI_MODEL_NEWS_FALLBACK,
   LlmError,
   LLM_MAX_RETRIES,
+  NEWS_THINKING_LEVEL,
 } from './llm.types';
 
 jest.mock('@google/genai', () => {
@@ -132,14 +133,85 @@ describe('LlmService 型號選擇（2026-09-12 依資料流分流）', () => {
     expect(generateContent).toHaveBeenCalledWith({ model: GEMINI_MODEL_NEWS, contents: '請策展' });
   });
 
-  it('三個型號常數皆為 Flash-Lite 系，且策展備援與主型號不同（2026-09-25 起）', () => {
-    // 2026-09-25 起策展主備型號皆為 Lite（見 llm.types docstring）：主型號與榜單型號同一個，備援刻意
-    // 換不同型號——免費配額按型號分開計算，同型號重試對 429／型號 404 都無解。
-    for (const model of [GEMINI_MODEL_BOARD, GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK]) {
-      expect(model).toMatch(/flash-lite$/);
-    }
-    expect(GEMINI_MODEL_NEWS).toBe(GEMINI_MODEL_BOARD);
+  it('策展主型號為 Flash 系、備援為 Flash-Lite 系且與榜單同型號（2026-09-27 起）', () => {
+    // 2026-09-27 起策展回到 Flash 主／Lite 備援（見 llm.types docstring）：Lite 主型號四天則數 5／7／7／6 且
+    // 漏選明顯的官方發布，退場條件成立。備援刻意換不同型號——免費配額按型號分開計算，同型號重試對
+    // 429／型號 404 都無解。
+    expect(GEMINI_MODEL_NEWS).toMatch(/-flash$/);
+    expect(GEMINI_MODEL_BOARD).toMatch(/flash-lite$/);
+    expect(GEMINI_MODEL_NEWS_FALLBACK).toBe(GEMINI_MODEL_BOARD);
     expect(GEMINI_MODEL_NEWS_FALLBACK).not.toBe(GEMINI_MODEL_NEWS);
+    expect(NEWS_THINKING_LEVEL).toBe('high');
+  });
+});
+
+describe('LlmService thinking 設定（2026-09-27 新增）', () => {
+  it('未指定 thinkingLevel → 請求體不帶 config（簡介／TL;DR 行為不變）', async () => {
+    const generateContent = jest.fn().mockResolvedValue({ text: 'ok' });
+    const svc = makeService(generateContent);
+    await svc.generate('請生成', { model: GEMINI_MODEL_BOARD });
+    expect(generateContent).toHaveBeenCalledWith({ model: GEMINI_MODEL_BOARD, contents: '請生成' });
+    expect(generateContent.mock.calls[0][0]).not.toHaveProperty('config');
+  });
+
+  it('指定 thinkingLevel: high → 帶 config.thinkingConfig.thinkingLevel=HIGH，且用量 log 標 thinking=high', async () => {
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+    const generateContent = jest.fn().mockResolvedValue({
+      text: 'ok',
+      usageMetadata: { promptTokenCount: 7420, candidatesTokenCount: 969, thoughtsTokenCount: 3000, totalTokenCount: 11389 },
+      candidates: [{ finishReason: 'STOP' }],
+    });
+    const svc = makeService(generateContent);
+    await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, thinkingLevel: NEWS_THINKING_LEVEL });
+    expect(generateContent).toHaveBeenCalledTimes(1);
+    expect(generateContent).toHaveBeenCalledWith({
+      model: GEMINI_MODEL_NEWS,
+      contents: '請策展',
+      config: { thinkingConfig: { thinkingLevel: ThinkingLevel.HIGH } },
+    });
+    const line = logSpy.mock.calls.map((c) => String(c[0])).find((l) => l.startsWith('LLM 用量')) ?? '';
+    expect(line).toContain('thinking=high');
+    expect(line).toContain('思考 3000');
+    logSpy.mockRestore();
+  });
+
+  it('帶 thinking 被型號以 400 拒絕 → warn 後立即以同一 prompt 不帶 thinking 重送一次並成功，不擲 LlmError', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generateContent = jest
+      .fn()
+      .mockRejectedValueOnce(new ApiError({ status: 400, message: 'thinking_level is not supported' }))
+      .mockResolvedValueOnce({ text: '不帶 thinking 的結果' });
+    const svc = makeService(generateContent);
+
+    await expect(svc.generate('請策展', { model: GEMINI_MODEL_NEWS, thinkingLevel: 'high' })).resolves.toBe('不帶 thinking 的結果');
+
+    expect(generateContent).toHaveBeenCalledTimes(2);
+    expect(generateContent.mock.calls[0][0]).toHaveProperty('config');
+    expect(generateContent.mock.calls[1][0]).toEqual({ model: GEMINI_MODEL_NEWS, contents: '請策展' });
+    const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((l) => l.includes('拒絕 thinking')) ?? '';
+    expect(warn).toContain(GEMINI_MODEL_NEWS);
+    expect(warn).toContain('status=400');
+    expect(warn).not.toContain('請策展');
+    warnSpy.mockRestore();
+  });
+
+  it('帶 thinking 遇 503 → 走一般退避重試（下一次仍帶 thinking），不觸發「不帶 thinking 重送」', async () => {
+    const generateContent = jest
+      .fn()
+      .mockRejectedValueOnce(new ApiError({ status: 503, message: 'high demand' }))
+      .mockResolvedValueOnce({ text: 'ok' });
+    const svc = makeService(generateContent);
+    await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, thinkingLevel: 'high' });
+    expect(generateContent).toHaveBeenCalledTimes(2);
+    expect(generateContent.mock.calls[1][0]).toHaveProperty('config');
+  });
+
+  it('不帶 thinking 的 400 仍為不可重試錯誤（LlmError(error)），只呼叫 1 次', async () => {
+    jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generateContent = jest.fn().mockRejectedValue(new ApiError({ status: 400, message: 'bad request' }));
+    const svc = makeService(generateContent);
+    await expect(svc.generate('x', { model: GEMINI_MODEL_NEWS })).rejects.toMatchObject({ reason: 'error' });
+    expect(generateContent).toHaveBeenCalledTimes(1);
   });
 });
 

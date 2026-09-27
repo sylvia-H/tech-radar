@@ -29,12 +29,40 @@
  * 品質風險：Lite 策展日的則數變異較大（09-13～09-25 四個 Lite 日為 9／9／5／7 則），且新 prompt 要 LLM
  * 對「未歸類高熱度」候選回填領域、辨識同題群集，對判斷力要求更高——若連續一週則數明顯偏低、或未歸類
  * 候選全數不選，就改回 Flash 系（只改此檔常數）。
+ *
+ * 2026-09-27（現況）：**策展改回 Flash 主、Lite 備援，並對策展呼叫開啟 thinking**（使用者決策）。Lite 主型號
+ * 上線後四個策展日則數 5／7／7／6（對照 Flash 成功日 9～10），09-27 候選 79 則只選 7 則、把 Node.js LTS 發布
+ * 誤放補位陣列、20 則未歸類中的 F-Droid 2.0／Go 官方 SIMD／開源 IDE 一則未補、Gemini 3.8 TTS 官方發布與
+ * Anthropic 供應鏈風險判決等明顯 (1)／(3) 全數漏選——退場條件（則數連續偏低＋未歸類全不選）四天內即成立。
+ * 主型號 `GEMINI_MODEL_NEWS` = `gemini-3.8-flash`（5 RPM／20 RPD，每日 1 次策展含退避最多 4 次 HTTP 嘗試仍有
+ * 5 倍餘裕；503 過載日退 Lite 的路徑不變），備援 `GEMINI_MODEL_NEWS_FALLBACK` = `gemini-3.5-flash-lite`（09-13～
+ * 09-25 實證可用的 Flash→Lite 路徑，取代未曾在正式排程成功過的 `gemini-3.1-flash-lite`）。策展呼叫另帶
+ * `thinkingLevel: NEWS_THINKING_LEVEL`（high）：此前 `generateContent` 未帶任何 config，Actions log 的
+ * 「思考 ?」證實 Lite 完全沒有思考 token 就要對 79 則候選做三類判準＋三陣列分類；thinking 只增加 token、
+ * 不增加請求數，對 RPM／RPD 零成本。若型號拒絕 thinking 設定（400），`LlmService` 會以同一 prompt 不帶
+ * thinking 重送一次並 warn，不會因此降級（見 `llm.service.ts`）。
  */
 export const GEMINI_MODEL_BOARD = 'gemini-3.5-flash-lite';
-export const GEMINI_MODEL_NEWS = 'gemini-3.5-flash-lite';
+export const GEMINI_MODEL_NEWS = 'gemini-3.8-flash';
 
-/** 策展備援型號：主型號擲 `LlmError` 時同 prompt 單次重試用（2026-09-25 新增，見上方 docstring）。 */
-export const GEMINI_MODEL_NEWS_FALLBACK = 'gemini-3.1-flash-lite';
+/**
+ * 策展備援型號：主型號擲 `LlmError` 時同 prompt 單次重試用（2026-09-25 新增，見上方 docstring）。
+ * 2026-09-27 起為 `gemini-3.5-flash-lite`（與 `GEMINI_MODEL_BOARD` 同型號、配額同一份）。
+ */
+export const GEMINI_MODEL_NEWS_FALLBACK = 'gemini-3.5-flash-lite';
+
+/**
+ * Gemini thinking 深度（對應 `@google/genai` 的 `ThinkingConfig.thinkingLevel`，Gemini 3 系型號的建議寫法；
+ * 由 `LlmService` 對映為 SDK 列舉，呼叫端不直接依賴 SDK 型別）。
+ */
+export type LlmThinkingLevel = 'low' | 'medium' | 'high';
+
+/**
+ * 每日晨報策展呼叫的 thinking 深度（2026-09-27 新增，見上方 docstring）。策展是本專案唯一需要「對整份候選池
+ * 逐則核對絕對判準、再分三陣列」的長程判斷任務，每日只 1 次、思考 token 不計入 RPM／RPD，取最高深度。
+ * 簡介與榜單 TL;DR 仍不帶 thinking（任務單純、Lite 即可）。
+ */
+export const NEWS_THINKING_LEVEL: LlmThinkingLevel = 'high';
 
 /** 可用型號的聯集（避免呼叫端打錯字串）。 */
 export type GeminiModel =
@@ -42,9 +70,13 @@ export type GeminiModel =
   | typeof GEMINI_MODEL_NEWS
   | typeof GEMINI_MODEL_NEWS_FALLBACK;
 
-/** `LlmService.generate` 的選項：`model` 未給即用 `GEMINI_MODEL_BOARD`。 */
+/**
+ * `LlmService.generate` 的選項：`model` 未給即用 `GEMINI_MODEL_BOARD`；`thinkingLevel` 未給即不帶
+ * `thinkingConfig`（維持型號預設行為，2026-09-27 新增）。
+ */
 export interface LlmGenerateOptions {
   model?: GeminiModel;
+  thinkingLevel?: LlmThinkingLevel;
 }
 
 /** 429/503/網路錯誤最多重試次數（含首次嘗試，research D6）。 */

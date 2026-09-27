@@ -17,7 +17,7 @@
 | repo 簡介  | 首次進榜時抓 README → Gemini 產 ≤250 字簡介 → **按 repoId 快取（獨立於榜單快照）**                     | 只生成一次，省額度、內容穩定；跌出榜再進榜也不重生成，且天然只介紹「有變化」的 repo。   |
 | 狀態存放   | **commit 到獨立 `state` 分支的 `state/board.json`**（榜單快照 + 簡介快取 + 已推新聞紀錄）               | 「只看變化」需要跨執行的狀態；committed JSON 零外部依賴，順帶替排程保活（§2.1）；獨立分支使 bot commit 不混入 `develop`/`main` 開發歷史（§2.2、§8）。 |
 | 推播       | **Discord Channel Webhook**（HTTP POST）                                                               | 只推播不收訊息 → 不需要 bot、gateway、Message Content Intent。                          |
-| LLM        | **Gemini 免費層，依資料流分兩型號**：榜單簡介／TL;DR 用 Flash-Lite（`GEMINI_MODEL_BOARD`），每日晨報策展用 Flash-Lite（`GEMINI_MODEL_NEWS`，2026-09-25 起亦為 `gemini-3.5-flash-lite`，備援 `GEMINI_MODEL_NEWS_FALLBACK` = `gemini-3.1-flash-lite`） | Lite 用量極低（七天 0～數次）；Flash 免費層 5 RPM／20 RPD（2026-09-12 AI Studio 確認），每日 1 次、含退避最多 4 次 HTTP 嘗試，餘裕充足（§2.4）。 |
+| LLM        | **Gemini 免費層，依資料流分兩型號**：榜單簡介／TL;DR 用 Flash-Lite（`GEMINI_MODEL_BOARD`），每日晨報策展用 Flash（`GEMINI_MODEL_NEWS` = `gemini-3.8-flash`，2026-09-27 起帶 thinking=high；備援 `GEMINI_MODEL_NEWS_FALLBACK` = `gemini-3.5-flash-lite`；09-25～09-27 曾短暫改為 Lite 主／Lite 備援） | Lite 用量極低（七天 0～數次）；Flash 免費層 5 RPM／20 RPD（2026-09-12 AI Studio 確認），每日 1 次、含退避最多 4 次 HTTP 嘗試，餘裕充足（§2.4）。 |
 | DB（歷史） | 不用                                                                                                   | MVP 不需要通用資料庫；星星歷史不自存（見 §3）。                                         |
 
 > **NestJS 的角色**：用 `NestFactory.createApplicationContext()` 跑成一次性 CLI job（保留 DI/模組結構、不啟 HTTP server、跑完即退），完美契合 Actions。
@@ -118,7 +118,7 @@
       該型號的免費層配額。
     - 教訓：Gemini 免費層型號 ID **可能無預警提前下架**，`LlmService` 非可重試錯誤（如 404）
       務必印出實際狀態碼與訊息（見 `llm.service.ts` `errDetail`），否則會被誤判為速率限制。
-  - **策展型號（`GEMINI_MODEL_NEWS`，2026-09-25 起 = `gemini-3.5-flash-lite`、備援 `GEMINI_MODEL_NEWS_FALLBACK` = `gemini-3.1-flash-lite`；此前為 `gemini-3.8-flash` → Lite 備援）**：每日晨報策展，每日僅 1 次呼叫，但要對
+  - **策展型號（`GEMINI_MODEL_NEWS` = `gemini-3.8-flash`、備援 `GEMINI_MODEL_NEWS_FALLBACK` = `gemini-3.5-flash-lite`，2026-09-27 起並帶 thinking=high；09-25～09-27 曾短暫為 Lite 主／`gemini-3.1-flash-lite` 備援，見下）**：每日晨報策展，每日僅 1 次呼叫，但要對
     50 則候選做語意去重、三類判準逐則核對與繁中改寫，判斷品質直接決定晨報內容，值得用較強的
     Flash。**免費層配額：5 RPM／20 RPD（2026-09-12 於 AI Studio 確認）**。用量估算：正式排程每日
     1 次策展；`LlmService` 退避最多 4 次 HTTP 嘗試（10s／20s／40s＋jitter，等待總計約 70～100 秒、四次呼叫落在約兩分鐘內；2026-09-20 由 1s／2s／4s 拉長，因 Flash 連續六天首次呼叫失敗、疑 503 過載）仍在 5 RPM
@@ -137,6 +137,17 @@
       計算，同型號重試對 429 與 404 都無解）；`gemini-3.1-flash-lite` 官方公告 shutdown 日為 **2027-05-07**
       （2026-09-25 覆核 deprecations 頁，3.5-flash-lite 未公告），到期前須更換備援。風險與退場條件：Lite
       策展日則數變異較大，若連續一週明顯偏低、或「未歸類高熱度」候選全數不選，就改回 Flash 系（只改常數）。
+    - **2026-09-27 改回 Flash 主／Lite 備援，並對策展呼叫開啟 thinking（使用者決策）**：Lite 主型號四個策展日
+      則數 5／7／7／6（Flash 成功日 9～10），09-27 候選 79 則只選 7 則，且把 Node.js v24.21.0 LTS 發布誤放補位陣列、
+      20 則未歸類中的 F-Droid 2.0／Go 官方 SIMD／開源 IDE 一則未補、Gemini 3.8 TTS 官方發布與 Anthropic 供應鏈
+      風險判決等明顯 (1)／(3) 全數漏選——上段退場條件四天內即成立。主 `gemini-3.8-flash`（5 RPM／20 RPD，每日
+      1 次策展含退避最多 4 次仍有 5 倍餘裕；503 過載日退 Lite 的路徑不變），備援改回 `gemini-3.5-flash-lite`
+      （09-13～09-25 實證可用的 Flash→Lite 路徑；`gemini-3.1-flash-lite` 從未在正式排程成功過，退場）。策展呼叫
+      另帶 `thinkingLevel: 'high'`（`NEWS_THINKING_LEVEL`，`LlmService` 對映 SDK `ThinkingConfig.thinkingLevel`）：
+      此前 `generateContent` 未帶任何 config，Actions log 的「思考 ?」證實策展完全沒有思考 token；thinking 只增加
+      token、不增加請求數，對 RPM／RPD 零成本。防禦：若型號以 400 拒絕 thinking 參數，`LlmService` warn 後以
+      同一 prompt **不帶 thinking 重送一次**（多 1 次 HTTP、不佔退避次數），不會因設定問題走到備援與降級；
+      簡介／TL;DR 不帶 thinking、行為不變。用量 log 自此標 `thinking=high`，並可從「思考 N」看實際思考 token。
 - **降級路徑（2026-09-12 起）**：策展以 Flash 呼叫失敗（`LlmError` 不論原因：429 重試耗盡、型號 404
   等不可重試錯誤、空回應——空回應也換型號，不同型號的截斷／安全過濾行為可能不同）
   → 以 Lite（`GEMINI_MODEL_BOARD`）用**同一 prompt 單次重試** → 仍失敗才退回純程式排序的原文標題版
@@ -145,8 +156,8 @@
   Gemini 一次」的語意；成功日仍恰 1 次。
 - **觀察窗（上線後兩週）**：留意告警頻道的 429／型號 404／「晨報策展降級」紅色 embed，以及
   Actions log 中 `LLM 呼叫失敗（<型號>）` 的型號字樣（`gemini-3.8-flash` 為 Flash 側、
-  `gemini-3.5-flash-lite` 為 Lite 側；2026-09-25 起策展主型號字樣為 `gemini-3.5-flash-lite`、備援為 `gemini-3.1-flash-lite`）。本機測試前先看當日已用的 Flash 次數（RPD 僅 20）。
-- 用途：每個新進榜 repo 一次 250 字簡介 + 榜單日一段「本次變化」TL;DR（皆 Lite）+ 每日一次新聞策展（2026-09-25 起亦為 Lite，備援 `gemini-3.1-flash-lite`）。穩定態榜單七天才有 0～數個新 repo → 用量極低。
+  `gemini-3.5-flash-lite` 為 Lite 側；2026-09-27 起策展主型號字樣為 `gemini-3.8-flash，thinking=high`、備援為 `gemini-3.5-flash-lite，thinking=high`）。本機測試前先看當日已用的 Flash 次數（RPD 僅 20）。
+- 用途：每個新進榜 repo 一次 250 字簡介 + 榜單日一段「本次變化」TL;DR（皆 Lite）+ 每日一次新聞策展（Flash 主、Lite 備援，2026-09-27 起帶 thinking）。穩定態榜單七天才有 0～數個新 repo → 用量極低。
 - ⚠️ 免費層 prompt 可能被拿去改善模型 → 本專案只送公開資料，OK。加 429 指數退避。
 
 ### 2.5 GitHub API：Personal Access Token
@@ -340,7 +351,7 @@ Gemini 一次、不用向量檢索/embeddings）、**選重要而非選熱門**�
 
 > 本步**只做選擇、去重與改寫摘要，不得產生或竄改連結/數字**（連結與分數一律由程式帶）。整個新聞流程對 LLM 的用量固定為「每日 1 次」，與候選數無關。
 
-- **補位 `backfillPicks`（2026-09-26 新增，憲章 1.8.0）**：回應的第三陣列，只收「未歸類」候選中的 (b) 資安事件（重大漏洞、資料外洩、供應鏈攻擊）與 (c) 一般軟體工程（程式語言與執行環境、資料庫、作業系統與平台、開源專案與開發工具）。`curation-validate.ts` 在三桶精選完成非 AI 配額與總數截斷**之後**才處理，只補到 15 則、永遠排在最後，領域記為 `general`（`NewsDigestDomain`，state 的 seenNews／publish.news 列舉同步加值）、不計入非 AI 配額；已歸類候選放進補位以 `backfill-scope` 剔除，名額已滿以 `backfill-full` 剔除；回應缺此鍵視為空陣列、不降級。**優先序**：未歸類候選中的 AI 新事物（a）依 (1)／(2) 放前兩陣列，永遠先於補位；補位只在則數偏低、且當日沒有更優先的內容時才生效——這是補位機制，不是主動擴大晨報範圍。起因：1.7.0 上線首日只有 7 則，未歸類 10 則中的 F-Droid 2.0、Snapdragon 支援 Linux、FBI 被駭因不在三桶而全數不選。
+- **補位 `backfillPicks`（2026-09-26 新增，憲章 1.8.0）**：回應的第三陣列，只收「未歸類」候選中的 (b) 資安事件（重大漏洞、資料外洩、供應鏈攻擊）與 (c) 一般軟體工程（程式語言與執行環境、資料庫、作業系統與平台、開源專案與開發工具）。`curation-validate.ts` 在三桶精選完成非 AI 配額與總數截斷**之後**才處理，只補到 15 則、永遠排在最後，領域記為 `general`（`NewsDigestDomain`，state 的 seenNews／publish.news 列舉同步加值）、不計入非 AI 配額；名額已滿以 `backfill-full` 剔除；回應缺此鍵視為空陣列、不降級。**已歸類候選被放進補位陣列 → 回流主桶**（2026-09-27，取代原 `backfill-scope` 剔除）：補位上線首日 LLM 把 Node.js v24.21.0 LTS 發布（前後端，合格的【官方發布】）放進 `backfillPicks`，原規則把它整則丟掉、當日 7 選 → 6 推。這類項目是 LLM 已選、已改寫繁中的三桶範圍候選，放錯陣列是分類錯誤而非入選錯誤；改為視同 `communityPicks` 尾端（最低優先）併入主桶，照常走去重、來源多樣性、非 AI 配額與總數截斷（仍只在 LLM 已選集合內重排、不遞補新候選），領域沿用程式歸類、LLM 帶的 `domain` 忽略，並以一行 warn「補位陣列含已歸類候選，已回流主桶套配額」揭露。補位陣列本身仍只收未歸類候選，憲章 1.8.0 不變。另自同日起成功路徑多印一行「策展入選 N 則：[領域 來源「截短標題」]…」，不必再翻 state 分支對照推了什麼。**優先序**：未歸類候選中的 AI 新事物（a）依 (1)／(2) 放前兩陣列，永遠先於補位；補位只在則數偏低、且當日沒有更優先的內容時才生效——這是補位機制，不是主動擴大晨報範圍。起因：1.7.0 上線首日只有 7 則，未歸類 10 則中的 F-Droid 2.0、Snapdragon 支援 Linux、FBI 被駭因不在三桶而全數不選。
 
 > 若候選不足 15 則（冷門日），就推實際數量、不用湊滿；某類別挂零也沒關係（例如某天完全沒有夠格的前後端新聞）。配額是「上限約束」不是「硬性填滿」；同理，**寧可少而重要，也不要為湊滿而塞進不重要的熱門文**。
 
