@@ -5,6 +5,7 @@ import { StateStore } from '../state/state.store';
 import { BoardState } from '../state/state.schema';
 import { NewsIngestService, boardRepoNameSet } from '../news/news-ingest.service';
 import { NewsCurationService } from '../curation/curation.service';
+import { CuratedDigest } from '../curation/curation.types';
 import { normalizeTargetUrl } from '../news/url-normalize';
 import { pruneSeenNews } from '../news/seen-news';
 import { makeNewsFeedEntries, appendFeedEntries } from '../publish/feed-entry';
@@ -18,7 +19,8 @@ export type NewsSegmentResult =
   | { status: 'skipped' } // guard 未到期，整段跳過（FR-002）
   | { status: 'no-content' } // 精選為空，未推播、未前進 guard（FR-006）
   | { status: 'push-failed' } // 推播失敗，狀態未寫回、已發告警（FR-005/SC-003）
-  | { status: 'ok' }; // 正常推播並落檔
+  | { status: 'ok' } // 正常推播並落檔
+  | { status: 'dry-run'; items: number }; // 乾跑：已策展並推到告警頻道，未寫狀態（2026-09-27）
 
 /**
  * 晨報段（US1/US2）：guard → F4 ingest → F6 curate →（空精選早退）→ 組版 → 依序推播 →
@@ -45,10 +47,7 @@ export class NewsSegmentService {
       return { status: 'skipped' };
     }
 
-    const boardRepoNames = boardRepoNameSet(state.board);
-    // 傳入共享 state 的 seenNews，讓 ingest 免去重複 stateStore.load()（pipeline 開頭已 load 一次）。
-    const candidates = await this.newsIngest.ingest(now, boardRepoNames, undefined, state.seenNews);
-    const digest = await this.newsCuration.curate(candidates, boardRepoNames, now);
+    const digest = await this.ingestAndCurate(state, now);
 
     if (digest.items.length === 0) {
       // 空精選：不推空晨報、不前進 lastNewsPushAt，同日補跑/隔日重試（FR-006）。
@@ -112,6 +111,37 @@ export class NewsSegmentService {
     await this.stateStore.save(state);
 
     return { status: 'ok' };
+  }
+
+  /**
+   * 乾跑（2026-09-27 新增，`NEWS_DRY_RUN=1`／workflow_dispatch `dry_run`）：**跳過 guard**、照常抓取與策展
+   * （會真的呼叫 Gemini、消耗當日 1 次策展配額），組版後推到**告警頻道**（標題標「乾跑」）供檢視版面，
+   * **不推晨報頻道、不寫 `seenNews`／`lastNewsPushAt`／`publish`、不 save**。用途：調整 prompt／型號／
+   * thinking 後立刻驗證，不必等隔日排程，也不必動 state 分支（憲章 VI 禁止繞過 StateStore 改檔；此前
+   * 唯一替代是手動退回 `lastNewsPushAt`、跑完再還原，且會讓隔日排程落在 18h guard 內被擋）。
+   * 策展入選內容與 LLM 用量已由 `NewsCurationService` 印在 log。推播失敗直接上拋（乾跑是人工觸發，
+   * 讓 workflow 失敗比 best-effort 告警更直接）。
+   */
+  async dryRun(state: BoardState, now: Date): Promise<NewsSegmentResult> {
+    this.logger.log('晨報乾跑：跳過 guard、不寫狀態，結果推到告警頻道');
+    const digest = await this.ingestAndCurate(state, now);
+    if (digest.items.length === 0) {
+      this.logger.warn('晨報乾跑：精選為空，未推播');
+      return { status: 'dry-run', items: 0 };
+    }
+    const embeds = buildDigestEmbeds(digest, `${taipeiDateLabel(now)}（乾跑，未寫狀態${digest.degraded ? '，策展降級' : ''}）`);
+    for (const batch of chunkEmbedsByBudget(embeds)) {
+      await this.discord.send({ username: 'Tech Radar（乾跑）', embeds: batch }, 'alert');
+    }
+    this.logger.log(`晨報乾跑完成：${digest.items.length} 則已推到告警頻道，狀態未變更`);
+    return { status: 'dry-run', items: digest.items.length };
+  }
+
+  /** F4 ingest → F6 curate（正式與乾跑共用）。傳入共享 state 的 seenNews，讓 ingest 免去重複 `stateStore.load()`。 */
+  private async ingestAndCurate(state: BoardState, now: Date): Promise<CuratedDigest> {
+    const boardRepoNames = boardRepoNameSet(state.board);
+    const candidates = await this.newsIngest.ingest(now, boardRepoNames, undefined, state.seenNews);
+    return this.newsCuration.curate(candidates, boardRepoNames, now);
   }
 }
 

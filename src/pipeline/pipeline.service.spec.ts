@@ -19,6 +19,7 @@ interface Mocks {
   postFailureAlert: jest.Mock;
   boardRun: jest.Mock;
   newsRun: jest.Mock;
+  newsDryRun: jest.Mock;
 }
 
 function makeMocks(): Mocks {
@@ -27,15 +28,40 @@ function makeMocks(): Mocks {
   const postFailureAlert = jest.fn().mockResolvedValue(undefined);
   const boardRun = jest.fn().mockResolvedValue({ status: 'skipped' });
   const newsRun = jest.fn().mockResolvedValue({ status: 'skipped' });
+  const newsDryRun = jest.fn().mockResolvedValue({ status: 'dry-run', items: 0 });
 
   const stateStore = { load, save } as unknown as StateStore;
   const discord = { postFailureAlert } as unknown as DiscordWebhookService;
   const boardSegment = { run: boardRun } as unknown as BoardSegmentService;
-  const newsSegment = { run: newsRun } as unknown as NewsSegmentService;
+  const newsSegment = { run: newsRun, dryRun: newsDryRun } as unknown as NewsSegmentService;
 
   const service = new PipelineService(stateStore, discord, boardSegment, newsSegment);
-  return { service, load, postFailureAlert, boardRun, newsRun };
+  return { service, load, postFailureAlert, boardRun, newsRun, newsDryRun };
 }
+
+describe('PipelineService.runNewsDryRun — 晨報乾跑（2026-09-27 新增）', () => {
+  it('load 一次 → 只呼叫 newsSegment.dryRun（同一 state）；不跑榜單段、不跑正式晨報段', async () => {
+    const { service, load, boardRun, newsRun, newsDryRun } = makeMocks();
+    const state = emptyBoardState();
+    load.mockResolvedValue(state);
+
+    await service.runNewsDryRun();
+
+    expect(load).toHaveBeenCalledTimes(1);
+    expect(newsDryRun).toHaveBeenCalledTimes(1);
+    expect(newsDryRun.mock.calls[0][0]).toBe(state);
+    expect(boardRun).not.toHaveBeenCalled();
+    expect(newsRun).not.toHaveBeenCalled();
+  });
+
+  it('dryRun 擲錯 → 不吞、不發 best-effort 告警，直接上拋給 main.cli 處理', async () => {
+    const { service, postFailureAlert, newsDryRun } = makeMocks();
+    newsDryRun.mockRejectedValue(new Error('dry-run boom'));
+
+    await expect(service.runNewsDryRun()).rejects.toThrow('dry-run boom');
+    expect(postFailureAlert).not.toHaveBeenCalled();
+  });
+});
 
 describe('PipelineService.run — US4 段間與來源隔離容錯', () => {
   it('Acceptance 1：榜單段擲出未預期錯誤 → 晨報段仍照常執行，榜單段發一則紅色告警', async () => {

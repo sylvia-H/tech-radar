@@ -42,6 +42,16 @@ export class PipelineService {
       await bestEffortFailureAlert(this.discord, this.logger, `晨報段發生未預期錯誤：${errMsg(err)}`);
     }
   }
+
+  /**
+   * 晨報乾跑（2026-09-27，`NEWS_DRY_RUN=1`）：只 load 狀態、只跑晨報段的 `dryRun()`（不跑榜單段、
+   * 不 save）。錯誤刻意**不吞**：乾跑是人工觸發的驗證，失敗直接上拋讓 `main.cli.ts` 送告警並以非零 exit
+   * 結束，比 best-effort 告警後回 exit 0 更直接。
+   */
+  async runNewsDryRun(): Promise<void> {
+    const state = await this.stateStore.load();
+    await this.newsSegment.dryRun(state, new Date());
+  }
 }
 
 function errMsg(err: unknown): string {

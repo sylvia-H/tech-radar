@@ -10,6 +10,11 @@ import { tryPostFailureAlert } from './discord/failure-alert';
 const NEWS_OBSERVE_ENV = 'NEWS_INGEST_OBSERVE';
 /** 設為 `1` 時只跑 F8 發佈段（獨立 `publish` job 用），不跑 `PipelineService`（research D2）。 */
 const PUBLISH_MODE_ENV = 'PUBLISH_MODE';
+/**
+ * 設為 `1` 時晨報乾跑（2026-09-27）：跳過 guard、照常抓取與策展（消耗當日 1 次策展配額）、結果推到告警頻道，
+ * 不推晨報頻道、不寫狀態、不跑榜單段。workflow_dispatch 的 `dry_run` 輸入會設此變數。
+ */
+const NEWS_DRY_RUN_ENV = 'NEWS_DRY_RUN';
 
 /**
  * CLI 進入點：建立 application context（不啟 HTTP server）→ 執行 pipeline → 跑完即退。
@@ -29,6 +34,8 @@ async function bootstrap(): Promise<void> {
     if (process.env[NEWS_OBSERVE_ENV] === '1') {
       // F4 觀測模式：只跑階段 A 新聞漏斗、印出候選清單（不推播；正式串接進 pipeline 屬 F7）。
       await app.get(NewsIngestService).ingest();
+    } else if (process.env[NEWS_DRY_RUN_ENV] === '1') {
+      await app.get(PipelineService).runNewsDryRun();
     } else if (process.env[PUBLISH_MODE_ENV] === '1') {
       // F8 發佈段：PublishService.run() 永不 throw（頂層 catch-all，best-effort 告警），
       // 故此分支自然一律以 exit 0 結束，不進入既有 PipelineService 失敗路徑（research D10）。
