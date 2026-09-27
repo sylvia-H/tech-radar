@@ -367,3 +367,54 @@ describe('NewsSegmentService.run — US5 版面整合（T020：晨報逼近 4096
     }
   });
 });
+
+describe('NewsSegmentService.dryRun — 晨報乾跑（2026-09-27 新增）', () => {
+  it('guard 未到期（4h 前才推過）仍照常抓取＋策展；結果推到 alert 頻道、標題標「乾跑」；不推 news 頻道、不 save、state 不變', async () => {
+    const { service, ingest, curate, send, save } = build();
+    const state = makeState({ lastNewsPushAt: hoursAgo(4), seenNews: [] });
+    const before = JSON.stringify(state);
+
+    const result = await service.dryRun(state, NOW);
+
+    expect(result).toEqual({ status: 'dry-run', items: 1 });
+    expect(ingest).toHaveBeenCalledTimes(1);
+    expect(curate).toHaveBeenCalledTimes(1);
+    expect(send).toHaveBeenCalledTimes(1);
+    expect(send.mock.calls[0][1]).toBe('alert');
+    const payload = send.mock.calls[0][0] as { username: string; embeds: Array<{ title: string }> };
+    expect(payload.username).toContain('乾跑');
+    expect(payload.embeds[0].title).toContain('乾跑');
+    expect(save).not.toHaveBeenCalled();
+    expect(JSON.stringify(state)).toBe(before);
+  });
+
+  it('精選為空 → 不推播、回 items:0、不 save', async () => {
+    const { service, curate, send, save } = build();
+    curate.mockResolvedValue({ items: [], degraded: false } as CuratedDigest);
+
+    const result = await service.dryRun(makeState(), NOW);
+
+    expect(result).toEqual({ status: 'dry-run', items: 0 });
+    expect(send).not.toHaveBeenCalled();
+    expect(save).not.toHaveBeenCalled();
+  });
+
+  it('策展降級時標題註明「策展降級」、不另發降級告警（乾跑結果本身就在告警頻道）', async () => {
+    const { service, curate, send, postFailureAlert } = build();
+    curate.mockResolvedValue({ items: [curatedItem({ content: null, degraded: true })], degraded: true } as CuratedDigest);
+
+    await service.dryRun(makeState(), NOW);
+
+    const payload = send.mock.calls[0][0] as { embeds: Array<{ title: string }> };
+    expect(payload.embeds[0].title).toContain('策展降級');
+    expect(postFailureAlert).not.toHaveBeenCalled();
+  });
+
+  it('推播失敗直接上拋（不吞、不 save）', async () => {
+    const { service, send, save } = build();
+    send.mockRejectedValue(new Error('webhook 500'));
+
+    await expect(service.dryRun(makeState(), NOW)).rejects.toThrow('webhook 500');
+    expect(save).not.toHaveBeenCalled();
+  });
+});

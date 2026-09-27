@@ -50,8 +50,8 @@ export class DiscordWebhookService {
     await this.post(buildFailureAlert(summary), 'alert');
   }
 
-  /** F7 公開送出任意 payload（榜單/晨報組版批次），依 channel 分流至對應 webhook。 */
-  async send(payload: DiscordWebhookPayload, channel: 'news' | 'board'): Promise<void> {
+  /** F7 公開送出任意 payload（榜單/晨報組版批次），依 channel 分流至對應 webhook；`alert` 供晨報乾跑推版面（2026-09-27）。 */
+  async send(payload: DiscordWebhookPayload, channel: DiscordChannel): Promise<void> {
     await this.post(payload, channel);
   }
 

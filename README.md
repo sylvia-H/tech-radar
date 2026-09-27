@@ -655,8 +655,12 @@ $env:GH_API_TOKEN="…"; $env:GEMINI_API_KEY="…"
 node dist/main.cli.js
 ```
 
-另有兩個模式：`NEWS_INGEST_OBSERVE=1` 只跑 Stage A 漏斗並印出候選表（不呼叫 LLM、不推播），
-`PUBLISH_MODE=1` 只跑發佈段（見 [quickstart](specs/008-pages-publish/quickstart.md)）。
+另有三個模式：`NEWS_INGEST_OBSERVE=1` 只跑 Stage A 漏斗並印出候選表（不呼叫 LLM、不推播），
+`PUBLISH_MODE=1` 只跑發佈段（見 [quickstart](specs/008-pages-publish/quickstart.md)），
+`NEWS_DRY_RUN=1` 晨報乾跑（2026-09-27）：跳過 18h guard、照常抓取與策展（消耗 1 次策展配額），結果推到
+**告警頻道**（標「乾跑」），不推晨報頻道、不寫狀態、不跑榜單段。Actions 上以 `workflow_dispatch` 勾選
+`dry_run` 觸發，state commit 與 Pages 發佈一併跳過；用來在調整 prompt／型號後立即驗證，不必等隔日排程、
+也不必動 state 分支。
 
 ### 測試
 
