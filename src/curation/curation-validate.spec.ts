@@ -538,11 +538,12 @@ describe('validateCuration（補位 backfillPicks，2026-09-26，憲章 1.8.0）
     expect(result.some((it) => it.domain === 'general')).toBe(false);
   });
 
-  it('已歸類候選放進補位 → backfill-scope 剔除；與前兩陣列重複 → duplicate-ref；越界 → invalid-ref', () => {
+  it('已歸類候選放進補位 → 回流主桶（排在 communityPicks 之後）並回呼 onBackfillRerouted；與前兩陣列重複 → duplicate-ref；越界 → invalid-ref（2026-09-27）', () => {
     const a = makeCandidate({ originalUrl: 'https://a.com', domain: 'ai' });
     const d = makeCandidate({ originalUrl: 'https://d.com', domain: 'devops', sourceId: 'cncf-blog', sources: ['cncf-blog'] });
     const x = makeCandidate({ originalUrl: 'https://x.com', domain: 'cross', score: 400 });
     const { drops, onDrop } = collect();
+    const rerouted: Array<[number, string]> = [];
 
     const result = validateCuration(
       [{ ref: 0, title: 'a', content: 'c' }],
@@ -556,13 +557,82 @@ describe('validateCuration（補位 backfillPicks，2026-09-26，憲章 1.8.0）
         { ref: 9, title: 'ghost', content: 'c' },
         { ref: 2, title: 'ok', content: 'c' },
       ],
+      (ref, title) => rerouted.push([ref, title]),
     );
 
+    // 回流項沿用程式歸類的領域（devops），排在主桶末端、但仍在補位（general）之前
     expect(result.map((it) => [it.url, it.domain])).toEqual([
       ['https://a.com', 'ai'],
+      ['https://d.com', 'devops'],
       ['https://x.com', 'general'],
     ]);
-    expect(drops.map((dr) => dr.stage)).toEqual(['backfill-scope', 'duplicate-ref', 'invalid-ref']);
+    expect(rerouted).toEqual([[1, 'devops']]);
+    expect(drops.map((dr) => dr.stage)).toEqual(['duplicate-ref', 'invalid-ref']);
+    expect(drops.some((dr) => (dr.stage as string) === 'backfill-scope')).toBe(false);
+  });
+
+  it('回流的 Node.js LTS 發布（首日情境）：7 則 AI ＋ 補位陣列誤放 frontend-backend → 8 則、Node 在最後，不再被剔除', () => {
+    const ai = Array.from({ length: 7 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai' }));
+    const node = makeCandidate({
+      originalUrl: 'https://github.com/nodejs/node/releases/tag/v24.21.0',
+      domain: 'frontend-backend',
+      sourceId: 'gh-nodejs',
+      sources: ['gh-nodejs'],
+      score: null,
+    });
+    const candidates = [...ai, node];
+    const officialPicks: CurationLlmPick[] = ai.slice(0, 3).map((_, i) => ({ ref: i, title: `o${i}`, content: 'c' }));
+    const communityPicks: CurationLlmPick[] = ai.slice(3).map((_, i) => ({ ref: 3 + i, title: `s${i}`, content: 'c' }));
+    const { drops, onDrop } = collect();
+
+    const result = validateCuration(officialPicks, communityPicks, candidates, onDrop, undefined, [
+      { ref: 7, title: 'Node.js 發布 v24.21.0', content: 'c' },
+    ]);
+
+    expect(result).toHaveLength(8);
+    expect(result[7]).toMatchObject({ url: node.originalUrl, domain: 'frontend-backend', sourceId: 'gh-nodejs' });
+    expect(drops).toEqual([]);
+  });
+
+  it('回流項照常受非 AI 配額約束：AI 10 則＋非 AI 5 則已滿時，回流的第 6 則非 AI 以 non-ai-cap 剔除（不因來自補位陣列而繞過配額）', () => {
+    const ai = Array.from({ length: 10 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai' }));
+    const dev = Array.from({ length: 5 }, (_, i) =>
+      makeCandidate({ originalUrl: `https://dev${i}.com`, domain: 'devops', sourceId: `s${i}`, sources: [`s${i}`] }),
+    );
+    const extra = makeCandidate({ originalUrl: 'https://fe.com', domain: 'frontend-backend', sourceId: 'gh-nodejs', sources: ['gh-nodejs'] });
+    const candidates = [...ai, ...dev, extra];
+    const officialPicks: CurationLlmPick[] = candidates.slice(0, 15).map((_, i) => ({ ref: i, title: `t${i}`, content: 'c' }));
+    const { drops, onDrop } = collect();
+
+    const result = validateCuration(officialPicks, [], candidates, onDrop, undefined, [{ ref: 15, title: 'fe', content: 'c' }]);
+
+    expect(result).toHaveLength(15);
+    expect(result.some((it) => it.url === 'https://fe.com')).toBe(false);
+    expect(drops.map((dr) => [dr.stage, dr.ref])).toEqual([['non-ai-cap', 15]]);
+  });
+
+  it('回流項照常受總數截斷：主精選已 15 則時，回流的已歸類候選以 max-items 剔除', () => {
+    const ai = Array.from({ length: 15 }, (_, i) => makeCandidate({ originalUrl: `https://ai${i}.com`, domain: 'ai' }));
+    const more = makeCandidate({ originalUrl: 'https://more.com', domain: 'ai' });
+    const officialPicks: CurationLlmPick[] = ai.map((_, i) => ({ ref: i, title: `t${i}`, content: 'c' }));
+    const { drops, onDrop } = collect();
+
+    const result = validateCuration(officialPicks, [], [...ai, more], onDrop, undefined, [{ ref: 15, title: 'more', content: 'c' }]);
+
+    expect(result).toHaveLength(15);
+    expect(drops.map((dr) => [dr.stage, dr.ref])).toEqual([['max-items', 15]]);
+  });
+
+  it('回流項的 domain 由程式歸類決定，LLM 帶的 domain 忽略、不觸發 onDomainDefaulted', () => {
+    const d = makeCandidate({ originalUrl: 'https://d.com', domain: 'devops', sourceId: 'cncf-blog', sources: ['cncf-blog'] });
+    const defaulted: number[] = [];
+
+    const result = validateCuration([], [], [d], undefined, (ref) => defaulted.push(ref), [
+      { ref: 0, title: 'd', content: 'c', domain: 'ai' },
+    ]);
+
+    expect(result.map((it) => it.domain)).toEqual(['devops']);
+    expect(defaulted).toEqual([]);
   });
 
   it('補位項不計入非 AI 配額：AI 10 則＋非 AI 5 則已滿時，補位不入；AI 4＋非 AI 0 時補位可補到 15', () => {

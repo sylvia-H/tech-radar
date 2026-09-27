@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { LlmService } from '../llm/llm.service';
-import { GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK, GeminiModel, LlmError } from '../llm/llm.types';
+import { GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK, GeminiModel, LlmError, NEWS_THINKING_LEVEL } from '../llm/llm.types';
 import { isUnresolved, mentionsBoardRepo } from '../news/funnel';
 import { NewsCandidate } from '../news/news.types';
 import { detectTopicClusters, summarizeClusters, TopicCluster } from '../news/topic-cluster';
@@ -8,7 +8,7 @@ import { fallbackDigest } from './curation-fallback';
 import { buildCurationPrompt } from './curation-prompt';
 import { describeIgnoredKeys, parseCurationResponse } from './curation-parse';
 import { CurationDrop, validateCuration } from './curation-validate';
-import { CuratedDigest, CurationItemView } from './curation.types';
+import { CuratedDigest, CuratedNewsItem, CurationItemView } from './curation.types';
 
 /** `generateWithModelFallback()` 的結果：LLM 原文、實際成功的型號、是否經主型號失敗後降級為備援型號。 */
 interface ModelFallbackResult {
@@ -56,8 +56,8 @@ export class NewsCurationService {
         `策展輸入：${candidates.length} 候選，未歸類高熱度 ${candidates.filter(isUnresolved).length} 則，` +
           `同題群集 ${clusterSummary.length} 組${clusterStr}`,
       );
-      // 每日晨報策展走 `GEMINI_MODEL_NEWS`（2026-09-25 起為 gemini-3.5-flash-lite，見 `llm.types.ts`）；
-      // 主型號擲 `LlmError` 時改以備援型號重試一次（見 `generateWithModelFallback`）。
+      // 每日晨報策展走 `GEMINI_MODEL_NEWS`（2026-09-27 起回 gemini-3.8-flash，見 `llm.types.ts`）並開啟
+      // thinking；主型號擲 `LlmError` 時改以備援型號重試一次（見 `generateWithModelFallback`）。
       const { raw, model, fellBack } = await this.generateWithModelFallback(buildCurationPrompt(views));
       const { officialPicks, communityPicks, backfillPicks, ignoredKeys } = parseCurationResponse(raw);
       if (ignoredKeys.length > 0) {
@@ -69,6 +69,7 @@ export class NewsCurationService {
       }
       const drops: CurationDrop[] = [];
       const defaulted: string[] = [];
+      const rerouted: string[] = [];
       const items = validateCuration(
         officialPicks,
         communityPicks,
@@ -76,7 +77,13 @@ export class NewsCurationService {
         (d) => drops.push(d),
         (ref, title) => defaulted.push(`ref=${ref}「${clampTitle(title)}」`),
         backfillPicks,
+        (ref, title) =>
+          rerouted.push(`ref=${ref} ${candidates[ref].sourceId}/${candidates[ref].domain}「${clampTitle(title)}」`),
       );
+      if (rerouted.length > 0) {
+        // 已歸類候選被放進補位陣列（2026-09-27）：程式已回流主桶套配額，這裡只揭露 LLM 分類錯誤、不降級。
+        this.logger.warn(`補位陣列含已歸類候選，已回流主桶套配額：${rerouted.join(' ')}`);
+      }
       if (defaulted.length > 0) {
         // 未歸類候選被選入但 LLM 未回填合法 domain（2026-09-25）：程式已預設 ai，這裡只揭露、不降級。
         this.logger.warn(`未歸類候選未回填 domain、預設 ai：${defaulted.join(' ')}`);
@@ -100,6 +107,11 @@ export class NewsCurationService {
         `新聞策展完成：${candidates.length} 候選 → LLM 選官方 ${officialPicks.length} 則＋社群 ` +
         `${communityPicks.length} 則＋補位 ${backfillPicks.length} 則 → 驗證後 ${items.length} 則（${domainStr}）（${modelStr}）`,
       );
+      if (items.length > 0) {
+        // 入選清單揭露（2026-09-27 新增）：此前 log 只有則數，要知道「推了什麼、漏了什麼」得去 state 分支翻
+        // seenNews 對照候選池。只印領域、代表來源與截短標題，不含 LLM 回應全文（憲章 VII）。
+        this.logger.log(`策展入選 ${items.length} 則：${describeItems(items)}`);
+      }
       return { items, degraded: false };
     } catch (err) {
       const reason = err instanceof Error ? err.message : String(err);
@@ -112,8 +124,8 @@ export class NewsCurationService {
    * 以主型號（`GEMINI_MODEL_NEWS`）送出策展 prompt；若擲 `LlmError`（不論 `reason`：`exhausted`＝429
    * 退避耗盡、`error`＝型號 404 下架等不可重試錯誤、`empty`＝空回應），記 warn 後改以備援型號
    * （`GEMINI_MODEL_NEWS_FALLBACK`）重送**同一 prompt 一次**；第二次仍失敗才把錯誤拋給呼叫端走降級。
-   * 2026-09-25 起兩者皆為 Flash-Lite 系（主 `gemini-3.5-flash-lite`、備援 `gemini-3.1-flash-lite`），
-   * 此前為 Flash → Lite。
+   * 2026-09-27 起回到 Flash → Lite（主 `gemini-3.8-flash`、備援 `gemini-3.5-flash-lite`），兩者皆帶
+   * `thinkingLevel: NEWS_THINKING_LEVEL`；09-25～09-27 曾為 Lite 主／Lite 備援（見 `llm.types.ts`）。
    *
    * 為何換型號而非同型號再退避：Gemini 免費層配額**按型號分開計算**，主型號 429 耗盡時同型號的
    * 指數退避只是白等，換型號才有機會在當日成功；另本專案已兩度遇到型號無預警下架（404），
@@ -128,7 +140,7 @@ export class NewsCurationService {
    */
   private async generateWithModelFallback(prompt: string): Promise<ModelFallbackResult> {
     try {
-      const raw = await this.llm.generate(prompt, { model: GEMINI_MODEL_NEWS });
+      const raw = await this.llm.generate(prompt, { model: GEMINI_MODEL_NEWS, thinkingLevel: NEWS_THINKING_LEVEL });
       return { raw, model: GEMINI_MODEL_NEWS, fellBack: false };
     } catch (err) {
       if (!(err instanceof LlmError)) {
@@ -137,7 +149,7 @@ export class NewsCurationService {
       this.logger.warn(
         `策展主型號失敗（${err.reason}，${GEMINI_MODEL_NEWS}），改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`,
       );
-      const raw = await this.llm.generate(prompt, { model: GEMINI_MODEL_NEWS_FALLBACK });
+      const raw = await this.llm.generate(prompt, { model: GEMINI_MODEL_NEWS_FALLBACK, thinkingLevel: NEWS_THINKING_LEVEL });
       return { raw, model: GEMINI_MODEL_NEWS_FALLBACK, fellBack: true };
     }
   }
@@ -196,6 +208,14 @@ export function describeDrops(drops: readonly CurationDrop[]): string {
       return `[${d.stage} ref=${d.ref}${origin}${title}]`;
     })
     .join(' ');
+}
+
+/**
+ * 入選清單的 log 摘要（2026-09-27 新增）：每則「[領域 代表來源「截短標題」]」，順序即推播順序。標題為 LLM 改寫的
+ * 繁中標題截 30 code points，只為辨識，不含回應全文（憲章 VII）。
+ */
+export function describeItems(items: readonly CuratedNewsItem[]): string {
+  return items.map((it) => `[${it.domain} ${it.sourceId}「${clampTitle(it.title)}」]`).join(' ');
 }
 
 function clampTitle(title: string): string {

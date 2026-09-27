@@ -1,6 +1,10 @@
 import { Logger } from '@nestjs/common';
 import { LlmService } from '../llm/llm.service';
-import { GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK, LlmError } from '../llm/llm.types';
+import { GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK, LlmError, NEWS_THINKING_LEVEL } from '../llm/llm.types';
+
+/** 策展呼叫固定帶主型號＋thinking（2026-09-27 起）；備援同 thinking、換型號。 */
+const NEWS_OPTS = { model: GEMINI_MODEL_NEWS, thinkingLevel: NEWS_THINKING_LEVEL };
+const FALLBACK_OPTS = { model: GEMINI_MODEL_NEWS_FALLBACK, thinkingLevel: NEWS_THINKING_LEVEL };
 import { NewsCandidate } from '../news/news.types';
 import { NewsCurationService } from './curation.service';
 
@@ -62,7 +66,7 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
     }
     expect(generate).toHaveBeenCalledTimes(1);
     // 每日晨報策展明確指定主型號（2026-09-12 起）；簡介與榜單 TL;DR 不傳 model、走預設。
-    expect(generate).toHaveBeenCalledWith(expect.any(String), { model: GEMINI_MODEL_NEWS });
+    expect(generate).toHaveBeenCalledWith(expect.any(String), NEWS_OPTS);
   });
 
   it('殘留語意重複輸入＋mock 只選一次 → 最終該事件 ≤1（SC-006）', async () => {
@@ -220,8 +224,8 @@ describe('NewsCurationService.curate（型號降級重試：主型號失敗改�
       expect(result.degraded).toBe(false);
       expect(result.items.map((it) => it.url)).toEqual(['https://a.com/ai1']);
       expect(generate).toHaveBeenCalledTimes(2);
-      expect(generate.mock.calls[0][1]).toEqual({ model: GEMINI_MODEL_NEWS });
-      expect(generate.mock.calls[1][1]).toEqual({ model: GEMINI_MODEL_NEWS_FALLBACK });
+      expect(generate.mock.calls[0][1]).toEqual(NEWS_OPTS);
+      expect(generate.mock.calls[1][1]).toEqual(FALLBACK_OPTS);
       expect(generate.mock.calls[1][0]).toBe(generate.mock.calls[0][0]);
       expect(warnSpy).toHaveBeenCalledTimes(1);
       const warnMessage = warnSpy.mock.calls[0][0] as string;
@@ -250,8 +254,8 @@ describe('NewsCurationService.curate（型號降級重試：主型號失敗改�
     expect(result.items).toHaveLength(1);
     expect(result.items[0].degraded).toBe(true);
     expect(generate).toHaveBeenCalledTimes(2);
-    expect(generate.mock.calls[0][1]).toEqual({ model: GEMINI_MODEL_NEWS });
-    expect(generate.mock.calls[1][1]).toEqual({ model: GEMINI_MODEL_NEWS_FALLBACK });
+    expect(generate.mock.calls[0][1]).toEqual(NEWS_OPTS);
+    expect(generate.mock.calls[1][1]).toEqual(FALLBACK_OPTS);
     expect(warnSpy).toHaveBeenCalledTimes(2);
     warnSpy.mockRestore();
   });
@@ -266,7 +270,7 @@ describe('NewsCurationService.curate（型號降級重試：主型號失敗改�
 
     expect(result.degraded).toBe(false);
     expect(generate).toHaveBeenCalledTimes(1);
-    expect(generate).toHaveBeenCalledWith(expect.any(String), { model: GEMINI_MODEL_NEWS });
+    expect(generate).toHaveBeenCalledWith(expect.any(String), NEWS_OPTS);
     expect(warnSpy).not.toHaveBeenCalled();
     const successLog = logSpy.mock.calls.map((c) => c[0] as string).find((m) => m.includes('新聞策展完成'));
     expect(successLog).toContain(GEMINI_MODEL_NEWS);
@@ -284,7 +288,7 @@ describe('NewsCurationService.curate（型號降級重試：主型號失敗改�
 
     expect(result.degraded).toBe(true);
     expect(generate).toHaveBeenCalledTimes(1);
-    expect(generate).toHaveBeenCalledWith(expect.any(String), { model: GEMINI_MODEL_NEWS });
+    expect(generate).toHaveBeenCalledWith(expect.any(String), NEWS_OPTS);
     expect(warnSpy).toHaveBeenCalledTimes(1);
     expect(warnSpy.mock.calls[0][0] as string).not.toContain('備援型號');
     warnSpy.mockRestore();
@@ -329,5 +333,78 @@ describe('NewsCurationService.curate（驗證剔除 warn，2026-09-14 新增）'
 
     expect(warnSpy).not.toHaveBeenCalled();
     warnSpy.mockRestore();
+  });
+});
+
+describe('NewsCurationService.curate（補位回流 warn 與入選清單 log，2026-09-27 新增）', () => {
+  it('補位陣列含已歸類候選 → 一行 warn 含 ref、來源／領域與截短標題；該則回流主桶照常推出，不降級', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ originalUrl: 'https://a.com', domain: 'ai', title: 'AI' }),
+      makeCandidate({
+        originalUrl: 'https://github.com/nodejs/node/releases/tag/v24.21.0',
+        domain: 'frontend-backend',
+        sourceId: 'gh-nodejs',
+        sources: ['gh-nodejs'],
+        title: 'Node v24.21.0',
+      }),
+    ];
+    const raw = JSON.stringify({
+      officialPicks: [{ ref: 0, title: 'AI 標題', content: '內容' }],
+      communityPicks: [],
+      backfillPicks: [{ ref: 1, title: 'Node.js 發布 v24.21.0「Krypton」LTS', content: '內容' }],
+    });
+    const { service } = makeService(jest.fn().mockResolvedValue(raw));
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(false);
+    expect(result.items.map((it) => [it.url, it.domain])).toEqual([
+      ['https://a.com', 'ai'],
+      ['https://github.com/nodejs/node/releases/tag/v24.21.0', 'frontend-backend'],
+    ]);
+    const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((m) => m.includes('回流主桶')) ?? '';
+    expect(warn).toContain('ref=1 gh-nodejs/frontend-backend');
+    expect(warn).toContain('Node.js 發布 v24.21.0');
+    expect(warnSpy.mock.calls.some((c) => String(c[0]).includes('策展驗證剔除'))).toBe(false);
+    warnSpy.mockRestore();
+  });
+
+  it('成功時多一行「策展入選 N 則」log：依推播順序列出領域、代表來源與截短標題，不含內容全文', async () => {
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+    const candidates: NewsCandidate[] = [
+      makeCandidate({ originalUrl: 'https://a.com', domain: 'ai', sourceId: 'hn' }),
+      makeCandidate({ originalUrl: 'https://d.com', domain: 'devops', sourceId: 'cncf-blog', sources: ['cncf-blog'] }),
+      makeCandidate({ originalUrl: 'https://x.com', domain: 'cross', sourceId: 'hn', score: 900 }),
+    ];
+    const raw = JSON.stringify({
+      officialPicks: [{ ref: 1, title: 'DevOps 標題', content: '機密般的長內容' }],
+      communityPicks: [{ ref: 0, title: '中'.repeat(40), content: '內容' }],
+      backfillPicks: [{ ref: 2, title: 'F-Droid 2.0 發布', content: '內容' }],
+    });
+    const { service } = makeService(jest.fn().mockResolvedValue(raw));
+
+    await service.curate(candidates, new Set());
+
+    const line = logSpy.mock.calls.map((c) => String(c[0])).find((m) => m.startsWith('策展入選')) ?? '';
+    expect(line).toBe(
+      `策展入選 3 則：[devops cncf-blog「DevOps 標題」] [ai hn「${'中'.repeat(30)}…」] [general hn「F-Droid 2.0 發布」]`,
+    );
+    expect(line).not.toContain('機密般的長內容');
+    logSpy.mockRestore();
+  });
+
+  it('全部剔除為空時不印「策展入選」', async () => {
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+    jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const candidates: NewsCandidate[] = [makeCandidate({ originalUrl: 'https://a.com' })];
+    const raw = JSON.stringify({ officialPicks: [{ ref: 9, title: 'ghost', content: 'c' }], communityPicks: [] });
+    const { service } = makeService(jest.fn().mockResolvedValue(raw));
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.items).toEqual([]);
+    expect(logSpy.mock.calls.some((c) => String(c[0]).startsWith('策展入選'))).toBe(false);
+    jest.restoreAllMocks();
   });
 });
