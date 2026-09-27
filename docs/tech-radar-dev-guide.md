@@ -677,7 +677,8 @@ on:
   schedule:
     - cron: "7 20 * * *" # 04:07 台北 · 每日晨報（主排）
     - cron: "37 20 * * *" # 04:37 台北 · 補跑（主排被 Actions 跳過時遞補；靠 lastNewsPushAt guard 去重）
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs: { dry_run: { type: boolean, default: false } } # 晨報乾跑，見 §8.x
 permissions:
   contents: write # 為了 commit state 分支上的 state/board.json
 concurrency:
@@ -728,6 +729,22 @@ jobs:
 ```
 
 ---
+
+
+### 8.x 手動觸發與晨報乾跑（2026-09-27 新增）
+
+- `workflow_dispatch` 直接按下去等同排程執行：**會被 18h guard 擋住**（距上次推播不足 18h 整段跳過），
+  榜單段亦受 162h 節奏約束，因此「現在想看新設定跑出什麼」不能靠純手動觸發。
+- **禁止的做法**：手動改 `state` 分支的 `board.json`（退回 `lastNewsPushAt`、事後還原）——違反憲章 VI
+  （狀態只經 `StateStore` 讀寫），且跑完後 `lastNewsPushAt` 落在當下，隔日排程距離不足 18h 會被 guard 擋掉，
+  還原 `seenNews` 又可能讓隔日重推同一批新聞。
+- **乾跑（`dry_run` 輸入 → `NEWS_DRY_RUN=1`）**：`PipelineService.runNewsDryRun()` → `NewsSegmentService.dryRun()`
+  ——跳過 guard、照常 F4 抓取＋F6 策展（**會真的呼叫 Gemini、消耗當日 1 次策展配額**，Flash 為 20 RPD），
+  組版後推到**告警頻道**（`DISCORD_ALERT_WEBHOOK_URL`，username 與 embed 標題皆標「乾跑」）供檢視版面；
+  **不推晨報頻道、不寫 `seenNews`／`lastNewsPushAt`／`publish`、不 save、不跑榜單段**，workflow 的
+  state commit 步驟與 `publish` job 一併跳過。策展入選清單、LLM 用量（含 thinking token）與回流 warn 都在
+  Actions log。用途：調 prompt／型號／thinking 後立即驗證。乾跑失敗直接讓 workflow 失敗（不走 best-effort 告警）。
+- 另兩個本機除錯模式不變：`NEWS_INGEST_OBSERVE=1`（只跑漏斗、不呼叫 LLM）、`PUBLISH_MODE=1`（只跑發佈段）。
 
 ## 9. NestJS 專案結構
 
