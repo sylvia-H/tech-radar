@@ -1,17 +1,26 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { ApiError, GenerateContentResponse, GoogleGenAI } from '@google/genai';
+import { ApiError, GenerateContentResponse, GoogleGenAI, ThinkingLevel } from '@google/genai';
 import {
   GEMINI_MODEL_BOARD,
+  GeminiModel,
   LLM_BACKOFF_BASE_MS,
   LLM_MAX_BACKOFF_MS,
   LLM_MAX_RETRIES,
   LlmError,
   LlmGenerateOptions,
+  LlmThinkingLevel,
 } from './llm.types';
 
 /** 觸發退避重試的暫時性 HTTP 狀態碼（速率/額度限制、暫時不可用，research D6）。 */
 const RETRYABLE_STATUS = new Set([429, 503]);
+
+/** 本專案的 thinking 深度 → SDK 列舉（只暴露三檔，不用 MINIMAL／UNSPECIFIED）。 */
+const THINKING_LEVEL_MAP: Record<LlmThinkingLevel, ThinkingLevel> = {
+  low: ThinkingLevel.LOW,
+  medium: ThinkingLevel.MEDIUM,
+  high: ThinkingLevel.HIGH,
+};
 
 /**
  * 所有 LLM 呼叫的唯一入口（FR-011）：對 Gemini 免費層 Flash 系送一段 prompt 生成文字，
@@ -43,13 +52,12 @@ export class LlmService {
       throw new LlmError('empty');
     }
     const model = options.model ?? GEMINI_MODEL_BOARD;
+    const thinking = options.thinkingLevel;
+    const thinkingLabel = thinking ? `，thinking=${thinking}` : '';
 
     for (let attempt = 1; attempt <= LLM_MAX_RETRIES; attempt++) {
       try {
-        const response = await this.client.models.generateContent({
-          model,
-          contents: prompt,
-        });
+        const response = await this.callModel(model, prompt, thinking);
         const text = (response.text ?? '').trim();
         // 用量與結束原因（2026-09-25 新增）：候選池 60 → 70、晨報 10 → 15 則後，「prompt 太大容易失敗」
         // 只能猜——此前既不記 token 數也不記 finishReason，輸出被 MAX_TOKENS 截斷只會以 reason=empty
@@ -58,10 +66,10 @@ export class LlmService {
         if (!text) {
           // 空回應（多為 MAX_TOKENS 截斷或安全過濾）刻意不重試：重送同一 prompt 通常仍空，
           // 重試只會白白多燒一次 Gemini 免費層配額（憲章 I／V 節制 LLM）；交由呼叫端降級。
-          this.logger.warn(`LLM 回應為空（${model}，${usage}）`);
+          this.logger.warn(`LLM 回應為空（${model}${thinkingLabel}，${usage}）`);
           throw new LlmError('empty');
         }
-        this.logger.log(`LLM 用量（${model}，${usage}，回應 ${text.length} 字元）`);
+        this.logger.log(`LLM 用量（${model}${thinkingLabel}，${usage}，回應 ${text.length} 字元）`);
         return text;
       } catch (err) {
         if (err instanceof LlmError) {
@@ -87,6 +95,38 @@ export class LlmService {
       }
     }
     throw new LlmError('exhausted');
+  }
+
+  /**
+   * 單次 HTTP 呼叫：有 `thinking` 時帶 `config.thinkingConfig.thinkingLevel`（2026-09-27 新增，見 `llm.types.ts`
+   * `NEWS_THINKING_LEVEL`），否則請求體與此前完全相同（簡介／TL;DR 不受影響）。
+   *
+   * 防禦：thinking 設定是否被型號接受無法在本機驗證（無 `GEMINI_API_KEY`），若型號以 400 拒絕該參數，
+   * 不能讓整條策展因設定問題走 `error` → 備援型號同樣 400 → 原文標題版＋紅色告警；故只在「帶了 thinking
+   * 且 400」時 warn 後**立即以同一 prompt 不帶 thinking 重送一次**（多 1 次 HTTP 呼叫、不佔退避次數），
+   * 其餘錯誤原樣拋給 `generate()` 的重試／分類邏輯。不帶 thinking 的呼叫 400 仍是不可重試錯誤、不在此攔。
+   */
+  private async callModel(
+    model: GeminiModel,
+    prompt: string,
+    thinking: LlmThinkingLevel | undefined,
+  ): Promise<GenerateContentResponse> {
+    if (!thinking) {
+      return this.client.models.generateContent({ model, contents: prompt });
+    }
+    try {
+      return await this.client.models.generateContent({
+        model,
+        contents: prompt,
+        config: { thinkingConfig: { thinkingLevel: THINKING_LEVEL_MAP[thinking] } },
+      });
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 400) {
+        this.logger.warn(`LLM 拒絕 thinking 設定（${model}，thinking=${thinking}，${this.errDetail(err)}），改以不帶 thinking 重送一次`);
+        return this.client.models.generateContent({ model, contents: prompt });
+      }
+      throw err;
+    }
   }
 
   /** 429/503 與網路層錯誤（無法辨識明確狀態碼者）可重試；其餘（400/401/403 等）不可重試。 */
