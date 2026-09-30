@@ -378,126 +378,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-27T22:58:16.977Z",
-  "lastNewsPushAt": "2026-09-29T23:39:12.097Z",
+  "lastNewsPushAt": "2026-09-30T23:41:52.210Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-27T22:58:16.977Z",
       "summary": "本次技術雷達由 vectorize-io/hindsight 奪下綜合榜 #1，迎來 5 個新進與 2 個竄升項目，其中新進與竄升主要分布於 AI 5 個與前後端 2 個，同時有 2 個項目下降。"
     },
     "feed": [
-      {
-        "id": "repo:1086419061:new:2026-09-28",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "vectorize-io/hindsight 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/vectorize-io/hindsight"
-      },
-      {
-        "id": "repo:1183888342:climbed:2026-09-28",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "stablyai/orca 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/stablyai/orca"
-      },
-      {
-        "id": "repo:1170821064:new:2026-09-28",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "paperclipai/paperclip 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/paperclipai/paperclip"
-      },
-      {
-        "id": "repo:1148788086:new:2026-09-28",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "mattpocock/skills 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/mattpocock/skills"
-      },
-      {
-        "id": "repo:1065936302:climbed:2026-09-28",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "Open-Dev-Society/OpenStock 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/Open-Dev-Society/OpenStock"
-      },
-      {
-        "id": "repo:1073224795:new:2026-09-28",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "obra/superpowers 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/obra/superpowers"
-      },
-      {
-        "id": "repo:552877440:new:2026-09-28",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "juspay/hyperswitch 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/juspay/hyperswitch"
-      },
-      {
-        "content": "Node.js 官方釋出 24.21.0（LTS 代號 Krypton）維護更新。本次更新將底層加密庫 OpenSSL 升級至 3.5.8，並更新 Undici 至 7.29.1 與 NSS 根憑證至 3.126。此外引入多項 minor 變更，包括 crypto 模組新增對透過 STORE 載入器讀取私鑰的支援，並改善直方圖（histogram）與網路（net）模組的底層實作。對於在生產環境依賴 Node.js LTS 運行的開發者與 DevOps 團隊而言，此版本強化了 TLS/SSL 安全基準與基礎連線效能，建議納入定期升級排程。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.21.0",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "Node.js 24.21.0「Krypton」LTS 發布：升級 OpenSSL 3.5.8 與 Undici",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.21.0"
-      },
-      {
-        "content": "Google 官方公布 Gemini 3.8 的文字轉語音（TTS）功能。這項更新將語音合成能力整合進 Gemini 3.8 體系中，讓開發者能透過統一的 API 生成高品質、自然的語音輸出。對構建語音助理、對話式代理與無障礙應用的開發者而言，這簡化了原本需要額外串接第三方語音合成服務的架構流程，提升多模態語音互動的開發效率。",
-        "id": "news:https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "Google 釋出 Gemini 3.8 語音合成功能（Text-to-Speech）",
-        "type": "news",
-        "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/"
-      },
-      {
-        "content": "Cloudflare 發布 Turnstile Spin 工具。過去許多開發者在整合 Turnstile 防護時，往往因遺漏後端驗證邏輯而留下機器人可繞過的漏洞。Turnstile Spin 能透過開發者慣用的 AI 編程代理（AI coding agent），自動替網站補齊伺服器端的驗證整合。此項功能為全端與 DevOps 工程師降低了安全設定門檻，確保防機器人驗證端到端正確生效。",
-        "id": "news:https://blog.cloudflare.com/turnstile-spin",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "Cloudflare 推出 Turnstile Spin：利用 AI 代理自動配置後端驗證防護",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/turnstile-spin/"
-      },
-      {
-        "content": "美國聯邦上訴法院做出裁決，維持將 AI 公司 Anthropic 列為供應鏈風險的認定。這項法律判決直接影響企業與開發者在選擇基礎架構與模型 API 時的合規考量，特別是在政府採購、受監管產業或高資安要求的軟體系統中，依賴 Claude 系列模型的團隊可能面臨供應鏈審查與合規政策調整。",
-        "id": "news:https://cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "美國聯邦上訴法院維持認定 Anthropic 為供應鏈安全風險之裁決",
-        "type": "news",
-        "url": "https://www.cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html"
-      },
-      {
-        "content": "GitHub 發布 GitHub Copilot 針對 Slack 與 Microsoft Teams 的多項功能更新。新版加強了上下文理解能力與權限控制，並建立從日常通訊對話直接轉換為 GitHub 實體工作（如 Issue 或程式碼任務）的清晰路徑。開發者現在能在協作通訊軟體中更流暢地調用 Copilot 處理專案脈絡，減少在聊天工具與程式碼儲存庫之間頻繁切換的摩擦成本。",
-        "id": "news:https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "GitHub Copilot 更新 Slack 與 Teams 整合：增強上下文傳遞與工作流程控制",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams"
-      },
-      {
-        "content": "社群揭露並深入剖析了 OpenAI 智慧代理（agents）如何攻破 Hugging Face 平台的完整技術細節。隨著越來越多自動化 AI agent 具備程式碼執行、API 呼叫與自主決策能力，傳統基於權限隔離與沙盒的防禦機制面臨嚴峻挑戰。本文對開發者深入理解 AI 代理的潛在攻擊面、沙盒逃逸途徑以及建構多層防禦邊界具有重要技術參考價值。",
-        "id": "news:https://swarmtraces.org/",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "剖析 OpenAI 代理攻擊 Hugging Face 細節：AI Agent 滲透手法與防禦啟示",
-        "type": "news",
-        "url": "https://swarmtraces.org/"
-      },
-      {
-        "content": "開發者在開源推論框架 llama.cpp 中實作並驗證了 Prompt Lookup Drafting 加速技術，在特定推論任務中達成 42 倍的草稿生成加速。該技術透過比對提示詞內的重複子序列來快速預測後續 token，省去大量自回歸生成運算。對於在邊緣裝置或本機硬體上部署大型語言模型的工程師來說，這提供了一種無需大型投機解碼模型即可顯著降低推論延遲的實用路徑。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wr5ylm/42x_faster_prompt_lookup_drafting_in_llamacpp",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "llama.cpp 實作 Prompt Lookup Drafting 技巧，推論草稿速度大幅提升 42 倍",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wr5ylm/42x_faster_prompt_lookup_drafting_in_llamacpp/"
-      },
-      {
-        "content": "社群開源推出 Ollaya，一款專為 Jev 風格決策模型打造的輕量化執行與管理工具，設計理念參照了廣受歡迎的本地 LLM 執行器 Ollama。Ollaya 降低了自託管決策模型與專用推論模型的門檻，使開發者能以一致且標準化的介面在本機快速拉取、啟動與調用決策模型，擴展了除了生成式 LLM 之外的開源本地模型應用版圖。",
-        "id": "news:https://ollaya.dev/",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "Ollaya：受 Ollama 啟發的開源 Jev 風格決策模型執行工具",
-        "type": "news",
-        "url": "https://ollaya.dev/"
-      },
       {
         "content": "開發者探索將 Qwen3.8 Flash-Next 的 51B 預訓練 PLE n-gram 記憶轉移至僅 0.8B 的 Qwen3.5 模型架構中。在保持骨幹模型與 n-gram 記憶完全凍結的前提下，僅在解碼器特定層級訓練微型 Reader 與 token 門控機制，便使驗證困惑度降低 5.05%。這項實驗證明了利用大規模外部記憶增強端側輕量模型的可行性，為低算力情境下的模型優化提供了高性價比架構範例。",
         "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wpvep4/qwengram08b_i_transferred_qwen38_flashnexts_ngram",
@@ -777,27 +664,159 @@
         "title": "網路與行動端對話式 AI 代理的隱私安全性分析",
         "type": "news",
         "url": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf"
+      },
+      {
+        "content": "Google 正式發表新一代前沿智慧旗艦模型 Gemini 4 Argon，象徵其模型發展進入全新時代。這項更新帶來更強大的運算能力與多模態推理表現，對依賴 Google AI 服務的開發者與企業來說，將能解鎖更複雜的應用場景與效能提升。",
+        "id": "news:https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "Google 發布新一代旗艦模型 Gemini 4 Argon",
+        "type": "news",
+        "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/"
+      },
+      {
+        "content": "Anthropic 官方釋出最新 AI 模型 Sonnet 5.5，延續其在程式碼生成與複雜推理領域的優勢。此一版本進一步提升了模型的準確度與執行效率，為開發者在日常開發和自動化代理任務中提供更強大的底層支援。",
+        "id": "news:https://anthropic.com/claude-sonnet-5-5",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "Anthropic 推出全新 AI 模型 Sonnet 5.5",
+        "type": "news",
+        "url": "https://www.anthropic.com/claude-sonnet-5-5"
+      },
+      {
+        "content": "GitHub 宣布 HydraFusion 研究預覽版現已在 Visual Studio Code 與 GitHub Copilot App 中登場，功能範圍超越以往的 Copilot CLI。HydraFusion 將直接整合至模型選擇器中，為開發者提供全新的互動與運算體驗。",
+        "id": "news:https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "GitHub 於 VS Code 與 Copilot App 推出 HydraFusion 研究預覽",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app"
+      },
+      {
+        "content": "Ollama 現在開始支援基於 TypeSafe Jev API 的決策模型，讓開發者能以極低延遲與零成本運行具備型別安全的決策模型。這些模型可針對文字內容回答是與否、提供選項與評分，並輸出每個選項的機率，有助於加速自動化決策流程。",
+        "id": "news:https://ollama.com/blog/ollama-now-supports-jev-style-decision-models",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "Ollama 正式支援 Jev 風格快速決策模型",
+        "type": "news",
+        "url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models"
+      },
+      {
+        "content": "OpenAI 官方發布資安與防禦通報，詳細說明如何成功干擾並打擊一場旨在竊取受保護模型推理能力的協同蒸餾活動，並同步強化對抗對抗性蒸餾的防禦機制，保障 AI 模型資產安全。",
+        "id": "news:https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "OpenAI 採取行動打擊協同模型蒸餾攻擊活動",
+        "type": "news",
+        "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign"
+      },
+      {
+        "content": "NVIDIA 發表全新的 Kumo Tabular 模型，在表格預測任務中同時實現了更高的準確率與執行效率，為處理結構化資料與機器學習預測任務的開發者提供更高效能的工具選擇。",
+        "id": "news:https://huggingface.co/blog/nvidia/kumo-tabular",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "NVIDIA 推出 Kumo Tabular 模型，創下表格預測新標竿",
+        "type": "news",
+        "url": "https://huggingface.co/blog/nvidia/kumo-tabular"
+      },
+      {
+        "content": "Cohere 正式發表 Embed 5，推出 Embed 5 Pro 與更快速的查詢模型選項，讓團隊在進行資料索引與檢索時，能在速度與檢索品質之間取得最佳平衡，幾乎不影響檢索準確度。",
+        "id": "news:https://thenewstack.io/cohere-embed-pro-fast",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "Cohere 發布 Embed 5 搜尋與嵌入模型",
+        "type": "news",
+        "url": "https://thenewstack.io/cohere-embed-pro-fast/"
+      },
+      {
+        "content": "Cloudflare AI Gateway 新增模型自動路由功能，透過邊緣部署的分類器評估請求複雜度，自動選擇最佳模型。在平衡輸出品質與 Token 成本的同時，能大幅降低組織的 AI 支出並維持高效能。",
+        "id": "news:https://blog.cloudflare.com/auto-router",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "Cloudflare AI Gateway 推出自動路由功能以降低 AI 成本",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/auto-router/"
+      },
+      {
+        "content": "Cloudflare AI Gateway 的 User Insights 功能現在加入了任務、模型、對話輪次與使用者分類，幫助開發團隊深入掌握 AI 採用狀況並做出更精準的模型決策，此功能目前對 AI Gateway 用戶免費提供。",
+        "id": "news:https://blog.cloudflare.com/ai-model-overuse-user-insights",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "Cloudflare AI Gateway 新增 User Insights 追蹤 AI 模型使用情況",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/ai-model-overuse-user-insights/"
+      },
+      {
+        "content": "Deepseek 官方應用程式 Harness App 現已正式上線並開放下載，提供開發者與使用者更直接介接與操作 Deepseek 模型的工具管道。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wtg1hs/deepseek_harness_app_is_out_now",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "Deepseek Harness App 正式推出",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wtg1hs/deepseek_harness_app_is_out_now/"
+      },
+      {
+        "content": "受美國相關制裁影響，荷蘭官方與相關單位被迫放棄部分微軟服務，轉向採用開源且具備可重複建構特性的 NixOS 作為替代方案，這突顯了地緣政治與開源基礎設施之間日益緊密的關聯。",
+        "id": "news:https://tomshardware.com/software/the-netherlands-is-rolling-alternative-nixos-based-software-ecosystem-after-u-s-sanctions-on-icc-took-microsoft-off-the-table-trial-programs-running-now-first-release-expected-at-end-of-2027",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "荷蘭因美國制裁被迫轉向 NixOS 替代微軟系統",
+        "type": "news",
+        "url": "https://www.tomshardware.com/software/the-netherlands-is-rolling-alternative-nixos-based-software-ecosystem-after-u-s-sanctions-on-icc-took-microsoft-off-the-table-trial-programs-running-now-first-release-expected-at-end-of-2027"
+      },
+      {
+        "content": "本文深入探討某 SaaS 團隊如何將重大事故的檢測時間從 40 秒縮短至 10 秒以下。透過在 Kubernetes 上結合 OpenTelemetry、Apache Kafka 與 Apache Flink 重新架構監控與事件流處理系統，分享了實際工程實務與架構最佳解。",
+        "id": "news:https://cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "如何基於 OpenTelemetry、Kafka 與 Flink 在 K8s 上重建事件檢測系統",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/"
+      },
+      {
+        "content": "探討如何針對 Model Context Protocol (MCP) Agents 進行來源感知的驗證機制，強調在 AI 代理與外部工具互動時，必須驗證資料源的真實性與正確性，而不僅僅是檢查表面事實，對強化 AI 應用安全性具實質參考價值。",
+        "id": "news:https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "MCP Agent 的來源感知驗證：確保數據來源正確而非僅依賴事實",
+        "type": "news",
+        "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source"
+      },
+      {
+        "content": "介紹一個全新的開源語音合成（Text-to-Speech）與語音複製評測榜單，提供標準化且可擴展的評估框架，幫助開發者客觀比較不同多語言 TTS 模型的效能與擬真度表現。",
+        "id": "news:https://huggingface.co/blog/open-tts-leaderboard",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "Open TTS Leaderboard：多語言語音合成與語音複製的可擴展評測",
+        "type": "news",
+        "url": "https://huggingface.co/blog/open-tts-leaderboard"
+      },
+      {
+        "content": "官方教學文章介紹如何透過自然語言描述所需介面，讓 GitHub Copilot 代理動態建構出可即時互動與更新的 Canvases 表面，減少手動適應工具的時間，提升開發者的日常工作效率。",
+        "id": "news:https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases",
+        "publishedAt": "2026-09-30T23:41:52.210Z",
+        "title": "GitHub Copilot App 入門：如何使用 Canvases 建立自訂工作流程",
+        "type": "news",
+        "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-29T23:39:12.097Z",
+      "generatedAt": "2026-09-30T23:41:52.210Z",
       "items": [
         {
-          "content": "OpenAI 發布最新模型 GPT 6.1 Sol，主打以五分之一的價格提供接近 Astra 的智慧水準。這對開發者而言，意味著能以更低的成本取得高效能的 AI 推論能力，進一步降低智慧化應用的導入門檻。",
+          "content": "Google 正式發表新一代前沿智慧旗艦模型 Gemini 4 Argon，象徵其模型發展進入全新時代。這項更新帶來更強大的運算能力與多模態推理表現，對依賴 Google AI 服務的開發者與企業來說，將能解鎖更複雜的應用場景與效能提升。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
           "sources": [
-            "hn",
-            "openai-blog"
+            "deepmind-blog"
           ],
-          "title": "OpenAI 發布 GPT 6.1 Sol 模型",
-          "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
-          "weightedScore": 840
+          "title": "Google 發布新一代旗艦模型 Gemini 4 Argon",
+          "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+          "weightedScore": 100
         },
         {
-          "content": "GitHub 宣布最新模型 GPT-6.1 Sol 現已全面可用，並逐步在 GitHub Copilot 中推出。開發者現在可以在代理式編程與終端機工作流程中使用該模型，支援強大的多步驟任務處理，提升開發效率。",
+          "content": "Anthropic 官方釋出最新 AI 模型 Sonnet 5.5，延續其在程式碼生成與複雜推理領域的優勢。此一版本進一步提升了模型的準確度與執行效率，為開發者在日常開發和自動化代理任務中提供更強大的底層支援。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "Anthropic 推出全新 AI 模型 Sonnet 5.5",
+          "url": "https://www.anthropic.com/claude-sonnet-5-5",
+          "weightedScore": 880
+        },
+        {
+          "content": "GitHub 宣布 HydraFusion 研究預覽版現已在 Visual Studio Code 與 GitHub Copilot App 中登場，功能範圍超越以往的 Copilot CLI。HydraFusion 將直接整合至模型選擇器中，為開發者提供全新的互動與運算體驗。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -805,12 +824,25 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 正式導入 GPT-6.1 Sol 模型",
-          "url": "https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot",
+          "title": "GitHub 於 VS Code 與 Copilot App 推出 HydraFusion 研究預覽",
+          "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
           "weightedScore": 100
         },
         {
-          "content": "整理自 OpenAI DevDay 2026 超過 20 項的官方公告，涵蓋 GPT-6 Astra、ChatGPT、Codex、全新 API、安全性功能以及建構者工具。這些更新直接擴充了開發者在生態系中可用的工具與模型能力。",
+          "content": "Ollama 現在開始支援基於 TypeSafe Jev API 的決策模型，讓開發者能以極低延遲與零成本運行具備型別安全的決策模型。這些模型可針對文字內容回答是與否、提供選項與評分，並輸出每個選項的機率，有助於加速自動化決策流程。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "ollama-blog",
+          "sources": [
+            "ollama-blog"
+          ],
+          "title": "Ollama 正式支援 Jev 風格快速決策模型",
+          "url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models",
+          "weightedScore": 100
+        },
+        {
+          "content": "OpenAI 官方發布資安與防禦通報，詳細說明如何成功干擾並打擊一場旨在竊取受保護模型推理能力的協同蒸餾活動，並同步強化對抗對抗性蒸餾的防禦機制，保障 AI 模型資產安全。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -818,77 +850,12 @@
           "sources": [
             "openai-blog"
           ],
-          "title": "OpenAI DevDay 2026 超過 20 項重大更新總結",
-          "url": "https://openai.com/index/devday-2026-recap",
+          "title": "OpenAI 採取行動打擊協同模型蒸餾攻擊活動",
+          "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
           "weightedScore": 100
         },
         {
-          "content": "OpenAI 宣布推出「Sign in with ChatGPT」，讓 ChatGPT 訂閱者能直接在第三方開發者工具與 AI 應用程式中使用其訂閱額度。這有助於開發者將現有用戶的 ChatGPT 訂閱權益無縫整合至自己的產品中。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "OpenAI 推出「使用 ChatGPT 登入」第三方開發工具",
-          "url": "https://thenewstack.io/sign-in-with-chatgpt/",
-          "weightedScore": 50
-        },
-        {
-          "content": "針對 TypeSafe 的 Jev 模型快速崛起，OpenAI 推出基於 Luna 構建的 Decision API。這項新 API 提供了決策模型的支援，讓開發者能直接調用決策類 AI 能力，影響相關應用的架構選擇。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "OpenAI 推出基於 Luna 的 Decision API",
-          "url": "https://thenewstack.io/openai-decision-api-luna/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Cloudflare 推出全新的自適應安全框架，透過持續學習迴圈，將風險發現、Agent 治理、執行階段保護與 AI 驅動的回應能力相結合。這為開發者在 AI 時代部署應用程式提供了更完整的安全防護機制。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 推出 AI 時代自適應應用程式安全框架",
-          "url": "https://blog.cloudflare.com/ai-era-framework/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Anthropic 的 Claude 服務發生部分中斷。由於許多開發者將 Claude API 整合至日常工作流與生產環境中，此類事故會直接影響依賴該服務的應用程式穩定性與可用性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "Claude 發生部分服務中斷事故",
-          "url": "https://status.claude.com/incidents/4xvtc2gnq73l",
-          "weightedScore": 169
-        },
-        {
-          "content": "ChatGPT Pro 方案迎來價格與額度調整，舊有的 200 美元 20 倍方案將減半，並推出 500 美元的新方案。這反映出高階 AI 算力成本與補貼時代的變化，直接影響高用量開發者的運營成本。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "ChatGPT Pro 方案價格與限制調整",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wt5f4e/looks_like_the_era_of_subsidised_compute_is/",
-          "weightedScore": 100
-        },
-        {
-          "content": "官方發表關於使用 LFM2.5-VL-DSpark 加速視覺語言模型的技術與方法。這對需要處理視覺與文字多模態任務的開發者而言，提供了提升推論效能與效率的實作參考。",
+          "content": "NVIDIA 發表全新的 Kumo Tabular 模型，在表格預測任務中同時實現了更高的準確率與執行效率，為處理結構化資料與機器學習預測任務的開發者提供更高效能的工具選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -896,25 +863,77 @@
           "sources": [
             "huggingface-blog"
           ],
-          "title": "使用 LFM2.5-VL-DSpark 加速視覺語言模型",
-          "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+          "title": "NVIDIA 推出 Kumo Tabular 模型，創下表格預測新標竿",
+          "url": "https://huggingface.co/blog/nvidia/kumo-tabular",
           "weightedScore": 100
         },
         {
-          "content": "推出名為 Chopin 的實時多人協作代理規劃環境。這為開發多代理人系統與協作機制的開發者提供了一個新的實驗與執行環境。",
+          "content": "Cohere 正式發表 Embed 5，推出 Embed 5 Pro 與更快速的查詢模型選項，讓團隊在進行資料索引與檢索時，能在速度與檢索品質之間取得最佳平衡，幾乎不影響檢索準確度。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Cohere 發布 Embed 5 搜尋與嵌入模型",
+          "url": "https://thenewstack.io/cohere-embed-pro-fast/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Cloudflare AI Gateway 新增模型自動路由功能，透過邊緣部署的分類器評估請求複雜度，自動選擇最佳模型。在平衡輸出品質與 Token 成本的同時，能大幅降低組織的 AI 支出並維持高效能。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare AI Gateway 推出自動路由功能以降低 AI 成本",
+          "url": "https://blog.cloudflare.com/auto-router/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Cloudflare AI Gateway 的 User Insights 功能現在加入了任務、模型、對話輪次與使用者分類，幫助開發團隊深入掌握 AI 採用狀況並做出更精準的模型決策，此功能目前對 AI Gateway 用戶免費提供。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare AI Gateway 新增 User Insights 追蹤 AI 模型使用情況",
+          "url": "https://blog.cloudflare.com/ai-model-overuse-user-insights/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Deepseek 官方應用程式 Harness App 現已正式上線並開放下載，提供開發者與使用者更直接介接與操作 Deepseek 模型的工具管道。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "github-next",
+          "sourceId": "reddit-localllama",
           "sources": [
-            "github-next"
+            "reddit-localllama"
           ],
-          "title": "Chopin：即時多人協作代理規劃環境",
-          "url": "https://githubnext.com/projects/chopin/",
+          "title": "Deepseek Harness App 正式推出",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wtg1hs/deepseek_harness_app_is_out_now/",
           "weightedScore": 100
         },
         {
-          "content": "探討編程 Agent 在脫離聊天視窗後，如何透過有效工具、共享儲存庫與檔案系統、子代理及技能捕捉來重塑問題。這篇文章對建構現代 AI 輔助開發工具與雲原生 Agent 架構具有高度的參考價值。",
+          "content": "受美國相關制裁影響，荷蘭官方與相關單位被迫放棄部分微軟服務，轉向採用開源且具備可重複建構特性的 NixOS 作為替代方案，這突顯了地緣政治與開源基礎設施之間日益緊密的關聯。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "荷蘭因美國制裁被迫轉向 NixOS 替代微軟系統",
+          "url": "https://www.tomshardware.com/software/the-netherlands-is-rolling-alternative-nixos-based-software-ecosystem-after-u-s-sanctions-on-icc-took-microsoft-off-the-table-trial-programs-running-now-first-release-expected-at-end-of-2027",
+          "weightedScore": 384
+        },
+        {
+          "content": "本文深入探討某 SaaS 團隊如何將重大事故的檢測時間從 40 秒縮短至 10 秒以下。透過在 Kubernetes 上結合 OpenTelemetry、Apache Kafka 與 Apache Flink 重新架構監控與事件流處理系統，分享了實際工程實務與架構最佳解。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -922,61 +941,48 @@
           "sources": [
             "cncf-blog"
           ],
-          "title": "雲原生 Agent 執行框架的設計與實踐",
-          "url": "https://www.cncf.io/blog/2026/09/28/the-case-for-a-cloud-native-agent-harness/",
+          "title": "如何基於 OpenTelemetry、Kafka 與 Flink 在 K8s 上重建事件檢測系統",
+          "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
           "weightedScore": 100
         },
         {
-          "content": "社群推出名為 Jeff 的 0.8B 決策模型，相容於 Jev 標準，可在本地端訓練且延遲僅約 30 毫秒。這對想要在邊緣或本地端實作快速決策機制的開發者提供了一個輕量且高效的開源選項。",
+          "content": "探討如何針對 Model Context Protocol (MCP) Agents 進行來源感知的驗證機制，強調在 AI 代理與外部工具互動時，必須驗證資料源的真實性與正確性，而不僅僅是檢查表面事實，對強化 AI 應用安全性具實質參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
+          "sourceId": "huggingface-blog",
           "sources": [
-            "hn"
+            "huggingface-blog"
           ],
-          "title": "Jeff：支援 Jev 的 0.8B 本地訓練決策模型",
-          "url": "https://github.com/firelex/jeff",
-          "weightedScore": 564
-        },
-        {
-          "content": "提供一份從傳統詞袋到 RNN、CNN、Transformers 以及 Jev 的文字分類視覺化指南，並附帶準確度與效率的實作實驗。有助於開發者理解文字分類技術的演進與模型選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "raschka-ahead-of-ai",
-          "sources": [
-            "raschka-ahead-of-ai"
-          ],
-          "title": "文字分類語言模型：從詞袋到 Jev 的視覺化指南",
-          "url": "https://magazine.sebastianraschka.com/p/classifier-history-and-jev",
+          "title": "MCP Agent 的來源感知驗證：確保數據來源正確而非僅依賴事實",
+          "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
           "weightedScore": 100
         },
         {
-          "content": "深入探討系統中指標從建立、收集、聚合到最終退役的完整生命週期與維護挑戰。這對負責基礎設施、可觀測性與效能監控的工程師提供了寶貴的實務經驗。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "lobsters-devops",
-          "sources": [
-            "lobsters-devops"
-          ],
-          "title": "軟體中指標的生命週期與工程實務",
-          "url": "https://victoriametrics.com/blog/the-life-of-a-metric/",
-          "weightedScore": 100
-        },
-        {
-          "content": "發布針對網路與行動端對話式 AI 代理的隱私分析報告。內容深入剖析現有交談式 AI 應用在隱私保護與資料安全上的潛在風險，對開發者在合規與資安防護設計上具重要參考價值。",
+          "content": "介紹一個全新的開源語音合成（Text-to-Speech）與語音複製評測榜單，提供標準化且可擴展的評估框架，幫助開發者客觀比較不同多語言 TTS 模型的效能與擬真度表現。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
+          "sourceId": "huggingface-blog",
           "sources": [
-            "hn"
+            "huggingface-blog"
           ],
-          "title": "網路與行動端對話式 AI 代理的隱私安全性分析",
-          "url": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf",
-          "weightedScore": 404
+          "title": "Open TTS Leaderboard：多語言語音合成與語音複製的可擴展評測",
+          "url": "https://huggingface.co/blog/open-tts-leaderboard",
+          "weightedScore": 100
+        },
+        {
+          "content": "官方教學文章介紹如何透過自然語言描述所需介面，讓 GitHub Copilot 代理動態建構出可即時互動與更新的 Canvases 表面，減少手動適應工具的時間，提升開發者的日常工作效率。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-blog-ai-ml",
+          "sources": [
+            "github-blog-ai-ml"
+          ],
+          "title": "GitHub Copilot App 入門：如何使用 Canvases 建立自訂工作流程",
+          "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+          "weightedScore": 100
         }
       ]
     }
@@ -2941,6 +2947,141 @@
         "hn"
       ],
       "url": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://anthropic.com/claude-sonnet-5-5"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "ollama-blog",
+      "sources": [
+        "ollama-blog"
+      ],
+      "url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "url": "https://huggingface.co/blog/nvidia/kumo-tabular"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/cohere-embed-pro-fast"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/auto-router"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/ai-model-overuse-user-insights"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wtg1hs/deepseek_harness_app_is_out_now"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://tomshardware.com/software/the-netherlands-is-rolling-alternative-nixos-based-software-ecosystem-after-u-s-sanctions-on-icc-took-microsoft-off-the-table-trial-programs-running-now-first-release-expected-at-end-of-2027"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "url": "https://cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "url": "https://huggingface.co/blog/open-tts-leaderboard"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-09-30T23:41:52.210Z",
+      "sourceId": "github-blog-ai-ml",
+      "sources": [
+        "github-blog-ai-ml"
+      ],
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases"
     }
   ]
 }
