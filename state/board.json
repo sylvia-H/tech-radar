@@ -378,133 +378,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-27T22:58:16.977Z",
-  "lastNewsPushAt": "2026-09-30T23:41:52.210Z",
+  "lastNewsPushAt": "2026-10-01T23:51:54.733Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-27T22:58:16.977Z",
       "summary": "本次技術雷達由 vectorize-io/hindsight 奪下綜合榜 #1，迎來 5 個新進與 2 個竄升項目，其中新進與竄升主要分布於 AI 5 個與前後端 2 個，同時有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "開發者探索將 Qwen3.8 Flash-Next 的 51B 預訓練 PLE n-gram 記憶轉移至僅 0.8B 的 Qwen3.5 模型架構中。在保持骨幹模型與 n-gram 記憶完全凍結的前提下，僅在解碼器特定層級訓練微型 Reader 與 token 門控機制，便使驗證困惑度降低 5.05%。這項實驗證明了利用大規模外部記憶增強端側輕量模型的可行性，為低算力情境下的模型優化提供了高性價比架構範例。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wpvep4/qwengram08b_i_transferred_qwen38_flashnexts_ngram",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "Qwengram-0.8B：將 51B 預訓練 n-gram 記憶注入小型模型，困惑度下降 5.05%",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wpvep4/qwengram08b_i_transferred_qwen38_flashnexts_ngram/"
-      },
-      {
-        "content": "本文深入探討在 Apple 生態系硬體與系統架構中，如何結合機器學習模型與同態加密（Homomorphic Encryption）技術。透過在密文中直接執行推論運算，開發者能在不暴露使用者隱私敏感資料的前提下提供智慧化服務。這對於重視資料隱私、受監管健康醫療或金融領域的 iOS/macOS 應用開發者而言，提供了具體可行的端側隱私架構指南。",
-        "id": "news:https://machinelearning.apple.com/research/homomorphic-encryption",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "結合機器學習與同態加密：Apple 生態系下的端側隱私計算技術解析",
-        "type": "news",
-        "url": "https://machinelearning.apple.com/research/homomorphic-encryption"
-      },
-      {
-        "content": "NVIDIA 技術指南詳細介紹如何運用 Warp 與 MjWarp 框架大幅加速機器人動力學模擬與強化學習工作流。透過將物理模擬核心完全向量化並直接部署於 GPU 上運行，開發者能省去 CPU 與 GPU 之間的資料搬移瓶頸，將訓練與模擬的吞吐量提升數倍。這對從事具身智慧、機器人研發與高效能數值計算的工程師提供了核心實作指南。",
-        "id": "news:https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "NVIDIA Warp 與 MjWarp 實戰：加速機器人模擬與強化學習工作流",
-        "type": "news",
-        "url": "https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp"
-      },
-      {
-        "content": "英國 AI 安全研究所（UK AISI）與 EvalEval 團隊深入探討當前大語言模型評測難以重現的痛點，並提出標準化的評測框架與資料集防污染實踐。面對不同評測環境導致的跑分浮動與再現危機，該實踐為開發者評估自研模型、進行安全紅隊演練與落地效能驗證時，建立了更具公信力與可驗證性的工程評測基準。",
-        "id": "news:https://huggingface.co/blog/evaleval-aisi",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "UK AISI 與 EvalEval 如何建立標準化、可重現的 AI 基準測試框架",
-        "type": "news",
-        "url": "https://huggingface.co/blog/evaleval-aisi"
-      },
-      {
-        "content": "社群深入探討在 Go 語言中實現平台無關（Platform-independent）SIMD 指令集的技術方案與底層編譯機制。雖然 Go 原生對 SIMD 支援有限，但透過跨平台抽象層封裝與組合語言代碼生成技巧，開發者能夠在 x86 與 ARM 架構上發揮硬體向量運算效能。這對於進行音訊影像處理、高效能加密與數值計算的 Go 系統工程師提供了珍貴的底層最佳化實踐。",
-        "id": "news:https://go.dev/blog/simd-experiment",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "Go 語言實現平台無關 SIMD 向量化運算技術探討",
-        "type": "news",
-        "url": "https://go.dev/blog/simd-experiment"
-      },
-      {
-        "content": "專注於自由與開源軟體的 Android 應用平台 F-Droid 正式發布 2.0 重大版本。新版在使用者介面架構、客戶端效能以及軟體套件同步更新機制上進行了全面現代化重構。對於開源 Android 應用開發者而言，F-Droid 是擺脫專有應用商店審查與追蹤庫限制的重要發行管道，新版本的大幅改善將為開源生態提供更穩定高效的分發體驗。",
-        "id": "news:https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "Android 開源應用商店 F-Droid 迎來 2.0 重大架構更新",
-        "type": "news",
-        "url": "https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html"
-      },
-      {
-        "content": "荷蘭政府專案探索基於宣告式 Linux 發行版 NixOS 構建微軟 Windows 與相關生態的開源替代架構。NixOS 的不可變特性與宣告式組態管理，為大型公共組織提供了極高的一致性、可重現性與快速還原能力。這項實踐向基礎設施工程師展示了將現代宣告式系統理念推向大規模公部門桌面與伺服器環境的具體可行性。",
-        "id": "news:https://dawo.community/en",
-        "publishedAt": "2026-09-27T22:58:16.977Z",
-        "title": "荷蘭政府基於 NixOS 打造微軟系統開源替代方案",
-        "type": "news",
-        "url": "https://www.dawo.community/en/"
-      },
-      {
-        "content": "Anthropic 的最新模型 Claude Sonnet 5.5 現已在 GitHub Copilot 中一般可用。該模型專為建構功能和修復錯誤等日常程式碼編寫任務而設計，能協助開發者在日常開發工作流程中直接運用最新 AI 能力。",
-        "id": "news:https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "Claude Sonnet 5.5 現已在 GitHub Copilot 中全面推出",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot"
-      },
-      {
-        "content": "NVIDIA 發布名為 OpenShell 的開源沙盒工具，旨在為本地與開源的 AI 代理程式提供真正的運行時限制，而非僅依賴提示詞規則。目前已有超過百家企業加入此安全技術堆疊，有助於提升 AI 代理運行的安全性與邊界控管。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1ws9ydg/nvidia_shipped_openshell_an_open_source_sandbox",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "NVIDIA 推出開源沙盒 OpenShell 為代理程式提供運行時限制",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws9ydg/nvidia_shipped_openshell_an_open_source_sandbox/"
-      },
-      {
-        "content": "Cloudflare 釋出全新命令列工具 cf，完整鏡像整個 Cloudflare API 並支援程式化 TypeScript 配置。同時官方也將內部 SDK 產生器 Forge 開源，提供開發者更便捷的雲端 API 互動與自動化開發體驗。",
-        "id": "news:https://blog.cloudflare.com/cloudflare-cf-cli-launch",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "Cloudflare 發布全新 agentic CLI 工具 cf 與開源 SDK 產生器",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/cloudflare-cf-cli-launch/"
-      },
-      {
-        "content": "OpenAI 在最新報告中揭露了一種新型的提示詞注入（prompt injection）攻擊手法，該漏洞具備類似電腦蠕蟲的自我傳播特性。這項安全通報提醒開發者在建構 AI 應用與處理不受信任的輸入時，必須加強資安防護與隔離機制。",
-        "id": "news:https://thenewstack.io/openai-self-replicating-injections",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "OpenAI 公布具備蠕蟲傳播特性的新型提示詞注入漏洞",
-        "type": "news",
-        "url": "https://thenewstack.io/openai-self-replicating-injections/"
-      },
-      {
-        "content": "Vinext 1.0 從早期 AI 實驗專案畢業，成為生產環境就緒的框架。此版本讓開發者能夠直接在 Vite 上運行 Next.js 應用程式，並帶來進階快取預熱、更廣泛的相容性及自動化測試管線，為前端架構提供新選擇。",
-        "id": "news:https://blog.cloudflare.com/vinext-nextjs-on-vite",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "Vinext 1.0 正式發布：支援在 Vite 上運行 Next.js 應用",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/vinext-nextjs-on-vite/"
-      },
-      {
-        "content": "vscode-typescript 釋出 1.0.0 版本。此更新標誌著該工具的穩定與成熟，為使用 Visual Studio Code 進行 TypeScript 開發的工程師提供標準化的支援與核心功能升級。",
-        "id": "news:https://github.com/microsoft/TypeScript/releases/tag/vscode-typescript%2Fv1.0.0",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "vscode-typescript v1.0.0 正式釋出",
-        "type": "news",
-        "url": "https://github.com/microsoft/TypeScript/releases/tag/vscode-typescript%2Fv1.0.0"
-      },
-      {
-        "content": "微軟宣佈重啟 Copilot 並放棄個人 AI 聊天機器人競賽。這項主要服務與 API 生態的策略轉變，直接影響開發者在整合微軟相關 AI 服務時的架構選擇與可用工具。",
-        "id": "news:https://bloomberg.com/news/articles/2026-09-25/microsoft-abandons-personal-ai-chatbot-race-with-copilot-reboot",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "微軟重啟 Copilot 並調整個人 AI 聊天機器人戰略",
-        "type": "news",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-25/microsoft-abandons-personal-ai-chatbot-race-with-copilot-reboot"
-      },
-      {
-        "content": "Holo4 框架正式亮相，旨在為通用型的電腦操作代理程式（computer-use agents）提供強大動力。這項更新有助於推動具備跨應用程式操作能力的 AI 代理技術發展。",
-        "id": "news:https://huggingface.co/blog/Hcompany/holo4",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "Holo4 框架發布以支援通用電腦操作代理程式",
-        "type": "news",
-        "url": "https://huggingface.co/blog/Hcompany/holo4"
-      },
       {
         "content": "本文深入探討 Go 語言的並行處理核心與實作細節，透過技術分析協助後端開發者更好地掌握高併發系統設計與效能調優。",
         "id": "news:https://antonz.org/go-concurrency-distilled",
@@ -784,26 +664,133 @@
         "title": "GitHub Copilot App 入門：如何使用 Canvases 建立自訂工作流程",
         "type": "news",
         "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/"
+      },
+      {
+        "content": "Google 正式發布 Gemini 4 Argon 模型，社群討論度迅速攀升。該版本代表 Google 旗艦系列模型的最新進展，預計在上下文理解、推論效率及多模態任務處理上帶來能力提升。對於依賴 Gemini API 開發應用與建構代理人架構的開發者而言，新模型的推出意味著推論基準與效能特性的更新，值得即刻追蹤其效能指標並評估既有管線的相容性。",
+        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "Google 釋出全新旗艦 AI 模型 Gemini 4 Argon",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+      },
+      {
+        "content": "OpenAI 發布名為「Dots」的常駐型代理人（Always-on agents）。Dots 具備 24 小時不間斷運作的能力，且在推出初期提供特定免費額度，不會直接消耗使用者的常規使用額度。這項發布象徵 AI Agent 的運作典範正從傳統的「被動接收提示詞、單次推論」轉向「常駐背景、主動監控與執行」的新架構，開發者需開始構思常駐代理人在事件驅動與持續整合情境下的系統設計。",
+        "id": "news:https://openai.com/index/introducing-dots",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "OpenAI 推出 Dots 常駐型 AI 代理人服務",
+        "type": "news",
+        "url": "https://openai.com/index/introducing-dots/"
+      },
+      {
+        "content": "Cloudflare 宣布推出名為 Clef 的開源權重決策模型，並同步釋出全新的強化學習（RL）微調平台。Clef 專注於複雜決策制定與邏輯路徑推導，並透過開放權重降低部署門檻。微調平台的釋出讓開發者能夠使用自訂資料集針對特定業務場景進行強化學習訓練，擺脫完全依賴封閉專有模型的限制，有助於建構更具自主控制權的高可靠 Agent 決策管線。",
+        "id": "news:https://blog.cloudflare.com/clef-decision-models",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "Cloudflare 發布 Clef 開源權重決策模型與 RL 微調平台",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/clef-decision-models/"
+      },
+      {
+        "content": "Cloudflare 推出全新無伺服器事件串流服務「Cloudflare K2」。該服務旨在讓開發者直接在邊緣網路處理高吞吐量的即時事件流，無需自行部署並維護如 Kafka 或 AWS Kinesis 等複雜的底層訊息佇列叢集。對於需要建構即時資料管線、分散式日誌處理以及事件驅動架構的 DevOps 與後端工程師而言，K2 顯著降低了基礎設施運維負擔與延遲。",
+        "id": "news:https://blog.cloudflare.com/cloudflare-k2-streams",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "Cloudflare K2 發布：邊緣無伺服器事件串流平台",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/cloudflare-k2-streams/"
+      },
+      {
+        "content": "GitHub 宣布為 Copilot CLI 與 macOS/Windows 平台上的 Copilot 桌面應用程式推出「Computer Use」公開預覽版。該功能賦予 Copilot 代替使用者直接操作各類桌面軟體與 GUI 的能力，跨越了以往僅限於編輯器內補全程式碼的限制。這項更新改變了開發工作流，讓從環境設定、除錯到跨工具資料傳遞等重複性桌面工作均能交由 Agent 自主協同完成。",
+        "id": "news:https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "GitHub Copilot 正式支援 Computer Use 跨桌面應用程式操作",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps"
+      },
+      {
+        "content": "Allen AI 正式發表 Olmo-core 3，專為超大規模混合專家模型（MoE）設計的開源、高可擴展訓練基礎設施。該框架針對跨節點通訊效能、專家路由分配與記憶體佔用進行深度優化，大幅降低訓練分散式 MoE 模型的工程門檻。對於從事基礎模型研發、自研開源大模型的工程團隊來說，Olmo-core 3 提供了透明、可重現且高效的端到端訓練基礎建設支援。",
+        "id": "news:https://huggingface.co/blog/allenai/olmocore3",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "Allen AI 發布 Olmo-core 3：大規模 MoE 混合專家開源訓練架構",
+        "type": "news",
+        "url": "https://huggingface.co/blog/allenai/olmocore3"
+      },
+      {
+        "content": "GitHub 於 Copilot CLI、Copilot 桌面應用程式及 GitHub Copilot SDK 中推出「Dynamic Workflows」。開發者現在能直接以程式碼精確定義 Agent 的編排邏輯與工作流程，在保有大語言模型靈活性的同時，取得傳統程式化工作流的可靠性與可驗證性。這項更新讓工程團隊能將複雜的多步驟開發任務封裝為可重現、可版本控管的自動化流程。",
+        "id": "news:https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "GitHub Copilot CLI 與 App 支援 Dynamic Workflows 程式化編排",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app"
+      },
+      {
+        "content": "Hugging Face 開源了一套專為 WebGPU 打造的高效機器學習運算核心，涵蓋超過 200 種常見 ML 運算操作，完全在瀏覽器端本地運行。該專案亦積極推動將這些底層優化上游合併至 Transformers.js、ONNX Runtime Web 與 LiteRT.js 等前端推論框架。這意味著網頁與前端開發者能以極高效率在用戶端設備直接執行本地端 AI 推論，大幅降低伺服器推論成本並提升隱私保護。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wu8tpg/we_just_opensourced_the_worlds_fastest_webgpu",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "Hugging Face 開源超過 200 個極速 WebGPU 核心加速端側推論",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wu8tpg/we_just_opensourced_the_worlds_fastest_webgpu/"
+      },
+      {
+        "content": "Cloudflare 宣布 AI Search 正式進入正式發行（GA）階段。該功能具備直接嵌入影像像素以實現視覺檢索的能力，並內建對掃描 PDF 的光學字元辨識（OCR），支援單檔最大 10 MiB 的處理容量，並能無縫銜接各類主流對話模型。此一更新大幅簡化多模態文件處理與語意搜尋的開發流程，開發者無需拼湊多個獨立元件即可在邊緣端快速建置檢索增強生成（RAG）管線。",
+        "id": "news:https://blog.cloudflare.com/ai-search-ga",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "Cloudflare AI Search 正式 GA，支援像素級視覺檢索與 OCR",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/ai-search-ga/"
+      },
+      {
+        "content": "Cloudflare 開放 Monetization Gateway 封閉測試，允許網域擁有者為其 Model Context Protocol（MCP）工具設定存取收費機制。這項服務讓開發者能將自身 API 與 MCP 伺服器商業化，但同時引發業界對 Agent 自主消費與成本控制的熱烈討論：在無人值守的自主 Agent 時代，究竟應由誰授權並管控 Agent 呼叫付費工具時的支出上限，將直接影響未來 Agent 系統的資安與架構設計。",
+        "id": "news:https://thenewstack.io/cloudflare-x402-agent-spending",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "Cloudflare 推出 MCP 工具計費閘道，引發 Agent 支出控制機制討論",
+        "type": "news",
+        "url": "https://thenewstack.io/cloudflare-x402-agent-spending/"
+      },
+      {
+        "content": "Google DeepMind 發表「SynthID Bio」概念驗證技術，能在保留蛋白質原有生物功能的前提下，為 AI 生成的蛋白質序列嵌入數位浮水印。這項技術解決了生成式生物學在智慧財產權辨識與生物安全治理上的重大挑戰，讓合成生物學研究人員與生技開發者在利用生成模型設計分子與酵素時，能有效區分合成來源並確保合規與可追溯性。",
+        "id": "news:https://deepmind.google/blog/introducing-synthid-bio",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "Google DeepMind 推出 SynthID Bio 蛋白質數位浮水印技術",
+        "type": "news",
+        "url": "https://deepmind.google/blog/introducing-synthid-bio/"
+      },
+      {
+        "content": "社群針對 Anthropic 力推的 Model Context Protocol（MCP）展開深入架構反思。討論聚焦於在生產環境中導入 MCP 的代價，包含協定抽象層帶來的序列化開銷、除錯困難度、潛在安全性邊界模糊以及是否過度工程化等問題。對於正在評估是否將內部 API 全面改寫為 MCP 伺服器的架構師而言，這場爭論提供了平衡樂觀預期、深入檢視傳輸層實作與長期維護成本的重要參考依據。",
+        "id": "news:https://earendil.com/posts/you-said-no-mcp",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "架構反思：社群熱議拒絕採用 Model Context Protocol（MCP）之考量",
+        "type": "news",
+        "url": "https://earendil.com/posts/you-said-no-mcp/"
+      },
+      {
+        "content": "資安與 AI 研究團隊針對 GLM-5.3 模型的程式碼生成與網路攻防能力進行深度實測。研究顯示，最新一代開源前沿模型在漏洞挖掘、滲透測試自動化及惡意程式碼分析上已展現出高度成熟的推理能力。此分析提醒軟體工程與資安團隊，隨著具備高階資安攻防能力的模型走向普及，防守端必須加快導入自動化程式碼稽核與防禦性架構，因應即將到來的全自動化漏洞探測威脅。",
+        "id": "news:https://anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "技術深度剖析：GLM-5.3 前沿模型引發的進階網路資安能力外溢",
+        "type": "news",
+        "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"
+      },
+      {
+        "content": "開發社群針對 Claude Opus 5.5 發布深入的 Prompt 工程與架構設計實戰指南。文章剖析了 Opus 5.5 在長上下文推理、多步驟規劃及結構化輸出上的具體行為差異，指出過往針對舊版設計的 System Prompt 可能面臨的新限制，並給出如何透過更精確的邊界條件與思考路徑引導以充分發揮模型能力之策略，對正在微調生產端 Prompt 管線的工程師極具實作價值。",
+        "id": "news:https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "Claude Opus 5.5 實戰 Prompt 工程指南與行為模式拆解",
+        "type": "news",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5"
+      },
+      {
+        "content": "針對 Kubernetes 平台工程中的原則管理（Policy Enforcement），社群深入探討傳統 OPA Gatekeeper 等準入控制器（Admission Controller）的「硬性阻斷（Gates）」模式所帶來的開發者摩擦，並倡導轉向「護欄（Guardrails）」引導機制。文章結合 Kyverno 與 Gatekeeper 的實踐經驗，分析如何兼顧叢集安全基線與內部開發者體驗（IDP），為平台維運團隊提供重新設計策略管線的思維框架。",
+        "id": "news:https://cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams",
+        "publishedAt": "2026-10-01T23:51:54.733Z",
+        "title": "平台工程架構思考：從阻斷性 Gate 轉向引導式 Guardrails 策略管理",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams/"
       }
     ],
     "news": {
-      "generatedAt": "2026-09-30T23:41:52.210Z",
+      "generatedAt": "2026-10-01T23:51:54.733Z",
       "items": [
         {
-          "content": "Google 正式發表新一代前沿智慧旗艦模型 Gemini 4 Argon，象徵其模型發展進入全新時代。這項更新帶來更強大的運算能力與多模態推理表現，對依賴 Google AI 服務的開發者與企業來說，將能解鎖更複雜的應用場景與效能提升。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "deepmind-blog",
-          "sources": [
-            "deepmind-blog"
-          ],
-          "title": "Google 發布新一代旗艦模型 Gemini 4 Argon",
-          "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Anthropic 官方釋出最新 AI 模型 Sonnet 5.5，延續其在程式碼生成與複雜推理領域的優勢。此一版本進一步提升了模型的準確度與執行效率，為開發者在日常開發和自動化代理任務中提供更強大的底層支援。",
+          "content": "Google 正式發布 Gemini 4 Argon 模型，社群討論度迅速攀升。該版本代表 Google 旗艦系列模型的最新進展，預計在上下文理解、推論效率及多模態任務處理上帶來能力提升。對於依賴 Gemini API 開發應用與建構代理人架構的開發者而言，新模型的推出意味著推論基準與效能特性的更新，值得即刻追蹤其效能指標並評估既有管線的相容性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -811,12 +798,54 @@
           "sources": [
             "hn"
           ],
-          "title": "Anthropic 推出全新 AI 模型 Sonnet 5.5",
-          "url": "https://www.anthropic.com/claude-sonnet-5-5",
-          "weightedScore": 880
+          "title": "Google 釋出全新旗艦 AI 模型 Gemini 4 Argon",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+          "weightedScore": 1637
         },
         {
-          "content": "GitHub 宣布 HydraFusion 研究預覽版現已在 Visual Studio Code 與 GitHub Copilot App 中登場，功能範圍超越以往的 Copilot CLI。HydraFusion 將直接整合至模型選擇器中，為開發者提供全新的互動與運算體驗。",
+          "content": "OpenAI 發布名為「Dots」的常駐型代理人（Always-on agents）。Dots 具備 24 小時不間斷運作的能力，且在推出初期提供特定免費額度，不會直接消耗使用者的常規使用額度。這項發布象徵 AI Agent 的運作典範正從傳統的「被動接收提示詞、單次推論」轉向「常駐背景、主動監控與執行」的新架構，開發者需開始構思常駐代理人在事件驅動與持續整合情境下的系統設計。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sources": [
+            "hn",
+            "openai-blog"
+          ],
+          "title": "OpenAI 推出 Dots 常駐型 AI 代理人服務",
+          "url": "https://openai.com/index/introducing-dots/",
+          "weightedScore": 861
+        },
+        {
+          "content": "Cloudflare 宣布推出名為 Clef 的開源權重決策模型，並同步釋出全新的強化學習（RL）微調平台。Clef 專注於複雜決策制定與邏輯路徑推導，並透過開放權重降低部署門檻。微調平台的釋出讓開發者能夠使用自訂資料集針對特定業務場景進行強化學習訓練，擺脫完全依賴封閉專有模型的限制，有助於建構更具自主控制權的高可靠 Agent 決策管線。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sources": [
+            "cloudflare-blog",
+            "hn"
+          ],
+          "title": "Cloudflare 發布 Clef 開源權重決策模型與 RL 微調平台",
+          "url": "https://blog.cloudflare.com/clef-decision-models/",
+          "weightedScore": 494
+        },
+        {
+          "content": "Cloudflare 推出全新無伺服器事件串流服務「Cloudflare K2」。該服務旨在讓開發者直接在邊緣網路處理高吞吐量的即時事件流，無需自行部署並維護如 Kafka 或 AWS Kinesis 等複雜的底層訊息佇列叢集。對於需要建構即時資料管線、分散式日誌處理以及事件驅動架構的 DevOps 與後端工程師而言，K2 顯著降低了基礎設施運維負擔與延遲。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sources": [
+            "cloudflare-blog",
+            "hn"
+          ],
+          "title": "Cloudflare K2 發布：邊緣無伺服器事件串流平台",
+          "url": "https://blog.cloudflare.com/cloudflare-k2-streams/",
+          "weightedScore": 284
+        },
+        {
+          "content": "GitHub 宣布為 Copilot CLI 與 macOS/Windows 平台上的 Copilot 桌面應用程式推出「Computer Use」公開預覽版。該功能賦予 Copilot 代替使用者直接操作各類桌面軟體與 GUI 的能力，跨越了以往僅限於編輯器內補全程式碼的限制。這項更新改變了開發工作流，讓從環境設定、除錯到跨工具資料傳遞等重複性桌面工作均能交由 Agent 自主協同完成。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -824,38 +853,12 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub 於 VS Code 與 Copilot App 推出 HydraFusion 研究預覽",
-          "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
+          "title": "GitHub Copilot 正式支援 Computer Use 跨桌面應用程式操作",
+          "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
           "weightedScore": 100
         },
         {
-          "content": "Ollama 現在開始支援基於 TypeSafe Jev API 的決策模型，讓開發者能以極低延遲與零成本運行具備型別安全的決策模型。這些模型可針對文字內容回答是與否、提供選項與評分，並輸出每個選項的機率，有助於加速自動化決策流程。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "ollama-blog",
-          "sources": [
-            "ollama-blog"
-          ],
-          "title": "Ollama 正式支援 Jev 風格快速決策模型",
-          "url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models",
-          "weightedScore": 100
-        },
-        {
-          "content": "OpenAI 官方發布資安與防禦通報，詳細說明如何成功干擾並打擊一場旨在竊取受保護模型推理能力的協同蒸餾活動，並同步強化對抗對抗性蒸餾的防禦機制，保障 AI 模型資產安全。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sources": [
-            "openai-blog"
-          ],
-          "title": "OpenAI 採取行動打擊協同模型蒸餾攻擊活動",
-          "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
-          "weightedScore": 100
-        },
-        {
-          "content": "NVIDIA 發表全新的 Kumo Tabular 模型，在表格預測任務中同時實現了更高的準確率與執行效率，為處理結構化資料與機器學習預測任務的開發者提供更高效能的工具選擇。",
+          "content": "Allen AI 正式發表 Olmo-core 3，專為超大規模混合專家模型（MoE）設計的開源、高可擴展訓練基礎設施。該框架針對跨節點通訊效能、專家路由分配與記憶體佔用進行深度優化，大幅降低訓練分散式 MoE 模型的工程門檻。對於從事基礎模型研發、自研開源大模型的工程團隊來說，Olmo-core 3 提供了透明、可重現且高效的端到端訓練基礎建設支援。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -863,51 +866,25 @@
           "sources": [
             "huggingface-blog"
           ],
-          "title": "NVIDIA 推出 Kumo Tabular 模型，創下表格預測新標竿",
-          "url": "https://huggingface.co/blog/nvidia/kumo-tabular",
+          "title": "Allen AI 發布 Olmo-core 3：大規模 MoE 混合專家開源訓練架構",
+          "url": "https://huggingface.co/blog/allenai/olmocore3",
           "weightedScore": 100
         },
         {
-          "content": "Cohere 正式發表 Embed 5，推出 Embed 5 Pro 與更快速的查詢模型選項，讓團隊在進行資料索引與檢索時，能在速度與檢索品質之間取得最佳平衡，幾乎不影響檢索準確度。",
+          "content": "GitHub 於 Copilot CLI、Copilot 桌面應用程式及 GitHub Copilot SDK 中推出「Dynamic Workflows」。開發者現在能直接以程式碼精確定義 Agent 的編排邏輯與工作流程，在保有大語言模型靈活性的同時，取得傳統程式化工作流的可靠性與可驗證性。這項更新讓工程團隊能將複雜的多步驟開發任務封裝為可重現、可版本控管的自動化流程。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
+          "sourceId": "github-changelog-copilot",
           "sources": [
-            "thenewstack"
+            "github-changelog-copilot"
           ],
-          "title": "Cohere 發布 Embed 5 搜尋與嵌入模型",
-          "url": "https://thenewstack.io/cohere-embed-pro-fast/",
-          "weightedScore": 50
+          "title": "GitHub Copilot CLI 與 App 支援 Dynamic Workflows 程式化編排",
+          "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
+          "weightedScore": 100
         },
         {
-          "content": "Cloudflare AI Gateway 新增模型自動路由功能，透過邊緣部署的分類器評估請求複雜度，自動選擇最佳模型。在平衡輸出品質與 Token 成本的同時，能大幅降低組織的 AI 支出並維持高效能。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare AI Gateway 推出自動路由功能以降低 AI 成本",
-          "url": "https://blog.cloudflare.com/auto-router/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Cloudflare AI Gateway 的 User Insights 功能現在加入了任務、模型、對話輪次與使用者分類，幫助開發團隊深入掌握 AI 採用狀況並做出更精準的模型決策，此功能目前對 AI Gateway 用戶免費提供。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare AI Gateway 新增 User Insights 追蹤 AI 模型使用情況",
-          "url": "https://blog.cloudflare.com/ai-model-overuse-user-insights/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Deepseek 官方應用程式 Harness App 現已正式上線並開放下載，提供開發者與使用者更直接介接與操作 Deepseek 模型的工具管道。",
+          "content": "Hugging Face 開源了一套專為 WebGPU 打造的高效機器學習運算核心，涵蓋超過 200 種常見 ML 運算操作，完全在瀏覽器端本地運行。該專案亦積極推動將這些底層優化上游合併至 Transformers.js、ONNX Runtime Web 與 LiteRT.js 等前端推論框架。這意味著網頁與前端開發者能以極高效率在用戶端設備直接執行本地端 AI 推論，大幅降低伺服器推論成本並提升隱私保護。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -915,25 +892,91 @@
           "sources": [
             "reddit-localllama"
           ],
-          "title": "Deepseek Harness App 正式推出",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wtg1hs/deepseek_harness_app_is_out_now/",
+          "title": "Hugging Face 開源超過 200 個極速 WebGPU 核心加速端側推論",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wu8tpg/we_just_opensourced_the_worlds_fastest_webgpu/",
           "weightedScore": 100
         },
         {
-          "content": "受美國相關制裁影響，荷蘭官方與相關單位被迫放棄部分微軟服務，轉向採用開源且具備可重複建構特性的 NixOS 作為替代方案，這突顯了地緣政治與開源基礎設施之間日益緊密的關聯。",
+          "content": "Cloudflare 宣布 AI Search 正式進入正式發行（GA）階段。該功能具備直接嵌入影像像素以實現視覺檢索的能力，並內建對掃描 PDF 的光學字元辨識（OCR），支援單檔最大 10 MiB 的處理容量，並能無縫銜接各類主流對話模型。此一更新大幅簡化多模態文件處理與語意搜尋的開發流程，開發者無需拼湊多個獨立元件即可在邊緣端快速建置檢索增強生成（RAG）管線。",
           "degraded": false,
           "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare AI Search 正式 GA，支援像素級視覺檢索與 OCR",
+          "url": "https://blog.cloudflare.com/ai-search-ga/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Cloudflare 開放 Monetization Gateway 封閉測試，允許網域擁有者為其 Model Context Protocol（MCP）工具設定存取收費機制。這項服務讓開發者能將自身 API 與 MCP 伺服器商業化，但同時引發業界對 Agent 自主消費與成本控制的熱烈討論：在無人值守的自主 Agent 時代，究竟應由誰授權並管控 Agent 呼叫付費工具時的支出上限，將直接影響未來 Agent 系統的資安與架構設計。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Cloudflare 推出 MCP 工具計費閘道，引發 Agent 支出控制機制討論",
+          "url": "https://thenewstack.io/cloudflare-x402-agent-spending/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Google DeepMind 發表「SynthID Bio」概念驗證技術，能在保留蛋白質原有生物功能的前提下，為 AI 生成的蛋白質序列嵌入數位浮水印。這項技術解決了生成式生物學在智慧財產權辨識與生物安全治理上的重大挑戰，讓合成生物學研究人員與生技開發者在利用生成模型設計分子與酵素時，能有效區分合成來源並確保合規與可追溯性。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "Google DeepMind 推出 SynthID Bio 蛋白質數位浮水印技術",
+          "url": "https://deepmind.google/blog/introducing-synthid-bio/",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群針對 Anthropic 力推的 Model Context Protocol（MCP）展開深入架構反思。討論聚焦於在生產環境中導入 MCP 的代價，包含協定抽象層帶來的序列化開銷、除錯困難度、潛在安全性邊界模糊以及是否過度工程化等問題。對於正在評估是否將內部 API 全面改寫為 MCP 伺服器的架構師而言，這場爭論提供了平衡樂觀預期、深入檢視傳輸層實作與長期維護成本的重要參考依據。",
+          "degraded": false,
+          "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
           "sources": [
             "hn"
           ],
-          "title": "荷蘭因美國制裁被迫轉向 NixOS 替代微軟系統",
-          "url": "https://www.tomshardware.com/software/the-netherlands-is-rolling-alternative-nixos-based-software-ecosystem-after-u-s-sanctions-on-icc-took-microsoft-off-the-table-trial-programs-running-now-first-release-expected-at-end-of-2027",
-          "weightedScore": 384
+          "title": "架構反思：社群熱議拒絕採用 Model Context Protocol（MCP）之考量",
+          "url": "https://earendil.com/posts/you-said-no-mcp/",
+          "weightedScore": 667
         },
         {
-          "content": "本文深入探討某 SaaS 團隊如何將重大事故的檢測時間從 40 秒縮短至 10 秒以下。透過在 Kubernetes 上結合 OpenTelemetry、Apache Kafka 與 Apache Flink 重新架構監控與事件流處理系統，分享了實際工程實務與架構最佳解。",
+          "content": "資安與 AI 研究團隊針對 GLM-5.3 模型的程式碼生成與網路攻防能力進行深度實測。研究顯示，最新一代開源前沿模型在漏洞挖掘、滲透測試自動化及惡意程式碼分析上已展現出高度成熟的推理能力。此分析提醒軟體工程與資安團隊，隨著具備高階資安攻防能力的模型走向普及，防守端必須加快導入自動化程式碼稽核與防禦性架構，因應即將到來的全自動化漏洞探測威脅。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sources": [
+            "hn",
+            "reddit-localllama"
+          ],
+          "title": "技術深度剖析：GLM-5.3 前沿模型引發的進階網路資安能力外溢",
+          "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+          "weightedScore": 350
+        },
+        {
+          "content": "開發社群針對 Claude Opus 5.5 發布深入的 Prompt 工程與架構設計實戰指南。文章剖析了 Opus 5.5 在長上下文推理、多步驟規劃及結構化輸出上的具體行為差異，指出過往針對舊版設計的 System Prompt 可能面臨的新限制，並給出如何透過更精確的邊界條件與思考路徑引導以充分發揮模型能力之策略，對正在微調生產端 Prompt 管線的工程師極具實作價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "Claude Opus 5.5 實戰 Prompt 工程指南與行為模式拆解",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
+          "weightedScore": 207
+        },
+        {
+          "content": "針對 Kubernetes 平台工程中的原則管理（Policy Enforcement），社群深入探討傳統 OPA Gatekeeper 等準入控制器（Admission Controller）的「硬性阻斷（Gates）」模式所帶來的開發者摩擦，並倡導轉向「護欄（Guardrails）」引導機制。文章結合 Kyverno 與 Gatekeeper 的實踐經驗，分析如何兼顧叢集安全基線與內部開發者體驗（IDP），為平台維運團隊提供重新設計策略管線的思維框架。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -941,47 +984,8 @@
           "sources": [
             "cncf-blog"
           ],
-          "title": "如何基於 OpenTelemetry、Kafka 與 Flink 在 K8s 上重建事件檢測系統",
-          "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
-          "weightedScore": 100
-        },
-        {
-          "content": "探討如何針對 Model Context Protocol (MCP) Agents 進行來源感知的驗證機制，強調在 AI 代理與外部工具互動時，必須驗證資料源的真實性與正確性，而不僅僅是檢查表面事實，對強化 AI 應用安全性具實質參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "MCP Agent 的來源感知驗證：確保數據來源正確而非僅依賴事實",
-          "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
-          "weightedScore": 100
-        },
-        {
-          "content": "介紹一個全新的開源語音合成（Text-to-Speech）與語音複製評測榜單，提供標準化且可擴展的評估框架，幫助開發者客觀比較不同多語言 TTS 模型的效能與擬真度表現。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "Open TTS Leaderboard：多語言語音合成與語音複製的可擴展評測",
-          "url": "https://huggingface.co/blog/open-tts-leaderboard",
-          "weightedScore": 100
-        },
-        {
-          "content": "官方教學文章介紹如何透過自然語言描述所需介面，讓 GitHub Copilot 代理動態建構出可即時互動與更新的 Canvases 表面，減少手動適應工具的時間，提升開發者的日常工作效率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
-          "sources": [
-            "github-blog-ai-ml"
-          ],
-          "title": "GitHub Copilot App 入門：如何使用 Canvases 建立自訂工作流程",
-          "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+          "title": "平台工程架構思考：從阻斷性 Gate 轉向引導式 Guardrails 策略管理",
+          "url": "https://www.cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams/",
           "weightedScore": 100
         }
       ]
@@ -3082,6 +3086,145 @@
         "github-blog-ai-ml"
       ],
       "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "openai-blog"
+      ],
+      "url": "https://openai.com/index/introducing-dots"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "hn",
+      "sources": [
+        "cloudflare-blog",
+        "hn"
+      ],
+      "url": "https://blog.cloudflare.com/clef-decision-models"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "hn",
+      "sources": [
+        "cloudflare-blog",
+        "hn"
+      ],
+      "url": "https://blog.cloudflare.com/cloudflare-k2-streams"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "url": "https://huggingface.co/blog/allenai/olmocore3"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wu8tpg/we_just_opensourced_the_worlds_fastest_webgpu"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/ai-search-ga"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/cloudflare-x402-agent-spending"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "url": "https://deepmind.google/blog/introducing-synthid-bio"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://earendil.com/posts/you-said-no-mcp"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "reddit-localllama"
+      ],
+      "url": "https://anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-01T23:51:54.733Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "url": "https://cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams"
     }
   ]
 }
