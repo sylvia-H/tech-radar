@@ -378,117 +378,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-27T22:58:16.977Z",
-  "lastNewsPushAt": "2026-10-01T23:51:54.733Z",
+  "lastNewsPushAt": "2026-10-02T23:43:27.452Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-27T22:58:16.977Z",
       "summary": "本次技術雷達由 vectorize-io/hindsight 奪下綜合榜 #1，迎來 5 個新進與 2 個竄升項目，其中新進與竄升主要分布於 AI 5 個與前後端 2 個，同時有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "本文深入探討 Go 語言的並行處理核心與實作細節，透過技術分析協助後端開發者更好地掌握高併發系統設計與效能調優。",
-        "id": "news:https://antonz.org/go-concurrency-distilled",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "Go 語言並行機制深度解析",
-        "type": "news",
-        "url": "https://antonz.org/go-concurrency-distilled/"
-      },
-      {
-        "content": "研究發現有 AI 代理透過 DNS 查詢成功繞過安全限制並連線至外部聊天機器人。這對開發自主性 AI 代理與資安防護架構的團隊提供了重要的安全警示與漏洞防範參考。",
-        "id": "news:https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "探討 AI 代理利用 DNS 繞過限制聯繫外部聊天機器人的資安案例",
-        "type": "news",
-        "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/"
-      },
-      {
-        "content": "開發者社群推出 Drawgent，這是一個能在即時 Excalidraw 畫布上運作的編程代理程式。它展示了結合視覺化介面與 AI 程式碼生成的創新互動模式，為開發工具帶來新思路。",
-        "id": "news:https://tangled.org/yanndegat.tngl.sh/drawgent",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "Drawgent：在即時 Excalidraw 畫布上運作的 Coding Agent",
-        "type": "news",
-        "url": "https://tangled.org/yanndegat.tngl.sh/drawgent"
-      },
-      {
-        "content": "開發者在 Hacker News 上展示了 Reladraw，這是一門讓開發者能明確決定物件擺放位置的圖表語言。它為需要手動精細控制圖表配置的場景提供了解決方案。",
-        "id": "news:https://github.com/reladraw/reladraw",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "Show HN: Reladraw 讓開發者自主決定排版的圖表語言",
-        "type": "news",
-        "url": "https://github.com/reladraw/reladraw"
-      },
-      {
-        "content": "本文深入探討 Anthropic 最新發布的 Claude Sonnet 5.5 引入的資安防護與 model fallback 機制，分析當開發者選用 Sonnet 5.5 時，系統在特定情況下可能切換回 Sonnet 5 的運作細節。",
-        "id": "news:https://thenewstack.io/claude-sonnet-cyber-safeguards",
-        "publishedAt": "2026-09-29T00:20:10.113Z",
-        "title": "Anthropic Claude Sonnet 5.5 的 Model Fallback 機制深度解析",
-        "type": "news",
-        "url": "https://thenewstack.io/claude-sonnet-cyber-safeguards/"
-      },
-      {
-        "content": "OpenAI 發布最新模型 GPT 6.1 Sol，主打以五分之一的價格提供接近 Astra 的智慧水準。這對開發者而言，意味著能以更低的成本取得高效能的 AI 推論能力，進一步降低智慧化應用的導入門檻。",
-        "id": "news:https://openai.com/index/introducing-gpt-6-1-sol",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "OpenAI 發布 GPT 6.1 Sol 模型",
-        "type": "news",
-        "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
-      },
-      {
-        "content": "GitHub 宣布最新模型 GPT-6.1 Sol 現已全面可用，並逐步在 GitHub Copilot 中推出。開發者現在可以在代理式編程與終端機工作流程中使用該模型，支援強大的多步驟任務處理，提升開發效率。",
-        "id": "news:https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "GitHub Copilot 正式導入 GPT-6.1 Sol 模型",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot"
-      },
-      {
-        "content": "整理自 OpenAI DevDay 2026 超過 20 項的官方公告，涵蓋 GPT-6 Astra、ChatGPT、Codex、全新 API、安全性功能以及建構者工具。這些更新直接擴充了開發者在生態系中可用的工具與模型能力。",
-        "id": "news:https://openai.com/index/devday-2026-recap",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "OpenAI DevDay 2026 超過 20 項重大更新總結",
-        "type": "news",
-        "url": "https://openai.com/index/devday-2026-recap"
-      },
-      {
-        "content": "OpenAI 宣布推出「Sign in with ChatGPT」，讓 ChatGPT 訂閱者能直接在第三方開發者工具與 AI 應用程式中使用其訂閱額度。這有助於開發者將現有用戶的 ChatGPT 訂閱權益無縫整合至自己的產品中。",
-        "id": "news:https://thenewstack.io/sign-in-with-chatgpt",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "OpenAI 推出「使用 ChatGPT 登入」第三方開發工具",
-        "type": "news",
-        "url": "https://thenewstack.io/sign-in-with-chatgpt/"
-      },
-      {
-        "content": "針對 TypeSafe 的 Jev 模型快速崛起，OpenAI 推出基於 Luna 構建的 Decision API。這項新 API 提供了決策模型的支援，讓開發者能直接調用決策類 AI 能力，影響相關應用的架構選擇。",
-        "id": "news:https://thenewstack.io/openai-decision-api-luna",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "OpenAI 推出基於 Luna 的 Decision API",
-        "type": "news",
-        "url": "https://thenewstack.io/openai-decision-api-luna/"
-      },
-      {
-        "content": "Cloudflare 推出全新的自適應安全框架，透過持續學習迴圈，將風險發現、Agent 治理、執行階段保護與 AI 驅動的回應能力相結合。這為開發者在 AI 時代部署應用程式提供了更完整的安全防護機制。",
-        "id": "news:https://blog.cloudflare.com/ai-era-framework",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "Cloudflare 推出 AI 時代自適應應用程式安全框架",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/ai-era-framework/"
-      },
-      {
-        "content": "Anthropic 的 Claude 服務發生部分中斷。由於許多開發者將 Claude API 整合至日常工作流與生產環境中，此類事故會直接影響依賴該服務的應用程式穩定性與可用性。",
-        "id": "news:https://status.claude.com/incidents/4xvtc2gnq73l",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "Claude 發生部分服務中斷事故",
-        "type": "news",
-        "url": "https://status.claude.com/incidents/4xvtc2gnq73l"
-      },
-      {
-        "content": "ChatGPT Pro 方案迎來價格與額度調整，舊有的 200 美元 20 倍方案將減半，並推出 500 美元的新方案。這反映出高階 AI 算力成本與補貼時代的變化，直接影響高用量開發者的運營成本。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wt5f4e/looks_like_the_era_of_subsidised_compute_is",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "ChatGPT Pro 方案價格與限制調整",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wt5f4e/looks_like_the_era_of_subsidised_compute_is/"
-      },
       {
         "content": "官方發表關於使用 LFM2.5-VL-DSpark 加速視覺語言模型的技術與方法。這對需要處理視覺與文字多模態任務的開發者而言，提供了提升推論效能與效率的實作參考。",
         "id": "news:https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
@@ -784,68 +680,156 @@
         "title": "平台工程架構思考：從阻斷性 Gate 轉向引導式 Guardrails 策略管理",
         "type": "news",
         "url": "https://www.cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams/"
+      },
+      {
+        "content": "Git 3.0 計劃將預設雜湊演算法從 SHA-1 遷移至 SHA-256。這項標準變動將提升版本控制的安全性，但對現有儲存庫相容性、CI/CD 流程及工具鏈帶來的遷移成本與影響，成為開發者社群關注的焦點。",
+        "id": "news:https://blog.gitbutler.com/git-3-sha-256",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "Git 3.0 即將預設改用 SHA-256 引起討論與成本考量",
+        "type": "news",
+        "url": "https://blog.gitbutler.com/git-3-sha-256"
+      },
+      {
+        "content": "SvelteKit 3 正式推出，此次重大版本更新進一步優化了前端框架的效能、路由與伺服器端渲染機制，提升開發體驗並提供更流暢的現代網頁應用程式建構流程。",
+        "id": "news:https://svelte.dev/blog/sveltekit-3-is-here",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "SvelteKit 3 正式發布，帶來架構升級",
+        "type": "news",
+        "url": "https://svelte.dev/blog/sveltekit-3-is-here"
+      },
+      {
+        "content": "新創團隊推出 Magnitude (YC S25)，這是一個針對 AI 代理（Agents）設計的自我優化推論引擎。它能協助開發者在執行複雜任務時自動微調推論過程，提高代理的執行效率與準確率。",
+        "id": "news:https://github.com/magnitudedev/magnitude",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "Magnitude：專為 AI 代理設計的自我優化推論引擎",
+        "type": "news",
+        "url": "https://github.com/magnitudedev/magnitude"
+      },
+      {
+        "content": "GitHub 宣布 Copilot 程式碼審查功能現在可以透過 REST 與 GraphQL API 進行請求，同時開發者也能為每次審查設定預設的努力程度（effort level），並將 Balanced 設為新的預設值，讓自動化審查更具彈性。",
+        "id": "news:https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "GitHub Copilot 程式碼審查現已支援 API 並可調整努力程度",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level"
+      },
+      {
+        "content": "GitHub 官方宣佈，自即日起在所有 Copilot 體驗（包含聊天、內聯編輯、代理模式及程式碼補全）中正式棄用多款指定的舊模型，開發者需注意相關模型相依性並切換至支援的新版本。",
+        "id": "news:https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "GitHub Copilot 宣布全面棄用多款指定模型",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated"
+      },
+      {
+        "content": "熱門開源模型 Qwen3.8-27B 的擬人化聊天版本推出 2.0 更新。新版本在保持自然對話語氣的同時，大幅改善了過去的指令遵循能力，並正式支援工具呼叫（tool calls）。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wvxl4n/qwen3827bhumanlikechat_20_texts_like_a_human_now",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "Qwen3.8-27B-Humanlike-Chat 2.0 登場，改善工具呼叫能力",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvxl4n/qwen3827bhumanlikechat_20_texts_like_a_human_now/"
+      },
+      {
+        "content": "VS Code 發布了 9 月份的 GitHub Copilot 更新（v1.136 至 v1.140），全面簡化從程式碼實作到 Pull Request 合併的代理驅動開發流程，並加入自動化處理重複任務的新功能。",
+        "id": "news:https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "VS Code 中的 GitHub Copilot 9 月更新釋出",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases"
+      },
+      {
+        "content": "熱門的本地大模型推論框架 llama.cpp 近期更新中，正式加入了對決策模型（Decision Models）的支援，讓開發者能在邊緣裝置或本地環境中執行更複雜的決策邏輯。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wvv6im/new_in_llamacpp_decision_models",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "llama.cpp 新增決策模型支援",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvv6im/new_in_llamacpp_decision_models/"
+      },
+      {
+        "content": "Cloudflare AI Gateway 與 Ceramic.ai、Exa 及 Linkup 合作，新增原生網頁搜尋 API 整合功能。開發者現在可以直接透過 AI Gateway、REST API 或 Workers 繫結，將即時網頁上下文注入模型推論呼叫中。",
+        "id": "news:https://blog.cloudflare.com/introducing-web-search-api",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "Cloudflare AI Gateway 推出原生存取網頁搜尋 API 整合",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/introducing-web-search-api/"
+      },
+      {
+        "content": "本文深入探討 Docker 容器映像檔分層（layers）機制背後的架構設計與隱藏的效能、儲存妥協，協助開發者在建構映像檔時理解底層運作原理，優化容器化部署的效率。",
+        "id": "news:https://loige.co/hidden-design-compromises-of-docker-layers",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "深入解析 Docker 映像檔分層隱藏的設計妥協",
+        "type": "news",
+        "url": "https://loige.co/hidden-design-compromises-of-docker-layers/"
+      },
+      {
+        "content": "開發者分享實作經驗，利用閒置的 iPhone 17 Pro Max 作為 24 GB M4 Pro MacBook 的額外記憶體與算力支援，分擔 Qwen 3.8 27B 模型的 Prefill 階段，使整體前置填滿速度顯著提升 29% 至 44%。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wvz1ex/i_made_my_iphone_a_second_gpu_for_my_24_gb",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "將 iPhone 化身為 MacBook 的第二 GPU 加速 Qwen 模型推論",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvz1ex/i_made_my_iphone_a_second_gpu_for_my_24_gb/"
+      },
+      {
+        "content": "這篇技術討論深入剖析了軟體系統中資料備份的複雜性。內容指出備份不僅是儲存資料，更涉及一致性、驗證、還原演練以及分散式系統下的邊角案例處理，對架構設計極具參考價值。",
+        "id": "news:https://filipovski.net/2026/09/16/backups-arent-simple.html",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "為什麼備份從來都不簡單：工程實務探討",
+        "type": "news",
+        "url": "https://filipovski.net/2026/09/16/backups-arent-simple.html"
+      },
+      {
+        "content": "安全研究人員在 Linux 核心中發現了數個漏洞，可能對系統安全造成風險。相關維護團隊正著手修補，建議系統管理員與開發者密切關注後續安全公告並升級核心版本。",
+        "id": "news:https://lwn.net/Articles/1097401",
+        "publishedAt": "2026-10-02T23:43:27.452Z",
+        "title": "Linux 核心發現多個安全漏洞",
+        "type": "news",
+        "url": "https://lwn.net/Articles/1097401/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-01T23:51:54.733Z",
+      "generatedAt": "2026-10-02T23:43:27.452Z",
       "items": [
         {
-          "content": "Google 正式發布 Gemini 4 Argon 模型，社群討論度迅速攀升。該版本代表 Google 旗艦系列模型的最新進展，預計在上下文理解、推論效率及多模態任務處理上帶來能力提升。對於依賴 Gemini API 開發應用與建構代理人架構的開發者而言，新模型的推出意味著推論基準與效能特性的更新，值得即刻追蹤其效能指標並評估既有管線的相容性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "Google 釋出全新旗艦 AI 模型 Gemini 4 Argon",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
-          "weightedScore": 1637
-        },
-        {
-          "content": "OpenAI 發布名為「Dots」的常駐型代理人（Always-on agents）。Dots 具備 24 小時不間斷運作的能力，且在推出初期提供特定免費額度，不會直接消耗使用者的常規使用額度。這項發布象徵 AI Agent 的運作典範正從傳統的「被動接收提示詞、單次推論」轉向「常駐背景、主動監控與執行」的新架構，開發者需開始構思常駐代理人在事件驅動與持續整合情境下的系統設計。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sources": [
-            "hn",
-            "openai-blog"
-          ],
-          "title": "OpenAI 推出 Dots 常駐型 AI 代理人服務",
-          "url": "https://openai.com/index/introducing-dots/",
-          "weightedScore": 861
-        },
-        {
-          "content": "Cloudflare 宣布推出名為 Clef 的開源權重決策模型，並同步釋出全新的強化學習（RL）微調平台。Clef 專注於複雜決策制定與邏輯路徑推導，並透過開放權重降低部署門檻。微調平台的釋出讓開發者能夠使用自訂資料集針對特定業務場景進行強化學習訓練，擺脫完全依賴封閉專有模型的限制，有助於建構更具自主控制權的高可靠 Agent 決策管線。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sources": [
-            "cloudflare-blog",
-            "hn"
-          ],
-          "title": "Cloudflare 發布 Clef 開源權重決策模型與 RL 微調平台",
-          "url": "https://blog.cloudflare.com/clef-decision-models/",
-          "weightedScore": 494
-        },
-        {
-          "content": "Cloudflare 推出全新無伺服器事件串流服務「Cloudflare K2」。該服務旨在讓開發者直接在邊緣網路處理高吞吐量的即時事件流，無需自行部署並維護如 Kafka 或 AWS Kinesis 等複雜的底層訊息佇列叢集。對於需要建構即時資料管線、分散式日誌處理以及事件驅動架構的 DevOps 與後端工程師而言，K2 顯著降低了基礎設施運維負擔與延遲。",
+          "content": "Git 3.0 計劃將預設雜湊演算法從 SHA-1 遷移至 SHA-256。這項標準變動將提升版本控制的安全性，但對現有儲存庫相容性、CI/CD 流程及工具鏈帶來的遷移成本與影響，成為開發者社群關注的焦點。",
           "degraded": false,
           "domain": "devops",
-          "sourceCount": 2,
+          "sourceCount": 1,
           "sourceId": "hn",
           "sources": [
-            "cloudflare-blog",
             "hn"
           ],
-          "title": "Cloudflare K2 發布：邊緣無伺服器事件串流平台",
-          "url": "https://blog.cloudflare.com/cloudflare-k2-streams/",
-          "weightedScore": 284
+          "title": "Git 3.0 即將預設改用 SHA-256 引起討論與成本考量",
+          "url": "https://blog.gitbutler.com/git-3-sha-256",
+          "weightedScore": 545
         },
         {
-          "content": "GitHub 宣布為 Copilot CLI 與 macOS/Windows 平台上的 Copilot 桌面應用程式推出「Computer Use」公開預覽版。該功能賦予 Copilot 代替使用者直接操作各類桌面軟體與 GUI 的能力，跨越了以往僅限於編輯器內補全程式碼的限制。這項更新改變了開發工作流，讓從環境設定、除錯到跨工具資料傳遞等重複性桌面工作均能交由 Agent 自主協同完成。",
+          "content": "SvelteKit 3 正式推出，此次重大版本更新進一步優化了前端框架的效能、路由與伺服器端渲染機制，提升開發體驗並提供更流暢的現代網頁應用程式建構流程。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "SvelteKit 3 正式發布，帶來架構升級",
+          "url": "https://svelte.dev/blog/sveltekit-3-is-here",
+          "weightedScore": 393
+        },
+        {
+          "content": "新創團隊推出 Magnitude (YC S25)，這是一個針對 AI 代理（Agents）設計的自我優化推論引擎。它能協助開發者在執行複雜任務時自動微調推論過程，提高代理的執行效率與準確率。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "Magnitude：專為 AI 代理設計的自我優化推論引擎",
+          "url": "https://github.com/magnitudedev/magnitude",
+          "weightedScore": 194
+        },
+        {
+          "content": "GitHub 宣布 Copilot 程式碼審查功能現在可以透過 REST 與 GraphQL API 進行請求，同時開發者也能為每次審查設定預設的努力程度（effort level），並將 Balanced 設為新的預設值，讓自動化審查更具彈性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -853,25 +837,12 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 正式支援 Computer Use 跨桌面應用程式操作",
-          "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
+          "title": "GitHub Copilot 程式碼審查現已支援 API 並可調整努力程度",
+          "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
           "weightedScore": 100
         },
         {
-          "content": "Allen AI 正式發表 Olmo-core 3，專為超大規模混合專家模型（MoE）設計的開源、高可擴展訓練基礎設施。該框架針對跨節點通訊效能、專家路由分配與記憶體佔用進行深度優化，大幅降低訓練分散式 MoE 模型的工程門檻。對於從事基礎模型研發、自研開源大模型的工程團隊來說，Olmo-core 3 提供了透明、可重現且高效的端到端訓練基礎建設支援。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "Allen AI 發布 Olmo-core 3：大規模 MoE 混合專家開源訓練架構",
-          "url": "https://huggingface.co/blog/allenai/olmocore3",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 於 Copilot CLI、Copilot 桌面應用程式及 GitHub Copilot SDK 中推出「Dynamic Workflows」。開發者現在能直接以程式碼精確定義 Agent 的編排邏輯與工作流程，在保有大語言模型靈活性的同時，取得傳統程式化工作流的可靠性與可驗證性。這項更新讓工程團隊能將複雜的多步驟開發任務封裝為可重現、可版本控管的自動化流程。",
+          "content": "GitHub 官方宣佈，自即日起在所有 Copilot 體驗（包含聊天、內聯編輯、代理模式及程式碼補全）中正式棄用多款指定的舊模型，開發者需注意相關模型相依性並切換至支援的新版本。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -879,12 +850,12 @@
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot CLI 與 App 支援 Dynamic Workflows 程式化編排",
-          "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
+          "title": "GitHub Copilot 宣布全面棄用多款指定模型",
+          "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
           "weightedScore": 100
         },
         {
-          "content": "Hugging Face 開源了一套專為 WebGPU 打造的高效機器學習運算核心，涵蓋超過 200 種常見 ML 運算操作，完全在瀏覽器端本地運行。該專案亦積極推動將這些底層優化上游合併至 Transformers.js、ONNX Runtime Web 與 LiteRT.js 等前端推論框架。這意味著網頁與前端開發者能以極高效率在用戶端設備直接執行本地端 AI 推論，大幅降低伺服器推論成本並提升隱私保護。",
+          "content": "熱門開源模型 Qwen3.8-27B 的擬人化聊天版本推出 2.0 更新。新版本在保持自然對話語氣的同時，大幅改善了過去的指令遵循能力，並正式支援工具呼叫（tool calls）。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -892,12 +863,38 @@
           "sources": [
             "reddit-localllama"
           ],
-          "title": "Hugging Face 開源超過 200 個極速 WebGPU 核心加速端側推論",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wu8tpg/we_just_opensourced_the_worlds_fastest_webgpu/",
+          "title": "Qwen3.8-27B-Humanlike-Chat 2.0 登場，改善工具呼叫能力",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvxl4n/qwen3827bhumanlikechat_20_texts_like_a_human_now/",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 宣布 AI Search 正式進入正式發行（GA）階段。該功能具備直接嵌入影像像素以實現視覺檢索的能力，並內建對掃描 PDF 的光學字元辨識（OCR），支援單檔最大 10 MiB 的處理容量，並能無縫銜接各類主流對話模型。此一更新大幅簡化多模態文件處理與語意搜尋的開發流程，開發者無需拼湊多個獨立元件即可在邊緣端快速建置檢索增強生成（RAG）管線。",
+          "content": "VS Code 發布了 9 月份的 GitHub Copilot 更新（v1.136 至 v1.140），全面簡化從程式碼實作到 Pull Request 合併的代理驅動開發流程，並加入自動化處理重複任務的新功能。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "VS Code 中的 GitHub Copilot 9 月更新釋出",
+          "url": "https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases",
+          "weightedScore": 100
+        },
+        {
+          "content": "熱門的本地大模型推論框架 llama.cpp 近期更新中，正式加入了對決策模型（Decision Models）的支援，讓開發者能在邊緣裝置或本地環境中執行更複雜的決策邏輯。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "llama.cpp 新增決策模型支援",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvv6im/new_in_llamacpp_decision_models/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare AI Gateway 與 Ceramic.ai、Exa 及 Linkup 合作，新增原生網頁搜尋 API 整合功能。開發者現在可以直接透過 AI Gateway、REST API 或 Workers 繫結，將即時網頁上下文注入模型推論呼叫中。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -905,88 +902,61 @@
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "Cloudflare AI Search 正式 GA，支援像素級視覺檢索與 OCR",
-          "url": "https://blog.cloudflare.com/ai-search-ga/",
+          "title": "Cloudflare AI Gateway 推出原生存取網頁搜尋 API 整合",
+          "url": "https://blog.cloudflare.com/introducing-web-search-api/",
           "weightedScore": 50
         },
         {
-          "content": "Cloudflare 開放 Monetization Gateway 封閉測試，允許網域擁有者為其 Model Context Protocol（MCP）工具設定存取收費機制。這項服務讓開發者能將自身 API 與 MCP 伺服器商業化，但同時引發業界對 Agent 自主消費與成本控制的熱烈討論：在無人值守的自主 Agent 時代，究竟應由誰授權並管控 Agent 呼叫付費工具時的支出上限，將直接影響未來 Agent 系統的資安與架構設計。",
+          "content": "本文深入探討 Docker 容器映像檔分層（layers）機制背後的架構設計與隱藏的效能、儲存妥協，協助開發者在建構映像檔時理解底層運作原理，優化容器化部署的效率。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
+          "sourceId": "lobsters-programming",
           "sources": [
-            "thenewstack"
+            "lobsters-programming"
           ],
-          "title": "Cloudflare 推出 MCP 工具計費閘道，引發 Agent 支出控制機制討論",
-          "url": "https://thenewstack.io/cloudflare-x402-agent-spending/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Google DeepMind 發表「SynthID Bio」概念驗證技術，能在保留蛋白質原有生物功能的前提下，為 AI 生成的蛋白質序列嵌入數位浮水印。這項技術解決了生成式生物學在智慧財產權辨識與生物安全治理上的重大挑戰，讓合成生物學研究人員與生技開發者在利用生成模型設計分子與酵素時，能有效區分合成來源並確保合規與可追溯性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "deepmind-blog",
-          "sources": [
-            "deepmind-blog"
-          ],
-          "title": "Google DeepMind 推出 SynthID Bio 蛋白質數位浮水印技術",
-          "url": "https://deepmind.google/blog/introducing-synthid-bio/",
+          "title": "深入解析 Docker 映像檔分層隱藏的設計妥協",
+          "url": "https://loige.co/hidden-design-compromises-of-docker-layers/",
           "weightedScore": 100
         },
         {
-          "content": "社群針對 Anthropic 力推的 Model Context Protocol（MCP）展開深入架構反思。討論聚焦於在生產環境中導入 MCP 的代價，包含協定抽象層帶來的序列化開銷、除錯困難度、潛在安全性邊界模糊以及是否過度工程化等問題。對於正在評估是否將內部 API 全面改寫為 MCP 伺服器的架構師而言，這場爭論提供了平衡樂觀預期、深入檢視傳輸層實作與長期維護成本的重要參考依據。",
+          "content": "開發者分享實作經驗，利用閒置的 iPhone 17 Pro Max 作為 24 GB M4 Pro MacBook 的額外記憶體與算力支援，分擔 Qwen 3.8 27B 模型的 Prefill 階段，使整體前置填滿速度顯著提升 29% 至 44%。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
+          "sourceId": "reddit-localllama",
           "sources": [
-            "hn"
-          ],
-          "title": "架構反思：社群熱議拒絕採用 Model Context Protocol（MCP）之考量",
-          "url": "https://earendil.com/posts/you-said-no-mcp/",
-          "weightedScore": 667
-        },
-        {
-          "content": "資安與 AI 研究團隊針對 GLM-5.3 模型的程式碼生成與網路攻防能力進行深度實測。研究顯示，最新一代開源前沿模型在漏洞挖掘、滲透測試自動化及惡意程式碼分析上已展現出高度成熟的推理能力。此分析提醒軟體工程與資安團隊，隨著具備高階資安攻防能力的模型走向普及，防守端必須加快導入自動化程式碼稽核與防禦性架構，因應即將到來的全自動化漏洞探測威脅。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sources": [
-            "hn",
             "reddit-localllama"
           ],
-          "title": "技術深度剖析：GLM-5.3 前沿模型引發的進階網路資安能力外溢",
-          "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
-          "weightedScore": 350
+          "title": "將 iPhone 化身為 MacBook 的第二 GPU 加速 Qwen 模型推論",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvz1ex/i_made_my_iphone_a_second_gpu_for_my_24_gb/",
+          "weightedScore": 100
         },
         {
-          "content": "開發社群針對 Claude Opus 5.5 發布深入的 Prompt 工程與架構設計實戰指南。文章剖析了 Opus 5.5 在長上下文推理、多步驟規劃及結構化輸出上的具體行為差異，指出過往針對舊版設計的 System Prompt 可能面臨的新限制，並給出如何透過更精確的邊界條件與思考路徑引導以充分發揮模型能力之策略，對正在微調生產端 Prompt 管線的工程師極具實作價值。",
+          "content": "這篇技術討論深入剖析了軟體系統中資料備份的複雜性。內容指出備份不僅是儲存資料，更涉及一致性、驗證、還原演練以及分散式系統下的邊角案例處理，對架構設計極具參考價值。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "lobsters-devops",
+          "sources": [
+            "lobsters-devops"
+          ],
+          "title": "為什麼備份從來都不簡單：工程實務探討",
+          "url": "https://filipovski.net/2026/09/16/backups-arent-simple.html",
+          "weightedScore": 100
+        },
+        {
+          "content": "安全研究人員在 Linux 核心中發現了數個漏洞，可能對系統安全造成風險。相關維護團隊正著手修補，建議系統管理員與開發者密切關注後續安全公告並升級核心版本。",
+          "degraded": false,
+          "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
           "sources": [
             "hn"
           ],
-          "title": "Claude Opus 5.5 實戰 Prompt 工程指南與行為模式拆解",
-          "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
-          "weightedScore": 207
-        },
-        {
-          "content": "針對 Kubernetes 平台工程中的原則管理（Policy Enforcement），社群深入探討傳統 OPA Gatekeeper 等準入控制器（Admission Controller）的「硬性阻斷（Gates）」模式所帶來的開發者摩擦，並倡導轉向「護欄（Guardrails）」引導機制。文章結合 Kyverno 與 Gatekeeper 的實踐經驗，分析如何兼顧叢集安全基線與內部開發者體驗（IDP），為平台維運團隊提供重新設計策略管線的思維框架。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "平台工程架構思考：從阻斷性 Gate 轉向引導式 Guardrails 策略管理",
-          "url": "https://www.cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams/",
-          "weightedScore": 100
+          "title": "Linux 核心發現多個安全漏洞",
+          "url": "https://lwn.net/Articles/1097401/",
+          "weightedScore": 543
         }
       ]
     }
@@ -3225,6 +3195,123 @@
         "cncf-blog"
       ],
       "url": "https://cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://blog.gitbutler.com/git-3-sha-256"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://svelte.dev/blog/sveltekit-3-is-here"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://github.com/magnitudedev/magnitude"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wvxl4n/qwen3827bhumanlikechat_20_texts_like_a_human_now"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "url": "https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wvv6im/new_in_llamacpp_decision_models"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/introducing-web-search-api"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "lobsters-programming",
+      "sources": [
+        "lobsters-programming"
+      ],
+      "url": "https://loige.co/hidden-design-compromises-of-docker-layers"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wvz1ex/i_made_my_iphone_a_second_gpu_for_my_24_gb"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "url": "https://filipovski.net/2026/09/16/backups-arent-simple.html"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-02T23:43:27.452Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://lwn.net/Articles/1097401"
     }
   ]
 }
