@@ -378,101 +378,13 @@
     }
   },
   "lastBoardPushAt": "2026-09-27T22:58:16.977Z",
-  "lastNewsPushAt": "2026-10-02T23:43:27.452Z",
+  "lastNewsPushAt": "2026-10-03T22:49:56.394Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-09-27T22:58:16.977Z",
       "summary": "本次技術雷達由 vectorize-io/hindsight 奪下綜合榜 #1，迎來 5 個新進與 2 個竄升項目，其中新進與竄升主要分布於 AI 5 個與前後端 2 個，同時有 2 個項目下降。"
     },
     "feed": [
-      {
-        "content": "官方發表關於使用 LFM2.5-VL-DSpark 加速視覺語言模型的技術與方法。這對需要處理視覺與文字多模態任務的開發者而言，提供了提升推論效能與效率的實作參考。",
-        "id": "news:https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "使用 LFM2.5-VL-DSpark 加速視覺語言模型",
-        "type": "news",
-        "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark"
-      },
-      {
-        "content": "推出名為 Chopin 的實時多人協作代理規劃環境。這為開發多代理人系統與協作機制的開發者提供了一個新的實驗與執行環境。",
-        "id": "news:https://githubnext.com/projects/chopin",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "Chopin：即時多人協作代理規劃環境",
-        "type": "news",
-        "url": "https://githubnext.com/projects/chopin/"
-      },
-      {
-        "content": "探討編程 Agent 在脫離聊天視窗後，如何透過有效工具、共享儲存庫與檔案系統、子代理及技能捕捉來重塑問題。這篇文章對建構現代 AI 輔助開發工具與雲原生 Agent 架構具有高度的參考價值。",
-        "id": "news:https://cncf.io/blog/2026/09/28/the-case-for-a-cloud-native-agent-harness",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "雲原生 Agent 執行框架的設計與實踐",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/09/28/the-case-for-a-cloud-native-agent-harness/"
-      },
-      {
-        "content": "社群推出名為 Jeff 的 0.8B 決策模型，相容於 Jev 標準，可在本地端訓練且延遲僅約 30 毫秒。這對想要在邊緣或本地端實作快速決策機制的開發者提供了一個輕量且高效的開源選項。",
-        "id": "news:https://github.com/firelex/jeff",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "Jeff：支援 Jev 的 0.8B 本地訓練決策模型",
-        "type": "news",
-        "url": "https://github.com/firelex/jeff"
-      },
-      {
-        "content": "提供一份從傳統詞袋到 RNN、CNN、Transformers 以及 Jev 的文字分類視覺化指南，並附帶準確度與效率的實作實驗。有助於開發者理解文字分類技術的演進與模型選擇。",
-        "id": "news:https://magazine.sebastianraschka.com/p/classifier-history-and-jev",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "文字分類語言模型：從詞袋到 Jev 的視覺化指南",
-        "type": "news",
-        "url": "https://magazine.sebastianraschka.com/p/classifier-history-and-jev"
-      },
-      {
-        "content": "深入探討系統中指標從建立、收集、聚合到最終退役的完整生命週期與維護挑戰。這對負責基礎設施、可觀測性與效能監控的工程師提供了寶貴的實務經驗。",
-        "id": "news:https://victoriametrics.com/blog/the-life-of-a-metric",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "軟體中指標的生命週期與工程實務",
-        "type": "news",
-        "url": "https://victoriametrics.com/blog/the-life-of-a-metric/"
-      },
-      {
-        "content": "發布針對網路與行動端對話式 AI 代理的隱私分析報告。內容深入剖析現有交談式 AI 應用在隱私保護與資料安全上的潛在風險，對開發者在合規與資安防護設計上具重要參考價值。",
-        "id": "news:https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf",
-        "publishedAt": "2026-09-29T23:39:12.097Z",
-        "title": "網路與行動端對話式 AI 代理的隱私安全性分析",
-        "type": "news",
-        "url": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf"
-      },
-      {
-        "content": "Google 正式發表新一代前沿智慧旗艦模型 Gemini 4 Argon，象徵其模型發展進入全新時代。這項更新帶來更強大的運算能力與多模態推理表現，對依賴 Google AI 服務的開發者與企業來說，將能解鎖更複雜的應用場景與效能提升。",
-        "id": "news:https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "Google 發布新一代旗艦模型 Gemini 4 Argon",
-        "type": "news",
-        "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/"
-      },
-      {
-        "content": "Anthropic 官方釋出最新 AI 模型 Sonnet 5.5，延續其在程式碼生成與複雜推理領域的優勢。此一版本進一步提升了模型的準確度與執行效率，為開發者在日常開發和自動化代理任務中提供更強大的底層支援。",
-        "id": "news:https://anthropic.com/claude-sonnet-5-5",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "Anthropic 推出全新 AI 模型 Sonnet 5.5",
-        "type": "news",
-        "url": "https://www.anthropic.com/claude-sonnet-5-5"
-      },
-      {
-        "content": "GitHub 宣布 HydraFusion 研究預覽版現已在 Visual Studio Code 與 GitHub Copilot App 中登場，功能範圍超越以往的 Copilot CLI。HydraFusion 將直接整合至模型選擇器中，為開發者提供全新的互動與運算體驗。",
-        "id": "news:https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "GitHub 於 VS Code 與 Copilot App 推出 HydraFusion 研究預覽",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app"
-      },
-      {
-        "content": "Ollama 現在開始支援基於 TypeSafe Jev API 的決策模型，讓開發者能以極低延遲與零成本運行具備型別安全的決策模型。這些模型可針對文字內容回答是與否、提供選項與評分，並輸出每個選項的機率，有助於加速自動化決策流程。",
-        "id": "news:https://ollama.com/blog/ollama-now-supports-jev-style-decision-models",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "Ollama 正式支援 Jev 風格快速決策模型",
-        "type": "news",
-        "url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models"
-      },
       {
         "content": "OpenAI 官方發布資安與防禦通報，詳細說明如何成功干擾並打擊一場旨在竊取受保護模型推理能力的協同蒸餾活動，並同步強化對抗對抗性蒸餾的防禦機制，保障 AI 模型資產安全。",
         "id": "news:https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
@@ -784,78 +696,101 @@
         "title": "Linux 核心發現多個安全漏洞",
         "type": "news",
         "url": "https://lwn.net/Articles/1097401/"
+      },
+      {
+        "content": "Aleph Alpha 正式開源 Kolibri-1 模型，具備 78B 參數、3.46B 啟動參數與最高 100 萬 token 上下文支援，採用 Apache 2.0 授權。這為開發者與企業提供了一個具備超長上下文、主權開源的大型語言模型選項，適合在地部署與客製化應用開發。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wwl7y6/alephalphakolibri1_hugging_face_78b_parameters",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "Aleph Alpha 開源 Kolibri-1 大型語言模型",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwl7y6/alephalphakolibri1_hugging_face_78b_parameters/"
+      },
+      {
+        "content": "新一代圖像生成模型 FLUX 3 Image 正式亮相，帶來更強大的視覺生成與理解能力。這為開發者和 AI 應用建構者提供了最新的影像生成工具，大幅提升生成品質與精確度。",
+        "id": "news:https://bfl.ai/models/flux-3-image",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "FLUX 3 Image 圖像生成模型正式發表",
+        "type": "news",
+        "url": "https://bfl.ai/models/flux-3-image"
+      },
+      {
+        "content": "Redis 創作者推出名為 ds4 的新工具，讓開發者能夠在本地端輕鬆執行大型語言模型。此工具提供輕量且高效的本地運行方案，有助於開發者在無網路或注重隱私的環境下測試與開發 AI 應用。",
+        "id": "news:https://dwarfstar.sh/",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "Redis 作者推出全新本地端 LLM 執行工具 ds4",
+        "type": "news",
+        "url": "https://dwarfstar.sh/"
+      },
+      {
+        "content": "Cloudflare 發布全新的 OHTTP (Oblivious HTTP) 閘道器，旨在進一步強化網路請求的隱私保護。這協助開發者在系統架構設計上實現更高的隱私與安全性，防止中介節點追蹤客戶端請求。",
+        "id": "news:https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "Cloudflare 正式推出 OHTTP 閘道器服務",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/"
+      },
+      {
+        "content": "Google 開源的容器沙箱與隔離技術 gVisor 宣佈捐贈給雲端原生計算基金會 (CNCF)。這標誌著該專案將轉入中立基金會治理，有助於推動其在雲端原生生態系中的廣泛採用與標準化。",
+        "id": "news:https://gvisor.dev/blog/2026/10/02/gvisor-cncf",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "容器沙箱與隔離專案 gVisor 捐贈給 CNCF",
+        "type": "news",
+        "url": "https://gvisor.dev/blog/2026/10/02/gvisor-cncf/"
+      },
+      {
+        "content": "DeepSeek 發布支援 macOS 與 Windows 的桌面端操作應用程式 DeepSeek Harness Desktop。這提供開發者更便捷的桌面操作介面，方便直接調用模型與管理相關工作流程。",
+        "id": "news:https://deepseek.com/en/harness",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "DeepSeek 推出桌面端管理工具 Harness Desktop",
+        "type": "news",
+        "url": "https://www.deepseek.com/en/harness/"
+      },
+      {
+        "content": "熱門的開源地理資訊與地圖資料收集工具 StreetComplete 正式推出 iOS 公開測試版。這讓 iOS 開發者與貢獻者能夠參與這款行動端應用的使用與測試。",
+        "id": "news:https://github.com/streetcomplete/StreetComplete/issues/5421",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "開源地圖工具 StreetComplete 推出 iOS 公開測試版",
+        "type": "news",
+        "url": "https://github.com/streetcomplete/StreetComplete/issues/5421"
+      },
+      {
+        "content": "Asta 官方宣佈開源其在系統內使用的高速報告生成模型 AstaBrief。這為需要自動化生成報告的開發團隊提供輕量且高效的專用模型選擇。",
+        "id": "news:https://huggingface.co/blog/allenai/astabrief",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "Asta 開源高速報告生成模型 AstaBrief",
+        "type": "news",
+        "url": "https://huggingface.co/blog/allenai/astabrief"
+      },
+      {
+        "content": "Cloudflare 發布 Account Abuse Protection 儀表板，利用具狀態分析與邊緣生成的雜湊使用者 ID 來偵測與阻擋濫用。這能協助資安與維運團隊有效應對現代攻擊者利用 AI 繞過傳統無狀態安全檢查的威脅。",
+        "id": "news:https://blog.cloudflare.com/account-abuse-protection-dashboard",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "Cloudflare 推出帳戶濫用防護新儀表板",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/account-abuse-protection-dashboard/"
+      },
+      {
+        "content": "本文探討在實際開發中，當 AI Agent 宣告任務完成時，底層資料庫狀態卻出現不一致的現象與背後原因。這點出了目前在建構 Autonomous Agents 應用時，狀態同步與交易一致性驗證的核心工程痛點，對系統架構設計極具參考價值。",
+        "id": "news:https://huggingface.co/blog/microsoft/thinkingbox",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "AI Agent 執行完畢與資料庫狀態不一致的實務挑戰",
+        "type": "news",
+        "url": "https://huggingface.co/blog/microsoft/thinkingbox"
+      },
+      {
+        "content": "社群針對向量資料庫在現代 AI 架構中的定位與必要性展開深度討論與反思。這引導開發者重新思考在 RAG 與檢索系統中，是否真的需要專用向量資料庫，或是可以透過傳統資料庫的新功能替代，進而影響架構選型。",
+        "id": "news:https://turbopuffer.com/blog/rip-vector-database",
+        "publishedAt": "2026-10-03T22:49:56.394Z",
+        "title": "向量資料庫的架構省思與技術爭論",
+        "type": "news",
+        "url": "https://turbopuffer.com/blog/rip-vector-database"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-02T23:43:27.452Z",
+      "generatedAt": "2026-10-03T22:49:56.394Z",
       "items": [
         {
-          "content": "Git 3.0 計劃將預設雜湊演算法從 SHA-1 遷移至 SHA-256。這項標準變動將提升版本控制的安全性，但對現有儲存庫相容性、CI/CD 流程及工具鏈帶來的遷移成本與影響，成為開發者社群關注的焦點。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "Git 3.0 即將預設改用 SHA-256 引起討論與成本考量",
-          "url": "https://blog.gitbutler.com/git-3-sha-256",
-          "weightedScore": 545
-        },
-        {
-          "content": "SvelteKit 3 正式推出，此次重大版本更新進一步優化了前端框架的效能、路由與伺服器端渲染機制，提升開發體驗並提供更流暢的現代網頁應用程式建構流程。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "SvelteKit 3 正式發布，帶來架構升級",
-          "url": "https://svelte.dev/blog/sveltekit-3-is-here",
-          "weightedScore": 393
-        },
-        {
-          "content": "新創團隊推出 Magnitude (YC S25)，這是一個針對 AI 代理（Agents）設計的自我優化推論引擎。它能協助開發者在執行複雜任務時自動微調推論過程，提高代理的執行效率與準確率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "Magnitude：專為 AI 代理設計的自我優化推論引擎",
-          "url": "https://github.com/magnitudedev/magnitude",
-          "weightedScore": 194
-        },
-        {
-          "content": "GitHub 宣布 Copilot 程式碼審查功能現在可以透過 REST 與 GraphQL API 進行請求，同時開發者也能為每次審查設定預設的努力程度（effort level），並將 Balanced 設為新的預設值，讓自動化審查更具彈性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 程式碼審查現已支援 API 並可調整努力程度",
-          "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 官方宣佈，自即日起在所有 Copilot 體驗（包含聊天、內聯編輯、代理模式及程式碼補全）中正式棄用多款指定的舊模型，開發者需注意相關模型相依性並切換至支援的新版本。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 宣布全面棄用多款指定模型",
-          "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
-          "weightedScore": 100
-        },
-        {
-          "content": "熱門開源模型 Qwen3.8-27B 的擬人化聊天版本推出 2.0 更新。新版本在保持自然對話語氣的同時，大幅改善了過去的指令遵循能力，並正式支援工具呼叫（tool calls）。",
+          "content": "Aleph Alpha 正式開源 Kolibri-1 模型，具備 78B 參數、3.46B 啟動參數與最高 100 萬 token 上下文支援，採用 Apache 2.0 授權。這為開發者與企業提供了一個具備超長上下文、主權開源的大型語言模型選項，適合在地部署與客製化應用開發。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -863,77 +798,52 @@
           "sources": [
             "reddit-localllama"
           ],
-          "title": "Qwen3.8-27B-Humanlike-Chat 2.0 登場，改善工具呼叫能力",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvxl4n/qwen3827bhumanlikechat_20_texts_like_a_human_now/",
+          "title": "Aleph Alpha 開源 Kolibri-1 大型語言模型",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwl7y6/alephalphakolibri1_hugging_face_78b_parameters/",
           "weightedScore": 100
         },
         {
-          "content": "VS Code 發布了 9 月份的 GitHub Copilot 更新（v1.136 至 v1.140），全面簡化從程式碼實作到 Pull Request 合併的代理驅動開發流程，並加入自動化處理重複任務的新功能。",
+          "content": "新一代圖像生成模型 FLUX 3 Image 正式亮相，帶來更強大的視覺生成與理解能力。這為開發者和 AI 應用建構者提供了最新的影像生成工具，大幅提升生成品質與精確度。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
+          "sourceId": "hn",
           "sources": [
-            "github-changelog-copilot"
+            "hn"
           ],
-          "title": "VS Code 中的 GitHub Copilot 9 月更新釋出",
-          "url": "https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases",
-          "weightedScore": 100
+          "title": "FLUX 3 Image 圖像生成模型正式發表",
+          "url": "https://bfl.ai/models/flux-3-image",
+          "weightedScore": 426
         },
         {
-          "content": "熱門的本地大模型推論框架 llama.cpp 近期更新中，正式加入了對決策模型（Decision Models）的支援，讓開發者能在邊緣裝置或本地環境中執行更複雜的決策邏輯。",
+          "content": "Redis 創作者推出名為 ds4 的新工具，讓開發者能夠在本地端輕鬆執行大型語言模型。此工具提供輕量且高效的本地運行方案，有助於開發者在無網路或注重隱私的環境下測試與開發 AI 應用。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
+          "sourceId": "hn",
           "sources": [
-            "reddit-localllama"
+            "hn"
           ],
-          "title": "llama.cpp 新增決策模型支援",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvv6im/new_in_llamacpp_decision_models/",
-          "weightedScore": 100
+          "title": "Redis 作者推出全新本地端 LLM 執行工具 ds4",
+          "url": "https://dwarfstar.sh/",
+          "weightedScore": 340
         },
         {
-          "content": "Cloudflare AI Gateway 與 Ceramic.ai、Exa 及 Linkup 合作，新增原生網頁搜尋 API 整合功能。開發者現在可以直接透過 AI Gateway、REST API 或 Workers 繫結，將即時網頁上下文注入模型推論呼叫中。",
+          "content": "Cloudflare 發布全新的 OHTTP (Oblivious HTTP) 閘道器，旨在進一步強化網路請求的隱私保護。這協助開發者在系統架構設計上實現更高的隱私與安全性，防止中介節點追蹤客戶端請求。",
           "degraded": false,
           "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
+          "sourceCount": 2,
+          "sourceId": "hn",
           "sources": [
-            "cloudflare-blog"
+            "cloudflare-blog",
+            "hn"
           ],
-          "title": "Cloudflare AI Gateway 推出原生存取網頁搜尋 API 整合",
-          "url": "https://blog.cloudflare.com/introducing-web-search-api/",
-          "weightedScore": 50
+          "title": "Cloudflare 正式推出 OHTTP 閘道器服務",
+          "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/",
+          "weightedScore": 282
         },
         {
-          "content": "本文深入探討 Docker 容器映像檔分層（layers）機制背後的架構設計與隱藏的效能、儲存妥協，協助開發者在建構映像檔時理解底層運作原理，優化容器化部署的效率。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "lobsters-programming",
-          "sources": [
-            "lobsters-programming"
-          ],
-          "title": "深入解析 Docker 映像檔分層隱藏的設計妥協",
-          "url": "https://loige.co/hidden-design-compromises-of-docker-layers/",
-          "weightedScore": 100
-        },
-        {
-          "content": "開發者分享實作經驗，利用閒置的 iPhone 17 Pro Max 作為 24 GB M4 Pro MacBook 的額外記憶體與算力支援，分擔 Qwen 3.8 27B 模型的 Prefill 階段，使整體前置填滿速度顯著提升 29% 至 44%。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "將 iPhone 化身為 MacBook 的第二 GPU 加速 Qwen 模型推論",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvz1ex/i_made_my_iphone_a_second_gpu_for_my_24_gb/",
-          "weightedScore": 100
-        },
-        {
-          "content": "這篇技術討論深入剖析了軟體系統中資料備份的複雜性。內容指出備份不僅是儲存資料，更涉及一致性、驗證、還原演練以及分散式系統下的邊角案例處理，對架構設計極具參考價值。",
+          "content": "Google 開源的容器沙箱與隔離技術 gVisor 宣佈捐贈給雲端原生計算基金會 (CNCF)。這標誌著該專案將轉入中立基金會治理，有助於推動其在雲端原生生態系中的廣泛採用與標準化。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -941,22 +851,87 @@
           "sources": [
             "lobsters-devops"
           ],
-          "title": "為什麼備份從來都不簡單：工程實務探討",
-          "url": "https://filipovski.net/2026/09/16/backups-arent-simple.html",
+          "title": "容器沙箱與隔離專案 gVisor 捐贈給 CNCF",
+          "url": "https://gvisor.dev/blog/2026/10/02/gvisor-cncf/",
           "weightedScore": 100
         },
         {
-          "content": "安全研究人員在 Linux 核心中發現了數個漏洞，可能對系統安全造成風險。相關維護團隊正著手修補，建議系統管理員與開發者密切關注後續安全公告並升級核心版本。",
+          "content": "DeepSeek 發布支援 macOS 與 Windows 的桌面端操作應用程式 DeepSeek Harness Desktop。這提供開發者更便捷的桌面操作介面，方便直接調用模型與管理相關工作流程。",
           "degraded": false,
-          "domain": "general",
+          "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
           "sources": [
             "hn"
           ],
-          "title": "Linux 核心發現多個安全漏洞",
-          "url": "https://lwn.net/Articles/1097401/",
-          "weightedScore": 543
+          "title": "DeepSeek 推出桌面端管理工具 Harness Desktop",
+          "url": "https://www.deepseek.com/en/harness/",
+          "weightedScore": 405
+        },
+        {
+          "content": "熱門的開源地理資訊與地圖資料收集工具 StreetComplete 正式推出 iOS 公開測試版。這讓 iOS 開發者與貢獻者能夠參與這款行動端應用的使用與測試。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "開源地圖工具 StreetComplete 推出 iOS 公開測試版",
+          "url": "https://github.com/streetcomplete/StreetComplete/issues/5421",
+          "weightedScore": 626
+        },
+        {
+          "content": "Asta 官方宣佈開源其在系統內使用的高速報告生成模型 AstaBrief。這為需要自動化生成報告的開發團隊提供輕量且高效的專用模型選擇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "Asta 開源高速報告生成模型 AstaBrief",
+          "url": "https://huggingface.co/blog/allenai/astabrief",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 發布 Account Abuse Protection 儀表板，利用具狀態分析與邊緣生成的雜湊使用者 ID 來偵測與阻擋濫用。這能協助資安與維運團隊有效應對現代攻擊者利用 AI 繞過傳統無狀態安全檢查的威脅。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare 推出帳戶濫用防護新儀表板",
+          "url": "https://blog.cloudflare.com/account-abuse-protection-dashboard/",
+          "weightedScore": 50
+        },
+        {
+          "content": "本文探討在實際開發中，當 AI Agent 宣告任務完成時，底層資料庫狀態卻出現不一致的現象與背後原因。這點出了目前在建構 Autonomous Agents 應用時，狀態同步與交易一致性驗證的核心工程痛點，對系統架構設計極具參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "AI Agent 執行完畢與資料庫狀態不一致的實務挑戰",
+          "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群針對向量資料庫在現代 AI 架構中的定位與必要性展開深度討論與反思。這引導開發者重新思考在 RAG 與檢索系統中，是否真的需要專用向量資料庫，或是可以透過傳統資料庫的新功能替代，進而影響架構選型。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "向量資料庫的架構省思與技術爭論",
+          "url": "https://turbopuffer.com/blog/rip-vector-database",
+          "weightedScore": 385
         }
       ]
     }
@@ -3312,6 +3287,106 @@
         "hn"
       ],
       "url": "https://lwn.net/Articles/1097401"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wwl7y6/alephalphakolibri1_hugging_face_78b_parameters"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://bfl.ai/models/flux-3-image"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://dwarfstar.sh/"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "hn",
+      "sources": [
+        "cloudflare-blog",
+        "hn"
+      ],
+      "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "url": "https://gvisor.dev/blog/2026/10/02/gvisor-cncf"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://deepseek.com/en/harness"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://github.com/streetcomplete/StreetComplete/issues/5421"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "url": "https://huggingface.co/blog/allenai/astabrief"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/account-abuse-protection-dashboard"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "url": "https://huggingface.co/blog/microsoft/thinkingbox"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-03T22:49:56.394Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://turbopuffer.com/blog/rip-vector-database"
     }
   ]
 }
