@@ -5,45 +5,27 @@
       "firstSeenAt": "2026-09-27T22:58:16.977Z",
       "fullName": "juspay/hyperswitch",
       "language": "Rust",
-      "rank": 10,
-      "starsThisWeek": 1129,
+      "rank": 9,
+      "starsThisWeek": 1182,
       "url": "https://github.com/juspay/hyperswitch"
     },
-    "1065936302": {
+    "997737944": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-09-21T00:06:43.738Z",
-      "fullName": "Open-Dev-Society/OpenStock",
-      "language": "TypeScript",
-      "rank": 8,
-      "starsThisWeek": 3528,
-      "url": "https://github.com/Open-Dev-Society/OpenStock"
-    },
-    "1073224795": {
-      "domain": "ai",
-      "firstSeenAt": "2026-09-27T22:58:16.977Z",
-      "fullName": "obra/superpowers",
-      "language": "Shell",
-      "rank": 9,
-      "starsThisWeek": 3415,
-      "url": "https://github.com/obra/superpowers"
+      "firstSeenAt": "2026-10-04T23:01:45.455Z",
+      "fullName": "ruvnet/RuView",
+      "language": "Rust",
+      "rank": 10,
+      "starsThisWeek": 1120,
+      "url": "https://github.com/ruvnet/RuView"
     },
     "1086419061": {
       "domain": "ai",
       "firstSeenAt": "2026-09-27T22:58:16.977Z",
       "fullName": "vectorize-io/hindsight",
       "language": "Python",
-      "rank": 1,
-      "starsThisWeek": 7282,
+      "rank": 2,
+      "starsThisWeek": 14507,
       "url": "https://github.com/vectorize-io/hindsight"
-    },
-    "1136590548": {
-      "domain": "ai",
-      "firstSeenAt": "2026-09-06T23:45:03.614Z",
-      "fullName": "affaan-m/ECC",
-      "language": "JavaScript",
-      "rank": 4,
-      "starsThisWeek": 5522,
-      "url": "https://github.com/affaan-m/ECC"
     },
     "1148788086": {
       "domain": "ai",
@@ -51,44 +33,62 @@
       "fullName": "mattpocock/skills",
       "language": "Shell",
       "rank": 6,
-      "starsThisWeek": 4521,
+      "starsThisWeek": 5310,
       "url": "https://github.com/mattpocock/skills"
+    },
+    "1166129534": {
+      "domain": "ai",
+      "firstSeenAt": "2026-10-04T23:01:45.455Z",
+      "fullName": "NVIDIA/OpenShell",
+      "language": "Rust",
+      "rank": 5,
+      "starsThisWeek": 5854,
+      "url": "https://github.com/NVIDIA/OpenShell"
     },
     "1170821064": {
       "domain": "ai",
       "firstSeenAt": "2026-09-27T22:58:16.977Z",
       "fullName": "paperclipai/paperclip",
       "language": "TypeScript",
-      "rank": 5,
-      "starsThisWeek": 5376,
+      "rank": 3,
+      "starsThisWeek": 10722,
       "url": "https://github.com/paperclipai/paperclip"
     },
-    "1183888342": {
+    "1185590488": {
       "domain": "ai",
-      "firstSeenAt": "2026-09-21T00:06:43.738Z",
-      "fullName": "stablyai/orca",
-      "language": "TypeScript",
-      "rank": 2,
-      "starsThisWeek": 6503,
-      "url": "https://github.com/stablyai/orca"
-    },
-    "1241960226": {
-      "domain": "ai",
-      "firstSeenAt": "2026-09-21T00:06:43.738Z",
-      "fullName": "alibaba/open-code-review",
-      "language": "Go",
+      "firstSeenAt": "2026-10-04T23:01:45.455Z",
+      "fullName": "rohitg00/ai-engineering-from-scratch",
+      "language": "Python",
       "rank": 7,
-      "starsThisWeek": 4310,
-      "url": "https://github.com/alibaba/open-code-review"
+      "starsThisWeek": 5059,
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch"
     },
-    "1273427276": {
+    "1206390571": {
       "domain": "ai",
-      "firstSeenAt": "2026-09-21T00:06:43.738Z",
-      "fullName": "cloudflare/security-audit-skill",
+      "firstSeenAt": "2026-10-04T23:01:45.455Z",
+      "fullName": "debpalash/VoiceStudio",
+      "language": "Python",
+      "rank": 1,
+      "starsThisWeek": 16775,
+      "url": "https://github.com/debpalash/VoiceStudio"
+    },
+    "1222527844": {
+      "domain": "ai",
+      "firstSeenAt": "2026-10-04T23:01:45.455Z",
+      "fullName": "ifixai-ai/iFixAi",
+      "language": "Python",
+      "rank": 8,
+      "starsThisWeek": 4728,
+      "url": "https://github.com/ifixai-ai/iFixAi"
+    },
+    "1266797999": {
+      "domain": "ai",
+      "firstSeenAt": "2026-10-04T23:01:45.455Z",
+      "fullName": "DietrichGebert/ponytail",
       "language": "JavaScript",
-      "rank": 3,
-      "starsThisWeek": 6474,
-      "url": "https://github.com/cloudflare/security-audit-skill"
+      "rank": 4,
+      "starsThisWeek": 7729,
+      "url": "https://github.com/DietrichGebert/ponytail"
     }
   },
   "intros": {
@@ -244,6 +244,10 @@
       "intro": "為 AI Agent 一鍵解鎖網際網路能力，解決各大平台因封鎖、需付費或登入而無法讀取資料的痛點。專案具備自動選型、安裝與「首選+備選」的多後端路由機制，確保接入方式換代時用戶無感；並內建環境診斷與隱私安全保護，Cookie 僅存本機。相容 Claude Code、Cursor、OpenClaw 等主流命令列 Agent，讓你的 AI 輕鬆閱讀網頁、刷推特、看 YouTube、搜 Reddit 與小紅書。",
       "introAt": "2026-08-09T22:40:29.356Z"
     },
+    "1166129534": {
+      "intro": "NVIDIA OpenShell 是一個專為自主 AI 代理（AI Agents）群體打造的安全、私密執行環境。它解決了 AI 代理需要讀取檔案、安裝套件與呼叫 API，卻可能帶來資料與網路安全風險的問題。\n\n核心特色包含核心級隔離與強制執行，能透過沙箱與核心控制監控檔案存取及網路連線，並利用形式化驗證（Formal Verification）在套用前檢查政策變更的風險。此外，它能安全地管理憑證，僅在對應至核准端點的請求中加入憑證。\n\n…",
+      "introAt": "2026-10-04T23:01:45.455Z"
+    },
     "1167788341": {
       "intro": "AI 程式開發常因重複讀取龐大程式碼而浪費 Token。code-review-graph 利用 Tree-sitter 建立程式碼結構圖，透過增量更新與精準上下文分析，讓 AI 僅讀取必要的關聯檔案，大幅節省成本並提升效率。核心支援多種程式語言、提供 MCP 整合與 CI 風險分析，適合處理大型專案與 Monorepo 的開發者，平均可降低約 82 倍的 Token 使用量，是優化 AI 程式碼審查的利器。",
       "introAt": "2026-07-26T23:05:01.196Z"
@@ -320,6 +324,10 @@
       "intro": "這是一個將分散的 AI 影像案例轉為結構化 Prompt-as-Code 的工業級提示詞引擎與模板庫。專案提供原子化綱要與結構化控制，將主體、光影與版面等視覺細節模組化，解決 AI 影像生成難以穩定控制與重複使用的问题。非常適合代理程式、自動化腳本及生產工作流，方便使用者進行批次生成、套用工業級模板與構建視覺資產。",
       "introAt": "2026-08-31T00:24:16.184Z"
     },
+    "1222527844": {
+      "intro": "iFixAi 是一個 AI 代理獨立審計與診斷工具，能在 120 秒內評估 AI 代理是否符合業務 KPI 與組織結構，完美結合 AI 紅隊測試與營運確信。提供互動式 CLI 精靈、命令列參數及主流 AI 代理外掛／技能等三種執行方式。執行 32 項跨五大支柱的檢查，產出 A 到 F 級的評分與記分卡，有效檢測幻覺、提示詞注入及確保 AI 安全與合規，適合用於持續整合、自動化測試與企業 AI 風險管理。",
+      "introAt": "2026-10-04T23:01:45.455Z"
+    },
     "1222917575": {
       "intro": "Hallmark 是一款專為 Claude Code、Cursor 與 Codex 設計的 AI 設計技能，旨在解決 AI 生成內容千篇一律的「罐頭感」。它透過內建的 57 項防廢話檢測與自我審查機制，確保產出的 CSS 與 HTML 具備獨特宏觀架構與設計美感。本工具提供建構、審計、重設計及分析四大功能，能根據創意需求靈活切換 20 種主題或進行客製化設計，讓不同專案展現截然不同的獨特風貌。",
       "introAt": "2026-07-19T11:16:05.077Z"
@@ -377,190 +385,14 @@
       "introAt": "2026-09-06T23:45:03.614Z"
     }
   },
-  "lastBoardPushAt": "2026-09-27T22:58:16.977Z",
-  "lastNewsPushAt": "2026-10-03T22:49:56.394Z",
+  "lastBoardPushAt": "2026-10-04T23:01:45.455Z",
+  "lastNewsPushAt": "2026-10-04T23:01:45.455Z",
   "publish": {
     "boardSummary": {
-      "generatedAt": "2026-09-27T22:58:16.977Z",
-      "summary": "本次技術雷達由 vectorize-io/hindsight 奪下綜合榜 #1，迎來 5 個新進與 2 個竄升項目，其中新進與竄升主要分布於 AI 5 個與前後端 2 個，同時有 2 個項目下降。"
+      "generatedAt": "2026-10-04T23:01:45.455Z",
+      "summary": "本次榜單新進 6 個、竄升 2 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 2 個，綜合榜 #1 為 debpalash/VoiceStudio"
     },
     "feed": [
-      {
-        "content": "OpenAI 官方發布資安與防禦通報，詳細說明如何成功干擾並打擊一場旨在竊取受保護模型推理能力的協同蒸餾活動，並同步強化對抗對抗性蒸餾的防禦機制，保障 AI 模型資產安全。",
-        "id": "news:https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "OpenAI 採取行動打擊協同模型蒸餾攻擊活動",
-        "type": "news",
-        "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign"
-      },
-      {
-        "content": "NVIDIA 發表全新的 Kumo Tabular 模型，在表格預測任務中同時實現了更高的準確率與執行效率，為處理結構化資料與機器學習預測任務的開發者提供更高效能的工具選擇。",
-        "id": "news:https://huggingface.co/blog/nvidia/kumo-tabular",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "NVIDIA 推出 Kumo Tabular 模型，創下表格預測新標竿",
-        "type": "news",
-        "url": "https://huggingface.co/blog/nvidia/kumo-tabular"
-      },
-      {
-        "content": "Cohere 正式發表 Embed 5，推出 Embed 5 Pro 與更快速的查詢模型選項，讓團隊在進行資料索引與檢索時，能在速度與檢索品質之間取得最佳平衡，幾乎不影響檢索準確度。",
-        "id": "news:https://thenewstack.io/cohere-embed-pro-fast",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "Cohere 發布 Embed 5 搜尋與嵌入模型",
-        "type": "news",
-        "url": "https://thenewstack.io/cohere-embed-pro-fast/"
-      },
-      {
-        "content": "Cloudflare AI Gateway 新增模型自動路由功能，透過邊緣部署的分類器評估請求複雜度，自動選擇最佳模型。在平衡輸出品質與 Token 成本的同時，能大幅降低組織的 AI 支出並維持高效能。",
-        "id": "news:https://blog.cloudflare.com/auto-router",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "Cloudflare AI Gateway 推出自動路由功能以降低 AI 成本",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/auto-router/"
-      },
-      {
-        "content": "Cloudflare AI Gateway 的 User Insights 功能現在加入了任務、模型、對話輪次與使用者分類，幫助開發團隊深入掌握 AI 採用狀況並做出更精準的模型決策，此功能目前對 AI Gateway 用戶免費提供。",
-        "id": "news:https://blog.cloudflare.com/ai-model-overuse-user-insights",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "Cloudflare AI Gateway 新增 User Insights 追蹤 AI 模型使用情況",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/ai-model-overuse-user-insights/"
-      },
-      {
-        "content": "Deepseek 官方應用程式 Harness App 現已正式上線並開放下載，提供開發者與使用者更直接介接與操作 Deepseek 模型的工具管道。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wtg1hs/deepseek_harness_app_is_out_now",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "Deepseek Harness App 正式推出",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wtg1hs/deepseek_harness_app_is_out_now/"
-      },
-      {
-        "content": "受美國相關制裁影響，荷蘭官方與相關單位被迫放棄部分微軟服務，轉向採用開源且具備可重複建構特性的 NixOS 作為替代方案，這突顯了地緣政治與開源基礎設施之間日益緊密的關聯。",
-        "id": "news:https://tomshardware.com/software/the-netherlands-is-rolling-alternative-nixos-based-software-ecosystem-after-u-s-sanctions-on-icc-took-microsoft-off-the-table-trial-programs-running-now-first-release-expected-at-end-of-2027",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "荷蘭因美國制裁被迫轉向 NixOS 替代微軟系統",
-        "type": "news",
-        "url": "https://www.tomshardware.com/software/the-netherlands-is-rolling-alternative-nixos-based-software-ecosystem-after-u-s-sanctions-on-icc-took-microsoft-off-the-table-trial-programs-running-now-first-release-expected-at-end-of-2027"
-      },
-      {
-        "content": "本文深入探討某 SaaS 團隊如何將重大事故的檢測時間從 40 秒縮短至 10 秒以下。透過在 Kubernetes 上結合 OpenTelemetry、Apache Kafka 與 Apache Flink 重新架構監控與事件流處理系統，分享了實際工程實務與架構最佳解。",
-        "id": "news:https://cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "如何基於 OpenTelemetry、Kafka 與 Flink 在 K8s 上重建事件檢測系統",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/"
-      },
-      {
-        "content": "探討如何針對 Model Context Protocol (MCP) Agents 進行來源感知的驗證機制，強調在 AI 代理與外部工具互動時，必須驗證資料源的真實性與正確性，而不僅僅是檢查表面事實，對強化 AI 應用安全性具實質參考價值。",
-        "id": "news:https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "MCP Agent 的來源感知驗證：確保數據來源正確而非僅依賴事實",
-        "type": "news",
-        "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source"
-      },
-      {
-        "content": "介紹一個全新的開源語音合成（Text-to-Speech）與語音複製評測榜單，提供標準化且可擴展的評估框架，幫助開發者客觀比較不同多語言 TTS 模型的效能與擬真度表現。",
-        "id": "news:https://huggingface.co/blog/open-tts-leaderboard",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "Open TTS Leaderboard：多語言語音合成與語音複製的可擴展評測",
-        "type": "news",
-        "url": "https://huggingface.co/blog/open-tts-leaderboard"
-      },
-      {
-        "content": "官方教學文章介紹如何透過自然語言描述所需介面，讓 GitHub Copilot 代理動態建構出可即時互動與更新的 Canvases 表面，減少手動適應工具的時間，提升開發者的日常工作效率。",
-        "id": "news:https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases",
-        "publishedAt": "2026-09-30T23:41:52.210Z",
-        "title": "GitHub Copilot App 入門：如何使用 Canvases 建立自訂工作流程",
-        "type": "news",
-        "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/"
-      },
-      {
-        "content": "Google 正式發布 Gemini 4 Argon 模型，社群討論度迅速攀升。該版本代表 Google 旗艦系列模型的最新進展，預計在上下文理解、推論效率及多模態任務處理上帶來能力提升。對於依賴 Gemini API 開發應用與建構代理人架構的開發者而言，新模型的推出意味著推論基準與效能特性的更新，值得即刻追蹤其效能指標並評估既有管線的相容性。",
-        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "Google 釋出全新旗艦 AI 模型 Gemini 4 Argon",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
-      },
-      {
-        "content": "OpenAI 發布名為「Dots」的常駐型代理人（Always-on agents）。Dots 具備 24 小時不間斷運作的能力，且在推出初期提供特定免費額度，不會直接消耗使用者的常規使用額度。這項發布象徵 AI Agent 的運作典範正從傳統的「被動接收提示詞、單次推論」轉向「常駐背景、主動監控與執行」的新架構，開發者需開始構思常駐代理人在事件驅動與持續整合情境下的系統設計。",
-        "id": "news:https://openai.com/index/introducing-dots",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "OpenAI 推出 Dots 常駐型 AI 代理人服務",
-        "type": "news",
-        "url": "https://openai.com/index/introducing-dots/"
-      },
-      {
-        "content": "Cloudflare 宣布推出名為 Clef 的開源權重決策模型，並同步釋出全新的強化學習（RL）微調平台。Clef 專注於複雜決策制定與邏輯路徑推導，並透過開放權重降低部署門檻。微調平台的釋出讓開發者能夠使用自訂資料集針對特定業務場景進行強化學習訓練，擺脫完全依賴封閉專有模型的限制，有助於建構更具自主控制權的高可靠 Agent 決策管線。",
-        "id": "news:https://blog.cloudflare.com/clef-decision-models",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "Cloudflare 發布 Clef 開源權重決策模型與 RL 微調平台",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/clef-decision-models/"
-      },
-      {
-        "content": "Cloudflare 推出全新無伺服器事件串流服務「Cloudflare K2」。該服務旨在讓開發者直接在邊緣網路處理高吞吐量的即時事件流，無需自行部署並維護如 Kafka 或 AWS Kinesis 等複雜的底層訊息佇列叢集。對於需要建構即時資料管線、分散式日誌處理以及事件驅動架構的 DevOps 與後端工程師而言，K2 顯著降低了基礎設施運維負擔與延遲。",
-        "id": "news:https://blog.cloudflare.com/cloudflare-k2-streams",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "Cloudflare K2 發布：邊緣無伺服器事件串流平台",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/cloudflare-k2-streams/"
-      },
-      {
-        "content": "GitHub 宣布為 Copilot CLI 與 macOS/Windows 平台上的 Copilot 桌面應用程式推出「Computer Use」公開預覽版。該功能賦予 Copilot 代替使用者直接操作各類桌面軟體與 GUI 的能力，跨越了以往僅限於編輯器內補全程式碼的限制。這項更新改變了開發工作流，讓從環境設定、除錯到跨工具資料傳遞等重複性桌面工作均能交由 Agent 自主協同完成。",
-        "id": "news:https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "GitHub Copilot 正式支援 Computer Use 跨桌面應用程式操作",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps"
-      },
-      {
-        "content": "Allen AI 正式發表 Olmo-core 3，專為超大規模混合專家模型（MoE）設計的開源、高可擴展訓練基礎設施。該框架針對跨節點通訊效能、專家路由分配與記憶體佔用進行深度優化，大幅降低訓練分散式 MoE 模型的工程門檻。對於從事基礎模型研發、自研開源大模型的工程團隊來說，Olmo-core 3 提供了透明、可重現且高效的端到端訓練基礎建設支援。",
-        "id": "news:https://huggingface.co/blog/allenai/olmocore3",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "Allen AI 發布 Olmo-core 3：大規模 MoE 混合專家開源訓練架構",
-        "type": "news",
-        "url": "https://huggingface.co/blog/allenai/olmocore3"
-      },
-      {
-        "content": "GitHub 於 Copilot CLI、Copilot 桌面應用程式及 GitHub Copilot SDK 中推出「Dynamic Workflows」。開發者現在能直接以程式碼精確定義 Agent 的編排邏輯與工作流程，在保有大語言模型靈活性的同時，取得傳統程式化工作流的可靠性與可驗證性。這項更新讓工程團隊能將複雜的多步驟開發任務封裝為可重現、可版本控管的自動化流程。",
-        "id": "news:https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "GitHub Copilot CLI 與 App 支援 Dynamic Workflows 程式化編排",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app"
-      },
-      {
-        "content": "Hugging Face 開源了一套專為 WebGPU 打造的高效機器學習運算核心，涵蓋超過 200 種常見 ML 運算操作，完全在瀏覽器端本地運行。該專案亦積極推動將這些底層優化上游合併至 Transformers.js、ONNX Runtime Web 與 LiteRT.js 等前端推論框架。這意味著網頁與前端開發者能以極高效率在用戶端設備直接執行本地端 AI 推論，大幅降低伺服器推論成本並提升隱私保護。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wu8tpg/we_just_opensourced_the_worlds_fastest_webgpu",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "Hugging Face 開源超過 200 個極速 WebGPU 核心加速端側推論",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wu8tpg/we_just_opensourced_the_worlds_fastest_webgpu/"
-      },
-      {
-        "content": "Cloudflare 宣布 AI Search 正式進入正式發行（GA）階段。該功能具備直接嵌入影像像素以實現視覺檢索的能力，並內建對掃描 PDF 的光學字元辨識（OCR），支援單檔最大 10 MiB 的處理容量，並能無縫銜接各類主流對話模型。此一更新大幅簡化多模態文件處理與語意搜尋的開發流程，開發者無需拼湊多個獨立元件即可在邊緣端快速建置檢索增強生成（RAG）管線。",
-        "id": "news:https://blog.cloudflare.com/ai-search-ga",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "Cloudflare AI Search 正式 GA，支援像素級視覺檢索與 OCR",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/ai-search-ga/"
-      },
-      {
-        "content": "Cloudflare 開放 Monetization Gateway 封閉測試，允許網域擁有者為其 Model Context Protocol（MCP）工具設定存取收費機制。這項服務讓開發者能將自身 API 與 MCP 伺服器商業化，但同時引發業界對 Agent 自主消費與成本控制的熱烈討論：在無人值守的自主 Agent 時代，究竟應由誰授權並管控 Agent 呼叫付費工具時的支出上限，將直接影響未來 Agent 系統的資安與架構設計。",
-        "id": "news:https://thenewstack.io/cloudflare-x402-agent-spending",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "Cloudflare 推出 MCP 工具計費閘道，引發 Agent 支出控制機制討論",
-        "type": "news",
-        "url": "https://thenewstack.io/cloudflare-x402-agent-spending/"
-      },
-      {
-        "content": "Google DeepMind 發表「SynthID Bio」概念驗證技術，能在保留蛋白質原有生物功能的前提下，為 AI 生成的蛋白質序列嵌入數位浮水印。這項技術解決了生成式生物學在智慧財產權辨識與生物安全治理上的重大挑戰，讓合成生物學研究人員與生技開發者在利用生成模型設計分子與酵素時，能有效區分合成來源並確保合規與可追溯性。",
-        "id": "news:https://deepmind.google/blog/introducing-synthid-bio",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "Google DeepMind 推出 SynthID Bio 蛋白質數位浮水印技術",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-synthid-bio/"
-      },
       {
         "content": "社群針對 Anthropic 力推的 Model Context Protocol（MCP）展開深入架構反思。討論聚焦於在生產環境中導入 MCP 的代價，包含協定抽象層帶來的序列化開銷、除錯困難度、潛在安全性邊界模糊以及是否過度工程化等問題。對於正在評估是否將內部 API 全面改寫為 MCP 伺服器的架構師而言，這場爭論提供了平衡樂觀預期、深入檢視傳輸層實作與長期維護成本的重要參考依據。",
         "id": "news:https://earendil.com/posts/you-said-no-mcp",
@@ -784,118 +616,194 @@
         "title": "向量資料庫的架構省思與技術爭論",
         "type": "news",
         "url": "https://turbopuffer.com/blog/rip-vector-database"
+      },
+      {
+        "id": "repo:1206390571:new:2026-10-05",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "debpalash/VoiceStudio 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/debpalash/VoiceStudio"
+      },
+      {
+        "id": "repo:1170821064:climbed:2026-10-05",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "paperclipai/paperclip 竄升",
+        "type": "board-climbed",
+        "url": "https://github.com/paperclipai/paperclip"
+      },
+      {
+        "id": "repo:1266797999:new:2026-10-05",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "DietrichGebert/ponytail 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/DietrichGebert/ponytail"
+      },
+      {
+        "id": "repo:1166129534:new:2026-10-05",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "NVIDIA/OpenShell 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/NVIDIA/OpenShell"
+      },
+      {
+        "id": "repo:1185590488:new:2026-10-05",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "rohitg00/ai-engineering-from-scratch 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/rohitg00/ai-engineering-from-scratch"
+      },
+      {
+        "id": "repo:1222527844:new:2026-10-05",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "ifixai-ai/iFixAi 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/ifixai-ai/iFixAi"
+      },
+      {
+        "id": "repo:552877440:climbed:2026-10-05",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "juspay/hyperswitch 竄升",
+        "type": "board-climbed",
+        "url": "https://github.com/juspay/hyperswitch"
+      },
+      {
+        "id": "repo:997737944:new:2026-10-05",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "ruvnet/RuView 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/ruvnet/RuView"
+      },
+      {
+        "content": "Anthropic 與 OpenAI 分別推出 Claude Opus 5.5 以及 GPT-6 Sol、GPT-6 Luna 等新世代模型，同時伴隨市場上新一輪的 API 價格戰。這對開發者與企業來說，意味著模型效能的大幅提升與成本結構的改變，需評估是否調整系統架構與導入新模型。",
+        "id": "news:https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "Claude Opus 5.5、GPT-6 系列模型發表與新一輪價格戰",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/"
+      },
+      {
+        "content": "Cloudflare 宣布推出涵蓋日誌、追蹤、分析、警報、儀表板、查詢與遙測匯出的八大 Observability 平台重大更新，並採用更簡單且可預測的定價模式。這項更新讓開發者能將原本分散的監控功能整合至單一平台，簡化系統除錯與效能追蹤流程。",
+        "id": "news:https://blog.cloudflare.com/one-observability-platform",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "Cloudflare 推出 Observability 平台八大重大更新",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/one-observability-platform/"
+      },
+      {
+        "content": "OpenAI 官方發布最新功能「Sites in ChatGPT」，允許在 ChatGPT 環境內直接建立與檢視網頁或互動內容。這項更新擴展了 AI 互動的邊界，讓開發者與使用者能更直接在對話介面中部署和驗證輕量級網頁應用。",
+        "id": "news:https://chatgpt.com/features/sites",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "OpenAI 推出 ChatGPT 內嵌網站功能 Sites in ChatGPT",
+        "type": "news",
+        "url": "https://chatgpt.com/features/sites/"
+      },
+      {
+        "content": "美國 FTC 正式對 OpenAI、Anthropic 等多家主流 AI 公司展開調查，審查其產品在安全性、隱私與市場競爭方面的潛在風險。此項監管行動可能直接影響未來 AI 模型的推出時程、合規要求及企業的 AI 部署策略。",
+        "id": "news:https://cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "美國聯邦貿易委員會（FTC）對多款 AI 產品風險展開調查",
+        "type": "news",
+        "url": "https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html"
+      },
+      {
+        "content": "軟體界正湧現一批極度輕量、專門化的推論執行階段（如 Strata、ninfer、DwarfStar 等），它們捨棄了通用性，針對特定少數模型或單一硬體家族進行極致效能優化。這顯示「通用推論引擎追求相容性、專門化引擎追求極限效能」可能成為未來 AI 部署的新常態。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wwu6zj/the_rise_of_overfit_inference_engines",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "專門化推論引擎（Overfit Inference Engines）的崛起",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwu6zj/the_rise_of_overfit_inference_engines/"
+      },
+      {
+        "content": "開發者分享如何在單張 RTX 4090 消費級顯示卡上，以高達 100 Token/s 的驚人速度流暢運行 Qwen 3.8 Flash Next（125B）等大型模型的技術實作與優化經驗。這對希望在本地端部署高效能 AI、降低雲端成本的開發者具備高度參考價值。",
+        "id": "news:https://github.com/Niko1221/Strata",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "在消費級硬體 RTX 4090 上以每秒 100 Token 運行 125B 大模型",
+        "type": "news",
+        "url": "https://github.com/Niko1221/Strata"
+      },
+      {
+        "content": "隨著 AI 自動化生成大量程式碼與 Pull Request，CI（持續整合）管線迅速成為開發流程的新瓶頸。工程文章指出，單純加快管線速度無法根本解決問題，團隊應重新思考 AI 時代下的程式碼審查與自動化工作流程設計。",
+        "id": "news:https://thenewstack.io/ci-bottleneck-agent-verification",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "AI 時代下的 CI 瓶頸：盲目追求管線加速並非正確解方",
+        "type": "news",
+        "url": "https://thenewstack.io/ci-bottleneck-agent-verification/"
+      },
+      {
+        "content": "社群迎來名為 Kolibri 的主權開源權重模型，提供公開的權重與技術細節，旨在滿足對資料隱私與自主控制有強烈需求的機構與開發者。這為全球追求本地可控 AI 的開發者提供了新的開源替代選擇。",
+        "id": "news:https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "Kolibri：一款主權級開源權重模型發布",
+        "type": "news",
+        "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/"
+      },
+      {
+        "content": "針對 Claude Opus 5.5 的推出，開發社群分享了一系列在 Claude 聊天介面與 Claude Code 工具中的最佳實作指南。內容涵蓋提示詞調整、上下文管理與工具協調技巧，助開發者提升 AI 輔助編程的準確度與產出效率。",
+        "id": "news:https://claude.dev/blog/getting-the-most-out-of-opus-5-5",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "如何在 Claude 與 Claude Code 中發揮 Opus 5.5 的最大效能",
+        "type": "news",
+        "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/"
+      },
+      {
+        "content": "技術文章介紹如何利用 Cloudflare Workers、Durable Objects 搭配容器化媒體引擎，建立長執行時間、連續性的視訊處理管線（Streamline）。這為開發者提供了一種無需維護複雜雲端基礎設施即可實現高效影片處理的架構方案。",
+        "id": "news:https://blog.cloudflare.com/streamline",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "結合 Cloudflare Workers 與容器化媒體引擎打造自訂視訊管線",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/streamline/"
+      },
+      {
+        "content": "Valve 的開源工程師 Timur Kristóf 近期針對 Linux 系統上的舊款 AMD GPU 進行深度驅動與效能優化工作，獲得社群高度關注。這對依賴開源驅動、在 Linux 環境進行圖形或底層運算開發的工程師而言，能顯著改善老舊硬體的運行穩定度與效能。",
+        "id": "news:https://phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "Valve 的 Timur Kristóf 持續改善 Linux 上舊 AMD GPU 效能",
+        "type": "news",
+        "url": "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU"
+      },
+      {
+        "content": "Meta 應用商店排名第一的 Muse Agent 系統提示詞遭公開，其中明確規定「用戶對自身家戶的權威是無條件的，且能覆蓋安全訓練」。這引發開發社群對 AI 代理權限邊界、安全對齊與用戶控制權之間平衡的深度討論。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wx8ruy/metas_muse_agent_1_in_the_app_store_system_prompt",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "Meta Muse 系統提示詞曝光：強調用戶對家戶的絕對權威",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wx8ruy/metas_muse_agent_1_in_the_app_store_system_prompt/"
+      },
+      {
+        "content": "開發者展示了一項針對 Opus 5.5 的前端互動實驗，透過模擬畫布（Paint Canvas）讓 AI 模型直接進行視覺化創作與互動操作。這為開發者探索多模態 AI 在前端 UI 與即時視覺應用上的結合提供了創新的實作範例。",
+        "id": "news:https://stillwet.art/",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "Show HN：為 Opus 5.5 賦予模擬畫布繪圖能力的互動展示",
+        "type": "news",
+        "url": "https://stillwet.art/"
+      },
+      {
+        "content": "電子前哨基金會（EFF）針對猶他州一項 VPN 相關法律的訴訟獲得法院認同，法官指出該法實務上要求業者達成技術不可能實現的目標。這項裁決對網路隱私、VPN 服務營運商及相關合規開發政策具有重大法律與技術指標意義。",
+        "id": "news:https://eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility",
+        "publishedAt": "2026-10-04T23:01:45.455Z",
+        "title": "美國法院認同 EFF 立場：猶他州 VPN 法律要求技術上不可能的事",
+        "type": "news",
+        "url": "https://www.eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-03T22:49:56.394Z",
+      "generatedAt": "2026-10-04T23:01:45.455Z",
       "items": [
         {
-          "content": "Aleph Alpha 正式開源 Kolibri-1 模型，具備 78B 參數、3.46B 啟動參數與最高 100 萬 token 上下文支援，採用 Apache 2.0 授權。這為開發者與企業提供了一個具備超長上下文、主權開源的大型語言模型選項，適合在地部署與客製化應用開發。",
+          "content": "Anthropic 與 OpenAI 分別推出 Claude Opus 5.5 以及 GPT-6 Sol、GPT-6 Luna 等新世代模型，同時伴隨市場上新一輪的 API 價格戰。這對開發者與企業來說，意味著模型效能的大幅提升與成本結構的改變，需評估是否調整系統架構與導入新模型。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
+          "sourceId": "simonwillison",
           "sources": [
-            "reddit-localllama"
+            "simonwillison"
           ],
-          "title": "Aleph Alpha 開源 Kolibri-1 大型語言模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwl7y6/alephalphakolibri1_hugging_face_78b_parameters/",
+          "title": "Claude Opus 5.5、GPT-6 系列模型發表與新一輪價格戰",
+          "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
           "weightedScore": 100
         },
         {
-          "content": "新一代圖像生成模型 FLUX 3 Image 正式亮相，帶來更強大的視覺生成與理解能力。這為開發者和 AI 應用建構者提供了最新的影像生成工具，大幅提升生成品質與精確度。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "FLUX 3 Image 圖像生成模型正式發表",
-          "url": "https://bfl.ai/models/flux-3-image",
-          "weightedScore": 426
-        },
-        {
-          "content": "Redis 創作者推出名為 ds4 的新工具，讓開發者能夠在本地端輕鬆執行大型語言模型。此工具提供輕量且高效的本地運行方案，有助於開發者在無網路或注重隱私的環境下測試與開發 AI 應用。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "Redis 作者推出全新本地端 LLM 執行工具 ds4",
-          "url": "https://dwarfstar.sh/",
-          "weightedScore": 340
-        },
-        {
-          "content": "Cloudflare 發布全新的 OHTTP (Oblivious HTTP) 閘道器，旨在進一步強化網路請求的隱私保護。這協助開發者在系統架構設計上實現更高的隱私與安全性，防止中介節點追蹤客戶端請求。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sources": [
-            "cloudflare-blog",
-            "hn"
-          ],
-          "title": "Cloudflare 正式推出 OHTTP 閘道器服務",
-          "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/",
-          "weightedScore": 282
-        },
-        {
-          "content": "Google 開源的容器沙箱與隔離技術 gVisor 宣佈捐贈給雲端原生計算基金會 (CNCF)。這標誌著該專案將轉入中立基金會治理，有助於推動其在雲端原生生態系中的廣泛採用與標準化。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "lobsters-devops",
-          "sources": [
-            "lobsters-devops"
-          ],
-          "title": "容器沙箱與隔離專案 gVisor 捐贈給 CNCF",
-          "url": "https://gvisor.dev/blog/2026/10/02/gvisor-cncf/",
-          "weightedScore": 100
-        },
-        {
-          "content": "DeepSeek 發布支援 macOS 與 Windows 的桌面端操作應用程式 DeepSeek Harness Desktop。這提供開發者更便捷的桌面操作介面，方便直接調用模型與管理相關工作流程。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "DeepSeek 推出桌面端管理工具 Harness Desktop",
-          "url": "https://www.deepseek.com/en/harness/",
-          "weightedScore": 405
-        },
-        {
-          "content": "熱門的開源地理資訊與地圖資料收集工具 StreetComplete 正式推出 iOS 公開測試版。這讓 iOS 開發者與貢獻者能夠參與這款行動端應用的使用與測試。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "開源地圖工具 StreetComplete 推出 iOS 公開測試版",
-          "url": "https://github.com/streetcomplete/StreetComplete/issues/5421",
-          "weightedScore": 626
-        },
-        {
-          "content": "Asta 官方宣佈開源其在系統內使用的高速報告生成模型 AstaBrief。這為需要自動化生成報告的開發團隊提供輕量且高效的專用模型選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "Asta 開源高速報告生成模型 AstaBrief",
-          "url": "https://huggingface.co/blog/allenai/astabrief",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 發布 Account Abuse Protection 儀表板，利用具狀態分析與邊緣生成的雜湊使用者 ID 來偵測與阻擋濫用。這能協助資安與維運團隊有效應對現代攻擊者利用 AI 繞過傳統無狀態安全檢查的威脅。",
+          "content": "Cloudflare 宣布推出涵蓋日誌、追蹤、分析、警報、儀表板、查詢與遙測匯出的八大 Observability 平台重大更新，並採用更簡單且可預測的定價模式。這項更新讓開發者能將原本分散的監控功能整合至單一平台，簡化系統除錯與效能追蹤流程。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -903,25 +811,12 @@
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "Cloudflare 推出帳戶濫用防護新儀表板",
-          "url": "https://blog.cloudflare.com/account-abuse-protection-dashboard/",
+          "title": "Cloudflare 推出 Observability 平台八大重大更新",
+          "url": "https://blog.cloudflare.com/one-observability-platform/",
           "weightedScore": 50
         },
         {
-          "content": "本文探討在實際開發中，當 AI Agent 宣告任務完成時，底層資料庫狀態卻出現不一致的現象與背後原因。這點出了目前在建構 Autonomous Agents 應用時，狀態同步與交易一致性驗證的核心工程痛點，對系統架構設計極具參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "AI Agent 執行完畢與資料庫狀態不一致的實務挑戰",
-          "url": "https://huggingface.co/blog/microsoft/thinkingbox",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群針對向量資料庫在現代 AI 架構中的定位與必要性展開深度討論與反思。這引導開發者重新思考在 RAG 與檢索系統中，是否真的需要專用向量資料庫，或是可以透過傳統資料庫的新功能替代，進而影響架構選型。",
+          "content": "OpenAI 官方發布最新功能「Sites in ChatGPT」，允許在 ChatGPT 環境內直接建立與檢視網頁或互動內容。這項更新擴展了 AI 互動的邊界，讓開發者與使用者能更直接在對話介面中部署和驗證輕量級網頁應用。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
@@ -929,9 +824,152 @@
           "sources": [
             "hn"
           ],
-          "title": "向量資料庫的架構省思與技術爭論",
-          "url": "https://turbopuffer.com/blog/rip-vector-database",
-          "weightedScore": 385
+          "title": "OpenAI 推出 ChatGPT 內嵌網站功能 Sites in ChatGPT",
+          "url": "https://chatgpt.com/features/sites/",
+          "weightedScore": 347
+        },
+        {
+          "content": "美國 FTC 正式對 OpenAI、Anthropic 等多家主流 AI 公司展開調查，審查其產品在安全性、隱私與市場競爭方面的潛在風險。此項監管行動可能直接影響未來 AI 模型的推出時程、合規要求及企業的 AI 部署策略。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "美國聯邦貿易委員會（FTC）對多款 AI 產品風險展開調查",
+          "url": "https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html",
+          "weightedScore": 210
+        },
+        {
+          "content": "軟體界正湧現一批極度輕量、專門化的推論執行階段（如 Strata、ninfer、DwarfStar 等），它們捨棄了通用性，針對特定少數模型或單一硬體家族進行極致效能優化。這顯示「通用推論引擎追求相容性、專門化引擎追求極限效能」可能成為未來 AI 部署的新常態。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "專門化推論引擎（Overfit Inference Engines）的崛起",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwu6zj/the_rise_of_overfit_inference_engines/",
+          "weightedScore": 100
+        },
+        {
+          "content": "開發者分享如何在單張 RTX 4090 消費級顯示卡上，以高達 100 Token/s 的驚人速度流暢運行 Qwen 3.8 Flash Next（125B）等大型模型的技術實作與優化經驗。這對希望在本地端部署高效能 AI、降低雲端成本的開發者具備高度參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "在消費級硬體 RTX 4090 上以每秒 100 Token 運行 125B 大模型",
+          "url": "https://github.com/Niko1221/Strata",
+          "weightedScore": 541
+        },
+        {
+          "content": "隨著 AI 自動化生成大量程式碼與 Pull Request，CI（持續整合）管線迅速成為開發流程的新瓶頸。工程文章指出，單純加快管線速度無法根本解決問題，團隊應重新思考 AI 時代下的程式碼審查與自動化工作流程設計。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "AI 時代下的 CI 瓶頸：盲目追求管線加速並非正確解方",
+          "url": "https://thenewstack.io/ci-bottleneck-agent-verification/",
+          "weightedScore": 50
+        },
+        {
+          "content": "社群迎來名為 Kolibri 的主權開源權重模型，提供公開的權重與技術細節，旨在滿足對資料隱私與自主控制有強烈需求的機構與開發者。這為全球追求本地可控 AI 的開發者提供了新的開源替代選擇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "Kolibri：一款主權級開源權重模型發布",
+          "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+          "weightedScore": 652
+        },
+        {
+          "content": "針對 Claude Opus 5.5 的推出，開發社群分享了一系列在 Claude 聊天介面與 Claude Code 工具中的最佳實作指南。內容涵蓋提示詞調整、上下文管理與工具協調技巧，助開發者提升 AI 輔助編程的準確度與產出效率。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "如何在 Claude 與 Claude Code 中發揮 Opus 5.5 的最大效能",
+          "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+          "weightedScore": 231
+        },
+        {
+          "content": "技術文章介紹如何利用 Cloudflare Workers、Durable Objects 搭配容器化媒體引擎，建立長執行時間、連續性的視訊處理管線（Streamline）。這為開發者提供了一種無需維護複雜雲端基礎設施即可實現高效影片處理的架構方案。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "結合 Cloudflare Workers 與容器化媒體引擎打造自訂視訊管線",
+          "url": "https://blog.cloudflare.com/streamline/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Valve 的開源工程師 Timur Kristóf 近期針對 Linux 系統上的舊款 AMD GPU 進行深度驅動與效能優化工作，獲得社群高度關注。這對依賴開源驅動、在 Linux 環境進行圖形或底層運算開發的工程師而言，能顯著改善老舊硬體的運行穩定度與效能。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "Valve 的 Timur Kristóf 持續改善 Linux 上舊 AMD GPU 效能",
+          "url": "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
+          "weightedScore": 448
+        },
+        {
+          "content": "Meta 應用商店排名第一的 Muse Agent 系統提示詞遭公開，其中明確規定「用戶對自身家戶的權威是無條件的，且能覆蓋安全訓練」。這引發開發社群對 AI 代理權限邊界、安全對齊與用戶控制權之間平衡的深度討論。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "Meta Muse 系統提示詞曝光：強調用戶對家戶的絕對權威",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wx8ruy/metas_muse_agent_1_in_the_app_store_system_prompt/",
+          "weightedScore": 100
+        },
+        {
+          "content": "開發者展示了一項針對 Opus 5.5 的前端互動實驗，透過模擬畫布（Paint Canvas）讓 AI 模型直接進行視覺化創作與互動操作。這為開發者探索多模態 AI 在前端 UI 與即時視覺應用上的結合提供了創新的實作範例。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "Show HN：為 Opus 5.5 賦予模擬畫布繪圖能力的互動展示",
+          "url": "https://stillwet.art/",
+          "weightedScore": 381
+        },
+        {
+          "content": "電子前哨基金會（EFF）針對猶他州一項 VPN 相關法律的訴訟獲得法院認同，法官指出該法實務上要求業者達成技術不可能實現的目標。這項裁決對網路隱私、VPN 服務營運商及相關合規開發政策具有重大法律與技術指標意義。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "美國法院認同 EFF 立場：猶他州 VPN 法律要求技術上不可能的事",
+          "url": "https://www.eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility",
+          "weightedScore": 799
         }
       ]
     }
@@ -3387,6 +3425,132 @@
         "hn"
       ],
       "url": "https://turbopuffer.com/blog/rip-vector-database"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "simonwillison",
+      "sources": [
+        "simonwillison"
+      ],
+      "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/one-observability-platform"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://chatgpt.com/features/sites"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wwu6zj/the_rise_of_overfit_inference_engines"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://github.com/Niko1221/Strata"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/ci-bottleneck-agent-verification"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/streamline"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1wx8ruy/metas_muse_agent_1_in_the_app_store_system_prompt"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://stillwet.art/"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-04T23:01:45.455Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility"
     }
   ]
 }
