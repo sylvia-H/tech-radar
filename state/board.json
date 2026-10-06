@@ -386,133 +386,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-04T23:01:45.455Z",
-  "lastNewsPushAt": "2026-10-06T01:16:30.479Z",
+  "lastNewsPushAt": "2026-10-06T23:45:08.530Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-04T23:01:45.455Z",
       "summary": "本次榜單新進 6 個、竄升 2 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 2 個，綜合榜 #1 為 debpalash/VoiceStudio"
     },
     "feed": [
-      {
-        "content": "本文深入探討 Docker 容器映像檔分層（layers）機制背後的架構設計與隱藏的效能、儲存妥協，協助開發者在建構映像檔時理解底層運作原理，優化容器化部署的效率。",
-        "id": "news:https://loige.co/hidden-design-compromises-of-docker-layers",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "深入解析 Docker 映像檔分層隱藏的設計妥協",
-        "type": "news",
-        "url": "https://loige.co/hidden-design-compromises-of-docker-layers/"
-      },
-      {
-        "content": "開發者分享實作經驗，利用閒置的 iPhone 17 Pro Max 作為 24 GB M4 Pro MacBook 的額外記憶體與算力支援，分擔 Qwen 3.8 27B 模型的 Prefill 階段，使整體前置填滿速度顯著提升 29% 至 44%。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wvz1ex/i_made_my_iphone_a_second_gpu_for_my_24_gb",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "將 iPhone 化身為 MacBook 的第二 GPU 加速 Qwen 模型推論",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvz1ex/i_made_my_iphone_a_second_gpu_for_my_24_gb/"
-      },
-      {
-        "content": "這篇技術討論深入剖析了軟體系統中資料備份的複雜性。內容指出備份不僅是儲存資料，更涉及一致性、驗證、還原演練以及分散式系統下的邊角案例處理，對架構設計極具參考價值。",
-        "id": "news:https://filipovski.net/2026/09/16/backups-arent-simple.html",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "為什麼備份從來都不簡單：工程實務探討",
-        "type": "news",
-        "url": "https://filipovski.net/2026/09/16/backups-arent-simple.html"
-      },
-      {
-        "content": "安全研究人員在 Linux 核心中發現了數個漏洞，可能對系統安全造成風險。相關維護團隊正著手修補，建議系統管理員與開發者密切關注後續安全公告並升級核心版本。",
-        "id": "news:https://lwn.net/Articles/1097401",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "Linux 核心發現多個安全漏洞",
-        "type": "news",
-        "url": "https://lwn.net/Articles/1097401/"
-      },
-      {
-        "content": "Aleph Alpha 正式開源 Kolibri-1 模型，具備 78B 參數、3.46B 啟動參數與最高 100 萬 token 上下文支援，採用 Apache 2.0 授權。這為開發者與企業提供了一個具備超長上下文、主權開源的大型語言模型選項，適合在地部署與客製化應用開發。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wwl7y6/alephalphakolibri1_hugging_face_78b_parameters",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "Aleph Alpha 開源 Kolibri-1 大型語言模型",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwl7y6/alephalphakolibri1_hugging_face_78b_parameters/"
-      },
-      {
-        "content": "新一代圖像生成模型 FLUX 3 Image 正式亮相，帶來更強大的視覺生成與理解能力。這為開發者和 AI 應用建構者提供了最新的影像生成工具，大幅提升生成品質與精確度。",
-        "id": "news:https://bfl.ai/models/flux-3-image",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "FLUX 3 Image 圖像生成模型正式發表",
-        "type": "news",
-        "url": "https://bfl.ai/models/flux-3-image"
-      },
-      {
-        "content": "Redis 創作者推出名為 ds4 的新工具，讓開發者能夠在本地端輕鬆執行大型語言模型。此工具提供輕量且高效的本地運行方案，有助於開發者在無網路或注重隱私的環境下測試與開發 AI 應用。",
-        "id": "news:https://dwarfstar.sh/",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "Redis 作者推出全新本地端 LLM 執行工具 ds4",
-        "type": "news",
-        "url": "https://dwarfstar.sh/"
-      },
-      {
-        "content": "Cloudflare 發布全新的 OHTTP (Oblivious HTTP) 閘道器，旨在進一步強化網路請求的隱私保護。這協助開發者在系統架構設計上實現更高的隱私與安全性，防止中介節點追蹤客戶端請求。",
-        "id": "news:https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "Cloudflare 正式推出 OHTTP 閘道器服務",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/"
-      },
-      {
-        "content": "Google 開源的容器沙箱與隔離技術 gVisor 宣佈捐贈給雲端原生計算基金會 (CNCF)。這標誌著該專案將轉入中立基金會治理，有助於推動其在雲端原生生態系中的廣泛採用與標準化。",
-        "id": "news:https://gvisor.dev/blog/2026/10/02/gvisor-cncf",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "容器沙箱與隔離專案 gVisor 捐贈給 CNCF",
-        "type": "news",
-        "url": "https://gvisor.dev/blog/2026/10/02/gvisor-cncf/"
-      },
-      {
-        "content": "DeepSeek 發布支援 macOS 與 Windows 的桌面端操作應用程式 DeepSeek Harness Desktop。這提供開發者更便捷的桌面操作介面，方便直接調用模型與管理相關工作流程。",
-        "id": "news:https://deepseek.com/en/harness",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "DeepSeek 推出桌面端管理工具 Harness Desktop",
-        "type": "news",
-        "url": "https://www.deepseek.com/en/harness/"
-      },
-      {
-        "content": "熱門的開源地理資訊與地圖資料收集工具 StreetComplete 正式推出 iOS 公開測試版。這讓 iOS 開發者與貢獻者能夠參與這款行動端應用的使用與測試。",
-        "id": "news:https://github.com/streetcomplete/StreetComplete/issues/5421",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "開源地圖工具 StreetComplete 推出 iOS 公開測試版",
-        "type": "news",
-        "url": "https://github.com/streetcomplete/StreetComplete/issues/5421"
-      },
-      {
-        "content": "Asta 官方宣佈開源其在系統內使用的高速報告生成模型 AstaBrief。這為需要自動化生成報告的開發團隊提供輕量且高效的專用模型選擇。",
-        "id": "news:https://huggingface.co/blog/allenai/astabrief",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "Asta 開源高速報告生成模型 AstaBrief",
-        "type": "news",
-        "url": "https://huggingface.co/blog/allenai/astabrief"
-      },
-      {
-        "content": "Cloudflare 發布 Account Abuse Protection 儀表板，利用具狀態分析與邊緣生成的雜湊使用者 ID 來偵測與阻擋濫用。這能協助資安與維運團隊有效應對現代攻擊者利用 AI 繞過傳統無狀態安全檢查的威脅。",
-        "id": "news:https://blog.cloudflare.com/account-abuse-protection-dashboard",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "Cloudflare 推出帳戶濫用防護新儀表板",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/account-abuse-protection-dashboard/"
-      },
-      {
-        "content": "本文探討在實際開發中，當 AI Agent 宣告任務完成時，底層資料庫狀態卻出現不一致的現象與背後原因。這點出了目前在建構 Autonomous Agents 應用時，狀態同步與交易一致性驗證的核心工程痛點，對系統架構設計極具參考價值。",
-        "id": "news:https://huggingface.co/blog/microsoft/thinkingbox",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "AI Agent 執行完畢與資料庫狀態不一致的實務挑戰",
-        "type": "news",
-        "url": "https://huggingface.co/blog/microsoft/thinkingbox"
-      },
-      {
-        "content": "社群針對向量資料庫在現代 AI 架構中的定位與必要性展開深度討論與反思。這引導開發者重新思考在 RAG 與檢索系統中，是否真的需要專用向量資料庫，或是可以透過傳統資料庫的新功能替代，進而影響架構選型。",
-        "id": "news:https://turbopuffer.com/blog/rip-vector-database",
-        "publishedAt": "2026-10-03T22:49:56.394Z",
-        "title": "向量資料庫的架構省思與技術爭論",
-        "type": "news",
-        "url": "https://turbopuffer.com/blog/rip-vector-database"
-      },
       {
         "id": "repo:1206390571:new:2026-10-05",
         "publishedAt": "2026-10-04T23:01:45.455Z",
@@ -784,180 +664,342 @@
         "title": "丹麥發生重大資料外洩事件，波及 880 萬人個人資料",
         "type": "news",
         "url": "https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger"
+      },
+      {
+        "content": "Mistral 官方正式發布新一代旗艦大型語言模型 Mistral Large 4，帶來更強大的推論與綜合處理能力，持續拓展其開源與商業模型的效能邊界。",
+        "id": "news:https://mistral.ai/news/mistral-large-4",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "Mistral Large 4 正式發布",
+        "type": "news",
+        "url": "https://mistral.ai/news/mistral-large-4/\\"
+      },
+      {
+        "content": "DNS 根金鑰預定於 2026 年 10 月 11 日切換至新的金鑰簽署金鑰（KSK-2024）。開發者與維運人員需確認 DNS 解析器是否支援相關標準，以確保網域名稱解析服務不受影響。",
+        "id": "news:https://blog.cloudflare.com/root-ksk-2024-rollover",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "網際網路根金鑰將於 10 月 11 日進行更新",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/root-ksk-2024-rollover/"
+      },
+      {
+        "content": "知名高效能 DataFrame 處理工具 Polars 推出 2.0 重大版本更新。此次改版帶來核心架構的升級與效能優化，進一步提升大規模資料處理的運算效率與開發者體驗。",
+        "id": "news:https://pola.rs/posts/release-polars-2",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "高效資料處理工具 Polars 2.0 正式登場",
+        "type": "news",
+        "url": "https://pola.rs/posts/release-polars-2/"
+      },
+      {
+        "content": "Google 推出 EmbeddingGemma 2，這是一款擁有 7.4 億參數的開源輕量級多模態嵌入模型，支援文字、程式碼、圖片、影片及音訊檢索，適合在資源受限的環境中部署。",
+        "id": "news:https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "Google 發布開源輕量多模態嵌入模型 EmbeddingGemma 2",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/"
+      },
+      {
+        "content": "官方發布最新技術進展報告，詳細說明 AI 模型在處理複雜數學推理與證明任務上的突破與應用成果，展示人工智慧在邏輯推導能力上的升級。",
+        "id": "news:https://openai.com/index/sharing-ai-progress-in-mathematics",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "OpenAI 分享 AI 在數學領域的最新進展",
+        "type": "news",
+        "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/"
+      },
+      {
+        "content": "用於 Rust 與 Python 的 Tapo 裝置控制程式庫迎來更新，現在正式支援 TP-Link 的 TPAP 協議，讓開發者能更便利地整合與控制相關智慧硬體設備。",
+        "id": "news:https://mihai.dinculescu.dev/posts/tapo-speaks-tpap",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "Tapo 程式庫新增支援 TP-Link TPAP 協定",
+        "type": "news",
+        "url": "https://mihai.dinculescu.dev/posts/tapo-speaks-tpap/"
+      },
+      {
+        "content": "Linux 發行版 Pop!_OS 專案發布重大政策調整，宣佈禁止在專案的大部分程式碼庫中使用 AI 生成的程式碼，此舉確立了對開源貢獻品質與源頭審查的新標準。",
+        "id": "news:https://neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "Pop!_OS 專案宣佈禁止在多數程式碼庫中使用 AI 生成程式碼",
+        "type": "news",
+        "url": "https://www.neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases/"
+      },
+      {
+        "content": "官方宣佈與 Ironclad 展開合作，透過訓練與評估 AI 代理來處理專業且複雜的合約工作流程，進一步推進人工智慧在企業法務與實務應用上的電腦操作能力。",
+        "id": "news:https://openai.com/index/advancing-computer-use-with-ironclad",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "OpenAI 與 Ironclad 合作推進複雜合約工作流程的 AI 代理應用",
+        "type": "news",
+        "url": "https://openai.com/index/advancing-computer-use-with-ironclad"
+      },
+      {
+        "content": "深入探討 Linux cgroup v2 在 Kubernetes 中的應用與轉移。隨著 Kubernetes v1.31 將 cgroup v1 支援降級為維護模式，cgroup v2 提供統一的階層架構與更佳的資源分配管理，本文分析了升級時不可不知的關鍵變動與注意事項。",
+        "id": "news:https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "Kubernetes 轉移至 cgroup v2：開發者與維運人員需知重點",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/"
+      },
+      {
+        "content": "探討一項突破性的機器學習研究「Dust」，該研究探討在不依賴傳統反向傳播（Backpropagation）機制的狀況下，如何對 Transformers 模型進行預訓練，為深度學習架構提供全新的技術實作與理論分析。",
+        "id": "news:https://qlabs.sh/research/dust",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "Dust：不使用反向傳播預訓練 Transformers 模型",
+        "type": "news",
+        "url": "https://qlabs.sh/research/dust"
+      },
+      {
+        "content": "針對 AI 軟體工程領域的評測基準進行深入討論。文章比較了 GitHub Copilot 在自家程式碼審查基準中的領先表現，與獨立第三方評測所呈現的不同觀點，探討如何客觀評估 AI 程式碼助理的實際效能。",
+        "id": "news:https://thenewstack.io/github-reviewbench-code-review",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "GitHub Copilot 評測表現分析：官方基準與獨立測試的差異",
+        "type": "news",
+        "url": "https://thenewstack.io/github-reviewbench-code-review/"
+      },
+      {
+        "content": "開發者在社群分享一項在 macOS 上運作的實作專案，提供針對本機所有照片及影片每一影格內容的 AI 智慧搜尋功能，展示了端側多模態檢索的技術應用。",
+        "id": "news:https://github.com/allenv0/SCM",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "Show HN：在 macOS 上為所有照片與影片影格提供 AI 搜尋工具",
+        "type": "news",
+        "url": "https://github.com/allenv0/SCM"
+      },
+      {
+        "content": "Reflection 團隊發布名為 Beam 的 501B 開放權重模型。文章探討其模型架構、權重設計與開發展現的技術細節，吸引開源社群的高度關注與實測討論。",
+        "id": "news:https://reflection.ai/blog/introducing-beam",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "Beam：Reflection 推出 501B 開放權重模型",
+        "type": "news",
+        "url": "https://reflection.ai/blog/introducing-beam"
+      },
+      {
+        "content": "安全導向的作業系統 GrapheneOS 指出，Google Pixel 11 目前尚未完全滿足其嚴格的硬體安全標準，未來可能面臨不予支援或跳過該代硬體的評估。",
+        "id": "news:https://discuss.grapheneos.org/d/41564-pixel-11-doesnt-yet-meet-the-grapheneos-security-standards-and-may-be-skipped",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "Google Pixel 11 尚未符合 GrapheneOS 資安標準恐被跳過",
+        "type": "news",
+        "url": "https://discuss.grapheneos.org/d/41564-pixel-11-doesnt-yet-meet-the-grapheneos-security-standards-and-may-be-skipped"
+      },
+      {
+        "content": "社群分享一項有趣的開源或實作專案，成功將經典的 Visual Basic (VB6) IDE 移植並使其能在瀏覽器原生環境中流暢運行，完整還原復古的開發體驗與技術細節。",
+        "id": "news:https://wieslawsoltes.github.io/VB6",
+        "publishedAt": "2026-10-06T23:45:08.530Z",
+        "title": "重現經典：瀏覽器原生執行的傳統 Visual Basic VB6 開發環境",
+        "type": "news",
+        "url": "https://wieslawsoltes.github.io/VB6/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-06T01:16:30.479Z",
+      "generatedAt": "2026-10-06T23:45:08.530Z",
       "items": [
         {
-          "content": "Kubernetes 官方宣佈節點啟用 Swap 功能正式達到一般可用性（GA）。面對 AI 代理等工作負載對記憶體的大量需求，啟用 Swap 能有效解決記憶體耗盡問題，提高叢集 Pod 密度，降低營運成本。",
+          "content": "Mistral 官方正式發布新一代旗艦大型語言模型 Mistral Large 4，帶來更強大的推論與綜合處理能力，持續拓展其開源與商業模型的效能邊界。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "kubernetes-blog",
+          "sourceId": "hn",
+          "sourceTitle": "Mistral Large 4",
           "sources": [
-            "kubernetes-blog"
+            "hn"
           ],
-          "title": "Kubernetes 節點 Swap 支援正式達到 GA，助解記憶體瓶頸",
-          "url": "https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/",
-          "weightedScore": 100
+          "title": "Mistral Large 4 正式發布",
+          "url": "https://mistral.ai/news/mistral-large-4/\\",
+          "weightedScore": 1539
         },
         {
-          "content": "OpenAI 宣布開發者現在可透過 API 為生成的文字選擇加入浮水印。與 Anthropic 的預設開啟策略不同，OpenAI 的文字浮水印功能預設為關閉，由開發者自行決定是否啟用，以符合相關規範與追溯需求。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "OpenAI API 推出文字浮水印功能，預設為關閉狀態",
-          "url": "https://thenewstack.io/openai-api-text-watermarking/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Cloudflare 慶祝成立 16 週年，總計發布了 46 項橫跨開源專案、後量子密碼學、AI 代理及開發者平台升級的重大公告。此次更新進一步強化了其開發者生態系的基礎設施與安全防護能力。",
+          "content": "DNS 根金鑰預定於 2026 年 10 月 11 日切換至新的金鑰簽署金鑰（KSK-2024）。開發者與維運人員需確認 DNS 解析器是否支援相關標準，以確保網域名稱解析服務不受影響。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cloudflare-blog",
+          "sourceTitle": "The keys to the Internet change on October 11. Are you ready?",
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "Cloudflare 2026 生日週總結：發布 46 項開源與安全性更新",
-          "url": "https://blog.cloudflare.com/birthday-week-2026-wrap-up/",
+          "title": "網際網路根金鑰將於 10 月 11 日進行更新",
+          "url": "https://blog.cloudflare.com/root-ksk-2024-rollover/",
           "weightedScore": 50
         },
         {
-          "content": "GitHub 官方推出 ReviewBench，這是一個專為評估 AI 程式碼審查代理而設計的開放基準測試。它基於具有代表性的 GitHub Pull Request、多來源真實數據與生產環境對齊指標，提供標準化評估方法。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
-          "sources": [
-            "github-blog-ai-ml"
-          ],
-          "title": "GitHub 推出開源 AI 程式碼審查基準測試 ReviewBench",
-          "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 發布開發者號召，邀請社群在其基礎設施與開發者平台上構建下一代 Git 平台，利用其分散式邊緣運算與全球網路來改變版本控制與程式碼託管的運作方式。",
+          "content": "知名高效能 DataFrame 處理工具 Polars 推出 2.0 重大版本更新。此次改版帶來核心架構的升級與效能優化，進一步提升大規模資料處理的運算效率與開發者體驗。",
           "degraded": false,
           "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Polars 2.0",
+          "sources": [
+            "hn"
+          ],
+          "title": "高效資料處理工具 Polars 2.0 正式登場",
+          "url": "https://pola.rs/posts/release-polars-2/",
+          "weightedScore": 405
+        },
+        {
+          "content": "Google 推出 EmbeddingGemma 2，這是一款擁有 7.4 億參數的開源輕量級多模態嵌入模型，支援文字、程式碼、圖片、影片及音訊檢索，適合在資源受限的環境中部署。",
+          "degraded": false,
+          "domain": "ai",
           "sourceCount": 2,
           "sourceId": "hn",
+          "sourceTitle": "EmbeddingGemma 2: An open, lightweight multimodal embedding model",
           "sources": [
-            "cloudflare-blog",
+            "deepmind-blog",
             "hn"
           ],
-          "title": "Cloudflare 號召開發者在其平台上建立下一代 Git 平台",
-          "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/",
-          "weightedScore": 325
+          "title": "Google 發布開源輕量多模態嵌入模型 EmbeddingGemma 2",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+          "weightedScore": 288
         },
         {
-          "content": "探討 Kubernetes 工作節點面臨檔案系統 inode 耗盡（如 NodeFilesystemFilesFillingUp 告警）時的實務排查經驗。當磁碟空間顯示尚有餘裕時，inode 可能已先耗盡，文章分析了 Kubelet 的監控機制與開發者應注意的實務細節。",
+          "content": "官方發布最新技術進展報告，詳細說明 AI 模型在處理複雜數學推理與證明任務上的突破與應用成果，展示人工智慧在邏輯推導能力上的升級。",
           "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Sharing AI Progress in Mathematics",
           "sources": [
-            "cncf-blog"
+            "hn",
+            "openai-blog"
           ],
-          "title": "Kubelet 監控 inode 機制的運作盲點與緊急處理",
-          "url": "https://www.cncf.io/blog/2026/10/05/kubelet-watches-inodes-just-not-until-its-an-emergency/",
+          "title": "OpenAI 分享 AI 在數學領域的最新進展",
+          "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+          "weightedScore": 313
+        },
+        {
+          "content": "用於 Rust 與 Python 的 Tapo 裝置控制程式庫迎來更新，現在正式支援 TP-Link 的 TPAP 協議，讓開發者能更便利地整合與控制相關智慧硬體設備。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Tapo (Rust/Python library) now speaks TP-Link's TPAP protocol",
+          "sources": [
+            "hn"
+          ],
+          "title": "Tapo 程式庫新增支援 TP-Link TPAP 協定",
+          "url": "https://mihai.dinculescu.dev/posts/tapo-speaks-tpap/",
+          "weightedScore": 125
+        },
+        {
+          "content": "Linux 發行版 Pop!_OS 專案發布重大政策調整，宣佈禁止在專案的大部分程式碼庫中使用 AI 生成的程式碼，此舉確立了對開源貢獻品質與源頭審查的新標準。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Pop!_OS bans AI-generated code from much of its codebase",
+          "sources": [
+            "hn"
+          ],
+          "title": "Pop!_OS 專案宣佈禁止在多數程式碼庫中使用 AI 生成程式碼",
+          "url": "https://www.neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases/",
+          "weightedScore": 122
+        },
+        {
+          "content": "官方宣佈與 Ironclad 展開合作，透過訓練與評估 AI 代理來處理專業且複雜的合約工作流程，進一步推進人工智慧在企業法務與實務應用上的電腦操作能力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sourceTitle": "Advancing computer use with Ironclad",
+          "sources": [
+            "openai-blog"
+          ],
+          "title": "OpenAI 與 Ironclad 合作推進複雜合約工作流程的 AI 代理應用",
+          "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
           "weightedScore": 100
         },
         {
-          "content": "探討在無需 root 權限的環境下，如何利用 Podman 的 rootless 模式來運行 Docker Compose 工作負載，提升容器化應用的安全性與隔離性，對不希望以高權限執行常駐服務的開發者提供實務指引。",
+          "content": "深入探討 Linux cgroup v2 在 Kubernetes 中的應用與轉移。隨著 Kubernetes v1.31 將 cgroup v1 支援降級為維護模式，cgroup v2 提供統一的階層架構與更佳的資源分配管理，本文分析了升級時不可不知的關鍵變動與注意事項。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "lobsters-devops",
+          "sourceId": "kubernetes-blog",
+          "sourceTitle": "The Shift to cgroup v2 in Kubernetes: What You Need to Know",
           "sources": [
-            "lobsters-devops"
+            "kubernetes-blog"
           ],
-          "title": "如何在 Rootless 模式下使用 Podman 結合 Docker Compose",
-          "url": "https://elou.world/en/tutorial/podman-docker-compose",
+          "title": "Kubernetes 轉移至 cgroup v2：開發者與維運人員需知重點",
+          "url": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/",
           "weightedScore": 100
         },
         {
-          "content": "深入探討 AI 代理在工程實務上的架構設計。文章指出，與其依賴複雜且容易出錯的對話記憶體管理，不如透過結構化、清晰的專案文件與 API 規格來引導代理，能更有效地提升 AI 在軟體開發任務中的表現。",
+          "content": "探討一項突破性的機器學習研究「Dust」，該研究探討在不依賴傳統反向傳播（Backpropagation）機制的狀況下，如何對 Transformers 模型進行預訓練，為深度學習架構提供全新的技術實作與理論分析。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
+          "sourceTitle": "Dust: Pretraining Transformers Without Backpropagation",
           "sources": [
             "hn"
           ],
-          "title": "觀點：AI 代理不需要複雜記憶體，真正需要的是完善文件",
-          "url": "https://liao.gg/blog/agents-dont-need-memory",
-          "weightedScore": 371
+          "title": "Dust：不使用反向傳播預訓練 Transformers 模型",
+          "url": "https://qlabs.sh/research/dust",
+          "weightedScore": 272
         },
         {
-          "content": "AI 代理在科學研究領域取得重大進展，Opus 5.5 代理成功自主發現了兩種具備室溫磁性半導體特性的候選材料，展示了先進 AI 模型在推動材料科學與硬體底層創新上的實質應用價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "Opus 5.5 AI 代理成功發現兩種室溫磁性半導體候選材料",
-          "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors",
-          "weightedScore": 197
-        },
-        {
-          "content": "技術評測指出，如 Jev 等新型決策模型在實際表現上仍無法超越傳統分類器或主流的 LLM-as-a-judge（大模型評審）方法，為開發者在選擇自動化評估與品質控制方案時提供重要的參考基準。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "評測顯示決策模型 Jev 表現不及傳統分類器與 LLM-as-a-judge",
-          "url": "https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails",
-          "weightedScore": 153
-        },
-        {
-          "content": "探討 Model Context Protocol (MCP) 伺服器在啟動時常消耗大量 Token（例如單一伺服器在執行動作前即消耗 18,000 個 Token）的效能痛點，並提供具體的優化與工作區離避（workaround）實務作法。",
+          "content": "針對 AI 軟體工程領域的評測基準進行深入討論。文章比較了 GitHub Copilot 在自家程式碼審查基準中的領先表現，與獨立第三方評測所呈現的不同觀點，探討如何客觀評估 AI 程式碼助理的實際效能。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
+          "sourceTitle": "Copilot tops GitHub’s own AI code review benchmark. An independent one tells a different story.",
           "sources": [
             "thenewstack"
           ],
-          "title": "單一 MCP 伺服器初始化消耗大量 Token 的問題與解決方案",
-          "url": "https://thenewstack.io/pi-agent-mcp-codemode/",
+          "title": "GitHub Copilot 評測表現分析：官方基準與獨立測試的差異",
+          "url": "https://thenewstack.io/github-reviewbench-code-review/",
           "weightedScore": 50
         },
         {
-          "content": "技術深度探討德國 Aleph Alpha 推出的主權大模型 Kolibri 的架構設計與運作機制，為關注歐洲在地化 AI 發展與替代方案的開發者提供實用的技術剖析。",
+          "content": "開發者在社群分享一項在 macOS 上運作的實作專案，提供針對本機所有照片及影片每一影格內容的 AI 智慧搜尋功能，展示了端側多模態檢索的技術應用。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
+          "sourceTitle": "Show HN: AI search for every photo and every frame of video on macOS",
           "sources": [
             "hn"
           ],
-          "title": "深入解析德國主權大模型 Aleph Alpha Kolibri 的運作原理",
-          "url": "https://tej.as/blog/aleph-alpha-kolibri",
-          "weightedScore": 420
+          "title": "Show HN：在 macOS 上為所有照片與影片影格提供 AI 搜尋工具",
+          "url": "https://github.com/allenv0/SCM",
+          "weightedScore": 174
         },
         {
-          "content": "丹麥驚傳大規模資料外洩事故，導致高達 880 萬人的個人敏感資料曝光。此類重大資安事件凸顯了企業與系統在資料保護、存取控制與供應鏈安全上面臨的嚴峻挑戰。",
+          "content": "Reflection 團隊發布名為 Beam 的 501B 開放權重模型。文章探討其模型架構、權重設計與開發展現的技術細節，吸引開源社群的高度關注與實測討論。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Beam: Reflection's 501B open-weight model",
+          "sources": [
+            "hn"
+          ],
+          "title": "Beam：Reflection 推出 501B 開放權重模型",
+          "url": "https://reflection.ai/blog/introducing-beam",
+          "weightedScore": 540
+        },
+        {
+          "content": "安全導向的作業系統 GrapheneOS 指出，Google Pixel 11 目前尚未完全滿足其嚴格的硬體安全標準，未來可能面臨不予支援或跳過該代硬體的評估。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
+          "sourceTitle": "Pixel 11 doesn't yet meet the GrapheneOS security standards and may be skipped",
           "sources": [
             "hn"
           ],
-          "title": "丹麥發生重大資料外洩事件，波及 880 萬人個人資料",
-          "url": "https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger",
-          "weightedScore": 463
+          "title": "Google Pixel 11 尚未符合 GrapheneOS 資安標準恐被跳過",
+          "url": "https://discuss.grapheneos.org/d/41564-pixel-11-doesnt-yet-meet-the-grapheneos-security-standards-and-may-be-skipped",
+          "weightedScore": 427
+        },
+        {
+          "content": "社群分享一項有趣的開源或實作專案，成功將經典的 Visual Basic (VB6) IDE 移植並使其能在瀏覽器原生環境中流暢運行，完整還原復古的開發體驗與技術細節。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "A browser-native classic Visual Basic VB6 IDE",
+          "sources": [
+            "hn"
+          ],
+          "title": "重現經典：瀏覽器原生執行的傳統 Visual Basic VB6 開發環境",
+          "url": "https://wieslawsoltes.github.io/VB6/",
+          "weightedScore": 414
         }
       ]
     }
@@ -3657,6 +3699,158 @@
         "hn"
       ],
       "url": "https://cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Mistral Large 4",
+      "url": "https://mistral.ai/news/mistral-large-4"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "The keys to the Internet change on October 11. Are you ready?",
+      "url": "https://blog.cloudflare.com/root-ksk-2024-rollover"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Polars 2.0",
+      "url": "https://pola.rs/posts/release-polars-2"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "deepmind-blog",
+        "hn"
+      ],
+      "title": "EmbeddingGemma 2: An open, lightweight multimodal embedding model",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "openai-blog"
+      ],
+      "title": "Sharing AI Progress in Mathematics",
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Tapo (Rust/Python library) now speaks TP-Link's TPAP protocol",
+      "url": "https://mihai.dinculescu.dev/posts/tapo-speaks-tpap"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Pop!_OS bans AI-generated code from much of its codebase",
+      "url": "https://neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Advancing computer use with Ironclad",
+      "url": "https://openai.com/index/advancing-computer-use-with-ironclad"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "title": "The Shift to cgroup v2 in Kubernetes: What You Need to Know",
+      "url": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Dust: Pretraining Transformers Without Backpropagation",
+      "url": "https://qlabs.sh/research/dust"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Copilot tops GitHub’s own AI code review benchmark. An independent one tells a different story.",
+      "url": "https://thenewstack.io/github-reviewbench-code-review"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Show HN: AI search for every photo and every frame of video on macOS",
+      "url": "https://github.com/allenv0/SCM"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Beam: Reflection's 501B open-weight model",
+      "url": "https://reflection.ai/blog/introducing-beam"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Pixel 11 doesn't yet meet the GrapheneOS security standards and may be skipped",
+      "url": "https://discuss.grapheneos.org/d/41564-pixel-11-doesnt-yet-meet-the-grapheneos-security-standards-and-may-be-skipped"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-06T23:45:08.530Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "A browser-native classic Visual Basic VB6 IDE",
+      "url": "https://wieslawsoltes.github.io/VB6"
     }
   ]
 }
