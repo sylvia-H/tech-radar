@@ -1,6 +1,7 @@
 import { NewsCandidate } from './news.types';
 import { SeenNewsEntry } from '../state/state.schema';
 import { normalizeTargetUrl } from './url-normalize';
+import { jaccard, normalizeTitle, TITLE_JACCARD_THRESHOLD } from './title-similarity';
 
 const DAY_MS = 86_400_000;
 
@@ -45,4 +46,59 @@ export function excludeSeen(
 ): NewsCandidate[] {
   const seenSet = new Set(seen.map((e) => normalizeTargetUrl(e.url)));
   return cands.filter((c) => !seenSet.has(c.normalizedUrl));
+}
+
+/**
+ * 跨日標題去重的回看視窗（2026-10-06 新增）。同一件事的多篇報導不會相差數月，與當日池內標題合併的
+ * `TITLE_MERGE_MAX_GAP_DAYS`（14 天）同一把尺；不用整個 45 天保留期，避免一個月前的舊事件壓掉同名新版本。
+ */
+export const SEEN_TITLE_WINDOW_DAYS = 14;
+
+/** 跨日標題去重門檻：沿用當日池內的 `TITLE_JACCARD_THRESHOLD`（0.6），保守起步避免誤殺同主題的新進展。 */
+export const SEEN_TITLE_JACCARD_THRESHOLD = TITLE_JACCARD_THRESHOLD;
+
+/** `excludeSeenByTitle` 的結果：保留的候選，與被排除者及其命中的已推標題（供 log 揭露）。 */
+export interface ExcludeSeenByTitleResult {
+  kept: NewsCandidate[];
+  dropped: Array<{ candidate: NewsCandidate; seenTitle: string }>;
+}
+
+/**
+ * 跨日標題去重（2026-10-06 新增）：`excludeSeen` 只比 URL，同一事件換一條連結隔日再出現（官方 blog 推過、
+ * 隔天 HN 投稿連到另一頁；或同一發布的不同報導）會再推一次——1.3.1 上線九天內荷蘭 NixOS、Gemini 4 Argon、
+ * Sonnet 5.5 各重推兩次。本函式對近 `windowDays` 天內**帶標題**的已推紀錄（2026-10-06 起落檔才有 `title`）
+ * 以 `normalizeTitle`＋Jaccard 比對，相似度 ≥ `threshold` 即排除。純函式、零 LLM、`now` 注入；舊條目無標題者
+ * 跳過。回傳被排除者與命中的已推標題，呼叫端印 log。
+ */
+export function excludeSeenByTitle(
+  cands: readonly NewsCandidate[],
+  seen: readonly SeenNewsEntry[],
+  now: Date,
+  windowDays: number = SEEN_TITLE_WINDOW_DAYS,
+  threshold: number = SEEN_TITLE_JACCARD_THRESHOLD,
+): ExcludeSeenByTitleResult {
+  const cutoff = now.getTime() - windowDays * DAY_MS;
+  const recent = seen
+    .filter((e) => typeof e.title === 'string' && e.title.length > 0)
+    .filter((e) => {
+      const t = Date.parse(e.seenAt);
+      return Number.isFinite(t) && t >= cutoff;
+    })
+    .map((e) => ({ title: e.title as string, tokens: normalizeTitle(e.title as string) }))
+    .filter((e) => e.tokens.length > 0);
+  if (recent.length === 0) {
+    return { kept: [...cands], dropped: [] };
+  }
+  const kept: NewsCandidate[] = [];
+  const dropped: ExcludeSeenByTitleResult['dropped'] = [];
+  for (const c of cands) {
+    const tokens = normalizeTitle(c.title);
+    const hit = recent.find((e) => jaccard(tokens, e.tokens) >= threshold);
+    if (hit) {
+      dropped.push({ candidate: c, seenTitle: hit.title });
+    } else {
+      kept.push(c);
+    }
+  }
+  return { kept, dropped };
 }

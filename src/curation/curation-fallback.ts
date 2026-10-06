@@ -34,6 +34,7 @@ export function fallbackDigest(candidates: readonly NewsCandidate[]): CuratedDig
     sourceCount: c.sources.length,
     weightedScore: c.weightedScore,
     degraded: true,
+    sourceTitle: c.title,
   }));
   return { items, degraded: true };
 }

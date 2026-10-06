@@ -93,7 +93,15 @@ export class NewsSegmentService {
     for (const item of digest.items) {
       const url = normalizeTargetUrl(item.url);
       if (!seenUrls.has(url)) {
-        seen.push({ url, seenAt, sourceId: item.sourceId, sources: item.sources, domain: item.domain });
+        // `title`（2026-10-06）：候選原始標題，供漏斗跨日標題去重；程式提供的事實、非 LLM 改寫的繁中標題。
+        seen.push({
+          url,
+          seenAt,
+          sourceId: item.sourceId,
+          sources: item.sources,
+          domain: item.domain,
+          ...(item.sourceTitle ? { title: item.sourceTitle } : {}),
+        });
         seenUrls.add(url);
       }
     }
