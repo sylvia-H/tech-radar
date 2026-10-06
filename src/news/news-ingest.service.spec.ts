@@ -237,6 +237,51 @@ describe('NewsIngestService.ingest — 排除已見於收斂之前（Fix 1）', 
   });
 });
 
+describe('NewsIngestService.ingest — 跨日標題去重（近 14 天已推標題 Jaccard，2026-10-06 新增）', () => {
+  const sources: NewsSource[] = [
+    { id: 'good-rss-0', type: 'rss', url: 'https://good.example/one', domain: 'ai', tier: 1 },
+  ];
+  const parse = () => ({
+    items: [
+      { title: 'Gemini 4 Argon: our next era of frontier intelligence', link: 'https://blog.google/gemini-4-argon', isoDate: NOW.toISOString() },
+      { title: 'Platform-independent SIMD in Go', link: 'https://go.dev/blog/simd', isoDate: NOW.toISOString() },
+    ],
+  });
+
+  it('已推紀錄帶 title、3 天前、標題近似 → 候選被排除且 log 列出配對；無標題的舊紀錄不影響', async () => {
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+    const state: BoardState = {
+      ...emptyBoardState(),
+      seenNews: [
+        { url: 'https://deepmind.google/gemini-4-argon', seenAt: new Date(NOW.getTime() - 3 * 86_400_000).toISOString(), title: 'Introducing Gemini 4 Argon: our next era of frontier intelligence' },
+        { url: 'https://old.example/no-title', seenAt: NOW.toISOString() },
+      ],
+    };
+    const { svc } = makeService({ parse, state });
+
+    const out = await svc.ingest(NOW, new Set(), sources);
+
+    expect(out.map((c) => c.title)).toEqual(['Platform-independent SIMD in Go']);
+    const line = logSpy.mock.calls.map((c) => String(c[0])).find((m) => m.includes('排除近 14 天已推相似標題後')) ?? '';
+    expect(line).toContain('（-1）');
+    expect(line).toContain('Gemini 4 Argon');
+    expect(line).toContain('≈已推「');
+    logSpy.mockRestore();
+  });
+
+  it('已推紀錄超過 14 天 → 不排除', async () => {
+    const state: BoardState = {
+      ...emptyBoardState(),
+      seenNews: [
+        { url: 'https://deepmind.google/gemini-4-argon', seenAt: new Date(NOW.getTime() - 20 * 86_400_000).toISOString(), title: 'Gemini 4 Argon: our next era of frontier intelligence' },
+      ],
+    };
+    const { svc } = makeService({ parse, state });
+    const out = await svc.ingest(NOW, new Set(), sources);
+    expect(out).toHaveLength(2);
+  });
+});
+
 describe('NewsIngestService.ingest — 新鮮度視窗提前至標題去重之前、URL 去重之後（2026-09-12，分支 1 T1 / F3）', () => {
   const DAY_MS = 86_400_000;
   const daysAgo = (d: number) => new Date(NOW.getTime() - d * DAY_MS).toISOString();

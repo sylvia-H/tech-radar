@@ -12,7 +12,7 @@ import { dedupByTitle, dedupByUrl } from './dedup';
 import { TITLE_JACCARD_THRESHOLD } from './title-similarity';
 import { classifyCross } from './news-classify';
 import { DEFAULT_FUNNEL_CONFIG, isFreshEnough, isUnresolved, runFunnel } from './funnel';
-import { excludeSeen, pruneSeenNews } from './seen-news';
+import { excludeSeen, excludeSeenByTitle, pruneSeenNews, SEEN_TITLE_WINDOW_DAYS } from './seen-news';
 import { formatCandidateSet } from './news-log';
 import { isSocialPlatformUrl } from './social-hosts';
 
@@ -100,6 +100,18 @@ export class NewsIngestService {
     const beforeExcluded = cands.length;
     cands = excludeSeen(cands, pruned);
     this.logger.log(`[漏斗 A] 排除已見後：${cands.length} 則（-${beforeExcluded - cands.length}）`);
+
+    // 跨日標題去重（2026-10-06）：同一事件換連結再出現時 URL 接不上，對近 14 天已推標題做 Jaccard 比對。
+    // 只印截短標題配對，不含摘要（憲章 VII 無涉，純觀測）。
+    const byTitle = excludeSeenByTitle(cands, pruned, now);
+    cands = byTitle.kept;
+    const pairs = byTitle.dropped
+      .map((d) => `「${clip(d.candidate.title)}」≈已推「${clip(d.seenTitle)}」`)
+      .join('、');
+    this.logger.log(
+      `[漏斗 A] 排除近 ${SEEN_TITLE_WINDOW_DAYS} 天已推相似標題後：${cands.length} 則（-${byTitle.dropped.length}）` +
+        (pairs ? `：${pairs}` : ''),
+    );
 
     const beforeFunnel = cands.length;
     const unresolvedBeforeFunnel = cands.filter(isUnresolved).length;
@@ -253,4 +265,10 @@ function sourceWindowLookup(sources: readonly NewsSource[]): (c: NewsCandidate) 
   const def = DEFAULT_FUNNEL_CONFIG.freshnessWindowDays;
   const byId = new Map(sources.map((s) => [s.id, s.freshnessWindowDays ?? def]));
   return (c) => Math.max(...c.sources.map((id) => byId.get(id) ?? def));
+}
+
+/** log 用標題截短（40 code points）。 */
+function clip(title: string): string {
+  const cps = Array.from(title);
+  return cps.length <= 40 ? title : `${cps.slice(0, 40).join('')}…`;
 }

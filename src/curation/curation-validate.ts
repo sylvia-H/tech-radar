@@ -205,5 +205,6 @@ function toItem(it: ResolvedPick, domain: NewsDigestDomain): CuratedNewsItem {
     sourceCount: it.candidate.sources.length,
     weightedScore: it.candidate.weightedScore,
     degraded: false,
+    sourceTitle: it.candidate.title,
   };
 }

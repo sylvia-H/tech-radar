@@ -29,8 +29,8 @@ describe('fallbackDigest（US2 降級路徑）', () => {
 
     expect(digest.degraded).toBe(true);
     expect(digest.items).toEqual([
-      { title: 'Title A', content: null, url: 'https://a.com', domain: 'ai', sourceId: 'hn', sources: ['hn', 'lobsters'], sourceCount: 2, weightedScore: 300, degraded: true },
-      { title: 'Title B', content: null, url: 'https://b.com', domain: 'ai', sourceId: 'hn', sources: ['hn'], sourceCount: 1, weightedScore: 200, degraded: true },
+      { title: 'Title A', content: null, url: 'https://a.com', domain: 'ai', sourceId: 'hn', sources: ['hn', 'lobsters'], sourceCount: 2, weightedScore: 300, degraded: true, sourceTitle: 'Title A' },
+      { title: 'Title B', content: null, url: 'https://b.com', domain: 'ai', sourceId: 'hn', sources: ['hn'], sourceCount: 1, weightedScore: 200, degraded: true, sourceTitle: 'Title B' },
     ]);
   });
 

@@ -100,6 +100,13 @@ export interface CuratedNewsItem {
   sourceCount: number;
   weightedScore: number;
   degraded: boolean;
+  /**
+   * 候選原始標題（`NewsCandidate.title`，2026-10-06 新增）：程式提供的事實、非 LLM 產生（憲章 VI）。
+   * 隨推播寫入 `seenNews.title`，供漏斗對近 14 天已推標題做 Jaccard 跨日去重——`title` 是 LLM 改寫的繁中
+   * 標題，與候選英文標題無法比對。型別上選用是因為 2026-10-06 前落檔的 `publish.news.items` 沒有此欄；
+   * `validateCuration`／`fallbackDigest` 產出的新項一律帶值。
+   */
+  sourceTitle?: string;
 }
 
 /** `NewsCurationService.curate()` 的回傳：當日晨報精選集（FR-008/010、SC-001~006）。 */
