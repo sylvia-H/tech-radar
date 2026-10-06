@@ -386,117 +386,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-04T23:01:45.455Z",
-  "lastNewsPushAt": "2026-10-04T23:01:45.455Z",
+  "lastNewsPushAt": "2026-10-06T01:16:30.479Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-04T23:01:45.455Z",
       "summary": "本次榜單新進 6 個、竄升 2 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 2 個，綜合榜 #1 為 debpalash/VoiceStudio"
     },
     "feed": [
-      {
-        "content": "社群針對 Anthropic 力推的 Model Context Protocol（MCP）展開深入架構反思。討論聚焦於在生產環境中導入 MCP 的代價，包含協定抽象層帶來的序列化開銷、除錯困難度、潛在安全性邊界模糊以及是否過度工程化等問題。對於正在評估是否將內部 API 全面改寫為 MCP 伺服器的架構師而言，這場爭論提供了平衡樂觀預期、深入檢視傳輸層實作與長期維護成本的重要參考依據。",
-        "id": "news:https://earendil.com/posts/you-said-no-mcp",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "架構反思：社群熱議拒絕採用 Model Context Protocol（MCP）之考量",
-        "type": "news",
-        "url": "https://earendil.com/posts/you-said-no-mcp/"
-      },
-      {
-        "content": "資安與 AI 研究團隊針對 GLM-5.3 模型的程式碼生成與網路攻防能力進行深度實測。研究顯示，最新一代開源前沿模型在漏洞挖掘、滲透測試自動化及惡意程式碼分析上已展現出高度成熟的推理能力。此分析提醒軟體工程與資安團隊，隨著具備高階資安攻防能力的模型走向普及，防守端必須加快導入自動化程式碼稽核與防禦性架構，因應即將到來的全自動化漏洞探測威脅。",
-        "id": "news:https://anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "技術深度剖析：GLM-5.3 前沿模型引發的進階網路資安能力外溢",
-        "type": "news",
-        "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"
-      },
-      {
-        "content": "開發社群針對 Claude Opus 5.5 發布深入的 Prompt 工程與架構設計實戰指南。文章剖析了 Opus 5.5 在長上下文推理、多步驟規劃及結構化輸出上的具體行為差異，指出過往針對舊版設計的 System Prompt 可能面臨的新限制，並給出如何透過更精確的邊界條件與思考路徑引導以充分發揮模型能力之策略，對正在微調生產端 Prompt 管線的工程師極具實作價值。",
-        "id": "news:https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "Claude Opus 5.5 實戰 Prompt 工程指南與行為模式拆解",
-        "type": "news",
-        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5"
-      },
-      {
-        "content": "針對 Kubernetes 平台工程中的原則管理（Policy Enforcement），社群深入探討傳統 OPA Gatekeeper 等準入控制器（Admission Controller）的「硬性阻斷（Gates）」模式所帶來的開發者摩擦，並倡導轉向「護欄（Guardrails）」引導機制。文章結合 Kyverno 與 Gatekeeper 的實踐經驗，分析如何兼顧叢集安全基線與內部開發者體驗（IDP），為平台維運團隊提供重新設計策略管線的思維框架。",
-        "id": "news:https://cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams",
-        "publishedAt": "2026-10-01T23:51:54.733Z",
-        "title": "平台工程架構思考：從阻斷性 Gate 轉向引導式 Guardrails 策略管理",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams/"
-      },
-      {
-        "content": "Git 3.0 計劃將預設雜湊演算法從 SHA-1 遷移至 SHA-256。這項標準變動將提升版本控制的安全性，但對現有儲存庫相容性、CI/CD 流程及工具鏈帶來的遷移成本與影響，成為開發者社群關注的焦點。",
-        "id": "news:https://blog.gitbutler.com/git-3-sha-256",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "Git 3.0 即將預設改用 SHA-256 引起討論與成本考量",
-        "type": "news",
-        "url": "https://blog.gitbutler.com/git-3-sha-256"
-      },
-      {
-        "content": "SvelteKit 3 正式推出，此次重大版本更新進一步優化了前端框架的效能、路由與伺服器端渲染機制，提升開發體驗並提供更流暢的現代網頁應用程式建構流程。",
-        "id": "news:https://svelte.dev/blog/sveltekit-3-is-here",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "SvelteKit 3 正式發布，帶來架構升級",
-        "type": "news",
-        "url": "https://svelte.dev/blog/sveltekit-3-is-here"
-      },
-      {
-        "content": "新創團隊推出 Magnitude (YC S25)，這是一個針對 AI 代理（Agents）設計的自我優化推論引擎。它能協助開發者在執行複雜任務時自動微調推論過程，提高代理的執行效率與準確率。",
-        "id": "news:https://github.com/magnitudedev/magnitude",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "Magnitude：專為 AI 代理設計的自我優化推論引擎",
-        "type": "news",
-        "url": "https://github.com/magnitudedev/magnitude"
-      },
-      {
-        "content": "GitHub 宣布 Copilot 程式碼審查功能現在可以透過 REST 與 GraphQL API 進行請求，同時開發者也能為每次審查設定預設的努力程度（effort level），並將 Balanced 設為新的預設值，讓自動化審查更具彈性。",
-        "id": "news:https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "GitHub Copilot 程式碼審查現已支援 API 並可調整努力程度",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level"
-      },
-      {
-        "content": "GitHub 官方宣佈，自即日起在所有 Copilot 體驗（包含聊天、內聯編輯、代理模式及程式碼補全）中正式棄用多款指定的舊模型，開發者需注意相關模型相依性並切換至支援的新版本。",
-        "id": "news:https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "GitHub Copilot 宣布全面棄用多款指定模型",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated"
-      },
-      {
-        "content": "熱門開源模型 Qwen3.8-27B 的擬人化聊天版本推出 2.0 更新。新版本在保持自然對話語氣的同時，大幅改善了過去的指令遵循能力，並正式支援工具呼叫（tool calls）。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wvxl4n/qwen3827bhumanlikechat_20_texts_like_a_human_now",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "Qwen3.8-27B-Humanlike-Chat 2.0 登場，改善工具呼叫能力",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvxl4n/qwen3827bhumanlikechat_20_texts_like_a_human_now/"
-      },
-      {
-        "content": "VS Code 發布了 9 月份的 GitHub Copilot 更新（v1.136 至 v1.140），全面簡化從程式碼實作到 Pull Request 合併的代理驅動開發流程，並加入自動化處理重複任務的新功能。",
-        "id": "news:https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "VS Code 中的 GitHub Copilot 9 月更新釋出",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases"
-      },
-      {
-        "content": "熱門的本地大模型推論框架 llama.cpp 近期更新中，正式加入了對決策模型（Decision Models）的支援，讓開發者能在邊緣裝置或本地環境中執行更複雜的決策邏輯。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wvv6im/new_in_llamacpp_decision_models",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "llama.cpp 新增決策模型支援",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvv6im/new_in_llamacpp_decision_models/"
-      },
-      {
-        "content": "Cloudflare AI Gateway 與 Ceramic.ai、Exa 及 Linkup 合作，新增原生網頁搜尋 API 整合功能。開發者現在可以直接透過 AI Gateway、REST API 或 Workers 繫結，將即時網頁上下文注入模型推論呼叫中。",
-        "id": "news:https://blog.cloudflare.com/introducing-web-search-api",
-        "publishedAt": "2026-10-02T23:43:27.452Z",
-        "title": "Cloudflare AI Gateway 推出原生存取網頁搜尋 API 整合",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/introducing-web-search-api/"
-      },
       {
         "content": "本文深入探討 Docker 容器映像檔分層（layers）機制背後的架構設計與隱藏的效能、儲存妥協，協助開發者在建構映像檔時理解底層運作原理，優化容器化部署的效率。",
         "id": "news:https://loige.co/hidden-design-compromises-of-docker-layers",
@@ -784,91 +680,130 @@
         "title": "美國法院認同 EFF 立場：猶他州 VPN 法律要求技術上不可能的事",
         "type": "news",
         "url": "https://www.eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility"
+      },
+      {
+        "content": "Kubernetes 官方宣佈節點啟用 Swap 功能正式達到一般可用性（GA）。面對 AI 代理等工作負載對記憶體的大量需求，啟用 Swap 能有效解決記憶體耗盡問題，提高叢集 Pod 密度，降低營運成本。",
+        "id": "news:https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "Kubernetes 節點 Swap 支援正式達到 GA，助解記憶體瓶頸",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/"
+      },
+      {
+        "content": "OpenAI 宣布開發者現在可透過 API 為生成的文字選擇加入浮水印。與 Anthropic 的預設開啟策略不同，OpenAI 的文字浮水印功能預設為關閉，由開發者自行決定是否啟用，以符合相關規範與追溯需求。",
+        "id": "news:https://thenewstack.io/openai-api-text-watermarking",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "OpenAI API 推出文字浮水印功能，預設為關閉狀態",
+        "type": "news",
+        "url": "https://thenewstack.io/openai-api-text-watermarking/"
+      },
+      {
+        "content": "Cloudflare 慶祝成立 16 週年，總計發布了 46 項橫跨開源專案、後量子密碼學、AI 代理及開發者平台升級的重大公告。此次更新進一步強化了其開發者生態系的基礎設施與安全防護能力。",
+        "id": "news:https://blog.cloudflare.com/birthday-week-2026-wrap-up",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "Cloudflare 2026 生日週總結：發布 46 項開源與安全性更新",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/birthday-week-2026-wrap-up/"
+      },
+      {
+        "content": "GitHub 官方推出 ReviewBench，這是一個專為評估 AI 程式碼審查代理而設計的開放基準測試。它基於具有代表性的 GitHub Pull Request、多來源真實數據與生產環境對齊指標，提供標準化評估方法。",
+        "id": "news:https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "GitHub 推出開源 AI 程式碼審查基準測試 ReviewBench",
+        "type": "news",
+        "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/"
+      },
+      {
+        "content": "Cloudflare 發布開發者號召，邀請社群在其基礎設施與開發者平台上構建下一代 Git 平台，利用其分散式邊緣運算與全球網路來改變版本控制與程式碼託管的運作方式。",
+        "id": "news:https://blog.cloudflare.com/next-git-platform-on-cloudflare",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "Cloudflare 號召開發者在其平台上建立下一代 Git 平台",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/"
+      },
+      {
+        "content": "探討 Kubernetes 工作節點面臨檔案系統 inode 耗盡（如 NodeFilesystemFilesFillingUp 告警）時的實務排查經驗。當磁碟空間顯示尚有餘裕時，inode 可能已先耗盡，文章分析了 Kubelet 的監控機制與開發者應注意的實務細節。",
+        "id": "news:https://cncf.io/blog/2026/10/05/kubelet-watches-inodes-just-not-until-its-an-emergency",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "Kubelet 監控 inode 機制的運作盲點與緊急處理",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/10/05/kubelet-watches-inodes-just-not-until-its-an-emergency/"
+      },
+      {
+        "content": "探討在無需 root 權限的環境下，如何利用 Podman 的 rootless 模式來運行 Docker Compose 工作負載，提升容器化應用的安全性與隔離性，對不希望以高權限執行常駐服務的開發者提供實務指引。",
+        "id": "news:https://elou.world/en/tutorial/podman-docker-compose",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "如何在 Rootless 模式下使用 Podman 結合 Docker Compose",
+        "type": "news",
+        "url": "https://elou.world/en/tutorial/podman-docker-compose"
+      },
+      {
+        "content": "深入探討 AI 代理在工程實務上的架構設計。文章指出，與其依賴複雜且容易出錯的對話記憶體管理，不如透過結構化、清晰的專案文件與 API 規格來引導代理，能更有效地提升 AI 在軟體開發任務中的表現。",
+        "id": "news:https://liao.gg/blog/agents-dont-need-memory",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "觀點：AI 代理不需要複雜記憶體，真正需要的是完善文件",
+        "type": "news",
+        "url": "https://liao.gg/blog/agents-dont-need-memory"
+      },
+      {
+        "content": "AI 代理在科學研究領域取得重大進展，Opus 5.5 代理成功自主發現了兩種具備室溫磁性半導體特性的候選材料，展示了先進 AI 模型在推動材料科學與硬體底層創新上的實質應用價值。",
+        "id": "news:https://vals.ai/blogs/room-temperature-magnetic-semiconductors",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "Opus 5.5 AI 代理成功發現兩種室溫磁性半導體候選材料",
+        "type": "news",
+        "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors"
+      },
+      {
+        "content": "技術評測指出，如 Jev 等新型決策模型在實際表現上仍無法超越傳統分類器或主流的 LLM-as-a-judge（大模型評審）方法，為開發者在選擇自動化評估與品質控制方案時提供重要的參考基準。",
+        "id": "news:https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "評測顯示決策模型 Jev 表現不及傳統分類器與 LLM-as-a-judge",
+        "type": "news",
+        "url": "https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails"
+      },
+      {
+        "content": "探討 Model Context Protocol (MCP) 伺服器在啟動時常消耗大量 Token（例如單一伺服器在執行動作前即消耗 18,000 個 Token）的效能痛點，並提供具體的優化與工作區離避（workaround）實務作法。",
+        "id": "news:https://thenewstack.io/pi-agent-mcp-codemode",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "單一 MCP 伺服器初始化消耗大量 Token 的問題與解決方案",
+        "type": "news",
+        "url": "https://thenewstack.io/pi-agent-mcp-codemode/"
+      },
+      {
+        "content": "技術深度探討德國 Aleph Alpha 推出的主權大模型 Kolibri 的架構設計與運作機制，為關注歐洲在地化 AI 發展與替代方案的開發者提供實用的技術剖析。",
+        "id": "news:https://tej.as/blog/aleph-alpha-kolibri",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "深入解析德國主權大模型 Aleph Alpha Kolibri 的運作原理",
+        "type": "news",
+        "url": "https://tej.as/blog/aleph-alpha-kolibri"
+      },
+      {
+        "content": "丹麥驚傳大規模資料外洩事故，導致高達 880 萬人的個人敏感資料曝光。此類重大資安事件凸顯了企業與系統在資料保護、存取控制與供應鏈安全上面臨的嚴峻挑戰。",
+        "id": "news:https://cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger",
+        "publishedAt": "2026-10-06T01:16:30.479Z",
+        "title": "丹麥發生重大資料外洩事件，波及 880 萬人個人資料",
+        "type": "news",
+        "url": "https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-04T23:01:45.455Z",
+      "generatedAt": "2026-10-06T01:16:30.479Z",
       "items": [
         {
-          "content": "Anthropic 與 OpenAI 分別推出 Claude Opus 5.5 以及 GPT-6 Sol、GPT-6 Luna 等新世代模型，同時伴隨市場上新一輪的 API 價格戰。這對開發者與企業來說，意味著模型效能的大幅提升與成本結構的改變，需評估是否調整系統架構與導入新模型。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "simonwillison",
-          "sources": [
-            "simonwillison"
-          ],
-          "title": "Claude Opus 5.5、GPT-6 系列模型發表與新一輪價格戰",
-          "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 宣布推出涵蓋日誌、追蹤、分析、警報、儀表板、查詢與遙測匯出的八大 Observability 平台重大更新，並採用更簡單且可預測的定價模式。這項更新讓開發者能將原本分散的監控功能整合至單一平台，簡化系統除錯與效能追蹤流程。",
+          "content": "Kubernetes 官方宣佈節點啟用 Swap 功能正式達到一般可用性（GA）。面對 AI 代理等工作負載對記憶體的大量需求，啟用 Swap 能有效解決記憶體耗盡問題，提高叢集 Pod 密度，降低營運成本。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
+          "sourceId": "kubernetes-blog",
           "sources": [
-            "cloudflare-blog"
+            "kubernetes-blog"
           ],
-          "title": "Cloudflare 推出 Observability 平台八大重大更新",
-          "url": "https://blog.cloudflare.com/one-observability-platform/",
-          "weightedScore": 50
-        },
-        {
-          "content": "OpenAI 官方發布最新功能「Sites in ChatGPT」，允許在 ChatGPT 環境內直接建立與檢視網頁或互動內容。這項更新擴展了 AI 互動的邊界，讓開發者與使用者能更直接在對話介面中部署和驗證輕量級網頁應用。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "OpenAI 推出 ChatGPT 內嵌網站功能 Sites in ChatGPT",
-          "url": "https://chatgpt.com/features/sites/",
-          "weightedScore": 347
-        },
-        {
-          "content": "美國 FTC 正式對 OpenAI、Anthropic 等多家主流 AI 公司展開調查，審查其產品在安全性、隱私與市場競爭方面的潛在風險。此項監管行動可能直接影響未來 AI 模型的推出時程、合規要求及企業的 AI 部署策略。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "美國聯邦貿易委員會（FTC）對多款 AI 產品風險展開調查",
-          "url": "https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html",
-          "weightedScore": 210
-        },
-        {
-          "content": "軟體界正湧現一批極度輕量、專門化的推論執行階段（如 Strata、ninfer、DwarfStar 等），它們捨棄了通用性，針對特定少數模型或單一硬體家族進行極致效能優化。這顯示「通用推論引擎追求相容性、專門化引擎追求極限效能」可能成為未來 AI 部署的新常態。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "專門化推論引擎（Overfit Inference Engines）的崛起",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwu6zj/the_rise_of_overfit_inference_engines/",
+          "title": "Kubernetes 節點 Swap 支援正式達到 GA，助解記憶體瓶頸",
+          "url": "https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/",
           "weightedScore": 100
         },
         {
-          "content": "開發者分享如何在單張 RTX 4090 消費級顯示卡上，以高達 100 Token/s 的驚人速度流暢運行 Qwen 3.8 Flash Next（125B）等大型模型的技術實作與優化經驗。這對希望在本地端部署高效能 AI、降低雲端成本的開發者具備高度參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "在消費級硬體 RTX 4090 上以每秒 100 Token 運行 125B 大模型",
-          "url": "https://github.com/Niko1221/Strata",
-          "weightedScore": 541
-        },
-        {
-          "content": "隨著 AI 自動化生成大量程式碼與 Pull Request，CI（持續整合）管線迅速成為開發流程的新瓶頸。工程文章指出，單純加快管線速度無法根本解決問題，團隊應重新思考 AI 時代下的程式碼審查與自動化工作流程設計。",
+          "content": "OpenAI 宣布開發者現在可透過 API 為生成的文字選擇加入浮水印。與 Anthropic 的預設開啟策略不同，OpenAI 的文字浮水印功能預設為關閉，由開發者自行決定是否啟用，以符合相關規範與追溯需求。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -876,38 +811,12 @@
           "sources": [
             "thenewstack"
           ],
-          "title": "AI 時代下的 CI 瓶頸：盲目追求管線加速並非正確解方",
-          "url": "https://thenewstack.io/ci-bottleneck-agent-verification/",
+          "title": "OpenAI API 推出文字浮水印功能，預設為關閉狀態",
+          "url": "https://thenewstack.io/openai-api-text-watermarking/",
           "weightedScore": 50
         },
         {
-          "content": "社群迎來名為 Kolibri 的主權開源權重模型，提供公開的權重與技術細節，旨在滿足對資料隱私與自主控制有強烈需求的機構與開發者。這為全球追求本地可控 AI 的開發者提供了新的開源替代選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "Kolibri：一款主權級開源權重模型發布",
-          "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
-          "weightedScore": 652
-        },
-        {
-          "content": "針對 Claude Opus 5.5 的推出，開發社群分享了一系列在 Claude 聊天介面與 Claude Code 工具中的最佳實作指南。內容涵蓋提示詞調整、上下文管理與工具協調技巧，助開發者提升 AI 輔助編程的準確度與產出效率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "如何在 Claude 與 Claude Code 中發揮 Opus 5.5 的最大效能",
-          "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
-          "weightedScore": 231
-        },
-        {
-          "content": "技術文章介紹如何利用 Cloudflare Workers、Durable Objects 搭配容器化媒體引擎，建立長執行時間、連續性的視訊處理管線（Streamline）。這為開發者提供了一種無需維護複雜雲端基礎設施即可實現高效影片處理的架構方案。",
+          "content": "Cloudflare 慶祝成立 16 週年，總計發布了 46 項橫跨開源專案、後量子密碼學、AI 代理及開發者平台升級的重大公告。此次更新進一步強化了其開發者生態系的基礎設施與安全防護能力。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
@@ -915,51 +824,130 @@
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "結合 Cloudflare Workers 與容器化媒體引擎打造自訂視訊管線",
-          "url": "https://blog.cloudflare.com/streamline/",
+          "title": "Cloudflare 2026 生日週總結：發布 46 項開源與安全性更新",
+          "url": "https://blog.cloudflare.com/birthday-week-2026-wrap-up/",
           "weightedScore": 50
         },
         {
-          "content": "Valve 的開源工程師 Timur Kristóf 近期針對 Linux 系統上的舊款 AMD GPU 進行深度驅動與效能優化工作，獲得社群高度關注。這對依賴開源驅動、在 Linux 環境進行圖形或底層運算開發的工程師而言，能顯著改善老舊硬體的運行穩定度與效能。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sources": [
-            "hn"
-          ],
-          "title": "Valve 的 Timur Kristóf 持續改善 Linux 上舊 AMD GPU 效能",
-          "url": "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
-          "weightedScore": 448
-        },
-        {
-          "content": "Meta 應用商店排名第一的 Muse Agent 系統提示詞遭公開，其中明確規定「用戶對自身家戶的權威是無條件的，且能覆蓋安全訓練」。這引發開發社群對 AI 代理權限邊界、安全對齊與用戶控制權之間平衡的深度討論。",
+          "content": "GitHub 官方推出 ReviewBench，這是一個專為評估 AI 程式碼審查代理而設計的開放基準測試。它基於具有代表性的 GitHub Pull Request、多來源真實數據與生產環境對齊指標，提供標準化評估方法。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
+          "sourceId": "github-blog-ai-ml",
           "sources": [
-            "reddit-localllama"
+            "github-blog-ai-ml"
           ],
-          "title": "Meta Muse 系統提示詞曝光：強調用戶對家戶的絕對權威",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wx8ruy/metas_muse_agent_1_in_the_app_store_system_prompt/",
+          "title": "GitHub 推出開源 AI 程式碼審查基準測試 ReviewBench",
+          "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/",
           "weightedScore": 100
         },
         {
-          "content": "開發者展示了一項針對 Opus 5.5 的前端互動實驗，透過模擬畫布（Paint Canvas）讓 AI 模型直接進行視覺化創作與互動操作。這為開發者探索多模態 AI 在前端 UI 與即時視覺應用上的結合提供了創新的實作範例。",
+          "content": "Cloudflare 發布開發者號召，邀請社群在其基礎設施與開發者平台上構建下一代 Git 平台，利用其分散式邊緣運算與全球網路來改變版本控制與程式碼託管的運作方式。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "devops",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sources": [
+            "cloudflare-blog",
+            "hn"
+          ],
+          "title": "Cloudflare 號召開發者在其平台上建立下一代 Git 平台",
+          "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/",
+          "weightedScore": 325
+        },
+        {
+          "content": "探討 Kubernetes 工作節點面臨檔案系統 inode 耗盡（如 NodeFilesystemFilesFillingUp 告警）時的實務排查經驗。當磁碟空間顯示尚有餘裕時，inode 可能已先耗盡，文章分析了 Kubelet 的監控機制與開發者應注意的實務細節。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "Kubelet 監控 inode 機制的運作盲點與緊急處理",
+          "url": "https://www.cncf.io/blog/2026/10/05/kubelet-watches-inodes-just-not-until-its-an-emergency/",
+          "weightedScore": 100
+        },
+        {
+          "content": "探討在無需 root 權限的環境下，如何利用 Podman 的 rootless 模式來運行 Docker Compose 工作負載，提升容器化應用的安全性與隔離性，對不希望以高權限執行常駐服務的開發者提供實務指引。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "lobsters-devops",
+          "sources": [
+            "lobsters-devops"
+          ],
+          "title": "如何在 Rootless 模式下使用 Podman 結合 Docker Compose",
+          "url": "https://elou.world/en/tutorial/podman-docker-compose",
+          "weightedScore": 100
+        },
+        {
+          "content": "深入探討 AI 代理在工程實務上的架構設計。文章指出，與其依賴複雜且容易出錯的對話記憶體管理，不如透過結構化、清晰的專案文件與 API 規格來引導代理，能更有效地提升 AI 在軟體開發任務中的表現。",
+          "degraded": false,
+          "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
           "sources": [
             "hn"
           ],
-          "title": "Show HN：為 Opus 5.5 賦予模擬畫布繪圖能力的互動展示",
-          "url": "https://stillwet.art/",
-          "weightedScore": 381
+          "title": "觀點：AI 代理不需要複雜記憶體，真正需要的是完善文件",
+          "url": "https://liao.gg/blog/agents-dont-need-memory",
+          "weightedScore": 371
         },
         {
-          "content": "電子前哨基金會（EFF）針對猶他州一項 VPN 相關法律的訴訟獲得法院認同，法官指出該法實務上要求業者達成技術不可能實現的目標。這項裁決對網路隱私、VPN 服務營運商及相關合規開發政策具有重大法律與技術指標意義。",
+          "content": "AI 代理在科學研究領域取得重大進展，Opus 5.5 代理成功自主發現了兩種具備室溫磁性半導體特性的候選材料，展示了先進 AI 模型在推動材料科學與硬體底層創新上的實質應用價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "Opus 5.5 AI 代理成功發現兩種室溫磁性半導體候選材料",
+          "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors",
+          "weightedScore": 197
+        },
+        {
+          "content": "技術評測指出，如 Jev 等新型決策模型在實際表現上仍無法超越傳統分類器或主流的 LLM-as-a-judge（大模型評審）方法，為開發者在選擇自動化評估與品質控制方案時提供重要的參考基準。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "評測顯示決策模型 Jev 表現不及傳統分類器與 LLM-as-a-judge",
+          "url": "https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails",
+          "weightedScore": 153
+        },
+        {
+          "content": "探討 Model Context Protocol (MCP) 伺服器在啟動時常消耗大量 Token（例如單一伺服器在執行動作前即消耗 18,000 個 Token）的效能痛點，並提供具體的優化與工作區離避（workaround）實務作法。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "單一 MCP 伺服器初始化消耗大量 Token 的問題與解決方案",
+          "url": "https://thenewstack.io/pi-agent-mcp-codemode/",
+          "weightedScore": 50
+        },
+        {
+          "content": "技術深度探討德國 Aleph Alpha 推出的主權大模型 Kolibri 的架構設計與運作機制，為關注歐洲在地化 AI 發展與替代方案的開發者提供實用的技術剖析。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sources": [
+            "hn"
+          ],
+          "title": "深入解析德國主權大模型 Aleph Alpha Kolibri 的運作原理",
+          "url": "https://tej.as/blog/aleph-alpha-kolibri",
+          "weightedScore": 420
+        },
+        {
+          "content": "丹麥驚傳大規模資料外洩事故，導致高達 880 萬人的個人敏感資料曝光。此類重大資安事件凸顯了企業與系統在資料保護、存取控制與供應鏈安全上面臨的嚴峻挑戰。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
@@ -967,9 +955,9 @@
           "sources": [
             "hn"
           ],
-          "title": "美國法院認同 EFF 立場：猶他州 VPN 法律要求技術上不可能的事",
-          "url": "https://www.eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility",
-          "weightedScore": 799
+          "title": "丹麥發生重大資料外洩事件，波及 880 萬人個人資料",
+          "url": "https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger",
+          "weightedScore": 463
         }
       ]
     }
@@ -3551,6 +3539,124 @@
         "hn"
       ],
       "url": "https://eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "url": "https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/openai-api-text-watermarking"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "url": "https://blog.cloudflare.com/birthday-week-2026-wrap-up"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "github-blog-ai-ml",
+      "sources": [
+        "github-blog-ai-ml"
+      ],
+      "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "hn",
+      "sources": [
+        "cloudflare-blog",
+        "hn"
+      ],
+      "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "url": "https://cncf.io/blog/2026/10/05/kubelet-watches-inodes-just-not-until-its-an-emergency"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "url": "https://elou.world/en/tutorial/podman-docker-compose"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://liao.gg/blog/agents-dont-need-memory"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://vals.ai/blogs/room-temperature-magnetic-semiconductors"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "url": "https://thenewstack.io/pi-agent-mcp-codemode"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://tej.as/blog/aleph-alpha-kolibri"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-06T01:16:30.479Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "url": "https://cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger"
     }
   ]
 }
