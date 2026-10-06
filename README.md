@@ -707,6 +707,7 @@ checklist → tasks → analyze → implement`）後以 `--no-ff` 合併回 `dev
 ### 文件索引
 
 - **[憲章](.specify/memory/constitution.md)**：八條非協商原則＋技術與安全約束，最高規範。
-- **[開發指南](docs/tech-radar-dev-guide.md)**：架構決策、來源選型、Discord 版面、排程、Feature 規劃。
+- **[開發指南](docs/tech-radar-dev-guide.md)**：架構與機制的現況、來源選型、Discord 版面、排程、Feature 規劃。
+- **[決策紀錄 ADR](docs/adr/README.md)**：2026-10-06 起，每個有替代方案的決策一份——脈絡、被否決的方案、裁決理由、後果。
 - **[CLAUDE.md](CLAUDE.md)**：給 Agent 的協作指引（真實來源優先序、commit 規範、SDD 流程）。
 - 各 `specs/NNN-*/`：每個 Feature 的 spec／plan／tasks／contracts／checklists。

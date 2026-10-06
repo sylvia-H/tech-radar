@@ -286,7 +286,7 @@ guard 擋。使用者選「乾跑＋推到告警頻道」。
 （10+5／11+4、無 max-items 剔除），上限疑似被當目標、品質尚可，續觀察。source-diversity 夾 cloudflare 第 3 則 2 次。
 Actions 排程延遲 2.7～5.2h（10-06 台北 09:16 才到）。
 
-**三項裁決**：
+**三項裁決**（決策理由自此移到 `docs/adr/`：0001 型號、0002 未歸類通道、0003 補位、0004 乾跑、0005 跨日去重；本檔只留觀察數據與待辦）：
 - **主備型號不改**（Agent 建議 Lite＋thinking 改主型號、Flash 退備援 → 使用者否決）：Lite 可重試額度是 Flash 的好幾倍，當備援
   最保險；Flash 成功日能得到一次較高品質的分析。已寫入 dev-guide §2.4。
 - [x] 同題群集停用詞補 america／american／companies／company／community／text（分支 `feat/news-cross-day-dedup`）。
