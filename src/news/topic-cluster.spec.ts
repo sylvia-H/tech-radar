@@ -90,6 +90,15 @@ describe('detectTopicClusters（同題群集，2026-09-25）', () => {
     expect(detectTopicClusters(cands).size).toBe(0);
   });
 
+  it('2026-10-06 補的泛用詞（america／companies／community／text）跨多來源出現也不成群集', () => {
+    const cands = [
+      cand({ title: 'America needs more text about companies', normalizedUrl: 'a.com/1', sourceId: 'hn', sources: ['hn'] }),
+      cand({ title: 'Community text for American companies', normalizedUrl: 'b.com/2', sourceId: 'lobsters-ai', sources: ['lobsters-ai'] }),
+      cand({ title: 'Companies in America: a community text', normalizedUrl: 'c.com/3', sourceId: 'reddit-localllama', sources: ['reddit-localllama'] }),
+    ];
+    expect(detectTopicClusters(cands).size).toBe(0);
+  });
+
   it('過短 token（≤2 字元）與數字開頭 token 不成群集', () => {
     const cands = [
       cand({ title: 'Go 1.27 is out', normalizedUrl: 'a.com/1' }),

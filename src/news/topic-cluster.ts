@@ -57,6 +57,8 @@ const CLUSTER_STOP_TOKENS: ReadonlySet<string> = new Set([
   'cli', 'model', 'models', 'benchmark', 'benchmarks', 'test', 'tests', 'testing', 'paper', 'research',
   'launch', 'launches', 'launched', 'available', 'generally', 'preview', 'beta', 'alpha', 'stable', 'native',
   'official', 'edition', 'review', 'vs', 'versus', 'why', 'while', 'where', 'who', 'which', 'because',
+  // 2026-10-06 補（1.3.1 上線九天觀察：這四個詞各自跨多來源成「群集」卻無任何主題意義）
+  'america', 'american', 'companies', 'company', 'community', 'text',
   // 人人皆知的產品／公司／語言名（群集要抓的是「陌生名詞」）
   'github', 'google', 'apple', 'microsoft', 'amazon', 'aws', 'azure', 'meta', 'facebook', 'nvidia',
   'intel', 'amd', 'linux', 'windows', 'macos', 'ios', 'android', 'chrome', 'firefox', 'safari', 'rust',
