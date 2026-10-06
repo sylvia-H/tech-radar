@@ -276,3 +276,24 @@ guard 擋。使用者選「乾跑＋推到告警頻道」。
 - [x] dev-guide §8.x、README、007 quickstart 同步。
 - [ ] 合併後手動勾 `dry_run` 觸發一次，檢查 log：`thinking=high` 與「思考 N」、「策展入選 N 則」、回流 warn、是否出現
       「LLM 拒絕 thinking 設定」；告警頻道收到乾跑晨報 embed。
+
+## 2026-10-06 追加：1.3.1 九天回顧與第六批（使用者決策）
+
+09-28～10-06 九天：則數 15／13／15／15／15／13／11／14／13（平均 13.8；1.3.1 前 Lite 5～7、Flash 9～10）。Flash 2/9 天成功，
+其餘 4×503 退 Lite；thinking 全數被接受、無 400 退回、無 MAX_TOKENS（Lite 思考 4.4～7.7k、Flash 9.3k／11.9k）。補位共 6 則
+（F-Droid、NixOS、Go SIMD、Linux 核心漏洞、EFF 猶他 VPN、丹麥資料外洩），回流 warn 0 次。未歸類入選 22 則（日均 2.4）：
+(a) 9（含 Sonnet 5.5 官方發布 880 分——標題無任何關鍵字，舊閘門必丟）、(c) 7、(b) 2、(d) 1、(e) 邊緣 3。LLM 多日剛好選滿 15
+（10+5／11+4、無 max-items 剔除），上限疑似被當目標、品質尚可，續觀察。source-diversity 夾 cloudflare 第 3 則 2 次。
+Actions 排程延遲 2.7～5.2h（10-06 台北 09:16 才到）。
+
+**三項裁決**（決策理由自此移到 `docs/adr/`：0001 型號、0002 未歸類通道、0003 補位、0004 乾跑、0005 跨日去重；本檔只留觀察數據與待辦）：
+- **主備型號不改**（Agent 建議 Lite＋thinking 改主型號、Flash 退備援 → 使用者否決）：Lite 可重試額度是 Flash 的好幾倍，當備援
+  最保險；Flash 成功日能得到一次較高品質的分析。已寫入 dev-guide §2.4。
+- [x] 同題群集停用詞補 america／american／companies／company／community／text（分支 `feat/news-cross-day-dedup`）。
+- [x] 跨日標題去重：`CuratedNewsItem.sourceTitle` → `seenNews.title`（選用欄位），漏斗在 URL 排除已見後對近 14 天帶標題的已推
+      紀錄做 Jaccard ≥ 0.6 比對（`excludeSeenByTitle`），log 列出配對；舊條目無標題只比 URL。測試 660 → 670。
+- 已知限度（實作時量測）：九天內三組重推實例的原始標題 Jaccard 為 0.23（NixOS）／0.43（Argon）／0.40（Sonnet 5.5），皆低於
+  0.6——它們是「同主題、不同報導」，零 LLM 層只能接住同一篇換連結的情況。候補：把近 7～14 天已推標題投影進策展 prompt
+  （同一次呼叫、約 +2～4k tokens）交 LLM 判斷「已報導過、除非有新事實」；或把門檻降到 0.4（接住 Argon／Sonnet 兩組，
+  誤殺風險未評估）。待使用者決策。
+- [ ] （觀察）跨日去重 log「排除近 14 天已推相似標題後」每日命中數與配對是否合理；seenNews 體積增幅（每筆多一個標題）。

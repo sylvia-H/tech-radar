@@ -368,6 +368,29 @@ describe('NewsSegmentService.run — US5 版面整合（T020：晨報逼近 4096
   });
 });
 
+describe('NewsSegmentService.run — seenNews 記候選原始標題（跨日標題去重，2026-10-06 新增）', () => {
+  it('精選項帶 sourceTitle → seenNews 條目多 title 欄（原始標題，非 LLM 繁中標題）；缺 sourceTitle 的舊形狀則不帶 title 鍵', async () => {
+    const { service, curate, save } = build();
+    curate.mockResolvedValue({
+      items: [
+        curatedItem({ title: '繁中標題', url: 'https://example.com/a', sourceTitle: 'Original English Title' }),
+        curatedItem({ title: '另一則', url: 'https://example.com/b' }),
+      ],
+      degraded: false,
+    } as CuratedDigest);
+    const state = makeState({ lastNewsPushAt: hoursAgo(24), seenNews: [] });
+
+    await service.run(state, NOW);
+
+    expect(save).toHaveBeenCalledTimes(1);
+    expect(state.seenNews.map((e) => [e.url, e.title])).toEqual([
+      ['https://example.com/a', 'Original English Title'],
+      ['https://example.com/b', undefined],
+    ]);
+    expect(Object.keys(state.seenNews[1])).not.toContain('title');
+  });
+});
+
 describe('NewsSegmentService.dryRun — 晨報乾跑（2026-09-27 新增）', () => {
   it('guard 未到期（4h 前才推過）仍照常抓取＋策展；結果推到 alert 頻道、標題標「乾跑」；不推 news 頻道、不 save、state 不變', async () => {
     const { service, ingest, curate, send, save } = build();

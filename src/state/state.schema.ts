@@ -69,6 +69,11 @@ export const introCacheSchema = z.object({
  * 代表項一律是 hn）。同樣 `.optional()`，理由同上。
  */
 export const seenNewsEntrySchema = z.object({
+  /**
+   * 候選原始標題（2026-10-06 新增，選用）：供 `excludeSeenByTitle` 對近 14 天已推標題做 Jaccard 跨日去重
+   * （同一事件換連結再出現時 URL 比對接不上）。舊條目缺此欄者只參與 URL 比對。
+   */
+  title: z.string().optional(),
   url: z.string(),
   seenAt: isoDatetime,
   sourceId: z.string().optional(),
@@ -96,6 +101,8 @@ export const curatedNewsItemSchema = z.object({
   sourceCount: z.number().int().min(0),
   weightedScore: z.number(),
   degraded: z.boolean(),
+  /** 候選原始標題（2026-10-06 新增，選用；舊 `publish.news.items` 無此欄）。 */
+  sourceTitle: z.string().optional(),
 });
 
 /**

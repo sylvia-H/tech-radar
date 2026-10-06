@@ -37,6 +37,7 @@ describe('validateCuration（US1 合規路徑）', () => {
         sourceCount: 2,
         weightedScore: 200,
         degraded: false,
+        sourceTitle: 'Original Title',
       },
     ]);
   });
