@@ -386,125 +386,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-04T23:01:45.455Z",
-  "lastNewsPushAt": "2026-10-06T23:45:08.530Z",
+  "lastNewsPushAt": "2026-10-08T00:08:11.517Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-04T23:01:45.455Z",
       "summary": "本次榜單新進 6 個、竄升 2 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 2 個，綜合榜 #1 為 debpalash/VoiceStudio"
     },
     "feed": [
-      {
-        "id": "repo:1206390571:new:2026-10-05",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "debpalash/VoiceStudio 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/debpalash/VoiceStudio"
-      },
-      {
-        "id": "repo:1170821064:climbed:2026-10-05",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "paperclipai/paperclip 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/paperclipai/paperclip"
-      },
-      {
-        "id": "repo:1266797999:new:2026-10-05",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "DietrichGebert/ponytail 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/DietrichGebert/ponytail"
-      },
-      {
-        "id": "repo:1166129534:new:2026-10-05",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "NVIDIA/OpenShell 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/NVIDIA/OpenShell"
-      },
-      {
-        "id": "repo:1185590488:new:2026-10-05",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "rohitg00/ai-engineering-from-scratch 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch"
-      },
-      {
-        "id": "repo:1222527844:new:2026-10-05",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "ifixai-ai/iFixAi 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/ifixai-ai/iFixAi"
-      },
-      {
-        "id": "repo:552877440:climbed:2026-10-05",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "juspay/hyperswitch 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/juspay/hyperswitch"
-      },
-      {
-        "id": "repo:997737944:new:2026-10-05",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "ruvnet/RuView 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/ruvnet/RuView"
-      },
-      {
-        "content": "Anthropic 與 OpenAI 分別推出 Claude Opus 5.5 以及 GPT-6 Sol、GPT-6 Luna 等新世代模型，同時伴隨市場上新一輪的 API 價格戰。這對開發者與企業來說，意味著模型效能的大幅提升與成本結構的改變，需評估是否調整系統架構與導入新模型。",
-        "id": "news:https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "Claude Opus 5.5、GPT-6 系列模型發表與新一輪價格戰",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/"
-      },
-      {
-        "content": "Cloudflare 宣布推出涵蓋日誌、追蹤、分析、警報、儀表板、查詢與遙測匯出的八大 Observability 平台重大更新，並採用更簡單且可預測的定價模式。這項更新讓開發者能將原本分散的監控功能整合至單一平台，簡化系統除錯與效能追蹤流程。",
-        "id": "news:https://blog.cloudflare.com/one-observability-platform",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "Cloudflare 推出 Observability 平台八大重大更新",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/one-observability-platform/"
-      },
-      {
-        "content": "OpenAI 官方發布最新功能「Sites in ChatGPT」，允許在 ChatGPT 環境內直接建立與檢視網頁或互動內容。這項更新擴展了 AI 互動的邊界，讓開發者與使用者能更直接在對話介面中部署和驗證輕量級網頁應用。",
-        "id": "news:https://chatgpt.com/features/sites",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "OpenAI 推出 ChatGPT 內嵌網站功能 Sites in ChatGPT",
-        "type": "news",
-        "url": "https://chatgpt.com/features/sites/"
-      },
-      {
-        "content": "美國 FTC 正式對 OpenAI、Anthropic 等多家主流 AI 公司展開調查，審查其產品在安全性、隱私與市場競爭方面的潛在風險。此項監管行動可能直接影響未來 AI 模型的推出時程、合規要求及企業的 AI 部署策略。",
-        "id": "news:https://cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "美國聯邦貿易委員會（FTC）對多款 AI 產品風險展開調查",
-        "type": "news",
-        "url": "https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html"
-      },
-      {
-        "content": "軟體界正湧現一批極度輕量、專門化的推論執行階段（如 Strata、ninfer、DwarfStar 等），它們捨棄了通用性，針對特定少數模型或單一硬體家族進行極致效能優化。這顯示「通用推論引擎追求相容性、專門化引擎追求極限效能」可能成為未來 AI 部署的新常態。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wwu6zj/the_rise_of_overfit_inference_engines",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "專門化推論引擎（Overfit Inference Engines）的崛起",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwu6zj/the_rise_of_overfit_inference_engines/"
-      },
-      {
-        "content": "開發者分享如何在單張 RTX 4090 消費級顯示卡上，以高達 100 Token/s 的驚人速度流暢運行 Qwen 3.8 Flash Next（125B）等大型模型的技術實作與優化經驗。這對希望在本地端部署高效能 AI、降低雲端成本的開發者具備高度參考價值。",
-        "id": "news:https://github.com/Niko1221/Strata",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "在消費級硬體 RTX 4090 上以每秒 100 Token 運行 125B 大模型",
-        "type": "news",
-        "url": "https://github.com/Niko1221/Strata"
-      },
-      {
-        "content": "隨著 AI 自動化生成大量程式碼與 Pull Request，CI（持續整合）管線迅速成為開發流程的新瓶頸。工程文章指出，單純加快管線速度無法根本解決問題，團隊應重新思考 AI 時代下的程式碼審查與自動化工作流程設計。",
-        "id": "news:https://thenewstack.io/ci-bottleneck-agent-verification",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "AI 時代下的 CI 瓶頸：盲目追求管線加速並非正確解方",
-        "type": "news",
-        "url": "https://thenewstack.io/ci-bottleneck-agent-verification/"
-      },
       {
         "content": "社群迎來名為 Kolibri 的主權開源權重模型，提供公開的權重與技術細節，旨在滿足對資料隱私與自主控制有強烈需求的機構與開發者。這為全球追求本地可控 AI 的開發者提供了新的開源替代選擇。",
         "id": "news:https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model",
@@ -784,222 +672,344 @@
         "title": "重現經典：瀏覽器原生執行的傳統 Visual Basic VB6 開發環境",
         "type": "news",
         "url": "https://wieslawsoltes.github.io/VB6/"
+      },
+      {
+        "content": null,
+        "id": "news:https://techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "Anthropic reported diary entry to police, woman faces felony charge",
+        "type": "news",
+        "url": "https://www.techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html"
+      },
+      {
+        "content": null,
+        "id": "news:https://simonwillison.net/2026/Oct/3/default-hard-budget-caps",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "We're going to need default hard budget caps on pretty much everything",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/"
+      },
+      {
+        "content": null,
+        "id": "news:https://anthropic.com/claude-haiku-5-5",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "Claude Haiku 5.5",
+        "type": "news",
+        "url": "https://www.anthropic.com/claude-haiku-5-5"
+      },
+      {
+        "content": null,
+        "id": "news:https://openai.com/index/gpt-6-for-everyone",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "GPT‑6 and Intelligent UI for everyone",
+        "type": "news",
+        "url": "https://openai.com/index/gpt-6-for-everyone/"
+      },
+      {
+        "content": null,
+        "id": "news:https://niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
+        "type": "news",
+        "url": "https://www.niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons/"
+      },
+      {
+        "content": null,
+        "id": "news:https://github.com/FeSens/openTPU",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "OpenTPU – An open-source AI accelerator, developed by AI",
+        "type": "news",
+        "url": "https://github.com/FeSens/openTPU"
+      },
+      {
+        "content": null,
+        "id": "news:https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
+        "type": "news",
+        "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/"
+      },
+      {
+        "content": null,
+        "id": "news:https://zohaib.cc/blog/smartest-claude-code-feature",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "Claude Code’s suggested message feature: I think the real customer is the model",
+        "type": "news",
+        "url": "https://www.zohaib.cc/blog/smartest-claude-code-feature"
+      },
+      {
+        "content": null,
+        "id": "news:https://rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
+        "type": "news",
+        "url": "https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/"
+      },
+      {
+        "content": null,
+        "id": "news:https://penguin-mail.com/",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "Penguin Mail – open-source Rust email client for Linux with AI",
+        "type": "news",
+        "url": "https://penguin-mail.com/"
+      },
+      {
+        "content": null,
+        "id": "news:https://nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "Religious scholars met with Anthropic",
+        "type": "news",
+        "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html"
+      },
+      {
+        "content": null,
+        "id": "news:https://github.com/docker/docker-agent",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "Docker Agent",
+        "type": "news",
+        "url": "https://github.com/docker/docker-agent"
+      },
+      {
+        "content": null,
+        "id": "news:https://cncf.io/blog/2026/10/07/ciliumcon-is-back-at-kubecon-cloudnativecon-north-america-2026",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "CiliumCon is back at KubeCon + CloudNativeCon North America 2026",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/10/07/ciliumcon-is-back-at-kubecon-cloudnativecon-north-america-2026/"
+      },
+      {
+        "content": null,
+        "id": "news:https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "Secret protection must scale with software",
+        "type": "news",
+        "url": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software/"
+      },
+      {
+        "content": null,
+        "id": "news:https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection",
+        "publishedAt": "2026-10-08T00:08:11.517Z",
+        "title": "Purpose-built model for leaked secret detection",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-06T23:45:08.530Z",
+      "generatedAt": "2026-10-08T00:08:11.517Z",
       "items": [
         {
-          "content": "Mistral 官方正式發布新一代旗艦大型語言模型 Mistral Large 4，帶來更強大的推論與綜合處理能力，持續拓展其開源與商業模型的效能邊界。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Mistral Large 4",
+          "sourceTitle": "Anthropic reported diary entry to police, woman faces felony charge",
           "sources": [
             "hn"
           ],
-          "title": "Mistral Large 4 正式發布",
-          "url": "https://mistral.ai/news/mistral-large-4/\\",
-          "weightedScore": 1539
+          "title": "Anthropic reported diary entry to police, woman faces felony charge",
+          "url": "https://www.techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html",
+          "weightedScore": 824
         },
         {
-          "content": "DNS 根金鑰預定於 2026 年 10 月 11 日切換至新的金鑰簽署金鑰（KSK-2024）。開發者與維運人員需確認 DNS 解析器是否支援相關標準，以確保網域名稱解析服務不受影響。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "The keys to the Internet change on October 11. Are you ready?",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "網際網路根金鑰將於 10 月 11 日進行更新",
-          "url": "https://blog.cloudflare.com/root-ksk-2024-rollover/",
-          "weightedScore": 50
-        },
-        {
-          "content": "知名高效能 DataFrame 處理工具 Polars 推出 2.0 重大版本更新。此次改版帶來核心架構的升級與效能優化，進一步提升大規模資料處理的運算效率與開發者體驗。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Polars 2.0",
-          "sources": [
-            "hn"
-          ],
-          "title": "高效資料處理工具 Polars 2.0 正式登場",
-          "url": "https://pola.rs/posts/release-polars-2/",
-          "weightedScore": 405
-        },
-        {
-          "content": "Google 推出 EmbeddingGemma 2，這是一款擁有 7.4 億參數的開源輕量級多模態嵌入模型，支援文字、程式碼、圖片、影片及音訊檢索，適合在資源受限的環境中部署。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "EmbeddingGemma 2: An open, lightweight multimodal embedding model",
+          "sourceTitle": "We're going to need default hard budget caps on pretty much everything",
           "sources": [
-            "deepmind-blog",
-            "hn"
+            "hn",
+            "simonwillison"
           ],
-          "title": "Google 發布開源輕量多模態嵌入模型 EmbeddingGemma 2",
-          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
-          "weightedScore": 288
+          "title": "We're going to need default hard budget caps on pretty much everything",
+          "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+          "weightedScore": 743
         },
         {
-          "content": "官方發布最新技術進展報告，詳細說明 AI 模型在處理複雜數學推理與證明任務上的突破與應用成果，展示人工智慧在邏輯推導能力上的升級。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 3,
+          "sourceId": "hn",
+          "sourceTitle": "Claude Haiku 5.5",
+          "sources": [
+            "github-changelog-copilot",
+            "hn",
+            "simonwillison"
+          ],
+          "title": "Claude Haiku 5.5",
+          "url": "https://www.anthropic.com/claude-haiku-5-5",
+          "weightedScore": 734
+        },
+        {
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "Sharing AI Progress in Mathematics",
+          "sourceTitle": "GPT‑6 and Intelligent UI for everyone",
           "sources": [
             "hn",
             "openai-blog"
           ],
-          "title": "OpenAI 分享 AI 在數學領域的最新進展",
-          "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
-          "weightedScore": 313
+          "title": "GPT‑6 and Intelligent UI for everyone",
+          "url": "https://openai.com/index/gpt-6-for-everyone/",
+          "weightedScore": 567
         },
         {
-          "content": "用於 Rust 與 Python 的 Tapo 裝置控制程式庫迎來更新，現在正式支援 TP-Link 的 TPAP 協議，讓開發者能更便利地整合與控制相關智慧硬體設備。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Tapo (Rust/Python library) now speaks TP-Link's TPAP protocol",
-          "sources": [
-            "hn"
-          ],
-          "title": "Tapo 程式庫新增支援 TP-Link TPAP 協定",
-          "url": "https://mihai.dinculescu.dev/posts/tapo-speaks-tpap/",
-          "weightedScore": 125
-        },
-        {
-          "content": "Linux 發行版 Pop!_OS 專案發布重大政策調整，宣佈禁止在專案的大部分程式碼庫中使用 AI 生成的程式碼，此舉確立了對開源貢獻品質與源頭審查的新標準。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Pop!_OS bans AI-generated code from much of its codebase",
+          "sourceTitle": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
           "sources": [
             "hn"
           ],
-          "title": "Pop!_OS 專案宣佈禁止在多數程式碼庫中使用 AI 生成程式碼",
-          "url": "https://www.neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases/",
-          "weightedScore": 122
+          "title": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
+          "url": "https://www.niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons/",
+          "weightedScore": 553
         },
         {
-          "content": "官方宣佈與 Ironclad 展開合作，透過訓練與評估 AI 代理來處理專業且複雜的合約工作流程，進一步推進人工智慧在企業法務與實務應用上的電腦操作能力。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Advancing computer use with Ironclad",
+          "sourceId": "hn",
+          "sourceTitle": "OpenTPU – An open-source AI accelerator, developed by AI",
           "sources": [
-            "openai-blog"
+            "hn"
           ],
-          "title": "OpenAI 與 Ironclad 合作推進複雜合約工作流程的 AI 代理應用",
-          "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+          "title": "OpenTPU – An open-source AI accelerator, developed by AI",
+          "url": "https://github.com/FeSens/openTPU",
+          "weightedScore": 334
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
+          "sources": [
+            "hn"
+          ],
+          "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
+          "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+          "weightedScore": 300
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Claude Code’s suggested message feature: I think the real customer is the model",
+          "sources": [
+            "hn"
+          ],
+          "title": "Claude Code’s suggested message feature: I think the real customer is the model",
+          "url": "https://www.zohaib.cc/blog/smartest-claude-code-feature",
+          "weightedScore": 262
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
+          "sources": [
+            "hn"
+          ],
+          "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
+          "url": "https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/",
+          "weightedScore": 252
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Penguin Mail – open-source Rust email client for Linux with AI",
+          "sources": [
+            "hn"
+          ],
+          "title": "Penguin Mail – open-source Rust email client for Linux with AI",
+          "url": "https://penguin-mail.com/",
+          "weightedScore": 230
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Religious scholars met with Anthropic",
+          "sources": [
+            "hn"
+          ],
+          "title": "Religious scholars met with Anthropic",
+          "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
+          "weightedScore": 165
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Docker Agent",
+          "sources": [
+            "hn"
+          ],
+          "title": "Docker Agent",
+          "url": "https://github.com/docker/docker-agent",
+          "weightedScore": 164
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sourceTitle": "CiliumCon is back at KubeCon + CloudNativeCon North America 2026",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "CiliumCon is back at KubeCon + CloudNativeCon North America 2026",
+          "url": "https://www.cncf.io/blog/2026/10/07/ciliumcon-is-back-at-kubecon-cloudnativecon-north-america-2026/",
           "weightedScore": 100
         },
         {
-          "content": "深入探討 Linux cgroup v2 在 Kubernetes 中的應用與轉移。隨著 Kubernetes v1.31 將 cgroup v1 支援降級為維護模式，cgroup v2 提供統一的階層架構與更佳的資源分配管理，本文分析了升級時不可不知的關鍵變動與注意事項。",
-          "degraded": false,
-          "domain": "devops",
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "kubernetes-blog",
-          "sourceTitle": "The Shift to cgroup v2 in Kubernetes: What You Need to Know",
+          "sourceId": "github-blog-ai-ml",
+          "sourceTitle": "Secret protection must scale with software",
           "sources": [
-            "kubernetes-blog"
+            "github-blog-ai-ml"
           ],
-          "title": "Kubernetes 轉移至 cgroup v2：開發者與維運人員需知重點",
-          "url": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/",
+          "title": "Secret protection must scale with software",
+          "url": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software/",
           "weightedScore": 100
         },
         {
-          "content": "探討一項突破性的機器學習研究「Dust」，該研究探討在不依賴傳統反向傳播（Backpropagation）機制的狀況下，如何對 Transformers 模型進行預訓練，為深度學習架構提供全新的技術實作與理論分析。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Dust: Pretraining Transformers Without Backpropagation",
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Purpose-built model for leaked secret detection",
           "sources": [
-            "hn"
+            "github-changelog-copilot"
           ],
-          "title": "Dust：不使用反向傳播預訓練 Transformers 模型",
-          "url": "https://qlabs.sh/research/dust",
-          "weightedScore": 272
-        },
-        {
-          "content": "針對 AI 軟體工程領域的評測基準進行深入討論。文章比較了 GitHub Copilot 在自家程式碼審查基準中的領先表現，與獨立第三方評測所呈現的不同觀點，探討如何客觀評估 AI 程式碼助理的實際效能。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Copilot tops GitHub’s own AI code review benchmark. An independent one tells a different story.",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "GitHub Copilot 評測表現分析：官方基準與獨立測試的差異",
-          "url": "https://thenewstack.io/github-reviewbench-code-review/",
-          "weightedScore": 50
-        },
-        {
-          "content": "開發者在社群分享一項在 macOS 上運作的實作專案，提供針對本機所有照片及影片每一影格內容的 AI 智慧搜尋功能，展示了端側多模態檢索的技術應用。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Show HN: AI search for every photo and every frame of video on macOS",
-          "sources": [
-            "hn"
-          ],
-          "title": "Show HN：在 macOS 上為所有照片與影片影格提供 AI 搜尋工具",
-          "url": "https://github.com/allenv0/SCM",
-          "weightedScore": 174
-        },
-        {
-          "content": "Reflection 團隊發布名為 Beam 的 501B 開放權重模型。文章探討其模型架構、權重設計與開發展現的技術細節，吸引開源社群的高度關注與實測討論。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Beam: Reflection's 501B open-weight model",
-          "sources": [
-            "hn"
-          ],
-          "title": "Beam：Reflection 推出 501B 開放權重模型",
-          "url": "https://reflection.ai/blog/introducing-beam",
-          "weightedScore": 540
-        },
-        {
-          "content": "安全導向的作業系統 GrapheneOS 指出，Google Pixel 11 目前尚未完全滿足其嚴格的硬體安全標準，未來可能面臨不予支援或跳過該代硬體的評估。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Pixel 11 doesn't yet meet the GrapheneOS security standards and may be skipped",
-          "sources": [
-            "hn"
-          ],
-          "title": "Google Pixel 11 尚未符合 GrapheneOS 資安標準恐被跳過",
-          "url": "https://discuss.grapheneos.org/d/41564-pixel-11-doesnt-yet-meet-the-grapheneos-security-standards-and-may-be-skipped",
-          "weightedScore": 427
-        },
-        {
-          "content": "社群分享一項有趣的開源或實作專案，成功將經典的 Visual Basic (VB6) IDE 移植並使其能在瀏覽器原生環境中流暢運行，完整還原復古的開發體驗與技術細節。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "A browser-native classic Visual Basic VB6 IDE",
-          "sources": [
-            "hn"
-          ],
-          "title": "重現經典：瀏覽器原生執行的傳統 Visual Basic VB6 開發環境",
-          "url": "https://wieslawsoltes.github.io/VB6/",
-          "weightedScore": 414
+          "title": "Purpose-built model for leaked secret detection",
+          "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection",
+          "weightedScore": 100
         }
       ]
     }
@@ -3851,6 +3861,160 @@
       ],
       "title": "A browser-native classic Visual Basic VB6 IDE",
       "url": "https://wieslawsoltes.github.io/VB6"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Anthropic reported diary entry to police, woman faces felony charge",
+      "url": "https://techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "simonwillison"
+      ],
+      "title": "We're going to need default hard budget caps on pretty much everything",
+      "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "github-changelog-copilot",
+        "hn",
+        "simonwillison"
+      ],
+      "title": "Claude Haiku 5.5",
+      "url": "https://anthropic.com/claude-haiku-5-5"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "openai-blog"
+      ],
+      "title": "GPT‑6 and Intelligent UI for everyone",
+      "url": "https://openai.com/index/gpt-6-for-everyone"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
+      "url": "https://niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "OpenTPU – An open-source AI accelerator, developed by AI",
+      "url": "https://github.com/FeSens/openTPU"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
+      "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Claude Code’s suggested message feature: I think the real customer is the model",
+      "url": "https://zohaib.cc/blog/smartest-claude-code-feature"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
+      "url": "https://rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Penguin Mail – open-source Rust email client for Linux with AI",
+      "url": "https://penguin-mail.com/"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Religious scholars met with Anthropic",
+      "url": "https://nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Docker Agent",
+      "url": "https://github.com/docker/docker-agent"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "CiliumCon is back at KubeCon + CloudNativeCon North America 2026",
+      "url": "https://cncf.io/blog/2026/10/07/ciliumcon-is-back-at-kubecon-cloudnativecon-north-america-2026"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "github-blog-ai-ml",
+      "sources": [
+        "github-blog-ai-ml"
+      ],
+      "title": "Secret protection must scale with software",
+      "url": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-08T00:08:11.517Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Purpose-built model for leaked secret detection",
+      "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection"
     }
   ]
 }
