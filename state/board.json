@@ -386,117 +386,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-04T23:01:45.455Z",
-  "lastNewsPushAt": "2026-10-08T00:08:11.517Z",
+  "lastNewsPushAt": "2026-10-09T00:16:25.961Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-04T23:01:45.455Z",
       "summary": "本次榜單新進 6 個、竄升 2 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 2 個，綜合榜 #1 為 debpalash/VoiceStudio"
     },
     "feed": [
-      {
-        "content": "社群迎來名為 Kolibri 的主權開源權重模型，提供公開的權重與技術細節，旨在滿足對資料隱私與自主控制有強烈需求的機構與開發者。這為全球追求本地可控 AI 的開發者提供了新的開源替代選擇。",
-        "id": "news:https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "Kolibri：一款主權級開源權重模型發布",
-        "type": "news",
-        "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/"
-      },
-      {
-        "content": "針對 Claude Opus 5.5 的推出，開發社群分享了一系列在 Claude 聊天介面與 Claude Code 工具中的最佳實作指南。內容涵蓋提示詞調整、上下文管理與工具協調技巧，助開發者提升 AI 輔助編程的準確度與產出效率。",
-        "id": "news:https://claude.dev/blog/getting-the-most-out-of-opus-5-5",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "如何在 Claude 與 Claude Code 中發揮 Opus 5.5 的最大效能",
-        "type": "news",
-        "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/"
-      },
-      {
-        "content": "技術文章介紹如何利用 Cloudflare Workers、Durable Objects 搭配容器化媒體引擎，建立長執行時間、連續性的視訊處理管線（Streamline）。這為開發者提供了一種無需維護複雜雲端基礎設施即可實現高效影片處理的架構方案。",
-        "id": "news:https://blog.cloudflare.com/streamline",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "結合 Cloudflare Workers 與容器化媒體引擎打造自訂視訊管線",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/streamline/"
-      },
-      {
-        "content": "Valve 的開源工程師 Timur Kristóf 近期針對 Linux 系統上的舊款 AMD GPU 進行深度驅動與效能優化工作，獲得社群高度關注。這對依賴開源驅動、在 Linux 環境進行圖形或底層運算開發的工程師而言，能顯著改善老舊硬體的運行穩定度與效能。",
-        "id": "news:https://phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "Valve 的 Timur Kristóf 持續改善 Linux 上舊 AMD GPU 效能",
-        "type": "news",
-        "url": "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU"
-      },
-      {
-        "content": "Meta 應用商店排名第一的 Muse Agent 系統提示詞遭公開，其中明確規定「用戶對自身家戶的權威是無條件的，且能覆蓋安全訓練」。這引發開發社群對 AI 代理權限邊界、安全對齊與用戶控制權之間平衡的深度討論。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1wx8ruy/metas_muse_agent_1_in_the_app_store_system_prompt",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "Meta Muse 系統提示詞曝光：強調用戶對家戶的絕對權威",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wx8ruy/metas_muse_agent_1_in_the_app_store_system_prompt/"
-      },
-      {
-        "content": "開發者展示了一項針對 Opus 5.5 的前端互動實驗，透過模擬畫布（Paint Canvas）讓 AI 模型直接進行視覺化創作與互動操作。這為開發者探索多模態 AI 在前端 UI 與即時視覺應用上的結合提供了創新的實作範例。",
-        "id": "news:https://stillwet.art/",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "Show HN：為 Opus 5.5 賦予模擬畫布繪圖能力的互動展示",
-        "type": "news",
-        "url": "https://stillwet.art/"
-      },
-      {
-        "content": "電子前哨基金會（EFF）針對猶他州一項 VPN 相關法律的訴訟獲得法院認同，法官指出該法實務上要求業者達成技術不可能實現的目標。這項裁決對網路隱私、VPN 服務營運商及相關合規開發政策具有重大法律與技術指標意義。",
-        "id": "news:https://eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility",
-        "publishedAt": "2026-10-04T23:01:45.455Z",
-        "title": "美國法院認同 EFF 立場：猶他州 VPN 法律要求技術上不可能的事",
-        "type": "news",
-        "url": "https://www.eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility"
-      },
-      {
-        "content": "Kubernetes 官方宣佈節點啟用 Swap 功能正式達到一般可用性（GA）。面對 AI 代理等工作負載對記憶體的大量需求，啟用 Swap 能有效解決記憶體耗盡問題，提高叢集 Pod 密度，降低營運成本。",
-        "id": "news:https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "Kubernetes 節點 Swap 支援正式達到 GA，助解記憶體瓶頸",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/"
-      },
-      {
-        "content": "OpenAI 宣布開發者現在可透過 API 為生成的文字選擇加入浮水印。與 Anthropic 的預設開啟策略不同，OpenAI 的文字浮水印功能預設為關閉，由開發者自行決定是否啟用，以符合相關規範與追溯需求。",
-        "id": "news:https://thenewstack.io/openai-api-text-watermarking",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "OpenAI API 推出文字浮水印功能，預設為關閉狀態",
-        "type": "news",
-        "url": "https://thenewstack.io/openai-api-text-watermarking/"
-      },
-      {
-        "content": "Cloudflare 慶祝成立 16 週年，總計發布了 46 項橫跨開源專案、後量子密碼學、AI 代理及開發者平台升級的重大公告。此次更新進一步強化了其開發者生態系的基礎設施與安全防護能力。",
-        "id": "news:https://blog.cloudflare.com/birthday-week-2026-wrap-up",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "Cloudflare 2026 生日週總結：發布 46 項開源與安全性更新",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/birthday-week-2026-wrap-up/"
-      },
-      {
-        "content": "GitHub 官方推出 ReviewBench，這是一個專為評估 AI 程式碼審查代理而設計的開放基準測試。它基於具有代表性的 GitHub Pull Request、多來源真實數據與生產環境對齊指標，提供標準化評估方法。",
-        "id": "news:https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "GitHub 推出開源 AI 程式碼審查基準測試 ReviewBench",
-        "type": "news",
-        "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/"
-      },
-      {
-        "content": "Cloudflare 發布開發者號召，邀請社群在其基礎設施與開發者平台上構建下一代 Git 平台，利用其分散式邊緣運算與全球網路來改變版本控制與程式碼託管的運作方式。",
-        "id": "news:https://blog.cloudflare.com/next-git-platform-on-cloudflare",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "Cloudflare 號召開發者在其平台上建立下一代 Git 平台",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/"
-      },
-      {
-        "content": "探討 Kubernetes 工作節點面臨檔案系統 inode 耗盡（如 NodeFilesystemFilesFillingUp 告警）時的實務排查經驗。當磁碟空間顯示尚有餘裕時，inode 可能已先耗盡，文章分析了 Kubelet 的監控機制與開發者應注意的實務細節。",
-        "id": "news:https://cncf.io/blog/2026/10/05/kubelet-watches-inodes-just-not-until-its-an-emergency",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "Kubelet 監控 inode 機制的運作盲點與緊急處理",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/10/05/kubelet-watches-inodes-just-not-until-its-an-emergency/"
-      },
       {
         "content": "探討在無需 root 權限的環境下，如何利用 Podman 的 rootless 模式來運行 Docker Compose 工作負載，提升容器化應用的安全性與隔離性，對不希望以高權限執行常駐服務的開發者提供實務指引。",
         "id": "news:https://elou.world/en/tutorial/podman-docker-compose",
@@ -792,223 +688,295 @@
         "title": "Purpose-built model for leaked secret detection",
         "type": "news",
         "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection"
+      },
+      {
+        "content": "相關標準與憑證授權機構預告，數位憑證的最大有效期限將於 2027 年 2 月縮短至 64 天。這項重大標準變動將迫使開發者與維運團隊必須全面自動化憑證的輪替與管理流程，以因應更頻繁的憑證更新需求。",
+        "id": "news:https://letsencrypt.org/2026/10/07/64-day-certs.html",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "憑證有效期限將於 2027 年 2 月縮短至 64 天",
+        "type": "news",
+        "url": "https://letsencrypt.org/2026/10/07/64-day-certs.html"
+      },
+      {
+        "content": "Node.js 發布了 26.11.0 (Current) 版本，包含多項重要更新與次要變更（SEMVER-MINOR）。本次更新在 buffer 模組中新增了 `isLatin1` 檢測與 `Buffer.stringLength()` 方法，並在 http 模組加入標頭驗證函式，同時將 Alpine Linux 提升至 Tier 2 支援。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.11.0",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "Node.js 26.11.0 版本正式發布",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.11.0"
+      },
+      {
+        "content": "GitHub 宣布本地沙箱（Local sandboxing）功能現已全面登陸 GitHub Copilot CLI、Copilot App 以及使用 Agent Host 的 VS Code 工作階段。這項功能提供開發者一個安全且隔離的本地環境來執行 AI 相關任務。",
+        "id": "news:https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "GitHub Copilot 本地沙箱功能全面推出",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available"
+      },
+      {
+        "content": "從 GitHub Copilot CLI 1.0.94-0 版本開始，開發者可以在現有工作流程中透過 `/model` 指令輕鬆探索並選擇運行中的本地模型，無需離開終端機介面。",
+        "id": "news:https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "GitHub Copilot CLI 支援本地模型發現功能",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli"
+      },
+      {
+        "content": "Rust 機器學習框架 Burn 發布 0.22.0 版本，帶來更快的編譯速度、更簡便的擴充機制，以及更智慧的自動調校（Autotuning）功能，有助於開發者打造高效能的深度學習模型與管線。",
+        "id": "news:https://tracel.ai/blog/release-0.22.0",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "Rust 深度學習框架 Burn 0.22.0 正式發布",
+        "type": "news",
+        "url": "https://tracel.ai/blog/release-0.22.0/"
+      },
+      {
+        "content": "技術社群與官方推出全新的 Falcon ASR 語音識別模型，為開發者與研究人員提供高效且開源的語音轉文字（Speech-to-Text）解決方案，擴充了現有的多模態模型生態系。",
+        "id": "news:https://huggingface.co/blog/tiiuae/falcon-asr",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "Falcon ASR 語音識別模型正式推出",
+        "type": "news",
+        "url": "https://huggingface.co/blog/tiiuae/falcon-asr"
+      },
+      {
+        "content": "繼 OpenAI 推出資料代理功能後，Anthropic 也正式推出 Claude Dashboards，允許開發者透過自然語言與 Claude 協作快速建構及產生資料儀表板，提升數據視覺化與營運監控的效率。",
+        "id": "news:https://thenewstack.io/claude-dashboards-data-motion",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "Anthropic 推出 Claude Dashboards 資料儀表板建構功能",
+        "type": "news",
+        "url": "https://thenewstack.io/claude-dashboards-data-motion/"
+      },
+      {
+        "content": "官方宣佈 Decisions API 現已進入 Public Beta 階段。這項新 API 的推出讓開發者能夠在其應用程式與工作流程中整合自動化決策能力。",
+        "id": "news:https://developers.openai.com/api/docs/guides/decisions",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "Decisions API 正式進入公開測試階段",
+        "type": "news",
+        "url": "https://developers.openai.com/api/docs/guides/decisions"
+      },
+      {
+        "content": "llama.cpp 合併了一項重要 Pull Request，針對無法完全放入 VRAM 的混合專家模型（MoE），在主記憶體（Host Memory）中為 MoE 專家保留 GPU 快取。這項實作預期能為未完全載入 GPU 的 MoE 模型帶來顯著的速度提升。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x03xkc/llama_add_a_gpu_cache_for_moe_experts_kept_in",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "llama.cpp 實作主記憶體 MoE 專家的 GPU 快取加速",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x03xkc/llama_add_a_gpu_cache_for_moe_experts_kept_in/"
+      },
+      {
+        "content": "針對自主式 AI 系統操作機台的安全議題，本文探討在何種條件下能安全允許 AI 代理運作。核心建議是切勿直接給予 AI 代理 root 權限，而是讓其「提出」下一個系統狀態，由決定性的邊界來審查與執行。",
+        "id": "news:https://cncf.io/blog/2026/10/08/dont-give-ai-agents-root-make-them-propose-the-next-system-state",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "避免賦予 AI Agents Root 權限：改由其提出系統狀態變更",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/10/08/dont-give-ai-agents-root-make-them-propose-the-next-system-state/"
+      },
+      {
+        "content": "Cloudflare Managed Defense 分享如何利用 Workers 與全球網路遙測資料建構專門的 AI 代理團隊來分析資安警報。系統透過將「具決定性的證據蒐集」與「模型推論」分離，向分析師提供有實證基礎的建議。",
+        "id": "news:https://blog.cloudflare.com/agentic-security-operations",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "在 Cloudflare 上建構基於實證的代理式資安營運 Harness",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/agentic-security-operations/"
+      },
+      {
+        "content": "Google 正在 Chromium/Chrome 中推進原生支援 JPEG XL（JXL）圖片格式的實作與出貨。這項變動對前端開發者與網頁效能優化具重要意義，能提供更高壓縮比與品質的圖像選項。",
+        "id": "news:https://developer.chrome.com/blog/jpeg-xl-in-chrome",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "Chrome 瀏覽器正推進支援 JPEG XL 圖片格式",
+        "type": "news",
+        "url": "https://developer.chrome.com/blog/jpeg-xl-in-chrome"
+      },
+      {
+        "content": "根據 CrowdStrike 的調查報告指出，上周南韓大型銀行遭受的網路攻擊可能由單一駭客獨立完成。攻擊者結合了開源 AI 滲透測試工具 ARTEX，以及 DeepSeek v4.1-Flash、GLM-5.3、Grok 4.6 與 Claude Code 等多款 AI 模型堆疊來執行攻擊，凸顯了 AI 工具在資安攻防兩端帶來的全新挑戰。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were",
+        "publishedAt": "2026-10-09T00:16:25.961Z",
+        "title": "南韓大型銀行遭單人駭客結合開源滲透工具與多款 AI 模型發動攻擊",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-08T00:08:11.517Z",
+      "generatedAt": "2026-10-09T00:16:25.961Z",
       "items": [
         {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Anthropic reported diary entry to police, woman faces felony charge",
-          "sources": [
-            "hn"
-          ],
-          "title": "Anthropic reported diary entry to police, woman faces felony charge",
-          "url": "https://www.techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html",
-          "weightedScore": 824
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "We're going to need default hard budget caps on pretty much everything",
-          "sources": [
-            "hn",
-            "simonwillison"
-          ],
-          "title": "We're going to need default hard budget caps on pretty much everything",
-          "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
-          "weightedScore": 743
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 3,
-          "sourceId": "hn",
-          "sourceTitle": "Claude Haiku 5.5",
-          "sources": [
-            "github-changelog-copilot",
-            "hn",
-            "simonwillison"
-          ],
-          "title": "Claude Haiku 5.5",
-          "url": "https://www.anthropic.com/claude-haiku-5-5",
-          "weightedScore": 734
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "GPT‑6 and Intelligent UI for everyone",
-          "sources": [
-            "hn",
-            "openai-blog"
-          ],
-          "title": "GPT‑6 and Intelligent UI for everyone",
-          "url": "https://openai.com/index/gpt-6-for-everyone/",
-          "weightedScore": 567
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
-          "sources": [
-            "hn"
-          ],
-          "title": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
-          "url": "https://www.niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons/",
-          "weightedScore": 553
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "OpenTPU – An open-source AI accelerator, developed by AI",
-          "sources": [
-            "hn"
-          ],
-          "title": "OpenTPU – An open-source AI accelerator, developed by AI",
-          "url": "https://github.com/FeSens/openTPU",
-          "weightedScore": 334
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
-          "sources": [
-            "hn"
-          ],
-          "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
-          "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
-          "weightedScore": 300
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Claude Code’s suggested message feature: I think the real customer is the model",
-          "sources": [
-            "hn"
-          ],
-          "title": "Claude Code’s suggested message feature: I think the real customer is the model",
-          "url": "https://www.zohaib.cc/blog/smartest-claude-code-feature",
-          "weightedScore": 262
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
-          "sources": [
-            "hn"
-          ],
-          "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
-          "url": "https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/",
-          "weightedScore": 252
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Penguin Mail – open-source Rust email client for Linux with AI",
-          "sources": [
-            "hn"
-          ],
-          "title": "Penguin Mail – open-source Rust email client for Linux with AI",
-          "url": "https://penguin-mail.com/",
-          "weightedScore": 230
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Religious scholars met with Anthropic",
-          "sources": [
-            "hn"
-          ],
-          "title": "Religious scholars met with Anthropic",
-          "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
-          "weightedScore": 165
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Docker Agent",
-          "sources": [
-            "hn"
-          ],
-          "title": "Docker Agent",
-          "url": "https://github.com/docker/docker-agent",
-          "weightedScore": 164
-        },
-        {
-          "content": null,
-          "degraded": true,
+          "content": "相關標準與憑證授權機構預告，數位憑證的最大有效期限將於 2027 年 2 月縮短至 64 天。這項重大標準變動將迫使開發者與維運團隊必須全面自動化憑證的輪替與管理流程，以因應更頻繁的憑證更新需求。",
+          "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "CiliumCon is back at KubeCon + CloudNativeCon North America 2026",
+          "sourceId": "lobsters-devops",
+          "sourceTitle": "64-Day Certificate Lifetimes Coming Feb 2027",
           "sources": [
-            "cncf-blog"
+            "lobsters-devops"
           ],
-          "title": "CiliumCon is back at KubeCon + CloudNativeCon North America 2026",
-          "url": "https://www.cncf.io/blog/2026/10/07/ciliumcon-is-back-at-kubecon-cloudnativecon-north-america-2026/",
+          "title": "憑證有效期限將於 2027 年 2 月縮短至 64 天",
+          "url": "https://letsencrypt.org/2026/10/07/64-day-certs.html",
           "weightedScore": 100
         },
         {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
+          "content": "Node.js 發布了 26.11.0 (Current) 版本，包含多項重要更新與次要變更（SEMVER-MINOR）。本次更新在 buffer 模組中新增了 `isLatin1` 檢測與 `Buffer.stringLength()` 方法，並在 http 模組加入標頭驗證函式，同時將 Alpine Linux 提升至 Tier 2 支援。",
+          "degraded": false,
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
-          "sourceTitle": "Secret protection must scale with software",
+          "sourceId": "gh-nodejs",
+          "sourceTitle": "2026-10-07, Version 26.11.0 (Current), @aduh95",
           "sources": [
-            "github-blog-ai-ml"
+            "gh-nodejs"
           ],
-          "title": "Secret protection must scale with software",
-          "url": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software/",
+          "title": "Node.js 26.11.0 版本正式發布",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.11.0",
           "weightedScore": 100
         },
         {
-          "content": null,
-          "degraded": true,
+          "content": "GitHub 宣布本地沙箱（Local sandboxing）功能現已全面登陸 GitHub Copilot CLI、Copilot App 以及使用 Agent Host 的 VS Code 工作階段。這項功能提供開發者一個安全且隔離的本地環境來執行 AI 相關任務。",
+          "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Purpose-built model for leaked secret detection",
+          "sourceTitle": "Local sandboxing for GitHub Copilot now generally available",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "Purpose-built model for leaked secret detection",
-          "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection",
+          "title": "GitHub Copilot 本地沙箱功能全面推出",
+          "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available",
+          "weightedScore": 100
+        },
+        {
+          "content": "從 GitHub Copilot CLI 1.0.94-0 版本開始，開發者可以在現有工作流程中透過 `/model` 指令輕鬆探索並選擇運行中的本地模型，無需離開終端機介面。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Discover local models in GitHub Copilot CLI",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot CLI 支援本地模型發現功能",
+          "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli",
+          "weightedScore": 100
+        },
+        {
+          "content": "Rust 機器學習框架 Burn 發布 0.22.0 版本，帶來更快的編譯速度、更簡便的擴充機制，以及更智慧的自動調校（Autotuning）功能，有助於開發者打造高效能的深度學習模型與管線。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Burn 0.22.0: Faster Builds, Easier Extensions, and Smarter Autotuning",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "Rust 深度學習框架 Burn 0.22.0 正式發布",
+          "url": "https://tracel.ai/blog/release-0.22.0/",
+          "weightedScore": 100
+        },
+        {
+          "content": "技術社群與官方推出全新的 Falcon ASR 語音識別模型，為開發者與研究人員提供高效且開源的語音轉文字（Speech-to-Text）解決方案，擴充了現有的多模態模型生態系。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Introducing Falcon ASR",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "Falcon ASR 語音識別模型正式推出",
+          "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
+          "weightedScore": 100
+        },
+        {
+          "content": "繼 OpenAI 推出資料代理功能後，Anthropic 也正式推出 Claude Dashboards，允許開發者透過自然語言與 Claude 協作快速建構及產生資料儀表板，提升數據視覺化與營運監控的效率。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Claude can now build your dashboards",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Anthropic 推出 Claude Dashboards 資料儀表板建構功能",
+          "url": "https://thenewstack.io/claude-dashboards-data-motion/",
+          "weightedScore": 50
+        },
+        {
+          "content": "官方宣佈 Decisions API 現已進入 Public Beta 階段。這項新 API 的推出讓開發者能夠在其應用程式與工作流程中整合自動化決策能力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Decisions API is in public beta",
+          "sources": [
+            "hn"
+          ],
+          "title": "Decisions API 正式進入公開測試階段",
+          "url": "https://developers.openai.com/api/docs/guides/decisions",
+          "weightedScore": 389
+        },
+        {
+          "content": "llama.cpp 合併了一項重要 Pull Request，針對無法完全放入 VRAM 的混合專家模型（MoE），在主記憶體（Host Memory）中為 MoE 專家保留 GPU 快取。這項實作預期能為未完全載入 GPU 的 MoE 模型帶來顯著的速度提升。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "llama : add a GPU cache for MoE experts kept in host memory by am17an · Pull Request #29887 · ggml-org/llama.cpp",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "llama.cpp 實作主記憶體 MoE 專家的 GPU 快取加速",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x03xkc/llama_add_a_gpu_cache_for_moe_experts_kept_in/",
+          "weightedScore": 100
+        },
+        {
+          "content": "針對自主式 AI 系統操作機台的安全議題，本文探討在何種條件下能安全允許 AI 代理運作。核心建議是切勿直接給予 AI 代理 root 權限，而是讓其「提出」下一個系統狀態，由決定性的邊界來審查與執行。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sourceTitle": "Don’t give AI agents root. Make them propose the next system state.",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "避免賦予 AI Agents Root 權限：改由其提出系統狀態變更",
+          "url": "https://www.cncf.io/blog/2026/10/08/dont-give-ai-agents-root-make-them-propose-the-next-system-state/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare Managed Defense 分享如何利用 Workers 與全球網路遙測資料建構專門的 AI 代理團隊來分析資安警報。系統透過將「具決定性的證據蒐集」與「模型推論」分離，向分析師提供有實證基礎的建議。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Building an evidence-grounded agentic security operations harness on Cloudflare",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "在 Cloudflare 上建構基於實證的代理式資安營運 Harness",
+          "url": "https://blog.cloudflare.com/agentic-security-operations/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Google 正在 Chromium/Chrome 中推進原生支援 JPEG XL（JXL）圖片格式的實作與出貨。這項變動對前端開發者與網頁效能優化具重要意義，能提供更高壓縮比與品質的圖像選項。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Shipping JPEG XL in Chrome",
+          "sources": [
+            "hn"
+          ],
+          "title": "Chrome 瀏覽器正推進支援 JPEG XL 圖片格式",
+          "url": "https://developer.chrome.com/blog/jpeg-xl-in-chrome",
+          "weightedScore": 561
+        },
+        {
+          "content": "根據 CrowdStrike 的調查報告指出，上周南韓大型銀行遭受的網路攻擊可能由單一駭客獨立完成。攻擊者結合了開源 AI 滲透測試工具 ARTEX，以及 DeepSeek v4.1-Flash、GLM-5.3、Grok 4.6 與 Claude Code 等多款 AI 模型堆疊來執行攻擊，凸顯了 AI 工具在資安攻防兩端帶來的全新挑戰。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "Last week some of South Korea's biggest banks were hit by a cyberattack. We now know the entire hack may have been done by a single person. He used a combined stack of an open-source AI penetration tool named ARTEX, DeepSeek v4.1-Flash, GLM-5.3, Grok 4.6, and Claude Code (CrowdStrike)",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "南韓大型銀行遭單人駭客結合開源滲透工具與多款 AI 模型發動攻擊",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were/",
           "weightedScore": 100
         }
       ]
@@ -4015,6 +3983,136 @@
       ],
       "title": "Purpose-built model for leaked secret detection",
       "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "title": "64-Day Certificate Lifetimes Coming Feb 2027",
+      "url": "https://letsencrypt.org/2026/10/07/64-day-certs.html"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "title": "2026-10-07, Version 26.11.0 (Current), @aduh95",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.11.0"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Local sandboxing for GitHub Copilot now generally available",
+      "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Discover local models in GitHub Copilot CLI",
+      "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Burn 0.22.0: Faster Builds, Easier Extensions, and Smarter Autotuning",
+      "url": "https://tracel.ai/blog/release-0.22.0"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Introducing Falcon ASR",
+      "url": "https://huggingface.co/blog/tiiuae/falcon-asr"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Claude can now build your dashboards",
+      "url": "https://thenewstack.io/claude-dashboards-data-motion"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Decisions API is in public beta",
+      "url": "https://developers.openai.com/api/docs/guides/decisions"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "llama : add a GPU cache for MoE experts kept in host memory by am17an · Pull Request #29887 · ggml-org/llama.cpp",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x03xkc/llama_add_a_gpu_cache_for_moe_experts_kept_in"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "Don’t give AI agents root. Make them propose the next system state.",
+      "url": "https://cncf.io/blog/2026/10/08/dont-give-ai-agents-root-make-them-propose-the-next-system-state"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Building an evidence-grounded agentic security operations harness on Cloudflare",
+      "url": "https://blog.cloudflare.com/agentic-security-operations"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Shipping JPEG XL in Chrome",
+      "url": "https://developer.chrome.com/blog/jpeg-xl-in-chrome"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T00:16:25.961Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Last week some of South Korea's biggest banks were hit by a cyberattack. We now know the entire hack may have been done by a single person. He used a combined stack of an open-source AI penetration tool named ARTEX, DeepSeek v4.1-Flash, GLM-5.3, Grok 4.6, and Claude Code (CrowdStrike)",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were"
     }
   ]
 }
