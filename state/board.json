@@ -386,125 +386,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-04T23:01:45.455Z",
-  "lastNewsPushAt": "2026-10-09T23:59:03.593Z",
+  "lastNewsPushAt": "2026-10-10T23:28:22.953Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-04T23:01:45.455Z",
       "summary": "本次榜單新進 6 個、竄升 2 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 2 個，綜合榜 #1 為 debpalash/VoiceStudio"
     },
     "feed": [
-      {
-        "content": "用於 Rust 與 Python 的 Tapo 裝置控制程式庫迎來更新，現在正式支援 TP-Link 的 TPAP 協議，讓開發者能更便利地整合與控制相關智慧硬體設備。",
-        "id": "news:https://mihai.dinculescu.dev/posts/tapo-speaks-tpap",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "Tapo 程式庫新增支援 TP-Link TPAP 協定",
-        "type": "news",
-        "url": "https://mihai.dinculescu.dev/posts/tapo-speaks-tpap/"
-      },
-      {
-        "content": "Linux 發行版 Pop!_OS 專案發布重大政策調整，宣佈禁止在專案的大部分程式碼庫中使用 AI 生成的程式碼，此舉確立了對開源貢獻品質與源頭審查的新標準。",
-        "id": "news:https://neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "Pop!_OS 專案宣佈禁止在多數程式碼庫中使用 AI 生成程式碼",
-        "type": "news",
-        "url": "https://www.neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases/"
-      },
-      {
-        "content": "官方宣佈與 Ironclad 展開合作，透過訓練與評估 AI 代理來處理專業且複雜的合約工作流程，進一步推進人工智慧在企業法務與實務應用上的電腦操作能力。",
-        "id": "news:https://openai.com/index/advancing-computer-use-with-ironclad",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "OpenAI 與 Ironclad 合作推進複雜合約工作流程的 AI 代理應用",
-        "type": "news",
-        "url": "https://openai.com/index/advancing-computer-use-with-ironclad"
-      },
-      {
-        "content": "深入探討 Linux cgroup v2 在 Kubernetes 中的應用與轉移。隨著 Kubernetes v1.31 將 cgroup v1 支援降級為維護模式，cgroup v2 提供統一的階層架構與更佳的資源分配管理，本文分析了升級時不可不知的關鍵變動與注意事項。",
-        "id": "news:https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "Kubernetes 轉移至 cgroup v2：開發者與維運人員需知重點",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/"
-      },
-      {
-        "content": "探討一項突破性的機器學習研究「Dust」，該研究探討在不依賴傳統反向傳播（Backpropagation）機制的狀況下，如何對 Transformers 模型進行預訓練，為深度學習架構提供全新的技術實作與理論分析。",
-        "id": "news:https://qlabs.sh/research/dust",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "Dust：不使用反向傳播預訓練 Transformers 模型",
-        "type": "news",
-        "url": "https://qlabs.sh/research/dust"
-      },
-      {
-        "content": "針對 AI 軟體工程領域的評測基準進行深入討論。文章比較了 GitHub Copilot 在自家程式碼審查基準中的領先表現，與獨立第三方評測所呈現的不同觀點，探討如何客觀評估 AI 程式碼助理的實際效能。",
-        "id": "news:https://thenewstack.io/github-reviewbench-code-review",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "GitHub Copilot 評測表現分析：官方基準與獨立測試的差異",
-        "type": "news",
-        "url": "https://thenewstack.io/github-reviewbench-code-review/"
-      },
-      {
-        "content": "開發者在社群分享一項在 macOS 上運作的實作專案，提供針對本機所有照片及影片每一影格內容的 AI 智慧搜尋功能，展示了端側多模態檢索的技術應用。",
-        "id": "news:https://github.com/allenv0/SCM",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "Show HN：在 macOS 上為所有照片與影片影格提供 AI 搜尋工具",
-        "type": "news",
-        "url": "https://github.com/allenv0/SCM"
-      },
-      {
-        "content": "Reflection 團隊發布名為 Beam 的 501B 開放權重模型。文章探討其模型架構、權重設計與開發展現的技術細節，吸引開源社群的高度關注與實測討論。",
-        "id": "news:https://reflection.ai/blog/introducing-beam",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "Beam：Reflection 推出 501B 開放權重模型",
-        "type": "news",
-        "url": "https://reflection.ai/blog/introducing-beam"
-      },
-      {
-        "content": "安全導向的作業系統 GrapheneOS 指出，Google Pixel 11 目前尚未完全滿足其嚴格的硬體安全標準，未來可能面臨不予支援或跳過該代硬體的評估。",
-        "id": "news:https://discuss.grapheneos.org/d/41564-pixel-11-doesnt-yet-meet-the-grapheneos-security-standards-and-may-be-skipped",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "Google Pixel 11 尚未符合 GrapheneOS 資安標準恐被跳過",
-        "type": "news",
-        "url": "https://discuss.grapheneos.org/d/41564-pixel-11-doesnt-yet-meet-the-grapheneos-security-standards-and-may-be-skipped"
-      },
-      {
-        "content": "社群分享一項有趣的開源或實作專案，成功將經典的 Visual Basic (VB6) IDE 移植並使其能在瀏覽器原生環境中流暢運行，完整還原復古的開發體驗與技術細節。",
-        "id": "news:https://wieslawsoltes.github.io/VB6",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "重現經典：瀏覽器原生執行的傳統 Visual Basic VB6 開發環境",
-        "type": "news",
-        "url": "https://wieslawsoltes.github.io/VB6/"
-      },
-      {
-        "content": null,
-        "id": "news:https://techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "Anthropic reported diary entry to police, woman faces felony charge",
-        "type": "news",
-        "url": "https://www.techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html"
-      },
-      {
-        "content": null,
-        "id": "news:https://simonwillison.net/2026/Oct/3/default-hard-budget-caps",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "We're going to need default hard budget caps on pretty much everything",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/"
-      },
-      {
-        "content": null,
-        "id": "news:https://anthropic.com/claude-haiku-5-5",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "Claude Haiku 5.5",
-        "type": "news",
-        "url": "https://www.anthropic.com/claude-haiku-5-5"
-      },
-      {
-        "content": null,
-        "id": "news:https://openai.com/index/gpt-6-for-everyone",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "GPT‑6 and Intelligent UI for everyone",
-        "type": "news",
-        "url": "https://openai.com/index/gpt-6-for-everyone/"
-      },
       {
         "content": null,
         "id": "news:https://niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons",
@@ -792,179 +680,319 @@
         "title": "歐盟 NIS2 與 DORA 法規落地：Kubernetes 平台架構團隊的權責劃分指南",
         "type": "news",
         "url": "https://www.cncf.io/blog/2026/10/09/who-owns-nis2-and-dora-on-a-kubernetes-platform-team/"
+      },
+      {
+        "content": "Cloudflare 宣布收購 Deno。Deno 作為現代化 JavaScript 與 TypeScript 執行環境，以安全性、Web 標準相容性及內建工具鏈為特色。這項收購預期將對邊緣運算（Edge Computing）與 Serverless 架構生態帶來深遠影響，推動 Cloudflare Workers 與 Deno 生態系在執行環境與開發者體驗上的進一步整合。",
+        "id": "news:https://deno.com/blog/cloudflare",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "Cloudflare 宣布收購 Deno，加速整合邊緣運算與 JavaScript 執行環境",
+        "type": "news",
+        "url": "https://deno.com/blog/cloudflare"
+      },
+      {
+        "content": "Python 官方正式發布 3.15.0 版本。作為後端工程與系統軟體廣泛依賴的程式語言，主要版本發布涉及核心直譯器行為與底層更新，開發者應關注官方發布說明以評估升級時程與既有套件的相容性。",
+        "id": "news:https://github.com/python/cpython/releases/tag/v3.15.0",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "Python 3.15.0 正式釋出，後端開發核心語言迎來新版本",
+        "type": "news",
+        "url": "https://github.com/python/cpython/releases/tag/v3.15.0"
+      },
+      {
+        "content": "微軟正式在 Foundry 平台上推出 Microsoft-Decision-1 決策模型。在 OpenAI 開放 Decisions API 之際，微軟選擇基於阿里巴巴開源的 Qwen 模型架構自主構建決策模型。此舉為 Azure 生態系帶來了新的原生決策推論選擇，也顯示出雲端平台在自主代理與決策工作流上的多模型發展策略。",
+        "id": "news:https://thenewstack.io/microsoft-decision-model-foundry",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "微軟於 Foundry 推出 Microsoft-Decision-1 模型，基於阿里 Qwen 架構打造",
+        "type": "news",
+        "url": "https://thenewstack.io/microsoft-decision-model-foundry/"
+      },
+      {
+        "content": "Clef 決策模型家族發表全新 Clef-omni，可在單一處理管線中原生處理音訊、視訊、圖像與文字輸入。同時，官方下調了 Clef-flash 的定價，並將 Clef 推論速度提升最高達 2.0 倍，為需要低延遲即時決策的多模態應用場景提供更具性價比的選擇。",
+        "id": "news:https://blog.cloudflare.com/clef-faster-cheaper-multimodal",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "Clef 家族推出全多模態模型 Clef-omni，同步調降 Clef-flash 定價並提升推論速度",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/"
+      },
+      {
+        "content": "GitHub 針對 JetBrains IDE 的 Copilot 外掛發布更新。本次更新讓開發者能更精細地控制預設使用的模型以及 MCP（Model Context Protocol）伺服器，同時改善問題診斷流程、聊天導航與帳號控制，提升開發者在 IDE 內協同 AI Agent 與外部工具時的操作彈性。",
+        "id": "news:https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "GitHub Copilot for JetBrains 更新：強化預設模型切換與 MCP 伺服器自訂控制",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains"
+      },
+      {
+        "content": "GitHub 針對 Copilot code review 推出全新組織管理設定。企業與組織擁有者現在能將具備 Copilot 授權成員所產生的 code review 統一納入組織帳單計算，並提供更完整的授權控管機制，便於工程團隊管理 AI 輔助程式碼審查的配額與支出。",
+        "id": "news:https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "GitHub 釋出 Copilot Code Review 企業組織計費與授權控管功能",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls"
+      },
+      {
+        "content": "OpenAI 正式撤回了三篇涉及數學推論的研究論文。此撤回事件在 AI 與形式化數學社群引發討論，凸顯出在大語言模型進行嚴謹數學推演與邏輯論證時面臨的驗證挑戰，也提醒依賴模型生成高複雜度邏輯證明的開發者需維持嚴格的校驗機制。",
+        "id": "news:https://github.com/openai/math/blob/main/history.md",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "OpenAI 撤回三篇數學研究論文，引發學界對模型推論驗證的關注",
+        "type": "news",
+        "url": "https://github.com/openai/math/blob/main/history.md"
+      },
+      {
+        "content": "該研究挑戰了現代大型語言模型必須依賴 Tokenizer 才能維持效率的假設。研究指出標準扁平 Transformer 直接處理原始 byte（位元組）序列時，隨著參數規模擴展，其表現實際上能超越傳統 subword 模型。過去普遍認為處理 byte 序列因長度過長而運算低效，該論文透過資訊分配分析與規模化實驗顛覆了此觀點，為未來的無分詞器（Tokenizer-free）架構提供重要實證。",
+        "id": "news:https://arxiv.org/html/2610.05978v1",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "研究挑戰 Tokenizer 必要性：Byte 語言模型在參數量擴展下超越傳統 Subword 模型",
+        "type": "news",
+        "url": "https://arxiv.org/html/2610.05978v1"
+      },
+      {
+        "content": "文章深入探討 Lean 定理證明器（Theorem Prover）的核心可靠性機制，以及大語言模型與形式化驗證系統整合時的關鍵挑戰。Lean 透過微核心架構保證邏輯與證明的絕對正確性，在 AI 生成代碼與邏輯推演容易出現幻覺的背景下，成為檢驗 AI 輸出與構建高可靠系統的重要工具。",
+        "id": "news:https://terrytao.wordpress.com/2026/10/09/what-mathematicians-should-know-about-the-lean-theorem-proverquestions-of-reliability-and-ai",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "解析 Lean 定理證明器：微核心可靠性設計與 AI 輔助數學推論的結合",
+        "type": "news",
+        "url": "https://terrytao.wordpress.com/2026/10/09/what-mathematicians-should-know-about-the-lean-theorem-proverquestions-of-reliability-and-ai/"
+      },
+      {
+        "content": "NVIDIA 分享了針對 Nemotron 模型家族進行專項微調的實作成果，使其在國際資訊奧林匹克競賽（IOI）與國際數學奧林匹克競賽（IMO）等高難度挑戰中達到金牌水準。內容詳細探討了針對複雜演算法推導與數學證明任務的合成資料集構建與多步驟推理微調經驗。",
+        "id": "news:https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "NVIDIA 分享 Nemotron 微調實踐：單一模型在國際資訊奧賽與數學奧賽達金牌成績",
+        "type": "news",
+        "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026"
+      },
+      {
+        "content": "文章探討 AI Agent 上線後的品質演進挑戰。當服務運作正常但輸出結果難以衡量進步時，工程團隊應透過串接線上執行軌跡（production traces）與精選資料集建立回饋循環，以系統化的評估機制持續改善代理人的決策與輸出表現，為 LLMOps 與 Agent 架構維運提供實踐指南。",
+        "id": "news:https://thenewstack.io/ai-agent-evaluation-loop",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "將線上生產環境追蹤轉化為 Agent 迭代動力：AI Agent 閉環優化指南",
+        "type": "news",
+        "url": "https://thenewstack.io/ai-agent-evaluation-loop/"
+      },
+      {
+        "content": "開源 macOS 應用程式 DigUp 結合 Google DeepMind 的 EmbeddingGemma 2 模型，讓使用者能在本機完全離線檢索檔案。該模型將文字、圖像、音訊與視訊統一映射至同一個向量語意空間，支援透過自然語言直接定位影音片段或文件段落，展示了端側多模態語意檢索的實用落地方式。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "開源 Mac 應用 DigUp 釋出：在本地利用 EmbeddingGemma 2 進行跨模態檔案檢索",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2/"
+      },
+      {
+        "content": "Talorys 是一個開源且自託管的個人 AI Agent 專案，完整部署在 Cloudflare 的免費層（Free tier）之上。該專案展示了如何結合 Serverless 邊緣架構與低成本雲端資源，將代理人邏輯、工具調用與狀態管理整合於邊緣環境，為開發者實作低成本 AI Agent 提供具體參考架構。",
+        "id": "news:https://github.com/rociiu/talorys",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "Talorys：基於 Cloudflare 免費層構建的輕量自託管個人 AI 代理架構",
+        "type": "news",
+        "url": "https://github.com/rociiu/talorys"
+      },
+      {
+        "content": "Voxlocal 是一個使用 Rust 語言編寫的極簡本地語音代理（Voice Agent）開源專案。該專案聚焦於低延遲與端側處理，展示如何利用 Rust 的高併發與效能特性整合語音識別、語言模型與語音合成，為探索邊緣設備即時語音管線整合的工程師提供輕量實作參考。",
+        "id": "news:https://samkhawase.com/blog/voxlocal-minimal-voice-agent",
+        "publishedAt": "2026-10-10T23:28:22.953Z",
+        "title": "Voxlocal：以 Rust 開發的極簡本地語音 AI 代理開源實作",
+        "type": "news",
+        "url": "https://samkhawase.com/blog/voxlocal-minimal-voice-agent/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-09T23:59:03.593Z",
+      "generatedAt": "2026-10-10T23:28:22.953Z",
       "items": [
         {
-          "content": "Python 官方正式釋出 3.15.0 版本。作為主流後端開發與 AI/機器學習領域的核心基礎設施，本次大版本更新延續了執行時期效能最佳化、直譯器效能改進與型別系統支援。這對全球 Python 開發團隊而言是重大版本升級里程碑，建議工程團隊著手評估既有依賴套件相容性並規劃升級驗證。",
+          "content": "Cloudflare 宣布收購 Deno。Deno 作為現代化 JavaScript 與 TypeScript 執行環境，以安全性、Web 標準相容性及內建工具鏈為特色。這項收購預期將對邊緣運算（Edge Computing）與 Serverless 架構生態帶來深遠影響，推動 Cloudflare Workers 與 Deno 生態系在執行環境與開發者體驗上的進一步整合。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Python 3.15",
+          "sourceTitle": "Cloudflare acquires Deno",
           "sources": [
             "hn"
           ],
-          "title": "Python 3.15 正式版本釋出",
-          "url": "https://www.python.org/downloads/release/python-3150/",
-          "weightedScore": 284
+          "title": "Cloudflare 宣布收購 Deno，加速整合邊緣運算與 JavaScript 執行環境",
+          "url": "https://deno.com/blog/cloudflare",
+          "weightedScore": 1335
         },
         {
-          "content": "Deno 團隊宣布加入 Cloudflare。雙方將攜手降低 Cloudflare Workers 與 Durable Objects 的自託管難度，使開發者能夠在更多自建或私有環境中使用完全一致的無伺服器原始組件（primitives）。Deno 過去在 JavaScript/TypeScript 執行環境與邊緣架構的積累，結合 Cloudflare 的全球邊緣網路與分散式儲存能力，預期將深刻影響全端與邊緣應用的開發體驗與部署模式。",
+          "content": "Python 官方正式發布 3.15.0 版本。作為後端工程與系統軟體廣泛依賴的程式語言，主要版本發布涉及核心直譯器行為與底層更新，開發者應關注官方發布說明以評估升級時程與既有套件的相容性。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Deno is joining Cloudflare",
+          "sourceId": "gh-cpython",
+          "sourceTitle": "v3.15.0",
           "sources": [
-            "cloudflare-blog"
+            "gh-cpython"
           ],
-          "title": "Deno 正式加入 Cloudflare，加速簡化 Workers 與 Durable Objects 自託管",
-          "url": "https://blog.cloudflare.com/deno-joins-cloudflare/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Kubernetes 生態系正全面加速淘汰舊版 Linux cgroup v1，全面轉向依賴 cgroup v2。cgroup v2 提供更統一的階層架構、更精確的記憶體與 CPU 資源隔離、增強的 OOM 控制與更優秀的 eBPF 整合。這項架構淘汰意味著依賴舊版 Linux 核心與節點作業系統的維運與 SRE 團隊必須儘速規劃節點環境升級，否則將無法升級至未來的 Kubernetes 版本。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Kubernetes on cgroup v1 is dead. Here’s what comes next.",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Kubernetes 正式終結 cgroup v1 支援：叢集轉向 cgroup v2 的關鍵變更",
-          "url": "https://thenewstack.io/kubernetes-node-swap-ai/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Cloudflare 宣布為 Workers 和 Durable Objects 推出隨選 CPU 與記憶體效能剖析（profiling）功能。開發者現在可以直接在生產環境中即時產生互動式火焰圖（flamegraphs），精確診斷無伺服器程式碼中的效能瓶頸與記憶體洩漏問題。這大幅降低了過去在分散式邊緣運算環境中難以重現與排查極限負載問題的痛點。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare Workers 與 Durable Objects 支援隨選 CPU 及記憶體火焰圖分析",
-          "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
-          "weightedScore": 50
-        },
-        {
-          "content": "AWS 宣布 Amazon ECS 現已支援自動偵測並修復故障的 GPU 與運算實例。當底層硬體或驅動程式發生故障時，ECS 能自動替換不良節點，確保服務持續運作。對於在雲端執行大規模 AI 訓練與推論工作負載的 SRE 與平台工程團隊而言，這顯著減少了手動介入硬體故障排查的維運負擔，提升高可用性。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Amazon ECS now auto-repairs failing GPUs and instances. Here’s why it matters for SREs.",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Amazon ECS 支援故障 GPU 與實例自動修復，強化 AI 與關鍵負載穩定度",
-          "url": "https://thenewstack.io/amazon-ecs-auto-repair/",
-          "weightedScore": 50
-        },
-        {
-          "content": "開源專案 Whistle 發布了一款極致輕量化的語音轉文字（Speech to Text）模型，整體模型容量僅 16.9 MB。相較於 Whisper 等動輒數百 MB 到數 GB 的語音辨識模型，Whistle 能在資源極端受限的物聯網設備、瀏覽器 WebAssembly 或行動端流暢運行，為邊緣語音互動應用大幅降低了部署門檻與推論延遲。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Whistle: Speech to Text in 16.9 MB",
-          "sources": [
-            "hn",
-            "lobsters-ai"
-          ],
-          "title": "Whistle 開源釋出：模型大小僅 16.9 MB 的超輕量語音轉文字工具",
-          "url": "https://cactuscompute.com/blog/whistle",
-          "weightedScore": 1015
-        },
-        {
-          "content": "阿里巴巴在 Hugging Face 開源釋出 Qwen-Image-2.1-Turbo 模型。作為千問系列在影像生成領域的最新加速版本，該模型主打更高速的影像合成與推論效率，進一步豐富了開源多模態生態系。開發者可直接基於 Hugging Face 下載權重，將高效影像生成能力整合至私有化工作流或客製化產品中。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "Qwen/Qwen-Image-2.1-Turbo · Hugging Face",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "阿里開源 Qwen-Image-2.1-Turbo 影像生成模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x1ldef/qwenqwenimage21turbo_hugging_face/",
+          "title": "Python 3.15.0 正式釋出，後端開發核心語言迎來新版本",
+          "url": "https://github.com/python/cpython/releases/tag/v3.15.0",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 發布最新 Copilot 週更新，著重於跨帳號與多環境下的管理彈性。管理員現在能更嚴格地控管 AI agent 的存取權限與任務調度，並整合 GitHub Copilot Claude Haiku 模型支援。這項更新為企業與團隊在導入自主代理（Autonomous Agents）協同開發時，提供了不可或缺的安全邊界與權限治理機制。",
+          "content": "微軟正式在 Foundry 平台上推出 Microsoft-Decision-1 決策模型。在 OpenAI 開放 Decisions API 之際，微軟選擇基於阿里巴巴開源的 Qwen 模型架構自主構建決策模型。此舉為 Azure 生態系帶來了新的原生決策推論選擇，也顯示出雲端平台在自主代理與決策工作流上的多模型發展策略。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Microsoft skipped OpenAI’s decision model and built its own on Alibaba’s Qwen",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "微軟於 Foundry 推出 Microsoft-Decision-1 模型，基於阿里 Qwen 架構打造",
+          "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Clef 決策模型家族發表全新 Clef-omni，可在單一處理管線中原生處理音訊、視訊、圖像與文字輸入。同時，官方下調了 Clef-flash 的定價，並將 Clef 推論速度提升最高達 2.0 倍，為需要低延遲即時決策的多模態應用場景提供更具性價比的選擇。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Introducing Clef-omni with full multimodality, plus a faster Clef and a cheaper Clef-flash",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Clef 家族推出全多模態模型 Clef-omni，同步調降 Clef-flash 定價並提升推論速度",
+          "url": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/",
+          "weightedScore": 50
+        },
+        {
+          "content": "GitHub 針對 JetBrains IDE 的 Copilot 外掛發布更新。本次更新讓開發者能更精細地控制預設使用的模型以及 MCP（Model Context Protocol）伺服器，同時改善問題診斷流程、聊天導航與帳號控制，提升開發者在 IDE 內協同 AI Agent 與外部工具時的操作彈性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot weekly releases — October 5",
+          "sourceTitle": "New controls and chat improvements in Copilot for JetBrains",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 每週更新：強化 Agent 權限隔離與跨帳號環境控制",
-          "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5",
+          "title": "GitHub Copilot for JetBrains 更新：強化預設模型切換與 MCP 伺服器自訂控制",
+          "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains",
           "weightedScore": 100
         },
         {
-          "content": "Hacker News 社群針對 DeepSeek 4.1 Flash 展開熱烈討論。討論核心圍繞在其極低推論成本與高效架構表現，探討為何開源社群與產業界尚未對該模型的效能性價比做出足夠熱烈的反應。這場討論深入拆解了該模型在推論效率、快顯機制與大規模部署上的技術細節，為評估輕量開源模型架構提供了豐富的第一手實務反思。",
+          "content": "GitHub 針對 Copilot code review 推出全新組織管理設定。企業與組織擁有者現在能將具備 Copilot 授權成員所產生的 code review 統一納入組織帳單計算，並提供更完整的授權控管機制，便於工程團隊管理 AI 輔助程式碼審查的配額與支出。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Copilot code review: New organization billing options and controls",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub 釋出 Copilot Code Review 企業組織計費與授權控管功能",
+          "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls",
+          "weightedScore": 100
+        },
+        {
+          "content": "OpenAI 正式撤回了三篇涉及數學推論的研究論文。此撤回事件在 AI 與形式化數學社群引發討論，凸顯出在大語言模型進行嚴謹數學推演與邏輯論證時面臨的驗證挑戰，也提醒依賴模型生成高複雜度邏輯證明的開發者需維持嚴格的校驗機制。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
+          "sourceTitle": "OpenAI Withdraws 3 Math Papers",
           "sources": [
             "hn"
           ],
-          "title": "社群熱議 DeepSeek 4.1 Flash：業界是否低估了其低成本架構衝擊？",
-          "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/",
-          "weightedScore": 1080
+          "title": "OpenAI 撤回三篇數學研究論文，引發學界對模型推論驗證的關注",
+          "url": "https://github.com/openai/math/blob/main/history.md",
+          "weightedScore": 342
         },
         {
-          "content": "開發者分享了以約 2800 美元低成本打造 256GB VRAM 本地推論工作站的深度實作經驗。其採用 8 張老款企業級 AMD Radeon Pro V620 GPU，並透過自訂 vLLM 分支調校，成功在 Qwen3.8-Flash-Next 上實現每秒 60-100 token 的解碼速度與 3000+ token 的預填速度。這為苦於高昂 NVIDIA 硬體成本的 LLM 開發者提供了一套高性價比的自建推論架構範例。",
+          "content": "該研究挑戰了現代大型語言模型必須依賴 Tokenizer 才能維持效率的假設。研究指出標準扁平 Transformer 直接處理原始 byte（位元組）序列時，隨著參數規模擴展，其表現實際上能超越傳統 subword 模型。過去普遍認為處理 byte 序列因長度過長而運算低效，該論文透過資訊分配分析與規模化實驗顛覆了此觀點，為未來的無分詞器（Tokenizer-free）架構提供重要實證。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "$2800 rig with 8x Radeon Pro V620 (256 GB VRAM) + custom vLLM fork = Qwen3.8-Flash-Next at 60 to 100 t/s decode and 3000+ t/s prefill",
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
           "sources": [
-            "reddit-localllama"
+            "lobsters-ai"
           ],
-          "title": "8 卡 AMD Radeon Pro 打造高性價推論叢集：Qwen3.8 解碼達 100 t/s",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0wnz1/2800_rig_with_8x_radeon_pro_v620_256_gb_vram/",
+          "title": "研究挑戰 Tokenizer 必要性：Byte 語言模型在參數量擴展下超越傳統 Subword 模型",
+          "url": "https://arxiv.org/html/2610.05978v1",
           "weightedScore": 100
         },
         {
-          "content": "本文深入探討在大規模 AI 訓練與推論環境中，如何設計兼具影響力與資源利用率的 GPU 叢集調度機制。針對分散式作業通訊開銷、顯存碎片化以及優先級搶佔等痛點，文章解析了調度演算法對叢集整體吞吐量與延遲的關鍵影響，為從事 MLOps 與平台工程架構師提供了實用的優化指引。",
+          "content": "文章深入探討 Lean 定理證明器（Theorem Prover）的核心可靠性機制，以及大語言模型與形式化驗證系統整合時的關鍵挑戰。Lean 透過微核心架構保證邏輯與證明的絕對正確性，在 AI 生成代碼與邏輯推演容易出現幻覺的背景下，成為檢驗 AI 輸出與構建高可靠系統的重要工具。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "What mathematicians should know about the Lean Theorem Prover: reliability & AI",
+          "sources": [
+            "hn"
+          ],
+          "title": "解析 Lean 定理證明器：微核心可靠性設計與 AI 輔助數學推論的結合",
+          "url": "https://terrytao.wordpress.com/2026/10/09/what-mathematicians-should-know-about-the-lean-theorem-proverquestions-of-reliability-and-ai/",
+          "weightedScore": 190
+        },
+        {
+          "content": "NVIDIA 分享了針對 Nemotron 模型家族進行專項微調的實作成果，使其在國際資訊奧林匹克競賽（IOI）與國際數學奧林匹克競賽（IMO）等高難度挑戰中達到金牌水準。內容詳細探討了針對複雜演算法推導與數學證明任務的合成資料集構建與多步驟推理微調經驗。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "huggingface-blog",
-          "sourceTitle": "Impactful scheduling for GPU clusters",
+          "sourceTitle": "One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO",
           "sources": [
             "huggingface-blog"
           ],
-          "title": "大規模 GPU 叢集排程實務：化解 AI 運算資源瓶頸的關鍵策略",
-          "url": "https://huggingface.co/blog/allenai/impactful-scheduling",
+          "title": "NVIDIA 分享 Nemotron 微調實踐：單一模型在國際資訊奧賽與數學奧賽達金牌成績",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026",
           "weightedScore": 100
         },
         {
-          "content": "隨著歐盟重大資安與營運韌性法規 NIS2 和 DORA 生效，企業內部對基礎設施的合規審查要求急遽升高。本文深度分析 Kubernetes 平台團隊在面對法規控制項目時的實務邊界，探討平台工程師應如何從容器安全、災難復原、審計追蹤到存取控制等層面落實合規證據交付，避免平台團隊陷入無休止的合規模糊地帶。",
+          "content": "文章探討 AI Agent 上線後的品質演進挑戰。當服務運作正常但輸出結果難以衡量進步時，工程團隊應透過串接線上執行軌跡（production traces）與精選資料集建立回饋循環，以系統化的評估機制持續改善代理人的決策與輸出表現，為 LLMOps 與 Agent 架構維運提供實踐指南。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Who owns NIS2 and DORA on a Kubernetes platform team",
+          "sourceId": "thenewstack",
+          "sourceTitle": "How to turn AI production feedback into better agents",
           "sources": [
-            "cncf-blog"
+            "thenewstack"
           ],
-          "title": "歐盟 NIS2 與 DORA 法規落地：Kubernetes 平台架構團隊的權責劃分指南",
-          "url": "https://www.cncf.io/blog/2026/10/09/who-owns-nis2-and-dora-on-a-kubernetes-platform-team/",
+          "title": "將線上生產環境追蹤轉化為 Agent 迭代動力：AI Agent 閉環優化指南",
+          "url": "https://thenewstack.io/ai-agent-evaluation-loop/",
+          "weightedScore": 50
+        },
+        {
+          "content": "開源 macOS 應用程式 DigUp 結合 Google DeepMind 的 EmbeddingGemma 2 模型，讓使用者能在本機完全離線檢索檔案。該模型將文字、圖像、音訊與視訊統一映射至同一個向量語意空間，支援透過自然語言直接定位影音片段或文件段落，展示了端側多模態語意檢索的實用落地方式。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "Open-source Mac app that runs EmbeddingGemma 2 locally to search your files by what’s in them",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "開源 Mac 應用 DigUp 釋出：在本地利用 EmbeddingGemma 2 進行跨模態檔案檢索",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2/",
           "weightedScore": 100
+        },
+        {
+          "content": "Talorys 是一個開源且自託管的個人 AI Agent 專案，完整部署在 Cloudflare 的免費層（Free tier）之上。該專案展示了如何結合 Serverless 邊緣架構與低成本雲端資源，將代理人邏輯、工具調用與狀態管理整合於邊緣環境，為開發者實作低成本 AI Agent 提供具體參考架構。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+          "sources": [
+            "hn"
+          ],
+          "title": "Talorys：基於 Cloudflare 免費層構建的輕量自託管個人 AI 代理架構",
+          "url": "https://github.com/rociiu/talorys",
+          "weightedScore": 229
+        },
+        {
+          "content": "Voxlocal 是一個使用 Rust 語言編寫的極簡本地語音代理（Voice Agent）開源專案。該專案聚焦於低延遲與端側處理，展示如何利用 Rust 的高併發與效能特性整合語音識別、語言模型與語音合成，為探索邊緣設備即時語音管線整合的工程師提供輕量實作參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Voxlocal: a minimal voice agent written in Rust",
+          "sources": [
+            "lobsters-ai",
+            "lobsters-programming"
+          ],
+          "title": "Voxlocal：以 Rust 開發的極簡本地語音 AI 代理開源實作",
+          "url": "https://samkhawase.com/blog/voxlocal-minimal-voice-agent/",
+          "weightedScore": 200
         }
       ]
     }
@@ -4221,6 +4249,147 @@
       ],
       "title": "Who owns NIS2 and DORA on a Kubernetes platform team",
       "url": "https://cncf.io/blog/2026/10/09/who-owns-nis2-and-dora-on-a-kubernetes-platform-team"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Cloudflare acquires Deno",
+      "url": "https://deno.com/blog/cloudflare"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "gh-cpython",
+      "sources": [
+        "gh-cpython"
+      ],
+      "title": "v3.15.0",
+      "url": "https://github.com/python/cpython/releases/tag/v3.15.0"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Microsoft skipped OpenAI’s decision model and built its own on Alibaba’s Qwen",
+      "url": "https://thenewstack.io/microsoft-decision-model-foundry"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Introducing Clef-omni with full multimodality, plus a faster Clef and a cheaper Clef-flash",
+      "url": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "New controls and chat improvements in Copilot for JetBrains",
+      "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Copilot code review: New organization billing options and controls",
+      "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "OpenAI Withdraws 3 Math Papers",
+      "url": "https://github.com/openai/math/blob/main/history.md"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
+      "url": "https://arxiv.org/html/2610.05978v1"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "What mathematicians should know about the Lean Theorem Prover: reliability & AI",
+      "url": "https://terrytao.wordpress.com/2026/10/09/what-mathematicians-should-know-about-the-lean-theorem-proverquestions-of-reliability-and-ai"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO",
+      "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "How to turn AI production feedback into better agents",
+      "url": "https://thenewstack.io/ai-agent-evaluation-loop"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Open-source Mac app that runs EmbeddingGemma 2 locally to search your files by what’s in them",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+      "url": "https://github.com/rociiu/talorys"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-10T23:28:22.953Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai",
+        "lobsters-programming"
+      ],
+      "title": "Voxlocal: a minimal voice agent written in Rust",
+      "url": "https://samkhawase.com/blog/voxlocal-minimal-voice-agent"
     }
   ]
 }
