@@ -386,109 +386,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-04T23:01:45.455Z",
-  "lastNewsPushAt": "2026-10-09T00:16:25.961Z",
+  "lastNewsPushAt": "2026-10-09T23:59:03.593Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-04T23:01:45.455Z",
       "summary": "本次榜單新進 6 個、竄升 2 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 2 個，綜合榜 #1 為 debpalash/VoiceStudio"
     },
     "feed": [
-      {
-        "content": "探討在無需 root 權限的環境下，如何利用 Podman 的 rootless 模式來運行 Docker Compose 工作負載，提升容器化應用的安全性與隔離性，對不希望以高權限執行常駐服務的開發者提供實務指引。",
-        "id": "news:https://elou.world/en/tutorial/podman-docker-compose",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "如何在 Rootless 模式下使用 Podman 結合 Docker Compose",
-        "type": "news",
-        "url": "https://elou.world/en/tutorial/podman-docker-compose"
-      },
-      {
-        "content": "深入探討 AI 代理在工程實務上的架構設計。文章指出，與其依賴複雜且容易出錯的對話記憶體管理，不如透過結構化、清晰的專案文件與 API 規格來引導代理，能更有效地提升 AI 在軟體開發任務中的表現。",
-        "id": "news:https://liao.gg/blog/agents-dont-need-memory",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "觀點：AI 代理不需要複雜記憶體，真正需要的是完善文件",
-        "type": "news",
-        "url": "https://liao.gg/blog/agents-dont-need-memory"
-      },
-      {
-        "content": "AI 代理在科學研究領域取得重大進展，Opus 5.5 代理成功自主發現了兩種具備室溫磁性半導體特性的候選材料，展示了先進 AI 模型在推動材料科學與硬體底層創新上的實質應用價值。",
-        "id": "news:https://vals.ai/blogs/room-temperature-magnetic-semiconductors",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "Opus 5.5 AI 代理成功發現兩種室溫磁性半導體候選材料",
-        "type": "news",
-        "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors"
-      },
-      {
-        "content": "技術評測指出，如 Jev 等新型決策模型在實際表現上仍無法超越傳統分類器或主流的 LLM-as-a-judge（大模型評審）方法，為開發者在選擇自動化評估與品質控制方案時提供重要的參考基準。",
-        "id": "news:https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "評測顯示決策模型 Jev 表現不及傳統分類器與 LLM-as-a-judge",
-        "type": "news",
-        "url": "https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails"
-      },
-      {
-        "content": "探討 Model Context Protocol (MCP) 伺服器在啟動時常消耗大量 Token（例如單一伺服器在執行動作前即消耗 18,000 個 Token）的效能痛點，並提供具體的優化與工作區離避（workaround）實務作法。",
-        "id": "news:https://thenewstack.io/pi-agent-mcp-codemode",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "單一 MCP 伺服器初始化消耗大量 Token 的問題與解決方案",
-        "type": "news",
-        "url": "https://thenewstack.io/pi-agent-mcp-codemode/"
-      },
-      {
-        "content": "技術深度探討德國 Aleph Alpha 推出的主權大模型 Kolibri 的架構設計與運作機制，為關注歐洲在地化 AI 發展與替代方案的開發者提供實用的技術剖析。",
-        "id": "news:https://tej.as/blog/aleph-alpha-kolibri",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "深入解析德國主權大模型 Aleph Alpha Kolibri 的運作原理",
-        "type": "news",
-        "url": "https://tej.as/blog/aleph-alpha-kolibri"
-      },
-      {
-        "content": "丹麥驚傳大規模資料外洩事故，導致高達 880 萬人的個人敏感資料曝光。此類重大資安事件凸顯了企業與系統在資料保護、存取控制與供應鏈安全上面臨的嚴峻挑戰。",
-        "id": "news:https://cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger",
-        "publishedAt": "2026-10-06T01:16:30.479Z",
-        "title": "丹麥發生重大資料外洩事件，波及 880 萬人個人資料",
-        "type": "news",
-        "url": "https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger"
-      },
-      {
-        "content": "Mistral 官方正式發布新一代旗艦大型語言模型 Mistral Large 4，帶來更強大的推論與綜合處理能力，持續拓展其開源與商業模型的效能邊界。",
-        "id": "news:https://mistral.ai/news/mistral-large-4",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "Mistral Large 4 正式發布",
-        "type": "news",
-        "url": "https://mistral.ai/news/mistral-large-4/\\"
-      },
-      {
-        "content": "DNS 根金鑰預定於 2026 年 10 月 11 日切換至新的金鑰簽署金鑰（KSK-2024）。開發者與維運人員需確認 DNS 解析器是否支援相關標準，以確保網域名稱解析服務不受影響。",
-        "id": "news:https://blog.cloudflare.com/root-ksk-2024-rollover",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "網際網路根金鑰將於 10 月 11 日進行更新",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/root-ksk-2024-rollover/"
-      },
-      {
-        "content": "知名高效能 DataFrame 處理工具 Polars 推出 2.0 重大版本更新。此次改版帶來核心架構的升級與效能優化，進一步提升大規模資料處理的運算效率與開發者體驗。",
-        "id": "news:https://pola.rs/posts/release-polars-2",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "高效資料處理工具 Polars 2.0 正式登場",
-        "type": "news",
-        "url": "https://pola.rs/posts/release-polars-2/"
-      },
-      {
-        "content": "Google 推出 EmbeddingGemma 2，這是一款擁有 7.4 億參數的開源輕量級多模態嵌入模型，支援文字、程式碼、圖片、影片及音訊檢索，適合在資源受限的環境中部署。",
-        "id": "news:https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "Google 發布開源輕量多模態嵌入模型 EmbeddingGemma 2",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/"
-      },
-      {
-        "content": "官方發布最新技術進展報告，詳細說明 AI 模型在處理複雜數學推理與證明任務上的突破與應用成果，展示人工智慧在邏輯推導能力上的升級。",
-        "id": "news:https://openai.com/index/sharing-ai-progress-in-mathematics",
-        "publishedAt": "2026-10-06T23:45:08.530Z",
-        "title": "OpenAI 分享 AI 在數學領域的最新進展",
-        "type": "news",
-        "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/"
-      },
       {
         "content": "用於 Rust 與 Python 的 Tapo 裝置控制程式庫迎來更新，現在正式支援 TP-Link 的 TPAP 協議，讓開發者能更便利地整合與控制相關智慧硬體設備。",
         "id": "news:https://mihai.dinculescu.dev/posts/tapo-speaks-tpap",
@@ -792,191 +696,274 @@
         "title": "南韓大型銀行遭單人駭客結合開源滲透工具與多款 AI 模型發動攻擊",
         "type": "news",
         "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were/"
+      },
+      {
+        "content": "Python 官方正式釋出 3.15.0 版本。作為主流後端開發與 AI/機器學習領域的核心基礎設施，本次大版本更新延續了執行時期效能最佳化、直譯器效能改進與型別系統支援。這對全球 Python 開發團隊而言是重大版本升級里程碑，建議工程團隊著手評估既有依賴套件相容性並規劃升級驗證。",
+        "id": "news:https://python.org/downloads/release/python-3150",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "Python 3.15 正式版本釋出",
+        "type": "news",
+        "url": "https://www.python.org/downloads/release/python-3150/"
+      },
+      {
+        "content": "Deno 團隊宣布加入 Cloudflare。雙方將攜手降低 Cloudflare Workers 與 Durable Objects 的自託管難度，使開發者能夠在更多自建或私有環境中使用完全一致的無伺服器原始組件（primitives）。Deno 過去在 JavaScript/TypeScript 執行環境與邊緣架構的積累，結合 Cloudflare 的全球邊緣網路與分散式儲存能力，預期將深刻影響全端與邊緣應用的開發體驗與部署模式。",
+        "id": "news:https://blog.cloudflare.com/deno-joins-cloudflare",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "Deno 正式加入 Cloudflare，加速簡化 Workers 與 Durable Objects 自託管",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/deno-joins-cloudflare/"
+      },
+      {
+        "content": "Kubernetes 生態系正全面加速淘汰舊版 Linux cgroup v1，全面轉向依賴 cgroup v2。cgroup v2 提供更統一的階層架構、更精確的記憶體與 CPU 資源隔離、增強的 OOM 控制與更優秀的 eBPF 整合。這項架構淘汰意味著依賴舊版 Linux 核心與節點作業系統的維運與 SRE 團隊必須儘速規劃節點環境升級，否則將無法升級至未來的 Kubernetes 版本。",
+        "id": "news:https://thenewstack.io/kubernetes-node-swap-ai",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "Kubernetes 正式終結 cgroup v1 支援：叢集轉向 cgroup v2 的關鍵變更",
+        "type": "news",
+        "url": "https://thenewstack.io/kubernetes-node-swap-ai/"
+      },
+      {
+        "content": "Cloudflare 宣布為 Workers 和 Durable Objects 推出隨選 CPU 與記憶體效能剖析（profiling）功能。開發者現在可以直接在生產環境中即時產生互動式火焰圖（flamegraphs），精確診斷無伺服器程式碼中的效能瓶頸與記憶體洩漏問題。這大幅降低了過去在分散式邊緣運算環境中難以重現與排查極限負載問題的痛點。",
+        "id": "news:https://blog.cloudflare.com/workers-on-demand-profiling",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "Cloudflare Workers 與 Durable Objects 支援隨選 CPU 及記憶體火焰圖分析",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/workers-on-demand-profiling/"
+      },
+      {
+        "content": "AWS 宣布 Amazon ECS 現已支援自動偵測並修復故障的 GPU 與運算實例。當底層硬體或驅動程式發生故障時，ECS 能自動替換不良節點，確保服務持續運作。對於在雲端執行大規模 AI 訓練與推論工作負載的 SRE 與平台工程團隊而言，這顯著減少了手動介入硬體故障排查的維運負擔，提升高可用性。",
+        "id": "news:https://thenewstack.io/amazon-ecs-auto-repair",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "Amazon ECS 支援故障 GPU 與實例自動修復，強化 AI 與關鍵負載穩定度",
+        "type": "news",
+        "url": "https://thenewstack.io/amazon-ecs-auto-repair/"
+      },
+      {
+        "content": "開源專案 Whistle 發布了一款極致輕量化的語音轉文字（Speech to Text）模型，整體模型容量僅 16.9 MB。相較於 Whisper 等動輒數百 MB 到數 GB 的語音辨識模型，Whistle 能在資源極端受限的物聯網設備、瀏覽器 WebAssembly 或行動端流暢運行，為邊緣語音互動應用大幅降低了部署門檻與推論延遲。",
+        "id": "news:https://cactuscompute.com/blog/whistle",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "Whistle 開源釋出：模型大小僅 16.9 MB 的超輕量語音轉文字工具",
+        "type": "news",
+        "url": "https://cactuscompute.com/blog/whistle"
+      },
+      {
+        "content": "阿里巴巴在 Hugging Face 開源釋出 Qwen-Image-2.1-Turbo 模型。作為千問系列在影像生成領域的最新加速版本，該模型主打更高速的影像合成與推論效率，進一步豐富了開源多模態生態系。開發者可直接基於 Hugging Face 下載權重，將高效影像生成能力整合至私有化工作流或客製化產品中。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x1ldef/qwenqwenimage21turbo_hugging_face",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "阿里開源 Qwen-Image-2.1-Turbo 影像生成模型",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x1ldef/qwenqwenimage21turbo_hugging_face/"
+      },
+      {
+        "content": "GitHub 發布最新 Copilot 週更新，著重於跨帳號與多環境下的管理彈性。管理員現在能更嚴格地控管 AI agent 的存取權限與任務調度，並整合 GitHub Copilot Claude Haiku 模型支援。這項更新為企業與團隊在導入自主代理（Autonomous Agents）協同開發時，提供了不可或缺的安全邊界與權限治理機制。",
+        "id": "news:https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "GitHub Copilot 每週更新：強化 Agent 權限隔離與跨帳號環境控制",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5"
+      },
+      {
+        "content": "Hacker News 社群針對 DeepSeek 4.1 Flash 展開熱烈討論。討論核心圍繞在其極低推論成本與高效架構表現，探討為何開源社群與產業界尚未對該模型的效能性價比做出足夠熱烈的反應。這場討論深入拆解了該模型在推論效率、快顯機制與大規模部署上的技術細節，為評估輕量開源模型架構提供了豐富的第一手實務反思。",
+        "id": "news:https://dgt.is/blog/2026-10-07-deepseek-freek-out",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "社群熱議 DeepSeek 4.1 Flash：業界是否低估了其低成本架構衝擊？",
+        "type": "news",
+        "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/"
+      },
+      {
+        "content": "開發者分享了以約 2800 美元低成本打造 256GB VRAM 本地推論工作站的深度實作經驗。其採用 8 張老款企業級 AMD Radeon Pro V620 GPU，並透過自訂 vLLM 分支調校，成功在 Qwen3.8-Flash-Next 上實現每秒 60-100 token 的解碼速度與 3000+ token 的預填速度。這為苦於高昂 NVIDIA 硬體成本的 LLM 開發者提供了一套高性價比的自建推論架構範例。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x0wnz1/2800_rig_with_8x_radeon_pro_v620_256_gb_vram",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "8 卡 AMD Radeon Pro 打造高性價推論叢集：Qwen3.8 解碼達 100 t/s",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0wnz1/2800_rig_with_8x_radeon_pro_v620_256_gb_vram/"
+      },
+      {
+        "content": "本文深入探討在大規模 AI 訓練與推論環境中，如何設計兼具影響力與資源利用率的 GPU 叢集調度機制。針對分散式作業通訊開銷、顯存碎片化以及優先級搶佔等痛點，文章解析了調度演算法對叢集整體吞吐量與延遲的關鍵影響，為從事 MLOps 與平台工程架構師提供了實用的優化指引。",
+        "id": "news:https://huggingface.co/blog/allenai/impactful-scheduling",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "大規模 GPU 叢集排程實務：化解 AI 運算資源瓶頸的關鍵策略",
+        "type": "news",
+        "url": "https://huggingface.co/blog/allenai/impactful-scheduling"
+      },
+      {
+        "content": "隨著歐盟重大資安與營運韌性法規 NIS2 和 DORA 生效，企業內部對基礎設施的合規審查要求急遽升高。本文深度分析 Kubernetes 平台團隊在面對法規控制項目時的實務邊界，探討平台工程師應如何從容器安全、災難復原、審計追蹤到存取控制等層面落實合規證據交付，避免平台團隊陷入無休止的合規模糊地帶。",
+        "id": "news:https://cncf.io/blog/2026/10/09/who-owns-nis2-and-dora-on-a-kubernetes-platform-team",
+        "publishedAt": "2026-10-09T23:59:03.593Z",
+        "title": "歐盟 NIS2 與 DORA 法規落地：Kubernetes 平台架構團隊的權責劃分指南",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/10/09/who-owns-nis2-and-dora-on-a-kubernetes-platform-team/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-09T00:16:25.961Z",
+      "generatedAt": "2026-10-09T23:59:03.593Z",
       "items": [
         {
-          "content": "相關標準與憑證授權機構預告，數位憑證的最大有效期限將於 2027 年 2 月縮短至 64 天。這項重大標準變動將迫使開發者與維運團隊必須全面自動化憑證的輪替與管理流程，以因應更頻繁的憑證更新需求。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "lobsters-devops",
-          "sourceTitle": "64-Day Certificate Lifetimes Coming Feb 2027",
-          "sources": [
-            "lobsters-devops"
-          ],
-          "title": "憑證有效期限將於 2027 年 2 月縮短至 64 天",
-          "url": "https://letsencrypt.org/2026/10/07/64-day-certs.html",
-          "weightedScore": 100
-        },
-        {
-          "content": "Node.js 發布了 26.11.0 (Current) 版本，包含多項重要更新與次要變更（SEMVER-MINOR）。本次更新在 buffer 模組中新增了 `isLatin1` 檢測與 `Buffer.stringLength()` 方法，並在 http 模組加入標頭驗證函式，同時將 Alpine Linux 提升至 Tier 2 支援。",
+          "content": "Python 官方正式釋出 3.15.0 版本。作為主流後端開發與 AI/機器學習領域的核心基礎設施，本次大版本更新延續了執行時期效能最佳化、直譯器效能改進與型別系統支援。這對全球 Python 開發團隊而言是重大版本升級里程碑，建議工程團隊著手評估既有依賴套件相容性並規劃升級驗證。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sourceTitle": "2026-10-07, Version 26.11.0 (Current), @aduh95",
-          "sources": [
-            "gh-nodejs"
-          ],
-          "title": "Node.js 26.11.0 版本正式發布",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.11.0",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 宣布本地沙箱（Local sandboxing）功能現已全面登陸 GitHub Copilot CLI、Copilot App 以及使用 Agent Host 的 VS Code 工作階段。這項功能提供開發者一個安全且隔離的本地環境來執行 AI 相關任務。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Local sandboxing for GitHub Copilot now generally available",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 本地沙箱功能全面推出",
-          "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available",
-          "weightedScore": 100
-        },
-        {
-          "content": "從 GitHub Copilot CLI 1.0.94-0 版本開始，開發者可以在現有工作流程中透過 `/model` 指令輕鬆探索並選擇運行中的本地模型，無需離開終端機介面。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Discover local models in GitHub Copilot CLI",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot CLI 支援本地模型發現功能",
-          "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli",
-          "weightedScore": 100
-        },
-        {
-          "content": "Rust 機器學習框架 Burn 發布 0.22.0 版本，帶來更快的編譯速度、更簡便的擴充機制，以及更智慧的自動調校（Autotuning）功能，有助於開發者打造高效能的深度學習模型與管線。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "Burn 0.22.0: Faster Builds, Easier Extensions, and Smarter Autotuning",
-          "sources": [
-            "lobsters-ai"
-          ],
-          "title": "Rust 深度學習框架 Burn 0.22.0 正式發布",
-          "url": "https://tracel.ai/blog/release-0.22.0/",
-          "weightedScore": 100
-        },
-        {
-          "content": "技術社群與官方推出全新的 Falcon ASR 語音識別模型，為開發者與研究人員提供高效且開源的語音轉文字（Speech-to-Text）解決方案，擴充了現有的多模態模型生態系。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Introducing Falcon ASR",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "Falcon ASR 語音識別模型正式推出",
-          "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
-          "weightedScore": 100
-        },
-        {
-          "content": "繼 OpenAI 推出資料代理功能後，Anthropic 也正式推出 Claude Dashboards，允許開發者透過自然語言與 Claude 協作快速建構及產生資料儀表板，提升數據視覺化與營運監控的效率。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Claude can now build your dashboards",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Anthropic 推出 Claude Dashboards 資料儀表板建構功能",
-          "url": "https://thenewstack.io/claude-dashboards-data-motion/",
-          "weightedScore": 50
-        },
-        {
-          "content": "官方宣佈 Decisions API 現已進入 Public Beta 階段。這項新 API 的推出讓開發者能夠在其應用程式與工作流程中整合自動化決策能力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Decisions API is in public beta",
+          "sourceTitle": "Python 3.15",
           "sources": [
             "hn"
           ],
-          "title": "Decisions API 正式進入公開測試階段",
-          "url": "https://developers.openai.com/api/docs/guides/decisions",
-          "weightedScore": 389
+          "title": "Python 3.15 正式版本釋出",
+          "url": "https://www.python.org/downloads/release/python-3150/",
+          "weightedScore": 284
         },
         {
-          "content": "llama.cpp 合併了一項重要 Pull Request，針對無法完全放入 VRAM 的混合專家模型（MoE），在主記憶體（Host Memory）中為 MoE 專家保留 GPU 快取。這項實作預期能為未完全載入 GPU 的 MoE 模型帶來顯著的速度提升。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "llama : add a GPU cache for MoE experts kept in host memory by am17an · Pull Request #29887 · ggml-org/llama.cpp",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "llama.cpp 實作主記憶體 MoE 專家的 GPU 快取加速",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x03xkc/llama_add_a_gpu_cache_for_moe_experts_kept_in/",
-          "weightedScore": 100
-        },
-        {
-          "content": "針對自主式 AI 系統操作機台的安全議題，本文探討在何種條件下能安全允許 AI 代理運作。核心建議是切勿直接給予 AI 代理 root 權限，而是讓其「提出」下一個系統狀態，由決定性的邊界來審查與執行。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Don’t give AI agents root. Make them propose the next system state.",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "避免賦予 AI Agents Root 權限：改由其提出系統狀態變更",
-          "url": "https://www.cncf.io/blog/2026/10/08/dont-give-ai-agents-root-make-them-propose-the-next-system-state/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare Managed Defense 分享如何利用 Workers 與全球網路遙測資料建構專門的 AI 代理團隊來分析資安警報。系統透過將「具決定性的證據蒐集」與「模型推論」分離，向分析師提供有實證基礎的建議。",
+          "content": "Deno 團隊宣布加入 Cloudflare。雙方將攜手降低 Cloudflare Workers 與 Durable Objects 的自託管難度，使開發者能夠在更多自建或私有環境中使用完全一致的無伺服器原始組件（primitives）。Deno 過去在 JavaScript/TypeScript 執行環境與邊緣架構的積累，結合 Cloudflare 的全球邊緣網路與分散式儲存能力，預期將深刻影響全端與邊緣應用的開發體驗與部署模式。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cloudflare-blog",
-          "sourceTitle": "Building an evidence-grounded agentic security operations harness on Cloudflare",
+          "sourceTitle": "Deno is joining Cloudflare",
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "在 Cloudflare 上建構基於實證的代理式資安營運 Harness",
-          "url": "https://blog.cloudflare.com/agentic-security-operations/",
+          "title": "Deno 正式加入 Cloudflare，加速簡化 Workers 與 Durable Objects 自託管",
+          "url": "https://blog.cloudflare.com/deno-joins-cloudflare/",
           "weightedScore": 50
         },
         {
-          "content": "Google 正在 Chromium/Chrome 中推進原生支援 JPEG XL（JXL）圖片格式的實作與出貨。這項變動對前端開發者與網頁效能優化具重要意義，能提供更高壓縮比與品質的圖像選項。",
+          "content": "Kubernetes 生態系正全面加速淘汰舊版 Linux cgroup v1，全面轉向依賴 cgroup v2。cgroup v2 提供更統一的階層架構、更精確的記憶體與 CPU 資源隔離、增強的 OOM 控制與更優秀的 eBPF 整合。這項架構淘汰意味著依賴舊版 Linux 核心與節點作業系統的維運與 SRE 團隊必須儘速規劃節點環境升級，否則將無法升級至未來的 Kubernetes 版本。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Shipping JPEG XL in Chrome",
+          "sourceId": "thenewstack",
+          "sourceTitle": "Kubernetes on cgroup v1 is dead. Here’s what comes next.",
           "sources": [
-            "hn"
+            "thenewstack"
           ],
-          "title": "Chrome 瀏覽器正推進支援 JPEG XL 圖片格式",
-          "url": "https://developer.chrome.com/blog/jpeg-xl-in-chrome",
-          "weightedScore": 561
+          "title": "Kubernetes 正式終結 cgroup v1 支援：叢集轉向 cgroup v2 的關鍵變更",
+          "url": "https://thenewstack.io/kubernetes-node-swap-ai/",
+          "weightedScore": 50
         },
         {
-          "content": "根據 CrowdStrike 的調查報告指出，上周南韓大型銀行遭受的網路攻擊可能由單一駭客獨立完成。攻擊者結合了開源 AI 滲透測試工具 ARTEX，以及 DeepSeek v4.1-Flash、GLM-5.3、Grok 4.6 與 Claude Code 等多款 AI 模型堆疊來執行攻擊，凸顯了 AI 工具在資安攻防兩端帶來的全新挑戰。",
+          "content": "Cloudflare 宣布為 Workers 和 Durable Objects 推出隨選 CPU 與記憶體效能剖析（profiling）功能。開發者現在可以直接在生產環境中即時產生互動式火焰圖（flamegraphs），精確診斷無伺服器程式碼中的效能瓶頸與記憶體洩漏問題。這大幅降低了過去在分散式邊緣運算環境中難以重現與排查極限負載問題的痛點。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare Workers 與 Durable Objects 支援隨選 CPU 及記憶體火焰圖分析",
+          "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+          "weightedScore": 50
+        },
+        {
+          "content": "AWS 宣布 Amazon ECS 現已支援自動偵測並修復故障的 GPU 與運算實例。當底層硬體或驅動程式發生故障時，ECS 能自動替換不良節點，確保服務持續運作。對於在雲端執行大規模 AI 訓練與推論工作負載的 SRE 與平台工程團隊而言，這顯著減少了手動介入硬體故障排查的維運負擔，提升高可用性。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Amazon ECS now auto-repairs failing GPUs and instances. Here’s why it matters for SREs.",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Amazon ECS 支援故障 GPU 與實例自動修復，強化 AI 與關鍵負載穩定度",
+          "url": "https://thenewstack.io/amazon-ecs-auto-repair/",
+          "weightedScore": 50
+        },
+        {
+          "content": "開源專案 Whistle 發布了一款極致輕量化的語音轉文字（Speech to Text）模型，整體模型容量僅 16.9 MB。相較於 Whisper 等動輒數百 MB 到數 GB 的語音辨識模型，Whistle 能在資源極端受限的物聯網設備、瀏覽器 WebAssembly 或行動端流暢運行，為邊緣語音互動應用大幅降低了部署門檻與推論延遲。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Whistle: Speech to Text in 16.9 MB",
+          "sources": [
+            "hn",
+            "lobsters-ai"
+          ],
+          "title": "Whistle 開源釋出：模型大小僅 16.9 MB 的超輕量語音轉文字工具",
+          "url": "https://cactuscompute.com/blog/whistle",
+          "weightedScore": 1015
+        },
+        {
+          "content": "阿里巴巴在 Hugging Face 開源釋出 Qwen-Image-2.1-Turbo 模型。作為千問系列在影像生成領域的最新加速版本，該模型主打更高速的影像合成與推論效率，進一步豐富了開源多模態生態系。開發者可直接基於 Hugging Face 下載權重，將高效影像生成能力整合至私有化工作流或客製化產品中。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "reddit-localllama",
-          "sourceTitle": "Last week some of South Korea's biggest banks were hit by a cyberattack. We now know the entire hack may have been done by a single person. He used a combined stack of an open-source AI penetration tool named ARTEX, DeepSeek v4.1-Flash, GLM-5.3, Grok 4.6, and Claude Code (CrowdStrike)",
+          "sourceTitle": "Qwen/Qwen-Image-2.1-Turbo · Hugging Face",
           "sources": [
             "reddit-localllama"
           ],
-          "title": "南韓大型銀行遭單人駭客結合開源滲透工具與多款 AI 模型發動攻擊",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were/",
+          "title": "阿里開源 Qwen-Image-2.1-Turbo 影像生成模型",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x1ldef/qwenqwenimage21turbo_hugging_face/",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 發布最新 Copilot 週更新，著重於跨帳號與多環境下的管理彈性。管理員現在能更嚴格地控管 AI agent 的存取權限與任務調度，並整合 GitHub Copilot Claude Haiku 模型支援。這項更新為企業與團隊在導入自主代理（Autonomous Agents）協同開發時，提供了不可或缺的安全邊界與權限治理機制。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub Copilot weekly releases — October 5",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 每週更新：強化 Agent 權限隔離與跨帳號環境控制",
+          "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5",
+          "weightedScore": 100
+        },
+        {
+          "content": "Hacker News 社群針對 DeepSeek 4.1 Flash 展開熱烈討論。討論核心圍繞在其極低推論成本與高效架構表現，探討為何開源社群與產業界尚未對該模型的效能性價比做出足夠熱烈的反應。這場討論深入拆解了該模型在推論效率、快顯機制與大規模部署上的技術細節，為評估輕量開源模型架構提供了豐富的第一手實務反思。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
+          "sources": [
+            "hn"
+          ],
+          "title": "社群熱議 DeepSeek 4.1 Flash：業界是否低估了其低成本架構衝擊？",
+          "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/",
+          "weightedScore": 1080
+        },
+        {
+          "content": "開發者分享了以約 2800 美元低成本打造 256GB VRAM 本地推論工作站的深度實作經驗。其採用 8 張老款企業級 AMD Radeon Pro V620 GPU，並透過自訂 vLLM 分支調校，成功在 Qwen3.8-Flash-Next 上實現每秒 60-100 token 的解碼速度與 3000+ token 的預填速度。這為苦於高昂 NVIDIA 硬體成本的 LLM 開發者提供了一套高性價比的自建推論架構範例。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "$2800 rig with 8x Radeon Pro V620 (256 GB VRAM) + custom vLLM fork = Qwen3.8-Flash-Next at 60 to 100 t/s decode and 3000+ t/s prefill",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "8 卡 AMD Radeon Pro 打造高性價推論叢集：Qwen3.8 解碼達 100 t/s",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0wnz1/2800_rig_with_8x_radeon_pro_v620_256_gb_vram/",
+          "weightedScore": 100
+        },
+        {
+          "content": "本文深入探討在大規模 AI 訓練與推論環境中，如何設計兼具影響力與資源利用率的 GPU 叢集調度機制。針對分散式作業通訊開銷、顯存碎片化以及優先級搶佔等痛點，文章解析了調度演算法對叢集整體吞吐量與延遲的關鍵影響，為從事 MLOps 與平台工程架構師提供了實用的優化指引。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Impactful scheduling for GPU clusters",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "大規模 GPU 叢集排程實務：化解 AI 運算資源瓶頸的關鍵策略",
+          "url": "https://huggingface.co/blog/allenai/impactful-scheduling",
+          "weightedScore": 100
+        },
+        {
+          "content": "隨著歐盟重大資安與營運韌性法規 NIS2 和 DORA 生效，企業內部對基礎設施的合規審查要求急遽升高。本文深度分析 Kubernetes 平台團隊在面對法規控制項目時的實務邊界，探討平台工程師應如何從容器安全、災難復原、審計追蹤到存取控制等層面落實合規證據交付，避免平台團隊陷入無休止的合規模糊地帶。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sourceTitle": "Who owns NIS2 and DORA on a Kubernetes platform team",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "歐盟 NIS2 與 DORA 法規落地：Kubernetes 平台架構團隊的權責劃分指南",
+          "url": "https://www.cncf.io/blog/2026/10/09/who-owns-nis2-and-dora-on-a-kubernetes-platform-team/",
           "weightedScore": 100
         }
       ]
@@ -4113,6 +4100,127 @@
       ],
       "title": "Last week some of South Korea's biggest banks were hit by a cyberattack. We now know the entire hack may have been done by a single person. He used a combined stack of an open-source AI penetration tool named ARTEX, DeepSeek v4.1-Flash, GLM-5.3, Grok 4.6, and Claude Code (CrowdStrike)",
       "url": "https://reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Python 3.15",
+      "url": "https://python.org/downloads/release/python-3150"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Deno is joining Cloudflare",
+      "url": "https://blog.cloudflare.com/deno-joins-cloudflare"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Kubernetes on cgroup v1 is dead. Here’s what comes next.",
+      "url": "https://thenewstack.io/kubernetes-node-swap-ai"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects",
+      "url": "https://blog.cloudflare.com/workers-on-demand-profiling"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Amazon ECS now auto-repairs failing GPUs and instances. Here’s why it matters for SREs.",
+      "url": "https://thenewstack.io/amazon-ecs-auto-repair"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-ai"
+      ],
+      "title": "Whistle: Speech to Text in 16.9 MB",
+      "url": "https://cactuscompute.com/blog/whistle"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Qwen/Qwen-Image-2.1-Turbo · Hugging Face",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x1ldef/qwenqwenimage21turbo_hugging_face"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot weekly releases — October 5",
+      "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
+      "url": "https://dgt.is/blog/2026-10-07-deepseek-freek-out"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "$2800 rig with 8x Radeon Pro V620 (256 GB VRAM) + custom vLLM fork = Qwen3.8-Flash-Next at 60 to 100 t/s decode and 3000+ t/s prefill",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x0wnz1/2800_rig_with_8x_radeon_pro_v620_256_gb_vram"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Impactful scheduling for GPU clusters",
+      "url": "https://huggingface.co/blog/allenai/impactful-scheduling"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-09T23:59:03.593Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "Who owns NIS2 and DORA on a Kubernetes platform team",
+      "url": "https://cncf.io/blog/2026/10/09/who-owns-nis2-and-dora-on-a-kubernetes-platform-team"
     }
   ]
 }
