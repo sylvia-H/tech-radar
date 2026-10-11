@@ -1,94 +1,94 @@
 {
   "board": {
-    "552877440": {
-      "domain": "frontend-backend",
-      "firstSeenAt": "2026-09-27T22:58:16.977Z",
-      "fullName": "juspay/hyperswitch",
-      "language": "Rust",
-      "rank": 9,
-      "starsThisWeek": 1182,
-      "url": "https://github.com/juspay/hyperswitch"
-    },
-    "997737944": {
-      "domain": "frontend-backend",
-      "firstSeenAt": "2026-10-04T23:01:45.455Z",
-      "fullName": "ruvnet/RuView",
-      "language": "Rust",
-      "rank": 10,
-      "starsThisWeek": 1120,
-      "url": "https://github.com/ruvnet/RuView"
-    },
-    "1086419061": {
+    "1048065319": {
       "domain": "ai",
-      "firstSeenAt": "2026-09-27T22:58:16.977Z",
-      "fullName": "vectorize-io/hindsight",
-      "language": "Python",
-      "rank": 2,
-      "starsThisWeek": 14507,
-      "url": "https://github.com/vectorize-io/hindsight"
+      "firstSeenAt": "2026-10-11T23:37:19.365Z",
+      "fullName": "thedotmack/claude-mem",
+      "language": "TypeScript",
+      "rank": 8,
+      "starsThisWeek": 4035,
+      "url": "https://github.com/thedotmack/claude-mem"
+    },
+    "1097346685": {
+      "domain": "ai",
+      "firstSeenAt": "2026-10-11T23:37:19.365Z",
+      "fullName": "pbakaus/impeccable",
+      "language": "JavaScript",
+      "rank": 6,
+      "starsThisWeek": 4392,
+      "url": "https://github.com/pbakaus/impeccable"
     },
     "1148788086": {
       "domain": "ai",
       "firstSeenAt": "2026-09-27T22:58:16.977Z",
       "fullName": "mattpocock/skills",
       "language": "Shell",
-      "rank": 6,
-      "starsThisWeek": 5310,
+      "rank": 2,
+      "starsThisWeek": 9179,
       "url": "https://github.com/mattpocock/skills"
     },
-    "1166129534": {
+    "1158722119": {
       "domain": "ai",
-      "firstSeenAt": "2026-10-04T23:01:45.455Z",
-      "fullName": "NVIDIA/OpenShell",
-      "language": "Rust",
+      "firstSeenAt": "2026-10-11T23:37:19.365Z",
+      "fullName": "addyosmani/agent-skills",
+      "language": "JavaScript",
+      "rank": 9,
+      "starsThisWeek": 3775,
+      "url": "https://github.com/addyosmani/agent-skills"
+    },
+    "1165277268": {
+      "domain": "ai",
+      "firstSeenAt": "2026-10-11T23:37:19.365Z",
+      "fullName": "Panniantong/Agent-Reach",
+      "language": "Python",
       "rank": 5,
-      "starsThisWeek": 5854,
-      "url": "https://github.com/NVIDIA/OpenShell"
+      "starsThisWeek": 6056,
+      "url": "https://github.com/Panniantong/Agent-Reach"
     },
-    "1170821064": {
+    "1177402105": {
       "domain": "ai",
-      "firstSeenAt": "2026-09-27T22:58:16.977Z",
-      "fullName": "paperclipai/paperclip",
+      "firstSeenAt": "2026-10-11T23:37:19.365Z",
+      "fullName": "heygen-com/hyperframes",
       "language": "TypeScript",
-      "rank": 3,
-      "starsThisWeek": 10722,
-      "url": "https://github.com/paperclipai/paperclip"
-    },
-    "1185590488": {
-      "domain": "ai",
-      "firstSeenAt": "2026-10-04T23:01:45.455Z",
-      "fullName": "rohitg00/ai-engineering-from-scratch",
-      "language": "Python",
       "rank": 7,
-      "starsThisWeek": 5059,
-      "url": "https://github.com/rohitg00/ai-engineering-from-scratch"
-    },
-    "1206390571": {
-      "domain": "ai",
-      "firstSeenAt": "2026-10-04T23:01:45.455Z",
-      "fullName": "debpalash/VoiceStudio",
-      "language": "Python",
-      "rank": 1,
-      "starsThisWeek": 16775,
-      "url": "https://github.com/debpalash/VoiceStudio"
-    },
-    "1222527844": {
-      "domain": "ai",
-      "firstSeenAt": "2026-10-04T23:01:45.455Z",
-      "fullName": "ifixai-ai/iFixAi",
-      "language": "Python",
-      "rank": 8,
-      "starsThisWeek": 4728,
-      "url": "https://github.com/ifixai-ai/iFixAi"
+      "starsThisWeek": 4081,
+      "url": "https://github.com/heygen-com/hyperframes"
     },
     "1266797999": {
       "domain": "ai",
       "firstSeenAt": "2026-10-04T23:01:45.455Z",
       "fullName": "DietrichGebert/ponytail",
       "language": "JavaScript",
-      "rank": 4,
-      "starsThisWeek": 7729,
+      "rank": 3,
+      "starsThisWeek": 7701,
       "url": "https://github.com/DietrichGebert/ponytail"
+    },
+    "1305213943": {
+      "domain": "frontend-backend",
+      "firstSeenAt": "2026-10-11T23:37:19.365Z",
+      "fullName": "DuarteSantos8/openGym",
+      "language": "JavaScript",
+      "rank": 4,
+      "starsThisWeek": 7369,
+      "url": "https://github.com/DuarteSantos8/openGym"
+    },
+    "1329849289": {
+      "domain": "ai",
+      "firstSeenAt": "2026-10-11T23:37:19.365Z",
+      "fullName": "lexmount/moli",
+      "language": "Rust",
+      "rank": 1,
+      "starsThisWeek": 9973,
+      "url": "https://github.com/lexmount/moli"
+    },
+    "1408371739": {
+      "domain": "frontend-backend",
+      "firstSeenAt": "2026-10-11T23:37:19.365Z",
+      "fullName": "bas3line/ascii",
+      "language": "TypeScript",
+      "rank": 10,
+      "starsThisWeek": 763,
+      "url": "https://github.com/bas3line/ascii"
     }
   },
   "intros": {
@@ -188,6 +188,10 @@
       "intro": "Pi Agent Harness 提供一個可自我擴充的程式開發代理框架。核心包含統一的多模型 LLM API、具狀態管理的代理運行時、互動式 CLI 以及終端介面庫。適合需整合多樣 AI 模型、自動化編碼任務或建立開發代理的開發者。專案高度重視供應鏈安全，並鼓勵共享開源開發會話以優化代理效能。可透過容器化或沙盒技術靈活保障執行安全性。",
       "introAt": "2026-07-26T23:05:01.196Z"
     },
+    "1048065319": {
+      "intro": "`thedotmack/claude-mem` 是一個專為 Claude Code 打造的持續性記憶壓縮系統。它能自動捕捉工具使用觀察並生成語意摘要，無縫跨越工作階段保留專案上下文。\n\n核心特色包含：跨工作階段的持續記憶、分層檢索的漸進式揭露、具備技能的專案歷史搜尋、即時記憶串流網頁介面，以及隱密性標籤等隱私控制。\n\n適合需要在多個獨立工作階段中，維持專案知識連續性與長期記憶的開發者與 AI 代理使用情境。",
+      "introAt": "2026-10-11T23:37:19.365Z"
+    },
     "1053118194": {
       "intro": "本專案是一本深入探討 AI Agent 的開源技術書，解決了從原理到生產實踐的落地難題。書中圍繞「Agent = LLM + 上下文 + 工具」核心架構，由 10 章內容與 92 個配套實作專案組成。涵蓋 RAG、記憶工程、多 Agent 協作、模型後訓練及多模態交互等關鍵技術。適合希望透過系統化學習與實戰練習，掌握 AI Agent 工程化開發的開發者與架構師。",
       "introAt": "2026-07-26T23:05:01.196Z"
@@ -211,6 +215,10 @@
     "1086419061": {
       "intro": "Hindsight 專為 AI 代理打造，超越傳統 RAG 與知識圖譜，實現能隨時間真正學習而非僅僅回憶對話的長期記憶系統。具備頂尖基準效能與多種架構支援。核心特色包含自動存取記憶的 LLM 包裝器、保留與反思機制，以及支援超過 60 種整合平台。適用於企業生產環境、AI 新創及各種主流程式碼代理與開發框架。",
       "introAt": "2026-09-27T22:58:16.977Z"
+    },
+    "1097346685": {
+      "intro": "專案旨在解決 AI 產出前端設計千篇一律的問題（如 Inter 字體、紫藍色漸層與過度巢狀卡片）。核心包含 1 組核心技能、24 個設計指令、即時瀏覽器迭代，以及 59 項無需 API 金鑰的確定性偵測規則，並透過 PRODUCT.md 記錄持久產品真相。適合使用 AI 編碼工具進行前端開發、需精進介面設計與維持專案風格一致性的開發者與團隊。",
+      "introAt": "2026-10-11T23:37:19.365Z"
     },
     "1128123594": {
       "intro": "OpenViking 是專為 AI 代理設計的開源上下文資料庫，將記憶、資源與技能統一納入 `viking://` 虛擬檔案系統中，解決傳統黑箱向量檢索的問題。其核心特色包含三層載取機制（L0 摘要、L1 總覽、L2 細節）以減少 Token 消耗、支援目錄遞歸檢索與具備可視化的檢索軌跡，並能在對話結束後自動將會話轉為長期記憶。適用於需精準管理 AI 上下文、降低查詢延遲並串接各大主流 AI 代理與開發工具的開發者。",
@@ -360,6 +368,10 @@
       "intro": "Grok Build 是 SpaceXAI 開發的終端 AI 程式設計代理。它提供全螢幕 TUI 介面，能深入理解程式碼庫、執行檔案編輯、終端指令、網路搜尋與管理長期任務。該專案透過 Rust 編寫，支援互動式操作、自動化腳本及編輯器嵌入。適合需要高效 AI 輔助開發、CI 自動化或追求終端環境作業流程的開發者使用。",
       "introAt": "2026-07-19T11:16:05.077Z"
     },
+    "1305213943": {
+      "intro": "openGym 是一款完全自主掌控的自架健身與體重追蹤器，擺脫第三方伺服器與訂閱陷阱。支援 Docker 一鍵部署、Passkey 安全登入與離線同步。內含超過 5,600 種帶有動畫的動作庫、多元訓練計劃、槓片計算與進度熱力圖。更可選配 AI 教練及 MCP 伺服器，是注重隱私、追求自主管理的健身族群的最佳選擇。",
+      "introAt": "2026-10-11T23:37:19.365Z"
+    },
     "1316527318": {
       "intro": "QM 是專為新創打造的多人協作 AI 代理架構。它解決了個人助理難以擴展至團隊使用的痛點，提供個人與共享空間，讓每位成員擁有隔離的記憶、權限與沙盒，實現獨立作業與團隊協作。其核心架構開放且模型中立，支援 Slack 與網頁介面，並具備完善的企業級管理、權限管控與自動化背景任務，非常適合重視安全性與客製化，並需在 Slack 頻道或專案中高效協作、自動處理日常工作的開發團隊。",
       "introAt": "2026-08-02T23:01:29.724Z"
@@ -367,6 +379,10 @@
     "1317565852": {
       "intro": "本專案致力於修復介面互動中被忽視的細節，解決點擊後瞬間的僵硬、跳動與異常感。提供高度精緻的 React 微互動組件，核心採用 Headless Hook 與 Motion 技術，確保動態符合物理邏輯並支援鍵盤與無障礙操作。適合追求頂尖 UI 細節、希望透過精準動畫提升使用者信任感的開發者，可直接複製原始碼至專案中靈活客製。",
       "introAt": "2026-08-02T23:01:29.724Z"
+    },
+    "1329849289": {
+      "intro": "Moli 是一個專為 AI 代理打造的生產級無頭瀏覽器，解決傳統瀏覽器耗資源的問題。它將完整網頁執行環境與輕量資源結合，採用按需排版設計，平時僅以結構優先運作，只在需要時才進行視覺渲染。支援命令列、CDP 與 WebDriver，具備高速、高資源效率與功能齊全的特點。極適合網頁爬蟲、瀏覽器自動化、檢索管線、評估環境及強化學習等 AI 工作負載。",
+      "introAt": "2026-10-11T23:37:19.365Z"
     },
     "1330867309": {
       "intro": "pdfcn 解決了開發者在 React 中繁瑣製作 PDF 的痛點，提供免費開源且可客製化的 PDF 元件。核心特色包含支援 Takumi 與 Forme 雙渲染引擎、零設定開箱即用、支援文件即時預覽，並完美相容 shadcn/ui 的 CLI 工作流。程式碼完全掌控，適合需要快速打造表格、發票、報表與圖表等文件的 React 開發者。",
@@ -383,168 +399,20 @@
     "1354310030": {
       "intro": "這是一個在瀏覽器中設計 Material 3 Expressive 介面的視覺化工具。支援拖曳豐富的元件、磁吸群組、多螢幕尺寸切換及頁面導航串連，並能將設計一鍵轉換為精準的 AI 程式碼提示詞。適合開發者搭配 Claude Code、Cursor 等 AI 工具快速建構跨平台應用程式。",
       "introAt": "2026-09-06T23:45:03.614Z"
+    },
+    "1408371739": {
+      "intro": "這是一個以 TypeScript 打造的 ASCII 動態藝術函式庫，專為極簡與終端機風格網站設計，在不破壞復古排版的前提下為頁面增添微動效。內含 217 種豐富組件，從色彩場景、載入動畫到圖標與物理效果應有盡有。支援 React、Next.js、Astro、Web Components 或純 HTML，也能在終端機中直接播放，並提供適用於 GitHub README 的動態 SVG 與自訂橫幅製作工具。",
+      "introAt": "2026-10-11T23:37:19.365Z"
     }
   },
-  "lastBoardPushAt": "2026-10-04T23:01:45.455Z",
-  "lastNewsPushAt": "2026-10-10T23:28:22.953Z",
+  "lastBoardPushAt": "2026-10-11T23:37:19.365Z",
+  "lastNewsPushAt": "2026-10-11T23:37:19.365Z",
   "publish": {
     "boardSummary": {
-      "generatedAt": "2026-10-04T23:01:45.455Z",
-      "summary": "本次榜單新進 6 個、竄升 2 個、下降 1 個，新進與竄升集中於 AI 6 個與前後端 2 個，綜合榜 #1 為 debpalash/VoiceStudio"
+      "generatedAt": "2026-10-11T23:37:19.365Z",
+      "summary": "本次榜單由 lexmount/moli 奪下 #1，共迎來 8 個新進項目與 2 個竄升項目，領域分布涵蓋 AI 8 個及前後端 2 個。"
     },
     "feed": [
-      {
-        "content": null,
-        "id": "news:https://niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
-        "type": "news",
-        "url": "https://www.niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons/"
-      },
-      {
-        "content": null,
-        "id": "news:https://github.com/FeSens/openTPU",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "OpenTPU – An open-source AI accelerator, developed by AI",
-        "type": "news",
-        "url": "https://github.com/FeSens/openTPU"
-      },
-      {
-        "content": null,
-        "id": "news:https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
-        "type": "news",
-        "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/"
-      },
-      {
-        "content": null,
-        "id": "news:https://zohaib.cc/blog/smartest-claude-code-feature",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "Claude Code’s suggested message feature: I think the real customer is the model",
-        "type": "news",
-        "url": "https://www.zohaib.cc/blog/smartest-claude-code-feature"
-      },
-      {
-        "content": null,
-        "id": "news:https://rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
-        "type": "news",
-        "url": "https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/"
-      },
-      {
-        "content": null,
-        "id": "news:https://penguin-mail.com/",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "Penguin Mail – open-source Rust email client for Linux with AI",
-        "type": "news",
-        "url": "https://penguin-mail.com/"
-      },
-      {
-        "content": null,
-        "id": "news:https://nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "Religious scholars met with Anthropic",
-        "type": "news",
-        "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html"
-      },
-      {
-        "content": null,
-        "id": "news:https://github.com/docker/docker-agent",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "Docker Agent",
-        "type": "news",
-        "url": "https://github.com/docker/docker-agent"
-      },
-      {
-        "content": null,
-        "id": "news:https://cncf.io/blog/2026/10/07/ciliumcon-is-back-at-kubecon-cloudnativecon-north-america-2026",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "CiliumCon is back at KubeCon + CloudNativeCon North America 2026",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/10/07/ciliumcon-is-back-at-kubecon-cloudnativecon-north-america-2026/"
-      },
-      {
-        "content": null,
-        "id": "news:https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "Secret protection must scale with software",
-        "type": "news",
-        "url": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software/"
-      },
-      {
-        "content": null,
-        "id": "news:https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection",
-        "publishedAt": "2026-10-08T00:08:11.517Z",
-        "title": "Purpose-built model for leaked secret detection",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection"
-      },
-      {
-        "content": "相關標準與憑證授權機構預告，數位憑證的最大有效期限將於 2027 年 2 月縮短至 64 天。這項重大標準變動將迫使開發者與維運團隊必須全面自動化憑證的輪替與管理流程，以因應更頻繁的憑證更新需求。",
-        "id": "news:https://letsencrypt.org/2026/10/07/64-day-certs.html",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "憑證有效期限將於 2027 年 2 月縮短至 64 天",
-        "type": "news",
-        "url": "https://letsencrypt.org/2026/10/07/64-day-certs.html"
-      },
-      {
-        "content": "Node.js 發布了 26.11.0 (Current) 版本，包含多項重要更新與次要變更（SEMVER-MINOR）。本次更新在 buffer 模組中新增了 `isLatin1` 檢測與 `Buffer.stringLength()` 方法，並在 http 模組加入標頭驗證函式，同時將 Alpine Linux 提升至 Tier 2 支援。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.11.0",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "Node.js 26.11.0 版本正式發布",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.11.0"
-      },
-      {
-        "content": "GitHub 宣布本地沙箱（Local sandboxing）功能現已全面登陸 GitHub Copilot CLI、Copilot App 以及使用 Agent Host 的 VS Code 工作階段。這項功能提供開發者一個安全且隔離的本地環境來執行 AI 相關任務。",
-        "id": "news:https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "GitHub Copilot 本地沙箱功能全面推出",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available"
-      },
-      {
-        "content": "從 GitHub Copilot CLI 1.0.94-0 版本開始，開發者可以在現有工作流程中透過 `/model` 指令輕鬆探索並選擇運行中的本地模型，無需離開終端機介面。",
-        "id": "news:https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "GitHub Copilot CLI 支援本地模型發現功能",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli"
-      },
-      {
-        "content": "Rust 機器學習框架 Burn 發布 0.22.0 版本，帶來更快的編譯速度、更簡便的擴充機制，以及更智慧的自動調校（Autotuning）功能，有助於開發者打造高效能的深度學習模型與管線。",
-        "id": "news:https://tracel.ai/blog/release-0.22.0",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "Rust 深度學習框架 Burn 0.22.0 正式發布",
-        "type": "news",
-        "url": "https://tracel.ai/blog/release-0.22.0/"
-      },
-      {
-        "content": "技術社群與官方推出全新的 Falcon ASR 語音識別模型，為開發者與研究人員提供高效且開源的語音轉文字（Speech-to-Text）解決方案，擴充了現有的多模態模型生態系。",
-        "id": "news:https://huggingface.co/blog/tiiuae/falcon-asr",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "Falcon ASR 語音識別模型正式推出",
-        "type": "news",
-        "url": "https://huggingface.co/blog/tiiuae/falcon-asr"
-      },
-      {
-        "content": "繼 OpenAI 推出資料代理功能後，Anthropic 也正式推出 Claude Dashboards，允許開發者透過自然語言與 Claude 協作快速建構及產生資料儀表板，提升數據視覺化與營運監控的效率。",
-        "id": "news:https://thenewstack.io/claude-dashboards-data-motion",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "Anthropic 推出 Claude Dashboards 資料儀表板建構功能",
-        "type": "news",
-        "url": "https://thenewstack.io/claude-dashboards-data-motion/"
-      },
-      {
-        "content": "官方宣佈 Decisions API 現已進入 Public Beta 階段。這項新 API 的推出讓開發者能夠在其應用程式與工作流程中整合自動化決策能力。",
-        "id": "news:https://developers.openai.com/api/docs/guides/decisions",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "Decisions API 正式進入公開測試階段",
-        "type": "news",
-        "url": "https://developers.openai.com/api/docs/guides/decisions"
-      },
       {
         "content": "llama.cpp 合併了一項重要 Pull Request，針對無法完全放入 VRAM 的混合專家模型（MoE），在主記憶體（Host Memory）中為 MoE 專家保留 GPU 快取。這項實作預期能為未完全載入 GPU 的 MoE 模型帶來顯著的速度提升。",
         "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x03xkc/llama_add_a_gpu_cache_for_moe_experts_kept_in",
@@ -792,240 +660,283 @@
         "title": "Voxlocal：以 Rust 開發的極簡本地語音 AI 代理開源實作",
         "type": "news",
         "url": "https://samkhawase.com/blog/voxlocal-minimal-voice-agent/"
+      },
+      {
+        "id": "repo:1329849289:new:2026-10-12",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "lexmount/moli 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/lexmount/moli"
+      },
+      {
+        "id": "repo:1148788086:climbed:2026-10-12",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "mattpocock/skills 竄升",
+        "type": "board-climbed",
+        "url": "https://github.com/mattpocock/skills"
+      },
+      {
+        "id": "repo:1266797999:climbed:2026-10-12",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "DietrichGebert/ponytail 竄升",
+        "type": "board-climbed",
+        "url": "https://github.com/DietrichGebert/ponytail"
+      },
+      {
+        "id": "repo:1305213943:new:2026-10-12",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "DuarteSantos8/openGym 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/DuarteSantos8/openGym"
+      },
+      {
+        "id": "repo:1165277268:new:2026-10-12",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "Panniantong/Agent-Reach 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/Panniantong/Agent-Reach"
+      },
+      {
+        "id": "repo:1097346685:new:2026-10-12",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "pbakaus/impeccable 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/pbakaus/impeccable"
+      },
+      {
+        "id": "repo:1177402105:new:2026-10-12",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "heygen-com/hyperframes 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/heygen-com/hyperframes"
+      },
+      {
+        "id": "repo:1048065319:new:2026-10-12",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "thedotmack/claude-mem 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/thedotmack/claude-mem"
+      },
+      {
+        "id": "repo:1158722119:new:2026-10-12",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "addyosmani/agent-skills 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/addyosmani/agent-skills"
+      },
+      {
+        "id": "repo:1408371739:new:2026-10-12",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "bas3line/ascii 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/bas3line/ascii"
+      },
+      {
+        "content": "微軟正式推出 Microsoft Execution Containers（Mxc）1.0.0 版本。這項發布標誌著該容器執行環境正式邁入生產就緒階段，為開發者與維運團隊提供微軟生態系中標準化且高效的容器隔離與執行機制，直接影響依賴微軟基礎設施與容器化工作流的部署架構。",
+        "id": "news:https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "微軟發布執行容器 Mxc 1.0.0 正式版",
+        "type": "news",
+        "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/"
+      },
+      {
+        "content": "GitHub 官方發布公告指出，近期 Copilot 使用量統計中，若發現 Agent 活動度或生成的程式碼行數指標異常下滑，主因在於客戶端回報機制的統計問題。目前官方已推出修復修正檔，開發者與團隊管理者需升級各 IDE 中的 Copilot 擴充套件，才能恢復正確的 Agent 貢獻數據追蹤。",
+        "id": "news:https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "GitHub 發布 Copilot 修正：請更新 IDE 以恢復正確的 Agent 活動指標",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics"
+      },
+      {
+        "content": "Anthropic 於資安任務倡議中推出全新「OSS Scanner」，利用 Claude 模型對開源生態系進行大規模自動化安全審查，共回報 29,000 個潛在缺陷，但目前僅有 516 個漏洞獲得修復。此報導深入探討了 AI 漏洞掃描工具雖然大幅降低挖掘缺陷的門檻，但也使人力有限的開源維護者面臨海量通報的審查負擔，促使開發社群重新檢視 AI 輔助資安通報與修復驗證的流程平衡。",
+        "id": "news:https://thenewstack.io/anthropic-oss-scanner-vulnerabilities",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "Anthropic 推出 OSS Scanner 掃描出開源專案 2.9 萬個潛在漏洞，凸顯修復量能落差",
+        "type": "news",
+        "url": "https://thenewstack.io/anthropic-oss-scanner-vulnerabilities/"
+      },
+      {
+        "content": "文章深入分析了開發者在實際專案中將 Claude Code 與模型上下文協定（MCP, Model Context Protocol）搭配使用的工程經驗。實測顯示，Claude Code 能在兩次 MCP 呼叫內迅速定位並釐清複雜系統中的共享合約結構，大幅降低接手陌生架構的認知負擔；然而實務上也隨即遭遇大量資料查詢時上下文長度迅速耗盡的瓶頸，為探索 Agentic 工作流落地的軟體工程師提供了寶貴的實作參考與邊界評估。",
+        "id": "news:https://thenewstack.io/claude-code-mcp-records",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "實測 Claude Code 結合 MCP 協定：兩次呼叫定位共享合約與上下文耗盡挑戰",
+        "type": "news",
+        "url": "https://thenewstack.io/claude-code-mcp-records/"
+      },
+      {
+        "content": "作者分享了長達五個月在真實開發工作流中調度多個 AI Coding Agent 的工程實務。該團隊借鏡現代醫療分診與專科體系，將缺陷修復拆解為分診評估、病因診斷、模組修復補丁與術後回歸驗證等多個階段，讓不同的 Agent 專注於專一職責。這種架構有效解決了傳統單一 Agent 承擔過多任務時容易出錯的盲點，為建構高穩定度 AI 結對編程流程提供了具體參考。",
+        "id": "news:https://cockroachlabs.com/blog/experiment-running-hospital-code",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "五個月工程實踐：將 Bug 視為病患、將 AI Coding Agents 組織為醫療團隊的協作架構",
+        "type": "news",
+        "url": "https://www.cockroachlabs.com/blog/experiment-running-hospital-code/"
+      },
+      {
+        "content": "作者公開為 10 人工程團隊建置成本約 1.8 萬美元的本地端 LLM 推論主機實作經驗，配置 Threadripper 處理器與 4 張 AMD Radeon R9700 AI Pro（總計 128GB VRAM），並使用 Radiance 框架分支部署 Qwen 3.8 27B MXFP4 與 DSV4 Flash 模型。文中揭露了 16 個並行工作階段下的 Prefill 與 Decode 實際吞吐量數據，為希望在地化部署大模型、兼顧隱私與 API 成本控制的工程團隊提供了實用的硬體架構參考。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x2u742/building_a_4x_r9700_setup_for_a_10_person_startup",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "10 人新創自建 4 卡 AMD 推論伺服器實測：Qwen 3.8 量化模型部署與吞吐數據剖析",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2u742/building_a_4x_r9700_setup_for_a_10_person_startup/"
+      },
+      {
+        "content": "開發者開源了一款新工具，使電腦操作型 AI Agent（Computer-Using Agents）能夠直接在使用者螢幕上動態繪製高對比的箭頭、外框與文字標註。這改變了過往 Agent 僅能依賴背景自動點擊或文字對話視窗的交互形式，讓 AI 在執行自動化測試、系統導覽或結對編程時，能以直觀的視覺反饋引導開發者，大幅降低人機協同的理解門檻並強化操作透明度。",
+        "id": "news:https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "Show HN：開源工具讓 AI Agent 具備在螢幕繪製箭頭、外框與文字的視覺互動能力",
+        "type": "news",
+        "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen"
+      },
+      {
+        "content": "資安報告揭露 Telegram Desktop 用戶端存在重大安全漏洞，攻擊者可利用該漏洞在受害者電腦上未經授權竊取任意本機檔案。考量到許多軟體開發團隊與 DevOps 人員常使用 Telegram 進行即時協作或暫存機敏資訊，此漏洞極可能導致本機原始碼、.env 環境設定檔或私鑰遭竊，使用該客戶端的開發者應儘速檢查並升級至官方安全版本。",
+        "id": "news:https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "Telegram 桌面端驚傳重大安全漏洞，攻擊者可藉此竊取使用者任意本機檔案",
+        "type": "news",
+        "url": "https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover/"
+      },
+      {
+        "content": "社群高分開源專案 REA（Reverse – Engineer Anything）正式發布，旨在為安全研究人員與軟體工程師提供高度模組化的逆向工程工具集。該專案簡化了未知二進位檔案分析、專屬通訊協定逆向與資料結構萃取的流程，提供現代化界面與靈活的自動化擴充能力，能有效提升工程師在分析無原始碼依賴套件或排查底層系統問題時的工作效率。",
+        "id": "news:https://rea.tools/",
+        "publishedAt": "2026-10-11T23:37:19.365Z",
+        "title": "開源逆向工程分析框架 REA：支援多格式的多功能逆向分析工具",
+        "type": "news",
+        "url": "https://rea.tools/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-10T23:28:22.953Z",
+      "generatedAt": "2026-10-11T23:37:19.365Z",
       "items": [
         {
-          "content": "Cloudflare 宣布收購 Deno。Deno 作為現代化 JavaScript 與 TypeScript 執行環境，以安全性、Web 標準相容性及內建工具鏈為特色。這項收購預期將對邊緣運算（Edge Computing）與 Serverless 架構生態帶來深遠影響，推動 Cloudflare Workers 與 Deno 生態系在執行環境與開發者體驗上的進一步整合。",
+          "content": "微軟正式推出 Microsoft Execution Containers（Mxc）1.0.0 版本。這項發布標誌著該容器執行環境正式邁入生產就緒階段，為開發者與維運團隊提供微軟生態系中標準化且高效的容器隔離與執行機制，直接影響依賴微軟基礎設施與容器化工作流的部署架構。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "devops",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Cloudflare acquires Deno",
+          "sourceTitle": "Mxc: Microsoft Execution Containers version 1.0.0",
           "sources": [
             "hn"
           ],
-          "title": "Cloudflare 宣布收購 Deno，加速整合邊緣運算與 JavaScript 執行環境",
-          "url": "https://deno.com/blog/cloudflare",
-          "weightedScore": 1335
+          "title": "微軟發布執行容器 Mxc 1.0.0 正式版",
+          "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+          "weightedScore": 222
         },
         {
-          "content": "Python 官方正式發布 3.15.0 版本。作為後端工程與系統軟體廣泛依賴的程式語言，主要版本發布涉及核心直譯器行為與底層更新，開發者應關注官方發布說明以評估升級時程與既有套件的相容性。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "gh-cpython",
-          "sourceTitle": "v3.15.0",
-          "sources": [
-            "gh-cpython"
-          ],
-          "title": "Python 3.15.0 正式釋出，後端開發核心語言迎來新版本",
-          "url": "https://github.com/python/cpython/releases/tag/v3.15.0",
-          "weightedScore": 100
-        },
-        {
-          "content": "微軟正式在 Foundry 平台上推出 Microsoft-Decision-1 決策模型。在 OpenAI 開放 Decisions API 之際，微軟選擇基於阿里巴巴開源的 Qwen 模型架構自主構建決策模型。此舉為 Azure 生態系帶來了新的原生決策推論選擇，也顯示出雲端平台在自主代理與決策工作流上的多模型發展策略。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Microsoft skipped OpenAI’s decision model and built its own on Alibaba’s Qwen",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "微軟於 Foundry 推出 Microsoft-Decision-1 模型，基於阿里 Qwen 架構打造",
-          "url": "https://thenewstack.io/microsoft-decision-model-foundry/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Clef 決策模型家族發表全新 Clef-omni，可在單一處理管線中原生處理音訊、視訊、圖像與文字輸入。同時，官方下調了 Clef-flash 的定價，並將 Clef 推論速度提升最高達 2.0 倍，為需要低延遲即時決策的多模態應用場景提供更具性價比的選擇。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Introducing Clef-omni with full multimodality, plus a faster Clef and a cheaper Clef-flash",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Clef 家族推出全多模態模型 Clef-omni，同步調降 Clef-flash 定價並提升推論速度",
-          "url": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/",
-          "weightedScore": 50
-        },
-        {
-          "content": "GitHub 針對 JetBrains IDE 的 Copilot 外掛發布更新。本次更新讓開發者能更精細地控制預設使用的模型以及 MCP（Model Context Protocol）伺服器，同時改善問題診斷流程、聊天導航與帳號控制，提升開發者在 IDE 內協同 AI Agent 與外部工具時的操作彈性。",
+          "content": "GitHub 官方發布公告指出，近期 Copilot 使用量統計中，若發現 Agent 活動度或生成的程式碼行數指標異常下滑，主因在於客戶端回報機制的統計問題。目前官方已推出修復修正檔，開發者與團隊管理者需升級各 IDE 中的 Copilot 擴充套件，才能恢復正確的 Agent 貢獻數據追蹤。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "New controls and chat improvements in Copilot for JetBrains",
+          "sourceTitle": "Update your IDE to restore agent activity in Copilot usage metrics",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot for JetBrains 更新：強化預設模型切換與 MCP 伺服器自訂控制",
-          "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains",
+          "title": "GitHub 發布 Copilot 修正：請更新 IDE 以恢復正確的 Agent 活動指標",
+          "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 針對 Copilot code review 推出全新組織管理設定。企業與組織擁有者現在能將具備 Copilot 授權成員所產生的 code review 統一納入組織帳單計算，並提供更完整的授權控管機制，便於工程團隊管理 AI 輔助程式碼審查的配額與支出。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Copilot code review: New organization billing options and controls",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub 釋出 Copilot Code Review 企業組織計費與授權控管功能",
-          "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls",
-          "weightedScore": 100
-        },
-        {
-          "content": "OpenAI 正式撤回了三篇涉及數學推論的研究論文。此撤回事件在 AI 與形式化數學社群引發討論，凸顯出在大語言模型進行嚴謹數學推演與邏輯論證時面臨的驗證挑戰，也提醒依賴模型生成高複雜度邏輯證明的開發者需維持嚴格的校驗機制。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "OpenAI Withdraws 3 Math Papers",
-          "sources": [
-            "hn"
-          ],
-          "title": "OpenAI 撤回三篇數學研究論文，引發學界對模型推論驗證的關注",
-          "url": "https://github.com/openai/math/blob/main/history.md",
-          "weightedScore": 342
-        },
-        {
-          "content": "該研究挑戰了現代大型語言模型必須依賴 Tokenizer 才能維持效率的假設。研究指出標準扁平 Transformer 直接處理原始 byte（位元組）序列時，隨著參數規模擴展，其表現實際上能超越傳統 subword 模型。過去普遍認為處理 byte 序列因長度過長而運算低效，該論文透過資訊分配分析與規模化實驗顛覆了此觀點，為未來的無分詞器（Tokenizer-free）架構提供重要實證。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
-          "sources": [
-            "lobsters-ai"
-          ],
-          "title": "研究挑戰 Tokenizer 必要性：Byte 語言模型在參數量擴展下超越傳統 Subword 模型",
-          "url": "https://arxiv.org/html/2610.05978v1",
-          "weightedScore": 100
-        },
-        {
-          "content": "文章深入探討 Lean 定理證明器（Theorem Prover）的核心可靠性機制，以及大語言模型與形式化驗證系統整合時的關鍵挑戰。Lean 透過微核心架構保證邏輯與證明的絕對正確性，在 AI 生成代碼與邏輯推演容易出現幻覺的背景下，成為檢驗 AI 輸出與構建高可靠系統的重要工具。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "What mathematicians should know about the Lean Theorem Prover: reliability & AI",
-          "sources": [
-            "hn"
-          ],
-          "title": "解析 Lean 定理證明器：微核心可靠性設計與 AI 輔助數學推論的結合",
-          "url": "https://terrytao.wordpress.com/2026/10/09/what-mathematicians-should-know-about-the-lean-theorem-proverquestions-of-reliability-and-ai/",
-          "weightedScore": 190
-        },
-        {
-          "content": "NVIDIA 分享了針對 Nemotron 模型家族進行專項微調的實作成果，使其在國際資訊奧林匹克競賽（IOI）與國際數學奧林匹克競賽（IMO）等高難度挑戰中達到金牌水準。內容詳細探討了針對複雜演算法推導與數學證明任務的合成資料集構建與多步驟推理微調經驗。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "NVIDIA 分享 Nemotron 微調實踐：單一模型在國際資訊奧賽與數學奧賽達金牌成績",
-          "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026",
-          "weightedScore": 100
-        },
-        {
-          "content": "文章探討 AI Agent 上線後的品質演進挑戰。當服務運作正常但輸出結果難以衡量進步時，工程團隊應透過串接線上執行軌跡（production traces）與精選資料集建立回饋循環，以系統化的評估機制持續改善代理人的決策與輸出表現，為 LLMOps 與 Agent 架構維運提供實踐指南。",
+          "content": "Anthropic 於資安任務倡議中推出全新「OSS Scanner」，利用 Claude 模型對開源生態系進行大規模自動化安全審查，共回報 29,000 個潛在缺陷，但目前僅有 516 個漏洞獲得修復。此報導深入探討了 AI 漏洞掃描工具雖然大幅降低挖掘缺陷的門檻，但也使人力有限的開源維護者面臨海量通報的審查負擔，促使開發社群重新檢視 AI 輔助資安通報與修復驗證的流程平衡。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "How to turn AI production feedback into better agents",
+          "sourceTitle": "Claude found 29,000 possible bugs in open source. Only 516 have been fixed.",
           "sources": [
             "thenewstack"
           ],
-          "title": "將線上生產環境追蹤轉化為 Agent 迭代動力：AI Agent 閉環優化指南",
-          "url": "https://thenewstack.io/ai-agent-evaluation-loop/",
+          "title": "Anthropic 推出 OSS Scanner 掃描出開源專案 2.9 萬個潛在漏洞，凸顯修復量能落差",
+          "url": "https://thenewstack.io/anthropic-oss-scanner-vulnerabilities/",
           "weightedScore": 50
         },
         {
-          "content": "開源 macOS 應用程式 DigUp 結合 Google DeepMind 的 EmbeddingGemma 2 模型，讓使用者能在本機完全離線檢索檔案。該模型將文字、圖像、音訊與視訊統一映射至同一個向量語意空間，支援透過自然語言直接定位影音片段或文件段落，展示了端側多模態語意檢索的實用落地方式。",
+          "content": "文章深入分析了開發者在實際專案中將 Claude Code 與模型上下文協定（MCP, Model Context Protocol）搭配使用的工程經驗。實測顯示，Claude Code 能在兩次 MCP 呼叫內迅速定位並釐清複雜系統中的共享合約結構，大幅降低接手陌生架構的認知負擔；然而實務上也隨即遭遇大量資料查詢時上下文長度迅速耗盡的瓶頸，為探索 Agentic 工作流落地的軟體工程師提供了寶貴的實作參考與邊界評估。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Claude Code found my app’s shared contract in two MCP calls. Then the records ran out.",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "實測 Claude Code 結合 MCP 協定：兩次呼叫定位共享合約與上下文耗盡挑戰",
+          "url": "https://thenewstack.io/claude-code-mcp-records/",
+          "weightedScore": 50
+        },
+        {
+          "content": "作者分享了長達五個月在真實開發工作流中調度多個 AI Coding Agent 的工程實務。該團隊借鏡現代醫療分診與專科體系，將缺陷修復拆解為分診評估、病因診斷、模組修復補丁與術後回歸驗證等多個階段，讓不同的 Agent 專注於專一職責。這種架構有效解決了傳統單一 Agent 承擔過多任務時容易出錯的盲點，為建構高穩定度 AI 結對編程流程提供了具體參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Five months treating bugs like patients and coding agents like a medical team",
+          "sources": [
+            "hn"
+          ],
+          "title": "五個月工程實踐：將 Bug 視為病患、將 AI Coding Agents 組織為醫療團隊的協作架構",
+          "url": "https://www.cockroachlabs.com/blog/experiment-running-hospital-code/",
+          "weightedScore": 213
+        },
+        {
+          "content": "作者公開為 10 人工程團隊建置成本約 1.8 萬美元的本地端 LLM 推論主機實作經驗，配置 Threadripper 處理器與 4 張 AMD Radeon R9700 AI Pro（總計 128GB VRAM），並使用 Radiance 框架分支部署 Qwen 3.8 27B MXFP4 與 DSV4 Flash 模型。文中揭露了 16 個並行工作階段下的 Prefill 與 Decode 實際吞吐量數據，為希望在地化部署大模型、兼顧隱私與 API 成本控制的工程團隊提供了實用的硬體架構參考。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "reddit-localllama",
-          "sourceTitle": "Open-source Mac app that runs EmbeddingGemma 2 locally to search your files by what’s in them",
+          "sourceTitle": "Building a 4x R9700 setup for a 10 person startup",
           "sources": [
             "reddit-localllama"
           ],
-          "title": "開源 Mac 應用 DigUp 釋出：在本地利用 EmbeddingGemma 2 進行跨模態檔案檢索",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2/",
+          "title": "10 人新創自建 4 卡 AMD 推論伺服器實測：Qwen 3.8 量化模型部署與吞吐數據剖析",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2u742/building_a_4x_r9700_setup_for_a_10_person_startup/",
           "weightedScore": 100
         },
         {
-          "content": "Talorys 是一個開源且自託管的個人 AI Agent 專案，完整部署在 Cloudflare 的免費層（Free tier）之上。該專案展示了如何結合 Serverless 邊緣架構與低成本雲端資源，將代理人邏輯、工具調用與狀態管理整合於邊緣環境，為開發者實作低成本 AI Agent 提供具體參考架構。",
+          "content": "開發者開源了一款新工具，使電腦操作型 AI Agent（Computer-Using Agents）能夠直接在使用者螢幕上動態繪製高對比的箭頭、外框與文字標註。這改變了過往 Agent 僅能依賴背景自動點擊或文字對話視窗的交互形式，讓 AI 在執行自動化測試、系統導覽或結對編程時，能以直觀的視覺反饋引導開發者，大幅降低人機協同的理解門檻並強化操作透明度。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+          "sourceTitle": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
           "sources": [
             "hn"
           ],
-          "title": "Talorys：基於 Cloudflare 免費層構建的輕量自託管個人 AI 代理架構",
-          "url": "https://github.com/rociiu/talorys",
-          "weightedScore": 229
+          "title": "Show HN：開源工具讓 AI Agent 具備在螢幕繪製箭頭、外框與文字的視覺互動能力",
+          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+          "weightedScore": 414
         },
         {
-          "content": "Voxlocal 是一個使用 Rust 語言編寫的極簡本地語音代理（Voice Agent）開源專案。該專案聚焦於低延遲與端側處理，展示如何利用 Rust 的高併發與效能特性整合語音識別、語言模型與語音合成，為探索邊緣設備即時語音管線整合的工程師提供輕量實作參考。",
+          "content": "資安報告揭露 Telegram Desktop 用戶端存在重大安全漏洞，攻擊者可利用該漏洞在受害者電腦上未經授權竊取任意本機檔案。考量到許多軟體開發團隊與 DevOps 人員常使用 Telegram 進行即時協作或暫存機敏資訊，此漏洞極可能導致本機原始碼、.env 環境設定檔或私鑰遭竊，使用該客戶端的開發者應儘速檢查並升級至官方安全版本。",
           "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "Voxlocal: a minimal voice agent written in Rust",
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Telegram Desktop vulnerability allowed any user's file to be stolen",
           "sources": [
-            "lobsters-ai",
-            "lobsters-programming"
+            "hn"
           ],
-          "title": "Voxlocal：以 Rust 開發的極簡本地語音 AI 代理開源實作",
-          "url": "https://samkhawase.com/blog/voxlocal-minimal-voice-agent/",
-          "weightedScore": 200
+          "title": "Telegram 桌面端驚傳重大安全漏洞，攻擊者可藉此竊取使用者任意本機檔案",
+          "url": "https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover/",
+          "weightedScore": 460
+        },
+        {
+          "content": "社群高分開源專案 REA（Reverse – Engineer Anything）正式發布，旨在為安全研究人員與軟體工程師提供高度模組化的逆向工程工具集。該專案簡化了未知二進位檔案分析、專屬通訊協定逆向與資料結構萃取的流程，提供現代化界面與靈活的自動化擴充能力，能有效提升工程師在分析無原始碼依賴套件或排查底層系統問題時的工作效率。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "REA Reverse – Engineer Anything",
+          "sources": [
+            "hn"
+          ],
+          "title": "開源逆向工程分析框架 REA：支援多格式的多功能逆向分析工具",
+          "url": "https://rea.tools/",
+          "weightedScore": 763
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-27T03:03:45.232Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v26.5.1"
-    },
-    {
-      "seenAt": "2026-08-27T03:03:45.232Z",
-      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration"
-    },
-    {
-      "seenAt": "2026-08-27T03:03:45.232Z",
-      "url": "https://blog.cloudflare.com/introducing-radar-researcher"
-    },
-    {
-      "seenAt": "2026-08-27T03:03:45.232Z",
-      "url": "https://blog.cloudflare.com/mcp-security-updates"
-    },
-    {
-      "seenAt": "2026-08-27T03:03:45.232Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vth1c3/i_just_built_a_mini_kimik3_from_scratch_under_250"
-    },
-    {
-      "seenAt": "2026-08-27T03:03:45.232Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vuotqr/qwen3827b_q6_is_a_beast_at_agentic_coding"
-    },
-    {
-      "seenAt": "2026-08-27T03:03:45.232Z",
-      "url": "https://bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek"
-    },
     {
       "seenAt": "2026-08-28T06:03:56.816Z",
       "url": "https://blog.cloudflare.com/mcp-v2"
@@ -4390,6 +4301,96 @@
       ],
       "title": "Voxlocal: a minimal voice agent written in Rust",
       "url": "https://samkhawase.com/blog/voxlocal-minimal-voice-agent"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-11T23:37:19.365Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Mxc: Microsoft Execution Containers version 1.0.0",
+      "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-11T23:37:19.365Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Update your IDE to restore agent activity in Copilot usage metrics",
+      "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-11T23:37:19.365Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Claude found 29,000 possible bugs in open source. Only 516 have been fixed.",
+      "url": "https://thenewstack.io/anthropic-oss-scanner-vulnerabilities"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-11T23:37:19.365Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Claude Code found my app’s shared contract in two MCP calls. Then the records ran out.",
+      "url": "https://thenewstack.io/claude-code-mcp-records"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-11T23:37:19.365Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Five months treating bugs like patients and coding agents like a medical team",
+      "url": "https://cockroachlabs.com/blog/experiment-running-hospital-code"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-11T23:37:19.365Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Building a 4x R9700 setup for a 10 person startup",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x2u742/building_a_4x_r9700_setup_for_a_10_person_startup"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-11T23:37:19.365Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
+      "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-11T23:37:19.365Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Telegram Desktop vulnerability allowed any user's file to be stolen",
+      "url": "https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-11T23:37:19.365Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "REA Reverse – Engineer Anything",
+      "url": "https://rea.tools/"
     }
   ]
 }
