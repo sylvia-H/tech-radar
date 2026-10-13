@@ -406,117 +406,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-11T23:37:19.365Z",
-  "lastNewsPushAt": "2026-10-11T23:37:19.365Z",
+  "lastNewsPushAt": "2026-10-13T01:58:42.615Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-11T23:37:19.365Z",
       "summary": "本次榜單由 lexmount/moli 奪下 #1，共迎來 8 個新進項目與 2 個竄升項目，領域分布涵蓋 AI 8 個及前後端 2 個。"
     },
     "feed": [
-      {
-        "content": "llama.cpp 合併了一項重要 Pull Request，針對無法完全放入 VRAM 的混合專家模型（MoE），在主記憶體（Host Memory）中為 MoE 專家保留 GPU 快取。這項實作預期能為未完全載入 GPU 的 MoE 模型帶來顯著的速度提升。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x03xkc/llama_add_a_gpu_cache_for_moe_experts_kept_in",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "llama.cpp 實作主記憶體 MoE 專家的 GPU 快取加速",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x03xkc/llama_add_a_gpu_cache_for_moe_experts_kept_in/"
-      },
-      {
-        "content": "針對自主式 AI 系統操作機台的安全議題，本文探討在何種條件下能安全允許 AI 代理運作。核心建議是切勿直接給予 AI 代理 root 權限，而是讓其「提出」下一個系統狀態，由決定性的邊界來審查與執行。",
-        "id": "news:https://cncf.io/blog/2026/10/08/dont-give-ai-agents-root-make-them-propose-the-next-system-state",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "避免賦予 AI Agents Root 權限：改由其提出系統狀態變更",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/10/08/dont-give-ai-agents-root-make-them-propose-the-next-system-state/"
-      },
-      {
-        "content": "Cloudflare Managed Defense 分享如何利用 Workers 與全球網路遙測資料建構專門的 AI 代理團隊來分析資安警報。系統透過將「具決定性的證據蒐集」與「模型推論」分離，向分析師提供有實證基礎的建議。",
-        "id": "news:https://blog.cloudflare.com/agentic-security-operations",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "在 Cloudflare 上建構基於實證的代理式資安營運 Harness",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/agentic-security-operations/"
-      },
-      {
-        "content": "Google 正在 Chromium/Chrome 中推進原生支援 JPEG XL（JXL）圖片格式的實作與出貨。這項變動對前端開發者與網頁效能優化具重要意義，能提供更高壓縮比與品質的圖像選項。",
-        "id": "news:https://developer.chrome.com/blog/jpeg-xl-in-chrome",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "Chrome 瀏覽器正推進支援 JPEG XL 圖片格式",
-        "type": "news",
-        "url": "https://developer.chrome.com/blog/jpeg-xl-in-chrome"
-      },
-      {
-        "content": "根據 CrowdStrike 的調查報告指出，上周南韓大型銀行遭受的網路攻擊可能由單一駭客獨立完成。攻擊者結合了開源 AI 滲透測試工具 ARTEX，以及 DeepSeek v4.1-Flash、GLM-5.3、Grok 4.6 與 Claude Code 等多款 AI 模型堆疊來執行攻擊，凸顯了 AI 工具在資安攻防兩端帶來的全新挑戰。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were",
-        "publishedAt": "2026-10-09T00:16:25.961Z",
-        "title": "南韓大型銀行遭單人駭客結合開源滲透工具與多款 AI 模型發動攻擊",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were/"
-      },
-      {
-        "content": "Python 官方正式釋出 3.15.0 版本。作為主流後端開發與 AI/機器學習領域的核心基礎設施，本次大版本更新延續了執行時期效能最佳化、直譯器效能改進與型別系統支援。這對全球 Python 開發團隊而言是重大版本升級里程碑，建議工程團隊著手評估既有依賴套件相容性並規劃升級驗證。",
-        "id": "news:https://python.org/downloads/release/python-3150",
-        "publishedAt": "2026-10-09T23:59:03.593Z",
-        "title": "Python 3.15 正式版本釋出",
-        "type": "news",
-        "url": "https://www.python.org/downloads/release/python-3150/"
-      },
-      {
-        "content": "Deno 團隊宣布加入 Cloudflare。雙方將攜手降低 Cloudflare Workers 與 Durable Objects 的自託管難度，使開發者能夠在更多自建或私有環境中使用完全一致的無伺服器原始組件（primitives）。Deno 過去在 JavaScript/TypeScript 執行環境與邊緣架構的積累，結合 Cloudflare 的全球邊緣網路與分散式儲存能力，預期將深刻影響全端與邊緣應用的開發體驗與部署模式。",
-        "id": "news:https://blog.cloudflare.com/deno-joins-cloudflare",
-        "publishedAt": "2026-10-09T23:59:03.593Z",
-        "title": "Deno 正式加入 Cloudflare，加速簡化 Workers 與 Durable Objects 自託管",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/deno-joins-cloudflare/"
-      },
-      {
-        "content": "Kubernetes 生態系正全面加速淘汰舊版 Linux cgroup v1，全面轉向依賴 cgroup v2。cgroup v2 提供更統一的階層架構、更精確的記憶體與 CPU 資源隔離、增強的 OOM 控制與更優秀的 eBPF 整合。這項架構淘汰意味著依賴舊版 Linux 核心與節點作業系統的維運與 SRE 團隊必須儘速規劃節點環境升級，否則將無法升級至未來的 Kubernetes 版本。",
-        "id": "news:https://thenewstack.io/kubernetes-node-swap-ai",
-        "publishedAt": "2026-10-09T23:59:03.593Z",
-        "title": "Kubernetes 正式終結 cgroup v1 支援：叢集轉向 cgroup v2 的關鍵變更",
-        "type": "news",
-        "url": "https://thenewstack.io/kubernetes-node-swap-ai/"
-      },
-      {
-        "content": "Cloudflare 宣布為 Workers 和 Durable Objects 推出隨選 CPU 與記憶體效能剖析（profiling）功能。開發者現在可以直接在生產環境中即時產生互動式火焰圖（flamegraphs），精確診斷無伺服器程式碼中的效能瓶頸與記憶體洩漏問題。這大幅降低了過去在分散式邊緣運算環境中難以重現與排查極限負載問題的痛點。",
-        "id": "news:https://blog.cloudflare.com/workers-on-demand-profiling",
-        "publishedAt": "2026-10-09T23:59:03.593Z",
-        "title": "Cloudflare Workers 與 Durable Objects 支援隨選 CPU 及記憶體火焰圖分析",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/workers-on-demand-profiling/"
-      },
-      {
-        "content": "AWS 宣布 Amazon ECS 現已支援自動偵測並修復故障的 GPU 與運算實例。當底層硬體或驅動程式發生故障時，ECS 能自動替換不良節點，確保服務持續運作。對於在雲端執行大規模 AI 訓練與推論工作負載的 SRE 與平台工程團隊而言，這顯著減少了手動介入硬體故障排查的維運負擔，提升高可用性。",
-        "id": "news:https://thenewstack.io/amazon-ecs-auto-repair",
-        "publishedAt": "2026-10-09T23:59:03.593Z",
-        "title": "Amazon ECS 支援故障 GPU 與實例自動修復，強化 AI 與關鍵負載穩定度",
-        "type": "news",
-        "url": "https://thenewstack.io/amazon-ecs-auto-repair/"
-      },
-      {
-        "content": "開源專案 Whistle 發布了一款極致輕量化的語音轉文字（Speech to Text）模型，整體模型容量僅 16.9 MB。相較於 Whisper 等動輒數百 MB 到數 GB 的語音辨識模型，Whistle 能在資源極端受限的物聯網設備、瀏覽器 WebAssembly 或行動端流暢運行，為邊緣語音互動應用大幅降低了部署門檻與推論延遲。",
-        "id": "news:https://cactuscompute.com/blog/whistle",
-        "publishedAt": "2026-10-09T23:59:03.593Z",
-        "title": "Whistle 開源釋出：模型大小僅 16.9 MB 的超輕量語音轉文字工具",
-        "type": "news",
-        "url": "https://cactuscompute.com/blog/whistle"
-      },
-      {
-        "content": "阿里巴巴在 Hugging Face 開源釋出 Qwen-Image-2.1-Turbo 模型。作為千問系列在影像生成領域的最新加速版本，該模型主打更高速的影像合成與推論效率，進一步豐富了開源多模態生態系。開發者可直接基於 Hugging Face 下載權重，將高效影像生成能力整合至私有化工作流或客製化產品中。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x1ldef/qwenqwenimage21turbo_hugging_face",
-        "publishedAt": "2026-10-09T23:59:03.593Z",
-        "title": "阿里開源 Qwen-Image-2.1-Turbo 影像生成模型",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x1ldef/qwenqwenimage21turbo_hugging_face/"
-      },
-      {
-        "content": "GitHub 發布最新 Copilot 週更新，著重於跨帳號與多環境下的管理彈性。管理員現在能更嚴格地控管 AI agent 的存取權限與任務調度，並整合 GitHub Copilot Claude Haiku 模型支援。這項更新為企業與團隊在導入自主代理（Autonomous Agents）協同開發時，提供了不可或缺的安全邊界與權限治理機制。",
-        "id": "news:https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5",
-        "publishedAt": "2026-10-09T23:59:03.593Z",
-        "title": "GitHub Copilot 每週更新：強化 Agent 權限隔離與跨帳號環境控制",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5"
-      },
       {
         "content": "Hacker News 社群針對 DeepSeek 4.1 Flash 展開熱烈討論。討論核心圍繞在其極低推論成本與高效架構表現，探討為何開源社群與產業界尚未對該模型的效能性價比做出足夠熱烈的反應。這場討論深入拆解了該模型在推論效率、快顯機制與大規模部署上的技術細節，為評估輕量開源模型架構提供了豐富的第一手實務反思。",
         "id": "news:https://dgt.is/blog/2026-10-07-deepseek-freek-out",
@@ -802,177 +698,301 @@
         "title": "開源逆向工程分析框架 REA：支援多格式的多功能逆向分析工具",
         "type": "news",
         "url": "https://rea.tools/"
+      },
+      {
+        "content": "Qwen 團隊宣布推出 QwenGyre，這是一個專為極長時程（XLong）AI Agent 訓練設計的彈性強化學習（RL）框架。該框架具備兩大核心架構：彈性排程器（Elastic Scheduler）能在 rollout 與訓練階段之間動態重新分配 GPU 資源且不中斷即時執行，相比 Colocate 與 Async 架構分別帶來最高 1.85 倍與 1.78 倍的加速；軌跡處理器（Trajectory Processor）則將分支執行過程轉化為共享前綴的軌跡樹，有效消除重複樣本並允許即使逾時也能保留部分進度。這為開發超長任務與複雜工具呼叫的 AI Agent 提供了更高效能的底層訓練架構。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x41myz/qwen_released_qwengyre_rl_framework_for_training",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "Qwen 釋出 QwenGyre 強化學習框架，專為超長時程 AI Agent 訓練設計",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x41myz/qwen_released_qwengyre_rl_framework_for_training/"
+      },
+      {
+        "content": "Python 官方宣布 Python 3.10 正式達到生命週期終點（End of Life, EOL），結束了為期五年的維護期。這意味著 Python 3.10 將不再接收任何安全性更新或錯誤修復。對於仍在生產環境或 CI/CD 流水線中使用 Python 3.10 的開發團隊而言，應盡早規劃並升級至 Python 3.11 或更新版本，以確保相依套件支援度並防範潛在的安全漏洞。",
+        "id": "news:https://github.com/python/cpython/releases/tag/3.10",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "Python 3.10 正式終止支援，開發團隊應盡快升級至維護中版本",
+        "type": "news",
+        "url": "https://github.com/python/cpython/releases/tag/3.10"
+      },
+      {
+        "content": "Cloudflare Logpush 宣布新增 Transformers 功能，讓團隊在將日誌匯出至目標端之前，可直接使用 SQL 語法進行日誌串流的過濾、脫敏（redact）與重塑（reshape）。該功能由 Apache DataFusion 與 Apache Arrow 提供支援，能在日誌資料抵達目的地前直接套用變更。這讓 DevOps 與資料工程團隊能夠在邊緣端預先精簡日誌體積、遮蔽敏感個資，大幅降低下游儲存分析系統的成本與合規負擔。",
+        "id": "news:https://blog.cloudflare.com/transformers-on-logpush",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "Cloudflare Logpush 支援 Transformers：日誌匯出前可透過 SQL 過濾與重構",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/transformers-on-logpush/"
+      },
+      {
+        "content": "開發工具 OpenCode 在公開測試三個月後，正式揭露 2.0 版本的重大架構改造。OpenCode 2.0 將原本分散的終端機、桌面端與 Web 應用程式統整至單一共用服務之上。這項架構改版消除了跨端介面之間的割裂狀態，讓開發者在不同使用場景（終端環境、本機桌面或網頁端）之間能享有一致的運作體驗與服務連線架構。",
+        "id": "news:https://thenewstack.io/opencode-2-shared-service",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "OpenCode 2.0 重大架構升級：終端、桌面與 Web 應用整合至共用服務",
+        "type": "news",
+        "url": "https://thenewstack.io/opencode-2-shared-service/"
+      },
+      {
+        "content": "知名開源地理資訊系統專案 QGIS 正式實施暫停接受 AI 貢獻的政策（moratorium on AI contributions）。這代表社群將暫時停止合併由 AI 生成的程式碼或提案。這項政策反映了大型開源專案在面對 AI 生成程式碼時，對代碼品質、版權合規性及審核負擔的嚴肅考量，也提醒軟體開發者向開源社群提交貢獻時需嚴格遵守各專案的 AI 治理規範。",
+        "id": "news:https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "開源地理資訊專案 QGIS 頒布 AI 禁令，暫停接受 AI 生成程式碼貢獻",
+        "type": "news",
+        "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387"
+      },
+      {
+        "content": "GitHub 官方發布教學，指導開發者如何教導 GitHub Copilot 深度理解其代碼庫。內容涵蓋如何在儲存庫中加入自訂指令與 skills、使用客製化 agents，以及如何連接如 Playwright 等 MCP（Model Context Protocol）伺服器。這對於希望將 AI 深度整合至日常開發流程的工程師而言，能顯著提升 Copilot 對特定專案脈絡的理解精準度與自動化操作能力。",
+        "id": "news:https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-teach-copilot-about-your-codebase",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "GitHub 發布 Copilot 整合指南：運用客製化指令與 MCP 串接代碼庫",
+        "type": "news",
+        "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-teach-copilot-about-your-codebase/"
+      },
+      {
+        "content": "美國紐約市的「一鍵取消」（Click to Cancel）規則現已正式生效。該項法規直接規範了訂閱制軟體與服務的業務邏輯，要求提供訂閱服務的業者必須具備直覺且容易的取消流程。這項合規義務直接影響了從事 SaaS、訂閱計費與電子商務系統開發的前後端工程師，團隊必須檢視並重構現有的退訂流程，避免使用暗黑模式阻礙用戶退訂而面臨合規罰則。",
+        "id": "news:https://nyc.gov/main/click-to-cancel",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "紐約市「一鍵取消」新規正式生效，軟體訂閱流程須符合簡易退訂標準",
+        "type": "news",
+        "url": "https://www.nyc.gov/main/click-to-cancel"
+      },
+      {
+        "content": "在 Kubernetes 平台運行 GPU 工作負載通常面臨「萬事皆需自建」的困境。平台工程團隊雖然習慣透過 Grafana 儀表板監控資源，但在 GPU 資源可見性、排程調度以及基礎設施帳單成本控管上存在巨大挑戰。這篇分析深入探討了維運人員將 GPU 引入 K8s 叢集時必須面對的架構瓶頸與實際考量，對正在建構 AI 運算平台的 DevOps 工程師深具參考價值。",
+        "id": "news:https://thenewstack.io/gpus-on-kubernetes",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "在 Kubernetes 上調度 GPU 工作負載的底層挑戰與成本透明度剖析",
+        "type": "news",
+        "url": "https://thenewstack.io/gpus-on-kubernetes/"
+      },
+      {
+        "content": "一篇深度工程分享紀錄了消耗 5000 億（500B）Token 讓多個 AI Agent 嘗試反編譯一款第一人稱射擊遊戲的完整歷程。文章剖析了 AI Agent 在面對底層二進制逆向工程、複雜架構推理與大規模上下文管理時的能力極限與崩潰點。這項實作經驗為嘗試將 LLM 應用於複雜系統逆向工程與大型代碼庫分析的開發者提供了極具價值的技術數據。",
+        "id": "news:https://momo5502.com/posts/2026-10-09-game-decompilation",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "消耗 5000 億 Token 的實驗：讓 AI Agent 反編譯第一人稱射擊遊戲",
+        "type": "news",
+        "url": "https://momo5502.com/posts/2026-10-09-game-decompilation/"
+      },
+      {
+        "content": "技術社群深入探討了在 Kubernetes 叢集中實作節點裝箱（Node Bin Packing）的排程機制。透過自訂排程演算法將 Pod 集中放置在少數節點上，能有效提高伺服器資源利用率，並配合自動擴縮機制釋放未使用的節點。此實作經驗對於需要最佳化雲端基礎架構成本、改善節點資源碎片化問題的 DevOps 與 SRE 工程師具備高度實用性。",
+        "id": "news:https://blog.costgraph.ai/node-rightsizing",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "實作 Kubernetes 節點 Bin Packing 排程策略的最佳化實務",
+        "type": "news",
+        "url": "https://blog.costgraph.ai/node-rightsizing/"
+      },
+      {
+        "content": "開發者社群分享了運用開源快照備份工具 restic 與雲端物件儲存 Backblaze B2 實作「3-2-1 備份策略」的具體技術架構。內容詳細介紹了加密傳輸、去重複化（deduplication）機制以及自動化備份腳本的配置方式。這為負責資料保護與災難復原的後端與維運工程師提供了一套兼顧高安全性與低成本的實作參考範本。",
+        "id": "news:https://chuck.is/paranoid",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "結合 restic 與 Backblaze B2 打造現代 3-2-1 備份架構實務",
+        "type": "news",
+        "url": "https://chuck.is/paranoid/"
+      },
+      {
+        "content": "社群深入探討 Passkeys（通行密鑰）在現代身分驗證體系中的架構缺陷與潛在隱憂。雖然 Passkeys 提供了無密碼登入的安全性，但在實務上高度依賴特定科技巨頭的生態系，導致私鑰的匯出與跨平台遷移極為困難，甚至產生供應商鎖定效應。對於正在設計身分認證系統的架構師與安全工程師而言，文章提醒在全面採用 WebAuthn / Passkeys 前，需全面評估災難復原、備份機制與用戶自主權。",
+        "id": "news:https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "Passkeys 的架構陷阱：分析平台鎖定與跨生態系遷移困難",
+        "type": "news",
+        "url": "https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them"
+      },
+      {
+        "content": "技術社群探討了在第三方 Cookie 逐漸退場後，網站指紋追蹤技術（Device / Browser Fingerprinting）成為新一代追蹤手段的現狀。文章深入分析了追蹤腳本如何利用 Canvas、音訊 API、硬體特徵與字型列舉構建高精確度的裝置識別碼，以及現代瀏覽器在防禦指紋追蹤上的技術極限。這對於關注 Web 安全、隱私保護與前端架構的開發者而言，提供了理解現代 Web 追蹤機制的重要技術脈絡。",
+        "id": "news:https://royfish.dev/fingerprints-are-the-new-cookies",
+        "publishedAt": "2026-10-13T01:58:42.615Z",
+        "title": "瀏覽器指紋技術全面解析：取代 Cookie 的無狀態追蹤機制與防禦",
+        "type": "news",
+        "url": "https://royfish.dev/fingerprints-are-the-new-cookies"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-11T23:37:19.365Z",
+      "generatedAt": "2026-10-13T01:58:42.615Z",
       "items": [
         {
-          "content": "微軟正式推出 Microsoft Execution Containers（Mxc）1.0.0 版本。這項發布標誌著該容器執行環境正式邁入生產就緒階段，為開發者與維運團隊提供微軟生態系中標準化且高效的容器隔離與執行機制，直接影響依賴微軟基礎設施與容器化工作流的部署架構。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Mxc: Microsoft Execution Containers version 1.0.0",
-          "sources": [
-            "hn"
-          ],
-          "title": "微軟發布執行容器 Mxc 1.0.0 正式版",
-          "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
-          "weightedScore": 222
-        },
-        {
-          "content": "GitHub 官方發布公告指出，近期 Copilot 使用量統計中，若發現 Agent 活動度或生成的程式碼行數指標異常下滑，主因在於客戶端回報機制的統計問題。目前官方已推出修復修正檔，開發者與團隊管理者需升級各 IDE 中的 Copilot 擴充套件，才能恢復正確的 Agent 貢獻數據追蹤。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Update your IDE to restore agent activity in Copilot usage metrics",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub 發布 Copilot 修正：請更新 IDE 以恢復正確的 Agent 活動指標",
-          "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
-          "weightedScore": 100
-        },
-        {
-          "content": "Anthropic 於資安任務倡議中推出全新「OSS Scanner」，利用 Claude 模型對開源生態系進行大規模自動化安全審查，共回報 29,000 個潛在缺陷，但目前僅有 516 個漏洞獲得修復。此報導深入探討了 AI 漏洞掃描工具雖然大幅降低挖掘缺陷的門檻，但也使人力有限的開源維護者面臨海量通報的審查負擔，促使開發社群重新檢視 AI 輔助資安通報與修復驗證的流程平衡。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Claude found 29,000 possible bugs in open source. Only 516 have been fixed.",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Anthropic 推出 OSS Scanner 掃描出開源專案 2.9 萬個潛在漏洞，凸顯修復量能落差",
-          "url": "https://thenewstack.io/anthropic-oss-scanner-vulnerabilities/",
-          "weightedScore": 50
-        },
-        {
-          "content": "文章深入分析了開發者在實際專案中將 Claude Code 與模型上下文協定（MCP, Model Context Protocol）搭配使用的工程經驗。實測顯示，Claude Code 能在兩次 MCP 呼叫內迅速定位並釐清複雜系統中的共享合約結構，大幅降低接手陌生架構的認知負擔；然而實務上也隨即遭遇大量資料查詢時上下文長度迅速耗盡的瓶頸，為探索 Agentic 工作流落地的軟體工程師提供了寶貴的實作參考與邊界評估。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Claude Code found my app’s shared contract in two MCP calls. Then the records ran out.",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "實測 Claude Code 結合 MCP 協定：兩次呼叫定位共享合約與上下文耗盡挑戰",
-          "url": "https://thenewstack.io/claude-code-mcp-records/",
-          "weightedScore": 50
-        },
-        {
-          "content": "作者分享了長達五個月在真實開發工作流中調度多個 AI Coding Agent 的工程實務。該團隊借鏡現代醫療分診與專科體系，將缺陷修復拆解為分診評估、病因診斷、模組修復補丁與術後回歸驗證等多個階段，讓不同的 Agent 專注於專一職責。這種架構有效解決了傳統單一 Agent 承擔過多任務時容易出錯的盲點，為建構高穩定度 AI 結對編程流程提供了具體參考。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Five months treating bugs like patients and coding agents like a medical team",
-          "sources": [
-            "hn"
-          ],
-          "title": "五個月工程實踐：將 Bug 視為病患、將 AI Coding Agents 組織為醫療團隊的協作架構",
-          "url": "https://www.cockroachlabs.com/blog/experiment-running-hospital-code/",
-          "weightedScore": 213
-        },
-        {
-          "content": "作者公開為 10 人工程團隊建置成本約 1.8 萬美元的本地端 LLM 推論主機實作經驗，配置 Threadripper 處理器與 4 張 AMD Radeon R9700 AI Pro（總計 128GB VRAM），並使用 Radiance 框架分支部署 Qwen 3.8 27B MXFP4 與 DSV4 Flash 模型。文中揭露了 16 個並行工作階段下的 Prefill 與 Decode 實際吞吐量數據，為希望在地化部署大模型、兼顧隱私與 API 成本控制的工程團隊提供了實用的硬體架構參考。",
+          "content": "Qwen 團隊宣布推出 QwenGyre，這是一個專為極長時程（XLong）AI Agent 訓練設計的彈性強化學習（RL）框架。該框架具備兩大核心架構：彈性排程器（Elastic Scheduler）能在 rollout 與訓練階段之間動態重新分配 GPU 資源且不中斷即時執行，相比 Colocate 與 Async 架構分別帶來最高 1.85 倍與 1.78 倍的加速；軌跡處理器（Trajectory Processor）則將分支執行過程轉化為共享前綴的軌跡樹，有效消除重複樣本並允許即使逾時也能保留部分進度。這為開發超長任務與複雜工具呼叫的 AI Agent 提供了更高效能的底層訓練架構。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "reddit-localllama",
-          "sourceTitle": "Building a 4x R9700 setup for a 10 person startup",
+          "sourceTitle": "Qwen released QwenGyre - RL framework for training AI agents on extremely long complex tasks",
           "sources": [
             "reddit-localllama"
           ],
-          "title": "10 人新創自建 4 卡 AMD 推論伺服器實測：Qwen 3.8 量化模型部署與吞吐數據剖析",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2u742/building_a_4x_r9700_setup_for_a_10_person_startup/",
+          "title": "Qwen 釋出 QwenGyre 強化學習框架，專為超長時程 AI Agent 訓練設計",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x41myz/qwen_released_qwengyre_rl_framework_for_training/",
           "weightedScore": 100
         },
         {
-          "content": "開發者開源了一款新工具，使電腦操作型 AI Agent（Computer-Using Agents）能夠直接在使用者螢幕上動態繪製高對比的箭頭、外框與文字標註。這改變了過往 Agent 僅能依賴背景自動點擊或文字對話視窗的交互形式，讓 AI 在執行自動化測試、系統導覽或結對編程時，能以直觀的視覺反饋引導開發者，大幅降低人機協同的理解門檻並強化操作透明度。",
+          "content": "Python 官方宣布 Python 3.10 正式達到生命週期終點（End of Life, EOL），結束了為期五年的維護期。這意味著 Python 3.10 將不再接收任何安全性更新或錯誤修復。對於仍在生產環境或 CI/CD 流水線中使用 Python 3.10 的開發團隊而言，應盡早規劃並升級至 Python 3.11 或更新版本，以確保相依套件支援度並防範潛在的安全漏洞。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "gh-cpython",
+          "sourceTitle": "Python 3.10 end of life",
+          "sources": [
+            "gh-cpython"
+          ],
+          "title": "Python 3.10 正式終止支援，開發團隊應盡快升級至維護中版本",
+          "url": "https://github.com/python/cpython/releases/tag/3.10",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare Logpush 宣布新增 Transformers 功能，讓團隊在將日誌匯出至目標端之前，可直接使用 SQL 語法進行日誌串流的過濾、脫敏（redact）與重塑（reshape）。該功能由 Apache DataFusion 與 Apache Arrow 提供支援，能在日誌資料抵達目的地前直接套用變更。這讓 DevOps 與資料工程團隊能夠在邊緣端預先精簡日誌體積、遮蔽敏感個資，大幅降低下游儲存分析系統的成本與合規負擔。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Filter, reshape, and redact logs before export with Transformers",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare Logpush 支援 Transformers：日誌匯出前可透過 SQL 過濾與重構",
+          "url": "https://blog.cloudflare.com/transformers-on-logpush/",
+          "weightedScore": 50
+        },
+        {
+          "content": "開發工具 OpenCode 在公開測試三個月後，正式揭露 2.0 版本的重大架構改造。OpenCode 2.0 將原本分散的終端機、桌面端與 Web 應用程式統整至單一共用服務之上。這項架構改版消除了跨端介面之間的割裂狀態，讓開發者在不同使用場景（終端環境、本機桌面或網頁端）之間能享有一致的運作體驗與服務連線架構。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "“A major overhaul”: OpenCode 2.0 puts its terminal, desktop, and web apps on one shared service",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "OpenCode 2.0 重大架構升級：終端、桌面與 Web 應用整合至共用服務",
+          "url": "https://thenewstack.io/opencode-2-shared-service/",
+          "weightedScore": 50
+        },
+        {
+          "content": "知名開源地理資訊系統專案 QGIS 正式實施暫停接受 AI 貢獻的政策（moratorium on AI contributions）。這代表社群將暫時停止合併由 AI 生成的程式碼或提案。這項政策反映了大型開源專案在面對 AI 生成程式碼時，對代碼品質、版權合規性及審核負擔的嚴肅考量，也提醒軟體開發者向開源社群提交貢獻時需嚴格遵守各專案的 AI 治理規範。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
+          "sourceTitle": "QGIS enacts moratorium on AI contributions",
           "sources": [
             "hn"
           ],
-          "title": "Show HN：開源工具讓 AI Agent 具備在螢幕繪製箭頭、外框與文字的視覺互動能力",
-          "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
-          "weightedScore": 414
+          "title": "開源地理資訊專案 QGIS 頒布 AI 禁令，暫停接受 AI 生成程式碼貢獻",
+          "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387",
+          "weightedScore": 363
         },
         {
-          "content": "資安報告揭露 Telegram Desktop 用戶端存在重大安全漏洞，攻擊者可利用該漏洞在受害者電腦上未經授權竊取任意本機檔案。考量到許多軟體開發團隊與 DevOps 人員常使用 Telegram 進行即時協作或暫存機敏資訊，此漏洞極可能導致本機原始碼、.env 環境設定檔或私鑰遭竊，使用該客戶端的開發者應儘速檢查並升級至官方安全版本。",
+          "content": "GitHub 官方發布教學，指導開發者如何教導 GitHub Copilot 深度理解其代碼庫。內容涵蓋如何在儲存庫中加入自訂指令與 skills、使用客製化 agents，以及如何連接如 Playwright 等 MCP（Model Context Protocol）伺服器。這對於希望將 AI 深度整合至日常開發流程的工程師而言，能顯著提升 Copilot 對特定專案脈絡的理解精準度與自動化操作能力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-blog-ai-ml",
+          "sourceTitle": "GitHub Copilot app for Beginners: How to teach Copilot about your codebase",
+          "sources": [
+            "github-blog-ai-ml"
+          ],
+          "title": "GitHub 發布 Copilot 整合指南：運用客製化指令與 MCP 串接代碼庫",
+          "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-teach-copilot-about-your-codebase/",
+          "weightedScore": 100
+        },
+        {
+          "content": "美國紐約市的「一鍵取消」（Click to Cancel）規則現已正式生效。該項法規直接規範了訂閱制軟體與服務的業務邏輯，要求提供訂閱服務的業者必須具備直覺且容易的取消流程。這項合規義務直接影響了從事 SaaS、訂閱計費與電子商務系統開發的前後端工程師，團隊必須檢視並重構現有的退訂流程，避免使用暗黑模式阻礙用戶退訂而面臨合規罰則。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "NYC's \"Click to Cancel\" rule is now in effect",
+          "sources": [
+            "hn"
+          ],
+          "title": "紐約市「一鍵取消」新規正式生效，軟體訂閱流程須符合簡易退訂標準",
+          "url": "https://www.nyc.gov/main/click-to-cancel",
+          "weightedScore": 587
+        },
+        {
+          "content": "在 Kubernetes 平台運行 GPU 工作負載通常面臨「萬事皆需自建」的困境。平台工程團隊雖然習慣透過 Grafana 儀表板監控資源，但在 GPU 資源可見性、排程調度以及基礎設施帳單成本控管上存在巨大挑戰。這篇分析深入探討了維運人員將 GPU 引入 K8s 叢集時必須面對的架構瓶頸與實際考量，對正在建構 AI 運算平台的 DevOps 工程師深具參考價值。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "GPUs on Kubernetes are bring-your-own-everything, starting with the bill",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "在 Kubernetes 上調度 GPU 工作負載的底層挑戰與成本透明度剖析",
+          "url": "https://thenewstack.io/gpus-on-kubernetes/",
+          "weightedScore": 50
+        },
+        {
+          "content": "一篇深度工程分享紀錄了消耗 5000 億（500B）Token 讓多個 AI Agent 嘗試反編譯一款第一人稱射擊遊戲的完整歷程。文章剖析了 AI Agent 在面對底層二進制逆向工程、複雜架構推理與大規模上下文管理時的能力極限與崩潰點。這項實作經驗為嘗試將 LLM 應用於複雜系統逆向工程與大型代碼庫分析的開發者提供了極具價值的技術數據。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "500B tokens later: Letting AI agents decompile a first-person shooter",
+          "sources": [
+            "hn"
+          ],
+          "title": "消耗 5000 億 Token 的實驗：讓 AI Agent 反編譯第一人稱射擊遊戲",
+          "url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
+          "weightedScore": 209
+        },
+        {
+          "content": "技術社群深入探討了在 Kubernetes 叢集中實作節點裝箱（Node Bin Packing）的排程機制。透過自訂排程演算法將 Pod 集中放置在少數節點上，能有效提高伺服器資源利用率，並配合自動擴縮機制釋放未使用的節點。此實作經驗對於需要最佳化雲端基礎架構成本、改善節點資源碎片化問題的 DevOps 與 SRE 工程師具備高度實用性。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "lobsters-devops",
+          "sourceTitle": "Implementing kubernetes node bin packing",
+          "sources": [
+            "lobsters-devops"
+          ],
+          "title": "實作 Kubernetes 節點 Bin Packing 排程策略的最佳化實務",
+          "url": "https://blog.costgraph.ai/node-rightsizing/",
+          "weightedScore": 100
+        },
+        {
+          "content": "開發者社群分享了運用開源快照備份工具 restic 與雲端物件儲存 Backblaze B2 實作「3-2-1 備份策略」的具體技術架構。內容詳細介紹了加密傳輸、去重複化（deduplication）機制以及自動化備份腳本的配置方式。這為負責資料保護與災難復原的後端與維運工程師提供了一套兼顧高安全性與低成本的實作參考範本。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "lobsters-devops",
+          "sourceTitle": "3-2-1 Backup Strategy with restic and Backblaze B2",
+          "sources": [
+            "lobsters-devops"
+          ],
+          "title": "結合 restic 與 Backblaze B2 打造現代 3-2-1 備份架構實務",
+          "url": "https://chuck.is/paranoid/",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群深入探討 Passkeys（通行密鑰）在現代身分驗證體系中的架構缺陷與潛在隱憂。雖然 Passkeys 提供了無密碼登入的安全性，但在實務上高度依賴特定科技巨頭的生態系，導致私鑰的匯出與跨平台遷移極為困難，甚至產生供應商鎖定效應。對於正在設計身分認證系統的架構師與安全工程師而言，文章提醒在全面採用 WebAuthn / Passkeys 前，需全面評估災難復原、備份機制與用戶自主權。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Telegram Desktop vulnerability allowed any user's file to be stolen",
+          "sourceTitle": "Passkeys are a trap",
           "sources": [
             "hn"
           ],
-          "title": "Telegram 桌面端驚傳重大安全漏洞，攻擊者可藉此竊取使用者任意本機檔案",
-          "url": "https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover/",
-          "weightedScore": 460
+          "title": "Passkeys 的架構陷阱：分析平台鎖定與跨生態系遷移困難",
+          "url": "https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them",
+          "weightedScore": 1025
         },
         {
-          "content": "社群高分開源專案 REA（Reverse – Engineer Anything）正式發布，旨在為安全研究人員與軟體工程師提供高度模組化的逆向工程工具集。該專案簡化了未知二進位檔案分析、專屬通訊協定逆向與資料結構萃取的流程，提供現代化界面與靈活的自動化擴充能力，能有效提升工程師在分析無原始碼依賴套件或排查底層系統問題時的工作效率。",
+          "content": "技術社群探討了在第三方 Cookie 逐漸退場後，網站指紋追蹤技術（Device / Browser Fingerprinting）成為新一代追蹤手段的現狀。文章深入分析了追蹤腳本如何利用 Canvas、音訊 API、硬體特徵與字型列舉構建高精確度的裝置識別碼，以及現代瀏覽器在防禦指紋追蹤上的技術極限。這對於關注 Web 安全、隱私保護與前端架構的開發者而言，提供了理解現代 Web 追蹤機制的重要技術脈絡。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "REA Reverse – Engineer Anything",
+          "sourceTitle": "Fingerprints are the new cookies",
           "sources": [
             "hn"
           ],
-          "title": "開源逆向工程分析框架 REA：支援多格式的多功能逆向分析工具",
-          "url": "https://rea.tools/",
-          "weightedScore": 763
+          "title": "瀏覽器指紋技術全面解析：取代 Cookie 的無狀態追蹤機制與防禦",
+          "url": "https://royfish.dev/fingerprints-are-the-new-cookies",
+          "weightedScore": 703
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-28T06:03:56.816Z",
-      "url": "https://blog.cloudflare.com/mcp-v2"
-    },
-    {
-      "seenAt": "2026-08-28T06:03:56.816Z",
-      "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control"
-    },
-    {
-      "seenAt": "2026-08-28T06:03:56.816Z",
-      "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe"
-    },
-    {
-      "seenAt": "2026-08-28T06:03:56.816Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v26.6.0"
-    },
-    {
-      "seenAt": "2026-08-28T06:03:56.816Z",
-      "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils-2"
-    },
-    {
-      "seenAt": "2026-08-28T06:03:56.816Z",
-      "url": "https://blog.cloudflare.com/good-and-bad-agentic-behaviors"
-    },
-    {
-      "seenAt": "2026-08-28T06:03:56.816Z",
-      "url": "https://louisabraham.github.io/load-bearing"
-    },
-    {
-      "seenAt": "2026-08-28T06:03:56.816Z",
-      "url": "https://thenewstack.io/agent-harness-token-costs"
-    },
-    {
-      "seenAt": "2026-08-28T06:03:56.816Z",
-      "url": "https://thenewstack.io/anthropic-files-api-costs"
-    },
     {
       "seenAt": "2026-08-29T03:38:37.622Z",
       "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash"
@@ -4391,6 +4411,136 @@
       ],
       "title": "REA Reverse – Engineer Anything",
       "url": "https://rea.tools/"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Qwen released QwenGyre - RL framework for training AI agents on extremely long complex tasks",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x41myz/qwen_released_qwengyre_rl_framework_for_training"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "gh-cpython",
+      "sources": [
+        "gh-cpython"
+      ],
+      "title": "Python 3.10 end of life",
+      "url": "https://github.com/python/cpython/releases/tag/3.10"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Filter, reshape, and redact logs before export with Transformers",
+      "url": "https://blog.cloudflare.com/transformers-on-logpush"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "“A major overhaul”: OpenCode 2.0 puts its terminal, desktop, and web apps on one shared service",
+      "url": "https://thenewstack.io/opencode-2-shared-service"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "QGIS enacts moratorium on AI contributions",
+      "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "github-blog-ai-ml",
+      "sources": [
+        "github-blog-ai-ml"
+      ],
+      "title": "GitHub Copilot app for Beginners: How to teach Copilot about your codebase",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-teach-copilot-about-your-codebase"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "NYC's \"Click to Cancel\" rule is now in effect",
+      "url": "https://nyc.gov/main/click-to-cancel"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "GPUs on Kubernetes are bring-your-own-everything, starting with the bill",
+      "url": "https://thenewstack.io/gpus-on-kubernetes"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "500B tokens later: Letting AI agents decompile a first-person shooter",
+      "url": "https://momo5502.com/posts/2026-10-09-game-decompilation"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "title": "Implementing kubernetes node bin packing",
+      "url": "https://blog.costgraph.ai/node-rightsizing"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "title": "3-2-1 Backup Strategy with restic and Backblaze B2",
+      "url": "https://chuck.is/paranoid"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Passkeys are a trap",
+      "url": "https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-13T01:58:42.615Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Fingerprints are the new cookies",
+      "url": "https://royfish.dev/fingerprints-are-the-new-cookies"
     }
   ]
 }
