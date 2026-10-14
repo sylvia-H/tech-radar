@@ -406,123 +406,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-11T23:37:19.365Z",
-  "lastNewsPushAt": "2026-10-13T23:42:40.985Z",
+  "lastNewsPushAt": "2026-10-14T23:08:50.711Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-11T23:37:19.365Z",
       "summary": "本次榜單由 lexmount/moli 奪下 #1，共迎來 8 個新進項目與 2 個竄升項目，領域分布涵蓋 AI 8 個及前後端 2 個。"
     },
     "feed": [
-      {
-        "content": "開源 macOS 應用程式 DigUp 結合 Google DeepMind 的 EmbeddingGemma 2 模型，讓使用者能在本機完全離線檢索檔案。該模型將文字、圖像、音訊與視訊統一映射至同一個向量語意空間，支援透過自然語言直接定位影音片段或文件段落，展示了端側多模態語意檢索的實用落地方式。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2",
-        "publishedAt": "2026-10-10T23:28:22.953Z",
-        "title": "開源 Mac 應用 DigUp 釋出：在本地利用 EmbeddingGemma 2 進行跨模態檔案檢索",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2/"
-      },
-      {
-        "content": "Talorys 是一個開源且自託管的個人 AI Agent 專案，完整部署在 Cloudflare 的免費層（Free tier）之上。該專案展示了如何結合 Serverless 邊緣架構與低成本雲端資源，將代理人邏輯、工具調用與狀態管理整合於邊緣環境，為開發者實作低成本 AI Agent 提供具體參考架構。",
-        "id": "news:https://github.com/rociiu/talorys",
-        "publishedAt": "2026-10-10T23:28:22.953Z",
-        "title": "Talorys：基於 Cloudflare 免費層構建的輕量自託管個人 AI 代理架構",
-        "type": "news",
-        "url": "https://github.com/rociiu/talorys"
-      },
-      {
-        "content": "Voxlocal 是一個使用 Rust 語言編寫的極簡本地語音代理（Voice Agent）開源專案。該專案聚焦於低延遲與端側處理，展示如何利用 Rust 的高併發與效能特性整合語音識別、語言模型與語音合成，為探索邊緣設備即時語音管線整合的工程師提供輕量實作參考。",
-        "id": "news:https://samkhawase.com/blog/voxlocal-minimal-voice-agent",
-        "publishedAt": "2026-10-10T23:28:22.953Z",
-        "title": "Voxlocal：以 Rust 開發的極簡本地語音 AI 代理開源實作",
-        "type": "news",
-        "url": "https://samkhawase.com/blog/voxlocal-minimal-voice-agent/"
-      },
-      {
-        "id": "repo:1329849289:new:2026-10-12",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "lexmount/moli 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/lexmount/moli"
-      },
-      {
-        "id": "repo:1148788086:climbed:2026-10-12",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "mattpocock/skills 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/mattpocock/skills"
-      },
-      {
-        "id": "repo:1266797999:climbed:2026-10-12",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "DietrichGebert/ponytail 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/DietrichGebert/ponytail"
-      },
-      {
-        "id": "repo:1305213943:new:2026-10-12",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "DuarteSantos8/openGym 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/DuarteSantos8/openGym"
-      },
-      {
-        "id": "repo:1165277268:new:2026-10-12",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "Panniantong/Agent-Reach 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/Panniantong/Agent-Reach"
-      },
-      {
-        "id": "repo:1097346685:new:2026-10-12",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "pbakaus/impeccable 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/pbakaus/impeccable"
-      },
-      {
-        "id": "repo:1177402105:new:2026-10-12",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "heygen-com/hyperframes 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/heygen-com/hyperframes"
-      },
-      {
-        "id": "repo:1048065319:new:2026-10-12",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "thedotmack/claude-mem 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/thedotmack/claude-mem"
-      },
-      {
-        "id": "repo:1158722119:new:2026-10-12",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "addyosmani/agent-skills 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/addyosmani/agent-skills"
-      },
-      {
-        "id": "repo:1408371739:new:2026-10-12",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "bas3line/ascii 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/bas3line/ascii"
-      },
-      {
-        "content": "微軟正式推出 Microsoft Execution Containers（Mxc）1.0.0 版本。這項發布標誌著該容器執行環境正式邁入生產就緒階段，為開發者與維運團隊提供微軟生態系中標準化且高效的容器隔離與執行機制，直接影響依賴微軟基礎設施與容器化工作流的部署架構。",
-        "id": "news:https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "微軟發布執行容器 Mxc 1.0.0 正式版",
-        "type": "news",
-        "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/"
-      },
-      {
-        "content": "GitHub 官方發布公告指出，近期 Copilot 使用量統計中，若發現 Agent 活動度或生成的程式碼行數指標異常下滑，主因在於客戶端回報機制的統計問題。目前官方已推出修復修正檔，開發者與團隊管理者需升級各 IDE 中的 Copilot 擴充套件，才能恢復正確的 Agent 貢獻數據追蹤。",
-        "id": "news:https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
-        "publishedAt": "2026-10-11T23:37:19.365Z",
-        "title": "GitHub 發布 Copilot 修正：請更新 IDE 以恢復正確的 Agent 活動指標",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics"
-      },
       {
         "content": "Anthropic 於資安任務倡議中推出全新「OSS Scanner」，利用 Claude 模型對開源生態系進行大規模自動化安全審查，共回報 29,000 個潛在缺陷，但目前僅有 516 個漏洞獲得修復。此報導深入探討了 AI 漏洞掃描工具雖然大幅降低挖掘缺陷的門檻，但也使人力有限的開源維護者面臨海量通報的審查負擔，促使開發社群重新檢視 AI 輔助資安通報與修復驗證的流程平衡。",
         "id": "news:https://thenewstack.io/anthropic-oss-scanner-vulnerabilities",
@@ -802,259 +692,345 @@
         "title": "以純 C 語言構建現代 Web 應用：架構實踐、記憶體管理與極致效能分析",
         "type": "news",
         "url": "https://prophitt.me/writing/a-modern-web-app-in-c"
+      },
+      {
+        "content": "Google 正式推出 Gemini 4 Argon 模型，主打應對高難度的推理與運算挑戰，並同步釋出負責任與安全開發的技術報告。新模型強化了極限問題的處理能力與安全護欄設計，為構建複雜 AI 應用與注重模型對齊、合規防護的開發者提供了更強大的底座選擇。",
+        "id": "news:https://deepmind.google/blog/introducing-gemini-4-argon",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "Google 發布 Gemini 4 Argon 模型：專為解決高難度問題打造並強化安全機制",
+        "type": "news",
+        "url": "https://deepmind.google/blog/introducing-gemini-4-argon/"
+      },
+      {
+        "content": "NVIDIA 發表 Nemotron Bolt 3.5 74B A9B 模型，採用 740 億總參數、90 億啟動參數的混合專家（MoE）架構，並透過量化感知訓練壓縮至 24GB 顯存以內。該架構旨在兼顧密集模型的高吞吐速度與同量級 MoE 模型的高智慧水準，後續亦規劃推出更小體積的 E4B 版本。這讓追求自建推論服務或在單張主流 GPU 上部署大模型的開發者能大幅降低硬體門檻。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x5t1tm/nvidia_nemotron_bolt_35_74b_a9b_releases_oct_15th",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "NVIDIA 發表 Nemotron Bolt 3.5 74B A9B：以 2-bit 量化 MoE 架構兼顧推論速度與智慧",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5t1tm/nvidia_nemotron_bolt_35_74b_a9b_releases_oct_15th/"
+      },
+      {
+        "content": "Liquid AI 推出 LFM2.5-24B-A2B 模型，專為在端側與本地環境運行快速、高隱私度的 AI 代理（Agents）設計。對於需要在邊緣設備或在嚴格隱私規範下構建離線自主 Agent 的開發者而言，提供了低延遲且資料不出境的解決方案。",
+        "id": "news:https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "Liquid AI 推出 LFM2.5-24B-A2B：主打高速、隱私的端側自主代理模型",
+        "type": "news",
+        "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b"
+      },
+      {
+        "content": "GitHub 宣布 HydraFusion 模型集迎來更新，改進了模型編排工作流程，並同步推出 HydraFusion Max 選項，已在 VS Code、GitHub Copilot 應用程式等環境中提供。這讓依賴 Copilot 輔助開發的工程師能在更靈活的模型池與最佳化編排流程中協同工作，提升編程與程式碼生成效率。",
+        "id": "news:https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "GitHub 發布 HydraFusion 更新與 HydraFusion Max：升級 Copilot 多模型編排能力",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option"
+      },
+      {
+        "content": "GitHub Copilot 為託管環境推出客戶端遙測使用者歸屬（User Attribution）與可配置擷取功能。企業管理員現在可將 Copilot 活動關聯至特定使用者，同時保證系統完全不收集提示詞、模型回應或工具調用內容。這解決了企業在導入 AI 開發工具時，既要符合嚴格隱私標準又必須落實稽核追蹤的工程管理痛點。",
+        "id": "news:https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "GitHub Copilot 推出客戶端遙測歸屬設定：兼顧隱私與企業審查需求",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture"
+      },
+      {
+        "content": "Node.js 發布長期支援版本 24.22.0（代號 Krypton），底層加密模組迎來多項更新，包含新增 crypto.parsePKCS12() 解析方法、加入通用 MAC API、支援從 OpenSSL providers 自動發現密碼與雜湊演算法，並在 Cipher/Decipher API 中正式啟用 SIV 與 GCM-SIV 模式。這強化了後端開發者在金鑰解析、憑證管理與現代對稱加密實作上的原生支援。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v24.22.0",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "Node.js 24.22.0 LTS 發布：擴充 Crypto 模組支援 PKCS12、通用 MAC API 與 GCM-SIV",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v24.22.0"
+      },
+      {
+        "content": "Cloudflare 宣布 Hyperdrive 的 MySQL 支援正式邁入通用可用階段（GA），並深入剖析研發期間追蹤一項發生率僅 0.001% 的細微協定快取缺陷的除錯歷程。Hyperdrive 可自動加速分散式環境下的關聯式資料庫查詢，對於使用 Cloudflare Workers 構建後端並需降低跨區域 MySQL 連線延遲的架構師而言是重要的基礎設施進展。",
+        "id": "news:https://blog.cloudflare.com/hyperdrive-mysql",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "Cloudflare Hyperdrive 支援 MySQL 正式 GA：揭露 0.001% 極低機率快取協定 Bug 排查歷程",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/hyperdrive-mysql/"
+      },
+      {
+        "content": "報導指出 Linux 核心領導者 Linus Torvalds 嘗試借助 Anthropic 的 Claude Code 來解決核心效能問題，但隨後社群審查者在 AI 生成的 Linux page cache 修補程式中揪出了潛在的競態條件（race condition）。此案例突顯了當前 AI 輔助編程工具在深入底層作業系統、極致併發等關鍵子系統時的可靠度限制，提醒開發者在採納 AI 產出代碼時仍須嚴守嚴格的架構級代碼審查。",
+        "id": "news:https://thenewstack.io/torvalds-claude-code-kernel",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "Linus Torvalds 嘗試以 Claude Code 修復 Linux 分頁快取，審查團隊隨後抓出 Race Condition",
+        "type": "news",
+        "url": "https://thenewstack.io/torvalds-claude-code-kernel/"
+      },
+      {
+        "content": "文章深入探討雲原生維運中最棘手的「幽靈變慢」（phantom slowdown）情境——即 Grafana 或 K8s 儀表板皆顯示節點與容器運作健康，但對外服務請求卻發生嚴重延遲或停滯。內容提供了從網路層、連線池排隊到排程資源爭用的排查路徑，協助 SRE 與後端工程師建立系統化的深度診斷思維。",
+        "id": "news:https://thenewstack.io/kubernetes-hidden-latency-telemetry",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "排查 Kubernetes「幽靈變慢」現象：當儀表板全綠但請求嚴重停滯時的除錯實務",
+        "type": "news",
+        "url": "https://thenewstack.io/kubernetes-hidden-latency-telemetry/"
+      },
+      {
+        "content": "最新理論研究指出，大型語言模型在數學機制上已被證明有能力在評測或特定情境中隱蔽任意能力與潛在行為。這項結論對 AI 安全評測、紅隊演練與對齊防禦領域具有重要意義，意味著傳統黑箱或基準測試難以完全排除模型隱藏的非預期行為，促使社群必須往白箱可解釋性與更嚴謹的安全驗證方向發展。",
+        "id": "news:https://arxiv.org/abs/2610.13928",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "理論研究揭露：AI 模型在數學上已被證明能刻意隱藏任意能力",
+        "type": "news",
+        "url": "https://arxiv.org/abs/2610.13928"
+      },
+      {
+        "content": "開發社群針對 Python 工具鏈中快速崛起的打包構建工具 uv-build 展開技術辯論，深入分析其在構建標準相容性、工具鏈綁定與 PEP 標準生態長期發展上的權衡與潛在風險。這為評估是否在生產環境全面遷移現代 Python 工具鏈的架構師提供了多角度的審慎依據。",
+        "id": "news:https://blogs.gentoo.org/mgorny/2026/10/12/a-plea-not-to-use-uv-build",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "社群探討 Python 打包生態：呼籲謹慎採用 uv-build 的架構與相容性考量",
+        "type": "news",
+        "url": "https://blogs.gentoo.org/mgorny/2026/10/12/a-plea-not-to-use-uv-build/"
+      },
+      {
+        "content": "Cloudflare 發布網路流量觀測數據，分析俄羅斯 Yandex 資料中心遭受打擊後的網路效應。數據顯示，雖然 Yandex 官方搜尋引擎爬蟲隨之中斷，但原先混雜於相關線路的惡意自動化機器人（bots）並未消失，而是迅速將流量遷徙至其他網路節點。這項實證分析提醒資安與基礎設施工程師，惡意殭屍網路具備高度分散與動態轉移的彈性，單點基礎設施中斷難以長久消除爬蟲威脅。",
+        "id": "news:https://blog.cloudflare.com/yandex-outage",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "Cloudflare 觀測 Yandex 資料中心受損後續：惡意殭屍網路迅速遷徙而非停擺",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/yandex-outage/"
+      },
+      {
+        "content": "報導指出 Android 開源專案（AOSP）近期官方原始碼釋出進度嚴重延誤，導致第三方開發者在遭遇系統級錯誤時，被迫直接反組譯 Android 預編譯函式庫來定位根因並提交 Issue。這反映出上游 Android 平台在開源透明度與維護協同上的挑戰，直接衝擊依賴 AOSP 進行客製化系統、ROM 移植及底層 SDK 開發者的日常工作流。",
+        "id": "news:https://github.com/android/ndk/issues/2260",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "AOSP 原始碼交付持續延遲，促使開發者不得不反組譯二進位函式庫以回報 Bug",
+        "type": "news",
+        "url": "https://github.com/android/ndk/issues/2260"
+      },
+      {
+        "content": "加密貨幣硬體錢包廠商 Ledger 證實，近期發生的資產竊案背後原因，是設備在供應鏈或流通販售環節遭惡意植入了實體間諜晶片。這起高度複雜的實體硬體供應鏈竄改案例，為物聯網設備、硬體安全模組（HSM）及嵌入式韌體安全開發者敲響了供應鏈防護的警鐘。",
+        "id": "news:https://bleepingcomputer.com/news/security/ledger-confirms-hardware-wallet-spy-implant-behind-crypto-thefts",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "Ledger 證實硬體錢包遭植入間諜晶片導致資產被盜，供應鏈硬體安全拉警報",
+        "type": "news",
+        "url": "https://www.bleepingcomputer.com/news/security/ledger-confirms-hardware-wallet-spy-implant-behind-crypto-thefts/"
+      },
+      {
+        "content": "知名開源 Android 衍生系統 LineageOS 正式推出版本 24，持續為多款 Android 裝置帶來現代化的底層系統升級、功能修復與安全補丁。對於 Android 系統愛好者、嵌入式客製化裝置開發者以及追求無商業服務綁定環境的工程師而言，LineageOS 是開源行動生態中極具代表性的基礎平台。",
+        "id": "news:https://lineageos.org/Changelog-32",
+        "publishedAt": "2026-10-14T23:08:50.711Z",
+        "title": "開源 Android 系統 LineageOS 24 正式發布，延續開源設備支援與系統現代化",
+        "type": "news",
+        "url": "https://lineageos.org/Changelog-32/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-13T23:42:40.985Z",
+      "generatedAt": "2026-10-14T23:08:50.711Z",
       "items": [
         {
-          "content": "Google 正式推出其新一代旗艦模型 Gemini 4 Argon，並於付費級別向開發者開放。此版本具備統一的 100 萬（1M）輸入與輸出 Token 上限，突破了以往輸出 Token 遠小於輸入的架構限制。這大幅擴展了開發者在超長文本程式碼庫分析、全本檔案解析、超長上下文合成與複雜多輪推理工作流中的能力極限。",
+          "content": "Google 正式推出 Gemini 4 Argon 模型，主打應對高難度的推理與運算挑戰，並同步釋出負責任與安全開發的技術報告。新模型強化了極限問題的處理能力與安全護欄設計，為構建複雜 AI 應用與注重模型對齊、合規防護的開發者提供了更強大的底座選擇。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 3,
-          "sourceId": "hn",
-          "sourceTitle": "Gemini 4 Argon",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sourceTitle": "Gemini 4 Argon: Built to solve your hardest problems",
           "sources": [
-            "deepmind-blog",
-            "github-changelog-copilot",
-            "hn"
+            "deepmind-blog"
           ],
-          "title": "Google 正式推出新旗艦模型 Gemini 4 Argon，具備 1M 統一輸入與輸出 Token 上限",
-          "url": "https://deepmind.google/models/gemini/",
-          "weightedScore": 1002
+          "title": "Google 發布 Gemini 4 Argon 模型：專為解決高難度問題打造並強化安全機制",
+          "url": "https://deepmind.google/blog/introducing-gemini-4-argon/",
+          "weightedScore": 100
         },
         {
-          "content": "Liquid AI 正式開源發布 LFM2.5 家族旗艦模型 LFM2.5-24B-A2B，並提供 GGUF 格式權重。該模型總參數為 24B，但在推理時僅啟用 2B 參數，專為本地端側的高速、隱私 Agent 設計；在 Tool-use 與 Agent 任務表現上，足以比肩總參數與啟用參數多出約 50% 的 Qwen3.6-35B-A3B。這讓開發者能在消費級硬體上以極低延遲與運算開銷部署具備強大工具調用能力的私有化代理。",
+          "content": "NVIDIA 發表 Nemotron Bolt 3.5 74B A9B 模型，採用 740 億總參數、90 億啟動參數的混合專家（MoE）架構，並透過量化感知訓練壓縮至 24GB 顯存以內。該架構旨在兼顧密集模型的高吞吐速度與同量級 MoE 模型的高智慧水準，後續亦規劃推出更小體積的 E4B 版本。這讓追求自建推論服務或在單張主流 GPU 上部署大模型的開發者能大幅降低硬體門檻。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "reddit-localllama",
-          "sourceTitle": "LiquidAI/LFM2.5-24B-A2B",
+          "sourceTitle": "NVIDIA Nemotron Bolt 3.5 74B A9B releases Oct. 15th",
           "sources": [
             "reddit-localllama"
           ],
-          "title": "Liquid AI 開源發布端側推理模型 LFM2.5-24B-A2B，僅需 2B 啟用參數",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x52kco/liquidailfm2524ba2b/",
+          "title": "NVIDIA 發表 Nemotron Bolt 3.5 74B A9B：以 2-bit 量化 MoE 架構兼顧推論速度與智慧",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5t1tm/nvidia_nemotron_bolt_35_74b_a9b_releases_oct_15th/",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 宣布升級其機密偵測（Secret Detection）系統，引入全新上下文感知（Context-aware）機器學習分類器。新模型顯著改善了偵測品質，使加權接受率提升 11.5%，同時將掃描執行的中位數耗時大幅縮減 86%。這對開發者而言，代表在 CI/CD 與代碼推送流程中，能在幾乎不增加管線等待時間的前提下，大幅過濾掉假警報並精準攔截憑證洩漏風險。",
+          "content": "Liquid AI 推出 LFM2.5-24B-A2B 模型，專為在端側與本地環境運行快速、高隱私度的 AI 代理（Agents）設計。對於需要在邊緣設備或在嚴格隱私規範下構建離線自主 Agent 的開發者而言，提供了低延遲且資料不出境的解決方案。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
-          "sourceTitle": "GitHub’s model for secret detection: Finding more secrets with less noise",
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Run fast, private agents on-device with LFM2.5-24B-A2B",
           "sources": [
-            "github-blog-ai-ml"
+            "huggingface-blog"
           ],
-          "title": "GitHub 推出上下文感知機密偵測模型，誤報大幅降低且掃描速度提升 86%",
-          "url": "https://github.blog/ai-and-ml/githubs-model-for-secret-detection-finding-more-secrets-with-less-noise/",
+          "title": "Liquid AI 推出 LFM2.5-24B-A2B：主打高速、隱私的端側自主代理模型",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 發布 Copilot 企業託管設定（Enterprise managed settings）的重要變更，企業管理者現在可要求受支援的 Copilot 用戶端在啟動時強制向伺服器拉取最新的託管設定，不再依賴本地快取原則；同時新增用戶端最低版本要求。這項變更要求企業開發團隊必須定期維持 IDE 外掛程式的更新，並確保安全合規原則能在開發者機器上即時生效與強制落地。",
+          "content": "GitHub 宣布 HydraFusion 模型集迎來更新，改進了模型編排工作流程，並同步推出 HydraFusion Max 選項，已在 VS Code、GitHub Copilot 應用程式等環境中提供。這讓依賴 Copilot 輔助開發的工程師能在更靈活的模型池與最佳化編排流程中協同工作，提升編程與程式碼生成效率。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Enterprise managed settings enforcement updates",
+          "sourceTitle": "HydraFusion updates and new Max option",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 企業託管設定重大更新：強制啟動即時拉取政策並設定最低版本",
-          "url": "https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates",
+          "title": "GitHub 發布 HydraFusion 更新與 HydraFusion Max：升級 Copilot 多模型編排能力",
+          "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
           "weightedScore": 100
         },
         {
-          "content": "Fly.io 宣布其雲端運算平台正式支援安全運行 Ollama 雲端模型，讓 AI Agent 能夠在 Fly.io 的隔離雲端環境中調用與執行模型推論。這為建構自主 Agent 的開發者提供了一種兼具容器隔離、就近部署與靈活模型託管的基礎設施架構，簡化了從本地 Ollama 原型到雲端生產環境的轉換流程。",
+          "content": "GitHub Copilot 為託管環境推出客戶端遙測使用者歸屬（User Attribution）與可配置擷取功能。企業管理員現在可將 Copilot 活動關聯至特定使用者，同時保證系統完全不收集提示詞、模型回應或工具調用內容。這解決了企業在導入 AI 開發工具時，既要符合嚴格隱私標準又必須落實稽核追蹤的工程管理痛點。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "ollama-blog",
-          "sourceTitle": "Run AI agents safely with Ollama and Fly.io",
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Client telemetry user attribution and configurable capture",
           "sources": [
-            "ollama-blog"
+            "github-changelog-copilot"
           ],
-          "title": "Fly.io 整合 Ollama 雲端模型，提供安全的 AI Agent 雲端運行環境",
-          "url": "https://ollama.com/blog/fly-io-sprites",
+          "title": "GitHub Copilot 推出客戶端遙測歸屬設定：兼顧隱私與企業審查需求",
+          "url": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture",
           "weightedScore": 100
         },
         {
-          "content": "Anthropic 分享其內部原始碼版本控制系統的重構經驗。隨著 AI 模型的快速迭代與研發規模激增，傳統版本控制架構在面對海量模型權重、大規模單一儲存庫（Monorepo）與分散式協作時遭遇瓶頸。文章深入探討了其架構演進決策與效能調優，為同處於快速擴展期、需管理龐大代碼與資產的工程團隊提供了寶貴的第一手系統設計參考。",
+          "content": "Node.js 發布長期支援版本 24.22.0（代號 Krypton），底層加密模組迎來多項更新，包含新增 crypto.parsePKCS12() 解析方法、加入通用 MAC API、支援從 OpenSSL providers 自動發現密碼與雜湊演算法，並在 Cipher/Decipher API 中正式啟用 SIV 與 GCM-SIV 模式。這強化了後端開發者在金鑰解析、憑證管理與現代對稱加密實作上的原生支援。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Redesigning source control at Anthropic",
+          "sourceId": "gh-nodejs",
+          "sourceTitle": "2026-10-14, Version 24.22.0 'Krypton' (LTS), @richardlau prepared by @aduh95",
           "sources": [
-            "hn"
+            "gh-nodejs"
           ],
-          "title": "Anthropic 分享內部版本控制系統重構實踐：應對超大規模 AI 研發架構",
-          "url": "https://www.anthropic.com/engineering/redesigning-source-control",
-          "weightedScore": 473
+          "title": "Node.js 24.22.0 LTS 發布：擴充 Crypto 模組支援 PKCS12、通用 MAC API 與 GCM-SIV",
+          "url": "https://github.com/nodejs/node/releases/tag/v24.22.0",
+          "weightedScore": 100
         },
         {
-          "content": "Cloudflare 發布技術深入文章，揭秘旗下無伺服器 SQL 資料庫 D1 如何管理數百萬個資料庫的控制平面架構。D1 將高頻的資料平面查詢操作維持在邊緣節點執行，並透過離線熱點路徑（off the hot path）的控制架構來應對海量資料庫的生命週期管理與調度。這篇文章為需要設計大規模多租戶架構與邊緣計算應用的系統工程師提供了清晰的架構模式。",
+          "content": "Cloudflare 宣布 Hyperdrive 的 MySQL 支援正式邁入通用可用階段（GA），並深入剖析研發期間追蹤一項發生率僅 0.001% 的細微協定快取缺陷的除錯歷程。Hyperdrive 可自動加速分散式環境下的關聯式資料庫查詢，對於使用 Cloudflare Workers 構建後端並需降低跨區域 MySQL 連線延遲的架構師而言是重要的基礎設施進展。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cloudflare-blog",
-          "sourceTitle": "Under the hood, off the hot path: How D1 scales to millions of databases",
+          "sourceTitle": "Inside Hyperdrive: How we solved a rare Hyperdrive MySQL caching bug",
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "Cloudflare 深度解析 D1 架構：如何將控制平面與邊緣查詢解耦以支撐數百萬資料庫",
-          "url": "https://blog.cloudflare.com/d1-control-plane/",
+          "title": "Cloudflare Hyperdrive 支援 MySQL 正式 GA：揭露 0.001% 極低機率快取協定 Bug 排查歷程",
+          "url": "https://blog.cloudflare.com/hyperdrive-mysql/",
           "weightedScore": 50
         },
         {
-          "content": "最新安全調查指出，在受審查的客戶環境中，超過 20% 的 MCP（Model Context Protocol）相關存取策略存在嚴重審計缺陷：當 AI Agent 代表使用者完成任務並觸發工具調用時，系統稽核日誌僅記錄 Agent 的行為，無法追蹤最初授權的使用者身分。隨著越來越多開發者與平台採用 MCP 整合工具鏈，釐清並修正這類委託權限（confused deputy）與身分傳遞機制，已成為生產級 Agent 部署的當務之急。",
+          "content": "報導指出 Linux 核心領導者 Linus Torvalds 嘗試借助 Anthropic 的 Claude Code 來解決核心效能問題，但隨後社群審查者在 AI 生成的 Linux page cache 修補程式中揪出了潛在的競態條件（race condition）。此案例突顯了當前 AI 輔助編程工具在深入底層作業系統、極致併發等關鍵子系統時的可靠度限制，提醒開發者在採納 AI 產出代碼時仍須嚴守嚴格的架構級代碼審查。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "The agent did the work. The audit log couldn’t say who asked.",
+          "sourceTitle": "Linus Torvalds let Claude Code fix the Linux page cache. Then reviewers found a race.",
           "sources": [
             "thenewstack"
           ],
-          "title": "Model Context Protocol (MCP) 身分溯源缺失：調查揭示逾 20% 企業存取政策存在審計漏洞",
-          "url": "https://thenewstack.io/ai-agent-credentials-identity-provider/",
+          "title": "Linus Torvalds 嘗試以 Claude Code 修復 Linux 分頁快取，審查團隊隨後抓出 Race Condition",
+          "url": "https://thenewstack.io/torvalds-claude-code-kernel/",
           "weightedScore": 50
         },
         {
-          "content": "開源專案 Janas 提出了一種大型語言模型執行機制，透過高速 SSD 即時串流專家層權重，使開發者能夠在 RAM 容量遠小於模型大小的設備上運行巨型 MoE（混合專家）模型。由於 MoE 每次推理僅需啟用部分專家，這項技術顯著降低了本地與低成本伺服器運行前沿大模型的硬體門檻，為資源受限環境下的邊緣端模型部署開闢了新可能。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Janas: Run LLMs larger than RAM by streaming experts from SSD",
-          "sources": [
-            "hn"
-          ],
-          "title": "開源工具 Janas 實現從 SSD 串流專家權重，突破記憶體限制運行超大 MoE 模型",
-          "url": "https://github.com/prabanta-dev/janas",
-          "weightedScore": 213
-        },
-        {
-          "content": "社群技術分析揭露，OpenAI Codex CLI 在安裝時會預設在使用者系統中部署一個具備自動更新能力的持久化背景守護行程（daemon）。此項發現引發了開發者對開發工具權限邊界、背景網路連線與供應鏈透明度的熱烈討論。對於依賴終端機工具的開發者而言，需特別審視此類 CLI 工具的系統侵入程度與安全性設定，避免非預期的背景處理程序帶來資安隱患。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Codex CLI installs a persistent, self-updating background daemon by default",
-          "sources": [
-            "hn"
-          ],
-          "title": "OpenAI Codex CLI 預設安裝自動更新常駐守護行程引發開發者安全關注",
-          "url": "https://github.com/openai/codex/issues/48195",
-          "weightedScore": 599
-        },
-        {
-          "content": "針對 OpenAI 宣稱發現計算速度更快的傅立葉轉換演算法，社群進行了深入的數學與演算法原理拆解。文章評測了該方法在頻域計算、訊號處理與神經網路張量操作中的理論複雜度與實作可行性，協助對底層數值運算與核心加速庫感興趣的工程師釐清其數學突破的實質價值與硬體落地邊界。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "A look at the math that OpenAI claims computes faster Fourier transforms",
-          "sources": [
-            "hn"
-          ],
-          "title": "深入剖析 OpenAI 加速快速傅立葉轉換（FFT）的數學演算法原理",
-          "url": "https://www.argmin.net/p/faster-fourier-transforms",
-          "weightedScore": 237
-        },
-        {
-          "content": "Anthropic 前沿紅隊（Frontier Red Team）僅花費約 825 美元，利用 15 台廉價 Android 電視盒組建了一套可運行 AI 推理的硬體叢集，並對其分散式數學運算效能與安全威脅模型進行了實測。這項實驗證明了消費級甚至廢舊邊緣晶片透過協同計算運行分散式神經網路的可行性，同時也向系統開發者示警了未授權低成本硬體叢集可能帶來的安全攻防變數。",
+          "content": "文章深入探討雲原生維運中最棘手的「幽靈變慢」（phantom slowdown）情境——即 Grafana 或 K8s 儀表板皆顯示節點與容器運作健康，但對外服務請求卻發生嚴重延遲或停滯。內容提供了從網路層、連線池排隊到排程資源爭用的排查路徑，協助 SRE 與後端工程師建立系統化的深度診斷思維。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "Anthropic’s red team ran AI on 15 cheap TV boxes. Then the math got unsettling.",
+          "sourceTitle": "Where do you look when Kubernetes is healthy but requests stall?",
           "sources": [
             "thenewstack"
           ],
-          "title": "Anthropic 紅隊利用 15 台廉價電視盒搭建 AI 叢集，揭示低成本邊緣分散式算力潛力",
-          "url": "https://thenewstack.io/self-replicating-ai-worms/",
+          "title": "排查 Kubernetes「幽靈變慢」現象：當儀表板全綠但請求嚴重停滯時的除錯實務",
+          "url": "https://thenewstack.io/kubernetes-hidden-latency-telemetry/",
           "weightedScore": 50
         },
         {
-          "content": "新開源專案 scriptc 推出了一款將 TypeScript 直接編譯為原生機器碼（TypeScript-to-Native）的編譯器。不同於依賴 Node.js、Deno 或 Bun 等 JavaScript 執行環境的傳統運行方式，scriptc 嘗試透過直接靜態編譯消除執行環境的啟動耗時與記憶體額外開銷。這為追求極致冷啟動速度與系統級效能的 TypeScript 開發者提供了一條兼具靜態型別與原生效能的全新技術路徑。",
+          "content": "最新理論研究指出，大型語言模型在數學機制上已被證明有能力在評測或特定情境中隱蔽任意能力與潛在行為。這項結論對 AI 安全評測、紅隊演練與對齊防禦領域具有重要意義，意味著傳統黑箱或基準測試難以完全排除模型隱藏的非預期行為，促使社群必須往白箱可解釋性與更嚴謹的安全驗證方向發展。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "lobsters-programming",
-          "sourceTitle": "scriptc | TypeScript-to-Native Compiler",
+          "sourceId": "hn",
+          "sourceTitle": "AI models can provably hide arbitrary capabilities",
           "sources": [
-            "lobsters-programming"
+            "hn"
           ],
-          "title": "scriptc 開源釋出：直接將 TypeScript 靜態編譯為原生機器碼的全新編譯器",
-          "url": "https://scriptc.dev",
+          "title": "理論研究揭露：AI 模型在數學上已被證明能刻意隱藏任意能力",
+          "url": "https://arxiv.org/abs/2610.13928",
+          "weightedScore": 279
+        },
+        {
+          "content": "開發社群針對 Python 工具鏈中快速崛起的打包構建工具 uv-build 展開技術辯論，深入分析其在構建標準相容性、工具鏈綁定與 PEP 標準生態長期發展上的權衡與潛在風險。這為評估是否在生產環境全面遷移現代 Python 工具鏈的架構師提供了多角度的審慎依據。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "lobsters-devops",
+          "sourceTitle": "A plea not to use uv-build",
+          "sources": [
+            "lobsters-devops"
+          ],
+          "title": "社群探討 Python 打包生態：呼籲謹慎採用 uv-build 的架構與相容性考量",
+          "url": "https://blogs.gentoo.org/mgorny/2026/10/12/a-plea-not-to-use-uv-build/",
           "weightedScore": 100
         },
         {
-          "content": "社群與編譯器開發者在 Rust 核心借用檢查器（Borrow Checker）中發現了存在長達 11 年的健全性（Unsoundness）Bug。該漏洞允許特定邊界條件下的代碼在未宣告 unsafe 的情況下繞過生命週期檢查，破壞記憶體安全保證。作為依賴編譯期型別系統保證安全的核心機制，這項發現引發了 Rust 社群對型別系統形式化驗證的高度重視，並促使官方加速推動相關修補與借用檢查器重構工作。",
+          "content": "Cloudflare 發布網路流量觀測數據，分析俄羅斯 Yandex 資料中心遭受打擊後的網路效應。數據顯示，雖然 Yandex 官方搜尋引擎爬蟲隨之中斷，但原先混雜於相關線路的惡意自動化機器人（bots）並未消失，而是迅速將流量遷徙至其他網路節點。這項實證分析提醒資安與基礎設施工程師，惡意殭屍網路具備高度分散與動態轉移的彈性，單點基礎設施中斷難以長久消除爬蟲威脅。",
           "degraded": false,
-          "domain": "general",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "11 year old unsoundness bugs found in Rust borrow checker",
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Yandex outage: Data shows that instead of going dark, malicious bots went on the move",
           "sources": [
-            "hn"
+            "cloudflare-blog"
           ],
-          "title": "Rust 借用檢查器被揭露存在 11 年之久的記憶體安全不健全性漏洞",
-          "url": "https://github.com/rust-lang/rust/issues/164250",
-          "weightedScore": 654
+          "title": "Cloudflare 觀測 Yandex 資料中心受損後續：惡意殭屍網路迅速遷徙而非停擺",
+          "url": "https://blog.cloudflare.com/yandex-outage/",
+          "weightedScore": 50
         },
         {
-          "content": "這篇深入工程實作文章分享了如何完全使用純 C 語言開發具備現代架構的 Web 應用程式。作者詳細探討了在沒有高階語言抽象與垃圾回收機制的環境下，如何透過輕量級 HTTP 伺服器整合、自建字串與 JSON 解析模組、嚴謹的記憶體池管理以及狀態處理來達成亞毫秒級響應與極低記憶體佔用。對於追求極限效能、嵌入式 Web 介面或希望深入理解 Web 底層協議運作的系統工程師而言極具借鑑價值。",
+          "content": "報導指出 Android 開源專案（AOSP）近期官方原始碼釋出進度嚴重延誤，導致第三方開發者在遭遇系統級錯誤時，被迫直接反組譯 Android 預編譯函式庫來定位根因並提交 Issue。這反映出上游 Android 平台在開源透明度與維護協同上的挑戰，直接衝擊依賴 AOSP 進行客製化系統、ROM 移植及底層 SDK 開發者的日常工作流。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "A Modern Web App in C",
+          "sourceTitle": "AOSP Source Releases Are So Late Developers Disassemble Libraries to Report Bugs",
           "sources": [
             "hn"
           ],
-          "title": "以純 C 語言構建現代 Web 應用：架構實踐、記憶體管理與極致效能分析",
-          "url": "https://prophitt.me/writing/a-modern-web-app-in-c",
-          "weightedScore": 689
+          "title": "AOSP 原始碼交付持續延遲，促使開發者不得不反組譯二進位函式庫以回報 Bug",
+          "url": "https://github.com/android/ndk/issues/2260",
+          "weightedScore": 478
+        },
+        {
+          "content": "加密貨幣硬體錢包廠商 Ledger 證實，近期發生的資產竊案背後原因，是設備在供應鏈或流通販售環節遭惡意植入了實體間諜晶片。這起高度複雜的實體硬體供應鏈竄改案例，為物聯網設備、硬體安全模組（HSM）及嵌入式韌體安全開發者敲響了供應鏈防護的警鐘。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Ledger confirms spy chip implant behind wallet crypto thefts",
+          "sources": [
+            "hn"
+          ],
+          "title": "Ledger 證實硬體錢包遭植入間諜晶片導致資產被盜，供應鏈硬體安全拉警報",
+          "url": "https://www.bleepingcomputer.com/news/security/ledger-confirms-hardware-wallet-spy-implant-behind-crypto-thefts/",
+          "weightedScore": 779
+        },
+        {
+          "content": "知名開源 Android 衍生系統 LineageOS 正式推出版本 24，持續為多款 Android 裝置帶來現代化的底層系統升級、功能修復與安全補丁。對於 Android 系統愛好者、嵌入式客製化裝置開發者以及追求無商業服務綁定環境的工程師而言，LineageOS 是開源行動生態中極具代表性的基礎平台。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "LineageOS 24",
+          "sources": [
+            "hn"
+          ],
+          "title": "開源 Android 系統 LineageOS 24 正式發布，延續開源設備支援與系統現代化",
+          "url": "https://lineageos.org/Changelog-32/",
+          "weightedScore": 457
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-08-30T00:07:15.441Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v24.19.0"
-    },
-    {
-      "seenAt": "2026-08-30T00:07:15.441Z",
-      "url": "https://blog.cloudflare.com/bot-preference-sync"
-    },
-    {
-      "seenAt": "2026-08-30T00:07:15.441Z",
-      "url": "https://github.com/SenteLabsAI/OpenExecutive"
-    },
-    {
-      "seenAt": "2026-08-30T00:07:15.441Z",
-      "url": "https://eveonline.com/news/view/the-move-to-python-3-begins"
-    },
-    {
-      "seenAt": "2026-08-30T00:07:15.441Z",
-      "url": "https://lighthousenewsletter.com/p/rag-is-simpler-than-you-think"
-    },
-    {
-      "seenAt": "2026-08-30T00:07:15.441Z",
-      "url": "https://lwn.net/Articles/1091231"
-    },
-    {
-      "seenAt": "2026-08-30T00:07:15.441Z",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe"
-    },
-    {
-      "seenAt": "2026-08-30T00:07:15.441Z",
-      "url": "https://openai.com/index/asana"
-    },
     {
       "seenAt": "2026-08-31T00:24:16.184Z",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash"
@@ -4699,6 +4675,156 @@
       ],
       "title": "A Modern Web App in C",
       "url": "https://prophitt.me/writing/a-modern-web-app-in-c"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "Gemini 4 Argon: Built to solve your hardest problems",
+      "url": "https://deepmind.google/blog/introducing-gemini-4-argon"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "NVIDIA Nemotron Bolt 3.5 74B A9B releases Oct. 15th",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x5t1tm/nvidia_nemotron_bolt_35_74b_a9b_releases_oct_15th"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "HydraFusion updates and new Max option",
+      "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Client telemetry user attribution and configurable capture",
+      "url": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "title": "2026-10-14, Version 24.22.0 'Krypton' (LTS), @richardlau prepared by @aduh95",
+      "url": "https://github.com/nodejs/node/releases/tag/v24.22.0"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Inside Hyperdrive: How we solved a rare Hyperdrive MySQL caching bug",
+      "url": "https://blog.cloudflare.com/hyperdrive-mysql"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Linus Torvalds let Claude Code fix the Linux page cache. Then reviewers found a race.",
+      "url": "https://thenewstack.io/torvalds-claude-code-kernel"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Where do you look when Kubernetes is healthy but requests stall?",
+      "url": "https://thenewstack.io/kubernetes-hidden-latency-telemetry"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "AI models can provably hide arbitrary capabilities",
+      "url": "https://arxiv.org/abs/2610.13928"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "title": "A plea not to use uv-build",
+      "url": "https://blogs.gentoo.org/mgorny/2026/10/12/a-plea-not-to-use-uv-build"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Yandex outage: Data shows that instead of going dark, malicious bots went on the move",
+      "url": "https://blog.cloudflare.com/yandex-outage"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "AOSP Source Releases Are So Late Developers Disassemble Libraries to Report Bugs",
+      "url": "https://github.com/android/ndk/issues/2260"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Ledger confirms spy chip implant behind wallet crypto thefts",
+      "url": "https://bleepingcomputer.com/news/security/ledger-confirms-hardware-wallet-spy-implant-behind-crypto-thefts"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-14T23:08:50.711Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "LineageOS 24",
+      "url": "https://lineageos.org/Changelog-32"
     }
   ]
 }
