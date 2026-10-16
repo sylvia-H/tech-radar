@@ -406,133 +406,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-11T23:37:19.365Z",
-  "lastNewsPushAt": "2026-10-15T23:00:22.238Z",
+  "lastNewsPushAt": "2026-10-16T22:45:53.308Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-11T23:37:19.365Z",
       "summary": "本次榜單由 lexmount/moli 奪下 #1，共迎來 8 個新進項目與 2 個竄升項目，領域分布涵蓋 AI 8 個及前後端 2 個。"
     },
     "feed": [
-      {
-        "content": "在 Kubernetes 平台運行 GPU 工作負載通常面臨「萬事皆需自建」的困境。平台工程團隊雖然習慣透過 Grafana 儀表板監控資源，但在 GPU 資源可見性、排程調度以及基礎設施帳單成本控管上存在巨大挑戰。這篇分析深入探討了維運人員將 GPU 引入 K8s 叢集時必須面對的架構瓶頸與實際考量，對正在建構 AI 運算平台的 DevOps 工程師深具參考價值。",
-        "id": "news:https://thenewstack.io/gpus-on-kubernetes",
-        "publishedAt": "2026-10-13T01:58:42.615Z",
-        "title": "在 Kubernetes 上調度 GPU 工作負載的底層挑戰與成本透明度剖析",
-        "type": "news",
-        "url": "https://thenewstack.io/gpus-on-kubernetes/"
-      },
-      {
-        "content": "一篇深度工程分享紀錄了消耗 5000 億（500B）Token 讓多個 AI Agent 嘗試反編譯一款第一人稱射擊遊戲的完整歷程。文章剖析了 AI Agent 在面對底層二進制逆向工程、複雜架構推理與大規模上下文管理時的能力極限與崩潰點。這項實作經驗為嘗試將 LLM 應用於複雜系統逆向工程與大型代碼庫分析的開發者提供了極具價值的技術數據。",
-        "id": "news:https://momo5502.com/posts/2026-10-09-game-decompilation",
-        "publishedAt": "2026-10-13T01:58:42.615Z",
-        "title": "消耗 5000 億 Token 的實驗：讓 AI Agent 反編譯第一人稱射擊遊戲",
-        "type": "news",
-        "url": "https://momo5502.com/posts/2026-10-09-game-decompilation/"
-      },
-      {
-        "content": "技術社群深入探討了在 Kubernetes 叢集中實作節點裝箱（Node Bin Packing）的排程機制。透過自訂排程演算法將 Pod 集中放置在少數節點上，能有效提高伺服器資源利用率，並配合自動擴縮機制釋放未使用的節點。此實作經驗對於需要最佳化雲端基礎架構成本、改善節點資源碎片化問題的 DevOps 與 SRE 工程師具備高度實用性。",
-        "id": "news:https://blog.costgraph.ai/node-rightsizing",
-        "publishedAt": "2026-10-13T01:58:42.615Z",
-        "title": "實作 Kubernetes 節點 Bin Packing 排程策略的最佳化實務",
-        "type": "news",
-        "url": "https://blog.costgraph.ai/node-rightsizing/"
-      },
-      {
-        "content": "開發者社群分享了運用開源快照備份工具 restic 與雲端物件儲存 Backblaze B2 實作「3-2-1 備份策略」的具體技術架構。內容詳細介紹了加密傳輸、去重複化（deduplication）機制以及自動化備份腳本的配置方式。這為負責資料保護與災難復原的後端與維運工程師提供了一套兼顧高安全性與低成本的實作參考範本。",
-        "id": "news:https://chuck.is/paranoid",
-        "publishedAt": "2026-10-13T01:58:42.615Z",
-        "title": "結合 restic 與 Backblaze B2 打造現代 3-2-1 備份架構實務",
-        "type": "news",
-        "url": "https://chuck.is/paranoid/"
-      },
-      {
-        "content": "社群深入探討 Passkeys（通行密鑰）在現代身分驗證體系中的架構缺陷與潛在隱憂。雖然 Passkeys 提供了無密碼登入的安全性，但在實務上高度依賴特定科技巨頭的生態系，導致私鑰的匯出與跨平台遷移極為困難，甚至產生供應商鎖定效應。對於正在設計身分認證系統的架構師與安全工程師而言，文章提醒在全面採用 WebAuthn / Passkeys 前，需全面評估災難復原、備份機制與用戶自主權。",
-        "id": "news:https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them",
-        "publishedAt": "2026-10-13T01:58:42.615Z",
-        "title": "Passkeys 的架構陷阱：分析平台鎖定與跨生態系遷移困難",
-        "type": "news",
-        "url": "https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them"
-      },
-      {
-        "content": "技術社群探討了在第三方 Cookie 逐漸退場後，網站指紋追蹤技術（Device / Browser Fingerprinting）成為新一代追蹤手段的現狀。文章深入分析了追蹤腳本如何利用 Canvas、音訊 API、硬體特徵與字型列舉構建高精確度的裝置識別碼，以及現代瀏覽器在防禦指紋追蹤上的技術極限。這對於關注 Web 安全、隱私保護與前端架構的開發者而言，提供了理解現代 Web 追蹤機制的重要技術脈絡。",
-        "id": "news:https://royfish.dev/fingerprints-are-the-new-cookies",
-        "publishedAt": "2026-10-13T01:58:42.615Z",
-        "title": "瀏覽器指紋技術全面解析：取代 Cookie 的無狀態追蹤機制與防禦",
-        "type": "news",
-        "url": "https://royfish.dev/fingerprints-are-the-new-cookies"
-      },
-      {
-        "content": "Google 正式推出其新一代旗艦模型 Gemini 4 Argon，並於付費級別向開發者開放。此版本具備統一的 100 萬（1M）輸入與輸出 Token 上限，突破了以往輸出 Token 遠小於輸入的架構限制。這大幅擴展了開發者在超長文本程式碼庫分析、全本檔案解析、超長上下文合成與複雜多輪推理工作流中的能力極限。",
-        "id": "news:https://deepmind.google/models/gemini",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "Google 正式推出新旗艦模型 Gemini 4 Argon，具備 1M 統一輸入與輸出 Token 上限",
-        "type": "news",
-        "url": "https://deepmind.google/models/gemini/"
-      },
-      {
-        "content": "Liquid AI 正式開源發布 LFM2.5 家族旗艦模型 LFM2.5-24B-A2B，並提供 GGUF 格式權重。該模型總參數為 24B，但在推理時僅啟用 2B 參數，專為本地端側的高速、隱私 Agent 設計；在 Tool-use 與 Agent 任務表現上，足以比肩總參數與啟用參數多出約 50% 的 Qwen3.6-35B-A3B。這讓開發者能在消費級硬體上以極低延遲與運算開銷部署具備強大工具調用能力的私有化代理。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x52kco/liquidailfm2524ba2b",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "Liquid AI 開源發布端側推理模型 LFM2.5-24B-A2B，僅需 2B 啟用參數",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x52kco/liquidailfm2524ba2b/"
-      },
-      {
-        "content": "GitHub 宣布升級其機密偵測（Secret Detection）系統，引入全新上下文感知（Context-aware）機器學習分類器。新模型顯著改善了偵測品質，使加權接受率提升 11.5%，同時將掃描執行的中位數耗時大幅縮減 86%。這對開發者而言，代表在 CI/CD 與代碼推送流程中，能在幾乎不增加管線等待時間的前提下，大幅過濾掉假警報並精準攔截憑證洩漏風險。",
-        "id": "news:https://github.blog/ai-and-ml/githubs-model-for-secret-detection-finding-more-secrets-with-less-noise",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "GitHub 推出上下文感知機密偵測模型，誤報大幅降低且掃描速度提升 86%",
-        "type": "news",
-        "url": "https://github.blog/ai-and-ml/githubs-model-for-secret-detection-finding-more-secrets-with-less-noise/"
-      },
-      {
-        "content": "GitHub 發布 Copilot 企業託管設定（Enterprise managed settings）的重要變更，企業管理者現在可要求受支援的 Copilot 用戶端在啟動時強制向伺服器拉取最新的託管設定，不再依賴本地快取原則；同時新增用戶端最低版本要求。這項變更要求企業開發團隊必須定期維持 IDE 外掛程式的更新，並確保安全合規原則能在開發者機器上即時生效與強制落地。",
-        "id": "news:https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "GitHub Copilot 企業託管設定重大更新：強制啟動即時拉取政策並設定最低版本",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates"
-      },
-      {
-        "content": "Fly.io 宣布其雲端運算平台正式支援安全運行 Ollama 雲端模型，讓 AI Agent 能夠在 Fly.io 的隔離雲端環境中調用與執行模型推論。這為建構自主 Agent 的開發者提供了一種兼具容器隔離、就近部署與靈活模型託管的基礎設施架構，簡化了從本地 Ollama 原型到雲端生產環境的轉換流程。",
-        "id": "news:https://ollama.com/blog/fly-io-sprites",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "Fly.io 整合 Ollama 雲端模型，提供安全的 AI Agent 雲端運行環境",
-        "type": "news",
-        "url": "https://ollama.com/blog/fly-io-sprites"
-      },
-      {
-        "content": "Anthropic 分享其內部原始碼版本控制系統的重構經驗。隨著 AI 模型的快速迭代與研發規模激增，傳統版本控制架構在面對海量模型權重、大規模單一儲存庫（Monorepo）與分散式協作時遭遇瓶頸。文章深入探討了其架構演進決策與效能調優，為同處於快速擴展期、需管理龐大代碼與資產的工程團隊提供了寶貴的第一手系統設計參考。",
-        "id": "news:https://anthropic.com/engineering/redesigning-source-control",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "Anthropic 分享內部版本控制系統重構實踐：應對超大規模 AI 研發架構",
-        "type": "news",
-        "url": "https://www.anthropic.com/engineering/redesigning-source-control"
-      },
-      {
-        "content": "Cloudflare 發布技術深入文章，揭秘旗下無伺服器 SQL 資料庫 D1 如何管理數百萬個資料庫的控制平面架構。D1 將高頻的資料平面查詢操作維持在邊緣節點執行，並透過離線熱點路徑（off the hot path）的控制架構來應對海量資料庫的生命週期管理與調度。這篇文章為需要設計大規模多租戶架構與邊緣計算應用的系統工程師提供了清晰的架構模式。",
-        "id": "news:https://blog.cloudflare.com/d1-control-plane",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "Cloudflare 深度解析 D1 架構：如何將控制平面與邊緣查詢解耦以支撐數百萬資料庫",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/d1-control-plane/"
-      },
-      {
-        "content": "最新安全調查指出，在受審查的客戶環境中，超過 20% 的 MCP（Model Context Protocol）相關存取策略存在嚴重審計缺陷：當 AI Agent 代表使用者完成任務並觸發工具調用時，系統稽核日誌僅記錄 Agent 的行為，無法追蹤最初授權的使用者身分。隨著越來越多開發者與平台採用 MCP 整合工具鏈，釐清並修正這類委託權限（confused deputy）與身分傳遞機制，已成為生產級 Agent 部署的當務之急。",
-        "id": "news:https://thenewstack.io/ai-agent-credentials-identity-provider",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "Model Context Protocol (MCP) 身分溯源缺失：調查揭示逾 20% 企業存取政策存在審計漏洞",
-        "type": "news",
-        "url": "https://thenewstack.io/ai-agent-credentials-identity-provider/"
-      },
-      {
-        "content": "開源專案 Janas 提出了一種大型語言模型執行機制，透過高速 SSD 即時串流專家層權重，使開發者能夠在 RAM 容量遠小於模型大小的設備上運行巨型 MoE（混合專家）模型。由於 MoE 每次推理僅需啟用部分專家，這項技術顯著降低了本地與低成本伺服器運行前沿大模型的硬體門檻，為資源受限環境下的邊緣端模型部署開闢了新可能。",
-        "id": "news:https://github.com/prabanta-dev/janas",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "開源工具 Janas 實現從 SSD 串流專家權重，突破記憶體限制運行超大 MoE 模型",
-        "type": "news",
-        "url": "https://github.com/prabanta-dev/janas"
-      },
       {
         "content": "社群技術分析揭露，OpenAI Codex CLI 在安裝時會預設在使用者系統中部署一個具備自動更新能力的持久化背景守護行程（daemon）。此項發現引發了開發者對開發工具權限邊界、背景網路連線與供應鏈透明度的熱烈討論。對於依賴終端機工具的開發者而言，需特別審視此類 CLI 工具的系統侵入程度與安全性設定，避免非預期的背景處理程序帶來資安隱患。",
         "id": "news:https://github.com/openai/codex/issues/48195",
@@ -812,235 +692,345 @@
         "title": "安全研究人員警告：惡意網路廣告已被武器化用於散播「零點擊」間諜軟體",
         "type": "news",
         "url": "https://www.theguardian.com/technology/2026/oct/15/israeli-firm-digital-ads-enabling-installation-of-zero-click-spyware-researchers-say"
+      },
+      {
+        "content": "中國商務部與科技部發布《中國禁止出口限制出口技術目錄》修訂草案，擬新增涵蓋人工智慧、生物醫藥等領域的 40 項技術，其中 23 項與 AI 相關，包含基礎/大模型、智慧體（Agent）、計算叢集以及資訊處理技術，並已啟動公眾意見徵詢。草案明確規定，已經開源的技術不在管制範圍內。此項法規變動直接影響跨國 AI 研發、算力叢集架構輸出與商業大模型的出海部署，但開源豁免條款也為開源生態與全球開發者合作提供了明確的合規界限。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x7g3zq/china_proposes_export_controls_on_23_ai",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "中國擬修訂技術出口管制目錄：涵蓋大模型等 23 項 AI 技術，已開源技術獲豁免",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x7g3zq/china_proposes_export_controls_on_23_ai/"
+      },
+      {
+        "content": "官方正式推出參數量達 501B 的開源大模型 Beam。該模型主打高可自訂性與彈性擴展能力，開發者能夠完全擁有模型權重並進行私有化微調與部署，適用於軟體工程、複雜推理以及需要長期運行的智慧體（Agent）工作流程。這為追求自主可控、不願受限於閉源商業 API 的企業與開發者提供了全新的大規模開源基礎模型選擇。",
+        "id": "news:https://huggingface.co/blog/reflection-beam",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "501B 開源大模型 Beam 正式發布：支援自主客製化與大規模擴展",
+        "type": "news",
+        "url": "https://huggingface.co/blog/reflection-beam"
+      },
+      {
+        "content": "隨著 AI 編程工具普及，越來越多非技術員工開始利用 AI 自行建構應用程式（Vibe-coding），導致企業內部出現「影子軟體」與資安風險。Cloudflare 正式開源 Void 工具，旨在為 IT 與維運團隊提供透明的管理途徑，既能鼓勵員工利用 AI 提高生產力，又能監控、審查與管理這些自主生成的內部工具，確保安全性與架構合規。",
+        "id": "news:https://thenewstack.io/cloudflare-voidzero-void-vibe-coding",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "Cloudflare 開源 Void：協助企業 IT 管理員工使用 AI 自建的內部應用",
+        "type": "news",
+        "url": "https://thenewstack.io/cloudflare-voidzero-void-vibe-coding/"
+      },
+      {
+        "content": "Hugging Face 宣布在 Diffusers 函式庫中正式整合支援 FLUX.3 Image Klein 模型。開發者現在可直接透過 Diffusers 標準 API 載入並微調該模型，快速將新一代 FLUX 影像生成技術整合至既有的 Python AI 工作流程與生產環境管線中，降低了部署與推論門檻。",
+        "id": "news:https://huggingface.co/blog/flux-3",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "Hugging Face Diffusers 正式支援 FLUX.3 Image Klein 影像生成模型",
+        "type": "news",
+        "url": "https://huggingface.co/blog/flux-3"
+      },
+      {
+        "content": "Cloudflare 宣布針對驗證機器人（Verified Bots）推出持續評估機制。單純通過身分驗證不再足以維持白名單資格，系統將持續監控爬蟲行為，檢查其是否切實遵守網站設定的 robots.txt 規則以及 HTTP 429（請求過多）限制。對於站長與維運人員而言，此舉能有效防止 AI 抓取程式過度消耗伺服器頻寬；對爬蟲與 AI 代理開發者來說，遵循網站限制已成為避免遭到全域攔截的必要條件。",
+        "id": "news:https://blog.cloudflare.com/verified-bots-accountability",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "Cloudflare 推出驗證機器人持續問責機制：動態監控 robots.txt 與 HTTP 429 遵守狀況",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/verified-bots-accountability/"
+      },
+      {
+        "content": "知名生成式 AI 對話平台 Character.ai 已主動聲請美國破產法第 11 章破產保護程序。作為高流量的對話式 AI 平台之一，此事件突顯了生成式 AI 服務在面臨高昂推論算力成本與變現困難時的財務壓力，依賴其生態系或 API 構建服務的開發者與合作夥伴需密切關注後續重組與服務可用性風險。",
+        "id": "news:https://blog.character.ai/an-update-on-character-ai",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "AI 對話平台 Character.ai 正式聲請美國破產法第 11 章破產保護",
+        "type": "news",
+        "url": "https://blog.character.ai/an-update-on-character-ai/"
+      },
+      {
+        "content": "開源程式碼助手專案 OpenCode 正式推出 2.0 版本。新版本聚焦於提升程式碼生成準確度、上下文理解與開發流程整合體驗，為開發者在私有環境部署本地 AI 編程代理提供了更成熟的開源替代方案。",
+        "id": "news:https://anoma.ly/notes/opencode-2-0",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "開源編程輔助工具 OpenCode 2.0 正式發布",
+        "type": "news",
+        "url": "https://anoma.ly/notes/opencode-2-0/"
+      },
+      {
+        "content": "密碼學研究者透過 Claude 模型分析並推導出長期以來備受爭議的 ECDSA 橢圓曲線常數的可能來源。此研究展示了大語言模型在輔助逆向工程與密碼學演算法歷史謎題上的分析能力，為安全研究員與密碼學實作者提供了全新的研究範式。",
+        "id": "news:https://anthropic.com/research/ecdsa-curve-origins",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "研究者利用 Claude 逆向解析 ECDSA 橢圓曲線標準常數的潛在生成源頭",
+        "type": "news",
+        "url": "https://www.anthropic.com/research/ecdsa-curve-origins"
+      },
+      {
+        "content": "工作流自動化工具 n8n 在單一容器與 SQLite 下容易測試，但進入生產流量時難度大幅增加。工程團隊分享了在 AWS EKS 上的架構實踐，解析如何將單體架構拆解為獨立的 Webhook 處理器、背景 Worker，並整合 PostgreSQL 與 Redis 實現高可用與自動擴展，為需要將自動化管線生產化的 DevOps 工程師提供了完整的遷移指南。",
+        "id": "news:https://cncf.io/blog/2026/10/16/deploying-maintaining-and-migrating-production-n8n-on-eks",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "在 AWS EKS 上生產級部署與維護 n8n 工作流引擎的實戰架構解析",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/10/16/deploying-maintaining-and-migrating-production-n8n-on-eks/"
+      },
+      {
+        "content": "Fish 發布最新語音合成模型 Drama 3 35B3A，採用 35B 混合專家（MoE）架構。社群實測指出該模型在 DGX Spark 上運作良好，且 4-bit 量化版本的輸出品質非常接近原始權重，並已提供開源權重與本機推論 Demo。這讓需要高品質在地端執行 Text-to-Speech 的開發者獲得了極具競爭力的開源新選擇。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x6f9p2/new_tts_king_in_town_fishs_drama_3_35b3a",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "Fish Audio 開源新一代語音合成模型 Drama 3 35B3A：MoE 架構與 4-bit 量化實測",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6f9p2/new_tts_king_in_town_fishs_drama_3_35b3a/"
+      },
+      {
+        "content": "CNCF 畢業專案 Kyverno 長期用於 Kubernetes 設定安全與準入控制（Admission Control）。面對新興的 AI 叢集與大型模型推論工作負載，文章探討如何將 Kyverno 策略進一步延伸到運行時（Runtime）安全防護，解決傳統準入控制無法涵蓋的動態行為與運行時威脅，提升雲原生 AI 基礎設施的整體安全基線。",
+        "id": "news:https://cncf.io/blog/2026/10/15/extending-kubernetes-policy-enforcement-to-runtime-security-for-ai-workloads",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "將 Kubernetes Kyverno 策略引擎延伸至 AI 工作負載的運行時安全防護",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/10/15/extending-kubernetes-policy-enforcement-to-runtime-security-for-ai-workloads/"
+      },
+      {
+        "content": "硬體駭客與開源社群成功在越獄的 PlayStation 5 主機 GPU 上部署並運行 Qwen 27B 模型，實測推論速度達到每秒約 20 個 Token。這項極客實驗驗證了消費級遊戲主機硬體在邊緣大模型推論上的潛力，為低成本硬體自建本地推論節點提供了有趣的技術實證。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x5ak2n/someone_is_running_qwen_27b_at_20_toks_on_a",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "開發者在越獄 PS5 上成功以 20 tok/s 速度運行 Qwen 27B 大模型",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5ak2n/someone_is_running_qwen_27b_at_20_toks_on_a/"
+      },
+      {
+        "content": "一項針對勞動力市場任務的研究指出，美國工作人口 90% 的工作時間所從事的任務，在現有各大主流 AI Benchmark 中並未得到良好涵蓋。這突顯出當前以學術測試或合成問答為主的 AI 基準測試與真實世界軟體工程及商業工作流程存在巨大鴻溝，提醒開發者與企業在評估導入 LLM 時應避免單純依賴公開基準分數，需建立符合實際業務場景的評估指標。",
+        "id": "news:https://mercor.com/research/labor-index/benchmark-map",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "實證研究：美國 90% 的工時任務無法被現行 AI 評測基準有效覆蓋",
+        "type": "news",
+        "url": "https://www.mercor.com/research/labor-index/benchmark-map/"
+      },
+      {
+        "content": "開發者分享了在瀏覽器環境中運行輕量語言模型以實作檢索增強生成（RAG）的實踐方案。透過 Web 平台直接在客戶端完成向量檢索與推論，無需將資料傳送至雲端伺服器，既保障了使用者隱私，也大幅降低了後端算力成本，為邊緣端隱私優先的 Web AI 應用提供了實用參考。",
+        "id": "news:https://bart.degoe.de/rag-with-a-small-language-model-in-the-browser",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "在瀏覽器端利用小型語言模型（SLM）實作完全本地的 RAG 架構",
+        "type": "news",
+        "url": "https://bart.degoe.de/rag-with-a-small-language-model-in-the-browser/"
+      },
+      {
+        "content": "資安研究揭露名為 AdFection 的新型攻擊機制，攻擊者將商業定向廣告網路轉化為零點擊（Zero-click）傭兵間諜軟體的傳遞管道。受害者無需點擊任何惡意連結，僅透過廣告展示與定位機制即可遭到感染。該事件凸顯了數位廣告生態系中的深層供應鏈與隱私防護漏洞，對端點安全與企業網路流量過濾機制帶來了嚴峻挑戰。",
+        "id": "news:https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware",
+        "publishedAt": "2026-10-16T22:45:53.308Z",
+        "title": "AdFection 攻擊技術曝光：定向廣告系統遭武器化為零點擊間諜軟體傳播管線",
+        "type": "news",
+        "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-15T23:00:22.238Z",
+      "generatedAt": "2026-10-16T22:45:53.308Z",
       "items": [
         {
-          "content": "GitHub 官方公告將在 2026 年 11 月 16 日正式棄用多款 Copilot 支援的模型，範圍涵蓋 Copilot Chat、行內編輯、詢問與 Agent 模式及程式碼補全等所有 Copilot 使用體驗。依賴特定模型產出或自動化流程的開發團隊需及早檢視並規劃轉移至新版支援模型，以避免即將到來的服務中斷或行為差異。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Upcoming deprecation of selected GitHub Copilot models in mid-November",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub 宣佈將於 11 月中旬淘汰多款 GitHub Copilot 模型",
-          "url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
-          "weightedScore": 100
-        },
-        {
-          "content": "OpenAI 發布 API 棄用通知，預計於 2027 年 1 月 14 日淘汰 API 上的四款 GPT-4 模型。然而，過去 OpenAI 曾承諾給予開發者半年的遷移通知期，此次通知卻僅提供約三個月緩衝，引發開發社群廣泛關注。凡在生產環境中依賴舊版 GPT-4 API 進行推論或工作流編排的團隊，必須加速評估模型升級與相容性測試。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "OpenAI promised developers six months’ notice. GPT-4o users got three.",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "OpenAI 宣佈將於 2027 年 1 月淘汰四款 GPT-4 系列模型，棄用通知期縮短為三個月",
-          "url": "https://thenewstack.io/openai-gpt4o-api-shutdown/",
-          "weightedScore": 50
-        },
-        {
-          "content": "GitHub 官方宣布程式碼掃描警報的「Agentic autofix」功能正式全面開放（GA）。此功能模擬真實開發者的除錯工作流，能自主探索整個代碼庫中與安全漏洞相關的多個檔案，自動產生修復程式碼建議並提供 Pull Request。這能大幅降低安全警報的平均修復時間（MTTR），減輕開發者手動追查與修補漏洞的負擔。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Agentic autofix for code scanning alerts general availability",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub 宣佈程式碼掃描警報 Agentic Autofix 正式全面推出",
-          "url": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群正式釋出開源權重模型 Muse Spark Open，總參數量達 816B、啟用參數 42B，並具備 1M tokens 的上下文視窗。該模型原生支援文字、圖像、視訊與音訊等多模態輸入，專門針對長時間執行的任務、複雜軟體工程與多步推理等 Agentic 場景進行優化，同時通過嚴格的對齊與安全後訓練評估，為本機與開源部署帶來頂級能力。",
+          "content": "中國商務部與科技部發布《中國禁止出口限制出口技術目錄》修訂草案，擬新增涵蓋人工智慧、生物醫藥等領域的 40 項技術，其中 23 項與 AI 相關，包含基礎/大模型、智慧體（Agent）、計算叢集以及資訊處理技術，並已啟動公眾意見徵詢。草案明確規定，已經開源的技術不在管制範圍內。此項法規變動直接影響跨國 AI 研發、算力叢集架構輸出與商業大模型的出海部署，但開源豁免條款也為開源生態與全球開發者合作提供了明確的合規界限。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "reddit-localllama",
-          "sourceTitle": "Introducing Muse Spark Open: the most capable US open-weight model to date",
+          "sourceTitle": "China proposes export controls on 23 AI technologies (including large models, agents & clusters); already open-sourced tech is exempted",
           "sources": [
             "reddit-localllama"
           ],
-          "title": "開源權重模型 Muse Spark Open 正式推出：816B 參數與 1M 脈絡長度專為 Agent 打造",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6r9pz/introducing_muse_spark_open_the_most_capable_us/",
+          "title": "中國擬修訂技術出口管制目錄：涵蓋大模型等 23 項 AI 技術，已開源技術獲豁免",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x7g3zq/china_proposes_export_controls_on_23_ai/",
           "weightedScore": 100
         },
         {
-          "content": "NVIDIA 於 Hugging Face 正式釋出 NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB 視覺語言模型（VLM）。該模型採用原生 2-bit 量化技術，讓 74B 等級的模型僅需 24GB 記憶體即可在消費級硬體上本機執行，並兼顧推論速度與智能表現。其主要針對日常 Agentic 任務設計，便於開發者在本機邊緣設備或個人工作站上與其他應用並行部署。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB · Hugging Face",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "NVIDIA 發布 Nemotron 3.5 Bolt 視覺語言模型，原生 2-bit 量化適配 24GB 顯存",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6o31q/nvidianvidianemotron35bolt74ba9b24gb_hugging_face/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Node.js 正式釋出 26.12.0 當前版本，帶來多項次版本更新（SEMVER-MINOR）。重點更新包括：在缺少 WebAssembly 或 RX 支援時主動拋出錯誤；HTTP 模組新增 websocketMask() 與 websocketUnmask() 輔助函式；並修復與優化了 WebCrypto 的 subtle.digest 輸入處理及 Buffer 基準測試，提升了底層網路與密碼學操作的穩定性。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sourceTitle": "2026-10-14, Version 26.12.0 (Current), @richardlau",
-          "sources": [
-            "gh-nodejs"
-          ],
-          "title": "Node.js 釋出 26.12.0 版本：新增 WebSocket 遮罩 API 與 WebAssembly 支援檢查",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.12.0",
-          "weightedScore": 100
-        },
-        {
-          "content": "Vercel 在舊金山舉辦的 Ship 大會上宣布為其平台引進常駐 Workers（always-on workers）。這項新特性突破了過去無伺服器架構（Serverless）僅限短暫事件驅動的限制，允許開發者直接在 Vercel 平台上執行常駐程序、背景任務與需要持久連線的後端工作負載，大幅降低混合架構部署或外接常駐伺服器的複雜度。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Vercel adds always-on workers to run more of your backend",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Vercel 於 Ship 大會推出常駐 Workers，拓展長生命週期後端執行支援",
-          "url": "https://thenewstack.io/vercel-faces-its-daemons/",
-          "weightedScore": 50
-        },
-        {
-          "content": "IBM 釋出 Granite Switch 4.1 模型，主打透過單一 API 端點同時提供對話生成、邏輯決策以及語音處理多種能力。此設計讓開發者在構建複雜多模態或多工 Agent 時，不必在多個獨立模型與服務間來回切換或串接不同 API，大幅簡化系統架構與呼叫延遲。",
+          "content": "官方正式推出參數量達 501B 的開源大模型 Beam。該模型主打高可自訂性與彈性擴展能力，開發者能夠完全擁有模型權重並進行私有化微調與部署，適用於軟體工程、複雜推理以及需要長期運行的智慧體（Agent）工作流程。這為追求自主可控、不願受限於閉源商業 API 的企業與開發者提供了全新的大規模開源基礎模型選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "huggingface-blog",
-          "sourceTitle": "Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint",
+          "sourceTitle": "Welcome Beam: a 501B open model you can own, customize, and scale",
           "sources": [
             "huggingface-blog"
           ],
-          "title": "IBM 發布 Granite Switch 4.1：整合對話、決策與語音能力的單一端點模型",
-          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1",
+          "title": "501B 開源大模型 Beam 正式發布：支援自主客製化與大規模擴展",
+          "url": "https://huggingface.co/blog/reflection-beam",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 宣布將 Cloudflare Gateway 與資料外洩防護（DLP）服務與 Cloudflare Workers 開發者平台深度整合。開發者現在可以直接透過編寫 Workers 程式碼，自訂網路邊緣的流量檢查、存取控制與資料防護邏輯，實現全端且高度客製化的安全閘道功能。",
+          "content": "隨著 AI 編程工具普及，越來越多非技術員工開始利用 AI 自行建構應用程式（Vibe-coding），導致企業內部出現「影子軟體」與資安風險。Cloudflare 正式開源 Void 工具，旨在為 IT 與維運團隊提供透明的管理途徑，既能鼓勵員工利用 AI 提高生產力，又能監控、審查與管理這些自主生成的內部工具，確保安全性與架構合規。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "A fully programmable secure web gateway",
+          "sourceId": "thenewstack",
+          "sourceTitle": "Employees are vibe-coding their own apps. Cloudflare open-sources Void to give IT a handle on them",
           "sources": [
-            "cloudflare-blog"
+            "thenewstack"
           ],
-          "title": "Cloudflare 推出完全可程式化的安全 Web 網關，深度整合 Workers 平台",
-          "url": "https://blog.cloudflare.com/programmable-gateway-dlp/",
+          "title": "Cloudflare 開源 Void：協助企業 IT 管理員工使用 AI 自建的內部應用",
+          "url": "https://thenewstack.io/cloudflare-voidzero-void-vibe-coding/",
           "weightedScore": 50
         },
         {
-          "content": "Void 專案正式推出，提供涵蓋 SDK、CLI 與自託管平台的開源解決方案，專門針對全端 Vite 應用程式的構建與部署設計，能一鍵將全端專案部署至 Cloudflare 基礎架構上，簡化現代前端與邊緣運算環境之間的整合流程。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Deploy with Void",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "開源全端部署工具 Void 正式推出：簡化 Vite 應用至 Cloudflare 的發布流程",
-          "url": "https://blog.cloudflare.com/deploy-with-void/",
-          "weightedScore": 50
-        },
-        {
-          "content": "開放基準平台 whatmodel.sh 彙整了超過 1,000 個來源、涵蓋 1,200 多款模型的兩萬多筆測試數據，分析開源權重與閉源旗艦模型的能力演進。分析指出中國開源模型在文字任務上的表現與美國領先閉源模型的差距已縮小至約 7 個月，為開發團隊評估自建開源模型替代商業 API 提供了具體的評測數據與選型參考。",
+          "content": "Hugging Face 宣布在 Diffusers 函式庫中正式整合支援 FLUX.3 Image Klein 模型。開發者現在可直接透過 Diffusers 標準 API 載入並微調該模型，快速將新一代 FLUX 影像生成技術整合至既有的 Python AI 工作流程與生產環境管線中，降低了部署與推論門檻。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "The AI race: China's open-weight models trail US closed models by just 7 months",
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Welcome FLUX.3 Image Klein in Diffusers",
           "sources": [
-            "reddit-localllama"
+            "huggingface-blog"
           ],
-          "title": "開源基準測試分析：中國開源模型能力落後美國閉源模型僅約 7 個月",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5pjv7/the_ai_race_chinas_openweight_models_trail_us/",
+          "title": "Hugging Face Diffusers 正式支援 FLUX.3 Image Klein 影像生成模型",
+          "url": "https://huggingface.co/blog/flux-3",
           "weightedScore": 100
         },
         {
-          "content": "在採用 Kueue 管理資源配額的 Kubernetes 叢集中，Job 長時間處於 Suspended 狀態往往並非 Pod 故障，而是尚未通過 Kueue 的工作負載准入評估。本文深入解析 Kueue 在雲原生 AI 與批次工作中的排程決策機制，並示範如何利用 Headlamp 外掛將准入排程狀態視覺化，幫助平台工程師快速定位資源阻塞根因。",
+          "content": "Cloudflare 宣布針對驗證機器人（Verified Bots）推出持續評估機制。單純通過身分驗證不再足以維持白名單資格，系統將持續監控爬蟲行為，檢查其是否切實遵守網站設定的 robots.txt 規則以及 HTTP 429（請求過多）限制。對於站長與維運人員而言，此舉能有效防止 AI 抓取程式過度消耗伺服器頻寬；對爬蟲與 AI 代理開發者來說，遵循網站限制已成為避免遭到全域攔截的必要條件。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "kubernetes-blog",
-          "sourceTitle": "Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp",
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Continuous accountability for Verified bots",
           "sources": [
-            "kubernetes-blog"
+            "cloudflare-blog"
           ],
-          "title": "Kubernetes 批次任務卡在 Pending？使用 Headlamp 外掛追蹤 Kueue 准入排程",
-          "url": "https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/",
-          "weightedScore": 100
+          "title": "Cloudflare 推出驗證機器人持續問責機制：動態監控 robots.txt 與 HTTP 429 遵守狀況",
+          "url": "https://blog.cloudflare.com/verified-bots-accountability/",
+          "weightedScore": 50
         },
         {
-          "content": "在 Observability Summit 會議上，講者深入探討如何將軟體碳強度（Software Carbon Intensity, SCI）標準整合進雲原生可觀測性標準 OpenTelemetry。該倡議提議將碳排數據作為標準指標傳遞，讓 DevOps 與 SRE 團隊在監控系統延遲與資源使用率的同時，能直接量化並優化分散式服務的綠色運算效能。",
+          "content": "知名生成式 AI 對話平台 Character.ai 已主動聲請美國破產法第 11 章破產保護程序。作為高流量的對話式 AI 平台之一，此事件突顯了生成式 AI 服務在面臨高昂推論算力成本與變現困難時的財務壓力，依賴其生態系或 API 構建服務的開發者與合作夥伴需密切關注後續重組與服務可用性風險。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Character.ai has initiated voluntary Chapter 11 bankruptcy",
+          "sources": [
+            "hn"
+          ],
+          "title": "AI 對話平台 Character.ai 正式聲請美國破產法第 11 章破產保護",
+          "url": "https://blog.character.ai/an-update-on-character-ai/",
+          "weightedScore": 334
+        },
+        {
+          "content": "開源程式碼助手專案 OpenCode 正式推出 2.0 版本。新版本聚焦於提升程式碼生成準確度、上下文理解與開發流程整合體驗，為開發者在私有環境部署本地 AI 編程代理提供了更成熟的開源替代方案。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "OpenCode 2.0",
+          "sources": [
+            "hn"
+          ],
+          "title": "開源編程輔助工具 OpenCode 2.0 正式發布",
+          "url": "https://anoma.ly/notes/opencode-2-0/",
+          "weightedScore": 878
+        },
+        {
+          "content": "密碼學研究者透過 Claude 模型分析並推導出長期以來備受爭議的 ECDSA 橢圓曲線常數的可能來源。此研究展示了大語言模型在輔助逆向工程與密碼學演算法歷史謎題上的分析能力，為安全研究員與密碼學實作者提供了全新的研究範式。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Claude reveals ECDSA curve origins",
+          "sources": [
+            "hn"
+          ],
+          "title": "研究者利用 Claude 逆向解析 ECDSA 橢圓曲線標準常數的潛在生成源頭",
+          "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+          "weightedScore": 526
+        },
+        {
+          "content": "工作流自動化工具 n8n 在單一容器與 SQLite 下容易測試，但進入生產流量時難度大幅增加。工程團隊分享了在 AWS EKS 上的架構實踐，解析如何將單體架構拆解為獨立的 Webhook 處理器、背景 Worker，並整合 PostgreSQL 與 Redis 實現高可用與自動擴展，為需要將自動化管線生產化的 DevOps 工程師提供了完整的遷移指南。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cncf-blog",
-          "sourceTitle": "Carbon as a first-class signal: Bringing software carbon intensity to OpenTelemetry",
+          "sourceTitle": "Deploying, maintaining, and migrating production n8n on EKS",
           "sources": [
             "cncf-blog"
           ],
-          "title": "軟體碳強度納入 OpenTelemetry：將軟體碳排指標提升為一等觀測訊號",
-          "url": "https://www.cncf.io/blog/2026/10/15/carbon-as-a-first-class-signal-bringing-software-carbon-intensity-to-opentelemetry/",
+          "title": "在 AWS EKS 上生產級部署與維護 n8n 工作流引擎的實戰架構解析",
+          "url": "https://www.cncf.io/blog/2026/10/16/deploying-maintaining-and-migrating-production-n8n-on-eks/",
           "weightedScore": 100
         },
         {
-          "content": "資安研究揭露攻擊者利用網路廣告生態系投放武器化的惡意腳本，實現無需使用者點擊或互動即可滲透裝置的「零點擊」（zero-click）間諜軟體攻擊。此類攻擊繞過了傳統基於使用者行為的安全防護邊界，對終端安全與 Web 瀏覽器執行環境的安全隔離機制帶來全新挑戰。",
+          "content": "Fish 發布最新語音合成模型 Drama 3 35B3A，採用 35B 混合專家（MoE）架構。社群實測指出該模型在 DGX Spark 上運作良好，且 4-bit 量化版本的輸出品質非常接近原始權重，並已提供開源權重與本機推論 Demo。這讓需要高品質在地端執行 Text-to-Speech 的開發者獲得了極具競爭力的開源新選擇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "New TTS king in town: Fish's Drama 3 35B3A!",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "Fish Audio 開源新一代語音合成模型 Drama 3 35B3A：MoE 架構與 4-bit 量化實測",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6f9p2/new_tts_king_in_town_fishs_drama_3_35b3a/",
+          "weightedScore": 100
+        },
+        {
+          "content": "CNCF 畢業專案 Kyverno 長期用於 Kubernetes 設定安全與準入控制（Admission Control）。面對新興的 AI 叢集與大型模型推論工作負載，文章探討如何將 Kyverno 策略進一步延伸到運行時（Runtime）安全防護，解決傳統準入控制無法涵蓋的動態行為與運行時威脅，提升雲原生 AI 基礎設施的整體安全基線。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sourceTitle": "Extending Kubernetes policy enforcement to runtime security for AI workloads",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "將 Kubernetes Kyverno 策略引擎延伸至 AI 工作負載的運行時安全防護",
+          "url": "https://www.cncf.io/blog/2026/10/15/extending-kubernetes-policy-enforcement-to-runtime-security-for-ai-workloads/",
+          "weightedScore": 100
+        },
+        {
+          "content": "硬體駭客與開源社群成功在越獄的 PlayStation 5 主機 GPU 上部署並運行 Qwen 27B 模型，實測推論速度達到每秒約 20 個 Token。這項極客實驗驗證了消費級遊戲主機硬體在邊緣大模型推論上的潛力，為低成本硬體自建本地推論節點提供了有趣的技術實證。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "Someone is running Qwen 27B at ~20 tok/s on a jailbroken PS5's GPU",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "開發者在越獄 PS5 上成功以 20 tok/s 速度運行 Qwen 27B 大模型",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5ak2n/someone_is_running_qwen_27b_at_20_toks_on_a/",
+          "weightedScore": 100
+        },
+        {
+          "content": "一項針對勞動力市場任務的研究指出，美國工作人口 90% 的工作時間所從事的任務，在現有各大主流 AI Benchmark 中並未得到良好涵蓋。這突顯出當前以學術測試或合成問答為主的 AI 基準測試與真實世界軟體工程及商業工作流程存在巨大鴻溝，提醒開發者與企業在評估導入 LLM 時應避免單純依賴公開基準分數，需建立符合實際業務場景的評估指標。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
+          "sources": [
+            "hn"
+          ],
+          "title": "實證研究：美國 90% 的工時任務無法被現行 AI 評測基準有效覆蓋",
+          "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
+          "weightedScore": 346
+        },
+        {
+          "content": "開發者分享了在瀏覽器環境中運行輕量語言模型以實作檢索增強生成（RAG）的實踐方案。透過 Web 平台直接在客戶端完成向量檢索與推論，無需將資料傳送至雲端伺服器，既保障了使用者隱私，也大幅降低了後端算力成本，為邊緣端隱私優先的 Web AI 應用提供了實用參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Running RAG with a (small) language model in the browser",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "在瀏覽器端利用小型語言模型（SLM）實作完全本地的 RAG 架構",
+          "url": "https://bart.degoe.de/rag-with-a-small-language-model-in-the-browser/",
+          "weightedScore": 100
+        },
+        {
+          "content": "資安研究揭露名為 AdFection 的新型攻擊機制，攻擊者將商業定向廣告網路轉化為零點擊（Zero-click）傭兵間諜軟體的傳遞管道。受害者無需點擊任何惡意連結，僅透過廣告展示與定位機制即可遭到感染。該事件凸顯了數位廣告生態系中的深層供應鏈與隱私防護漏洞，對端點安全與企業網路流量過濾機制帶來了嚴峻挑戰。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Online ads weaponised to deliver ‘zero-click’ spyware, researchers say",
+          "sourceTitle": "AdFection: Targeted ads turned into a pipeline for zero-click mercenary spyware",
           "sources": [
             "hn"
           ],
-          "title": "安全研究人員警告：惡意網路廣告已被武器化用於散播「零點擊」間諜軟體",
-          "url": "https://www.theguardian.com/technology/2026/oct/15/israeli-firm-digital-ads-enabling-installation-of-zero-click-spyware-researchers-say",
+          "title": "AdFection 攻擊技術曝光：定向廣告系統遭武器化為零點擊間諜軟體傳播管線",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/",
           "weightedScore": 495
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-09-01T01:12:33.196Z",
-      "url": "https://openai.com/index/builders-guide-to-gpt-5-6"
-    },
-    {
-      "seenAt": "2026-09-01T01:12:33.196Z",
-      "url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash"
-    },
-    {
-      "seenAt": "2026-09-01T01:12:33.196Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vxzg6v/apple_introduces_new_mac_studio_with_m5_max_and"
-    },
-    {
-      "seenAt": "2026-09-01T01:12:33.196Z",
-      "url": "https://cncf.io/blog/2026/08/21/how-to-turn-slow-queries-into-actionable-reliability-metrics-with-opentelemetry"
-    },
-    {
-      "seenAt": "2026-09-01T01:12:33.196Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1vxybmy/qwen_38_flash_next_day_0_support_from_unsloth"
-    },
-    {
-      "seenAt": "2026-09-01T01:12:33.196Z",
-      "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b"
-    },
     {
       "seenAt": "2026-09-01T23:58:45.362Z",
       "url": "https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source"
@@ -4919,6 +4909,156 @@
       ],
       "title": "Online ads weaponised to deliver ‘zero-click’ spyware, researchers say",
       "url": "https://theguardian.com/technology/2026/oct/15/israeli-firm-digital-ads-enabling-installation-of-zero-click-spyware-researchers-say"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "China proposes export controls on 23 AI technologies (including large models, agents & clusters); already open-sourced tech is exempted",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x7g3zq/china_proposes_export_controls_on_23_ai"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Welcome Beam: a 501B open model you can own, customize, and scale",
+      "url": "https://huggingface.co/blog/reflection-beam"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Employees are vibe-coding their own apps. Cloudflare open-sources Void to give IT a handle on them",
+      "url": "https://thenewstack.io/cloudflare-voidzero-void-vibe-coding"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Welcome FLUX.3 Image Klein in Diffusers",
+      "url": "https://huggingface.co/blog/flux-3"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Continuous accountability for Verified bots",
+      "url": "https://blog.cloudflare.com/verified-bots-accountability"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Character.ai has initiated voluntary Chapter 11 bankruptcy",
+      "url": "https://blog.character.ai/an-update-on-character-ai"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "OpenCode 2.0",
+      "url": "https://anoma.ly/notes/opencode-2-0"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Claude reveals ECDSA curve origins",
+      "url": "https://anthropic.com/research/ecdsa-curve-origins"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "Deploying, maintaining, and migrating production n8n on EKS",
+      "url": "https://cncf.io/blog/2026/10/16/deploying-maintaining-and-migrating-production-n8n-on-eks"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "New TTS king in town: Fish's Drama 3 35B3A!",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x6f9p2/new_tts_king_in_town_fishs_drama_3_35b3a"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "Extending Kubernetes policy enforcement to runtime security for AI workloads",
+      "url": "https://cncf.io/blog/2026/10/15/extending-kubernetes-policy-enforcement-to-runtime-security-for-ai-workloads"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Someone is running Qwen 27B at ~20 tok/s on a jailbroken PS5's GPU",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x5ak2n/someone_is_running_qwen_27b_at_20_toks_on_a"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
+      "url": "https://mercor.com/research/labor-index/benchmark-map"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Running RAG with a (small) language model in the browser",
+      "url": "https://bart.degoe.de/rag-with-a-small-language-model-in-the-browser"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-16T22:45:53.308Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "AdFection: Targeted ads turned into a pipeline for zero-click mercenary spyware",
+      "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware"
     }
   ]
 }
