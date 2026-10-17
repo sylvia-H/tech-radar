@@ -33,10 +33,10 @@
 | LLM 呼叫 | 新聞策展每日 1 次（`gemini-3.8-flash` 帶 thinking，備援 `gemini-3.5-flash-lite`）；repo 簡介一生 1 次並快取、榜單日多 1 次一句話 TL;DR（皆 `gemini-3.5-flash-lite`） |
 | 榜單 | 每領域追蹤 top 15，推播綜合 top 10，每 7 天只推變化 |
 | 榜單資料 | GitHub Trending weekly 6 個頁面 ＋ Search API 2 條查詢，不自存星星歷史 |
-| 排程 | 雙離峰 cron（台北 04:07 主班、04:37 補班）＋ 時間戳 guard；手動 `dry_run` 乾跑不寫狀態 |
+| 排程 | 雙離峰 cron（台北 04:07 主班、04:37 補班）＋ 時間戳 guard；手動 `dry_run` 乾跑、`replay_date` 降級日補發，皆不寫狀態 |
 | 常駐服務／資料庫 | 0 |
 | 月費 | $0 |
-| 單元測試 | 670 個、65 個測試套件 |
+| 單元測試 | 734 個、68 個測試套件 |
 
 三條輸出流：
 
@@ -666,7 +666,8 @@ node dist/main.cli.js
 `NEWS_DRY_RUN=1` 晨報乾跑（2026-09-27）：跳過 18h guard、照常抓取與策展（消耗 1 次策展配額），結果推到
 **告警頻道**（標「乾跑」），不推晨報頻道、不寫狀態、不跑榜單段。Actions 上以 `workflow_dispatch` 勾選
 `dry_run` 觸發，state commit 與 Pages 發佈一併跳過；用來在調整 prompt／型號後立即驗證，不必等隔日排程、
-也不必動 state 分支。
+也不必動 state 分支。`NEWS_REPLAY_DATE=YYYY-MM-DD`（須搭配 `NEWS_DRY_RUN=1`；Actions 上填 `replay_date` 即隱含乾跑）
+為降級日補發（2026-10-17）：把該台北日已推的原始標題逐則翻成繁中（不重新篩選），先送一則黃色說明、再送翻譯版到告警頻道，不寫狀態。
 
 ### 測試
 

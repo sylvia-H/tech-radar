@@ -215,6 +215,129 @@ describe('LlmService thinking 設定（2026-09-27 新增）', () => {
   });
 });
 
+describe('LlmService 結構化輸出 responseJsonSchema（2026-10-17 新增，ADR 0006）', () => {
+  const SCHEMA: Record<string, unknown> = {
+    type: 'object',
+    properties: { picks: { type: 'array', items: { type: 'object' } } },
+    required: ['picks'],
+  };
+
+  it('帶 responseJsonSchema → config 帶 responseMimeType=application/json 與同一個 schema 物件', async () => {
+    const generateContent = jest.fn().mockResolvedValue({ text: '{"picks":[]}' });
+    const svc = makeService(generateContent);
+    await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, responseJsonSchema: SCHEMA });
+    expect(generateContent).toHaveBeenCalledTimes(1);
+    const req = generateContent.mock.calls[0][0];
+    expect(req).toEqual({
+      model: GEMINI_MODEL_NEWS,
+      contents: '請策展',
+      config: { responseMimeType: 'application/json', responseJsonSchema: SCHEMA },
+    });
+    expect(req.config.responseJsonSchema).toBe(SCHEMA);
+    expect(req.config).not.toHaveProperty('thinkingConfig');
+  });
+
+  it('同時帶 thinking 與 schema → 同一個 config 兩者並存', async () => {
+    const generateContent = jest.fn().mockResolvedValue({ text: '{"picks":[]}' });
+    const svc = makeService(generateContent);
+    await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, thinkingLevel: NEWS_THINKING_LEVEL, responseJsonSchema: SCHEMA });
+    expect(generateContent).toHaveBeenCalledWith({
+      model: GEMINI_MODEL_NEWS,
+      contents: '請策展',
+      config: {
+        thinkingConfig: { thinkingLevel: ThinkingLevel.HIGH },
+        responseMimeType: 'application/json',
+        responseJsonSchema: SCHEMA,
+      },
+    });
+    expect(generateContent.mock.calls[0][0].config.responseJsonSchema).toBe(SCHEMA);
+  });
+
+  it('不帶 schema 也不帶 thinking → 請求體無 config', async () => {
+    const generateContent = jest.fn().mockResolvedValue({ text: 'ok' });
+    const svc = makeService(generateContent);
+    await svc.generate('請生成');
+    expect(generateContent.mock.calls[0][0]).toEqual({ model: GEMINI_MODEL_BOARD, contents: '請生成' });
+  });
+
+  it('帶 schema（不帶 thinking）遇 400 → warn 一次後以純 { model, contents } 重送並成功，不擲 LlmError', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generateContent = jest
+      .fn()
+      .mockRejectedValueOnce(new ApiError({ status: 400, message: 'responseJsonSchema is not supported' }))
+      .mockResolvedValueOnce({ text: '{"picks":[]}' });
+    const svc = makeService(generateContent);
+
+    await expect(svc.generate('請策展', { model: GEMINI_MODEL_NEWS, responseJsonSchema: SCHEMA })).resolves.toBe('{"picks":[]}');
+
+    expect(generateContent).toHaveBeenCalledTimes(2);
+    expect(generateContent.mock.calls[0][0].config).toMatchObject({ responseMimeType: 'application/json' });
+    expect(generateContent.mock.calls[1][0]).toEqual({ model: GEMINI_MODEL_NEWS, contents: '請策展' });
+    const warns = warnSpy.mock.calls.map((c) => String(c[0])).filter((l) => l.includes('拒絕 thinking'));
+    expect(warns).toHaveLength(1);
+    expect(warns[0]).toContain(GEMINI_MODEL_NEWS);
+    expect(warns[0]).toContain('thinking=無');
+    expect(warns[0]).toContain('schema=有');
+    expect(warns[0]).toContain('status=400');
+    expect(warns[0]).not.toContain('請策展');
+    warnSpy.mockRestore();
+  });
+
+  it('帶 thinking＋schema 遇 400 → 重送時兩項一併拿掉', async () => {
+    jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generateContent = jest
+      .fn()
+      .mockRejectedValueOnce(new ApiError({ status: 400, message: 'bad config' }))
+      .mockResolvedValueOnce({ text: 'ok' });
+    const svc = makeService(generateContent);
+    await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, thinkingLevel: 'high', responseJsonSchema: SCHEMA });
+    expect(generateContent).toHaveBeenCalledTimes(2);
+    expect(generateContent.mock.calls[1][0]).toEqual({ model: GEMINI_MODEL_NEWS, contents: '請策展' });
+  });
+
+  it('帶 schema 遇 503 → 走一般退避重試，下一次仍帶 schema', async () => {
+    jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generateContent = jest
+      .fn()
+      .mockRejectedValueOnce(new ApiError({ status: 503, message: 'high demand' }))
+      .mockResolvedValueOnce({ text: '{"picks":[]}' });
+    const svc = makeService(generateContent);
+    await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, responseJsonSchema: SCHEMA });
+    expect(generateContent).toHaveBeenCalledTimes(2);
+    expect((svc as unknown as { delay: jest.Mock }).delay).toHaveBeenCalledTimes(1);
+    expect(generateContent.mock.calls[1][0].config).toEqual({ responseMimeType: 'application/json', responseJsonSchema: SCHEMA });
+  });
+
+  it('用量 log 與空回應 warn 皆標 schema=json（接在 thinking 標籤之後）', async () => {
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generateContent = jest
+      .fn()
+      .mockResolvedValueOnce({ text: '{"picks":[]}' })
+      .mockResolvedValueOnce({ text: '' });
+    const svc = makeService(generateContent);
+
+    await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, thinkingLevel: 'high', responseJsonSchema: SCHEMA });
+    const line = logSpy.mock.calls.map((c) => String(c[0])).find((l) => l.startsWith('LLM 用量')) ?? '';
+    expect(line).toContain(`${GEMINI_MODEL_NEWS}，thinking=high，schema=json，`);
+
+    await expect(svc.generate('請策展', { model: GEMINI_MODEL_NEWS, responseJsonSchema: SCHEMA })).rejects.toMatchObject({
+      reason: 'empty',
+    });
+    const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((l) => l.startsWith('LLM 回應為空')) ?? '';
+    expect(warn).toContain(`${GEMINI_MODEL_NEWS}，schema=json，`);
+  });
+
+  it('不帶 schema 時用量 log 不出現 schema=json', async () => {
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+    const generateContent = jest.fn().mockResolvedValue({ text: 'ok' });
+    const svc = makeService(generateContent);
+    await svc.generate('請生成');
+    const line = logSpy.mock.calls.map((c) => String(c[0])).find((l) => l.startsWith('LLM 用量')) ?? '';
+    expect(line).not.toContain('schema=');
+  });
+});
+
 describe('LlmService.generate — 重試路徑 warn 帶狀態碼與訊息（2026-09-20 補）', () => {
   it('429 退避重試與耗盡時，warn 皆含 status 與訊息，不含 prompt', async () => {
     const { Logger } = await import('@nestjs/common');

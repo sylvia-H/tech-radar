@@ -52,6 +52,17 @@ export class PipelineService {
     const state = await this.stateStore.load();
     await this.newsSegment.dryRun(state, new Date());
   }
+
+  /**
+   * 晨報補發（2026-10-17，`NEWS_DRY_RUN=1`＋`NEWS_REPLAY_DATE`）：只 load 狀態、只跑晨報段的 `replay()`
+   * （不跑榜單段、不 save）。錯誤不吞，理由同 `runNewsDryRun()`。
+   *
+   * @param date 台北日期 `YYYY-MM-DD`（`main.cli.ts` 已以 `parseReplayDate` 驗證）
+   */
+  async runNewsReplay(date: string): Promise<void> {
+    const state = await this.stateStore.load();
+    await this.newsSegment.replay(state, date, new Date());
+  }
 }
 
 function errMsg(err: unknown): string {

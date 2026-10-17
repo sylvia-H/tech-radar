@@ -5,6 +5,7 @@ import { PipelineService } from './pipeline/pipeline.service';
 import { NewsIngestService } from './news/news-ingest.service';
 import { PublishService } from './publish/publish.service';
 import { tryPostFailureAlert } from './discord/failure-alert';
+import { parseReplayDate } from './news/replay-candidates';
 
 /** 設為 `1` 時只跑 F4 階段 A 新聞漏斗、印出候選清單觀測（不推播）。 */
 const NEWS_OBSERVE_ENV = 'NEWS_INGEST_OBSERVE';
@@ -15,6 +16,11 @@ const PUBLISH_MODE_ENV = 'PUBLISH_MODE';
  * 不推晨報頻道、不寫狀態、不跑榜單段。workflow_dispatch 的 `dry_run` 輸入會設此變數。
  */
 const NEWS_DRY_RUN_ENV = 'NEWS_DRY_RUN';
+/**
+ * 晨報補發日期（2026-10-17，台北日期 `YYYY-MM-DD`）：與 `NEWS_DRY_RUN=1` 併用時改跑補發——以該日已推標題
+ * 重新策展、推到告警頻道、不寫狀態。workflow_dispatch 的 `replay_date` 輸入會設此變數並隱含乾跑。
+ */
+const NEWS_REPLAY_DATE_ENV = 'NEWS_REPLAY_DATE';
 
 /**
  * CLI 進入點：建立 application context（不啟 HTTP server）→ 執行 pipeline → 跑完即退。
@@ -31,11 +37,21 @@ async function bootstrap(): Promise<void> {
   });
 
   try {
+    const replayDate = process.env[NEWS_REPLAY_DATE_ENV]?.trim() ?? '';
+    if (replayDate !== '' && process.env[NEWS_DRY_RUN_ENV] !== '1') {
+      // 防呆：補發只在乾跑下執行；單設補發日期卻落入正式 run 會照常推晨報並寫狀態，寧可 fail-fast。
+      throw new Error(`${NEWS_REPLAY_DATE_ENV} 須搭配 ${NEWS_DRY_RUN_ENV}=1 使用（補發不寫狀態）`);
+    }
     if (process.env[NEWS_OBSERVE_ENV] === '1') {
       // F4 觀測模式：只跑階段 A 新聞漏斗、印出候選清單（不推播；正式串接進 pipeline 屬 F7）。
       await app.get(NewsIngestService).ingest();
     } else if (process.env[NEWS_DRY_RUN_ENV] === '1') {
-      await app.get(PipelineService).runNewsDryRun();
+      if (replayDate !== '') {
+        // 格式不合法時 parseReplayDate 擲錯 → 下方 catch 送告警、非零 exit（錯誤不吞，比照乾跑）。
+        await app.get(PipelineService).runNewsReplay(parseReplayDate(replayDate));
+      } else {
+        await app.get(PipelineService).runNewsDryRun();
+      }
     } else if (process.env[PUBLISH_MODE_ENV] === '1') {
       // F8 發佈段：PublishService.run() 永不 throw（頂層 catch-all，best-effort 告警），
       // 故此分支自然一律以 exit 0 結束，不進入既有 PipelineService 失敗路徑（research D10）。

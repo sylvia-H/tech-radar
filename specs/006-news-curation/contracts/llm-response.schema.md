@@ -33,6 +33,8 @@
 2. **`JSON.parse`**：解析為物件。
 3. **形狀淺驗證**：`picks` 為陣列；每項 `ref` 為 `number`、`title`／`content` 為 `string`。
 4. 任一步失敗 → 擲 `CurationParseError`（不做局部搶救，D2）。
+   **2026-10-17 起**（[ADR 0006](../../../docs/adr/0006-curation-structured-output-and-salvage.md)）：單則形狀不符改為略過該則並記入
+   `malformed`、不擲錯；只有結構性錯誤才擲。呼叫端另以 `responseJsonSchema`（`curation-schema.ts`）要求 Gemini 結構化輸出。
 
 > 解析層**只保證「拿到結構正確的 picks」**，不判定越界 `ref`／超長字數／配額／重複——那些交由
 > 硬驗證管線收斂（見 `news-curation.contract.md` §硬驗證管線、FR-008~010）。
