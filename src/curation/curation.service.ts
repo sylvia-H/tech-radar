@@ -69,6 +69,7 @@ export class NewsCurationService {
     candidates: readonly NewsCandidate[],
     boardRepoNames: ReadonlySet<string>,
     now: Date = new Date(),
+    recentPushed: readonly string[] = [],
   ): Promise<CuratedDigest> {
     if (candidates.length === 0) {
       return { items: [], degraded: false };
@@ -88,12 +89,12 @@ export class NewsCurationService {
           : '';
       this.logger.log(
         `策展輸入：${candidates.length} 候選，未歸類高熱度 ${candidates.filter(isUnresolved).length} 則，` +
-          `同題群集 ${clusterSummary.length} 組${clusterStr}`,
+          `同題群集 ${clusterSummary.length} 組${clusterStr}，近期已推 ${recentPushed.length} 則供比對`,
       );
       // 每日晨報策展走 `GEMINI_MODEL_NEWS`（2026-09-27 起回 gemini-3.8-flash，見 `llm.types.ts`）並開啟
       // thinking、帶結構化輸出 schema（2026-10-17）；主型號擲 `LlmError` 時改以備援型號重試一次（見
       // `generateWithModelFallback`），主型號回應解析不完整時亦同（見 `resolveResponse`）。
-      const prompt = buildCurationPrompt(views);
+      const prompt = buildCurationPrompt(views, recentPushed);
       const first = await this.generateWithModelFallback(prompt);
       const { raw, response, modelStr } = await this.resolveResponse(prompt, first);
       const { officialPicks, communityPicks, backfillPicks, ignoredKeys } = response;

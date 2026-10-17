@@ -544,3 +544,23 @@ describe('NewsSegmentService.replay — 晨報補發（2026-10-17 新增）', ()
     expect(save).not.toHaveBeenCalled();
   });
 });
+
+describe('NewsSegmentService — 近期已推標題投影傳入策展（2026-10-17，ADR 0007）', () => {
+  it('run 與 dryRun 皆把 seenNews 近 5 天帶標題者（新到舊）作為 curate 第 4 個引數；視窗外與無標題者不帶', async () => {
+    const seenNews = [
+      { url: 'https://old.com/a', seenAt: hoursAgo(24 * 6), title: 'Too Old' },
+      { url: 'https://a.com/1', seenAt: hoursAgo(48), title: 'Two Days Ago' },
+      { url: 'https://a.com/2', seenAt: hoursAgo(24), title: 'Yesterday' },
+      { url: 'https://a.com/3', seenAt: hoursAgo(24) },
+    ];
+    for (const mode of ['run', 'dryRun'] as const) {
+      const { service, curate } = build();
+      const state = makeState({ lastNewsPushAt: hoursAgo(24), seenNews: seenNews.map((e) => ({ ...e })) });
+
+      await service[mode](state, NOW);
+
+      expect(curate).toHaveBeenCalledTimes(1);
+      expect(curate.mock.calls[0][3]).toEqual(['Yesterday', 'Two Days Ago']);
+    }
+  });
+});
