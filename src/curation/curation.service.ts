@@ -1,14 +1,22 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { LlmService } from '../llm/llm.service';
-import { GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK, GeminiModel, LlmError, NEWS_THINKING_LEVEL } from '../llm/llm.types';
+import {
+  GEMINI_MODEL_NEWS,
+  GEMINI_MODEL_NEWS_FALLBACK,
+  GeminiModel,
+  LlmError,
+  LlmGenerateOptions,
+  NEWS_THINKING_LEVEL,
+} from '../llm/llm.types';
 import { isUnresolved, mentionsBoardRepo } from '../news/funnel';
 import { NewsCandidate } from '../news/news.types';
 import { detectTopicClusters, summarizeClusters, TopicCluster } from '../news/topic-cluster';
 import { fallbackDigest } from './curation-fallback';
 import { buildCurationPrompt } from './curation-prompt';
-import { describeIgnoredKeys, parseCurationResponse } from './curation-parse';
+import { CurationParseError, describeIgnoredKeys, describeMalformed, parseCurationResponse } from './curation-parse';
+import { CURATION_RESPONSE_JSON_SCHEMA } from './curation-schema';
 import { CurationDrop, validateCuration } from './curation-validate';
-import { CuratedDigest, CuratedNewsItem, CurationItemView } from './curation.types';
+import { CuratedDigest, CuratedNewsItem, CurationItemView, CurationLlmResponse } from './curation.types';
 
 /** `generateWithModelFallback()` 的結果：LLM 原文、實際成功的型號、是否經主型號失敗後降級為備援型號。 */
 interface ModelFallbackResult {
@@ -17,13 +25,33 @@ interface ModelFallbackResult {
   fellBack: boolean;
 }
 
+/** 單一型號回應的解析結果（2026-10-17，ADR 0006）：成功（可能含形狀不符項）或結構性錯誤的 `reason`。 */
+type ParseOutcome = { ok: true; response: CurationLlmResponse } | { ok: false; reason: string };
+
+/** 一次型號呼叫的回應與其解析結果。 */
+interface ParsedAttempt {
+  raw: string;
+  model: GeminiModel;
+  outcome: ParseOutcome;
+}
+
+/** `resolveResponse()` 最終採用的回應：原文（供 `describeIgnoredKeys`）、解析結果與完成 log 的型號字樣。 */
+interface ResolvedResponse {
+  raw: string;
+  response: CurationLlmResponse;
+  modelStr: string;
+}
+
 /**
- * 每日單次策展服務（階段 B，FR-001~020）：把 F4 候選集投影為公開脈絡視圖，以**單一**
- * `LlmService.generate()` 完成殘留語意去重、依開發者重要性挑選、繁中改寫，再經硬驗證管線
- * 產出恆合規的精選集。空候選短路不呼叫 LLM（FR-020/SC-001）。策展的 LLM 呼叫或解析失敗時
- * **不擲錯**，改退回 `fallbackDigest()` 純程式排序降級版，並以 `logger.warn` 記錄失敗（不含
- * prompt／回應全文，FR-011/014）。只回傳記憶體結構，**不落檔、不寫 `seenNews`、不推播**
- * （FR-019，交 F7）。
+ * 每日單次策展服務（階段 B，FR-001~020）：把 F4 候選集投影為公開脈絡視圖，以**單一**策展
+ * prompt 交 `LlmService.generate()` 完成殘留語意去重、依開發者重要性挑選、繁中改寫，再經硬驗證管線
+ * 產出恆合規的精選集。空候選短路不呼叫 LLM（FR-020/SC-001）。
+ *
+ * 失敗處理：主型號擲 `LlmError` → 備援型號重試一次（2026-09-12）；主型號回應解析不完整（結構性錯誤或
+ * 任一則形狀不符）→ 同樣改用備援型號重試一次，仍不完整則丟棄壞項、採用可用則數較多的回應（2026-10-17，
+ * ADR 0006，見 `resolveResponse`）。皆無可用項目時**不擲錯**，改退回 `fallbackDigest()` 純程式排序降級版，
+ * 並以 `logger.warn` 記錄失敗（不含 prompt／回應全文，FR-011/014）。只回傳記憶體結構，**不落檔、不寫
+ * `seenNews`、不推播**（FR-019，交 F7）。
  */
 @Injectable()
 export class NewsCurationService {
@@ -57,9 +85,12 @@ export class NewsCurationService {
           `同題群集 ${clusterSummary.length} 組${clusterStr}`,
       );
       // 每日晨報策展走 `GEMINI_MODEL_NEWS`（2026-09-27 起回 gemini-3.8-flash，見 `llm.types.ts`）並開啟
-      // thinking；主型號擲 `LlmError` 時改以備援型號重試一次（見 `generateWithModelFallback`）。
-      const { raw, model, fellBack } = await this.generateWithModelFallback(buildCurationPrompt(views));
-      const { officialPicks, communityPicks, backfillPicks, ignoredKeys } = parseCurationResponse(raw);
+      // thinking、帶結構化輸出 schema（2026-10-17）；主型號擲 `LlmError` 時改以備援型號重試一次（見
+      // `generateWithModelFallback`），主型號回應解析不完整時亦同（見 `resolveResponse`）。
+      const prompt = buildCurationPrompt(views);
+      const first = await this.generateWithModelFallback(prompt);
+      const { raw, response, modelStr } = await this.resolveResponse(prompt, first);
+      const { officialPicks, communityPicks, backfillPicks, ignoredKeys } = response;
       if (ignoredKeys.length > 0) {
         // 防禦：LLM 自創鍵（如 externalPicks）會被解析器靜默忽略而無聲少推；只警示鍵名與陣列長度，
         // 不含回應全文（憲章 VII），流程照常繼續、不降級（2026-09-12 新增）
@@ -102,7 +133,6 @@ export class NewsCurationService {
         {} as Record<string, number>,
       );
       const domainStr = Object.entries(domainDist).map(([d, c]) => `${d}:${c}`).join(' / ');
-      const modelStr = fellBack ? `${model}，主型號失敗後降級至備援` : model;
       this.logger.log(
         `新聞策展完成：${candidates.length} 候選 → LLM 選官方 ${officialPicks.length} 則＋社群 ` +
         `${communityPicks.length} 則＋補位 ${backfillPicks.length} 則 → 驗證後 ${items.length} 則（${domainStr}）（${modelStr}）`,
@@ -126,6 +156,7 @@ export class NewsCurationService {
    * （`GEMINI_MODEL_NEWS_FALLBACK`）重送**同一 prompt 一次**；第二次仍失敗才把錯誤拋給呼叫端走降級。
    * 2026-09-27 起回到 Flash → Lite（主 `gemini-3.8-flash`、備援 `gemini-3.5-flash-lite`），兩者皆帶
    * `thinkingLevel: NEWS_THINKING_LEVEL`；09-25～09-27 曾為 Lite 主／Lite 備援（見 `llm.types.ts`）。
+   * 2026-10-17 起兩者另帶 `responseJsonSchema`（見 `curationOptions`）。
    *
    * 為何換型號而非同型號再退避：Gemini 免費層配額**按型號分開計算**，主型號 429 耗盡時同型號的
    * 指數退避只是白等，換型號才有機會在當日成功；另本專案已兩度遇到型號無預警下架（404），
@@ -135,12 +166,14 @@ export class NewsCurationService {
    * prompt、同一份候選），`LlmService.generate()` 既有的退避本就是多次 HTTP 嘗試；失敗日多 1 次
    * Lite 呼叫屬同一策展的重試，不是第二次策展（2026-09-12）。成功日仍嚴格只有 1 次呼叫。
    *
-   * 只攔 `LlmError`：解析／驗證失敗（`CurationParseError` 等）發生在本方法回傳之後，不觸發換型號
-   * ——那是回應內容問題，不是型號問題。
+   * 本方法只攔 `LlmError`。解析失敗原本也不換型號（「那是回應內容問題，不是型號問題」），2026-10-17 由
+   * 使用者裁決推翻（ADR 0006）：主型號回應解析不完整時改用備援型號重試一次，由 `resolveResponse` 處理；
+   * 兩條換型號路徑互斥（本方法已降級為備援者，`resolveResponse` 不再呼叫），故每日最多主型號 1 輪＋
+   * 備援 1 輪。
    */
   private async generateWithModelFallback(prompt: string): Promise<ModelFallbackResult> {
     try {
-      const raw = await this.llm.generate(prompt, { model: GEMINI_MODEL_NEWS, thinkingLevel: NEWS_THINKING_LEVEL });
+      const raw = await this.llm.generate(prompt, curationOptions(GEMINI_MODEL_NEWS));
       return { raw, model: GEMINI_MODEL_NEWS, fellBack: false };
     } catch (err) {
       if (!(err instanceof LlmError)) {
@@ -149,10 +182,134 @@ export class NewsCurationService {
       this.logger.warn(
         `策展主型號失敗（${err.reason}，${GEMINI_MODEL_NEWS}），改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`,
       );
-      const raw = await this.llm.generate(prompt, { model: GEMINI_MODEL_NEWS_FALLBACK, thinkingLevel: NEWS_THINKING_LEVEL });
+      const raw = await this.llm.generate(prompt, curationOptions(GEMINI_MODEL_NEWS_FALLBACK));
       return { raw, model: GEMINI_MODEL_NEWS_FALLBACK, fellBack: true };
     }
   }
+
+  /**
+   * 解析策展回應並決定採用哪一份（2026-10-17 新增，ADR 0006；2026-10-08 一則形狀不符就讓整份晨報降級的修正）：
+   *
+   * 1. 第一份回應（`first`）解析成功且無形狀不符項 → 直接採用（成功日的唯一路徑，仍只 1 次呼叫）。
+   * 2. 否則 warn「策展回應解析不完整（型號）：診斷」。若 `first` 來自主型號 → 以備援型號同 prompt、同設定
+   *    重試**一次**；備援擲 `LlmError` 只 warn、視為無第二份（非 `LlmError` 照常上拋，由呼叫端降級）。
+   *    `first` 已是備援（主型號 `LlmError` 降級而來）→ 不再呼叫任何型號。
+   * 3. 第二份解析成功且無形狀不符 → 採用。否則在成功解析的回應中取可用則數（三陣列合計）最多者、平手取
+   *    第一份，丟棄其形狀不符項並 warn「策展回應丟棄形狀不符 N 則」（明細已在步驟 2 的 warn 印過，不重複）。
+   * 4. 皆無成功解析、或可用則數為 0 → 擲 `CurationParseError`，由 `curate()` 外層 catch 走 `fallbackDigest`。
+   *
+   * 與憲章 V「每日僅呼叫一次」的關係：備援重試是**同一份策展**（同 prompt、同候選）的重試、不是第二次策展；
+   * 與 `generateWithModelFallback` 的 `LlmError` 換型號互斥，每日最多主型號 1 輪＋備援 1 輪。
+   * 所有 log 只含型號、則數、陣列鍵、索引與鍵的型別，不含 LLM 回應的標題或內容（憲章 VII）。
+   */
+  private async resolveResponse(prompt: string, first: ModelFallbackResult): Promise<ResolvedResponse> {
+    const r1: ParsedAttempt = { raw: first.raw, model: first.model, outcome: tryParse(first.raw) };
+    const baseNotes = first.fellBack ? ['主型號失敗後降級至備援'] : [];
+    if (r1.outcome.ok && r1.outcome.response.malformed.length === 0) {
+      return { raw: r1.raw, response: r1.outcome.response, modelStr: formatModel(r1.model, baseNotes) };
+    }
+
+    const nextStep = first.fellBack
+      ? '已是備援型號，不再重試'
+      : `改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`;
+    this.logger.warn(`策展回應解析不完整（${r1.model}）：${describeOutcome(r1.outcome)}；${nextStep}`);
+
+    let r2: ParsedAttempt | null = null;
+    if (!first.fellBack) {
+      r2 = await this.retryWithFallbackModel(prompt);
+      if (r2 !== null) {
+        if (r2.outcome.ok && r2.outcome.response.malformed.length === 0) {
+          return {
+            raw: r2.raw,
+            response: r2.outcome.response,
+            modelStr: formatModel(r2.model, ['主型號回應解析不完整後改用備援']),
+          };
+        }
+        this.logger.warn(`策展回應解析不完整（${r2.model}）：${describeOutcome(r2.outcome)}；不再重試`);
+      }
+    }
+
+    // 逐則搶救：r1 在前，只在 r2 可用則數「嚴格大於」時才取 r2（平手取 r1）。
+    let chosen: { attempt: ParsedAttempt; response: CurationLlmResponse } | null = null;
+    for (const attempt of [r1, r2]) {
+      if (attempt === null || !attempt.outcome.ok) continue;
+      const response = attempt.outcome.response;
+      if (chosen === null || usableCount(response) > usableCount(chosen.response)) {
+        chosen = { attempt, response };
+      }
+    }
+    if (chosen === null || usableCount(chosen.response) === 0) {
+      throw new CurationParseError('主備型號回應皆無可用項目');
+    }
+
+    const notes = [...baseNotes];
+    if (chosen.attempt === r2) notes.push('主型號回應解析不完整後改用備援');
+    const dropped = chosen.response.malformed.length;
+    if (dropped > 0) {
+      notes.push(`已丟棄形狀不符 ${dropped} 則`);
+      this.logger.warn(
+        `策展回應丟棄形狀不符 ${dropped} 則：採用 ${chosen.attempt.model} 回應的可用 ` +
+          `${usableCount(chosen.response)} 則（明細見上方「策展回應解析不完整（${chosen.attempt.model}）」）`,
+      );
+    }
+    return { raw: chosen.attempt.raw, response: chosen.response, modelStr: formatModel(chosen.attempt.model, notes) };
+  }
+
+  /**
+   * 主型號回應解析不完整時的備援重試（2026-10-17，ADR 0006）：同 prompt、同 thinking、同 schema。
+   * 備援擲 `LlmError` → warn 後回 `null`（由呼叫端搶救主型號回應）；其他錯誤照常上拋。
+   */
+  private async retryWithFallbackModel(prompt: string): Promise<ParsedAttempt | null> {
+    try {
+      const raw = await this.llm.generate(prompt, curationOptions(GEMINI_MODEL_NEWS_FALLBACK));
+      return { raw, model: GEMINI_MODEL_NEWS_FALLBACK, outcome: tryParse(raw) };
+    } catch (err) {
+      if (!(err instanceof LlmError)) {
+        throw err;
+      }
+      this.logger.warn(
+        `策展備援重試失敗（${err.reason}，${GEMINI_MODEL_NEWS_FALLBACK}），改為搶救主型號回應的可用項目`,
+      );
+      return null;
+    }
+  }
+}
+
+/**
+ * 策展呼叫的 `generate` 選項：指定型號＋thinking（2026-09-27）＋結構化輸出 schema（2026-10-17，ADR 0006）。
+ * 主、備援（含解析失敗的備援重試）一律相同，只換型號。
+ */
+function curationOptions(model: GeminiModel): LlmGenerateOptions {
+  return { model, thinkingLevel: NEWS_THINKING_LEVEL, responseJsonSchema: CURATION_RESPONSE_JSON_SCHEMA };
+}
+
+/** 解析回應；結構性錯誤（`CurationParseError`）轉為 `{ ok: false }`，其他例外照常上拋。 */
+function tryParse(raw: string): ParseOutcome {
+  try {
+    return { ok: true, response: parseCurationResponse(raw) };
+  } catch (err) {
+    if (err instanceof CurationParseError) {
+      return { ok: false, reason: err.reason };
+    }
+    throw err;
+  }
+}
+
+/** 解析不完整的診斷：結構性錯誤印 `reason`；否則「形狀不符 N 則：<describeMalformed>」。 */
+function describeOutcome(outcome: ParseOutcome): string {
+  if (!outcome.ok) return outcome.reason;
+  const { malformed } = outcome.response;
+  return `形狀不符 ${malformed.length} 則：${describeMalformed(malformed)}`;
+}
+
+/** 可用則數：三陣列中通過形狀驗證的項目合計（硬驗證前）。 */
+function usableCount(response: CurationLlmResponse): number {
+  return response.officialPicks.length + response.communityPicks.length + response.backfillPicks.length;
+}
+
+/** 完成 log 的型號字樣：`型號`，有附註時為 `型號，附註1，附註2`。 */
+function formatModel(model: GeminiModel, notes: readonly string[]): string {
+  return [model, ...notes].join('，');
 }
 
 /**
