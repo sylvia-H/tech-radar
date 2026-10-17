@@ -296,3 +296,27 @@ describe('buildCurationPrompt（補位陣列 backfillPicks，2026-09-26）', () 
     expect(outputRules(prompt) ?? '').toContain('"backfillPicks":[{"ref":<「未歸類」候選索引>,"title"');
   });
 });
+
+describe('buildCurationPrompt 近期已推報導段落（2026-10-17，ADR 0007）', () => {
+  it('給定已推標題 → 列出清單與「同一件事且無新事實不選、有新進展照常評估」規則，位於候選標記說明之後、輸出規則之前', () => {
+    const prompt = buildCurationPrompt([makeView()], ['Cloudflare acquires Deno', 'Python 3.15.0 released']);
+    const block = sliceBetween(prompt, '近期已推報導', '輸出規則：');
+    expect(block).not.toBeNull();
+    expect(block).toContain('- Cloudflare acquires Deno\n- Python 3.15.0 released');
+    expect(block).toContain('不是候選，不得回傳');
+    expect(block).toContain('同一件事、且沒有新的事實，就不要選');
+    expect(block).toMatch(/正式發布[\s\S]*事後報告[\s\S]*撤回或更正/);
+    expect(prompt.indexOf('候選標記說明')).toBeLessThan(prompt.indexOf('近期已推報導'));
+  });
+
+  it('段落說明文字不含阿拉伯數字（不寫天數，錨定防線）；數字只出現在標題本身', () => {
+    const prompt = buildCurationPrompt([makeView()], ['Plain title']);
+    const block = sliceBetween(prompt, '近期已推報導', '輸出規則：') ?? '';
+    expect(block).not.toMatch(/\d/);
+  });
+
+  it('已推清單為空（含預設）→ 整段不出現', () => {
+    expect(buildCurationPrompt([makeView()])).not.toContain('近期已推報導');
+    expect(buildCurationPrompt([makeView()], [])).not.toContain('近期已推報導');
+  });
+});

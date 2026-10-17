@@ -67,8 +67,13 @@ import { CurationItemView } from './curation.types';
  * Snapdragon 支援 Linux、FBI 被駭等資安／一般軟體工程新聞，因不在三桶範圍而全數不選，晨報只有 7 則。
  * 使用者要求則數不足上限時以這兩類補位。沿用兩陣列的結構性保證：LLM 只需分類，「補位永遠排在最後、
  * 只補到上限」由 `curation-validate.ts` 保證，不靠 prompt 描述執行順序。
+ *
+ * 近期已推報導（2026-10-17 新增，ADR 0007）：`recentPushed` 為近幾天晨報已推的候選原始標題（`recent-pushed.ts`），非空時
+ * 投影為一段比對清單，要求 LLM 把「與已推報導同一件事、且無新事實」的候選視為重複不選，有實質新進展者照常評估。起因：
+ * `seenNews` 的 URL 比對與 Jaccard 標題比對只接得住同一篇換連結，接不住同一事件的不同報導（10-07～10-17 每週 ≥3 組）。
+ * 段落文字不寫天數（錨定防線，且天數是可調常數）；清單不帶 ref、明示不得回傳，避免與候選混淆。空清單時整段不出現。
  */
-export function buildCurationPrompt(items: readonly CurationItemView[]): string {
+export function buildCurationPrompt(items: readonly CurationItemView[], recentPushed: readonly string[] = []): string {
   const lines = items
     .map((it) => {
       const boardMark = it.onBoard ? '★在榜 ' : '';
@@ -83,6 +88,18 @@ export function buildCurationPrompt(items: readonly CurationItemView[]): string 
       }`;
     })
     .join('\n');
+
+  const recentBlock =
+    recentPushed.length > 0
+      ? `
+
+近期已推報導（晨報前幾天已推過的原始標題，只供比對，不是候選，不得回傳）：
+${recentPushed.map((t) => `- ${t}`).join('\n')}
+
+已推比對：候選若與上列某則報導的是同一件事、且沒有新的事實，就不要選——換了連結、換了來源、換了角度或
+評論的同一則消息都算重複。有實質新進展者照常依判準評估：例如預告或測試版之後的正式發布、新版本、事故的
+事後報告、撤回或更正、已生效判決。無法確定是否同一件事時，依判準照常評估。`
+      : '';
 
   return `你是技術雷達的每日新聞策展人。以下是今天的候選新聞清單（已去重、已排序），請完成三件事：
 (a) 認出候選中「不同連結但其實是同一件事」的殘留語意重複，只保留其中一則；
@@ -172,7 +189,7 @@ M 個不同來源的標題裡。多個來源同時討論同一個陌生名詞，
 ${lines || '（無候選）'}
 
 候選標記說明：「★在榜」表示該候選提到目前榜上的 repo，可作為重要性判斷的正面提示（非唯一依據）；
-領域欄「未歸類」與前綴「🔥同題」的意義見上文。
+領域欄「未歸類」與前綴「🔥同題」的意義見上文。${recentBlock}
 
 輸出規則：
 - 只回傳單一 JSON 物件，分成三個陣列：
