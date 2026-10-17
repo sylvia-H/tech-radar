@@ -15,6 +15,7 @@ import { chunkEmbedsByBudget } from './layout/embed-split';
 import { taipeiDateLabel } from './layout/date-label';
 import { buildReplayNoticeEmbed } from './layout/replay-notice';
 import { candidatesFromSeen } from '../news/replay-candidates';
+import { recentPushedTitles } from '../curation/recent-pushed';
 
 /** `NewsSegmentService.run()` 的回傳型別（判別聯集，供觀測；F7 內部型別）。 */
 export type NewsSegmentResult =
@@ -197,7 +198,8 @@ export class NewsSegmentService {
   private async ingestAndCurate(state: BoardState, now: Date): Promise<CuratedDigest> {
     const boardRepoNames = boardRepoNameSet(state.board);
     const candidates = await this.newsIngest.ingest(now, boardRepoNames, undefined, state.seenNews);
-    return this.newsCuration.curate(candidates, boardRepoNames, now);
+    // 近期已推標題投影（2026-10-17，ADR 0007）：讓策展 LLM 略過「已報導過的同一件事」的不同報導。
+    return this.newsCuration.curate(candidates, boardRepoNames, now, recentPushedTitles(state.seenNews, now));
   }
 }
 

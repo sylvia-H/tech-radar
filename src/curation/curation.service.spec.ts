@@ -708,3 +708,20 @@ describe('NewsCurationService.translateForReplay（晨報補發只翻譯不篩�
     expect(generate).not.toHaveBeenCalled();
   });
 });
+
+describe('NewsCurationService.curate 近期已推標題投影（2026-10-17，ADR 0007）', () => {
+  it('recentPushed 進入 prompt，策展輸入 log 帶則數；仍只呼叫 1 次', async () => {
+    const raw = JSON.stringify({ officialPicks: [], communityPicks: [], backfillPicks: [] });
+    const generate = jest.fn().mockResolvedValue(raw);
+    const { service } = makeService(generate);
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+
+    await service.curate([makeCandidate()], new Set(), new Date('2026-07-18T00:00:00.000Z'), ['Already pushed story']);
+
+    expect(generate).toHaveBeenCalledTimes(1);
+    expect(String(generate.mock.calls[0][0])).toContain('- Already pushed story');
+    const line = logSpy.mock.calls.map((c) => String(c[0])).find((l) => l.startsWith('策展輸入')) ?? '';
+    expect(line).toContain('近期已推 1 則供比對');
+    logSpy.mockRestore();
+  });
+});
