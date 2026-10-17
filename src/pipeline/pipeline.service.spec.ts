@@ -20,6 +20,7 @@ interface Mocks {
   boardRun: jest.Mock;
   newsRun: jest.Mock;
   newsDryRun: jest.Mock;
+  newsReplay: jest.Mock;
 }
 
 function makeMocks(): Mocks {
@@ -29,14 +30,15 @@ function makeMocks(): Mocks {
   const boardRun = jest.fn().mockResolvedValue({ status: 'skipped' });
   const newsRun = jest.fn().mockResolvedValue({ status: 'skipped' });
   const newsDryRun = jest.fn().mockResolvedValue({ status: 'dry-run', items: 0 });
+  const newsReplay = jest.fn().mockResolvedValue({ status: 'replay', items: 0 });
 
   const stateStore = { load, save } as unknown as StateStore;
   const discord = { postFailureAlert } as unknown as DiscordWebhookService;
   const boardSegment = { run: boardRun } as unknown as BoardSegmentService;
-  const newsSegment = { run: newsRun, dryRun: newsDryRun } as unknown as NewsSegmentService;
+  const newsSegment = { run: newsRun, dryRun: newsDryRun, replay: newsReplay } as unknown as NewsSegmentService;
 
   const service = new PipelineService(stateStore, discord, boardSegment, newsSegment);
-  return { service, load, postFailureAlert, boardRun, newsRun, newsDryRun };
+  return { service, load, postFailureAlert, boardRun, newsRun, newsDryRun, newsReplay };
 }
 
 describe('PipelineService.runNewsDryRun — 晨報乾跑（2026-09-27 新增）', () => {
@@ -59,6 +61,33 @@ describe('PipelineService.runNewsDryRun — 晨報乾跑（2026-09-27 新增）'
     newsDryRun.mockRejectedValue(new Error('dry-run boom'));
 
     await expect(service.runNewsDryRun()).rejects.toThrow('dry-run boom');
+    expect(postFailureAlert).not.toHaveBeenCalled();
+  });
+});
+
+describe('PipelineService.runNewsReplay — 晨報補發（2026-10-17 新增）', () => {
+  it('load 一次 → 只呼叫 newsSegment.replay（同一 state、同一日期）；不跑榜單段、正式晨報段與乾跑', async () => {
+    const { service, load, boardRun, newsRun, newsDryRun, newsReplay } = makeMocks();
+    const state = emptyBoardState();
+    load.mockResolvedValue(state);
+
+    await service.runNewsReplay('2026-10-08');
+
+    expect(load).toHaveBeenCalledTimes(1);
+    expect(newsReplay).toHaveBeenCalledTimes(1);
+    expect(newsReplay.mock.calls[0][0]).toBe(state);
+    expect(newsReplay.mock.calls[0][1]).toBe('2026-10-08');
+    expect(newsReplay.mock.calls[0][2]).toBeInstanceOf(Date);
+    expect(boardRun).not.toHaveBeenCalled();
+    expect(newsRun).not.toHaveBeenCalled();
+    expect(newsDryRun).not.toHaveBeenCalled();
+  });
+
+  it('replay 擲錯 → 不吞、不發 best-effort 告警，直接上拋給 main.cli 處理', async () => {
+    const { service, postFailureAlert, newsReplay } = makeMocks();
+    newsReplay.mockRejectedValue(new Error('replay boom'));
+
+    await expect(service.runNewsReplay('2026-10-08')).rejects.toThrow('replay boom');
     expect(postFailureAlert).not.toHaveBeenCalled();
   });
 });

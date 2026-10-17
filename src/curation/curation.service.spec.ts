@@ -2,11 +2,22 @@ import { Logger } from '@nestjs/common';
 import { LlmService } from '../llm/llm.service';
 import { GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK, LlmError, NEWS_THINKING_LEVEL } from '../llm/llm.types';
 
-/** 策展呼叫固定帶主型號＋thinking（2026-09-27 起）；備援同 thinking、換型號。 */
-const NEWS_OPTS = { model: GEMINI_MODEL_NEWS, thinkingLevel: NEWS_THINKING_LEVEL };
-const FALLBACK_OPTS = { model: GEMINI_MODEL_NEWS_FALLBACK, thinkingLevel: NEWS_THINKING_LEVEL };
 import { NewsCandidate } from '../news/news.types';
+import { CURATION_RESPONSE_JSON_SCHEMA } from './curation-schema';
+import { REPLAY_TRANSLATION_JSON_SCHEMA } from './replay-translation';
 import { NewsCurationService } from './curation.service';
+
+/** 策展呼叫固定帶主型號＋thinking（2026-09-27 起）＋結構化輸出 schema（2026-10-17）；備援同設定、換型號。 */
+const NEWS_OPTS = {
+  model: GEMINI_MODEL_NEWS,
+  thinkingLevel: NEWS_THINKING_LEVEL,
+  responseJsonSchema: CURATION_RESPONSE_JSON_SCHEMA,
+};
+const FALLBACK_OPTS = {
+  model: GEMINI_MODEL_NEWS_FALLBACK,
+  thinkingLevel: NEWS_THINKING_LEVEL,
+  responseJsonSchema: CURATION_RESPONSE_JSON_SCHEMA,
+};
 
 function makeCandidate(overrides: Partial<NewsCandidate> = {}): NewsCandidate {
   return {
@@ -173,12 +184,12 @@ describe('NewsCurationService.curate（US1 成功路徑）', () => {
 });
 
 describe('NewsCurationService.curate（US2 降級路徑）', () => {
-  // 第三欄：預期 generate 呼叫次數——LlmError 會先換備援型號重試一次（兩次皆失敗才降級，2026-09-12），
-  // 解析失敗則不換型號、只呼叫一次。
+  // 第三欄：預期 generate 呼叫次數——LlmError 會先換備援型號重試一次（兩次皆失敗才降級，2026-09-12）；
+  // 解析失敗自 2026-10-17 起同樣改用備援重試一次（ADR 0006），主備皆不可解析才降級。
   const cases: Array<[string, () => Promise<string>, number]> = [
     ['LlmError(exhausted)', () => Promise.reject(new LlmError('exhausted')), 2],
     ['LlmError(empty)', () => Promise.reject(new LlmError('empty')), 2],
-    ['不可解析內容', () => Promise.resolve('這不是 JSON'), 1],
+    ['不可解析內容', () => Promise.resolve('這不是 JSON'), 2],
   ];
 
   it.each(cases)('%s → 回 degraded:true digest、未擲錯、logger.warn 被呼叫（FR-011/014、SC-004）', async (_label, mockImpl, expectedCalls) => {
@@ -279,19 +290,237 @@ describe('NewsCurationService.curate（型號降級重試：主型號失敗改�
     logSpy.mockRestore();
   });
 
-  it('主型號回非 JSON（解析失敗）→ generate 只呼叫 1 次、直接降級，不因解析失敗換型號', async () => {
+  it('主型號回非 JSON（解析失敗）→ 改以備援型號重試一次（generate 共 2 次）；備援成功即不降級（2026-10-17 改，ADR 0006）', async () => {
     const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generate = jest.fn().mockResolvedValueOnce('這不是 JSON').mockResolvedValueOnce(okRaw);
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(false);
+    expect(generate).toHaveBeenCalledTimes(2);
+    expect(generate.mock.calls[0][1]).toEqual(NEWS_OPTS);
+    expect(generate.mock.calls[1][1]).toEqual(FALLBACK_OPTS);
+    expect(generate.mock.calls[1][0]).toBe(generate.mock.calls[0][0]);
+    expect(warnSpy).toHaveBeenCalledTimes(1);
+    const warnMessage = warnSpy.mock.calls[0][0] as string;
+    expect(warnMessage).toContain(`策展回應解析不完整（${GEMINI_MODEL_NEWS}）：非合法 JSON（回應 ${'這不是 JSON'.length} 字元）`);
+    expect(warnMessage).toContain(`改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`);
+    expect(warnMessage).not.toContain('這不是 JSON');
+    warnSpy.mockRestore();
+  });
+});
+
+describe('NewsCurationService.curate（解析失敗改用備援重試＋逐則搶救，2026-10-17，ADR 0006）', () => {
+  const candidates: NewsCandidate[] = [
+    makeCandidate({ originalUrl: 'https://a.com/0', title: 'AI news 0' }),
+    makeCandidate({ originalUrl: 'https://a.com/1', title: 'AI news 1' }),
+    makeCandidate({ originalUrl: 'https://a.com/2', title: 'AI news 2' }),
+    makeCandidate({ originalUrl: 'https://a.com/3', title: 'AI news 3' }),
+  ];
+  const pick = (ref: number): { ref: number; title: string; content: string } => ({
+    ref,
+    title: `繁中標題${ref}`,
+    content: `繁中內容${ref}`,
+  });
+  /** 形狀不符項：缺 content、ref 為字串；標題刻意帶可辨識字樣以驗 log 不外洩。 */
+  const badPick = { ref: '9', title: '外洩偵測標題' };
+  const raw = (officialPicks: unknown[], communityPicks: unknown[] = []): string =>
+    JSON.stringify({ officialPicks, communityPicks, backfillPicks: [] });
+
+  let warnSpy: jest.SpyInstance;
+  let logSpy: jest.SpyInstance;
+  beforeEach(() => {
+    warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+  });
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  const warns = (): string[] => warnSpy.mock.calls.map((c) => String(c[0]));
+  const successLog = (): string =>
+    logSpy.mock.calls.map((c) => String(c[0])).find((m) => m.startsWith('新聞策展完成')) ?? '';
+  const expectNoLeak = (): void => {
+    for (const w of warns()) {
+      expect(w).not.toContain('外洩偵測標題');
+      expect(w).not.toContain('繁中內容');
+    }
+  };
+
+  it('(a) 主型號一則形狀不符 → 備援完整 → 採備援、不降級；完成 log 標「主型號回應解析不完整後改用備援」', async () => {
+    const generate = jest
+      .fn()
+      .mockResolvedValueOnce(raw([pick(0), badPick, pick(1)]))
+      .mockResolvedValueOnce(raw([pick(2), pick(3)]));
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(false);
+    expect(result.items.map((it) => it.url)).toEqual(['https://a.com/2', 'https://a.com/3']);
+    expect(generate).toHaveBeenCalledTimes(2);
+    expect(warns()).toEqual([
+      `策展回應解析不完整（${GEMINI_MODEL_NEWS}）：形狀不符 1 則：officialPicks[1]{ref:string,title:string,content:缺}；` +
+        `改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`,
+    ]);
+    expect(successLog()).toContain(`（${GEMINI_MODEL_NEWS_FALLBACK}，主型號回應解析不完整後改用備援）`);
+    expectNoLeak();
+  });
+
+  it('(b) 主型號部分可用＋備援非 JSON → 搶救主型號可用項；warn 含兩份診斷與丟棄則數', async () => {
+    const generate = jest
+      .fn()
+      .mockResolvedValueOnce(raw([pick(0), badPick, pick(1)]))
+      .mockResolvedValueOnce('{"officialPicks":[{"ref":0,"title":"外洩偵測標題');
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(false);
+    expect(result.items.map((it) => it.url)).toEqual(['https://a.com/0', 'https://a.com/1']);
+    expect(generate).toHaveBeenCalledTimes(2);
+    const w = warns();
+    expect(w).toHaveLength(3);
+    expect(w[0]).toContain(`策展回應解析不完整（${GEMINI_MODEL_NEWS}）：形狀不符 1 則：officialPicks[1]`);
+    expect(w[1]).toMatch(
+      new RegExp(`^策展回應解析不完整（${GEMINI_MODEL_NEWS_FALLBACK}）：非合法 JSON（回應 \\d+ 字元）；不再重試$`),
+    );
+    expect(w[2]).toBe(
+      `策展回應丟棄形狀不符 1 則：採用 ${GEMINI_MODEL_NEWS} 回應的可用 2 則` +
+        `（明細見上方「策展回應解析不完整（${GEMINI_MODEL_NEWS}）」）`,
+    );
+    expect(successLog()).toContain(`（${GEMINI_MODEL_NEWS}，已丟棄形狀不符 1 則）`);
+    expectNoLeak();
+  });
+
+  it('(c) 主備皆非 JSON → degraded:true（fallbackDigest），generate 共 2 次', async () => {
     const generate = jest.fn().mockResolvedValue('這不是 JSON');
     const { service } = makeService(generate);
 
     const result = await service.curate(candidates, new Set());
 
     expect(result.degraded).toBe(true);
+    expect(result.items.every((it) => it.degraded)).toBe(true);
+    expect(generate).toHaveBeenCalledTimes(2);
+    const w = warns();
+    expect(w[w.length - 1]).toContain('新聞策展失敗，退回降級路徑：策展回應解析失敗：主備型號回應皆無可用項目');
+    expect(w.some((m) => m.includes('這不是 JSON'))).toBe(false);
+  });
+
+  it('(d) 主型號 LlmError 已降級為備援、備援回應部分不符 → 不呼叫第三次、搶救備援可用項', async () => {
+    const generate = jest
+      .fn()
+      .mockRejectedValueOnce(new LlmError('exhausted'))
+      .mockResolvedValueOnce(raw([pick(0)], [badPick, pick(1)]));
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(false);
+    expect(result.items.map((it) => it.url)).toEqual(['https://a.com/0', 'https://a.com/1']);
+    expect(generate).toHaveBeenCalledTimes(2);
+    const w = warns();
+    expect(w[1]).toBe(
+      `策展回應解析不完整（${GEMINI_MODEL_NEWS_FALLBACK}）：形狀不符 1 則：communityPicks[0]{ref:string,title:string,content:缺}；` +
+        '已是備援型號，不再重試',
+    );
+    expect(w[2]).toContain('策展回應丟棄形狀不符 1 則');
+    expect(successLog()).toContain(
+      `（${GEMINI_MODEL_NEWS_FALLBACK}，主型號失敗後降級至備援，已丟棄形狀不符 1 則）`,
+    );
+    expectNoLeak();
+  });
+
+  it('(e) 備援重試擲 LlmError → warn 後搶救主型號可用項、不降級', async () => {
+    const generate = jest
+      .fn()
+      .mockResolvedValueOnce(raw([badPick, pick(2)]))
+      .mockRejectedValueOnce(new LlmError('error'));
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(false);
+    expect(result.items.map((it) => it.url)).toEqual(['https://a.com/2']);
+    expect(generate).toHaveBeenCalledTimes(2);
+    expect(warns()).toContain(`策展備援重試失敗（error，${GEMINI_MODEL_NEWS_FALLBACK}），改為搶救主型號回應的可用項目`);
+    expect(successLog()).toContain(`（${GEMINI_MODEL_NEWS}，已丟棄形狀不符 1 則）`);
+    expectNoLeak();
+  });
+
+  it('(e2) 備援重試擲非 LlmError → 照常上拋、外層降級', async () => {
+    const generate = jest
+      .fn()
+      .mockResolvedValueOnce(raw([badPick, pick(2)]))
+      .mockRejectedValueOnce(new Error('unexpected'));
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(true);
+    expect(generate).toHaveBeenCalledTimes(2);
+  });
+
+  it('(f) 兩份皆部分可用 → 取可用則數多者；平手取主型號', async () => {
+    const more = jest
+      .fn()
+      .mockResolvedValueOnce(raw([badPick, pick(0)]))
+      .mockResolvedValueOnce(raw([pick(1), badPick, pick(2)], [pick(3)]));
+    const r1 = await makeService(more).service.curate(candidates, new Set());
+    expect(r1.items.map((it) => it.url)).toEqual(['https://a.com/1', 'https://a.com/2', 'https://a.com/3']);
+    expect(successLog()).toContain(
+      `（${GEMINI_MODEL_NEWS_FALLBACK}，主型號回應解析不完整後改用備援，已丟棄形狀不符 1 則）`,
+    );
+
+    logSpy.mockClear();
+    const tie = jest
+      .fn()
+      .mockResolvedValueOnce(raw([pick(0), badPick]))
+      .mockResolvedValueOnce(raw([badPick, pick(1)]));
+    const r2 = await makeService(tie).service.curate(candidates, new Set());
+    expect(r2.degraded).toBe(false);
+    expect(r2.items.map((it) => it.url)).toEqual(['https://a.com/0']);
+    expect(successLog()).toContain(`（${GEMINI_MODEL_NEWS}，已丟棄形狀不符 1 則）`);
+  });
+
+  it('(g) 兩份可用則數皆 0（全數形狀不符）→ degraded:true', async () => {
+    const generate = jest.fn().mockResolvedValueOnce(raw([badPick])).mockResolvedValueOnce(raw([], [badPick]));
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result.degraded).toBe(true);
+    expect(generate).toHaveBeenCalledTimes(2);
+    expect(warns().some((m) => m.includes('主備型號回應皆無可用項目'))).toBe(true);
+    expectNoLeak();
+  });
+
+  it('(h) 主型號與備援重試的 generate 都帶 responseJsonSchema 與 thinkingLevel、同一 prompt', async () => {
+    const generate = jest.fn().mockResolvedValueOnce(raw([badPick])).mockResolvedValueOnce(raw([pick(0)]));
+    const { service } = makeService(generate);
+
+    await service.curate(candidates, new Set());
+
+    expect(generate).toHaveBeenCalledTimes(2);
+    expect(generate.mock.calls[0][1]).toEqual(NEWS_OPTS);
+    expect(generate.mock.calls[1][1]).toEqual(FALLBACK_OPTS);
+    expect(generate.mock.calls[1][0]).toBe(generate.mock.calls[0][0]);
+    for (const call of generate.mock.calls) {
+      expect(call[1].responseJsonSchema).toBe(CURATION_RESPONSE_JSON_SCHEMA);
+      expect(call[1].thinkingLevel).toBe(NEWS_THINKING_LEVEL);
+    }
+  });
+
+  it('主型號回應合規但兩陣列皆空 → 照舊不重試、不降級（無合適候選是合法結果）', async () => {
+    const generate = jest.fn().mockResolvedValue(raw([]));
+    const { service } = makeService(generate);
+
+    const result = await service.curate(candidates, new Set());
+
+    expect(result).toEqual({ items: [], degraded: false });
     expect(generate).toHaveBeenCalledTimes(1);
-    expect(generate).toHaveBeenCalledWith(expect.any(String), NEWS_OPTS);
-    expect(warnSpy).toHaveBeenCalledTimes(1);
-    expect(warnSpy.mock.calls[0][0] as string).not.toContain('備援型號');
-    warnSpy.mockRestore();
+    expect(warns()).toEqual([]);
   });
 });
 
@@ -406,5 +635,76 @@ describe('NewsCurationService.curate（補位回流 warn 與入選清單 log，2
     expect(result.items).toEqual([]);
     expect(logSpy.mock.calls.some((c) => String(c[0]).startsWith('策展入選'))).toBe(false);
     jest.restoreAllMocks();
+  });
+});
+
+describe('NewsCurationService.translateForReplay（晨報補發只翻譯不篩選，2026-10-17）', () => {
+  const REPLAY_OPTS = { ...NEWS_OPTS, responseJsonSchema: REPLAY_TRANSLATION_JSON_SCHEMA };
+  const REPLAY_FALLBACK_OPTS = { ...FALLBACK_OPTS, responseJsonSchema: REPLAY_TRANSLATION_JSON_SCHEMA };
+  const cands = (): NewsCandidate[] => [
+    makeCandidate({ title: 'Claude Haiku 5.5', normalizedUrl: 'a.com/1', originalUrl: 'https://a.com/1', summary: null, score: null }),
+    makeCandidate({ title: 'GPT‑6', normalizedUrl: 'a.com/2', originalUrl: 'https://a.com/2', summary: null, score: null }),
+  ];
+
+  it('主型號回全部 → 每則都有繁中內容、順序同候選、只呼叫 1 次且帶補發 schema；不篩選', async () => {
+    const raw = JSON.stringify({ items: [{ ref: 1, title: 'GPT‑6 發布', content: '乙' }, { ref: 0, title: 'Claude Haiku 5.5 發布', content: '甲' }] });
+    const generate = jest.fn().mockResolvedValue(raw);
+    const { service } = makeService(generate);
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+
+    const digest = await service.translateForReplay(cands());
+
+    expect(generate).toHaveBeenCalledTimes(1);
+    expect(generate).toHaveBeenCalledWith(expect.any(String), REPLAY_OPTS);
+    expect(digest.degraded).toBe(false);
+    expect(digest.items.map((it) => [it.title, it.content, it.url])).toEqual([
+      ['Claude Haiku 5.5 發布', '甲', 'https://a.com/1'],
+      ['GPT‑6 發布', '乙', 'https://a.com/2'],
+    ]);
+    const line = logSpy.mock.calls.map((c) => String(c[0])).find((l) => l.includes('補發翻譯完成')) ?? '';
+    expect(line).toContain('2 則 → 翻譯 2 則');
+    logSpy.mockRestore();
+  });
+
+  it('漏回一則 → 該則保留原文標題 degraded，整份不降級', async () => {
+    const generate = jest.fn().mockResolvedValue(JSON.stringify({ items: [{ ref: 0, title: '甲', content: '甲' }] }));
+    const { service } = makeService(generate);
+
+    const digest = await service.translateForReplay(cands());
+
+    expect(digest.degraded).toBe(false);
+    expect(digest.items[1]).toEqual(expect.objectContaining({ title: 'GPT‑6', content: null, degraded: true }));
+  });
+
+  it('主型號回非 JSON → 改用備援重試一次並採用', async () => {
+    const generate = jest
+      .fn()
+      .mockResolvedValueOnce('不是 JSON')
+      .mockResolvedValueOnce(JSON.stringify({ items: [{ ref: 0, title: '甲', content: '甲' }, { ref: 1, title: '乙', content: '乙' }] }));
+    const { service } = makeService(generate);
+
+    const digest = await service.translateForReplay(cands());
+
+    expect(generate).toHaveBeenCalledTimes(2);
+    expect(generate.mock.calls[1][1]).toEqual(REPLAY_FALLBACK_OPTS);
+    expect(digest.items.every((it) => !it.degraded)).toBe(true);
+  });
+
+  it('主備皆 LlmError → 全部保留原文標題、整份 degraded，不擲錯', async () => {
+    const generate = jest.fn().mockRejectedValue(new LlmError('exhausted'));
+    const { service } = makeService(generate);
+
+    const digest = await service.translateForReplay(cands());
+
+    expect(generate).toHaveBeenCalledTimes(2);
+    expect(digest.degraded).toBe(true);
+    expect(digest.items.map((it) => it.title)).toEqual(['Claude Haiku 5.5', 'GPT‑6']);
+  });
+
+  it('空候選 → 不呼叫 LLM', async () => {
+    const generate = jest.fn();
+    const { service } = makeService(generate);
+    expect(await service.translateForReplay([])).toEqual({ items: [], degraded: false });
+    expect(generate).not.toHaveBeenCalled();
   });
 });

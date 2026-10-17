@@ -45,3 +45,4 @@
 | [0003](0003-backfill-and-reroute.md) | 補位陣列：資安與一般軟體工程補位、誤放者回流主桶 | Accepted | 2026-09-26；2026-09-27 修訂 |
 | [0004](0004-news-dry-run-mode.md) | 晨報乾跑模式取代手動改 state | Accepted | 2026-09-27 |
 | [0005](0005-cross-day-title-dedup.md) | 跨日標題去重：seenNews 記標題、近 14 天 Jaccard | Accepted（候補方案待決） | 2026-10-06 |
+| [0006](0006-curation-structured-output-and-salvage.md) | 策展回應：結構化輸出、解析失敗改用備援重試、仍失敗逐則搶救 | Accepted | 2026-10-17 |

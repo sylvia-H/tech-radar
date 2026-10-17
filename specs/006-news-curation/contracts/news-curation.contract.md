@@ -34,7 +34,7 @@ class NewsCurationService {
 | **正常成功** | 回 `{ items, degraded:false }`；`items.length ≤ 6`、每則繁中且 `title ≤50`／`content ≤300`（code point）、配額（AI ≥4 於候選足夠時／非 AI ≤2）、每則可對回真實候選、殘留語意重複 ≤1；**恰呼叫 `llm.generate` 一次**（FR-002、SC-001~006） |
 | **候選不足** | 照實輸出 < 6 則，不硬湊、不遞補未改寫候選（FR-005/010） |
 | **空候選** | 回 `{ items:[], degraded:false }`，**不呼叫 LLM**（0 次，FR-020/SC-001） |
-| **策展失敗**（`LlmError` exhausted/empty/error、或解析失敗） | **不擲錯**，回 `{ items, degraded:true }`（見降級契約）；`logger.warn` 記錄失敗（FR-011/014/SC-004） |
+| **策展失敗**（`LlmError` exhausted/empty/error、或解析失敗） | **不擲錯**，回 `{ items, degraded:true }`（見降級契約）；`logger.warn` 記錄失敗（FR-011/014/SC-004）。2026-10-17 起解析不完整先改用備援重試、再逐則搶救，主備皆無可用項目才降級（ADR 0006） |
 
 ## 硬驗證管線（FR-008~010，固定順序 · 見 research D5）
 

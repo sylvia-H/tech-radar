@@ -297,3 +297,27 @@ Actions 排程延遲 2.7～5.2h（10-06 台北 09:16 才到）。
   （同一次呼叫、約 +2～4k tokens）交 LLM 判斷「已報導過、除非有新事實」；或把門檻降到 0.4（接住 Argon／Sonnet 兩組，
   誤殺風險未評估）。待使用者決策。
 - [ ] （觀察）跨日去重 log「排除近 14 天已推相似標題後」每日命中數與配對是否合理；seenNews 體積增幅（每筆多一個標題）。
+
+## 2026-10-17 追加：第六批上線後 11 天回顧與第七批（使用者決策）
+
+台北 10-07～10-17 則數 15／**15 降級**／13／12／14／9／13／15／15／14／15。Flash 8/11 天成功（10-10 起連 8 天，503 明顯減少），
+Lite 備援 2 天（10-07、10-09）；thinking 全數接受、無 MAX_TOKENS（Flash 思考 6.9～11.3k）。驗證剔除只有 source-diversity 夾掉
+cloudflare／thenewstack 第 3 則（3 次）；回流 warn 1 次。榜單 10-12 週推正常。Actions 起跑 22:45～01:58 UTC（台北最晚 09:58）。
+
+**10-08 降級事件**（run 37706091980）：Flash 首呼叫即 STOP，但只輸出 651 tokens／1,391 字元 → 「officialPicks 項目形狀不符」→
+整份原文標題版（15 則英文標題、無摘要，12 則 hn ai，含 GPT‑6、Claude Haiku 5.5），且已寫入 seenNews。成因（缺欄位或型別錯）
+因 log 無形狀資訊而無法確證。
+
+**ADR 0005 回看（原定 10-13）**：Jaccard 層命中 4 組（EmbeddingGemma 2、Haiku 5.5、LFM2.5、Passkeys），「Passkeys are not a trap」
+≈「Passkeys are a trap」為反駁文、屬誤殺邊緣（僅此一例）。入選清單跨日比對，Jaccard 接不住的同主題不同報導：Deno×Cloudflare
+（10-10／10-11）、Python 3.15（10-10／10-11）、k8s cgroup（10-07／10-10）、OpenCode 2.0（10-13／10-17）、Gemini 4 Argo（10-14／10-15）、
+LFM2.5‑24B（10-14／10-15）、Void（10-16／10-17）、AdFection 零點擊廣告（10-16／10-17）、Beam 501B（10-07／10-17）——每週 ≥3 組，
+依 ADR 0005 判讀標準已達「做 prompt 投影」門檻。**待使用者決策。**
+
+**第七批裁決**（分支 `fix/curation-parse-salvage-and-replay`；決策紀錄 [ADR 0006](../adr/0006-curation-structured-output-and-salvage.md)）：
+- [x] 策展主備呼叫帶 `responseJsonSchema` 結構化輸出；400 拒絕時以純請求重送一次。
+- [x] 解析失敗 warn 印壞項鍵名／型別與回應字元數（不含內容）。
+- [x] 主型號回應解析不完整 → 改用 Lite 重試一次；仍不完整 → 丟掉形狀不符項目、保留其餘；皆無可用項目才原文標題版。
+- [x] 降級日補發模式 `replay_date`（隱含乾跑、推告警頻道、不寫狀態）。首次補發 10-08（run 39037275115）：結構化輸出被 Flash 接受，
+      但沿用每日策展只選 5／15、漏 GPT‑6／Haiku 5.5 → 使用者同意改為逐則翻譯、不篩選，重跑 10-08。
+- [ ] （觀察）用量 log 是否帶 `schema=json`、有無「拒絕 thinking／結構化輸出設定」warn；Flash 回應字元數是否回到正常區間。
