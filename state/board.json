@@ -406,117 +406,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-11T23:37:19.365Z",
-  "lastNewsPushAt": "2026-10-16T22:45:53.308Z",
+  "lastNewsPushAt": "2026-10-17T22:12:40.144Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-11T23:37:19.365Z",
       "summary": "本次榜單由 lexmount/moli 奪下 #1，共迎來 8 個新進項目與 2 個竄升項目，領域分布涵蓋 AI 8 個及前後端 2 個。"
     },
     "feed": [
-      {
-        "content": "社群技術分析揭露，OpenAI Codex CLI 在安裝時會預設在使用者系統中部署一個具備自動更新能力的持久化背景守護行程（daemon）。此項發現引發了開發者對開發工具權限邊界、背景網路連線與供應鏈透明度的熱烈討論。對於依賴終端機工具的開發者而言，需特別審視此類 CLI 工具的系統侵入程度與安全性設定，避免非預期的背景處理程序帶來資安隱患。",
-        "id": "news:https://github.com/openai/codex/issues/48195",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "OpenAI Codex CLI 預設安裝自動更新常駐守護行程引發開發者安全關注",
-        "type": "news",
-        "url": "https://github.com/openai/codex/issues/48195"
-      },
-      {
-        "content": "針對 OpenAI 宣稱發現計算速度更快的傅立葉轉換演算法，社群進行了深入的數學與演算法原理拆解。文章評測了該方法在頻域計算、訊號處理與神經網路張量操作中的理論複雜度與實作可行性，協助對底層數值運算與核心加速庫感興趣的工程師釐清其數學突破的實質價值與硬體落地邊界。",
-        "id": "news:https://argmin.net/p/faster-fourier-transforms",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "深入剖析 OpenAI 加速快速傅立葉轉換（FFT）的數學演算法原理",
-        "type": "news",
-        "url": "https://www.argmin.net/p/faster-fourier-transforms"
-      },
-      {
-        "content": "Anthropic 前沿紅隊（Frontier Red Team）僅花費約 825 美元，利用 15 台廉價 Android 電視盒組建了一套可運行 AI 推理的硬體叢集，並對其分散式數學運算效能與安全威脅模型進行了實測。這項實驗證明了消費級甚至廢舊邊緣晶片透過協同計算運行分散式神經網路的可行性，同時也向系統開發者示警了未授權低成本硬體叢集可能帶來的安全攻防變數。",
-        "id": "news:https://thenewstack.io/self-replicating-ai-worms",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "Anthropic 紅隊利用 15 台廉價電視盒搭建 AI 叢集，揭示低成本邊緣分散式算力潛力",
-        "type": "news",
-        "url": "https://thenewstack.io/self-replicating-ai-worms/"
-      },
-      {
-        "content": "新開源專案 scriptc 推出了一款將 TypeScript 直接編譯為原生機器碼（TypeScript-to-Native）的編譯器。不同於依賴 Node.js、Deno 或 Bun 等 JavaScript 執行環境的傳統運行方式，scriptc 嘗試透過直接靜態編譯消除執行環境的啟動耗時與記憶體額外開銷。這為追求極致冷啟動速度與系統級效能的 TypeScript 開發者提供了一條兼具靜態型別與原生效能的全新技術路徑。",
-        "id": "news:https://scriptc.dev/",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "scriptc 開源釋出：直接將 TypeScript 靜態編譯為原生機器碼的全新編譯器",
-        "type": "news",
-        "url": "https://scriptc.dev"
-      },
-      {
-        "content": "社群與編譯器開發者在 Rust 核心借用檢查器（Borrow Checker）中發現了存在長達 11 年的健全性（Unsoundness）Bug。該漏洞允許特定邊界條件下的代碼在未宣告 unsafe 的情況下繞過生命週期檢查，破壞記憶體安全保證。作為依賴編譯期型別系統保證安全的核心機制，這項發現引發了 Rust 社群對型別系統形式化驗證的高度重視，並促使官方加速推動相關修補與借用檢查器重構工作。",
-        "id": "news:https://github.com/rust-lang/rust/issues/164250",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "Rust 借用檢查器被揭露存在 11 年之久的記憶體安全不健全性漏洞",
-        "type": "news",
-        "url": "https://github.com/rust-lang/rust/issues/164250"
-      },
-      {
-        "content": "這篇深入工程實作文章分享了如何完全使用純 C 語言開發具備現代架構的 Web 應用程式。作者詳細探討了在沒有高階語言抽象與垃圾回收機制的環境下，如何透過輕量級 HTTP 伺服器整合、自建字串與 JSON 解析模組、嚴謹的記憶體池管理以及狀態處理來達成亞毫秒級響應與極低記憶體佔用。對於追求極限效能、嵌入式 Web 介面或希望深入理解 Web 底層協議運作的系統工程師而言極具借鑑價值。",
-        "id": "news:https://prophitt.me/writing/a-modern-web-app-in-c",
-        "publishedAt": "2026-10-13T23:42:40.985Z",
-        "title": "以純 C 語言構建現代 Web 應用：架構實踐、記憶體管理與極致效能分析",
-        "type": "news",
-        "url": "https://prophitt.me/writing/a-modern-web-app-in-c"
-      },
-      {
-        "content": "Google 正式推出 Gemini 4 Argon 模型，主打應對高難度的推理與運算挑戰，並同步釋出負責任與安全開發的技術報告。新模型強化了極限問題的處理能力與安全護欄設計，為構建複雜 AI 應用與注重模型對齊、合規防護的開發者提供了更強大的底座選擇。",
-        "id": "news:https://deepmind.google/blog/introducing-gemini-4-argon",
-        "publishedAt": "2026-10-14T23:08:50.711Z",
-        "title": "Google 發布 Gemini 4 Argon 模型：專為解決高難度問題打造並強化安全機制",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-gemini-4-argon/"
-      },
-      {
-        "content": "NVIDIA 發表 Nemotron Bolt 3.5 74B A9B 模型，採用 740 億總參數、90 億啟動參數的混合專家（MoE）架構，並透過量化感知訓練壓縮至 24GB 顯存以內。該架構旨在兼顧密集模型的高吞吐速度與同量級 MoE 模型的高智慧水準，後續亦規劃推出更小體積的 E4B 版本。這讓追求自建推論服務或在單張主流 GPU 上部署大模型的開發者能大幅降低硬體門檻。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x5t1tm/nvidia_nemotron_bolt_35_74b_a9b_releases_oct_15th",
-        "publishedAt": "2026-10-14T23:08:50.711Z",
-        "title": "NVIDIA 發表 Nemotron Bolt 3.5 74B A9B：以 2-bit 量化 MoE 架構兼顧推論速度與智慧",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5t1tm/nvidia_nemotron_bolt_35_74b_a9b_releases_oct_15th/"
-      },
-      {
-        "content": "Liquid AI 推出 LFM2.5-24B-A2B 模型，專為在端側與本地環境運行快速、高隱私度的 AI 代理（Agents）設計。對於需要在邊緣設備或在嚴格隱私規範下構建離線自主 Agent 的開發者而言，提供了低延遲且資料不出境的解決方案。",
-        "id": "news:https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
-        "publishedAt": "2026-10-14T23:08:50.711Z",
-        "title": "Liquid AI 推出 LFM2.5-24B-A2B：主打高速、隱私的端側自主代理模型",
-        "type": "news",
-        "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b"
-      },
-      {
-        "content": "GitHub 宣布 HydraFusion 模型集迎來更新，改進了模型編排工作流程，並同步推出 HydraFusion Max 選項，已在 VS Code、GitHub Copilot 應用程式等環境中提供。這讓依賴 Copilot 輔助開發的工程師能在更靈活的模型池與最佳化編排流程中協同工作，提升編程與程式碼生成效率。",
-        "id": "news:https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
-        "publishedAt": "2026-10-14T23:08:50.711Z",
-        "title": "GitHub 發布 HydraFusion 更新與 HydraFusion Max：升級 Copilot 多模型編排能力",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option"
-      },
-      {
-        "content": "GitHub Copilot 為託管環境推出客戶端遙測使用者歸屬（User Attribution）與可配置擷取功能。企業管理員現在可將 Copilot 活動關聯至特定使用者，同時保證系統完全不收集提示詞、模型回應或工具調用內容。這解決了企業在導入 AI 開發工具時，既要符合嚴格隱私標準又必須落實稽核追蹤的工程管理痛點。",
-        "id": "news:https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture",
-        "publishedAt": "2026-10-14T23:08:50.711Z",
-        "title": "GitHub Copilot 推出客戶端遙測歸屬設定：兼顧隱私與企業審查需求",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture"
-      },
-      {
-        "content": "Node.js 發布長期支援版本 24.22.0（代號 Krypton），底層加密模組迎來多項更新，包含新增 crypto.parsePKCS12() 解析方法、加入通用 MAC API、支援從 OpenSSL providers 自動發現密碼與雜湊演算法，並在 Cipher/Decipher API 中正式啟用 SIV 與 GCM-SIV 模式。這強化了後端開發者在金鑰解析、憑證管理與現代對稱加密實作上的原生支援。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.22.0",
-        "publishedAt": "2026-10-14T23:08:50.711Z",
-        "title": "Node.js 24.22.0 LTS 發布：擴充 Crypto 模組支援 PKCS12、通用 MAC API 與 GCM-SIV",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.22.0"
-      },
-      {
-        "content": "Cloudflare 宣布 Hyperdrive 的 MySQL 支援正式邁入通用可用階段（GA），並深入剖析研發期間追蹤一項發生率僅 0.001% 的細微協定快取缺陷的除錯歷程。Hyperdrive 可自動加速分散式環境下的關聯式資料庫查詢，對於使用 Cloudflare Workers 構建後端並需降低跨區域 MySQL 連線延遲的架構師而言是重要的基礎設施進展。",
-        "id": "news:https://blog.cloudflare.com/hyperdrive-mysql",
-        "publishedAt": "2026-10-14T23:08:50.711Z",
-        "title": "Cloudflare Hyperdrive 支援 MySQL 正式 GA：揭露 0.001% 極低機率快取協定 Bug 排查歷程",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/hyperdrive-mysql/"
-      },
       {
         "content": "報導指出 Linux 核心領導者 Linus Torvalds 嘗試借助 Anthropic 的 Claude Code 來解決核心效能問題，但隨後社群審查者在 AI 生成的 Linux page cache 修補程式中揪出了潛在的競態條件（race condition）。此案例突顯了當前 AI 輔助編程工具在深入底層作業系統、極致併發等關鍵子系統時的可靠度限制，提醒開發者在採納 AI 產出代碼時仍須嚴守嚴格的架構級代碼審查。",
         "id": "news:https://thenewstack.io/torvalds-claude-code-kernel",
@@ -812,253 +708,302 @@
         "title": "AdFection 攻擊技術曝光：定向廣告系統遭武器化為零點擊間諜軟體傳播管線",
         "type": "news",
         "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+      },
+      {
+        "content": "DeepSeek 推出新版模型 DeepSeek-v4.1-Flash-1017，在多項開源權重模型評測中取得領先地位。該版本著重於提升推論效率與任務表現，提供更強大的程式碼生成與邏輯推理能力。對於開發者而言，這代表開源社群再度迎來具備極高性價比的高效能模型選項，能在本地或私有雲環境中以更低延遲執行複雜的代理任務與程式生成，大幅降低對封閉商業 API 的依賴。",
+        "id": "news:https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "DeepSeek 發布 DeepSeek-v4.1-Flash-1017，刷新開源模型評測基準",
+        "type": "news",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
+      },
+      {
+        "content": "Cloudflare 宣布與 OpenAI 合作，共同建立更有效率的 AI 內容探索與檢索架構。此合作旨在讓 AI 系統更即時地追蹤網頁內容變更，同時大幅減少爬蟲對網站發出的無效重複請求。對於網站維運與後端工程師而言，這項機制有助於降低因 AI 爬蟲造成的伺服器流量與負載壓力，並確保網站最新內容能更準確、快速地被 AI 搜尋與模型檢索到。",
+        "id": "news:https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "Cloudflare 與 OpenAI 展開合作，優化 AI 網路爬蟲索引與快取效率",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/"
+      },
+      {
+        "content": "Google DeepMind 與新加坡 GovTech 合作，微調輕量級 Gemma 模型應用於私密通訊中的詐騙對話攔截。該方案完全在使用者本機端（On-device）運行推論，達到零雲端資料外傳（zero cloud data egress）的安全標準。這項落地實踐展示了如何在極端注重隱私與資料合規的場景下部署小型語言模型（SLM）實現即時防護，為注重隱私保護的 AI 應用架構提供了極佳參考。",
+        "id": "news:https://deepmind.google/blog/on-device-ai-scam-detection-mddi",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "Google DeepMind 攜手新加坡政府，運用輕量 Gemma 模型實作端側防詐檢測",
+        "type": "news",
+        "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/"
+      },
+      {
+        "content": "GitHub 針對 Slack 與 Microsoft Teams 的官方整合外掛推出重要更新，正式支援在單一對話頻道中跨多個儲存庫（Multi-repository）進行操作。開發者現在可以直接在通訊軟體內跨專案建立 Issue、發起 Pull Request 或排查錯誤。這項變更簡化了微服務架構或多專案團隊的日常維運工作流，降低開發者在不同聊天視窗與程式碼庫間切換 Context 的認知成本。",
+        "id": "news:https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "GitHub 擴充 Slack 與 Teams 整合功能，支援跨多儲存庫操作與協同",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates"
+      },
+      {
+        "content": "Anthropic 分享了 Claude Code 開發團隊內部的程式碼審查（Code Review）流程，探討工程團隊如何在高強度 AI 輔助編程的環境下維持程式品質與工程嚴謹性。內容著重於如何定位 AI 生成程式碼的審查邊界、建立驗證機制，以及避免過度依賴造成的架構腐化。對於正導入 AI 程式碼輔助工具的工程團隊而言，提供了極具價值的實務協作準則與工程文化借鏡。",
+        "id": "news:https://claude.dev/blog/solving-code-review-at-anthropic",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "Anthropic Claude Code 團隊揭秘內部程式碼審查與人機協作實務",
+        "type": "news",
+        "url": "https://claude.dev/blog/solving-code-review-at-anthropic/"
+      },
+      {
+        "content": "The New Stack 專文分析了向 3,200 萬名觀眾即時串流大型體育賽事背後的系統架構與工程挑戰。文章剖析了在毫秒級延遲要求下，如何處理瞬間爆發的流量洪峰、確保影音串流的同步播放一致性，以及大規模邊緣節點快取與容錯設計。對於建構大規模低延遲分散式系統與高併發架構的後端及 DevOps 工程師而言，提供了寶貴的第一手大規模生產環境實務經驗。",
+        "id": "news:https://thenewstack.io/live-streaming-engineering-lessons",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "支撐 3,200 萬人同時觀看：大型即時體育賽事串流架構經驗談",
+        "type": "news",
+        "url": "https://thenewstack.io/live-streaming-engineering-lessons/"
+      },
+      {
+        "content": "技術深度文章《You could have invented transformers from memory》從注意力機制的最基礎直覺出發，引導讀者逐步推導出 Transformer 的核心架構設計。文章捨棄複雜的抽象數學包裝，專注於為何需要 Query、Key、Value 的矩陣運算，以及多頭注意力與位置編碼的工程必然性。這有助於機器學習工程師與開發者徹底理解模型底層運作邏輯，進而在自訂模型架構或微調優化時做出更合理的決策。",
+        "id": "news:https://alexwang.ai/posts/associative-memory",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "從直覺與記憶推導 Transformer 架構：核心運算機制深層解析",
+        "type": "news",
+        "url": "https://alexwang.ai/posts/associative-memory/"
+      },
+      {
+        "content": "針對近期頻傳的 AI 代理安全事件，資安專家深入分析指出，多數攻擊得以成功並非單純因為模型遭到越獄（Jailbreak），而是圍繞在 AI 週邊的系統隔離（Containment）機制與執行時監控嚴重不足。文章探討了如何針對具有工具調用權限的 AI Agent 設計權限沙盒與監控管道。這對正在將 LLM 整合進生產環境、賦予 API 存取權限的架構師與資安工程師而言，是極為關鍵的架構防禦指引。",
+        "id": "news:https://csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "資安專家剖析 AI 駭侵事件成因：系統隔離與即時監控機制缺失才是關鍵",
+        "type": "news",
+        "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html"
+      },
+      {
+        "content": "資料工程團隊深入分享如何在不犧牲資料品質的前提下，逆轉指數級增長的硬體資源開銷。文章詳細介紹了資料管線（Data Pipeline）中的批次處理調校、記憶體瓶頸排查與資料流重塑策略，讓高吞吐量管線能在有限硬體下維持穩定運行。這為面臨大規模資料成長、雲端算力成本高漲的資料工程師與 DevOps 團隊提供了具體可執行的效能與成本優化路徑。",
+        "id": "news:https://blog.cloudflare.com/rewinding-the-exponential",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "壓低硬體消耗的資料管線架構策略：在保障品質下極大化吞吐量",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/rewinding-the-exponential/"
+      },
+      {
+        "content": "文章探討了如何將大型語言模型與 AI 工具導入硬體逆向工程領域，加速電路板走線分析、未公開晶片介面識別與通訊協定反編譯。透過讓 AI 處理繁複的訊號比對與架構推導，逆向工程人員能大幅縮短分析週期。此實踐展示了 AI 跨足低階系統與韌體安全領域的新範式，對硬體安全研究人員及韌體工程師具有高度技術啟發性。",
+        "id": "news:https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "運用生成式 AI 輔助硬體逆向工程：從電路分析到協定解析的實戰",
+        "type": "news",
+        "url": "https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware/"
+      },
+      {
+        "content": "開發者發布開源工具 Llmspeed，旨在解決本地運行大模型時的硬體選型難題。該工具能根據模型架構、量化參數與目標硬體規格，精準模擬並預覽推論時的 Token 生成速度與延遲表現，讓開發者在投資昂貴的 GPU 或工作站前獲得客觀數據。這對於正在評估私有化部署硬體預算、規劃本地 AI 推論叢集的工程師與架構師相當實用。",
+        "id": "news:https://llmspeed.dev/",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "Llmspeed：在採購硬體前模擬與評測本地 LLM 運行速度的開源工具",
+        "type": "news",
+        "url": "https://llmspeed.dev/"
+      },
+      {
+        "content": "資安社群指出，Google 在背景作業中自動將使用者已登入的多個帳號與裝置手機號碼進行跨帳號關聯，引發隱私與身分隔離失效的高度擔憂。對於開發身分驗證系統、管理多重測試帳號或重視營運隱私隔離（OpSec）的工程師來說，此行為打破了傳統依靠不同帳號進行身分切分的安全邊界，需重新審視雲端帳號管理與雙因子驗證配置策略。",
+        "id": "news:https://androidauthority.com/google-auto-phone-number-verification-android-3723117",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "Google 遭揭露靜默關聯同一裝置下所有已登入帳號的手機號碼",
+        "type": "news",
+        "url": "https://www.androidauthority.com/google-auto-phone-number-verification-android-3723117/"
+      },
+      {
+        "content": "開發者撰文深入探討軟體渲染（Software Rendering）的底層實作技術，分享如何在不依賴現代 GPU 加速與圖形 API（如 Vulkan、DirectX）的情況下，完全運用 CPU 進行幾何光柵化、深度緩衝與著色運算。文章不僅回顧了電腦圖形學的基本運算原理，也展示了在受限環境或除錯場景下撰寫高效軟體光柵化引擎的技巧，對系統級程式設計與底層圖形工程師深具參考價值。",
+        "id": "news:https://jamesfmackenzie.com/2026/10/13/i-love-software-rendering",
+        "publishedAt": "2026-10-17T22:12:40.144Z",
+        "title": "純軟體渲染技術實作探討：重溫 CPU 逐像素繪製的核心美學",
+        "type": "news",
+        "url": "https://www.jamesfmackenzie.com/2026/10/13/i-love-software-rendering/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-16T22:45:53.308Z",
+      "generatedAt": "2026-10-17T22:12:40.144Z",
       "items": [
         {
-          "content": "中國商務部與科技部發布《中國禁止出口限制出口技術目錄》修訂草案，擬新增涵蓋人工智慧、生物醫藥等領域的 40 項技術，其中 23 項與 AI 相關，包含基礎/大模型、智慧體（Agent）、計算叢集以及資訊處理技術，並已啟動公眾意見徵詢。草案明確規定，已經開源的技術不在管制範圍內。此項法規變動直接影響跨國 AI 研發、算力叢集架構輸出與商業大模型的出海部署，但開源豁免條款也為開源生態與全球開發者合作提供了明確的合規界限。",
+          "content": "DeepSeek 推出新版模型 DeepSeek-v4.1-Flash-1017，在多項開源權重模型評測中取得領先地位。該版本著重於提升推論效率與任務表現，提供更強大的程式碼生成與邏輯推理能力。對於開發者而言，這代表開源社群再度迎來具備極高性價比的高效能模型選項，能在本地或私有雲環境中以更低延遲執行複雜的代理任務與程式生成，大幅降低對封閉商業 API 的依賴。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "China proposes export controls on 23 AI technologies (including large models, agents & clusters); already open-sourced tech is exempted",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "DeepSeek-v4.1-Flash-1017",
           "sources": [
+            "hn",
             "reddit-localllama"
           ],
-          "title": "中國擬修訂技術出口管制目錄：涵蓋大模型等 23 項 AI 技術，已開源技術獲豁免",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x7g3zq/china_proposes_export_controls_on_23_ai/",
-          "weightedScore": 100
+          "title": "DeepSeek 發布 DeepSeek-v4.1-Flash-1017，刷新開源模型評測基準",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "weightedScore": 716
         },
         {
-          "content": "官方正式推出參數量達 501B 的開源大模型 Beam。該模型主打高可自訂性與彈性擴展能力，開發者能夠完全擁有模型權重並進行私有化微調與部署，適用於軟體工程、複雜推理以及需要長期運行的智慧體（Agent）工作流程。這為追求自主可控、不願受限於閉源商業 API 的企業與開發者提供了全新的大規模開源基礎模型選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Welcome Beam: a 501B open model you can own, customize, and scale",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "501B 開源大模型 Beam 正式發布：支援自主客製化與大規模擴展",
-          "url": "https://huggingface.co/blog/reflection-beam",
-          "weightedScore": 100
-        },
-        {
-          "content": "隨著 AI 編程工具普及，越來越多非技術員工開始利用 AI 自行建構應用程式（Vibe-coding），導致企業內部出現「影子軟體」與資安風險。Cloudflare 正式開源 Void 工具，旨在為 IT 與維運團隊提供透明的管理途徑，既能鼓勵員工利用 AI 提高生產力，又能監控、審查與管理這些自主生成的內部工具，確保安全性與架構合規。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Employees are vibe-coding their own apps. Cloudflare open-sources Void to give IT a handle on them",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Cloudflare 開源 Void：協助企業 IT 管理員工使用 AI 自建的內部應用",
-          "url": "https://thenewstack.io/cloudflare-voidzero-void-vibe-coding/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Hugging Face 宣布在 Diffusers 函式庫中正式整合支援 FLUX.3 Image Klein 模型。開發者現在可直接透過 Diffusers 標準 API 載入並微調該模型，快速將新一代 FLUX 影像生成技術整合至既有的 Python AI 工作流程與生產環境管線中，降低了部署與推論門檻。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Welcome FLUX.3 Image Klein in Diffusers",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "Hugging Face Diffusers 正式支援 FLUX.3 Image Klein 影像生成模型",
-          "url": "https://huggingface.co/blog/flux-3",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 宣布針對驗證機器人（Verified Bots）推出持續評估機制。單純通過身分驗證不再足以維持白名單資格，系統將持續監控爬蟲行為，檢查其是否切實遵守網站設定的 robots.txt 規則以及 HTTP 429（請求過多）限制。對於站長與維運人員而言，此舉能有效防止 AI 抓取程式過度消耗伺服器頻寬；對爬蟲與 AI 代理開發者來說，遵循網站限制已成為避免遭到全域攔截的必要條件。",
+          "content": "Cloudflare 宣布與 OpenAI 合作，共同建立更有效率的 AI 內容探索與檢索架構。此合作旨在讓 AI 系統更即時地追蹤網頁內容變更，同時大幅減少爬蟲對網站發出的無效重複請求。對於網站維運與後端工程師而言，這項機制有助於降低因 AI 爬蟲造成的伺服器流量與負載壓力，並確保網站最新內容能更準確、快速地被 AI 搜尋與模型檢索到。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cloudflare-blog",
-          "sourceTitle": "Continuous accountability for Verified bots",
+          "sourceTitle": "Cloudflare and OpenAI: Making AI discovery better for everyone",
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "Cloudflare 推出驗證機器人持續問責機制：動態監控 robots.txt 與 HTTP 429 遵守狀況",
-          "url": "https://blog.cloudflare.com/verified-bots-accountability/",
+          "title": "Cloudflare 與 OpenAI 展開合作，優化 AI 網路爬蟲索引與快取效率",
+          "url": "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/",
           "weightedScore": 50
         },
         {
-          "content": "知名生成式 AI 對話平台 Character.ai 已主動聲請美國破產法第 11 章破產保護程序。作為高流量的對話式 AI 平台之一，此事件突顯了生成式 AI 服務在面臨高昂推論算力成本與變現困難時的財務壓力，依賴其生態系或 API 構建服務的開發者與合作夥伴需密切關注後續重組與服務可用性風險。",
+          "content": "Google DeepMind 與新加坡 GovTech 合作，微調輕量級 Gemma 模型應用於私密通訊中的詐騙對話攔截。該方案完全在使用者本機端（On-device）運行推論，達到零雲端資料外傳（zero cloud data egress）的安全標準。這項落地實踐展示了如何在極端注重隱私與資料合規的場景下部署小型語言模型（SLM）實現即時防護，為注重隱私保護的 AI 應用架構提供了極佳參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sourceTitle": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "Google DeepMind 攜手新加坡政府，運用輕量 Gemma 模型實作端側防詐檢測",
+          "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 針對 Slack 與 Microsoft Teams 的官方整合外掛推出重要更新，正式支援在單一對話頻道中跨多個儲存庫（Multi-repository）進行操作。開發者現在可以直接在通訊軟體內跨專案建立 Issue、發起 Pull Request 或排查錯誤。這項變更簡化了微服務架構或多專案團隊的日常維運工作流，降低開發者在不同聊天視窗與程式碼庫間切換 Context 的認知成本。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Multi-repository support and other improvements for GitHub in Slack and Teams",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub 擴充 Slack 與 Teams 整合功能，支援跨多儲存庫操作與協同",
+          "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates",
+          "weightedScore": 100
+        },
+        {
+          "content": "Anthropic 分享了 Claude Code 開發團隊內部的程式碼審查（Code Review）流程，探討工程團隊如何在高強度 AI 輔助編程的環境下維持程式品質與工程嚴謹性。內容著重於如何定位 AI 生成程式碼的審查邊界、建立驗證機制，以及避免過度依賴造成的架構腐化。對於正導入 AI 程式碼輔助工具的工程團隊而言，提供了極具價值的實務協作準則與工程文化借鏡。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Character.ai has initiated voluntary Chapter 11 bankruptcy",
+          "sourceTitle": "How the Claude Code team does code review",
           "sources": [
             "hn"
           ],
-          "title": "AI 對話平台 Character.ai 正式聲請美國破產法第 11 章破產保護",
-          "url": "https://blog.character.ai/an-update-on-character-ai/",
-          "weightedScore": 334
+          "title": "Anthropic Claude Code 團隊揭秘內部程式碼審查與人機協作實務",
+          "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+          "weightedScore": 454
         },
         {
-          "content": "開源程式碼助手專案 OpenCode 正式推出 2.0 版本。新版本聚焦於提升程式碼生成準確度、上下文理解與開發流程整合體驗，為開發者在私有環境部署本地 AI 編程代理提供了更成熟的開源替代方案。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "OpenCode 2.0",
-          "sources": [
-            "hn"
-          ],
-          "title": "開源編程輔助工具 OpenCode 2.0 正式發布",
-          "url": "https://anoma.ly/notes/opencode-2-0/",
-          "weightedScore": 878
-        },
-        {
-          "content": "密碼學研究者透過 Claude 模型分析並推導出長期以來備受爭議的 ECDSA 橢圓曲線常數的可能來源。此研究展示了大語言模型在輔助逆向工程與密碼學演算法歷史謎題上的分析能力，為安全研究員與密碼學實作者提供了全新的研究範式。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Claude reveals ECDSA curve origins",
-          "sources": [
-            "hn"
-          ],
-          "title": "研究者利用 Claude 逆向解析 ECDSA 橢圓曲線標準常數的潛在生成源頭",
-          "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
-          "weightedScore": 526
-        },
-        {
-          "content": "工作流自動化工具 n8n 在單一容器與 SQLite 下容易測試，但進入生產流量時難度大幅增加。工程團隊分享了在 AWS EKS 上的架構實踐，解析如何將單體架構拆解為獨立的 Webhook 處理器、背景 Worker，並整合 PostgreSQL 與 Redis 實現高可用與自動擴展，為需要將自動化管線生產化的 DevOps 工程師提供了完整的遷移指南。",
+          "content": "The New Stack 專文分析了向 3,200 萬名觀眾即時串流大型體育賽事背後的系統架構與工程挑戰。文章剖析了在毫秒級延遲要求下，如何處理瞬間爆發的流量洪峰、確保影音串流的同步播放一致性，以及大規模邊緣節點快取與容錯設計。對於建構大規模低延遲分散式系統與高併發架構的後端及 DevOps 工程師而言，提供了寶貴的第一手大規模生產環境實務經驗。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Deploying, maintaining, and migrating production n8n on EKS",
+          "sourceId": "thenewstack",
+          "sourceTitle": "Here are the engineering lessons we learned when live-streaming sports to 32 million people",
           "sources": [
-            "cncf-blog"
+            "thenewstack"
           ],
-          "title": "在 AWS EKS 上生產級部署與維護 n8n 工作流引擎的實戰架構解析",
-          "url": "https://www.cncf.io/blog/2026/10/16/deploying-maintaining-and-migrating-production-n8n-on-eks/",
-          "weightedScore": 100
+          "title": "支撐 3,200 萬人同時觀看：大型即時體育賽事串流架構經驗談",
+          "url": "https://thenewstack.io/live-streaming-engineering-lessons/",
+          "weightedScore": 50
         },
         {
-          "content": "Fish 發布最新語音合成模型 Drama 3 35B3A，採用 35B 混合專家（MoE）架構。社群實測指出該模型在 DGX Spark 上運作良好，且 4-bit 量化版本的輸出品質非常接近原始權重，並已提供開源權重與本機推論 Demo。這讓需要高品質在地端執行 Text-to-Speech 的開發者獲得了極具競爭力的開源新選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "New TTS king in town: Fish's Drama 3 35B3A!",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "Fish Audio 開源新一代語音合成模型 Drama 3 35B3A：MoE 架構與 4-bit 量化實測",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6f9p2/new_tts_king_in_town_fishs_drama_3_35b3a/",
-          "weightedScore": 100
-        },
-        {
-          "content": "CNCF 畢業專案 Kyverno 長期用於 Kubernetes 設定安全與準入控制（Admission Control）。面對新興的 AI 叢集與大型模型推論工作負載，文章探討如何將 Kyverno 策略進一步延伸到運行時（Runtime）安全防護，解決傳統準入控制無法涵蓋的動態行為與運行時威脅，提升雲原生 AI 基礎設施的整體安全基線。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Extending Kubernetes policy enforcement to runtime security for AI workloads",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "將 Kubernetes Kyverno 策略引擎延伸至 AI 工作負載的運行時安全防護",
-          "url": "https://www.cncf.io/blog/2026/10/15/extending-kubernetes-policy-enforcement-to-runtime-security-for-ai-workloads/",
-          "weightedScore": 100
-        },
-        {
-          "content": "硬體駭客與開源社群成功在越獄的 PlayStation 5 主機 GPU 上部署並運行 Qwen 27B 模型，實測推論速度達到每秒約 20 個 Token。這項極客實驗驗證了消費級遊戲主機硬體在邊緣大模型推論上的潛力，為低成本硬體自建本地推論節點提供了有趣的技術實證。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "Someone is running Qwen 27B at ~20 tok/s on a jailbroken PS5's GPU",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "開發者在越獄 PS5 上成功以 20 tok/s 速度運行 Qwen 27B 大模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5ak2n/someone_is_running_qwen_27b_at_20_toks_on_a/",
-          "weightedScore": 100
-        },
-        {
-          "content": "一項針對勞動力市場任務的研究指出，美國工作人口 90% 的工作時間所從事的任務，在現有各大主流 AI Benchmark 中並未得到良好涵蓋。這突顯出當前以學術測試或合成問答為主的 AI 基準測試與真實世界軟體工程及商業工作流程存在巨大鴻溝，提醒開發者與企業在評估導入 LLM 時應避免單純依賴公開基準分數，需建立符合實際業務場景的評估指標。",
+          "content": "技術深度文章《You could have invented transformers from memory》從注意力機制的最基礎直覺出發，引導讀者逐步推導出 Transformer 的核心架構設計。文章捨棄複雜的抽象數學包裝，專注於為何需要 Query、Key、Value 的矩陣運算，以及多頭注意力與位置編碼的工程必然性。這有助於機器學習工程師與開發者徹底理解模型底層運作邏輯，進而在自訂模型架構或微調優化時做出更合理的決策。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
+          "sourceTitle": "You could have invented transformers from memory",
           "sources": [
             "hn"
           ],
-          "title": "實證研究：美國 90% 的工時任務無法被現行 AI 評測基準有效覆蓋",
-          "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
-          "weightedScore": 346
+          "title": "從直覺與記憶推導 Transformer 架構：核心運算機制深層解析",
+          "url": "https://alexwang.ai/posts/associative-memory/",
+          "weightedScore": 463
         },
         {
-          "content": "開發者分享了在瀏覽器環境中運行輕量語言模型以實作檢索增強生成（RAG）的實踐方案。透過 Web 平台直接在客戶端完成向量檢索與推論，無需將資料傳送至雲端伺服器，既保障了使用者隱私，也大幅降低了後端算力成本，為邊緣端隱私優先的 Web AI 應用提供了實用參考。",
+          "content": "針對近期頻傳的 AI 代理安全事件，資安專家深入分析指出，多數攻擊得以成功並非單純因為模型遭到越獄（Jailbreak），而是圍繞在 AI 週邊的系統隔離（Containment）機制與執行時監控嚴重不足。文章探討了如何針對具有工具調用權限的 AI Agent 設計權限沙盒與監控管道。這對正在將 LLM 整合進生產環境、賦予 API 存取權限的架構師與資安工程師而言，是極為關鍵的架構防禦指引。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "Running RAG with a (small) language model in the browser",
+          "sourceId": "hn",
+          "sourceTitle": "Containment and monitoring failures are to blame for AI hacking reports: experts",
           "sources": [
-            "lobsters-ai"
+            "hn"
           ],
-          "title": "在瀏覽器端利用小型語言模型（SLM）實作完全本地的 RAG 架構",
-          "url": "https://bart.degoe.de/rag-with-a-small-language-model-in-the-browser/",
-          "weightedScore": 100
+          "title": "資安專家剖析 AI 駭侵事件成因：系統隔離與即時監控機制缺失才是關鍵",
+          "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+          "weightedScore": 948
         },
         {
-          "content": "資安研究揭露名為 AdFection 的新型攻擊機制，攻擊者將商業定向廣告網路轉化為零點擊（Zero-click）傭兵間諜軟體的傳遞管道。受害者無需點擊任何惡意連結，僅透過廣告展示與定位機制即可遭到感染。該事件凸顯了數位廣告生態系中的深層供應鏈與隱私防護漏洞，對端點安全與企業網路流量過濾機制帶來了嚴峻挑戰。",
+          "content": "資料工程團隊深入分享如何在不犧牲資料品質的前提下，逆轉指數級增長的硬體資源開銷。文章詳細介紹了資料管線（Data Pipeline）中的批次處理調校、記憶體瓶頸排查與資料流重塑策略，讓高吞吐量管線能在有限硬體下維持穩定運行。這為面臨大規模資料成長、雲端算力成本高漲的資料工程師與 DevOps 團隊提供了具體可執行的效能與成本優化路徑。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Rewinding the exponential: How we keep hardware usage down",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "壓低硬體消耗的資料管線架構策略：在保障品質下極大化吞吐量",
+          "url": "https://blog.cloudflare.com/rewinding-the-exponential/",
+          "weightedScore": 50
+        },
+        {
+          "content": "文章探討了如何將大型語言模型與 AI 工具導入硬體逆向工程領域，加速電路板走線分析、未公開晶片介面識別與通訊協定反編譯。透過讓 AI 處理繁複的訊號比對與架構推導，逆向工程人員能大幅縮短分析週期。此實踐展示了 AI 跨足低階系統與韌體安全領域的新範式，對硬體安全研究人員及韌體工程師具有高度技術啟發性。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Using AI to reverse engineer hardware",
+          "sources": [
+            "hn"
+          ],
+          "title": "運用生成式 AI 輔助硬體逆向工程：從電路分析到協定解析的實戰",
+          "url": "https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware/",
+          "weightedScore": 250
+        },
+        {
+          "content": "開發者發布開源工具 Llmspeed，旨在解決本地運行大模型時的硬體選型難題。該工具能根據模型架構、量化參數與目標硬體規格，精準模擬並預覽推論時的 Token 生成速度與延遲表現，讓開發者在投資昂貴的 GPU 或工作站前獲得客觀數據。這對於正在評估私有化部署硬體預算、規劃本地 AI 推論叢集的工程師與架構師相當實用。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+          "sources": [
+            "hn"
+          ],
+          "title": "Llmspeed：在採購硬體前模擬與評測本地 LLM 運行速度的開源工具",
+          "url": "https://llmspeed.dev/",
+          "weightedScore": 226
+        },
+        {
+          "content": "資安社群指出，Google 在背景作業中自動將使用者已登入的多個帳號與裝置手機號碼進行跨帳號關聯，引發隱私與身分隔離失效的高度擔憂。對於開發身分驗證系統、管理多重測試帳號或重視營運隱私隔離（OpSec）的工程師來說，此行為打破了傳統依靠不同帳號進行身分切分的安全邊界，需重新審視雲端帳號管理與雙因子驗證配置策略。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "AdFection: Targeted ads turned into a pipeline for zero-click mercenary spyware",
+          "sourceTitle": "Google is silently linking your phone number across all signed-in accounts",
           "sources": [
             "hn"
           ],
-          "title": "AdFection 攻擊技術曝光：定向廣告系統遭武器化為零點擊間諜軟體傳播管線",
-          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/",
-          "weightedScore": 495
+          "title": "Google 遭揭露靜默關聯同一裝置下所有已登入帳號的手機號碼",
+          "url": "https://www.androidauthority.com/google-auto-phone-number-verification-android-3723117/",
+          "weightedScore": 519
+        },
+        {
+          "content": "開發者撰文深入探討軟體渲染（Software Rendering）的底層實作技術，分享如何在不依賴現代 GPU 加速與圖形 API（如 Vulkan、DirectX）的情況下，完全運用 CPU 進行幾何光柵化、深度緩衝與著色運算。文章不僅回顧了電腦圖形學的基本運算原理，也展示了在受限環境或除錯場景下撰寫高效軟體光柵化引擎的技巧，對系統級程式設計與底層圖形工程師深具參考價值。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "I love software rendering",
+          "sources": [
+            "hn"
+          ],
+          "title": "純軟體渲染技術實作探討：重溫 CPU 逐像素繪製的核心美學",
+          "url": "https://www.jamesfmackenzie.com/2026/10/13/i-love-software-rendering/",
+          "weightedScore": 366
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-09-01T23:58:45.362Z",
-      "url": "https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source"
-    },
-    {
-      "seenAt": "2026-09-01T23:58:45.362Z",
-      "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini"
-    },
-    {
-      "seenAt": "2026-09-01T23:58:45.362Z",
-      "url": "https://blog.cloudflare.com/cache-transcoding"
-    },
-    {
-      "seenAt": "2026-09-01T23:58:45.362Z",
-      "url": "https://cncf.io/blog/2026/08/24/automating-root-cause-analysis-at-scale-multi-signal-correlation-for-cloud-native-incident-response"
-    },
-    {
-      "seenAt": "2026-09-01T23:58:45.362Z",
-      "url": "https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52"
-    },
-    {
-      "seenAt": "2026-09-01T23:58:45.362Z",
-      "url": "https://mvakde.github.io/blog/44-on-arc-1"
-    },
-    {
-      "seenAt": "2026-09-01T23:58:45.362Z",
-      "url": "https://pwning.systems/posts/llm-memory-program-analysis"
-    },
     {
       "seenAt": "2026-09-03T00:01:55.579Z",
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber"
@@ -5059,6 +5004,137 @@
       ],
       "title": "AdFection: Targeted ads turned into a pipeline for zero-click mercenary spyware",
       "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "reddit-localllama"
+      ],
+      "title": "DeepSeek-v4.1-Flash-1017",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Cloudflare and OpenAI: Making AI discovery better for everyone",
+      "url": "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+      "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Multi-repository support and other improvements for GitHub in Slack and Teams",
+      "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "How the Claude Code team does code review",
+      "url": "https://claude.dev/blog/solving-code-review-at-anthropic"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Here are the engineering lessons we learned when live-streaming sports to 32 million people",
+      "url": "https://thenewstack.io/live-streaming-engineering-lessons"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "You could have invented transformers from memory",
+      "url": "https://alexwang.ai/posts/associative-memory"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
+      "url": "https://csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Rewinding the exponential: How we keep hardware usage down",
+      "url": "https://blog.cloudflare.com/rewinding-the-exponential"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Using AI to reverse engineer hardware",
+      "url": "https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+      "url": "https://llmspeed.dev/"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Google is silently linking your phone number across all signed-in accounts",
+      "url": "https://androidauthority.com/google-auto-phone-number-verification-android-3723117"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-17T22:12:40.144Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "I love software rendering",
+      "url": "https://jamesfmackenzie.com/2026/10/13/i-love-software-rendering"
     }
   ]
 }
