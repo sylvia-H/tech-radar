@@ -321,3 +321,10 @@ LFM2.5‑24B（10-14／10-15）、Void（10-16／10-17）、AdFection 零點擊�
 - [x] 降級日補發模式 `replay_date`（隱含乾跑、推告警頻道、不寫狀態）。首次補發 10-08（run 39037275115）：結構化輸出被 Flash 接受，
       但沿用每日策展只選 5／15、漏 GPT‑6／Haiku 5.5 → 使用者同意改為逐則翻譯、不篩選，重跑 10-08。
 - [ ] （觀察）用量 log 是否帶 `schema=json`、有無「拒絕 thinking／結構化輸出設定」warn；Flash 回應字元數是否回到正常區間。
+
+**ADR 0005 候補裁決**（分支 `feat/curation-recent-pushed-projection`；[ADR 0007](../adr/0007-recent-pushed-titles-in-curation-prompt.md)）：
+使用者顧慮 token 增加拉高 Flash 失敗率 → Agent 以 log 說明 503 與 prompt 大小無相關，提議 7 天＋截 60 字＋上限 100＋乾跑量測＋退場條件；
+使用者改為 5 天（重推多半間隔 1～4 天），其餘照提議。實測投影約 72 則／4.2k 字元（約 +1.2～1.4k tokens）。
+- [ ] 乾跑量測輸入／思考 token 與同題候選是否被略過，再決定上線。
+- [ ] （觀察一週）Flash 改用 Lite 天數（基準 10-10～10-17 為 0）、MAX_TOKENS、跨日同題組數（目標每週 ≤1）、是否誤殺同主題新進展；
+      超標即 `RECENT_PUSHED_WINDOW_DAYS = 0` 關閉。

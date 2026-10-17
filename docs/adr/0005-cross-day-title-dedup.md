@@ -1,6 +1,6 @@
 # 0005. 跨日標題去重：seenNews 記標題、近 14 天 Jaccard
 
-- **狀態**：Accepted（限度已知，候補方案待決）
+- **狀態**：Accepted（限度已知；候補方案「prompt 投影」已於 2026-10-17 採用，見 [ADR 0007](0007-recent-pushed-titles-in-curation-prompt.md)）
 - **日期**：2026-10-06
 - **相關**：憲章 V（去重零 LLM）；開發指南 §4.4 第 6 步；`src/news/seen-news.ts` `excludeSeenByTitle`、`src/curation/curation.types.ts` `sourceTitle`、`src/state/state.schema.ts`
 
