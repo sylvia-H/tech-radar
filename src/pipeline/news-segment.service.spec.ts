@@ -55,6 +55,7 @@ interface Mocks {
   service: NewsSegmentService;
   ingest: jest.Mock;
   curate: jest.Mock;
+  translateForReplay: jest.Mock;
   send: jest.Mock;
   postFailureAlert: jest.Mock;
   save: jest.Mock;
@@ -63,17 +64,18 @@ interface Mocks {
 function build(): Mocks {
   const ingest = jest.fn().mockResolvedValue([candidate()]);
   const curate = jest.fn().mockResolvedValue({ items: [curatedItem()], degraded: false } as CuratedDigest);
+  const translateForReplay = jest.fn().mockResolvedValue({ items: [curatedItem()], degraded: false } as CuratedDigest);
   const send = jest.fn().mockResolvedValue(undefined);
   const postFailureAlert = jest.fn().mockResolvedValue(undefined);
   const save = jest.fn().mockResolvedValue(undefined);
 
   const newsIngest = { ingest } as unknown as NewsIngestService;
-  const newsCuration = { curate } as unknown as NewsCurationService;
+  const newsCuration = { curate, translateForReplay } as unknown as NewsCurationService;
   const discord = { send, postFailureAlert } as unknown as DiscordWebhookService;
   const stateStore = { save } as unknown as StateStore;
 
   const service = new NewsSegmentService(stateStore, discord, newsIngest, newsCuration);
-  return { service, ingest, curate, send, postFailureAlert, save };
+  return { service, ingest, curate, translateForReplay, send, postFailureAlert, save };
 }
 
 describe('NewsSegmentService.run — US1 Acceptance（每日晨報端到端）', () => {
@@ -460,8 +462,8 @@ describe('NewsSegmentService.replay — 晨報補發（2026-10-17 新增）', ()
   }
   const REPLAY_NOW = new Date('2026-10-17T03:00:00.000Z');
 
-  it('以當日帶標題的 seenNews 重建候選交 curate；先送黃色說明 embed、再送晨報本體，皆到 alert 頻道；不送 news、不 save、state 不變', async () => {
-    const { service, ingest, curate, send, save, postFailureAlert } = build();
+  it('以當日帶標題的 seenNews 重建候選交 translateForReplay（逐則翻譯、不篩選，不走 curate）；先送黃色說明 embed、再送晨報本體，皆到 alert 頻道；不送 news、不 save、state 不變', async () => {
+    const { service, ingest, curate, translateForReplay, send, save, postFailureAlert } = build();
     const state = replayState();
     const before = JSON.stringify(state);
 
@@ -469,15 +471,14 @@ describe('NewsSegmentService.replay — 晨報補發（2026-10-17 新增）', ()
 
     expect(result).toEqual({ status: 'replay', items: 1 });
     expect(ingest).not.toHaveBeenCalled(); // 不重新抓取
-    expect(curate).toHaveBeenCalledTimes(1);
-    const [cands, boardNames, now] = curate.mock.calls[0] as [NewsCandidate[], Set<string>, Date];
+    expect(curate).not.toHaveBeenCalled();
+    expect(translateForReplay).toHaveBeenCalledTimes(1);
+    const [cands] = translateForReplay.mock.calls[0] as [NewsCandidate[]];
     expect(cands.map((c) => [c.title, c.normalizedUrl, c.domain, c.weightedScore])).toEqual([
       ['First Title', 'https://a.com/1', 'ai', 2],
       ['Second Title', 'https://a.com/2', 'cross', 1],
     ]);
     expect(cands[0]).toEqual(expect.objectContaining({ summary: null, score: null, publishedAt: null, sources: ['hn', 'lobsters-ai'], tier: 1 }));
-    expect(boardNames).toBeInstanceOf(Set);
-    expect(now).toBe(REPLAY_NOW);
 
     expect(send).toHaveBeenCalledTimes(2);
     expect(send.mock.calls.every((c) => c[1] === 'alert')).toBe(true);
@@ -486,8 +487,9 @@ describe('NewsSegmentService.replay — 晨報補發（2026-10-17 新增）', ()
     expect(notice.embeds).toHaveLength(1);
     expect(notice.embeds[0].title).toBe('⚠️ 晨報補發：2026/10/08（翻譯摘要版）');
     expect(notice.embeds[0].color).toBe(COLOR_WARNING);
-    expect(notice.embeds[0].description).toContain('已推 2 則');
-    expect(notice.embeds[0].description).toContain('收錄 1 則');
+    expect(notice.embeds[0].description).toContain('已推的 2 則');
+    expect(notice.embeds[0].description).toContain('翻譯 1 則，1 則未回、保留原文標題');
+    expect(notice.embeds[0].description).toContain('不重新篩選');
     expect(notice.embeds[0].description).toContain('不寫狀態');
     const digestPayload = send.mock.calls[1][0] as { username: string; embeds: Array<{ title: string; color: number }> };
     expect(digestPayload.username).toBe('Tech Radar（補發）');
@@ -500,19 +502,19 @@ describe('NewsSegmentService.replay — 晨報補發（2026-10-17 新增）', ()
   });
 
   it('該日無帶標題條目 → 不策展、不推播、回 items:0', async () => {
-    const { service, curate, send, save } = build();
+    const { service, translateForReplay, send, save } = build();
 
     const result = await service.replay(replayState(), '2026-10-01', REPLAY_NOW);
 
     expect(result).toEqual({ status: 'replay', items: 0 });
-    expect(curate).not.toHaveBeenCalled();
+    expect(translateForReplay).not.toHaveBeenCalled();
     expect(send).not.toHaveBeenCalled();
     expect(save).not.toHaveBeenCalled();
   });
 
-  it('重新策展後精選為空 → 不推播、回 items:0', async () => {
-    const { service, curate, send } = build();
-    curate.mockResolvedValue({ items: [], degraded: false } as CuratedDigest);
+  it('翻譯結果為空 → 不推播、回 items:0', async () => {
+    const { service, translateForReplay, send } = build();
+    translateForReplay.mockResolvedValue({ items: [], degraded: false } as CuratedDigest);
 
     const result = await service.replay(replayState(), DATE, REPLAY_NOW);
 
@@ -520,17 +522,17 @@ describe('NewsSegmentService.replay — 晨報補發（2026-10-17 新增）', ()
     expect(send).not.toHaveBeenCalled();
   });
 
-  it('策展再度降級 → 說明與晨報標題註明降級、不另發降級告警', async () => {
-    const { service, curate, send, postFailureAlert } = build();
-    curate.mockResolvedValue({ items: [curatedItem({ content: null, degraded: true })], degraded: true } as CuratedDigest);
+  it('翻譯整份失敗 → 說明與晨報標題註明、不另發降級告警', async () => {
+    const { service, translateForReplay, send, postFailureAlert } = build();
+    translateForReplay.mockResolvedValue({ items: [curatedItem({ content: null, degraded: true })], degraded: true } as CuratedDigest);
 
     await service.replay(replayState(), DATE, REPLAY_NOW);
 
     const notice = send.mock.calls[0][0] as { embeds: Array<{ title: string; description: string }> };
-    expect(notice.embeds[0].title).toContain('策展再度降級');
-    expect(notice.embeds[0].description).toContain('同樣降級');
+    expect(notice.embeds[0].title).toContain('翻譯失敗');
+    expect(notice.embeds[0].description).toContain('本次翻譯失敗');
     const digestPayload = send.mock.calls[1][0] as { embeds: Array<{ title: string }> };
-    expect(digestPayload.embeds[0].title).toContain('補發，策展降級');
+    expect(digestPayload.embeds[0].title).toContain('補發，翻譯失敗');
     expect(postFailureAlert).not.toHaveBeenCalled();
   });
 

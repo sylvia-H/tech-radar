@@ -4,6 +4,7 @@ import { GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK, LlmError, NEWS_THINKING_
 
 import { NewsCandidate } from '../news/news.types';
 import { CURATION_RESPONSE_JSON_SCHEMA } from './curation-schema';
+import { REPLAY_TRANSLATION_JSON_SCHEMA } from './replay-translation';
 import { NewsCurationService } from './curation.service';
 
 /** 策展呼叫固定帶主型號＋thinking（2026-09-27 起）＋結構化輸出 schema（2026-10-17）；備援同設定、換型號。 */
@@ -634,5 +635,76 @@ describe('NewsCurationService.curate（補位回流 warn 與入選清單 log，2
     expect(result.items).toEqual([]);
     expect(logSpy.mock.calls.some((c) => String(c[0]).startsWith('策展入選'))).toBe(false);
     jest.restoreAllMocks();
+  });
+});
+
+describe('NewsCurationService.translateForReplay（晨報補發只翻譯不篩選，2026-10-17）', () => {
+  const REPLAY_OPTS = { ...NEWS_OPTS, responseJsonSchema: REPLAY_TRANSLATION_JSON_SCHEMA };
+  const REPLAY_FALLBACK_OPTS = { ...FALLBACK_OPTS, responseJsonSchema: REPLAY_TRANSLATION_JSON_SCHEMA };
+  const cands = (): NewsCandidate[] => [
+    makeCandidate({ title: 'Claude Haiku 5.5', normalizedUrl: 'a.com/1', originalUrl: 'https://a.com/1', summary: null, score: null }),
+    makeCandidate({ title: 'GPT‑6', normalizedUrl: 'a.com/2', originalUrl: 'https://a.com/2', summary: null, score: null }),
+  ];
+
+  it('主型號回全部 → 每則都有繁中內容、順序同候選、只呼叫 1 次且帶補發 schema；不篩選', async () => {
+    const raw = JSON.stringify({ items: [{ ref: 1, title: 'GPT‑6 發布', content: '乙' }, { ref: 0, title: 'Claude Haiku 5.5 發布', content: '甲' }] });
+    const generate = jest.fn().mockResolvedValue(raw);
+    const { service } = makeService(generate);
+    const logSpy = jest.spyOn(Logger.prototype, 'log').mockImplementation(() => undefined);
+
+    const digest = await service.translateForReplay(cands());
+
+    expect(generate).toHaveBeenCalledTimes(1);
+    expect(generate).toHaveBeenCalledWith(expect.any(String), REPLAY_OPTS);
+    expect(digest.degraded).toBe(false);
+    expect(digest.items.map((it) => [it.title, it.content, it.url])).toEqual([
+      ['Claude Haiku 5.5 發布', '甲', 'https://a.com/1'],
+      ['GPT‑6 發布', '乙', 'https://a.com/2'],
+    ]);
+    const line = logSpy.mock.calls.map((c) => String(c[0])).find((l) => l.includes('補發翻譯完成')) ?? '';
+    expect(line).toContain('2 則 → 翻譯 2 則');
+    logSpy.mockRestore();
+  });
+
+  it('漏回一則 → 該則保留原文標題 degraded，整份不降級', async () => {
+    const generate = jest.fn().mockResolvedValue(JSON.stringify({ items: [{ ref: 0, title: '甲', content: '甲' }] }));
+    const { service } = makeService(generate);
+
+    const digest = await service.translateForReplay(cands());
+
+    expect(digest.degraded).toBe(false);
+    expect(digest.items[1]).toEqual(expect.objectContaining({ title: 'GPT‑6', content: null, degraded: true }));
+  });
+
+  it('主型號回非 JSON → 改用備援重試一次並採用', async () => {
+    const generate = jest
+      .fn()
+      .mockResolvedValueOnce('不是 JSON')
+      .mockResolvedValueOnce(JSON.stringify({ items: [{ ref: 0, title: '甲', content: '甲' }, { ref: 1, title: '乙', content: '乙' }] }));
+    const { service } = makeService(generate);
+
+    const digest = await service.translateForReplay(cands());
+
+    expect(generate).toHaveBeenCalledTimes(2);
+    expect(generate.mock.calls[1][1]).toEqual(REPLAY_FALLBACK_OPTS);
+    expect(digest.items.every((it) => !it.degraded)).toBe(true);
+  });
+
+  it('主備皆 LlmError → 全部保留原文標題、整份 degraded，不擲錯', async () => {
+    const generate = jest.fn().mockRejectedValue(new LlmError('exhausted'));
+    const { service } = makeService(generate);
+
+    const digest = await service.translateForReplay(cands());
+
+    expect(generate).toHaveBeenCalledTimes(2);
+    expect(digest.degraded).toBe(true);
+    expect(digest.items.map((it) => it.title)).toEqual(['Claude Haiku 5.5', 'GPT‑6']);
+  });
+
+  it('空候選 → 不呼叫 LLM', async () => {
+    const generate = jest.fn();
+    const { service } = makeService(generate);
+    expect(await service.translateForReplay([])).toEqual({ items: [], degraded: false });
+    expect(generate).not.toHaveBeenCalled();
   });
 });

@@ -17,6 +17,12 @@ import { CurationParseError, describeIgnoredKeys, describeMalformed, parseCurati
 import { CURATION_RESPONSE_JSON_SCHEMA } from './curation-schema';
 import { CurationDrop, validateCuration } from './curation-validate';
 import { CuratedDigest, CuratedNewsItem, CurationItemView, CurationLlmResponse } from './curation.types';
+import {
+  buildReplayDigest,
+  buildReplayTranslationPrompt,
+  parseReplayTranslation,
+  REPLAY_TRANSLATION_JSON_SCHEMA,
+} from './replay-translation';
 
 /** `generateWithModelFallback()` 的結果：LLM 原文、實際成功的型號、是否經主型號失敗後降級為備援型號。 */
 interface ModelFallbackResult {
@@ -151,6 +157,51 @@ export class NewsCurationService {
   }
 
   /**
+   * 晨報補發的逐則翻譯（2026-10-17 新增，見 `replay-translation.ts`）：候選是當日已推過的項目，**不篩選**，只把
+   * 每則補成繁中標題＋內容，順序與則數同當日推播。型號與設定同每日策展（Flash 主、Lite 備援、thinking、結構化
+   * 輸出，schema 換成 `REPLAY_TRANSLATION_JSON_SCHEMA`）；主型號回應結構性解析失敗時改用備援重試一次。
+   * 未回或形狀不符的項目保留原文標題（`degraded:true`）；兩型號皆失敗則整份原文標題版。不擲錯。
+   * 補發是人工觸發的單次動作，額外的這 1～2 次呼叫不屬於每日策展（憲章 V 的「每日一次」指排程晨報）。
+   */
+  async translateForReplay(candidates: readonly NewsCandidate[]): Promise<CuratedDigest> {
+    if (candidates.length === 0) {
+      return { items: [], degraded: false };
+    }
+    const prompt = buildReplayTranslationPrompt(candidates);
+    let parsed: ReturnType<typeof parseReplayTranslation> | null = null;
+    let modelStr = '';
+    try {
+      const first = await this.generateWithModelFallback(prompt, REPLAY_TRANSLATION_JSON_SCHEMA);
+      modelStr = first.fellBack ? `${first.model}，主型號失敗後降級至備援` : first.model;
+      try {
+        parsed = parseReplayTranslation(first.raw, candidates.length);
+      } catch (err) {
+        if (!(err instanceof CurationParseError) || first.fellBack) {
+          throw err;
+        }
+        this.logger.warn(
+          `補發翻譯回應解析失敗（${first.model}）：${err.reason}；改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`,
+        );
+        const raw = await this.llm.generate(prompt, curationOptions(GEMINI_MODEL_NEWS_FALLBACK, REPLAY_TRANSLATION_JSON_SCHEMA));
+        modelStr = `${GEMINI_MODEL_NEWS_FALLBACK}，主型號回應解析失敗後改用備援`;
+        parsed = parseReplayTranslation(raw, candidates.length);
+      }
+    } catch (err) {
+      const reason = err instanceof Error ? err.message : String(err);
+      this.logger.warn(`補發翻譯失敗，全部保留原文標題：${reason}（${candidates.length} 則）`);
+      return buildReplayDigest(candidates, new Map());
+    }
+    const digest = buildReplayDigest(candidates, parsed.picks);
+    const missing = digest.items.filter((it) => it.degraded).length;
+    this.logger.log(
+      `補發翻譯完成：${candidates.length} 則 → 翻譯 ${candidates.length - missing} 則` +
+        `${missing > 0 ? `、保留原文標題 ${missing} 則` : ''}` +
+        `${parsed.skipped > 0 ? `（略過形狀不符／越界／重複 ${parsed.skipped} 則）` : ''}（${modelStr}）`,
+    );
+    return digest;
+  }
+
+  /**
    * 以主型號（`GEMINI_MODEL_NEWS`）送出策展 prompt；若擲 `LlmError`（不論 `reason`：`exhausted`＝429
    * 退避耗盡、`error`＝型號 404 下架等不可重試錯誤、`empty`＝空回應），記 warn 後改以備援型號
    * （`GEMINI_MODEL_NEWS_FALLBACK`）重送**同一 prompt 一次**；第二次仍失敗才把錯誤拋給呼叫端走降級。
@@ -171,9 +222,12 @@ export class NewsCurationService {
    * 兩條換型號路徑互斥（本方法已降級為備援者，`resolveResponse` 不再呼叫），故每日最多主型號 1 輪＋
    * 備援 1 輪。
    */
-  private async generateWithModelFallback(prompt: string): Promise<ModelFallbackResult> {
+  private async generateWithModelFallback(
+    prompt: string,
+    schema: Record<string, unknown> = CURATION_RESPONSE_JSON_SCHEMA,
+  ): Promise<ModelFallbackResult> {
     try {
-      const raw = await this.llm.generate(prompt, curationOptions(GEMINI_MODEL_NEWS));
+      const raw = await this.llm.generate(prompt, curationOptions(GEMINI_MODEL_NEWS, schema));
       return { raw, model: GEMINI_MODEL_NEWS, fellBack: false };
     } catch (err) {
       if (!(err instanceof LlmError)) {
@@ -182,7 +236,7 @@ export class NewsCurationService {
       this.logger.warn(
         `策展主型號失敗（${err.reason}，${GEMINI_MODEL_NEWS}），改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`,
       );
-      const raw = await this.llm.generate(prompt, curationOptions(GEMINI_MODEL_NEWS_FALLBACK));
+      const raw = await this.llm.generate(prompt, curationOptions(GEMINI_MODEL_NEWS_FALLBACK, schema));
       return { raw, model: GEMINI_MODEL_NEWS_FALLBACK, fellBack: true };
     }
   }
@@ -279,8 +333,11 @@ export class NewsCurationService {
  * 策展呼叫的 `generate` 選項：指定型號＋thinking（2026-09-27）＋結構化輸出 schema（2026-10-17，ADR 0006）。
  * 主、備援（含解析失敗的備援重試）一律相同，只換型號。
  */
-function curationOptions(model: GeminiModel): LlmGenerateOptions {
-  return { model, thinkingLevel: NEWS_THINKING_LEVEL, responseJsonSchema: CURATION_RESPONSE_JSON_SCHEMA };
+function curationOptions(
+  model: GeminiModel,
+  schema: Record<string, unknown> = CURATION_RESPONSE_JSON_SCHEMA,
+): LlmGenerateOptions {
+  return { model, thinkingLevel: NEWS_THINKING_LEVEL, responseJsonSchema: schema };
 }
 
 /** 解析回應；結構性錯誤（`CurationParseError`）轉為 `{ ok: false }`，其他例外照常上拋。 */
