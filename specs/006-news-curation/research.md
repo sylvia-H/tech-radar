@@ -46,6 +46,10 @@
 **任一步失敗一律擲 `CurationParseError`**，由 `NewsCurationService.curate()` catch 後走 US2 降級路徑
 （FR-011、Edge「LLM 回傳格式無法解析」）；**不做局部搶救**（不嘗試正則挖出片段 picks）。
 
+> **2026-10-17 已被推翻**（[ADR 0006](../../docs/adr/0006-curation-structured-output-and-salvage.md)）：單則形狀不符改為逐則略過並記入
+> `malformed`，主型號回應解析不完整時先改用備援型號重試一次，仍不完整才丟掉壞項、保留其餘；結構性錯誤（非 JSON、缺鍵、非陣列）仍擲錯。
+> 起因 2026-10-08 一則形狀不符就讓整份晨報退回原文標題版。以下原文保留為當時的決策脈絡。
+
 - **去 fence**：若回應被 ```` ```json … ``` ```` 或 ```` ``` … ``` ```` 包住，剝除柵欄再解析
   （沿用 `src/intro/markdown-noise.ts` 對三引號區塊的處理精神，但此處是「取出」柵欄內文而非「刪除」，
   故另寫一個小工具 `stripJsonFence()`，不改 F5 檔案）。

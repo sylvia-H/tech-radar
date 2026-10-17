@@ -111,13 +111,19 @@
   - thinking 只增加 token、不增加請求數，對 RPM／RPD 零成本。型號以 400 拒絕 thinking 參數時，`LlmService` warn 後以同一 prompt
     **不帶 thinking 重送一次**（多 1 次 HTTP、不佔退避次數），不會因設定問題走到備援與降級。用量 log 標 `thinking=high`，「思考 N」為實際思考 token。
   - 實測常態（2026-09-28～10-06）：Flash 首次呼叫多為 503 過載、九天 2 天成功，其餘退 Lite；Lite 思考 4.4～7.7k tokens、Flash 9.3～11.9k；則數皆 11～15。
+    2026-10-07～10-17：Flash 11 天 8 天成功（10-10 起連 8 天），Lite 2 天，10-08 一天 Flash 回應形狀不符而降級（促成 ADR 0006）；Flash 思考 6.9～11.3k。
   - 教訓（沿用）：免費層型號 ID **可能無預警提前下架**（2026-07-19 `gemini-2.5-flash`／`2.5-flash-lite` 在公告日前回 404），`LlmService` 非可重試
     錯誤務必印實際狀態碼與訊息（`errDetail`），否則會被誤判為速率限制；Flash 與 Lite 配額不同級，換型號前先在 AI Studio 確認。
-- **降級路徑（2026-09-12 起）**：主型號失敗 → 備援同 prompt 單次重試 → 仍失敗、或 JSON 解析失敗，才退回純程式排序的原文標題版晨報（§10）
-  並發 Discord 紅色告警。失敗日多出的 1 次備援呼叫是同一次策展的重試、不是第二次策展，不違反憲章 V；成功日仍恰 1 次。
-  解析／驗證失敗不換型號（那是回應內容問題）。
+- **結構化輸出（2026-10-17 起；決策紀錄 [ADR 0006](adr/0006-curation-structured-output-and-salvage.md)）**：策展主、備援呼叫皆帶
+  `responseMimeType: application/json`＋`responseJsonSchema`（`src/curation/curation-schema.ts`，須與 prompt 輸出規則同步），用量 log 標 `schema=json`。
+  型號以 400 拒絕 thinking 或 schema 時，warn 後以**不帶這兩項設定**的純請求重送一次。
+- **降級路徑（2026-09-12 起；2026-10-17 修訂）**：主型號擲 `LlmError` → 備援同 prompt 單次重試。主型號回應**解析不完整**（非 JSON、缺鍵，
+  或任一則形狀不符）→ 同樣改用備援重試一次（已經是備援者不再重試）。仍不完整 → 在可解析的回應中取可用則數多者、**丟掉形狀不符的項目、
+  保留其餘**；兩份皆無可用項目，才退回純程式排序的原文標題版晨報（§10）並發 Discord 紅色告警。失敗日多出的 1 次備援呼叫是同一次策展的重試、
+  不是第二次策展，不違反憲章 V；成功日仍恰 1 次。解析失敗的 warn 只印壞項的鍵名與型別（缺席標「缺」）與回應字元數，不含內容。
 - **看什麼**：告警頻道的 429／型號 404／「晨報策展降級」紅色 embed；Actions log 的「LLM 呼叫失敗（<型號>，status=…）」、
-  「策展主型號失敗…改以備援型號」、「LLM 拒絕 thinking 設定」（出現則改試 `thinkingBudget`）。本機測試前先看當日已用的 Flash 次數。
+  「策展主型號失敗…改以備援型號」、「策展回應解析不完整」「策展回應丟棄形狀不符 N 則」、「LLM 拒絕 thinking／結構化輸出設定」（出現則
+  thinking 或 schema 被型號拒絕，須另案處理）。本機測試前先看當日已用的 Flash 次數。
 - ⚠️ 免費層 prompt 可能被拿去改善模型 → 本專案只送公開資料，OK。加 429 指數退避。
 
 ### 2.5 GitHub API：Personal Access Token
@@ -648,7 +654,7 @@ on:
     - cron: "7 20 * * *" # 04:07 台北 · 每日晨報（主排）
     - cron: "37 20 * * *" # 04:37 台北 · 補跑（主排被 Actions 跳過時遞補；靠 lastNewsPushAt guard 去重）
   workflow_dispatch:
-    inputs: { dry_run: { type: boolean, default: false } } # 晨報乾跑，見 §8.x
+    inputs: { dry_run: { type: boolean, default: false }, replay_date: { type: string, default: '' } } # 晨報乾跑／降級日補發，見 §8.x
 permissions:
   contents: write # 為了 commit state 分支上的 state/board.json
 concurrency:
@@ -714,6 +720,11 @@ jobs:
   **不推晨報頻道、不寫 `seenNews`／`lastNewsPushAt`／`publish`、不 save、不跑榜單段**，workflow 的
   state commit 步驟與 `publish` job 一併跳過。策展入選清單、LLM 用量（含 thinking token）與回流 warn 都在
   Actions log。用途：調 prompt／型號／thinking 後立即驗證。乾跑失敗直接讓 workflow 失敗（不走 best-effort 告警）。
+- **降級日補發（`replay_date` 輸入 → `NEWS_REPLAY_DATE=YYYY-MM-DD`，台北日期，隱含乾跑；2026-10-17 新增，[ADR 0006](adr/0006-curation-structured-output-and-salvage.md)）**：
+  `PipelineService.runNewsReplay()` → `NewsSegmentService.replay()`——取該日 `seenNews` 中帶 `title` 的條目（2026-10-06 起才有）重建候選
+  （無摘要、無分數；`general` 或缺領域者視為未歸類），重新策展後先送一則 warning embed 說明補發原因，再送翻譯摘要版，全部推到**告警頻道**；
+  與乾跑同樣不寫狀態、跳過 state commit 與 `publish` job。用途：策展降級日事後補一份繁中版。內容只能依標題改寫，LLM 也可能略去不重要者。
+  觸發：`gh workflow run radar.yml --ref <branch> -f dry_run=true -f replay_date=2026-10-08`。
 - 另兩個本機除錯模式不變：`NEWS_INGEST_OBSERVE=1`（只跑漏斗、不呼叫 LLM）、`PUBLISH_MODE=1`（只跑發佈段）。
 
 ## 9. NestJS 專案結構
@@ -761,7 +772,7 @@ bootstrap();
 - **新聞策展固定每日 1 次、不用 embeddings**：跨來源去重主力是零 LLM 的 target-URL 正規化（§4.4 階段 A）；殘留重複交給那唯一一次策展呼叫順手處理。**不建向量檢索/embeddings**——素材小、context-stuffing 即可，一次看到全部候選標題就能做完 embeddings 想做的事。用量與候選數無關。
 - **選重要而非選熱門**：策展 prompt 明講「重要 ≠ 熱門」，優先會改變開發者做事方式的內容（新工具/版本、breaking change、安全通報、重大模型/API 發布、deprecation），壓低純爆紅口水/觀點文；分數只當提示、非排序主鍵。
 - **防幻覺**：prompt 明確要求「只依提供資料、不得杜撰數字/連結」；星數與連結一律由程式提供、不經 LLM（新聞策展同理，只選擇/去重/依 title+summary 改寫繁中摘要，不造連結、分數或來源沒有的事實）。
-- **退避**：429 用指數退避 + jitter；單一 repo 簡介失敗不阻斷整批（該卡改顯示 description 當備援）；策展 Flash 呼叫失敗時先以 Lite 用同一 prompt 單次重試（§2.4），仍失敗才退回「純程式排序（分數 + 交叉驗證/tier + 榜單相關性）取前 10」當備援並發紅色降級告警，不阻斷晨報——此時每則僅有「原文標題＋連結」（無繁中 70/500 改寫），屬可接受的降級。
+- **退避**：429 用指數退避 + jitter；單一 repo 簡介失敗不阻斷整批（該卡改顯示 description 當備援）；策展 Flash 呼叫失敗或回應解析不完整時先以 Lite 用同一 prompt 單次重試，仍不完整則丟掉形狀不符的項目、保留其餘（§2.4），兩份皆無可用項目才退回「純程式排序（分數 + 交叉驗證/tier + 榜單相關性）取前 10」當備援並發紅色降級告警，不阻斷晨報——此時每則僅有「原文標題＋連結」（無繁中 70/500 改寫），屬可接受的降級。
 
 ---
 
