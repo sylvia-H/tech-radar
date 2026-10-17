@@ -722,8 +722,9 @@ jobs:
   Actions log。用途：調 prompt／型號／thinking 後立即驗證。乾跑失敗直接讓 workflow 失敗（不走 best-effort 告警）。
 - **降級日補發（`replay_date` 輸入 → `NEWS_REPLAY_DATE=YYYY-MM-DD`，台北日期，隱含乾跑；2026-10-17 新增，[ADR 0006](adr/0006-curation-structured-output-and-salvage.md)）**：
   `PipelineService.runNewsReplay()` → `NewsSegmentService.replay()`——取該日 `seenNews` 中帶 `title` 的條目（2026-10-06 起才有）重建候選
-  （無摘要、無分數；`general` 或缺領域者視為未歸類），重新策展後先送一則 warning embed 說明補發原因，再送翻譯摘要版，全部推到**告警頻道**；
-  與乾跑同樣不寫狀態、跳過 state commit 與 `publish` job。用途：策展降級日事後補一份繁中版。內容只能依標題改寫，LLM 也可能略去不重要者。
+  （無摘要、無分數），以 `NewsCurationService.translateForReplay()` **逐則翻譯、不重新篩選**（順序同原推播，未回者保留原文標題；
+  首版沿用每日策展，10-08 實測 15 選 5、漏掉 GPT‑6／Haiku 5.5，故改為只翻譯），先送一則 warning embed 說明補發原因，再送翻譯版，全部推到
+  **告警頻道**；與乾跑同樣不寫狀態、跳過 state commit 與 `publish` job。用途：策展降級日事後補一份繁中版。內容只能依標題撰寫、篇幅較短。
   觸發：`gh workflow run radar.yml --ref <branch> -f dry_run=true -f replay_date=2026-10-08`。
 - 另兩個本機除錯模式不變：`NEWS_INGEST_OBSERVE=1`（只跑漏斗、不呼叫 LLM）、`PUBLISH_MODE=1`（只跑發佈段）。
 
