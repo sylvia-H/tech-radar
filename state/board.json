@@ -422,125 +422,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-18T22:23:11.316Z",
-  "lastNewsPushAt": "2026-10-19T23:33:46.783Z",
+  "lastNewsPushAt": "2026-10-20T23:08:36.444Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-18T22:23:11.316Z",
       "summary": "本次榜單共新進 7 個項目，其中 AI 佔 6 個、前後端佔 1 個，下降 2 個，並由 morluto/rea 奪下綜合榜 #1。"
     },
     "feed": [
-      {
-        "content": "Fish 發布最新語音合成模型 Drama 3 35B3A，採用 35B 混合專家（MoE）架構。社群實測指出該模型在 DGX Spark 上運作良好，且 4-bit 量化版本的輸出品質非常接近原始權重，並已提供開源權重與本機推論 Demo。這讓需要高品質在地端執行 Text-to-Speech 的開發者獲得了極具競爭力的開源新選擇。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x6f9p2/new_tts_king_in_town_fishs_drama_3_35b3a",
-        "publishedAt": "2026-10-16T22:45:53.308Z",
-        "title": "Fish Audio 開源新一代語音合成模型 Drama 3 35B3A：MoE 架構與 4-bit 量化實測",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6f9p2/new_tts_king_in_town_fishs_drama_3_35b3a/"
-      },
-      {
-        "content": "CNCF 畢業專案 Kyverno 長期用於 Kubernetes 設定安全與準入控制（Admission Control）。面對新興的 AI 叢集與大型模型推論工作負載，文章探討如何將 Kyverno 策略進一步延伸到運行時（Runtime）安全防護，解決傳統準入控制無法涵蓋的動態行為與運行時威脅，提升雲原生 AI 基礎設施的整體安全基線。",
-        "id": "news:https://cncf.io/blog/2026/10/15/extending-kubernetes-policy-enforcement-to-runtime-security-for-ai-workloads",
-        "publishedAt": "2026-10-16T22:45:53.308Z",
-        "title": "將 Kubernetes Kyverno 策略引擎延伸至 AI 工作負載的運行時安全防護",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/10/15/extending-kubernetes-policy-enforcement-to-runtime-security-for-ai-workloads/"
-      },
-      {
-        "content": "硬體駭客與開源社群成功在越獄的 PlayStation 5 主機 GPU 上部署並運行 Qwen 27B 模型，實測推論速度達到每秒約 20 個 Token。這項極客實驗驗證了消費級遊戲主機硬體在邊緣大模型推論上的潛力，為低成本硬體自建本地推論節點提供了有趣的技術實證。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x5ak2n/someone_is_running_qwen_27b_at_20_toks_on_a",
-        "publishedAt": "2026-10-16T22:45:53.308Z",
-        "title": "開發者在越獄 PS5 上成功以 20 tok/s 速度運行 Qwen 27B 大模型",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5ak2n/someone_is_running_qwen_27b_at_20_toks_on_a/"
-      },
-      {
-        "content": "一項針對勞動力市場任務的研究指出，美國工作人口 90% 的工作時間所從事的任務，在現有各大主流 AI Benchmark 中並未得到良好涵蓋。這突顯出當前以學術測試或合成問答為主的 AI 基準測試與真實世界軟體工程及商業工作流程存在巨大鴻溝，提醒開發者與企業在評估導入 LLM 時應避免單純依賴公開基準分數，需建立符合實際業務場景的評估指標。",
-        "id": "news:https://mercor.com/research/labor-index/benchmark-map",
-        "publishedAt": "2026-10-16T22:45:53.308Z",
-        "title": "實證研究：美國 90% 的工時任務無法被現行 AI 評測基準有效覆蓋",
-        "type": "news",
-        "url": "https://www.mercor.com/research/labor-index/benchmark-map/"
-      },
-      {
-        "content": "開發者分享了在瀏覽器環境中運行輕量語言模型以實作檢索增強生成（RAG）的實踐方案。透過 Web 平台直接在客戶端完成向量檢索與推論，無需將資料傳送至雲端伺服器，既保障了使用者隱私，也大幅降低了後端算力成本，為邊緣端隱私優先的 Web AI 應用提供了實用參考。",
-        "id": "news:https://bart.degoe.de/rag-with-a-small-language-model-in-the-browser",
-        "publishedAt": "2026-10-16T22:45:53.308Z",
-        "title": "在瀏覽器端利用小型語言模型（SLM）實作完全本地的 RAG 架構",
-        "type": "news",
-        "url": "https://bart.degoe.de/rag-with-a-small-language-model-in-the-browser/"
-      },
-      {
-        "content": "資安研究揭露名為 AdFection 的新型攻擊機制，攻擊者將商業定向廣告網路轉化為零點擊（Zero-click）傭兵間諜軟體的傳遞管道。受害者無需點擊任何惡意連結，僅透過廣告展示與定位機制即可遭到感染。該事件凸顯了數位廣告生態系中的深層供應鏈與隱私防護漏洞，對端點安全與企業網路流量過濾機制帶來了嚴峻挑戰。",
-        "id": "news:https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware",
-        "publishedAt": "2026-10-16T22:45:53.308Z",
-        "title": "AdFection 攻擊技術曝光：定向廣告系統遭武器化為零點擊間諜軟體傳播管線",
-        "type": "news",
-        "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
-      },
-      {
-        "content": "DeepSeek 推出新版模型 DeepSeek-v4.1-Flash-1017，在多項開源權重模型評測中取得領先地位。該版本著重於提升推論效率與任務表現，提供更強大的程式碼生成與邏輯推理能力。對於開發者而言，這代表開源社群再度迎來具備極高性價比的高效能模型選項，能在本地或私有雲環境中以更低延遲執行複雜的代理任務與程式生成，大幅降低對封閉商業 API 的依賴。",
-        "id": "news:https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "DeepSeek 發布 DeepSeek-v4.1-Flash-1017，刷新開源模型評測基準",
-        "type": "news",
-        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
-      },
-      {
-        "content": "Cloudflare 宣布與 OpenAI 合作，共同建立更有效率的 AI 內容探索與檢索架構。此合作旨在讓 AI 系統更即時地追蹤網頁內容變更，同時大幅減少爬蟲對網站發出的無效重複請求。對於網站維運與後端工程師而言，這項機制有助於降低因 AI 爬蟲造成的伺服器流量與負載壓力，並確保網站最新內容能更準確、快速地被 AI 搜尋與模型檢索到。",
-        "id": "news:https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "Cloudflare 與 OpenAI 展開合作，優化 AI 網路爬蟲索引與快取效率",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/"
-      },
-      {
-        "content": "Google DeepMind 與新加坡 GovTech 合作，微調輕量級 Gemma 模型應用於私密通訊中的詐騙對話攔截。該方案完全在使用者本機端（On-device）運行推論，達到零雲端資料外傳（zero cloud data egress）的安全標準。這項落地實踐展示了如何在極端注重隱私與資料合規的場景下部署小型語言模型（SLM）實現即時防護，為注重隱私保護的 AI 應用架構提供了極佳參考。",
-        "id": "news:https://deepmind.google/blog/on-device-ai-scam-detection-mddi",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "Google DeepMind 攜手新加坡政府，運用輕量 Gemma 模型實作端側防詐檢測",
-        "type": "news",
-        "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/"
-      },
-      {
-        "content": "GitHub 針對 Slack 與 Microsoft Teams 的官方整合外掛推出重要更新，正式支援在單一對話頻道中跨多個儲存庫（Multi-repository）進行操作。開發者現在可以直接在通訊軟體內跨專案建立 Issue、發起 Pull Request 或排查錯誤。這項變更簡化了微服務架構或多專案團隊的日常維運工作流，降低開發者在不同聊天視窗與程式碼庫間切換 Context 的認知成本。",
-        "id": "news:https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "GitHub 擴充 Slack 與 Teams 整合功能，支援跨多儲存庫操作與協同",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates"
-      },
-      {
-        "content": "Anthropic 分享了 Claude Code 開發團隊內部的程式碼審查（Code Review）流程，探討工程團隊如何在高強度 AI 輔助編程的環境下維持程式品質與工程嚴謹性。內容著重於如何定位 AI 生成程式碼的審查邊界、建立驗證機制，以及避免過度依賴造成的架構腐化。對於正導入 AI 程式碼輔助工具的工程團隊而言，提供了極具價值的實務協作準則與工程文化借鏡。",
-        "id": "news:https://claude.dev/blog/solving-code-review-at-anthropic",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "Anthropic Claude Code 團隊揭秘內部程式碼審查與人機協作實務",
-        "type": "news",
-        "url": "https://claude.dev/blog/solving-code-review-at-anthropic/"
-      },
-      {
-        "content": "The New Stack 專文分析了向 3,200 萬名觀眾即時串流大型體育賽事背後的系統架構與工程挑戰。文章剖析了在毫秒級延遲要求下，如何處理瞬間爆發的流量洪峰、確保影音串流的同步播放一致性，以及大規模邊緣節點快取與容錯設計。對於建構大規模低延遲分散式系統與高併發架構的後端及 DevOps 工程師而言，提供了寶貴的第一手大規模生產環境實務經驗。",
-        "id": "news:https://thenewstack.io/live-streaming-engineering-lessons",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "支撐 3,200 萬人同時觀看：大型即時體育賽事串流架構經驗談",
-        "type": "news",
-        "url": "https://thenewstack.io/live-streaming-engineering-lessons/"
-      },
-      {
-        "content": "技術深度文章《You could have invented transformers from memory》從注意力機制的最基礎直覺出發，引導讀者逐步推導出 Transformer 的核心架構設計。文章捨棄複雜的抽象數學包裝，專注於為何需要 Query、Key、Value 的矩陣運算，以及多頭注意力與位置編碼的工程必然性。這有助於機器學習工程師與開發者徹底理解模型底層運作邏輯，進而在自訂模型架構或微調優化時做出更合理的決策。",
-        "id": "news:https://alexwang.ai/posts/associative-memory",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "從直覺與記憶推導 Transformer 架構：核心運算機制深層解析",
-        "type": "news",
-        "url": "https://alexwang.ai/posts/associative-memory/"
-      },
-      {
-        "content": "針對近期頻傳的 AI 代理安全事件，資安專家深入分析指出，多數攻擊得以成功並非單純因為模型遭到越獄（Jailbreak），而是圍繞在 AI 週邊的系統隔離（Containment）機制與執行時監控嚴重不足。文章探討了如何針對具有工具調用權限的 AI Agent 設計權限沙盒與監控管道。這對正在將 LLM 整合進生產環境、賦予 API 存取權限的架構師與資安工程師而言，是極為關鍵的架構防禦指引。",
-        "id": "news:https://csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "資安專家剖析 AI 駭侵事件成因：系統隔離與即時監控機制缺失才是關鍵",
-        "type": "news",
-        "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html"
-      },
       {
         "content": "資料工程團隊深入分享如何在不犧牲資料品質的前提下，逆轉指數級增長的硬體資源開銷。文章詳細介紹了資料管線（Data Pipeline）中的批次處理調校、記憶體瓶頸排查與資料流重塑策略，讓高吞吐量管線能在有限硬體下維持穩定運行。這為面臨大規模資料成長、雲端算力成本高漲的資料工程師與 DevOps 團隊提供了具體可執行的效能與成本優化路徑。",
         "id": "news:https://blog.cloudflare.com/rewinding-the-exponential",
@@ -821,226 +709,324 @@
         "title": "Wine 成功移植至 OpenBSD：拓展 BSD 生態系的 Windows 相容層支援",
         "type": "news",
         "url": "https://marc.info/?l=openbsd-ports&m=179236125692175"
+      },
+      {
+        "content": "DeepSeek 正式開源針對其模型架構優化的高效能、大規模推論框架 DeepInfer。該框架專為 DeepSeek 系列模型設計，提供深入的底層推論優化，有助於開發者深入研究並提升現有自訂推論引擎（如 gufo、halogen、strata 等）的執行效能與吞吐量，對需要私有化部署與大規模運行 DeepSeek 模型的架構師與開發團隊來說是重要開源資源。",
+        "id": "news:https://github.com/deepseek-ai/DeepInfer",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "DeepSeek 開源高效能推論框架 DeepInfer",
+        "type": "news",
+        "url": "https://github.com/deepseek-ai/DeepInfer"
+      },
+      {
+        "content": "微軟宣布釋出 TypeScript 7.1 Beta，現已可透過 npm 進行下載與測試。作為廣大前後端生態系的核心語言，TypeScript 每個次版本的預覽都帶來型別推斷、編譯效能與語法支援的演進，開發者可提前在測試環境評估新特性並驗證專案相容性。",
+        "id": "news:https://github.com/microsoft/TypeScript/releases/tag/v7.1-beta",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "微軟發布 TypeScript 7.1 Beta 版",
+        "type": "news",
+        "url": "https://github.com/microsoft/TypeScript/releases/tag/v7.1-beta"
+      },
+      {
+        "content": "由於發現 eMudhra 的 8 個中間憑證（Intermediate CA）使用了弱金鑰，導致憑證安全性遭到妥協。Cloudflare 已緊急部署緩解措施並發布客戶端更新，同時說明該事件對整體網路信任鏈的影響，並建議受影響的客戶與開發者檢查自身憑證設定並盡快套用對應修正。",
+        "id": "news:https://blog.cloudflare.com/emudhra-certificate-compromise",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "8 個 eMudhra 中間憑證遭妥協，Cloudflare 部署防護與客戶更新",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/"
+      },
+      {
+        "content": "根據美國國土安全部（DHS）發布的最新命令，美國聯邦民事機構已被全面禁止使用 DeepSeek 模型。這項外部法規直接限制了政府單位及其外包軟體服務商採用該模型的合規性，對於開發與聯邦機構相關業務或有合規審查要求的技術團隊而言，需要立即調整 AI 模型的選型策略與整合架構。",
+        "id": "news:https://reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "美國國土安全部發布新禁令：聯邦民事機構全面禁用 DeepSeek",
+        "type": "news",
+        "url": "https://www.reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19/"
+      },
+      {
+        "content": "Mistral 推出語音模型 Voxtral 3。作為專注於音訊與語音處理的模型，其發布拓展了開源與商業開發者在語音辨識、語音生成以及多模態語音助理架構上的選擇，為開發端到端語音應用的工程師提供最新基礎模型能力。",
+        "id": "news:https://mistral.ai/news/voxtral-3",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "Mistral 發表新一代語音模型 Voxtral 3",
+        "type": "news",
+        "url": "https://mistral.ai/news/voxtral-3/"
+      },
+      {
+        "content": "Tsrs 專案正式將 TypeScript 編譯器與型別系統移植至 Rust。該專案由 Cloudflare 主導，核心特色在於透過 AI 程式碼 Agent 大量協同撰寫完成，旨在不分叉 TypeScript 生態系的前提下，讓 AI Agent 與開發者能在不耗盡伺服器運算資源的情況下高速驗證程式碼，大幅提升 TypeScript 編譯與型別檢查效能。",
+        "id": "news:https://blog.cloudflare.com/typescript-rust-port",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "Tsrs：由 AI Agent 協同打造的 TypeScript 轉 Rust 移植專案",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/typescript-rust-port/"
+      },
+      {
+        "content": "Cloudflare 開發的 27B 多模態決策模型 Clef 正式上架 Ollama 平台，開發者現在可以選擇在本地端執行，或是直接透過 Ollama Cloud 調用。Clef 專為多模態決策與 Agent 任務設計，支援 Ollama 生態讓開發者能以極低門檻將其整合進本機開發與私有化工作流程中。",
+        "id": "news:https://ollama.com/blog/clef",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "Cloudflare 27B 多模態決策模型 Clef 正式登上 Ollama",
+        "type": "news",
+        "url": "https://ollama.com/blog/clef"
+      },
+      {
+        "content": "Mercury 3 模型發布，聚焦於大規模擴散模型（Diffusion at scale）的訓練與架構實踐。該模型的推出為生成式 AI 領域提供更具擴展性的架構參考，對研究大規模生成技術與落地擴散模型應用的開發者具有重要參考價值。",
+        "id": "news:https://inceptionlabs.ai/blog/introducing-mercury-3",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "大規模擴散模型 Mercury 3 正式發表",
+        "type": "news",
+        "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3"
+      },
+      {
+        "content": "Respan 團隊在開源其以 Rust 撰寫的 AI Gateway 之際，分享了重構決策的技術內幕。團隊先前花費兩年、累積超過 10 萬行程式碼構建在 LiteLLM 之上，但遭遇版本升級帶來的相容性與架構瓶頸，最終痛定思痛決定以 Rust 打掉重構。這篇文章深入探討了維護龐大開源依賴的技術債、效能考量與架構取捨，對微服務及 AI 中介層架構師極具借鏡意義。",
+        "id": "news:https://thenewstack.io/respan-rust-ai-gateway",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "基於 LiteLLM 兩年後決定砍掉重練：Respan 以 Rust 重構開源 AI Gateway",
+        "type": "news",
+        "url": "https://thenewstack.io/respan-rust-ai-gateway/"
+      },
+      {
+        "content": "社群開發者分享如何在 Linux 環境下藉由自製系統服務解決單張 24GB 顯示卡顯存競爭問題。該服務會動態監控 GPU 狀態並在 ComfyUI、llama 與 strata 等推論引擎間無縫置換載入，避免手動切換與孤兒進程長期佔用 VRAM，讓單一工作站能在零顯存衝突下兼顧多項生成任務，為個人與中小團隊本地部署多模型提供了實用的自動化排程思維。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xahi82/24gb_is_plenty_if_your_engines_take_turns",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "單張 24GB GPU 跑多模型：以系統服務動態輪替推論引擎的工程實踐",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xahi82/24gb_is_plenty_if_your_engines_take_turns/"
+      },
+      {
+        "content": "社群針對近期密集釋出的開源權重模型（包括 Meta Muse Spark 等）進行硬體配置與授權條件的橫向技術拆解。分析指出 Meta 宣稱支援桌面級運行的 816B 模型實際上需要兩台各具 512GB 記憶體的頂級 Mac Studio 或四台高階工作站（硬體成本數萬美元），並伴隨特定署名授權要求；反觀 NVIDIA 釋出的模型是少數能在 24GB 消費級顯卡運行的模型。該文深入揭露了當前開源模型在宣傳與工程落地之間的真實硬體差距。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x9d23j/72_hours_four_big_open_weights_drops_the_only_one",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "開源權重模型 72 小時密集釋出：硬體門檻與授權條款深度橫向評測",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x9d23j/72_hours_four_big_open_weights_drops_the_only_one/"
+      },
+      {
+        "content": "一項技術實測揭露了將刻意偽造的統計數據發布於網路後，大型語言模型在搜尋與問答生成時會輕易予以採納並作為權威引用。這項研究點出了現代 LLM 與 RAG 系統在評估外部資料來源可信度時的結構性盲點，對於依賴外部知識庫、網路爬蟲與檢索增強生成架構的開發者而言，凸顯了建立資料驗證與來源過濾管道的迫切性。",
+        "id": "news:https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "偽造統計數據輕易被 LLM 引用：揭露模型檢索與幻覺防禦漏洞",
+        "type": "news",
+        "url": "https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web"
+      },
+      {
+        "content": "開發者深入解析如何利用 Tmux 的 Session 管理機制與 send-keys 指令，將命令列 AI 工具 Claude Code 深度整合至自動化工作流程中。文章不僅詳細介紹操作架構與具體指令模式，也剖析了終端自動化互動的極限與瓶頸，為探索 CLI AI 代理自主編程實務的開發者提供寶貴的第一手工程經驗。",
+        "id": "news:https://crystl.dev/guides/tmux-for-ai-agents",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "Tmux 結合 Claude Code：會話管理、指令發送與自動化極限分析",
+        "type": "news",
+        "url": "https://crystl.dev/guides/tmux-for-ai-agents/"
+      },
+      {
+        "content": "安全導向的開源作業系統 OpenBSD 正式推出 8.0 版本。本次重大版本更新進一步強化了核心安全性、記憶體防護機制與網路堆疊表現，並擴展對現代硬體架構的相容性，為重視高安全性環境、基礎網路建設與 Unix 系統底層工程的開發者提供了穩固的最新系統基底。",
+        "id": "news:https://openbsd.org/80.html",
+        "publishedAt": "2026-10-20T23:08:36.444Z",
+        "title": "OpenBSD 8.0 正式發布：強化系統安全與硬體支援",
+        "type": "news",
+        "url": "https://www.openbsd.org/80.html"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-19T23:33:46.783Z",
+      "generatedAt": "2026-10-20T23:08:36.444Z",
       "items": [
         {
-          "content": "Mistral 正式推出名為 Timestral 的時間序列基礎模型系列。這是該團隊跨出純文字領域、針對時間序列數據預測與分析所打造的模型。對於需要處理金融行情、感測數據、資源負載監控或供應鏈預測的開發者而言，Timestral 提供了新的開源與 API 基礎模型選項，有望降低時間序列預測系統的建置與微調門檻。",
+          "content": "DeepSeek 正式開源針對其模型架構優化的高效能、大規模推論框架 DeepInfer。該框架專為 DeepSeek 系列模型設計，提供深入的底層推論優化，有助於開發者深入研究並提升現有自訂推論引擎（如 gufo、halogen、strata 等）的執行效能與吞吐量，對需要私有化部署與大規模運行 DeepSeek 模型的架構師與開發團隊來說是重要開源資源。",
           "degraded": false,
           "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "DeepInfer: High-performance inference framework for DeepSeek models",
+          "sources": [
+            "hn"
+          ],
+          "title": "DeepSeek 開源高效能推論框架 DeepInfer",
+          "url": "https://github.com/deepseek-ai/DeepInfer",
+          "weightedScore": 2077
+        },
+        {
+          "content": "微軟宣布釋出 TypeScript 7.1 Beta，現已可透過 npm 進行下載與測試。作為廣大前後端生態系的核心語言，TypeScript 每個次版本的預覽都帶來型別推斷、編譯效能與語法支援的演進，開發者可提前在測試環境評估新特性並驗證專案相容性。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "gh-typescript",
+          "sourceTitle": "TypeScript 7.1 Beta",
+          "sources": [
+            "gh-typescript"
+          ],
+          "title": "微軟發布 TypeScript 7.1 Beta 版",
+          "url": "https://github.com/microsoft/TypeScript/releases/tag/v7.1-beta",
+          "weightedScore": 100
+        },
+        {
+          "content": "由於發現 eMudhra 的 8 個中間憑證（Intermediate CA）使用了弱金鑰，導致憑證安全性遭到妥協。Cloudflare 已緊急部署緩解措施並發布客戶端更新，同時說明該事件對整體網路信任鏈的影響，並建議受影響的客戶與開發者檢查自身憑證設定並盡快套用對應修正。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "8 eMudhra certificates are compromised. Here's what you need to know",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "8 個 eMudhra 中間憑證遭妥協，Cloudflare 部署防護與客戶更新",
+          "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+          "weightedScore": 50
+        },
+        {
+          "content": "根據美國國土安全部（DHS）發布的最新命令，美國聯邦民事機構已被全面禁止使用 DeepSeek 模型。這項外部法規直接限制了政府單位及其外包軟體服務商採用該模型的合規性，對於開發與聯邦機構相關業務或有合規審查要求的技術團隊而言，需要立即調整 AI 模型的選型策略與整合架構。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "DeepSeek banned from U.S. federal civilian agencies under new DHS order",
+          "sources": [
+            "hn"
+          ],
+          "title": "美國國土安全部發布新禁令：聯邦民事機構全面禁用 DeepSeek",
+          "url": "https://www.reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19/",
+          "weightedScore": 548
+        },
+        {
+          "content": "Mistral 推出語音模型 Voxtral 3。作為專注於音訊與語音處理的模型，其發布拓展了開源與商業開發者在語音辨識、語音生成以及多模態語音助理架構上的選擇，為開發端到端語音應用的工程師提供最新基礎模型能力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Voxtral 3",
+          "sources": [
+            "hn"
+          ],
+          "title": "Mistral 發表新一代語音模型 Voxtral 3",
+          "url": "https://mistral.ai/news/voxtral-3/",
+          "weightedScore": 472
+        },
+        {
+          "content": "Tsrs 專案正式將 TypeScript 編譯器與型別系統移植至 Rust。該專案由 Cloudflare 主導，核心特色在於透過 AI 程式碼 Agent 大量協同撰寫完成，旨在不分叉 TypeScript 生態系的前提下，讓 AI Agent 與開發者能在不耗盡伺服器運算資源的情況下高速驗證程式碼，大幅提升 TypeScript 編譯與型別檢查效能。",
+          "degraded": false,
+          "domain": "frontend-backend",
           "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "Timestral: Mistral's time-series foundation models",
+          "sourceTitle": "Tsrs: A Port of TypeScript to Rust",
           "sources": [
-            "hn",
-            "lobsters-ai"
+            "cloudflare-blog",
+            "hn"
           ],
-          "title": "Mistral 發表時間序列基礎模型 Timestral",
-          "url": "https://mistral.ai/news/timestral/",
-          "weightedScore": 626
+          "title": "Tsrs：由 AI Agent 協同打造的 TypeScript 轉 Rust 移植專案",
+          "url": "https://blog.cloudflare.com/typescript-rust-port/",
+          "weightedScore": 424
         },
         {
-          "content": "Google 正式開源 Harness2 框架，可將任何 AI 測試與執行環境轉化為隨時間自我進化的系統。傳統上系統提示詞、工具集、記憶體與子代理人等配置皆由工程師靜態設定；Harness2 讓 Agent 能針對個別任務自主提出環境配置調整建議，並在執行多個候選版本後透過效能評估挑選最佳配置，無需依賴標準答案或梯度反向傳播。",
+          "content": "Cloudflare 開發的 27B 多模態決策模型 Clef 正式上架 Ollama 平台，開發者現在可以選擇在本地端執行，或是直接透過 Ollama Cloud 調用。Clef 專為多模態決策與 Agent 任務設計，支援 Ollama 生態讓開發者能以極低門檻將其整合進本機開發與私有化工作流程中。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "Google Open Sources Harness2 for Self Improving AI Agents",
+          "sourceId": "ollama-blog",
+          "sourceTitle": "Clef is available on Ollama's cloud",
           "sources": [
-            "reddit-localllama"
+            "ollama-blog"
           ],
-          "title": "Google 開源 Harness2：讓 AI Agent 自主反覆優化執行環境配置",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x9gfnb/google_open_sources_harness2_for_self_improving/",
+          "title": "Cloudflare 27B 多模態決策模型 Clef 正式登上 Ollama",
+          "url": "https://ollama.com/blog/clef",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 發表名為 Clairic 的全新 System One 等級萃取模型，專門用於從非結構化輸入中高速提取、計算、估算與預測數據。對於需要在雲端或邊緣工作流程中大量處理非結構化文字與資料轉換的開發者而言，該模型提供了低延遲且專精的結構化資料萃取能力。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Introducing Clairic, a new System One class of extraction models",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 推出 Clairic 模型：專注非結構化資料萃取與預測",
-          "url": "https://blog.cloudflare.com/clairic-extraction-model/",
-          "weightedScore": 50
-        },
-        {
-          "content": "MiniMax 正式釋出 M3.1 Flash 模型權重，並宣布每 Token 價格減半，聲稱可降低 AI Agent 整體運作成本達 70%。隨著代理人執行長度與工具調用頻率增加，推論成本成為重要考量，M3.1 Flash 為建置高頻調用型自主代理人的開發團隊提供了更高成本效益的模型選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "MiniMax M3.1 Flash released, Model weights Oct 23",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "MiniMax 釋出 M3.1 Flash 模型權重並大幅調降 Token 費率",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x9uzv9/minimax_m31_flash_released_model_weights_oct_23/",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 宣布自 2026 年 10 月 19 日起，在 Copilot 各項主要體驗（包含 Copilot Chat、行內編輯、詢問與 Agent 模式、程式碼補全）中正式淘汰數款舊版底層模型。依賴特定舊模型行為或輸出特性的工程團隊應儘速檢查擴充功能與工作流程，確保平順轉移至目前支援的新版模型。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot models deprecated on October 19, 2026",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub 宣布即日起正式淘汰 Copilot 多項舊版底層模型",
-          "url": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 推出全新的 Copilot 模型策略 REST API，提供 GET 與 PATCH 端點。企業管理員與平台工程團隊現在能以程式化方式查詢與更新企業、組織及團隊層級的 Copilot 模型使用策略，便於大型組織自動化實施 AI 工具的安全合規與存取控管。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Copilot model policy API for enterprise, orgs, and teams",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub 推出 Copilot 模型策略 REST API，支援企業自動化治理",
-          "url": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
-          "weightedScore": 100
-        },
-        {
-          "content": "針對 NetScaler Gateway 爆發的重大漏洞 CVE-2026-88771，攻擊者可在使用者通過身分驗證前遠端執行指令。由於修補程式部署需要驗證時間，安全團隊建議將身分驗證決策前移至易受攻擊的程式碼之前，藉由架構層的防護機制建立防禦縱深，防止閘道端暴露於即時漏洞風險。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Beyond the patch: Protecting your NetScaler gateway against future vulnerabilities",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "NetScaler Gateway 重大預驗證 RCE 漏洞 CVE-2026-88771 防護策略",
-          "url": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
-          "weightedScore": 50
-        },
-        {
-          "content": "OpenAI 分享其在提升 ChatGPT 處理低資源程式語言（low-resource languages）能力的最新進展，並針對軟體工程、SQLite 及 COBOL 遷移等場景建立全新評測基準。此進展對負責企業遺留系統現代化重構與特定領域語言維護的工程師而言，能顯著改善程式碼分析與遷移品質。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Advancing Coding in Low-Resource Programming Languages",
-          "sources": [
-            "openai-blog"
-          ],
-          "title": "OpenAI 強化低資源語言編程能力，加強 COBOL 與 SQLite 評測",
-          "url": "https://openai.com/index/low-resource-programming-languages",
-          "weightedScore": 100
-        },
-        {
-          "content": "Kubernetes 長期仰賴排程器（Scheduler）與節點自動擴展器（Autoscaler）兩套各自獨立的控制迴路運作，但 AI 訓練與推論負載對 GPU 拓撲、批次放置與資源保留有極嚴格要求，打破了兩者鮮少互動的傳統模式。深入理解兩大控制迴路的互動轉變，是平台工程師打造高效能大規模 AI 叢集的關鍵。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "How AI workloads are reshaping Kubernetes autoscaling",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "AI 負載如何顛覆 Kubernetes 排程與自動擴展架構",
-          "url": "https://www.cncf.io/blog/2026/10/19/how-ai-workloads-are-reshaping-kubernetes-autoscaling/",
-          "weightedScore": 100
-        },
-        {
-          "content": "該技術研究提出 Hybrid Reasoning Agents 架構，讓大型語言模型在連續的潛在空間（latent space）中進行深層推理與思考搜尋，僅在與外部環境互動時輸出離散文字。這項設計克服了純文字思考鏈（CoT）高 Token 消耗與離散搜尋效率受限的問題，為下一代自主代理人系統設計提供了新思路。",
+          "content": "Mercury 3 模型發布，聚焦於大規模擴散模型（Diffusion at scale）的訓練與架構實踐。該模型的推出為生成式 AI 領域提供更具擴展性的架構參考，對研究大規模生成技術與落地擴散模型應用的開發者具有重要參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",
+          "sourceTitle": "Mercury 3: Diffusion at scale",
           "sources": [
             "hn"
           ],
-          "title": "混合推理代理人架構：結合潛在空間思考與文字行動的 LLM Agent",
-          "url": "https://arxiv.org/abs/2610.18861",
-          "weightedScore": 502
+          "title": "大規模擴散模型 Mercury 3 正式發表",
+          "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+          "weightedScore": 255
         },
         {
-          "content": "文章深入探討在生產架構中部署專屬 LLM Proxy 的必要性。若應用層直接呼叫第三方模型端點，開發團隊將難以掌握詳細 Token 用量、延遲分佈、重試狀態與隱私風險。透過自建 Proxy，團隊能集中實作快取、速率限制、金鑰輪替與成本監控，大幅強化系統掌控力。",
+          "content": "Respan 團隊在開源其以 Rust 撰寫的 AI Gateway 之際，分享了重構決策的技術內幕。團隊先前花費兩年、累積超過 10 萬行程式碼構建在 LiteLLM 之上，但遭遇版本升級帶來的相容性與架構瓶頸，最終痛定思痛決定以 Rust 打掉重構。這篇文章深入探討了維護龐大開源依賴的技術債、效能考量與架構取捨，對微服務及 AI 中介層架構師極具借鏡意義。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Respan spent two years building on LiteLLM. One upgrade made it start over.",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "基於 LiteLLM 兩年後決定砍掉重練：Respan 以 Rust 重構開源 AI Gateway",
+          "url": "https://thenewstack.io/respan-rust-ai-gateway/",
+          "weightedScore": 50
+        },
+        {
+          "content": "社群開發者分享如何在 Linux 環境下藉由自製系統服務解決單張 24GB 顯示卡顯存競爭問題。該服務會動態監控 GPU 狀態並在 ComfyUI、llama 與 strata 等推論引擎間無縫置換載入，避免手動切換與孤兒進程長期佔用 VRAM，讓單一工作站能在零顯存衝突下兼顧多項生成任務，為個人與中小團隊本地部署多模型提供了實用的自動化排程思維。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "24GB is plenty if your engines take turns",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "單張 24GB GPU 跑多模型：以系統服務動態輪替推論引擎的工程實踐",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xahi82/24gb_is_plenty_if_your_engines_take_turns/",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群針對近期密集釋出的開源權重模型（包括 Meta Muse Spark 等）進行硬體配置與授權條件的橫向技術拆解。分析指出 Meta 宣稱支援桌面級運行的 816B 模型實際上需要兩台各具 512GB 記憶體的頂級 Mac Studio 或四台高階工作站（硬體成本數萬美元），並伴隨特定署名授權要求；反觀 NVIDIA 釋出的模型是少數能在 24GB 消費級顯卡運行的模型。該文深入揭露了當前開源模型在宣傳與工程落地之間的真實硬體差距。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "72 hours, four big open weights drops. The only one that fits in 24GB came from NVIDIA, of all companies.",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "開源權重模型 72 小時密集釋出：硬體門檻與授權條款深度橫向評測",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x9d23j/72_hours_four_big_open_weights_drops_the_only_one/",
+          "weightedScore": 100
+        },
+        {
+          "content": "一項技術實測揭露了將刻意偽造的統計數據發布於網路後，大型語言模型在搜尋與問答生成時會輕易予以採納並作為權威引用。這項研究點出了現代 LLM 與 RAG 系統在評估外部資料來源可信度時的結構性盲點，對於依賴外部知識庫、網路爬蟲與檢索增強生成架構的開發者而言，凸顯了建立資料驗證與來源過濾管道的迫切性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "If you don't run your own LLM proxy, how do you know whats going on?",
+          "sourceTitle": "Publish fake stats, get cited in LLMs",
           "sources": [
             "hn"
           ],
-          "title": "為何生產環境必須自建 LLM Proxy：可觀測性與成本控制核心",
-          "url": "https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on/",
-          "weightedScore": 292
+          "title": "偽造統計數據輕易被 LLM 引用：揭露模型檢索與幻覺防禦漏洞",
+          "url": "https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web",
+          "weightedScore": 309
         },
         {
-          "content": "技術指南詳述如何將在獨立 GitHub Copilot App 中啟動的 Agent 工作階段移轉至 VS Code 編輯器內繼續進行。此移轉流程能完整保留對話紀錄、程式碼修改歷史與上下文資訊，讓開發者在跨工具開發流程中維持工作脈絡，避免切換環境時重複輸入提示詞。",
+          "content": "開發者深入解析如何利用 Tmux 的 Session 管理機制與 send-keys 指令，將命令列 AI 工具 Claude Code 深度整合至自動化工作流程中。文章不僅詳細介紹操作架構與具體指令模式，也剖析了終端自動化互動的極限與瓶頸，為探索 CLI AI 代理自主編程實務的開發者提供寶貴的第一手工程經驗。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
-          "sourceTitle": "How to continue a GitHub Copilot app session in VS Code",
+          "sourceId": "hn",
+          "sourceTitle": "Tmux and Claude Code: Sessions, Send-Keys, and the Ceiling",
           "sources": [
-            "github-blog-ai-ml"
+            "hn"
           ],
-          "title": "如何在 VS Code 中無縫延續 GitHub Copilot App 的 Agent 工作階段",
-          "url": "https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/",
-          "weightedScore": 100
+          "title": "Tmux 結合 Claude Code：會話管理、指令發送與自動化極限分析",
+          "url": "https://crystl.dev/guides/tmux-for-ai-agents/",
+          "weightedScore": 166
         },
         {
-          "content": "開源 Windows 相容層 Wine 已被成功移植至 OpenBSD 作業系統。這項成果克服了 OpenBSD 嚴格的安全記憶體保護與系統調用限制，對推動開源作業系統的二進位相容性與生態整合是重要里程碑，讓 OpenBSD 使用者與開發者能直接在該系統環境下執行 Windows 應用程式。",
+          "content": "安全導向的開源作業系統 OpenBSD 正式推出 8.0 版本。本次重大版本更新進一步強化了核心安全性、記憶體防護機制與網路堆疊表現，並擴展對現代硬體架構的相容性，為重視高安全性環境、基礎網路建設與 Unix 系統底層工程的開發者提供了穩固的最新系統基底。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Wine ported to OpenBSD",
+          "sourceTitle": "OpenBSD 8.0",
           "sources": [
             "hn"
           ],
-          "title": "Wine 成功移植至 OpenBSD：拓展 BSD 生態系的 Windows 相容層支援",
-          "url": "https://marc.info/?l=openbsd-ports&m=179236125692175",
-          "weightedScore": 481
+          "title": "OpenBSD 8.0 正式發布：強化系統安全與硬體支援",
+          "url": "https://www.openbsd.org/80.html",
+          "weightedScore": 464
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-09-04T23:55:51.688Z",
-      "url": "https://cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html"
-    },
-    {
-      "seenAt": "2026-09-04T23:55:51.688Z",
-      "url": "https://openai.com/index/daybreak-for-frontline-defenders"
-    },
-    {
-      "seenAt": "2026-09-04T23:55:51.688Z",
-      "url": "https://blog.cloudflare.com/workers-protected-by-access"
-    },
-    {
-      "seenAt": "2026-09-04T23:55:51.688Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1w78ztg/you_can_now_run_a_90m_conversational_llm_on_the"
-    },
-    {
-      "seenAt": "2026-09-04T23:55:51.688Z",
-      "url": "https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot"
-    },
-    {
-      "seenAt": "2026-09-04T23:55:51.688Z",
-      "url": "https://blog.cloudflare.com/rfc9234-bgp-role-model"
-    },
-    {
-      "seenAt": "2026-09-04T23:55:51.688Z",
-      "url": "https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt"
-    },
     {
       "seenAt": "2026-09-05T23:46:00.661Z",
       "url": "https://thenewstack.io/gpt6-astra-developer-access-delayed"
@@ -5326,6 +5312,147 @@
       ],
       "title": "Wine ported to OpenBSD",
       "url": "https://marc.info/?l=openbsd-ports&m=179236125692175"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "DeepInfer: High-performance inference framework for DeepSeek models",
+      "url": "https://github.com/deepseek-ai/DeepInfer"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "gh-typescript",
+      "sources": [
+        "gh-typescript"
+      ],
+      "title": "TypeScript 7.1 Beta",
+      "url": "https://github.com/microsoft/TypeScript/releases/tag/v7.1-beta"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "8 eMudhra certificates are compromised. Here's what you need to know",
+      "url": "https://blog.cloudflare.com/emudhra-certificate-compromise"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "DeepSeek banned from U.S. federal civilian agencies under new DHS order",
+      "url": "https://reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Voxtral 3",
+      "url": "https://mistral.ai/news/voxtral-3"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "hn",
+      "sources": [
+        "cloudflare-blog",
+        "hn"
+      ],
+      "title": "Tsrs: A Port of TypeScript to Rust",
+      "url": "https://blog.cloudflare.com/typescript-rust-port"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "ollama-blog",
+      "sources": [
+        "ollama-blog"
+      ],
+      "title": "Clef is available on Ollama's cloud",
+      "url": "https://ollama.com/blog/clef"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Mercury 3: Diffusion at scale",
+      "url": "https://inceptionlabs.ai/blog/introducing-mercury-3"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Respan spent two years building on LiteLLM. One upgrade made it start over.",
+      "url": "https://thenewstack.io/respan-rust-ai-gateway"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "24GB is plenty if your engines take turns",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xahi82/24gb_is_plenty_if_your_engines_take_turns"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "72 hours, four big open weights drops. The only one that fits in 24GB came from NVIDIA, of all companies.",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1x9d23j/72_hours_four_big_open_weights_drops_the_only_one"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Publish fake stats, get cited in LLMs",
+      "url": "https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Tmux and Claude Code: Sessions, Send-Keys, and the Ceiling",
+      "url": "https://crystl.dev/guides/tmux-for-ai-agents"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-20T23:08:36.444Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "OpenBSD 8.0",
+      "url": "https://openbsd.org/80.html"
     }
   ]
 }
