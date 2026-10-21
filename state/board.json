@@ -422,110 +422,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-18T22:23:11.316Z",
-  "lastNewsPushAt": "2026-10-20T23:08:36.444Z",
+  "lastNewsPushAt": "2026-10-21T23:12:31.298Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-18T22:23:11.316Z",
       "summary": "本次榜單共新進 7 個項目，其中 AI 佔 6 個、前後端佔 1 個，下降 2 個，並由 morluto/rea 奪下綜合榜 #1。"
     },
     "feed": [
-      {
-        "content": "資料工程團隊深入分享如何在不犧牲資料品質的前提下，逆轉指數級增長的硬體資源開銷。文章詳細介紹了資料管線（Data Pipeline）中的批次處理調校、記憶體瓶頸排查與資料流重塑策略，讓高吞吐量管線能在有限硬體下維持穩定運行。這為面臨大規模資料成長、雲端算力成本高漲的資料工程師與 DevOps 團隊提供了具體可執行的效能與成本優化路徑。",
-        "id": "news:https://blog.cloudflare.com/rewinding-the-exponential",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "壓低硬體消耗的資料管線架構策略：在保障品質下極大化吞吐量",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/rewinding-the-exponential/"
-      },
-      {
-        "content": "文章探討了如何將大型語言模型與 AI 工具導入硬體逆向工程領域，加速電路板走線分析、未公開晶片介面識別與通訊協定反編譯。透過讓 AI 處理繁複的訊號比對與架構推導，逆向工程人員能大幅縮短分析週期。此實踐展示了 AI 跨足低階系統與韌體安全領域的新範式，對硬體安全研究人員及韌體工程師具有高度技術啟發性。",
-        "id": "news:https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "運用生成式 AI 輔助硬體逆向工程：從電路分析到協定解析的實戰",
-        "type": "news",
-        "url": "https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware/"
-      },
-      {
-        "content": "開發者發布開源工具 Llmspeed，旨在解決本地運行大模型時的硬體選型難題。該工具能根據模型架構、量化參數與目標硬體規格，精準模擬並預覽推論時的 Token 生成速度與延遲表現，讓開發者在投資昂貴的 GPU 或工作站前獲得客觀數據。這對於正在評估私有化部署硬體預算、規劃本地 AI 推論叢集的工程師與架構師相當實用。",
-        "id": "news:https://llmspeed.dev/",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "Llmspeed：在採購硬體前模擬與評測本地 LLM 運行速度的開源工具",
-        "type": "news",
-        "url": "https://llmspeed.dev/"
-      },
-      {
-        "content": "資安社群指出，Google 在背景作業中自動將使用者已登入的多個帳號與裝置手機號碼進行跨帳號關聯，引發隱私與身分隔離失效的高度擔憂。對於開發身分驗證系統、管理多重測試帳號或重視營運隱私隔離（OpSec）的工程師來說，此行為打破了傳統依靠不同帳號進行身分切分的安全邊界，需重新審視雲端帳號管理與雙因子驗證配置策略。",
-        "id": "news:https://androidauthority.com/google-auto-phone-number-verification-android-3723117",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "Google 遭揭露靜默關聯同一裝置下所有已登入帳號的手機號碼",
-        "type": "news",
-        "url": "https://www.androidauthority.com/google-auto-phone-number-verification-android-3723117/"
-      },
-      {
-        "content": "開發者撰文深入探討軟體渲染（Software Rendering）的底層實作技術，分享如何在不依賴現代 GPU 加速與圖形 API（如 Vulkan、DirectX）的情況下，完全運用 CPU 進行幾何光柵化、深度緩衝與著色運算。文章不僅回顧了電腦圖形學的基本運算原理，也展示了在受限環境或除錯場景下撰寫高效軟體光柵化引擎的技巧，對系統級程式設計與底層圖形工程師深具參考價值。",
-        "id": "news:https://jamesfmackenzie.com/2026/10/13/i-love-software-rendering",
-        "publishedAt": "2026-10-17T22:12:40.144Z",
-        "title": "純軟體渲染技術實作探討：重溫 CPU 逐像素繪製的核心美學",
-        "type": "news",
-        "url": "https://www.jamesfmackenzie.com/2026/10/13/i-love-software-rendering/"
-      },
-      {
-        "id": "repo:1209966933:new:2026-10-19",
-        "publishedAt": "2026-10-18T22:23:11.316Z",
-        "title": "morluto/rea 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/morluto/rea"
-      },
-      {
-        "id": "repo:476507964:new:2026-10-19",
-        "publishedAt": "2026-10-18T22:23:11.316Z",
-        "title": "storytold/artcraft 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/storytold/artcraft"
-      },
-      {
-        "id": "repo:1206390571:new:2026-10-19",
-        "publishedAt": "2026-10-18T22:23:11.316Z",
-        "title": "debpalash/VoiceStudio 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/debpalash/VoiceStudio"
-      },
-      {
-        "id": "repo:1212769188:new:2026-10-19",
-        "publishedAt": "2026-10-18T22:23:11.316Z",
-        "title": "cathrynlavery/diagram-design 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/cathrynlavery/diagram-design"
-      },
-      {
-        "id": "repo:1222527844:new:2026-10-19",
-        "publishedAt": "2026-10-18T22:23:11.316Z",
-        "title": "ifixai-ai/iFixAi 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/ifixai-ai/iFixAi"
-      },
-      {
-        "id": "repo:1164477708:new:2026-10-19",
-        "publishedAt": "2026-10-18T22:23:11.316Z",
-        "title": "mksglu/context-mode 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/mksglu/context-mode"
-      },
-      {
-        "id": "repo:274495425:new:2026-10-19",
-        "publishedAt": "2026-10-18T22:23:11.316Z",
-        "title": "remotion-dev/remotion 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/remotion-dev/remotion"
-      },
-      {
-        "content": "DeepSeek 正式推出 Search 與 Fetch API 服務，定價為每 1,000 次成功請求 0.75 美元。此服務讓開發者能夠直接調用其網路搜尋與內容擷取管道，大幅簡化為大型語言模型構建聯網檢索增強生成（RAG）與自主 Agent 的工作流程，並提供極具價格競爭力的即時網路資訊存取方案。",
-        "id": "news:https://api-docs.deepseek.com/guides/search",
-        "publishedAt": "2026-10-18T22:23:11.316Z",
-        "title": "DeepSeek 推出搜尋與抓取 API：每千次請求 0.75 美元",
-        "type": "news",
-        "url": "https://api-docs.deepseek.com/guides/search/"
-      },
       {
         "content": "Krea 正式推出新一代圖像生成模型 Krea 3，聚焦於大規模生產環境下的圖像編輯能力。相較於一般單純文生圖模型，Krea 3 強調精確的局部圖像修改、風格延續性與批量處理效能，旨在為應用開發者與創作者提供可控度更高、更適合整合進自動化視覺管線的生成式基礎模型。",
         "id": "news:https://krea.ai/krea-3",
@@ -821,244 +724,302 @@
         "title": "OpenBSD 8.0 正式發布：強化系統安全與硬體支援",
         "type": "news",
         "url": "https://www.openbsd.org/80.html"
+      },
+      {
+        "content": "Google Cloud 與 OpenAI 達成合作協議，將 OpenAI 旗下的前沿模型引入 Google Cloud 平台。這項轉變直接打破了長期以來微軟 Azure 在主流雲端供應商中獨占託管 OpenAI 模型的局面。對現代雲端架構師與 AI 開發者而言，這意味著企業未來在構建高可用、具備多雲容災備援（Multi-cloud Resilience）或跨雲資料治理架構時，不再受限於單一雲端供應商的 API 綁定，能更靈活地在 Google Cloud 生態（如結合 Vertex AI、BigQuery 等原生服務）中直接調度 OpenAI 模型算力。",
+        "id": "news:https://openai.com/index/openai-models-google-cloud",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "OpenAI 模型正式登陸 Google Cloud：打破 Azure 獨占的多雲部署新選擇",
+        "type": "news",
+        "url": "https://openai.com/index/openai-models-google-cloud/"
+      },
+      {
+        "content": "Node.js 官方釋出針對各支援分支（包括 Node.js 24 LTS、22 LTS 及 26 Current）的安全修補更新。本次更新修補了多個評級為 High 的安全漏洞，重點包括 CVE-2026-105482（DNS 解析輸入未驗證 null bytes）、CVE-2026-106069（TLS 模組拒絕非標準規範 IP 位址以防繞過檢驗）、CVE-2026-105483（TLS IP 正規化回歸問題），以及權限模型檢查與 Crypto 快取重置等缺陷。由於這些漏洞直接影響底層網路通訊與主機權限防護，所有在生產環境運行 Node.js 服務的團隊應儘速安排升級以阻斷潛在攻擊。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v24.22.1",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "Node.js 發布重大安全修補版本：修復 DNS 與 TLS 相關等多項高危漏洞",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v24.22.1"
+      },
+      {
+        "content": "雲端應用託管平台 Railway 正式發布安全揭露公告，向開發者社群通報近期的安全事件及平台所採取的防護加固作為。Railway 近年來成為眾多獨立開發者與新創團隊部署容器化後端與微服務的核心 PaaS 基礎設施，其平台安全直接牽動託管應用程式的原始碼、環境變數（含敏感 API Key 及資料庫密碼）與運行期憑證。開發者應檢視該公告以確認自身專案是否受到波及，並配合官方指引評估是否需要輪換生產環境的敏感憑證與存取權杖。",
+        "id": "news:https://blog.railway.com/p/security-disclosure-wednesday-october-21st",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "Railway 發布官方安全揭露通報：說明近期系統資安事件與防護因應",
+        "type": "news",
+        "url": "https://blog.railway.com/p/security-disclosure-wednesday-october-21st"
+      },
+      {
+        "content": "Cloudflare 為其 Web 應用程式防火牆（WAF）推出「完整事務檢測（Full Transaction Detection）」功能。過往傳統 WAF 多僅依賴對傳入 HTTP 請求（Request）的單向特徵比對，容易漏判成功利用漏洞後的實質資料外洩或服務端配置錯誤；新功能能夠自動將 HTTP 請求與伺服器回傳的 HTTP 回應（Response）進行即時關聯分析。對維運與安全工程師而言，這大幅提升了防禦 0-day 攻擊與敏感資訊外流的能力，能夠在攻擊回傳敏感資料時立即阻斷，顯著降低維護自訂防禦規則的負擔。",
+        "id": "news:https://blog.cloudflare.com/full-transaction-waf",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "Cloudflare WAF 推出「完整事務檢測」：關聯請求與回應精準攔截資料外洩",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/full-transaction-waf/"
+      },
+      {
+        "content": "AI 新創 Reflection 正式釋出其首款開源權重模型 Beam，並透過 Ollama 雲端平台提供限時免費存取。Beam 專門針對軟體工程編碼、複雜邏輯推理以及長時間運行的 Agentic 工作流程進行了深度優化。隨著本機與自託管開源模型生態的快速演進，這為依賴 Ollama 打造自動化代碼審查、自主除錯或架構巡檢的工程團隊提供了一個輕量、易整合且專注於工程任務的新模型選擇，有助於降低高階封閉模型 API 的調用成本。",
+        "id": "news:https://ollama.com/blog/reflection-beam",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "Reflection 首款開源權重模型 Beam 上架 Ollama：專注軟體工程與長週期 Agent 任務",
+        "type": "news",
+        "url": "https://ollama.com/blog/reflection-beam"
+      },
+      {
+        "content": "NVIDIA 推出名為 Kumo Relational 的新架構，在關聯式資料庫結構上的預測效能成功超越傳統監督式機器學習模型，且全程「無需額外訓練」。在企業軟體系統中，龐大的關聯式資料通常需要繁瑣的特徵工程與模型微調流程；Kumo Relational 透過圖神經網路與基礎模型架構直接理解跨表實體關聯，使開發者與資料工程師能以極低門檻對關聯式資料集進行即時預測，徹底重塑企業預測性分析與智慧查詢的系統設計流程。",
+        "id": "news:https://huggingface.co/blog/nvidia/kumo-relational",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "NVIDIA 發表 Kumo Relational 架構：關聯式資料無需訓練即可超越監督式學習",
+        "type": "news",
+        "url": "https://huggingface.co/blog/nvidia/kumo-relational"
+      },
+      {
+        "content": "Google 推出全新開源模型 EmbeddingGemma 2，這是一款輕量且高效的多模態嵌入（Multimodal Embedding）模型。在現代 RAG（檢索增強生成）與語意搜尋系統中，跨文本、圖像等不同模態的統一表徵一直面臨計算成本過高的挑戰。EmbeddingGemma 2 具備小巧的參數量與出色的跨模態對齊能力，能夠輕易部署在邊緣端或自託管伺服器上，為資源受限的開發團隊在打造多模態知識庫檢索與智慧推薦系統時提供了高性價比的解決方案。",
+        "id": "news:https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "Google 發表 EmbeddingGemma 2：開源輕量級多模態嵌入模型",
+        "type": "news",
+        "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/"
+      },
+      {
+        "content": "資安研究團隊公開了名為「PHP2Shell」的技術實錄，揭示 AI Agent 如何自主在 PHP 核心引擎中分析原始碼並挖掘出嚴重的遠端程式碼執行（RCE）漏洞。由於 PHP 支撐了全球約七成網站的伺服端運行，此發現震驚整個開源與資安社群。這項技術成果不僅展示了 AI 自動化程式碼稽核技術從簡單靜態分析躍升至具備挖掘複雜底層漏洞的里程碑，也向所有軟體工程師發出警訊：防禦者必須盡早將 AI 輔助的安全稽核工具整合進 CI/CD 流程，因為攻擊者同樣具備使用 AI 挖掘 0-day 漏洞的能力。",
+        "id": "news:https://wiz.io/blog/php2shell-php-rce",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "PHP2Shell 實錄：AI Agent 自主挖掘出覆蓋全球 70% 網站的 PHP 核心 RCE 漏洞",
+        "type": "news",
+        "url": "https://www.wiz.io/blog/php2shell-php-rce"
+      },
+      {
+        "content": "一篇深入探討機器學習框架安全性的技術文章揭露了 PyTorch Autograd 機制的潛在攻擊面：攻擊者可利用動態計算圖的反向傳播（Backward Pass）流程，將具備圖靈完備性的惡意程式碼直接嵌入神經網路計算中。由於傳統模型安全檢測通常只聚焦於模型權重載入時的 pickle 反序列化安全，這項技術證明即使通過載入檢查，模型在訓練梯度更新階段仍可能被觸發執行任意程式碼。此發現對 ML 基礎設施工程師、開源模型審查機制與 AI 供應鏈安全提出了嚴峻的防禦挑戰。",
+        "id": "news:https://elonlit.com/scrivings/how-to-run-turing-complete-malware-in-pytorchs-backward-pass",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "技術深度剖析：如何在 PyTorch 反向傳播計算中植入並執行圖靈完備惡意代碼",
+        "type": "news",
+        "url": "https://elonlit.com/scrivings/how-to-run-turing-complete-malware-in-pytorchs-backward-pass/"
+      },
+      {
+        "content": "該技術研究深入探討了小語言模型（SLM）在專屬領域部署時的效能瓶頸，並提出透過「特化詞表（Vocabulary Specialization）」將實際應用推論成本大幅削減 77% 的工程方法。研究指出，通用的預訓練詞表在特定領域（如程式碼解析、醫療或金融結構化文字）中存在嚴重的 token 切分碎片化問題，導致輸入與輸出序列過長；透過針對特定領域語料重構並微調詞表，能顯著降低序列長度與注意力運算開銷。這項技術為在邊緣端或高併發情境下自託管 SLM 的工程師提供了具體可落地的推理優化指南。",
+        "id": "news:https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "架構實踐：特化小語言模型（SLM）詞表如何將實際應用推論成本銳減 77%",
+        "type": "news",
+        "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization"
+      },
+      {
+        "content": "本文針對 AWS 自研 AI 專用晶片 Trainium 與其專屬加速庫 TorchNeuron 展開系統級效能剖析（System-level Profiling）。作者詳細解構了在非 NVIDIA 硬體架構上運行深度學習模型時，神經網絡算子在 Neuron 核心上的排程機制、晶片間 NeuronLink 的互聯頻寬瓶頸，以及編譯器圖優化（Graph Optimization）對推理延遲的具體影響。對於正試圖降低對高價 GPU 依賴、將大型模型訓練或推理任務遷移至 AWS Trainium 等替代晶片的 MLOps 與基礎設施工程師而言，這是一篇極具參考價值的底層調優指南。",
+        "id": "news:https://huggingface.co/blog/amazon/profiling-torchneuron-part-1",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "AWS Trainium 實戰：TorchNeuron 系統級效能剖析與硬體瓶頸診斷指南",
+        "type": "news",
+        "url": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1"
+      },
+      {
+        "content": "PHP 開發團隊正式發布最新安全維護版本，修復核心引擎中多項被揭露的重大漏洞，並發表專文說明後續強化 PHP 安全機制的長期策略。該漏洞被證實可被串接達成遠端程式碼執行（RCE），影響範圍遍及廣泛運行的 PHP 舊版本。官方除了緊急釋出修補更新外，亦針對核心程式庫的記憶體安全檢查與 CI 自動化測試流程提出了進一步的安全加固措施。維護 PHP 應用環境的後端工程師與維運人員應立即檢視伺服器版本並執行修補，確保線上服務免受惡意攻擊。",
+        "id": "news:https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "PHP 官方發布緊急安全更新並說明核心防護加固措施",
+        "type": "news",
+        "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/"
+      },
+      {
+        "content": "資安研究團隊詳細揭露了印度主要憑證授權機構 eMudhra 中繼憑證私鑰遭到破解的密碼學根本原因。分析指出，該 CA 在生成金鑰時存在災難性的隨機數熵（Entropy）嚴重不足缺陷，導致實際的金鑰空間僅剩微乎其微的有效位元（相當於僅有 8 位元的有效信任），使得攻擊者得以在數毫秒內直接暴力破解並推導出私鑰。此事件凸顯了公開金鑰基礎設施（PKI）若缺乏嚴謹的密碼學隨機數生成驗證機制所帶來的災難性後果，也提醒所有資安與基礎設施工程師在管理內部 PKI 服務時，必須嚴格落實金鑰生成機制的安全審計。",
+        "id": "news:https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds",
+        "publishedAt": "2026-10-21T23:12:31.298Z",
+        "title": "八位元的信任危機：eMudhra 中繼 CA 私鑰為何能在數毫秒內遭暴力破解？",
+        "type": "news",
+        "url": "https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-20T23:08:36.444Z",
+      "generatedAt": "2026-10-21T23:12:31.298Z",
       "items": [
         {
-          "content": "DeepSeek 正式開源針對其模型架構優化的高效能、大規模推論框架 DeepInfer。該框架專為 DeepSeek 系列模型設計，提供深入的底層推論優化，有助於開發者深入研究並提升現有自訂推論引擎（如 gufo、halogen、strata 等）的執行效能與吞吐量，對需要私有化部署與大規模運行 DeepSeek 模型的架構師與開發團隊來說是重要開源資源。",
+          "content": "Google Cloud 與 OpenAI 達成合作協議，將 OpenAI 旗下的前沿模型引入 Google Cloud 平台。這項轉變直接打破了長期以來微軟 Azure 在主流雲端供應商中獨占託管 OpenAI 模型的局面。對現代雲端架構師與 AI 開發者而言，這意味著企業未來在構建高可用、具備多雲容災備援（Multi-cloud Resilience）或跨雲資料治理架構時，不再受限於單一雲端供應商的 API 綁定，能更靈活地在 Google Cloud 生態（如結合 Vertex AI、BigQuery 等原生服務）中直接調度 OpenAI 模型算力。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 1,
+          "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "DeepInfer: High-performance inference framework for DeepSeek models",
+          "sourceTitle": "OpenAI models are coming to Google Cloud",
           "sources": [
-            "hn"
+            "hn",
+            "openai-blog"
           ],
-          "title": "DeepSeek 開源高效能推論框架 DeepInfer",
-          "url": "https://github.com/deepseek-ai/DeepInfer",
-          "weightedScore": 2077
+          "title": "OpenAI 模型正式登陸 Google Cloud：打破 Azure 獨占的多雲部署新選擇",
+          "url": "https://openai.com/index/openai-models-google-cloud/",
+          "weightedScore": 309
         },
         {
-          "content": "微軟宣布釋出 TypeScript 7.1 Beta，現已可透過 npm 進行下載與測試。作為廣大前後端生態系的核心語言，TypeScript 每個次版本的預覽都帶來型別推斷、編譯效能與語法支援的演進，開發者可提前在測試環境評估新特性並驗證專案相容性。",
+          "content": "Node.js 官方釋出針對各支援分支（包括 Node.js 24 LTS、22 LTS 及 26 Current）的安全修補更新。本次更新修補了多個評級為 High 的安全漏洞，重點包括 CVE-2026-105482（DNS 解析輸入未驗證 null bytes）、CVE-2026-106069（TLS 模組拒絕非標準規範 IP 位址以防繞過檢驗）、CVE-2026-105483（TLS IP 正規化回歸問題），以及權限模型檢查與 Crypto 快取重置等缺陷。由於這些漏洞直接影響底層網路通訊與主機權限防護，所有在生產環境運行 Node.js 服務的團隊應儘速安排升級以阻斷潛在攻擊。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "sourceId": "gh-typescript",
-          "sourceTitle": "TypeScript 7.1 Beta",
+          "sourceId": "gh-nodejs",
+          "sourceTitle": "2026-10-21, Version 24.22.1 'Krypton' (LTS), @aduh95",
           "sources": [
-            "gh-typescript"
+            "gh-nodejs"
           ],
-          "title": "微軟發布 TypeScript 7.1 Beta 版",
-          "url": "https://github.com/microsoft/TypeScript/releases/tag/v7.1-beta",
+          "title": "Node.js 發布重大安全修補版本：修復 DNS 與 TLS 相關等多項高危漏洞",
+          "url": "https://github.com/nodejs/node/releases/tag/v24.22.1",
           "weightedScore": 100
         },
         {
-          "content": "由於發現 eMudhra 的 8 個中間憑證（Intermediate CA）使用了弱金鑰，導致憑證安全性遭到妥協。Cloudflare 已緊急部署緩解措施並發布客戶端更新，同時說明該事件對整體網路信任鏈的影響，並建議受影響的客戶與開發者檢查自身憑證設定並盡快套用對應修正。",
+          "content": "雲端應用託管平台 Railway 正式發布安全揭露公告，向開發者社群通報近期的安全事件及平台所採取的防護加固作為。Railway 近年來成為眾多獨立開發者與新創團隊部署容器化後端與微服務的核心 PaaS 基礎設施，其平台安全直接牽動託管應用程式的原始碼、環境變數（含敏感 API Key 及資料庫密碼）與運行期憑證。開發者應檢視該公告以確認自身專案是否受到波及，並配合官方指引評估是否需要輪換生產環境的敏感憑證與存取權杖。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "lobsters-devops",
+          "sourceTitle": "Railway Security Disclosure: Wednesday October 21st",
+          "sources": [
+            "lobsters-devops"
+          ],
+          "title": "Railway 發布官方安全揭露通報：說明近期系統資安事件與防護因應",
+          "url": "https://blog.railway.com/p/security-disclosure-wednesday-october-21st",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 為其 Web 應用程式防火牆（WAF）推出「完整事務檢測（Full Transaction Detection）」功能。過往傳統 WAF 多僅依賴對傳入 HTTP 請求（Request）的單向特徵比對，容易漏判成功利用漏洞後的實質資料外洩或服務端配置錯誤；新功能能夠自動將 HTTP 請求與伺服器回傳的 HTTP 回應（Response）進行即時關聯分析。對維運與安全工程師而言，這大幅提升了防禦 0-day 攻擊與敏感資訊外流的能力，能夠在攻擊回傳敏感資料時立即阻斷，顯著降低維護自訂防禦規則的負擔。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cloudflare-blog",
-          "sourceTitle": "8 eMudhra certificates are compromised. Here's what you need to know",
+          "sourceTitle": "Introducing full transaction detection for Cloudflare WAF",
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "8 個 eMudhra 中間憑證遭妥協，Cloudflare 部署防護與客戶更新",
-          "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
+          "title": "Cloudflare WAF 推出「完整事務檢測」：關聯請求與回應精準攔截資料外洩",
+          "url": "https://blog.cloudflare.com/full-transaction-waf/",
           "weightedScore": 50
         },
         {
-          "content": "根據美國國土安全部（DHS）發布的最新命令，美國聯邦民事機構已被全面禁止使用 DeepSeek 模型。這項外部法規直接限制了政府單位及其外包軟體服務商採用該模型的合規性，對於開發與聯邦機構相關業務或有合規審查要求的技術團隊而言，需要立即調整 AI 模型的選型策略與整合架構。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "DeepSeek banned from U.S. federal civilian agencies under new DHS order",
-          "sources": [
-            "hn"
-          ],
-          "title": "美國國土安全部發布新禁令：聯邦民事機構全面禁用 DeepSeek",
-          "url": "https://www.reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19/",
-          "weightedScore": 548
-        },
-        {
-          "content": "Mistral 推出語音模型 Voxtral 3。作為專注於音訊與語音處理的模型，其發布拓展了開源與商業開發者在語音辨識、語音生成以及多模態語音助理架構上的選擇，為開發端到端語音應用的工程師提供最新基礎模型能力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Voxtral 3",
-          "sources": [
-            "hn"
-          ],
-          "title": "Mistral 發表新一代語音模型 Voxtral 3",
-          "url": "https://mistral.ai/news/voxtral-3/",
-          "weightedScore": 472
-        },
-        {
-          "content": "Tsrs 專案正式將 TypeScript 編譯器與型別系統移植至 Rust。該專案由 Cloudflare 主導，核心特色在於透過 AI 程式碼 Agent 大量協同撰寫完成，旨在不分叉 TypeScript 生態系的前提下，讓 AI Agent 與開發者能在不耗盡伺服器運算資源的情況下高速驗證程式碼，大幅提升 TypeScript 編譯與型別檢查效能。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Tsrs: A Port of TypeScript to Rust",
-          "sources": [
-            "cloudflare-blog",
-            "hn"
-          ],
-          "title": "Tsrs：由 AI Agent 協同打造的 TypeScript 轉 Rust 移植專案",
-          "url": "https://blog.cloudflare.com/typescript-rust-port/",
-          "weightedScore": 424
-        },
-        {
-          "content": "Cloudflare 開發的 27B 多模態決策模型 Clef 正式上架 Ollama 平台，開發者現在可以選擇在本地端執行，或是直接透過 Ollama Cloud 調用。Clef 專為多模態決策與 Agent 任務設計，支援 Ollama 生態讓開發者能以極低門檻將其整合進本機開發與私有化工作流程中。",
+          "content": "AI 新創 Reflection 正式釋出其首款開源權重模型 Beam，並透過 Ollama 雲端平台提供限時免費存取。Beam 專門針對軟體工程編碼、複雜邏輯推理以及長時間運行的 Agentic 工作流程進行了深度優化。隨著本機與自託管開源模型生態的快速演進，這為依賴 Ollama 打造自動化代碼審查、自主除錯或架構巡檢的工程團隊提供了一個輕量、易整合且專注於工程任務的新模型選擇，有助於降低高階封閉模型 API 的調用成本。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "ollama-blog",
-          "sourceTitle": "Clef is available on Ollama's cloud",
+          "sourceTitle": "Reflection's Beam is freely available on Ollama for a limited time",
           "sources": [
             "ollama-blog"
           ],
-          "title": "Cloudflare 27B 多模態決策模型 Clef 正式登上 Ollama",
-          "url": "https://ollama.com/blog/clef",
+          "title": "Reflection 首款開源權重模型 Beam 上架 Ollama：專注軟體工程與長週期 Agent 任務",
+          "url": "https://ollama.com/blog/reflection-beam",
           "weightedScore": 100
         },
         {
-          "content": "Mercury 3 模型發布，聚焦於大規模擴散模型（Diffusion at scale）的訓練與架構實踐。該模型的推出為生成式 AI 領域提供更具擴展性的架構參考，對研究大規模生成技術與落地擴散模型應用的開發者具有重要參考價值。",
+          "content": "NVIDIA 推出名為 Kumo Relational 的新架構，在關聯式資料庫結構上的預測效能成功超越傳統監督式機器學習模型，且全程「無需額外訓練」。在企業軟體系統中，龐大的關聯式資料通常需要繁瑣的特徵工程與模型微調流程；Kumo Relational 透過圖神經網路與基礎模型架構直接理解跨表實體關聯，使開發者與資料工程師能以極低門檻對關聯式資料集進行即時預測，徹底重塑企業預測性分析與智慧查詢的系統設計流程。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "NVIDIA 發表 Kumo Relational 架構：關聯式資料無需訓練即可超越監督式學習",
+          "url": "https://huggingface.co/blog/nvidia/kumo-relational",
+          "weightedScore": 100
+        },
+        {
+          "content": "Google 推出全新開源模型 EmbeddingGemma 2，這是一款輕量且高效的多模態嵌入（Multimodal Embedding）模型。在現代 RAG（檢索增強生成）與語意搜尋系統中，跨文本、圖像等不同模態的統一表徵一直面臨計算成本過高的挑戰。EmbeddingGemma 2 具備小巧的參數量與出色的跨模態對齊能力，能夠輕易部署在邊緣端或自託管伺服器上，為資源受限的開發團隊在打造多模態知識庫檢索與智慧推薦系統時提供了高性價比的解決方案。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sourceTitle": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "Google 發表 EmbeddingGemma 2：開源輕量級多模態嵌入模型",
+          "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+          "weightedScore": 100
+        },
+        {
+          "content": "資安研究團隊公開了名為「PHP2Shell」的技術實錄，揭示 AI Agent 如何自主在 PHP 核心引擎中分析原始碼並挖掘出嚴重的遠端程式碼執行（RCE）漏洞。由於 PHP 支撐了全球約七成網站的伺服端運行，此發現震驚整個開源與資安社群。這項技術成果不僅展示了 AI 自動化程式碼稽核技術從簡單靜態分析躍升至具備挖掘複雜底層漏洞的里程碑，也向所有軟體工程師發出警訊：防禦者必須盡早將 AI 輔助的安全稽核工具整合進 CI/CD 流程，因為攻擊者同樣具備使用 AI 挖掘 0-day 漏洞的能力。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Mercury 3: Diffusion at scale",
+          "sourceTitle": "PHP2Shell: AI uncovers critical RCE in PHP",
           "sources": [
             "hn"
           ],
-          "title": "大規模擴散模型 Mercury 3 正式發表",
-          "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
-          "weightedScore": 255
+          "title": "PHP2Shell 實錄：AI Agent 自主挖掘出覆蓋全球 70% 網站的 PHP 核心 RCE 漏洞",
+          "url": "https://www.wiz.io/blog/php2shell-php-rce",
+          "weightedScore": 428
         },
         {
-          "content": "Respan 團隊在開源其以 Rust 撰寫的 AI Gateway 之際，分享了重構決策的技術內幕。團隊先前花費兩年、累積超過 10 萬行程式碼構建在 LiteLLM 之上，但遭遇版本升級帶來的相容性與架構瓶頸，最終痛定思痛決定以 Rust 打掉重構。這篇文章深入探討了維護龐大開源依賴的技術債、效能考量與架構取捨，對微服務及 AI 中介層架構師極具借鏡意義。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Respan spent two years building on LiteLLM. One upgrade made it start over.",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "基於 LiteLLM 兩年後決定砍掉重練：Respan 以 Rust 重構開源 AI Gateway",
-          "url": "https://thenewstack.io/respan-rust-ai-gateway/",
-          "weightedScore": 50
-        },
-        {
-          "content": "社群開發者分享如何在 Linux 環境下藉由自製系統服務解決單張 24GB 顯示卡顯存競爭問題。該服務會動態監控 GPU 狀態並在 ComfyUI、llama 與 strata 等推論引擎間無縫置換載入，避免手動切換與孤兒進程長期佔用 VRAM，讓單一工作站能在零顯存衝突下兼顧多項生成任務，為個人與中小團隊本地部署多模型提供了實用的自動化排程思維。",
+          "content": "一篇深入探討機器學習框架安全性的技術文章揭露了 PyTorch Autograd 機制的潛在攻擊面：攻擊者可利用動態計算圖的反向傳播（Backward Pass）流程，將具備圖靈完備性的惡意程式碼直接嵌入神經網路計算中。由於傳統模型安全檢測通常只聚焦於模型權重載入時的 pickle 反序列化安全，這項技術證明即使通過載入檢查，模型在訓練梯度更新階段仍可能被觸發執行任意程式碼。此發現對 ML 基礎設施工程師、開源模型審查機制與 AI 供應鏈安全提出了嚴峻的防禦挑戰。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "24GB is plenty if your engines take turns",
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "How to Run Turing-Complete Malware in PyTorch's Backward Pass",
           "sources": [
-            "reddit-localllama"
+            "lobsters-ai"
           ],
-          "title": "單張 24GB GPU 跑多模型：以系統服務動態輪替推論引擎的工程實踐",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xahi82/24gb_is_plenty_if_your_engines_take_turns/",
+          "title": "技術深度剖析：如何在 PyTorch 反向傳播計算中植入並執行圖靈完備惡意代碼",
+          "url": "https://elonlit.com/scrivings/how-to-run-turing-complete-malware-in-pytorchs-backward-pass/",
           "weightedScore": 100
         },
         {
-          "content": "社群針對近期密集釋出的開源權重模型（包括 Meta Muse Spark 等）進行硬體配置與授權條件的橫向技術拆解。分析指出 Meta 宣稱支援桌面級運行的 816B 模型實際上需要兩台各具 512GB 記憶體的頂級 Mac Studio 或四台高階工作站（硬體成本數萬美元），並伴隨特定署名授權要求；反觀 NVIDIA 釋出的模型是少數能在 24GB 消費級顯卡運行的模型。該文深入揭露了當前開源模型在宣傳與工程落地之間的真實硬體差距。",
+          "content": "該技術研究深入探討了小語言模型（SLM）在專屬領域部署時的效能瓶頸，並提出透過「特化詞表（Vocabulary Specialization）」將實際應用推論成本大幅削減 77% 的工程方法。研究指出，通用的預訓練詞表在特定領域（如程式碼解析、醫療或金融結構化文字）中存在嚴重的 token 切分碎片化問題，導致輸入與輸出序列過長；透過針對特定領域語料重構並微調詞表，能顯著降低序列長度與注意力運算開銷。這項技術為在邊緣端或高併發情境下自託管 SLM 的工程師提供了具體可落地的推理優化指南。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "72 hours, four big open weights drops. The only one that fits in 24GB came from NVIDIA, of all companies.",
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications",
           "sources": [
-            "reddit-localllama"
+            "huggingface-blog"
           ],
-          "title": "開源權重模型 72 小時密集釋出：硬體門檻與授權條款深度橫向評測",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x9d23j/72_hours_four_big_open_weights_drops_the_only_one/",
+          "title": "架構實踐：特化小語言模型（SLM）詞表如何將實際應用推論成本銳減 77%",
+          "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
           "weightedScore": 100
         },
         {
-          "content": "一項技術實測揭露了將刻意偽造的統計數據發布於網路後，大型語言模型在搜尋與問答生成時會輕易予以採納並作為權威引用。這項研究點出了現代 LLM 與 RAG 系統在評估外部資料來源可信度時的結構性盲點，對於依賴外部知識庫、網路爬蟲與檢索增強生成架構的開發者而言，凸顯了建立資料驗證與來源過濾管道的迫切性。",
+          "content": "本文針對 AWS 自研 AI 專用晶片 Trainium 與其專屬加速庫 TorchNeuron 展開系統級效能剖析（System-level Profiling）。作者詳細解構了在非 NVIDIA 硬體架構上運行深度學習模型時，神經網絡算子在 Neuron 核心上的排程機制、晶片間 NeuronLink 的互聯頻寬瓶頸，以及編譯器圖優化（Graph Optimization）對推理延遲的具體影響。對於正試圖降低對高價 GPU 依賴、將大型模型訓練或推理任務遷移至 AWS Trainium 等替代晶片的 MLOps 與基礎設施工程師而言，這是一篇極具參考價值的底層調優指南。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Publish fake stats, get cited in LLMs",
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.",
           "sources": [
-            "hn"
+            "huggingface-blog"
           ],
-          "title": "偽造統計數據輕易被 LLM 引用：揭露模型檢索與幻覺防禦漏洞",
-          "url": "https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web",
-          "weightedScore": 309
+          "title": "AWS Trainium 實戰：TorchNeuron 系統級效能剖析與硬體瓶頸診斷指南",
+          "url": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1",
+          "weightedScore": 100
         },
         {
-          "content": "開發者深入解析如何利用 Tmux 的 Session 管理機制與 send-keys 指令，將命令列 AI 工具 Claude Code 深度整合至自動化工作流程中。文章不僅詳細介紹操作架構與具體指令模式，也剖析了終端自動化互動的極限與瓶頸，為探索 CLI AI 代理自主編程實務的開發者提供寶貴的第一手工程經驗。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Tmux and Claude Code: Sessions, Send-Keys, and the Ceiling",
-          "sources": [
-            "hn"
-          ],
-          "title": "Tmux 結合 Claude Code：會話管理、指令發送與自動化極限分析",
-          "url": "https://crystl.dev/guides/tmux-for-ai-agents/",
-          "weightedScore": 166
-        },
-        {
-          "content": "安全導向的開源作業系統 OpenBSD 正式推出 8.0 版本。本次重大版本更新進一步強化了核心安全性、記憶體防護機制與網路堆疊表現，並擴展對現代硬體架構的相容性，為重視高安全性環境、基礎網路建設與 Unix 系統底層工程的開發者提供了穩固的最新系統基底。",
+          "content": "PHP 開發團隊正式發布最新安全維護版本，修復核心引擎中多項被揭露的重大漏洞，並發表專文說明後續強化 PHP 安全機制的長期策略。該漏洞被證實可被串接達成遠端程式碼執行（RCE），影響範圍遍及廣泛運行的 PHP 舊版本。官方除了緊急釋出修補更新外，亦針對核心程式庫的記憶體安全檢查與 CI 自動化測試流程提出了進一步的安全加固措施。維護 PHP 應用環境的後端工程師與維運人員應立即檢視伺服器版本並執行修補，確保線上服務免受惡意攻擊。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "OpenBSD 8.0",
+          "sourceTitle": "Today's PHP security release, and how we're strengthening security",
           "sources": [
             "hn"
           ],
-          "title": "OpenBSD 8.0 正式發布：強化系統安全與硬體支援",
-          "url": "https://www.openbsd.org/80.html",
-          "weightedScore": 464
+          "title": "PHP 官方發布緊急安全更新並說明核心防護加固措施",
+          "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
+          "weightedScore": 614
+        },
+        {
+          "content": "資安研究團隊詳細揭露了印度主要憑證授權機構 eMudhra 中繼憑證私鑰遭到破解的密碼學根本原因。分析指出，該 CA 在生成金鑰時存在災難性的隨機數熵（Entropy）嚴重不足缺陷，導致實際的金鑰空間僅剩微乎其微的有效位元（相當於僅有 8 位元的有效信任），使得攻擊者得以在數毫秒內直接暴力破解並推導出私鑰。此事件凸顯了公開金鑰基礎設施（PKI）若缺乏嚴謹的密碼學隨機數生成驗證機制所帶來的災難性後果，也提醒所有資安與基礎設施工程師在管理內部 PKI 服務時，必須嚴格落實金鑰生成機制的安全審計。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Eight Bits of Trust: eMudhra's CA keys cracked in milliseconds",
+          "sources": [
+            "hn"
+          ],
+          "title": "八位元的信任危機：eMudhra 中繼 CA 私鑰為何能在數毫秒內遭暴力破解？",
+          "url": "https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds/",
+          "weightedScore": 803
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-09-05T23:46:00.661Z",
-      "url": "https://thenewstack.io/gpt6-astra-developer-access-delayed"
-    },
-    {
-      "seenAt": "2026-09-05T23:46:00.661Z",
-      "url": "https://thenewstack.io/claude-fable-upgrade-tested"
-    },
-    {
-      "seenAt": "2026-09-05T23:46:00.661Z",
-      "url": "https://blog.cloudflare.com/agents-week-review-august-2026"
-    },
-    {
-      "seenAt": "2026-09-05T23:46:00.661Z",
-      "url": "https://collusion.wiki/"
-    },
-    {
-      "seenAt": "2026-09-05T23:46:00.661Z",
-      "url": "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode"
-    },
-    {
-      "seenAt": "2026-09-05T23:46:00.661Z",
-      "url": "https://armature.tech/blog/which-tools-coding-agents-install"
-    },
-    {
-      "seenAt": "2026-09-05T23:46:00.661Z",
-      "url": "https://cncf.io/blog/2026/09/04/kubernetes-isnt-new-but-ai-makes-it-scary-again"
-    },
-    {
-      "seenAt": "2026-09-05T23:46:00.661Z",
-      "url": "https://simonwillison.net/2026/Sep/4/rogue-agent-wikis"
-    },
     {
       "seenAt": "2026-09-06T23:45:03.614Z",
       "url": "https://thenewstack.io/polars-streaming-row-order"
@@ -5453,6 +5414,137 @@
       ],
       "title": "OpenBSD 8.0",
       "url": "https://openbsd.org/80.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "openai-blog"
+      ],
+      "title": "OpenAI models are coming to Google Cloud",
+      "url": "https://openai.com/index/openai-models-google-cloud"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "title": "2026-10-21, Version 24.22.1 'Krypton' (LTS), @aduh95",
+      "url": "https://github.com/nodejs/node/releases/tag/v24.22.1"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "title": "Railway Security Disclosure: Wednesday October 21st",
+      "url": "https://blog.railway.com/p/security-disclosure-wednesday-october-21st"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Introducing full transaction detection for Cloudflare WAF",
+      "url": "https://blog.cloudflare.com/full-transaction-waf"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "ollama-blog",
+      "sources": [
+        "ollama-blog"
+      ],
+      "title": "Reflection's Beam is freely available on Ollama for a limited time",
+      "url": "https://ollama.com/blog/reflection-beam"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required",
+      "url": "https://huggingface.co/blog/nvidia/kumo-relational"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+      "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "PHP2Shell: AI uncovers critical RCE in PHP",
+      "url": "https://wiz.io/blog/php2shell-php-rce"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "How to Run Turing-Complete Malware in PyTorch's Backward Pass",
+      "url": "https://elonlit.com/scrivings/how-to-run-turing-complete-malware-in-pytorchs-backward-pass"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications",
+      "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.",
+      "url": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Today's PHP security release, and how we're strengthening security",
+      "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-21T23:12:31.298Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Eight Bits of Trust: eMudhra's CA keys cracked in milliseconds",
+      "url": "https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds"
     }
   ]
 }
