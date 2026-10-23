@@ -764,6 +764,16 @@ jobs:
 - **checkout 憑證**：只有 `radar` job 的 state-branch checkout 保留預設（該步要把 `board.json` 推回 `state` 分支）；
   `radar` 主 checkout、`publish` 的兩個 checkout、`test.yml` 的 checkout 皆 `persist-credentials: false`。
 
+**已知限制**
+
+- **radar／publish 裝整棵相依（含 dev）**（2026-10-23 記錄，待辦）：
+  - 現況：`radar` 與 `publish` 兩個 job 各自 `npm ci --ignore-scripts`，裝的是整棵相依，包含 jest、ts-jest、typescript
+    等開發依賴，再各自 `npm run build`。帶著 token 與 Secrets 的 job 裡因此多了一整棵執行時用不到的套件。
+  - 改法：只在 `radar` job 裝完整相依並 build，把 `dist/` 以 `actions/upload-artifact` 傳給 `publish`；兩個 job
+    執行時只裝執行期依賴（`npm ci --omit=dev --ignore-scripts`）。或另開一個不帶 Secrets 的 build job，產出 `dist/` 給兩者。
+  - 為何這次不做：這是排程架構的改動（job 之間的依賴、artifact 的保存與失敗告警都要跟著調），與這次的相依資安修補無關；
+    `--ignore-scripts` 加上 `persist-credentials: false` 已擋下主要風險（install script 在安裝時取得憑證）。
+
 ## 9. NestJS 專案結構
 
 ```
