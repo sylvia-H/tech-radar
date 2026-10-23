@@ -4,7 +4,7 @@
 
 ## 前置
 
-- Node.js 24 LTS（本機 nvm 24.18.0）、npm。
+- Node.js 24 LTS：Node 24 線 ≥ 24.20（npm ≥ 11.18，見 [ADR 0006](../../docs/adr/0006-ci-ignore-scripts-and-test-workflow.md)）。
 - 一個私人 Discord 伺服器與頻道，且已建立 Webhook，取得 `DISCORD_WEBHOOK_URL`。
 - 一組 GitHub fine-grained PAT（唯讀 public repo）作為 `GH_API_TOKEN`（F1 只驗證存在）。
 - 一組 Gemini API key 作為 `GEMINI_API_KEY`（F1 只驗證存在）。

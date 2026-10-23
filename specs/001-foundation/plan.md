@@ -10,7 +10,7 @@
 
 ## Technical Context
 
-**Language/Version**: TypeScript 5.x on Node.js 24 LTS（本機 nvm 24.18.0；workflow `actions/setup-node@v5` 設 `node-version: "24"`）
+**Language/Version**: TypeScript 5.x on Node.js 24 LTS（本機 Node 24 線 ≥ 24.20、npm ≥ 11.18，見 [ADR 0006](../../docs/adr/0006-ci-ignore-scripts-and-test-workflow.md)；workflow `actions/setup-node@v5` 設 `node-version: "24"`）（2026-10-23 更新為現況；001 contract 保留當時的 @v4 作紀錄）
 
 **Primary Dependencies**: NestJS（`@nestjs/core`、`@nestjs/common`、`@nestjs/config`、`reflect-metadata`、`rxjs`）；狀態與環境驗證用 `zod`；HTTP 用 Node 24 內建全域 `fetch`（undici），不引入 axios。F1 **不**需要 `cheerio` / `rss-parser` / `@google/genai`（屬 F2+，屆時於各自 plan 引入）。
 
