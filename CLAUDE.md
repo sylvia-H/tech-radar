@@ -60,7 +60,7 @@ tech-radar 是一個**排程型、純自用、全免費、零維運**的每日�
   `New-Item -ItemType Directory -Force`、`Remove-Item -Recurse -Force`，不要用 `cp` / `mkdir -p`
   / `rm -rf`。Bash 工具是 POSIX sh，兩者語法不可混用。
 - 套件管理用 **npm**（非 pnpm、非 monorepo）：`npm ci`、`npm run build`（`tsc`）、`npm test`（Jest）。
-- **Node.js 24**（本機建議 nvm `24.x`；CI 用 `actions/setup-node@v5` `node-version: 24`；`radar.yml` 排程與發佈、`test.yml` 在 push／PR 時跑 `npm test`，兩者皆 `npm ci --ignore-scripts`）。
+- **Node.js 24**（本機建議 nvm `24.x`；CI 用 `actions/setup-node@v5` `node-version: 24`；`radar.yml` 排程與發佈、`test.yml` 在 push／PR 時跑 build、`npm test` 與 prod 相依 audit，兩者皆 `npm ci --ignore-scripts`）。
 - 全程 **strict TypeScript**，避免 `any` 逃逸。
 - 無本機 infra（無 docker / DB / 常駐服務）：本專案是一支跑完即退的一次性 CLI。
 - 本機執行需三個機密以環境變數提供（勿寫入檔案）；缺任一即 fail-fast 不推播。
