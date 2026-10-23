@@ -23,11 +23,12 @@ CHANGES 已改為未經 `allowScripts` 允許的相依 script 一律擋下，本
 - 本機：以 `npm install-scripts deny --all` 在 `package.json` 的 `allowScripts` 把目前 4 個有 install script 的套件
   （`@google/genai`、`protobufjs`、`@parcel/watcher`、`unrs-resolver`）記為 `false`；它們都不是建置或執行所需（清單見開發指南 §8.y）。
 - 版本分界（npm CHANGELOG 與 nodejs.org `dist/index.json`）：`allowScripts` 欄位自 npm 11.16.0（2026-05-27，「Phase 1 of
-  allowScripts」；Node 24 線為 24.18.0）起生效。11.16～11.17 已讀這個欄位、也有 `npm approve-scripts`／`deny-scripts`
-  （11.17.0 的 CHANGELOG 已有修正這兩個指令的項目），但 enforcement gap 要到 11.18.0（npm/cli #9652，release/v11 的 backport
-  為 #9663）才修；`npm install-scripts` 子命令（#9635）與 `prune`（#9662）也自 11.18.0 起。Node 24 線沒有附帶 11.18.x 的版本，
-  最早是 24.20.0（npm 11.19.0）。因此 `package.json` 的 `engines` 加 `"npm": ">=11.18"`
-  （npm 預設只警告 engines 不符，不會讓安裝失敗）。
+  allowScripts」；Node 24 線為 24.18.0）起生效：11.16 起名稱型 `false` 項目已會略過 script（v11.16.0 的 arborist
+  `rebuild.js` 已有 Phase 1 gate），也有 `npm approve-scripts`／`deny-scripts`。11.18.0 另補了釘版本 deny 在 lockfile 缺
+  `resolved` 時 fail closed、`npm link <pkg>` 過 gate 等 gap（npm/cli #9652，release/v11 的 backport 為 #9663），並新增
+  `npm install-scripts` 子命令（#9635）與 `prune`（#9662）；開發指南 §8.y 的維護流程依賴後者，故 `engines.npm` 取 `>=11.18`
+  （npm 預設只警告 engines 不符，不會讓安裝失敗）。舊的 `approve-scripts`／`deny-scripts` 在 11.18+ 仍保留，`install-scripts`
+  為正式入口。Node 24 線沒有附帶 11.18.x 的版本，最早是 24.20.0（npm 11.19.0）。
 - CI：`radar`、`publish`、`test` 三處 `npm ci` 另保留 `--ignore-scripts` 當第二道防線。Node 24.22.1 附帶的 npm 11.19.1
   支援 `allowScripts`（本機實測 deny 生效），但 `setup-node` 的 `node-version: 24` 解析到哪個 24.x、附帶哪版 npm 不由本 repo
   決定；不認得這個欄位的 npm（例如 Node 22.23.4 附帶的 npm 10.9.9）會直接忽略它、不報錯，照樣執行 script。

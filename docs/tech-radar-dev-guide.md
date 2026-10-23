@@ -748,9 +748,12 @@ jobs:
 **install script：一律不執行，分兩層**：
 
 - **本機（與任何不帶旗標的 `npm ci`／`npm install`）**：`package.json` 的 `allowScripts` 把下表 4 個套件記為 `false`
-  （`npm install-scripts deny`）。需 npm ≥ 11.18（Node 24 線 ≥ 24.20；`engines` 已註明，npm 只警告 engines 不符、不擋安裝）；
-  版本分界與理由見 ADR 0006。npm 11 對未被 `allowScripts` 涵蓋的 script 只警告、仍會執行（`strict-allow-scripts` 預設 false），記為 `false` 的則一律略過；`npm install-scripts ls` 應顯示「No packages with unreviewed install scripts.」。
-- **CI**：三處 `npm ci`（`radar`、`publish`、`test`）另帶 `--ignore-scripts`，不依賴 runner 上的 npm 是否認得 `allowScripts`；理由見 ADR 0006。
+  （`npm install-scripts deny`）。需 npm ≥ 11.18（Node 24 線 ≥ 24.20；`engines.npm` 已註明，`engines.node` 仍是 `>=24`）；
+  低於 11.16 的 npm 會忽略 `allowScripts`、照常執行 script；npm 對 engines 不符只警告、不擋安裝。版本分界與理由見 ADR 0006。
+  npm 11 對未被 `allowScripts` 涵蓋的 script 只警告、仍會執行（`strict-allow-scripts` 預設 false），記為 `false` 的則一律
+  略過；`npm install-scripts ls` 應顯示「No packages with unreviewed install scripts.」。
+- **CI**：三處 `npm ci`（`radar`、`publish`、`test`）另帶 `--ignore-scripts`，不依賴 runner 上的 npm 是否認得
+  `allowScripts`；理由見 ADR 0006。
 
 lockfile 內有 install script 的套件（2026-10-23）與不需要執行的理由：
 
