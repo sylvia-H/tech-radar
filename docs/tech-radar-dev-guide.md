@@ -748,11 +748,11 @@ jobs:
 **install script：一律不執行，分兩層**：
 
 - **本機（與任何不帶旗標的 `npm ci`／`npm install`）**：`package.json` 的 `allowScripts` 把下表 4 個套件記為 `false`
-  （`npm install-scripts deny`）。npm 11 對未被 `allowScripts` 涵蓋的 script 只警告、仍會執行（`strict-allow-scripts`
-  預設 false），記為 `false` 的則一律略過；`npm install-scripts ls` 應顯示「No packages with unreviewed install scripts.」。
-- **CI**：三處 `npm ci`（`radar`、`publish`、`test`）另帶 `--ignore-scripts`，不依賴 runner 上的 npm 版本是否認得
-  `allowScripts`。install script 可直接取得 checkout 留在 `.git/config` 的 token（`radar` 為 `contents: write`）；Secrets
-  在後續步驟才進 env，`--ignore-scripts` 擋的是安裝階段這一層。
+  （`npm install-scripts deny`）。需 npm ≥ 11.18（Node 24 線 ≥ 24.20），`engines` 已註明 `"npm": ">=11.18"`：11.16～11.17
+  雖已讀這個欄位，但沒有 `install-scripts` 子命令、也還有 enforcement gap；更舊的 npm 會忽略這個欄位、照樣執行 script
+  （npm 只警告 engines 不符，不會擋下安裝；分界的查證見 ADR 0006）。npm 11 對未被 `allowScripts` 涵蓋的 script 只警告、
+  仍會執行（`strict-allow-scripts` 預設 false），記為 `false` 的則一律略過；`npm install-scripts ls` 應顯示「No packages with unreviewed install scripts.」。
+- **CI**：三處 `npm ci`（`radar`、`publish`、`test`）另帶 `--ignore-scripts`，不依賴 runner 上的 npm 是否認得 `allowScripts`；理由見 ADR 0006。
 
 lockfile 內有 install script 的套件（2026-10-23）與不需要執行的理由：
 
@@ -770,6 +770,9 @@ lockfile 內有 install script 的套件（2026-10-23）與不需要執行的理
   或執行是否必要：不需要就 `npm install-scripts deny <pkg>`，需要就 `npm install-scripts approve <pkg>`（預設寫入釘版本的
   項目），並更新上表。CI 真的需要時改成「主 checkout `persist-credentials: false`、只在推回狀態那一步帶 token」的做法，
   而不是拿掉 `--ignore-scripts`。
+- **升級上表 4 個套件時**：重新核對其 install script 是否變了、是否仍不需要——`deny` 寫的是只有套件名稱的 `false`
+  項目，新版本換了 script npm 也不會再提醒。相依移除或不再帶 install script 後，以 `npm install-scripts prune`
+  （可先加 `--dry-run`）清掉 `allowScripts` 裡已不對應的項目。
 - **不用 `.npmrc`（`ignore-scripts=true`）**：理由見 ADR 0006。
 - **checkout 憑證**：只有 `radar` job 的 state-branch checkout 保留預設（該步要把 `board.json` 推回 `state` 分支）；
   `radar` 主 checkout、`publish` 的兩個 checkout、`test.yml` 的 checkout 皆 `persist-credentials: false`。

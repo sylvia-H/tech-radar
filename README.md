@@ -661,7 +661,7 @@ $env:GH_API_TOKEN="…"; $env:GEMINI_API_KEY="…"
 node dist/main.cli.js
 ```
 
-目前有 install script 的 4 個相依套件已在 `package.json` 的 `allowScripts` 記為 `false`，安裝時不會執行。新增依賴後若 `npm ci`／`npm install`
+目前有 install script 的 4 個相依套件已在 `package.json` 的 `allowScripts` 記為 `false`，安裝時不會執行（需 npm ≥ 11.18，Node 24 線 ≥ 24.20）。新增依賴後若 `npm ci`／`npm install`
 列出「not yet covered by allowScripts」，依開發指南 §8.y 以 `npm install-scripts deny|approve <pkg>` 處理。
 
 另有三個模式：`NEWS_INGEST_OBSERVE=1` 只跑 Stage A 漏斗並印出候選表（不呼叫 LLM、不推播），
