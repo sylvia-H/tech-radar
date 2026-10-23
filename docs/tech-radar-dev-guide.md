@@ -664,7 +664,7 @@ jobs:
       - run: mkdir -p state && cp state-branch/state/board.json state/board.json
       - uses: actions/setup-node@v5
         with: { node-version: "24", cache: "npm" }
-      - run: npm ci
+      - run: npm ci --ignore-scripts # 不執行相依套件的 install script（job 帶 token 與 Secrets）
       - run: npm run build
       - run: node dist/main.cli.js
         env:
