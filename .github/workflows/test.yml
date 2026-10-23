@@ -1,0 +1,32 @@
+name: Test
+
+# 單元測試：push 與 pull_request 時跑 npm test。刻意與每日排程的 radar.yml 分開——
+# 排程 job 只負責抓取、策展與推播，不因測試而延長執行時間或消耗額外 Actions 分鐘。
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        # 與 radar.yml 一致：不執行相依套件的 install script
+        run: npm ci --ignore-scripts
+
+      - name: Test
+        run: npm test
