@@ -56,12 +56,13 @@
 
 ### 2.1 執行環境：GitHub Actions
 
-- **額度**：public repo 無限；private repo 每月 2,000 分鐘（每個 job 各自進位到整分鐘計費）。估算（2026-10-23）：
-  - 每日排程 2 次觸發，各跑 `radar`＋`publish` 兩個 job（主排約 3～5 分鐘；補跑因 guard 多半數十秒內結束、兩 job 各計 1 分鐘）
-    → 每日約 5～7 分鐘、每月約 150～210 分鐘。
+- **額度**：public repo 無限；private repo 每月 2,000 分鐘（每個 job 各自進位到整分鐘計費）。本 repo 目前為 public、不計分鐘，
+  以下為轉 private 時的估算（依 2026-10-22 UTC 的實際 run 39870603733／39872504021）：
+  - 每日排程 2 次觸發，各跑 `radar`＋`publish` 兩個 job：主排 radar 4m01s＋publish 27s → 進位 5＋1＝6 分鐘；補跑因 guard
+    數十秒內結束 → 1＋1＝2 分鐘。每日約 8 分鐘、每月約 240 分鐘。
   - `test.yml`（§8.y）每次 push 跑 `test`（npm ci＋build＋test，約 1～2 分鐘）與 `audit`（不到 1 分鐘、計 1 分鐘）兩個 job
     → 每次約 2～3 分鐘；同 repo 分支開 PR 時再多一次。以每月 30 次 push 估約 60～90 分鐘。
-  - 合計每月約 210～300 分鐘，遠低於限額。
+  - 合計每月約 300～330 分鐘，遠低於限額。
 - **注意**：
   - cron 是 **UTC**，尖峰時可能延遲數分鐘（偶爾更久）。摘要推播可接受。
   - 排程 workflow 在 repo **連續 60 天無活動**會被停用；每次 run 都 commit `state/board.json`
@@ -724,6 +725,8 @@ jobs:
 
 ### 8.y CI 測試、相依稽核與 install script（2026-10-23 新增）
 
+決策紀錄：[ADR 0006](adr/0006-ci-ignore-scripts-and-test-workflow.md)
+
 **`.github/workflows/test.yml`**（與每日排程的 `radar.yml` 分開）：
 
 - **觸發**：push（`branches-ignore: [state]`——`state` 是只放 `board.json` 的 orphan 分支，沒有 `package.json`）與
@@ -740,8 +743,7 @@ jobs:
   - 處理方式：有修正版 → 開 `fix/` 分支升級（上游鎖死版本時用 `overrides`）；沒有修正版、或確認不影響本專案執行路徑
     （誤報）→ 在 `docs/plans/` 記下公告編號、判斷理由與重看時點，接受紅燈到上游修正為止。不要為了轉綠而移除這個 job
     或調高 `--audit-level`。
-- **為何不併進 `radar.yml`**：曾考慮在 radar job 的 build 後加 `npm test`，否決——測試失敗不應擋下當天晨報；程式只在 push
-  時改變，每天排程多跑一次測試只是多花時間與 Actions 分鐘。
+- **不併進 `radar.yml`**：理由見 ADR 0006。
 
 **install script：三處 `npm ci`（`radar`、`publish`、`test`）都帶 `--ignore-scripts`**。`radar`／`publish` job 帶有
 `GITHUB_TOKEN`（`radar` 為 `contents: write`）與 Actions Secrets，相依套件的 install script 若被投毒即可取得；
@@ -751,7 +753,7 @@ jobs:
 | --- | --- | --- | --- |
 | `@google/genai` | 執行期 | preinstall | 只有 `echo`，不做事 |
 | `protobufjs` | 執行期 | postinstall | 只檢查版本格式並印警告 |
-| `@parcel/watcher` | 開發（jest 30 的 `jest-haste-map`） | install | 只在缺預編譯檔時從原始碼編譯；各平台預編譯檔以 optional 依賴提供，且只在 jest watch 模式使用 |
+| `@parcel/watcher` | 開發（jest 30 的 `jest-haste-map`） | install | 只在帶 `--build-from-source`（`npm_config_build_from_source=true`）時才以 node-gyp 編譯，預設 no-op；各平台預編譯檔以 optional 依賴提供、只在 jest watch 模式使用 |
 | `unrs-resolver` | 開發（jest 30 的 `jest-resolve`） | postinstall | 只在缺原生檔時補裝；各平台 binding（`@unrs/resolver-binding-*`）以 optional 依賴提供 |
 
 - **前提**：jest 30 的 `jest-resolve` 需要 `unrs-resolver` 的原生檔，CI 依賴 lockfile 已含各平台 binding（含
@@ -759,8 +761,7 @@ jobs:
   CI 會報找不到原生 binding；重產後確認 lockfile 仍列出 linux 的 binding，缺了就刪掉 `node_modules` 與 lockfile 完整重產。
 - **新增依賴帶進新的 install script 時**：先確認它對建置或執行是否必要，再更新上表；真的需要時改成「主 checkout
   `persist-credentials: false`、只在推回狀態那一步帶 token」的做法，而不是拿掉 `--ignore-scripts`。
-- **不加 `.npmrc`（`ignore-scripts=true`）**：本機 npm 11 的 `allow-scripts` 預設為空、不執行未核准的 install script
-  （`npm ci` 時只列出警告），本機已有同等效果；`.npmrc` 只會多一份要維護的設定。
+- **不加 `.npmrc`（`ignore-scripts=true`）**：理由見 ADR 0006。
 - **checkout 憑證**：只有 `radar` job 的 state-branch checkout 保留預設（該步要把 `board.json` 推回 `state` 分支）；
   `radar` 主 checkout、`publish` 的兩個 checkout、`test.yml` 的 checkout 皆 `persist-credentials: false`。
 
@@ -771,8 +772,7 @@ jobs:
     等開發依賴，再各自 `npm run build`。帶著 token 與 Secrets 的 job 裡因此多了一整棵執行時用不到的套件。
   - 改法：只在 `radar` job 裝完整相依並 build，把 `dist/` 以 `actions/upload-artifact` 傳給 `publish`；兩個 job
     執行時只裝執行期依賴（`npm ci --omit=dev --ignore-scripts`）。或另開一個不帶 Secrets 的 build job，產出 `dist/` 給兩者。
-  - 為何這次不做：這是排程架構的改動（job 之間的依賴、artifact 的保存與失敗告警都要跟著調），與這次的相依資安修補無關；
-    `--ignore-scripts` 加上 `persist-credentials: false` 已擋下主要風險（install script 在安裝時取得憑證）。
+  - 為何這次不做：見 ADR 0006。
 
 ## 9. NestJS 專案結構
 
