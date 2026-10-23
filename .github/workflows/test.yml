@@ -4,6 +4,8 @@ name: Test
 # 排程 job 只負責抓取、策展與推播，不因測試而延長執行時間或消耗額外 Actions 分鐘。
 on:
   push:
+    # state 分支只放 state/board.json（orphan、無 package.json），不跑測試
+    branches-ignore: [state]
   pull_request:
 
 permissions:

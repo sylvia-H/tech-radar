@@ -688,7 +688,7 @@ commit 回 `state` 分支（push 失敗重試 3 次）；`publish` job `needs: r
 Source 設為 GitHub Actions；到 Actions 頁 Run workflow 手動驗證。手動執行時勾 `dry_run` 即為晨報乾跑：
 跳過 18h guard、真的抓取與策展、結果推到告警頻道，不寫狀態、不跑榜單段、不發佈 Pages。
 
-`.github/workflows/test.yml`：push 與 pull_request 時以 Node 24 跑 `npm ci --ignore-scripts` 與 `npm test`，權限只有
+`.github/workflows/test.yml`：push（排除 `state` 分支）與 pull_request 時以 Node 24 跑 `npm ci --ignore-scripts` 與 `npm test`，權限只有
 `contents: read`；與每日排程分開，不延長 radar job。兩個 workflow 的 `npm ci` 都帶 `--ignore-scripts`，
 不讓相依套件的 install script 在帶有 token 與 Secrets 的 job 裡執行。
 
