@@ -146,7 +146,8 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        # 不執行相依套件的 install script（此 job 帶 token 與 Secrets）；現況見 dev-guide §8.y、理由見 ADR 0006
+        # 不執行相依套件的 install script：本 job 有 id-token: write／pages: write（任何步驟都能向 runner 請求
+        # OIDC token），兩個 checkout 皆不保留 GITHUB_TOKEN。現況見 dev-guide §8.y、理由見 ADR 0006
         run: npm ci --ignore-scripts
 
       - name: Build
