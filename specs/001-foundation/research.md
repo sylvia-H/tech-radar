@@ -15,7 +15,7 @@
 ## D2. 語言 / Runtime / 套件管理
 
 - **Decision**: TypeScript 5.x、**Node.js 24 LTS**（本機 nvm 24.18.0）、npm（`npm ci` + `npm run build`）。
-- **Rationale**: 與本機 nvm 版本一致（24.18.0），避免本機/CI 版本落差；Node 24 內建全域 `fetch`（免額外 HTTP 套件）、原生 ESM/TS 工具鏈更完整。workflow `setup-node@v4` 設 `node-version: "24"`、`cache: "npm"`。
+- **Rationale**: 與本機 nvm 版本一致（24.18.0），避免本機/CI 版本落差；Node 24 內建全域 `fetch`（免額外 HTTP 套件）、原生 ESM/TS 工具鏈更完整。workflow `setup-node@v5` 設 `node-version: "24"`、`cache: "npm"`。
 - **Alternatives**: Node 20 → 較舊，且與本機 nvm 24.18.0 不一致，已否決；pnpm/yarn → 與 `npm ci` 不一致，無必要偏離。
 - **Note**: 開發指南 §8 的 workflow 範例原寫 `node-version: "20"`，已同步更新為 `"24"` 以免文件矛盾。
 
