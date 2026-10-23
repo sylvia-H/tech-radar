@@ -661,6 +661,9 @@ $env:GH_API_TOKEN="…"; $env:GEMINI_API_KEY="…"
 node dist/main.cli.js
 ```
 
+目前有 install script 的 4 個相依套件已在 `package.json` 的 `allowScripts` 記為 `false`，安裝時不會執行。新增依賴後若 `npm ci`／`npm install`
+列出「not yet covered by allowScripts」，依開發指南 §8.y 以 `npm install-scripts deny|approve <pkg>` 處理。
+
 另有三個模式：`NEWS_INGEST_OBSERVE=1` 只跑 Stage A 漏斗並印出候選表（不呼叫 LLM、不推播），
 `PUBLISH_MODE=1` 只跑發佈段（見 [quickstart](specs/008-pages-publish/quickstart.md)），
 `NEWS_DRY_RUN=1` 晨報乾跑（2026-09-27）：跳過 18h guard、照常抓取與策展（消耗 1 次策展配額），結果推到
@@ -693,7 +696,7 @@ Source 設為 GitHub Actions；到 Actions 頁 Run workflow 手動驗證。手�
 與 `audit`（`npm audit --omit=dev --audit-level=high`，只看執行期依賴）。`audit` 在既有依賴出新公告時也會紅燈，
 不一定是該次 push 造成；有修正版就開 `fix/` 分支升級，沒有修正版或確認誤報時記進 `docs/plans/` 並接受紅燈到上游修正。
 與每日排程分開，測試或稽核失敗都不擋晨報。三處 `npm ci` 都帶 `--ignore-scripts`，不讓相依套件的 install script 在帶有
-token 與 Secrets 的 job 裡執行；套件清單、前提與理由見開發指南 §8.y。
+token 的 job 裡執行；本機則由 `package.json` 的 `allowScripts` 把目前有 install script 的套件記為不執行。現況見開發指南 §8.y、理由見 [ADR 0006](docs/adr/0006-ci-ignore-scripts-and-test-workflow.md)。
 
 ## 開發歷程（Spec-Driven Development）
 
