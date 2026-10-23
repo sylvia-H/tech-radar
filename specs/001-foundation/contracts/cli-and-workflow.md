@@ -3,7 +3,8 @@
 > **F1（001-foundation）時期的契約**，保留當時的設計作為紀錄；現況以 `.github/workflows/radar.yml` 與開發指南 §8、§8.y 為準。
 > 之後已改的主要項目：cron 改為 UTC `7 20`／`37 20`；Discord webhook 拆成晨報／榜單／告警三個，Secrets 共五項；
 > 狀態改落獨立的 `state` 分支（另 checkout 到 `state-branch/`，在該子目錄內 commit/push）；主 checkout 不保留憑證
-> （`persist-credentials: false`）；新增 `publish` job（Pages）；另有 `test.yml` 跑 build、測試與執行期相依稽核。
+> （`persist-credentials: false`）；action 升到 @v5、三處 `npm ci` 加 `--ignore-scripts`（現況見 radar.yml、dev-guide §8.y）；
+> 新增 `publish` job（Pages）；另有 `test.yml` 跑 build、測試與執行期相依稽核。
 
 ## CLI 契約
 
@@ -49,9 +50,9 @@ node dist/main.cli.js
 
 ### 步驟契約（順序）
 
-1. `actions/checkout@v5`（含既有 `state/board.json`）。
-2. `actions/setup-node@v5`（`node-version: 24`、`cache: npm`）。
-3. `npm ci --ignore-scripts` → `npm run build`。
+1. `actions/checkout@v4`（含既有 `state/board.json`）。
+2. `actions/setup-node@v4`（`node-version: 24`、`cache: npm`）。
+3. `npm ci` → `npm run build`。
 4. `node dist/main.cli.js`（帶三個 env secrets；step `id: run-app`）。
 5. **Commit state（僅在變更時）**：`git add state/board.json` → `git diff --cached --quiet` 則早退（不 commit）；否則先設 committer 身分 `git config user.name "radar-bot"` / `user.email "radar-bot@users.noreply.github.com"` → `git commit -m "chore: update board state [skip ci]"` → `pull --rebase --autostash` + `push`，重試至多 3 次，最終失敗 `::error::` 並讓 job 失敗。
 6. **告警（`if: failure()` + marker 去重）**：任何步驟失敗都會進入此步；script 內先檢查 marker 檔 `.radar-alert-sent`——存在（CLI 已成功送出告警）即跳過，缺席才以 `curl` POST 紅色 embed 到 `DISCORD_WEBHOOK_URL`。因此涵蓋：app 啟動前失敗（步驟 1–3）、app 啟動階段失敗（env 驗證/DI，`run-app` 失敗但 CLI 未及送告警）、CLI 告警送出本身失敗、以及狀態 commit/push 失敗（步驟 5）。
