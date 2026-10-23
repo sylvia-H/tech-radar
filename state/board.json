@@ -422,133 +422,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-18T22:23:11.316Z",
-  "lastNewsPushAt": "2026-10-22T23:15:58.961Z",
+  "lastNewsPushAt": "2026-10-23T23:04:02.112Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-18T22:23:11.316Z",
       "summary": "本次榜單共新進 7 個項目，其中 AI 佔 6 個、前後端佔 1 個，下降 2 個，並由 morluto/rea 奪下綜合榜 #1。"
     },
     "feed": [
-      {
-        "content": "GitHub 宣布自 2026 年 10 月 19 日起，在 Copilot 各項主要體驗（包含 Copilot Chat、行內編輯、詢問與 Agent 模式、程式碼補全）中正式淘汰數款舊版底層模型。依賴特定舊模型行為或輸出特性的工程團隊應儘速檢查擴充功能與工作流程，確保平順轉移至目前支援的新版模型。",
-        "id": "news:https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
-        "publishedAt": "2026-10-19T23:33:46.783Z",
-        "title": "GitHub 宣布即日起正式淘汰 Copilot 多項舊版底層模型",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026"
-      },
-      {
-        "content": "GitHub 推出全新的 Copilot 模型策略 REST API，提供 GET 與 PATCH 端點。企業管理員與平台工程團隊現在能以程式化方式查詢與更新企業、組織及團隊層級的 Copilot 模型使用策略，便於大型組織自動化實施 AI 工具的安全合規與存取控管。",
-        "id": "news:https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
-        "publishedAt": "2026-10-19T23:33:46.783Z",
-        "title": "GitHub 推出 Copilot 模型策略 REST API，支援企業自動化治理",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams"
-      },
-      {
-        "content": "針對 NetScaler Gateway 爆發的重大漏洞 CVE-2026-88771，攻擊者可在使用者通過身分驗證前遠端執行指令。由於修補程式部署需要驗證時間，安全團隊建議將身分驗證決策前移至易受攻擊的程式碼之前，藉由架構層的防護機制建立防禦縱深，防止閘道端暴露於即時漏洞風險。",
-        "id": "news:https://blog.cloudflare.com/protect-your-netscaler-gateway",
-        "publishedAt": "2026-10-19T23:33:46.783Z",
-        "title": "NetScaler Gateway 重大預驗證 RCE 漏洞 CVE-2026-88771 防護策略",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/protect-your-netscaler-gateway/"
-      },
-      {
-        "content": "OpenAI 分享其在提升 ChatGPT 處理低資源程式語言（low-resource languages）能力的最新進展，並針對軟體工程、SQLite 及 COBOL 遷移等場景建立全新評測基準。此進展對負責企業遺留系統現代化重構與特定領域語言維護的工程師而言，能顯著改善程式碼分析與遷移品質。",
-        "id": "news:https://openai.com/index/low-resource-programming-languages",
-        "publishedAt": "2026-10-19T23:33:46.783Z",
-        "title": "OpenAI 強化低資源語言編程能力，加強 COBOL 與 SQLite 評測",
-        "type": "news",
-        "url": "https://openai.com/index/low-resource-programming-languages"
-      },
-      {
-        "content": "Kubernetes 長期仰賴排程器（Scheduler）與節點自動擴展器（Autoscaler）兩套各自獨立的控制迴路運作，但 AI 訓練與推論負載對 GPU 拓撲、批次放置與資源保留有極嚴格要求，打破了兩者鮮少互動的傳統模式。深入理解兩大控制迴路的互動轉變，是平台工程師打造高效能大規模 AI 叢集的關鍵。",
-        "id": "news:https://cncf.io/blog/2026/10/19/how-ai-workloads-are-reshaping-kubernetes-autoscaling",
-        "publishedAt": "2026-10-19T23:33:46.783Z",
-        "title": "AI 負載如何顛覆 Kubernetes 排程與自動擴展架構",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/10/19/how-ai-workloads-are-reshaping-kubernetes-autoscaling/"
-      },
-      {
-        "content": "該技術研究提出 Hybrid Reasoning Agents 架構，讓大型語言模型在連續的潛在空間（latent space）中進行深層推理與思考搜尋，僅在與外部環境互動時輸出離散文字。這項設計克服了純文字思考鏈（CoT）高 Token 消耗與離散搜尋效率受限的問題，為下一代自主代理人系統設計提供了新思路。",
-        "id": "news:https://arxiv.org/abs/2610.18861",
-        "publishedAt": "2026-10-19T23:33:46.783Z",
-        "title": "混合推理代理人架構：結合潛在空間思考與文字行動的 LLM Agent",
-        "type": "news",
-        "url": "https://arxiv.org/abs/2610.18861"
-      },
-      {
-        "content": "文章深入探討在生產架構中部署專屬 LLM Proxy 的必要性。若應用層直接呼叫第三方模型端點，開發團隊將難以掌握詳細 Token 用量、延遲分佈、重試狀態與隱私風險。透過自建 Proxy，團隊能集中實作快取、速率限制、金鑰輪替與成本監控，大幅強化系統掌控力。",
-        "id": "news:https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on",
-        "publishedAt": "2026-10-19T23:33:46.783Z",
-        "title": "為何生產環境必須自建 LLM Proxy：可觀測性與成本控制核心",
-        "type": "news",
-        "url": "https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on/"
-      },
-      {
-        "content": "技術指南詳述如何將在獨立 GitHub Copilot App 中啟動的 Agent 工作階段移轉至 VS Code 編輯器內繼續進行。此移轉流程能完整保留對話紀錄、程式碼修改歷史與上下文資訊，讓開發者在跨工具開發流程中維持工作脈絡，避免切換環境時重複輸入提示詞。",
-        "id": "news:https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code",
-        "publishedAt": "2026-10-19T23:33:46.783Z",
-        "title": "如何在 VS Code 中無縫延續 GitHub Copilot App 的 Agent 工作階段",
-        "type": "news",
-        "url": "https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/"
-      },
-      {
-        "content": "開源 Windows 相容層 Wine 已被成功移植至 OpenBSD 作業系統。這項成果克服了 OpenBSD 嚴格的安全記憶體保護與系統調用限制，對推動開源作業系統的二進位相容性與生態整合是重要里程碑，讓 OpenBSD 使用者與開發者能直接在該系統環境下執行 Windows 應用程式。",
-        "id": "news:https://marc.info/?l=openbsd-ports&m=179236125692175",
-        "publishedAt": "2026-10-19T23:33:46.783Z",
-        "title": "Wine 成功移植至 OpenBSD：拓展 BSD 生態系的 Windows 相容層支援",
-        "type": "news",
-        "url": "https://marc.info/?l=openbsd-ports&m=179236125692175"
-      },
-      {
-        "content": "DeepSeek 正式開源針對其模型架構優化的高效能、大規模推論框架 DeepInfer。該框架專為 DeepSeek 系列模型設計，提供深入的底層推論優化，有助於開發者深入研究並提升現有自訂推論引擎（如 gufo、halogen、strata 等）的執行效能與吞吐量，對需要私有化部署與大規模運行 DeepSeek 模型的架構師與開發團隊來說是重要開源資源。",
-        "id": "news:https://github.com/deepseek-ai/DeepInfer",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "DeepSeek 開源高效能推論框架 DeepInfer",
-        "type": "news",
-        "url": "https://github.com/deepseek-ai/DeepInfer"
-      },
-      {
-        "content": "微軟宣布釋出 TypeScript 7.1 Beta，現已可透過 npm 進行下載與測試。作為廣大前後端生態系的核心語言，TypeScript 每個次版本的預覽都帶來型別推斷、編譯效能與語法支援的演進，開發者可提前在測試環境評估新特性並驗證專案相容性。",
-        "id": "news:https://github.com/microsoft/TypeScript/releases/tag/v7.1-beta",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "微軟發布 TypeScript 7.1 Beta 版",
-        "type": "news",
-        "url": "https://github.com/microsoft/TypeScript/releases/tag/v7.1-beta"
-      },
-      {
-        "content": "由於發現 eMudhra 的 8 個中間憑證（Intermediate CA）使用了弱金鑰，導致憑證安全性遭到妥協。Cloudflare 已緊急部署緩解措施並發布客戶端更新，同時說明該事件對整體網路信任鏈的影響，並建議受影響的客戶與開發者檢查自身憑證設定並盡快套用對應修正。",
-        "id": "news:https://blog.cloudflare.com/emudhra-certificate-compromise",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "8 個 eMudhra 中間憑證遭妥協，Cloudflare 部署防護與客戶更新",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/"
-      },
-      {
-        "content": "根據美國國土安全部（DHS）發布的最新命令，美國聯邦民事機構已被全面禁止使用 DeepSeek 模型。這項外部法規直接限制了政府單位及其外包軟體服務商採用該模型的合規性，對於開發與聯邦機構相關業務或有合規審查要求的技術團隊而言，需要立即調整 AI 模型的選型策略與整合架構。",
-        "id": "news:https://reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "美國國土安全部發布新禁令：聯邦民事機構全面禁用 DeepSeek",
-        "type": "news",
-        "url": "https://www.reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19/"
-      },
-      {
-        "content": "Mistral 推出語音模型 Voxtral 3。作為專注於音訊與語音處理的模型，其發布拓展了開源與商業開發者在語音辨識、語音生成以及多模態語音助理架構上的選擇，為開發端到端語音應用的工程師提供最新基礎模型能力。",
-        "id": "news:https://mistral.ai/news/voxtral-3",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "Mistral 發表新一代語音模型 Voxtral 3",
-        "type": "news",
-        "url": "https://mistral.ai/news/voxtral-3/"
-      },
-      {
-        "content": "Tsrs 專案正式將 TypeScript 編譯器與型別系統移植至 Rust。該專案由 Cloudflare 主導，核心特色在於透過 AI 程式碼 Agent 大量協同撰寫完成，旨在不分叉 TypeScript 生態系的前提下，讓 AI Agent 與開發者能在不耗盡伺服器運算資源的情況下高速驗證程式碼，大幅提升 TypeScript 編譯與型別檢查效能。",
-        "id": "news:https://blog.cloudflare.com/typescript-rust-port",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "Tsrs：由 AI Agent 協同打造的 TypeScript 轉 Rust 移植專案",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/typescript-rust-port/"
-      },
       {
         "content": "Cloudflare 開發的 27B 多模態決策模型 Clef 正式上架 Ollama 平台，開發者現在可以選擇在本地端執行，或是直接透過 Ollama Cloud 調用。Clef 專為多模態決策與 Agent 任務設計，支援 Ollama 生態讓開發者能以極低門檻將其整合進本機開發與私有化工作流程中。",
         "id": "news:https://ollama.com/blog/clef",
@@ -828,240 +708,345 @@
         "title": "遭逢中介金鑰外洩事件後 eMudhra 宣布全面退出全球 SSL/TLS 憑證業務",
         "type": "news",
         "url": "https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business"
+      },
+      {
+        "content": "月之暗面（Moonshot AI）推出新一代 Kimi K3.1 Pro 及主打高速推論的 K3.1 Pro Highspeed 模型。新版本進一步提升複雜推理、長文本理解與代碼生成能力，Highspeed 版本則針對低延遲與高吞吐需求進行最佳化。這使開發者在打造即時對話系統或自主 AI Agent 時，能在推論品質與回應延遲之間獲得更具彈性的選擇。",
+        "id": "news:https://kimi.ai/blog/kimi-k3-1-pro",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "月之暗面發布 Kimi K3.1 Pro 與 K3.1 Pro Highspeed 模型",
+        "type": "news",
+        "url": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+      },
+      {
+        "content": "Node.js 釋出安全性更新版本 26.12.1，重點修補多個 High 等級安全性弱點。主要修復包括拒絕非規範（non-canonical）IP 位址以防範 SSRF 與 TLS 繞過攻擊（CVE-2026-106069、CVE-2026-106072）、在 DNS 解析輸入中嚴格過濾空字元（CVE-2026-105482），以及更新 Brotli 解碼器以修正潛在錯誤。官方建議使用 26.x 版本的開發團隊儘速升級以確保服務安全。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.12.1",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "Node.js 發布安全更新修復非規範 IP 阻擋與 DNS 等高危漏洞",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.12.1"
+      },
+      {
+        "content": "Cloudflare 宣布推出支援後量子密碼學（PQC）的 GeoKey Manager 地理圍欄金鑰管理服務。新架構旨在抵禦「先攔截、後解密」（Harvest Now, Decrypt Later）的量子威脅，同時滿足跨國企業嚴格的區域資料主權與金鑰本地化法規要求。這使安全架構師能確保在邊緣節點進行解密時，兼顧跨國低延遲傳輸與未來世代的抗量子加密標準。",
+        "id": "news:https://blog.cloudflare.com/post-quantum-geo-key-manager",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "Cloudflare 推出支援後量子密碼學的 GeoKey Manager",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/post-quantum-geo-key-manager/"
+      },
+      {
+        "content": "GitHub 釋出 Visual Studio 的 Copilot 9 月更新，讓開發者能直接在 Copilot 聊天介面中檢視並探討 Pull Request 變更，無須切換回瀏覽器。同時，更新支援團隊自選信任的基礎 AI 模型，並在 IDE 偵測到套件相依性弱點時提供即時的一鍵修復建議，有效降低代碼審查與相依性修補時的上下文切換成本。",
+        "id": "news:https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "GitHub Copilot 在 Visual Studio 支援 PR 檢視與即時漏洞修復",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2"
+      },
+      {
+        "content": "Google 官方公開 Gemini 4 Argon 的安全評估報告，深入說明其在模型對齊、防範惡意滥用以及真實場景魯棒性方面的測試機制。報告聚焦於自主 Agent 行為邊界、提示詞注入防禦與幻覺控制的最新驗證基準，為採用 Gemini 系列模型構建企業級 Agent 與敏感業務系統的開發者提供了清晰的安全防護界限依據。",
+        "id": "news:https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "Google 發表 Gemini 4 Argon 模型安全評估與對齊報告",
+        "type": "news",
+        "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/"
+      },
+      {
+        "content": "OpenAI 發布技術說明，詳述其為前沿模型訓練與評估環境所建構的安全隔離機制。實踐涵蓋嚴格的完全離線（air-gapped）沙盒環境、高算力自動化紅隊測試，以及細粒度的網路邊界控制，旨在杜絕訓練權重洩露與惡意代碼外溢風險。該架構為進行大規模模型研發的 AI 與 MLOps 基礎設施團隊提供了高規格的基建安全參考。",
+        "id": "news:https://openai.com/index/securing-our-frontier-model-training-environment",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "OpenAI 公開前沿模型訓練環境的安全隔離與紅隊防護架構",
+        "type": "news",
+        "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+      },
+      {
+        "content": "隱私與安全 DNS 服務商 Quad9 宣布將終止在法國境內的伺服器營運與法律實體。起因於法國法院要求其在全球遞迴解析層面封鎖特定侵權網址，引發管轄權爭議，Quad9 認為該判決嚴重威脅網路中立性。此事件直接影響仰賴 Quad9 進行惡意域名過濾的歐盟開發者與基礎設施團隊，凸顯依賴公共 DNS 時需考量的地緣法規風險。",
+        "id": "news:https://quad9.net/news/blog/au-revoir-france",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "知名安全 DNS 服務 Quad9 因法規爭端宣布撤出法國市場",
+        "type": "news",
+        "url": "https://quad9.net/news/blog/au-revoir-france/"
+      },
+      {
+        "content": "瑞典政府辦公室正式宣布在內部公務環境中禁止使用 ChatGPT 與 Claude 等外部商業 AI 服務，主要考量敏感數據洩漏風險與境外資料傳輸的合規要求。此禁令顯示歐盟各國公共部門對商用 LLM 的監管審查日益嚴苛，對承接政府專案或高隱私監管領域的軟體團隊而言，轉向私有化地端部署或合規主權模型已成必然趨勢。",
+        "id": "news:https://sverigesradio.se/artikel/chat-gpt-och-claude-forbjuder-regeringskansliet",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "瑞典政府機構宣布全面禁用商業 AI 模型 ChatGPT 與 Claude",
+        "type": "news",
+        "url": "https://www.sverigesradio.se/artikel/chat-gpt-och-claude-forbjuder-regeringskansliet"
+      },
+      {
+        "content": "OpenAI 發表架構深度專文，剖析支撐超過 10 億使用者的 ChatGPT 線上儲存擴展架構。團隊藉由在自研儲存系統 Habitat 中落實高可用多租戶架構、結合 Azure Cosmos DB 與全域分散式快取設計，成功將端對端讀取延遲降至原先的十二分之一。文章詳述了分散式快取一致性、高並發熱點防範與故障轉移設計，對分散式後端架構極具參考價值。",
+        "id": "news:https://openai.com/index/scaling-storage-one-billion-users-part-two",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "OpenAI 解析 ChatGPT 儲存架構：將 10 億用戶讀取延遲降至十二分之一",
+        "type": "news",
+        "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two"
+      },
+      {
+        "content": "Cloudflare 技術團隊揭露其利用 Pingora 代理層重構大型檔案 Byte-Range 請求快取機制的實作經驗。傳統 Range 快取常因微小請求而浪費數十 GB 的源站頻寬，新架構能自動協調邊緣分段擷取與快取合併，不僅解決了頻寬放大問題，更將 Cloudflare R2 物件儲存的 p99 延遲降低了 50%，為影音串流與大檔案分發架構提供了優良範例。",
+        "id": "news:https://blog.cloudflare.com/origin-range-requests",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "Cloudflare 透過 Pingora 重構 Range 快取架構，將 R2 延遲減半",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/origin-range-requests/"
+      },
+      {
+        "content": "GPU 資源管理常面臨獨立叢集控制平面成本過高、單一叢集多租戶隔離性不足的兩難。本文探討如何整合 Kamaji（輕量級獨立控制平面）與 HAMi（異質 GPU 算力與記憶體切分），在虛擬化基礎設施上構建兼顧硬性安全隔離與高硬體利用率的 GPU 平台，為雲原生 AI 算力調度與 MLOps 團隊提供了落地的開源解決方案。",
+        "id": "news:https://cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "利用 Kamaji 與 HAMi 在 Kubernetes 實現高隔離 GPU 多租戶架構",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami/"
+      },
+      {
+        "content": "本文深入分析大語言模型在軟體形式化驗證（Formal Verification）領域的最新進展。過去形式化證明因需大量人工撰寫規格引理而難以擴展至大型專案；近期實踐證明，LLM 能夠高效輔助證明路徑搜尋、反例除錯與規格自動推導，顯著降低了形式化驗證的門檻，正逐步改變關鍵核心系統與編譯器的可靠度驗證流程。",
+        "id": "news:https://anthropic.com/research/formal-verification",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "大語言模型助力形式化軟體驗證邁向大規模工程實踐",
+        "type": "news",
+        "url": "https://www.anthropic.com/research/formal-verification"
+      },
+      {
+        "content": "許多開發者嘗試直接提示 LLM 輸出「置信度評分」作為決策門檻，本文深入探討此實作的統計盲點。研究指出，自回歸 LLM 的自評置信度極易受到提示詞語氣、上下文長度及過度自信傾向影響，與真實校準準確率脫節。文章建議開發者應改採 Token Logits 機率熵分析、多次採樣一致性（Self-Consistency）或外部校準模型來評估不確定性。",
+        "id": "news:https://rumple.github.io/blog/2026/10/20/asking-llm-for-confidence.html",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "技術剖析：為何直接讓 LLM 輸出置信度分數是不可靠的作法",
+        "type": "news",
+        "url": "https://rumple.github.io/blog/2026/10/20/asking-llm-for-confidence.html"
+      },
+      {
+        "content": "傳統自回歸文字生成受限於逐字預測（Next-Token Prediction）的序列計算瓶頸。Next-Concept Modeling 提出從粗到細（Coarse-to-Fine）的兩階段生成機制：先高速並行規劃高層次概念語意，再並行細化為具體 Token。該方法在維持語意連貫性的同時顯著釋放了推論的並行運算能力，為新一代非自回歸推論架構開闢了全新方向。",
+        "id": "news:https://arxiv.org/abs/2610.14162",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "Next-Concept Modeling 論文解析：從粗到細的平行文字生成架構",
+        "type": "news",
+        "url": "https://arxiv.org/abs/2610.14162"
+      },
+      {
+        "content": "Vercel 宣布在生態系中逐步淘汰長期靜態 API Key，要求市集夥伴改用短期動態認證，但開發社群隨後指出其自身部署流程仍廣泛依賴長期 Deployment Token。此事件引發了開發者對現代 CI/CD 憑證輪替、身分同盟（OIDC）實踐複雜度與安全代價的深入討論，突顯在無伺服器環境中落實零信任架構時的現實挑戰。",
+        "id": "news:https://thenewstack.io/vercel-oidc-static-credentials",
+        "publishedAt": "2026-10-23T23:04:02.112Z",
+        "title": "Vercel 淘汰靜態憑證引發社群檢視長期部署權杖安全實務",
+        "type": "news",
+        "url": "https://thenewstack.io/vercel-oidc-static-credentials/"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-22T23:15:58.961Z",
+      "generatedAt": "2026-10-23T23:04:02.112Z",
       "items": [
         {
-          "content": "OpenAI 宣布將其制定的「Open Responses」通用 LLM API 規格正式捐贈給開源組織 Agentic AI Foundation。此舉旨在為業界建立一致且開源的 LLM 回應與 AI 代理人（Agent）互動規格，避免開發者被單一供應商的私有格式鎖定，並加速不同廠商與框架間多 Agent 系統的互操作性。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "OpenAI donates Open Responses, its spec for a common LLM API, to the Agentic AI Foundation",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "OpenAI 將通用 LLM API 規格「Open Responses」捐贈給 Agentic AI 基金會",
-          "url": "https://thenewstack.io/openai-donates-open-responses/",
-          "weightedScore": 50
-        },
-        {
-          "content": "KittenML 正式開源 Kitten-TTS 2 程式碼與模型權重。該模型為首款採用 1.58-bit 三元權重（Ternary Weights）的前沿文字轉語音（TTS）模型，僅需 CPU 就能達到即時推論，並支援零樣本聲音複製、多語言與情緒語氣控制。超低運算需求大幅降低了自架語音合成的硬體與雲端成本，特別適合邊緣設備與低延遲 AI 代理人整合。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "Kitten-TTS 2: New Open-source SOTA 1.58 bit TTS (CPU-only with voice cloning, multilingual, emotion control)",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "KittenML 開源 Kitten-TTS 2：採 1.58-bit 權重、僅需 CPU 即可即時運行的語音合成模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xc48or/kittentts_2_new_opensource_sota_158_bit_tts/",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 宣布 Copilot 使用量指標 API 迎來功能更新。企業組織現在可以透過 API 取得個別自訂技能（Skills）、自訂 Agent、Model Context Protocol（MCP）伺服器、斜線指令及外掛的具體名稱與呼叫數據，不再像以往全數歸納在通用分類中。這有助於工程主管與架構師精確評估內部擴充功能與 Agentic 工具的實際效益與採用率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Custom skills, agents, and MCP servers in usage metrics API",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 使用量指標 API 升級：支援追蹤自訂 Agent、MCP 伺服器與技能數據",
-          "url": "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 宣布針對 Copilot Business 與 Copilot Enterprise 訂閱方案的「全域預設原則（Global Default Policy）」進入正式發布（GA）階段並逐步推送。該政策為正式釋出的 Copilot 功能與支援的客戶端能力提供統一的全域套用設定，協助企業管理者以一致的治理標準管理開發團隊的功能權限，免去逐一手動設定各專案政策的維運負擔。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Global default for Copilot features generally available",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 全域預設原則正式 GA：統一企業版功能推送與支援控管",
-          "url": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群迎來 OpenAI CLI 命令列工具，讓開發者與維運人員能直接在終端機呼叫 OpenAI 模型進行文本處理、程式碼分析與管線整合。該工具免去了撰寫臨時腳本的步驟，大幅簡化在 Shell 環境與 CI/CD 自動化流程中導入 AI 能力的流程。",
+          "content": "月之暗面（Moonshot AI）推出新一代 Kimi K3.1 Pro 及主打高速推論的 K3.1 Pro Highspeed 模型。新版本進一步提升複雜推理、長文本理解與代碼生成能力，Highspeed 版本則針對低延遲與高吞吐需求進行最佳化。這使開發者在打造即時對話系統或自主 AI Agent 時，能在推論品質與回應延遲之間獲得更具彈性的選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "OpenAI CLI",
+          "sourceTitle": "Kimi K3.1 Pro and K3.1 Pro Highspeed",
           "sources": [
             "hn"
           ],
-          "title": "OpenAI CLI 命令列工具推出：加速終端機環境的 API 操作與自動化腳本整合",
-          "url": "https://github.com/openai/openai-cli",
-          "weightedScore": 228
+          "title": "月之暗面發布 Kimi K3.1 Pro 與 K3.1 Pro Highspeed 模型",
+          "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+          "weightedScore": 625
         },
         {
-          "content": "OpenShell 釋出，旨在為大量自主 AI Agent 提供安全、隔離且兼具隱私保護的專用執行環境（Runtime）。隨著 AI 代理人逐步獲得呼叫外部工具與操作系統的權限，OpenShell 透過沙盒架構協助開發團隊部署自主 Agent 集群，降低未受控操作或機敏資料外洩的風險。",
+          "content": "Node.js 釋出安全性更新版本 26.12.1，重點修補多個 High 等級安全性弱點。主要修復包括拒絕非規範（non-canonical）IP 位址以防範 SSRF 與 TLS 繞過攻擊（CVE-2026-106069、CVE-2026-106072）、在 DNS 解析輸入中嚴格過濾空字元（CVE-2026-105482），以及更新 Brotli 解碼器以修正潛在錯誤。官方建議使用 26.x 版本的開發團隊儘速升級以確保服務安全。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "OpenShell – A safe, private runtime for fleets of autonomous AI agents",
+          "sourceId": "gh-nodejs",
+          "sourceTitle": "2026-10-21, Version 26.12.1 (Current), @aduh95 prepared by @RafaelGSS",
           "sources": [
-            "hn"
+            "gh-nodejs"
           ],
-          "title": "OpenShell：專為自主 AI Agent 集群打造的安全私有執行環境",
-          "url": "https://github.com/NVIDIA/OpenShell",
-          "weightedScore": 254
+          "title": "Node.js 發布安全更新修復非規範 IP 阻擋與 DNS 等高危漏洞",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.12.1",
+          "weightedScore": 100
         },
         {
-          "content": "Cloudflare 與 Commerce.com 合作，利用 WebMCP 在邊緣網路為近十萬個電商網域提供標準化的 AI Agent 互動介面。此機制使自主代理人能直接透過結構化工具進行商品檢索與下單互動，同時確保商家保有存取控制權，展示了 MCP 協議在大規模 Web 生產環境的落地應用。",
+          "content": "Cloudflare 宣布推出支援後量子密碼學（PQC）的 GeoKey Manager 地理圍欄金鑰管理服務。新架構旨在抵禦「先攔截、後解密」（Harvest Now, Decrypt Later）的量子威脅，同時滿足跨國企業嚴格的區域資料主權與金鑰本地化法規要求。這使安全架構師能確保在邊緣節點進行解密時，兼顧跨國低延遲傳輸與未來世代的抗量子加密標準。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cloudflare-blog",
-          "sourceTitle": "How Commerce.com and Cloudflare are getting storefronts ready for AI agents",
+          "sourceTitle": "Bringing post-quantum cryptography to geographically fenced key management",
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "Cloudflare 攜手 Commerce.com 透過 WebMCP 支援十萬電商網站介接 AI Agent",
-          "url": "https://blog.cloudflare.com/webmcp-commerce/",
+          "title": "Cloudflare 推出支援後量子密碼學的 GeoKey Manager",
+          "url": "https://blog.cloudflare.com/post-quantum-geo-key-manager/",
           "weightedScore": 50
         },
         {
-          "content": "啟用 AI 寫程式代理人的遙測常會產生海量非結構化日誌與追蹤資料，造成昂貴的儲存支出與分析困難。本文詳細探討如何透過 OpenTelemetry Collector 的處理器管線，對 AI Agent 的對話與工具呼叫遙測進行抽樣、雜訊過濾與欄位裁剪，在保留核心排錯指標的同時大幅降低監控成本。",
+          "content": "GitHub 釋出 Visual Studio 的 Copilot 9 月更新，讓開發者能直接在 Copilot 聊天介面中檢視並探討 Pull Request 變更，無須切換回瀏覽器。同時，更新支援團隊自選信任的基礎 AI 模型，並在 IDE 偵測到套件相依性弱點時提供即時的一鍵修復建議，有效降低代碼審查與相依性修補時的上下文切換成本。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub Copilot in Visual Studio — September update",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 在 Visual Studio 支援 PR 檢視與即時漏洞修復",
+          "url": "https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
+          "weightedScore": 100
+        },
+        {
+          "content": "Google 官方公開 Gemini 4 Argon 的安全評估報告，深入說明其在模型對齊、防範惡意滥用以及真實場景魯棒性方面的測試機制。報告聚焦於自主 Agent 行為邊界、提示詞注入防禦與幻覺控制的最新驗證基準，為採用 Gemini 系列模型構建企業級 Agent 與敏感業務系統的開發者提供了清晰的安全防護界限依據。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sourceTitle": "Developing Gemini 4 Argon responsibly and safely",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "Google 發表 Gemini 4 Argon 模型安全評估與對齊報告",
+          "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+          "weightedScore": 100
+        },
+        {
+          "content": "OpenAI 發布技術說明，詳述其為前沿模型訓練與評估環境所建構的安全隔離機制。實踐涵蓋嚴格的完全離線（air-gapped）沙盒環境、高算力自動化紅隊測試，以及細粒度的網路邊界控制，旨在杜絕訓練權重洩露與惡意代碼外溢風險。該架構為進行大規模模型研發的 AI 與 MLOps 基礎設施團隊提供了高規格的基建安全參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sourceTitle": "Securing our frontier model training environment",
+          "sources": [
+            "openai-blog"
+          ],
+          "title": "OpenAI 公開前沿模型訓練環境的安全隔離與紅隊防護架構",
+          "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+          "weightedScore": 100
+        },
+        {
+          "content": "隱私與安全 DNS 服務商 Quad9 宣布將終止在法國境內的伺服器營運與法律實體。起因於法國法院要求其在全球遞迴解析層面封鎖特定侵權網址，引發管轄權爭議，Quad9 認為該判決嚴重威脅網路中立性。此事件直接影響仰賴 Quad9 進行惡意域名過濾的歐盟開發者與基礎設施團隊，凸顯依賴公共 DNS 時需考量的地緣法規風險。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Quad9 to exit France",
+          "sources": [
+            "hn"
+          ],
+          "title": "知名安全 DNS 服務 Quad9 因法規爭端宣布撤出法國市場",
+          "url": "https://quad9.net/news/blog/au-revoir-france/",
+          "weightedScore": 1335
+        },
+        {
+          "content": "瑞典政府辦公室正式宣布在內部公務環境中禁止使用 ChatGPT 與 Claude 等外部商業 AI 服務，主要考量敏感數據洩漏風險與境外資料傳輸的合規要求。此禁令顯示歐盟各國公共部門對商用 LLM 的監管審查日益嚴苛，對承接政府專案或高隱私監管領域的軟體團隊而言，轉向私有化地端部署或合規主權模型已成必然趨勢。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Swedish government offices to ban ChatGPT and Claude",
+          "sources": [
+            "hn"
+          ],
+          "title": "瑞典政府機構宣布全面禁用商業 AI 模型 ChatGPT 與 Claude",
+          "url": "https://www.sverigesradio.se/artikel/chat-gpt-och-claude-forbjuder-regeringskansliet",
+          "weightedScore": 314
+        },
+        {
+          "content": "OpenAI 發表架構深度專文，剖析支撐超過 10 億使用者的 ChatGPT 線上儲存擴展架構。團隊藉由在自研儲存系統 Habitat 中落實高可用多租戶架構、結合 Azure Cosmos DB 與全域分散式快取設計，成功將端對端讀取延遲降至原先的十二分之一。文章詳述了分散式快取一致性、高並發熱點防範與故障轉移設計，對分散式後端架構極具參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sourceTitle": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+          "sources": [
+            "openai-blog"
+          ],
+          "title": "OpenAI 解析 ChatGPT 儲存架構：將 10 億用戶讀取延遲降至十二分之一",
+          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 技術團隊揭露其利用 Pingora 代理層重構大型檔案 Byte-Range 請求快取機制的實作經驗。傳統 Range 快取常因微小請求而浪費數十 GB 的源站頻寬，新架構能自動協調邊緣分段擷取與快取合併，不僅解決了頻寬放大問題，更將 Cloudflare R2 物件儲存的 p99 延遲降低了 50%，為影音串流與大檔案分發架構提供了優良範例。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Origin Range Requests: Serving large files without range-request tuning",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare 透過 Pingora 重構 Range 快取架構，將 R2 延遲減半",
+          "url": "https://blog.cloudflare.com/origin-range-requests/",
+          "weightedScore": 50
+        },
+        {
+          "content": "GPU 資源管理常面臨獨立叢集控制平面成本過高、單一叢集多租戶隔離性不足的兩難。本文探討如何整合 Kamaji（輕量級獨立控制平面）與 HAMi（異質 GPU 算力與記憶體切分），在虛擬化基礎設施上構建兼顧硬性安全隔離與高硬體利用率的 GPU 平台，為雲原生 AI 算力調度與 MLOps 團隊提供了落地的開源解決方案。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cncf-blog",
-          "sourceTitle": "Filtering and reducing AI agent telemetry with the OpenTelemetry Collector",
+          "sourceTitle": "Multi-tenant GPU Kubernetes on simulated hardware with Kamaji and HAMi",
           "sources": [
             "cncf-blog"
           ],
-          "title": "借助 OpenTelemetry Collector 過濾並精簡 AI Agent 暴增的遙測資料",
-          "url": "https://www.cncf.io/blog/2026/10/22/filtering-and-reducing-ai-agent-telemetry-with-the-opentelemetry-collector/",
+          "title": "利用 Kamaji 與 HAMi 在 Kubernetes 實現高隔離 GPU 多租戶架構",
+          "url": "https://www.cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami/",
           "weightedScore": 100
         },
         {
-          "content": "本文對五種主流的 AI Agent 執行骨架（Harness）進行長期記憶基準測試。評測結果顯示，各框架在對話記憶與早期任務關聯上的表現落差巨大，證實單純記錄歷史並不等於 Agent 能正確檢索與運用，並深入分析了向量檢索與情境壓縮等不同架構的實際優劣。",
+          "content": "本文深入分析大語言模型在軟體形式化驗證（Formal Verification）領域的最新進展。過去形式化證明因需大量人工撰寫規格引理而難以擴展至大型專案；近期實踐證明，LLM 能夠高效輔助證明路徑搜尋、反例除錯與規格自動推導，顯著降低了形式化驗證的門檻，正逐步改變關鍵核心系統與編譯器的可靠度驗證流程。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "LLMs are making formal software verification feasible at a much larger scale",
+          "sources": [
+            "hn"
+          ],
+          "title": "大語言模型助力形式化軟體驗證邁向大規模工程實踐",
+          "url": "https://www.anthropic.com/research/formal-verification",
+          "weightedScore": 437
+        },
+        {
+          "content": "許多開發者嘗試直接提示 LLM 輸出「置信度評分」作為決策門檻，本文深入探討此實作的統計盲點。研究指出，自回歸 LLM 的自評置信度極易受到提示詞語氣、上下文長度及過度自信傾向影響，與真實校準準確率脫節。文章建議開發者應改採 Token Logits 機率熵分析、多次採樣一致性（Self-Consistency）或外部校準模型來評估不確定性。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Using LLM for confidence scoring is a bad idea",
+          "sources": [
+            "hn"
+          ],
+          "title": "技術剖析：為何直接讓 LLM 輸出置信度分數是不可靠的作法",
+          "url": "https://rumple.github.io/blog/2026/10/20/asking-llm-for-confidence.html",
+          "weightedScore": 221
+        },
+        {
+          "content": "傳統自回歸文字生成受限於逐字預測（Next-Token Prediction）的序列計算瓶頸。Next-Concept Modeling 提出從粗到細（Coarse-to-Fine）的兩階段生成機制：先高速並行規劃高層次概念語意，再並行細化為具體 Token。該方法在維持語意連貫性的同時顯著釋放了推論的並行運算能力，為新一代非自回歸推論架構開闢了全新方向。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Next-Concept Modeling: Fast, Parallel Coarse-to-Fine Text Generation",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "Next-Concept Modeling 論文解析：從粗到細的平行文字生成架構",
+          "url": "https://arxiv.org/abs/2610.14162",
+          "weightedScore": 100
+        },
+        {
+          "content": "Vercel 宣布在生態系中逐步淘汰長期靜態 API Key，要求市集夥伴改用短期動態認證，但開發社群隨後指出其自身部署流程仍廣泛依賴長期 Deployment Token。此事件引發了開發者對現代 CI/CD 憑證輪替、身分同盟（OIDC）實踐複雜度與安全代價的深入討論，突顯在無伺服器環境中落實零信任架構時的現實挑戰。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "Five AI agent harnesses took the same memory test. The results weren’t even close.",
+          "sourceTitle": "Vercel moved to kill static credentials. Then developers spotted its own deployment token.",
           "sources": [
             "thenewstack"
           ],
-          "title": "五款 AI Agent Harness 記憶基準測試：架構差異決定任務持續性與召回成敗",
-          "url": "https://thenewstack.io/letta-frontiermemory-agent-harness-benchmark/",
+          "title": "Vercel 淘汰靜態憑證引發社群檢視長期部署權杖安全實務",
+          "url": "https://thenewstack.io/vercel-oidc-static-credentials/",
           "weightedScore": 50
-        },
-        {
-          "content": "企業在評估高價的專用 AI SRE 產品時，往往忽略工程師日常使用的寫程式 Agent（如 Claude Code 或 Cursor）已具備調查 Kubernetes 叢集的能力，核心瓶頸在於缺乏即時情境與權限。本文提出以既有工具串接基礎架構可觀測性資料的做法，協助團隊以更低成本建立自動化 SRE 流程。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Before you evaluate an AI SRE, give your existing agent context",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "導入 AI SRE 前的關鍵架構思考：優先為現有 Coding Agent 串接叢集情境",
-          "url": "https://www.cncf.io/blog/2026/10/21/before-you-evaluate-an-ai-sre-give-your-existing-agent-context/",
-          "weightedScore": 100
-        },
-        {
-          "content": "隨著自主 AI 代理人具備自動化逆向工程與漏洞挖掘能力，漏洞發現的速度已大幅超越人類團隊的應變能量。「Patch the Planet」探討了全球安全社群如何透過自動化回應與跨組織協調機制因應此轉變，以防自動化攻擊腳本領先修補程序造成零日漏洞攻擊。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Patch the Planet: global response coordination as agents uncover vulnerabilities",
-          "sources": [
-            "hn",
-            "openai-blog"
-          ],
-          "title": "Patch the Planet：面對 AI Agent 大規模自動化挖掘漏洞的全球協同修補機制",
-          "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/",
-          "weightedScore": 362
-        },
-        {
-          "content": "傳統強化學習在訓練 Agent 時常面臨獎勵訊號模糊的問題。ThinkingBox 提出將資料庫查詢與評分機制直接轉換為強化學習獎勵訊號的方法，讓 AI 代理人能在具備嚴格校驗標準的結構化環境中持續微調，為需精確操作 SQL 與結構化資料的垂直領域模型提供了可靠的後訓練思路。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "以資料庫判定結果作為 RL 獎勵：利用 ThinkingBox 進行 Agent 後訓練",
-          "url": "https://huggingface.co/blog/microsoft/thinkingbox-training",
-          "weightedScore": 100
-        },
-        {
-          "content": "廣受歡迎的開源 LLM 介面套件 LiteLLM 於 PyPI 釋出的 1.107.0 版本遭惡意植入後門與憑證竊取程式。LiteLLM 是眾多團隊構建 AI 服務時的核心依賴，若在 CI/CD 或本機開發環境安裝了受感染版本，環境變數中的 API 金鑰與主機敏感資訊恐已外洩，開發者應立即檢查相依版本並更換相關金鑰。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Compromised LiteLLM 1.107.0 on PyPI Installs a Credential Stealer and Backdoor",
-          "sources": [
-            "hn"
-          ],
-          "title": "PyPI 上的 LiteLLM 1.107.0 遭投毒：植入憑證竊取器與後門腳本",
-          "url": "https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/",
-          "weightedScore": 587
-        },
-        {
-          "content": "在日前中介憑證授權單位（CA）私鑰遭破解並引發瀏覽器社群信任審查後，印度 CA 機構 eMudhra 正式宣布退出全球 SSL/TLS 憑證業務。此舉將直接衝擊仍在使用其簽發憑證的線上服務，維運與 DevOps 工程師需儘快盤點對外網域憑證並替換為其他受信公有 CA，以防連線中斷。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "eMudhra to exit global SSL/TLS certificate business",
-          "sources": [
-            "hn"
-          ],
-          "title": "遭逢中介金鑰外洩事件後 eMudhra 宣布全面退出全球 SSL/TLS 憑證業務",
-          "url": "https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business",
-          "weightedScore": 890
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-09-08T00:10:50.507Z",
-      "url": "https://cncf.io/blog/2026/09/04/cpu-gpu-why-ai-platform-engineering-is-a-heterogeneous-infrastructure-problem"
-    },
-    {
-      "seenAt": "2026-09-08T00:10:50.507Z",
-      "url": "https://blog.cloudflare.com/ddos-threat-report-2026-h1"
-    },
-    {
-      "seenAt": "2026-09-08T00:10:50.507Z",
-      "url": "https://cncf.io/blog/2026/09/07/handling-vulnerability-reports-recipe-card"
-    },
-    {
-      "seenAt": "2026-09-08T00:10:50.507Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1w9dlf1/new_benchmark_the_struggle_bench"
-    },
-    {
-      "seenAt": "2026-09-08T00:10:50.507Z",
-      "url": "https://thenewstack.io/astra-reasoning-effort-cost"
-    },
-    {
-      "seenAt": "2026-09-08T00:10:50.507Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1w8vx6w/8_uncensored_qwen_38_27b_variants_one_base_167"
-    },
-    {
-      "seenAt": "2026-09-08T00:10:50.507Z",
-      "url": "https://austinhenley.com/blog/python1024.html"
-    },
     {
       "seenAt": "2026-09-09T00:02:21.880Z",
       "url": "https://blog.cloudflare.com/automatic-key-exchange-for-origins"
@@ -5684,6 +5669,156 @@
       ],
       "title": "eMudhra to exit global SSL/TLS certificate business",
       "url": "https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Kimi K3.1 Pro and K3.1 Pro Highspeed",
+      "url": "https://kimi.ai/blog/kimi-k3-1-pro"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "title": "2026-10-21, Version 26.12.1 (Current), @aduh95 prepared by @RafaelGSS",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.12.1"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Bringing post-quantum cryptography to geographically fenced key management",
+      "url": "https://blog.cloudflare.com/post-quantum-geo-key-manager"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot in Visual Studio — September update",
+      "url": "https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "Developing Gemini 4 Argon responsibly and safely",
+      "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Securing our frontier model training environment",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Quad9 to exit France",
+      "url": "https://quad9.net/news/blog/au-revoir-france"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Swedish government offices to ban ChatGPT and Claude",
+      "url": "https://sverigesradio.se/artikel/chat-gpt-och-claude-forbjuder-regeringskansliet"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Origin Range Requests: Serving large files without range-request tuning",
+      "url": "https://blog.cloudflare.com/origin-range-requests"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "Multi-tenant GPU Kubernetes on simulated hardware with Kamaji and HAMi",
+      "url": "https://cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "LLMs are making formal software verification feasible at a much larger scale",
+      "url": "https://anthropic.com/research/formal-verification"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Using LLM for confidence scoring is a bad idea",
+      "url": "https://rumple.github.io/blog/2026/10/20/asking-llm-for-confidence.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Next-Concept Modeling: Fast, Parallel Coarse-to-Fine Text Generation",
+      "url": "https://arxiv.org/abs/2610.14162"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-23T23:04:02.112Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Vercel moved to kill static credentials. Then developers spotted its own deployment token.",
+      "url": "https://thenewstack.io/vercel-oidc-static-credentials"
     }
   ]
 }
