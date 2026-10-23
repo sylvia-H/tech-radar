@@ -1,5 +1,10 @@
 # Contract: CLI 進入點與排程 Workflow
 
+> **F1（001-foundation）時期的契約**，保留當時的設計作為紀錄；現況以 `.github/workflows/radar.yml` 與開發指南 §8、§8.y 為準。
+> 之後已改的主要項目：cron 改為 UTC `7 20`／`37 20`；Discord webhook 拆成晨報／榜單／告警三個，Secrets 共五項；
+> 狀態改落獨立的 `state` 分支（另 checkout 到 `state-branch/`，在該子目錄內 commit/push）；主 checkout 不保留憑證
+> （`persist-credentials: false`）；新增 `publish` job（Pages）；另有 `test.yml` 跑 build、測試與執行期相依稽核。
+
 ## CLI 契約
 
 ```

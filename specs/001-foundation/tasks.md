@@ -69,7 +69,7 @@ description: "Task list for 001-foundation implementation"
 - [X] T014 [US1] 實作 `DiscordWebhookService` 於 `src/discord/discord.webhook.service.ts`（`postTestEmbed`：內建 `fetch` POST、204 判定、429 有限退避、絕不記錄機密）（依 T013）
 - [X] T015 [US1] 建立 `DiscordModule` 於 `src/discord/discord.module.ts`，並在 `src/app.module.ts` 匯入
 - [X] T016 [US1] 於 `src/pipeline/pipeline.service.ts` 串接 `run()`：呼叫 `postTestEmbed`（帶執行時間戳與 `env=ci|local` 標記）
-- [X] T017 [US1] 建立 `.github/workflows/radar.yml` 基底：`workflow_dispatch` + 雙 `schedule` cron（`7 22 * * *`、`37 22 * * *`）+ `concurrency: { group: tech-radar, cancel-in-progress: false }` + `permissions: contents: write` + `checkout@v4` + `setup-node@v4`（`node-version: 24`、`cache: npm`）+ `npm ci` + `npm run build` + `node dist/main.cli.js`（此執行步驟設 `id: run-app`，供 T029 告警條件辨識 app 內失敗；帶 `DISCORD_WEBHOOK_URL`/`GH_API_TOKEN`/`GEMINI_API_KEY` 三 secrets）
+- [X] T017 [US1] 建立 `.github/workflows/radar.yml` 基底：`workflow_dispatch` + 雙 `schedule` cron（`7 22 * * *`、`37 22 * * *`）+ `concurrency: { group: tech-radar, cancel-in-progress: false }` + `permissions: contents: write` + `checkout@v4` + `setup-node@v4`（`node-version: 24`、`cache: npm`）+ `npm ci` + `npm run build` + `node dist/main.cli.js`（此執行步驟設 `id: run-app`，供 T029 告警條件辨識 app 內失敗；帶 `DISCORD_WEBHOOK_URL`/`GH_API_TOKEN`/`GEMINI_API_KEY` 三 secrets）（action 版本保留當時的 @v4，現況見 radar.yml）
 
 **Checkpoint**: US1 可獨立展示 M0 核心（SC-001、SC-003）——收到測試 embed；缺機密 fail-fast 不推播。
 
