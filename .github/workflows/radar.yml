@@ -26,6 +26,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          # 此 checkout 不需推送；推回狀態只在 state-branch 那份 checkout 內進行
+          persist-credentials: false
 
       - name: Checkout state branch
         uses: actions/checkout@v5
@@ -45,9 +48,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        # --ignore-scripts：此 job 帶有 GITHUB_TOKEN 與 Actions Secrets，不讓相依套件的 install script
-        # 執行（現有的 install script 皆非建置或執行所需：@google/genai 的 preinstall 是 no-op、
-        # protobufjs 的 postinstall 只做版本提示、@parcel/watcher 與 unrs-resolver 屬 jest 開發依賴）。
+        # 不執行相依套件的 install script（此 job 帶 token 與 Secrets）；清單與理由見 dev-guide §8.y
         run: npm ci --ignore-scripts
 
       - name: Build
@@ -123,12 +124,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          persist-credentials: false
 
       - name: Checkout state branch
         uses: actions/checkout@v5
         with:
           ref: state
           path: state-branch
+          persist-credentials: false
 
       - name: Load state into workspace
         run: |
@@ -142,9 +146,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        # --ignore-scripts：此 job 帶有 GITHUB_TOKEN 與 Actions Secrets，不讓相依套件的 install script
-        # 執行（現有的 install script 皆非建置或執行所需：@google/genai 的 preinstall 是 no-op、
-        # protobufjs 的 postinstall 只做版本提示、@parcel/watcher 與 unrs-resolver 屬 jest 開發依賴）。
+        # 不執行相依套件的 install script（此 job 帶 token 與 Secrets）；清單與理由見 dev-guide §8.y
         run: npm ci --ignore-scripts
 
       - name: Build

@@ -1,7 +1,8 @@
 name: Test
 
-# 單元測試：push 與 pull_request 時跑 npm test。刻意與每日排程的 radar.yml 分開——
-# 排程 job 只負責抓取、策展與推播，不因測試而延長執行時間或消耗額外 Actions 分鐘。
+# push 與 pull_request 時跑 build、單元測試，並另以獨立 job 稽核執行期相依。刻意與每日排程的
+# radar.yml 分開（理由見 dev-guide §8.y）。同 repo 分支開 PR 時 push 與 pull_request 會各跑一次；
+# 專案平常在本機 --no-ff 合併、很少開 PR，接受這點重複。
 on:
   push:
     # state 分支只放 state/board.json（orphan、無 package.json），不跑測試
@@ -11,9 +12,14 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -27,8 +33,33 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        # 與 radar.yml 一致：不執行相依套件的 install script
+        # 不執行相依套件的 install script，清單與理由見 dev-guide §8.y。前提：jest 30 的 jest-resolve
+        # 需要 unrs-resolver 的原生檔，這裡依賴 lockfile 已含各平台 binding；在 Windows 重產 lockfile
+        # 若漏掉其他平台的 optional 套件（npm/cli#4828），CI 會報找不到原生 binding。
         run: npm ci --ignore-scripts
+
+      - name: Build
+        # 沒被 spec import 的檔案（main.cli.ts、app.module.ts、各 *.module.ts）只有 tsc 會檢查
+        run: npm run build
 
       - name: Test
         run: npm test
+
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        # npm audit 只讀 lockfile、不需安裝依賴，因此不開 npm 快取
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Audit runtime dependencies
+        # 既有執行期依賴出新公告時也會紅燈；處理方式見 dev-guide §8.y
+        run: npm audit --omit=dev --audit-level=high
