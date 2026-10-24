@@ -49,6 +49,39 @@ describe('boardStateSchema', () => {
         .success,
     ).toBe(false);
   });
+
+  // zod 4 的 z.iso.datetime({ offset: true }) 比 zod 3 嚴格：寫入端一律用 toISOString()，
+  // 這組把可接受與會被拒的格式邊界釘住，日後換寫入方式或升級 zod 時會在這裡先發現。
+  it.each([
+    ['toISOString() 的輸出', new Date('2026-10-24T00:00:00Z').toISOString()],
+    ['帶冒號的時差', '2026-10-24T08:00:00+08:00'],
+  ])('時間戳格式邊界：%s 通過', (_label, value) => {
+    expect(
+      boardStateSchema.safeParse({ ...emptyBoardState(), lastBoardPushAt: value }).success,
+    ).toBe(true);
+  });
+
+  it.each([
+    ['沒有秒', '2026-10-24T00:00Z'],
+    ['時差沒有冒號', '2026-10-24T08:00:00+0800'],
+    ['時差超出範圍', '2026-10-24T08:00:00+99:99'],
+  ])('時間戳格式邊界：%s 被拒', (_label, value) => {
+    expect(
+      boardStateSchema.safeParse({ ...emptyBoardState(), lastBoardPushAt: value }).success,
+    ).toBe(false);
+  });
+});
+
+describe('boardEntrySchema 的 url（z.url()）', () => {
+  it('前後有空白時仍通過，且輸出被改寫為 trim 後的值', () => {
+    const result = boardEntrySchema.safeParse(entry({ url: '  https://github.com/owner/name  ' }));
+    expect(result.success).toBe(true);
+    expect(result.success && result.data.url).toBe('https://github.com/owner/name');
+  });
+
+  it('無法解析的 url 被拒', () => {
+    expect(boardEntrySchema.safeParse(entry({ url: 'not a url' })).success).toBe(false);
+  });
 });
 
 describe('board 條目層寬鬆載入（FR-024）', () => {
