@@ -11,7 +11,7 @@ export const newsSourceSchema = z.object({
   // z.httpUrl()（zod 4.6.7）：先 JS trim()（含 NBSP、BOM、全形空白）再以 URL 解析；協定須為 http／https，且 `://`
   // 不可省（`http:example.com` 被拒）；hostname 須是帶英文 TLD 的網域（IP、localhost 被拒）。輸出改寫為 trim
   // 並刪除 tab／換行後的值。載入時就擋下 `htps://`、`javascript:` 等錯字或非網頁連結（FR-002）。
-  url: z.httpUrl(),
+  url: z.httpUrl({ error: 'url 須為 http(s):// 開頭、帶網域名稱（不接受 IP／localhost）的完整網址' }),
   domain: z.enum(['ai', 'devops', 'frontend-backend', 'cross']),
   tier: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   enabled: z.boolean().optional(),

@@ -32,8 +32,10 @@ describe('validateNewsSources（FR-002）', () => {
     ['協定拼錯', 'htps://a.com/f'],
     ['省略 //', 'http:a.com/f'],
     ['非網頁協定', 'javascript:alert(1)'],
-  ])('url 為%s（%s）→ 載入時即擲帶 id 錯誤（z.httpUrl()）', (_label, url) => {
-    expect(() => validateNewsSources([{ ...valid, id: 'u', url }])).toThrow(/\[u\]/);
+  ])('url 為%s（%s）→ 載入時即擲帶 id 與中文原因的錯誤（z.httpUrl()）', (_label, url) => {
+    expect(() => validateNewsSources([{ ...valid, id: 'u', url }])).toThrow(
+      '新聞來源 [u] schema 驗證失敗：url url 須為 http(s):// 開頭、帶網域名稱（不接受 IP／localhost）的完整網址',
+    );
   });
 
   it.each([
