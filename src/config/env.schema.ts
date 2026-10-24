@@ -9,7 +9,7 @@ const DISCORD_WEBHOOK_PATTERN =
 
 function discordWebhookField(name: string) {
   return z
-    .string()
+    .string({ error: `${name} 必填` })
     .trim()
     .min(1, `${name} 必填`)
     .regex(DISCORD_WEBHOOK_PATTERN, `${name} 格式不符 Discord webhook URL`);
@@ -17,14 +17,15 @@ function discordWebhookField(name: string) {
 
 /**
  * 環境變數 schema（EnvConfig）。五項機密皆必填，缺失即 fail-fast（憲章 VII）。
+ * 缺值（`undefined`）與空字串都回「X 必填」：zod 4 對缺值的預設訊息是英文的型別錯誤，故 `z.string({ error })` 另行指定。
  * 三個 Discord webhook 分頻道（晨報／榜單／告警），互不共用。
  */
 export const envSchema = z.object({
   DISCORD_NEWS_WEBHOOK_URL: discordWebhookField('DISCORD_NEWS_WEBHOOK_URL'),
   DISCORD_BOARD_WEBHOOK_URL: discordWebhookField('DISCORD_BOARD_WEBHOOK_URL'),
   DISCORD_ALERT_WEBHOOK_URL: discordWebhookField('DISCORD_ALERT_WEBHOOK_URL'),
-  GH_API_TOKEN: z.string().trim().min(1, 'GH_API_TOKEN 必填'),
-  GEMINI_API_KEY: z.string().trim().min(1, 'GEMINI_API_KEY 必填'),
+  GH_API_TOKEN: z.string({ error: 'GH_API_TOKEN 必填' }).trim().min(1, 'GH_API_TOKEN 必填'),
+  GEMINI_API_KEY: z.string({ error: 'GEMINI_API_KEY 必填' }).trim().min(1, 'GEMINI_API_KEY 必填'),
   /** 選用、非機密：供 F8 `RepoVisibilityService` 取得 `owner/repo`。本機執行核心 pipeline 時
    * 本就沒有此變數，缺值的後果收斂在發佈段內，不 fail-fast（見 research D3）。 */
   GITHUB_REPOSITORY: z.string().trim().optional(),
