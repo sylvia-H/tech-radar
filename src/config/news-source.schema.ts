@@ -8,7 +8,7 @@ import { NewsSource } from '../news/news.types';
 export const newsSourceSchema = z.object({
   id: z.string().min(1),
   type: z.enum(['hn-algolia', 'reddit-weekly', 'rss', 'github-releases']),
-  url: z.string().url(),
+  url: z.url(),
   domain: z.enum(['ai', 'devops', 'frontend-backend', 'cross']),
   tier: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   enabled: z.boolean().optional(),
