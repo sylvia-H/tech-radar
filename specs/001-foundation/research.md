@@ -14,7 +14,7 @@
 
 ## D2. 語言 / Runtime / 套件管理
 
-- **Decision**: TypeScript 5.x、**Node.js 24 LTS**（本機 Node 24 線 ≥ 24.20、npm ≥ 11.18，見 [ADR 0006](../../docs/adr/0006-ci-ignore-scripts-and-test-workflow.md)）、npm（`npm ci` + `npm run build`）。
+- **Decision**: TypeScript 5.x、**Node.js 24 LTS**（本機 Node 24 線 ≥ 24.20、npm ≥ 11.18，見 [ADR 0008](../../docs/adr/0008-ci-ignore-scripts-and-test-workflow.md)）、npm（`npm ci` + `npm run build`）。
 - **Rationale**: 與本機 Node 24 線一致，避免本機/CI 版本落差；Node 24 內建全域 `fetch`（免額外 HTTP 套件）、原生 ESM/TS 工具鏈更完整。workflow `setup-node@v5` 設 `node-version: "24"`、`cache: "npm"`（2026-10-23 更新為現況；001 contract 保留當時的 @v4 作紀錄）。
 - **Alternatives**: Node 20 → 較舊，且與本機 Node 24 不一致，已否決；pnpm/yarn → 與 `npm ci` 不一致，無必要偏離。
 - **Note**: 開發指南 §8 的 workflow 範例原寫 `node-version: "20"`，已同步更新為 `"24"` 以免文件矛盾。

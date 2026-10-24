@@ -697,7 +697,7 @@ Source 設為 GitHub Actions；到 Actions 頁 Run workflow 手動驗證。手�
 與 `audit`（`npm audit --omit=dev --audit-level=high`，只看執行期依賴）。`audit` 在既有依賴出新公告時也會紅燈，
 不一定是該次 push 造成；有修正版就開 `fix/` 分支升級，沒有修正版或確認誤報時記進 `docs/plans/` 並接受紅燈到上游修正。
 與每日排程分開，測試或稽核失敗都不擋晨報。三處 `npm ci` 都帶 `--ignore-scripts`，不讓相依套件的 install script 在帶有
-token 的 job 裡執行；本機則由 `package.json` 的 `allowScripts` 把目前有 install script 的套件記為不執行。現況見開發指南 §8.y、理由見 [ADR 0006](docs/adr/0006-ci-ignore-scripts-and-test-workflow.md)。
+token 的 job 裡執行；本機則由 `package.json` 的 `allowScripts` 把目前有 install script 的套件記為不執行。現況見開發指南 §8.y、理由見 [ADR 0008](docs/adr/0008-ci-ignore-scripts-and-test-workflow.md)。
 
 ## 開發歷程（Spec-Driven Development）
 

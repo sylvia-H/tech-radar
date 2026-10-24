@@ -738,7 +738,7 @@ jobs:
 
 ### 8.y CI 測試、相依稽核與 install script（2026-10-23 新增）
 
-決策紀錄：[ADR 0006](adr/0006-ci-ignore-scripts-and-test-workflow.md)
+決策紀錄：[ADR 0008](adr/0008-ci-ignore-scripts-and-test-workflow.md)
 
 **`.github/workflows/test.yml`**（與每日排程的 `radar.yml` 分開）：
 
@@ -756,17 +756,17 @@ jobs:
   - 處理方式：有修正版 → 開 `fix/` 分支升級（上游鎖死版本時用 `overrides`）；沒有修正版、或確認不影響本專案執行路徑
     （誤報）→ 在 `docs/plans/` 記下公告編號、判斷理由與重看時點，接受紅燈到上游修正為止。不要為了轉綠而移除這個 job
     或調高 `--audit-level`。
-- **不併進 `radar.yml`**：理由見 ADR 0006。
+- **不併進 `radar.yml`**：理由見 ADR 0008。
 
 **install script：一律不執行，分兩層**：
 
 - **本機（與任何不帶旗標的 `npm ci`／`npm install`）**：`package.json` 的 `allowScripts` 把下表 4 個套件記為 `false`
   （`npm install-scripts deny`）。需 npm ≥ 11.18（Node 24 線 ≥ 24.20；`engines.npm` 已註明，`engines.node` 仍是 `>=24`）；
-  低於 11.16 的 npm 會忽略 `allowScripts`、照常執行 script；npm 對 engines 不符只警告、不擋安裝。版本分界與理由見 ADR 0006。
+  低於 11.16 的 npm 會忽略 `allowScripts`、照常執行 script；npm 對 engines 不符只警告、不擋安裝。版本分界與理由見 ADR 0008。
   npm 11 對未被 `allowScripts` 涵蓋的 script 只警告、仍會執行（`strict-allow-scripts` 預設 false），記為 `false` 的則一律
   略過；`npm install-scripts ls` 應顯示「No packages with unreviewed install scripts.」。
 - **CI**：三處 `npm ci`（`radar`、`publish`、`test`）另帶 `--ignore-scripts`，不依賴 runner 上的 npm 是否認得
-  `allowScripts`；理由見 ADR 0006。
+  `allowScripts`；理由見 ADR 0008。
 
 lockfile 內有 install script 的套件（2026-10-23）與不需要執行的理由：
 
@@ -787,7 +787,7 @@ lockfile 內有 install script 的套件（2026-10-23）與不需要執行的理
 - **升級上表 4 個套件時**：重新核對其 install script 是否變了、是否仍不需要——`deny` 寫的是只有套件名稱的 `false`
   項目，新版本換了 script npm 也不會再提醒。相依移除或不再帶 install script 後，以 `npm install-scripts prune`
   （可先加 `--dry-run`）清掉 `allowScripts` 裡已不對應的項目。
-- **不用 `.npmrc`（`ignore-scripts=true`）**：理由見 ADR 0006。
+- **不用 `.npmrc`（`ignore-scripts=true`）**：理由見 ADR 0008。
 - **checkout 憑證**：只有 `radar` job 的 state-branch checkout 保留預設（該步要把 `board.json` 推回 `state` 分支）；
   `radar` 主 checkout、`publish` 的兩個 checkout、`test.yml` 的 checkout 皆 `persist-credentials: false`。
 
@@ -798,7 +798,7 @@ lockfile 內有 install script 的套件（2026-10-23）與不需要執行的理
     等開發依賴，再各自 `npm run build`。帶著 token 與 Secrets 的 job 裡因此多了一整棵執行時用不到的套件。
   - 改法：只在 `radar` job 裝完整相依並 build，把 `dist/` 以 `actions/upload-artifact` 傳給 `publish`；兩個 job
     執行時只裝執行期依賴（`npm ci --omit=dev --ignore-scripts`）。或另開一個不帶 Secrets 的 build job，產出 `dist/` 給兩者。
-  - 為何這次不做：見 ADR 0006。
+  - 為何這次不做：見 ADR 0008。
 
 ## 9. NestJS 專案結構
 

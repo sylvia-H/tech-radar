@@ -1,4 +1,4 @@
-# 0006. 相依的 install script 一律不執行（本機 allowScripts deny、CI --ignore-scripts），另以 test.yml 跑 build、測試與執行期相依稽核
+# 0008. 相依的 install script 一律不執行（本機 allowScripts deny、CI --ignore-scripts），另以 test.yml 跑 build、測試與執行期相依稽核
 
 - **狀態**：Accepted
 - **日期**：2026-10-23（首次裁決）；2026-10-23 修訂（install script 的本機防線重新裁決，見「否決的替代方案」的推翻紀錄）

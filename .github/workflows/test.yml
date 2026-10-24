@@ -1,7 +1,7 @@
 name: Test
 
 # push 與 pull_request 時跑 build、單元測試，並另以獨立 job 稽核執行期相依。刻意與每日排程的
-# radar.yml 分開（現況見 dev-guide §8.y、理由見 ADR 0006）。同 repo 分支開 PR 時 push 與 pull_request 會各跑一次；
+# radar.yml 分開（現況見 dev-guide §8.y、理由見 ADR 0008）。同 repo 分支開 PR 時 push 與 pull_request 會各跑一次；
 # 專案平常在本機 --no-ff 合併、很少開 PR，接受這點重複。
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        # 不執行相依套件的 install script，現況見 dev-guide §8.y、理由見 ADR 0006。前提：jest 30 的 jest-resolve
+        # 不執行相依套件的 install script，現況見 dev-guide §8.y、理由見 ADR 0008。前提：jest 30 的 jest-resolve
         # 需要 unrs-resolver 的原生檔，這裡依賴 lockfile 已含各平台 binding；在 Windows 重產 lockfile
         # 若漏掉其他平台的 optional 套件（npm/cli#4828），CI 會報找不到原生 binding。
         run: npm ci --ignore-scripts
