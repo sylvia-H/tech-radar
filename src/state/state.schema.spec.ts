@@ -8,6 +8,7 @@ import {
   feedEntrySchema,
   emptyBoardState,
 } from './state.schema';
+import { nowIso } from './state-time';
 
 function entry(overrides: Record<string, unknown> = {}): Record<string, unknown> {
   return {
@@ -37,44 +38,31 @@ describe('boardStateSchema', () => {
     expect(boardStateSchema.safeParse(bad).success).toBe(false);
   });
 
-  it('時間戳接受 null 或合法 ISO，拒絕非法字串', () => {
-    expect(
-      boardStateSchema.safeParse({
-        ...emptyBoardState(),
-        lastBoardPushAt: '2026-07-11T22:07:00.000Z',
-      }).success,
-    ).toBe(true);
-    expect(
-      boardStateSchema.safeParse({ ...emptyBoardState(), lastBoardPushAt: 'not-a-date' })
-        .success,
-    ).toBe(false);
-  });
-
-  // zod 4 的 z.iso.datetime({ offset: true }) 比 zod 3 嚴格：寫入端一律用 toISOString()，
-  // 這組把可接受與會被拒的格式邊界釘住，日後換寫入方式或升級 zod 時會在這裡先發現。
+  // zod 4 的 z.iso.datetime({ offset: true }) 比 zod 3 嚴格（沒有秒、時差沒有冒號、超出範圍的時差 zod 3
+  // 皆接受）：寫入端一律經 nowIso()，這張表把可接受與會被拒的格式邊界釘住，換寫入方式或升級 zod 時會先在這裡發現。
   it.each([
-    ['toISOString() 的輸出', new Date('2026-10-24T00:00:00Z').toISOString()],
-    ['帶冒號的時差', '2026-10-24T08:00:00+08:00'],
-  ])('時間戳格式邊界：%s 通過', (_label, value) => {
+    ['null', null, true],
+    ['合法 ISO（毫秒＋Z）', '2026-07-11T22:07:00.000Z', true],
+    ['nowIso() 的輸出', nowIso(new Date('2026-10-24T00:00:00Z')), true],
+    ['帶冒號的時差', '2026-10-24T08:00:00+08:00', true],
+    ['非日期字串', 'not-a-date', false],
+    ['沒有秒', '2026-10-24T00:00Z', false],
+    ['時差沒有冒號', '2026-10-24T08:00:00+0800', false],
+    ['時差超出範圍', '2026-10-24T08:00:00+99:99', false],
+  ])('時間戳格式：%s → %s', (_label, value, ok) => {
     expect(
       boardStateSchema.safeParse({ ...emptyBoardState(), lastBoardPushAt: value }).success,
-    ).toBe(true);
-  });
-
-  it.each([
-    ['沒有秒', '2026-10-24T00:00Z'],
-    ['時差沒有冒號', '2026-10-24T08:00:00+0800'],
-    ['時差超出範圍', '2026-10-24T08:00:00+99:99'],
-  ])('時間戳格式邊界：%s 被拒', (_label, value) => {
-    expect(
-      boardStateSchema.safeParse({ ...emptyBoardState(), lastBoardPushAt: value }).success,
-    ).toBe(false);
+    ).toBe(ok);
   });
 });
 
 describe('boardEntrySchema 的 url（z.url()）', () => {
-  it('前後有空白時仍通過，且輸出被改寫為 trim 後的值', () => {
-    const result = boardEntrySchema.safeParse(entry({ url: '  https://github.com/owner/name  ' }));
+  it.each([
+    ['前後有空白', '  https://github.com/owner/name  '],
+    ['路徑中有 tab', 'https://github.com/owner/\tname'],
+    ['結尾有換行', 'https://github.com/owner/name\n'],
+  ])('%s 時仍通過，且輸出被改寫為 trim 並刪除 tab／換行後的值', (_label, url) => {
+    const result = boardEntrySchema.safeParse(entry({ url }));
     expect(result.success).toBe(true);
     expect(result.success && result.data.url).toBe('https://github.com/owner/name');
   });

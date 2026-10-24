@@ -28,6 +28,22 @@ describe('validateNewsSources（FR-002）', () => {
     expect(() => validateNewsSources([{ ...valid, id: 'g', freshnessWindowDays: 31 }])).toThrow(/[g]/);
   });
 
+  it.each([
+    ['協定拼錯', 'htps://a.com/f'],
+    ['省略 //', 'http:a.com/f'],
+    ['非網頁協定', 'javascript:alert(1)'],
+  ])('url 為%s（%s）→ 載入時即擲帶 id 錯誤（z.httpUrl()）', (_label, url) => {
+    expect(() => validateNewsSources([{ ...valid, id: 'u', url }])).toThrow(/\[u\]/);
+  });
+
+  it.each([
+    ['前後有空白', '  https://a.com/f  '],
+    ['路徑中有 tab', 'https://a.com/\tf'],
+    ['結尾有換行', 'https://a.com/f\n'],
+  ])('url %s → 通過，且輸出被改寫為 trim 並刪除 tab／換行後的值', (_label, url) => {
+    expect(validateNewsSources([{ ...valid, url }])[0].url).toBe('https://a.com/f');
+  });
+
   it('非陣列 → 擲錯', () => {
     expect(() => validateNewsSources({} as unknown)).toThrow(/必須是陣列/);
   });

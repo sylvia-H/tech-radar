@@ -56,6 +56,34 @@ describe('env.schema validateEnv', () => {
     expect(() => validateEnv({ ...validEnv, DISCORD_NEWS_WEBHOOK_URL: url })).toThrow();
   });
 
+  const REQUIRED_KEYS = [
+    'DISCORD_NEWS_WEBHOOK_URL',
+    'DISCORD_BOARD_WEBHOOK_URL',
+    'DISCORD_ALERT_WEBHOOK_URL',
+    'GH_API_TOKEN',
+    'GEMINI_API_KEY',
+  ] as const;
+
+  it.each(REQUIRED_KEYS.flatMap((key) => [
+    [key, '缺值', undefined],
+    [key, '空字串', ''],
+  ] as const))('%s %s → 訊息為中文「必填」且不含機密值', (key, _label, value) => {
+    const env: Record<string, unknown> = { ...validEnv };
+    if (value === undefined) {
+      delete env[key];
+    } else {
+      env[key] = value;
+    }
+    expect(() => validateEnv(env)).toThrow(`${key}: ${key} 必填`);
+    try {
+      validateEnv(env);
+    } catch (e) {
+      expect((e as Error).message).not.toContain('gh-token');
+      expect((e as Error).message).not.toContain('gemini-key');
+      expect((e as Error).message).not.toContain('webhooks/123');
+    }
+  });
+
   it('擲錯訊息不含機密值', () => {
     try {
       validateEnv({ ...validEnv, DISCORD_ALERT_WEBHOOK_URL: 'https://evil.com/x' });
