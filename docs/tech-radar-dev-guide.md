@@ -117,13 +117,19 @@
   - thinking 只增加 token、不增加請求數，對 RPM／RPD 零成本。型號以 400 拒絕 thinking 參數時，`LlmService` warn 後以同一 prompt
     **不帶 thinking 重送一次**（多 1 次 HTTP、不佔退避次數），不會因設定問題走到備援與降級。用量 log 標 `thinking=high`，「思考 N」為實際思考 token。
   - 實測常態（2026-09-28～10-06）：Flash 首次呼叫多為 503 過載、九天 2 天成功，其餘退 Lite；Lite 思考 4.4～7.7k tokens、Flash 9.3～11.9k；則數皆 11～15。
+    2026-10-07～10-17：Flash 11 天 8 天成功（10-10 起連 8 天），Lite 2 天，10-08 一天 Flash 回應形狀不符而降級（促成 ADR 0006）；Flash 思考 6.9～11.3k。
   - 教訓（沿用）：免費層型號 ID **可能無預警提前下架**（2026-07-19 `gemini-2.5-flash`／`2.5-flash-lite` 在公告日前回 404），`LlmService` 非可重試
     錯誤務必印實際狀態碼與訊息（`errDetail`），否則會被誤判為速率限制；Flash 與 Lite 配額不同級，換型號前先在 AI Studio 確認。
-- **降級路徑（2026-09-12 起）**：主型號失敗 → 備援同 prompt 單次重試 → 仍失敗、或 JSON 解析失敗，才退回純程式排序的原文標題版晨報（§10）
-  並發 Discord 紅色告警。失敗日多出的 1 次備援呼叫是同一次策展的重試、不是第二次策展，不違反憲章 V；成功日仍恰 1 次。
-  解析／驗證失敗不換型號（那是回應內容問題）。
+- **結構化輸出（2026-10-17 起；決策紀錄 [ADR 0006](adr/0006-curation-structured-output-and-salvage.md)）**：策展主、備援呼叫皆帶
+  `responseMimeType: application/json`＋`responseJsonSchema`（`src/curation/curation-schema.ts`，須與 prompt 輸出規則同步），用量 log 標 `schema=json`。
+  型號以 400 拒絕 thinking 或 schema 時，warn 後以**不帶這兩項設定**的純請求重送一次。
+- **降級路徑（2026-09-12 起；2026-10-17 修訂）**：主型號擲 `LlmError` → 備援同 prompt 單次重試。主型號回應**解析不完整**（非 JSON、缺鍵，
+  或任一則形狀不符）→ 同樣改用備援重試一次（已經是備援者不再重試）。仍不完整 → 在可解析的回應中取可用則數多者、**丟掉形狀不符的項目、
+  保留其餘**；兩份皆無可用項目，才退回純程式排序的原文標題版晨報（§10）並發 Discord 紅色告警。失敗日多出的 1 次備援呼叫是同一次策展的重試、
+  不是第二次策展，不違反憲章 V；成功日仍恰 1 次。解析失敗的 warn 只印壞項的鍵名與型別（缺席標「缺」）與回應字元數，不含內容。
 - **看什麼**：告警頻道的 429／型號 404／「晨報策展降級」紅色 embed；Actions log 的「LLM 呼叫失敗（<型號>，status=…）」、
-  「策展主型號失敗…改以備援型號」、「LLM 拒絕 thinking 設定」（出現則改試 `thinkingBudget`）。本機測試前先看當日已用的 Flash 次數。
+  「策展主型號失敗…改以備援型號」、「策展回應解析不完整」「策展回應丟棄形狀不符 N 則」、「LLM 拒絕 thinking／結構化輸出設定」（出現則
+  thinking 或 schema 被型號拒絕，須另案處理）。本機測試前先看當日已用的 Flash 次數。
 - ⚠️ 免費層 prompt 可能被拿去改善模型 → 本專案只送公開資料，OK。加 429 指數退避。
 
 ### 2.5 GitHub API：Personal Access Token
@@ -327,6 +333,7 @@ Gemini 一次、不用向量檢索/embeddings）、**選重要而非選熱門**�
 
 > 本步**只做選擇、去重與改寫摘要，不得產生或竄改連結/數字**（連結與分數一律由程式帶）。整個新聞流程對 LLM 的用量固定為「每日 1 次」，與候選數無關。
 
+- **近期已推報導投影（2026-10-17 新增；決策紀錄 [ADR 0007](adr/0007-recent-pushed-titles-in-curation-prompt.md)）**：`recent-pushed.ts` 取 `seenNews` 近 **5 天**帶原始標題的已推紀錄（新到舊、同標題去重、每則截 60 字、最多 100 則），列在 prompt「候選標記說明」之後，明示只供比對、不得回傳；規則為「與已推報導同一件事且無新事實者不選，換連結／換來源／換角度都算重複；正式發布、新版本、事後報告、撤回或更正、已生效判決等實質新進展照常評估」。補足 ADR 0005 零 LLM 層接不住的「同一事件不同報導」（10-07～10-17 每週 ≥3 組）。同一次呼叫、約 +1.2～1.4k tokens；段落不寫天數（錨定防線）。退場：`RECENT_PUSHED_WINDOW_DAYS = 0` 即關閉。log：「策展輸入：…近期已推 N 則供比對」。
 - **補位 `backfillPicks`（2026-09-26 新增，憲章 1.8.0；決策紀錄 [ADR 0003](adr/0003-backfill-and-reroute.md)）**：回應的第三陣列，只收「未歸類」候選中的 (b) 資安事件（重大漏洞、資料外洩、供應鏈攻擊）與 (c) 一般軟體工程（程式語言與執行環境、資料庫、作業系統與平台、開源專案與開發工具）。`curation-validate.ts` 在三桶精選完成非 AI 配額與總數截斷**之後**才處理，只補到 15 則、永遠排在最後，領域記為 `general`（`NewsDigestDomain`，state 的 seenNews／publish.news 列舉同步加值）、不計入非 AI 配額；名額已滿以 `backfill-full` 剔除；回應缺此鍵視為空陣列、不降級。**已歸類候選被放進補位陣列 → 回流主桶**（2026-09-27，取代原 `backfill-scope` 剔除）：補位上線首日 LLM 把 Node.js v24.21.0 LTS 發布（前後端，合格的【官方發布】）放進 `backfillPicks`，原規則把它整則丟掉、當日 7 選 → 6 推。這類項目是 LLM 已選、已改寫繁中的三桶範圍候選，放錯陣列是分類錯誤而非入選錯誤；改為視同 `communityPicks` 尾端（最低優先）併入主桶，照常走去重、來源多樣性、非 AI 配額與總數截斷（仍只在 LLM 已選集合內重排、不遞補新候選），領域沿用程式歸類、LLM 帶的 `domain` 忽略，並以一行 warn「補位陣列含已歸類候選，已回流主桶套配額」揭露。補位陣列本身仍只收未歸類候選，憲章 1.8.0 不變。另自同日起成功路徑多印一行「策展入選 N 則：[領域 來源「截短標題」]…」，不必再翻 state 分支對照推了什麼。**優先序**：未歸類候選中的 AI 新事物（a）依 (1)／(2) 放前兩陣列，永遠先於補位；補位只在則數偏低、且當日沒有更優先的內容時才生效——這是補位機制，不是主動擴大晨報範圍。起因：1.7.0 上線首日只有 7 則，未歸類 10 則中的 F-Droid 2.0、Snapdragon 支援 Linux、FBI 被駭因不在三桶而全數不選。
 
 > 若候選不足 15 則（冷門日），就推實際數量、不用湊滿；某類別挂零也沒關係（例如某天完全沒有夠格的前後端新聞）。配額是「上限約束」不是「硬性填滿」；同理，**寧可少而重要，也不要為湊滿而塞進不重要的熱門文**。
@@ -654,7 +661,7 @@ on:
     - cron: "7 20 * * *" # 04:07 台北 · 每日晨報（主排）
     - cron: "37 20 * * *" # 04:37 台北 · 補跑（主排被 Actions 跳過時遞補；靠 lastNewsPushAt guard 去重）
   workflow_dispatch:
-    inputs: { dry_run: { type: boolean, default: false } } # 晨報乾跑，見 §8.x
+    inputs: { dry_run: { type: boolean, default: false }, replay_date: { type: string, default: '' } } # 晨報乾跑／降級日補發，見 §8.x
 permissions:
   contents: write # 為了 commit state 分支上的 state/board.json
 concurrency:
@@ -721,6 +728,12 @@ jobs:
   **不推晨報頻道、不寫 `seenNews`／`lastNewsPushAt`／`publish`、不 save、不跑榜單段**，workflow 的
   state commit 步驟與 `publish` job 一併跳過。策展入選清單、LLM 用量（含 thinking token）與回流 warn 都在
   Actions log。用途：調 prompt／型號／thinking 後立即驗證。乾跑失敗直接讓 workflow 失敗（不走 best-effort 告警）。
+- **降級日補發（`replay_date` 輸入 → `NEWS_REPLAY_DATE=YYYY-MM-DD`，台北日期，隱含乾跑；2026-10-17 新增，[ADR 0006](adr/0006-curation-structured-output-and-salvage.md)）**：
+  `PipelineService.runNewsReplay()` → `NewsSegmentService.replay()`——取該日 `seenNews` 中帶 `title` 的條目（2026-10-06 起才有）重建候選
+  （無摘要、無分數），以 `NewsCurationService.translateForReplay()` **逐則翻譯、不重新篩選**（順序同原推播，未回者保留原文標題；
+  首版沿用每日策展，10-08 實測 15 選 5、漏掉 GPT‑6／Haiku 5.5，故改為只翻譯），先送一則 warning embed 說明補發原因，再送翻譯版，全部推到
+  **告警頻道**；與乾跑同樣不寫狀態、跳過 state commit 與 `publish` job。用途：策展降級日事後補一份繁中版。內容只能依標題撰寫、篇幅較短。
+  觸發：`gh workflow run radar.yml --ref <branch> -f dry_run=true -f replay_date=2026-10-08`。
 - 另兩個本機除錯模式不變：`NEWS_INGEST_OBSERVE=1`（只跑漏斗、不呼叫 LLM）、`PUBLISH_MODE=1`（只跑發佈段）。
 
 ### 8.y CI 測試、相依稽核與 install script（2026-10-23 新增）
@@ -832,7 +845,7 @@ bootstrap();
 - **新聞策展固定每日 1 次、不用 embeddings**：跨來源去重主力是零 LLM 的 target-URL 正規化（§4.4 階段 A）；殘留重複交給那唯一一次策展呼叫順手處理。**不建向量檢索/embeddings**——素材小、context-stuffing 即可，一次看到全部候選標題就能做完 embeddings 想做的事。用量與候選數無關。
 - **選重要而非選熱門**：策展 prompt 明講「重要 ≠ 熱門」，優先會改變開發者做事方式的內容（新工具/版本、breaking change、安全通報、重大模型/API 發布、deprecation），壓低純爆紅口水/觀點文；分數只當提示、非排序主鍵。
 - **防幻覺**：prompt 明確要求「只依提供資料、不得杜撰數字/連結」；星數與連結一律由程式提供、不經 LLM（新聞策展同理，只選擇/去重/依 title+summary 改寫繁中摘要，不造連結、分數或來源沒有的事實）。
-- **退避**：429 用指數退避 + jitter；單一 repo 簡介失敗不阻斷整批（該卡改顯示 description 當備援）；策展 Flash 呼叫失敗時先以 Lite 用同一 prompt 單次重試（§2.4），仍失敗才退回「純程式排序（分數 + 交叉驗證/tier + 榜單相關性）取前 10」當備援並發紅色降級告警，不阻斷晨報——此時每則僅有「原文標題＋連結」（無繁中 70/500 改寫），屬可接受的降級。
+- **退避**：429 用指數退避 + jitter；單一 repo 簡介失敗不阻斷整批（該卡改顯示 description 當備援）；策展 Flash 呼叫失敗或回應解析不完整時先以 Lite 用同一 prompt 單次重試，仍不完整則丟掉形狀不符的項目、保留其餘（§2.4），兩份皆無可用項目才退回「純程式排序（分數 + 交叉驗證/tier + 榜單相關性）取前 10」當備援並發紅色降級告警，不阻斷晨報——此時每則僅有「原文標題＋連結」（無繁中 70/500 改寫），屬可接受的降級。
 
 ---
 

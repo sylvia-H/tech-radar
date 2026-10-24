@@ -40,7 +40,7 @@
  * `thinkingLevel: NEWS_THINKING_LEVEL`（high）：此前 `generateContent` 未帶任何 config，Actions log 的
  * 「思考 ?」證實 Lite 完全沒有思考 token 就要對 79 則候選做三類判準＋三陣列分類；thinking 只增加 token、
  * 不增加請求數，對 RPM／RPD 零成本。若型號拒絕 thinking 設定（400），`LlmService` 會以同一 prompt 不帶
- * thinking 重送一次並 warn，不會因此降級（見 `llm.service.ts`）。
+ * thinking 重送一次並 warn，不會因此降級（見 `llm.service.ts`；2026-10-17 起 400 時連同結構化輸出設定一併拿掉，ADR 0006）。
  */
 export const GEMINI_MODEL_BOARD = 'gemini-3.5-flash-lite';
 export const GEMINI_MODEL_NEWS = 'gemini-3.8-flash';
@@ -73,10 +73,15 @@ export type GeminiModel =
 /**
  * `LlmService.generate` 的選項：`model` 未給即用 `GEMINI_MODEL_BOARD`；`thinkingLevel` 未給即不帶
  * `thinkingConfig`（維持型號預設行為，2026-09-27 新增）。
+ *
+ * `responseJsonSchema`（2026-10-17 新增，ADR 0006）：給定時請求帶 `responseMimeType: 'application/json'`
+ * ＋`responseJsonSchema`（純 JSON Schema 物件，呼叫端不依賴 SDK 型別），由 Gemini 結構化輸出保證回應形狀；
+ * 未給即不帶（簡介／TL;DR 行為不變）。
  */
 export interface LlmGenerateOptions {
   model?: GeminiModel;
   thinkingLevel?: LlmThinkingLevel;
+  responseJsonSchema?: Record<string, unknown>;
 }
 
 /** 429/503/網路錯誤最多重試次數（含首次嘗試，research D6）。 */

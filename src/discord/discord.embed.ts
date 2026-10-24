@@ -1,6 +1,8 @@
 /** Discord embed 色值（十進位）。 */
 export const COLOR_TEST = 0xf5a623; // 橙：連通測試
 export const COLOR_FAILURE = 0xe74c3c; // 紅：失敗告警
+/** 黃：非失敗的警示通知（2026-10-17 新增，晨報補發開頭說明用；與紅色失敗告警、橙色晨報區隔）。 */
+export const COLOR_WARNING = 0xf1c40f;
 
 /** F7 組版色值（research D3；contracts/discord-layout.md L1）。 */
 export const COLOR_BOARD_COVER = 0x5865f2; // 藍：榜單封面

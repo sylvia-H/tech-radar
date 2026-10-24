@@ -70,6 +70,28 @@ export interface CurationLlmResponse {
    * `NewsCurationService.curate()` 以 `logger.warn` 揭露。
    */
   ignoredKeys: string[];
+  /**
+   * 形狀不符而被略過的項目（2026-10-17 新增，ADR 0006；無則為空陣列）。此前任一則形狀不符就整份擲錯降級
+   * （2026-10-08 實例：一則壞項讓 15 則全退回原文標題）；改為逐則略過、其餘照常解析，由
+   * `NewsCurationService.curate()` 決定改用備援型號重試或丟棄壞項，並以 `describeMalformed()` 揭露診斷。
+   */
+  malformed: MalformedPick[];
+}
+
+/**
+ * 形狀不符而被解析器略過的一則（2026-10-17 新增，ADR 0006）。只記位置與形狀，不含任何標題或內容（憲章 VII）。
+ */
+export interface MalformedPick {
+  /** 所在陣列鍵。 */
+  key: 'officialPicks' | 'communityPicks' | 'backfillPicks';
+  /** 在該陣列中的 0-based 索引（原始回應中的位置，含被略過者）。 */
+  index: number;
+  /**
+   * 形狀描述：物件項為 `{鍵:typeof,…}`（必要鍵 `ref`／`title`／`content` 依序在前、缺席標「缺」，其餘鍵附後），
+   * 例 `{ref:string,title:string,content:缺}`；非物件項為 `(typeof)`，例 `(string)`。`null`／陣列分別記
+   * `null`／`array`。
+   */
+  shape: string;
 }
 
 /**

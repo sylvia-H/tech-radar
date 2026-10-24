@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { ApiError, GenerateContentResponse, GoogleGenAI, ThinkingLevel } from '@google/genai';
+import { ApiError, GenerateContentConfig, GenerateContentResponse, GoogleGenAI, ThinkingLevel } from '@google/genai';
 import {
   GEMINI_MODEL_BOARD,
   GeminiModel,
@@ -44,6 +44,8 @@ export class LlmService {
    * 對 Gemini Flash 系送一段 prompt 生成文字（trim 後非空）。`options.model` 未給即用
    * `GEMINI_MODEL_BOARD`（Flash-Lite）；每日晨報策展傳 `GEMINI_MODEL_NEWS`（2026-09-12 起，見
    * `llm.types.ts`）。退避、錯誤分類與 log 對兩個型號一視同仁，log 會帶型號以利對帳配額。
+   * `options.thinkingLevel`／`options.responseJsonSchema`（後者 2026-10-17 新增，ADR 0006）為進階設定，
+   * 帶法與 400 防禦見 `callModel()`；log 以「thinking=…」「schema=json」標示有帶上哪些。
    * @throws LlmError 空 prompt／空回應（`'empty'`，不重試）、重試耗盡（`'exhausted'`）、
    *   不可重試的用戶端錯誤（`'error'`，如 400/401/403）。
    */
@@ -53,11 +55,13 @@ export class LlmService {
     }
     const model = options.model ?? GEMINI_MODEL_BOARD;
     const thinking = options.thinkingLevel;
-    const thinkingLabel = thinking ? `，thinking=${thinking}` : '';
+    const schema = options.responseJsonSchema;
+    // 有 schema 時加標「schema=json」（2026-10-17，ADR 0006）：讓 Actions log 看得出結構化輸出確實有帶上。
+    const thinkingLabel = (thinking ? `，thinking=${thinking}` : '') + (schema ? '，schema=json' : '');
 
     for (let attempt = 1; attempt <= LLM_MAX_RETRIES; attempt++) {
       try {
-        const response = await this.callModel(model, prompt, thinking);
+        const response = await this.callModel(model, prompt, thinking, schema);
         const text = (response.text ?? '').trim();
         // 用量與結束原因（2026-09-25 新增）：候選池 60 → 70、晨報 10 → 15 則後，「prompt 太大容易失敗」
         // 只能猜——此前既不記 token 數也不記 finishReason，輸出被 MAX_TOKENS 截斷只會以 reason=empty
@@ -98,31 +102,46 @@ export class LlmService {
   }
 
   /**
-   * 單次 HTTP 呼叫：有 `thinking` 時帶 `config.thinkingConfig.thinkingLevel`（2026-09-27 新增，見 `llm.types.ts`
-   * `NEWS_THINKING_LEVEL`），否則請求體與此前完全相同（簡介／TL;DR 不受影響）。
+   * 單次 HTTP 呼叫。「進階設定」共兩項，可同時存在於同一個 `config`：
+   * - `thinking`：帶 `config.thinkingConfig.thinkingLevel`（2026-09-27 新增，見 `llm.types.ts` `NEWS_THINKING_LEVEL`）。
+   * - `schema`：帶 `config.responseMimeType: 'application/json'`＋`config.responseJsonSchema`（2026-10-17 新增，
+   *   ADR 0006）。2026-10-08 gemini-3.8-flash 回了形狀不符的 JSON（某則缺欄位或型別錯）、整份晨報降級，
+   *   僅靠 prompt 約束形狀不夠，改由 Gemini 結構化輸出保證回應形狀。
+   * 兩者皆無時請求體與此前完全相同 `{ model, contents }`（簡介／TL;DR 不受影響）。
    *
-   * 防禦：thinking 設定是否被型號接受無法在本機驗證（無 `GEMINI_API_KEY`），若型號以 400 拒絕該參數，
-   * 不能讓整條策展因設定問題走 `error` → 備援型號同樣 400 → 原文標題版＋紅色告警；故只在「帶了 thinking
-   * 且 400」時 warn 後**立即以同一 prompt 不帶 thinking 重送一次**（多 1 次 HTTP 呼叫、不佔退避次數），
-   * 其餘錯誤原樣拋給 `generate()` 的重試／分類邏輯。不帶 thinking 的呼叫 400 仍是不可重試錯誤、不在此攔。
+   * 防禦：進階設定是否被型號接受無法在本機驗證（無 `GEMINI_API_KEY`），若型號以 400 拒絕該參數，
+   * 不能讓整條策展因設定問題走 `error` → 備援型號同樣 400 → 原文標題版＋紅色告警；故只在「帶了任一進階
+   * 設定且 400」時 warn 後**立即以同一 prompt、不帶任何進階設定（純 `{ model, contents }`）重送一次**（多 1 次
+   * HTTP 呼叫、不佔退避次數）。2026-10-17 起由「只攔 thinking」擴大為整組進階設定一併拿掉：400 只說明請求被拒、
+   * 分不出是哪一項，逐項試會多燒 Flash 免費層 RPD（憲章 I／V）；schema 拿掉後回應形狀退回由 prompt 約束、
+   * 交呼叫端解析把關。其餘錯誤原樣拋給 `generate()` 的重試／分類邏輯（503 等重試時下一次仍帶進階設定）；
+   * 不帶任何進階設定的呼叫 400 仍是不可重試錯誤、不在此攔。
    */
   private async callModel(
     model: GeminiModel,
     prompt: string,
     thinking: LlmThinkingLevel | undefined,
+    schema: Record<string, unknown> | undefined,
   ): Promise<GenerateContentResponse> {
-    if (!thinking) {
+    if (!thinking && !schema) {
       return this.client.models.generateContent({ model, contents: prompt });
     }
+    const config: GenerateContentConfig = {};
+    if (thinking) {
+      config.thinkingConfig = { thinkingLevel: THINKING_LEVEL_MAP[thinking] };
+    }
+    if (schema) {
+      config.responseMimeType = 'application/json';
+      config.responseJsonSchema = schema;
+    }
     try {
-      return await this.client.models.generateContent({
-        model,
-        contents: prompt,
-        config: { thinkingConfig: { thinkingLevel: THINKING_LEVEL_MAP[thinking] } },
-      });
+      return await this.client.models.generateContent({ model, contents: prompt, config });
     } catch (err) {
       if (err instanceof ApiError && err.status === 400) {
-        this.logger.warn(`LLM 拒絕 thinking 設定（${model}，thinking=${thinking}，${this.errDetail(err)}），改以不帶 thinking 重送一次`);
+        this.logger.warn(
+          `LLM 拒絕 thinking／結構化輸出設定（${model}，thinking=${thinking ?? '無'}，schema=${schema ? '有' : '無'}，` +
+            `${this.errDetail(err)}），改以不帶這些設定重送一次`,
+        );
         return this.client.models.generateContent({ model, contents: prompt });
       }
       throw err;

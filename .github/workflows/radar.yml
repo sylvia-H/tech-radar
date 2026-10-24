@@ -7,6 +7,10 @@ on:
         description: '晨報乾跑：跳過 18h guard、照常抓取與策展（消耗 1 次策展配額），結果推到告警頻道；不推晨報頻道、不寫狀態、不跑榜單段、不發佈 Pages'
         type: boolean
         default: false
+      replay_date:
+        description: '晨報補發：台北日期 YYYY-MM-DD；填了即為補發模式：以當日已推標題重新策展（消耗 1 次策展配額）、推到告警頻道，不寫狀態；隱含乾跑（不必另勾 dry_run）'
+        type: string
+        default: ''
   schedule:
     # UTC 20:07 → 台北 04:07（主排；2026-09-26 由 22:07 提前 2h，抵銷 Actions 排程約 2h 延遲）
     - cron: '7 20 * * *'
@@ -58,8 +62,12 @@ jobs:
         id: run-app
         run: node dist/main.cli.js
         env:
-          # schedule 觸發時 inputs.dry_run 為空 → '0'；只有手動勾選才是 '1'
-          NEWS_DRY_RUN: ${{ inputs.dry_run == true && '1' || '0' }}
+          # schedule 觸發時 inputs 為空物件、inputs.* 皆為 null → '0'；只有手動勾選 dry_run 或填了
+          # replay_date 才是 '1'（補發隱含乾跑）。replay_date 以 truthiness 判斷：null 與 '' 同為 falsy，
+          # 不依賴 null 與 '' 的跨型別比較。
+          NEWS_DRY_RUN: ${{ (inputs.dry_run == true || inputs.replay_date) && '1' || '0' }}
+          # schedule 時 null 展開為空字串；CLI 以非空判定補發，並驗證 YYYY-MM-DD 格式（不合法即失敗＋告警）
+          NEWS_REPLAY_DATE: ${{ inputs.replay_date }}
           DISCORD_NEWS_WEBHOOK_URL: ${{ secrets.DISCORD_NEWS_WEBHOOK_URL }}
           DISCORD_BOARD_WEBHOOK_URL: ${{ secrets.DISCORD_BOARD_WEBHOOK_URL }}
           DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
@@ -68,8 +76,9 @@ jobs:
 
       - name: Commit state (on change only)
         # 狀態只 commit 到獨立的 state 分支，develop/main 不再出現 bot commit（見
-        # dev-guide §8）。乾跑不寫狀態，整步跳過。
-        if: ${{ inputs.dry_run != true }}
+        # dev-guide §8）。乾跑／補發不寫狀態，整步跳過（schedule 時 inputs.* 為 null：
+        # null != true 為真、!null 為真 → 照常執行）。
+        if: ${{ inputs.dry_run != true && !inputs.replay_date }}
         run: |
           cp state/board.json state-branch/state/board.json
           cd state-branch
@@ -110,8 +119,8 @@ jobs:
 
   publish:
     needs: radar
-    # 乾跑不改狀態，無需重新發佈 Pages
-    if: ${{ inputs.dry_run != true }}
+    # 乾跑／補發不改狀態，無需重新發佈 Pages（schedule 時 inputs.* 為 null，條件為真、照常發佈）
+    if: ${{ inputs.dry_run != true && !inputs.replay_date }}
     runs-on: ubuntu-latest
     permissions:
       # job 層 permissions 會整組取代 workflow 層的 contents: write，未列出的 scope 一律為

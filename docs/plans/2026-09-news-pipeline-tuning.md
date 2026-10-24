@@ -297,3 +297,37 @@ Actions 排程延遲 2.7～5.2h（10-06 台北 09:16 才到）。
   （同一次呼叫、約 +2～4k tokens）交 LLM 判斷「已報導過、除非有新事實」；或把門檻降到 0.4（接住 Argon／Sonnet 兩組，
   誤殺風險未評估）。待使用者決策。
 - [ ] （觀察）跨日去重 log「排除近 14 天已推相似標題後」每日命中數與配對是否合理；seenNews 體積增幅（每筆多一個標題）。
+
+## 2026-10-17 追加：第六批上線後 11 天回顧與第七批（使用者決策）
+
+台北 10-07～10-17 則數 15／**15 降級**／13／12／14／9／13／15／15／14／15。Flash 8/11 天成功（10-10 起連 8 天，503 明顯減少），
+Lite 備援 2 天（10-07、10-09）；thinking 全數接受、無 MAX_TOKENS（Flash 思考 6.9～11.3k）。驗證剔除只有 source-diversity 夾掉
+cloudflare／thenewstack 第 3 則（3 次）；回流 warn 1 次。榜單 10-12 週推正常。Actions 起跑 22:45～01:58 UTC（台北最晚 09:58）。
+
+**10-08 降級事件**（run 37706091980）：Flash 首呼叫即 STOP，但只輸出 651 tokens／1,391 字元 → 「officialPicks 項目形狀不符」→
+整份原文標題版（15 則英文標題、無摘要，12 則 hn ai，含 GPT‑6、Claude Haiku 5.5），且已寫入 seenNews。成因（缺欄位或型別錯）
+因 log 無形狀資訊而無法確證。
+
+**ADR 0005 回看（原定 10-13）**：Jaccard 層命中 4 組（EmbeddingGemma 2、Haiku 5.5、LFM2.5、Passkeys），「Passkeys are not a trap」
+≈「Passkeys are a trap」為反駁文、屬誤殺邊緣（僅此一例）。入選清單跨日比對，Jaccard 接不住的同主題不同報導：Deno×Cloudflare
+（10-10／10-11）、Python 3.15（10-10／10-11）、k8s cgroup（10-07／10-10）、OpenCode 2.0（10-13／10-17）、Gemini 4 Argo（10-14／10-15）、
+LFM2.5‑24B（10-14／10-15）、Void（10-16／10-17）、AdFection 零點擊廣告（10-16／10-17）、Beam 501B（10-07／10-17）——每週 ≥3 組，
+依 ADR 0005 判讀標準已達「做 prompt 投影」門檻。**待使用者決策。**
+
+**第七批裁決**（分支 `fix/curation-parse-salvage-and-replay`；決策紀錄 [ADR 0006](../adr/0006-curation-structured-output-and-salvage.md)）：
+- [x] 策展主備呼叫帶 `responseJsonSchema` 結構化輸出；400 拒絕時以純請求重送一次。
+- [x] 解析失敗 warn 印壞項鍵名／型別與回應字元數（不含內容）。
+- [x] 主型號回應解析不完整 → 改用 Lite 重試一次；仍不完整 → 丟掉形狀不符項目、保留其餘；皆無可用項目才原文標題版。
+- [x] 降級日補發模式 `replay_date`（隱含乾跑、推告警頻道、不寫狀態）。首次補發 10-08（run 39037275115）：結構化輸出被 Flash 接受，
+      但沿用每日策展只選 5／15、漏 GPT‑6／Haiku 5.5 → 使用者同意改為逐則翻譯、不篩選，重跑 10-08。
+- [ ] （觀察）用量 log 是否帶 `schema=json`、有無「拒絕 thinking／結構化輸出設定」warn；Flash 回應字元數是否回到正常區間。
+
+**ADR 0005 候補裁決**（分支 `feat/curation-recent-pushed-projection`；[ADR 0007](../adr/0007-recent-pushed-titles-in-curation-prompt.md)）：
+使用者顧慮 token 增加拉高 Flash 失敗率 → Agent 以 log 說明 503 與 prompt 大小無相關，提議 7 天＋截 60 字＋上限 100＋乾跑量測＋退場條件；
+使用者改為 5 天（重推多半間隔 1～4 天），其餘照提議。實測投影約 72 則／4.2k 字元（約 +1.2～1.4k tokens）。
+- [x] 乾跑量測（10-17 同一候選池 75 則，Flash 皆首呼叫成功）：基準 run 39041274886（舊分支、無投影）vs 投影 run 39041881609（72 則已推標題）。
+      prompt 15,978 → 20,011 字元；輸入 6,797 → 8,042 tokens（+18%）；思考 9,039 → 11,811（+31%）；輸出 2,118 → 1,871；LLM 呼叫約 90 → 166 秒。
+      基準 15 則中 3 則為近 5 天已推的同一件事（Muse Spark Open 10-15、Beam 501B 10-16、越獄 PS5 跑 Qwen 10-16），投影後 3 則皆略過、14 則入選；
+      另有 3 則非重複項（k8s 控制迴圈、硬體膨脹、2.8 兆 token 預訓練）換成 5 則其他非重複項，屬單次策展變異。入選清單未見已推重複，也未見明顯誤殺。
+- [ ] （觀察一週）Flash 改用 Lite 天數（基準 10-10～10-17 為 0）、MAX_TOKENS、跨日同題組數（目標每週 ≤1）、是否誤殺同主題新進展；
+      超標即 `RECENT_PUSHED_WINDOW_DAYS = 0` 關閉。

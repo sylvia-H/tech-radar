@@ -13,6 +13,9 @@ import { decideNewsGuard } from './layout/news-guard';
 import { buildDigestEmbeds } from './layout/digest-embeds';
 import { chunkEmbedsByBudget } from './layout/embed-split';
 import { taipeiDateLabel } from './layout/date-label';
+import { buildReplayNoticeEmbed } from './layout/replay-notice';
+import { candidatesFromSeen } from '../news/replay-candidates';
+import { recentPushedTitles } from '../curation/recent-pushed';
 
 /** `NewsSegmentService.run()` 的回傳型別（判別聯集，供觀測；F7 內部型別）。 */
 export type NewsSegmentResult =
@@ -20,7 +23,8 @@ export type NewsSegmentResult =
   | { status: 'no-content' } // 精選為空，未推播、未前進 guard（FR-006）
   | { status: 'push-failed' } // 推播失敗，狀態未寫回、已發告警（FR-005/SC-003）
   | { status: 'ok' } // 正常推播並落檔
-  | { status: 'dry-run'; items: number }; // 乾跑：已策展並推到告警頻道，未寫狀態（2026-09-27）
+  | { status: 'dry-run'; items: number } // 乾跑：已策展並推到告警頻道，未寫狀態（2026-09-27）
+  | { status: 'replay'; items: number }; // 補發：以某日已推標題逐則翻譯、推到告警頻道，未寫狀態（2026-10-17）
 
 /**
  * 晨報段（US1/US2）：guard → F4 ingest → F6 curate →（空精選早退）→ 組版 → 依序推播 →
@@ -145,11 +149,57 @@ export class NewsSegmentService {
     return { status: 'dry-run', items: digest.items.length };
   }
 
+  /**
+   * 晨報補發（2026-10-17 新增，`NEWS_DRY_RUN=1`＋`NEWS_REPLAY_DATE=YYYY-MM-DD`／workflow_dispatch `replay_date`）：
+   * 某日晨報策展降級（推出原文標題、無翻譯摘要版）後，以該台北日已寫入 `seenNews` 的條目（原始標題＋事實
+   * 欄位）重建候選，**逐則翻譯、不重新篩選**（`NewsCurationService.translateForReplay`，真的呼叫 Gemini），推到
+   * **告警頻道**：先一則黃色說明 embed、再接晨報本體。起因：2026-10-08 策展解析失敗，原始候選池已無法重建（HN 視窗
+   * 只有 4 天）。首版補發沿用每日策展、15 則只選 5 則且漏掉 GPT‑6／Haiku 5.5，同日改為只翻譯。
+   *
+   * 形狀比照 `dryRun()`：**不推晨報頻道、不寫 `seenNews`／`lastNewsPushAt`／`publish`、不 save**；推播失敗
+   * 直接上拋（人工觸發，讓 workflow 失敗比 best-effort 告警更直接）。翻譯整份失敗時不另發降級告警（結果
+   * 本身就在告警頻道），改在說明 embed 與晨報標題註明。
+   *
+   * @param date 台北日期 `YYYY-MM-DD`（呼叫端已以 `parseReplayDate` 驗證）
+   */
+  async replay(state: BoardState, date: string, now: Date): Promise<NewsSegmentResult> {
+    this.logger.log(`晨報補發：以 ${date}（台北）已推標題逐則翻譯（不重新篩選）、不寫狀態，結果推到告警頻道`);
+    const candidates = candidatesFromSeen(state.seenNews, date);
+    if (candidates.length === 0) {
+      this.logger.warn(`晨報補發：seenNews 中無 ${date}（台北）且帶原始標題的條目，未推播`);
+      return { status: 'replay', items: 0 };
+    }
+    const digest = await this.newsCuration.translateForReplay(candidates);
+    if (digest.items.length === 0) {
+      this.logger.warn(`晨報補發：${candidates.length} 則候選翻譯後為空，未推播`);
+      return { status: 'replay', items: 0 };
+    }
+
+    const username = 'Tech Radar（補發）';
+    const notice = buildReplayNoticeEmbed({
+      date,
+      seenCount: candidates.length,
+      translatedCount: digest.items.filter((it) => !it.degraded).length,
+      degraded: digest.degraded,
+    });
+    await this.discord.send({ username, embeds: [notice] }, 'alert');
+    const embeds = buildDigestEmbeds(digest, `${date}（補發${digest.degraded ? '，翻譯失敗' : ''}）`);
+    for (const batch of chunkEmbedsByBudget(embeds)) {
+      await this.discord.send({ username, embeds: batch }, 'alert');
+    }
+    this.logger.log(
+      `晨報補發完成：${digest.items.length} 則已推到告警頻道` +
+        `${digest.degraded ? '（翻譯失敗，原文標題版）' : ''}，狀態未變更`,
+    );
+    return { status: 'replay', items: digest.items.length };
+  }
+
   /** F4 ingest → F6 curate（正式與乾跑共用）。傳入共享 state 的 seenNews，讓 ingest 免去重複 `stateStore.load()`。 */
   private async ingestAndCurate(state: BoardState, now: Date): Promise<CuratedDigest> {
     const boardRepoNames = boardRepoNameSet(state.board);
     const candidates = await this.newsIngest.ingest(now, boardRepoNames, undefined, state.seenNews);
-    return this.newsCuration.curate(candidates, boardRepoNames, now);
+    // 近期已推標題投影（2026-10-17，ADR 0007）：讓策展 LLM 略過「已報導過的同一件事」的不同報導。
+    return this.newsCuration.curate(candidates, boardRepoNames, now, recentPushedTitles(state.seenNews, now));
   }
 }
 
