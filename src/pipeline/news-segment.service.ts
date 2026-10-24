@@ -3,6 +3,7 @@ import { DiscordWebhookService } from '../discord/discord.webhook.service';
 import { bestEffortFailureAlert } from '../discord/best-effort-alert';
 import { StateStore } from '../state/state.store';
 import { BoardState } from '../state/state.schema';
+import { nowIso } from '../state/state-time';
 import { NewsIngestService, boardRepoNameSet } from '../news/news-ingest.service';
 import { NewsCurationService } from '../curation/curation.service';
 import { CuratedDigest } from '../curation/curation.types';
@@ -93,7 +94,7 @@ export class NewsSegmentService {
     // 統計，不再靠 host 反推；sources 讓被合併為次要來源的 RSS 一手來源也能被計入。
     const seen = pruneSeenNews(state.seenNews, now);
     const seenUrls = new Set(seen.map((e) => e.url));
-    const seenAt = now.toISOString();
+    const seenAt = nowIso(now);
     for (const item of digest.items) {
       const url = normalizeTargetUrl(item.url);
       if (!seenUrls.has(url)) {

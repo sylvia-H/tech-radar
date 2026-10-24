@@ -3,6 +3,7 @@ import { GithubHttpService } from '../github/github-http';
 import { fetchReadme } from '../github/github-readme';
 import { LlmService } from '../llm/llm.service';
 import { BoardState } from '../state/state.schema';
+import { nowIso } from '../state/state-time';
 import { buildMaterial } from './intro-material';
 import { clampTo250 } from './intro-length';
 import { introPrompt } from './intro-prompt';
@@ -39,7 +40,7 @@ export class IntroService {
       const material = buildMaterial(input, readme);
       const raw = await this.llm.generate(introPrompt(input, material));
       const intro = clampTo250(raw);
-      const introAt = now().toISOString();
+      const introAt = nowIso(now());
       state.intros[key] = { intro, introAt };
       return { status: 'generated', intro, introAt };
     } catch (err) {

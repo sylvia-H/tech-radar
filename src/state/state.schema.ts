@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 const logger = new Logger('state.schema');
 
-// zod 4 要求有秒、時差要有冒號（`+08:00`）；`2026-10-24T00:00Z`、`+0800` 會被拒（zod 3 曾接受）。寫入端一律用 `toISOString()`。
+// zod 4 要求有秒、時差要有冒號（`+08:00`）；`2026-10-24T00:00Z`、`+0800` 會被拒（zod 3 曾接受）。寫入端一律經 `nowIso()`（`./state-time.ts`）產生。
 const isoDatetime = z.iso.datetime({ offset: true });
 const nullableIso = isoDatetime.nullable();
 
