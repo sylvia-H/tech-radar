@@ -422,125 +422,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-18T22:23:11.316Z",
-  "lastNewsPushAt": "2026-10-23T23:04:02.112Z",
+  "lastNewsPushAt": "2026-10-24T22:24:48.812Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-18T22:23:11.316Z",
       "summary": "本次榜單共新進 7 個項目，其中 AI 佔 6 個、前後端佔 1 個，下降 2 個，並由 morluto/rea 奪下綜合榜 #1。"
     },
     "feed": [
-      {
-        "content": "Cloudflare 開發的 27B 多模態決策模型 Clef 正式上架 Ollama 平台，開發者現在可以選擇在本地端執行，或是直接透過 Ollama Cloud 調用。Clef 專為多模態決策與 Agent 任務設計，支援 Ollama 生態讓開發者能以極低門檻將其整合進本機開發與私有化工作流程中。",
-        "id": "news:https://ollama.com/blog/clef",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "Cloudflare 27B 多模態決策模型 Clef 正式登上 Ollama",
-        "type": "news",
-        "url": "https://ollama.com/blog/clef"
-      },
-      {
-        "content": "Mercury 3 模型發布，聚焦於大規模擴散模型（Diffusion at scale）的訓練與架構實踐。該模型的推出為生成式 AI 領域提供更具擴展性的架構參考，對研究大規模生成技術與落地擴散模型應用的開發者具有重要參考價值。",
-        "id": "news:https://inceptionlabs.ai/blog/introducing-mercury-3",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "大規模擴散模型 Mercury 3 正式發表",
-        "type": "news",
-        "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3"
-      },
-      {
-        "content": "Respan 團隊在開源其以 Rust 撰寫的 AI Gateway 之際，分享了重構決策的技術內幕。團隊先前花費兩年、累積超過 10 萬行程式碼構建在 LiteLLM 之上，但遭遇版本升級帶來的相容性與架構瓶頸，最終痛定思痛決定以 Rust 打掉重構。這篇文章深入探討了維護龐大開源依賴的技術債、效能考量與架構取捨，對微服務及 AI 中介層架構師極具借鏡意義。",
-        "id": "news:https://thenewstack.io/respan-rust-ai-gateway",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "基於 LiteLLM 兩年後決定砍掉重練：Respan 以 Rust 重構開源 AI Gateway",
-        "type": "news",
-        "url": "https://thenewstack.io/respan-rust-ai-gateway/"
-      },
-      {
-        "content": "社群開發者分享如何在 Linux 環境下藉由自製系統服務解決單張 24GB 顯示卡顯存競爭問題。該服務會動態監控 GPU 狀態並在 ComfyUI、llama 與 strata 等推論引擎間無縫置換載入，避免手動切換與孤兒進程長期佔用 VRAM，讓單一工作站能在零顯存衝突下兼顧多項生成任務，為個人與中小團隊本地部署多模型提供了實用的自動化排程思維。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xahi82/24gb_is_plenty_if_your_engines_take_turns",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "單張 24GB GPU 跑多模型：以系統服務動態輪替推論引擎的工程實踐",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xahi82/24gb_is_plenty_if_your_engines_take_turns/"
-      },
-      {
-        "content": "社群針對近期密集釋出的開源權重模型（包括 Meta Muse Spark 等）進行硬體配置與授權條件的橫向技術拆解。分析指出 Meta 宣稱支援桌面級運行的 816B 模型實際上需要兩台各具 512GB 記憶體的頂級 Mac Studio 或四台高階工作站（硬體成本數萬美元），並伴隨特定署名授權要求；反觀 NVIDIA 釋出的模型是少數能在 24GB 消費級顯卡運行的模型。該文深入揭露了當前開源模型在宣傳與工程落地之間的真實硬體差距。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1x9d23j/72_hours_four_big_open_weights_drops_the_only_one",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "開源權重模型 72 小時密集釋出：硬體門檻與授權條款深度橫向評測",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x9d23j/72_hours_four_big_open_weights_drops_the_only_one/"
-      },
-      {
-        "content": "一項技術實測揭露了將刻意偽造的統計數據發布於網路後，大型語言模型在搜尋與問答生成時會輕易予以採納並作為權威引用。這項研究點出了現代 LLM 與 RAG 系統在評估外部資料來源可信度時的結構性盲點，對於依賴外部知識庫、網路爬蟲與檢索增強生成架構的開發者而言，凸顯了建立資料驗證與來源過濾管道的迫切性。",
-        "id": "news:https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "偽造統計數據輕易被 LLM 引用：揭露模型檢索與幻覺防禦漏洞",
-        "type": "news",
-        "url": "https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web"
-      },
-      {
-        "content": "開發者深入解析如何利用 Tmux 的 Session 管理機制與 send-keys 指令，將命令列 AI 工具 Claude Code 深度整合至自動化工作流程中。文章不僅詳細介紹操作架構與具體指令模式，也剖析了終端自動化互動的極限與瓶頸，為探索 CLI AI 代理自主編程實務的開發者提供寶貴的第一手工程經驗。",
-        "id": "news:https://crystl.dev/guides/tmux-for-ai-agents",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "Tmux 結合 Claude Code：會話管理、指令發送與自動化極限分析",
-        "type": "news",
-        "url": "https://crystl.dev/guides/tmux-for-ai-agents/"
-      },
-      {
-        "content": "安全導向的開源作業系統 OpenBSD 正式推出 8.0 版本。本次重大版本更新進一步強化了核心安全性、記憶體防護機制與網路堆疊表現，並擴展對現代硬體架構的相容性，為重視高安全性環境、基礎網路建設與 Unix 系統底層工程的開發者提供了穩固的最新系統基底。",
-        "id": "news:https://openbsd.org/80.html",
-        "publishedAt": "2026-10-20T23:08:36.444Z",
-        "title": "OpenBSD 8.0 正式發布：強化系統安全與硬體支援",
-        "type": "news",
-        "url": "https://www.openbsd.org/80.html"
-      },
-      {
-        "content": "Google Cloud 與 OpenAI 達成合作協議，將 OpenAI 旗下的前沿模型引入 Google Cloud 平台。這項轉變直接打破了長期以來微軟 Azure 在主流雲端供應商中獨占託管 OpenAI 模型的局面。對現代雲端架構師與 AI 開發者而言，這意味著企業未來在構建高可用、具備多雲容災備援（Multi-cloud Resilience）或跨雲資料治理架構時，不再受限於單一雲端供應商的 API 綁定，能更靈活地在 Google Cloud 生態（如結合 Vertex AI、BigQuery 等原生服務）中直接調度 OpenAI 模型算力。",
-        "id": "news:https://openai.com/index/openai-models-google-cloud",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "OpenAI 模型正式登陸 Google Cloud：打破 Azure 獨占的多雲部署新選擇",
-        "type": "news",
-        "url": "https://openai.com/index/openai-models-google-cloud/"
-      },
-      {
-        "content": "Node.js 官方釋出針對各支援分支（包括 Node.js 24 LTS、22 LTS 及 26 Current）的安全修補更新。本次更新修補了多個評級為 High 的安全漏洞，重點包括 CVE-2026-105482（DNS 解析輸入未驗證 null bytes）、CVE-2026-106069（TLS 模組拒絕非標準規範 IP 位址以防繞過檢驗）、CVE-2026-105483（TLS IP 正規化回歸問題），以及權限模型檢查與 Crypto 快取重置等缺陷。由於這些漏洞直接影響底層網路通訊與主機權限防護，所有在生產環境運行 Node.js 服務的團隊應儘速安排升級以阻斷潛在攻擊。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.22.1",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "Node.js 發布重大安全修補版本：修復 DNS 與 TLS 相關等多項高危漏洞",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.22.1"
-      },
-      {
-        "content": "雲端應用託管平台 Railway 正式發布安全揭露公告，向開發者社群通報近期的安全事件及平台所採取的防護加固作為。Railway 近年來成為眾多獨立開發者與新創團隊部署容器化後端與微服務的核心 PaaS 基礎設施，其平台安全直接牽動託管應用程式的原始碼、環境變數（含敏感 API Key 及資料庫密碼）與運行期憑證。開發者應檢視該公告以確認自身專案是否受到波及，並配合官方指引評估是否需要輪換生產環境的敏感憑證與存取權杖。",
-        "id": "news:https://blog.railway.com/p/security-disclosure-wednesday-october-21st",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "Railway 發布官方安全揭露通報：說明近期系統資安事件與防護因應",
-        "type": "news",
-        "url": "https://blog.railway.com/p/security-disclosure-wednesday-october-21st"
-      },
-      {
-        "content": "Cloudflare 為其 Web 應用程式防火牆（WAF）推出「完整事務檢測（Full Transaction Detection）」功能。過往傳統 WAF 多僅依賴對傳入 HTTP 請求（Request）的單向特徵比對，容易漏判成功利用漏洞後的實質資料外洩或服務端配置錯誤；新功能能夠自動將 HTTP 請求與伺服器回傳的 HTTP 回應（Response）進行即時關聯分析。對維運與安全工程師而言，這大幅提升了防禦 0-day 攻擊與敏感資訊外流的能力，能夠在攻擊回傳敏感資料時立即阻斷，顯著降低維護自訂防禦規則的負擔。",
-        "id": "news:https://blog.cloudflare.com/full-transaction-waf",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "Cloudflare WAF 推出「完整事務檢測」：關聯請求與回應精準攔截資料外洩",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/full-transaction-waf/"
-      },
-      {
-        "content": "AI 新創 Reflection 正式釋出其首款開源權重模型 Beam，並透過 Ollama 雲端平台提供限時免費存取。Beam 專門針對軟體工程編碼、複雜邏輯推理以及長時間運行的 Agentic 工作流程進行了深度優化。隨著本機與自託管開源模型生態的快速演進，這為依賴 Ollama 打造自動化代碼審查、自主除錯或架構巡檢的工程團隊提供了一個輕量、易整合且專注於工程任務的新模型選擇，有助於降低高階封閉模型 API 的調用成本。",
-        "id": "news:https://ollama.com/blog/reflection-beam",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "Reflection 首款開源權重模型 Beam 上架 Ollama：專注軟體工程與長週期 Agent 任務",
-        "type": "news",
-        "url": "https://ollama.com/blog/reflection-beam"
-      },
-      {
-        "content": "NVIDIA 推出名為 Kumo Relational 的新架構，在關聯式資料庫結構上的預測效能成功超越傳統監督式機器學習模型，且全程「無需額外訓練」。在企業軟體系統中，龐大的關聯式資料通常需要繁瑣的特徵工程與模型微調流程；Kumo Relational 透過圖神經網路與基礎模型架構直接理解跨表實體關聯，使開發者與資料工程師能以極低門檻對關聯式資料集進行即時預測，徹底重塑企業預測性分析與智慧查詢的系統設計流程。",
-        "id": "news:https://huggingface.co/blog/nvidia/kumo-relational",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "NVIDIA 發表 Kumo Relational 架構：關聯式資料無需訓練即可超越監督式學習",
-        "type": "news",
-        "url": "https://huggingface.co/blog/nvidia/kumo-relational"
-      },
       {
         "content": "Google 推出全新開源模型 EmbeddingGemma 2，這是一款輕量且高效的多模態嵌入（Multimodal Embedding）模型。在現代 RAG（檢索增強生成）與語意搜尋系統中，跨文本、圖像等不同模態的統一表徵一直面臨計算成本過高的挑戰。EmbeddingGemma 2 具備小巧的參數量與出色的跨模態對齊能力，能夠輕易部署在邊緣端或自託管伺服器上，為資源受限的開發團隊在打造多模態知識庫檢索與智慧推薦系統時提供了高性價比的解決方案。",
         "id": "news:https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model",
@@ -828,241 +716,324 @@
         "title": "Vercel 淘汰靜態憑證引發社群檢視長期部署權杖安全實務",
         "type": "news",
         "url": "https://thenewstack.io/vercel-oidc-static-credentials/"
+      },
+      {
+        "content": "安全研究揭露名為 http2shell 的重大遠端程式碼執行（RCE）漏洞，該漏洞影響包括 Node.js、Python 等多種語言環境下的主流 HTTP/2 伺服器與相關函式庫實作。攻擊者可利用特定 HTTP/2 協定解析與狀態處理的缺陷達成未授權指令執行。此通報對所有維護 Web 服務與 API 網關的開發者至關重要，建議立即盤點系統依賴並套用相應的安全修補與緩解措施。",
+        "id": "news:https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "新型 RCE 漏洞 http2shell 威脅 Node.js 與 Python 等多種後端 HTTP/2 實作",
+        "type": "news",
+        "url": "https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8"
+      },
+      {
+        "content": "Node.js 官方推出 v22.23.4「Jod」長期支援版本（LTS）安全更新。本次更新重點修復了多個重大 CVE，包括修正 HTTP Agent 防護機制、DNS 解析中的 null byte 輸入驗證（CVE-2026-105482）、TLS 連線拒絕非規範 IP 位址（CVE-2026-106069）、強化權限模型在 realpathSync 下的檢查，以及確保跨 snapshot 時重設加密隨機快取。使用 Node.js 22 LTS 的開發者應盡速排程升級以維護環境安全。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v22.23.4",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "Node.js 發布 v22.23.4 'Jod' LTS 安全更新，修復多項 TLS、DNS 與權限漏洞",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v22.23.4"
+      },
+      {
+        "content": "雲端部署平台 Railway 正式公開 10 月 21 日安全事件的初步調查報告（Preliminary Report）。針對日前發生的資安衝擊，官方團隊詳細說明了受影響範圍、攻擊向量防堵過程以及目前採取的補救與加固措施。由於眾多現代團隊依賴 Railway 託管生產服務與資料庫，該報告對於評估自身基礎設施風險與安全合規狀態至關重要。",
+        "id": "news:https://blog.railway.com/p/preliminary-report-october-security-incident",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "Railway 發布 10 月 21 日資安事件初步事後報告，揭露事故調查進展",
+        "type": "news",
+        "url": "https://blog.railway.com/p/preliminary-report-october-security-incident"
+      },
+      {
+        "content": "AWS 宣布其程式碼安全 AI 代理服務「Continuum」正式全面開放（GA）。該服務能自動掃描程式碼儲存庫中的漏洞，進行主動驗證並嘗試自動修復，官方宣稱可解決高達 89% 的安全缺失。然而實際落地時仍須注意模型幻覺與邊界情況的限制。這項發布象徵雲端原生開發流程進一步邁向自動化安全補救，將直接改變 DevOps 與安全團隊的日常漏洞處理實務。",
+        "id": "news:https://thenewstack.io/aws-says-its-ai-security-agent-fixes-89-of-bugs-but-theres-a-catch",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "AWS 正式推出 Continuum 安全代理，可自動偵測並修復代碼庫漏洞",
+        "type": "news",
+        "url": "https://thenewstack.io/aws-says-its-ai-security-agent-fixes-89-of-bugs-but-theres-a-catch/"
+      },
+      {
+        "content": "中國 AI 團隊在釋出 Kimi K3.1 開源模型權重時，主動移除了涉及網路攻擊與安全漏洞利用的訓練數據。此決策主要源自中國最新的出口管制規定，同時也呼應了全球對大型語言模型可能被用於自動化網路攻擊的警戒。這項變更直接影響依賴該開源權重進行安全測試或自動化滲透研究的開發者，凸顯法規對開源模型能力的深遠影響。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xecgrf/kimi_k31_removes_cyberattack_training_data_from",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "因應出口管制與資安疑慮，Kimi K3.1 開源權重移除網路攻擊相關訓練資料",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xecgrf/kimi_k31_removes_cyberattack_training_data_from/"
+      },
+      {
+        "content": "歐盟成員國代表投票通過針對 AI 公司的數據使用新規定，批評者稱其為針對歐洲用戶內容的「數位徵用」。該政策調整了版權與數據使用豁免條款，直接影響在歐盟運作或處理歐洲數據的 AI 模型開發團隊與服務商在訓練資料收集、著作權授權與隱私合規方面的法律邊界，是歐洲 AI 監管框架下的重大政策變動。",
+        "id": "news:https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "歐盟成員國通過新版 AI 資料授權規範，放寬 AI 公司訓練數據取得限制",
+        "type": "news",
+        "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies"
+      },
+      {
+        "content": "GitHub 宣布為 Copilot 使用量指標（Usage metrics）API 加入擴展支援，現在起企業與團隊的用量報告將納入包含 OpenCode 在內等多種非官方整合工具的模型消耗數據。此更新讓軟體工程管理者與架構師能夠跨不同開發環境全面追蹤內部團隊實際調用 AI 模型的指標與成本，解決過去多工具混用導致的用量監控盲點。",
+        "id": "news:https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "GitHub Copilot 使用量指標 API 新增支援 OpenCode 等第三方開發工具",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode"
+      },
+      {
+        "content": "Meta 在最新研究論文中提出跳過傳統 Tokenizer、直接讓模型逐位元組（raw bytes）讀取文字架構。研究團隊透過知識蒸餾，將使用 Token 的 Llama 3 8B 權重轉移至僅讀取位元組的 1B 小模型中，成功克服了位元組序列長度帶來的表示瓶頸。儘管位元組模型初始學習曲線較慢，但研究指出其在多語言適應與長尾字元處理具備更高上限，為未來的語言模型架構設計帶來新路徑。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xe88ja/meta_trained_small_ai_models_to_read_raw_bytes",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "Meta 探索無 Token 革命：以 Llama 3 蒸餾 1B 位元組層級語言模型",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xe88ja/meta_trained_small_ai_models_to_read_raw_bytes/"
+      },
+      {
+        "content": "一家工程團隊分享了針對內部 AI 程式碼審查工具進行成本與延遲極限最佳化的實務經驗。在面對推論費用暴增兩倍的情況下，團隊深入剖析 Token 消耗結構，透過引入提示詞快取（Prompt Caching）並配合依任務複雜度分流的智慧模型路由機制，在大幅縮短審查時間的同時成功削減 68% 的推論費用，為生產環境中落實 GenAI 的架構師提供了具體的節費指南。",
+        "id": "news:https://blog.cloudflare.com/obsessive-inference-optimization",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "實戰案例：運用 Prompt Caching 與動態路由將 AI 程式碼審查成本降低 68%",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/obsessive-inference-optimization/"
+      },
+      {
+        "content": "技術社群深入探討 Docker 在多年演進下累積的諸多「怪異」行為與非預期機制。文章詳細拆解了 Docker 在處理 iptables 規則覆寫、磁碟卷（Volume）權限繼承、訊號傳遞（Signal Propagation）以及資源限制時的底層實作細節與陷阱。對於日常依賴 Docker 構建微服務與 CI/CD 流程的開發者與 SRE 而言，這份分析能有效避免在生產環境中踩到隱晦的容器配置地雷。",
+        "id": "news:https://codeandcake.dev/posts/2026-10-22-docker-is-weird",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "解構 Docker 的反直覺設計：容器底層隔離、網路與儲存的邊界行為分析",
+        "type": "news",
+        "url": "https://codeandcake.dev/posts/2026-10-22-docker-is-weird"
+      },
+      {
+        "content": "開發者發布開源專案 WorldTUI，展示如何僅使用 3.6 億參數的小型語言模型來端到端模擬完整的終端機（TUI）環境。該模型能在沒有真實作業系統底層支援的情況下，逼真重現 Shell 指令解析、輸出格式與互動狀態，證明了超小型模型在模擬特定沙盒環境與系統行為上的潛力，為端側 AI Agent 與互動式介面模擬提供了極具啟發性的研究實作。",
+        "id": "news:https://simedw.com/2026/10/21/world-model-terminal",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "WorldTUI：以 360M 輕量模型完全模擬終端機環境與 Shell 互動",
+        "type": "news",
+        "url": "https://simedw.com/2026/10/21/world-model-terminal/"
+      },
+      {
+        "content": "社群釋出超過 11 小時的深度實作教學，專注於從零構建具備邏輯推理能力的大型語言模型。內容使用 Python 與 PyTorch，深入解析評估基準（Evaluation）、推論期計算擴展（Inference-time Scaling）、強化學習（RL）對齊以及模型蒸餾等前沿推理模型關鍵技術，並提供完整的程式碼範例，為希望深入理解與訓練類 o1 推理架構的 AI 工程師提供了系統化的實戰指引。",
+        "id": "news:https://magazine.sebastianraschka.com/p/building-reasoning-models",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "從零建構推理模型實戰：涵蓋推論期擴展、RL 與蒸餾的完整 PyTorch 課程",
+        "type": "news",
+        "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models"
+      },
+      {
+        "content": "資安研究團隊公開其成功攻破最新 iOS 安全防線的技術細節。研究詳細記錄了如何繞過 PAC（指標驗證碼）、PPL 等硬體層級防禦機制，串聯多個記憶體損壞與邏輯漏洞達成任意程式碼執行的完整攻擊鏈。這項成果不僅展現了現代行動作業系統防護的脆弱點，也為系統底層安全研究員與從事跨平台安全架構設計的工程師提供了寶貴的攻防分析範本。",
+        "id": "news:https://blog.calif.io/p/iphone",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "攻破現代 iOS 防禦：資安研究團隊公開 iPhone 漏洞利用鏈實作解析",
+        "type": "news",
+        "url": "https://blog.calif.io/p/iphone"
+      },
+      {
+        "content": "開源互動式 HTTPS 代理與封包除錯工具 mitmproxy 在最新版本中加入了 --emudhra 旗標選項。此功能主要因應近期憑證頒發機構 eMudhra 金鑰遭破解的安全危機，讓安全研究員與開發者能在本地代理環境中快速識別、攔截或模擬受影響憑證的流量行為。此更新強化了開發者在排查 TLS 信任鏈問題與進行安全評估時的應對能力。",
+        "id": "news:https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b",
+        "publishedAt": "2026-10-24T22:24:48.812Z",
+        "title": "網路除錯工具 mitmproxy 新增 --emudhra 選項以因應憑證機構安全事件",
+        "type": "news",
+        "url": "https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-23T23:04:02.112Z",
+      "generatedAt": "2026-10-24T22:24:48.812Z",
       "items": [
         {
-          "content": "月之暗面（Moonshot AI）推出新一代 Kimi K3.1 Pro 及主打高速推論的 K3.1 Pro Highspeed 模型。新版本進一步提升複雜推理、長文本理解與代碼生成能力，Highspeed 版本則針對低延遲與高吞吐需求進行最佳化。這使開發者在打造即時對話系統或自主 AI Agent 時，能在推論品質與回應延遲之間獲得更具彈性的選擇。",
+          "content": "安全研究揭露名為 http2shell 的重大遠端程式碼執行（RCE）漏洞，該漏洞影響包括 Node.js、Python 等多種語言環境下的主流 HTTP/2 伺服器與相關函式庫實作。攻擊者可利用特定 HTTP/2 協定解析與狀態處理的缺陷達成未授權指令執行。此通報對所有維護 Web 服務與 API 網關的開發者至關重要，建議立即盤點系統依賴並套用相應的安全修補與緩解措施。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "frontend-backend",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Kimi K3.1 Pro and K3.1 Pro Highspeed",
+          "sourceTitle": "Evolving Threat: http2shell is an RCE in Node, Python, and more",
           "sources": [
             "hn"
           ],
-          "title": "月之暗面發布 Kimi K3.1 Pro 與 K3.1 Pro Highspeed 模型",
-          "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
-          "weightedScore": 625
+          "title": "新型 RCE 漏洞 http2shell 威脅 Node.js 與 Python 等多種後端 HTTP/2 實作",
+          "url": "https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8",
+          "weightedScore": 182
         },
         {
-          "content": "Node.js 釋出安全性更新版本 26.12.1，重點修補多個 High 等級安全性弱點。主要修復包括拒絕非規範（non-canonical）IP 位址以防範 SSRF 與 TLS 繞過攻擊（CVE-2026-106069、CVE-2026-106072）、在 DNS 解析輸入中嚴格過濾空字元（CVE-2026-105482），以及更新 Brotli 解碼器以修正潛在錯誤。官方建議使用 26.x 版本的開發團隊儘速升級以確保服務安全。",
+          "content": "Node.js 官方推出 v22.23.4「Jod」長期支援版本（LTS）安全更新。本次更新重點修復了多個重大 CVE，包括修正 HTTP Agent 防護機制、DNS 解析中的 null byte 輸入驗證（CVE-2026-105482）、TLS 連線拒絕非規範 IP 位址（CVE-2026-106069）、強化權限模型在 realpathSync 下的檢查，以及確保跨 snapshot 時重設加密隨機快取。使用 Node.js 22 LTS 的開發者應盡速排程升級以維護環境安全。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
           "sourceId": "gh-nodejs",
-          "sourceTitle": "2026-10-21, Version 26.12.1 (Current), @aduh95 prepared by @RafaelGSS",
+          "sourceTitle": "2026-10-21, Version 22.23.4 'Jod' (LTS), @aduh95",
           "sources": [
             "gh-nodejs"
           ],
-          "title": "Node.js 發布安全更新修復非規範 IP 阻擋與 DNS 等高危漏洞",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.12.1",
+          "title": "Node.js 發布 v22.23.4 'Jod' LTS 安全更新，修復多項 TLS、DNS 與權限漏洞",
+          "url": "https://github.com/nodejs/node/releases/tag/v22.23.4",
           "weightedScore": 100
         },
         {
-          "content": "Cloudflare 宣布推出支援後量子密碼學（PQC）的 GeoKey Manager 地理圍欄金鑰管理服務。新架構旨在抵禦「先攔截、後解密」（Harvest Now, Decrypt Later）的量子威脅，同時滿足跨國企業嚴格的區域資料主權與金鑰本地化法規要求。這使安全架構師能確保在邊緣節點進行解密時，兼顧跨國低延遲傳輸與未來世代的抗量子加密標準。",
+          "content": "雲端部署平台 Railway 正式公開 10 月 21 日安全事件的初步調查報告（Preliminary Report）。針對日前發生的資安衝擊，官方團隊詳細說明了受影響範圍、攻擊向量防堵過程以及目前採取的補救與加固措施。由於眾多現代團隊依賴 Railway 託管生產服務與資料庫，該報告對於評估自身基礎設施風險與安全合規狀態至關重要。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Bringing post-quantum cryptography to geographically fenced key management",
+          "sourceId": "lobsters-devops",
+          "sourceTitle": "Railway Preliminary Report: Oct 21st Security Incident",
           "sources": [
-            "cloudflare-blog"
+            "lobsters-devops"
           ],
-          "title": "Cloudflare 推出支援後量子密碼學的 GeoKey Manager",
-          "url": "https://blog.cloudflare.com/post-quantum-geo-key-manager/",
-          "weightedScore": 50
-        },
-        {
-          "content": "GitHub 釋出 Visual Studio 的 Copilot 9 月更新，讓開發者能直接在 Copilot 聊天介面中檢視並探討 Pull Request 變更，無須切換回瀏覽器。同時，更新支援團隊自選信任的基礎 AI 模型，並在 IDE 偵測到套件相依性弱點時提供即時的一鍵修復建議，有效降低代碼審查與相依性修補時的上下文切換成本。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot in Visual Studio — September update",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 在 Visual Studio 支援 PR 檢視與即時漏洞修復",
-          "url": "https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
+          "title": "Railway 發布 10 月 21 日資安事件初步事後報告，揭露事故調查進展",
+          "url": "https://blog.railway.com/p/preliminary-report-october-security-incident",
           "weightedScore": 100
         },
         {
-          "content": "Google 官方公開 Gemini 4 Argon 的安全評估報告，深入說明其在模型對齊、防範惡意滥用以及真實場景魯棒性方面的測試機制。報告聚焦於自主 Agent 行為邊界、提示詞注入防禦與幻覺控制的最新驗證基準，為採用 Gemini 系列模型構建企業級 Agent 與敏感業務系統的開發者提供了清晰的安全防護界限依據。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "deepmind-blog",
-          "sourceTitle": "Developing Gemini 4 Argon responsibly and safely",
-          "sources": [
-            "deepmind-blog"
-          ],
-          "title": "Google 發表 Gemini 4 Argon 模型安全評估與對齊報告",
-          "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
-          "weightedScore": 100
-        },
-        {
-          "content": "OpenAI 發布技術說明，詳述其為前沿模型訓練與評估環境所建構的安全隔離機制。實踐涵蓋嚴格的完全離線（air-gapped）沙盒環境、高算力自動化紅隊測試，以及細粒度的網路邊界控制，旨在杜絕訓練權重洩露與惡意代碼外溢風險。該架構為進行大規模模型研發的 AI 與 MLOps 基礎設施團隊提供了高規格的基建安全參考。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Securing our frontier model training environment",
-          "sources": [
-            "openai-blog"
-          ],
-          "title": "OpenAI 公開前沿模型訓練環境的安全隔離與紅隊防護架構",
-          "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
-          "weightedScore": 100
-        },
-        {
-          "content": "隱私與安全 DNS 服務商 Quad9 宣布將終止在法國境內的伺服器營運與法律實體。起因於法國法院要求其在全球遞迴解析層面封鎖特定侵權網址，引發管轄權爭議，Quad9 認為該判決嚴重威脅網路中立性。此事件直接影響仰賴 Quad9 進行惡意域名過濾的歐盟開發者與基礎設施團隊，凸顯依賴公共 DNS 時需考量的地緣法規風險。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Quad9 to exit France",
-          "sources": [
-            "hn"
-          ],
-          "title": "知名安全 DNS 服務 Quad9 因法規爭端宣布撤出法國市場",
-          "url": "https://quad9.net/news/blog/au-revoir-france/",
-          "weightedScore": 1335
-        },
-        {
-          "content": "瑞典政府辦公室正式宣布在內部公務環境中禁止使用 ChatGPT 與 Claude 等外部商業 AI 服務，主要考量敏感數據洩漏風險與境外資料傳輸的合規要求。此禁令顯示歐盟各國公共部門對商用 LLM 的監管審查日益嚴苛，對承接政府專案或高隱私監管領域的軟體團隊而言，轉向私有化地端部署或合規主權模型已成必然趨勢。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Swedish government offices to ban ChatGPT and Claude",
-          "sources": [
-            "hn"
-          ],
-          "title": "瑞典政府機構宣布全面禁用商業 AI 模型 ChatGPT 與 Claude",
-          "url": "https://www.sverigesradio.se/artikel/chat-gpt-och-claude-forbjuder-regeringskansliet",
-          "weightedScore": 314
-        },
-        {
-          "content": "OpenAI 發表架構深度專文，剖析支撐超過 10 億使用者的 ChatGPT 線上儲存擴展架構。團隊藉由在自研儲存系統 Habitat 中落實高可用多租戶架構、結合 Azure Cosmos DB 與全域分散式快取設計，成功將端對端讀取延遲降至原先的十二分之一。文章詳述了分散式快取一致性、高並發熱點防範與故障轉移設計，對分散式後端架構極具參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
-          "sources": [
-            "openai-blog"
-          ],
-          "title": "OpenAI 解析 ChatGPT 儲存架構：將 10 億用戶讀取延遲降至十二分之一",
-          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 技術團隊揭露其利用 Pingora 代理層重構大型檔案 Byte-Range 請求快取機制的實作經驗。傳統 Range 快取常因微小請求而浪費數十 GB 的源站頻寬，新架構能自動協調邊緣分段擷取與快取合併，不僅解決了頻寬放大問題，更將 Cloudflare R2 物件儲存的 p99 延遲降低了 50%，為影音串流與大檔案分發架構提供了優良範例。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Origin Range Requests: Serving large files without range-request tuning",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 透過 Pingora 重構 Range 快取架構，將 R2 延遲減半",
-          "url": "https://blog.cloudflare.com/origin-range-requests/",
-          "weightedScore": 50
-        },
-        {
-          "content": "GPU 資源管理常面臨獨立叢集控制平面成本過高、單一叢集多租戶隔離性不足的兩難。本文探討如何整合 Kamaji（輕量級獨立控制平面）與 HAMi（異質 GPU 算力與記憶體切分），在虛擬化基礎設施上構建兼顧硬性安全隔離與高硬體利用率的 GPU 平台，為雲原生 AI 算力調度與 MLOps 團隊提供了落地的開源解決方案。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Multi-tenant GPU Kubernetes on simulated hardware with Kamaji and HAMi",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "利用 Kamaji 與 HAMi 在 Kubernetes 實現高隔離 GPU 多租戶架構",
-          "url": "https://www.cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami/",
-          "weightedScore": 100
-        },
-        {
-          "content": "本文深入分析大語言模型在軟體形式化驗證（Formal Verification）領域的最新進展。過去形式化證明因需大量人工撰寫規格引理而難以擴展至大型專案；近期實踐證明，LLM 能夠高效輔助證明路徑搜尋、反例除錯與規格自動推導，顯著降低了形式化驗證的門檻，正逐步改變關鍵核心系統與編譯器的可靠度驗證流程。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "LLMs are making formal software verification feasible at a much larger scale",
-          "sources": [
-            "hn"
-          ],
-          "title": "大語言模型助力形式化軟體驗證邁向大規模工程實踐",
-          "url": "https://www.anthropic.com/research/formal-verification",
-          "weightedScore": 437
-        },
-        {
-          "content": "許多開發者嘗試直接提示 LLM 輸出「置信度評分」作為決策門檻，本文深入探討此實作的統計盲點。研究指出，自回歸 LLM 的自評置信度極易受到提示詞語氣、上下文長度及過度自信傾向影響，與真實校準準確率脫節。文章建議開發者應改採 Token Logits 機率熵分析、多次採樣一致性（Self-Consistency）或外部校準模型來評估不確定性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Using LLM for confidence scoring is a bad idea",
-          "sources": [
-            "hn"
-          ],
-          "title": "技術剖析：為何直接讓 LLM 輸出置信度分數是不可靠的作法",
-          "url": "https://rumple.github.io/blog/2026/10/20/asking-llm-for-confidence.html",
-          "weightedScore": 221
-        },
-        {
-          "content": "傳統自回歸文字生成受限於逐字預測（Next-Token Prediction）的序列計算瓶頸。Next-Concept Modeling 提出從粗到細（Coarse-to-Fine）的兩階段生成機制：先高速並行規劃高層次概念語意，再並行細化為具體 Token。該方法在維持語意連貫性的同時顯著釋放了推論的並行運算能力，為新一代非自回歸推論架構開闢了全新方向。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "Next-Concept Modeling: Fast, Parallel Coarse-to-Fine Text Generation",
-          "sources": [
-            "lobsters-ai"
-          ],
-          "title": "Next-Concept Modeling 論文解析：從粗到細的平行文字生成架構",
-          "url": "https://arxiv.org/abs/2610.14162",
-          "weightedScore": 100
-        },
-        {
-          "content": "Vercel 宣布在生態系中逐步淘汰長期靜態 API Key，要求市集夥伴改用短期動態認證，但開發社群隨後指出其自身部署流程仍廣泛依賴長期 Deployment Token。此事件引發了開發者對現代 CI/CD 憑證輪替、身分同盟（OIDC）實踐複雜度與安全代價的深入討論，突顯在無伺服器環境中落實零信任架構時的現實挑戰。",
+          "content": "AWS 宣布其程式碼安全 AI 代理服務「Continuum」正式全面開放（GA）。該服務能自動掃描程式碼儲存庫中的漏洞，進行主動驗證並嘗試自動修復，官方宣稱可解決高達 89% 的安全缺失。然而實際落地時仍須注意模型幻覺與邊界情況的限制。這項發布象徵雲端原生開發流程進一步邁向自動化安全補救，將直接改變 DevOps 與安全團隊的日常漏洞處理實務。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "Vercel moved to kill static credentials. Then developers spotted its own deployment token.",
+          "sourceTitle": "AWS says its AI security agent fixes 89% of bugs — but there’s a catch",
           "sources": [
             "thenewstack"
           ],
-          "title": "Vercel 淘汰靜態憑證引發社群檢視長期部署權杖安全實務",
-          "url": "https://thenewstack.io/vercel-oidc-static-credentials/",
+          "title": "AWS 正式推出 Continuum 安全代理，可自動偵測並修復代碼庫漏洞",
+          "url": "https://thenewstack.io/aws-says-its-ai-security-agent-fixes-89-of-bugs-but-theres-a-catch/",
           "weightedScore": 50
+        },
+        {
+          "content": "中國 AI 團隊在釋出 Kimi K3.1 開源模型權重時，主動移除了涉及網路攻擊與安全漏洞利用的訓練數據。此決策主要源自中國最新的出口管制規定，同時也呼應了全球對大型語言模型可能被用於自動化網路攻擊的警戒。這項變更直接影響依賴該開源權重進行安全測試或自動化滲透研究的開發者，凸顯法規對開源模型能力的深遠影響。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "Kimi K3.1 removes cyberattack training data from open weight release",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "因應出口管制與資安疑慮，Kimi K3.1 開源權重移除網路攻擊相關訓練資料",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xecgrf/kimi_k31_removes_cyberattack_training_data_from/",
+          "weightedScore": 100
+        },
+        {
+          "content": "歐盟成員國代表投票通過針對 AI 公司的數據使用新規定，批評者稱其為針對歐洲用戶內容的「數位徵用」。該政策調整了版權與數據使用豁免條款，直接影響在歐盟運作或處理歐洲數據的 AI 模型開發團隊與服務商在訓練資料收集、著作權授權與隱私合規方面的法律邊界，是歐洲 AI 監管框架下的重大政策變動。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "AI: EU Member States approve “digital expropriation” of Europeans for AI companies",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "歐盟成員國通過新版 AI 資料授權規範，放寬 AI 公司訓練數據取得限制",
+          "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 宣布為 Copilot 使用量指標（Usage metrics）API 加入擴展支援，現在起企業與團隊的用量報告將納入包含 OpenCode 在內等多種非官方整合工具的模型消耗數據。此更新讓軟體工程管理者與架構師能夠跨不同開發環境全面追蹤內部團隊實際調用 AI 模型的指標與成本，解決過去多工具混用導致的用量監控盲點。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Usage metrics API adds usage from tools like OpenCode",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 使用量指標 API 新增支援 OpenCode 等第三方開發工具",
+          "url": "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode",
+          "weightedScore": 100
+        },
+        {
+          "content": "Meta 在最新研究論文中提出跳過傳統 Tokenizer、直接讓模型逐位元組（raw bytes）讀取文字架構。研究團隊透過知識蒸餾，將使用 Token 的 Llama 3 8B 權重轉移至僅讀取位元組的 1B 小模型中，成功克服了位元組序列長度帶來的表示瓶頸。儘管位元組模型初始學習曲線較慢，但研究指出其在多語言適應與長尾字元處理具備更高上限，為未來的語言模型架構設計帶來新路徑。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "Meta trained small AI models to read raw bytes instead of tokens. They start out worse, but the paper predicts they end up better",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "Meta 探索無 Token 革命：以 Llama 3 蒸餾 1B 位元組層級語言模型",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xe88ja/meta_trained_small_ai_models_to_read_raw_bytes/",
+          "weightedScore": 100
+        },
+        {
+          "content": "一家工程團隊分享了針對內部 AI 程式碼審查工具進行成本與延遲極限最佳化的實務經驗。在面對推論費用暴增兩倍的情況下，團隊深入剖析 Token 消耗結構，透過引入提示詞快取（Prompt Caching）並配合依任務複雜度分流的智慧模型路由機制，在大幅縮短審查時間的同時成功削減 68% 的推論費用，為生產環境中落實 GenAI 的架構師提供了具體的節費指南。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Cutting our inference bill by 68% by being obsessive about optimization",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "實戰案例：運用 Prompt Caching 與動態路由將 AI 程式碼審查成本降低 68%",
+          "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+          "weightedScore": 50
+        },
+        {
+          "content": "技術社群深入探討 Docker 在多年演進下累積的諸多「怪異」行為與非預期機制。文章詳細拆解了 Docker 在處理 iptables 規則覆寫、磁碟卷（Volume）權限繼承、訊號傳遞（Signal Propagation）以及資源限制時的底層實作細節與陷阱。對於日常依賴 Docker 構建微服務與 CI/CD 流程的開發者與 SRE 而言，這份分析能有效避免在生產環境中踩到隱晦的容器配置地雷。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Docker is weird",
+          "sources": [
+            "hn",
+            "lobsters-programming"
+          ],
+          "title": "解構 Docker 的反直覺設計：容器底層隔離、網路與儲存的邊界行為分析",
+          "url": "https://codeandcake.dev/posts/2026-10-22-docker-is-weird",
+          "weightedScore": 960
+        },
+        {
+          "content": "開發者發布開源專案 WorldTUI，展示如何僅使用 3.6 億參數的小型語言模型來端到端模擬完整的終端機（TUI）環境。該模型能在沒有真實作業系統底層支援的情況下，逼真重現 Shell 指令解析、輸出格式與互動狀態，證明了超小型模型在模擬特定沙盒環境與系統行為上的潛力，為端側 AI Agent 與互動式介面模擬提供了極具啟發性的研究實作。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "WorldTUI: I trained a 360M model to pretend to be a terminal",
+          "sources": [
+            "hn"
+          ],
+          "title": "WorldTUI：以 360M 輕量模型完全模擬終端機環境與 Shell 互動",
+          "url": "https://simedw.com/2026/10/21/world-model-terminal/",
+          "weightedScore": 638
+        },
+        {
+          "content": "社群釋出超過 11 小時的深度實作教學，專注於從零構建具備邏輯推理能力的大型語言模型。內容使用 Python 與 PyTorch，深入解析評估基準（Evaluation）、推論期計算擴展（Inference-time Scaling）、強化學習（RL）對齊以及模型蒸餾等前沿推理模型關鍵技術，並提供完整的程式碼範例，為希望深入理解與訓練類 o1 推理架構的 AI 工程師提供了系統化的實戰指引。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "raschka-ahead-of-ai",
+          "sourceTitle": "Building Reasoning Models from the Ground Up: A Full Video Course",
+          "sources": [
+            "raschka-ahead-of-ai"
+          ],
+          "title": "從零建構推理模型實戰：涵蓋推論期擴展、RL 與蒸餾的完整 PyTorch 課程",
+          "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+          "weightedScore": 100
+        },
+        {
+          "content": "資安研究團隊公開其成功攻破最新 iOS 安全防線的技術細節。研究詳細記錄了如何繞過 PAC（指標驗證碼）、PPL 等硬體層級防禦機制，串聯多個記憶體損壞與邏輯漏洞達成任意程式碼執行的完整攻擊鏈。這項成果不僅展現了現代行動作業系統防護的脆弱點，也為系統底層安全研究員與從事跨平台安全架構設計的工程師提供了寶貴的攻防分析範本。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Today, we hacked what we'd set out to hack: the iPhone",
+          "sources": [
+            "hn"
+          ],
+          "title": "攻破現代 iOS 防禦：資安研究團隊公開 iPhone 漏洞利用鏈實作解析",
+          "url": "https://blog.calif.io/p/iphone",
+          "weightedScore": 1068
+        },
+        {
+          "content": "開源互動式 HTTPS 代理與封包除錯工具 mitmproxy 在最新版本中加入了 --emudhra 旗標選項。此功能主要因應近期憑證頒發機構 eMudhra 金鑰遭破解的安全危機，讓安全研究員與開發者能在本地代理環境中快速識別、攔截或模擬受影響憑證的流量行為。此更新強化了開發者在排查 TLS 信任鏈問題與進行安全評估時的應對能力。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "mitmproxy adds --emudhra option",
+          "sources": [
+            "hn"
+          ],
+          "title": "網路除錯工具 mitmproxy 新增 --emudhra 選項以因應憑證機構安全事件",
+          "url": "https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b",
+          "weightedScore": 620
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-09-09T00:02:21.880Z",
-      "url": "https://blog.cloudflare.com/automatic-key-exchange-for-origins"
-    },
-    {
-      "seenAt": "2026-09-09T00:02:21.880Z",
-      "url": "https://cncf.io/announcements/2026/09/07/cloud-native-computing-foundation-announces-karmada-graduation"
-    },
-    {
-      "seenAt": "2026-09-09T00:02:21.880Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wapjaw/openai_alleged_of_stealing_mathematicians_work"
-    },
-    {
-      "seenAt": "2026-09-09T00:02:21.880Z",
-      "url": "https://cncf.io/blog/2026/09/08/distributed-tracing-for-ci-pipelines-without-touching-a-single-workflow-file"
-    },
     {
       "seenAt": "2026-09-10T00:03:46.530Z",
       "url": "https://github.com/react/react/releases/tag/v19.3.0"
@@ -5819,6 +5790,147 @@
       ],
       "title": "Vercel moved to kill static credentials. Then developers spotted its own deployment token.",
       "url": "https://thenewstack.io/vercel-oidc-static-credentials"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Evolving Threat: http2shell is an RCE in Node, Python, and more",
+      "url": "https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "title": "2026-10-21, Version 22.23.4 'Jod' (LTS), @aduh95",
+      "url": "https://github.com/nodejs/node/releases/tag/v22.23.4"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "title": "Railway Preliminary Report: Oct 21st Security Incident",
+      "url": "https://blog.railway.com/p/preliminary-report-october-security-incident"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "AWS says its AI security agent fixes 89% of bugs — but there’s a catch",
+      "url": "https://thenewstack.io/aws-says-its-ai-security-agent-fixes-89-of-bugs-but-theres-a-catch"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Kimi K3.1 removes cyberattack training data from open weight release",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xecgrf/kimi_k31_removes_cyberattack_training_data_from"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "AI: EU Member States approve “digital expropriation” of Europeans for AI companies",
+      "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Usage metrics API adds usage from tools like OpenCode",
+      "url": "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Meta trained small AI models to read raw bytes instead of tokens. They start out worse, but the paper predicts they end up better",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xe88ja/meta_trained_small_ai_models_to_read_raw_bytes"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Cutting our inference bill by 68% by being obsessive about optimization",
+      "url": "https://blog.cloudflare.com/obsessive-inference-optimization"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-programming"
+      ],
+      "title": "Docker is weird",
+      "url": "https://codeandcake.dev/posts/2026-10-22-docker-is-weird"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "WorldTUI: I trained a 360M model to pretend to be a terminal",
+      "url": "https://simedw.com/2026/10/21/world-model-terminal"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "raschka-ahead-of-ai",
+      "sources": [
+        "raschka-ahead-of-ai"
+      ],
+      "title": "Building Reasoning Models from the Ground Up: A Full Video Course",
+      "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Today, we hacked what we'd set out to hack: the iPhone",
+      "url": "https://blog.calif.io/p/iphone"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-24T22:24:48.812Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "mitmproxy adds --emudhra option",
+      "url": "https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b"
     }
   ]
 }
