@@ -544,7 +544,7 @@ LLM 只能用索引指涉候選、只回敘事文字；星數、連結、名次�
   （git diff 乾淨）、寫 `.tmp` 再 `rename`；`load()` 遇壞檔擲錯不覆寫。
 - 榜單段先 `save()` 成功才把新狀態 assign 進共用物件，失敗只需還原簡介快照即可完整回滾，未落檔
   的榜單推播不可能透過晨報段稍後的 `save()` 外洩。
-- 狀態 schema 對 `feed[].url` 刻意不加 `.url()`、對 `feed` 不加 `.max(50)`：嚴格驗證會在推播
+- 狀態 schema 對 `feed[].url` 刻意不加 URL 驗證（`z.url()`）、對 `feed` 不加 `.max(50)`：嚴格驗證會在推播
   **成功之後**讓 `save()` 擲錯、遺失時間戳，補班 cron 就會重推同一份晨報。上限只在唯一寫入點強制。
 - 狀態 commit 落在獨立的 orphan `state` 分支：`develop`／`main` 不出現 bot commit，高頻變動檔不
   製造合併衝突，且 commit 仍算 repo 活動、避免 Actions 60 天無活動自動停用。

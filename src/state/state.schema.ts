@@ -3,6 +3,7 @@ import { z } from 'zod';
 
 const logger = new Logger('state.schema');
 
+// zod 4 要求有秒、時差要有冒號（`+08:00`）；`2026-10-24T00:00Z`、`+0800` 會被拒（zod 3 曾接受）。寫入端一律用 `toISOString()`。
 const isoDatetime = z.iso.datetime({ offset: true });
 const nullableIso = isoDatetime.nullable();
 
@@ -110,7 +111,7 @@ export const curatedNewsItemSchema = z.object({
  *
  * **`url` 刻意只用 `z.string()`、不用 `z.url()`**：此值直接來自第三方 RSS 的 `<link>`
  * （`rss.fetcher.ts` 只檢查非空，全鏈無格式驗證），來源產生器出錯時可能是相對路徑或漏 scheme。
- * `z.url()` 的判定就是 `new URL()` 成不成功（zod 4 另會先 trim），與 `normalizeTargetUrl` 同一把尺——而 `seenNews`
+ * `z.url()` 的判定與 `new URL()` 相同（與 `normalizeTargetUrl` 同一把尺；zod 4 另會把輸出改寫為 trim 並刪除 tab／換行後的值）——而 `seenNews`
  * 對同一份資料只用 `z.string()`。若在此嚴格驗證，`save()`（推播成功之後才執行）會擲錯 →
  * `lastNewsPushAt` 不落檔 → 補跑 cron 重推同一份晨報、同 run 榜單狀態一併遺失，正是與
  * 「`feed` 不加 `.max(50)`」（見下方 `publishStateSchema`）同一類的失敗模式。

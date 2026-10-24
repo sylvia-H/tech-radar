@@ -8,6 +8,7 @@ import { NewsSource } from '../news/news.types';
 export const newsSourceSchema = z.object({
   id: z.string().min(1),
   type: z.enum(['hn-algolia', 'reddit-weekly', 'rss', 'github-releases']),
+  // 判定與 `new URL()` 相同；zod 4 另會把輸出改寫為 trim 並刪除 tab／換行後的值。
   url: z.url(),
   domain: z.enum(['ai', 'devops', 'frontend-backend', 'cross']),
   tier: z.union([z.literal(1), z.literal(2), z.literal(3)]),
