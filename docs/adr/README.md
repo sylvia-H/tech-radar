@@ -47,3 +47,4 @@
 | [0005](0005-cross-day-title-dedup.md) | 跨日標題去重：seenNews 記標題、近 14 天 Jaccard | Accepted（候補方案見 0007） | 2026-10-06 |
 | [0006](0006-curation-structured-output-and-salvage.md) | 策展回應：結構化輸出、解析失敗改用備援重試、仍失敗逐則搶救 | Accepted | 2026-10-17 |
 | [0007](0007-recent-pushed-titles-in-curation-prompt.md) | 跨日同題：近五天已推標題投影進策展 prompt | Accepted（觀察中） | 2026-10-17 |
+| [0008](0008-ci-ignore-scripts-and-test-workflow.md) | 相依的 install script 一律不執行（本機 allowScripts deny、CI --ignore-scripts），另以 test.yml 跑 build、測試與執行期相依稽核 | Accepted | 2026-10-23；同日修訂 |

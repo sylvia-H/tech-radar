@@ -661,6 +661,9 @@ $env:GH_API_TOKEN="…"; $env:GEMINI_API_KEY="…"
 node dist/main.cli.js
 ```
 
+目前有 install script 的 4 個相依套件已在 `package.json` 的 `allowScripts` 記為 `false`，安裝時不會執行（需 npm ≥ 11.18，Node 24 線 ≥ 24.20）。新增依賴後若 `npm ci`／`npm install`
+列出「not yet covered by allowScripts」，依開發指南 §8.y 以 `npm install-scripts deny|approve <pkg>` 處理。
+
 另有三個模式：`NEWS_INGEST_OBSERVE=1` 只跑 Stage A 漏斗並印出候選表（不呼叫 LLM、不推播），
 `PUBLISH_MODE=1` 只跑發佈段（見 [quickstart](specs/008-pages-publish/quickstart.md)），
 `NEWS_DRY_RUN=1` 晨報乾跑（2026-09-27）：跳過 18h guard、照常抓取與策展（消耗 1 次策展配額），結果推到
@@ -688,6 +691,13 @@ commit 回 `state` 分支（push 失敗重試 3 次）；`publish` job `needs: r
 部署 Pages。設定方式：Settings → Secrets and variables → Actions 填五項機密；Settings → Pages 把
 Source 設為 GitHub Actions；到 Actions 頁 Run workflow 手動驗證。手動執行時勾 `dry_run` 即為晨報乾跑：
 跳過 18h guard、真的抓取與策展、結果推到告警頻道，不寫狀態、不跑榜單段、不發佈 Pages。
+
+`.github/workflows/test.yml`：push（排除 `state` 分支）與 pull_request 時以 Node 24 跑兩個並行 job，權限只有
+`contents: read`、checkout 不保留憑證、各限 10 分鐘：`test`（`npm ci --ignore-scripts` → `npm run build` → `npm test`）
+與 `audit`（`npm audit --omit=dev --audit-level=high`，只看執行期依賴）。`audit` 在既有依賴出新公告時也會紅燈，
+不一定是該次 push 造成；有修正版就開 `fix/` 分支升級，沒有修正版或確認誤報時記進 `docs/plans/` 並接受紅燈到上游修正。
+與每日排程分開，測試或稽核失敗都不擋晨報。三處 `npm ci` 都帶 `--ignore-scripts`，不讓相依套件的 install script 在帶有
+token 的 job 裡執行；本機則由 `package.json` 的 `allowScripts` 把目前有 install script 的套件記為不執行。現況見開發指南 §8.y、理由見 [ADR 0008](docs/adr/0008-ci-ignore-scripts-and-test-workflow.md)。
 
 ## 開發歷程（Spec-Driven Development）
 

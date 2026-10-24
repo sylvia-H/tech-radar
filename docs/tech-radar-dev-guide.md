@@ -56,7 +56,13 @@
 
 ### 2.1 執行環境：GitHub Actions
 
-- **額度**：public repo 無限；private repo 每月 2,000 分鐘。一天 2 次觸發（主排 1～3 分鐘；補跑因 guard 多半數十秒內結束）→ 一個月遠低於限額。
+- **額度**：public repo 無限；private repo 每月 2,000 分鐘（每個 job 各自進位到整分鐘計費）。本 repo 目前為 public、不計分鐘，
+  以下為轉 private 時的估算（依 2026-10-22 UTC 的實際 run 39870603733／39872504021）：
+  - 每日排程 2 次觸發，各跑 `radar`＋`publish` 兩個 job：主排 radar 4m01s＋publish 27s → 進位 5＋1＝6 分鐘；補跑因 guard
+    數十秒內結束 → 1＋1＝2 分鐘。每日約 8 分鐘、每月約 240 分鐘。
+  - `test.yml`（§8.y）每次 push 跑 `test`（npm ci＋build＋test，約 1～2 分鐘）與 `audit`（不到 1 分鐘、計 1 分鐘）兩個 job
+    → 每次約 2～3 分鐘；同 repo 分支開 PR 時再多一次。以每月 30 次 push 估約 60～90 分鐘。
+  - 合計每月約 300～330 分鐘，遠低於限額。
 - **注意**：
   - cron 是 **UTC**，尖峰時可能延遲數分鐘（偶爾更久）。摘要推播可接受。
   - 排程 workflow 在 repo **連續 60 天無活動**會被停用；每次 run 都 commit `state/board.json`
@@ -666,12 +672,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/checkout@v5 # 狀態獨立分支，與程式碼歷史解耦
+        with: { persist-credentials: false } # 此份不推送；推回狀態只在 state-branch 內
+      - uses: actions/checkout@v5 # 狀態獨立分支，與程式碼歷史解耦（保留憑證，要推回 state）
         with: { ref: "state", path: "state-branch" }
       - run: mkdir -p state && cp state-branch/state/board.json state/board.json
       - uses: actions/setup-node@v5
         with: { node-version: "24", cache: "npm" }
-      - run: npm ci
+      - run: npm ci --ignore-scripts # 不執行相依套件的 install script，見 §8.y
       - run: npm run build
       - run: node dist/main.cli.js
         env:
@@ -728,6 +735,70 @@ jobs:
   **告警頻道**；與乾跑同樣不寫狀態、跳過 state commit 與 `publish` job。用途：策展降級日事後補一份繁中版。內容只能依標題撰寫、篇幅較短。
   觸發：`gh workflow run radar.yml --ref <branch> -f dry_run=true -f replay_date=2026-10-08`。
 - 另兩個本機除錯模式不變：`NEWS_INGEST_OBSERVE=1`（只跑漏斗、不呼叫 LLM）、`PUBLISH_MODE=1`（只跑發佈段）。
+
+### 8.y CI 測試、相依稽核與 install script（2026-10-23 新增）
+
+決策紀錄：[ADR 0008](adr/0008-ci-ignore-scripts-and-test-workflow.md)
+
+**`.github/workflows/test.yml`**（與每日排程的 `radar.yml` 分開）：
+
+- **觸發**：push（`branches-ignore: [state]`——`state` 是只放 `board.json` 的 orphan 分支，沒有 `package.json`）與
+  pull_request。同 repo 分支開 PR 時 push 與 pull_request 會各跑一次；專案平常在本機 `--no-ff` 合併、很少開 PR，接受這點重複。
+- **權限與防護**：workflow 層 `contents: read`；checkout 皆 `persist-credentials: false`；每個 job `timeout-minutes: 10`；
+  `concurrency: test-${{ github.ref }}`、`cancel-in-progress: true`（同一 ref 連續 push 只留最新一次）。
+- **`test` job**：`npm ci --ignore-scripts` → `npm run build` → `npm test`。build 不可省：`main.cli.ts`、`app.module.ts`、
+  各 `*.module.ts` 沒被任何 spec import，型別錯或 DI 匯入錯只有 `tsc` 抓得到；少了 build，CI 會綠、要等隔天 04:07 radar
+  才失敗，當天晨報不發。
+- **`audit` job**（與 `test` 並行）：`npm audit --omit=dev --audit-level=high`，只讀 lockfile、不安裝依賴。只看執行期依賴
+  （dev 依賴不進 `dist/`，另由升級分支處理）。
+  - **既有依賴出新公告時也會紅燈**，不一定是這次 push 造成的；`audit` 與 `test` 分屬不同 job，可分辨是哪一種紅燈，
+    且兩者都不影響每日晨報（不同 workflow）。
+  - 處理方式：有修正版 → 開 `fix/` 分支升級（上游鎖死版本時用 `overrides`）；沒有修正版、或確認不影響本專案執行路徑
+    （誤報）→ 在 `docs/plans/` 記下公告編號、判斷理由與重看時點，接受紅燈到上游修正為止。不要為了轉綠而移除這個 job
+    或調高 `--audit-level`。
+- **不併進 `radar.yml`**：理由見 ADR 0008。
+
+**install script：一律不執行，分兩層**：
+
+- **本機（與任何不帶旗標的 `npm ci`／`npm install`）**：`package.json` 的 `allowScripts` 把下表 4 個套件記為 `false`
+  （`npm install-scripts deny`）。需 npm ≥ 11.18（Node 24 線 ≥ 24.20；`engines.npm` 已註明，`engines.node` 仍是 `>=24`）；
+  低於 11.16 的 npm 會忽略 `allowScripts`、照常執行 script；npm 對 engines 不符只警告、不擋安裝。版本分界與理由見 ADR 0008。
+  npm 11 對未被 `allowScripts` 涵蓋的 script 只警告、仍會執行（`strict-allow-scripts` 預設 false），記為 `false` 的則一律
+  略過；`npm install-scripts ls` 應顯示「No packages with unreviewed install scripts.」。
+- **CI**：三處 `npm ci`（`radar`、`publish`、`test`）另帶 `--ignore-scripts`，不依賴 runner 上的 npm 是否認得
+  `allowScripts`；理由見 ADR 0008。
+
+lockfile 內有 install script 的套件（2026-10-23）與不需要執行的理由：
+
+| 套件 | 種類 | script | 為何不需要 |
+| --- | --- | --- | --- |
+| `@google/genai` | 執行期 | preinstall | 只有 `echo`，不做事 |
+| `protobufjs` | 執行期 | postinstall | 只檢查版本格式並印警告 |
+| `@parcel/watcher` | 開發（jest 30 的 `jest-haste-map`） | install | 只在帶 `--build-from-source`（`npm_config_build_from_source=true`）時才以 node-gyp 編譯，預設 no-op；各平台預編譯檔以 optional 依賴提供、只在 jest watch 模式使用 |
+| `unrs-resolver` | 開發（jest 30 的 `jest-resolve`） | postinstall | 只在缺原生檔時補裝；各平台 binding（`@unrs/resolver-binding-*`）以 optional 依賴提供 |
+
+- **前提**：jest 30 的 `jest-resolve` 需要 `unrs-resolver` 的原生檔，CI 依賴 lockfile 已含各平台 binding（含
+  `@unrs/resolver-binding-linux-x64-gnu`）。在 Windows 重產 lockfile 若漏掉其他平台的 optional 套件（npm/cli#4828），
+  CI 會報找不到原生 binding；重產後確認 lockfile 仍列出 linux 的 binding，缺了就刪掉 `node_modules` 與 lockfile 完整重產。
+- **新增依賴帶進新的 install script 時**：`npm ci`／`npm install` 會列出「not yet covered by allowScripts」。先確認它對建置
+  或執行是否必要：不需要就 `npm install-scripts deny <pkg>`，需要就 `npm install-scripts approve <pkg>`（預設寫入釘版本的
+  項目），並更新上表。CI 真的需要時改成「主 checkout `persist-credentials: false`、只在推回狀態那一步帶 token」的做法，
+  而不是拿掉 `--ignore-scripts`。
+- **升級上表 4 個套件時**：重新核對其 install script 是否變了、是否仍不需要——`deny` 寫的是只有套件名稱的 `false`
+  項目，新版本換了 script npm 也不會再提醒。相依移除或不再帶 install script 後，以 `npm install-scripts prune`
+  （可先加 `--dry-run`）清掉 `allowScripts` 裡已不對應的項目。
+- **不用 `.npmrc`（`ignore-scripts=true`）**：理由見 ADR 0008。
+- **checkout 憑證**：只有 `radar` job 的 state-branch checkout 保留預設（該步要把 `board.json` 推回 `state` 分支）；
+  `radar` 主 checkout、`publish` 的兩個 checkout、`test.yml` 的 checkout 皆 `persist-credentials: false`。
+
+**已知限制**
+
+- **radar／publish 裝整棵相依（含 dev）**（2026-10-23 記錄，待辦）：
+  - 現況：`radar` 與 `publish` 兩個 job 各自 `npm ci --ignore-scripts`，裝的是整棵相依，包含 jest、ts-jest、typescript
+    等開發依賴，再各自 `npm run build`。帶著 token 與 Secrets 的 job 裡因此多了一整棵執行時用不到的套件。
+  - 改法：只在 `radar` job 裝完整相依並 build，把 `dist/` 以 `actions/upload-artifact` 傳給 `publish`；兩個 job
+    執行時只裝執行期依賴（`npm ci --omit=dev --ignore-scripts`）。或另開一個不帶 Secrets 的 build job，產出 `dist/` 給兩者。
+  - 為何這次不做：見 ADR 0008。
 
 ## 9. NestJS 專案結構
 
