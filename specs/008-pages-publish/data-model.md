@@ -14,7 +14,7 @@ export const feedEntrySchema = z.object({
   id: z.string(),                       // 見 §2.2 GUID 規則（research D9）
   type: z.enum(['news', 'board-new', 'board-climbed']),
   title: z.string(),
-  url: z.string(),                      // 刻意不加 .url()，理由見下方「驗證規則」（2026-08-04 修正）
+  url: z.string(),                      // 刻意不用 z.url()，理由見下方「驗證規則」（2026-08-04 修正）
   content: z.string().nullable().optional(), // 新聞內文 → atom:summary；榜單事件缺席
   publishedAt: isoDatetime,
 });
@@ -67,11 +67,12 @@ Scenario 2「尚無資料」空狀態——渲染層需自行處理 `state.publi
   ——結果是一個純發佈用的選用欄位把整條 pipeline（含 Discord 推播）打掛，正好違反 FR-014
   「MUST NOT 因這些欄位而使核心推播段失敗」。上限的正確守護位置是寫入端：`trimFeed` 加上
   T025／T027／T030 三組測試已覆蓋。
-- `FeedEntry.url` **刻意只用 `z.string()`、不加 `.url()`**（2026-08-04 修正）——與上一條同一類的
+- `FeedEntry.url` **刻意只用 `z.string()`、不用 `z.url()`**（2026-08-04 修正）——與上一條同一類的
   失敗模式。此值直接來自第三方 RSS 的 `<link>`：`rss.fetcher.ts` 只檢查非空，經 `targetUrl` →
   `NewsCandidate.originalUrl` → `CuratedNewsItem.url` → `FeedEntry.url` **全鏈無任何格式驗證**，
   網址也不進 Gemini prompt，因此來源產生器出錯給出的相對路徑／漏 scheme 網址可一路存活。zod
-  `.url()` 的判定就是 `new URL()` 成不成功，與 `normalizeTargetUrl` 同一把尺，而 `seenNews` 對
+  `z.url()` 等同 `normalizeTargetUrl`：先 trim 再 `new URL()`，並改寫輸出（zod 4 起輸出 trim 並刪除 tab／換行後的
+  值；2026-10-24 升 zod 4 時補註），而 `seenNews` 對
   同一份資料只用 `z.string()`——嚴格驗證會讓同一次 `save()` 內兩個欄位標準打架。更關鍵的是
   `save()` 執行於**推播成功之後**：驗證擲錯 → `lastNewsPushAt` 不落檔 → 補跑 cron 重推同一份晨報，
   同 run 榜單狀態一併遺失。壞連結的代價（一則新聞的連結點不開，且 Discord 晨報本來就已是同一個
