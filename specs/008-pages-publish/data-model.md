@@ -71,8 +71,8 @@ Scenario 2「尚無資料」空狀態——渲染層需自行處理 `state.publi
   失敗模式。此值直接來自第三方 RSS 的 `<link>`：`rss.fetcher.ts` 只檢查非空，經 `targetUrl` →
   `NewsCandidate.originalUrl` → `CuratedNewsItem.url` → `FeedEntry.url` **全鏈無任何格式驗證**，
   網址也不進 Gemini prompt，因此來源產生器出錯給出的相對路徑／漏 scheme 網址可一路存活。zod
-  `z.url()` 等同 `normalizeTargetUrl`：先 trim 再 `new URL()`，並改寫輸出（zod 4 起輸出 trim 並刪除 tab／換行後的
-  值；2026-10-24 升 zod 4 時補註），而 `seenNews` 對
+  `z.url()` 的判定與 `normalizeTargetUrl` 同一把尺（先 trim 再 `new URL()` 成不成功）；通過時 zod 4 另會把輸出改寫為
+  trim 並刪除 tab／換行後的值（2026-10-24 升 zod 4 時補註），而 `seenNews` 對
   同一份資料只用 `z.string()`——嚴格驗證會讓同一次 `save()` 內兩個欄位標準打架。更關鍵的是
   `save()` 執行於**推播成功之後**：驗證擲錯 → `lastNewsPushAt` 不落檔 → 補跑 cron 重推同一份晨報，
   同 run 榜單狀態一併遺失。壞連結的代價（一則新聞的連結點不開，且 Discord 晨報本來就已是同一個
