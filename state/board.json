@@ -1,94 +1,94 @@
 {
   "board": {
-    "274495425": {
+    "961357433": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-10-18T22:23:11.316Z",
-      "fullName": "remotion-dev/remotion",
+      "firstSeenAt": "2026-10-25T22:29:10.259Z",
+      "fullName": "LibreSpark/LibreTV",
       "language": "TypeScript",
-      "rank": 10,
-      "starsThisWeek": 1771,
-      "url": "https://github.com/remotion-dev/remotion"
+      "rank": 9,
+      "starsThisWeek": 2469,
+      "url": "https://github.com/LibreSpark/LibreTV"
     },
-    "476507964": {
+    "975734319": {
       "domain": "ai",
-      "firstSeenAt": "2026-10-18T22:23:11.316Z",
-      "fullName": "storytold/artcraft",
-      "language": "Rust",
-      "rank": 2,
-      "starsThisWeek": 18479,
-      "url": "https://github.com/storytold/artcraft"
+      "firstSeenAt": "2026-10-25T22:29:10.259Z",
+      "fullName": "anomalyco/opencode",
+      "language": "TypeScript",
+      "rank": 8,
+      "starsThisWeek": 6857,
+      "url": "https://github.com/anomalyco/opencode"
     },
     "1148788086": {
       "domain": "ai",
       "firstSeenAt": "2026-09-27T22:58:16.977Z",
       "fullName": "mattpocock/skills",
       "language": "Shell",
-      "rank": 4,
-      "starsThisWeek": 11272,
+      "rank": 6,
+      "starsThisWeek": 7758,
       "url": "https://github.com/mattpocock/skills"
     },
-    "1164477708": {
+    "1183888342": {
       "domain": "ai",
-      "firstSeenAt": "2026-10-18T22:23:11.316Z",
-      "fullName": "mksglu/context-mode",
+      "firstSeenAt": "2026-10-25T22:29:10.259Z",
+      "fullName": "stablyai/orca",
       "language": "TypeScript",
-      "rank": 8,
-      "starsThisWeek": 4438,
-      "url": "https://github.com/mksglu/context-mode"
+      "rank": 3,
+      "starsThisWeek": 9828,
+      "url": "https://github.com/stablyai/orca"
     },
-    "1177402105": {
+    "1200597263": {
       "domain": "ai",
-      "firstSeenAt": "2026-10-11T23:37:19.365Z",
-      "fullName": "heygen-com/hyperframes",
-      "language": "TypeScript",
+      "firstSeenAt": "2026-10-25T22:29:10.259Z",
+      "fullName": "Graphify-Labs/graphify",
+      "language": "Python",
       "rank": 7,
-      "starsThisWeek": 5639,
-      "url": "https://github.com/heygen-com/hyperframes"
+      "starsThisWeek": 6868,
+      "url": "https://github.com/Graphify-Labs/graphify"
     },
     "1206390571": {
       "domain": "ai",
       "firstSeenAt": "2026-10-18T22:23:11.316Z",
       "fullName": "debpalash/VoiceStudio",
       "language": "Python",
-      "rank": 3,
-      "starsThisWeek": 15911,
+      "rank": 2,
+      "starsThisWeek": 12237,
       "url": "https://github.com/debpalash/VoiceStudio"
     },
-    "1209966933": {
-      "domain": "ai",
-      "firstSeenAt": "2026-10-18T22:23:11.316Z",
-      "fullName": "morluto/rea",
-      "language": "TypeScript",
-      "rank": 1,
-      "starsThisWeek": 239923,
-      "url": "https://github.com/morluto/rea"
-    },
-    "1212769188": {
-      "domain": "ai",
-      "firstSeenAt": "2026-10-18T22:23:11.316Z",
-      "fullName": "cathrynlavery/diagram-design",
-      "language": "HTML",
-      "rank": 5,
-      "starsThisWeek": 8382,
-      "url": "https://github.com/cathrynlavery/diagram-design"
-    },
-    "1222527844": {
-      "domain": "ai",
-      "firstSeenAt": "2026-10-18T22:23:11.316Z",
-      "fullName": "ifixai-ai/iFixAi",
-      "language": "Python",
-      "rank": 6,
-      "starsThisWeek": 6895,
-      "url": "https://github.com/ifixai-ai/iFixAi"
-    },
-    "1305213943": {
+    "1226205410": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-10-11T23:37:19.365Z",
-      "fullName": "DuarteSantos8/openGym",
+      "firstSeenAt": "2026-10-25T22:29:10.259Z",
+      "fullName": "Renhuai123/ziwei-doushu",
+      "language": "TypeScript",
+      "rank": 10,
+      "starsThisWeek": 2209,
+      "url": "https://github.com/Renhuai123/ziwei-doushu"
+    },
+    "1266797999": {
+      "domain": "ai",
+      "firstSeenAt": "2026-10-25T22:29:10.259Z",
+      "fullName": "DietrichGebert/ponytail",
       "language": "JavaScript",
-      "rank": 9,
-      "starsThisWeek": 4041,
-      "url": "https://github.com/DuarteSantos8/openGym"
+      "rank": 4,
+      "starsThisWeek": 9747,
+      "url": "https://github.com/DietrichGebert/ponytail"
+    },
+    "1273427276": {
+      "domain": "ai",
+      "firstSeenAt": "2026-10-25T22:29:10.259Z",
+      "fullName": "cloudflare/security-audit-skill",
+      "language": "JavaScript",
+      "rank": 1,
+      "starsThisWeek": 12680,
+      "url": "https://github.com/cloudflare/security-audit-skill"
+    },
+    "1284653133": {
+      "domain": "ai",
+      "firstSeenAt": "2026-10-25T22:29:10.259Z",
+      "fullName": "xerj-org/xerj",
+      "language": "Rust",
+      "rank": 5,
+      "starsThisWeek": 8080,
+      "url": "https://github.com/xerj-org/xerj"
     }
   },
   "intros": {
@@ -168,9 +168,17 @@
       "intro": "告別繁雜臃腫的專案管理工具！Kaneo 專為追求高效與簡潔的團隊打造，提供極速、清爽且注重隱私的開源協作體驗。\n\n採用 TypeScript 與現代技術棧開發，具備乾淨介面並支援自主架構（Self-hosted）。無論是透過 Docker、Kubernetes 快速部署，或利用內建 MCP 伺服器讓 AI 工具直接管理任務，Kaneo 都能完美融入你的自然工作流，資料永遠掌握在自己手中。",
       "introAt": "2026-08-09T22:40:29.356Z"
     },
+    "961357433": {
+      "intro": "LibreTV 是一個免費的線上影音聚合搜尋與觀看平台。採用 Next.js 15 與 TypeScript 開發，提供多採集站並行搜尋、同名影片跨源聚合與測速換源、ArtPlayer 播放器支援 HLS 播放、片段跳過與進度自動同步。此外更整合了 M3U 訂閱、XMLTV 節目單的 IPTV 直播功能，並具備 PWA 支援與亮暗雙主題。適合想要聚合管理多方影音來源、追求流暢線上點播與直播體驗的使用者自架部署。",
+      "introAt": "2026-10-25T22:29:10.259Z"
+    },
     "965415649": {
       "intro": "這是一個由 OpenAI 推出的本機端命令列程式碼代理工具，旨在讓開發者直接在電腦上執行 AI 輔助開發。\n\n核心特色包含支援直接安裝於本機執行，並可透過 ChatGPT 帳號（Plus、Pro、Business、Edu 或 Enterprise 方案）登入使用，亦支援使用 API 金鑰。\n\n適合需要在本機環境中使用命令列來提升開發效率、或希望結合現有 ChatGPT 方案進行日常編碼作業的開發者。",
       "introAt": "2026-08-23T22:31:11.230Z"
+    },
+    "975734319": {
+      "intro": "OpenCode 是一個開源的 AI 程式碼代理工具，旨在協助開發者進行軟體開發。提供桌面應用程式與命令列安裝方式，內建具備完整存取權的 build 代理、用於分析與探索程式碼的唯讀 plan 代理，以及支援複雜搜尋的 general 子代理，讓使用者能透過 Tab 鍵輕鬆切換，適合進行程式碼探索、變更規劃與日常開發工作。",
+      "introAt": "2026-10-25T22:29:10.259Z"
     },
     "997737944": {
       "intro": "RuView 透過 ESP32 節點擷取 WiFi 信道狀態資訊（CSI），將無線電波轉化為空間感知系統，實現無需攝影機或穿戴裝置的非接觸式監測。系統能即時偵測人體存在、呼吸心跳、跌倒與活動狀態，精準度高且支援區域映射。完整支援 Home Assistant、Apple Home 及 Matter 生態系，適合居家自動化、安全監控與長照健康管理。所有運算皆在邊緣裝置完成，無需雲端連線，保護個人隱私。",
@@ -356,6 +364,10 @@
       "intro": "Hallmark 是一款專為 Claude Code、Cursor 與 Codex 設計的 AI 設計技能，旨在解決 AI 生成內容千篇一律的「罐頭感」。它透過內建的 57 項防廢話檢測與自我審查機制，確保產出的 CSS 與 HTML 具備獨特宏觀架構與設計美感。本工具提供建構、審計、重設計及分析四大功能，能根據創意需求靈活切換 20 種主題或進行客製化設計，讓不同專案展現截然不同的獨特風貌。",
       "introAt": "2026-07-19T11:16:05.077Z"
     },
+    "1226205410": {
+      "intro": "這是一個開源的紫微斗數排盤引擎與知識庫系統，基於倪海廈《天紀》教學體系。專案提供完整的排盤演算法、四化系統與格局資料，並釋出包含 67.5 萬張命盤與 13 維解讀的 v4.0 開源數據集。採用 TypeScript 與 Next.js 開發，致力於將公開的傳統智慧與演算法分享給大眾，適合命理研究者與開發者用於學習、排盤與整合應用。",
+      "introAt": "2026-10-25T22:29:10.259Z"
+    },
     "1232493406": {
       "intro": "Prime Agent 是一個開源的編碼與研究代理，專為通用與長時間運作的任務設計。它透過遞迴語言模型與持續骨架（Continual Harness），讓背景執行的常駐行程、子代理協同與 IPython 環境跨越單一對話視窗持續運作。核心特色包含程式化控制、動態技能建立、代理間直接通訊與背景守護行程。適合需要長時間運作、自動化評估與複雜研究任務的開發者使用。",
       "introAt": "2026-08-16T22:30:27.586Z"
@@ -379,6 +391,10 @@
     "1276665883": {
       "intro": "BrowserSkill 讓 AI 代理程式在不干擾日常工作的情況下，直接操作你已登入的瀏覽器分頁。它具備重複利用真實登入狀態、透過獨立的代理視窗維持背景運行、支援任何可執行 shell 的主流 AI 代理（如 Cursor、Claude Code 等），並內建人類介入機制以處理驗證碼或登入關卡。適合需要在保留當前瀏覽狀態下，讓各種 AI 代理安全執行網頁自動化任務的開發者與工作場景。",
       "introAt": "2026-09-21T00:06:43.738Z"
+    },
+    "1284653133": {
+      "intro": "XERJ 解決 AI 代理因逐一讀取檔案而消耗大量 Token 的問題。這是一個以 Rust 開發的 Local-first 搜尋引擎與 MCP 伺服器，支援自動索引程式碼、文件與日誌，並提供 BM25 全文、向量與混合檢索及代理記憶功能。相容 Elasticsearch API，並可無縫整合 Claude Code 與 Cursor 等 MCP 客戶端。適合用於參考編碼、程式碼庫問答與 RAG、安全性稽核及日誌分析，大幅降低 Token 消耗並提升代理執行效率。",
+      "introAt": "2026-10-25T22:29:10.259Z"
     },
     "1300902838": {
       "intro": "Grok Build 是 SpaceXAI 開發的終端 AI 程式設計代理。它提供全螢幕 TUI 介面，能深入理解程式碼庫、執行檔案編輯、終端指令、網路搜尋與管理長期任務。該專案透過 Rust 編寫，支援互動式操作、自動化腳本及編輯器嵌入。適合需要高效 AI 輔助開發、CI 自動化或追求終端環境作業流程的開發者使用。",
@@ -421,198 +437,14 @@
       "introAt": "2026-10-11T23:37:19.365Z"
     }
   },
-  "lastBoardPushAt": "2026-10-18T22:23:11.316Z",
-  "lastNewsPushAt": "2026-10-24T22:24:48.812Z",
+  "lastBoardPushAt": "2026-10-25T22:29:10.259Z",
+  "lastNewsPushAt": "2026-10-25T22:29:10.259Z",
   "publish": {
     "boardSummary": {
-      "generatedAt": "2026-10-18T22:23:11.316Z",
-      "summary": "本次榜單共新進 7 個項目，其中 AI 佔 6 個、前後端佔 1 個，下降 2 個，並由 morluto/rea 奪下綜合榜 #1。"
+      "generatedAt": "2026-10-25T22:29:10.259Z",
+      "summary": "本次技術雷達榜單由 cloudflare/security-audit-skill 拿下綜合榜 #1，共有 8 個新進、1 個竄升、1 個下降，其中新進與竄升項目主要分佈於 AI（7 個）與前後端（2 個）。"
     },
     "feed": [
-      {
-        "content": "Google 推出全新開源模型 EmbeddingGemma 2，這是一款輕量且高效的多模態嵌入（Multimodal Embedding）模型。在現代 RAG（檢索增強生成）與語意搜尋系統中，跨文本、圖像等不同模態的統一表徵一直面臨計算成本過高的挑戰。EmbeddingGemma 2 具備小巧的參數量與出色的跨模態對齊能力，能夠輕易部署在邊緣端或自託管伺服器上，為資源受限的開發團隊在打造多模態知識庫檢索與智慧推薦系統時提供了高性價比的解決方案。",
-        "id": "news:https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "Google 發表 EmbeddingGemma 2：開源輕量級多模態嵌入模型",
-        "type": "news",
-        "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/"
-      },
-      {
-        "content": "資安研究團隊公開了名為「PHP2Shell」的技術實錄，揭示 AI Agent 如何自主在 PHP 核心引擎中分析原始碼並挖掘出嚴重的遠端程式碼執行（RCE）漏洞。由於 PHP 支撐了全球約七成網站的伺服端運行，此發現震驚整個開源與資安社群。這項技術成果不僅展示了 AI 自動化程式碼稽核技術從簡單靜態分析躍升至具備挖掘複雜底層漏洞的里程碑，也向所有軟體工程師發出警訊：防禦者必須盡早將 AI 輔助的安全稽核工具整合進 CI/CD 流程，因為攻擊者同樣具備使用 AI 挖掘 0-day 漏洞的能力。",
-        "id": "news:https://wiz.io/blog/php2shell-php-rce",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "PHP2Shell 實錄：AI Agent 自主挖掘出覆蓋全球 70% 網站的 PHP 核心 RCE 漏洞",
-        "type": "news",
-        "url": "https://www.wiz.io/blog/php2shell-php-rce"
-      },
-      {
-        "content": "一篇深入探討機器學習框架安全性的技術文章揭露了 PyTorch Autograd 機制的潛在攻擊面：攻擊者可利用動態計算圖的反向傳播（Backward Pass）流程，將具備圖靈完備性的惡意程式碼直接嵌入神經網路計算中。由於傳統模型安全檢測通常只聚焦於模型權重載入時的 pickle 反序列化安全，這項技術證明即使通過載入檢查，模型在訓練梯度更新階段仍可能被觸發執行任意程式碼。此發現對 ML 基礎設施工程師、開源模型審查機制與 AI 供應鏈安全提出了嚴峻的防禦挑戰。",
-        "id": "news:https://elonlit.com/scrivings/how-to-run-turing-complete-malware-in-pytorchs-backward-pass",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "技術深度剖析：如何在 PyTorch 反向傳播計算中植入並執行圖靈完備惡意代碼",
-        "type": "news",
-        "url": "https://elonlit.com/scrivings/how-to-run-turing-complete-malware-in-pytorchs-backward-pass/"
-      },
-      {
-        "content": "該技術研究深入探討了小語言模型（SLM）在專屬領域部署時的效能瓶頸，並提出透過「特化詞表（Vocabulary Specialization）」將實際應用推論成本大幅削減 77% 的工程方法。研究指出，通用的預訓練詞表在特定領域（如程式碼解析、醫療或金融結構化文字）中存在嚴重的 token 切分碎片化問題，導致輸入與輸出序列過長；透過針對特定領域語料重構並微調詞表，能顯著降低序列長度與注意力運算開銷。這項技術為在邊緣端或高併發情境下自託管 SLM 的工程師提供了具體可落地的推理優化指南。",
-        "id": "news:https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "架構實踐：特化小語言模型（SLM）詞表如何將實際應用推論成本銳減 77%",
-        "type": "news",
-        "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization"
-      },
-      {
-        "content": "本文針對 AWS 自研 AI 專用晶片 Trainium 與其專屬加速庫 TorchNeuron 展開系統級效能剖析（System-level Profiling）。作者詳細解構了在非 NVIDIA 硬體架構上運行深度學習模型時，神經網絡算子在 Neuron 核心上的排程機制、晶片間 NeuronLink 的互聯頻寬瓶頸，以及編譯器圖優化（Graph Optimization）對推理延遲的具體影響。對於正試圖降低對高價 GPU 依賴、將大型模型訓練或推理任務遷移至 AWS Trainium 等替代晶片的 MLOps 與基礎設施工程師而言，這是一篇極具參考價值的底層調優指南。",
-        "id": "news:https://huggingface.co/blog/amazon/profiling-torchneuron-part-1",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "AWS Trainium 實戰：TorchNeuron 系統級效能剖析與硬體瓶頸診斷指南",
-        "type": "news",
-        "url": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1"
-      },
-      {
-        "content": "PHP 開發團隊正式發布最新安全維護版本，修復核心引擎中多項被揭露的重大漏洞，並發表專文說明後續強化 PHP 安全機制的長期策略。該漏洞被證實可被串接達成遠端程式碼執行（RCE），影響範圍遍及廣泛運行的 PHP 舊版本。官方除了緊急釋出修補更新外，亦針對核心程式庫的記憶體安全檢查與 CI 自動化測試流程提出了進一步的安全加固措施。維護 PHP 應用環境的後端工程師與維運人員應立即檢視伺服器版本並執行修補，確保線上服務免受惡意攻擊。",
-        "id": "news:https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "PHP 官方發布緊急安全更新並說明核心防護加固措施",
-        "type": "news",
-        "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/"
-      },
-      {
-        "content": "資安研究團隊詳細揭露了印度主要憑證授權機構 eMudhra 中繼憑證私鑰遭到破解的密碼學根本原因。分析指出，該 CA 在生成金鑰時存在災難性的隨機數熵（Entropy）嚴重不足缺陷，導致實際的金鑰空間僅剩微乎其微的有效位元（相當於僅有 8 位元的有效信任），使得攻擊者得以在數毫秒內直接暴力破解並推導出私鑰。此事件凸顯了公開金鑰基礎設施（PKI）若缺乏嚴謹的密碼學隨機數生成驗證機制所帶來的災難性後果，也提醒所有資安與基礎設施工程師在管理內部 PKI 服務時，必須嚴格落實金鑰生成機制的安全審計。",
-        "id": "news:https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds",
-        "publishedAt": "2026-10-21T23:12:31.298Z",
-        "title": "八位元的信任危機：eMudhra 中繼 CA 私鑰為何能在數毫秒內遭暴力破解？",
-        "type": "news",
-        "url": "https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds/"
-      },
-      {
-        "content": "OpenAI 宣布將其制定的「Open Responses」通用 LLM API 規格正式捐贈給開源組織 Agentic AI Foundation。此舉旨在為業界建立一致且開源的 LLM 回應與 AI 代理人（Agent）互動規格，避免開發者被單一供應商的私有格式鎖定，並加速不同廠商與框架間多 Agent 系統的互操作性。",
-        "id": "news:https://thenewstack.io/openai-donates-open-responses",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "OpenAI 將通用 LLM API 規格「Open Responses」捐贈給 Agentic AI 基金會",
-        "type": "news",
-        "url": "https://thenewstack.io/openai-donates-open-responses/"
-      },
-      {
-        "content": "KittenML 正式開源 Kitten-TTS 2 程式碼與模型權重。該模型為首款採用 1.58-bit 三元權重（Ternary Weights）的前沿文字轉語音（TTS）模型，僅需 CPU 就能達到即時推論，並支援零樣本聲音複製、多語言與情緒語氣控制。超低運算需求大幅降低了自架語音合成的硬體與雲端成本，特別適合邊緣設備與低延遲 AI 代理人整合。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xc48or/kittentts_2_new_opensource_sota_158_bit_tts",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "KittenML 開源 Kitten-TTS 2：採 1.58-bit 權重、僅需 CPU 即可即時運行的語音合成模型",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xc48or/kittentts_2_new_opensource_sota_158_bit_tts/"
-      },
-      {
-        "content": "GitHub 宣布 Copilot 使用量指標 API 迎來功能更新。企業組織現在可以透過 API 取得個別自訂技能（Skills）、自訂 Agent、Model Context Protocol（MCP）伺服器、斜線指令及外掛的具體名稱與呼叫數據，不再像以往全數歸納在通用分類中。這有助於工程主管與架構師精確評估內部擴充功能與 Agentic 工具的實際效益與採用率。",
-        "id": "news:https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "GitHub Copilot 使用量指標 API 升級：支援追蹤自訂 Agent、MCP 伺服器與技能數據",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api"
-      },
-      {
-        "content": "GitHub 宣布針對 Copilot Business 與 Copilot Enterprise 訂閱方案的「全域預設原則（Global Default Policy）」進入正式發布（GA）階段並逐步推送。該政策為正式釋出的 Copilot 功能與支援的客戶端能力提供統一的全域套用設定，協助企業管理者以一致的治理標準管理開發團隊的功能權限，免去逐一手動設定各專案政策的維運負擔。",
-        "id": "news:https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "GitHub Copilot 全域預設原則正式 GA：統一企業版功能推送與支援控管",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available"
-      },
-      {
-        "content": "社群迎來 OpenAI CLI 命令列工具，讓開發者與維運人員能直接在終端機呼叫 OpenAI 模型進行文本處理、程式碼分析與管線整合。該工具免去了撰寫臨時腳本的步驟，大幅簡化在 Shell 環境與 CI/CD 自動化流程中導入 AI 能力的流程。",
-        "id": "news:https://github.com/openai/openai-cli",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "OpenAI CLI 命令列工具推出：加速終端機環境的 API 操作與自動化腳本整合",
-        "type": "news",
-        "url": "https://github.com/openai/openai-cli"
-      },
-      {
-        "content": "OpenShell 釋出，旨在為大量自主 AI Agent 提供安全、隔離且兼具隱私保護的專用執行環境（Runtime）。隨著 AI 代理人逐步獲得呼叫外部工具與操作系統的權限，OpenShell 透過沙盒架構協助開發團隊部署自主 Agent 集群，降低未受控操作或機敏資料外洩的風險。",
-        "id": "news:https://github.com/NVIDIA/OpenShell",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "OpenShell：專為自主 AI Agent 集群打造的安全私有執行環境",
-        "type": "news",
-        "url": "https://github.com/NVIDIA/OpenShell"
-      },
-      {
-        "content": "Cloudflare 與 Commerce.com 合作，利用 WebMCP 在邊緣網路為近十萬個電商網域提供標準化的 AI Agent 互動介面。此機制使自主代理人能直接透過結構化工具進行商品檢索與下單互動，同時確保商家保有存取控制權，展示了 MCP 協議在大規模 Web 生產環境的落地應用。",
-        "id": "news:https://blog.cloudflare.com/webmcp-commerce",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "Cloudflare 攜手 Commerce.com 透過 WebMCP 支援十萬電商網站介接 AI Agent",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/webmcp-commerce/"
-      },
-      {
-        "content": "啟用 AI 寫程式代理人的遙測常會產生海量非結構化日誌與追蹤資料，造成昂貴的儲存支出與分析困難。本文詳細探討如何透過 OpenTelemetry Collector 的處理器管線，對 AI Agent 的對話與工具呼叫遙測進行抽樣、雜訊過濾與欄位裁剪，在保留核心排錯指標的同時大幅降低監控成本。",
-        "id": "news:https://cncf.io/blog/2026/10/22/filtering-and-reducing-ai-agent-telemetry-with-the-opentelemetry-collector",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "借助 OpenTelemetry Collector 過濾並精簡 AI Agent 暴增的遙測資料",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/10/22/filtering-and-reducing-ai-agent-telemetry-with-the-opentelemetry-collector/"
-      },
-      {
-        "content": "本文對五種主流的 AI Agent 執行骨架（Harness）進行長期記憶基準測試。評測結果顯示，各框架在對話記憶與早期任務關聯上的表現落差巨大，證實單純記錄歷史並不等於 Agent 能正確檢索與運用，並深入分析了向量檢索與情境壓縮等不同架構的實際優劣。",
-        "id": "news:https://thenewstack.io/letta-frontiermemory-agent-harness-benchmark",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "五款 AI Agent Harness 記憶基準測試：架構差異決定任務持續性與召回成敗",
-        "type": "news",
-        "url": "https://thenewstack.io/letta-frontiermemory-agent-harness-benchmark/"
-      },
-      {
-        "content": "企業在評估高價的專用 AI SRE 產品時，往往忽略工程師日常使用的寫程式 Agent（如 Claude Code 或 Cursor）已具備調查 Kubernetes 叢集的能力，核心瓶頸在於缺乏即時情境與權限。本文提出以既有工具串接基礎架構可觀測性資料的做法，協助團隊以更低成本建立自動化 SRE 流程。",
-        "id": "news:https://cncf.io/blog/2026/10/21/before-you-evaluate-an-ai-sre-give-your-existing-agent-context",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "導入 AI SRE 前的關鍵架構思考：優先為現有 Coding Agent 串接叢集情境",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/10/21/before-you-evaluate-an-ai-sre-give-your-existing-agent-context/"
-      },
-      {
-        "content": "隨著自主 AI 代理人具備自動化逆向工程與漏洞挖掘能力，漏洞發現的速度已大幅超越人類團隊的應變能量。「Patch the Planet」探討了全球安全社群如何透過自動化回應與跨組織協調機制因應此轉變，以防自動化攻擊腳本領先修補程序造成零日漏洞攻擊。",
-        "id": "news:https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "Patch the Planet：面對 AI Agent 大規模自動化挖掘漏洞的全球協同修補機制",
-        "type": "news",
-        "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/"
-      },
-      {
-        "content": "傳統強化學習在訓練 Agent 時常面臨獎勵訊號模糊的問題。ThinkingBox 提出將資料庫查詢與評分機制直接轉換為強化學習獎勵訊號的方法，讓 AI 代理人能在具備嚴格校驗標準的結構化環境中持續微調，為需精確操作 SQL 與結構化資料的垂直領域模型提供了可靠的後訓練思路。",
-        "id": "news:https://huggingface.co/blog/microsoft/thinkingbox-training",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "以資料庫判定結果作為 RL 獎勵：利用 ThinkingBox 進行 Agent 後訓練",
-        "type": "news",
-        "url": "https://huggingface.co/blog/microsoft/thinkingbox-training"
-      },
-      {
-        "content": "廣受歡迎的開源 LLM 介面套件 LiteLLM 於 PyPI 釋出的 1.107.0 版本遭惡意植入後門與憑證竊取程式。LiteLLM 是眾多團隊構建 AI 服務時的核心依賴，若在 CI/CD 或本機開發環境安裝了受感染版本，環境變數中的 API 金鑰與主機敏感資訊恐已外洩，開發者應立即檢查相依版本並更換相關金鑰。",
-        "id": "news:https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "PyPI 上的 LiteLLM 1.107.0 遭投毒：植入憑證竊取器與後門腳本",
-        "type": "news",
-        "url": "https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/"
-      },
-      {
-        "content": "在日前中介憑證授權單位（CA）私鑰遭破解並引發瀏覽器社群信任審查後，印度 CA 機構 eMudhra 正式宣布退出全球 SSL/TLS 憑證業務。此舉將直接衝擊仍在使用其簽發憑證的線上服務，維運與 DevOps 工程師需儘快盤點對外網域憑證並替換為其他受信公有 CA，以防連線中斷。",
-        "id": "news:https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business",
-        "publishedAt": "2026-10-22T23:15:58.961Z",
-        "title": "遭逢中介金鑰外洩事件後 eMudhra 宣布全面退出全球 SSL/TLS 憑證業務",
-        "type": "news",
-        "url": "https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business"
-      },
-      {
-        "content": "月之暗面（Moonshot AI）推出新一代 Kimi K3.1 Pro 及主打高速推論的 K3.1 Pro Highspeed 模型。新版本進一步提升複雜推理、長文本理解與代碼生成能力，Highspeed 版本則針對低延遲與高吞吐需求進行最佳化。這使開發者在打造即時對話系統或自主 AI Agent 時，能在推論品質與回應延遲之間獲得更具彈性的選擇。",
-        "id": "news:https://kimi.ai/blog/kimi-k3-1-pro",
-        "publishedAt": "2026-10-23T23:04:02.112Z",
-        "title": "月之暗面發布 Kimi K3.1 Pro 與 K3.1 Pro Highspeed 模型",
-        "type": "news",
-        "url": "https://www.kimi.ai/blog/kimi-k3-1-pro"
-      },
-      {
-        "content": "Node.js 釋出安全性更新版本 26.12.1，重點修補多個 High 等級安全性弱點。主要修復包括拒絕非規範（non-canonical）IP 位址以防範 SSRF 與 TLS 繞過攻擊（CVE-2026-106069、CVE-2026-106072）、在 DNS 解析輸入中嚴格過濾空字元（CVE-2026-105482），以及更新 Brotli 解碼器以修正潛在錯誤。官方建議使用 26.x 版本的開發團隊儘速升級以確保服務安全。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.12.1",
-        "publishedAt": "2026-10-23T23:04:02.112Z",
-        "title": "Node.js 發布安全更新修復非規範 IP 阻擋與 DNS 等高危漏洞",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.12.1"
-      },
       {
         "content": "Cloudflare 宣布推出支援後量子密碼學（PQC）的 GeoKey Manager 地理圍欄金鑰管理服務。新架構旨在抵禦「先攔截、後解密」（Harvest Now, Decrypt Later）的量子威脅，同時滿足跨國企業嚴格的區域資料主權與金鑰本地化法規要求。這使安全架構師能確保在邊緣節點進行解密時，兼顧跨國低延遲傳輸與未來世代的抗量子加密標準。",
         "id": "news:https://blog.cloudflare.com/post-quantum-geo-key-manager",
@@ -828,240 +660,386 @@
         "title": "網路除錯工具 mitmproxy 新增 --emudhra 選項以因應憑證機構安全事件",
         "type": "news",
         "url": "https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b"
+      },
+      {
+        "id": "repo:1273427276:new:2026-10-26",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "cloudflare/security-audit-skill 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/cloudflare/security-audit-skill"
+      },
+      {
+        "id": "repo:1206390571:climbed:2026-10-26",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "debpalash/VoiceStudio 竄升",
+        "type": "board-climbed",
+        "url": "https://github.com/debpalash/VoiceStudio"
+      },
+      {
+        "id": "repo:1183888342:new:2026-10-26",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "stablyai/orca 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/stablyai/orca"
+      },
+      {
+        "id": "repo:1266797999:new:2026-10-26",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "DietrichGebert/ponytail 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/DietrichGebert/ponytail"
+      },
+      {
+        "id": "repo:1284653133:new:2026-10-26",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "xerj-org/xerj 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/xerj-org/xerj"
+      },
+      {
+        "id": "repo:1200597263:new:2026-10-26",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "Graphify-Labs/graphify 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/Graphify-Labs/graphify"
+      },
+      {
+        "id": "repo:975734319:new:2026-10-26",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "anomalyco/opencode 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/anomalyco/opencode"
+      },
+      {
+        "id": "repo:961357433:new:2026-10-26",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "LibreSpark/LibreTV 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/LibreSpark/LibreTV"
+      },
+      {
+        "id": "repo:1226205410:new:2026-10-26",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "Renhuai123/ziwei-doushu 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/Renhuai123/ziwei-doushu"
+      },
+      {
+        "content": "安全研究人員揭露名為 Broccoli2Shell 的重大遠端程式碼執行（RCE）漏洞，該漏洞存在於底層 Brotli 解碼器實作中，直接波及 Node.js、Python 等主流後端執行環境與跨語言套件。由於 Brotli 是現代 Web 與 API 廣泛採用的資料壓縮標準，攻擊者可藉由特製的壓縮資料觸發記憶體破壞並執行任意指令。後端開發者與維運團隊應立即清查專案中依賴的解壓縮模組，並及時套用安全性更新修復。",
+        "id": "news:https://broccoli2shell.com/",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "Broccoli2Shell重大安全通報：Brotli解碼器爆出跨語言RCE漏洞波及Node.js與Python",
+        "type": "news",
+        "url": "https://broccoli2shell.com/"
+      },
+      {
+        "content": "本地模型執行框架 Ollama 正式宣布支援語音模型（Speech models），首發整合來自 Gradium 的 Phonon 模型。該模型支援將文字即時轉換為語音並支援串流輸出，涵蓋 5 種語言與數十種發音風格。在 Apple Silicon 硬體上，其生成速度可達即時音訊播放速度的 100 倍以上。這項重大更新讓開發者能以輕量且純本地的方式建構低延遲文字轉語音（TTS）管線，大幅降低語音對話應用與無障礙介面的整合門檻。",
+        "id": "news:https://ollama.com/blog/speech-models",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "Ollama正式支援語音模型：整合Phonon實現本地即時高速串流TTS",
+        "type": "news",
+        "url": "https://ollama.com/blog/speech-models"
+      },
+      {
+        "content": "AI 晶片製造商 Cerebras 宣布正式部署萬億參數（Trillion-Parameter）規模的 AI 模型，展現其晶圓級引擎（Wafer-Scale Engine）在超大規模模型上的實作與服務能力。相較於傳統 GPU 叢集面臨的跨節點通訊頻寬與記憶體存取延遲限制，Cerebras 透過單晶圓整合架構提供超高頻寬，為超大型前沿模型的低延遲推論與微調提供了全新硬體路徑，為需要高吞吐量模型服務的架構師拓寬了算力選項。",
+        "id": "news:https://cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "Cerebras正式部署兆級參數AI模型：晶圓級晶片突破大模型推論瓶頸",
+        "type": "news",
+        "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras"
+      },
+      {
+        "content": "Dessa 發布完全僅透過語音訊號訓練的端到端對話模型。傳統語音助理通常依賴「語音辨識（ASR）-> 文字大語言模型（LLM）-> 語音合成（TTS）」的三階段串接，容易累積延遲並遺失語調、情感與重音等副語言特徵。Dessa 直接以原生語音進行理解與生成，實現更即時、自然且具備語境情緒反應的雙向互動，為語音原生 AI 應用的開發與架構設計開闢了全新途徑。",
+        "id": "news:https://block.xyz/dessa",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "Dessa發布端到端純語音對話模型：跳脫傳統文字轉錄的新架構",
+        "type": "news",
+        "url": "https://block.xyz/dessa"
+      },
+      {
+        "content": "Nanbeige 團隊正式於 Hugging Face 開源發布 Nanbeige4.3-33B 模型。基準測試顯示該模型在多項指標上超越 Qwen3.8-27B，具備優異的推論與邏輯能力。官方表示，該模型將作為其小型模型蒸餾管線（如後續 Nanbeige4.3-3B）的教師模型基礎。這項開源發布為尋求自託管中型模型或規劃後續邊緣端輕量化部署的工程師提供了具競爭力的新選擇。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xf0kz4/nanbeigenanbeige4333b_hugging_face",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "Nanbeige 4.3-33B開源模型釋出：效能超越同級並作為小型模型蒸餾基礎",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xf0kz4/nanbeigenanbeige4333b_hugging_face/"
+      },
+      {
+        "content": "官方推出全新的 Decisions API，專為各類應用程式提供快速、專注且低成本的結構化決策判定能力。在眾多業務系統中，直接調用通用大語言模型處理簡單判定或分類常導致過高的延遲與 API 費用開銷。Decisions API 透過特化輕量模型加速決策流程，使開發者能在核心業務路徑上以極低成本取得穩定可靠的判斷結果，有效提升系統整體響應表現。",
+        "id": "news:https://openai.com/index/decisions-api",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "Decisions API正式發布：專為應用程式提供低延遲且低成本的輕量決策推論",
+        "type": "news",
+        "url": "https://openai.com/index/decisions-api"
+      },
+      {
+        "content": "GitHub 推出全新 Microsoft Teams 應用，將事件通知與 Copilot 深度整合。開發者可以直接在 Teams 頻道或群組對話中接收 GitHub Issue 與各類事件通知，並利用 Copilot 即時分析問題脈絡、產生修復程式碼建議與方案，無需跳出溝通介面即可推動協同排查。這項更新將 AI 輔助開發工作流進一步嵌入團隊日常即時溝通場景中，縮短修復交付週期。",
+        "id": "news:https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "GitHub推出Teams整合Copilot：直接將通報轉為修復程式碼",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams"
+      },
+      {
+        "content": "一項基準測試分析指出，十年前設計的經典卷積神經網路（CNN）在皮膚癌診斷等特定醫學圖像分類任務上，性能依舊顯著優於當前最先進的前沿大型多模態模型（LLM）。研究指出，通用前沿模型雖具備廣泛的常識與多模態泛化能力，但在對細粒度特徵極為敏感的特定垂直視覺任務中，高度特化的專用架構在準確度與運算成本上仍具優勢。這提醒工程師在架構選型時，不應盲目以通用大模型全面取代專用深度學習模型。",
+        "id": "news:https://lynchlab.net/llm-skin-cancer",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "十年前CNN在皮膚癌診斷勝過前沿大模型：專用架構在垂直領域依然具優勢",
+        "type": "news",
+        "url": "https://lynchlab.net/llm-skin-cancer"
+      },
+      {
+        "content": "深度技術文章詳細剖析 Kubernetes 環境中不同自動擴縮容機制（如水平 Pod 擴縮 HPA、垂直 Pod 擴縮 VPA 與叢集擴展器）相互干擾甚至競爭震盪的根本原因。文章指出，現行工具多依賴靜態閾值且各自獨立運作，缺乏全局感知，容易引發過度擴縮或策略互相抵銷。內文提出必須轉向協調性更強的自主式動態容量控制架構，為雲原生維運與 SRE 在大規模容器調度與容量規劃上提供了極具價值的實務視角。",
+        "id": "news:https://thenewstack.io/why-kubernetes-autoscalers-fight",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "深入剖析K8s自動擴縮容衝突根源：為何HPA與VPA互相競爭及解法探討",
+        "type": "news",
+        "url": "https://thenewstack.io/why-kubernetes-autoscalers-fight/"
+      },
+      {
+        "content": "技術專文深入探討如何結合 IBM Granite 時間序列模型構建集成預測（Ensemble Forecasting）系統。文章從基礎時序模型架構出發，詳細剖析多模型權重分配策略、誤差校準以及對非平穩序列特徵的處理技巧。實作結果展示，透過集成多個模型能有效抑制單一模型的過擬合與噪音敏感度，大幅提升多變量時序預測的穩定性與準確度，為工業監控與業務預測系統提供了實務落地指南。",
+        "id": "news:https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "深入實踐IBM Granite時序模型集成：提升多變量預測穩定性與精度",
+        "type": "news",
+        "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1"
+      },
+      {
+        "content": "約 12 款主流銀行應用程式近期開始調整安全驗證政策，明確允許在強調安全與隱私的客製 Android 系統 GrapheneOS 上正常運行。以往多數金融應用依賴嚴格的 Play Integrity 或 SafetyNet 檢驗，導致無 Google 官方框架的安全強化系統被全盤封鎖。這項轉變顯示金融資安策略正逐步轉向認可兼顧硬體安全機制的替代作業系統，對行動開發者的終端相容性與資安防護策略具指標意義。",
+        "id": "news:https://grapheneos.social/@GrapheneOS/117492375462459244",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "約十餘款主流銀行App開始主動支援GrapheneOS強化隱私環境",
+        "type": "news",
+        "url": "https://grapheneos.social/@GrapheneOS/117492375462459244"
+      },
+      {
+        "content": "安全研究社群成功在 Android 裝置上啟動並運行完整的 iOS 16.5 韌體。這項突破展示了跨平台核心虛擬化、硬體抽象層模擬與驅動轉譯的深厚底層實作。該成果不僅深化了開發者對 iOS 封閉系統啟動鏈與安全機制的理解，也為跨平台系統模擬、資安逆向工程與底層漏洞分析提供了全新的實作途徑。",
+        "id": "news:https://github.com/oosexgang/hackios-xnu-kernel",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "底層工程突破：研究人員成功在Android裝置上運行完整iOS 16.5韌體",
+        "type": "news",
+        "url": "https://github.com/oosexgang/hackios-xnu-kernel"
+      },
+      {
+        "content": "開源程式語言 Goose 正式發布，引發開發者社群對現代語言架構與編譯器設計的熱烈討論。Goose 嘗試在系統級執行效能、記憶體安全性與語法表現力之間取得平衡，並導入了特有的型別機制與編譯設計。對於關注程式語言設計理論、編譯器實作以及尋找現代替代語法的工程師而言，該專案提供了具啟發性的設計參考。",
+        "id": "news:https://aardappel.github.io/goose",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "新型程式語言Goose發布：探索現代化系統設計與語法哲學",
+        "type": "news",
+        "url": "https://aardappel.github.io/goose/"
+      },
+      {
+        "content": "廣受歡迎的跨平台開源影音錄製與直播軟體 OBS Studio 正式推出 33 版重大更新。新版本重構了底層音訊處理管線，大幅改善編解碼器的效能表現，並修復了多項跨平台相容性問題。作為眾多開發者構建即時影音串流、多媒體處理與錄製外掛的重要基礎設施，本次更新顯著提升了執行穩定度與外掛整合彈性。",
+        "id": "news:https://github.com/obsproject/obs-studio/releases/tag/33.0.0",
+        "publishedAt": "2026-10-25T22:29:10.259Z",
+        "title": "開源影音工具OBS Studio 33發布：音視訊管線重構與編解碼效能升級",
+        "type": "news",
+        "url": "https://github.com/obsproject/obs-studio/releases/tag/33.0.0"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-24T22:24:48.812Z",
+      "generatedAt": "2026-10-25T22:29:10.259Z",
       "items": [
         {
-          "content": "安全研究揭露名為 http2shell 的重大遠端程式碼執行（RCE）漏洞，該漏洞影響包括 Node.js、Python 等多種語言環境下的主流 HTTP/2 伺服器與相關函式庫實作。攻擊者可利用特定 HTTP/2 協定解析與狀態處理的缺陷達成未授權指令執行。此通報對所有維護 Web 服務與 API 網關的開發者至關重要，建議立即盤點系統依賴並套用相應的安全修補與緩解措施。",
+          "content": "安全研究人員揭露名為 Broccoli2Shell 的重大遠端程式碼執行（RCE）漏洞，該漏洞存在於底層 Brotli 解碼器實作中，直接波及 Node.js、Python 等主流後端執行環境與跨語言套件。由於 Brotli 是現代 Web 與 API 廣泛採用的資料壓縮標準，攻擊者可藉由特製的壓縮資料觸發記憶體破壞並執行任意指令。後端開發者與維運團隊應立即清查專案中依賴的解壓縮模組，並及時套用安全性更新修復。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Evolving Threat: http2shell is an RCE in Node, Python, and more",
+          "sourceTitle": "Broccoli2Shell: Brotli decoder RCE in Node.js, Python and more",
           "sources": [
             "hn"
           ],
-          "title": "新型 RCE 漏洞 http2shell 威脅 Node.js 與 Python 等多種後端 HTTP/2 實作",
-          "url": "https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8",
-          "weightedScore": 182
+          "title": "Broccoli2Shell重大安全通報：Brotli解碼器爆出跨語言RCE漏洞波及Node.js與Python",
+          "url": "https://broccoli2shell.com/",
+          "weightedScore": 391
         },
         {
-          "content": "Node.js 官方推出 v22.23.4「Jod」長期支援版本（LTS）安全更新。本次更新重點修復了多個重大 CVE，包括修正 HTTP Agent 防護機制、DNS 解析中的 null byte 輸入驗證（CVE-2026-105482）、TLS 連線拒絕非規範 IP 位址（CVE-2026-106069）、強化權限模型在 realpathSync 下的檢查，以及確保跨 snapshot 時重設加密隨機快取。使用 Node.js 22 LTS 的開發者應盡速排程升級以維護環境安全。",
+          "content": "本地模型執行框架 Ollama 正式宣布支援語音模型（Speech models），首發整合來自 Gradium 的 Phonon 模型。該模型支援將文字即時轉換為語音並支援串流輸出，涵蓋 5 種語言與數十種發音風格。在 Apple Silicon 硬體上，其生成速度可達即時音訊播放速度的 100 倍以上。這項重大更新讓開發者能以輕量且純本地的方式建構低延遲文字轉語音（TTS）管線，大幅降低語音對話應用與無障礙介面的整合門檻。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sourceTitle": "2026-10-21, Version 22.23.4 'Jod' (LTS), @aduh95",
+          "sourceId": "ollama-blog",
+          "sourceTitle": "Speech models in Ollama",
           "sources": [
-            "gh-nodejs"
+            "ollama-blog"
           ],
-          "title": "Node.js 發布 v22.23.4 'Jod' LTS 安全更新，修復多項 TLS、DNS 與權限漏洞",
-          "url": "https://github.com/nodejs/node/releases/tag/v22.23.4",
+          "title": "Ollama正式支援語音模型：整合Phonon實現本地即時高速串流TTS",
+          "url": "https://ollama.com/blog/speech-models",
           "weightedScore": 100
         },
         {
-          "content": "雲端部署平台 Railway 正式公開 10 月 21 日安全事件的初步調查報告（Preliminary Report）。針對日前發生的資安衝擊，官方團隊詳細說明了受影響範圍、攻擊向量防堵過程以及目前採取的補救與加固措施。由於眾多現代團隊依賴 Railway 託管生產服務與資料庫，該報告對於評估自身基礎設施風險與安全合規狀態至關重要。",
+          "content": "AI 晶片製造商 Cerebras 宣布正式部署萬億參數（Trillion-Parameter）規模的 AI 模型，展現其晶圓級引擎（Wafer-Scale Engine）在超大規模模型上的實作與服務能力。相較於傳統 GPU 叢集面臨的跨節點通訊頻寬與記憶體存取延遲限制，Cerebras 透過單晶圓整合架構提供超高頻寬，為超大型前沿模型的低延遲推論與微調提供了全新硬體路徑，為需要高吞吐量模型服務的架構師拓寬了算力選項。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "lobsters-devops",
-          "sourceTitle": "Railway Preliminary Report: Oct 21st Security Incident",
+          "sourceId": "hn",
+          "sourceTitle": "Cerebras Deploys Trillion-Parameter AI Models",
           "sources": [
-            "lobsters-devops"
+            "hn"
           ],
-          "title": "Railway 發布 10 月 21 日資安事件初步事後報告，揭露事故調查進展",
-          "url": "https://blog.railway.com/p/preliminary-report-october-security-incident",
-          "weightedScore": 100
+          "title": "Cerebras正式部署兆級參數AI模型：晶圓級晶片突破大模型推論瓶頸",
+          "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
+          "weightedScore": 344
         },
         {
-          "content": "AWS 宣布其程式碼安全 AI 代理服務「Continuum」正式全面開放（GA）。該服務能自動掃描程式碼儲存庫中的漏洞，進行主動驗證並嘗試自動修復，官方宣稱可解決高達 89% 的安全缺失。然而實際落地時仍須注意模型幻覺與邊界情況的限制。這項發布象徵雲端原生開發流程進一步邁向自動化安全補救，將直接改變 DevOps 與安全團隊的日常漏洞處理實務。",
+          "content": "Dessa 發布完全僅透過語音訊號訓練的端到端對話模型。傳統語音助理通常依賴「語音辨識（ASR）-> 文字大語言模型（LLM）-> 語音合成（TTS）」的三階段串接，容易累積延遲並遺失語調、情感與重音等副語言特徵。Dessa 直接以原生語音進行理解與生成，實現更即時、自然且具備語境情緒反應的雙向互動，為語音原生 AI 應用的開發與架構設計開闢了全新途徑。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "AWS says its AI security agent fixes 89% of bugs — but there’s a catch",
+          "sourceId": "hn",
+          "sourceTitle": "Dessa: Conversation Model trained only on speech",
           "sources": [
-            "thenewstack"
+            "hn"
           ],
-          "title": "AWS 正式推出 Continuum 安全代理，可自動偵測並修復代碼庫漏洞",
-          "url": "https://thenewstack.io/aws-says-its-ai-security-agent-fixes-89-of-bugs-but-theres-a-catch/",
-          "weightedScore": 50
+          "title": "Dessa發布端到端純語音對話模型：跳脫傳統文字轉錄的新架構",
+          "url": "https://block.xyz/dessa",
+          "weightedScore": 522
         },
         {
-          "content": "中國 AI 團隊在釋出 Kimi K3.1 開源模型權重時，主動移除了涉及網路攻擊與安全漏洞利用的訓練數據。此決策主要源自中國最新的出口管制規定，同時也呼應了全球對大型語言模型可能被用於自動化網路攻擊的警戒。這項變更直接影響依賴該開源權重進行安全測試或自動化滲透研究的開發者，凸顯法規對開源模型能力的深遠影響。",
+          "content": "Nanbeige 團隊正式於 Hugging Face 開源發布 Nanbeige4.3-33B 模型。基準測試顯示該模型在多項指標上超越 Qwen3.8-27B，具備優異的推論與邏輯能力。官方表示，該模型將作為其小型模型蒸餾管線（如後續 Nanbeige4.3-3B）的教師模型基礎。這項開源發布為尋求自託管中型模型或規劃後續邊緣端輕量化部署的工程師提供了具競爭力的新選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "reddit-localllama",
-          "sourceTitle": "Kimi K3.1 removes cyberattack training data from open weight release",
+          "sourceTitle": "Nanbeige/Nanbeige4.3-33B · Hugging Face",
           "sources": [
             "reddit-localllama"
           ],
-          "title": "因應出口管制與資安疑慮，Kimi K3.1 開源權重移除網路攻擊相關訓練資料",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xecgrf/kimi_k31_removes_cyberattack_training_data_from/",
+          "title": "Nanbeige 4.3-33B開源模型釋出：效能超越同級並作為小型模型蒸餾基礎",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xf0kz4/nanbeigenanbeige4333b_hugging_face/",
           "weightedScore": 100
         },
         {
-          "content": "歐盟成員國代表投票通過針對 AI 公司的數據使用新規定，批評者稱其為針對歐洲用戶內容的「數位徵用」。該政策調整了版權與數據使用豁免條款，直接影響在歐盟運作或處理歐洲數據的 AI 模型開發團隊與服務商在訓練資料收集、著作權授權與隱私合規方面的法律邊界，是歐洲 AI 監管框架下的重大政策變動。",
+          "content": "官方推出全新的 Decisions API，專為各類應用程式提供快速、專注且低成本的結構化決策判定能力。在眾多業務系統中，直接調用通用大語言模型處理簡單判定或分類常導致過高的延遲與 API 費用開銷。Decisions API 透過特化輕量模型加速決策流程，使開發者能在核心業務路徑上以極低成本取得穩定可靠的判斷結果，有效提升系統整體響應表現。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "AI: EU Member States approve “digital expropriation” of Europeans for AI companies",
+          "sourceId": "openai-blog",
+          "sourceTitle": "Build more responsive apps with the Decisions API",
           "sources": [
-            "lobsters-ai"
+            "openai-blog"
           ],
-          "title": "歐盟成員國通過新版 AI 資料授權規範，放寬 AI 公司訓練數據取得限制",
-          "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+          "title": "Decisions API正式發布：專為應用程式提供低延遲且低成本的輕量決策推論",
+          "url": "https://openai.com/index/decisions-api",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 宣布為 Copilot 使用量指標（Usage metrics）API 加入擴展支援，現在起企業與團隊的用量報告將納入包含 OpenCode 在內等多種非官方整合工具的模型消耗數據。此更新讓軟體工程管理者與架構師能夠跨不同開發環境全面追蹤內部團隊實際調用 AI 模型的指標與成本，解決過去多工具混用導致的用量監控盲點。",
+          "content": "GitHub 推出全新 Microsoft Teams 應用，將事件通知與 Copilot 深度整合。開發者可以直接在 Teams 頻道或群組對話中接收 GitHub Issue 與各類事件通知，並利用 Copilot 即時分析問題脈絡、產生修復程式碼建議與方案，無需跳出溝通介面即可推動協同排查。這項更新將 AI 輔助開發工作流進一步嵌入團隊日常即時溝通場景中，縮短修復交付週期。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Usage metrics API adds usage from tools like OpenCode",
+          "sourceTitle": "Turn notifications into code with GitHub Copilot in Teams",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 使用量指標 API 新增支援 OpenCode 等第三方開發工具",
-          "url": "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode",
+          "title": "GitHub推出Teams整合Copilot：直接將通報轉為修復程式碼",
+          "url": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams",
           "weightedScore": 100
         },
         {
-          "content": "Meta 在最新研究論文中提出跳過傳統 Tokenizer、直接讓模型逐位元組（raw bytes）讀取文字架構。研究團隊透過知識蒸餾，將使用 Token 的 Llama 3 8B 權重轉移至僅讀取位元組的 1B 小模型中，成功克服了位元組序列長度帶來的表示瓶頸。儘管位元組模型初始學習曲線較慢，但研究指出其在多語言適應與長尾字元處理具備更高上限，為未來的語言模型架構設計帶來新路徑。",
+          "content": "一項基準測試分析指出，十年前設計的經典卷積神經網路（CNN）在皮膚癌診斷等特定醫學圖像分類任務上，性能依舊顯著優於當前最先進的前沿大型多模態模型（LLM）。研究指出，通用前沿模型雖具備廣泛的常識與多模態泛化能力，但在對細粒度特徵極為敏感的特定垂直視覺任務中，高度特化的專用架構在準確度與運算成本上仍具優勢。這提醒工程師在架構選型時，不應盲目以通用大模型全面取代專用深度學習模型。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "Meta trained small AI models to read raw bytes instead of tokens. They start out worse, but the paper predicts they end up better",
+          "sourceId": "hn",
+          "sourceTitle": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
           "sources": [
-            "reddit-localllama"
+            "hn"
           ],
-          "title": "Meta 探索無 Token 革命：以 Llama 3 蒸餾 1B 位元組層級語言模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xe88ja/meta_trained_small_ai_models_to_read_raw_bytes/",
-          "weightedScore": 100
+          "title": "十年前CNN在皮膚癌診斷勝過前沿大模型：專用架構在垂直領域依然具優勢",
+          "url": "https://lynchlab.net/llm-skin-cancer",
+          "weightedScore": 336
         },
         {
-          "content": "一家工程團隊分享了針對內部 AI 程式碼審查工具進行成本與延遲極限最佳化的實務經驗。在面對推論費用暴增兩倍的情況下，團隊深入剖析 Token 消耗結構，透過引入提示詞快取（Prompt Caching）並配合依任務複雜度分流的智慧模型路由機制，在大幅縮短審查時間的同時成功削減 68% 的推論費用，為生產環境中落實 GenAI 的架構師提供了具體的節費指南。",
+          "content": "深度技術文章詳細剖析 Kubernetes 環境中不同自動擴縮容機制（如水平 Pod 擴縮 HPA、垂直 Pod 擴縮 VPA 與叢集擴展器）相互干擾甚至競爭震盪的根本原因。文章指出，現行工具多依賴靜態閾值且各自獨立運作，缺乏全局感知，容易引發過度擴縮或策略互相抵銷。內文提出必須轉向協調性更強的自主式動態容量控制架構，為雲原生維運與 SRE 在大規模容器調度與容量規劃上提供了極具價值的實務視角。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Cutting our inference bill by 68% by being obsessive about optimization",
+          "sourceId": "thenewstack",
+          "sourceTitle": "Why Kubernetes autoscalers keep fighting each other (and why the solution must be autonomous)",
           "sources": [
-            "cloudflare-blog"
+            "thenewstack"
           ],
-          "title": "實戰案例：運用 Prompt Caching 與動態路由將 AI 程式碼審查成本降低 68%",
-          "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+          "title": "深入剖析K8s自動擴縮容衝突根源：為何HPA與VPA互相競爭及解法探討",
+          "url": "https://thenewstack.io/why-kubernetes-autoscalers-fight/",
           "weightedScore": 50
         },
         {
-          "content": "技術社群深入探討 Docker 在多年演進下累積的諸多「怪異」行為與非預期機制。文章詳細拆解了 Docker 在處理 iptables 規則覆寫、磁碟卷（Volume）權限繼承、訊號傳遞（Signal Propagation）以及資源限制時的底層實作細節與陷阱。對於日常依賴 Docker 構建微服務與 CI/CD 流程的開發者與 SRE 而言，這份分析能有效避免在生產環境中踩到隱晦的容器配置地雷。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Docker is weird",
-          "sources": [
-            "hn",
-            "lobsters-programming"
-          ],
-          "title": "解構 Docker 的反直覺設計：容器底層隔離、網路與儲存的邊界行為分析",
-          "url": "https://codeandcake.dev/posts/2026-10-22-docker-is-weird",
-          "weightedScore": 960
-        },
-        {
-          "content": "開發者發布開源專案 WorldTUI，展示如何僅使用 3.6 億參數的小型語言模型來端到端模擬完整的終端機（TUI）環境。該模型能在沒有真實作業系統底層支援的情況下，逼真重現 Shell 指令解析、輸出格式與互動狀態，證明了超小型模型在模擬特定沙盒環境與系統行為上的潛力，為端側 AI Agent 與互動式介面模擬提供了極具啟發性的研究實作。",
+          "content": "技術專文深入探討如何結合 IBM Granite 時間序列模型構建集成預測（Ensemble Forecasting）系統。文章從基礎時序模型架構出發，詳細剖析多模型權重分配策略、誤差校準以及對非平穩序列特徵的處理技巧。實作結果展示，透過集成多個模型能有效抑制單一模型的過擬合與噪音敏感度，大幅提升多變量時序預測的穩定性與準確度，為工業監控與業務預測系統提供了實務落地指南。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "WorldTUI: I trained a 360M model to pretend to be a terminal",
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Ensemble forecasting with IBM Granite time-series models",
           "sources": [
-            "hn"
+            "huggingface-blog"
           ],
-          "title": "WorldTUI：以 360M 輕量模型完全模擬終端機環境與 Shell 互動",
-          "url": "https://simedw.com/2026/10/21/world-model-terminal/",
-          "weightedScore": 638
-        },
-        {
-          "content": "社群釋出超過 11 小時的深度實作教學，專注於從零構建具備邏輯推理能力的大型語言模型。內容使用 Python 與 PyTorch，深入解析評估基準（Evaluation）、推論期計算擴展（Inference-time Scaling）、強化學習（RL）對齊以及模型蒸餾等前沿推理模型關鍵技術，並提供完整的程式碼範例，為希望深入理解與訓練類 o1 推理架構的 AI 工程師提供了系統化的實戰指引。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "raschka-ahead-of-ai",
-          "sourceTitle": "Building Reasoning Models from the Ground Up: A Full Video Course",
-          "sources": [
-            "raschka-ahead-of-ai"
-          ],
-          "title": "從零建構推理模型實戰：涵蓋推論期擴展、RL 與蒸餾的完整 PyTorch 課程",
-          "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+          "title": "深入實踐IBM Granite時序模型集成：提升多變量預測穩定性與精度",
+          "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1",
           "weightedScore": 100
         },
         {
-          "content": "資安研究團隊公開其成功攻破最新 iOS 安全防線的技術細節。研究詳細記錄了如何繞過 PAC（指標驗證碼）、PPL 等硬體層級防禦機制，串聯多個記憶體損壞與邏輯漏洞達成任意程式碼執行的完整攻擊鏈。這項成果不僅展現了現代行動作業系統防護的脆弱點，也為系統底層安全研究員與從事跨平台安全架構設計的工程師提供了寶貴的攻防分析範本。",
+          "content": "約 12 款主流銀行應用程式近期開始調整安全驗證政策，明確允許在強調安全與隱私的客製 Android 系統 GrapheneOS 上正常運行。以往多數金融應用依賴嚴格的 Play Integrity 或 SafetyNet 檢驗，導致無 Google 官方框架的安全強化系統被全盤封鎖。這項轉變顯示金融資安策略正逐步轉向認可兼顧硬體安全機制的替代作業系統，對行動開發者的終端相容性與資安防護策略具指標意義。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Today, we hacked what we'd set out to hack: the iPhone",
+          "sourceTitle": "Around a dozen banking apps began specifically permitting GrapheneOS",
           "sources": [
             "hn"
           ],
-          "title": "攻破現代 iOS 防禦：資安研究團隊公開 iPhone 漏洞利用鏈實作解析",
-          "url": "https://blog.calif.io/p/iphone",
-          "weightedScore": 1068
+          "title": "約十餘款主流銀行App開始主動支援GrapheneOS強化隱私環境",
+          "url": "https://grapheneos.social/@GrapheneOS/117492375462459244",
+          "weightedScore": 672
         },
         {
-          "content": "開源互動式 HTTPS 代理與封包除錯工具 mitmproxy 在最新版本中加入了 --emudhra 旗標選項。此功能主要因應近期憑證頒發機構 eMudhra 金鑰遭破解的安全危機，讓安全研究員與開發者能在本地代理環境中快速識別、攔截或模擬受影響憑證的流量行為。此更新強化了開發者在排查 TLS 信任鏈問題與進行安全評估時的應對能力。",
+          "content": "安全研究社群成功在 Android 裝置上啟動並運行完整的 iOS 16.5 韌體。這項突破展示了跨平台核心虛擬化、硬體抽象層模擬與驅動轉譯的深厚底層實作。該成果不僅深化了開發者對 iOS 封閉系統啟動鏈與安全機制的理解，也為跨平台系統模擬、資安逆向工程與底層漏洞分析提供了全新的實作途徑。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "mitmproxy adds --emudhra option",
+          "sourceTitle": "Run full iOS 16.5 firmware on Android Devices",
           "sources": [
             "hn"
           ],
-          "title": "網路除錯工具 mitmproxy 新增 --emudhra 選項以因應憑證機構安全事件",
-          "url": "https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b",
-          "weightedScore": 620
+          "title": "底層工程突破：研究人員成功在Android裝置上運行完整iOS 16.5韌體",
+          "url": "https://github.com/oosexgang/hackios-xnu-kernel",
+          "weightedScore": 534
+        },
+        {
+          "content": "開源程式語言 Goose 正式發布，引發開發者社群對現代語言架構與編譯器設計的熱烈討論。Goose 嘗試在系統級執行效能、記憶體安全性與語法表現力之間取得平衡，並導入了特有的型別機制與編譯設計。對於關注程式語言設計理論、編譯器實作以及尋找現代替代語法的工程師而言，該專案提供了具啟發性的設計參考。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "The Goose Programming Language",
+          "sources": [
+            "hn"
+          ],
+          "title": "新型程式語言Goose發布：探索現代化系統設計與語法哲學",
+          "url": "https://aardappel.github.io/goose/",
+          "weightedScore": 554
+        },
+        {
+          "content": "廣受歡迎的跨平台開源影音錄製與直播軟體 OBS Studio 正式推出 33 版重大更新。新版本重構了底層音訊處理管線，大幅改善編解碼器的效能表現，並修復了多項跨平台相容性問題。作為眾多開發者構建即時影音串流、多媒體處理與錄製外掛的重要基礎設施，本次更新顯著提升了執行穩定度與外掛整合彈性。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "OBS Studio 33",
+          "sources": [
+            "hn"
+          ],
+          "title": "開源影音工具OBS Studio 33發布：音視訊管線重構與編解碼效能升級",
+          "url": "https://github.com/obsproject/obs-studio/releases/tag/33.0.0",
+          "weightedScore": 464
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-09-10T00:03:46.530Z",
-      "url": "https://github.com/react/react/releases/tag/v19.3.0"
-    },
-    {
-      "seenAt": "2026-09-10T00:03:46.530Z",
-      "url": "https://blog.cloudflare.com/workers-module-registry-nodejs"
-    },
-    {
-      "seenAt": "2026-09-10T00:03:46.530Z",
-      "url": "https://github.com/nodejs/node/releases/tag/v26.8.2"
-    },
-    {
-      "seenAt": "2026-09-10T00:03:46.530Z",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber"
-    },
-    {
-      "seenAt": "2026-09-10T00:03:46.530Z",
-      "url": "https://ai.meta.com/muse"
-    },
-    {
-      "seenAt": "2026-09-10T00:03:46.530Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wauxg9/qwenqwendrive104b_hugging_face"
-    },
-    {
-      "seenAt": "2026-09-10T00:03:46.530Z",
-      "url": "https://thenewstack.io/openai-ai-code-review"
-    },
     {
       "seenAt": "2026-09-10T23:59:28.349Z",
       "url": "https://blog.cloudflare.com/post-quantum-dnssec-1111"
@@ -5931,6 +5909,146 @@
       ],
       "title": "mitmproxy adds --emudhra option",
       "url": "https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Broccoli2Shell: Brotli decoder RCE in Node.js, Python and more",
+      "url": "https://broccoli2shell.com/"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "ollama-blog",
+      "sources": [
+        "ollama-blog"
+      ],
+      "title": "Speech models in Ollama",
+      "url": "https://ollama.com/blog/speech-models"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Cerebras Deploys Trillion-Parameter AI Models",
+      "url": "https://cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Dessa: Conversation Model trained only on speech",
+      "url": "https://block.xyz/dessa"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Nanbeige/Nanbeige4.3-33B · Hugging Face",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xf0kz4/nanbeigenanbeige4333b_hugging_face"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Build more responsive apps with the Decisions API",
+      "url": "https://openai.com/index/decisions-api"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Turn notifications into code with GitHub Copilot in Teams",
+      "url": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
+      "url": "https://lynchlab.net/llm-skin-cancer"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Why Kubernetes autoscalers keep fighting each other (and why the solution must be autonomous)",
+      "url": "https://thenewstack.io/why-kubernetes-autoscalers-fight"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Ensemble forecasting with IBM Granite time-series models",
+      "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Around a dozen banking apps began specifically permitting GrapheneOS",
+      "url": "https://grapheneos.social/@GrapheneOS/117492375462459244"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Run full iOS 16.5 firmware on Android Devices",
+      "url": "https://github.com/oosexgang/hackios-xnu-kernel"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "The Goose Programming Language",
+      "url": "https://aardappel.github.io/goose"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-25T22:29:10.259Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "OBS Studio 33",
+      "url": "https://github.com/obsproject/obs-studio/releases/tag/33.0.0"
     }
   ]
 }
