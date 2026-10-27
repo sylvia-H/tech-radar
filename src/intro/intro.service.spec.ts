@@ -165,9 +165,12 @@ describe('IntroService.ensureIntro', () => {
     expect(second.status).toBe('generated');
   });
 
-  it('逾時熔斷（2026-10-27）：一則 LLM 逾時後，其餘未命中快取者不再呼叫 LLM／README、直接降級；快取命中照常', async () => {
+  it.each([
+    ['hung', new LlmError('timeout', 'hung')],
+    ['budget', new LlmError('timeout', 'budget')],
+  ])('逾時熔斷（2026-10-27，%s）：一則 LLM 逾時後，其餘未命中快取者不再呼叫 LLM／README、直接降級；快取命中照常', async (_kind, timeoutErr) => {
     const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
-    const generate = jest.fn().mockRejectedValueOnce(new LlmError('timeout', 'hung')).mockResolvedValue('不該被用到');
+    const generate = jest.fn().mockRejectedValueOnce(timeoutErr).mockResolvedValue('不該被用到');
     const getJson = jest.fn().mockResolvedValue(base64Readme('x'.repeat(300)));
     const { service } = makeService({ generate, getJson });
     const state = emptyBoardState();
@@ -186,13 +189,13 @@ describe('IntroService.ensureIntro', () => {
     warnSpy.mockRestore();
   });
 
-  it('非掛住型失敗（exhausted／error／timeout budget）不觸發熔斷', async () => {
+  it('非逾時的 LLM 失敗（exhausted／error／empty）不觸發熔斷', async () => {
     const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
     const generate = jest
       .fn()
       .mockRejectedValueOnce(new LlmError('exhausted'))
       .mockRejectedValueOnce(new LlmError('error'))
-      .mockRejectedValueOnce(new LlmError('timeout', 'budget'))
+      .mockRejectedValueOnce(new LlmError('empty'))
       .mockResolvedValueOnce('第四個 repo 的簡介');
     const { service } = makeService({ generate, getJson: jest.fn().mockResolvedValue(base64Readme('x'.repeat(300))) });
     const state = emptyBoardState();

@@ -5,6 +5,7 @@ import {
   GEMINI_MODEL_NEWS_FALLBACK,
   LlmError,
   NEWS_LLM_TIMEOUT_MS,
+  NEWS_MIN_ATTEMPT_MS,
   NEWS_THINKING_LEVEL,
 } from '../llm/llm.types';
 
@@ -22,12 +23,14 @@ const NEWS_OPTS = {
   thinkingLevel: NEWS_THINKING_LEVEL,
   responseJsonSchema: CURATION_RESPONSE_JSON_SCHEMA,
   timeoutMs: NEWS_LLM_TIMEOUT_MS,
+  minAttemptMs: NEWS_MIN_ATTEMPT_MS,
 };
 const FALLBACK_OPTS = {
   model: GEMINI_MODEL_NEWS_FALLBACK,
   thinkingLevel: NEWS_THINKING_LEVEL,
   responseJsonSchema: CURATION_RESPONSE_JSON_SCHEMA,
   timeoutMs: NEWS_LLM_TIMEOUT_MS,
+  minAttemptMs: NEWS_MIN_ATTEMPT_MS,
 };
 
 function makeCandidate(overrides: Partial<NewsCandidate> = {}): NewsCandidate {

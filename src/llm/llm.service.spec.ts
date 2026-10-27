@@ -12,6 +12,7 @@ import {
   LLM_MIN_ATTEMPT_MS,
   LLM_TIMEOUT_MS,
   NEWS_LLM_TIMEOUT_MS,
+  NEWS_MIN_ATTEMPT_MS,
   NEWS_THINKING_LEVEL,
 } from './llm.types';
 
@@ -519,6 +520,28 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
     expect(warn).toContain('不再重試');
   });
 
+  it('minAttemptMs 可逐呼叫指定（策展 2 分鐘）：剩約 100 秒、退避 10～20 秒後不足 2 分鐘 → 不重送', async () => {
+    let now = 1_000_000;
+    jest.spyOn(Date, 'now').mockImplementation(() => now);
+    const generateContent = jest.fn().mockImplementation(async () => {
+      now += NEWS_LLM_TIMEOUT_MS - 100_000;
+      throw new ApiError({ message: 'unavailable', status: 503 });
+    });
+    const svc = makeService(generateContent);
+    await expect(
+      svc.generate('請策展', { model: GEMINI_MODEL_NEWS, timeoutMs: NEWS_LLM_TIMEOUT_MS, minAttemptMs: NEWS_MIN_ATTEMPT_MS }),
+    ).rejects.toMatchObject({ reason: 'timeout', timeoutKind: 'budget' });
+    expect(generateContent).toHaveBeenCalledTimes(1);
+    const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((l) => l.includes('剩餘期限不足')) ?? '';
+    expect(warn).toContain(`${NEWS_MIN_ATTEMPT_MS / 1000} 秒`);
+  });
+
+  it('LlmError：timeout 未給 kind 預設 hung，message 帶 kind；其他 reason 無 kind', () => {
+    expect(new LlmError('timeout')).toMatchObject({ timeoutKind: 'hung', message: 'LLM 呼叫失敗：timeout/hung' });
+    expect(new LlmError('timeout', 'budget').message).toBe('LLM 呼叫失敗：timeout/budget');
+    expect(new LlmError('exhausted', 'budget')).toMatchObject({ timeoutKind: undefined, message: 'LLM 呼叫失敗：exhausted' });
+  });
+
   it('退避後剩餘仍足夠（剩約 2 分鐘）→ 照常重試', async () => {
     let now = 1_000_000;
     jest.spyOn(Date, 'now').mockImplementation(() => now);
@@ -549,11 +572,15 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
     expect(warnSpy.mock.calls.map((c) => String(c[0])).some((l) => l.includes('不重送'))).toBe(true);
   });
 
-  it('timeoutMs 非正整數 → 擲 LlmError(error)、不送出請求', async () => {
-    for (const bad of [0, -1, 1.5, Number.NaN, Number.POSITIVE_INFINITY]) {
+  it('timeoutMs 非正整數或 minAttemptMs 非非負整數 → 擲 LlmError(error)、不送出請求', async () => {
+    const badOptions = [
+      ...[0, -1, 1.5, Number.NaN, Number.POSITIVE_INFINITY].map((timeoutMs) => ({ timeoutMs })),
+      ...[-1, 1.5, Number.NaN].map((minAttemptMs) => ({ minAttemptMs })),
+    ];
+    for (const bad of badOptions) {
       const generateContent = jest.fn();
       const svc = makeService(generateContent);
-      await expect(svc.generate('請生成', { timeoutMs: bad })).rejects.toMatchObject({ reason: 'error' });
+      await expect(svc.generate('請生成', bad)).rejects.toMatchObject({ reason: 'error' });
       expect(generateContent).not.toHaveBeenCalled();
     }
   });

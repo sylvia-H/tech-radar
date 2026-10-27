@@ -15,10 +15,11 @@ import { IntroInput, IntroResult } from './intro.types';
  * 就地寫入 `state.intros`。單筆失敗一律降級（回 `degraded`），**不擲錯**、不寫快取（FR-014/015/016）。
  * 只寫入傳入的 in-memory `state`——**不呼叫 `StateStore.save()`**，持久化由呼叫端（F7）負責。
  *
- * 逾時熔斷（2026-10-27，ADR 0009）：同一次執行內任一則 LLM 呼叫掛住（`LlmError('timeout', 'hung')`）後，其餘未命中快取的
- * repo 不再呼叫 LLM、直接降級——Gemini 卡住時逐則各等滿 300 秒，十多個新進 repo 就會吃光步驟逾時，晨報段整段跑不到。
- * `'budget'`（Gemini 有回 503 等、只是剩餘期限不夠重送）不熔斷，下一則照常嘗試。範圍只含簡介：榜單日 TL;DR 是之後的
- * 單一呼叫，掛住時最多再等一個 300 秒（已計入 ADR 0009 的最壞耗時）。服務在 CLI 一次執行內為單例，旗標隨程序結束歸零。
+ * 逾時熔斷（2026-10-27，ADR 0009）：同一次執行內任一則 LLM 呼叫逾時（`LlmError('timeout')`，`hung` 或 `budget` 皆是）後，
+ * 其餘未命中快取的 repo 不再呼叫 LLM、直接降級——Gemini 卡住或慢回 503 時逐則各耗近 300 秒，十多個新進 repo 就會吃光步驟
+ * 逾時，晨報段整段跑不到。`budget` 也熔斷：它只在該則已耗掉 210 秒以上才發生（剩餘不足「退避＋30 秒」），下一則多半一樣；
+ * 代價只是其餘簡介改用 description。範圍只含簡介：榜單日 TL;DR 是之後的單一呼叫，最多再等一個 300 秒（已計入 ADR 0009 的
+ * 最壞耗時）。服務在 CLI 一次執行內為單例，旗標隨程序結束歸零。
  */
 @Injectable()
 export class IntroService {
@@ -56,7 +57,7 @@ export class IntroService {
       state.intros[key] = { intro, introAt };
       return { status: 'generated', intro, introAt };
     } catch (err) {
-      if (err instanceof LlmError && err.reason === 'timeout' && err.timeoutKind === 'hung') {
+      if (err instanceof LlmError && err.reason === 'timeout') {
         this.llmTimedOut = true;
       }
       const reason = err instanceof Error ? err.message : String(err);
