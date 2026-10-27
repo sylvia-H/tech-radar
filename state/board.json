@@ -438,85 +438,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-25T22:29:10.259Z",
-  "lastNewsPushAt": "2026-10-26T23:46:30.600Z",
+  "lastNewsPushAt": "2026-10-27T23:43:50.988Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-25T22:29:10.259Z",
       "summary": "本次技術雷達榜單由 cloudflare/security-audit-skill 拿下綜合榜 #1，共有 8 個新進、1 個竄升、1 個下降，其中新進與竄升項目主要分佈於 AI（7 個）與前後端（2 個）。"
     },
     "feed": [
-      {
-        "content": "OpenAI 發表架構深度專文，剖析支撐超過 10 億使用者的 ChatGPT 線上儲存擴展架構。團隊藉由在自研儲存系統 Habitat 中落實高可用多租戶架構、結合 Azure Cosmos DB 與全域分散式快取設計，成功將端對端讀取延遲降至原先的十二分之一。文章詳述了分散式快取一致性、高並發熱點防範與故障轉移設計，對分散式後端架構極具參考價值。",
-        "id": "news:https://openai.com/index/scaling-storage-one-billion-users-part-two",
-        "publishedAt": "2026-10-23T23:04:02.112Z",
-        "title": "OpenAI 解析 ChatGPT 儲存架構：將 10 億用戶讀取延遲降至十二分之一",
-        "type": "news",
-        "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two"
-      },
-      {
-        "content": "Cloudflare 技術團隊揭露其利用 Pingora 代理層重構大型檔案 Byte-Range 請求快取機制的實作經驗。傳統 Range 快取常因微小請求而浪費數十 GB 的源站頻寬，新架構能自動協調邊緣分段擷取與快取合併，不僅解決了頻寬放大問題，更將 Cloudflare R2 物件儲存的 p99 延遲降低了 50%，為影音串流與大檔案分發架構提供了優良範例。",
-        "id": "news:https://blog.cloudflare.com/origin-range-requests",
-        "publishedAt": "2026-10-23T23:04:02.112Z",
-        "title": "Cloudflare 透過 Pingora 重構 Range 快取架構，將 R2 延遲減半",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/origin-range-requests/"
-      },
-      {
-        "content": "GPU 資源管理常面臨獨立叢集控制平面成本過高、單一叢集多租戶隔離性不足的兩難。本文探討如何整合 Kamaji（輕量級獨立控制平面）與 HAMi（異質 GPU 算力與記憶體切分），在虛擬化基礎設施上構建兼顧硬性安全隔離與高硬體利用率的 GPU 平台，為雲原生 AI 算力調度與 MLOps 團隊提供了落地的開源解決方案。",
-        "id": "news:https://cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami",
-        "publishedAt": "2026-10-23T23:04:02.112Z",
-        "title": "利用 Kamaji 與 HAMi 在 Kubernetes 實現高隔離 GPU 多租戶架構",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami/"
-      },
-      {
-        "content": "本文深入分析大語言模型在軟體形式化驗證（Formal Verification）領域的最新進展。過去形式化證明因需大量人工撰寫規格引理而難以擴展至大型專案；近期實踐證明，LLM 能夠高效輔助證明路徑搜尋、反例除錯與規格自動推導，顯著降低了形式化驗證的門檻，正逐步改變關鍵核心系統與編譯器的可靠度驗證流程。",
-        "id": "news:https://anthropic.com/research/formal-verification",
-        "publishedAt": "2026-10-23T23:04:02.112Z",
-        "title": "大語言模型助力形式化軟體驗證邁向大規模工程實踐",
-        "type": "news",
-        "url": "https://www.anthropic.com/research/formal-verification"
-      },
-      {
-        "content": "許多開發者嘗試直接提示 LLM 輸出「置信度評分」作為決策門檻，本文深入探討此實作的統計盲點。研究指出，自回歸 LLM 的自評置信度極易受到提示詞語氣、上下文長度及過度自信傾向影響，與真實校準準確率脫節。文章建議開發者應改採 Token Logits 機率熵分析、多次採樣一致性（Self-Consistency）或外部校準模型來評估不確定性。",
-        "id": "news:https://rumple.github.io/blog/2026/10/20/asking-llm-for-confidence.html",
-        "publishedAt": "2026-10-23T23:04:02.112Z",
-        "title": "技術剖析：為何直接讓 LLM 輸出置信度分數是不可靠的作法",
-        "type": "news",
-        "url": "https://rumple.github.io/blog/2026/10/20/asking-llm-for-confidence.html"
-      },
-      {
-        "content": "傳統自回歸文字生成受限於逐字預測（Next-Token Prediction）的序列計算瓶頸。Next-Concept Modeling 提出從粗到細（Coarse-to-Fine）的兩階段生成機制：先高速並行規劃高層次概念語意，再並行細化為具體 Token。該方法在維持語意連貫性的同時顯著釋放了推論的並行運算能力，為新一代非自回歸推論架構開闢了全新方向。",
-        "id": "news:https://arxiv.org/abs/2610.14162",
-        "publishedAt": "2026-10-23T23:04:02.112Z",
-        "title": "Next-Concept Modeling 論文解析：從粗到細的平行文字生成架構",
-        "type": "news",
-        "url": "https://arxiv.org/abs/2610.14162"
-      },
-      {
-        "content": "Vercel 宣布在生態系中逐步淘汰長期靜態 API Key，要求市集夥伴改用短期動態認證，但開發社群隨後指出其自身部署流程仍廣泛依賴長期 Deployment Token。此事件引發了開發者對現代 CI/CD 憑證輪替、身分同盟（OIDC）實踐複雜度與安全代價的深入討論，突顯在無伺服器環境中落實零信任架構時的現實挑戰。",
-        "id": "news:https://thenewstack.io/vercel-oidc-static-credentials",
-        "publishedAt": "2026-10-23T23:04:02.112Z",
-        "title": "Vercel 淘汰靜態憑證引發社群檢視長期部署權杖安全實務",
-        "type": "news",
-        "url": "https://thenewstack.io/vercel-oidc-static-credentials/"
-      },
-      {
-        "content": "安全研究揭露名為 http2shell 的重大遠端程式碼執行（RCE）漏洞，該漏洞影響包括 Node.js、Python 等多種語言環境下的主流 HTTP/2 伺服器與相關函式庫實作。攻擊者可利用特定 HTTP/2 協定解析與狀態處理的缺陷達成未授權指令執行。此通報對所有維護 Web 服務與 API 網關的開發者至關重要，建議立即盤點系統依賴並套用相應的安全修補與緩解措施。",
-        "id": "news:https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "新型 RCE 漏洞 http2shell 威脅 Node.js 與 Python 等多種後端 HTTP/2 實作",
-        "type": "news",
-        "url": "https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8"
-      },
-      {
-        "content": "Node.js 官方推出 v22.23.4「Jod」長期支援版本（LTS）安全更新。本次更新重點修復了多個重大 CVE，包括修正 HTTP Agent 防護機制、DNS 解析中的 null byte 輸入驗證（CVE-2026-105482）、TLS 連線拒絕非規範 IP 位址（CVE-2026-106069）、強化權限模型在 realpathSync 下的檢查，以及確保跨 snapshot 時重設加密隨機快取。使用 Node.js 22 LTS 的開發者應盡速排程升級以維護環境安全。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v22.23.4",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "Node.js 發布 v22.23.4 'Jod' LTS 安全更新，修復多項 TLS、DNS 與權限漏洞",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v22.23.4"
-      },
       {
         "content": "雲端部署平台 Railway 正式公開 10 月 21 日安全事件的初步調查報告（Preliminary Report）。針對日前發生的資安衝擊，官方團隊詳細說明了受影響範圍、攻擊向量防堵過程以及目前採取的補救與加固措施。由於眾多現代團隊依賴 Railway 託管生產服務與資料庫，該報告對於評估自身基礎設施風險與安全合規狀態至關重要。",
         "id": "news:https://blog.railway.com/p/preliminary-report-october-security-incident",
@@ -835,133 +763,214 @@
         "title": "分散式 SQLite 十二年實踐復盤：從嵌入式引擎到分散式架構的工程演進與反思",
         "type": "news",
         "url": "https://philipotoole.com/twelve-years-of-distributed-sqlite/"
+      },
+      {
+        "content": "CPython 核心開發團隊決定移除在 Python 3.13 中引入的實驗性 Copy-and-Patch JIT 編譯器架構。這項決定標誌著 Python 官方在執行期效能最佳化路徑上的重大調整，由於維護成本與架構複雜度高於預期收益，團隊將重新審視未來的 JIT 設計方向。對於關注 Python 底層效能、語言運行時演進以及依賴 CPython 內部 JIT 實作的開發者而言，需注意後續版本的變更與效能基準調整。",
+        "id": "news:https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c",
+        "publishedAt": "2026-10-27T23:43:50.988Z",
+        "title": "Python 官方計畫移除實驗性 JIT 編譯器",
+        "type": "news",
+        "url": "https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c/"
+      },
+      {
+        "content": "Google DeepMind 發表最新一代世界模型 Genie 4，能以模擬物理規律即時生成可互動、可操作的虛擬環境。該模型主要作為具身智慧（Embodied AI）與自主代理（AI Agents）的訓練沙盒，讓智慧體在不依賴真實世界或手動構建物理引擎的前提下，於多樣化環境中進行自我探索與策略學習。這項突破為遊戲開發、智慧體模擬測試以及次世代虛擬環境生成開闢了全新途徑。",
+        "id": "news:https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation",
+        "publishedAt": "2026-10-27T23:43:50.988Z",
+        "title": "Google DeepMind 正式發表世界模型 Genie 4",
+        "type": "news",
+        "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+      },
+      {
+        "content": "GitHub Copilot 正式於公開預覽版支援以 Organization 安裝的 GitHub App 進行伺服器對伺服器（Server-to-Server）身分驗證。這項更新讓使用 GitHub Copilot SDK 開發的背景服務、CI/CD 自動化流程與獨立 AI Agent，無須綁定個人使用者帳號或權限 token，即可直接以服務身分發起請求與調用 Copilot 功能。這大幅降低了企業構建後端自動化 Agent 的資安風險與維護負擔。",
+        "id": "news:https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
+        "publishedAt": "2026-10-27T23:43:50.988Z",
+        "title": "GitHub Copilot 開放支援伺服器對伺服器（S2S）身分驗證",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication"
+      },
+      {
+        "content": "GitHub 宣布 Copilot 的「輔助權限（Assisted Permissions）」功能正式在 Copilot CLI、Copilot App 及 VS Code 中全面推出（GA）。當 Copilot 嘗試執行系統終端指令或讀寫特定檔案路徑時，會透過細緻的權限提示請求使用者明確授權，避免 Agent 自主操作帶來潛在的破壞性指令風險。此功能為開發者在日常開發與終端環境中深度整合 AI 工具時，提供了更安全的把關機制。",
+        "id": "news:https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
+        "publishedAt": "2026-10-27T23:43:50.988Z",
+        "title": "GitHub Copilot 輔助權限管理功能正式全面推出（GA）",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available"
+      },
+      {
+        "content": "Kubernetes 社群宣布成立 Workload Conformance 工作小組，旨在為工作負載在 Kubernetes 上的執行期行為制定統一標準。過去的 Certified Kubernetes 主要檢驗叢集層級是否合規，而 AI Conformance 則檢驗叢集是否能運行 AI/ML 負載，但缺乏針對工作負載本身行為的規範。該工作小組將整合叢集維運者與應用程式開發者的需求，定義負載運行的標準化規範，以確保跨叢集部署的一致性與可靠性。",
+        "id": "news:https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg",
+        "publishedAt": "2026-10-27T23:43:50.988Z",
+        "title": "Kubernetes 社群成立 Workload Conformance 工作小組推動執行期標準",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/"
+      },
+      {
+        "content": "Liquid AI 宣布推出新一代非 Transformer 架構的 Liquid Foundation Models 3（LFM3），並提供多模態模型建置能力。LFM3 延續了動態系統與狀態空間模型（SSM）的架構優勢，致力於在維持極低記憶體佔用與高推論輸送量的同時，處理長序列多模態資料。這為希望在邊緣設備或特定專業領域部署低延遲多模態 AI 的開發團隊提供了全新選擇。",
+        "id": "news:https://huggingface.co/blog/LiquidAI/lfm3",
+        "publishedAt": "2026-10-27T23:43:50.988Z",
+        "title": "Liquid AI 推出 LFM3 模型架構，支援專用多模態模型建置",
+        "type": "news",
+        "url": "https://huggingface.co/blog/LiquidAI/lfm3"
+      },
+      {
+        "content": "本文深入對比了傳統結構化覆蓋引導模糊測試工具 Fuzzilli 與 Google 基於大語言模型的漏洞挖掘智慧體 BigSleep 在各大瀏覽器 JavaScript 引擎（如 V8、JavaScriptCore）上的實戰表現。評測分析了兩者在語法正確性生成、複雜語義觸發深層邊界條件以及未知漏洞發現效率上的差異與互補性，為編譯器開發者、瀏覽器工程師與資安研究人員展示了次世代 AI 驅動自動化漏洞挖掘的實際潛力與限制。",
+        "id": "news:https://projectzero.google/2026/10/fuzzing-v-AI.html",
+        "publishedAt": "2026-10-27T23:43:50.988Z",
+        "title": "模糊測試對決 AI：評測 Fuzzilli 與 BigSleep 於 JavaScript 引擎之漏洞挖掘能力",
+        "type": "news",
+        "url": "https://projectzero.google/2026/10/fuzzing-v-AI.html"
+      },
+      {
+        "content": "針對 Cohere 先前指控開源模型 Qwen 3.8 Flash Next 會向阿里巴巴遠端伺服器上傳資料的爭議，社群透過 Hugging Face 公開的推論追蹤資料集與 Python 驗證指令碼進行了深入技術複現。分析指出，原先聲稱的「回傳行為」源於測試指令碼在達到特定 token 長度時的誤判，並非模型本體內建的後門或連線機制。此技術剖析有助於釐清開源模型供應鏈安全爭議，並為評估開源模型權重安全性提供了透明的驗證方法。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xgopmj/debunking_coheres_claim_of_qwen_38_flash_next",
+        "publishedAt": "2026-10-27T23:43:50.988Z",
+        "title": "技術實證反駁 Cohere 指控：Qwen 3.8 Flash Next 未向阿里遠端回傳資料",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xgopmj/debunking_coheres_claim_of_qwen_38_flash_next/"
+      },
+      {
+        "content": "廣受開發者關注的現代化高效能終端模擬器 Ghostty 正式釋出 1.4 版本。Ghostty 採用 Zig 語言編寫，具備原生跨平台 GPU 渲染與高度可配置性。新版本帶來多項效能最佳化、修復輸入法與排版渲染問題，並增強對現代終端特性（如真彩色、字型裝飾與自訂鍵盤映射）的支援。對於追求流暢終端操作體驗與高客製化命令列工作流的工程師而言，是一次重要的工具升級。",
+        "id": "news:https://ghostty.org/docs/install/release-notes/1-4-0",
+        "publishedAt": "2026-10-27T23:43:50.988Z",
+        "title": "GPU 加速終端模擬器 Ghostty 1.4 正式發布",
+        "type": "news",
+        "url": "https://ghostty.org/docs/install/release-notes/1-4-0"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-26T23:46:30.600Z",
+      "generatedAt": "2026-10-27T23:43:50.988Z",
       "items": [
         {
-          "content": "OpenAI 正式推出新一代模型 GPT-6.1 Terra，將 API 價格直接調降 50%，同時在程式碼撰寫與電腦操作（computer-use）基準測試中帶來重大性能突破。此外，官方安全評估報告亦同步揭示了該模型的行為特徵與潛在考量。對於正在構建自主 Agent、自動化開發工具或大規模調用 LLM 的工程團隊而言，推論成本減半與程式處理能力的提升將顯著降低服務營運門檻，並改變現有工作流設計。",
+          "content": "CPython 核心開發團隊決定移除在 Python 3.13 中引入的實驗性 Copy-and-Patch JIT 編譯器架構。這項決定標誌著 Python 官方在執行期效能最佳化路徑上的重大調整，由於維護成本與架構複雜度高於預期收益，團隊將重新審視未來的 JIT 設計方向。對於關注 Python 底層效能、語言運行時演進以及依賴 CPython 內部 JIT 實作的開發者而言，需注意後續版本的變更與效能基準調整。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Python's experimental JIT to be removed",
+          "sources": [
+            "hn"
+          ],
+          "title": "Python 官方計畫移除實驗性 JIT 編譯器",
+          "url": "https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c/",
+          "weightedScore": 430
+        },
+        {
+          "content": "Google DeepMind 發表最新一代世界模型 Genie 4，能以模擬物理規律即時生成可互動、可操作的虛擬環境。該模型主要作為具身智慧（Embodied AI）與自主代理（AI Agents）的訓練沙盒，讓智慧體在不依賴真實世界或手動構建物理引擎的前提下，於多樣化環境中進行自我探索與策略學習。這項突破為遊戲開發、智慧體模擬測試以及次世代虛擬環境生成開闢了全新途徑。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 3,
+          "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "GPT-6.1 Terra",
+          "sourceTitle": "Genie 4",
           "sources": [
-            "github-changelog-copilot",
-            "hn",
-            "openai-blog"
+            "deepmind-blog",
+            "hn"
           ],
-          "title": "OpenAI 正式發布 GPT-6.1 Terra：API 價格減半並大幅強化程式碼與電腦操作能力",
-          "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
-          "weightedScore": 566
+          "title": "Google DeepMind 正式發表世界模型 Genie 4",
+          "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+          "weightedScore": 764
         },
         {
-          "content": "Cloudflare 公開了一起安全事件處理報告，指出其 Workers AI 平台在部署 GLM 5.3 模型時，因配置不符觸發了 SGLang 推論引擎的底層錯誤，導致不同請求之間的 KV 快取分頁發生跨請求洩漏（Cross-request KV cache exposure）。目前官方已完成漏洞修復。此事件為依賴大模型推論引擎的架構師提供了重大警訊：推論系統為追求吞吐量廣泛採用快取共享機制，若配置稍有偏差便可能引發嚴重的多租戶資料隔離失效，團隊必須加強對推論框架的隔離驗證。",
+          "content": "GitHub Copilot 正式於公開預覽版支援以 Organization 安裝的 GitHub App 進行伺服器對伺服器（Server-to-Server）身分驗證。這項更新讓使用 GitHub Copilot SDK 開發的背景服務、CI/CD 自動化流程與獨立 AI Agent，無須綁定個人使用者帳號或權限 token，即可直接以服務身分發起請求與調用 Copilot 功能。這大幅降低了企業構建後端自動化 Agent 的資安風險與維護負擔。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub Copilot supports server-to-server authentication",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 開放支援伺服器對伺服器（S2S）身分驗證",
+          "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 宣布 Copilot 的「輔助權限（Assisted Permissions）」功能正式在 Copilot CLI、Copilot App 及 VS Code 中全面推出（GA）。當 Copilot 嘗試執行系統終端指令或讀寫特定檔案路徑時，會透過細緻的權限提示請求使用者明確授權，避免 Agent 自主操作帶來潛在的破壞性指令風險。此功能為開發者在日常開發與終端環境中深度整合 AI 工具時，提供了更安全的把關機制。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub Copilot assisted permissions generally available",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 輔助權限管理功能正式全面推出（GA）",
+          "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
+          "weightedScore": 100
+        },
+        {
+          "content": "Kubernetes 社群宣布成立 Workload Conformance 工作小組，旨在為工作負載在 Kubernetes 上的執行期行為制定統一標準。過去的 Certified Kubernetes 主要檢驗叢集層級是否合規，而 AI Conformance 則檢驗叢集是否能運行 AI/ML 負載，但缺乏針對工作負載本身行為的規範。該工作小組將整合叢集維運者與應用程式開發者的需求，定義負載運行的標準化規範，以確保跨叢集部署的一致性與可靠性。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang",
+          "sourceId": "kubernetes-blog",
+          "sourceTitle": "Announcing the Workload Conformance Working Group",
           "sources": [
-            "cloudflare-blog"
+            "kubernetes-blog"
           ],
-          "title": "Cloudflare 揭露 Workers AI 跨請求 KV 快取洩漏漏洞與 SGLang 修復方案",
-          "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
-          "weightedScore": 50
+          "title": "Kubernetes 社群成立 Workload Conformance 工作小組推動執行期標準",
+          "url": "https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/",
+          "weightedScore": 100
         },
         {
-          "content": "Cloudflare 宣布已針對新揭露的 PHP 安全漏洞「php2shell」提前部署預設 Web 應用程式防火牆（WAF）規則。該規則藉由請求與回應特徵阻斷各類利用嘗試，避免機敏資料外洩。對於維護 PHP 生態系應用程式或依賴相關後端架構的開發團隊，在伺服器環境或依賴庫全面套用官方安全補丁前，邊緣端的 WAF 防護能提供關鍵的防禦緩衝，防範潛在的遠端攻擊與漏洞利用。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Cloudflare deploys protections against php2shell vulnerability",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 針對新公開 php2shell 漏洞全面部署 WAF 預設防禦規則",
-          "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
-          "weightedScore": 50
-        },
-        {
-          "content": "IBM 宣布推出開源 Granite 家族最新語音模型 Granite Speech 5.0，著重於提高語音轉錄（Transcribe）、跨語言翻譯（Translate）以及說話者歸屬（Attribute）的精確度與處理速度。對於需要整合語音輸入、構建即時會議紀錄分析或多語言語音互動應用的開發者而言，該模型提供了更高效、具備高準確率且便於自主部署的語音基礎架構選項。",
+          "content": "Liquid AI 宣布推出新一代非 Transformer 架構的 Liquid Foundation Models 3（LFM3），並提供多模態模型建置能力。LFM3 延續了動態系統與狀態空間模型（SSM）的架構優勢，致力於在維持極低記憶體佔用與高推論輸送量的同時，處理長序列多模態資料。這為希望在邊緣設備或特定專業領域部署低延遲多模態 AI 的開發團隊提供了全新選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "huggingface-blog",
-          "sourceTitle": "Granite Speech 5.0: Transcribe, Translate, and Attribute more Accurately and Faster",
+          "sourceTitle": "Build specialized multimodal models with LFM3",
           "sources": [
             "huggingface-blog"
           ],
-          "title": "IBM 發布 Granite Speech 5.0 語音模型：全面提升轉錄、翻譯與說話者歸屬能力",
-          "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
+          "title": "Liquid AI 推出 LFM3 模型架構，支援專用多模態模型建置",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm3",
           "weightedScore": 100
         },
         {
-          "content": "社群開發者分享實作評測，展示如何利用 Strata 技術將 125B 參數量級的 Qwen 3.8 Flash Next 模型工作負載分散於 8GB VRAM、32GB RAM 與 SSD 儲存之間。實測顯示其 Prefill 處理速度可達 900 t/s、文本生成達 30 t/s，在多項基準評測中超越現有 35B 及 27B 架構配置。這項實務驗證為受限於本地硬體運算資源的工程師提供了高吞吐量的本地部署架構參考，證明大參數量模型能以極低硬體成本流暢運行。",
+          "content": "本文深入對比了傳統結構化覆蓋引導模糊測試工具 Fuzzilli 與 Google 基於大語言模型的漏洞挖掘智慧體 BigSleep 在各大瀏覽器 JavaScript 引擎（如 V8、JavaScriptCore）上的實戰表現。評測分析了兩者在語法正確性生成、複雜語義觸發深層邊界條件以及未知漏洞發現效率上的差異與互補性，為編譯器開發者、瀏覽器工程師與資安研究人員展示了次世代 AI 驅動自動化漏洞挖掘的實際潛力與限制。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Fuzzers vs. AI: Comparing Fuzzilli and BigSleep on JavaScript Engines",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "模糊測試對決 AI：評測 Fuzzilli 與 BigSleep 於 JavaScript 引擎之漏洞挖掘能力",
+          "url": "https://projectzero.google/2026/10/fuzzing-v-AI.html",
+          "weightedScore": 100
+        },
+        {
+          "content": "針對 Cohere 先前指控開源模型 Qwen 3.8 Flash Next 會向阿里巴巴遠端伺服器上傳資料的爭議，社群透過 Hugging Face 公開的推論追蹤資料集與 Python 驗證指令碼進行了深入技術複現。分析指出，原先聲稱的「回傳行為」源於測試指令碼在達到特定 token 長度時的誤判，並非模型本體內建的後門或連線機制。此技術剖析有助於釐清開源模型供應鏈安全爭議，並為評估開源模型權重安全性提供了透明的驗證方法。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "reddit-localllama",
-          "sourceTitle": "Have 8 GB of VRAM and 32 GB of RAM? You can run Qwen 3.8 Flash Next at up to 900 t/s PP and 30 t/s TG!",
+          "sourceTitle": "Debunking Cohere's claim of Qwen 3.8 Flash Next uploading to Alibaba remote URL",
           "sources": [
             "reddit-localllama"
           ],
-          "title": "利用 Strata 分散架構在消費級硬體高效運行 125B 級 Qwen 3.8 Flash Next",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xft2ae/have_8_gb_of_vram_and_32_gb_of_ram_you_can_run/",
+          "title": "技術實證反駁 Cohere 指控：Qwen 3.8 Flash Next 未向阿里遠端回傳資料",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xgopmj/debunking_coheres_claim_of_qwen_38_flash_next/",
           "weightedScore": 100
         },
         {
-          "content": "資深工程團隊深度回顧了過去十二年間建構分散式 SQLite 的技術演進歷程，詳述如何將原本專為單機嵌入設計的 SQLite 改造為具備高可用與分散式一致性的資料儲存系統。內容深入剖析了複製協議、交易隔離、分散式狀態同步與容錯修復等關鍵技術權衡。對於從事分散式系統、邊緣運算儲存與資料庫架構設計的後端工程師而言，文中的實作經驗與反思具有極高的工程架構參考價值。",
+          "content": "廣受開發者關注的現代化高效能終端模擬器 Ghostty 正式釋出 1.4 版本。Ghostty 採用 Zig 語言編寫，具備原生跨平台 GPU 渲染與高度可配置性。新版本帶來多項效能最佳化、修復輸入法與排版渲染問題，並增強對現代終端特性（如真彩色、字型裝飾與自訂鍵盤映射）的支援。對於追求流暢終端操作體驗與高客製化命令列工作流的工程師而言，是一次重要的工具升級。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Twelve years of distributed SQLite",
+          "sourceTitle": "Ghostty 1.4",
           "sources": [
             "hn"
           ],
-          "title": "分散式 SQLite 十二年實踐復盤：從嵌入式引擎到分散式架構的工程演進與反思",
-          "url": "https://philipotoole.com/twelve-years-of-distributed-sqlite/",
-          "weightedScore": 390
+          "title": "GPU 加速終端模擬器 Ghostty 1.4 正式發布",
+          "url": "https://ghostty.org/docs/install/release-notes/1-4-0",
+          "weightedScore": 663
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "seenAt": "2026-09-12T00:07:16.756Z",
-      "url": "https://blog.cloudflare.com/casb-policies"
-    },
-    {
-      "seenAt": "2026-09-12T00:07:16.756Z",
-      "url": "https://developers.openai.com/api/docs/guides/agents-api/overview"
-    },
-    {
-      "seenAt": "2026-09-12T00:07:16.756Z",
-      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one"
-    },
-    {
-      "seenAt": "2026-09-12T00:07:16.756Z",
-      "url": "https://cncf.io/blog/2026/09/10/kubernetes-disaster-recovery-guidance-from-three-reproducible-failure-scenarios"
-    },
-    {
-      "seenAt": "2026-09-12T00:07:16.756Z",
-      "url": "https://github.com/ayghri/i-have-adhd"
-    },
-    {
-      "seenAt": "2026-09-12T00:07:16.756Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wdl2qa/qwen3827bhumanlikechat_a_model_i_tuned_to_imitate"
-    },
-    {
-      "seenAt": "2026-09-12T00:07:16.756Z",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wd4xxv/someone_apparently_managed_to_kind_of_replicate"
-    },
-    {
-      "seenAt": "2026-09-12T00:07:16.756Z",
-      "url": "https://cncf.io/blog/2026/09/09/whose-gpus-are-these-anyway-secure-self-service-metrics-for-multi-tenant-kubernetes"
-    },
     {
       "domain": "devops",
       "seenAt": "2026-09-12T23:55:30.853Z",
@@ -5977,6 +5986,97 @@
       ],
       "title": "Twelve years of distributed SQLite",
       "url": "https://philipotoole.com/twelve-years-of-distributed-sqlite"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-27T23:43:50.988Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Python's experimental JIT to be removed",
+      "url": "https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-27T23:43:50.988Z",
+      "sourceId": "hn",
+      "sources": [
+        "deepmind-blog",
+        "hn"
+      ],
+      "title": "Genie 4",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-27T23:43:50.988Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot supports server-to-server authentication",
+      "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-27T23:43:50.988Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot assisted permissions generally available",
+      "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-27T23:43:50.988Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "title": "Announcing the Workload Conformance Working Group",
+      "url": "https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-27T23:43:50.988Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Build specialized multimodal models with LFM3",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm3"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-27T23:43:50.988Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Fuzzers vs. AI: Comparing Fuzzilli and BigSleep on JavaScript Engines",
+      "url": "https://projectzero.google/2026/10/fuzzing-v-AI.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-27T23:43:50.988Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Debunking Cohere's claim of Qwen 3.8 Flash Next uploading to Alibaba remote URL",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xgopmj/debunking_coheres_claim_of_qwen_38_flash_next"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-27T23:43:50.988Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Ghostty 1.4",
+      "url": "https://ghostty.org/docs/install/release-notes/1-4-0"
     }
   ]
 }
