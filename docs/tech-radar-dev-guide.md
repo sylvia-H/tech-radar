@@ -56,7 +56,13 @@
 
 ### 2.1 執行環境：GitHub Actions
 
-- **額度**：public repo 無限；private repo 每月 2,000 分鐘。一天 2 次觸發（主排 1～3 分鐘；補跑因 guard 多半數十秒內結束）→ 一個月遠低於限額。
+- **額度**：public repo 無限；private repo 每月 2,000 分鐘（每個 job 各自進位到整分鐘計費）。本 repo 目前為 public、不計分鐘，
+  以下為轉 private 時的估算（依 2026-10-22 UTC 的實際 run 39870603733／39872504021）：
+  - 每日排程 2 次觸發，各跑 `radar`＋`publish` 兩個 job：主排 radar 4m01s＋publish 27s → 進位 5＋1＝6 分鐘；補跑因 guard
+    數十秒內結束 → 1＋1＝2 分鐘。每日約 8 分鐘、每月約 240 分鐘。
+  - `test.yml`（§8.y）每次 push 跑 `test`（npm ci＋build＋test，約 1～2 分鐘）與 `audit`（不到 1 分鐘、計 1 分鐘）兩個 job
+    → 每次約 2～3 分鐘；同 repo 分支開 PR 時再多一次。以每月 30 次 push 估約 60～90 分鐘。
+  - 合計每月約 300～330 分鐘，遠低於限額。
 - **注意**：
   - cron 是 **UTC**，尖峰時可能延遲數分鐘（偶爾更久）。摘要推播可接受。
   - 排程 workflow 在 repo **連續 60 天無活動**會被停用；每次 run 都 commit `state/board.json`
@@ -106,7 +112,7 @@
   |------|------|-----------|------|
   | 榜單簡介、榜單日 TL;DR | `gemini-3.5-flash-lite`（`GEMINI_MODEL_BOARD`，`generate()` 預設） | 約 15 RPM／1,000 RPD | 每新進 repo 一生一次並快取；穩定態七天 0～數次呼叫；不帶 thinking |
   | 晨報策展（主） | `gemini-3.8-flash`（`GEMINI_MODEL_NEWS`）＋ `thinkingLevel: high` | **5 RPM／20 RPD**（2026-09-12 AI Studio 確認） | 每日 1 次；退避最多 4 次 HTTP（10s／20s／40s＋jitter，約兩分鐘內）仍在 5 RPM 下，對 20 RPD 有 5 倍餘裕；**本機手動執行吃同一份 RPD** |
-  | 晨報策展（備援） | `gemini-3.5-flash-lite`（`GEMINI_MODEL_NEWS_FALLBACK`）＋ `thinkingLevel: high` | 同第一列 | 主型號擲 `LlmError`（429／503 耗盡、型號 404、空回應）時以**同一 prompt 單次重試** |
+  | 晨報策展（備援） | `gemini-3.5-flash-lite`（`GEMINI_MODEL_NEWS_FALLBACK`）＋ `thinkingLevel: high` | 同第一列 | 主型號擲 `LlmError`（429／503 耗盡、型號 404、空回應、10 分鐘期限用盡 `timeout`）時以**同一 prompt 單次重試** |
 
   - thinking 只增加 token、不增加請求數，對 RPM／RPD 零成本。型號以 400 拒絕 thinking 參數時，`LlmService` warn 後以同一 prompt
     **不帶 thinking 重送一次**（多 1 次 HTTP、不佔退避次數），不會因設定問題走到備援與降級。用量 log 標 `thinking=high`，「思考 N」為實際思考 token。
@@ -114,6 +120,21 @@
     2026-10-07～10-17：Flash 11 天 8 天成功（10-10 起連 8 天），Lite 2 天，10-08 一天 Flash 回應形狀不符而降級（促成 ADR 0006）；Flash 思考 6.9～11.3k。
   - 教訓（沿用）：免費層型號 ID **可能無預警提前下架**（2026-07-19 `gemini-2.5-flash`／`2.5-flash-lite` 在公告日前回 404），`LlmService` 非可重試
     錯誤務必印實際狀態碼與訊息（`errDetail`），否則會被誤判為速率限制；Flash 與 Lite 配額不同級，換型號前先在 AI Studio 確認。
+- **呼叫逾時（2026-10-27 起；決策紀錄 [ADR 0009](adr/0009-gemini-call-timeout.md)）**：每次 `generate()`（含重試與退避）有**總期限**，
+  每次 HTTP 嘗試以 `abortSignal` 限時剩餘時間——策展（主、備援、解析失敗重試、補發翻譯）`NEWS_LLM_TIMEOUT_MS` = **10 分鐘**，簡介／
+  TL;DR `LLM_TIMEOUT_MS` = 300 秒。期限用盡擲 `LlmError('timeout', 'hung')`；退避後（或 400 去設定重送前）剩餘不足最小重送期限
+  ——策展 `NEWS_MIN_ATTEMPT_MS` = **2 分鐘**、其餘 `LLM_MIN_ATTEMPT_MS` = 30 秒——擲 `LlmError('timeout', 'budget')`。兩者皆**不在同一
+  型號重試**（策展直接換備援）；429／503／其他網路錯誤在期限內照舊退避至多 4 次。簡介有熔斷：同一次執行任一則 LLM 呼叫失敗且耗時達
+  2 分鐘（`INTRO_BREAKER_SLOW_MS`，含所有逾時）後，其餘未命中快取者直接降級為 description（TL;DR 不在範圍內）。
+  連線層由 `LlmService` 建構時 `installGeminiDispatcher()`（`src/llm/gemini-dispatcher.ts`）換掉 Node `fetch` 的全域 dispatcher，只把
+  Gemini origin 的 headers／body 逾時上限拉到 10 分鐘（undici 預設 300 秒會先砍斷），其餘 origin 不變；`NODE_USE_ENV_PROXY=1` 時不換、
+  `GOOGLE_GEMINI_BASE_URL` 指向別的 origin 或以 `GOOGLE_GENAI_USE_VERTEXAI`／`ENTERPRISE`=`true` 走 Vertex 時上限不生效，兩者皆印 warn。
+  最壞耗時（失敗路徑）：策展 20 分鐘（主備各一個期限），榜單日簡介＋TL;DR 約 10 分鐘；簡介慢但成功時不熔斷（已知缺口，ADR 0009），
+  10 則（`PUSH_BOARD_SIZE`）最壞約 55 分鐘，由步驟逾時兜底——此時榜單與晨報皆未推出、無狀態可 commit，`:37` 補跑會重複同樣耗時；`radar.yml` 的 Run Tech Radar 步驟 `timeout-minutes: 60`，
+  超過即本步失敗：Commit state（`!cancelled()` 且 run-app 未被跳過）仍落檔已推出的狀態，並送紅色告警。log 看「LLM 呼叫逾時（<型號>，期限 N 秒用盡／
+  連線層逾時 UND_ERR_*）」、「退避 Nms 後剩餘期限不足 M 秒…不再重試」與「LLM 拒絕 thinking／結構化輸出設定…剩餘期限不足 M 秒，不重送」；
+  策展「主型號失敗／備援重試失敗」與簡介降級的 warn 皆帶 `timeout/hung` 或 `timeout/budget`（`LlmError.label`）。`minAttemptMs` 須小於
+  `timeoutMs`，否則 `generate()` 擲 `error`、不送出請求。
 - **結構化輸出（2026-10-17 起；決策紀錄 [ADR 0006](adr/0006-curation-structured-output-and-salvage.md)）**：策展主、備援呼叫皆帶
   `responseMimeType: application/json`＋`responseJsonSchema`（`src/curation/curation-schema.ts`，須與 prompt 輸出規則同步），用量 log 標 `schema=json`。
   型號以 400 拒絕 thinking 或 schema 時，warn 後以**不帶這兩項設定**的純請求重送一次。
@@ -322,7 +343,7 @@ Gemini 一次、不用向量檢索/embeddings）、**選重要而非選熱門**�
   - **判準結構（2026-09-12 限縮）**：prompt 把「算重大、應收錄」分成三類，要求 LLM 對每則候選各自核對（絕對判準，與候選池大小無關）——(1)【官方發布】新模型／新工具／新版本或重大能力更新、breaking change、安全通報、標準變動、重大 deprecation；(2)【技術深度內容】對某工具、模型、架構、工程實務的深入評測、實作經驗、架構或效能分析、技術爭論——**技術深度是必要條件、社群熱度是加分訊號**：來自 HN／Lobste.rs／Reddit 等高信度社群且分數或討論熱度異常高，只是「開發者關注度」的正面提示，無分數的一手部落格深文只要夠有技術深度也算；反過來，熱門而非技術的內容（純觀點、drama、業界八卦）即使分數再高也不算（同日 review 指正後由【社群熱度】改名：若把高熱度當必要條件，無分數的一手部落格深文三類皆不命中、又緊鄰「無分數純觀點文」排除句，會被系統性刷掉）；(3)【影響開發者的外部事件】監管政策／法規變動、主要服務或 API 的當機／事故與其事後報告——**即使沒有技術細節也算重大**，因為直接改變開發者可用的服務或必須遵守的規則（使用者決策 2026-09-12：**監管政策與服務當機刻意不排除**）。陣列歸屬：**`officialPicks`＝(1)＋(3)、`communityPicks`＝(2) 技術深度內容**——(1) 與 (3) 都是穩定的事實紀錄，不該被會隨話題退燒的社群內容擠掉名額；prompt 並明示**同時命中 (2) 或排除清單時以 (3) 為準**，否則 HN 高分帶入的當機事故會落入 `communityPicks`、在總數截斷時被丟掉（`curation-validate.ts` 合併時固定 `officialPicks` 在前，見 `curation.types.ts` `CurationLlmResponse` docstring 與 README 工程亮點第 1 點）。回應**只能有 `officialPicks` 與 `communityPicks` 兩個鍵、不得新增其他鍵**（三類判準對兩個陣列，防 LLM 自創 `externalPicks` 放第 (3) 類；`curation-parse.ts` 對額外鍵不擲錯、只回報鍵名，由 `NewsCurationService.curate()` 以 `logger.warn` 揭露）。
   - **排除清單（不算重大、不應收錄）**：純活動／系列文預告或開場導言、純社群統計／公關類報告；廠商認證／合規公告、廠商的統計或威脅報告、行銷公關文；公司募資／估值、人事異動；訴訟／指控的提起與進行中進展不收，**已生效判決**若改變開發者可用的工具、授權或 API 則依 (3) 收錄；與軟體開發無關的趣聞（遊戲作品／玩法／移植、棋類、消費性硬體的銷售／需求／供應鏈、一般科技產業或商業新聞），即使在社群很熱門——遊戲引擎、圖形／效能等開發技術與硬體的技術評測／效能實測不在此列；低分數或無分數來源的純觀點文（有技術深度者屬 (2)）；CSS 教學。
   - **限縮緣由**：2026-08-04 把「高信度社群任何形式內容（含觀點文、評論、討論串）」列為重大後，實測推出 OpenAI 被控竊取數學家成果、三家模型同時當機、Amiga 遊戲移植 Godot、Apple Mac Mini 需求、Bloomberg／CNBC 商業報導、圍棋名手擊敗 KataGo 等「熱門非重要」內容（§12 早已警告的風險）；其中「三家模型同時當機」依新判準仍算重大，屬第 (3) 類。prompt 仍**不加任何數字錨點**（§12 anchoring 教訓）；`curation-prompt.spec.ts` 斷言三類判準與排除清單的措辭存在，並斷言配額段除上限 10 外不含任何數字。
-- **未歸類候選與同題標記（2026-09-25 新增；決策紀錄 [ADR 0002](adr/0002-unresolved-high-signal-channel.md)）**：候選投影的領域欄對第 8 步保留的候選顯示「**未歸類**」，prompt 給的是**正向先驗**而非中性標記——明示這類候選「來自跨領域來源、社群熱度極高、但關鍵字歸類無法辨識其領域，正是本晨報最想捕捉的『我還不認識、但應該關注』的新事物」、「不要因為名字陌生或你不認識它就視為不重要」、「你的訓練資料也可能沒有它」，只要標題暗示新模型／新工具／新框架／新概念的發布、開源實作、評測或重大技術討論就依 (1)／(2) 收錄，並要求該則回應**回填 `domain`**（ai／devops／frontend-backend；`curation-parse.ts` 只保留合法值，`curation-validate.ts` 以之落定領域、未回填預設 `ai` 並 warn）；明顯與軟體開發無關者（政治、社會、消費硬體、趣聞、商業新聞）熱度再高也不選。另以零 LLM 的**同題群集**（`topic-cluster.ts`：`normalizeTitle` 斷詞、剔除泛用詞／三桶關鍵字／人人皆知的產品名後，同一 token 跨 ≥2 來源出現 ≥3 則；停用詞是資料、觀察到泛用詞成「群集」就補——2026-10-06 補 america／companies／community／text）在候選前綴標記「🔥同題「X」×N（M 來源）」，prompt 明示「多個來源同時討論同一陌生名詞通常代表正在崛起的新模型／工具／事件，視為比單一高分更強的正面訊號，同題候選中優先收錄最一手的一則」。實例：Jev 發布後 09-22～09-25 候選池每天 2～5 則相關候選（simonwillison、HN、reddit、lobsters、thenewstack），LLM 一則未選——單看一則陌生標題無從判斷輕重。標記文字刻意不含阿拉伯數字（§12 錨定教訓），`curation-prompt.spec.ts` 斷言之。
+- **未歸類候選與同題標記（2026-09-25 新增；決策紀錄 [ADR 0002](adr/0002-unresolved-high-signal-channel.md)）**：候選投影的領域欄對第 8 步保留的候選顯示「**未歸類**」，prompt 給的是**正向先驗**而非中性標記——明示這類候選「來自跨領域來源、社群熱度極高、但關鍵字歸類無法辨識其領域，正是本晨報最想捕捉的『我還不認識、但應該關注』的新事物」、「不要因為名字陌生或你不認識它就視為不重要」、「你的訓練資料也可能沒有它」，只要標題暗示新模型／新工具／新框架／新概念的發布、開源實作、評測或重大技術討論就依 (1)／(2) 收錄，並要求該則回應**回填 `domain`**（ai／devops／frontend-backend；`curation-parse.ts` 只保留合法值，`curation-validate.ts` 以之落定領域、未回填預設 `ai` 並 warn）；明顯與軟體開發無關者（政治、社會、消費硬體、趣聞、商業新聞）熱度再高也不選。另以零 LLM 的**同題群集**（`topic-cluster.ts`：`normalizeTitle` 斷詞、剔除泛用詞／三桶關鍵字／人人皆知的產品名後，同一 token 跨 ≥2 來源出現 ≥3 則；停用詞是資料、觀察到泛用詞成「群集」就補——2026-10-06 補 america／companies／community／text，2026-10-27 補 scale——代價是「Scale AI」這類以 scale 為名的公司不再成群集）在候選前綴標記「🔥同題「X」×N（M 來源）」，prompt 明示「多個來源同時討論同一陌生名詞通常代表正在崛起的新模型／工具／事件，視為比單一高分更強的正面訊號，同題候選中優先收錄最一手的一則」。實例：Jev 發布後 09-22～09-25 候選池每天 2～5 則相關候選（simonwillison、HN、reddit、lobsters、thenewstack），LLM 一則未選——單看一則陌生標題無從判斷輕重。標記文字刻意不含阿拉伯數字（§12 錨定教訓），`curation-prompt.spec.ts` 斷言之。
 - **每則精煉為繁中 70/500 格式**：以繁體中文輸出**標題 ≤70 字＋內容 ≤500 字**。內容須說清楚「發生什麼事＋為什麼對開發者重要」，**只依提供的 `title` 與 `summary` 節錄改寫，不得補充來源沒有的事實**（2026-09-12 起 prompt 明文要求，含「素材不足時寫短一點、不為湊字數推測」；先前僅文件宣稱、prompt 未寫——第 (3) 類候選常只有標題無摘要，幻覺面較大）。
 
 > 本步**只做選擇、去重與改寫摘要，不得產生或竄改連結/數字**（連結與分數一律由程式帶）。整個新聞流程對 LLM 的用量固定為「每日 1 次」，與候選數無關。
@@ -666,12 +687,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/checkout@v5 # 狀態獨立分支，與程式碼歷史解耦
+        with: { persist-credentials: false } # 此份不推送；推回狀態只在 state-branch 內
+      - uses: actions/checkout@v5 # 狀態獨立分支，與程式碼歷史解耦（保留憑證，要推回 state）
         with: { ref: "state", path: "state-branch" }
       - run: mkdir -p state && cp state-branch/state/board.json state/board.json
       - uses: actions/setup-node@v5
         with: { node-version: "24", cache: "npm" }
-      - run: npm ci
+      - run: npm ci --ignore-scripts # 不執行相依套件的 install script，見 §8.y
       - run: npm run build
       - run: node dist/main.cli.js
         env:
@@ -728,6 +750,70 @@ jobs:
   **告警頻道**；與乾跑同樣不寫狀態、跳過 state commit 與 `publish` job。用途：策展降級日事後補一份繁中版。內容只能依標題撰寫、篇幅較短。
   觸發：`gh workflow run radar.yml --ref <branch> -f dry_run=true -f replay_date=2026-10-08`。
 - 另兩個本機除錯模式不變：`NEWS_INGEST_OBSERVE=1`（只跑漏斗、不呼叫 LLM）、`PUBLISH_MODE=1`（只跑發佈段）。
+
+### 8.y CI 測試、相依稽核與 install script（2026-10-23 新增）
+
+決策紀錄：[ADR 0008](adr/0008-ci-ignore-scripts-and-test-workflow.md)
+
+**`.github/workflows/test.yml`**（與每日排程的 `radar.yml` 分開）：
+
+- **觸發**：push（`branches-ignore: [state]`——`state` 是只放 `board.json` 的 orphan 分支，沒有 `package.json`）與
+  pull_request。同 repo 分支開 PR 時 push 與 pull_request 會各跑一次；專案平常在本機 `--no-ff` 合併、很少開 PR，接受這點重複。
+- **權限與防護**：workflow 層 `contents: read`；checkout 皆 `persist-credentials: false`；每個 job `timeout-minutes: 10`；
+  `concurrency: test-${{ github.ref }}`、`cancel-in-progress: true`（同一 ref 連續 push 只留最新一次）。
+- **`test` job**：`npm ci --ignore-scripts` → `npm run build` → `npm test`。build 不可省：`main.cli.ts`、`app.module.ts`、
+  各 `*.module.ts` 沒被任何 spec import，型別錯或 DI 匯入錯只有 `tsc` 抓得到；少了 build，CI 會綠、要等隔天 04:07 radar
+  才失敗，當天晨報不發。
+- **`audit` job**（與 `test` 並行）：`npm audit --omit=dev --audit-level=high`，只讀 lockfile、不安裝依賴。只看執行期依賴
+  （dev 依賴不進 `dist/`，另由升級分支處理）。
+  - **既有依賴出新公告時也會紅燈**，不一定是這次 push 造成的；`audit` 與 `test` 分屬不同 job，可分辨是哪一種紅燈，
+    且兩者都不影響每日晨報（不同 workflow）。
+  - 處理方式：有修正版 → 開 `fix/` 分支升級（上游鎖死版本時用 `overrides`）；沒有修正版、或確認不影響本專案執行路徑
+    （誤報）→ 在 `docs/plans/` 記下公告編號、判斷理由與重看時點，接受紅燈到上游修正為止。不要為了轉綠而移除這個 job
+    或調高 `--audit-level`。
+- **不併進 `radar.yml`**：理由見 ADR 0008。
+
+**install script：一律不執行，分兩層**：
+
+- **本機（與任何不帶旗標的 `npm ci`／`npm install`）**：`package.json` 的 `allowScripts` 把下表 4 個套件記為 `false`
+  （`npm install-scripts deny`）。需 npm ≥ 11.18（Node 24 線 ≥ 24.20；`engines.npm` 已註明，`engines.node` 仍是 `>=24`）；
+  低於 11.16 的 npm 會忽略 `allowScripts`、照常執行 script；npm 對 engines 不符只警告、不擋安裝。版本分界與理由見 ADR 0008。
+  npm 11 對未被 `allowScripts` 涵蓋的 script 只警告、仍會執行（`strict-allow-scripts` 預設 false），記為 `false` 的則一律
+  略過；`npm install-scripts ls` 應顯示「No packages with unreviewed install scripts.」。
+- **CI**：三處 `npm ci`（`radar`、`publish`、`test`）另帶 `--ignore-scripts`，不依賴 runner 上的 npm 是否認得
+  `allowScripts`；理由見 ADR 0008。
+
+lockfile 內有 install script 的套件（2026-10-23）與不需要執行的理由：
+
+| 套件 | 種類 | script | 為何不需要 |
+| --- | --- | --- | --- |
+| `@google/genai` | 執行期 | preinstall | 只有 `echo`，不做事 |
+| `protobufjs` | 執行期 | postinstall | 只檢查版本格式並印警告 |
+| `@parcel/watcher` | 開發（jest 30 的 `jest-haste-map`） | install | 只在帶 `--build-from-source`（`npm_config_build_from_source=true`）時才以 node-gyp 編譯，預設 no-op；各平台預編譯檔以 optional 依賴提供、只在 jest watch 模式使用 |
+| `unrs-resolver` | 開發（jest 30 的 `jest-resolve`） | postinstall | 只在缺原生檔時補裝；各平台 binding（`@unrs/resolver-binding-*`）以 optional 依賴提供 |
+
+- **前提**：jest 30 的 `jest-resolve` 需要 `unrs-resolver` 的原生檔，CI 依賴 lockfile 已含各平台 binding（含
+  `@unrs/resolver-binding-linux-x64-gnu`）。在 Windows 重產 lockfile 若漏掉其他平台的 optional 套件（npm/cli#4828），
+  CI 會報找不到原生 binding；重產後確認 lockfile 仍列出 linux 的 binding，缺了就刪掉 `node_modules` 與 lockfile 完整重產。
+- **新增依賴帶進新的 install script 時**：`npm ci`／`npm install` 會列出「not yet covered by allowScripts」。先確認它對建置
+  或執行是否必要：不需要就 `npm install-scripts deny <pkg>`，需要就 `npm install-scripts approve <pkg>`（預設寫入釘版本的
+  項目），並更新上表。CI 真的需要時改成「主 checkout `persist-credentials: false`、只在推回狀態那一步帶 token」的做法，
+  而不是拿掉 `--ignore-scripts`。
+- **升級上表 4 個套件時**：重新核對其 install script 是否變了、是否仍不需要——`deny` 寫的是只有套件名稱的 `false`
+  項目，新版本換了 script npm 也不會再提醒。相依移除或不再帶 install script 後，以 `npm install-scripts prune`
+  （可先加 `--dry-run`）清掉 `allowScripts` 裡已不對應的項目。
+- **不用 `.npmrc`（`ignore-scripts=true`）**：理由見 ADR 0008。
+- **checkout 憑證**：只有 `radar` job 的 state-branch checkout 保留預設（該步要把 `board.json` 推回 `state` 分支）；
+  `radar` 主 checkout、`publish` 的兩個 checkout、`test.yml` 的 checkout 皆 `persist-credentials: false`。
+
+**已知限制**
+
+- **radar／publish 裝整棵相依（含 dev）**（2026-10-23 記錄，待辦）：
+  - 現況：`radar` 與 `publish` 兩個 job 各自 `npm ci --ignore-scripts`，裝的是整棵相依，包含 jest、ts-jest、typescript
+    等開發依賴，再各自 `npm run build`。帶著 token 與 Secrets 的 job 裡因此多了一整棵執行時用不到的套件。
+  - 改法：只在 `radar` job 裝完整相依並 build，把 `dist/` 以 `actions/upload-artifact` 傳給 `publish`；兩個 job
+    執行時只裝執行期依賴（`npm ci --omit=dev --ignore-scripts`）。或另開一個不帶 Secrets 的 build job，產出 `dist/` 給兩者。
+  - 為何這次不做：見 ADR 0008。
 
 ## 9. NestJS 專案結構
 

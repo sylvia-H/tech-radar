@@ -1,4 +1,5 @@
 import { FeedEntry } from '../state/state.schema';
+import { nowIso } from '../state/state-time';
 import { BoardDiff } from '../diff/diff.types';
 import { CuratedNewsItem } from '../curation/curation.types';
 import { normalizeTargetUrl } from '../news/url-normalize';
@@ -37,7 +38,7 @@ export function makeBoardFeedEntries(diff: BoardDiff, dateLabel: string, now: Da
       type: mapping.entryType,
       title: `${change.fullName} ${verb}`,
       url: change.url,
-      publishedAt: now.toISOString(),
+      publishedAt: nowIso(now),
     });
   }
   return entries;
@@ -54,7 +55,7 @@ export function makeNewsFeedEntries(items: CuratedNewsItem[], now: Date): FeedEn
     title: item.title,
     url: item.url,
     content: item.content,
-    publishedAt: now.toISOString(),
+    publishedAt: nowIso(now),
   }));
 }
 

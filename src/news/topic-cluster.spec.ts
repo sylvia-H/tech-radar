@@ -99,6 +99,15 @@ describe('detectTopicClusters（同題群集，2026-09-25）', () => {
     expect(detectTopicClusters(cands).size).toBe(0);
   });
 
+  it('2026-10-27 補的泛用詞 scale 跨多來源出現也不成群集（當日三則無關標題）', () => {
+    const cands = [
+      cand({ title: 'Isolation. Security. Scale.', normalizedUrl: 'cncf.io/blog/1', sourceId: 'cncf-blog', sources: ['cncf-blog'], domain: 'devops' }),
+      cand({ title: 'Switzerland. Block by block. At 1:1 scale', normalizedUrl: 'blocks.manifold3d.ch', domain: 'cross' }),
+      cand({ title: 'Localizing compliance at scale', normalizedUrl: 'blog.cloudflare.com/k-isms', sourceId: 'cloudflare-blog', sources: ['cloudflare-blog'], domain: 'devops' }),
+    ];
+    expect(detectTopicClusters(cands).size).toBe(0);
+  });
+
   it('過短 token（≤2 字元）與數字開頭 token 不成群集', () => {
     const cands = [
       cand({ title: 'Go 1.27 is out', normalizedUrl: 'a.com/1' }),

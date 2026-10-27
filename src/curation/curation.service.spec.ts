@@ -1,22 +1,36 @@
 import { Logger } from '@nestjs/common';
 import { LlmService } from '../llm/llm.service';
-import { GEMINI_MODEL_NEWS, GEMINI_MODEL_NEWS_FALLBACK, LlmError, NEWS_THINKING_LEVEL } from '../llm/llm.types';
+import {
+  GEMINI_MODEL_NEWS,
+  GEMINI_MODEL_NEWS_FALLBACK,
+  LlmError,
+  NEWS_LLM_TIMEOUT_MS,
+  NEWS_MIN_ATTEMPT_MS,
+  NEWS_THINKING_LEVEL,
+} from '../llm/llm.types';
 
 import { NewsCandidate } from '../news/news.types';
 import { CURATION_RESPONSE_JSON_SCHEMA } from './curation-schema';
 import { REPLAY_TRANSLATION_JSON_SCHEMA } from './replay-translation';
 import { NewsCurationService } from './curation.service';
 
-/** 策展呼叫固定帶主型號＋thinking（2026-09-27 起）＋結構化輸出 schema（2026-10-17）；備援同設定、換型號。 */
+/**
+ * 策展呼叫固定帶主型號＋thinking（2026-09-27 起）＋結構化輸出 schema（2026-10-17）＋10 分鐘逾時（2026-10-27）；
+ * 備援同設定、換型號。
+ */
 const NEWS_OPTS = {
   model: GEMINI_MODEL_NEWS,
   thinkingLevel: NEWS_THINKING_LEVEL,
   responseJsonSchema: CURATION_RESPONSE_JSON_SCHEMA,
+  timeoutMs: NEWS_LLM_TIMEOUT_MS,
+  minAttemptMs: NEWS_MIN_ATTEMPT_MS,
 };
 const FALLBACK_OPTS = {
   model: GEMINI_MODEL_NEWS_FALLBACK,
   thinkingLevel: NEWS_THINKING_LEVEL,
   responseJsonSchema: CURATION_RESPONSE_JSON_SCHEMA,
+  timeoutMs: NEWS_LLM_TIMEOUT_MS,
+  minAttemptMs: NEWS_MIN_ATTEMPT_MS,
 };
 
 function makeCandidate(overrides: Partial<NewsCandidate> = {}): NewsCandidate {
@@ -220,6 +234,7 @@ describe('NewsCurationService.curate（型號降級重試：主型號失敗改�
   const llmErrorCases: Array<[string, LlmError]> = [
     ['exhausted（429 退避耗盡）', new LlmError('exhausted')],
     ['error（型號 404 下架等不可重試錯誤）', new LlmError('error')],
+    ['timeout（總期限用盡，預設 hung，2026-10-27）', new LlmError('timeout')],
   ];
 
   it.each(llmErrorCases)(

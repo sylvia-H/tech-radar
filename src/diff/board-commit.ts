@@ -1,4 +1,5 @@
 import { BoardEntry, BoardState } from '../state/state.schema';
+import { nowIso } from '../state/state-time';
 import { PushBoard, BoardDiff } from './diff.types';
 import { BoardChangeSummary } from '../curation/board-summary.types';
 import { makeBoardFeedEntries, appendFeedEntries } from '../publish/feed-entry';
@@ -23,7 +24,7 @@ export function commitBoardPush(
   diff: BoardDiff,
   summary: BoardChangeSummary,
 ): BoardState {
-  const pushedAtIso = pushedAt.toISOString();
+  const pushedAtIso = nowIso(pushedAt);
 
   const board: Record<string, BoardEntry> = {};
   for (const row of pushBoard) {

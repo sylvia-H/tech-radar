@@ -36,7 +36,7 @@
 | 排程 | 雙離峰 cron（台北 04:07 主班、04:37 補班）＋ 時間戳 guard；手動 `dry_run` 乾跑、`replay_date` 降級日補發，皆不寫狀態 |
 | 常駐服務／資料庫 | 0 |
 | 月費 | $0 |
-| 單元測試 | 744 個、69 個測試套件 |
+| 單元測試 | 810 個、71 個測試套件 |
 
 三條輸出流：
 
@@ -544,7 +544,7 @@ LLM 只能用索引指涉候選、只回敘事文字；星數、連結、名次�
   （git diff 乾淨）、寫 `.tmp` 再 `rename`；`load()` 遇壞檔擲錯不覆寫。
 - 榜單段先 `save()` 成功才把新狀態 assign 進共用物件，失敗只需還原簡介快照即可完整回滾，未落檔
   的榜單推播不可能透過晨報段稍後的 `save()` 外洩。
-- 狀態 schema 對 `feed[].url` 刻意不加 `.url()`、對 `feed` 不加 `.max(50)`：嚴格驗證會在推播
+- 狀態 schema 對 `feed[].url` 刻意不加 URL 驗證（`z.url()`）、對 `feed` 不加 `.max(50)`：嚴格驗證會在推播
   **成功之後**讓 `save()` 擲錯、遺失時間戳，補班 cron 就會重推同一份晨報。上限只在唯一寫入點強制。
 - 狀態 commit 落在獨立的 orphan `state` 分支：`develop`／`main` 不出現 bot commit，高頻變動檔不
   製造合併衝突，且 commit 仍算 repo 活動、避免 Actions 60 天無活動自動停用。
@@ -613,7 +613,7 @@ Gemini 型號依資料流分兩個（`src/llm/llm.types.ts`），共用同一把
 |------|------|------|
 | 榜單簡介、榜單日 TL;DR | `gemini-3.5-flash-lite`（`GEMINI_MODEL_BOARD`，預設） | 免費層約 15 RPM／1,000 RPD；穩定態七天只有 0～數次呼叫 |
 | 每日晨報策展（主） | `gemini-3.8-flash`（`GEMINI_MODEL_NEWS`）＋ `thinkingLevel: high` | 免費層 **5 RPM／20 RPD**（2026-09-12 於 AI Studio 確認）；每日 1 次、含退避最多 4 次 HTTP 嘗試（10s／20s／40s＋jitter），對 20 RPD 有 5 倍餘裕；本機手動執行吃同一份 RPD |
-| 每日晨報策展（備援） | `gemini-3.5-flash-lite`（`GEMINI_MODEL_NEWS_FALLBACK`）＋ `thinkingLevel: high` | 主型號擲 `LlmError`（429／503 耗盡、型號 404、空回應）時以**同一 prompt 單次重試**，仍屬同一次策展；兩者皆敗才降級為原文標題版並發紅色告警（見第 9 關） |
+| 每日晨報策展（備援） | `gemini-3.5-flash-lite`（`GEMINI_MODEL_NEWS_FALLBACK`）＋ `thinkingLevel: high` | 主型號擲 `LlmError`（429／503 耗盡、型號 404、空回應、10 分鐘期限用盡）時以**同一 prompt 單次重試**，仍屬同一次策展；兩者皆敗才降級為原文標題版並發紅色告警（見第 9 關） |
 
 thinking 只增加 token、不增加請求數，對 RPM／RPD 零成本；若型號以 400 拒絕 thinking 參數，`LlmService`
 會以同一 prompt 不帶 thinking 重送一次，不會因設定問題一路降級。簡介與 TL;DR 不帶 thinking。免費層型號 ID
@@ -661,6 +661,9 @@ $env:GH_API_TOKEN="…"; $env:GEMINI_API_KEY="…"
 node dist/main.cli.js
 ```
 
+目前有 install script 的 4 個相依套件已在 `package.json` 的 `allowScripts` 記為 `false`，安裝時不會執行（需 npm ≥ 11.18，Node 24 線 ≥ 24.20）。新增依賴後若 `npm ci`／`npm install`
+列出「not yet covered by allowScripts」，依開發指南 §8.y 以 `npm install-scripts deny|approve <pkg>` 處理。
+
 另有三個模式：`NEWS_INGEST_OBSERVE=1` 只跑 Stage A 漏斗並印出候選表（不呼叫 LLM、不推播），
 `PUBLISH_MODE=1` 只跑發佈段（見 [quickstart](specs/008-pages-publish/quickstart.md)），
 `NEWS_DRY_RUN=1` 晨報乾跑（2026-09-27）：跳過 18h guard、照常抓取與策展（消耗 1 次策展配額），結果推到
@@ -675,7 +678,7 @@ node dist/main.cli.js
 npm test
 ```
 
-670 個單元測試、65 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
+810 個單元測試、71 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
 快照）、兩領域歸類、榜單 diff 與決勝、URL／標題去重、簡介快取命中、新聞配額與字數上限、來源
 schema 與 tier 加權、未歸類通道與同題群集、補位與回流、晨報 18h guard、榜單 162h 節奏、狀態原子寫入。
 Gemini 一律 mock，並另測降級路徑與 thinking 退回路徑。
@@ -688,6 +691,13 @@ commit 回 `state` 分支（push 失敗重試 3 次）；`publish` job `needs: r
 部署 Pages。設定方式：Settings → Secrets and variables → Actions 填五項機密；Settings → Pages 把
 Source 設為 GitHub Actions；到 Actions 頁 Run workflow 手動驗證。手動執行時勾 `dry_run` 即為晨報乾跑：
 跳過 18h guard、真的抓取與策展、結果推到告警頻道，不寫狀態、不跑榜單段、不發佈 Pages。
+
+`.github/workflows/test.yml`：push（排除 `state` 分支）與 pull_request 時以 Node 24 跑兩個並行 job，權限只有
+`contents: read`、checkout 不保留憑證、各限 10 分鐘：`test`（`npm ci --ignore-scripts` → `npm run build` → `npm test`）
+與 `audit`（`npm audit --omit=dev --audit-level=high`，只看執行期依賴）。`audit` 在既有依賴出新公告時也會紅燈，
+不一定是該次 push 造成；有修正版就開 `fix/` 分支升級，沒有修正版或確認誤報時記進 `docs/plans/` 並接受紅燈到上游修正。
+與每日排程分開，測試或稽核失敗都不擋晨報。三處 `npm ci` 都帶 `--ignore-scripts`，不讓相依套件的 install script 在帶有
+token 的 job 裡執行；本機則由 `package.json` 的 `allowScripts` 把目前有 install script 的套件記為不執行。現況見開發指南 §8.y、理由見 [ADR 0008](docs/adr/0008-ci-ignore-scripts-and-test-workflow.md)。
 
 ## 開發歷程（Spec-Driven Development）
 

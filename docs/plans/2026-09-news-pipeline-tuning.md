@@ -331,3 +331,11 @@ LFM2.5‑24B（10-14／10-15）、Void（10-16／10-17）、AdFection 零點擊�
       另有 3 則非重複項（k8s 控制迴圈、硬體膨脹、2.8 兆 token 預訓練）換成 5 則其他非重複項，屬單次策展變異。入選清單未見已推重複，也未見明顯誤殺。
 - [ ] （觀察一週）Flash 改用 Lite 天數（基準 10-10～10-17 為 0）、MAX_TOKENS、跨日同題組數（目標每週 ≤1）、是否誤殺同主題新進展；
       超標即 `RECENT_PUSHED_WINDOW_DAYS = 0` 關閉。
+
+**2026-10-27 晨報只 6 則與 Gemini 逾時**（分支 `fix/gemini-headers-timeout`；[ADR 0009](../adr/0009-gemini-call-timeout.md)）：
+正式 run 40422006619 的 Flash 一次 503 後成功，62 候選只選 6 則（前五天 14～15）；同日乾跑 run 40437009151 用同一池（扣掉已推 6 則）
+Lite 選 10 則，判定為 Flash 單次變異，prompt 不動。乾跑中 Flash 兩次在送出後正好 300 秒 `fetch failed`（undici headersTimeout）。
+- [x] Gemini 呼叫逾時：策展 10 分鐘、其餘 300 秒，逾時不在同一型號重試；Run Tech Radar 步驟 `timeout-minutes: 60`。
+- [x] 合併門第 2 輪：`generate()` 改為總期限、簡介逾時熔斷、步驟失敗時仍 commit 已推出的狀態、`NODE_USE_ENV_PROXY` 只認 `1`、baseUrl 覆寫 warn、逾時 log 分層。
+- [x] 同題群集停用詞補 scale（「Isolation. Security. Scale.」「1:1 scale」「compliance at scale」誤成群集）。
+- [ ] （觀察）Flash 呼叫在 300 秒後仍成功（「LLM 用量」行與前一行的時間差）；「LLM 呼叫逾時」warn 出現頻率。

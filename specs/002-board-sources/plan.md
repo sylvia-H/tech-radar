@@ -10,7 +10,7 @@
 
 ## Technical Context
 
-**Language/Version**: TypeScript 5.x on Node.js 24 LTS（沿用 F1；workflow `actions/setup-node@v4` `node-version: "24"`）
+**Language/Version**: TypeScript 5.x on Node.js 24 LTS（沿用 F1；workflow `actions/setup-node@v5` `node-version: "24"`）（2026-10-23 更新為現況；001 contract 保留當時的 @v4 作紀錄）
 
 **Primary Dependencies**: 沿用 F1 的 NestJS（application context）、`zod`、Node 24 內建 `fetch`（undici）。**本 Feature 新增 `cheerio`**（解析 Trending HTML）。**不**引入 `rss-parser`（F4）、`@google/genai`（F5）。GitHub REST 直接以 `fetch` 呼叫（Search / repos），不引入 Octokit。
 

@@ -77,12 +77,42 @@ export type GeminiModel =
  * `responseJsonSchema`（2026-10-17 新增，ADR 0006）：給定時請求帶 `responseMimeType: 'application/json'`
  * ＋`responseJsonSchema`（純 JSON Schema 物件，呼叫端不依賴 SDK 型別），由 Gemini 結構化輸出保證回應形狀；
  * 未給即不帶（簡介／TL;DR 行為不變）。
+ *
+ * `timeoutMs`（2026-10-27 新增）：整次 `generate()`（含重試與退避）的總期限，未給即 `LLM_TIMEOUT_MS`；策展傳 `NEWS_LLM_TIMEOUT_MS`。
+ * `minAttemptMs`：重送前至少要剩下的期限，未給即 `LLM_MIN_ATTEMPT_MS`；策展傳 `NEWS_MIN_ATTEMPT_MS`。
  */
 export interface LlmGenerateOptions {
   model?: GeminiModel;
   thinkingLevel?: LlmThinkingLevel;
   responseJsonSchema?: Record<string, unknown>;
+  timeoutMs?: number;
+  minAttemptMs?: number;
 }
+
+/**
+ * `generate()` 預設的總期限（含重試與退避，2026-10-27 新增）：與 Node `fetch`（undici）預設的 300 秒相同，簡介與榜單
+ * TL;DR 不開 thinking、數秒即回，沿用此值。決策紀錄：ADR 0009。
+ */
+export const LLM_TIMEOUT_MS = 5 * 60_000;
+
+/**
+ * 晨報策展 `generate()` 的總期限（含重試與退避，2026-10-27 新增）：策展開 `thinking=high`，Gemini 生成完整份回應才送
+ * 標頭，2026-10-22～10-26 成功呼叫 133～287 秒，取約兩倍。決策紀錄：ADR 0009。
+ */
+export const NEWS_LLM_TIMEOUT_MS = 10 * 60_000;
+
+/**
+ * 重送前至少要剩下的期限預設值（2026-10-27 新增）：退避後（或 400 去設定重送前）剩餘不足此值就不再送出——注定被
+ * `abortSignal` 砍掉的請求只會白扣一次免費層 RPD。簡介與 TL;DR 數秒即回，30 秒足夠。等於或大於總期限時任何重送都不可能
+ * 通過剩餘檢查，屬設定錯誤，`generate()` 直接擲 `'error'`（sanity check；小於總期限也不保證首次 400 後的去設定重送一定送得出）。
+ */
+export const LLM_MIN_ATTEMPT_MS = 30_000;
+
+/**
+ * 策展重送前至少要剩下的期限（2026-10-27 新增）：策展開 `thinking=high`，2026-10-22～10-26 成功呼叫最短 133 秒，剩不到
+ * 約 2 分鐘時重送多半等不到回應，直接換備援。
+ */
+export const NEWS_MIN_ATTEMPT_MS = 2 * 60_000;
 
 /** 429/503/網路錯誤最多重試次數（含首次嘗試，research D6）。 */
 export const LLM_MAX_RETRIES = 4;
@@ -100,12 +130,31 @@ export const LLM_MAX_BACKOFF_MS = 60000;
 
 /**
  * `LlmService.generate` 失敗時擲出，供 `IntroService` catch 後降級（FR-014）。
- * `reason` 供 log 分流，不含 prompt/回應全文（憲章 VII）。
+ * `reason` 供 log 分流，不含 prompt/回應全文（憲章 VII）。`'timeout'`（2026-10-27 新增）＝`generate()` 總期限用盡，
+ * 不在同一型號重試；`timeoutKind` 區分 `'hung'`（請求送出後等到期限或連線層逾時都沒回應，代表 Gemini 掛住）與
+ * `'budget'`（Gemini 有回可重試錯誤，但剩餘期限不夠再送一次），**只供 log 分辨、不驅動任何降級路徑**（簡介熔斷看 `reason`
+ * 與該則呼叫實際耗時 `INTRO_BREAKER_SLOW_MS`，策展換備援只看 `reason`）；`'timeout'` 未給 kind 時預設 `'hung'`，其他 `reason` 一律無 kind。`label`（例 `timeout/budget`）與
+ * `message`（`LLM 呼叫失敗：<label>`）都帶 kind，呼叫端印其一即可分辨。
  */
 export class LlmError extends Error {
   readonly name = 'LlmError';
+  readonly timeoutKind: 'hung' | 'budget' | undefined;
 
-  constructor(public readonly reason: 'exhausted' | 'empty' | 'error') {
-    super(`LLM 呼叫失敗：${reason}`);
+  constructor(
+    public readonly reason: 'exhausted' | 'empty' | 'error' | 'timeout',
+    timeoutKind?: 'hung' | 'budget',
+  ) {
+    const kind = reason === 'timeout' ? (timeoutKind ?? 'hung') : undefined;
+    super(`LLM 呼叫失敗：${llmErrorLabel(reason, kind)}`);
+    this.timeoutKind = kind;
   }
+
+  /** `reason`，逾時時附 kind（`timeout/hung`、`timeout/budget`），供呼叫端 log；與 `message` 同一公式。 */
+  get label(): string {
+    return llmErrorLabel(this.reason, this.timeoutKind);
+  }
+}
+
+function llmErrorLabel(reason: LlmError['reason'], kind: LlmError['timeoutKind']): string {
+  return kind ? `${reason}/${kind}` : reason;
 }
