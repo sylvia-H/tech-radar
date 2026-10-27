@@ -132,7 +132,8 @@
   最壞耗時：策展 20 分鐘（主備各一個期限），榜單日簡介＋TL;DR 約 10 分鐘；`radar.yml` 的 Run Tech Radar 步驟 `timeout-minutes: 60`，
   超過即本步失敗：Commit state（`!cancelled()` 且 run-app 未被跳過）仍落檔已推出的狀態，並送紅色告警。log 看「LLM 呼叫逾時（<型號>，期限 N 秒用盡／
   連線層逾時 UND_ERR_*）」、「退避 Nms 後剩餘期限不足 M 秒…不再重試」與「LLM 拒絕 thinking／結構化輸出設定…剩餘期限不足 M 秒，不重送」；
-  簡介降級 warn 的原因為 `LLM 呼叫失敗：timeout/hung` 或 `timeout/budget`。
+  策展「主型號失敗／備援重試失敗」與簡介降級的 warn 皆帶 `timeout/hung` 或 `timeout/budget`（`LlmError.label`）。`minAttemptMs` 須小於
+  `timeoutMs`，否則 `generate()` 擲 `error`、不送出請求。
 - **結構化輸出（2026-10-17 起；決策紀錄 [ADR 0006](adr/0006-curation-structured-output-and-salvage.md)）**：策展主、備援呼叫皆帶
   `responseMimeType: application/json`＋`responseJsonSchema`（`src/curation/curation-schema.ts`，須與 prompt 輸出規則同步），用量 log 標 `schema=json`。
   型號以 400 拒絕 thinking 或 schema 時，warn 後以**不帶這兩項設定**的純請求重送一次。
