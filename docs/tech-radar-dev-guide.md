@@ -124,8 +124,8 @@
   每次 HTTP 嘗試以 `abortSignal` 限時剩餘時間——策展（主、備援、解析失敗重試、補發翻譯）`NEWS_LLM_TIMEOUT_MS` = **10 分鐘**，簡介／
   TL;DR `LLM_TIMEOUT_MS` = 300 秒。期限用盡擲 `LlmError('timeout', 'hung')`；退避後（或 400 去設定重送前）剩餘不足最小重送期限
   ——策展 `NEWS_MIN_ATTEMPT_MS` = **2 分鐘**、其餘 `LLM_MIN_ATTEMPT_MS` = 30 秒——擲 `LlmError('timeout', 'budget')`。兩者皆**不在同一
-  型號重試**（策展直接換備援）；429／503／其他網路錯誤在期限內照舊退避至多 4 次。簡介有熔斷：同一次執行任一則逾時（`hung`／`budget`）
-  後，其餘未命中快取者直接降級為 description（TL;DR 不在範圍內）。
+  型號重試**（策展直接換備援）；429／503／其他網路錯誤在期限內照舊退避至多 4 次。簡介有熔斷：同一次執行任一則 LLM 呼叫失敗且耗時達
+  2 分鐘（`INTRO_BREAKER_SLOW_MS`，含所有逾時）後，其餘未命中快取者直接降級為 description（TL;DR 不在範圍內）。
   連線層由 `LlmService` 建構時 `installGeminiDispatcher()`（`src/llm/gemini-dispatcher.ts`）換掉 Node `fetch` 的全域 dispatcher，只把
   Gemini origin 的 headers／body 逾時上限拉到 10 分鐘（undici 預設 300 秒會先砍斷），其餘 origin 不變；`NODE_USE_ENV_PROXY=1` 時不換、
   `GOOGLE_GEMINI_BASE_URL` 指向別的 origin 或以 `GOOGLE_GENAI_USE_VERTEXAI`／`ENTERPRISE`=`true` 走 Vertex 時上限不生效，兩者皆印 warn。
