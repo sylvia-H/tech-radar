@@ -60,6 +60,9 @@ jobs:
 
       - name: Run Tech Radar
         id: run-app
+        # 步驟層逾時（2026-10-27，ADR 0009）：Gemini 卡住時最壞約 25 分鐘（策展主備各 10 分鐘＋退避），榜單日每個新進
+        # repo 的簡介再各多至 5 分鐘。設在步驟而非 job：逾時算本步失敗，下方 failure() 告警仍會送出，不會無聲。
+        timeout-minutes: 60
         run: node dist/main.cli.js
         env:
           # schedule 觸發時 inputs 為空物件、inputs.* 皆為 null → '0'；只有手動勾選 dry_run 或填了
