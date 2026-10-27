@@ -61,7 +61,7 @@ jobs:
       - name: Run Tech Radar
         id: run-app
         # 步驟層逾時（2026-10-27，ADR 0009）：Gemini 卡住時策展最壞 20 分鐘（主備各一個 10 分鐘總期限，已含退避），榜單日
-        # 簡介＋TL;DR 約 10 分鐘（第一則簡介慢失敗後其餘熔斷）。設在步驟而非 job：逾時算本步失敗，下方 Commit state 仍會
+        # 簡介＋TL;DR 約 10 分鐘（第一則簡介慢失敗後其餘熔斷）；簡介慢但成功時不熔斷，12 則最壞約 55 分鐘，由本逾時兜底。設在步驟而非 job：逾時算本步失敗，下方 Commit state 仍會
         # 落檔已推出的狀態、failure() 告警仍會送出，不會無聲。
         timeout-minutes: 60
         run: node dist/main.cli.js

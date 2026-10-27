@@ -129,7 +129,8 @@
   連線層由 `LlmService` 建構時 `installGeminiDispatcher()`（`src/llm/gemini-dispatcher.ts`）換掉 Node `fetch` 的全域 dispatcher，只把
   Gemini origin 的 headers／body 逾時上限拉到 10 分鐘（undici 預設 300 秒會先砍斷），其餘 origin 不變；`NODE_USE_ENV_PROXY=1` 時不換、
   `GOOGLE_GEMINI_BASE_URL` 指向別的 origin 或以 `GOOGLE_GENAI_USE_VERTEXAI`／`ENTERPRISE`=`true` 走 Vertex 時上限不生效，兩者皆印 warn。
-  最壞耗時：策展 20 分鐘（主備各一個期限），榜單日簡介＋TL;DR 約 10 分鐘；`radar.yml` 的 Run Tech Radar 步驟 `timeout-minutes: 60`，
+  最壞耗時（失敗路徑）：策展 20 分鐘（主備各一個期限），榜單日簡介＋TL;DR 約 10 分鐘；簡介慢但成功時不熔斷（已知缺口，ADR 0009），
+  12 則最壞約 55 分鐘，由步驟逾時兜底；`radar.yml` 的 Run Tech Radar 步驟 `timeout-minutes: 60`，
   超過即本步失敗：Commit state（`!cancelled()` 且 run-app 未被跳過）仍落檔已推出的狀態，並送紅色告警。log 看「LLM 呼叫逾時（<型號>，期限 N 秒用盡／
   連線層逾時 UND_ERR_*）」、「退避 Nms 後剩餘期限不足 M 秒…不再重試」與「LLM 拒絕 thinking／結構化輸出設定…剩餘期限不足 M 秒，不重送」；
   策展「主型號失敗／備援重試失敗」與簡介降級的 warn 皆帶 `timeout/hung` 或 `timeout/budget`（`LlmError.label`）。`minAttemptMs` 須小於
