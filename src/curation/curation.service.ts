@@ -238,7 +238,7 @@ export class NewsCurationService {
         throw err;
       }
       this.logger.warn(
-        `策展主型號失敗（${err.reason}，${GEMINI_MODEL_NEWS}），改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`,
+        `策展主型號失敗（${err.label}，${GEMINI_MODEL_NEWS}），改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`,
       );
       const raw = await this.llm.generate(prompt, curationOptions(GEMINI_MODEL_NEWS_FALLBACK, schema));
       return { raw, model: GEMINI_MODEL_NEWS_FALLBACK, fellBack: true };
@@ -326,7 +326,7 @@ export class NewsCurationService {
         throw err;
       }
       this.logger.warn(
-        `策展備援重試失敗（${err.reason}，${GEMINI_MODEL_NEWS_FALLBACK}），改為搶救主型號回應的可用項目`,
+        `策展備援重試失敗（${err.label}，${GEMINI_MODEL_NEWS_FALLBACK}），改為搶救主型號回應的可用項目`,
       );
       return null;
     }

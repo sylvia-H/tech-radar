@@ -103,7 +103,8 @@ export const NEWS_LLM_TIMEOUT_MS = 10 * 60_000;
 
 /**
  * 重送前至少要剩下的期限預設值（2026-10-27 新增）：退避後（或 400 去設定重送前）剩餘不足此值就不再送出——注定被
- * `abortSignal` 砍掉的請求只會白扣一次免費層 RPD。簡介與 TL;DR 數秒即回，30 秒足夠。期限本身短於此值時只會嘗試一次。
+ * `abortSignal` 砍掉的請求只會白扣一次免費層 RPD。簡介與 TL;DR 數秒即回，30 秒足夠。`generate()` 要求此值小於總期限
+ * （否則連首次嘗試被 400 拒絕後的去設定重送也會被判「剩餘不足」、誤報為逾時），不符即擲 `'error'`。
  */
 export const LLM_MIN_ATTEMPT_MS = 30_000;
 
@@ -131,19 +132,24 @@ export const LLM_MAX_BACKOFF_MS = 60000;
  * `LlmService.generate` 失敗時擲出，供 `IntroService` catch 後降級（FR-014）。
  * `reason` 供 log 分流，不含 prompt/回應全文（憲章 VII）。`'timeout'`（2026-10-27 新增）＝`generate()` 總期限用盡，
  * 不在同一型號重試；`timeoutKind` 區分 `'hung'`（請求送出後等到期限或連線層逾時都沒回應，代表 Gemini 掛住）與
- * `'budget'`（Gemini 有回可重試錯誤，但剩餘期限不夠再送一次），供 log 分辨；`'timeout'` 未給 kind 時預設 `'hung'`，
- * 其他 `reason` 一律無 kind。`message` 帶 kind（例 `LLM 呼叫失敗：timeout/budget`），呼叫端只印 message 也分得出來。
+ * `'budget'`（Gemini 有回可重試錯誤，但剩餘期限不夠再送一次），**只供 log 分辨、不驅動任何降級路徑**（簡介熔斷與策展換備援
+ * 只看 `reason`）；`'timeout'` 未給 kind 時預設 `'hung'`，其他 `reason` 一律無 kind。`label`（例 `timeout/budget`）與
+ * `message`（`LLM 呼叫失敗：<label>`）都帶 kind，呼叫端印其一即可分辨。
  */
 export class LlmError extends Error {
   readonly name = 'LlmError';
   readonly timeoutKind: 'hung' | 'budget' | undefined;
+  /** `reason`，逾時時附 kind（`timeout/hung`、`timeout/budget`），供呼叫端 log。 */
+  readonly label: string;
 
   constructor(
     public readonly reason: 'exhausted' | 'empty' | 'error' | 'timeout',
     timeoutKind?: 'hung' | 'budget',
   ) {
     const kind = reason === 'timeout' ? (timeoutKind ?? 'hung') : undefined;
-    super(`LLM 呼叫失敗：${reason}${kind ? `/${kind}` : ''}`);
+    const label = kind ? `${reason}/${kind}` : reason;
+    super(`LLM 呼叫失敗：${label}`);
     this.timeoutKind = kind;
+    this.label = label;
   }
 }

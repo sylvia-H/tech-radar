@@ -234,7 +234,7 @@ describe('NewsCurationService.curate（型號降級重試：主型號失敗改�
   const llmErrorCases: Array<[string, LlmError]> = [
     ['exhausted（429 退避耗盡）', new LlmError('exhausted')],
     ['error（型號 404 下架等不可重試錯誤）', new LlmError('error')],
-    ['timeout（單次呼叫逾時，2026-10-27）', new LlmError('timeout')],
+    ['timeout（總期限用盡，預設 hung，2026-10-27）', new LlmError('timeout')],
   ];
 
   it.each(llmErrorCases)(

@@ -63,7 +63,7 @@ export class LlmService {
    * 總期限**，每次 HTTP 嘗試以 `abortSignal` 限時剩餘時間。逾時**不在同一型號重試**、直接擲 `'timeout'`：等滿仍無回應，
    * 同型號重送多半再等一輪，且 Gemini 端可能已生成完、每次重送都可能多扣免費層 RPD；退避後剩餘不足 `options.minAttemptMs`
    * （未給即 `LLM_MIN_ATTEMPT_MS`）時同樣不再重試（`timeoutKind`：前者 `'hung'`、後者 `'budget'`）。
-   * 交呼叫端換備援或降級。`timeoutMs` 非正整數時擲 `'error'`（不送出請求）。
+   * 交呼叫端換備援或降級。`timeoutMs` 非正整數、`minAttemptMs` 非非負整數或不小於 `timeoutMs` 時擲 `'error'`（不送出請求）。
    * @throws LlmError 空 prompt／空回應（`'empty'`，不重試）、重試耗盡（`'exhausted'`）、
    *   不可重試的用戶端錯誤或不合法的 `timeoutMs`（`'error'`）、期限用盡（`'timeout'`，不重試）。
    */
@@ -76,7 +76,13 @@ export class LlmService {
     const schema = options.responseJsonSchema;
     const timeoutMs = options.timeoutMs ?? LLM_TIMEOUT_MS;
     const minAttemptMs = options.minAttemptMs ?? LLM_MIN_ATTEMPT_MS;
-    if (!Number.isInteger(timeoutMs) || timeoutMs <= 0 || !Number.isInteger(minAttemptMs) || minAttemptMs < 0) {
+    if (
+      !Number.isInteger(timeoutMs) ||
+      timeoutMs <= 0 ||
+      !Number.isInteger(minAttemptMs) ||
+      minAttemptMs < 0 ||
+      minAttemptMs >= timeoutMs
+    ) {
       this.logger.warn(`LLM 逾時設定不合法（${model}，timeoutMs=${timeoutMs}，minAttemptMs=${minAttemptMs}），不送出請求`);
       throw new LlmError('error');
     }
@@ -131,10 +137,10 @@ export class LlmService {
             );
             throw new LlmError('timeout', 'budget');
           }
-          this.logger.warn(`LLM 呼叫失敗（${model}，${detail}），第 ${attempt}/${LLM_MAX_RETRIES} 次退避 ${wait}ms 後重試`);
+          this.logger.warn(`LLM 呼叫失敗（${model}${thinkingLabel}，${detail}），第 ${attempt}/${LLM_MAX_RETRIES} 次退避 ${wait}ms 後重試`);
           await this.delay(wait);
         } else {
-          this.logger.warn(`LLM 呼叫失敗（${model}，${detail}），第 ${attempt}/${LLM_MAX_RETRIES} 次，重試耗盡`);
+          this.logger.warn(`LLM 呼叫失敗（${model}${thinkingLabel}，${detail}），第 ${attempt}/${LLM_MAX_RETRIES} 次，重試耗盡`);
         }
       }
     }

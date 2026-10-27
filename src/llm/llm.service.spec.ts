@@ -536,10 +536,27 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
     expect(warn).toContain(`${NEWS_MIN_ATTEMPT_MS / 1000} 秒`);
   });
 
-  it('LlmError：timeout 未給 kind 預設 hung，message 帶 kind；其他 reason 無 kind', () => {
-    expect(new LlmError('timeout')).toMatchObject({ timeoutKind: 'hung', message: 'LLM 呼叫失敗：timeout/hung' });
-    expect(new LlmError('timeout', 'budget').message).toBe('LLM 呼叫失敗：timeout/budget');
-    expect(new LlmError('exhausted', 'budget')).toMatchObject({ timeoutKind: undefined, message: 'LLM 呼叫失敗：exhausted' });
+  it('LlmError：timeout 未給 kind 預設 hung，label／message 帶 kind；其他 reason 無 kind', () => {
+    expect(new LlmError('timeout')).toMatchObject({ timeoutKind: 'hung', label: 'timeout/hung', message: 'LLM 呼叫失敗：timeout/hung' });
+    expect(new LlmError('timeout', 'budget')).toMatchObject({ label: 'timeout/budget', message: 'LLM 呼叫失敗：timeout/budget' });
+    expect(new LlmError('exhausted', 'budget')).toMatchObject({
+      timeoutKind: undefined,
+      label: 'exhausted',
+      message: 'LLM 呼叫失敗：exhausted',
+    });
+  });
+
+  it('退避重試與耗盡的 warn 同樣帶 thinking／schema 標示（與剩餘不足那條格式一致）', async () => {
+    const generateContent = jest.fn().mockRejectedValue(new ApiError({ message: 'unavailable', status: 503 }));
+    const svc = makeService(generateContent);
+    await expect(svc.generate('請策展', { model: GEMINI_MODEL_NEWS, thinkingLevel: 'high' })).rejects.toMatchObject({
+      reason: 'exhausted',
+    });
+    const msgs = warnSpy.mock.calls.map((c) => String(c[0])).filter((l) => l.startsWith('LLM 呼叫失敗'));
+    expect(msgs).toHaveLength(LLM_MAX_RETRIES);
+    for (const m of msgs) {
+      expect(m).toContain(`（${GEMINI_MODEL_NEWS}，thinking=high，status=503`);
+    }
   });
 
   it('退避後剩餘仍足夠（剩約 2 分鐘）→ 照常重試', async () => {
@@ -572,10 +589,12 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
     expect(warnSpy.mock.calls.map((c) => String(c[0])).some((l) => l.includes('不重送'))).toBe(true);
   });
 
-  it('timeoutMs 非正整數或 minAttemptMs 非非負整數 → 擲 LlmError(error)、不送出請求', async () => {
+  it('timeoutMs 非正整數、minAttemptMs 非非負整數或不小於 timeoutMs → 擲 LlmError(error)、不送出請求', async () => {
     const badOptions = [
       ...[0, -1, 1.5, Number.NaN, Number.POSITIVE_INFINITY].map((timeoutMs) => ({ timeoutMs })),
       ...[-1, 1.5, Number.NaN].map((minAttemptMs) => ({ minAttemptMs })),
+      { timeoutMs: 60_000, minAttemptMs: 60_000 },
+      { timeoutMs: 60_000, minAttemptMs: 120_000 },
     ];
     for (const bad of badOptions) {
       const generateContent = jest.fn();
@@ -588,7 +607,7 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
   it('signal 逾時（SDK 擲 AbortError）→ 擲 LlmError(timeout)、不重試、warn 帶型號與秒數不含 prompt', async () => {
     const generateContent = jest.fn().mockImplementation(hangUntilAborted);
     const svc = makeService(generateContent);
-    await expect(svc.generate('不該出現在 log 的 prompt', { model: GEMINI_MODEL_NEWS, timeoutMs: 20 })).rejects.toMatchObject({
+    await expect(svc.generate('不該出現在 log 的 prompt', { model: GEMINI_MODEL_NEWS, timeoutMs: 20, minAttemptMs: 0 })).rejects.toMatchObject({
       reason: 'timeout',
       timeoutKind: 'hung',
     });
