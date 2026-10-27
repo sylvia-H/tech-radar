@@ -61,7 +61,8 @@ jobs:
       - name: Run Tech Radar
         id: run-app
         # 步驟層逾時（2026-10-27，ADR 0009）：Gemini 卡住時最壞約 25 分鐘（策展主備各 10 分鐘＋退避），榜單日每個新進
-        # repo 的簡介再各多至 5 分鐘。設在步驟而非 job：逾時算本步失敗，下方 failure() 告警仍會送出，不會無聲。
+        # repo 的第一則簡介再多至 5 分鐘（逾時後其餘熔斷）。設在步驟而非 job：逾時算本步失敗，下方 Commit state 仍會
+        # 落檔已推出的狀態、failure() 告警仍會送出，不會無聲。
         timeout-minutes: 60
         run: node dist/main.cli.js
         env:
@@ -78,10 +79,14 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Commit state (on change only)
+        id: commit-state
         # 狀態只 commit 到獨立的 state 分支，develop/main 不再出現 bot commit（見
         # dev-guide §8）。乾跑／補發不寫狀態，整步跳過（schedule 時 inputs.* 為 null：
         # null != true 為真、!null 為真 → 照常執行）。
-        if: ${{ inputs.dry_run != true && !inputs.replay_date }}
+        # !cancelled()（2026-10-27，ADR 0009）：Run Tech Radar 失敗（含步驟逾時被砍）時仍執行——榜單段可能已推播並原子
+        # save 本機 board.json，晨報段才卡住；不落檔的話 :37 補跑讀到舊狀態會重推同一份榜單。save() 是原子寫入且只在
+        # 推播成功後才寫，失敗時 commit 本機檔是安全的；沒寫過的話 git diff 無變更、照常跳過。
+        if: ${{ !cancelled() && inputs.dry_run != true && !inputs.replay_date }}
         run: |
           cp state/board.json state-branch/state/board.json
           cd state-branch
@@ -107,7 +112,8 @@ jobs:
       - name: Failure alert (CLI 未送出告警的任何失敗)
         # CLI 成功送出告警後會寫 .radar-alert-sent marker；此步只在 marker 缺席時補送。
         # 去重依據是「CLI 明確回報已送出」而非 run-app 的 outcome，因此涵蓋
-        # app 啟動前失敗（env 驗證/DI）、CLI 告警送出失敗、狀態 commit/push 失敗。
+        # app 啟動前失敗（env 驗證/DI）、CLI 告警送出失敗、Run Tech Radar 步驟逾時（60 分鐘，CLI 被砍、來不及送）、
+        # 狀態 commit/push 失敗。文案帶兩步的 outcome 供分流。
         if: failure()
         run: |
           if [ -f .radar-alert-sent ]; then
@@ -115,7 +121,7 @@ jobs:
             exit 0
           fi
           curl -sf -H "Content-Type: application/json" \
-            -d '{"username":"Tech Radar","embeds":[{"title":"⚠️ Tech Radar 執行失敗","description":"workflow 失敗且 CLI 未送出告警（啟動前失敗、告警送出失敗或狀態 commit/push 失敗），請查 Actions log","color":15158322}]}' \
+            -d '{"username":"Tech Radar","embeds":[{"title":"⚠️ Tech Radar 執行失敗","description":"workflow 失敗且 CLI 未送出告警（啟動前失敗、告警送出失敗、Run Tech Radar 步驟逾時 60 分鐘或狀態 commit/push 失敗；逾時時榜單可能已推出，狀態已嘗試落檔）。run=${{ steps.run-app.outcome }}、commit-state=${{ steps.commit-state.outcome }}，請查 Actions log","color":15158322}]}' \
             "$DISCORD_ALERT_WEBHOOK_URL"
         env:
           DISCORD_ALERT_WEBHOOK_URL: ${{ secrets.DISCORD_ALERT_WEBHOOK_URL }}
