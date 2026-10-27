@@ -9,6 +9,7 @@ import {
   GEMINI_MODEL_NEWS_FALLBACK,
   LlmError,
   LLM_MAX_RETRIES,
+  LLM_MIN_ATTEMPT_MS,
   LLM_TIMEOUT_MS,
   NEWS_LLM_TIMEOUT_MS,
   NEWS_THINKING_LEVEL,
@@ -498,20 +499,54 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
     expect(timeoutSpy.mock.calls.map((c) => c[0])).toEqual([NEWS_LLM_TIMEOUT_MS, NEWS_LLM_TIMEOUT_MS - 100_000]);
   });
 
-  it('退避後會超過期限 → 不再重試、擲 LlmError(timeout)，warn 說明', async () => {
+  it.each([
+    ['退避後已超過期限（剩 5 秒）', 5_000],
+    ['退避後剩餘不足 LLM_MIN_ATTEMPT_MS（剩約 35 秒、退避 10～20 秒）', 35_000],
+  ])('%s → 不送第二次請求、擲 LlmError(timeout, budget)，warn 說明', async (_label, left) => {
     let now = 1_000_000;
     jest.spyOn(Date, 'now').mockImplementation(() => now);
     const generateContent = jest.fn().mockImplementation(async () => {
-      now += LLM_TIMEOUT_MS - 5_000; // 剩 5 秒，小於第一次退避的 10 秒
+      now += LLM_TIMEOUT_MS - left;
       throw new ApiError({ message: 'unavailable', status: 503 });
     });
     const svc = makeService(generateContent);
-    await expect(svc.generate('請生成')).rejects.toMatchObject({ reason: 'timeout' });
+    await expect(svc.generate('請生成')).rejects.toMatchObject({ reason: 'timeout', timeoutKind: 'budget' });
     expect(generateContent).toHaveBeenCalledTimes(1);
     expect((svc as unknown as { delay: jest.Mock }).delay).not.toHaveBeenCalled();
-    const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((l) => l.includes('將超過期限')) ?? '';
+    const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((l) => l.includes('剩餘期限不足')) ?? '';
     expect(warn).toContain('status=503');
+    expect(warn).toContain(`${LLM_MIN_ATTEMPT_MS / 1000} 秒`);
     expect(warn).toContain('不再重試');
+  });
+
+  it('退避後剩餘仍足夠（剩約 2 分鐘）→ 照常重試', async () => {
+    let now = 1_000_000;
+    jest.spyOn(Date, 'now').mockImplementation(() => now);
+    const generateContent = jest
+      .fn()
+      .mockImplementationOnce(async () => {
+        now += LLM_TIMEOUT_MS - 120_000;
+        throw new ApiError({ message: 'unavailable', status: 503 });
+      })
+      .mockResolvedValueOnce({ text: 'ok' });
+    const svc = makeService(generateContent);
+    await expect(svc.generate('請生成')).resolves.toBe('ok');
+    expect(generateContent).toHaveBeenCalledTimes(2);
+  });
+
+  it('400 去設定重送前剩餘期限不足 → 不重送、擲 LlmError(timeout, budget)', async () => {
+    let now = 1_000_000;
+    jest.spyOn(Date, 'now').mockImplementation(() => now);
+    const generateContent = jest.fn().mockImplementationOnce(async () => {
+      now += NEWS_LLM_TIMEOUT_MS - 10_000;
+      throw new ApiError({ status: 400, message: 'thinking_level is not supported' });
+    });
+    const svc = makeService(generateContent);
+    await expect(
+      svc.generate('請策展', { model: GEMINI_MODEL_NEWS, thinkingLevel: 'high', timeoutMs: NEWS_LLM_TIMEOUT_MS }),
+    ).rejects.toMatchObject({ reason: 'timeout', timeoutKind: 'budget' });
+    expect(generateContent).toHaveBeenCalledTimes(1);
+    expect(warnSpy.mock.calls.map((c) => String(c[0])).some((l) => l.includes('不重送'))).toBe(true);
   });
 
   it('timeoutMs 非正整數 → 擲 LlmError(error)、不送出請求', async () => {
@@ -528,6 +563,7 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
     const svc = makeService(generateContent);
     await expect(svc.generate('不該出現在 log 的 prompt', { model: GEMINI_MODEL_NEWS, timeoutMs: 20 })).rejects.toMatchObject({
       reason: 'timeout',
+      timeoutKind: 'hung',
     });
     expect(generateContent).toHaveBeenCalledTimes(1);
     expect((svc as unknown as { delay: jest.Mock }).delay).not.toHaveBeenCalled();
@@ -542,7 +578,10 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
     for (const code of ['UND_ERR_HEADERS_TIMEOUT', 'UND_ERR_BODY_TIMEOUT']) {
       const generateContent = jest.fn().mockRejectedValue(new TypeError('fetch failed', { cause: { code } }));
       const svc = makeService(generateContent);
-      await expect(svc.generate('請策展', { model: GEMINI_MODEL_NEWS })).rejects.toMatchObject({ reason: 'timeout' });
+      await expect(svc.generate('請策展', { model: GEMINI_MODEL_NEWS })).rejects.toMatchObject({
+        reason: 'timeout',
+        timeoutKind: 'hung',
+      });
       expect(generateContent).toHaveBeenCalledTimes(1);
       // 連線層先砍斷時印 cause.code，不誤寫成「期限用盡」
       const warn = warnSpy.mock.calls.map((c) => String(c[0])).filter((l) => l.startsWith('LLM 呼叫逾時')).pop() ?? '';

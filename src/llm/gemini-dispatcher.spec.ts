@@ -100,14 +100,19 @@ describe('geminiBaseUrlOverridden（2026-10-27）', () => {
     expect(geminiBaseUrlOverridden({ GOOGLE_GEMINI_BASE_URL: '' })).toBe(false);
     expect(geminiBaseUrlOverridden({ GOOGLE_GEMINI_BASE_URL: `${GEMINI_ORIGIN}/` })).toBe(false);
     expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_VERTEXAI: 'false' })).toBe(false);
+    // 比照 SDK：旗標只認 true；非 Vertex 模式不看 GOOGLE_VERTEX_BASE_URL；ENTERPRISE 有設時以它為準
+    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_VERTEXAI: '1' })).toBe(false);
+    expect(geminiBaseUrlOverridden({ GOOGLE_VERTEX_BASE_URL: 'https://us-central1-aiplatform.googleapis.com' })).toBe(false);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_ENTERPRISE: 'false', GOOGLE_GENAI_USE_VERTEXAI: 'true' })).toBe(false);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_ENTERPRISE: '', GOOGLE_GENAI_USE_VERTEXAI: 'true' })).toBe(false);
   });
 
-  it('baseUrl 指向別的 origin、不可解析，或改走 Vertex／Enterprise → true', () => {
+  it('非 Vertex 模式下 GOOGLE_GEMINI_BASE_URL 指向別的 origin 或不可解析，或改走 Vertex／Enterprise → true', () => {
     expect(geminiBaseUrlOverridden({ GOOGLE_GEMINI_BASE_URL: 'https://proxy.example.com/gemini' })).toBe(true);
-    expect(geminiBaseUrlOverridden({ GOOGLE_VERTEX_BASE_URL: 'https://us-central1-aiplatform.googleapis.com' })).toBe(true);
     expect(geminiBaseUrlOverridden({ GOOGLE_GEMINI_BASE_URL: 'not a url' })).toBe(true);
-    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_VERTEXAI: 'true' })).toBe(true);
-    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_ENTERPRISE: '1' })).toBe(true);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_VERTEXAI: 'TRUE' })).toBe(true);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_ENTERPRISE: 'true' })).toBe(true);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_ENTERPRISE: 'true', GOOGLE_GENAI_USE_VERTEXAI: 'false' })).toBe(true);
   });
 });
 

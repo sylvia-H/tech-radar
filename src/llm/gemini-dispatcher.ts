@@ -48,24 +48,27 @@ export function usesEnvProxy(
 }
 
 /**
- * SDK 的 baseUrl 是否可能不是 `GEMINI_ORIGIN`（2026-10-27）：`GOOGLE_GEMINI_BASE_URL`／`GOOGLE_VERTEX_BASE_URL` 指向別的
- * origin，或以 `GOOGLE_GENAI_USE_VERTEXAI`／`GOOGLE_GENAI_USE_ENTERPRISE` 改走 Vertex。此時 `poolOptionsFor` 對不上 origin、
- * 連線層上限不會生效，由呼叫端 warn。本專案只用 Gemini API 金鑰，正常不會命中。
+ * SDK 的 baseUrl 是否不是 `GEMINI_ORIGIN`（2026-10-27）：比照 `@google/genai` 2.12.0 的判定——走 Vertex／Enterprise
+ * （`GOOGLE_GENAI_USE_ENTERPRISE` 有設時以它為準，否則看 `GOOGLE_GENAI_USE_VERTEXAI`；值只認 `true`，不分大小寫），或非
+ * Vertex 模式下 `GOOGLE_GEMINI_BASE_URL` 指向別的 origin（`GOOGLE_VERTEX_BASE_URL` 只在 Vertex 模式才用）。此時
+ * `poolOptionsFor` 對不上 origin、連線層上限不會生效，由呼叫端 warn。本專案只用 Gemini API 金鑰，正常不會命中。
  */
 export function geminiBaseUrlOverridden(env: NodeJS.ProcessEnv = process.env): boolean {
-  const truthy = (v: string | undefined): boolean => ['1', 'true'].includes((v ?? '').trim().toLowerCase());
-  if (truthy(env.GOOGLE_GENAI_USE_VERTEXAI) || truthy(env.GOOGLE_GENAI_USE_ENTERPRISE)) {
+  const read = (v: string | undefined): string | undefined => v?.trim();
+  const enterprise = read(env.GOOGLE_GENAI_USE_ENTERPRISE);
+  const flag = enterprise !== undefined ? enterprise : read(env.GOOGLE_GENAI_USE_VERTEXAI);
+  if (flag?.toLowerCase() === 'true') {
     return true;
   }
-  return [env.GOOGLE_GEMINI_BASE_URL, env.GOOGLE_VERTEX_BASE_URL].some((raw) => {
-    const url = raw?.trim();
-    if (!url) return false;
-    try {
-      return new URL(url).origin !== GEMINI_ORIGIN;
-    } catch {
-      return true;
-    }
-  });
+  const url = read(env.GOOGLE_GEMINI_BASE_URL);
+  if (!url) {
+    return false;
+  }
+  try {
+    return new URL(url).origin !== GEMINI_ORIGIN;
+  } catch {
+    return true;
+  }
 }
 
 let installed = false;

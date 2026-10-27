@@ -7,6 +7,7 @@ import {
   LLM_BACKOFF_BASE_MS,
   LLM_MAX_BACKOFF_MS,
   LLM_MAX_RETRIES,
+  LLM_MIN_ATTEMPT_MS,
   LLM_TIMEOUT_MS,
   LlmError,
   LlmGenerateOptions,
@@ -60,7 +61,8 @@ export class LlmService {
    *
    * 逾時（2026-10-27，ADR 0009）：`options.timeoutMs`（未給即 `LLM_TIMEOUT_MS`）是**整次 `generate()`（含重試與退避）的
    * 總期限**，每次 HTTP 嘗試以 `abortSignal` 限時剩餘時間。逾時**不在同一型號重試**、直接擲 `'timeout'`：等滿仍無回應，
-   * 同型號重送多半再等一輪，且 Gemini 端可能已生成完、每次重送都可能多扣免費層 RPD；退避後會超過期限時同樣不再重試。
+   * 同型號重送多半再等一輪，且 Gemini 端可能已生成完、每次重送都可能多扣免費層 RPD；退避後剩餘不足 `LLM_MIN_ATTEMPT_MS`
+   * 時同樣不再重試（`timeoutKind`：前者 `'hung'`、後者 `'budget'`）。
    * 交呼叫端換備援或降級。`timeoutMs` 非正整數時擲 `'error'`（不送出請求）。
    * @throws LlmError 空 prompt／空回應（`'empty'`，不重試）、重試耗盡（`'exhausted'`）、
    *   不可重試的用戶端錯誤或不合法的 `timeoutMs`（`'error'`）、期限用盡（`'timeout'`，不重試）。
@@ -84,7 +86,7 @@ export class LlmService {
     for (let attempt = 1; attempt <= LLM_MAX_RETRIES; attempt++) {
       const signal = AbortSignal.timeout(Math.max(1, deadline - Date.now()));
       try {
-        const response = await this.callModel(model, prompt, thinking, schema, signal);
+        const response = await this.callModel(model, prompt, thinking, schema, signal, deadline);
         const text = (response.text ?? '').trim();
         // 用量與結束原因（2026-09-25 新增）：候選池 60 → 70、晨報 10 → 15 則後，「prompt 太大容易失敗」
         // 只能猜——此前既不記 token 數也不記 finishReason，輸出被 MAX_TOKENS 截斷只會以 reason=empty
@@ -107,7 +109,7 @@ export class LlmService {
           // 未換 dispatcher、上限仍是 300 秒，log 不該誤寫成「等滿期限」。
           const layer = signal.aborted ? `期限 ${timeoutMs / 1000} 秒用盡` : `連線層逾時 ${causeCode(err) ?? '?'}`;
           this.logger.warn(`LLM 呼叫逾時（${model}${thinkingLabel}，${layer}），不在同一型號重試`);
-          throw new LlmError('timeout');
+          throw new LlmError('timeout', 'hung');
         }
         if (!this.isRetryable(err)) {
           // 不重試路徑原本吞掉真實狀態碼/訊息，只留籠統的 'error'，故障時無從排查；
@@ -121,11 +123,11 @@ export class LlmService {
         const detail = this.errDetail(err);
         if (attempt < LLM_MAX_RETRIES) {
           const wait = this.backoffMs(attempt);
-          if (Date.now() + wait >= deadline) {
+          if (Date.now() + wait + LLM_MIN_ATTEMPT_MS >= deadline) {
             this.logger.warn(
-              `LLM 呼叫失敗（${model}，${detail}），退避 ${wait}ms 後將超過期限 ${timeoutMs / 1000} 秒，不再重試`,
+              `LLM 呼叫失敗（${model}，${detail}），退避 ${wait}ms 後剩餘期限不足 ${LLM_MIN_ATTEMPT_MS / 1000} 秒（總期限 ${timeoutMs / 1000} 秒），不再重試`,
             );
-            throw new LlmError('timeout');
+            throw new LlmError('timeout', 'budget');
           }
           this.logger.warn(`LLM 呼叫失敗（${model}，${detail}），第 ${attempt}/${LLM_MAX_RETRIES} 次退避 ${wait}ms 後重試`);
           await this.delay(wait);
@@ -152,7 +154,8 @@ export class LlmService {
    * HTTP 呼叫、不佔退避次數）。2026-10-17 起由「只攔 thinking」擴大為整組進階設定一併拿掉：400 只說明請求被拒、
    * 分不出是哪一項，逐項試會多燒 Flash 免費層 RPD（憲章 I／V）；schema 拿掉後回應形狀退回由 prompt 約束、
    * 交呼叫端解析把關。其餘錯誤原樣拋給 `generate()` 的重試／分類邏輯（503 等重試時下一次仍帶進階設定）；
-   * 不帶任何進階設定的呼叫 400 仍是不可重試錯誤、不在此攔。重送沿用同一個 `abortSignal`（同一次嘗試共用逾時）。
+   * 不帶任何進階設定的呼叫 400 仍是不可重試錯誤、不在此攔。重送沿用同一個 `abortSignal`（同一次嘗試共用逾時）；剩餘期限
+   * 不足 `LLM_MIN_ATTEMPT_MS` 時不重送、擲 `LlmError('timeout', 'budget')`。
    */
   private async callModel(
     model: GeminiModel,
@@ -160,6 +163,7 @@ export class LlmService {
     thinking: LlmThinkingLevel | undefined,
     schema: Record<string, unknown> | undefined,
     signal: AbortSignal,
+    deadline: number,
   ): Promise<GenerateContentResponse> {
     if (!thinking && !schema) {
       return this.client.models.generateContent({ model, contents: prompt, config: { abortSignal: signal } });
@@ -176,6 +180,13 @@ export class LlmService {
       return await this.client.models.generateContent({ model, contents: prompt, config });
     } catch (err) {
       if (err instanceof ApiError && err.status === 400) {
+        if (deadline - Date.now() < LLM_MIN_ATTEMPT_MS) {
+          this.logger.warn(
+            `LLM 拒絕 thinking／結構化輸出設定（${model}，${this.errDetail(err)}），剩餘期限不足 ` +
+              `${LLM_MIN_ATTEMPT_MS / 1000} 秒，不重送`,
+          );
+          throw new LlmError('timeout', 'budget');
+        }
         this.logger.warn(
           `LLM 拒絕 thinking／結構化輸出設定（${model}，thinking=${thinking ?? '無'}，schema=${schema ? '有' : '無'}，` +
             `${this.errDetail(err)}），改以不帶這些設定重送一次`,
@@ -222,8 +233,8 @@ export class LlmService {
 }
 
 /**
- * 是否為單次呼叫逾時（2026-10-27）：本次嘗試的 `abortSignal` 已觸發（SDK 轉成 `AbortError` 擲出），或 undici 連線層的
- * headers／body 逾時（`fetch failed`，`cause.code` 為 `UND_ERR_*_TIMEOUT`）。
+ * 本次嘗試是否逾時（2026-10-27）：本次嘗試的 `abortSignal`（以 `generate()` 剩餘期限建立）已觸發（SDK 轉成 `AbortError`
+ * 擲出），或 undici 連線層的 headers／body 逾時（`fetch failed`，`cause.code` 為 `UND_ERR_*_TIMEOUT`）。
  */
 export function isTimeout(err: unknown, signal: AbortSignal): boolean {
   if (signal.aborted) {
