@@ -466,9 +466,21 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
     });
   }
 
-  it('常數：預設 300 秒（同 undici 預設）、策展 10 分鐘', () => {
+  it('常數：預設 300 秒（同 undici 預設）、策展 10 分鐘；最小重送期限皆小於對應總期限（否則每次呼叫在入口擲 error）', () => {
     expect(LLM_TIMEOUT_MS).toBe(300_000);
     expect(NEWS_LLM_TIMEOUT_MS).toBe(600_000);
+    expect(LLM_MIN_ATTEMPT_MS).toBeLessThan(LLM_TIMEOUT_MS);
+    expect(NEWS_MIN_ATTEMPT_MS).toBeLessThan(NEWS_LLM_TIMEOUT_MS);
+  });
+
+  it('不重試的 warn 同樣帶 thinking／schema 標示', async () => {
+    const generateContent = jest.fn().mockRejectedValue(new ApiError({ message: 'not found', status: 404 }));
+    const svc = makeService(generateContent);
+    await expect(svc.generate('請策展', { model: GEMINI_MODEL_NEWS, thinkingLevel: 'high' })).rejects.toMatchObject({
+      reason: 'error',
+    });
+    const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((l) => l.startsWith('LLM 呼叫失敗（不重試')) ?? '';
+    expect(warn).toContain(`（不重試，${GEMINI_MODEL_NEWS}，thinking=high）：status=404`);
   });
 
   it('未指定 timeoutMs → 首次嘗試的 signal 約為 LLM_TIMEOUT_MS；指定時約為指定值', async () => {

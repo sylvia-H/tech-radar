@@ -103,8 +103,8 @@ export const NEWS_LLM_TIMEOUT_MS = 10 * 60_000;
 
 /**
  * 重送前至少要剩下的期限預設值（2026-10-27 新增）：退避後（或 400 去設定重送前）剩餘不足此值就不再送出——注定被
- * `abortSignal` 砍掉的請求只會白扣一次免費層 RPD。簡介與 TL;DR 數秒即回，30 秒足夠。`generate()` 要求此值小於總期限
- * （否則連首次嘗試被 400 拒絕後的去設定重送也會被判「剩餘不足」、誤報為逾時），不符即擲 `'error'`。
+ * `abortSignal` 砍掉的請求只會白扣一次免費層 RPD。簡介與 TL;DR 數秒即回，30 秒足夠。等於或大於總期限時任何重送都不可能
+ * 通過剩餘檢查，屬設定錯誤，`generate()` 直接擲 `'error'`（sanity check；小於總期限也不保證首次 400 後的去設定重送一定送得出）。
  */
 export const LLM_MIN_ATTEMPT_MS = 30_000;
 
@@ -139,17 +139,22 @@ export const LLM_MAX_BACKOFF_MS = 60000;
 export class LlmError extends Error {
   readonly name = 'LlmError';
   readonly timeoutKind: 'hung' | 'budget' | undefined;
-  /** `reason`，逾時時附 kind（`timeout/hung`、`timeout/budget`），供呼叫端 log。 */
-  readonly label: string;
 
   constructor(
     public readonly reason: 'exhausted' | 'empty' | 'error' | 'timeout',
     timeoutKind?: 'hung' | 'budget',
   ) {
     const kind = reason === 'timeout' ? (timeoutKind ?? 'hung') : undefined;
-    const label = kind ? `${reason}/${kind}` : reason;
-    super(`LLM 呼叫失敗：${label}`);
+    super(`LLM 呼叫失敗：${llmErrorLabel(reason, kind)}`);
     this.timeoutKind = kind;
-    this.label = label;
   }
+
+  /** `reason`，逾時時附 kind（`timeout/hung`、`timeout/budget`），供呼叫端 log；與 `message` 同一公式。 */
+  get label(): string {
+    return llmErrorLabel(this.reason, this.timeoutKind);
+  }
+}
+
+function llmErrorLabel(reason: LlmError['reason'], kind: LlmError['timeoutKind']): string {
+  return kind ? `${reason}/${kind}` : reason;
 }

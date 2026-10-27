@@ -3,7 +3,7 @@ import { GithubHttpService } from '../github/github-http';
 import { LlmService } from '../llm/llm.service';
 import { LlmError } from '../llm/llm.types';
 import { emptyBoardState } from '../state/state.schema';
-import { IntroService } from './intro.service';
+import { INTRO_BREAKER_SLOW_MS, IntroService } from './intro.service';
 import { IntroInput } from './intro.types';
 
 function makeInput(overrides: Partial<IntroInput> = {}): IntroInput {
@@ -185,7 +185,54 @@ describe('IntroService.ensureIntro', () => {
     expect(cached).toEqual({ status: 'cached', intro: '既有快取' });
     expect(generate).toHaveBeenCalledTimes(1);
     expect(getJson).toHaveBeenCalledTimes(1);
-    expect(warnSpy.mock.calls.map((c) => String(c[0])).some((l) => l.includes('本次執行已有 LLM 呼叫逾時'))).toBe(true);
+    expect(warnSpy.mock.calls.map((c) => String(c[0])).some((l) => l.includes('本次執行已有 LLM 呼叫慢失敗或逾時'))).toBe(true);
+    warnSpy.mockRestore();
+  });
+
+  it('慢失敗熔斷：exhausted 但 LLM 呼叫耗時達 INTRO_BREAKER_SLOW_MS（慢回 503 第 4 次失敗）→ 其餘直接降級', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    let now = 1_000_000;
+    const nowSpy = jest.spyOn(Date, 'now').mockImplementation(() => now);
+    const generate = jest
+      .fn()
+      .mockImplementationOnce(async () => {
+        now += 285_000;
+        throw new LlmError('exhausted');
+      })
+      .mockResolvedValue('不該被用到');
+    const { service } = makeService({ generate, getJson: jest.fn().mockResolvedValue(base64Readme('x'.repeat(300))) });
+    const state = emptyBoardState();
+
+    await service.ensureIntro(makeInput({ repoId: 1, fullName: 'owner/repo1' }), state, FIXED_NOW);
+    const second = await service.ensureIntro(makeInput({ repoId: 2, fullName: 'owner/repo2' }), state, FIXED_NOW);
+
+    expect(second.status).toBe('degraded');
+    expect(generate).toHaveBeenCalledTimes(1);
+    expect(INTRO_BREAKER_SLOW_MS).toBe(120_000);
+    nowSpy.mockRestore();
+    warnSpy.mockRestore();
+  });
+
+  it('快失敗（耗時未達門檻，例如 503 秒回重試到放棄約 100 秒）不熔斷', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    let now = 1_000_000;
+    const nowSpy = jest.spyOn(Date, 'now').mockImplementation(() => now);
+    const generate = jest
+      .fn()
+      .mockImplementationOnce(async () => {
+        now += 100_000;
+        throw new LlmError('exhausted');
+      })
+      .mockResolvedValueOnce('第二個 repo 的簡介');
+    const { service } = makeService({ generate, getJson: jest.fn().mockResolvedValue(base64Readme('x'.repeat(300))) });
+    const state = emptyBoardState();
+
+    await service.ensureIntro(makeInput({ repoId: 1, fullName: 'owner/repo1' }), state, FIXED_NOW);
+    const second = await service.ensureIntro(makeInput({ repoId: 2, fullName: 'owner/repo2' }), state, FIXED_NOW);
+
+    expect(second.status).toBe('generated');
+    expect(generate).toHaveBeenCalledTimes(2);
+    nowSpy.mockRestore();
     warnSpy.mockRestore();
   });
 

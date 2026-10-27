@@ -65,7 +65,7 @@ export class LlmService {
    * （未給即 `LLM_MIN_ATTEMPT_MS`）時同樣不再重試（`timeoutKind`：前者 `'hung'`、後者 `'budget'`）。
    * 交呼叫端換備援或降級。`timeoutMs` 非正整數、`minAttemptMs` 非非負整數或不小於 `timeoutMs` 時擲 `'error'`（不送出請求）。
    * @throws LlmError 空 prompt／空回應（`'empty'`，不重試）、重試耗盡（`'exhausted'`）、
-   *   不可重試的用戶端錯誤或不合法的 `timeoutMs`（`'error'`）、期限用盡（`'timeout'`，不重試）。
+   *   不可重試的用戶端錯誤或不合法的 `timeoutMs`／`minAttemptMs`（`'error'`）、期限用盡（`'timeout'`，不重試）。
    */
   async generate(prompt: string, options: LlmGenerateOptions = {}): Promise<string> {
     if (!prompt.trim()) {
@@ -121,7 +121,7 @@ export class LlmService {
         if (!this.isRetryable(err)) {
           // 不重試路徑原本吞掉真實狀態碼/訊息，只留籠統的 'error'，故障時無從排查；
           // 這裡補印出處（不含 prompt/回應全文，符合憲章 VII）。
-          this.logger.warn(`LLM 呼叫失敗（不重試，${model}）：${this.errDetail(err)}`);
+          this.logger.warn(`LLM 呼叫失敗（不重試，${model}${thinkingLabel}）：${this.errDetail(err)}`);
           throw new LlmError('error');
         }
         // 重試路徑同樣印出處（2026-09-20 補）：1.1.0 上線後 gemini-3.8-flash 連續六天首次呼叫皆失敗重試、
