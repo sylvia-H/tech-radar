@@ -193,9 +193,9 @@ describe('IntroService.ensureIntro', () => {
   });
 
   it('慢失敗熔斷：exhausted 但 LLM 呼叫耗時達 INTRO_BREAKER_SLOW_MS（慢回 503 第 4 次失敗）→ 其餘直接降級', async () => {
-    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
     let now = 1_000_000;
-    const nowSpy = jest.spyOn(Date, 'now').mockImplementation(() => now);
+    jest.spyOn(Date, 'now').mockImplementation(() => now);
     const generate = jest
       .fn()
       .mockImplementationOnce(async () => {
@@ -215,9 +215,9 @@ describe('IntroService.ensureIntro', () => {
   });
 
   it('快失敗（耗時未達門檻，例如近乎秒回的 503 重試到放棄約 100 秒）不熔斷', async () => {
-    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
     let now = 1_000_000;
-    const nowSpy = jest.spyOn(Date, 'now').mockImplementation(() => now);
+    jest.spyOn(Date, 'now').mockImplementation(() => now);
     const generate = jest
       .fn()
       .mockImplementationOnce(async () => {
@@ -236,7 +236,7 @@ describe('IntroService.ensureIntro', () => {
   });
 
   it('非逾時的 LLM 失敗（exhausted／error／empty）不觸發熔斷', async () => {
-    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
     const generate = jest
       .fn()
       .mockRejectedValueOnce(new LlmError('exhausted'))
