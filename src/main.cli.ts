@@ -6,7 +6,6 @@ import { NewsIngestService } from './news/news-ingest.service';
 import { PublishService } from './publish/publish.service';
 import { tryPostFailureAlert } from './discord/failure-alert';
 import { parseReplayDate } from './news/replay-candidates';
-import { installGeminiDispatcher } from './llm/gemini-dispatcher';
 
 /** 設為 `1` 時只跑 F4 階段 A 新聞漏斗、印出候選清單觀測（不推播）。 */
 const NEWS_OBSERVE_ENV = 'NEWS_INGEST_OBSERVE';
@@ -33,8 +32,6 @@ const NEWS_REPLAY_DATE_ENV = 'NEWS_REPLAY_DATE';
  *   供 workflow 去重；送出失敗則同樣交由 workflow 補送。之後以非零 exit 結束。
  */
 async function bootstrap(): Promise<void> {
-  // Gemini 策展開 thinking 時回應可能超過 Node fetch 預設的 300 秒逾時，只對 Gemini 拉長（見 gemini-dispatcher.ts）。
-  installGeminiDispatcher();
   const app = await NestFactory.createApplicationContext(AppModule, {
     logger: ['error', 'warn', 'log'],
   });

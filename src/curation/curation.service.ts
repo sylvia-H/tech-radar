@@ -6,6 +6,7 @@ import {
   GeminiModel,
   LlmError,
   LlmGenerateOptions,
+  NEWS_LLM_TIMEOUT_MS,
   NEWS_THINKING_LEVEL,
 } from '../llm/llm.types';
 import { isUnresolved, mentionsBoardRepo } from '../news/funnel';
@@ -331,14 +332,15 @@ export class NewsCurationService {
 }
 
 /**
- * 策展呼叫的 `generate` 選項：指定型號＋thinking（2026-09-27）＋結構化輸出 schema（2026-10-17，ADR 0006）。
+ * 策展呼叫的 `generate` 選項：指定型號＋thinking（2026-09-27）＋結構化輸出 schema（2026-10-17，ADR 0006）＋10 分鐘逾時
+ * （2026-10-27，ADR 0009）。
  * 主、備援（含解析失敗的備援重試）一律相同，只換型號。
  */
 function curationOptions(
   model: GeminiModel,
   schema: Record<string, unknown> = CURATION_RESPONSE_JSON_SCHEMA,
 ): LlmGenerateOptions {
-  return { model, thinkingLevel: NEWS_THINKING_LEVEL, responseJsonSchema: schema };
+  return { model, thinkingLevel: NEWS_THINKING_LEVEL, responseJsonSchema: schema, timeoutMs: NEWS_LLM_TIMEOUT_MS };
 }
 
 /** 解析回應；結構性錯誤（`CurationParseError`）轉為 `{ ok: false }`，其他例外照常上拋。 */

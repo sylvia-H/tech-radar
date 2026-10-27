@@ -1,13 +1,16 @@
 import { Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ApiError, GoogleGenAI, ThinkingLevel } from '@google/genai';
-import { describeUsage, LlmService } from './llm.service';
+import { describeUsage, isTimeout, LlmService } from './llm.service';
+import { installGeminiDispatcher } from './gemini-dispatcher';
 import {
   GEMINI_MODEL_BOARD,
   GEMINI_MODEL_NEWS,
   GEMINI_MODEL_NEWS_FALLBACK,
   LlmError,
   LLM_MAX_RETRIES,
+  LLM_TIMEOUT_MS,
+  NEWS_LLM_TIMEOUT_MS,
   NEWS_THINKING_LEVEL,
 } from './llm.types';
 
@@ -16,9 +19,15 @@ jest.mock('@google/genai', () => {
   return { ...actual, GoogleGenAI: jest.fn() };
 });
 
+jest.mock('./gemini-dispatcher', () => ({ installGeminiDispatcher: jest.fn() }));
+
 const MockedGoogleGenAI = GoogleGenAI as unknown as jest.Mock;
+const mockedInstall = installGeminiDispatcher as unknown as jest.Mock;
+/** 每次呼叫一律帶的 client 端逾時 signal（2026-10-27，不進請求體）。 */
+const SIGNAL = expect.any(AbortSignal);
 
 function makeService(generateContent: jest.Mock): LlmService {
+  mockedInstall.mockReturnValue(true);
   MockedGoogleGenAI.mockImplementation(() => ({
     models: { generateContent },
   }));
@@ -33,6 +42,7 @@ function makeService(generateContent: jest.Mock): LlmService {
 afterEach(() => {
   jest.restoreAllMocks();
   MockedGoogleGenAI.mockReset();
+  mockedInstall.mockReset();
 });
 
 describe('LlmService', () => {
@@ -123,14 +133,14 @@ describe('LlmService 型號選擇（2026-09-12 依資料流分流）', () => {
     const generateContent = jest.fn().mockResolvedValue({ text: 'ok' });
     const svc = makeService(generateContent);
     await svc.generate('請生成');
-    expect(generateContent).toHaveBeenCalledWith({ model: GEMINI_MODEL_BOARD, contents: '請生成' });
+    expect(generateContent).toHaveBeenCalledWith({ model: GEMINI_MODEL_BOARD, contents: '請生成', config: { abortSignal: SIGNAL } });
   });
 
   it('指定 model: GEMINI_MODEL_NEWS → 送策展主型號（每日晨報策展）', async () => {
     const generateContent = jest.fn().mockResolvedValue({ text: 'ok' });
     const svc = makeService(generateContent);
     await svc.generate('請策展', { model: GEMINI_MODEL_NEWS });
-    expect(generateContent).toHaveBeenCalledWith({ model: GEMINI_MODEL_NEWS, contents: '請策展' });
+    expect(generateContent).toHaveBeenCalledWith({ model: GEMINI_MODEL_NEWS, contents: '請策展', config: { abortSignal: SIGNAL } });
   });
 
   it('策展主型號為 Flash 系、備援為 Flash-Lite 系且與榜單同型號（2026-09-27 起）', () => {
@@ -146,12 +156,11 @@ describe('LlmService 型號選擇（2026-09-12 依資料流分流）', () => {
 });
 
 describe('LlmService thinking 設定（2026-09-27 新增）', () => {
-  it('未指定 thinkingLevel → 請求體不帶 config（簡介／TL;DR 行為不變）', async () => {
+  it('未指定 thinkingLevel → config 只帶 client 端的 abortSignal、不帶 thinkingConfig（簡介／TL;DR 行為不變）', async () => {
     const generateContent = jest.fn().mockResolvedValue({ text: 'ok' });
     const svc = makeService(generateContent);
     await svc.generate('請生成', { model: GEMINI_MODEL_BOARD });
-    expect(generateContent).toHaveBeenCalledWith({ model: GEMINI_MODEL_BOARD, contents: '請生成' });
-    expect(generateContent.mock.calls[0][0]).not.toHaveProperty('config');
+    expect(generateContent).toHaveBeenCalledWith({ model: GEMINI_MODEL_BOARD, contents: '請生成', config: { abortSignal: SIGNAL } });
   });
 
   it('指定 thinkingLevel: high → 帶 config.thinkingConfig.thinkingLevel=HIGH，且用量 log 標 thinking=high', async () => {
@@ -167,7 +176,7 @@ describe('LlmService thinking 設定（2026-09-27 新增）', () => {
     expect(generateContent).toHaveBeenCalledWith({
       model: GEMINI_MODEL_NEWS,
       contents: '請策展',
-      config: { thinkingConfig: { thinkingLevel: ThinkingLevel.HIGH } },
+      config: { abortSignal: SIGNAL, thinkingConfig: { thinkingLevel: ThinkingLevel.HIGH } },
     });
     const line = logSpy.mock.calls.map((c) => String(c[0])).find((l) => l.startsWith('LLM 用量')) ?? '';
     expect(line).toContain('thinking=high');
@@ -187,7 +196,9 @@ describe('LlmService thinking 設定（2026-09-27 新增）', () => {
 
     expect(generateContent).toHaveBeenCalledTimes(2);
     expect(generateContent.mock.calls[0][0]).toHaveProperty('config');
-    expect(generateContent.mock.calls[1][0]).toEqual({ model: GEMINI_MODEL_NEWS, contents: '請策展' });
+    expect(generateContent.mock.calls[1][0]).toEqual({ model: GEMINI_MODEL_NEWS, contents: '請策展', config: { abortSignal: SIGNAL } });
+    // 重送沿用同一次嘗試的 signal（共用逾時）
+    expect(generateContent.mock.calls[1][0].config.abortSignal).toBe(generateContent.mock.calls[0][0].config.abortSignal);
     const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((l) => l.includes('拒絕 thinking')) ?? '';
     expect(warn).toContain(GEMINI_MODEL_NEWS);
     expect(warn).toContain('status=400');
@@ -231,7 +242,7 @@ describe('LlmService 結構化輸出 responseJsonSchema（2026-10-17 新增，AD
     expect(req).toEqual({
       model: GEMINI_MODEL_NEWS,
       contents: '請策展',
-      config: { responseMimeType: 'application/json', responseJsonSchema: SCHEMA },
+      config: { abortSignal: SIGNAL, responseMimeType: 'application/json', responseJsonSchema: SCHEMA },
     });
     expect(req.config.responseJsonSchema).toBe(SCHEMA);
     expect(req.config).not.toHaveProperty('thinkingConfig');
@@ -245,6 +256,7 @@ describe('LlmService 結構化輸出 responseJsonSchema（2026-10-17 新增，AD
       model: GEMINI_MODEL_NEWS,
       contents: '請策展',
       config: {
+        abortSignal: SIGNAL,
         thinkingConfig: { thinkingLevel: ThinkingLevel.HIGH },
         responseMimeType: 'application/json',
         responseJsonSchema: SCHEMA,
@@ -253,11 +265,11 @@ describe('LlmService 結構化輸出 responseJsonSchema（2026-10-17 新增，AD
     expect(generateContent.mock.calls[0][0].config.responseJsonSchema).toBe(SCHEMA);
   });
 
-  it('不帶 schema 也不帶 thinking → 請求體無 config', async () => {
+  it('不帶 schema 也不帶 thinking → config 只有 abortSignal', async () => {
     const generateContent = jest.fn().mockResolvedValue({ text: 'ok' });
     const svc = makeService(generateContent);
     await svc.generate('請生成');
-    expect(generateContent.mock.calls[0][0]).toEqual({ model: GEMINI_MODEL_BOARD, contents: '請生成' });
+    expect(generateContent.mock.calls[0][0]).toEqual({ model: GEMINI_MODEL_BOARD, contents: '請生成', config: { abortSignal: SIGNAL } });
   });
 
   it('帶 schema（不帶 thinking）遇 400 → warn 一次後以純 { model, contents } 重送並成功，不擲 LlmError', async () => {
@@ -272,7 +284,7 @@ describe('LlmService 結構化輸出 responseJsonSchema（2026-10-17 新增，AD
 
     expect(generateContent).toHaveBeenCalledTimes(2);
     expect(generateContent.mock.calls[0][0].config).toMatchObject({ responseMimeType: 'application/json' });
-    expect(generateContent.mock.calls[1][0]).toEqual({ model: GEMINI_MODEL_NEWS, contents: '請策展' });
+    expect(generateContent.mock.calls[1][0]).toEqual({ model: GEMINI_MODEL_NEWS, contents: '請策展', config: { abortSignal: SIGNAL } });
     const warns = warnSpy.mock.calls.map((c) => String(c[0])).filter((l) => l.includes('拒絕 thinking'));
     expect(warns).toHaveLength(1);
     expect(warns[0]).toContain(GEMINI_MODEL_NEWS);
@@ -292,7 +304,7 @@ describe('LlmService 結構化輸出 responseJsonSchema（2026-10-17 新增，AD
     const svc = makeService(generateContent);
     await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, thinkingLevel: 'high', responseJsonSchema: SCHEMA });
     expect(generateContent).toHaveBeenCalledTimes(2);
-    expect(generateContent.mock.calls[1][0]).toEqual({ model: GEMINI_MODEL_NEWS, contents: '請策展' });
+    expect(generateContent.mock.calls[1][0]).toEqual({ model: GEMINI_MODEL_NEWS, contents: '請策展', config: { abortSignal: SIGNAL } });
   });
 
   it('帶 schema 遇 503 → 走一般退避重試，下一次仍帶 schema', async () => {
@@ -305,7 +317,7 @@ describe('LlmService 結構化輸出 responseJsonSchema（2026-10-17 新增，AD
     await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, responseJsonSchema: SCHEMA });
     expect(generateContent).toHaveBeenCalledTimes(2);
     expect((svc as unknown as { delay: jest.Mock }).delay).toHaveBeenCalledTimes(1);
-    expect(generateContent.mock.calls[1][0].config).toEqual({ responseMimeType: 'application/json', responseJsonSchema: SCHEMA });
+    expect(generateContent.mock.calls[1][0].config).toEqual({ abortSignal: SIGNAL, responseMimeType: 'application/json', responseJsonSchema: SCHEMA });
   });
 
   it('用量 log 與空回應 warn 皆標 schema=json（接在 thinking 標籤之後）', async () => {
@@ -433,5 +445,95 @@ describe('LlmService 用量與 finishReason log（2026-09-25）', () => {
     expect(describeUsage({ usageMetadata: { promptTokenCount: 1 }, candidates: [{ finishReason: 'SAFETY' }] } as never, 5)).toBe(
       'prompt 5 字元，tokens 輸入 1／輸出 ?／思考 ?／合計 ?，finishReason=SAFETY',
     );
+  });
+});
+
+describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
+  let warnSpy: jest.SpyInstance;
+  beforeEach(() => {
+    warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+  });
+
+  /** 模擬 SDK：等到本次嘗試的 abortSignal 觸發後以 AbortError 拒絕。 */
+  function hangUntilAborted(req: { config: { abortSignal: AbortSignal } }): Promise<never> {
+    return new Promise((_, reject) => {
+      req.config.abortSignal.addEventListener('abort', () => reject(new DOMException('This operation was aborted', 'AbortError')));
+    });
+  }
+
+  it('常數：預設 300 秒（同 undici 預設）、策展 10 分鐘', () => {
+    expect(LLM_TIMEOUT_MS).toBe(300_000);
+    expect(NEWS_LLM_TIMEOUT_MS).toBe(600_000);
+  });
+
+  it('未指定 timeoutMs → 每次嘗試以 LLM_TIMEOUT_MS 建 signal；指定時用指定值', async () => {
+    const timeoutSpy = jest.spyOn(AbortSignal, 'timeout');
+    const generateContent = jest.fn().mockResolvedValue({ text: 'ok' });
+    const svc = makeService(generateContent);
+    await svc.generate('請生成');
+    await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, timeoutMs: NEWS_LLM_TIMEOUT_MS });
+    expect(timeoutSpy.mock.calls.map((c) => c[0])).toEqual([LLM_TIMEOUT_MS, NEWS_LLM_TIMEOUT_MS]);
+  });
+
+  it('signal 逾時（SDK 擲 AbortError）→ 擲 LlmError(timeout)、不重試、warn 帶型號與秒數不含 prompt', async () => {
+    const generateContent = jest.fn().mockImplementation(hangUntilAborted);
+    const svc = makeService(generateContent);
+    await expect(svc.generate('不該出現在 log 的 prompt', { model: GEMINI_MODEL_NEWS, timeoutMs: 20 })).rejects.toMatchObject({
+      reason: 'timeout',
+    });
+    expect(generateContent).toHaveBeenCalledTimes(1);
+    expect((svc as unknown as { delay: jest.Mock }).delay).not.toHaveBeenCalled();
+    const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((l) => l.startsWith('LLM 呼叫逾時')) ?? '';
+    expect(warn).toContain(GEMINI_MODEL_NEWS);
+    expect(warn).toContain('0.02 秒');
+    expect(warn).toContain('不在同一型號重試');
+    expect(warn).not.toContain('不該出現在 log');
+  });
+
+  it('undici 連線層 headers／body 逾時（fetch failed，cause.code=UND_ERR_*_TIMEOUT）→ LlmError(timeout)、不重試', async () => {
+    for (const code of ['UND_ERR_HEADERS_TIMEOUT', 'UND_ERR_BODY_TIMEOUT']) {
+      const generateContent = jest.fn().mockRejectedValue(new TypeError('fetch failed', { cause: { code } }));
+      const svc = makeService(generateContent);
+      await expect(svc.generate('請策展', { model: GEMINI_MODEL_NEWS })).rejects.toMatchObject({ reason: 'timeout' });
+      expect(generateContent).toHaveBeenCalledTimes(1);
+    }
+  });
+
+  it('其他網路層錯誤（fetch failed 但非逾時碼）仍走退避重試', async () => {
+    const generateContent = jest
+      .fn()
+      .mockRejectedValueOnce(new TypeError('fetch failed', { cause: { code: 'ECONNRESET' } }))
+      .mockResolvedValueOnce({ text: 'ok' });
+    const svc = makeService(generateContent);
+    await expect(svc.generate('請策展')).resolves.toBe('ok');
+    expect(generateContent).toHaveBeenCalledTimes(2);
+  });
+
+  it('isTimeout：signal 已觸發即逾時；未觸發時只認 undici 逾時碼', () => {
+    const aborted = AbortSignal.abort();
+    const live = new AbortController().signal;
+    expect(isTimeout(new Error('x'), aborted)).toBe(true);
+    expect(isTimeout(new TypeError('fetch failed', { cause: { code: 'UND_ERR_HEADERS_TIMEOUT' } }), live)).toBe(true);
+    expect(isTimeout(new TypeError('fetch failed', { cause: { code: 'ECONNRESET' } }), live)).toBe(false);
+    expect(isTimeout(new ApiError({ message: 'x', status: 503 }), live)).toBe(false);
+    expect(isTimeout('not an error', live)).toBe(false);
+  });
+});
+
+describe('LlmService 建構時安裝 Gemini dispatcher（2026-10-27，ADR 0009）', () => {
+  it('建構即呼叫 installGeminiDispatcher；生效時不 warn', () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    makeService(jest.fn());
+    expect(mockedInstall).toHaveBeenCalledTimes(1);
+    expect(warnSpy).not.toHaveBeenCalled();
+  });
+
+  it('偵測到環境代理（install 回 false）→ warn 說明逾時上限維持 300 秒', () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    MockedGoogleGenAI.mockImplementation(() => ({ models: { generateContent: jest.fn() } }));
+    mockedInstall.mockReturnValue(false);
+    new LlmService({ get: () => 'test-key' } as unknown as ConfigService);
+    expect(String(warnSpy.mock.calls[0][0])).toContain('NODE_USE_ENV_PROXY');
+    expect(String(warnSpy.mock.calls[0][0])).toContain('300 秒');
   });
 });

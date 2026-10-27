@@ -77,12 +77,27 @@ export type GeminiModel =
  * `responseJsonSchema`（2026-10-17 新增，ADR 0006）：給定時請求帶 `responseMimeType: 'application/json'`
  * ＋`responseJsonSchema`（純 JSON Schema 物件，呼叫端不依賴 SDK 型別），由 Gemini 結構化輸出保證回應形狀；
  * 未給即不帶（簡介／TL;DR 行為不變）。
+ *
+ * `timeoutMs`（2026-10-27 新增）：單次 HTTP 呼叫的逾時，未給即 `LLM_TIMEOUT_MS`；策展傳 `NEWS_LLM_TIMEOUT_MS`。
  */
 export interface LlmGenerateOptions {
   model?: GeminiModel;
   thinkingLevel?: LlmThinkingLevel;
   responseJsonSchema?: Record<string, unknown>;
+  timeoutMs?: number;
 }
+
+/**
+ * 單次 Gemini 呼叫的預設逾時（2026-10-27 新增）：與 Node `fetch`（undici）預設的 300 秒相同，簡介與榜單 TL;DR
+ * 不開 thinking、數秒即回，沿用此值。決策紀錄：ADR 0009。
+ */
+export const LLM_TIMEOUT_MS = 5 * 60_000;
+
+/**
+ * 晨報策展單次呼叫的逾時（2026-10-27 新增）：策展開 `thinking=high`，Gemini 生成完整份回應才送標頭，2026-10-22～10-26
+ * 成功呼叫 133～287 秒，取約兩倍。決策紀錄：ADR 0009。
+ */
+export const NEWS_LLM_TIMEOUT_MS = 10 * 60_000;
 
 /** 429/503/網路錯誤最多重試次數（含首次嘗試，research D6）。 */
 export const LLM_MAX_RETRIES = 4;
@@ -100,12 +115,12 @@ export const LLM_MAX_BACKOFF_MS = 60000;
 
 /**
  * `LlmService.generate` 失敗時擲出，供 `IntroService` catch 後降級（FR-014）。
- * `reason` 供 log 分流，不含 prompt/回應全文（憲章 VII）。
+ * `reason` 供 log 分流，不含 prompt/回應全文（憲章 VII）。`'timeout'`（2026-10-27 新增）＝單次呼叫逾時，不在同一型號重試。
  */
 export class LlmError extends Error {
   readonly name = 'LlmError';
 
-  constructor(public readonly reason: 'exhausted' | 'empty' | 'error') {
+  constructor(public readonly reason: 'exhausted' | 'empty' | 'error' | 'timeout') {
     super(`LLM 呼叫失敗：${reason}`);
   }
 }
