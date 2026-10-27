@@ -4,6 +4,7 @@ import {
   GEMINI_ORIGIN,
   createDispatcher,
   dispatcherFactory,
+  geminiBaseUrlOverridden,
   poolOptionsFor,
   usesEnvProxy,
 } from './gemini-dispatcher';
@@ -79,29 +80,40 @@ describe('gemini-dispatcher（Gemini 連線層逾時上限，2026-10-27，ADR 00
     await dispatcher.close();
   });
 
-  it('usesEnvProxy：NODE_USE_ENV_PROXY 非空且非 0、或 --use-env-proxy（execArgv／NODE_OPTIONS）時為 true', () => {
+  it('usesEnvProxy：比照 Node 只認 NODE_USE_ENV_PROXY=1，或 --use-env-proxy（execArgv／NODE_OPTIONS）', () => {
     expect(usesEnvProxy({}, [])).toBe(false);
     expect(usesEnvProxy({ NODE_USE_ENV_PROXY: '' }, [])).toBe(false);
     expect(usesEnvProxy({ NODE_USE_ENV_PROXY: '0' }, [])).toBe(false);
+    expect(usesEnvProxy({ NODE_USE_ENV_PROXY: 'true' }, [])).toBe(false);
+    expect(usesEnvProxy({ NODE_USE_ENV_PROXY: 'yes' }, [])).toBe(false);
     expect(usesEnvProxy({ HTTPS_PROXY: 'http://proxy:8080' }, [])).toBe(false);
     expect(usesEnvProxy({ NODE_USE_ENV_PROXY: '1' }, [])).toBe(true);
+    expect(usesEnvProxy({ NODE_USE_ENV_PROXY: ' 1 ' }, [])).toBe(true);
     expect(usesEnvProxy({}, ['--use-env-proxy'])).toBe(true);
     expect(usesEnvProxy({ NODE_OPTIONS: '--max-old-space-size=4096 --use-env-proxy' }, [])).toBe(true);
   });
 });
 
-describe('installGeminiDispatcher（2026-10-27）', () => {
-  const ORIGINAL = process.env.NODE_USE_ENV_PROXY;
-  afterEach(() => {
-    if (ORIGINAL === undefined) {
-      delete process.env.NODE_USE_ENV_PROXY;
-    } else {
-      process.env.NODE_USE_ENV_PROXY = ORIGINAL;
-    }
+describe('geminiBaseUrlOverridden（2026-10-27）', () => {
+  it('未設或指向 Gemini origin → false', () => {
+    expect(geminiBaseUrlOverridden({})).toBe(false);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GEMINI_BASE_URL: '' })).toBe(false);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GEMINI_BASE_URL: `${GEMINI_ORIGIN}/` })).toBe(false);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_VERTEXAI: 'false' })).toBe(false);
   });
 
-  /** 每個案例取一份全新模組（模組內 `installed` 旗標歸零）。 */
-  function freshModule(): { install: () => boolean; setGlobal: jest.Mock } {
+  it('baseUrl 指向別的 origin、不可解析，或改走 Vertex／Enterprise → true', () => {
+    expect(geminiBaseUrlOverridden({ GOOGLE_GEMINI_BASE_URL: 'https://proxy.example.com/gemini' })).toBe(true);
+    expect(geminiBaseUrlOverridden({ GOOGLE_VERTEX_BASE_URL: 'https://us-central1-aiplatform.googleapis.com' })).toBe(true);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GEMINI_BASE_URL: 'not a url' })).toBe(true);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_VERTEXAI: 'true' })).toBe(true);
+    expect(geminiBaseUrlOverridden({ GOOGLE_GENAI_USE_ENTERPRISE: '1' })).toBe(true);
+  });
+});
+
+describe('installGeminiDispatcher（2026-10-27）', () => {
+  /** 每個案例取一份全新模組（模組內 `installed` 旗標歸零）。env／execArgv 一律注入，不受執行環境影響。 */
+  function freshModule(): { install: (env: NodeJS.ProcessEnv, execArgv: string[]) => boolean; setGlobal: jest.Mock } {
     let mod!: typeof import('./gemini-dispatcher');
     let undici!: { setGlobalDispatcher: jest.Mock };
     jest.isolateModules(() => {
@@ -113,18 +125,17 @@ describe('installGeminiDispatcher（2026-10-27）', () => {
   }
 
   it('未設代理 → 換上 Agent、回 true；重複呼叫只裝一次', () => {
-    delete process.env.NODE_USE_ENV_PROXY;
     const { install, setGlobal } = freshModule();
-    expect(install()).toBe(true);
-    expect(install()).toBe(true);
+    expect(install({}, [])).toBe(true);
+    expect(install({}, [])).toBe(true);
     expect(setGlobal).toHaveBeenCalledTimes(1);
     expect(setGlobal.mock.calls[0][0]).toBeInstanceOf(jest.requireActual('undici').Agent);
   });
 
-  it('NODE_USE_ENV_PROXY=1 → 不換 dispatcher、回 false', () => {
-    process.env.NODE_USE_ENV_PROXY = '1';
+  it('NODE_USE_ENV_PROXY=1 或 --use-env-proxy → 不換 dispatcher、回 false', () => {
     const { install, setGlobal } = freshModule();
-    expect(install()).toBe(false);
+    expect(install({ NODE_USE_ENV_PROXY: '1' }, [])).toBe(false);
+    expect(install({}, ['--use-env-proxy'])).toBe(false);
     expect(setGlobal).not.toHaveBeenCalled();
   });
 });

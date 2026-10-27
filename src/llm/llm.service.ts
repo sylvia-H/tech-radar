@@ -12,7 +12,7 @@ import {
   LlmGenerateOptions,
   LlmThinkingLevel,
 } from './llm.types';
-import { installGeminiDispatcher } from './gemini-dispatcher';
+import { geminiBaseUrlOverridden, installGeminiDispatcher } from './gemini-dispatcher';
 
 /** 觸發退避重試的暫時性 HTTP 狀態碼（速率/額度限制、暫時不可用，research D6）。 */
 const RETRYABLE_STATUS = new Set([429, 503]);
@@ -46,6 +46,8 @@ export class LlmService {
     // Gemini 連線層逾時上限（2026-10-27，ADR 0009）：Node fetch 預設 300 秒會先砍斷策展的長呼叫。
     if (!installGeminiDispatcher()) {
       this.logger.warn('偵測到環境代理設定（NODE_USE_ENV_PROXY），保留 Node 預設 dispatcher：Gemini 呼叫逾時上限維持 300 秒');
+    } else if (geminiBaseUrlOverridden()) {
+      this.logger.warn('偵測到 Gemini baseUrl 覆寫或 Vertex 模式（GOOGLE_*），連線層逾時上限只對 generativelanguage.googleapis.com 生效、此時維持 300 秒');
     }
   }
 
@@ -56,11 +58,12 @@ export class LlmService {
    * `options.thinkingLevel`／`options.responseJsonSchema`（後者 2026-10-17 新增，ADR 0006）為進階設定，
    * 帶法與 400 防禦見 `callModel()`；log 以「thinking=…」「schema=json」標示有帶上哪些。
    *
-   * 逾時（2026-10-27，ADR 0009）：每次 HTTP 呼叫以 `abortSignal` 限時 `options.timeoutMs`（未給即 `LLM_TIMEOUT_MS`）。逾時
-   * **不在同一型號重試**、直接擲 `'timeout'`：等滿逾時仍無回應，同型號重送多半再等一輪，且 Gemini 端可能已生成完、
-   * 每次重送都可能多扣免費層 RPD；交呼叫端換備援或降級。
+   * 逾時（2026-10-27，ADR 0009）：`options.timeoutMs`（未給即 `LLM_TIMEOUT_MS`）是**整次 `generate()`（含重試與退避）的
+   * 總期限**，每次 HTTP 嘗試以 `abortSignal` 限時剩餘時間。逾時**不在同一型號重試**、直接擲 `'timeout'`：等滿仍無回應，
+   * 同型號重送多半再等一輪，且 Gemini 端可能已生成完、每次重送都可能多扣免費層 RPD；退避後會超過期限時同樣不再重試。
+   * 交呼叫端換備援或降級。`timeoutMs` 非正整數時擲 `'error'`（不送出請求）。
    * @throws LlmError 空 prompt／空回應（`'empty'`，不重試）、重試耗盡（`'exhausted'`）、
-   *   不可重試的用戶端錯誤（`'error'`，如 400/401/403）、單次呼叫逾時（`'timeout'`，不重試）。
+   *   不可重試的用戶端錯誤或不合法的 `timeoutMs`（`'error'`）、期限用盡（`'timeout'`，不重試）。
    */
   async generate(prompt: string, options: LlmGenerateOptions = {}): Promise<string> {
     if (!prompt.trim()) {
@@ -70,11 +73,16 @@ export class LlmService {
     const thinking = options.thinkingLevel;
     const schema = options.responseJsonSchema;
     const timeoutMs = options.timeoutMs ?? LLM_TIMEOUT_MS;
+    if (!Number.isInteger(timeoutMs) || timeoutMs <= 0) {
+      this.logger.warn(`LLM 逾時設定不合法（${model}，timeoutMs=${timeoutMs}），不送出請求`);
+      throw new LlmError('error');
+    }
+    const deadline = Date.now() + timeoutMs;
     // 有 schema 時加標「schema=json」（2026-10-17，ADR 0006）：讓 Actions log 看得出結構化輸出確實有帶上。
     const thinkingLabel = (thinking ? `，thinking=${thinking}` : '') + (schema ? '，schema=json' : '');
 
     for (let attempt = 1; attempt <= LLM_MAX_RETRIES; attempt++) {
-      const signal = AbortSignal.timeout(timeoutMs);
+      const signal = AbortSignal.timeout(Math.max(1, deadline - Date.now()));
       try {
         const response = await this.callModel(model, prompt, thinking, schema, signal);
         const text = (response.text ?? '').trim();
@@ -95,9 +103,10 @@ export class LlmService {
           throw err;
         }
         if (isTimeout(err, signal)) {
-          this.logger.warn(
-            `LLM 呼叫逾時（${model}${thinkingLabel}，${timeoutMs / 1000} 秒，${this.errDetail(err)}），不在同一型號重試`,
-          );
+          // 分層印出（2026-10-27）：abortSignal＝本期限用盡；否則是 undici 連線層先砍斷（印 cause.code）——例如環境代理下
+          // 未換 dispatcher、上限仍是 300 秒，log 不該誤寫成「等滿期限」。
+          const layer = signal.aborted ? `期限 ${timeoutMs / 1000} 秒用盡` : `連線層逾時 ${causeCode(err) ?? '?'}`;
+          this.logger.warn(`LLM 呼叫逾時（${model}${thinkingLabel}，${layer}），不在同一型號重試`);
           throw new LlmError('timeout');
         }
         if (!this.isRetryable(err)) {
@@ -112,6 +121,12 @@ export class LlmService {
         const detail = this.errDetail(err);
         if (attempt < LLM_MAX_RETRIES) {
           const wait = this.backoffMs(attempt);
+          if (Date.now() + wait >= deadline) {
+            this.logger.warn(
+              `LLM 呼叫失敗（${model}，${detail}），退避 ${wait}ms 後將超過期限 ${timeoutMs / 1000} 秒，不再重試`,
+            );
+            throw new LlmError('timeout');
+          }
           this.logger.warn(`LLM 呼叫失敗（${model}，${detail}），第 ${attempt}/${LLM_MAX_RETRIES} 次退避 ${wait}ms 後重試`);
           await this.delay(wait);
         } else {
@@ -179,12 +194,19 @@ export class LlmService {
     return true;
   }
 
-  /** 供 log 用的錯誤摘要：ApiError 帶狀態碼，其餘退回 message（不含 prompt/回應全文）。 */
+  /**
+   * 供 log 用的錯誤摘要：ApiError 帶狀態碼，其餘退回 message（不含 prompt/回應全文）；`fetch failed` 這類網路層錯誤
+   * 另附 `cause.code`（2026-10-27），否則分不出逾時、連線重置或 DNS 失敗。
+   */
   private errDetail(err: unknown): string {
     if (err instanceof ApiError) {
       return `status=${err.status} ${err.message}`;
     }
-    return err instanceof Error ? err.message : String(err);
+    if (!(err instanceof Error)) {
+      return String(err);
+    }
+    const code = causeCode(err);
+    return code ? `${err.message}（${code}）` : err.message;
   }
 
   /** 指數退避＋jitter：base × 2^(attempt-1) + [0, base) 隨機，上限 LLM_MAX_BACKOFF_MS。 */
@@ -207,8 +229,14 @@ export function isTimeout(err: unknown, signal: AbortSignal): boolean {
   if (signal.aborted) {
     return true;
   }
+  const code = causeCode(err);
+  return code !== undefined && UNDICI_TIMEOUT_CODES.has(code);
+}
+
+/** 錯誤的 `cause.code`（undici 網路層錯誤的分類碼）；無則 `undefined`。 */
+function causeCode(err: unknown): string | undefined {
   const cause = err instanceof Error ? (err.cause as { code?: unknown } | undefined) : undefined;
-  return typeof cause?.code === 'string' && UNDICI_TIMEOUT_CODES.has(cause.code);
+  return typeof cause?.code === 'string' ? cause.code : undefined;
 }
 
 /**

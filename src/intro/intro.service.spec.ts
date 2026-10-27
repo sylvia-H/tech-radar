@@ -164,4 +164,45 @@ describe('IntroService.ensureIntro', () => {
     expect(first.status).toBe('degraded');
     expect(second.status).toBe('generated');
   });
+
+  it('逾時熔斷（2026-10-27）：一則 LLM 逾時後，其餘未命中快取者不再呼叫 LLM／README、直接降級；快取命中照常', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generate = jest.fn().mockRejectedValueOnce(new LlmError('timeout')).mockResolvedValue('不該被用到');
+    const getJson = jest.fn().mockResolvedValue(base64Readme('x'.repeat(300)));
+    const { service } = makeService({ generate, getJson });
+    const state = emptyBoardState();
+    state.intros['3'] = { intro: '既有快取', introAt: '2026-07-01T00:00:00.000Z' };
+
+    const first = await service.ensureIntro(makeInput({ repoId: 1, fullName: 'owner/repo1' }), state, FIXED_NOW);
+    const second = await service.ensureIntro(makeInput({ repoId: 2, fullName: 'owner/repo2' }), state, FIXED_NOW);
+    const cached = await service.ensureIntro(makeInput({ repoId: 3, fullName: 'owner/repo3' }), state, FIXED_NOW);
+
+    expect(first.status).toBe('degraded');
+    expect(second).toEqual({ status: 'degraded', description: 'A sample repo for testing' });
+    expect(cached).toEqual({ status: 'cached', intro: '既有快取' });
+    expect(generate).toHaveBeenCalledTimes(1);
+    expect(getJson).toHaveBeenCalledTimes(1);
+    expect(warnSpy.mock.calls.map((c) => String(c[0])).some((l) => l.includes('本次執行已有 LLM 呼叫逾時'))).toBe(true);
+    warnSpy.mockRestore();
+  });
+
+  it('非逾時的 LLM 失敗（exhausted／error）不觸發熔斷', async () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    const generate = jest
+      .fn()
+      .mockRejectedValueOnce(new LlmError('exhausted'))
+      .mockRejectedValueOnce(new LlmError('error'))
+      .mockResolvedValueOnce('第三個 repo 的簡介');
+    const { service } = makeService({ generate, getJson: jest.fn().mockResolvedValue(base64Readme('x'.repeat(300))) });
+    const state = emptyBoardState();
+
+    for (const id of [1, 2]) {
+      await service.ensureIntro(makeInput({ repoId: id, fullName: `owner/repo${id}` }), state, FIXED_NOW);
+    }
+    const third = await service.ensureIntro(makeInput({ repoId: 3, fullName: 'owner/repo3' }), state, FIXED_NOW);
+
+    expect(third.status).toBe('generated');
+    expect(generate).toHaveBeenCalledTimes(3);
+    warnSpy.mockRestore();
+  });
 });

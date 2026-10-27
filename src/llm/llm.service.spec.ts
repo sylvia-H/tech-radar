@@ -2,7 +2,7 @@ import { Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { ApiError, GoogleGenAI, ThinkingLevel } from '@google/genai';
 import { describeUsage, isTimeout, LlmService } from './llm.service';
-import { installGeminiDispatcher } from './gemini-dispatcher';
+import { geminiBaseUrlOverridden, installGeminiDispatcher } from './gemini-dispatcher';
 import {
   GEMINI_MODEL_BOARD,
   GEMINI_MODEL_NEWS,
@@ -19,15 +19,17 @@ jest.mock('@google/genai', () => {
   return { ...actual, GoogleGenAI: jest.fn() };
 });
 
-jest.mock('./gemini-dispatcher', () => ({ installGeminiDispatcher: jest.fn() }));
+jest.mock('./gemini-dispatcher', () => ({ installGeminiDispatcher: jest.fn(), geminiBaseUrlOverridden: jest.fn() }));
 
 const MockedGoogleGenAI = GoogleGenAI as unknown as jest.Mock;
 const mockedInstall = installGeminiDispatcher as unknown as jest.Mock;
+const mockedBaseUrlOverridden = geminiBaseUrlOverridden as unknown as jest.Mock;
 /** 每次呼叫一律帶的 client 端逾時 signal（2026-10-27，不進請求體）。 */
 const SIGNAL = expect.any(AbortSignal);
 
 function makeService(generateContent: jest.Mock): LlmService {
   mockedInstall.mockReturnValue(true);
+  mockedBaseUrlOverridden.mockReturnValue(false);
   MockedGoogleGenAI.mockImplementation(() => ({
     models: { generateContent },
   }));
@@ -43,6 +45,7 @@ afterEach(() => {
   jest.restoreAllMocks();
   MockedGoogleGenAI.mockReset();
   mockedInstall.mockReset();
+  mockedBaseUrlOverridden.mockReset();
 });
 
 describe('LlmService', () => {
@@ -466,13 +469,58 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
     expect(NEWS_LLM_TIMEOUT_MS).toBe(600_000);
   });
 
-  it('未指定 timeoutMs → 每次嘗試以 LLM_TIMEOUT_MS 建 signal；指定時用指定值', async () => {
+  it('未指定 timeoutMs → 首次嘗試的 signal 約為 LLM_TIMEOUT_MS；指定時約為指定值', async () => {
     const timeoutSpy = jest.spyOn(AbortSignal, 'timeout');
     const generateContent = jest.fn().mockResolvedValue({ text: 'ok' });
     const svc = makeService(generateContent);
     await svc.generate('請生成');
     await svc.generate('請策展', { model: GEMINI_MODEL_NEWS, timeoutMs: NEWS_LLM_TIMEOUT_MS });
-    expect(timeoutSpy.mock.calls.map((c) => c[0])).toEqual([LLM_TIMEOUT_MS, NEWS_LLM_TIMEOUT_MS]);
+    const [first, second] = timeoutSpy.mock.calls.map((c) => c[0]);
+    expect(first).toBeLessThanOrEqual(LLM_TIMEOUT_MS);
+    expect(first).toBeGreaterThan(LLM_TIMEOUT_MS - 1_000);
+    expect(second).toBeLessThanOrEqual(NEWS_LLM_TIMEOUT_MS);
+    expect(second).toBeGreaterThan(NEWS_LLM_TIMEOUT_MS - 1_000);
+  });
+
+  it('timeoutMs 是整次 generate()（含重試）的總期限：重試時 signal 只給剩餘時間', async () => {
+    let now = 1_000_000;
+    jest.spyOn(Date, 'now').mockImplementation(() => now);
+    const timeoutSpy = jest.spyOn(AbortSignal, 'timeout');
+    const generateContent = jest
+      .fn()
+      .mockImplementationOnce(async () => {
+        now += 100_000; // 第一次嘗試耗掉 100 秒才回 503
+        throw new ApiError({ message: 'unavailable', status: 503 });
+      })
+      .mockResolvedValueOnce({ text: 'ok' });
+    const svc = makeService(generateContent);
+    await expect(svc.generate('請策展', { timeoutMs: NEWS_LLM_TIMEOUT_MS })).resolves.toBe('ok');
+    expect(timeoutSpy.mock.calls.map((c) => c[0])).toEqual([NEWS_LLM_TIMEOUT_MS, NEWS_LLM_TIMEOUT_MS - 100_000]);
+  });
+
+  it('退避後會超過期限 → 不再重試、擲 LlmError(timeout)，warn 說明', async () => {
+    let now = 1_000_000;
+    jest.spyOn(Date, 'now').mockImplementation(() => now);
+    const generateContent = jest.fn().mockImplementation(async () => {
+      now += LLM_TIMEOUT_MS - 5_000; // 剩 5 秒，小於第一次退避的 10 秒
+      throw new ApiError({ message: 'unavailable', status: 503 });
+    });
+    const svc = makeService(generateContent);
+    await expect(svc.generate('請生成')).rejects.toMatchObject({ reason: 'timeout' });
+    expect(generateContent).toHaveBeenCalledTimes(1);
+    expect((svc as unknown as { delay: jest.Mock }).delay).not.toHaveBeenCalled();
+    const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((l) => l.includes('將超過期限')) ?? '';
+    expect(warn).toContain('status=503');
+    expect(warn).toContain('不再重試');
+  });
+
+  it('timeoutMs 非正整數 → 擲 LlmError(error)、不送出請求', async () => {
+    for (const bad of [0, -1, 1.5, Number.NaN, Number.POSITIVE_INFINITY]) {
+      const generateContent = jest.fn();
+      const svc = makeService(generateContent);
+      await expect(svc.generate('請生成', { timeoutMs: bad })).rejects.toMatchObject({ reason: 'error' });
+      expect(generateContent).not.toHaveBeenCalled();
+    }
   });
 
   it('signal 逾時（SDK 擲 AbortError）→ 擲 LlmError(timeout)、不重試、warn 帶型號與秒數不含 prompt', async () => {
@@ -485,7 +533,7 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
     expect((svc as unknown as { delay: jest.Mock }).delay).not.toHaveBeenCalled();
     const warn = warnSpy.mock.calls.map((c) => String(c[0])).find((l) => l.startsWith('LLM 呼叫逾時')) ?? '';
     expect(warn).toContain(GEMINI_MODEL_NEWS);
-    expect(warn).toContain('0.02 秒');
+    expect(warn).toContain('期限 0.02 秒用盡');
     expect(warn).toContain('不在同一型號重試');
     expect(warn).not.toContain('不該出現在 log');
   });
@@ -496,7 +544,21 @@ describe('LlmService 逾時（2026-10-27，ADR 0009）', () => {
       const svc = makeService(generateContent);
       await expect(svc.generate('請策展', { model: GEMINI_MODEL_NEWS })).rejects.toMatchObject({ reason: 'timeout' });
       expect(generateContent).toHaveBeenCalledTimes(1);
+      // 連線層先砍斷時印 cause.code，不誤寫成「期限用盡」
+      const warn = warnSpy.mock.calls.map((c) => String(c[0])).filter((l) => l.startsWith('LLM 呼叫逾時')).pop() ?? '';
+      expect(warn).toContain(`連線層逾時 ${code}`);
+      expect(warn).not.toContain('期限');
     }
+  });
+
+  it('非逾時的網路層錯誤：warn 附 cause.code', async () => {
+    const generateContent = jest
+      .fn()
+      .mockRejectedValueOnce(new TypeError('fetch failed', { cause: { code: 'ECONNRESET' } }))
+      .mockResolvedValueOnce({ text: 'ok' });
+    const svc = makeService(generateContent);
+    await svc.generate('請生成');
+    expect(String(warnSpy.mock.calls[0][0])).toContain('fetch failed（ECONNRESET）');
   });
 
   it('其他網路層錯誤（fetch failed 但非逾時碼）仍走退避重試', async () => {
@@ -526,6 +588,16 @@ describe('LlmService 建構時安裝 Gemini dispatcher（2026-10-27，ADR 0009�
     makeService(jest.fn());
     expect(mockedInstall).toHaveBeenCalledTimes(1);
     expect(warnSpy).not.toHaveBeenCalled();
+  });
+
+  it('baseUrl 被覆寫或走 Vertex（geminiBaseUrlOverridden）→ warn 說明上限不生效', () => {
+    const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
+    MockedGoogleGenAI.mockImplementation(() => ({ models: { generateContent: jest.fn() } }));
+    mockedInstall.mockReturnValue(true);
+    mockedBaseUrlOverridden.mockReturnValue(true);
+    new LlmService({ get: () => 'test-key' } as unknown as ConfigService);
+    expect(String(warnSpy.mock.calls[0][0])).toContain('baseUrl');
+    expect(String(warnSpy.mock.calls[0][0])).toContain('300 秒');
   });
 
   it('偵測到環境代理（install 回 false）→ warn 說明逾時上限維持 300 秒', () => {

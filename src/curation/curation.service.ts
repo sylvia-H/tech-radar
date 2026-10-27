@@ -205,7 +205,8 @@ export class NewsCurationService {
 
   /**
    * 以主型號（`GEMINI_MODEL_NEWS`）送出策展 prompt；若擲 `LlmError`（不論 `reason`：`exhausted`＝429
-   * 退避耗盡、`error`＝型號 404 下架等不可重試錯誤、`empty`＝空回應），記 warn 後改以備援型號
+   * 退避耗盡、`error`＝型號 404 下架等不可重試錯誤、`empty`＝空回應、`timeout`＝10 分鐘期限用盡（2026-10-27，
+   * ADR 0009）），記 warn 後改以備援型號
    * （`GEMINI_MODEL_NEWS_FALLBACK`）重送**同一 prompt 一次**；第二次仍失敗才把錯誤拋給呼叫端走降級。
    * 2026-09-27 起回到 Flash → Lite（主 `gemini-3.8-flash`、備援 `gemini-3.5-flash-lite`），兩者皆帶
    * `thinkingLevel: NEWS_THINKING_LEVEL`；09-25～09-27 曾為 Lite 主／Lite 備援（見 `llm.types.ts`）。
