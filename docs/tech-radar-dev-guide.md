@@ -120,6 +120,11 @@
     2026-10-07～10-17：Flash 11 天 8 天成功（10-10 起連 8 天），Lite 2 天，10-08 一天 Flash 回應形狀不符而降級（促成 ADR 0006）；Flash 思考 6.9～11.3k。
   - 教訓（沿用）：免費層型號 ID **可能無預警提前下架**（2026-07-19 `gemini-2.5-flash`／`2.5-flash-lite` 在公告日前回 404），`LlmService` 非可重試
     錯誤務必印實際狀態碼與訊息（`errDetail`），否則會被誤判為速率限制；Flash 與 Lite 配額不同級，換型號前先在 AI Studio 確認。
+- **HTTP 逾時（2026-10-27 起）**：Gemini 請求的 headers／body 逾時為 **10 分鐘**（`GEMINI_HTTP_TIMEOUT_MS`，`src/llm/gemini-dispatcher.ts`），
+  其餘 origin 維持 undici 預設 300 秒。CLI 進入點以 `installGeminiDispatcher()` 換掉 Node `fetch` 的全域 dispatcher，按 origin 只對
+  `generativelanguage.googleapis.com` 拉長。起因：策展開 thinking 時 Gemini 生成完整份回應才送標頭，10-22～10-26 成功呼叫 133～287 秒，
+  10-27 乾跑兩次正好 300 秒以 `fetch failed`（UND_ERR_HEADERS_TIMEOUT）失敗、最終退到備援。SDK 的 `httpOptions.timeout` 在 Node 24 調不動
+  全域 dispatcher 的逾時，不能取代此設定。代價：Flash 卡住時最壞情況 4 次 × 10 分鐘才退備援（job 未設 `timeout-minutes`，預設 6 小時）。
 - **結構化輸出（2026-10-17 起；決策紀錄 [ADR 0006](adr/0006-curation-structured-output-and-salvage.md)）**：策展主、備援呼叫皆帶
   `responseMimeType: application/json`＋`responseJsonSchema`（`src/curation/curation-schema.ts`，須與 prompt 輸出規則同步），用量 log 標 `schema=json`。
   型號以 400 拒絕 thinking 或 schema 時，warn 後以**不帶這兩項設定**的純請求重送一次。
