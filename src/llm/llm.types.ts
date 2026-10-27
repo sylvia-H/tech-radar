@@ -132,8 +132,8 @@ export const LLM_MAX_BACKOFF_MS = 60000;
  * `LlmService.generate` 失敗時擲出，供 `IntroService` catch 後降級（FR-014）。
  * `reason` 供 log 分流，不含 prompt/回應全文（憲章 VII）。`'timeout'`（2026-10-27 新增）＝`generate()` 總期限用盡，
  * 不在同一型號重試；`timeoutKind` 區分 `'hung'`（請求送出後等到期限或連線層逾時都沒回應，代表 Gemini 掛住）與
- * `'budget'`（Gemini 有回可重試錯誤，但剩餘期限不夠再送一次），**只供 log 分辨、不驅動任何降級路徑**（簡介熔斷與策展換備援
- * 只看 `reason`）；`'timeout'` 未給 kind 時預設 `'hung'`，其他 `reason` 一律無 kind。`label`（例 `timeout/budget`）與
+ * `'budget'`（Gemini 有回可重試錯誤，但剩餘期限不夠再送一次），**只供 log 分辨、不驅動任何降級路徑**（簡介熔斷看 `reason`
+ * 與該則呼叫實際耗時 `INTRO_BREAKER_SLOW_MS`，策展換備援只看 `reason`）；`'timeout'` 未給 kind 時預設 `'hung'`，其他 `reason` 一律無 kind。`label`（例 `timeout/budget`）與
  * `message`（`LLM 呼叫失敗：<label>`）都帶 kind，呼叫端印其一即可分辨。
  */
 export class LlmError extends Error {

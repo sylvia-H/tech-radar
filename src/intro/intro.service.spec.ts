@@ -36,6 +36,11 @@ function makeService(opts: { generate?: jest.Mock; getJson?: jest.Mock }): {
 const FIXED_NOW = () => new Date('2026-07-18T00:00:00.000Z');
 
 describe('IntroService.ensureIntro', () => {
+  // 逾時熔斷測試會 spy 全域 Date.now／Logger：斷言失敗時也要還原，免得連鎖影響同檔其餘測試。
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   it('快取未命中 + README 可取 → 回 generated、寫入 state.intros（US1、FR-004）', async () => {
     const readme = '# Repo\n' + 'x'.repeat(300);
     const { service } = makeService({
@@ -213,7 +218,7 @@ describe('IntroService.ensureIntro', () => {
     warnSpy.mockRestore();
   });
 
-  it('快失敗（耗時未達門檻，例如 503 秒回重試到放棄約 100 秒）不熔斷', async () => {
+  it('快失敗（耗時未達門檻，例如近乎秒回的 503 重試到放棄約 100 秒）不熔斷', async () => {
     const warnSpy = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
     let now = 1_000_000;
     const nowSpy = jest.spyOn(Date, 'now').mockImplementation(() => now);
