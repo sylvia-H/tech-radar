@@ -6,6 +6,8 @@ import {
   GeminiModel,
   LlmError,
   LlmGenerateOptions,
+  NEWS_LLM_TIMEOUT_MS,
+  NEWS_MIN_ATTEMPT_MS,
   NEWS_THINKING_LEVEL,
 } from '../llm/llm.types';
 import { isUnresolved, mentionsBoardRepo } from '../news/funnel';
@@ -204,7 +206,8 @@ export class NewsCurationService {
 
   /**
    * 以主型號（`GEMINI_MODEL_NEWS`）送出策展 prompt；若擲 `LlmError`（不論 `reason`：`exhausted`＝429
-   * 退避耗盡、`error`＝型號 404 下架等不可重試錯誤、`empty`＝空回應），記 warn 後改以備援型號
+   * 退避耗盡、`error`＝型號 404 下架等不可重試錯誤、`empty`＝空回應、`timeout`＝10 分鐘期限用盡（2026-10-27，
+   * ADR 0009）），記 warn 後改以備援型號
    * （`GEMINI_MODEL_NEWS_FALLBACK`）重送**同一 prompt 一次**；第二次仍失敗才把錯誤拋給呼叫端走降級。
    * 2026-09-27 起回到 Flash → Lite（主 `gemini-3.8-flash`、備援 `gemini-3.5-flash-lite`），兩者皆帶
    * `thinkingLevel: NEWS_THINKING_LEVEL`；09-25～09-27 曾為 Lite 主／Lite 備援（見 `llm.types.ts`）。
@@ -235,7 +238,7 @@ export class NewsCurationService {
         throw err;
       }
       this.logger.warn(
-        `策展主型號失敗（${err.reason}，${GEMINI_MODEL_NEWS}），改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`,
+        `策展主型號失敗（${err.label}，${GEMINI_MODEL_NEWS}），改以備援型號（${GEMINI_MODEL_NEWS_FALLBACK}）重試一次`,
       );
       const raw = await this.llm.generate(prompt, curationOptions(GEMINI_MODEL_NEWS_FALLBACK, schema));
       return { raw, model: GEMINI_MODEL_NEWS_FALLBACK, fellBack: true };
@@ -323,7 +326,7 @@ export class NewsCurationService {
         throw err;
       }
       this.logger.warn(
-        `策展備援重試失敗（${err.reason}，${GEMINI_MODEL_NEWS_FALLBACK}），改為搶救主型號回應的可用項目`,
+        `策展備援重試失敗（${err.label}，${GEMINI_MODEL_NEWS_FALLBACK}），改為搶救主型號回應的可用項目`,
       );
       return null;
     }
@@ -331,14 +334,21 @@ export class NewsCurationService {
 }
 
 /**
- * 策展呼叫的 `generate` 選項：指定型號＋thinking（2026-09-27）＋結構化輸出 schema（2026-10-17，ADR 0006）。
+ * 策展呼叫的 `generate` 選項：指定型號＋thinking（2026-09-27）＋結構化輸出 schema（2026-10-17，ADR 0006）＋10 分鐘總期限、
+ * 剩不到 2 分鐘不重送（2026-10-27，ADR 0009）。
  * 主、備援（含解析失敗的備援重試）一律相同，只換型號。
  */
 function curationOptions(
   model: GeminiModel,
   schema: Record<string, unknown> = CURATION_RESPONSE_JSON_SCHEMA,
 ): LlmGenerateOptions {
-  return { model, thinkingLevel: NEWS_THINKING_LEVEL, responseJsonSchema: schema };
+  return {
+    model,
+    thinkingLevel: NEWS_THINKING_LEVEL,
+    responseJsonSchema: schema,
+    timeoutMs: NEWS_LLM_TIMEOUT_MS,
+    minAttemptMs: NEWS_MIN_ATTEMPT_MS,
+  };
 }
 
 /** 解析回應；結構性錯誤（`CurationParseError`）轉為 `{ ok: false }`，其他例外照常上拋。 */

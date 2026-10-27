@@ -36,7 +36,7 @@
 | 排程 | 雙離峰 cron（台北 04:07 主班、04:37 補班）＋ 時間戳 guard；手動 `dry_run` 乾跑、`replay_date` 降級日補發，皆不寫狀態 |
 | 常駐服務／資料庫 | 0 |
 | 月費 | $0 |
-| 單元測試 | 773 個、70 個測試套件 |
+| 單元測試 | 810 個、71 個測試套件 |
 
 三條輸出流：
 
@@ -613,7 +613,7 @@ Gemini 型號依資料流分兩個（`src/llm/llm.types.ts`），共用同一把
 |------|------|------|
 | 榜單簡介、榜單日 TL;DR | `gemini-3.5-flash-lite`（`GEMINI_MODEL_BOARD`，預設） | 免費層約 15 RPM／1,000 RPD；穩定態七天只有 0～數次呼叫 |
 | 每日晨報策展（主） | `gemini-3.8-flash`（`GEMINI_MODEL_NEWS`）＋ `thinkingLevel: high` | 免費層 **5 RPM／20 RPD**（2026-09-12 於 AI Studio 確認）；每日 1 次、含退避最多 4 次 HTTP 嘗試（10s／20s／40s＋jitter），對 20 RPD 有 5 倍餘裕；本機手動執行吃同一份 RPD |
-| 每日晨報策展（備援） | `gemini-3.5-flash-lite`（`GEMINI_MODEL_NEWS_FALLBACK`）＋ `thinkingLevel: high` | 主型號擲 `LlmError`（429／503 耗盡、型號 404、空回應）時以**同一 prompt 單次重試**，仍屬同一次策展；兩者皆敗才降級為原文標題版並發紅色告警（見第 9 關） |
+| 每日晨報策展（備援） | `gemini-3.5-flash-lite`（`GEMINI_MODEL_NEWS_FALLBACK`）＋ `thinkingLevel: high` | 主型號擲 `LlmError`（429／503 耗盡、型號 404、空回應、10 分鐘期限用盡）時以**同一 prompt 單次重試**，仍屬同一次策展；兩者皆敗才降級為原文標題版並發紅色告警（見第 9 關） |
 
 thinking 只增加 token、不增加請求數，對 RPM／RPD 零成本；若型號以 400 拒絕 thinking 參數，`LlmService`
 會以同一 prompt 不帶 thinking 重送一次，不會因設定問題一路降級。簡介與 TL;DR 不帶 thinking。免費層型號 ID
@@ -678,7 +678,7 @@ node dist/main.cli.js
 npm test
 ```
 
-670 個單元測試、65 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
+810 個單元測試、71 個測試套件，與原始碼同目錄。憲章要求的關鍵邏輯皆有覆蓋：Trending 解析（HTML
 快照）、兩領域歸類、榜單 diff 與決勝、URL／標題去重、簡介快取命中、新聞配額與字數上限、來源
 schema 與 tier 加權、未歸類通道與同題群集、補位與回流、晨報 18h guard、榜單 162h 節奏、狀態原子寫入。
 Gemini 一律 mock，並另測降級路徑與 thinking 退回路徑。
