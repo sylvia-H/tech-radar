@@ -112,7 +112,7 @@
   |------|------|-----------|------|
   | 榜單簡介、榜單日 TL;DR | `gemini-3.5-flash-lite`（`GEMINI_MODEL_BOARD`，`generate()` 預設） | 約 15 RPM／1,000 RPD | 每新進 repo 一生一次並快取；穩定態七天 0～數次呼叫；不帶 thinking |
   | 晨報策展（主） | `gemini-3.8-flash`（`GEMINI_MODEL_NEWS`）＋ `thinkingLevel: high` | **5 RPM／20 RPD**（2026-09-12 AI Studio 確認） | 每日 1 次；退避最多 4 次 HTTP（10s／20s／40s＋jitter，約兩分鐘內）仍在 5 RPM 下，對 20 RPD 有 5 倍餘裕；**本機手動執行吃同一份 RPD** |
-  | 晨報策展（備援） | `gemini-3.5-flash-lite`（`GEMINI_MODEL_NEWS_FALLBACK`）＋ `thinkingLevel: high` | 同第一列 | 主型號擲 `LlmError`（429／503 耗盡、型號 404、空回應）時以**同一 prompt 單次重試** |
+  | 晨報策展（備援） | `gemini-3.5-flash-lite`（`GEMINI_MODEL_NEWS_FALLBACK`）＋ `thinkingLevel: high` | 同第一列 | 主型號擲 `LlmError`（429／503 耗盡、型號 404、空回應、10 分鐘期限用盡 `timeout`）時以**同一 prompt 單次重試** |
 
   - thinking 只增加 token、不增加請求數，對 RPM／RPD 零成本。型號以 400 拒絕 thinking 參數時，`LlmService` warn 後以同一 prompt
     **不帶 thinking 重送一次**（多 1 次 HTTP、不佔退避次數），不會因設定問題走到備援與降級。用量 log 標 `thinking=high`，「思考 N」為實際思考 token。
@@ -120,13 +120,16 @@
     2026-10-07～10-17：Flash 11 天 8 天成功（10-10 起連 8 天），Lite 2 天，10-08 一天 Flash 回應形狀不符而降級（促成 ADR 0006）；Flash 思考 6.9～11.3k。
   - 教訓（沿用）：免費層型號 ID **可能無預警提前下架**（2026-07-19 `gemini-2.5-flash`／`2.5-flash-lite` 在公告日前回 404），`LlmService` 非可重試
     錯誤務必印實際狀態碼與訊息（`errDetail`），否則會被誤判為速率限制；Flash 與 Lite 配額不同級，換型號前先在 AI Studio 確認。
-- **呼叫逾時（2026-10-27 起；決策紀錄 [ADR 0009](adr/0009-gemini-call-timeout.md)）**：每次 HTTP 呼叫以 `abortSignal` 限時——策展
-  （主、備援、解析失敗重試、補發翻譯）`NEWS_LLM_TIMEOUT_MS` = **10 分鐘**，簡介／TL;DR `LLM_TIMEOUT_MS` = 300 秒。逾時擲
-  `LlmError('timeout')`、**不在同一型號重試**（策展直接換備援）；429／503／其他網路錯誤照舊退避 4 次。連線層由 `LlmService` 建構時
-  `installGeminiDispatcher()`（`src/llm/gemini-dispatcher.ts`）換掉 Node `fetch` 的全域 dispatcher，只把 Gemini origin 的
-  headers／body 逾時上限拉到 10 分鐘（undici 預設 300 秒會先砍斷），其餘 origin 不變；啟用 `NODE_USE_ENV_PROXY` 時不換、印 warn。
-  最壞耗時：策展約 25 分鐘（主備各一次逾時＋503 退避），榜單日每個新進 repo 簡介再多至 5 分鐘；`radar.yml` 的 Run Tech Radar 步驟
-  `timeout-minutes: 60`，超過即本步失敗並送紅色告警。log 看「LLM 呼叫逾時（<型號>…）」。
+- **呼叫逾時（2026-10-27 起；決策紀錄 [ADR 0009](adr/0009-gemini-call-timeout.md)）**：每次 `generate()`（含重試與退避）有**總期限**，
+  每次 HTTP 嘗試以 `abortSignal` 限時剩餘時間——策展（主、備援、解析失敗重試、補發翻譯）`NEWS_LLM_TIMEOUT_MS` = **10 分鐘**，簡介／
+  TL;DR `LLM_TIMEOUT_MS` = 300 秒。期限用盡（或退避後會超過期限）擲 `LlmError('timeout')`、**不在同一型號重試**（策展直接換備援）；
+  429／503／其他網路錯誤在期限內照舊退避至多 4 次。簡介有熔斷：同一次執行任一則逾時後，其餘未命中快取者直接降級為 description。
+  連線層由 `LlmService` 建構時 `installGeminiDispatcher()`（`src/llm/gemini-dispatcher.ts`）換掉 Node `fetch` 的全域 dispatcher，只把
+  Gemini origin 的 headers／body 逾時上限拉到 10 分鐘（undici 預設 300 秒會先砍斷），其餘 origin 不變；`NODE_USE_ENV_PROXY=1` 時不換、
+  baseUrl 被覆寫或走 Vertex 時上限不生效，兩者皆印 warn。
+  最壞耗時：策展 20 分鐘（主備各一個期限），榜單日簡介＋TL;DR 約 10 分鐘；`radar.yml` 的 Run Tech Radar 步驟 `timeout-minutes: 60`，
+  超過即本步失敗：Commit state（`!cancelled()`）仍落檔已推出的狀態，並送紅色告警。log 看「LLM 呼叫逾時（<型號>，期限 N 秒用盡／
+  連線層逾時 UND_ERR_*）」與「退避後將超過期限」。
 - **結構化輸出（2026-10-17 起；決策紀錄 [ADR 0006](adr/0006-curation-structured-output-and-salvage.md)）**：策展主、備援呼叫皆帶
   `responseMimeType: application/json`＋`responseJsonSchema`（`src/curation/curation-schema.ts`，須與 prompt 輸出規則同步），用量 log 標 `schema=json`。
   型號以 400 拒絕 thinking 或 schema 時，warn 後以**不帶這兩項設定**的純請求重送一次。
