@@ -149,7 +149,6 @@ describe('IntroService.ensureIntro', () => {
     expect(result).toEqual({ status: 'degraded', description: 'A sample repo for testing' });
     expect(state.intros['123']).toBeUndefined();
     expect(warnSpy).toHaveBeenCalled();
-    warnSpy.mockRestore();
   });
 
   it('降級不影響批次中其餘 repo（呼叫端可續跑，FR-014）', async () => {
@@ -191,7 +190,6 @@ describe('IntroService.ensureIntro', () => {
     expect(generate).toHaveBeenCalledTimes(1);
     expect(getJson).toHaveBeenCalledTimes(1);
     expect(warnSpy.mock.calls.map((c) => String(c[0])).some((l) => l.includes('本次執行已有 LLM 呼叫慢失敗或逾時'))).toBe(true);
-    warnSpy.mockRestore();
   });
 
   it('慢失敗熔斷：exhausted 但 LLM 呼叫耗時達 INTRO_BREAKER_SLOW_MS（慢回 503 第 4 次失敗）→ 其餘直接降級', async () => {
@@ -214,8 +212,6 @@ describe('IntroService.ensureIntro', () => {
     expect(second.status).toBe('degraded');
     expect(generate).toHaveBeenCalledTimes(1);
     expect(INTRO_BREAKER_SLOW_MS).toBe(120_000);
-    nowSpy.mockRestore();
-    warnSpy.mockRestore();
   });
 
   it('快失敗（耗時未達門檻，例如近乎秒回的 503 重試到放棄約 100 秒）不熔斷', async () => {
@@ -237,8 +233,6 @@ describe('IntroService.ensureIntro', () => {
 
     expect(second.status).toBe('generated');
     expect(generate).toHaveBeenCalledTimes(2);
-    nowSpy.mockRestore();
-    warnSpy.mockRestore();
   });
 
   it('非逾時的 LLM 失敗（exhausted／error／empty）不觸發熔斷', async () => {
@@ -259,6 +253,5 @@ describe('IntroService.ensureIntro', () => {
 
     expect(fourth.status).toBe('generated');
     expect(generate).toHaveBeenCalledTimes(4);
-    warnSpy.mockRestore();
   });
 });
