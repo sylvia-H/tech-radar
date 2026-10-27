@@ -19,9 +19,11 @@
   `generativelanguage.googleapis.com` 的 headers／body 逾時上限拉到 10 分鐘，其餘 origin 沿用 undici 預設。
 - 呼叫層：每次 `generate()`（含重試與退避）有總期限，每次 HTTP 嘗試以 `config.abortSignal` 限時剩餘時間。策展（主、備援、
   解析失敗的備援重試、補發翻譯）10 分鐘，簡介與榜單 TL;DR 300 秒（與修改前單次呼叫的上限相同）。
-- 期限用盡、或退避後會超過期限，擲 `LlmError('timeout')`，**不在同一型號重試**，交呼叫端換備援或降級；429、503 與其他網路
-  錯誤在期限內照舊退避重試至多 4 次。簡介同一次執行內第一次逾時後熔斷，其餘直接降級為 description。
-- workflow 的 Run Tech Radar 步驟設 `timeout-minutes: 60`；Commit state 改為 `!cancelled()`，本步失敗或逾時時仍落檔已推出的狀態。
+- 期限用盡擲 `LlmError('timeout', 'hung')`；退避後（或 400 去設定重送前）剩餘不足 `LLM_MIN_ATTEMPT_MS`（30 秒）擲
+  `LlmError('timeout', 'budget')`。兩者都**不在同一型號重試**，交呼叫端換備援或降級；429、503 與其他網路錯誤在期限內照舊退避
+  重試至多 4 次。簡介在同一次執行內第一次 `hung` 後熔斷，其餘直接降級為 description（`budget` 不熔斷）。
+- workflow 的 Run Tech Radar 步驟設 `timeout-minutes: 60`；Commit state 改為 `!cancelled()` 且 run-app 未被跳過，本步失敗或逾時時
+  仍落檔已推出的狀態。
 
 ## 否決的替代方案
 
@@ -33,17 +35,22 @@
   主備各重試 4 次約 80 分鐘，超過步驟上限，連降級版晨報都推不出去。
 - 步驟逾時後照舊只在成功時 commit 狀態（第 1 輪修正版；合併門第 2 輪審查指出）→ 榜單段已推播並存檔、晨報段才被砍時，狀態
   沒進 `state` 分支，:37 補跑讀到舊狀態會重推同一份榜單（違反憲章 III／VI）。
+- 退避後只要沒超過期限就重送（第 2 輪修正版；合併門第 3 輪審查指出）→ 剩幾秒時送出注定被砍的請求，白扣一次 Flash RPD；改為
+  至少要剩 30 秒。
+- 熔斷下放到 `LlmService`、按型號記錄（第 3 輪審查的替代建議，Agent 評估後不採用）→ 榜單簡介與策展備援是同一個 Lite 型號，
+  簡介掛住會讓之後的策展備援也直接放棄，即使 Lite 已恢復；熔斷只放在簡介這種「同型號、連續多則」的呼叫端。
 - 降低 thinking 深度（Agent 自評）→ 會犧牲策展品質（2026-09-27 乾跑：thinking 讓同一候選池的 Lite 從 6 則變 12 則），不採用。
 - 改用串流 `generateContentStream`（Agent 自評）→ thinking 期間未必有 chunk，`bodyTimeout` 同樣是 300 秒；改動也較大。
 - 改設 job 層 `timeout-minutes`（Agent 自評）→ job 逾時會整個中止，`failure()` 告警步驟不會執行，失敗變成無聲。
 
 ## 後果與觀察
 
-- 最壞耗時：策展 20 分鐘（主、備援各一個 10 分鐘期限），榜單日簡介加 TL;DR 約 10 分鐘（第一則簡介逾時後熔斷）。超過 60 分鐘
+- 最壞耗時：策展 20 分鐘（主、備援各一個 10 分鐘期限），榜單日簡介加 TL;DR 約 10 分鐘（第一則簡介掛住後熔斷；TL;DR 不在熔斷
+  範圍，掛住時再等一個 300 秒）。超過 60 分鐘
   由步驟逾時中止：已推出的狀態照常 commit，並送紅色告警（文案帶 `run`／`commit-state` 兩步的 outcome）。
 - 啟用 Node 環境代理（`NODE_USE_ENV_PROXY=1` 或 `--use-env-proxy`，比照 Node 只認 `1`）時不換 dispatcher：保留代理連線，Gemini
-  逾時上限維持 300 秒，並印 warn。SDK baseUrl 被 `GOOGLE_GEMINI_BASE_URL`／`GOOGLE_VERTEX_BASE_URL` 改到別的 origin，或以
-  `GOOGLE_GENAI_USE_VERTEXAI`／`ENTERPRISE` 改走 Vertex 時，連線層上限對不上 origin、不生效，同樣印 warn。
+  逾時上限維持 300 秒，並印 warn。比照 SDK 2.12.0 的判定：以 `GOOGLE_GENAI_USE_ENTERPRISE`（有設時優先）／`GOOGLE_GENAI_USE_VERTEXAI`
+  =`true` 改走 Vertex，或非 Vertex 模式下 `GOOGLE_GEMINI_BASE_URL` 指向別的 origin 時，連線層上限對不上 origin、不生效，同樣印 warn。
 - 換 dispatcher 時不檢查目前是否已被其他模組換過（Node 預設 dispatcher 無可靠辨識方式）；日後若引入 `MockAgent` 或帶攔截器的
   dispatcher，須改為在其上組合。
 - 帶 `abortSignal` 後，不帶任何進階設定的請求體會多一個空的 `generationConfig`，等同不帶設定。

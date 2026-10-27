@@ -122,13 +122,14 @@
     錯誤務必印實際狀態碼與訊息（`errDetail`），否則會被誤判為速率限制；Flash 與 Lite 配額不同級，換型號前先在 AI Studio 確認。
 - **呼叫逾時（2026-10-27 起；決策紀錄 [ADR 0009](adr/0009-gemini-call-timeout.md)）**：每次 `generate()`（含重試與退避）有**總期限**，
   每次 HTTP 嘗試以 `abortSignal` 限時剩餘時間——策展（主、備援、解析失敗重試、補發翻譯）`NEWS_LLM_TIMEOUT_MS` = **10 分鐘**，簡介／
-  TL;DR `LLM_TIMEOUT_MS` = 300 秒。期限用盡（或退避後會超過期限）擲 `LlmError('timeout')`、**不在同一型號重試**（策展直接換備援）；
-  429／503／其他網路錯誤在期限內照舊退避至多 4 次。簡介有熔斷：同一次執行任一則逾時後，其餘未命中快取者直接降級為 description。
+  TL;DR `LLM_TIMEOUT_MS` = 300 秒。期限用盡擲 `LlmError('timeout', 'hung')`，退避後（或 400 去設定重送前）剩餘不足
+  `LLM_MIN_ATTEMPT_MS` = 30 秒擲 `LlmError('timeout', 'budget')`，兩者皆**不在同一型號重試**（策展直接換備援）；429／503／其他網路錯誤
+  在期限內照舊退避至多 4 次。簡介有熔斷：同一次執行任一則 `hung` 後，其餘未命中快取者直接降級為 description（TL;DR 不在範圍內）。
   連線層由 `LlmService` 建構時 `installGeminiDispatcher()`（`src/llm/gemini-dispatcher.ts`）換掉 Node `fetch` 的全域 dispatcher，只把
   Gemini origin 的 headers／body 逾時上限拉到 10 分鐘（undici 預設 300 秒會先砍斷），其餘 origin 不變；`NODE_USE_ENV_PROXY=1` 時不換、
-  baseUrl 被覆寫或走 Vertex 時上限不生效，兩者皆印 warn。
+  `GOOGLE_GEMINI_BASE_URL` 指向別的 origin 或以 `GOOGLE_GENAI_USE_VERTEXAI`／`ENTERPRISE`=`true` 走 Vertex 時上限不生效，兩者皆印 warn。
   最壞耗時：策展 20 分鐘（主備各一個期限），榜單日簡介＋TL;DR 約 10 分鐘；`radar.yml` 的 Run Tech Radar 步驟 `timeout-minutes: 60`，
-  超過即本步失敗：Commit state（`!cancelled()`）仍落檔已推出的狀態，並送紅色告警。log 看「LLM 呼叫逾時（<型號>，期限 N 秒用盡／
+  超過即本步失敗：Commit state（`!cancelled()` 且 run-app 未被跳過）仍落檔已推出的狀態，並送紅色告警。log 看「LLM 呼叫逾時（<型號>，期限 N 秒用盡／
   連線層逾時 UND_ERR_*）」與「退避後將超過期限」。
 - **結構化輸出（2026-10-17 起；決策紀錄 [ADR 0006](adr/0006-curation-structured-output-and-salvage.md)）**：策展主、備援呼叫皆帶
   `responseMimeType: application/json`＋`responseJsonSchema`（`src/curation/curation-schema.ts`，須與 prompt 輸出規則同步），用量 log 標 `schema=json`。
