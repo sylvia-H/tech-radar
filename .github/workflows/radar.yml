@@ -60,8 +60,8 @@ jobs:
 
       - name: Run Tech Radar
         id: run-app
-        # 步驟層逾時（2026-10-27，ADR 0009）：Gemini 卡住時最壞約 25 分鐘（策展主備各 10 分鐘＋退避），榜單日每個新進
-        # repo 的第一則簡介再多至 5 分鐘（逾時後其餘熔斷）。設在步驟而非 job：逾時算本步失敗，下方 Commit state 仍會
+        # 步驟層逾時（2026-10-27，ADR 0009）：Gemini 卡住時策展最壞 20 分鐘（主備各一個 10 分鐘總期限，已含退避），榜單日
+        # 簡介＋TL;DR 約 10 分鐘（第一則簡介掛住後其餘熔斷）。設在步驟而非 job：逾時算本步失敗，下方 Commit state 仍會
         # 落檔已推出的狀態、failure() 告警仍會送出，不會無聲。
         timeout-minutes: 60
         run: node dist/main.cli.js
@@ -85,8 +85,9 @@ jobs:
         # null != true 為真、!null 為真 → 照常執行）。
         # !cancelled()（2026-10-27，ADR 0009）：Run Tech Radar 失敗（含步驟逾時被砍）時仍執行——榜單段可能已推播並原子
         # save 本機 board.json，晨報段才卡住；不落檔的話 :37 補跑讀到舊狀態會重推同一份榜單。save() 是原子寫入且只在
-        # 推播成功後才寫，失敗時 commit 本機檔是安全的；沒寫過的話 git diff 無變更、照常跳過。
-        if: ${{ !cancelled() && inputs.dry_run != true && !inputs.replay_date }}
+        # 推播成功後才寫，失敗時 commit 本機檔是安全的；沒寫過的話 git diff 無變更、照常跳過。run-app 為 skipped（之前的
+        # checkout／安裝／build 失敗、CLI 根本沒跑）時不執行，免得以不相干的錯誤再失敗一次、誤導告警分流。
+        if: ${{ !cancelled() && steps.run-app.outcome != 'skipped' && inputs.dry_run != true && !inputs.replay_date }}
         run: |
           cp state/board.json state-branch/state/board.json
           cd state-branch
