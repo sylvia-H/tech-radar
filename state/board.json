@@ -438,130 +438,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-25T22:29:10.259Z",
-  "lastNewsPushAt": "2026-10-27T23:43:50.988Z",
+  "lastNewsPushAt": "2026-10-28T23:58:45.944Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-25T22:29:10.259Z",
       "summary": "本次技術雷達榜單由 cloudflare/security-audit-skill 拿下綜合榜 #1，共有 8 個新進、1 個竄升、1 個下降，其中新進與竄升項目主要分佈於 AI（7 個）與前後端（2 個）。"
     },
     "feed": [
-      {
-        "content": "雲端部署平台 Railway 正式公開 10 月 21 日安全事件的初步調查報告（Preliminary Report）。針對日前發生的資安衝擊，官方團隊詳細說明了受影響範圍、攻擊向量防堵過程以及目前採取的補救與加固措施。由於眾多現代團隊依賴 Railway 託管生產服務與資料庫，該報告對於評估自身基礎設施風險與安全合規狀態至關重要。",
-        "id": "news:https://blog.railway.com/p/preliminary-report-october-security-incident",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "Railway 發布 10 月 21 日資安事件初步事後報告，揭露事故調查進展",
-        "type": "news",
-        "url": "https://blog.railway.com/p/preliminary-report-october-security-incident"
-      },
-      {
-        "content": "AWS 宣布其程式碼安全 AI 代理服務「Continuum」正式全面開放（GA）。該服務能自動掃描程式碼儲存庫中的漏洞，進行主動驗證並嘗試自動修復，官方宣稱可解決高達 89% 的安全缺失。然而實際落地時仍須注意模型幻覺與邊界情況的限制。這項發布象徵雲端原生開發流程進一步邁向自動化安全補救，將直接改變 DevOps 與安全團隊的日常漏洞處理實務。",
-        "id": "news:https://thenewstack.io/aws-says-its-ai-security-agent-fixes-89-of-bugs-but-theres-a-catch",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "AWS 正式推出 Continuum 安全代理，可自動偵測並修復代碼庫漏洞",
-        "type": "news",
-        "url": "https://thenewstack.io/aws-says-its-ai-security-agent-fixes-89-of-bugs-but-theres-a-catch/"
-      },
-      {
-        "content": "中國 AI 團隊在釋出 Kimi K3.1 開源模型權重時，主動移除了涉及網路攻擊與安全漏洞利用的訓練數據。此決策主要源自中國最新的出口管制規定，同時也呼應了全球對大型語言模型可能被用於自動化網路攻擊的警戒。這項變更直接影響依賴該開源權重進行安全測試或自動化滲透研究的開發者，凸顯法規對開源模型能力的深遠影響。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xecgrf/kimi_k31_removes_cyberattack_training_data_from",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "因應出口管制與資安疑慮，Kimi K3.1 開源權重移除網路攻擊相關訓練資料",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xecgrf/kimi_k31_removes_cyberattack_training_data_from/"
-      },
-      {
-        "content": "歐盟成員國代表投票通過針對 AI 公司的數據使用新規定，批評者稱其為針對歐洲用戶內容的「數位徵用」。該政策調整了版權與數據使用豁免條款，直接影響在歐盟運作或處理歐洲數據的 AI 模型開發團隊與服務商在訓練資料收集、著作權授權與隱私合規方面的法律邊界，是歐洲 AI 監管框架下的重大政策變動。",
-        "id": "news:https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "歐盟成員國通過新版 AI 資料授權規範，放寬 AI 公司訓練數據取得限制",
-        "type": "news",
-        "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies"
-      },
-      {
-        "content": "GitHub 宣布為 Copilot 使用量指標（Usage metrics）API 加入擴展支援，現在起企業與團隊的用量報告將納入包含 OpenCode 在內等多種非官方整合工具的模型消耗數據。此更新讓軟體工程管理者與架構師能夠跨不同開發環境全面追蹤內部團隊實際調用 AI 模型的指標與成本，解決過去多工具混用導致的用量監控盲點。",
-        "id": "news:https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "GitHub Copilot 使用量指標 API 新增支援 OpenCode 等第三方開發工具",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode"
-      },
-      {
-        "content": "Meta 在最新研究論文中提出跳過傳統 Tokenizer、直接讓模型逐位元組（raw bytes）讀取文字架構。研究團隊透過知識蒸餾，將使用 Token 的 Llama 3 8B 權重轉移至僅讀取位元組的 1B 小模型中，成功克服了位元組序列長度帶來的表示瓶頸。儘管位元組模型初始學習曲線較慢，但研究指出其在多語言適應與長尾字元處理具備更高上限，為未來的語言模型架構設計帶來新路徑。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xe88ja/meta_trained_small_ai_models_to_read_raw_bytes",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "Meta 探索無 Token 革命：以 Llama 3 蒸餾 1B 位元組層級語言模型",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xe88ja/meta_trained_small_ai_models_to_read_raw_bytes/"
-      },
-      {
-        "content": "一家工程團隊分享了針對內部 AI 程式碼審查工具進行成本與延遲極限最佳化的實務經驗。在面對推論費用暴增兩倍的情況下，團隊深入剖析 Token 消耗結構，透過引入提示詞快取（Prompt Caching）並配合依任務複雜度分流的智慧模型路由機制，在大幅縮短審查時間的同時成功削減 68% 的推論費用，為生產環境中落實 GenAI 的架構師提供了具體的節費指南。",
-        "id": "news:https://blog.cloudflare.com/obsessive-inference-optimization",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "實戰案例：運用 Prompt Caching 與動態路由將 AI 程式碼審查成本降低 68%",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/obsessive-inference-optimization/"
-      },
-      {
-        "content": "技術社群深入探討 Docker 在多年演進下累積的諸多「怪異」行為與非預期機制。文章詳細拆解了 Docker 在處理 iptables 規則覆寫、磁碟卷（Volume）權限繼承、訊號傳遞（Signal Propagation）以及資源限制時的底層實作細節與陷阱。對於日常依賴 Docker 構建微服務與 CI/CD 流程的開發者與 SRE 而言，這份分析能有效避免在生產環境中踩到隱晦的容器配置地雷。",
-        "id": "news:https://codeandcake.dev/posts/2026-10-22-docker-is-weird",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "解構 Docker 的反直覺設計：容器底層隔離、網路與儲存的邊界行為分析",
-        "type": "news",
-        "url": "https://codeandcake.dev/posts/2026-10-22-docker-is-weird"
-      },
-      {
-        "content": "開發者發布開源專案 WorldTUI，展示如何僅使用 3.6 億參數的小型語言模型來端到端模擬完整的終端機（TUI）環境。該模型能在沒有真實作業系統底層支援的情況下，逼真重現 Shell 指令解析、輸出格式與互動狀態，證明了超小型模型在模擬特定沙盒環境與系統行為上的潛力，為端側 AI Agent 與互動式介面模擬提供了極具啟發性的研究實作。",
-        "id": "news:https://simedw.com/2026/10/21/world-model-terminal",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "WorldTUI：以 360M 輕量模型完全模擬終端機環境與 Shell 互動",
-        "type": "news",
-        "url": "https://simedw.com/2026/10/21/world-model-terminal/"
-      },
-      {
-        "content": "社群釋出超過 11 小時的深度實作教學，專注於從零構建具備邏輯推理能力的大型語言模型。內容使用 Python 與 PyTorch，深入解析評估基準（Evaluation）、推論期計算擴展（Inference-time Scaling）、強化學習（RL）對齊以及模型蒸餾等前沿推理模型關鍵技術，並提供完整的程式碼範例，為希望深入理解與訓練類 o1 推理架構的 AI 工程師提供了系統化的實戰指引。",
-        "id": "news:https://magazine.sebastianraschka.com/p/building-reasoning-models",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "從零建構推理模型實戰：涵蓋推論期擴展、RL 與蒸餾的完整 PyTorch 課程",
-        "type": "news",
-        "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models"
-      },
-      {
-        "content": "資安研究團隊公開其成功攻破最新 iOS 安全防線的技術細節。研究詳細記錄了如何繞過 PAC（指標驗證碼）、PPL 等硬體層級防禦機制，串聯多個記憶體損壞與邏輯漏洞達成任意程式碼執行的完整攻擊鏈。這項成果不僅展現了現代行動作業系統防護的脆弱點，也為系統底層安全研究員與從事跨平台安全架構設計的工程師提供了寶貴的攻防分析範本。",
-        "id": "news:https://blog.calif.io/p/iphone",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "攻破現代 iOS 防禦：資安研究團隊公開 iPhone 漏洞利用鏈實作解析",
-        "type": "news",
-        "url": "https://blog.calif.io/p/iphone"
-      },
-      {
-        "content": "開源互動式 HTTPS 代理與封包除錯工具 mitmproxy 在最新版本中加入了 --emudhra 旗標選項。此功能主要因應近期憑證頒發機構 eMudhra 金鑰遭破解的安全危機，讓安全研究員與開發者能在本地代理環境中快速識別、攔截或模擬受影響憑證的流量行為。此更新強化了開發者在排查 TLS 信任鏈問題與進行安全評估時的應對能力。",
-        "id": "news:https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b",
-        "publishedAt": "2026-10-24T22:24:48.812Z",
-        "title": "網路除錯工具 mitmproxy 新增 --emudhra 選項以因應憑證機構安全事件",
-        "type": "news",
-        "url": "https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b"
-      },
-      {
-        "id": "repo:1273427276:new:2026-10-26",
-        "publishedAt": "2026-10-25T22:29:10.259Z",
-        "title": "cloudflare/security-audit-skill 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/cloudflare/security-audit-skill"
-      },
-      {
-        "id": "repo:1206390571:climbed:2026-10-26",
-        "publishedAt": "2026-10-25T22:29:10.259Z",
-        "title": "debpalash/VoiceStudio 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/debpalash/VoiceStudio"
-      },
-      {
-        "id": "repo:1183888342:new:2026-10-26",
-        "publishedAt": "2026-10-25T22:29:10.259Z",
-        "title": "stablyai/orca 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/stablyai/orca"
-      },
       {
         "id": "repo:1266797999:new:2026-10-26",
         "publishedAt": "2026-10-25T22:29:10.259Z",
@@ -835,223 +718,347 @@
         "title": "GPU 加速終端模擬器 Ghostty 1.4 正式發布",
         "type": "news",
         "url": "https://ghostty.org/docs/install/release-notes/1-4-0"
+      },
+      {
+        "content": null,
+        "id": "news:https://sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Anthropic S-1",
+        "type": "news",
+        "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+      },
+      {
+        "content": null,
+        "id": "news:https://openai.com/index/building-scientific-understanding-with-academic-communities",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Three new discoveries in mathematics, computer science, and physics",
+        "type": "news",
+        "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/"
+      },
+      {
+        "content": null,
+        "id": "news:https://nullpt.rs/fingerprinting-bioweapons",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Why is this fingerprinting script creating bioweapons?",
+        "type": "news",
+        "url": "https://nullpt.rs/fingerprinting-bioweapons"
+      },
+      {
+        "content": null,
+        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Gemini 4 Carbon",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      {
+        "content": null,
+        "id": "news:https://oioannou.com/blog/ai-promised-less-work",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "AI promised less work. I've never worked more",
+        "type": "news",
+        "url": "https://oioannou.com/blog/ai-promised-less-work/"
+      },
+      {
+        "content": null,
+        "id": "news:https://stanforddaily.com/2026/10/27/professors-books-pirated-to-train-claude",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Anthropic trained Claude on illegally obtained Stanford professors' books",
+        "type": "news",
+        "url": "https://stanforddaily.com/2026/10/27/professors-books-pirated-to-train-claude/"
+      },
+      {
+        "content": null,
+        "id": "news:https://brangus.io/survival-llm",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Survival LLM: AI assistant and emergency library that runs on your own computer",
+        "type": "news",
+        "url": "https://www.brangus.io/survival-llm"
+      },
+      {
+        "content": null,
+        "id": "news:https://spectrum.ieee.org/wikipedia-wikiproject-ai-writing-cleanup",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Wikipedia's Cleanup of AI-Generated Content",
+        "type": "news",
+        "url": "https://spectrum.ieee.org/wikipedia-wikiproject-ai-writing-cleanup"
+      },
+      {
+        "content": null,
+        "id": "news:https://j11g.com/the-mythical-man-month-in-the-age-of-ai",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "The Mythical Man-Month in the Age of AI",
+        "type": "news",
+        "url": "https://j11g.com/the-mythical-man-month-in-the-age-of-ai"
+      },
+      {
+        "content": null,
+        "id": "news:https://minimaxir.com/2026/10/cheap-llms",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+        "type": "news",
+        "url": "https://minimaxir.com/2026/10/cheap-llms/"
+      },
+      {
+        "content": null,
+        "id": "news:https://religionnews.com/2026/10/26/in-a-first-a-humanist-granted-a-religious-exemption-from-using-ai",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Kentucky man becomes the first humanist granted religious exemption from AI",
+        "type": "news",
+        "url": "https://religionnews.com/2026/10/26/in-a-first-a-humanist-granted-a-religious-exemption-from-using-ai/"
+      },
+      {
+        "content": null,
+        "id": "news:https://gizmodo.com/police-are-using-ai-to-pull-over-drivers-for-suspicious-behavior-2000831220",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Police are using AI to pull over drivers for 'suspicious' behavior",
+        "type": "news",
+        "url": "https://gizmodo.com/police-are-using-ai-to-pull-over-drivers-for-suspicious-behavior-2000831220"
+      },
+      {
+        "content": null,
+        "id": "news:https://futurism.com/artificial-intelligence/amazon-ai-division-failure-nova",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Amazon Is Gutting Its AI Division After Sustained Failure",
+        "type": "news",
+        "url": "https://futurism.com/artificial-intelligence/amazon-ai-division-failure-nova"
+      },
+      {
+        "content": null,
+        "id": "news:https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Concerning behavior from a popular open-weight AI model",
+        "type": "news",
+        "url": "https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model"
+      },
+      {
+        "content": null,
+        "id": "news:https://anthropic.com/research/early-progress-drug-development",
+        "publishedAt": "2026-10-28T23:58:45.944Z",
+        "title": "Early progress on accelerating drug development with Claude",
+        "type": "news",
+        "url": "https://www.anthropic.com/research/early-progress-drug-development"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-27T23:43:50.988Z",
+      "generatedAt": "2026-10-28T23:58:45.944Z",
       "items": [
         {
-          "content": "CPython 核心開發團隊決定移除在 Python 3.13 中引入的實驗性 Copy-and-Patch JIT 編譯器架構。這項決定標誌著 Python 官方在執行期效能最佳化路徑上的重大調整，由於維護成本與架構複雜度高於預期收益，團隊將重新審視未來的 JIT 設計方向。對於關注 Python 底層效能、語言運行時演進以及依賴 CPython 內部 JIT 實作的開發者而言，需注意後續版本的變更與效能基準調整。",
-          "degraded": false,
-          "domain": "frontend-backend",
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Python's experimental JIT to be removed",
+          "sourceTitle": "Anthropic S-1",
           "sources": [
             "hn"
           ],
-          "title": "Python 官方計畫移除實驗性 JIT 編譯器",
-          "url": "https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c/",
-          "weightedScore": 430
+          "title": "Anthropic S-1",
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+          "weightedScore": 1701
         },
         {
-          "content": "Google DeepMind 發表最新一代世界模型 Genie 4，能以模擬物理規律即時生成可互動、可操作的虛擬環境。該模型主要作為具身智慧（Embodied AI）與自主代理（AI Agents）的訓練沙盒，讓智慧體在不依賴真實世界或手動構建物理引擎的前提下，於多樣化環境中進行自我探索與策略學習。這項突破為遊戲開發、智慧體模擬測試以及次世代虛擬環境生成開闢了全新途徑。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "Genie 4",
+          "sourceTitle": "Three new discoveries in mathematics, computer science, and physics",
           "sources": [
-            "deepmind-blog",
-            "hn"
+            "hn",
+            "openai-blog"
           ],
-          "title": "Google DeepMind 正式發表世界模型 Genie 4",
-          "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
-          "weightedScore": 764
+          "title": "Three new discoveries in mathematics, computer science, and physics",
+          "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+          "weightedScore": 1245
         },
         {
-          "content": "GitHub Copilot 正式於公開預覽版支援以 Organization 安裝的 GitHub App 進行伺服器對伺服器（Server-to-Server）身分驗證。這項更新讓使用 GitHub Copilot SDK 開發的背景服務、CI/CD 自動化流程與獨立 AI Agent，無須綁定個人使用者帳號或權限 token，即可直接以服務身分發起請求與調用 Copilot 功能。這大幅降低了企業構建後端自動化 Agent 的資安風險與維護負擔。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot supports server-to-server authentication",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Why is this fingerprinting script creating bioweapons?",
           "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 開放支援伺服器對伺服器（S2S）身分驗證",
-          "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 宣布 Copilot 的「輔助權限（Assisted Permissions）」功能正式在 Copilot CLI、Copilot App 及 VS Code 中全面推出（GA）。當 Copilot 嘗試執行系統終端指令或讀寫特定檔案路徑時，會透過細緻的權限提示請求使用者明確授權，避免 Agent 自主操作帶來潛在的破壞性指令風險。此功能為開發者在日常開發與終端環境中深度整合 AI 工具時，提供了更安全的把關機制。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot assisted permissions generally available",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 輔助權限管理功能正式全面推出（GA）",
-          "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
-          "weightedScore": 100
-        },
-        {
-          "content": "Kubernetes 社群宣布成立 Workload Conformance 工作小組，旨在為工作負載在 Kubernetes 上的執行期行為制定統一標準。過去的 Certified Kubernetes 主要檢驗叢集層級是否合規，而 AI Conformance 則檢驗叢集是否能運行 AI/ML 負載，但缺乏針對工作負載本身行為的規範。該工作小組將整合叢集維運者與應用程式開發者的需求，定義負載運行的標準化規範，以確保跨叢集部署的一致性與可靠性。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "kubernetes-blog",
-          "sourceTitle": "Announcing the Workload Conformance Working Group",
-          "sources": [
-            "kubernetes-blog"
-          ],
-          "title": "Kubernetes 社群成立 Workload Conformance 工作小組推動執行期標準",
-          "url": "https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Liquid AI 宣布推出新一代非 Transformer 架構的 Liquid Foundation Models 3（LFM3），並提供多模態模型建置能力。LFM3 延續了動態系統與狀態空間模型（SSM）的架構優勢，致力於在維持極低記憶體佔用與高推論輸送量的同時，處理長序列多模態資料。這為希望在邊緣設備或特定專業領域部署低延遲多模態 AI 的開發團隊提供了全新選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Build specialized multimodal models with LFM3",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "Liquid AI 推出 LFM3 模型架構，支援專用多模態模型建置",
-          "url": "https://huggingface.co/blog/LiquidAI/lfm3",
-          "weightedScore": 100
-        },
-        {
-          "content": "本文深入對比了傳統結構化覆蓋引導模糊測試工具 Fuzzilli 與 Google 基於大語言模型的漏洞挖掘智慧體 BigSleep 在各大瀏覽器 JavaScript 引擎（如 V8、JavaScriptCore）上的實戰表現。評測分析了兩者在語法正確性生成、複雜語義觸發深層邊界條件以及未知漏洞發現效率上的差異與互補性，為編譯器開發者、瀏覽器工程師與資安研究人員展示了次世代 AI 驅動自動化漏洞挖掘的實際潛力與限制。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "Fuzzers vs. AI: Comparing Fuzzilli and BigSleep on JavaScript Engines",
-          "sources": [
+            "hn",
             "lobsters-ai"
           ],
-          "title": "模糊測試對決 AI：評測 Fuzzilli 與 BigSleep 於 JavaScript 引擎之漏洞挖掘能力",
-          "url": "https://projectzero.google/2026/10/fuzzing-v-AI.html",
-          "weightedScore": 100
+          "title": "Why is this fingerprinting script creating bioweapons?",
+          "url": "https://nullpt.rs/fingerprinting-bioweapons",
+          "weightedScore": 826
         },
         {
-          "content": "針對 Cohere 先前指控開源模型 Qwen 3.8 Flash Next 會向阿里巴巴遠端伺服器上傳資料的爭議，社群透過 Hugging Face 公開的推論追蹤資料集與 Python 驗證指令碼進行了深入技術複現。分析指出，原先聲稱的「回傳行為」源於測試指令碼在達到特定 token 長度時的誤判，並非模型本體內建的後門或連線機制。此技術剖析有助於釐清開源模型供應鏈安全爭議，並為評估開源模型權重安全性提供了透明的驗證方法。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "Debunking Cohere's claim of Qwen 3.8 Flash Next uploading to Alibaba remote URL",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "技術實證反駁 Cohere 指控：Qwen 3.8 Flash Next 未向阿里遠端回傳資料",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xgopmj/debunking_coheres_claim_of_qwen_38_flash_next/",
-          "weightedScore": 100
-        },
-        {
-          "content": "廣受開發者關注的現代化高效能終端模擬器 Ghostty 正式釋出 1.4 版本。Ghostty 採用 Zig 語言編寫，具備原生跨平台 GPU 渲染與高度可配置性。新版本帶來多項效能最佳化、修復輸入法與排版渲染問題，並增強對現代終端特性（如真彩色、字型裝飾與自訂鍵盤映射）的支援。對於追求流暢終端操作體驗與高客製化命令列工作流的工程師而言，是一次重要的工具升級。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Ghostty 1.4",
+          "sourceTitle": "Gemini 4 Carbon",
           "sources": [
             "hn"
           ],
-          "title": "GPU 加速終端模擬器 Ghostty 1.4 正式發布",
-          "url": "https://ghostty.org/docs/install/release-notes/1-4-0",
+          "title": "Gemini 4 Carbon",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+          "weightedScore": 760
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "AI promised less work. I've never worked more",
+          "sources": [
+            "hn"
+          ],
+          "title": "AI promised less work. I've never worked more",
+          "url": "https://oioannou.com/blog/ai-promised-less-work/",
           "weightedScore": 663
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Anthropic trained Claude on illegally obtained Stanford professors' books",
+          "sources": [
+            "hn"
+          ],
+          "title": "Anthropic trained Claude on illegally obtained Stanford professors' books",
+          "url": "https://stanforddaily.com/2026/10/27/professors-books-pirated-to-train-claude/",
+          "weightedScore": 568
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Survival LLM: AI assistant and emergency library that runs on your own computer",
+          "sources": [
+            "hn"
+          ],
+          "title": "Survival LLM: AI assistant and emergency library that runs on your own computer",
+          "url": "https://www.brangus.io/survival-llm",
+          "weightedScore": 516
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Wikipedia's Cleanup of AI-Generated Content",
+          "sources": [
+            "hn"
+          ],
+          "title": "Wikipedia's Cleanup of AI-Generated Content",
+          "url": "https://spectrum.ieee.org/wikipedia-wikiproject-ai-writing-cleanup",
+          "weightedScore": 497
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "The Mythical Man-Month in the Age of AI",
+          "sources": [
+            "hn"
+          ],
+          "title": "The Mythical Man-Month in the Age of AI",
+          "url": "https://j11g.com/the-mythical-man-month-in-the-age-of-ai",
+          "weightedScore": 475
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+          "sources": [
+            "hn"
+          ],
+          "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+          "url": "https://minimaxir.com/2026/10/cheap-llms/",
+          "weightedScore": 440
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Kentucky man becomes the first humanist granted religious exemption from AI",
+          "sources": [
+            "hn"
+          ],
+          "title": "Kentucky man becomes the first humanist granted religious exemption from AI",
+          "url": "https://religionnews.com/2026/10/26/in-a-first-a-humanist-granted-a-religious-exemption-from-using-ai/",
+          "weightedScore": 412
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Police are using AI to pull over drivers for 'suspicious' behavior",
+          "sources": [
+            "hn"
+          ],
+          "title": "Police are using AI to pull over drivers for 'suspicious' behavior",
+          "url": "https://gizmodo.com/police-are-using-ai-to-pull-over-drivers-for-suspicious-behavior-2000831220",
+          "weightedScore": 391
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Amazon Is Gutting Its AI Division After Sustained Failure",
+          "sources": [
+            "hn"
+          ],
+          "title": "Amazon Is Gutting Its AI Division After Sustained Failure",
+          "url": "https://futurism.com/artificial-intelligence/amazon-ai-division-failure-nova",
+          "weightedScore": 366
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Concerning behavior from a popular open-weight AI model",
+          "sources": [
+            "hn"
+          ],
+          "title": "Concerning behavior from a popular open-weight AI model",
+          "url": "https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model",
+          "weightedScore": 329
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Early progress on accelerating drug development with Claude",
+          "sources": [
+            "hn"
+          ],
+          "title": "Early progress on accelerating drug development with Claude",
+          "url": "https://www.anthropic.com/research/early-progress-drug-development",
+          "weightedScore": 321
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-12T23:55:30.853Z",
-      "sourceId": "kubernetes-blog",
-      "sources": [
-        "kubernetes-blog"
-      ],
-      "url": "https://kubernetes.io/blog/2026/09/11/kubernetes-v1-37-native-histograms-beta"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-12T23:55:30.853Z",
-      "sourceId": "kubernetes-blog",
-      "sources": [
-        "kubernetes-blog"
-      ],
-      "url": "https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-12T23:55:30.853Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-12T23:55:30.853Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-09-12T23:55:30.853Z",
-      "sourceId": "gh-nodejs",
-      "sources": [
-        "gh-nodejs"
-      ],
-      "url": "https://github.com/nodejs/node/releases/tag/v26.8.0"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-09-12T23:55:30.853Z",
-      "sourceId": "gh-nodejs",
-      "sources": [
-        "gh-nodejs"
-      ],
-      "url": "https://github.com/nodejs/node/releases/tag/v24.20.0"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-12T23:55:30.853Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://rubyhack.ai/"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-12T23:55:30.853Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/mcp-security-permissions-overhaul"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-12T23:55:30.853Z",
-      "sourceId": "cncf-blog",
-      "sources": [
-        "cncf-blog"
-      ],
-      "url": "https://cncf.io/blog/2026/09/11/building-a-reliable-cloud-native-foundation-for-distributed-ai-training"
-    },
     {
       "domain": "devops",
       "seenAt": "2026-09-14T00:04:01.546Z",
@@ -6077,6 +6084,158 @@
       ],
       "title": "Ghostty 1.4",
       "url": "https://ghostty.org/docs/install/release-notes/1-4-0"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Anthropic S-1",
+      "url": "https://sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "openai-blog"
+      ],
+      "title": "Three new discoveries in mathematics, computer science, and physics",
+      "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-ai"
+      ],
+      "title": "Why is this fingerprinting script creating bioweapons?",
+      "url": "https://nullpt.rs/fingerprinting-bioweapons"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Gemini 4 Carbon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "AI promised less work. I've never worked more",
+      "url": "https://oioannou.com/blog/ai-promised-less-work"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Anthropic trained Claude on illegally obtained Stanford professors' books",
+      "url": "https://stanforddaily.com/2026/10/27/professors-books-pirated-to-train-claude"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Survival LLM: AI assistant and emergency library that runs on your own computer",
+      "url": "https://brangus.io/survival-llm"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Wikipedia's Cleanup of AI-Generated Content",
+      "url": "https://spectrum.ieee.org/wikipedia-wikiproject-ai-writing-cleanup"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "The Mythical Man-Month in the Age of AI",
+      "url": "https://j11g.com/the-mythical-man-month-in-the-age-of-ai"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+      "url": "https://minimaxir.com/2026/10/cheap-llms"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Kentucky man becomes the first humanist granted religious exemption from AI",
+      "url": "https://religionnews.com/2026/10/26/in-a-first-a-humanist-granted-a-religious-exemption-from-using-ai"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Police are using AI to pull over drivers for 'suspicious' behavior",
+      "url": "https://gizmodo.com/police-are-using-ai-to-pull-over-drivers-for-suspicious-behavior-2000831220"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Amazon Is Gutting Its AI Division After Sustained Failure",
+      "url": "https://futurism.com/artificial-intelligence/amazon-ai-division-failure-nova"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Concerning behavior from a popular open-weight AI model",
+      "url": "https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-28T23:58:45.944Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Early progress on accelerating drug development with Claude",
+      "url": "https://anthropic.com/research/early-progress-drug-development"
     }
   ]
 }
