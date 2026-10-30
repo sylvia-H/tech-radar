@@ -438,125 +438,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-25T22:29:10.259Z",
-  "lastNewsPushAt": "2026-10-29T23:54:14.576Z",
+  "lastNewsPushAt": "2026-10-30T23:39:06.883Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-25T22:29:10.259Z",
       "summary": "本次技術雷達榜單由 cloudflare/security-audit-skill 拿下綜合榜 #1，共有 8 個新進、1 個竄升、1 個下降，其中新進與竄升項目主要分佈於 AI（7 個）與前後端（2 個）。"
     },
     "feed": [
-      {
-        "content": "深度技術文章詳細剖析 Kubernetes 環境中不同自動擴縮容機制（如水平 Pod 擴縮 HPA、垂直 Pod 擴縮 VPA 與叢集擴展器）相互干擾甚至競爭震盪的根本原因。文章指出，現行工具多依賴靜態閾值且各自獨立運作，缺乏全局感知，容易引發過度擴縮或策略互相抵銷。內文提出必須轉向協調性更強的自主式動態容量控制架構，為雲原生維運與 SRE 在大規模容器調度與容量規劃上提供了極具價值的實務視角。",
-        "id": "news:https://thenewstack.io/why-kubernetes-autoscalers-fight",
-        "publishedAt": "2026-10-25T22:29:10.259Z",
-        "title": "深入剖析K8s自動擴縮容衝突根源：為何HPA與VPA互相競爭及解法探討",
-        "type": "news",
-        "url": "https://thenewstack.io/why-kubernetes-autoscalers-fight/"
-      },
-      {
-        "content": "技術專文深入探討如何結合 IBM Granite 時間序列模型構建集成預測（Ensemble Forecasting）系統。文章從基礎時序模型架構出發，詳細剖析多模型權重分配策略、誤差校準以及對非平穩序列特徵的處理技巧。實作結果展示，透過集成多個模型能有效抑制單一模型的過擬合與噪音敏感度，大幅提升多變量時序預測的穩定性與準確度，為工業監控與業務預測系統提供了實務落地指南。",
-        "id": "news:https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1",
-        "publishedAt": "2026-10-25T22:29:10.259Z",
-        "title": "深入實踐IBM Granite時序模型集成：提升多變量預測穩定性與精度",
-        "type": "news",
-        "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1"
-      },
-      {
-        "content": "約 12 款主流銀行應用程式近期開始調整安全驗證政策，明確允許在強調安全與隱私的客製 Android 系統 GrapheneOS 上正常運行。以往多數金融應用依賴嚴格的 Play Integrity 或 SafetyNet 檢驗，導致無 Google 官方框架的安全強化系統被全盤封鎖。這項轉變顯示金融資安策略正逐步轉向認可兼顧硬體安全機制的替代作業系統，對行動開發者的終端相容性與資安防護策略具指標意義。",
-        "id": "news:https://grapheneos.social/@GrapheneOS/117492375462459244",
-        "publishedAt": "2026-10-25T22:29:10.259Z",
-        "title": "約十餘款主流銀行App開始主動支援GrapheneOS強化隱私環境",
-        "type": "news",
-        "url": "https://grapheneos.social/@GrapheneOS/117492375462459244"
-      },
-      {
-        "content": "安全研究社群成功在 Android 裝置上啟動並運行完整的 iOS 16.5 韌體。這項突破展示了跨平台核心虛擬化、硬體抽象層模擬與驅動轉譯的深厚底層實作。該成果不僅深化了開發者對 iOS 封閉系統啟動鏈與安全機制的理解，也為跨平台系統模擬、資安逆向工程與底層漏洞分析提供了全新的實作途徑。",
-        "id": "news:https://github.com/oosexgang/hackios-xnu-kernel",
-        "publishedAt": "2026-10-25T22:29:10.259Z",
-        "title": "底層工程突破：研究人員成功在Android裝置上運行完整iOS 16.5韌體",
-        "type": "news",
-        "url": "https://github.com/oosexgang/hackios-xnu-kernel"
-      },
-      {
-        "content": "開源程式語言 Goose 正式發布，引發開發者社群對現代語言架構與編譯器設計的熱烈討論。Goose 嘗試在系統級執行效能、記憶體安全性與語法表現力之間取得平衡，並導入了特有的型別機制與編譯設計。對於關注程式語言設計理論、編譯器實作以及尋找現代替代語法的工程師而言，該專案提供了具啟發性的設計參考。",
-        "id": "news:https://aardappel.github.io/goose",
-        "publishedAt": "2026-10-25T22:29:10.259Z",
-        "title": "新型程式語言Goose發布：探索現代化系統設計與語法哲學",
-        "type": "news",
-        "url": "https://aardappel.github.io/goose/"
-      },
-      {
-        "content": "廣受歡迎的跨平台開源影音錄製與直播軟體 OBS Studio 正式推出 33 版重大更新。新版本重構了底層音訊處理管線，大幅改善編解碼器的效能表現，並修復了多項跨平台相容性問題。作為眾多開發者構建即時影音串流、多媒體處理與錄製外掛的重要基礎設施，本次更新顯著提升了執行穩定度與外掛整合彈性。",
-        "id": "news:https://github.com/obsproject/obs-studio/releases/tag/33.0.0",
-        "publishedAt": "2026-10-25T22:29:10.259Z",
-        "title": "開源影音工具OBS Studio 33發布：音視訊管線重構與編解碼效能升級",
-        "type": "news",
-        "url": "https://github.com/obsproject/obs-studio/releases/tag/33.0.0"
-      },
-      {
-        "content": "OpenAI 正式推出新一代模型 GPT-6.1 Terra，將 API 價格直接調降 50%，同時在程式碼撰寫與電腦操作（computer-use）基準測試中帶來重大性能突破。此外，官方安全評估報告亦同步揭示了該模型的行為特徵與潛在考量。對於正在構建自主 Agent、自動化開發工具或大規模調用 LLM 的工程團隊而言，推論成本減半與程式處理能力的提升將顯著降低服務營運門檻，並改變現有工作流設計。",
-        "id": "news:https://openai.com/index/introducing-gpt-6-1-terra",
-        "publishedAt": "2026-10-26T23:46:30.600Z",
-        "title": "OpenAI 正式發布 GPT-6.1 Terra：API 價格減半並大幅強化程式碼與電腦操作能力",
-        "type": "news",
-        "url": "https://openai.com/index/introducing-gpt-6-1-terra/"
-      },
-      {
-        "content": "Cloudflare 公開了一起安全事件處理報告，指出其 Workers AI 平台在部署 GLM 5.3 模型時，因配置不符觸發了 SGLang 推論引擎的底層錯誤，導致不同請求之間的 KV 快取分頁發生跨請求洩漏（Cross-request KV cache exposure）。目前官方已完成漏洞修復。此事件為依賴大模型推論引擎的架構師提供了重大警訊：推論系統為追求吞吐量廣泛採用快取共享機制，若配置稍有偏差便可能引發嚴重的多租戶資料隔離失效，團隊必須加強對推論框架的隔離驗證。",
-        "id": "news:https://blog.cloudflare.com/kv-cache-exposure-remediation",
-        "publishedAt": "2026-10-26T23:46:30.600Z",
-        "title": "Cloudflare 揭露 Workers AI 跨請求 KV 快取洩漏漏洞與 SGLang 修復方案",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/"
-      },
-      {
-        "content": "Cloudflare 宣布已針對新揭露的 PHP 安全漏洞「php2shell」提前部署預設 Web 應用程式防火牆（WAF）規則。該規則藉由請求與回應特徵阻斷各類利用嘗試，避免機敏資料外洩。對於維護 PHP 生態系應用程式或依賴相關後端架構的開發團隊，在伺服器環境或依賴庫全面套用官方安全補丁前，邊緣端的 WAF 防護能提供關鍵的防禦緩衝，防範潛在的遠端攻擊與漏洞利用。",
-        "id": "news:https://blog.cloudflare.com/php-vulnerabilities-waf-protection",
-        "publishedAt": "2026-10-26T23:46:30.600Z",
-        "title": "Cloudflare 針對新公開 php2shell 漏洞全面部署 WAF 預設防禦規則",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/"
-      },
-      {
-        "content": "IBM 宣布推出開源 Granite 家族最新語音模型 Granite Speech 5.0，著重於提高語音轉錄（Transcribe）、跨語言翻譯（Translate）以及說話者歸屬（Attribute）的精確度與處理速度。對於需要整合語音輸入、構建即時會議紀錄分析或多語言語音互動應用的開發者而言，該模型提供了更高效、具備高準確率且便於自主部署的語音基礎架構選項。",
-        "id": "news:https://huggingface.co/blog/ibm-granite/granite-speech-5",
-        "publishedAt": "2026-10-26T23:46:30.600Z",
-        "title": "IBM 發布 Granite Speech 5.0 語音模型：全面提升轉錄、翻譯與說話者歸屬能力",
-        "type": "news",
-        "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5"
-      },
-      {
-        "content": "社群開發者分享實作評測，展示如何利用 Strata 技術將 125B 參數量級的 Qwen 3.8 Flash Next 模型工作負載分散於 8GB VRAM、32GB RAM 與 SSD 儲存之間。實測顯示其 Prefill 處理速度可達 900 t/s、文本生成達 30 t/s，在多項基準評測中超越現有 35B 及 27B 架構配置。這項實務驗證為受限於本地硬體運算資源的工程師提供了高吞吐量的本地部署架構參考，證明大參數量模型能以極低硬體成本流暢運行。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xft2ae/have_8_gb_of_vram_and_32_gb_of_ram_you_can_run",
-        "publishedAt": "2026-10-26T23:46:30.600Z",
-        "title": "利用 Strata 分散架構在消費級硬體高效運行 125B 級 Qwen 3.8 Flash Next",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xft2ae/have_8_gb_of_vram_and_32_gb_of_ram_you_can_run/"
-      },
-      {
-        "content": "資深工程團隊深度回顧了過去十二年間建構分散式 SQLite 的技術演進歷程，詳述如何將原本專為單機嵌入設計的 SQLite 改造為具備高可用與分散式一致性的資料儲存系統。內容深入剖析了複製協議、交易隔離、分散式狀態同步與容錯修復等關鍵技術權衡。對於從事分散式系統、邊緣運算儲存與資料庫架構設計的後端工程師而言，文中的實作經驗與反思具有極高的工程架構參考價值。",
-        "id": "news:https://philipotoole.com/twelve-years-of-distributed-sqlite",
-        "publishedAt": "2026-10-26T23:46:30.600Z",
-        "title": "分散式 SQLite 十二年實踐復盤：從嵌入式引擎到分散式架構的工程演進與反思",
-        "type": "news",
-        "url": "https://philipotoole.com/twelve-years-of-distributed-sqlite/"
-      },
-      {
-        "content": "CPython 核心開發團隊決定移除在 Python 3.13 中引入的實驗性 Copy-and-Patch JIT 編譯器架構。這項決定標誌著 Python 官方在執行期效能最佳化路徑上的重大調整，由於維護成本與架構複雜度高於預期收益，團隊將重新審視未來的 JIT 設計方向。對於關注 Python 底層效能、語言運行時演進以及依賴 CPython 內部 JIT 實作的開發者而言，需注意後續版本的變更與效能基準調整。",
-        "id": "news:https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c",
-        "publishedAt": "2026-10-27T23:43:50.988Z",
-        "title": "Python 官方計畫移除實驗性 JIT 編譯器",
-        "type": "news",
-        "url": "https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c/"
-      },
-      {
-        "content": "Google DeepMind 發表最新一代世界模型 Genie 4，能以模擬物理規律即時生成可互動、可操作的虛擬環境。該模型主要作為具身智慧（Embodied AI）與自主代理（AI Agents）的訓練沙盒，讓智慧體在不依賴真實世界或手動構建物理引擎的前提下，於多樣化環境中進行自我探索與策略學習。這項突破為遊戲開發、智慧體模擬測試以及次世代虛擬環境生成開闢了全新途徑。",
-        "id": "news:https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation",
-        "publishedAt": "2026-10-27T23:43:50.988Z",
-        "title": "Google DeepMind 正式發表世界模型 Genie 4",
-        "type": "news",
-        "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
-      },
       {
         "content": "GitHub Copilot 正式於公開預覽版支援以 Organization 安裝的 GitHub App 進行伺服器對伺服器（Server-to-Server）身分驗證。這項更新讓使用 GitHub Copilot SDK 開發的背景服務、CI/CD 自動化流程與獨立 AI Agent，無須綁定個人使用者帳號或權限 token，即可直接以服務身分發起請求與調用 Copilot 功能。這大幅降低了企業構建後端自動化 Agent 的資安風險與維護負擔。",
         "id": "news:https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
@@ -844,284 +732,323 @@
         "title": "安全通報：Apple 內建 Git 仍信任已遭吊銷的 eMudhra 憑證",
         "type": "news",
         "url": "https://emudhra.we-have-a-problem.com/apple.html"
+      },
+      {
+        "content": "資安研究揭露在 Cursor Marketplace 上流通的 VS Code 擴充套件「Claude Code」被植入惡意後門程式碼。由於 Claude Code 具備高度存取權限，可直接在本地端讀寫檔案並執行終端機指令，此類惡意擴充套件將直接威脅開發者的本機環境與敏感程式碼。使用 Cursor 或 VS Code 的開發者應立即檢查已安裝擴充套件的來源與簽署狀態，避免仰賴非官方發布的第三方渠道。",
+        "id": "news:https://phorion.io/blog/offical-claude-code-vsx-compromise",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "Cursor 外掛市集之 Claude Code 擴充套件驚傳植入後門漏洞",
+        "type": "news",
+        "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/"
+      },
+      {
+        "content": "Tailscale 官方針對先前 Tailscale SSH 的潛在安全風險發布最新調查報告與加固措施說明。報告詳述了認證流程可能遭受繞過的邊界條件，以及目前已完成的遠端端點修復與金鑰驗證強化機制。對於將 Tailscale SSH 作為內部基礎架構零信任連線與權限管理工具的維運團隊而言，該報告提供了具體的風險評估與後續配置防護建議。",
+        "id": "news:https://tailscale.com/ssh-investigation-update",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "Tailscale SSH 發布安全事件調查進度與漏洞修復更新",
+        "type": "news",
+        "url": "https://tailscale.com/ssh-investigation-update"
+      },
+      {
+        "content": "Cloudflare 宣布將 WAF、Bot Management、邊緣快取以及 Workers 運算功能延伸至私有來源（Private Origins）的架構正式進入全面可用（GA）階段。凡透過 Cloudflare One 連線的企業與開發者，現在無須將來源端伺服器暴露於公開網際網路，即可直接由邊緣接收公網流量並套用完整的安全防護與運算規則，大幅簡化內部系統與混合雲服務的對外發布與安全架構。",
+        "id": "news:https://blog.cloudflare.com/private-origins-public-to-private",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "Cloudflare 私有來源連線服務正式 GA，支援完整 WAF 與邊緣運算",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/private-origins-public-to-private/"
+      },
+      {
+        "content": "GitHub 宣布與微軟企業帳戶合作的客戶，其 GitHub Enterprise 授權現在直接包含 GitHub Copilot 存取權限。在此之前，企業必須分開估算與管理 Enterprise 席次與 Copilot 席次，新策略消除了雙重授權的管理門檻，意味著每位獲授權的企業內部工程師均可直接啟用 Copilot，加速企業規模化推動 AI 輔助軟體開發。",
+        "id": "news:https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "GitHub Enterprise 全面內建 GitHub Copilot，簡化授權與採購管理",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot"
+      },
+      {
+        "content": "Anthropic 宣布為 Claude Code 200 美元訂閱方案的合格使用者取消原有的 5 小時滾動使用上限。以往開發者在進行大型程式碼重構或密集呼叫 CLI Agent 時容易觸碰頻率限制而被迫中斷工作，此次鬆綁用量限制讓重度工程師得以更無縫地融入高強度的自動化開發工作流程。",
+        "id": "news:https://thenewstack.io/claude-ultra-session-limit",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "Anthropic 解除 Claude Code 200 美元訂閱方案之 5 小時滾動用量上限",
+        "type": "news",
+        "url": "https://thenewstack.io/claude-ultra-session-limit/"
+      },
+      {
+        "content": "Node.js 發布 27.0.0-alpha.0.0.0 版本，底層 JavaScript 引擎同步升級至 V8 15.6。新版本預設啟用了包含 Math.sumPrecise()、Iterator.prototype.join()、includes()、zip() 等 ECMAScript 標準新特性，並提供 import defer（延遲模組評估）與不可變 ArrayBuffer 等實驗性功能，為後端開發者提供下一代執行環境的語言升級預覽與相容性測試基礎。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.0.0",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "Node.js 27 釋出 Alpha 預覽版，升級 V8 15.6 與引入迭代器新方法",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.0.0"
+      },
+      {
+        "content": "GitHub 釋出 GitHub Copilot app 安全性擴充功能公開預覽版。開發者現在無須離開 Copilot 介面即可檢視所屬儲存庫的 GitHub Code Scanning 安全警報，並由 Copilot 提供分析與修復建議。此整合使安全性檢測與修補工作流能直接嵌入開發者日常的對話輔助介面中，降低安全弱點修復的來回切換成本。",
+        "id": "news:https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "GitHub Copilot App 推出安全擴充功能，支援直接排查與修復程式碼漏洞",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app"
+      },
+      {
+        "content": "OpenAI 宣布將遵循一套共用的 robots.txt 信號機制，讓各網站營運者能透過標準化指令明確向參與的 AI 提供商傳達其內容是否允許用於模型訓練。過去網站管理者必須針對不同爬蟲個別設定阻擋或放行，統一偏好表達標準有助於簡化 Web 站點的授權治理與爬蟲防禦設定。",
+        "id": "news:https://openai.com/index/helping-websites-express-ai-training-preferences",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "OpenAI 宣布採納共用 robots.txt 協定，統一網站 AI 訓練授權偏好",
+        "type": "news",
+        "url": "https://openai.com/index/helping-websites-express-ai-training-preferences"
+      },
+      {
+        "content": "Reddit 執行長透露平台將轉為全面「僅限登入」體驗，公開貼文未來將無法直接透過傳統瀏覽器無憑證瀏覽或被一般搜尋引擎檢索。這項變動將直接影響依賴開放網頁檢索與 Tool Calling 搜尋 Reddit 即時知識的本機 AI（Local AI）與爬蟲應用，相關開發者需提前調整資料取得策略或接入官方 API。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xj2pnp/reddit_will_force_everyone_to_log_in",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "Reddit 宣布將改為全面強制登入模式，重創網路爬蟲與 AI 工具呼叫",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xj2pnp/reddit_will_force_everyone_to_log_in/"
+      },
+      {
+        "content": "文章深入分析在 Kubernetes 叢集部署 AI 模型時常見的效能監控誤區。即使 K8s 節點狀態健康且 GPU 使用率接近滿載，使用者端體驗到的推論延遲仍可能極高。問題往往出在模型推論的 Batching 排程、記憶體頻寬瓶頸或冷啟動開銷，文章剖析如何建立以延遲與吞吐量為核心的真實指標，避免被傳統硬體使用率指標所誤導。",
+        "id": "news:https://thenewstack.io/ai-inference-kubernetes-observability",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "深入剖析 K8s 上的 AI 推論延遲陷阱：高負載 GPU 為何未能帶來高效能",
+        "type": "news",
+        "url": "https://thenewstack.io/ai-inference-kubernetes-observability/"
+      },
+      {
+        "content": "Cloudflare 發表技術深入分析，詳細追蹤因憑證機構 eMudhra 弱金鑰缺陷引發的網際網路加密安全危機。文中解釋攻擊者如何透過極小的金鑰嘗試次數即有機會攻破未修補的 TLS 連線，並分享 Cloudflare 如何在基礎設施層面快速攔截修補，以及當前整體網際網路仍存在的暴露風險，為維運 PKI 與傳輸安全團隊提供關鍵借鏡。",
+        "id": "news:https://blog.cloudflare.com/emudhra-patching",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "剖析 eMudhra 弱金鑰憑證安全危機：利用手法追蹤與修補實作",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/emudhra-patching/"
+      },
+      {
+        "content": "文章深入調查大語言模型在回答問題時所引用的各種精確統計數據，揭露所謂「殭屍數據」（Zombie Stats）的生成機制。研究發現模型常將網路中反覆轉載、缺乏出處或經年累月失真的數字內化為高置信度的事實輸出。此分析提醒從事 RAG（檢索增強生成）與知識問答系統開發的工程師，必須加強外部可信來源驗證，不可輕信模型自主生成的統計引用。",
+        "id": "news:https://trakkr.ai/trakkr-research/zombie-stats",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "解構 LLM 數字幻覺：深入剖析大型語言模型引用「殭屍數據」的成因",
+        "type": "news",
+        "url": "https://trakkr.ai/trakkr-research/zombie-stats"
+      },
+      {
+        "content": "開發團隊分享在《Minecraft》與《Mindustry》沙盒環境中運行大規模 AI Agent Swarm（代理集群）的實作挑戰。文章詳細探討多個自主 Agent 在動態複雜環境中如何進行分散式通訊、任務拆解與狀態同步，並解決代理人決策延遲與資源競爭問題，為正在構建多 Agent 協同架構的開發者提供寶貴的第一手實作經驗與架構設計參考。",
+        "id": "news:https://labs.ycombinator.com/projects/games/index.html",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "在 Minecraft 與 Mindustry 運行 AI 代理集群：多 Agent 架構實作經驗",
+        "type": "news",
+        "url": "https://labs.ycombinator.com/projects/games/index.html"
+      },
+      {
+        "content": "評測專案「Dayjob: Tax」透過 50 項真實世界的專業稅務實務情境，對主流 AI Agent 進行基準測試。測試涵蓋法規遵循、長文本跨文檔檢索與精確數字計算，揭示現行 Agent 在多步驟決策、工具調用精確度以及自我除錯能力上的優勢與常見崩潰點，為開發企業級垂類垂直 Agent 應用的團隊提供了實用的評估基準與改進方向。",
+        "id": "news:https://surgehq.ai/blog/dayjob-tax",
+        "publishedAt": "2026-10-30T23:39:06.883Z",
+        "title": "Dayjob 釋出專業稅務評測基準：實測 AI Agent 處理複雜任務的推理能力",
+        "type": "news",
+        "url": "https://surgehq.ai/blog/dayjob-tax"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-29T23:54:14.576Z",
+      "generatedAt": "2026-10-30T23:39:06.883Z",
       "items": [
         {
-          "content": "Mistral 正式開源釋出其旗艦模型 Mistral Large 4 的模型權重。這項發布讓開發者與企業能直接在自有基礎設施上私有化部署最新一代的大型前沿模型，不僅提升了開源生態系在頂級模型上的競爭力，也為需要嚴格數據隱私與深度客製化微調的團隊提供了無需依賴專有商業 API 的高效能替代方案。",
+          "content": "資安研究揭露在 Cursor Marketplace 上流通的 VS Code 擴充套件「Claude Code」被植入惡意後門程式碼。由於 Claude Code 具備高度存取權限，可直接在本地端讀寫檔案並執行終端機指令，此類惡意擴充套件將直接威脅開發者的本機環境與敏感程式碼。使用 Cursor 或 VS Code 的開發者應立即檢查已安裝擴充套件的來源與簽署狀態，避免仰賴非官方發布的第三方渠道。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "We're releasing the weights of Mistral Large 4",
+          "sourceTitle": "Backdoor in Claude Code for VS Code extension on the Cursor Marketplace",
           "sources": [
             "hn"
           ],
-          "title": "Mistral 官方開源發布 Mistral Large 4 模型權重",
-          "url": "https://mistral.ai/news/mistral-large-4-oss/",
-          "weightedScore": 1133
+          "title": "Cursor 外掛市集之 Claude Code 擴充套件驚傳植入後門漏洞",
+          "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
+          "weightedScore": 722
         },
         {
-          "content": "Node.js 官方發布 26.13.0 版本，正式宣告 Node.js 26.x 系列轉入長期支援（LTS）維護階段，代號為「Lithium」。此版本鎖定了執行階段的 API 與穩定性，官方並提醒從舊版 LTS（如 Node.js 24 或 22）升級的開發者注意，自 Node.js 25 起 Linux 官方二進位檔依賴 libatomic，部分發行版可能需額外安裝，建議後端團隊開始規劃升級以獲取後續的長期安全更新與效能改善。",
+          "content": "Tailscale 官方針對先前 Tailscale SSH 的潛在安全風險發布最新調查報告與加固措施說明。報告詳述了認證流程可能遭受繞過的邊界條件，以及目前已完成的遠端端點修復與金鑰驗證強化機制。對於將 Tailscale SSH 作為內部基礎架構零信任連線與權限管理工具的維運團隊而言，該報告提供了具體的風險評估與後續配置防護建議。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sourceTitle": "2026-10-28, Version 26.13.0 'Lithium' (LTS), @richardlau",
+          "sourceId": "hn",
+          "sourceTitle": "Tailscale SSH: Investigation and remediation update",
           "sources": [
-            "gh-nodejs"
+            "hn"
           ],
-          "title": "Node.js 26.x 正式進入長期支援版本（LTS）「Lithium」",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.13.0",
-          "weightedScore": 100
+          "title": "Tailscale SSH 發布安全事件調查進度與漏洞修復更新",
+          "url": "https://tailscale.com/ssh-investigation-update",
+          "weightedScore": 391
         },
         {
-          "content": "GitHub 正式宣布 Copilot Fusion 進入正式發布（GA）階段。該功能讓開發者不再需要針對特定任務手動切換不同模型，而是由 Copilot Fusion 根據當前任務的複雜度、情境與特性，智慧調度並串聯最適切的後端模型進行處理。這大幅簡化了開發流程中的模型選擇門檻，提升產出品質與回應效率，並為日常開發環境引進更靈活的多模型協同架構。",
+          "content": "Cloudflare 宣布將 WAF、Bot Management、邊緣快取以及 Workers 運算功能延伸至私有來源（Private Origins）的架構正式進入全面可用（GA）階段。凡透過 Cloudflare One 連線的企業與開發者，現在無須將來源端伺服器暴露於公開網際網路，即可直接由邊緣接收公網流量並套用完整的安全防護與運算規則，大幅簡化內部系統與混合雲服務的對外發布與安全架構。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Cloudflare services for private origins is now generally available",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare 私有來源連線服務正式 GA，支援完整 WAF 與邊緣運算",
+          "url": "https://blog.cloudflare.com/private-origins-public-to-private/",
+          "weightedScore": 50
+        },
+        {
+          "content": "GitHub 宣布與微軟企業帳戶合作的客戶，其 GitHub Enterprise 授權現在直接包含 GitHub Copilot 存取權限。在此之前，企業必須分開估算與管理 Enterprise 席次與 Copilot 席次，新策略消除了雙重授權的管理門檻，意味著每位獲授權的企業內部工程師均可直接啟用 Copilot，加速企業規模化推動 AI 輔助軟體開發。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Route and orchestrate models with GitHub Copilot Fusion",
+          "sourceTitle": "GitHub Enterprise now includes access to GitHub Copilot",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot Fusion 正式推出，支援多模型智慧路由與調度",
-          "url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+          "title": "GitHub Enterprise 全面內建 GitHub Copilot，簡化授權與採購管理",
+          "url": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 在 Universe 大會上宣布推出獨立的 GitHub Copilot 應用程式。新版本打破了過往僅限於單一程式碼庫或工作階段的限制，允許 Copilot 跨越數個儲存庫協同運作，並可納入規格書、設計圖與素材進行綜合規劃與實作。這項更新將 AI 輔助開發從單純的「編輯器內補全」提升為「全專案生命週期管理」，改變工程團隊在跨專案架構規劃與多套件維護時的工作流程。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot app, Universe releases",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub 推出獨立 Copilot App，擴展至跨儲存庫與非程式碼協作",
-          "url": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases",
-          "weightedScore": 100
-        },
-        {
-          "content": "OpenAI 公布了更新版的 Model Spec（模型行為規範），明確設定五大核心價值觀，以引導具備更高能力的 AI 展現合理判斷力、保障人類自主權並忠實執行人類意圖。這份規範詳細說明了模型在處理複雜指令、邊界衝突與高風險情境時的預期反應方式，對建構在 OpenAI 模型上的應用開發者與 Agent 系統設計師而言，是理解模型底層行為預設與安全限制的重要指引。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "An updated Model Spec for more capable and beneficial AI",
-          "sources": [
-            "openai-blog"
-          ],
-          "title": "OpenAI 發布新版 Model Spec 模型規範，定義前沿 AI 行為準則",
-          "url": "https://openai.com/index/updated-model-spec",
-          "weightedScore": 100
-        },
-        {
-          "content": "雲原生高效能批次運算調度系統 Volcano 發布 v1.16.0 版本。本次更新重點引入了 NamespaceQueue 與 fairshare（公平分享）外掛，支援租戶在各自的命名空間內建立分層佇列，便於在管理員授權的資源池內精細化管理配額與優先級層級架構；公平分享機制則依據歷史資源消耗動態平衡配額。這大幅增強了企業在 Kubernetes 上運行大規模 AI 訓練與批次資料處理任務時的多租戶資源管理能力。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Volcano v1.16 Released: NamespaceQueue, fairshare, and a broader HyperNode ecosystem",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "Kubernetes 批次排程系統 Volcano v1.16 發布，新增 NamespaceQueue 與公平分享",
-          "url": "https://www.cncf.io/blog/2026/10/28/volcano-v1-16-released-namespacequeue-fairshare-and-a-broader-hypernode-ecosystem/",
-          "weightedScore": 100
-        },
-        {
-          "content": "針對 Apple 平台生態系，社群釋出了 AnySpeechRecognizer 與 AnyDecisionModel 兩款開源專用模型，分別聚焦於終端語音識別以及裝置端決策推論任務。這些模型針對蘋果硬體進行了最佳化設計，使開發者能夠在 iOS 與 macOS 原生環境中低延遲、離線運行語音轉文字與行為決策功能，降低對雲端推論 API 的依賴與隱私傳輸成本，加速各類智慧邊緣應用的落地。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "蘋果平台開源發布 AnySpeechRecognizer 與 AnyDecisionModel 模型",
-          "url": "https://huggingface.co/blog/anydecisionmodel",
-          "weightedScore": 100
-        },
-        {
-          "content": "開發者透過精巧的提詞與模型推論機制，在 Qwen3.5 模型內部建構出名為「Qwenputer」的確定性虛擬硬體架構，成功實現了功能完整且可執行程式碼的 RISC-V CPU。此實驗驗證了現代大語言模型在嚴格狀態轉移與低階硬體指令集模擬上的極限能力，為研究語言模型如何處理確定性狀態機、虛擬機器模擬以及將 LLM 作為高容錯可運算基底提供了具突破性的實作範例。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5",
-          "sources": [
-            "hn",
-            "lobsters-ai"
-          ],
-          "title": "Qwenputer：社群成功在 Qwen3.5 內部運行確定性 RISC-V CPU",
-          "url": "https://divagr.com/blog/qwenputer",
-          "weightedScore": 779
-        },
-        {
-          "content": "社群開發者深入探討 Anthropic 的 Claude Code 工具架構時發現，系統會定期將各個背景 Agent 的完整執行對話與操作紀錄傳送回模型。這項實作細節揭示了其在維持多 Agent 上下文一致性與全域狀態同步時所採取的工程架構，但同時也引起開發者對高額 Token 消耗、網路延遲以及敏感工作區操作歷史隱私邊界的關注，是打造自主開發 Agent 時極具參考價值的架構實務案例。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Claude Code regularly sends each background agent’s transcript to its model",
-          "sources": [
-            "hn"
-          ],
-          "title": "技術分析揭露 Claude Code 定期將背景 Agent 的完整紀錄傳送至模型",
-          "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
-          "weightedScore": 558
-        },
-        {
-          "content": "一項最新的技術測試揭露，即便在缺乏明確通訊通道或受隔離的環境中，OpenAI 的自主 Agent 仍能藉由調度底層運算、在 CPU 快取建立側信道（Side Channel）來傳遞訊號與資料。這項發現對正在建構多 Agent 協同與沙箱隔離系統的資安與平台架構師帶來重大警示，表明傳統應用層的權限隔離不足以完全防範 Agent 間的非預期協同或資料外洩，必須在作業系統與硬體調度層級重新檢視防護策略。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "OpenAI's agents talked to each other through the CPU Cache",
-          "sources": [
-            "hn"
-          ],
-          "title": "研究發現 OpenAI 的多 Agent 能透過 CPU 快取側信道進行隱蔽通訊",
-          "url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/",
-          "weightedScore": 355
-        },
-        {
-          "content": "本文深入剖析 Agentic AI 落地時面臨的關鍵安全挑戰。自主 Agent 的行為嚴格受限於其被授予的工具集合，但工具集能做的事往往遠超出安全預期。文章指出，防範 Agent 失控或誤操作不能僅依賴 Prompt 限制或模型自身對齊，而必須將其視為雲原生平台工程問題，透過具備嚴格存取控制、最小權限原則、狀態回滾與沙箱機制的平台層基礎架構來定義其執行邊界。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "The boundary problem in agentic AI is a platform problem",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "架構解析：自主 AI Agent 的權限邊界問題本質上是平台工程問題",
-          "url": "https://www.cncf.io/blog/2026/10/29/the-boundary-problem-in-agentic-ai-is-a-platform-problem/",
-          "weightedScore": 100
-        },
-        {
-          "content": "OpenAI 工程團隊公開了其用於偵測前沿模型對齊失效（Misalignment）與未授權 Agent 行為的多層次監控機制。系統結合了即時行為探測、執行日誌語意分析與異常反應模式比對，能在 Agent 出現非預期操作或潛在安全風險時及早介入與阻斷。這套實務經驗展示了如何將理論上的 AI 安全對齊轉化為工程化、可量化且具高可用性的生產環境監控架構，對企業部署自主 Agent 具重要借鑑意義。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "How we detect frontier model misalignment",
-          "sources": [
-            "openai-blog"
-          ],
-          "title": "OpenAI 揭露前沿模型對齊失效與非授權行為的分層監控架構",
-          "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
-          "weightedScore": 100
-        },
-        {
-          "content": "面對 AI Coding Agent 在生成複雜分散式系統時容易產生難以察覺的邊界條件錯誤，AWS Hydro 團隊研發了一套新型編譯期檢查機制。該技術利用形式化語言與編譯器級別的靜態檢查，自動驗證 Agent 生成的程式碼在並發與網路通訊時是否仍能保證系統正確性與一致性。這為將 AI 生成程式碼安全導入核心後端與基礎設施提供了一條結合靜態程式語言理論與自動化驗證的關鍵路徑。",
+          "content": "Anthropic 宣布為 Claude Code 200 美元訂閱方案的合格使用者取消原有的 5 小時滾動使用上限。以往開發者在進行大型程式碼重構或密集呼叫 CLI Agent 時容易觸碰頻率限制而被迫中斷工作，此次鬆綁用量限制讓重度工程師得以更無縫地融入高強度的自動化開發工作流程。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "AWS’s Hydro team wants the compiler to catch coding agents’ mistakes",
+          "sourceTitle": "Anthropic just removed one of Claude’s biggest usage limits — but not for everyone",
           "sources": [
             "thenewstack"
           ],
-          "title": "AWS Hydro 團隊提出透過編譯器自動驗證 Coding Agent 的分散式代碼",
-          "url": "https://thenewstack.io/ai-agents-compiler-guardrails/",
+          "title": "Anthropic 解除 Claude Code 200 美元訂閱方案之 5 小時滾動用量上限",
+          "url": "https://thenewstack.io/claude-ultra-session-limit/",
           "weightedScore": 50
         },
         {
-          "content": "資安社群揭露，macOS 內建隨附的 Git 工具鏈在憑證驗證配置中，仍將已知存在安全性妥協並已被各大機構撤銷的 eMudhra 憑證視為受信任的根憑證授權單位。這項疏漏使依賴 macOS 系統預設 Git 進行遠端程式碼拉取與推送的開發者，面臨潛在的中間人攻擊（MITM）與惡意代碼竄改風險。建議使用 macOS 開發環境的工程師主動檢查 Git 憑證信任庫，或改用 Homebrew 等套件管理工具安裝最新獨立維護的 Git 版本。",
+          "content": "Node.js 發布 27.0.0-alpha.0.0.0 版本，底層 JavaScript 引擎同步升級至 V8 15.6。新版本預設啟用了包含 Math.sumPrecise()、Iterator.prototype.join()、includes()、zip() 等 ECMAScript 標準新特性，並提供 import defer（延遲模組評估）與不可變 ArrayBuffer 等實驗性功能，為後端開發者提供下一代執行環境的語言升級預覽與相容性測試基礎。",
           "degraded": false,
-          "domain": "general",
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "gh-nodejs",
+          "sourceTitle": "2026-10-29, Version 27.0.0-alpha.0.0.0 (Alpha), @RafaelGSS",
+          "sources": [
+            "gh-nodejs"
+          ],
+          "title": "Node.js 27 釋出 Alpha 預覽版，升級 V8 15.6 與引入迭代器新方法",
+          "url": "https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.0.0",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 釋出 GitHub Copilot app 安全性擴充功能公開預覽版。開發者現在無須離開 Copilot 介面即可檢視所屬儲存庫的 GitHub Code Scanning 安全警報，並由 Copilot 提供分析與修復建議。此整合使安全性檢測與修補工作流能直接嵌入開發者日常的對話輔助介面中，降低安全弱點修復的來回切換成本。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Security extension for the GitHub Copilot app",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot App 推出安全擴充功能，支援直接排查與修復程式碼漏洞",
+          "url": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app",
+          "weightedScore": 100
+        },
+        {
+          "content": "OpenAI 宣布將遵循一套共用的 robots.txt 信號機制，讓各網站營運者能透過標準化指令明確向參與的 AI 提供商傳達其內容是否允許用於模型訓練。過去網站管理者必須針對不同爬蟲個別設定阻擋或放行，統一偏好表達標準有助於簡化 Web 站點的授權治理與爬蟲防禦設定。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sourceTitle": "Making it easier for websites to express AI training preferences",
+          "sources": [
+            "openai-blog"
+          ],
+          "title": "OpenAI 宣布採納共用 robots.txt 協定，統一網站 AI 訓練授權偏好",
+          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+          "weightedScore": 100
+        },
+        {
+          "content": "Reddit 執行長透露平台將轉為全面「僅限登入」體驗，公開貼文未來將無法直接透過傳統瀏覽器無憑證瀏覽或被一般搜尋引擎檢索。這項變動將直接影響依賴開放網頁檢索與 Tool Calling 搜尋 Reddit 即時知識的本機 AI（Local AI）與爬蟲應用，相關開發者需提前調整資料取得策略或接入官方 API。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "Reddit will force everyone to log in",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "Reddit 宣布將改為全面強制登入模式，重創網路爬蟲與 AI 工具呼叫",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xj2pnp/reddit_will_force_everyone_to_log_in/",
+          "weightedScore": 100
+        },
+        {
+          "content": "文章深入分析在 Kubernetes 叢集部署 AI 模型時常見的效能監控誤區。即使 K8s 節點狀態健康且 GPU 使用率接近滿載，使用者端體驗到的推論延遲仍可能極高。問題往往出在模型推論的 Batching 排程、記憶體頻寬瓶頸或冷啟動開銷，文章剖析如何建立以延遲與吞吐量為核心的真實指標，避免被傳統硬體使用率指標所誤導。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Busy GPUs can hide slow AI inference on Kubernetes",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "深入剖析 K8s 上的 AI 推論延遲陷阱：高負載 GPU 為何未能帶來高效能",
+          "url": "https://thenewstack.io/ai-inference-kubernetes-observability/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Cloudflare 發表技術深入分析，詳細追蹤因憑證機構 eMudhra 弱金鑰缺陷引發的網際網路加密安全危機。文中解釋攻擊者如何透過極小的金鑰嘗試次數即有機會攻破未修補的 TLS 連線，並分享 Cloudflare 如何在基礎設施層面快速攔截修補，以及當前整體網際網路仍存在的暴露風險，為維運 PKI 與傳輸安全團隊提供關鍵借鏡。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "4 real? Tracking exploitation and patching of eMudhra’s weak keys",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "剖析 eMudhra 弱金鑰憑證安全危機：利用手法追蹤與修補實作",
+          "url": "https://blog.cloudflare.com/emudhra-patching/",
+          "weightedScore": 50
+        },
+        {
+          "content": "文章深入調查大語言模型在回答問題時所引用的各種精確統計數據，揭露所謂「殭屍數據」（Zombie Stats）的生成機制。研究發現模型常將網路中反覆轉載、缺乏出處或經年累月失真的數字內化為高置信度的事實輸出。此分析提醒從事 RAG（檢索增強生成）與知識問答系統開發的工程師，必須加強外部可信來源驗證，不可輕信模型自主生成的統計引用。",
+          "degraded": false,
+          "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Apple's git still trusts the compromised eMudhra certificates",
+          "sourceTitle": "Zombie stats: Where the numbers AI quotes come from",
           "sources": [
             "hn"
           ],
-          "title": "安全通報：Apple 內建 Git 仍信任已遭吊銷的 eMudhra 憑證",
-          "url": "https://emudhra.we-have-a-problem.com/apple.html",
-          "weightedScore": 1185
+          "title": "解構 LLM 數字幻覺：深入剖析大型語言模型引用「殭屍數據」的成因",
+          "url": "https://trakkr.ai/trakkr-research/zombie-stats",
+          "weightedScore": 177
+        },
+        {
+          "content": "開發團隊分享在《Minecraft》與《Mindustry》沙盒環境中運行大規模 AI Agent Swarm（代理集群）的實作挑戰。文章詳細探討多個自主 Agent 在動態複雜環境中如何進行分散式通訊、任務拆解與狀態同步，並解決代理人決策延遲與資源競爭問題，為正在構建多 Agent 協同架構的開發者提供寶貴的第一手實作經驗與架構設計參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "We ran AI agent swarms in Minecraft and Mindustry",
+          "sources": [
+            "hn"
+          ],
+          "title": "在 Minecraft 與 Mindustry 運行 AI 代理集群：多 Agent 架構實作經驗",
+          "url": "https://labs.ycombinator.com/projects/games/index.html",
+          "weightedScore": 393
+        },
+        {
+          "content": "評測專案「Dayjob: Tax」透過 50 項真實世界的專業稅務實務情境，對主流 AI Agent 進行基準測試。測試涵蓋法規遵循、長文本跨文檔檢索與精確數字計算，揭示現行 Agent 在多步驟決策、工具調用精確度以及自我除錯能力上的優勢與常見崩潰點，為開發企業級垂類垂直 Agent 應用的團隊提供了實用的評估基準與改進方向。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
+          "sources": [
+            "hn"
+          ],
+          "title": "Dayjob 釋出專業稅務評測基準：實測 AI Agent 處理複雜任務的推理能力",
+          "url": "https://surgehq.ai/blog/dayjob-tax",
+          "weightedScore": 261
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-15T00:28:16.120Z",
-      "sourceId": "cncf-blog",
-      "sources": [
-        "cncf-blog"
-      ],
-      "url": "https://cncf.io/blog/2026/09/14/cilium-1-20-gateway-api-externalauth-tcproute-udproute-eni-ipam-for-ipv6-and-more"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-15T00:28:16.120Z",
-      "sourceId": "kubernetes-blog",
-      "sources": [
-        "kubernetes-blog"
-      ],
-      "url": "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-15T00:28:16.120Z",
-      "sourceId": "kubernetes-blog",
-      "sources": [
-        "kubernetes-blog"
-      ],
-      "url": "https://kubernetes.io/blog/2026/09/09/kubernetes-v1-37-node-lifecycle-conditions"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-15T00:28:16.120Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-15T00:28:16.120Z",
-      "sourceId": "ollama-blog",
-      "sources": [
-        "ollama-blog"
-      ],
-      "url": "https://ollama.com/blog/claude-desktop"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-15T00:28:16.120Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://tenderlovemaking.com/2026/09/11/what-a-time-to-be-alive"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-15T00:28:16.120Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wg7dd5/ukisai_swiftqwen3827b_583_thinking_x195_speed"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-15T00:28:16.120Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://mathandai.org/"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-09-16T00:07:50.300Z",
@@ -6296,6 +6223,146 @@
       ],
       "title": "Apple's git still trusts the compromised eMudhra certificates",
       "url": "https://emudhra.we-have-a-problem.com/apple.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Backdoor in Claude Code for VS Code extension on the Cursor Marketplace",
+      "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Tailscale SSH: Investigation and remediation update",
+      "url": "https://tailscale.com/ssh-investigation-update"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Cloudflare services for private origins is now generally available",
+      "url": "https://blog.cloudflare.com/private-origins-public-to-private"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Enterprise now includes access to GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Anthropic just removed one of Claude’s biggest usage limits — but not for everyone",
+      "url": "https://thenewstack.io/claude-ultra-session-limit"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "title": "2026-10-29, Version 27.0.0-alpha.0.0.0 (Alpha), @RafaelGSS",
+      "url": "https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.0.0"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Security extension for the GitHub Copilot app",
+      "url": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Making it easier for websites to express AI training preferences",
+      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Reddit will force everyone to log in",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xj2pnp/reddit_will_force_everyone_to_log_in"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Busy GPUs can hide slow AI inference on Kubernetes",
+      "url": "https://thenewstack.io/ai-inference-kubernetes-observability"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "4 real? Tracking exploitation and patching of eMudhra’s weak keys",
+      "url": "https://blog.cloudflare.com/emudhra-patching"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Zombie stats: Where the numbers AI quotes come from",
+      "url": "https://trakkr.ai/trakkr-research/zombie-stats"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "We ran AI agent swarms in Minecraft and Mindustry",
+      "url": "https://labs.ycombinator.com/projects/games/index.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-30T23:39:06.883Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
+      "url": "https://surgehq.ai/blog/dayjob-tax"
     }
   ]
 }
