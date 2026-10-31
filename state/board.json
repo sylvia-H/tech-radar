@@ -438,117 +438,13 @@
     }
   },
   "lastBoardPushAt": "2026-10-25T22:29:10.259Z",
-  "lastNewsPushAt": "2026-10-30T23:39:06.883Z",
+  "lastNewsPushAt": "2026-10-31T23:18:32.518Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-10-25T22:29:10.259Z",
       "summary": "本次技術雷達榜單由 cloudflare/security-audit-skill 拿下綜合榜 #1，共有 8 個新進、1 個竄升、1 個下降，其中新進與竄升項目主要分佈於 AI（7 個）與前後端（2 個）。"
     },
     "feed": [
-      {
-        "content": "GitHub Copilot 正式於公開預覽版支援以 Organization 安裝的 GitHub App 進行伺服器對伺服器（Server-to-Server）身分驗證。這項更新讓使用 GitHub Copilot SDK 開發的背景服務、CI/CD 自動化流程與獨立 AI Agent，無須綁定個人使用者帳號或權限 token，即可直接以服務身分發起請求與調用 Copilot 功能。這大幅降低了企業構建後端自動化 Agent 的資安風險與維護負擔。",
-        "id": "news:https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
-        "publishedAt": "2026-10-27T23:43:50.988Z",
-        "title": "GitHub Copilot 開放支援伺服器對伺服器（S2S）身分驗證",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication"
-      },
-      {
-        "content": "GitHub 宣布 Copilot 的「輔助權限（Assisted Permissions）」功能正式在 Copilot CLI、Copilot App 及 VS Code 中全面推出（GA）。當 Copilot 嘗試執行系統終端指令或讀寫特定檔案路徑時，會透過細緻的權限提示請求使用者明確授權，避免 Agent 自主操作帶來潛在的破壞性指令風險。此功能為開發者在日常開發與終端環境中深度整合 AI 工具時，提供了更安全的把關機制。",
-        "id": "news:https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
-        "publishedAt": "2026-10-27T23:43:50.988Z",
-        "title": "GitHub Copilot 輔助權限管理功能正式全面推出（GA）",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available"
-      },
-      {
-        "content": "Kubernetes 社群宣布成立 Workload Conformance 工作小組，旨在為工作負載在 Kubernetes 上的執行期行為制定統一標準。過去的 Certified Kubernetes 主要檢驗叢集層級是否合規，而 AI Conformance 則檢驗叢集是否能運行 AI/ML 負載，但缺乏針對工作負載本身行為的規範。該工作小組將整合叢集維運者與應用程式開發者的需求，定義負載運行的標準化規範，以確保跨叢集部署的一致性與可靠性。",
-        "id": "news:https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg",
-        "publishedAt": "2026-10-27T23:43:50.988Z",
-        "title": "Kubernetes 社群成立 Workload Conformance 工作小組推動執行期標準",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/"
-      },
-      {
-        "content": "Liquid AI 宣布推出新一代非 Transformer 架構的 Liquid Foundation Models 3（LFM3），並提供多模態模型建置能力。LFM3 延續了動態系統與狀態空間模型（SSM）的架構優勢，致力於在維持極低記憶體佔用與高推論輸送量的同時，處理長序列多模態資料。這為希望在邊緣設備或特定專業領域部署低延遲多模態 AI 的開發團隊提供了全新選擇。",
-        "id": "news:https://huggingface.co/blog/LiquidAI/lfm3",
-        "publishedAt": "2026-10-27T23:43:50.988Z",
-        "title": "Liquid AI 推出 LFM3 模型架構，支援專用多模態模型建置",
-        "type": "news",
-        "url": "https://huggingface.co/blog/LiquidAI/lfm3"
-      },
-      {
-        "content": "本文深入對比了傳統結構化覆蓋引導模糊測試工具 Fuzzilli 與 Google 基於大語言模型的漏洞挖掘智慧體 BigSleep 在各大瀏覽器 JavaScript 引擎（如 V8、JavaScriptCore）上的實戰表現。評測分析了兩者在語法正確性生成、複雜語義觸發深層邊界條件以及未知漏洞發現效率上的差異與互補性，為編譯器開發者、瀏覽器工程師與資安研究人員展示了次世代 AI 驅動自動化漏洞挖掘的實際潛力與限制。",
-        "id": "news:https://projectzero.google/2026/10/fuzzing-v-AI.html",
-        "publishedAt": "2026-10-27T23:43:50.988Z",
-        "title": "模糊測試對決 AI：評測 Fuzzilli 與 BigSleep 於 JavaScript 引擎之漏洞挖掘能力",
-        "type": "news",
-        "url": "https://projectzero.google/2026/10/fuzzing-v-AI.html"
-      },
-      {
-        "content": "針對 Cohere 先前指控開源模型 Qwen 3.8 Flash Next 會向阿里巴巴遠端伺服器上傳資料的爭議，社群透過 Hugging Face 公開的推論追蹤資料集與 Python 驗證指令碼進行了深入技術複現。分析指出，原先聲稱的「回傳行為」源於測試指令碼在達到特定 token 長度時的誤判，並非模型本體內建的後門或連線機制。此技術剖析有助於釐清開源模型供應鏈安全爭議，並為評估開源模型權重安全性提供了透明的驗證方法。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xgopmj/debunking_coheres_claim_of_qwen_38_flash_next",
-        "publishedAt": "2026-10-27T23:43:50.988Z",
-        "title": "技術實證反駁 Cohere 指控：Qwen 3.8 Flash Next 未向阿里遠端回傳資料",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xgopmj/debunking_coheres_claim_of_qwen_38_flash_next/"
-      },
-      {
-        "content": "廣受開發者關注的現代化高效能終端模擬器 Ghostty 正式釋出 1.4 版本。Ghostty 採用 Zig 語言編寫，具備原生跨平台 GPU 渲染與高度可配置性。新版本帶來多項效能最佳化、修復輸入法與排版渲染問題，並增強對現代終端特性（如真彩色、字型裝飾與自訂鍵盤映射）的支援。對於追求流暢終端操作體驗與高客製化命令列工作流的工程師而言，是一次重要的工具升級。",
-        "id": "news:https://ghostty.org/docs/install/release-notes/1-4-0",
-        "publishedAt": "2026-10-27T23:43:50.988Z",
-        "title": "GPU 加速終端模擬器 Ghostty 1.4 正式發布",
-        "type": "news",
-        "url": "https://ghostty.org/docs/install/release-notes/1-4-0"
-      },
-      {
-        "content": null,
-        "id": "news:https://sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
-        "publishedAt": "2026-10-28T23:58:45.944Z",
-        "title": "Anthropic S-1",
-        "type": "news",
-        "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
-      },
-      {
-        "content": null,
-        "id": "news:https://openai.com/index/building-scientific-understanding-with-academic-communities",
-        "publishedAt": "2026-10-28T23:58:45.944Z",
-        "title": "Three new discoveries in mathematics, computer science, and physics",
-        "type": "news",
-        "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/"
-      },
-      {
-        "content": null,
-        "id": "news:https://nullpt.rs/fingerprinting-bioweapons",
-        "publishedAt": "2026-10-28T23:58:45.944Z",
-        "title": "Why is this fingerprinting script creating bioweapons?",
-        "type": "news",
-        "url": "https://nullpt.rs/fingerprinting-bioweapons"
-      },
-      {
-        "content": null,
-        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon",
-        "publishedAt": "2026-10-28T23:58:45.944Z",
-        "title": "Gemini 4 Carbon",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
-      },
-      {
-        "content": null,
-        "id": "news:https://oioannou.com/blog/ai-promised-less-work",
-        "publishedAt": "2026-10-28T23:58:45.944Z",
-        "title": "AI promised less work. I've never worked more",
-        "type": "news",
-        "url": "https://oioannou.com/blog/ai-promised-less-work/"
-      },
-      {
-        "content": null,
-        "id": "news:https://stanforddaily.com/2026/10/27/professors-books-pirated-to-train-claude",
-        "publishedAt": "2026-10-28T23:58:45.944Z",
-        "title": "Anthropic trained Claude on illegally obtained Stanford professors' books",
-        "type": "news",
-        "url": "https://stanforddaily.com/2026/10/27/professors-books-pirated-to-train-claude/"
-      },
       {
         "content": null,
         "id": "news:https://brangus.io/survival-llm",
@@ -844,302 +740,301 @@
         "title": "Dayjob 釋出專業稅務評測基準：實測 AI Agent 處理複雜任務的推理能力",
         "type": "news",
         "url": "https://surgehq.ai/blog/dayjob-tax"
+      },
+      {
+        "content": "GitHub 正式向團隊推出 Copilot Automations 共享功能，允許工程團隊協同構建與維護由 AI 驅動的自動化工作流程。開發者可將自訂 Prompt、事件觸發器與工具組合在一起，建立圍繞日常開發流程的自動化規範。這項更新將 AI 代理的自動化能力從個人本地環境升級為團隊級別的可重用資產，有助於工程組織將繁瑣的日常任務與 CI/CD 流程以聲明式方式標準化。",
+        "id": "news:https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "GitHub 推出 Copilot Automations 團隊共享功能，加速協同構建 AI 自動化工作流",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations"
+      },
+      {
+        "content": "GitHub 發表 GitHub intelligence 上下文機制，強調 AI 代理不僅應理解程式碼庫本身，更需理解工程團隊的工作模式。系統可將開發者個人偏好、儲存庫慣例、技能設定以及自訂指令（custom instructions）納入推理脈絡，引導 AI 產出符合團隊風格與工程規範的變更。這直接解決了過去程式碼生成常因缺乏團隊隱性知識而產生風格偏離的問題，能有效降低人工代碼審查與重構的摩擦成本。",
+        "id": "news:https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "GitHub intelligence 強化上下文整合：讓代理依照團隊規範與慣例產出程式碼",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work"
+      },
+      {
+        "content": "Kubernetes 社群正式宣布 AI 一致性（AI Conformance）專案從初期的 Working Group 晉升為 SIG Architecture 旗下的正式子專案。該專案旨在為 Kubernetes 上的各類 AI 與機器學習工作負載建立標準化的介面規範與相容性測試機制。隨著大規模 AI 訓練與推論逐漸成為雲原生基礎設施的核心負載，此舉代表 Kubernetes 將 AI 運算的一致性納入核心架構藍圖，對在 K8s 上構建與部署 AI 平台的架構師而言是關鍵的標準演進。",
+        "id": "news:https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "Kubernetes AI 一致性專案晉升為 SIG Architecture 子專案，加速 AI 工作負載標準化",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/"
+      },
+      {
+        "content": "IBM 針對 Granite 模型家族釋出 Granite Switch 4.1.1 版本，主打「如同更新軟體般更新模型」的工程理念。該工具為多模型協作架構提供結構化的模型動態切換、路由調度與版本遷移機制。在當前 AI 應用快速演進的環境下，生產系統常面臨底層模型升級導致的介面破壞與提示詞失效風險，Granite Switch 提供了一套降低模型維護複雜度與退回成本的管理方案。",
+        "id": "news:https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "IBM 釋出 Granite Switch 4.1.1：以軟體升級思維管理多模型切換與路由",
+        "type": "news",
+        "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1"
+      },
+      {
+        "content": "資安團隊公開技術細節，示範如何藉由 ChatGPT 內部處理數學運算與上下文渲染時的解析邏輯缺陷，成功繞過安全機制實現對目標帳號的接管（Account Takeover）。這項研究揭示了當前生成式 AI 應用在整合富文本、數學公式或外部直譯環境時可能引入的非預期攻擊面，提醒構建 AI 應用的開發者在處理模型輸入與轉發渲染時，必須建立更嚴格的輸入消毒與會話隔離機制。",
+        "id": "news:https://parameter.ai/labs/we-found-a-gap-at-openai",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "資安研究揭露利用運算渲染邏輯漏洞劫持 ChatGPT 帳號之技術細節",
+        "type": "news",
+        "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai"
+      },
+      {
+        "content": "工程團隊分享了結合 Rust 與 Cloudflare Durable Objects 構建專屬 AI 代理版本控制系統的實作經驗。面對自主編程代理以秒為單位高頻進行微幅修改的特性，傳統 Git 顯得過於笨重且鎖定開銷高。該團隊利用 Rust 的記憶體效能優勢搭配 Durable Objects 的邊緣分散式一致性，成功實現了低延遲且具備細粒度回滾能力的專用版控，為代理型軟體工程的基礎架構設計提供了具體實踐範式。",
+        "id": "news:https://delta.dev/blog/fine-grained-version-control-for-agents",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "結合 Rust 與 Durable Objects：為自主 AI 代理打造細粒度版本控制系統",
+        "type": "news",
+        "url": "https://delta.dev/blog/fine-grained-version-control-for-agents"
+      },
+      {
+        "content": "研究人員提出名為 Sleep 的新型框架，模擬生物大腦睡眠時的神經記憶鞏固過程，旨在克服大型語言模型在持續學習（Continual Learning）新知識時發生的災難性遺忘（Catastrophic Forgetting）。該方法透過模擬離線鞏固階段，在吸收新資訊的同時鎖定關鍵特徵權重，使模型在無需頻繁從頭重新預訓練的情況下持續維持既有知識水準，對需要定期更新領域知識庫的 ML 工程團隊極具參考價值。",
+        "id": "news:https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "Sleep 框架：模擬大腦睡眠機制，解決大語言模型持續學習中的災難性遺忘",
+        "type": "news",
+        "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/"
+      },
+      {
+        "content": "Lean 定理證明器作者 Leo de Moura 深度探討 AI 與形式化驗證（Formal Verification）的交集發展。訪談解析了神經網路如何加速定理證明搜尋，以及形式化系統如何反向為 AI 生成的程式碼提供數學級別的正確性擔保。面對 AI 編程代理容易產出隱蔽錯誤與幻覺的現實瓶頸，將形式化驗證整合至代碼生成管線被視為實現高可靠軟體工程的重要方向。",
+        "id": "news:https://thedataexchange.media/leo-de-moura-lean-aws",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "專訪 Lean 之父 Leo de Moura：探討 AI 與形式化驗證結合的未來軟體工程",
+        "type": "news",
+        "url": "https://thedataexchange.media/leo-de-moura-lean-aws/"
+      },
+      {
+        "content": "資安報告揭露新型惡意軟體已開始引入 LLM 進行自動化攻擊流程。該惡意程式在滲透端點後，會透過呼叫大語言模型解析本機敏感文件與外洩資料，智慧判斷受害者機構的資產規模與勒索價值並進行自動分級。這項實證顯示攻擊者正將 AI 作為提高情報篩選效率的實用工具，也提醒防禦方在監控異常系統行為時，需對內部主機調用外部 AI API 的行為提高警覺。",
+        "id": "news:https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "新型惡意軟體整合 LLM 分析外洩資料，自動評估受害者價值與勒索排序",
+        "type": "news",
+        "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/"
+      },
+      {
+        "content": "Docusign 工程團隊深入剖析其在構建專用合約 AI 代理時克服「上下文問題」的架構方案。通用模型往往只能處理表面摘要，難以理解商業條款背後的權責邏輯與跨文件依賴。團隊透過自定義知識本體、結構化脈絡抽取與專門的評估管線，提升模型在特定商務場景的理解深度，為企業級 RAG 與領域專精代理的落地提供了清晰的工程實務指引。",
+        "id": "news:https://thenewstack.io/docusign-contract-ai-agents",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "深入解析 Docusign 架構實踐：如何破解合約代理中的業務上下文理解難題",
+        "type": "news",
+        "url": "https://thenewstack.io/docusign-contract-ai-agents/"
+      },
+      {
+        "content": "內部開發者平台 OpenChoreo 發布架構實務分享，說明如何將 OpenTelemetry 的分散式追蹤能力與 Kubernetes 叢集事件無縫整合。傳統除錯時，應用層追蹤日誌與基礎設施層事件往往處於割裂狀態；該方案展示如何打通兩者數據流，讓開發者在面對生產故障時，能直接在單一全鏈路視圖中回溯基礎架構事件對微服務調用延遲的實時影響。",
+        "id": "news:https://cncf.io/blog/2026/10/27/opentelemetry-powered-distributed-tracing-and-kubernetes-events-in-openchoreo",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "OpenChoreo 架構實務：結合 OpenTelemetry 與 K8s 事件實現端到端全鏈路觀測",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/10/27/opentelemetry-powered-distributed-tracing-and-kubernetes-events-in-openchoreo/"
+      },
+      {
+        "content": "機器學習理論研究提出 Trees to Flows 統一架構，揭示了經典非連續決策樹與現代連續動態流／擴散模型之間的數學關聯。該研究在理論與演算法層面建立了將結構化樹狀分割對映至流匹配的橋樑，不僅拓展了對擴散機制的理論理解，也為未來設計能夠原生處理表格數據的高效生成模型開闢了新的架構方向。",
+        "id": "news:https://arxiv.org/abs/2605.00414",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "決策樹與擴散模型的統一理論：Trees to Flows 框架連通結構化與生成式學習",
+        "type": "news",
+        "url": "https://arxiv.org/abs/2605.00414"
+      },
+      {
+        "content": "微服務與雲端基礎設施部署平台 Northflank 宣布遭遇安全侵害事件，官方已通報其內部系統遭到未授權存取。由於 Northflank 深度託管開發者的容器、生產資料庫與排程服務，此次事件可能導致環境變數、API Token 與資料庫存取憑證面臨暴露風險。凡依賴該平台部署應用的團隊，應立即清查稽核存取日誌、輪換所有生產金鑰並撤銷受影響的憑證，以杜絕供應鏈被進一步橫向滲透的風險。",
+        "id": "news:https://status.northflank.com/",
+        "publishedAt": "2026-10-31T23:18:32.518Z",
+        "title": "雲端開發平台 Northflank 傳出遭入侵事件，開發者需盡速輪換憑證與檢查金鑰",
+        "type": "news",
+        "url": "https://status.northflank.com"
       }
     ],
     "news": {
-      "generatedAt": "2026-10-30T23:39:06.883Z",
+      "generatedAt": "2026-10-31T23:18:32.518Z",
       "items": [
         {
-          "content": "資安研究揭露在 Cursor Marketplace 上流通的 VS Code 擴充套件「Claude Code」被植入惡意後門程式碼。由於 Claude Code 具備高度存取權限，可直接在本地端讀寫檔案並執行終端機指令，此類惡意擴充套件將直接威脅開發者的本機環境與敏感程式碼。使用 Cursor 或 VS Code 的開發者應立即檢查已安裝擴充套件的來源與簽署狀態，避免仰賴非官方發布的第三方渠道。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Backdoor in Claude Code for VS Code extension on the Cursor Marketplace",
-          "sources": [
-            "hn"
-          ],
-          "title": "Cursor 外掛市集之 Claude Code 擴充套件驚傳植入後門漏洞",
-          "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
-          "weightedScore": 722
-        },
-        {
-          "content": "Tailscale 官方針對先前 Tailscale SSH 的潛在安全風險發布最新調查報告與加固措施說明。報告詳述了認證流程可能遭受繞過的邊界條件，以及目前已完成的遠端端點修復與金鑰驗證強化機制。對於將 Tailscale SSH 作為內部基礎架構零信任連線與權限管理工具的維運團隊而言，該報告提供了具體的風險評估與後續配置防護建議。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Tailscale SSH: Investigation and remediation update",
-          "sources": [
-            "hn"
-          ],
-          "title": "Tailscale SSH 發布安全事件調查進度與漏洞修復更新",
-          "url": "https://tailscale.com/ssh-investigation-update",
-          "weightedScore": 391
-        },
-        {
-          "content": "Cloudflare 宣布將 WAF、Bot Management、邊緣快取以及 Workers 運算功能延伸至私有來源（Private Origins）的架構正式進入全面可用（GA）階段。凡透過 Cloudflare One 連線的企業與開發者，現在無須將來源端伺服器暴露於公開網際網路，即可直接由邊緣接收公網流量並套用完整的安全防護與運算規則，大幅簡化內部系統與混合雲服務的對外發布與安全架構。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Cloudflare services for private origins is now generally available",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 私有來源連線服務正式 GA，支援完整 WAF 與邊緣運算",
-          "url": "https://blog.cloudflare.com/private-origins-public-to-private/",
-          "weightedScore": 50
-        },
-        {
-          "content": "GitHub 宣布與微軟企業帳戶合作的客戶，其 GitHub Enterprise 授權現在直接包含 GitHub Copilot 存取權限。在此之前，企業必須分開估算與管理 Enterprise 席次與 Copilot 席次，新策略消除了雙重授權的管理門檻，意味著每位獲授權的企業內部工程師均可直接啟用 Copilot，加速企業規模化推動 AI 輔助軟體開發。",
+          "content": "GitHub 正式向團隊推出 Copilot Automations 共享功能，允許工程團隊協同構建與維護由 AI 驅動的自動化工作流程。開發者可將自訂 Prompt、事件觸發器與工具組合在一起，建立圍繞日常開發流程的自動化規範。這項更新將 AI 代理的自動化能力從個人本地環境升級為團隊級別的可重用資產，有助於工程組織將繁瑣的日常任務與 CI/CD 流程以聲明式方式標準化。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Enterprise now includes access to GitHub Copilot",
+          "sourceTitle": "Build shared workflows for your team with Copilot Automations",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Enterprise 全面內建 GitHub Copilot，簡化授權與採購管理",
-          "url": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot",
+          "title": "GitHub 推出 Copilot Automations 團隊共享功能，加速協同構建 AI 自動化工作流",
+          "url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations",
           "weightedScore": 100
         },
         {
-          "content": "Anthropic 宣布為 Claude Code 200 美元訂閱方案的合格使用者取消原有的 5 小時滾動使用上限。以往開發者在進行大型程式碼重構或密集呼叫 CLI Agent 時容易觸碰頻率限制而被迫中斷工作，此次鬆綁用量限制讓重度工程師得以更無縫地融入高強度的自動化開發工作流程。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Anthropic just removed one of Claude’s biggest usage limits — but not for everyone",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Anthropic 解除 Claude Code 200 美元訂閱方案之 5 小時滾動用量上限",
-          "url": "https://thenewstack.io/claude-ultra-session-limit/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Node.js 發布 27.0.0-alpha.0.0.0 版本，底層 JavaScript 引擎同步升級至 V8 15.6。新版本預設啟用了包含 Math.sumPrecise()、Iterator.prototype.join()、includes()、zip() 等 ECMAScript 標準新特性，並提供 import defer（延遲模組評估）與不可變 ArrayBuffer 等實驗性功能，為後端開發者提供下一代執行環境的語言升級預覽與相容性測試基礎。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sourceTitle": "2026-10-29, Version 27.0.0-alpha.0.0.0 (Alpha), @RafaelGSS",
-          "sources": [
-            "gh-nodejs"
-          ],
-          "title": "Node.js 27 釋出 Alpha 預覽版，升級 V8 15.6 與引入迭代器新方法",
-          "url": "https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.0.0",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 釋出 GitHub Copilot app 安全性擴充功能公開預覽版。開發者現在無須離開 Copilot 介面即可檢視所屬儲存庫的 GitHub Code Scanning 安全警報，並由 Copilot 提供分析與修復建議。此整合使安全性檢測與修補工作流能直接嵌入開發者日常的對話輔助介面中，降低安全弱點修復的來回切換成本。",
+          "content": "GitHub 發表 GitHub intelligence 上下文機制，強調 AI 代理不僅應理解程式碼庫本身，更需理解工程團隊的工作模式。系統可將開發者個人偏好、儲存庫慣例、技能設定以及自訂指令（custom instructions）納入推理脈絡，引導 AI 產出符合團隊風格與工程規範的變更。這直接解決了過去程式碼生成常因缺乏團隊隱性知識而產生風格偏離的問題，能有效降低人工代碼審查與重構的摩擦成本。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Security extension for the GitHub Copilot app",
+          "sourceTitle": "GitHub intelligence puts your code, context, and history to work",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot App 推出安全擴充功能，支援直接排查與修復程式碼漏洞",
-          "url": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app",
+          "title": "GitHub intelligence 強化上下文整合：讓代理依照團隊規範與慣例產出程式碼",
+          "url": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work",
           "weightedScore": 100
         },
         {
-          "content": "OpenAI 宣布將遵循一套共用的 robots.txt 信號機制，讓各網站營運者能透過標準化指令明確向參與的 AI 提供商傳達其內容是否允許用於模型訓練。過去網站管理者必須針對不同爬蟲個別設定阻擋或放行，統一偏好表達標準有助於簡化 Web 站點的授權治理與爬蟲防禦設定。",
+          "content": "Kubernetes 社群正式宣布 AI 一致性（AI Conformance）專案從初期的 Working Group 晉升為 SIG Architecture 旗下的正式子專案。該專案旨在為 Kubernetes 上的各類 AI 與機器學習工作負載建立標準化的介面規範與相容性測試機制。隨著大規模 AI 訓練與推論逐漸成為雲原生基礎設施的核心負載，此舉代表 Kubernetes 將 AI 運算的一致性納入核心架構藍圖，對在 K8s 上構建與部署 AI 平台的架構師而言是關鍵的標準演進。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "kubernetes-blog",
+          "sourceTitle": "From Working Group to SIG Architecture: spotlight on AI Conformance",
+          "sources": [
+            "kubernetes-blog"
+          ],
+          "title": "Kubernetes AI 一致性專案晉升為 SIG Architecture 子專案，加速 AI 工作負載標準化",
+          "url": "https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/",
+          "weightedScore": 100
+        },
+        {
+          "content": "IBM 針對 Granite 模型家族釋出 Granite Switch 4.1.1 版本，主打「如同更新軟體般更新模型」的工程理念。該工具為多模型協作架構提供結構化的模型動態切換、路由調度與版本遷移機制。在當前 AI 應用快速演進的環境下，生產系統常面臨底層模型升級導致的介面破壞與提示詞失效風險，Granite Switch 提供了一套降低模型維護複雜度與退回成本的管理方案。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Making it easier for websites to express AI training preferences",
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Granite Switch 4.1.1 — Update models like you update software",
           "sources": [
-            "openai-blog"
+            "huggingface-blog"
           ],
-          "title": "OpenAI 宣布採納共用 robots.txt 協定，統一網站 AI 訓練授權偏好",
-          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+          "title": "IBM 釋出 Granite Switch 4.1.1：以軟體升級思維管理多模型切換與路由",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
           "weightedScore": 100
         },
         {
-          "content": "Reddit 執行長透露平台將轉為全面「僅限登入」體驗，公開貼文未來將無法直接透過傳統瀏覽器無憑證瀏覽或被一般搜尋引擎檢索。這項變動將直接影響依賴開放網頁檢索與 Tool Calling 搜尋 Reddit 即時知識的本機 AI（Local AI）與爬蟲應用，相關開發者需提前調整資料取得策略或接入官方 API。",
+          "content": "資安團隊公開技術細節，示範如何藉由 ChatGPT 內部處理數學運算與上下文渲染時的解析邏輯缺陷，成功繞過安全機制實現對目標帳號的接管（Account Takeover）。這項研究揭示了當前生成式 AI 應用在整合富文本、數學公式或外部直譯環境時可能引入的非預期攻擊面，提醒構建 AI 應用的開發者在處理模型輸入與轉發渲染時，必須建立更嚴格的輸入消毒與會話隔離機制。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "Reddit will force everyone to log in",
+          "sourceId": "hn",
+          "sourceTitle": "Do the math: How we took over ChatGPT accounts",
           "sources": [
-            "reddit-localllama"
+            "hn"
           ],
-          "title": "Reddit 宣布將改為全面強制登入模式，重創網路爬蟲與 AI 工具呼叫",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xj2pnp/reddit_will_force_everyone_to_log_in/",
+          "title": "資安研究揭露利用運算渲染邏輯漏洞劫持 ChatGPT 帳號之技術細節",
+          "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai",
+          "weightedScore": 293
+        },
+        {
+          "content": "工程團隊分享了結合 Rust 與 Cloudflare Durable Objects 構建專屬 AI 代理版本控制系統的實作經驗。面對自主編程代理以秒為單位高頻進行微幅修改的特性，傳統 Git 顯得過於笨重且鎖定開銷高。該團隊利用 Rust 的記憶體效能優勢搭配 Durable Objects 的邊緣分散式一致性，成功實現了低延遲且具備細粒度回滾能力的專用版控，為代理型軟體工程的基礎架構設計提供了具體實踐範式。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Building fine-grained version control for agents with Rust and Durable Objects",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "結合 Rust 與 Durable Objects：為自主 AI 代理打造細粒度版本控制系統",
+          "url": "https://delta.dev/blog/fine-grained-version-control-for-agents",
           "weightedScore": 100
         },
         {
-          "content": "文章深入分析在 Kubernetes 叢集部署 AI 模型時常見的效能監控誤區。即使 K8s 節點狀態健康且 GPU 使用率接近滿載，使用者端體驗到的推論延遲仍可能極高。問題往往出在模型推論的 Batching 排程、記憶體頻寬瓶頸或冷啟動開銷，文章剖析如何建立以延遲與吞吐量為核心的真實指標，避免被傳統硬體使用率指標所誤導。",
+          "content": "研究人員提出名為 Sleep 的新型框架，模擬生物大腦睡眠時的神經記憶鞏固過程，旨在克服大型語言模型在持續學習（Continual Learning）新知識時發生的災難性遺忘（Catastrophic Forgetting）。該方法透過模擬離線鞏固階段，在吸收新資訊的同時鎖定關鍵特徵權重，使模型在無需頻繁從頭重新預訓練的情況下持續維持既有知識水準，對需要定期更新領域知識庫的 ML 工程團隊極具參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Sleep framework: A new way for LLMs to retain knowledge in continual learning",
+          "sources": [
+            "hn"
+          ],
+          "title": "Sleep 框架：模擬大腦睡眠機制，解決大語言模型持續學習中的災難性遺忘",
+          "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+          "weightedScore": 250
+        },
+        {
+          "content": "Lean 定理證明器作者 Leo de Moura 深度探討 AI 與形式化驗證（Formal Verification）的交集發展。訪談解析了神經網路如何加速定理證明搜尋，以及形式化系統如何反向為 AI 生成的程式碼提供數學級別的正確性擔保。面對 AI 編程代理容易產出隱蔽錯誤與幻覺的現實瓶頸，將形式化驗證整合至代碼生成管線被視為實現高可靠軟體工程的重要方向。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "AI, Lean, and the Future of Formal Verification, with Lean Creator Leo de Moura",
+          "sources": [
+            "hn"
+          ],
+          "title": "專訪 Lean 之父 Leo de Moura：探討 AI 與形式化驗證結合的未來軟體工程",
+          "url": "https://thedataexchange.media/leo-de-moura-lean-aws/",
+          "weightedScore": 186
+        },
+        {
+          "content": "資安報告揭露新型惡意軟體已開始引入 LLM 進行自動化攻擊流程。該惡意程式在滲透端點後，會透過呼叫大語言模型解析本機敏感文件與外洩資料，智慧判斷受害者機構的資產規模與勒索價值並進行自動分級。這項實證顯示攻擊者正將 AI 作為提高情報篩選效率的實用工具，也提醒防禦方在監控異常系統行為時，需對內部主機調用外部 AI API 的行為提高警覺。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Malware uses LLMs to rank victims by how much they're worth",
+          "sources": [
+            "hn"
+          ],
+          "title": "新型惡意軟體整合 LLM 分析外洩資料，自動評估受害者價值與勒索排序",
+          "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
+          "weightedScore": 225
+        },
+        {
+          "content": "Docusign 工程團隊深入剖析其在構建專用合約 AI 代理時克服「上下文問題」的架構方案。通用模型往往只能處理表面摘要，難以理解商業條款背後的權責邏輯與跨文件依賴。團隊透過自定義知識本體、結構化脈絡抽取與專門的評估管線，提升模型在特定商務場景的理解深度，為企業級 RAG 與領域專精代理的落地提供了清晰的工程實務指引。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "Busy GPUs can hide slow AI inference on Kubernetes",
+          "sourceTitle": "The context problem: How Docusign built agents that understand the business behind contracts",
           "sources": [
             "thenewstack"
           ],
-          "title": "深入剖析 K8s 上的 AI 推論延遲陷阱：高負載 GPU 為何未能帶來高效能",
-          "url": "https://thenewstack.io/ai-inference-kubernetes-observability/",
+          "title": "深入解析 Docusign 架構實踐：如何破解合約代理中的業務上下文理解難題",
+          "url": "https://thenewstack.io/docusign-contract-ai-agents/",
           "weightedScore": 50
         },
         {
-          "content": "Cloudflare 發表技術深入分析，詳細追蹤因憑證機構 eMudhra 弱金鑰缺陷引發的網際網路加密安全危機。文中解釋攻擊者如何透過極小的金鑰嘗試次數即有機會攻破未修補的 TLS 連線，並分享 Cloudflare 如何在基礎設施層面快速攔截修補，以及當前整體網際網路仍存在的暴露風險，為維運 PKI 與傳輸安全團隊提供關鍵借鏡。",
+          "content": "內部開發者平台 OpenChoreo 發布架構實務分享，說明如何將 OpenTelemetry 的分散式追蹤能力與 Kubernetes 叢集事件無縫整合。傳統除錯時，應用層追蹤日誌與基礎設施層事件往往處於割裂狀態；該方案展示如何打通兩者數據流，讓開發者在面對生產故障時，能直接在單一全鏈路視圖中回溯基礎架構事件對微服務調用延遲的實時影響。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "4 real? Tracking exploitation and patching of eMudhra’s weak keys",
+          "sourceId": "cncf-blog",
+          "sourceTitle": "OpenTelemetry-powered distributed tracing and Kubernetes events in OpenChoreo",
           "sources": [
-            "cloudflare-blog"
+            "cncf-blog"
           ],
-          "title": "剖析 eMudhra 弱金鑰憑證安全危機：利用手法追蹤與修補實作",
-          "url": "https://blog.cloudflare.com/emudhra-patching/",
-          "weightedScore": 50
+          "title": "OpenChoreo 架構實務：結合 OpenTelemetry 與 K8s 事件實現端到端全鏈路觀測",
+          "url": "https://www.cncf.io/blog/2026/10/27/opentelemetry-powered-distributed-tracing-and-kubernetes-events-in-openchoreo/",
+          "weightedScore": 100
         },
         {
-          "content": "文章深入調查大語言模型在回答問題時所引用的各種精確統計數據，揭露所謂「殭屍數據」（Zombie Stats）的生成機制。研究發現模型常將網路中反覆轉載、缺乏出處或經年累月失真的數字內化為高置信度的事實輸出。此分析提醒從事 RAG（檢索增強生成）與知識問答系統開發的工程師，必須加強外部可信來源驗證，不可輕信模型自主生成的統計引用。",
+          "content": "機器學習理論研究提出 Trees to Flows 統一架構，揭示了經典非連續決策樹與現代連續動態流／擴散模型之間的數學關聯。該研究在理論與演算法層面建立了將結構化樹狀分割對映至流匹配的橋樑，不僅拓展了對擴散機制的理論理解，也為未來設計能夠原生處理表格數據的高效生成模型開闢了新的架構方向。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Zombie stats: Where the numbers AI quotes come from",
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Trees to Flows and Back: Unifying Decision Trees and Diffusion Models",
           "sources": [
-            "hn"
+            "lobsters-ai"
           ],
-          "title": "解構 LLM 數字幻覺：深入剖析大型語言模型引用「殭屍數據」的成因",
-          "url": "https://trakkr.ai/trakkr-research/zombie-stats",
-          "weightedScore": 177
+          "title": "決策樹與擴散模型的統一理論：Trees to Flows 框架連通結構化與生成式學習",
+          "url": "https://arxiv.org/abs/2605.00414",
+          "weightedScore": 100
         },
         {
-          "content": "開發團隊分享在《Minecraft》與《Mindustry》沙盒環境中運行大規模 AI Agent Swarm（代理集群）的實作挑戰。文章詳細探討多個自主 Agent 在動態複雜環境中如何進行分散式通訊、任務拆解與狀態同步，並解決代理人決策延遲與資源競爭問題，為正在構建多 Agent 協同架構的開發者提供寶貴的第一手實作經驗與架構設計參考。",
+          "content": "微服務與雲端基礎設施部署平台 Northflank 宣布遭遇安全侵害事件，官方已通報其內部系統遭到未授權存取。由於 Northflank 深度託管開發者的容器、生產資料庫與排程服務，此次事件可能導致環境變數、API Token 與資料庫存取憑證面臨暴露風險。凡依賴該平台部署應用的團隊，應立即清查稽核存取日誌、輪換所有生產金鑰並撤銷受影響的憑證，以杜絕供應鏈被進一步橫向滲透的風險。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "We ran AI agent swarms in Minecraft and Mindustry",
+          "sourceTitle": "Northflank Breached",
           "sources": [
             "hn"
           ],
-          "title": "在 Minecraft 與 Mindustry 運行 AI 代理集群：多 Agent 架構實作經驗",
-          "url": "https://labs.ycombinator.com/projects/games/index.html",
-          "weightedScore": 393
-        },
-        {
-          "content": "評測專案「Dayjob: Tax」透過 50 項真實世界的專業稅務實務情境，對主流 AI Agent 進行基準測試。測試涵蓋法規遵循、長文本跨文檔檢索與精確數字計算，揭示現行 Agent 在多步驟決策、工具調用精確度以及自我除錯能力上的優勢與常見崩潰點，為開發企業級垂類垂直 Agent 應用的團隊提供了實用的評估基準與改進方向。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
-          "sources": [
-            "hn"
-          ],
-          "title": "Dayjob 釋出專業稅務評測基準：實測 AI Agent 處理複雜任務的推理能力",
-          "url": "https://surgehq.ai/blog/dayjob-tax",
-          "weightedScore": 261
+          "title": "雲端開發平台 Northflank 傳出遭入侵事件，開發者需盡速輪換憑證與檢查金鑰",
+          "url": "https://status.northflank.com",
+          "weightedScore": 471
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-16T00:07:50.300Z",
-      "sourceId": "hn",
-      "sources": [
-        "deepmind-blog",
-        "hn"
-      ],
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-16T00:07:50.300Z",
-      "sourceId": "kubernetes-blog",
-      "sources": [
-        "kubernetes-blog"
-      ],
-      "url": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-16T00:07:50.300Z",
-      "sourceId": "kubernetes-blog",
-      "sources": [
-        "kubernetes-blog"
-      ],
-      "url": "https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-16T00:07:50.300Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-16T00:07:50.300Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/workers-granular-authorization"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-16T00:07:50.300Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/meta-mcp-whatsapp-business-claude"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-16T00:07:50.300Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://nathannaveen.dev/posts/dropping-ebpf-cpu-cost-by-90"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-16T00:07:50.300Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://entelligence.ai/blogs/gpt-5.6-luna-vs-gpt-6-astra-is-a-1.20-model-good-enough-for-code-review"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-09-16T00:07:50.300Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://rmoff.net/2026/01/14/alternatives-to-minio-for-single-node-local-s3"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-16T00:07:50.300Z",
-      "sourceId": "raschka-ahead-of-ai",
-      "sources": [
-        "raschka-ahead-of-ai"
-      ],
-      "url": "https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and"
-    },
     {
       "domain": "frontend-backend",
       "seenAt": "2026-09-17T00:18:25.022Z",
@@ -6363,6 +6258,136 @@
       ],
       "title": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
       "url": "https://surgehq.ai/blog/dayjob-tax"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Build shared workflows for your team with Copilot Automations",
+      "url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub intelligence puts your code, context, and history to work",
+      "url": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "title": "From Working Group to SIG Architecture: spotlight on AI Conformance",
+      "url": "https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Granite Switch 4.1.1 — Update models like you update software",
+      "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Do the math: How we took over ChatGPT accounts",
+      "url": "https://parameter.ai/labs/we-found-a-gap-at-openai"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Building fine-grained version control for agents with Rust and Durable Objects",
+      "url": "https://delta.dev/blog/fine-grained-version-control-for-agents"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Sleep framework: A new way for LLMs to retain knowledge in continual learning",
+      "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "AI, Lean, and the Future of Formal Verification, with Lean Creator Leo de Moura",
+      "url": "https://thedataexchange.media/leo-de-moura-lean-aws"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Malware uses LLMs to rank victims by how much they're worth",
+      "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "The context problem: How Docusign built agents that understand the business behind contracts",
+      "url": "https://thenewstack.io/docusign-contract-ai-agents"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "OpenTelemetry-powered distributed tracing and Kubernetes events in OpenChoreo",
+      "url": "https://cncf.io/blog/2026/10/27/opentelemetry-powered-distributed-tracing-and-kubernetes-events-in-openchoreo"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Trees to Flows and Back: Unifying Decision Trees and Diffusion Models",
+      "url": "https://arxiv.org/abs/2605.00414"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-10-31T23:18:32.518Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Northflank Breached",
+      "url": "https://status.northflank.com/"
     }
   ]
 }
