@@ -454,125 +454,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-01T23:30:25.194Z",
-  "lastNewsPushAt": "2026-11-03T02:12:10.543Z",
+  "lastNewsPushAt": "2026-11-04T00:34:16.383Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-01T23:30:25.194Z",
       "summary": "本次榜單新進 7 個、竄升 1 個、下降 2 個，其中新進與竄升集中於 AI 6 個與前後端 2 個領域，綜合榜首由 Nutlope/hallmark 奪下。"
     },
     "feed": [
-      {
-        "content": "Cloudflare 發表技術深入分析，詳細追蹤因憑證機構 eMudhra 弱金鑰缺陷引發的網際網路加密安全危機。文中解釋攻擊者如何透過極小的金鑰嘗試次數即有機會攻破未修補的 TLS 連線，並分享 Cloudflare 如何在基礎設施層面快速攔截修補，以及當前整體網際網路仍存在的暴露風險，為維運 PKI 與傳輸安全團隊提供關鍵借鏡。",
-        "id": "news:https://blog.cloudflare.com/emudhra-patching",
-        "publishedAt": "2026-10-30T23:39:06.883Z",
-        "title": "剖析 eMudhra 弱金鑰憑證安全危機：利用手法追蹤與修補實作",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/emudhra-patching/"
-      },
-      {
-        "content": "文章深入調查大語言模型在回答問題時所引用的各種精確統計數據，揭露所謂「殭屍數據」（Zombie Stats）的生成機制。研究發現模型常將網路中反覆轉載、缺乏出處或經年累月失真的數字內化為高置信度的事實輸出。此分析提醒從事 RAG（檢索增強生成）與知識問答系統開發的工程師，必須加強外部可信來源驗證，不可輕信模型自主生成的統計引用。",
-        "id": "news:https://trakkr.ai/trakkr-research/zombie-stats",
-        "publishedAt": "2026-10-30T23:39:06.883Z",
-        "title": "解構 LLM 數字幻覺：深入剖析大型語言模型引用「殭屍數據」的成因",
-        "type": "news",
-        "url": "https://trakkr.ai/trakkr-research/zombie-stats"
-      },
-      {
-        "content": "開發團隊分享在《Minecraft》與《Mindustry》沙盒環境中運行大規模 AI Agent Swarm（代理集群）的實作挑戰。文章詳細探討多個自主 Agent 在動態複雜環境中如何進行分散式通訊、任務拆解與狀態同步，並解決代理人決策延遲與資源競爭問題，為正在構建多 Agent 協同架構的開發者提供寶貴的第一手實作經驗與架構設計參考。",
-        "id": "news:https://labs.ycombinator.com/projects/games/index.html",
-        "publishedAt": "2026-10-30T23:39:06.883Z",
-        "title": "在 Minecraft 與 Mindustry 運行 AI 代理集群：多 Agent 架構實作經驗",
-        "type": "news",
-        "url": "https://labs.ycombinator.com/projects/games/index.html"
-      },
-      {
-        "content": "評測專案「Dayjob: Tax」透過 50 項真實世界的專業稅務實務情境，對主流 AI Agent 進行基準測試。測試涵蓋法規遵循、長文本跨文檔檢索與精確數字計算，揭示現行 Agent 在多步驟決策、工具調用精確度以及自我除錯能力上的優勢與常見崩潰點，為開發企業級垂類垂直 Agent 應用的團隊提供了實用的評估基準與改進方向。",
-        "id": "news:https://surgehq.ai/blog/dayjob-tax",
-        "publishedAt": "2026-10-30T23:39:06.883Z",
-        "title": "Dayjob 釋出專業稅務評測基準：實測 AI Agent 處理複雜任務的推理能力",
-        "type": "news",
-        "url": "https://surgehq.ai/blog/dayjob-tax"
-      },
-      {
-        "content": "GitHub 正式向團隊推出 Copilot Automations 共享功能，允許工程團隊協同構建與維護由 AI 驅動的自動化工作流程。開發者可將自訂 Prompt、事件觸發器與工具組合在一起，建立圍繞日常開發流程的自動化規範。這項更新將 AI 代理的自動化能力從個人本地環境升級為團隊級別的可重用資產，有助於工程組織將繁瑣的日常任務與 CI/CD 流程以聲明式方式標準化。",
-        "id": "news:https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "GitHub 推出 Copilot Automations 團隊共享功能，加速協同構建 AI 自動化工作流",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations"
-      },
-      {
-        "content": "GitHub 發表 GitHub intelligence 上下文機制，強調 AI 代理不僅應理解程式碼庫本身，更需理解工程團隊的工作模式。系統可將開發者個人偏好、儲存庫慣例、技能設定以及自訂指令（custom instructions）納入推理脈絡，引導 AI 產出符合團隊風格與工程規範的變更。這直接解決了過去程式碼生成常因缺乏團隊隱性知識而產生風格偏離的問題，能有效降低人工代碼審查與重構的摩擦成本。",
-        "id": "news:https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "GitHub intelligence 強化上下文整合：讓代理依照團隊規範與慣例產出程式碼",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work"
-      },
-      {
-        "content": "Kubernetes 社群正式宣布 AI 一致性（AI Conformance）專案從初期的 Working Group 晉升為 SIG Architecture 旗下的正式子專案。該專案旨在為 Kubernetes 上的各類 AI 與機器學習工作負載建立標準化的介面規範與相容性測試機制。隨著大規模 AI 訓練與推論逐漸成為雲原生基礎設施的核心負載，此舉代表 Kubernetes 將 AI 運算的一致性納入核心架構藍圖，對在 K8s 上構建與部署 AI 平台的架構師而言是關鍵的標準演進。",
-        "id": "news:https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "Kubernetes AI 一致性專案晉升為 SIG Architecture 子專案，加速 AI 工作負載標準化",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/"
-      },
-      {
-        "content": "IBM 針對 Granite 模型家族釋出 Granite Switch 4.1.1 版本，主打「如同更新軟體般更新模型」的工程理念。該工具為多模型協作架構提供結構化的模型動態切換、路由調度與版本遷移機制。在當前 AI 應用快速演進的環境下，生產系統常面臨底層模型升級導致的介面破壞與提示詞失效風險，Granite Switch 提供了一套降低模型維護複雜度與退回成本的管理方案。",
-        "id": "news:https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "IBM 釋出 Granite Switch 4.1.1：以軟體升級思維管理多模型切換與路由",
-        "type": "news",
-        "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1"
-      },
-      {
-        "content": "資安團隊公開技術細節，示範如何藉由 ChatGPT 內部處理數學運算與上下文渲染時的解析邏輯缺陷，成功繞過安全機制實現對目標帳號的接管（Account Takeover）。這項研究揭示了當前生成式 AI 應用在整合富文本、數學公式或外部直譯環境時可能引入的非預期攻擊面，提醒構建 AI 應用的開發者在處理模型輸入與轉發渲染時，必須建立更嚴格的輸入消毒與會話隔離機制。",
-        "id": "news:https://parameter.ai/labs/we-found-a-gap-at-openai",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "資安研究揭露利用運算渲染邏輯漏洞劫持 ChatGPT 帳號之技術細節",
-        "type": "news",
-        "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai"
-      },
-      {
-        "content": "工程團隊分享了結合 Rust 與 Cloudflare Durable Objects 構建專屬 AI 代理版本控制系統的實作經驗。面對自主編程代理以秒為單位高頻進行微幅修改的特性，傳統 Git 顯得過於笨重且鎖定開銷高。該團隊利用 Rust 的記憶體效能優勢搭配 Durable Objects 的邊緣分散式一致性，成功實現了低延遲且具備細粒度回滾能力的專用版控，為代理型軟體工程的基礎架構設計提供了具體實踐範式。",
-        "id": "news:https://delta.dev/blog/fine-grained-version-control-for-agents",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "結合 Rust 與 Durable Objects：為自主 AI 代理打造細粒度版本控制系統",
-        "type": "news",
-        "url": "https://delta.dev/blog/fine-grained-version-control-for-agents"
-      },
-      {
-        "content": "研究人員提出名為 Sleep 的新型框架，模擬生物大腦睡眠時的神經記憶鞏固過程，旨在克服大型語言模型在持續學習（Continual Learning）新知識時發生的災難性遺忘（Catastrophic Forgetting）。該方法透過模擬離線鞏固階段，在吸收新資訊的同時鎖定關鍵特徵權重，使模型在無需頻繁從頭重新預訓練的情況下持續維持既有知識水準，對需要定期更新領域知識庫的 ML 工程團隊極具參考價值。",
-        "id": "news:https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "Sleep 框架：模擬大腦睡眠機制，解決大語言模型持續學習中的災難性遺忘",
-        "type": "news",
-        "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/"
-      },
-      {
-        "content": "Lean 定理證明器作者 Leo de Moura 深度探討 AI 與形式化驗證（Formal Verification）的交集發展。訪談解析了神經網路如何加速定理證明搜尋，以及形式化系統如何反向為 AI 生成的程式碼提供數學級別的正確性擔保。面對 AI 編程代理容易產出隱蔽錯誤與幻覺的現實瓶頸，將形式化驗證整合至代碼生成管線被視為實現高可靠軟體工程的重要方向。",
-        "id": "news:https://thedataexchange.media/leo-de-moura-lean-aws",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "專訪 Lean 之父 Leo de Moura：探討 AI 與形式化驗證結合的未來軟體工程",
-        "type": "news",
-        "url": "https://thedataexchange.media/leo-de-moura-lean-aws/"
-      },
-      {
-        "content": "資安報告揭露新型惡意軟體已開始引入 LLM 進行自動化攻擊流程。該惡意程式在滲透端點後，會透過呼叫大語言模型解析本機敏感文件與外洩資料，智慧判斷受害者機構的資產規模與勒索價值並進行自動分級。這項實證顯示攻擊者正將 AI 作為提高情報篩選效率的實用工具，也提醒防禦方在監控異常系統行為時，需對內部主機調用外部 AI API 的行為提高警覺。",
-        "id": "news:https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "新型惡意軟體整合 LLM 分析外洩資料，自動評估受害者價值與勒索排序",
-        "type": "news",
-        "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/"
-      },
-      {
-        "content": "Docusign 工程團隊深入剖析其在構建專用合約 AI 代理時克服「上下文問題」的架構方案。通用模型往往只能處理表面摘要，難以理解商業條款背後的權責邏輯與跨文件依賴。團隊透過自定義知識本體、結構化脈絡抽取與專門的評估管線，提升模型在特定商務場景的理解深度，為企業級 RAG 與領域專精代理的落地提供了清晰的工程實務指引。",
-        "id": "news:https://thenewstack.io/docusign-contract-ai-agents",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "深入解析 Docusign 架構實踐：如何破解合約代理中的業務上下文理解難題",
-        "type": "news",
-        "url": "https://thenewstack.io/docusign-contract-ai-agents/"
-      },
       {
         "content": "內部開發者平台 OpenChoreo 發布架構實務分享，說明如何將 OpenTelemetry 的分散式追蹤能力與 Kubernetes 叢集事件無縫整合。傳統除錯時，應用層追蹤日誌與基礎設施層事件往往處於割裂狀態；該方案展示如何打通兩者數據流，讓開發者在面對生產故障時，能直接在單一全鏈路視圖中回溯基礎架構事件對微服務調用延遲的實時影響。",
         "id": "news:https://cncf.io/blog/2026/10/27/opentelemetry-powered-distributed-tracing-and-kubernetes-events-in-openchoreo",
@@ -852,309 +740,324 @@
         "title": "聯想標榜「加密」的指紋解鎖 USB 竟只是未加密 SD 卡",
         "type": "news",
         "url": "https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/"
+      },
+      {
+        "content": "開發者發現 Postman 桌面版應用程式會悄悄自動安裝 AI 外掛，並試圖將所有 API 資料進行分享。這對依賴 Postman 處理敏感 API 的開發者與企業構成嚴重的資安與隱私風險，引發社群高度關注。",
+        "id": "news:https://github.com/postmanlabs/postman-app-support/issues/14370",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "Postman 未經同意自動安裝 AI 外掛並嘗試分享 API 資料",
+        "type": "news",
+        "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
+      },
+      {
+        "content": "Google 宣布一項政策變動，將對拒絕整合或採用 AI 相關服務的學校關閉搜尋服務支援。此舉直接影響教育機構的技術與工具選擇，對依賴 Google 服務的開發者與教育界帶來外部政策衝擊。",
+        "id": "news:https://nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "Google 將對拒絕 AI 的學校關閉搜尋服務",
+        "type": "news",
+        "url": "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html"
+      },
+      {
+        "content": "觀察指出 OpenAI 似乎在未明確通知的情況下，重新在 Codex 聊天對話上進行模型訓練。這牽涉到開發者程式碼與對話資料的隱私權限變動，對使用其服務的開發者而言是重要的安全與合規隱憂。",
+        "id": "news:https://news.ycombinator.com/item?id=50352757",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "OpenAI 似乎悄悄重新啟用針對 Codex 對話的模型訓練",
+        "type": "news",
+        "url": "https://news.ycombinator.com/item?id=50352757"
+      },
+      {
+        "content": "CNCF 的開源應用自動化與工作負載編排專案 OpenKruise 的子專案 OpenKruise Agents 發布 v0.6.0 版本，帶來在 Kubernetes 上大規模執行 Agent 沙箱的完整生命週期管理與強化安全機制。",
+        "id": "news:https://cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "OpenKruise Agents v0.6.0 發布：強化 Kubernetes 代理沙箱安全與自動化",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation/"
+      },
+      {
+        "content": "GitHub 更新了 Copilot 使用量指標 API，現在可以顯示跨 GitHub Copilot 的自帶金鑰 (BYOK) 使用情況，讓企業能夠將其與 Copilot 託管模型的用量清楚區隔並進行管理。",
+        "id": "news:https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "GitHub Copilot 用戶端 API 支援自帶金鑰與企業自訂模型",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api"
+      },
+      {
+        "content": "GitHub 推出的 Enclaves 是一項針對跨儲存庫 GitHub 代理工作流程的新安全原語，允許代理在不同儲存庫上協同工作，同時限制它們彼此洩露或存取私密程式碼的內容範圍。",
+        "id": "news:https://githubnext.com/posts/enclaves",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "使用 Enclaves 限制代理程式在私人儲存庫中的學習範圍",
+        "type": "news",
+        "url": "https://githubnext.com/posts/enclaves/"
+      },
+      {
+        "content": "GitHub Copilot 正式支援 JetBrains Air。開發者現在可以透過代理客戶端協議 (ACP) 在 JetBrains Air 中委派編碼任務、引導執行並審查結果，擴大開發者的 AI 輔助工作流程。",
+        "id": "news:https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "GitHub Copilot 現已在 JetBrains Air 中推出",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air"
+      },
+      {
+        "content": "阿里雲 Qwen Code 的 GitHub 專案 Pull Request 中意外洩漏了 qwen4-max、qwen4-coder-plus 及 qwen4-omni-120b 等未發布的新一代模型代號與設定，顯示 Qwen4 家族的開發進度與規格提前曝光。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xmitzx/alibabas_qwen_code_repo_just_leaked_qwen4max",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "阿里雲 Qwen Code 儲存庫意外洩漏 Qwen4 系列多款模型代號",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xmitzx/alibabas_qwen_code_repo_just_leaked_qwen4max/"
+      },
+      {
+        "content": "投資銀行高盛針對員工裝置上執行的 AI 程式碼代理（如 Claude Code）實施了安全存取限制，防範資安風險，但也針對特定場景開立了例外條款，反映金融業對 AI 開發工具的安全權衡與政策。",
+        "id": "news:https://thenewstack.io/ai-coding-agents-security",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "高盛對金融人員限制使用 Claude Code 但設有驚人例外",
+        "type": "news",
+        "url": "https://thenewstack.io/ai-coding-agents-security/"
+      },
+      {
+        "content": "開發者實測展示在一般筆電上執行的 Qwen 3.8 27B 模型具備解讀其他模型權重的能力，提供了解析與分析機器學習模型內部結構的新實作視角，對本地 AI 模型應用具參考價值。",
+        "id": "news:https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "筆電上的 Qwen 3.8 27B 也能解讀模型權重",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+      },
+      {
+        "content": "社群熱議的一項新工具與方法，提供開發者極簡且無痛的方式在本地端快速部署與測試 AI 模型，降低嘗試本地人工智慧技術的門檻。",
+        "id": "news:https://dataswamp.org/~solene/2026-11-01-braindead-local-intelligence.html",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "透過 braindead-local-intelligence 輕鬆嘗試本地 AI",
+        "type": "news",
+        "url": "https://dataswamp.org/~solene/2026-11-01-braindead-local-intelligence.html"
+      },
+      {
+        "content": "報導指出英國金融科技公司 Revolut 透過放棄使用 Claude 並轉向自架主機的開源模型，成功將 AI 編碼相關成本大幅削減 10 倍，為企業 AI 導入與成本控管提供重要的工程實務案例。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xn568h/british_fintech_revolut_slashes_ai_coding_costs",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "英國金融科技公司 Revolut 自架模型省下 10 倍 AI 編碼成本",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xn568h/british_fintech_revolut_slashes_ai_coding_costs/"
+      },
+      {
+        "content": "介紹如何透過 Caddy 伺服器精準控制與僅暴露私人內部服務的特定分享連結，提供 DevOps 與網路架構師在安全分享內部應用時的實用設定技巧。",
+        "id": "news:https://dataswamp.org/~solene/2026-10-21-caddy-forward-auth-public-share-links.html",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "使用 Caddy 僅暴露私人服務的分享連結",
+        "type": "news",
+        "url": "https://dataswamp.org/~solene/2026-10-21-caddy-forward-auth-public-share-links.html"
+      },
+      {
+        "content": "針對 Linux 核心存在的 0day 遠端程式碼執行 (RCE) 漏洞，Ubuntu 系統在經過近三週後仍未發布對應的安全性修補更新，引發基礎設施管理員與資安社群對作業系統供應鏈安全的強烈關注。",
+        "id": "news:https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432",
+        "publishedAt": "2026-11-04T00:34:16.383Z",
+        "title": "Ubuntu 在近三週內仍未釋出 Linux 零時差遠端程式碼執行漏洞修補程式",
+        "type": "news",
+        "url": "https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-03T02:12:10.543Z",
+      "generatedAt": "2026-11-04T00:34:16.383Z",
       "items": [
         {
-          "content": "Google 發布了下一代前沿 AI 模型 Gemini 4 Carbon。這項官方發表為開發者帶來更強大的模型能力與效能升級，影響開發者在應用程式中整合先進 AI 功能的選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "deepmind-blog",
-          "sourceTitle": "Gemini 4 Carbon: Our next frontier model",
-          "sources": [
-            "deepmind-blog"
-          ],
-          "title": "Gemini 4 Carbon：Google 下一代前沿 AI 模型發布",
-          "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
-          "weightedScore": 100
-        },
-        {
-          "content": "針對社群傳聞，千問（Qwen）團隊負責人劉大一恆正式發表官方聲明，明確表示未來的 Qwen 4.0 與 Qwen 5.0 系列將繼續保持開源，確保 AI 成為大眾的基礎能力，對依賴開源模型的開發者與社群具重大正面影響。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "Official Statement: Qwen Models Will Stick to Open Source to the End!",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "千問團隊官方聲明：未來 Qwen 4.0 與 5.0 將持續完全開源",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xm28e6/official_statement_qwen_models_will_stick_to_open/",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 發布了 VS Code 中 Copilot 的重大更新，專注於提供更多模型選擇、代理程式執行位置以及工作流程的彈性，讓開發者能更靈活地在日常開發環境中整合 AI 輔助功能。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot in VS Code, Universe releases",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 在 VS Code 與 Universe 大會推出重大更新",
-          "url": "https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub Copilot Fusion 推出實驗性預覽更新，開始支援智慧路由至本機端模型。系統可在支援的裝置端模型與雲端模型之間自動智慧切換，提升隱私與回應效率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot Fusion now supports selection of local models",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot Fusion 支援選擇本機端模型",
-          "url": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models",
-          "weightedScore": 100
-        },
-        {
-          "content": "安全通報指出官方的 Claude Code 擴充功能中發現了後門漏洞。這對使用該工具的開發者構成重大安全風險，需儘速檢查並更新相關開發環境以防範未然。",
+          "content": "開發者發現 Postman 桌面版應用程式會悄悄自動安裝 AI 外掛，並試圖將所有 API 資料進行分享。這對依賴 Postman 處理敏感 API 的開發者與企業構成嚴重的資安與隱私風險，引發社群高度關注。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Backdoors in official Claude Code extensions",
+          "sourceTitle": "Postman silently auto-installs AI plugins and attempts to share all API data",
           "sources": [
             "hn"
           ],
-          "title": "官方 Claude Code 擴充功能驚現後門漏洞",
-          "url": "https://cyberplace.social/@GossiTheDog/117528831681803563",
-          "weightedScore": 662
+          "title": "Postman 未經同意自動安裝 AI 外掛並嘗試分享 API 資料",
+          "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
+          "weightedScore": 984
         },
         {
-          "content": "OpenAI 宣布推出 Grid Protectors Program，將與公用事業合作，協助未來的運算與算力校園支援電網可靠性並保護消費者電價，這項外部政策直接影響大規模 AI 算力的基礎設施與供應。",
+          "content": "Google 宣布一項政策變動，將對拒絕整合或採用 AI 相關服務的學校關閉搜尋服務支援。此舉直接影響教育機構的技術與工具選擇，對依賴 Google 服務的開發者與教育界帶來外部政策衝擊。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Introducing the Grid Protectors Program",
+          "sourceId": "hn",
+          "sourceTitle": "Google will turn off search for schools that reject AI",
           "sources": [
-            "openai-blog"
+            "hn"
           ],
-          "title": "OpenAI 推出「電網保護者計畫」以確保算力中心供電穩定",
-          "url": "https://openai.com/index/grid-protectors-program",
-          "weightedScore": 100
+          "title": "Google 將對拒絕 AI 的學校關閉搜尋服務",
+          "url": "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html",
+          "weightedScore": 546
         },
         {
-          "content": "OpenAI 詳細公開了為因應 Codex 開發規模而打造的相容 Git 售後後端 Pando。這篇文章深入探討了在極大規模程式碼庫下版本控制系統的架構挑戰與效能優化實踐。",
+          "content": "觀察指出 OpenAI 似乎在未明確通知的情況下，重新在 Codex 聊天對話上進行模型訓練。這牽涉到開發者程式碼與對話資料的隱私權限變動，對使用其服務的開發者而言是重要的安全與合規隱憂。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Scaling Git at OpenAI",
+          "sourceId": "hn",
+          "sourceTitle": "OpenAI seems to be silently re-enabling model training on Codex chats",
           "sources": [
-            "openai-blog"
+            "hn"
           ],
-          "title": "拆解 OpenAI 如何打造專為大規模開發設計的 Git 後端 Pando",
-          "url": "https://openai.com/index/scaling-git-at-openai",
-          "weightedScore": 100
+          "title": "OpenAI 似乎悄悄重新啟用針對 Codex 對話的模型訓練",
+          "url": "https://news.ycombinator.com/item?id=50352757",
+          "weightedScore": 423
         },
         {
-          "content": "開發團隊分享了如何透過設計全新的排程器，在 DNS 區域設定變更時精準挑選最小安全建置，大幅削減完整建置次數、尖峰記憶體消耗與建置延遲，對大規模基礎設施維護極具參考價值。",
+          "content": "CNCF 的開源應用自動化與工作負載編排專案 OpenKruise 的子專案 OpenKruise Agents 發布 v0.6.0 版本，帶來在 Kubernetes 上大規模執行 Agent 沙箱的完整生命週期管理與強化安全機制。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "How we halved DNS build delay and cut memory use by 85%",
+          "sourceId": "cncf-blog",
+          "sourceTitle": "OpenKruise Agents v0.6.0: Leaping ahead in agent Sandbox security and automation",
           "sources": [
-            "cloudflare-blog"
+            "cncf-blog"
           ],
-          "title": "DNS 建置延遲減半、記憶體用量大降 85% 的架構優化實戰",
-          "url": "https://blog.cloudflare.com/dns-targeted-zone-builds/",
-          "weightedScore": 50
+          "title": "OpenKruise Agents v0.6.0 發布：強化 Kubernetes 代理沙箱安全與自動化",
+          "url": "https://www.cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation/",
+          "weightedScore": 100
         },
         {
-          "content": "開發者推出專注於生成 3D 遊戲資產的 4B 小型程式模型。該模型能直接編寫帶有 GLB 匯出功能的 Three.js 場景，讓開發者輕鬆將生成的資產導入 Godot 等遊戲引擎中。",
+          "content": "GitHub 更新了 Copilot 使用量指標 API，現在可以顯示跨 GitHub Copilot 的自帶金鑰 (BYOK) 使用情況，讓企業能夠將其與 Copilot 託管模型的用量清楚區隔並進行管理。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "BYOK and enterprise custom models in the Copilot usage API",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 用戶端 API 支援自帶金鑰與企業自訂模型",
+          "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 推出的 Enclaves 是一項針對跨儲存庫 GitHub 代理工作流程的新安全原語，允許代理在不同儲存庫上協同工作，同時限制它們彼此洩露或存取私密程式碼的內容範圍。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-next",
+          "sourceTitle": "Limit what agents learn about private repos with enclaves",
+          "sources": [
+            "github-next"
+          ],
+          "title": "使用 Enclaves 限制代理程式在私人儲存庫中的學習範圍",
+          "url": "https://githubnext.com/posts/enclaves/",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub Copilot 正式支援 JetBrains Air。開發者現在可以透過代理客戶端協議 (ACP) 在 JetBrains Air 中委派編碼任務、引導執行並審查結果，擴大開發者的 AI 輔助工作流程。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub Copilot is now available in JetBrains Air",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 現已在 JetBrains Air 中推出",
+          "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
+          "weightedScore": 100
+        },
+        {
+          "content": "阿里雲 Qwen Code 的 GitHub 專案 Pull Request 中意外洩漏了 qwen4-max、qwen4-coder-plus 及 qwen4-omni-120b 等未發布的新一代模型代號與設定，顯示 Qwen4 家族的開發進度與規格提前曝光。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "reddit-localllama",
-          "sourceTitle": "[GLB-3D-Coder] A tiny 4B coding model that creates 3D assets for Godot and other game engines",
+          "sourceTitle": "Alibaba's Qwen Code repo just leaked qwen4-max, qwen4-coder-plus, and qwen4-omni-120b",
           "sources": [
             "reddit-localllama"
           ],
-          "title": "GLB-3D-Coder：可為 Godot 等引擎生成 3D 資產的 4B 程式模型",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xlh0zw/glb3dcoder_a_tiny_4b_coding_model_that_creates_3d/",
+          "title": "阿里雲 Qwen Code 儲存庫意外洩漏 Qwen4 系列多款模型代號",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xmitzx/alibabas_qwen_code_repo_just_leaked_qwen4max/",
           "weightedScore": 100
         },
         {
-          "content": "技術社群深入探討 Astra 讀取與寫入模型權重以改進 Qwen 表現的實作方法，展示了在模型微調與權重層級操作上的技術深度與效能分析。",
+          "content": "投資銀行高盛針對員工裝置上執行的 AI 程式碼代理（如 Claude Code）實施了安全存取限制，防範資安風險，但也針對特定場景開立了例外條款，反映金融業對 AI 開發工具的安全權衡與政策。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Goldman Sachs restricted Claude Code for bankers — but made one surprising exception",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "高盛對金融人員限制使用 Claude Code 但設有驚人例外",
+          "url": "https://thenewstack.io/ai-coding-agents-security/",
+          "weightedScore": 50
+        },
+        {
+          "content": "開發者實測展示在一般筆電上執行的 Qwen 3.8 27B 模型具備解讀其他模型權重的能力，提供了解析與分析機器學習模型內部結構的新實作視角，對本地 AI 模型應用具參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "Astra can read and write weights to improve Qwen",
+          "sourceTitle": "Qwen 3.8 27B on my laptop can interpret model weights, too",
           "sources": [
             "hn",
+            "simonwillison"
+          ],
+          "title": "筆電上的 Qwen 3.8 27B 也能解讀模型權重",
+          "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+          "weightedScore": 569
+        },
+        {
+          "content": "社群熱議的一項新工具與方法，提供開發者極簡且無痛的方式在本地端快速部署與測試 AI 模型，降低嘗試本地人工智慧技術的門檻。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "An easy way to try local AI with braindead-local-intelligence",
+          "sources": [
             "lobsters-ai"
           ],
-          "title": "Astra 實現對 Qwen 模型權重的讀寫與優化能力",
-          "url": "https://rikiyat.github.io/blog/weight-space-programming/",
-          "weightedScore": 2069
-        },
-        {
-          "content": "Google DeepMind 與英國政府攜手合作，利用人工智慧技術減少規劃評估時間。這項技術實作展示了 AI 在公共行政與大型審查流程中的實際應用潛力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "deepmind-blog",
-          "sourceTitle": "Speeding up planning decisions with AI",
-          "sources": [
-            "deepmind-blog"
-          ],
-          "title": "Google DeepMind 與英國政府合作以 AI 加速規劃決策",
-          "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+          "title": "透過 braindead-local-intelligence 輕鬆嘗試本地 AI",
+          "url": "https://dataswamp.org/~solene/2026-11-01-braindead-local-intelligence.html",
           "weightedScore": 100
         },
         {
-          "content": "介紹全新基準測試 LifeVal，專門衡量 AI 在協助人類完成日常任務（如尋找托兒服務、管理財務及處理政府文件）方面的實際表現與能力。",
+          "content": "報導指出英國金融科技公司 Revolut 透過放棄使用 Claude 並轉向自架主機的開源模型，成功將 AI 編碼相關成本大幅削減 10 倍，為企業 AI 導入與成本控管提供重要的工程實務案例。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "LifeVal",
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "British fintech Revolut slashes AI coding costs 10x by cutting out Claude and going self-hosted",
           "sources": [
-            "openai-blog"
+            "reddit-localllama"
           ],
-          "title": "LifeVal：評估 AI 協助人類處理日常複雜任務能力的新基準",
-          "url": "https://openai.com/index/lifeval",
+          "title": "英國金融科技公司 Revolut 自架模型省下 10 倍 AI 編碼成本",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xn568h/british_fintech_revolut_slashes_ai_coding_costs/",
           "weightedScore": 100
         },
         {
-          "content": "熱門關聯式資料庫 PostgreSQL 19 的釋出時程因在開發階段發現了比以往更多的潛在臭蟲與錯誤而延後，反映出大型開源資料庫在嚴格品質把關下面臨的挑戰。",
+          "content": "介紹如何透過 Caddy 伺服器精準控制與僅暴露私人內部服務的特定分享連結，提供 DevOps 與網路架構師在安全分享內部應用時的實用設定技巧。",
           "degraded": false,
-          "domain": "general",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Postgres 19 is late because so many more bugs are being found now",
+          "sourceId": "lobsters-devops",
+          "sourceTitle": "Expose only share links of a private service with caddy",
           "sources": [
-            "hn"
+            "lobsters-devops"
           ],
-          "title": "Postgres 19 因發現大量錯誤而導致釋出時程延後",
-          "url": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
-          "weightedScore": 807
+          "title": "使用 Caddy 僅暴露私人服務的分享連結",
+          "url": "https://dataswamp.org/~solene/2026-10-21-caddy-forward-auth-public-share-links.html",
+          "weightedScore": 100
         },
         {
-          "content": "報導指出加密貨幣交易所幣安遭逢重大安全事件，高達 6.3 億美元的資產在短短 20 分鐘內遭到駭客竊取，引發資安界對大規模系統防護與供應鏈安全的強烈關注。",
+          "content": "針對 Linux 核心存在的 0day 遠端程式碼執行 (RCE) 漏洞，Ubuntu 系統在經過近三週後仍未發布對應的安全性修補更新，引發基礎設施管理員與資安社群對作業系統供應鏈安全的強烈關注。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "The $6.3B Binance hack was pulled off in just 20 minutes",
+          "sourceTitle": "Ubuntu still has not released patch for Linux 0day RCE in almost 3 weeks",
           "sources": [
             "hn"
           ],
-          "title": "幣安驚傳 63 億美元駭客攻擊事件在 20 分鐘內得手",
-          "url": "https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/",
-          "weightedScore": 595
-        },
-        {
-          "content": "資安與硬體拆解發現，聯想某款宣稱具備加密功能的指紋識別 USB 裝置，其內部實際上只是一張未加密的普通 SD 卡，引發消費者與硬體安全領域對廠商宣稱的強烈質疑。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
-          "sources": [
-            "hn"
-          ],
-          "title": "聯想標榜「加密」的指紋解鎖 USB 竟只是未加密 SD 卡",
-          "url": "https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/",
-          "weightedScore": 564
+          "title": "Ubuntu 在近三週內仍未釋出 Linux 零時差遠端程式碼執行漏洞修補程式",
+          "url": "https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432",
+          "weightedScore": 606
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-20T00:03:22.470Z",
-      "sourceId": "kubernetes-blog",
-      "sources": [
-        "kubernetes-blog"
-      ],
-      "url": "https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-09-20T00:03:22.470Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "lobsters-programming"
-      ],
-      "url": "https://flet.dev/"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-20T00:03:22.470Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/vercel-hobby-deployment-retention"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-20T00:03:22.470Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-20T00:03:22.470Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wk9fag/alibaba_opensources_medical_ai_model_that_can"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-20T00:03:22.470Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://arxiv.org/abs/2609.20804"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-20T00:03:22.470Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://arxiv.org/abs/2609.18842"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-20T00:03:22.470Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "lobsters-ai"
-      ],
-      "url": "https://spectrum.ieee.org/llms-for-chip-design"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-20T00:03:22.470Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/agentic-verification-distributed-systems"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-09-21T00:06:43.738Z",
@@ -6434,6 +6337,147 @@
       ],
       "title": "Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
       "url": "https://reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Postman silently auto-installs AI plugins and attempts to share all API data",
+      "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Google will turn off search for schools that reject AI",
+      "url": "https://nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "OpenAI seems to be silently re-enabling model training on Codex chats",
+      "url": "https://news.ycombinator.com/item?id=50352757"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "OpenKruise Agents v0.6.0: Leaping ahead in agent Sandbox security and automation",
+      "url": "https://cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "BYOK and enterprise custom models in the Copilot usage API",
+      "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "github-next",
+      "sources": [
+        "github-next"
+      ],
+      "title": "Limit what agents learn about private repos with enclaves",
+      "url": "https://githubnext.com/posts/enclaves"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot is now available in JetBrains Air",
+      "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Alibaba's Qwen Code repo just leaked qwen4-max, qwen4-coder-plus, and qwen4-omni-120b",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xmitzx/alibabas_qwen_code_repo_just_leaked_qwen4max"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Goldman Sachs restricted Claude Code for bankers — but made one surprising exception",
+      "url": "https://thenewstack.io/ai-coding-agents-security"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "simonwillison"
+      ],
+      "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+      "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "An easy way to try local AI with braindead-local-intelligence",
+      "url": "https://dataswamp.org/~solene/2026-11-01-braindead-local-intelligence.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "British fintech Revolut slashes AI coding costs 10x by cutting out Claude and going self-hosted",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xn568h/british_fintech_revolut_slashes_ai_coding_costs"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "title": "Expose only share links of a private service with caddy",
+      "url": "https://dataswamp.org/~solene/2026-10-21-caddy-forward-auth-public-share-links.html"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-04T00:34:16.383Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Ubuntu still has not released patch for Linux 0day RCE in almost 3 weeks",
+      "url": "https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432"
     }
   ]
 }
