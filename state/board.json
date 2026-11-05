@@ -454,101 +454,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-01T23:30:25.194Z",
-  "lastNewsPushAt": "2026-11-04T00:34:16.383Z",
+  "lastNewsPushAt": "2026-11-05T00:51:21.635Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-01T23:30:25.194Z",
       "summary": "本次榜單新進 7 個、竄升 1 個、下降 2 個，其中新進與竄升集中於 AI 6 個與前後端 2 個領域，綜合榜首由 Nutlope/hallmark 奪下。"
     },
     "feed": [
-      {
-        "content": "內部開發者平台 OpenChoreo 發布架構實務分享，說明如何將 OpenTelemetry 的分散式追蹤能力與 Kubernetes 叢集事件無縫整合。傳統除錯時，應用層追蹤日誌與基礎設施層事件往往處於割裂狀態；該方案展示如何打通兩者數據流，讓開發者在面對生產故障時，能直接在單一全鏈路視圖中回溯基礎架構事件對微服務調用延遲的實時影響。",
-        "id": "news:https://cncf.io/blog/2026/10/27/opentelemetry-powered-distributed-tracing-and-kubernetes-events-in-openchoreo",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "OpenChoreo 架構實務：結合 OpenTelemetry 與 K8s 事件實現端到端全鏈路觀測",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/10/27/opentelemetry-powered-distributed-tracing-and-kubernetes-events-in-openchoreo/"
-      },
-      {
-        "content": "機器學習理論研究提出 Trees to Flows 統一架構，揭示了經典非連續決策樹與現代連續動態流／擴散模型之間的數學關聯。該研究在理論與演算法層面建立了將結構化樹狀分割對映至流匹配的橋樑，不僅拓展了對擴散機制的理論理解，也為未來設計能夠原生處理表格數據的高效生成模型開闢了新的架構方向。",
-        "id": "news:https://arxiv.org/abs/2605.00414",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "決策樹與擴散模型的統一理論：Trees to Flows 框架連通結構化與生成式學習",
-        "type": "news",
-        "url": "https://arxiv.org/abs/2605.00414"
-      },
-      {
-        "content": "微服務與雲端基礎設施部署平台 Northflank 宣布遭遇安全侵害事件，官方已通報其內部系統遭到未授權存取。由於 Northflank 深度託管開發者的容器、生產資料庫與排程服務，此次事件可能導致環境變數、API Token 與資料庫存取憑證面臨暴露風險。凡依賴該平台部署應用的團隊，應立即清查稽核存取日誌、輪換所有生產金鑰並撤銷受影響的憑證，以杜絕供應鏈被進一步橫向滲透的風險。",
-        "id": "news:https://status.northflank.com/",
-        "publishedAt": "2026-10-31T23:18:32.518Z",
-        "title": "雲端開發平台 Northflank 傳出遭入侵事件，開發者需盡速輪換憑證與檢查金鑰",
-        "type": "news",
-        "url": "https://status.northflank.com"
-      },
-      {
-        "id": "repo:1222917575:new:2026-11-02",
-        "publishedAt": "2026-11-01T23:30:25.194Z",
-        "title": "Nutlope/hallmark 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/Nutlope/hallmark"
-      },
-      {
-        "id": "repo:1097346685:new:2026-11-02",
-        "publishedAt": "2026-11-01T23:30:25.194Z",
-        "title": "pbakaus/impeccable 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/pbakaus/impeccable"
-      },
-      {
-        "id": "repo:1124219907:new:2026-11-02",
-        "publishedAt": "2026-11-01T23:30:25.194Z",
-        "title": "HKUDS/DeepTutor 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/HKUDS/DeepTutor"
-      },
-      {
-        "id": "repo:1440705679:new:2026-11-02",
-        "publishedAt": "2026-11-01T23:30:25.194Z",
-        "title": "deepseek-ai/dsh-superagent-prototype 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/deepseek-ai/dsh-superagent-prototype"
-      },
-      {
-        "id": "repo:1339256252:new:2026-11-02",
-        "publishedAt": "2026-11-01T23:30:25.194Z",
-        "title": "YuJunZhiXue/dsh-purge 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/YuJunZhiXue/dsh-purge"
-      },
-      {
-        "id": "repo:1136590548:new:2026-11-02",
-        "publishedAt": "2026-11-01T23:30:25.194Z",
-        "title": "affaan-m/ECC 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/affaan-m/ECC"
-      },
-      {
-        "id": "repo:1226205410:climbed:2026-11-02",
-        "publishedAt": "2026-11-01T23:30:25.194Z",
-        "title": "Renhuai123/ziwei-doushu 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/Renhuai123/ziwei-doushu"
-      },
-      {
-        "id": "repo:664013991:new:2026-11-02",
-        "publishedAt": "2026-11-01T23:30:25.194Z",
-        "title": "gitroomhq/postiz-app 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/gitroomhq/postiz-app"
-      },
-      {
-        "content": "OpenAI 正式調整服務額度計算方式，將 ChatGPT 與 Codex 的用量限制（Usage Limits）進行整併。此變更直接影響依賴 Codex 進行輔助編程的開發者，未來撰寫程式碼與日常對話查詢將共用統一額度池。開發團隊需重新評估日常工作流程的 Token 分配，避免因高頻對話消耗而擠壓到程式碼生成的配額。",
-        "id": "news:https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits",
-        "publishedAt": "2026-11-01T23:30:25.194Z",
-        "title": "OpenAI 整併 ChatGPT 與 Codex 使用額度，統一計算開發者用量上限",
-        "type": "news",
-        "url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits"
-      },
       {
         "content": "開源模型修改工具 Heretic 正式迎來 2.0 重大版本發布。該專案在 GitHub 擁有逾 3.7 萬星標與大量模型下載量，過去主要用於移除語言模型的對齊審查限制，2.0 版本則大幅重構其功能架構，擴展為通用的本地開源模型行為調整與權重修改工具，為需要高度自訂模型行為的開發者提供更全面的控制能力。",
         "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xl2tcm/heretic_20_released_model_modification_for",
@@ -852,276 +764,279 @@
         "title": "Ubuntu 在近三週內仍未釋出 Linux 零時差遠端程式碼執行漏洞修補程式",
         "type": "news",
         "url": "https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432"
+      },
+      {
+        "content": "GitHub Copilot 官方宣布正式在 Xcode 內建編碼助理中提供公開預覽版，讓開發者能在原生 Xcode 工作流程中直接使用 Copilot，提升開發效率。",
+        "id": "news:https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "GitHub Copilot 現已支援 Xcode 編碼助理",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant"
+      },
+      {
+        "content": "Kimi 官方發布 Kimi-K3.1-Pro 模型並宣佈採用開源權重，提供開發者與研究人員更多樣的模型選擇與在地部署能力。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "Kimi-K3.1-Pro 模型宣佈開源權重",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights/"
+      },
+      {
+        "content": "推出 Ripple-65B 預覽版，號稱在代理程式編碼任務上達到美國開源模型的領先水準，提供強大的自動化編碼與推理支援。",
+        "id": "news:https://ricursive.com/ripple",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "Ripple-65B 預覽版發布：具備代理程式編碼能力的開源模型",
+        "type": "news",
+        "url": "https://www.ricursive.com/ripple"
+      },
+      {
+        "content": "Safari 瀏覽器在 27.3 版本中正式引入自適應深色模式，為網頁前端開發與使用者體驗帶來新的介面呈現標準。",
+        "id": "news:https://webkit.org/blog/18541/introducing-adaptive-dark-mode",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "Safari 27.3 引入自適應深色模式",
+        "type": "news",
+        "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode/"
+      },
+      {
+        "content": "雲端平台 Render 宣佈移除其 AI 沙箱的運行時間限制，支援長時間運行的 AI 代理程式，為開發者提供更具彈性的部署選項。",
+        "id": "news:https://thenewstack.io/render-vercel-ai-sandboxes",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "Render 移除 AI 沙箱時間限制",
+        "type": "news",
+        "url": "https://thenewstack.io/render-vercel-ai-sandboxes/"
+      },
+      {
+        "content": "針對個人 AI 代理程式模糊了自動化與人類流量界線的問題，Cloudflare 提供網站擁有者全新的可見性與控制工具，以管理個人代理程式的存取權限。",
+        "id": "news:https://blog.cloudflare.com/personal-agents-visibility-control",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "Cloudflare 推出個人 AI 代理程式的可見性與控制功能",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/personal-agents-visibility-control/"
+      },
+      {
+        "content": "Cloudflare Radar 推出 Zero Wire 平台，結合白話文簡報、全球攻擊遙測數據與修復步驟，協助開發者與維運人員更快進行關鍵 CVE 的分類並保護基礎設施。",
+        "id": "news:https://blog.cloudflare.com/zero-wire",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "Cloudflare Radar 推出重大網路漏洞調查中心 Zero Wire",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/zero-wire/"
+      },
+      {
+        "content": "Daybreak Red 模型透過 Amazon Bedrock 正式向 AWS GovCloud（US-East）的授權客戶開放，支援相關的網路安全工作。",
+        "id": "news:https://openai.com/index/daybreak-red-aws-govcloud",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "Daybreak Red 模型現已在 AWS GovCloud 提供",
+        "type": "news",
+        "url": "https://openai.com/index/daybreak-red-aws-govcloud"
+      },
+      {
+        "content": "針對 Linux 平台上的 Nvidia RTX Spark 加密韌體問題進行報導，指出其對模型推論速度造成顯著影響，降至原本的 35%，對硬體與 AI 部署開發者具重大影響。",
+        "id": "news:https://mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "輝達 RTX Spark 加密韌體導致 Linux 推論速度下降",
+        "type": "news",
+        "url": "https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop"
+      },
+      {
+        "content": "OpenAI 建立了一套自主化管線，成功在 Linux 核心中尋找、驗證並產生了 948 個本地權限提升漏洞的修補程式，展現 AI 在系統安全與自動化漏洞挖掘的深度技術應用。",
+        "id": "news:https://openai.com/index/a-thousand-fewer-paths-to-root",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "OpenAI 自主化管線尋找並修補 Linux 核心漏洞",
+        "type": "news",
+        "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
+      },
+      {
+        "content": "探討 AI 代理程式除了調用 API 外，還會執行 Shell、安裝套件與開啟網路連線等特性。本文為平台工程師提供在 Kubernetes 上安全運行 OpenShell 的實作指南與架構解析。",
+        "id": "news:https://cncf.io/blog/2026/11/04/openshell-on-kubernetes-a-guide-for-platform-engineers",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "Kubernetes 上的 OpenShell：平台工程師指南",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/11/04/openshell-on-kubernetes-a-guide-for-platform-engineers/"
+      },
+      {
+        "content": "深入介紹如何使用 Google Antigravity 與化學資訊學技能來加速藥物研發工作流程、搜尋化合物並提出新型大環化合物的實作與應用。",
+        "id": "news:https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
+        "publishedAt": "2026-11-05T00:51:21.635Z",
+        "title": "結合 Google Antigravity 的代理式化學資訊學",
+        "type": "news",
+        "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-04T00:34:16.383Z",
+      "generatedAt": "2026-11-05T00:51:21.635Z",
       "items": [
         {
-          "content": "開發者發現 Postman 桌面版應用程式會悄悄自動安裝 AI 外掛，並試圖將所有 API 資料進行分享。這對依賴 Postman 處理敏感 API 的開發者與企業構成嚴重的資安與隱私風險，引發社群高度關注。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Postman silently auto-installs AI plugins and attempts to share all API data",
-          "sources": [
-            "hn"
-          ],
-          "title": "Postman 未經同意自動安裝 AI 外掛並嘗試分享 API 資料",
-          "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
-          "weightedScore": 984
-        },
-        {
-          "content": "Google 宣布一項政策變動，將對拒絕整合或採用 AI 相關服務的學校關閉搜尋服務支援。此舉直接影響教育機構的技術與工具選擇，對依賴 Google 服務的開發者與教育界帶來外部政策衝擊。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Google will turn off search for schools that reject AI",
-          "sources": [
-            "hn"
-          ],
-          "title": "Google 將對拒絕 AI 的學校關閉搜尋服務",
-          "url": "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html",
-          "weightedScore": 546
-        },
-        {
-          "content": "觀察指出 OpenAI 似乎在未明確通知的情況下，重新在 Codex 聊天對話上進行模型訓練。這牽涉到開發者程式碼與對話資料的隱私權限變動，對使用其服務的開發者而言是重要的安全與合規隱憂。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "OpenAI seems to be silently re-enabling model training on Codex chats",
-          "sources": [
-            "hn"
-          ],
-          "title": "OpenAI 似乎悄悄重新啟用針對 Codex 對話的模型訓練",
-          "url": "https://news.ycombinator.com/item?id=50352757",
-          "weightedScore": 423
-        },
-        {
-          "content": "CNCF 的開源應用自動化與工作負載編排專案 OpenKruise 的子專案 OpenKruise Agents 發布 v0.6.0 版本，帶來在 Kubernetes 上大規模執行 Agent 沙箱的完整生命週期管理與強化安全機制。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "OpenKruise Agents v0.6.0: Leaping ahead in agent Sandbox security and automation",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "OpenKruise Agents v0.6.0 發布：強化 Kubernetes 代理沙箱安全與自動化",
-          "url": "https://www.cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation/",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 更新了 Copilot 使用量指標 API，現在可以顯示跨 GitHub Copilot 的自帶金鑰 (BYOK) 使用情況，讓企業能夠將其與 Copilot 託管模型的用量清楚區隔並進行管理。",
+          "content": "GitHub Copilot 官方宣布正式在 Xcode 內建編碼助理中提供公開預覽版，讓開發者能在原生 Xcode 工作流程中直接使用 Copilot，提升開發效率。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "BYOK and enterprise custom models in the Copilot usage API",
+          "sourceTitle": "GitHub Copilot is now available in Xcode’s coding assistant",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 用戶端 API 支援自帶金鑰與企業自訂模型",
-          "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
+          "title": "GitHub Copilot 現已支援 Xcode 編碼助理",
+          "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 推出的 Enclaves 是一項針對跨儲存庫 GitHub 代理工作流程的新安全原語，允許代理在不同儲存庫上協同工作，同時限制它們彼此洩露或存取私密程式碼的內容範圍。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-next",
-          "sourceTitle": "Limit what agents learn about private repos with enclaves",
-          "sources": [
-            "github-next"
-          ],
-          "title": "使用 Enclaves 限制代理程式在私人儲存庫中的學習範圍",
-          "url": "https://githubnext.com/posts/enclaves/",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub Copilot 正式支援 JetBrains Air。開發者現在可以透過代理客戶端協議 (ACP) 在 JetBrains Air 中委派編碼任務、引導執行並審查結果，擴大開發者的 AI 輔助工作流程。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot is now available in JetBrains Air",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 現已在 JetBrains Air 中推出",
-          "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
-          "weightedScore": 100
-        },
-        {
-          "content": "阿里雲 Qwen Code 的 GitHub 專案 Pull Request 中意外洩漏了 qwen4-max、qwen4-coder-plus 及 qwen4-omni-120b 等未發布的新一代模型代號與設定，顯示 Qwen4 家族的開發進度與規格提前曝光。",
+          "content": "Kimi 官方發布 Kimi-K3.1-Pro 模型並宣佈採用開源權重，提供開發者與研究人員更多樣的模型選擇與在地部署能力。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "reddit-localllama",
-          "sourceTitle": "Alibaba's Qwen Code repo just leaked qwen4-max, qwen4-coder-plus, and qwen4-omni-120b",
+          "sourceTitle": "Kimi-K3.1-Pro is now open-weights",
           "sources": [
             "reddit-localllama"
           ],
-          "title": "阿里雲 Qwen Code 儲存庫意外洩漏 Qwen4 系列多款模型代號",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xmitzx/alibabas_qwen_code_repo_just_leaked_qwen4max/",
+          "title": "Kimi-K3.1-Pro 模型宣佈開源權重",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights/",
           "weightedScore": 100
         },
         {
-          "content": "投資銀行高盛針對員工裝置上執行的 AI 程式碼代理（如 Claude Code）實施了安全存取限制，防範資安風險，但也針對特定場景開立了例外條款，反映金融業對 AI 開發工具的安全權衡與政策。",
+          "content": "推出 Ripple-65B 預覽版，號稱在代理程式編碼任務上達到美國開源模型的領先水準，提供強大的自動化編碼與推理支援。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Ripple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding",
+          "sources": [
+            "hn"
+          ],
+          "title": "Ripple-65B 預覽版發布：具備代理程式編碼能力的開源模型",
+          "url": "https://www.ricursive.com/ripple",
+          "weightedScore": 209
+        },
+        {
+          "content": "Safari 瀏覽器在 27.3 版本中正式引入自適應深色模式，為網頁前端開發與使用者體驗帶來新的介面呈現標準。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Safari introduces Adaptive Dark Mode in 27.3",
+          "sources": [
+            "hn"
+          ],
+          "title": "Safari 27.3 引入自適應深色模式",
+          "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode/",
+          "weightedScore": 499
+        },
+        {
+          "content": "雲端平台 Render 宣佈移除其 AI 沙箱的運行時間限制，支援長時間運行的 AI 代理程式，為開發者提供更具彈性的部署選項。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "Goldman Sachs restricted Claude Code for bankers — but made one surprising exception",
+          "sourceTitle": "Render just removed its AI sandbox time limit — and Vercel still has a 24-hour cap",
           "sources": [
             "thenewstack"
           ],
-          "title": "高盛對金融人員限制使用 Claude Code 但設有驚人例外",
-          "url": "https://thenewstack.io/ai-coding-agents-security/",
+          "title": "Render 移除 AI 沙箱時間限制",
+          "url": "https://thenewstack.io/render-vercel-ai-sandboxes/",
           "weightedScore": 50
         },
         {
-          "content": "開發者實測展示在一般筆電上執行的 Qwen 3.8 27B 模型具備解讀其他模型權重的能力，提供了解析與分析機器學習模型內部結構的新實作視角，對本地 AI 模型應用具參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Qwen 3.8 27B on my laptop can interpret model weights, too",
-          "sources": [
-            "hn",
-            "simonwillison"
-          ],
-          "title": "筆電上的 Qwen 3.8 27B 也能解讀模型權重",
-          "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
-          "weightedScore": 569
-        },
-        {
-          "content": "社群熱議的一項新工具與方法，提供開發者極簡且無痛的方式在本地端快速部署與測試 AI 模型，降低嘗試本地人工智慧技術的門檻。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "An easy way to try local AI with braindead-local-intelligence",
-          "sources": [
-            "lobsters-ai"
-          ],
-          "title": "透過 braindead-local-intelligence 輕鬆嘗試本地 AI",
-          "url": "https://dataswamp.org/~solene/2026-11-01-braindead-local-intelligence.html",
-          "weightedScore": 100
-        },
-        {
-          "content": "報導指出英國金融科技公司 Revolut 透過放棄使用 Claude 並轉向自架主機的開源模型，成功將 AI 編碼相關成本大幅削減 10 倍，為企業 AI 導入與成本控管提供重要的工程實務案例。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "British fintech Revolut slashes AI coding costs 10x by cutting out Claude and going self-hosted",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "英國金融科技公司 Revolut 自架模型省下 10 倍 AI 編碼成本",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xn568h/british_fintech_revolut_slashes_ai_coding_costs/",
-          "weightedScore": 100
-        },
-        {
-          "content": "介紹如何透過 Caddy 伺服器精準控制與僅暴露私人內部服務的特定分享連結，提供 DevOps 與網路架構師在安全分享內部應用時的實用設定技巧。",
+          "content": "針對個人 AI 代理程式模糊了自動化與人類流量界線的問題，Cloudflare 提供網站擁有者全新的可見性與控制工具，以管理個人代理程式的存取權限。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "lobsters-devops",
-          "sourceTitle": "Expose only share links of a private service with caddy",
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "See the agents, set the terms: new visibility and control for personal agents",
           "sources": [
-            "lobsters-devops"
+            "cloudflare-blog"
           ],
-          "title": "使用 Caddy 僅暴露私人服務的分享連結",
-          "url": "https://dataswamp.org/~solene/2026-10-21-caddy-forward-auth-public-share-links.html",
+          "title": "Cloudflare 推出個人 AI 代理程式的可見性與控制功能",
+          "url": "https://blog.cloudflare.com/personal-agents-visibility-control/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Cloudflare Radar 推出 Zero Wire 平台，結合白話文簡報、全球攻擊遙測數據與修復步驟，協助開發者與維運人員更快進行關鍵 CVE 的分類並保護基礎設施。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Introducing Zero Wire, a hub for investigating critical Internet vulnerabilities",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare Radar 推出重大網路漏洞調查中心 Zero Wire",
+          "url": "https://blog.cloudflare.com/zero-wire/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Daybreak Red 模型透過 Amazon Bedrock 正式向 AWS GovCloud（US-East）的授權客戶開放，支援相關的網路安全工作。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sourceTitle": "Daybreak Red is now available in AWS GovCloud (US-East)",
+          "sources": [
+            "openai-blog"
+          ],
+          "title": "Daybreak Red 模型現已在 AWS GovCloud 提供",
+          "url": "https://openai.com/index/daybreak-red-aws-govcloud",
           "weightedScore": 100
         },
         {
-          "content": "針對 Linux 核心存在的 0day 遠端程式碼執行 (RCE) 漏洞，Ubuntu 系統在經過近三週後仍未發布對應的安全性修補更新，引發基礎設施管理員與資安社群對作業系統供應鏈安全的強烈關注。",
+          "content": "針對 Linux 平台上的 Nvidia RTX Spark 加密韌體問題進行報導，指出其對模型推論速度造成顯著影響，降至原本的 35%，對硬體與 AI 部署開發者具重大影響。",
           "degraded": false,
-          "domain": "general",
+          "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Ubuntu still has not released patch for Linux 0day RCE in almost 3 weeks",
+          "sourceTitle": "Nvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux",
           "sources": [
             "hn"
           ],
-          "title": "Ubuntu 在近三週內仍未釋出 Linux 零時差遠端程式碼執行漏洞修補程式",
-          "url": "https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432",
-          "weightedScore": 606
+          "title": "輝達 RTX Spark 加密韌體導致 Linux 推論速度下降",
+          "url": "https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop",
+          "weightedScore": 587
+        },
+        {
+          "content": "OpenAI 建立了一套自主化管線，成功在 Linux 核心中尋找、驗證並產生了 948 個本地權限提升漏洞的修補程式，展現 AI 在系統安全與自動化漏洞挖掘的深度技術應用。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sourceTitle": "A thousand fewer paths to root",
+          "sources": [
+            "openai-blog"
+          ],
+          "title": "OpenAI 自主化管線尋找並修補 Linux 核心漏洞",
+          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+          "weightedScore": 100
+        },
+        {
+          "content": "探討 AI 代理程式除了調用 API 外，還會執行 Shell、安裝套件與開啟網路連線等特性。本文為平台工程師提供在 Kubernetes 上安全運行 OpenShell 的實作指南與架構解析。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sourceTitle": "OpenShell on Kubernetes: A guide for platform engineers",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "Kubernetes 上的 OpenShell：平台工程師指南",
+          "url": "https://www.cncf.io/blog/2026/11/04/openshell-on-kubernetes-a-guide-for-platform-engineers/",
+          "weightedScore": 100
+        },
+        {
+          "content": "深入介紹如何使用 Google Antigravity 與化學資訊學技能來加速藥物研發工作流程、搜尋化合物並提出新型大環化合物的實作與應用。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sourceTitle": "Agentic cheminformatics with Google Antigravity",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "結合 Google Antigravity 的代理式化學資訊學",
+          "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+          "weightedScore": 100
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-21T00:06:43.738Z",
-      "sourceId": "deepmind-blog",
-      "sources": [
-        "deepmind-blog"
-      ],
-      "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-21T00:06:43.738Z",
-      "sourceId": "kubernetes-blog",
-      "sources": [
-        "kubernetes-blog"
-      ],
-      "url": "https://kubernetes.io/blog/2026/08/28/kubernetes-v1-37-pod-certificates-and-cluster-trust-bundles"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-21T00:06:43.738Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "reddit-localllama"
-      ],
-      "url": "https://scmp.com/tech/big-tech/article/3368055/alibaba-open-sources-medical-ai-model-can-detect-cancer-and-nearly-150-conditions"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-21T00:06:43.738Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-21T00:06:43.738Z",
-      "sourceId": "deepmind-blog",
-      "sources": [
-        "deepmind-blog"
-      ],
-      "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-21T00:06:43.738Z",
-      "sourceId": "lobsters-devops",
-      "sources": [
-        "lobsters-devops"
-      ],
-      "url": "https://srcreigh.ca/posts/auditable-kata"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-21T00:06:43.738Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/nvidia-agent-debugging-safe"
-    },
     {
       "domain": "frontend-backend",
       "seenAt": "2026-09-22T00:42:50.167Z",
@@ -6478,6 +6393,126 @@
       ],
       "title": "Ubuntu still has not released patch for Linux 0day RCE in almost 3 weeks",
       "url": "https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot is now available in Xcode’s coding assistant",
+      "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Kimi-K3.1-Pro is now open-weights",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Ripple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding",
+      "url": "https://ricursive.com/ripple"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Safari introduces Adaptive Dark Mode in 27.3",
+      "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Render just removed its AI sandbox time limit — and Vercel still has a 24-hour cap",
+      "url": "https://thenewstack.io/render-vercel-ai-sandboxes"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "See the agents, set the terms: new visibility and control for personal agents",
+      "url": "https://blog.cloudflare.com/personal-agents-visibility-control"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Introducing Zero Wire, a hub for investigating critical Internet vulnerabilities",
+      "url": "https://blog.cloudflare.com/zero-wire"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
+      "url": "https://openai.com/index/daybreak-red-aws-govcloud"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Nvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux",
+      "url": "https://mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "A thousand fewer paths to root",
+      "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "OpenShell on Kubernetes: A guide for platform engineers",
+      "url": "https://cncf.io/blog/2026/11/04/openshell-on-kubernetes-a-guide-for-platform-engineers"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-05T00:51:21.635Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "Agentic cheminformatics with Google Antigravity",
+      "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity"
     }
   ]
 }
