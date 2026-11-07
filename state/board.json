@@ -454,117 +454,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-01T23:30:25.194Z",
-  "lastNewsPushAt": "2026-11-07T00:03:48.387Z",
+  "lastNewsPushAt": "2026-11-07T23:36:47.471Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-01T23:30:25.194Z",
       "summary": "本次榜單新進 7 個、竄升 1 個、下降 2 個，其中新進與竄升集中於 AI 6 個與前後端 2 個領域，綜合榜首由 Nutlope/hallmark 奪下。"
     },
     "feed": [
-      {
-        "content": "GitHub 推出的 Enclaves 是一項針對跨儲存庫 GitHub 代理工作流程的新安全原語，允許代理在不同儲存庫上協同工作，同時限制它們彼此洩露或存取私密程式碼的內容範圍。",
-        "id": "news:https://githubnext.com/posts/enclaves",
-        "publishedAt": "2026-11-04T00:34:16.383Z",
-        "title": "使用 Enclaves 限制代理程式在私人儲存庫中的學習範圍",
-        "type": "news",
-        "url": "https://githubnext.com/posts/enclaves/"
-      },
-      {
-        "content": "GitHub Copilot 正式支援 JetBrains Air。開發者現在可以透過代理客戶端協議 (ACP) 在 JetBrains Air 中委派編碼任務、引導執行並審查結果，擴大開發者的 AI 輔助工作流程。",
-        "id": "news:https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
-        "publishedAt": "2026-11-04T00:34:16.383Z",
-        "title": "GitHub Copilot 現已在 JetBrains Air 中推出",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air"
-      },
-      {
-        "content": "阿里雲 Qwen Code 的 GitHub 專案 Pull Request 中意外洩漏了 qwen4-max、qwen4-coder-plus 及 qwen4-omni-120b 等未發布的新一代模型代號與設定，顯示 Qwen4 家族的開發進度與規格提前曝光。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xmitzx/alibabas_qwen_code_repo_just_leaked_qwen4max",
-        "publishedAt": "2026-11-04T00:34:16.383Z",
-        "title": "阿里雲 Qwen Code 儲存庫意外洩漏 Qwen4 系列多款模型代號",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xmitzx/alibabas_qwen_code_repo_just_leaked_qwen4max/"
-      },
-      {
-        "content": "投資銀行高盛針對員工裝置上執行的 AI 程式碼代理（如 Claude Code）實施了安全存取限制，防範資安風險，但也針對特定場景開立了例外條款，反映金融業對 AI 開發工具的安全權衡與政策。",
-        "id": "news:https://thenewstack.io/ai-coding-agents-security",
-        "publishedAt": "2026-11-04T00:34:16.383Z",
-        "title": "高盛對金融人員限制使用 Claude Code 但設有驚人例外",
-        "type": "news",
-        "url": "https://thenewstack.io/ai-coding-agents-security/"
-      },
-      {
-        "content": "開發者實測展示在一般筆電上執行的 Qwen 3.8 27B 模型具備解讀其他模型權重的能力，提供了解析與分析機器學習模型內部結構的新實作視角，對本地 AI 模型應用具參考價值。",
-        "id": "news:https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights",
-        "publishedAt": "2026-11-04T00:34:16.383Z",
-        "title": "筆電上的 Qwen 3.8 27B 也能解讀模型權重",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
-      },
-      {
-        "content": "社群熱議的一項新工具與方法，提供開發者極簡且無痛的方式在本地端快速部署與測試 AI 模型，降低嘗試本地人工智慧技術的門檻。",
-        "id": "news:https://dataswamp.org/~solene/2026-11-01-braindead-local-intelligence.html",
-        "publishedAt": "2026-11-04T00:34:16.383Z",
-        "title": "透過 braindead-local-intelligence 輕鬆嘗試本地 AI",
-        "type": "news",
-        "url": "https://dataswamp.org/~solene/2026-11-01-braindead-local-intelligence.html"
-      },
-      {
-        "content": "報導指出英國金融科技公司 Revolut 透過放棄使用 Claude 並轉向自架主機的開源模型，成功將 AI 編碼相關成本大幅削減 10 倍，為企業 AI 導入與成本控管提供重要的工程實務案例。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xn568h/british_fintech_revolut_slashes_ai_coding_costs",
-        "publishedAt": "2026-11-04T00:34:16.383Z",
-        "title": "英國金融科技公司 Revolut 自架模型省下 10 倍 AI 編碼成本",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xn568h/british_fintech_revolut_slashes_ai_coding_costs/"
-      },
-      {
-        "content": "介紹如何透過 Caddy 伺服器精準控制與僅暴露私人內部服務的特定分享連結，提供 DevOps 與網路架構師在安全分享內部應用時的實用設定技巧。",
-        "id": "news:https://dataswamp.org/~solene/2026-10-21-caddy-forward-auth-public-share-links.html",
-        "publishedAt": "2026-11-04T00:34:16.383Z",
-        "title": "使用 Caddy 僅暴露私人服務的分享連結",
-        "type": "news",
-        "url": "https://dataswamp.org/~solene/2026-10-21-caddy-forward-auth-public-share-links.html"
-      },
-      {
-        "content": "針對 Linux 核心存在的 0day 遠端程式碼執行 (RCE) 漏洞，Ubuntu 系統在經過近三週後仍未發布對應的安全性修補更新，引發基礎設施管理員與資安社群對作業系統供應鏈安全的強烈關注。",
-        "id": "news:https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432",
-        "publishedAt": "2026-11-04T00:34:16.383Z",
-        "title": "Ubuntu 在近三週內仍未釋出 Linux 零時差遠端程式碼執行漏洞修補程式",
-        "type": "news",
-        "url": "https://freenode.net/article/ubuntu-lts-kernels-still-unfixed-for-critical-cve-2026-98432"
-      },
-      {
-        "content": "GitHub Copilot 官方宣布正式在 Xcode 內建編碼助理中提供公開預覽版，讓開發者能在原生 Xcode 工作流程中直接使用 Copilot，提升開發效率。",
-        "id": "news:https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
-        "publishedAt": "2026-11-05T00:51:21.635Z",
-        "title": "GitHub Copilot 現已支援 Xcode 編碼助理",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant"
-      },
-      {
-        "content": "Kimi 官方發布 Kimi-K3.1-Pro 模型並宣佈採用開源權重，提供開發者與研究人員更多樣的模型選擇與在地部署能力。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights",
-        "publishedAt": "2026-11-05T00:51:21.635Z",
-        "title": "Kimi-K3.1-Pro 模型宣佈開源權重",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights/"
-      },
-      {
-        "content": "推出 Ripple-65B 預覽版，號稱在代理程式編碼任務上達到美國開源模型的領先水準，提供強大的自動化編碼與推理支援。",
-        "id": "news:https://ricursive.com/ripple",
-        "publishedAt": "2026-11-05T00:51:21.635Z",
-        "title": "Ripple-65B 預覽版發布：具備代理程式編碼能力的開源模型",
-        "type": "news",
-        "url": "https://www.ricursive.com/ripple"
-      },
-      {
-        "content": "Safari 瀏覽器在 27.3 版本中正式引入自適應深色模式，為網頁前端開發與使用者體驗帶來新的介面呈現標準。",
-        "id": "news:https://webkit.org/blog/18541/introducing-adaptive-dark-mode",
-        "publishedAt": "2026-11-05T00:51:21.635Z",
-        "title": "Safari 27.3 引入自適應深色模式",
-        "type": "news",
-        "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode/"
-      },
       {
         "content": "雲端平台 Render 宣佈移除其 AI 沙箱的運行時間限制，支援長時間運行的 AI 代理程式，為開發者提供更具彈性的部署選項。",
         "id": "news:https://thenewstack.io/render-vercel-ai-sandboxes",
@@ -860,307 +756,302 @@
         "title": "Windows 小畫家爆發遠端程式碼執行（RCE）漏洞安全通報",
         "type": "news",
         "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844"
+      },
+      {
+        "content": "Google 發表專為機器人領域（Robotics）打造的 Gemini 4 Argon 模型。這項發布顯示 Gemini 系列模型正將多模態與推理能力延伸至機器人控制與具身智慧領域，為從事機器人與實體自動化應用的開發者提供新的官方模型選擇。",
+        "id": "news:https://deepmind.google/blog/gemini-4-argon-for-robotics",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "Google 推出專為機器人領域設計的 Gemini 4 Argon 模型",
+        "type": "news",
+        "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/"
+      },
+      {
+        "content": "GitHub 宣布 Copilot 程式碼審查功能現在可透過 REST 與 GraphQL API 進行管理，涵蓋從企業政策到個別儲存庫的設定。此外，Copilot 的審查總覽摘要留言也改版得更加緊湊。這項更新讓維運與平台團隊能夠以程式化方式自動化管理程式碼審查規則，並減少 PR 審查介面的雜訊。",
+        "id": "news:https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "GitHub Copilot 程式碼審查支援 REST 與 GraphQL API 管理",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates"
+      },
+      {
+        "content": "GitHub Copilot 使用指標 API 新增針對個別使用者的標記欄位，可顯示哪些使用者缺少客戶端遙測數據，或其 IDE 與擴充套件版本低於指標統計所需的最低版本。這項變更使管理者能更精確地掌握團隊內部開發環境的更新狀況，及時修正版本落後問題。",
+        "id": "news:https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "GitHub Copilot 使用指標 API 新增遙測與擴充套件版本落後標記",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps"
+      },
+      {
+        "content": "安全研究發布了針對 Firecracker 虛擬機逃逸（VM Escape）的深度分析文章「PwnEscape Part 2」。由於 Firecracker 被廣泛應用於 Serverless 與安全隔離沙盒中，虛擬機逃逸漏洞的成因與利用細節對於設計雲端多租戶架構與沙盒防禦機制的開發者具有關鍵參考價值。",
+        "id": "news:https://pwn.ai/blog/firecracker-escape",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "Firecracker 虛擬機逃逸漏洞分析：PwnEscape 第二部",
+        "type": "news",
+        "url": "https://pwn.ai/blog/firecracker-escape"
+      },
+      {
+        "content": "該技術討論介紹了一種讓較低成本模型在需要時向 Claude Opus 請求協助的協作機制，成功在達到 Opus 等級準確度的同時，將成本降低至原本的四分之一。這對於正在生產環境中尋求平衡大模型推論成本與輸出精準度的 AI 架構師提供了實用的優化思路。",
+        "id": "news:https://hightouch.com/blog/llm-judges-identity-resolution",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "結合外部求助機制的模型架構：以四分之一成本達到 Opus 準確度",
+        "type": "news",
+        "url": "https://hightouch.com/blog/llm-judges-identity-resolution"
+      },
+      {
+        "content": "該深度討論指出，AI 程式碼生成與自動化工具的導入正迫使軟體產業不得不正視並償還過去四十年累積的技術債。傳統開發中被容忍的架構缺陷、模糊規格與缺乏測試，在 AI 介入時會被急遽放大，因此建構清晰的介面與堅固的工程基礎已成為有效運用 AI 的先決條件。",
+        "id": "news:https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "AI 正迫使軟體工程界償還累積 40 年的技術債",
+        "type": "news",
+        "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability"
+      },
+      {
+        "content": "該技術分析探討了如何攔截與防禦潛藏在 PDF 文件內的提示詞注入（Prompt Injection）攻擊。隨著越來越多 LLM 應用與 RAG 系統直接解析外部上傳的 PDF 檔案，攻擊者可能在文件中埋入隱蔽指令誤導模型，開發者需在資料前處理與模型輸入層強化安全過濾機制。",
+        "id": "news:https://tomclancy.info/joshua-judges-ruth.html",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "檢測隱藏在 PDF 文件中的提示詞注入攻擊",
+        "type": "news",
+        "url": "https://tomclancy.info/joshua-judges-ruth.html"
+      },
+      {
+        "content": "面對 AI 生成程式碼帶來的代碼量激增，工程團隊提出無需逐行閱讀即可維持信任的審查流程，改為專注檢查五項核心關鍵面向。這項實務經驗有助於開發團隊在高產出的 AI 輔助開發時代中平衡審查吞吐量與代碼庫品質。",
+        "id": "news:https://thenewstack.io/scale-ai-code-reviews",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "團隊審查 4 倍量 AI 程式碼的實務檢驗策略",
+        "type": "news",
+        "url": "https://thenewstack.io/scale-ai-code-reviews/"
+      },
+      {
+        "content": "文章分享了 Palette 專案的實踐經驗，探討如何訓練小型語言模型使其能夠理解並遵循特定的設計語言來自動生成簡報。這為希望在垂直領域運用小型模型取代大型通用模型、兼顧風格一致性與運行成本的開發者提供了參考範例。",
+        "id": "news:https://huggingface.co/blog/ibm-research/palette-deck-building",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "Palette 專案：訓練小型模型依據特定設計語言製作簡報",
+        "type": "news",
+        "url": "https://huggingface.co/blog/ibm-research/palette-deck-building"
+      },
+      {
+        "content": "終端模擬器 Ghostty 釋出 Libghostty 1.0。該核心函式庫將終端模擬與相關功能封裝為可重複使用的庫，讓軟體開發者能夠在其他應用程式或自製工具中直接嵌入與調用 Ghostty 的終端功能。",
+        "id": "news:https://mitchellh.com/writing/libghostty-1-0",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "GPU 加速終端模擬器核心庫 Libghostty 1.0 發布",
+        "type": "news",
+        "url": "https://mitchellh.com/writing/libghostty-1-0"
+      },
+      {
+        "content": "C++26 的相關標準草案在最新投票階段未獲通過（Disapproved）。這項變動反映出委員會與成員國對次世代 C++ 標準中的某些提案與細節仍存分歧，可能影響 C++26 的最終功能規劃與發布時程，值得關注 C++ 語言標準演進的系統開發者持續追蹤。",
+        "id": "news:https://andreasfertig.com/blog/2026/11/cpp26-dis-failed-how-does-cpp-survive",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "C++26 委員會草案投票未獲通過",
+        "type": "news",
+        "url": "https://andreasfertig.com/blog/2026/11/cpp26-dis-failed-how-does-cpp-survive/"
+      },
+      {
+        "content": "安全監控偵測到美國白宮內部網路中存在住宅代理（Residential Proxies）活動。住宅代理經常被惡意行為者用於掩護未授權流量或繞過存取控制，此事件凸顯了內部網路端點防禦與異常連線檢測在關鍵基礎設施與企業安全防護中的重要性。",
+        "id": "news:https://layer3intel.com/blog/residential-proxies-white-house-network",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "美國白宮內部網路偵測到住宅代理節點",
+        "type": "news",
+        "url": "https://layer3intel.com/blog/residential-proxies-white-house-network"
+      },
+      {
+        "content": "技術分析發現 macOS 系統中內建了一個未公開記錄（Undocumented）的家庭成員分類器模型。該研究剖析了作業系統底層如何未經公開說明即載入並執行特定分類機制，引發系統開發者與安全研究人員對作業系統內建模型、隱私與未公開 API 的關注。",
+        "id": "news:https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+        "publishedAt": "2026-11-07T23:36:47.471Z",
+        "title": "逆向工程揭露每台 Mac 均內建未公開的家庭成員分類器",
+        "type": "news",
+        "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-07T00:03:48.387Z",
+      "generatedAt": "2026-11-07T23:36:47.471Z",
       "items": [
         {
-          "content": "GitHub 宣布 @GitHub 於 Slack 與 Microsoft Teams 的整合功能正式全面推出（GA）。開發者現在可以直接在即時通訊對話中調查問題、建立 Issue、實作程式碼變更並開啟 Pull Request，無須在多個工具間反覆切換視窗。此項整合大幅降低了跨團隊協作與即時處理 production 事故時的上下文切換成本，讓 ChatOps 流程更加順暢。",
+          "content": "Google 發表專為機器人領域（Robotics）打造的 Gemini 4 Argon 模型。這項發布顯示 Gemini 系列模型正將多模態與推理能力延伸至機器人控制與具身智慧領域，為從事機器人與實體自動化應用的開發者提供新的官方模型選擇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sourceTitle": "Gemini 4 Argon for Robotics",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "Google 推出專為機器人領域設計的 Gemini 4 Argon 模型",
+          "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 宣布 Copilot 程式碼審查功能現在可透過 REST 與 GraphQL API 進行管理，涵蓋從企業政策到個別儲存庫的設定。此外，Copilot 的審查總覽摘要留言也改版得更加緊湊。這項更新讓維運與平台團隊能夠以程式化方式自動化管理程式碼審查規則，並減少 PR 審查介面的雜訊。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "@GitHub in Slack and Teams is generally available and more",
+          "sourceTitle": "Copilot code review: API management and review overview updates",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub 正式推出 Slack 與 Teams 整合：直接在通訊軟體內審查程式碼與開 PR",
-          "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+          "title": "GitHub Copilot 程式碼審查支援 REST 與 GraphQL API 管理",
+          "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
           "weightedScore": 100
         },
         {
-          "content": "Discord 宣布將棄用長期使用的 Electron 框架，改採更輕量化架構以顯著降低記憶體（RAM）消耗並提升執行效能。身為全球最具代表性的 Electron 桌面應用之一，Discord 的技術架構轉移對前端與跨平台桌面開發社群具有高度指標意義，顯示大型桌面客戶端在面對資源佔用與效能瓶頸時，逐步轉向更現代化或原生的桌面技術方案。",
+          "content": "GitHub Copilot 使用指標 API 新增針對個別使用者的標記欄位，可顯示哪些使用者缺少客戶端遙測數據，或其 IDE 與擴充套件版本低於指標統計所需的最低版本。這項變更使管理者能更精確地掌握團隊內部開發環境的更新狀況，及時修正版本落後問題。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Discord is ditching Electron and its new app uses less RAM",
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Usage metrics API flags telemetry and version gaps",
           "sources": [
-            "hn"
+            "github-changelog-copilot"
           ],
-          "title": "Discord 放棄 Electron 架構：新版應用程式大幅降低記憶體佔用",
-          "url": "https://www.theverge.com/news/1027379/discord-ditching-electron-web-app",
-          "weightedScore": 477
+          "title": "GitHub Copilot 使用指標 API 新增遙測與擴充套件版本落後標記",
+          "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps",
+          "weightedScore": 100
         },
         {
-          "content": "高通推出針對資料中心 AI 推論設計的 Cloud AI 100 Ultra 加速卡，在僅 150W 功耗下提供 128GB 記憶體與 548GB/s 頻寬。對於負責大語言模型（LLM）部署與營運的基礎設施工程師而言，此款加速卡強調高每瓦效能比與充足的顯存容量，為成本敏感且需要高能效的雲端與邊緣推論節點提供了除主流 GPU 以外的硬體選擇。",
+          "content": "安全研究發布了針對 Firecracker 虛擬機逃逸（VM Escape）的深度分析文章「PwnEscape Part 2」。由於 Firecracker 被廣泛應用於 Serverless 與安全隔離沙盒中，虛擬機逃逸漏洞的成因與利用細節對於設計雲端多租戶架構與沙盒防禦機制的開發者具有關鍵參考價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Firecracker VM Escape: PwnEscape Part 2",
+          "sources": [
+            "hn",
+            "lobsters-ai"
+          ],
+          "title": "Firecracker 虛擬機逃逸漏洞分析：PwnEscape 第二部",
+          "url": "https://pwn.ai/blog/firecracker-escape",
+          "weightedScore": 379
+        },
+        {
+          "content": "該技術討論介紹了一種讓較低成本模型在需要時向 Claude Opus 請求協助的協作機制，成功在達到 Opus 等級準確度的同時，將成本降低至原本的四分之一。這對於正在生產環境中尋求平衡大模型推論成本與輸出精準度的 AI 架構師提供了實用的優化思路。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Qualcomm Cloud AI 100 Ultra – 150W AI Accelerator Card with 128GB at 548GB/s",
+          "sourceTitle": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
           "sources": [
             "hn"
           ],
-          "title": "高通發表 Cloud AI 100 Ultra：150W 功耗配備 128GB 記憶體之資料中心推論卡",
-          "url": "https://www.qualcomm.com/data-center/products/cloud-ai-100-ultra",
-          "weightedScore": 170
+          "title": "結合外部求助機制的模型架構：以四分之一成本達到 Opus 準確度",
+          "url": "https://hightouch.com/blog/llm-judges-identity-resolution",
+          "weightedScore": 570
         },
         {
-          "content": "OpenAI 發布包含 100 項任務的全新基準 BioBasicsBench，專門衡量 AI Agent 在解讀原始實驗數據及處理日常濕實驗室科學任務時的實際表現。這項評測標誌著 AI Agent 評估標準從純程式碼生成擴展至特定專業領域的端到端決策與實體科學邏輯，對開發自主科學 Agent 的團隊提供了明確的能力衡量依據。",
+          "content": "該深度討論指出，AI 程式碼生成與自動化工具的導入正迫使軟體產業不得不正視並償還過去四十年累積的技術債。傳統開發中被容忍的架構缺陷、模糊規格與缺乏測試，在 AI 介入時會被急遽放大，因此建構清晰的介面與堅固的工程基礎已成為有效運用 AI 的先決條件。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Measuring how AI agents handle everyday wet-lab science",
+          "sourceId": "hn",
+          "sourceTitle": "AI is forcing us to pay off 40 years of technical debt",
           "sources": [
-            "openai-blog"
+            "hn"
           ],
-          "title": "OpenAI 推出 BioBasicsBench：評測 AI Agent 解讀實驗數據與濕實驗室任務能力",
-          "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+          "title": "AI 正迫使軟體工程界償還累積 40 年的技術債",
+          "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
+          "weightedScore": 1295
+        },
+        {
+          "content": "該技術分析探討了如何攔截與防禦潛藏在 PDF 文件內的提示詞注入（Prompt Injection）攻擊。隨著越來越多 LLM 應用與 RAG 系統直接解析外部上傳的 PDF 檔案，攻擊者可能在文件中埋入隱蔽指令誤導模型，開發者需在資料前處理與模型輸入層強化安全過濾機制。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Catching prompt injections hidden in PDFs",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "檢測隱藏在 PDF 文件中的提示詞注入攻擊",
+          "url": "https://tomclancy.info/joshua-judges-ruth.html",
           "weightedScore": 100
         },
         {
-          "content": "Meta 宣布所有使用 Meta AI 與 Muse agent 的用戶將切換至透過旗艦模型 Muse Wonder 所訓練出的新模型。這項更新展示了 Meta 利用頂級前沿模型進行知識蒸餾與合成數據訓練，進而提升大眾端生產模型效能的落地實務，對關注大型模型蒸餾與日常推論品質提升的工程師具有參考價值。",
+          "content": "面對 AI 生成程式碼帶來的代碼量激增，工程團隊提出無需逐行閱讀即可維持信任的審查流程，改為專注檢查五項核心關鍵面向。這項實務經驗有助於開發團隊在高產出的 AI 輔助開發時代中平衡審查吞吐量與代碼庫品質。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "Meta’s best AI model now trains the one most of its users get",
+          "sourceTitle": "How we review 4x more AI code without reading every line",
           "sources": [
             "thenewstack"
           ],
-          "title": "Meta 升級 Meta AI 與 Muse：全面採用 Muse Wonder 訓練的新一代模型",
-          "url": "https://thenewstack.io/meta-muse-specialized-models/",
+          "title": "團隊審查 4 倍量 AI 程式碼的實務檢驗策略",
+          "url": "https://thenewstack.io/scale-ai-code-reviews/",
           "weightedScore": 50
         },
         {
-          "content": "GitHub 更新了 Copilot impact 儀表板中的 Agent 採用率圖表，正式加入 Copilot Chat 以及 VS Code Agents 視窗的使用數據，涵蓋目前九種不同的 Copilot 體驗。這項改動讓工程團隊管理者能具體量化與追蹤開發者在 IDE 內使用各類 Agent 工具的頻率與深度，有助於企業評估引進 AI 輔助開發工具的實質效益與導入進程。",
+          "content": "文章分享了 Palette 專案的實踐經驗，探討如何訓練小型語言模型使其能夠理解並遵循特定的設計語言來自動生成簡報。這為希望在垂直領域運用小型模型取代大型通用模型、兼顧風格一致性與運行成本的開發者提供了參考範例。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Copilot impact dashboard adds chat and VS Code agent usage",
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Palette: teaching a small model to build decks in your design language",
           "sources": [
-            "github-changelog-copilot"
+            "huggingface-blog"
           ],
-          "title": "GitHub Copilot 儀表板更新：納入 Copilot Chat 與 VS Code Agent 使用指標",
-          "url": "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
+          "title": "Palette 專案：訓練小型模型依據特定設計語言製作簡報",
+          "url": "https://huggingface.co/blog/ibm-research/palette-deck-building",
           "weightedScore": 100
         },
         {
-          "content": "本文深入探討 3D 創作軟體 Blender 的使用者介面與執行環境設計架構，並實測對比 Zed 編輯器所開發的 GPU 加速 UI 框架 GPUI。分析指出 Blender 歷經數十年最佳化的 C/C++ 渲染管線與自定義即時模式 UI 架構在多項微基準中展現出更出色的反應速度與資源效率，為 GUI 架構師與系統級前端工程師提供了關於現代桌面應用介面渲染與效能取捨的深度洞察。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Blender's UI and Runtime: Much Faster Than GPUI",
-          "sources": [
-            "hn"
-          ],
-          "title": "Blender 的 UI 與執行環境架構解析：為何執行速度顯著優於 GPUI",
-          "url": "https://github.com/ppmpreetham/BUI",
-          "weightedScore": 681
-        },
-        {
-          "content": "本文深入探討大語言模型推論叢集擴展時的冷啟動瓶頸。在推論副本啟動到實際能處理請求之間，系統必須經歷權重載入、GPU 資源初始化、Kernel 編譯以及 CUDA Graph 捕獲等多個階段。文章剖析了縮短每個階段耗時的工程手段，對於負責模型自動水平擴展（Autoscaling）與高可用架構的 DevOps 與 AI 基礎設施工程師而言，是解決流量突發時延遲飆升的關鍵指南。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Faster LLM inference startup: What you need to know",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "加速 LLM 推論實例啟動：權重載入、CUDA Graph 與 GPU 初始化的關鍵技術",
-          "url": "https://www.cncf.io/blog/2026/11/06/faster-llm-inference-startup-what-you-need-to-know/",
-          "weightedScore": 100
-        },
-        {
-          "content": "本文技術剖析了 Privacy Pass 等現行網頁隱私與防濫用密碼學協定在量子運算崛起時面臨的破密威脅，並探討新興後量子密碼學（PQC）演算法如何填補安全漏洞。文章針對密鑰交換、簽名大小與網路延遲的工程權衡進行詳細說明，為關注網路傳輸安全、身分驗證與基礎密碼學架構變革的後端與基礎設施工程師提供前瞻指導。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "The post-quantum future of web privacy",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Web 隱私的後量子密碼學未來：Privacy Pass 等安全協定的抗量子演進",
-          "url": "https://blog.cloudflare.com/vole-mole/",
-          "weightedScore": 50
-        },
-        {
-          "content": "隨著 AI Agent 代表數百萬使用者自主瀏覽與調用服務，伺服器與反向代理端面臨使用者可見性被剝離、既有 Bot 防護失效的新問題。本文探討了伺服器端如何安全識別、授權與調度這類半自主代理流量的技術架構與協作標準，對於維護高流量 API、Web 安全閘道以及反爬蟲架構的基礎設施開發者而言具有極高的實務參考價值。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Agents aren’t humans (but they kinda are)",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "當 AI Agent 成為網路流量主體：反向代理與伺服器端流量識別管理新挑戰",
-          "url": "https://blog.cloudflare.com/trusted-agent-delegation/",
-          "weightedScore": 50
-        },
-        {
-          "content": "GitHub 發布工程指南探討 AI 時代下的 Agentic Engineering 實務。文章指出單純生成程式碼速度變快後，軟體開發的瓶頸已轉移至前期的規劃架構、程式碼審查與生產環境事故排查。指南詳解如何利用 GitHub Copilot 協同 Agent 處理需求拆解與自動測試，同時明確界定哪些架構決策仍需工程師的關鍵判斷，協助開發者重構日常工程工作流。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
-          "sourceTitle": "Beyond code generation: A developer’s guide to agentic engineering",
-          "sources": [
-            "github-blog-ai-ml"
-          ],
-          "title": "超越單純程式碼生成：開發者邁向 Agentic Engineering 的實踐指南",
-          "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/",
-          "weightedScore": 100
-        },
-        {
-          "content": "本文分享了 GitHub Agentic Workflows 如何結合 Marks & Spencer 與 Provation 等企業實務，構建現代化的 Agent 開發工廠。文章剖析了如何將自動化 Agent 無縫嵌入 CI/CD、程式碼合規檢查與多儲存庫治理流程中，為希望在團隊內部大規模導入自主 AI Agent 開發流程的架構師與工程主管提供了落地的架構參考。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-next",
-          "sourceTitle": "The factory mindset: Agentic workflows in production",
-          "sources": [
-            "github-next"
-          ],
-          "title": "軟體工廠思維：GitHub Agentic Workflows 在生產環境的實作經驗",
-          "url": "https://githubnext.com/talks/the-factory-mindset/",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群推薦的開源指南《The Little Book of Generative AI Foundations》，以直觀清晰的方式梳理了生成式 AI 背後的核心數學基礎，涵蓋機率論、微分流形、擴散過程與 Transformer 注意力機制的數學表徵。對於希望從調用 API 深入到底層演算法與模型架構細節的 AI 研發工程師而言，這是一份高品質的理論與實作銜接教材。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
-          "sources": [
-            "hn"
-          ],
-          "title": "生成式 AI 數學基礎入門指南：直觀理解生成模型的數學原理",
-          "url": "https://arxiv.org/abs/2605.29713",
-          "weightedScore": 392
-        },
-        {
-          "content": "開源專案 sshole 在開發者社群引發熱烈討論，該工具旨在簡化 SSH 反向通道（reverse tunnel）與 NAT 穿透操作，讓開發者無需複雜配置即可將本機服務快速暴露至外部網路或進行遠端終端協同。對於經常需要進行本地除錯、Webhooks 測試與遠端伺服器存取的工程師而言，提供了一個輕量、開源且無需依賴第三方封閉服務的替代方案。",
+          "content": "終端模擬器 Ghostty 釋出 Libghostty 1.0。該核心函式庫將終端模擬與相關功能封裝為可重複使用的庫，讓軟體開發者能夠在其他應用程式或自製工具中直接嵌入與調用 Ghostty 的終端功能。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "sshole",
+          "sourceTitle": "Libghostty 1.0",
           "sources": [
             "hn"
           ],
-          "title": "sshole：極簡且高人氣的開源 SSH 穿透與通訊埠轉發工具",
-          "url": "https://sshhole.com",
-          "weightedScore": 2905
+          "title": "GPU 加速終端模擬器核心庫 Libghostty 1.0 發布",
+          "url": "https://mitchellh.com/writing/libghostty-1-0",
+          "weightedScore": 1017
         },
         {
-          "content": "安全研究人員揭露了微軟 Windows 內建工具「小畫家」（MS Paint）中存在的一項嚴重遠端程式碼執行（RCE）漏洞。攻擊者可藉由特製的惡意影像檔案，在受害者開啟檔案時觸發記憶體損壞並以當前使用者權限執行任意程式碼。該通報提醒系統管理員與安全團隊應及時關注端點補丁部署，並警惕透過看似無害的媒體檔案進行釣魚與供應鏈滲透的風險。",
+          "content": "C++26 的相關標準草案在最新投票階段未獲通過（Disapproved）。這項變動反映出委員會與成員國對次世代 C++ 標準中的某些提案與細節仍存分歧，可能影響 C++26 的最終功能規劃與發布時程，值得關注 C++ 語言標準演進的系統開發者持續追蹤。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "MS Paint Remote Code Execution Vulnerability",
+          "sourceTitle": "C++26 Disapproved",
           "sources": [
             "hn"
           ],
-          "title": "Windows 小畫家爆發遠端程式碼執行（RCE）漏洞安全通報",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844",
-          "weightedScore": 699
+          "title": "C++26 委員會草案投票未獲通過",
+          "url": "https://andreasfertig.com/blog/2026/11/cpp26-dis-failed-how-does-cpp-survive/",
+          "weightedScore": 412
+        },
+        {
+          "content": "安全監控偵測到美國白宮內部網路中存在住宅代理（Residential Proxies）活動。住宅代理經常被惡意行為者用於掩護未授權流量或繞過存取控制，此事件凸顯了內部網路端點防禦與異常連線檢測在關鍵基礎設施與企業安全防護中的重要性。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Residential proxies detected on White House network",
+          "sources": [
+            "hn"
+          ],
+          "title": "美國白宮內部網路偵測到住宅代理節點",
+          "url": "https://layer3intel.com/blog/residential-proxies-white-house-network",
+          "weightedScore": 1267
+        },
+        {
+          "content": "技術分析發現 macOS 系統中內建了一個未公開記錄（Undocumented）的家庭成員分類器模型。該研究剖析了作業系統底層如何未經公開說明即載入並執行特定分類機制，引發系統開發者與安全研究人員對作業系統內建模型、隱私與未公開 API 的關注。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Every Mac comes with an (undocumented) family member classifier",
+          "sources": [
+            "hn"
+          ],
+          "title": "逆向工程揭露每台 Mac 均內建未公開的家庭成員分類器",
+          "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+          "weightedScore": 560
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-23T00:16:51.773Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://anthropic.com/claude-opus-5-5"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-23T00:16:51.773Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "openai-blog"
-      ],
-      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-09-23T00:16:51.773Z",
-      "sourceId": "gh-nodejs",
-      "sources": [
-        "gh-nodejs"
-      ],
-      "url": "https://github.com/nodejs/node/releases/tag/v26.10.0"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-23T00:16:51.773Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/transformers-llama-cpp-quants"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-23T00:16:51.773Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/worker-previews"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-23T00:16:51.773Z",
-      "sourceId": "lobsters-devops",
-      "sources": [
-        "lobsters-devops"
-      ],
-      "url": "https://yonik.com/blog/introducing-luxir"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-23T00:16:51.773Z",
-      "sourceId": "openai-blog",
-      "sources": [
-        "openai-blog"
-      ],
-      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-23T00:16:51.773Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/vary-support"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-23T00:16:51.773Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://linear.app/now/ci-bottleneck-reworked"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-09-24T00:23:57.015Z",
@@ -6754,6 +6645,137 @@
       ],
       "title": "MS Paint Remote Code Execution Vulnerability",
       "url": "https://cve.org/CVERecord?id=CVE-2026-83844"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "Gemini 4 Argon for Robotics",
+      "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Copilot code review: API management and review overview updates",
+      "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Usage metrics API flags telemetry and version gaps",
+      "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-ai"
+      ],
+      "title": "Firecracker VM Escape: PwnEscape Part 2",
+      "url": "https://pwn.ai/blog/firecracker-escape"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
+      "url": "https://hightouch.com/blog/llm-judges-identity-resolution"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "AI is forcing us to pay off 40 years of technical debt",
+      "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Catching prompt injections hidden in PDFs",
+      "url": "https://tomclancy.info/joshua-judges-ruth.html"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "How we review 4x more AI code without reading every line",
+      "url": "https://thenewstack.io/scale-ai-code-reviews"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Palette: teaching a small model to build decks in your design language",
+      "url": "https://huggingface.co/blog/ibm-research/palette-deck-building"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Libghostty 1.0",
+      "url": "https://mitchellh.com/writing/libghostty-1-0"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "C++26 Disapproved",
+      "url": "https://andreasfertig.com/blog/2026/11/cpp26-dis-failed-how-does-cpp-survive"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Residential proxies detected on White House network",
+      "url": "https://layer3intel.com/blog/residential-proxies-white-house-network"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-07T23:36:47.471Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Every Mac comes with an (undocumented) family member classifier",
+      "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph"
     }
   ]
 }
