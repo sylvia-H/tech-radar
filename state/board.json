@@ -474,85 +474,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-08T23:38:50.039Z",
-  "lastNewsPushAt": "2026-11-08T23:38:50.039Z",
+  "lastNewsPushAt": "2026-11-10T02:40:05.287Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-08T23:38:50.039Z",
       "summary": "本次新進 7 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 7 個與前後端 1 個，綜合榜 #1 為 vercel-labs/agent-desktop。"
     },
     "feed": [
-      {
-        "content": "Phonon TTS 深入解析報告與模型正式推出，主打可在裝置本地端運行的高品質語音生成，並在多項評測基準上名列前茅。對於開發即時語音對話助手、邊緣運算設備或具備隱私要求的客戶端語音應用的工程師而言，提供了一個低延遲且無需依賴雲端 API 的優質替代方案。",
-        "id": "news:https://huggingface.co/blog/phonon-tts",
-        "publishedAt": "2026-11-06T00:57:25.673Z",
-        "title": "Phonon TTS 本地端高品質語音合成模型發布，效能評測超越既有基準",
-        "type": "news",
-        "url": "https://huggingface.co/blog/phonon-tts"
-      },
-      {
-        "content": "Dharma Field Extractor 推出全新工具，主打「輸入任意文件、輸出結構化 JSON 欄位」的能力。該工具針對半結構化與非結構化文件解析，簡化了從文字、合約或報表中提取特定資料屬性的管線，能協助後端與 AI 應用開發者大幅減少撰寫自訂解析腳本與正則表達式的負擔。",
-        "id": "news:https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
-        "publishedAt": "2026-11-06T00:57:25.673Z",
-        "title": "Dharma Field Extractor 開源：將任意文件轉換為結構化 JSON 欄位",
-        "type": "news",
-        "url": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor"
-      },
-      {
-        "content": "PDD Kit（Proof-Driven Development Kit）正式推出，旨在解決開發者對 AI 代理生成程式碼的信任問題。透過結合形式化驗證或證明驅動的開發流程，PDD Kit 協助工程師在將 AI 代理自動編寫的程式碼合併至專案前，自動建立並驗證邏輯正確性規範，為 AI 輔助軟體工程提供結構化驗證架構。",
-        "id": "news:https://githubnext.com/projects/pdd-kit",
-        "publishedAt": "2026-11-06T00:57:25.673Z",
-        "title": "PDD Kit 發布：透過證明驅動開發建立對 AI 代理生成程式碼的信任",
-        "type": "news",
-        "url": "https://githubnext.com/projects/pdd-kit/"
-      },
-      {
-        "content": "Alpine Linux 官方發布安全通報，指出其 OpenSSH-server 套件存在密碼認證繞過漏洞。由於 Alpine Linux 廣泛作為 Docker 容器基礎映像檔及輕量級 Linux 伺服器作業系統，該漏洞恐導致未授權攻擊者繞過認證取得系統存取權。DevOps 與系統工程師應立即檢查映像檔與容器環境，儘速升級相關套件以避免遭受攻擊。",
-        "id": "news:https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass",
-        "publishedAt": "2026-11-06T00:57:25.673Z",
-        "title": "Alpine Linux 發布重大安全通報：OpenSSH 伺服器存在密碼認證繞過漏洞",
-        "type": "news",
-        "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/"
-      },
-      {
-        "content": "GitHub 宣布 @GitHub 於 Slack 與 Microsoft Teams 的整合功能正式全面推出（GA）。開發者現在可以直接在即時通訊對話中調查問題、建立 Issue、實作程式碼變更並開啟 Pull Request，無須在多個工具間反覆切換視窗。此項整合大幅降低了跨團隊協作與即時處理 production 事故時的上下文切換成本，讓 ChatOps 流程更加順暢。",
-        "id": "news:https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "GitHub 正式推出 Slack 與 Teams 整合：直接在通訊軟體內審查程式碼與開 PR",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available"
-      },
-      {
-        "content": "Discord 宣布將棄用長期使用的 Electron 框架，改採更輕量化架構以顯著降低記憶體（RAM）消耗並提升執行效能。身為全球最具代表性的 Electron 桌面應用之一，Discord 的技術架構轉移對前端與跨平台桌面開發社群具有高度指標意義，顯示大型桌面客戶端在面對資源佔用與效能瓶頸時，逐步轉向更現代化或原生的桌面技術方案。",
-        "id": "news:https://theverge.com/news/1027379/discord-ditching-electron-web-app",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "Discord 放棄 Electron 架構：新版應用程式大幅降低記憶體佔用",
-        "type": "news",
-        "url": "https://www.theverge.com/news/1027379/discord-ditching-electron-web-app"
-      },
-      {
-        "content": "高通推出針對資料中心 AI 推論設計的 Cloud AI 100 Ultra 加速卡，在僅 150W 功耗下提供 128GB 記憶體與 548GB/s 頻寬。對於負責大語言模型（LLM）部署與營運的基礎設施工程師而言，此款加速卡強調高每瓦效能比與充足的顯存容量，為成本敏感且需要高能效的雲端與邊緣推論節點提供了除主流 GPU 以外的硬體選擇。",
-        "id": "news:https://qualcomm.com/data-center/products/cloud-ai-100-ultra",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "高通發表 Cloud AI 100 Ultra：150W 功耗配備 128GB 記憶體之資料中心推論卡",
-        "type": "news",
-        "url": "https://www.qualcomm.com/data-center/products/cloud-ai-100-ultra"
-      },
-      {
-        "content": "OpenAI 發布包含 100 項任務的全新基準 BioBasicsBench，專門衡量 AI Agent 在解讀原始實驗數據及處理日常濕實驗室科學任務時的實際表現。這項評測標誌著 AI Agent 評估標準從純程式碼生成擴展至特定專業領域的端到端決策與實體科學邏輯，對開發自主科學 Agent 的團隊提供了明確的能力衡量依據。",
-        "id": "news:https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "OpenAI 推出 BioBasicsBench：評測 AI Agent 解讀實驗數據與濕實驗室任務能力",
-        "type": "news",
-        "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science"
-      },
-      {
-        "content": "Meta 宣布所有使用 Meta AI 與 Muse agent 的用戶將切換至透過旗艦模型 Muse Wonder 所訓練出的新模型。這項更新展示了 Meta 利用頂級前沿模型進行知識蒸餾與合成數據訓練，進而提升大眾端生產模型效能的落地實務，對關注大型模型蒸餾與日常推論品質提升的工程師具有參考價值。",
-        "id": "news:https://thenewstack.io/meta-muse-specialized-models",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "Meta 升級 Meta AI 與 Muse：全面採用 Muse Wonder 訓練的新一代模型",
-        "type": "news",
-        "url": "https://thenewstack.io/meta-muse-specialized-models/"
-      },
       {
         "content": "GitHub 更新了 Copilot impact 儀表板中的 Agent 採用率圖表，正式加入 Copilot Chat 以及 VS Code Agents 視窗的使用數據，涵蓋目前九種不同的 Copilot 體驗。這項改動讓工程團隊管理者能具體量化與追蹤開發者在 IDE 內使用各類 Agent 工具的頻率與深度，有助於企業評估引進 AI 輔助開發工具的實質效益與導入進程。",
         "id": "news:https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
@@ -872,281 +800,213 @@
         "title": "Asahi Linux 公布最新開發進展：推進 Linux 7.3 支援並深化 Apple Silicon 硬體驅動整合",
         "type": "news",
         "url": "https://asahilinux.org/2026/11/progress-report-7-3/"
+      },
+      {
+        "content": "Anthropic 正式推出最新旗艦模型 Claude Fable 5.2 與 Mythos 5.2。新版本在程式碼編寫與複雜多步驟推理任務上表現顯著提升，在 Artificial Analysis 基準評測中取得 65 分的高分，同時 Anthropic 亦調降了使用費率。此外，Claude Fable 5.2 已同步在 GitHub Copilot 正式開放（GA），支援開發者在大型專案中進行深度的程式碼撰寫與重構。對開發者而言，新模型不僅大幅強化了 AI 輔助編程的能力上限，也帶來更高的性價比與直接的 IDE 整合支援。",
+        "id": "news:https://anthropic.com/claude-fable-and-mythos-5-2",
+        "publishedAt": "2026-11-10T02:40:05.287Z",
+        "title": "Anthropic 發表新一代旗艦模型 Claude Fable 5.2 與 Mythos 5.2",
+        "type": "news",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+      },
+      {
+        "content": "Google 在發表第八代 TPU 的同時，同步推出了開源軟體系統 TPU Sync。該系統旨在透過優化硬體同步機制與推論排程，大幅減少大規模 AI 模型在 TPU 叢集上的推論延遲，Google 宣稱延遲降幅最高可超過 90%。對從事大型語言模型部署、推論服務維運與雲端 AI 架構設計的工程師而言，TPU Sync 提供了在不更換底層模型的情況下顯著提升高併發推論吞吐量與降低響應延遲的新解法，也是評估 Google Cloud AI 基礎設施效能的重要考量依據。",
+        "id": "news:https://thenewstack.io/google-tpu-sync-inference",
+        "publishedAt": "2026-11-10T02:40:05.287Z",
+        "title": "Google 開源 TPU Sync 推論加速系統，號稱降低推論延遲達 90%",
+        "type": "news",
+        "url": "https://thenewstack.io/google-tpu-sync-inference/"
+      },
+      {
+        "content": "GitHub 發布 Copilot 每週更新，正式將 Copilot 導入 JetBrains Air 以及 Xcode 的 Coding Assistant，進一步擴展對 iOS 與 JetBrains 生態系開發者的原生 IDE 支援。本次更新同時強化了 Pull Request 管理、全域設定調整以及 Agent 會話管理功能，並加入「Agent Merge」等協助自動化合併與衝突處理的能力。這項更新讓跨平台與行動端開發團隊能夠在原本習慣的開發環境中直接享用 Copilot Agent 工具，進一步降低在不同工具鏈間切換的摩擦成本。",
+        "id": "news:https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+        "publishedAt": "2026-11-10T02:40:05.287Z",
+        "title": "GitHub Copilot 更新發布：支援 Xcode 與 JetBrains Air 並強化 PR 管理",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2"
+      },
+      {
+        "content": "微軟 Outlook.com 宣布實施更嚴格的電子郵件安全策略，將直接拒收任何未配置 DMARC（網域型郵件驗證報告與一致性）驗證機制的網域來信。這意味著若開發團隊或維運人員未在其寄件網域中正確設定 SPF、DKIM 與 DMARC 紀錄，所有發往 Outlook.com、Hotmail 等微軟消費級信箱的系統通知信、註冊驗證碼與交易型郵件都將遭到退件。開發者與維運團隊應立即檢查現有網域的 DNS 驗證設定與 DMARC 策略，避免因驗證缺失導致核心業務郵件無法送達用戶。",
+        "id": "news:https://mailroute.net/blog/outlook-rejecting-email-without-dmarc",
+        "publishedAt": "2026-11-10T02:40:05.287Z",
+        "title": "微軟 Outlook.com 開始全面拒收未配置 DMARC 的網域郵件",
+        "type": "news",
+        "url": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc"
+      },
+      {
+        "content": "最新消息指出，當用戶將 Google Gemini 連結至個人 Google 雲端硬碟（Drive）與 Gmail 進行分析時，系統可能會將相關文件與郵件內容路由至外部人工標註員進行審閱與訓練。這項行為引發了嚴重的隱私與資料外洩疑慮。對於在產品或內部工作流程中使用 Gemini 擴充功能、或倚賴 Google Workspace 處理敏感資料的開發團隊與企業而言，這項發現敲響了合規警鐘；開發者與企業架構師必須重新檢視存取權限與資料授權條款，避免未經授權將機密程式碼、客戶個資或敏感通訊暴露於第三方人工審查流程中。",
+        "id": "news:https://github.com/thisisme6598/gemini_files",
+        "publishedAt": "2026-11-10T02:40:05.287Z",
+        "title": "Google Gemini 遭曝將用戶個人雲端硬碟與信箱內容轉發給人工標註員審查",
+        "type": "news",
+        "url": "https://github.com/thisisme6598/gemini_files/"
+      },
+      {
+        "content": "隨著雲原生系統與 AI Agent 的普及，應用程式經常需要執行非開發團隊撰寫的程式碼——例如 AI Agent 即時生成的 Python 腳本或使用者上傳的外掛。微軟與開源社群推動的 Hyperlight 專案探討了如何在輕量級 Hypervisor 隔離的微型虛擬機器（micro-VM）中運行 Linux 應用。相較於傳統重型 VM 或容易發生容器逃逸的 Docker 隔離，Hyperlight 提供了極低延遲與極小記憶體開銷的微虛擬化邊界，為開發者在雲原生環境中建構高安全性、沙箱化執行 AI 生成程式碼的架構提供了可行的實踐範式。",
+        "id": "news:https://cncf.io/blog/2026/11/09/run-linux-applications-in-hypervisor-isolated-micro-vms-with-hyperlight",
+        "publishedAt": "2026-11-10T02:40:05.287Z",
+        "title": "透過 Hyperlight 在 Hypervisor 隔離微型虛擬機中安全執行非信任 AI 程式碼",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/11/09/run-linux-applications-in-hypervisor-isolated-micro-vms-with-hyperlight/"
+      },
+      {
+        "content": "OpenAI 公開了其內部基礎設施「Control Room」的架構細節。該系統作為核心控制平面，能夠在 OpenAI 跨資料中心的研究叢集上全面追蹤所有模型訓練與推論工作負載；一旦偵測到安全性威脅、漏洞利用或異常行為，系統能夠以極短延遲迅速強制終止相關任務。這篇文章展示了在超大規模 AI 叢集下如何進行集中化負載治理、資源隔離與應急阻斷。對於負責維運大型機器學習叢集、分散式排程架構與 AI 安全治理的工程師而言，提供了極具價值的實務設計參考。",
+        "id": "news:https://openai.com/index/control-room",
+        "publishedAt": "2026-11-10T02:40:05.287Z",
+        "title": "OpenAI 揭秘 Control Room：集中監控並即時終止異常模型工作負載的架構實踐",
+        "type": "news",
+        "url": "https://openai.com/index/control-room"
+      },
+      {
+        "content": "安全研究發現，OpenAI 的 ChatGPT 桌面端應用在執行遠端連接或特定任務時，會預設將用戶本地的 SSH Agent（SSH_AUTH_SOCK）轉發至遠端機器。這項機制可能使本機存放的 SSH 私鑰授權在缺乏透明提示與嚴格隔離的情況下暴露給遠端環境，構成潛在的憑證被劫持與橫向移動風險。對頻繁使用終端機、管理伺服器金鑰的軟體工程師而言，這是一項不可忽視的資安隱患；開發者若在工作機上使用 ChatGPT 桌面客戶端，應儘速檢查 SSH Agent 轉發設定，或暫時隔離金鑰存取權限以防憑證外洩。",
+        "id": "news:https://news.ycombinator.com/item?id=50422628",
+        "publishedAt": "2026-11-10T02:40:05.287Z",
+        "title": "ChatGPT 桌面端遭揭露會自動轉發本地 SSH Agent 憑證至遠端環境",
+        "type": "news",
+        "url": "https://news.ycombinator.com/item?id=50422628"
+      },
+      {
+        "content": "資安研究人員公布了一項嚴重的車聯網平台漏洞，展示了如何透過特定汽車品牌車聯網雲端 API 的身分驗證與授權缺失，在全球範圍內遠端發送指令解鎖該品牌的任何連網車輛。該漏洞暴露出 API 缺乏嚴格的權限查核（BOLA/IDOR）與微服務通訊邊界驗證等經典軟體工程缺陷。此案例對後端、雲端與物聯網（IoT）開發者具有高度警示意義：在設計對接實體設備的遠端控制 API 時，必須實施嚴格的多因素授權、端到端身分綁定與異常頻率限制，防止因邏輯瑕疵造成災難性實體安全風險。",
+        "id": "news:https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world",
+        "publishedAt": "2026-11-10T02:40:05.287Z",
+        "title": "安全研究員揭露重大車聯網 API 漏洞：可於全球遠端解鎖特定品牌所有車輛",
+        "type": "news",
+        "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-08T23:38:50.039Z",
+      "generatedAt": "2026-11-10T02:40:05.287Z",
       "items": [
         {
-          "content": "資安研究指出，Anthropic 推出的命令列 AI 開發工具 Claude Code 在使用者啟用「Don't Ask Again」自動確認選項後，可能在未經審核的情況下將敏感憑證與密碼寫入並推送到公開程式庫，已在 GitHub 上偵測到 1,122 份公開檔案遭到洩漏。這項問題對廣大採用 AI 輔助終端指令的開發者構成重大警訊，顯示在賦予 AI 自動執行與寫入權限時，必須落實 .gitignore 與機密管理防護，避免敏感資訊意外公開。",
+          "content": "Anthropic 正式推出最新旗艦模型 Claude Fable 5.2 與 Mythos 5.2。新版本在程式碼編寫與複雜多步驟推理任務上表現顯著提升，在 Artificial Analysis 基準評測中取得 65 分的高分，同時 Anthropic 亦調降了使用費率。此外，Claude Fable 5.2 已同步在 GitHub Copilot 正式開放（GA），支援開發者在大型專案中進行深度的程式碼撰寫與重構。對開發者而言，新模型不僅大幅強化了 AI 輔助編程的能力上限，也帶來更高的性價比與直接的 IDE 整合支援。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
+          "sourceTitle": "Claude Fable 5.2 and Mythos 5.2",
           "sources": [
             "hn"
           ],
-          "title": "Claude Code「不再詢問」選項傳出資安漏洞，導致逾千份 GitHub 公開檔案外洩密碼",
-          "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
-          "weightedScore": 574
+          "title": "Anthropic 發表新一代旗艦模型 Claude Fable 5.2 與 Mythos 5.2",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+          "weightedScore": 962
         },
         {
-          "content": "開源虛擬機工具 Lima 正式發布 v2.3 版本。新版本在 Windows 平台上透過主機運算系統（Host Compute System, HCS）原生啟動虛擬機，無需安裝額外依賴套件；同時在 Linux 環境新增 VMnet 網路支援，並引進了選單式文字終端使用者介面（TUI）。Lima 作為許多容器與開發生態系（如 Colima、Rancher Desktop）的核心底層，本次對 Windows 原生支援大幅簡化了跨平台開發環境的建置流程。",
+          "content": "Google 在發表第八代 TPU 的同時，同步推出了開源軟體系統 TPU Sync。該系統旨在透過優化硬體同步機制與推論排程，大幅減少大規模 AI 模型在 TPU 叢集上的推論延遲，Google 宣稱延遲降幅最高可超過 90%。對從事大型語言模型部署、推論服務維運與雲端 AI 架構設計的工程師而言，TPU Sync 提供了在不更換底層模型的情況下顯著提升高併發推論吞吐量與降低響應延遲的新解法，也是評估 Google Cloud AI 基礎設施效能的重要考量依據。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Google claims its new AI software cuts inference latency by over 90% — but there’s a catch",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Google 開源 TPU Sync 推論加速系統，號稱降低推論延遲達 90%",
+          "url": "https://thenewstack.io/google-tpu-sync-inference/",
+          "weightedScore": 50
+        },
+        {
+          "content": "GitHub 發布 Copilot 每週更新，正式將 Copilot 導入 JetBrains Air 以及 Xcode 的 Coding Assistant，進一步擴展對 iOS 與 JetBrains 生態系開發者的原生 IDE 支援。本次更新同時強化了 Pull Request 管理、全域設定調整以及 Agent 會話管理功能，並加入「Agent Merge」等協助自動化合併與衝突處理的能力。這項更新讓跨平台與行動端開發團隊能夠在原本習慣的開發環境中直接享用 Copilot Agent 工具，進一步降低在不同工具鏈間切換的摩擦成本。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub Copilot weekly releases — November 2",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 更新發布：支援 Xcode 與 JetBrains Air 並強化 PR 管理",
+          "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+          "weightedScore": 100
+        },
+        {
+          "content": "微軟 Outlook.com 宣布實施更嚴格的電子郵件安全策略，將直接拒收任何未配置 DMARC（網域型郵件驗證報告與一致性）驗證機制的網域來信。這意味著若開發團隊或維運人員未在其寄件網域中正確設定 SPF、DKIM 與 DMARC 紀錄，所有發往 Outlook.com、Hotmail 等微軟消費級信箱的系統通知信、註冊驗證碼與交易型郵件都將遭到退件。開發者與維運團隊應立即檢查現有網域的 DNS 驗證設定與 DMARC 策略，避免因驗證缺失導致核心業務郵件無法送達用戶。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Outlook.com is rejecting email from domains without DMARC",
+          "sources": [
+            "hn"
+          ],
+          "title": "微軟 Outlook.com 開始全面拒收未配置 DMARC 的網域郵件",
+          "url": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc",
+          "weightedScore": 531
+        },
+        {
+          "content": "最新消息指出，當用戶將 Google Gemini 連結至個人 Google 雲端硬碟（Drive）與 Gmail 進行分析時，系統可能會將相關文件與郵件內容路由至外部人工標註員進行審閱與訓練。這項行為引發了嚴重的隱私與資料外洩疑慮。對於在產品或內部工作流程中使用 Gemini 擴充功能、或倚賴 Google Workspace 處理敏感資料的開發團隊與企業而言，這項發現敲響了合規警鐘；開發者與企業架構師必須重新檢視存取權限與資料授權條款，避免未經授權將機密程式碼、客戶個資或敏感通訊暴露於第三方人工審查流程中。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Google Gemini routes personal Drive files and emails to human annotators",
+          "sources": [
+            "hn"
+          ],
+          "title": "Google Gemini 遭曝將用戶個人雲端硬碟與信箱內容轉發給人工標註員審查",
+          "url": "https://github.com/thisisme6598/gemini_files/",
+          "weightedScore": 444
+        },
+        {
+          "content": "隨著雲原生系統與 AI Agent 的普及，應用程式經常需要執行非開發團隊撰寫的程式碼——例如 AI Agent 即時生成的 Python 腳本或使用者上傳的外掛。微軟與開源社群推動的 Hyperlight 專案探討了如何在輕量級 Hypervisor 隔離的微型虛擬機器（micro-VM）中運行 Linux 應用。相較於傳統重型 VM 或容易發生容器逃逸的 Docker 隔離，Hyperlight 提供了極低延遲與極小記憶體開銷的微虛擬化邊界，為開發者在雲原生環境中建構高安全性、沙箱化執行 AI 生成程式碼的架構提供了可行的實踐範式。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cncf-blog",
-          "sourceTitle": "Lima v2.3: Native on Windows, VMnet on Linux, and menu TUI",
+          "sourceTitle": "Run Linux applications in hypervisor-isolated micro-VMs with Hyperlight",
           "sources": [
             "cncf-blog"
           ],
-          "title": "輕量級虛擬機工具 Lima v2.3 發布：原生支援 Windows、Linux 支援 VMnet 並新增選單 TUI",
-          "url": "https://www.cncf.io/blog/2026/11/08/lima-v2-3-native-on-windows-vmnet-on-linux-and-menu-tui/",
+          "title": "透過 Hyperlight 在 Hypervisor 隔離微型虛擬機中安全執行非信任 AI 程式碼",
+          "url": "https://www.cncf.io/blog/2026/11/09/run-linux-applications-in-hypervisor-isolated-micro-vms-with-hyperlight/",
           "weightedScore": 100
         },
         {
-          "content": "Perplexity 宣布推出新功能「Teammates」，允許系統協調多個 AI 代理（Agents）分工處理複雜任務。該架構具備跨工作階段的記憶能力，能記住先前的執行進度與上下文；即使使用者關閉瀏覽器分頁，代理仍會在背景持續執行任務而無需額外 Prompt 提示。這項更新展示了 AI 代理從即時單輪問答邁向非同步、持續自主運作工作流程的重要進展。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Perplexity’s AI agents keep working after you close the tab",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Perplexity 推出 Teammates 多代理協作架構：支援分頁關閉後背景持續運作與跨工作階段記憶",
-          "url": "https://thenewstack.io/perplexity-teammates-agent-orchestration/",
-          "weightedScore": 50
-        },
-        {
-          "content": "針對大語言模型在軟體安全弱點修復能力的評測基準 CWE-bench 正式推出 v2 版本。新版顯著提升了常見弱點列舉（CWE）的覆蓋面，並在測試案例品質與評測透明度上進行全面優化。對於正在研發或評估 AI 代碼安全審查、漏洞自動修復工具的工程團隊而言，該基準能提供更客觀、嚴謹的量化檢驗標準。",
+          "content": "OpenAI 公開了其內部基礎設施「Control Room」的架構細節。該系統作為核心控制平面，能夠在 OpenAI 跨資料中心的研究叢集上全面追蹤所有模型訓練與推論工作負載；一旦偵測到安全性威脅、漏洞利用或異常行為，系統能夠以極短延遲迅速強制終止相關任務。這篇文章展示了在超大規模 AI 叢集下如何進行集中化負載治理、資源隔離與應急阻斷。對於負責維運大型機器學習叢集、分散式排程架構與 AI 安全治理的工程師而言，提供了極具價值的實務設計參考。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "CWE-bench v2: More coverage, quality, and transparency",
+          "sourceId": "openai-blog",
+          "sourceTitle": "Control Room: A central system to track and stop model workloads across our research infrastructure",
           "sources": [
-            "huggingface-blog"
+            "openai-blog"
           ],
-          "title": "安全漏洞修復基準測試 CWE-bench v2 發布：擴大涵蓋範圍並提高評測品質與透明度",
-          "url": "https://huggingface.co/blog/cwe-bench",
+          "title": "OpenAI 揭秘 Control Room：集中監控並即時終止異常模型工作負載的架構實踐",
+          "url": "https://openai.com/index/control-room",
           "weightedScore": 100
         },
         {
-          "content": "社群開源專案 Llama-modchip 展示了一種新型推論最佳化技術，能夠在完全不依賴獨立 GPU 的情況下，僅使用 64GB 一般系統 RAM 成功載入並執行高達 284B 參數量級的 DeepSeek 模型。這項技術透過記憶體對映與極限卸載策略，大幅降低了超大型開源模型在本地端部署與實驗的硬體門檻，為個人開發者與資源受限的團隊提供了極高參考價值的本地推論範例。",
+          "content": "安全研究發現，OpenAI 的 ChatGPT 桌面端應用在執行遠端連接或特定任務時，會預設將用戶本地的 SSH Agent（SSH_AUTH_SOCK）轉發至遠端機器。這項機制可能使本機存放的 SSH 私鑰授權在缺乏透明提示與嚴格隔離的情況下暴露給遠端環境，構成潛在的憑證被劫持與橫向移動風險。對頻繁使用終端機、管理伺服器金鑰的軟體工程師而言，這是一項不可忽視的資安隱患；開發者若在工作機上使用 ChatGPT 桌面客戶端，應儘速檢查 SSH Agent 轉發設定，或暫時隔離金鑰存取權限以防憑證外洩。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+          "sourceTitle": "ChatGPT Desktop forwards your SSH agent to remote machines",
           "sources": [
             "hn"
           ],
-          "title": "Llama-modchip 開源實作：無需 GPU、在 64GB 記憶體上執行 284B DeepSeek 大模型",
-          "url": "https://github.com/synchopate/llama-modchip",
-          "weightedScore": 340
+          "title": "ChatGPT 桌面端遭揭露會自動轉發本地 SSH Agent 憑證至遠端環境",
+          "url": "https://news.ycombinator.com/item?id=50422628",
+          "weightedScore": 206
         },
         {
-          "content": "本文深入剖析了 Anthropic 發布的模型上下文協定（Model Context Protocol, MCP）。MCP 旨在解決大型語言模型與多樣化資料庫、API 及開發工具整合時缺乏統一介面的痛點，提供標準化的客戶端與伺服器通訊架構。深入了解 MCP 的協定規範與實作細節，能幫助開發者以模組化方式構建 AI Agent 工具鏈，避免陷入針對不同供應商與 API 重複撰寫膠水代碼的困境。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "MCP Explained",
-          "sources": [
-            "hn"
-          ],
-          "title": "深入剖析模型上下文協定（MCP）：標準化 AI 代理與外部工具整合的架構解析",
-          "url": "https://mcp-explained.com/",
-          "weightedScore": 345
-        },
-        {
-          "content": "隨著複雜產品測試持續產出失敗案例，全天候運作的自主 QA 代理在規模化過程面臨基礎架構瓶頸。本文總結了工程團隊將自主代理從單一團隊擴展支援 50 個團隊的實務經驗，詳細分析了從 Serverless 架構遷移至容器化基礎設施的決策框架。內容深入探討資源利用率、冷啟動延遲、執行時長限制與維運成本的權衡，對需大規模部署背景 AI 工作負載的 DevOps 與後端工程師具高度實用價值。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Scaling an autonomous agent from one team to fifty: A serverless-to-container decision framework",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "自主代理從單一團隊拓展至 50 組團隊的規模化架構：從 Serverless 遷移至容器的決策框架",
-          "url": "https://thenewstack.io/scaling-autonomous-agents-framework/",
-          "weightedScore": 50
-        },
-        {
-          "content": "本文深入探討自主 AI 代理（Agent）記憶系統的核心架構元件，將其拆解為工作記憶（Working Memory）、短長期持久化儲存、語意檢索與情境更新機制。文章系統性地分析了不同記憶層級在面對多輪對話、工具呼叫與複雜任務規劃時的實作挑戰，為正在設計與建構具備持續學習和跨會話記憶能力的 AI 應用工程師提供了清晰的架構指引。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "The Components of Agent Memory",
-          "sources": [
-            "hn"
-          ],
-          "title": "解析 AI 代理記憶架構的核心元件：工作記憶、長期儲存與狀態檢索機制",
-          "url": "https://www.anthropic.com/research/components-of-agent-memory",
-          "weightedScore": 173
-        },
-        {
-          "content": "MaxxBench 發布深入評測與分析，對近期多個 AI 程式代理在 DeepSWE 基準測試上所取得的高分提出嚴格檢視與質疑。分析探討了基準測試中可能存在的資料外洩、測試集過擬合以及評估指標與真實軟體開發能力脫節等問題。對於仰賴開源評測指標挑選 AI 程式設計工具與編程模型的開發者來說，該分析提醒了單一 Benchmark 分數的盲點與客觀驗證的重要性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "MaxxBench – \"Nice DeepSWE score. But is it true?\"",
-          "sources": [
-            "hn"
-          ],
-          "title": "質疑 DeepSWE 跑分真實性：MaxxBench 深入檢驗 AI 軟體工程基準測試的有效性",
-          "url": "https://maxxbench.unlap.ai/research/why-maxxbench/",
-          "weightedScore": 383
-        },
-        {
-          "content": "Asahi Linux 專案團隊發布最新進展報告，展示在 Apple Silicon 晶片上推進 Linux 核心支援的關鍵里程碑。報告涵蓋了最新 Linux 核心版本的適配工作、GPU 驅動程式逆向工程與上游整合進度、音訊及電源管理子系統的改善。這項進展不僅讓 Linux 在 ARM 架構 Mac 硬體上的實用性大幅提升，也為開源社群對現代 ARM SoC 的架構理解與驅動開發提供了極為寶貴的第一手技術參考。",
+          "content": "資安研究人員公布了一項嚴重的車聯網平台漏洞，展示了如何透過特定汽車品牌車聯網雲端 API 的身分驗證與授權缺失，在全球範圍內遠端發送指令解鎖該品牌的任何連網車輛。該漏洞暴露出 API 缺乏嚴格的權限查核（BOLA/IDOR）與微服務通訊邊界驗證等經典軟體工程缺陷。此案例對後端、雲端與物聯網（IoT）開發者具有高度警示意義：在設計對接實體設備的遠端控制 API 時，必須實施嚴格的多因素授權、端到端身分綁定與異常頻率限制，防止因邏輯瑕疵造成災難性實體安全風險。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Asahi Linux Progress Linux 7.3",
+          "sourceTitle": "Unlocking any car from X brand in most of the world",
           "sources": [
             "hn"
           ],
-          "title": "Asahi Linux 公布最新開發進展：推進 Linux 7.3 支援並深化 Apple Silicon 硬體驅動整合",
-          "url": "https://asahilinux.org/2026/11/progress-report-7-3/",
-          "weightedScore": 409
+          "title": "安全研究員揭露重大車聯網 API 漏洞：可於全球遠端解鎖特定品牌所有車輛",
+          "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/",
+          "weightedScore": 601
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-25T00:27:04.206Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/containers-cross-tenant-vulnerability"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-25T00:27:04.206Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-25T00:27:04.206Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-25T00:27:04.206Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-25T00:27:04.206Z",
-      "sourceId": "github-blog-ai-ml",
-      "sources": [
-        "github-blog-ai-ml"
-      ],
-      "url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-25T00:27:04.206Z",
-      "sourceId": "github-blog-ai-ml",
-      "sources": [
-        "github-blog-ai-ml"
-      ],
-      "url": "https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-25T00:27:04.206Z",
-      "sourceId": "github-blog-ai-ml",
-      "sources": [
-        "github-blog-ai-ml"
-      ],
-      "url": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T00:30:24.073Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T00:30:24.073Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T00:30:24.073Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T00:30:24.073Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wp0z3i/qwen3827b_is_good_enough_that_i_stopped_using_api"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T00:30:24.073Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wouby6/jev_almost_dead_clm_vs_jev"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T00:30:24.073Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wpdho8/qwen_38_27b_be_like"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T00:30:24.073Z",
-      "sourceId": "lobsters-ai",
-      "sources": [
-        "lobsters-ai"
-      ],
-      "url": "https://github.com/volotat/mini-AGI"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-09-26T22:41:18.589Z",
@@ -6800,6 +6660,96 @@
       ],
       "title": "Asahi Linux Progress Linux 7.3",
       "url": "https://asahilinux.org/2026/11/progress-report-7-3"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-10T02:40:05.287Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Claude Fable 5.2 and Mythos 5.2",
+      "url": "https://anthropic.com/claude-fable-and-mythos-5-2"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-10T02:40:05.287Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Google claims its new AI software cuts inference latency by over 90% — but there’s a catch",
+      "url": "https://thenewstack.io/google-tpu-sync-inference"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-10T02:40:05.287Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot weekly releases — November 2",
+      "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-10T02:40:05.287Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Outlook.com is rejecting email from domains without DMARC",
+      "url": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-10T02:40:05.287Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Google Gemini routes personal Drive files and emails to human annotators",
+      "url": "https://github.com/thisisme6598/gemini_files"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-10T02:40:05.287Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "Run Linux applications in hypervisor-isolated micro-VMs with Hyperlight",
+      "url": "https://cncf.io/blog/2026/11/09/run-linux-applications-in-hypervisor-isolated-micro-vms-with-hyperlight"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-10T02:40:05.287Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+      "url": "https://openai.com/index/control-room"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-10T02:40:05.287Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "ChatGPT Desktop forwards your SSH agent to remote machines",
+      "url": "https://news.ycombinator.com/item?id=50422628"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-10T02:40:05.287Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Unlocking any car from X brand in most of the world",
+      "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world"
     }
   ]
 }
