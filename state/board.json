@@ -474,125 +474,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-08T23:38:50.039Z",
-  "lastNewsPushAt": "2026-11-10T02:40:05.287Z",
+  "lastNewsPushAt": "2026-11-11T00:35:13.765Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-08T23:38:50.039Z",
       "summary": "本次新進 7 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 7 個與前後端 1 個，綜合榜 #1 為 vercel-labs/agent-desktop。"
     },
     "feed": [
-      {
-        "content": "GitHub 更新了 Copilot impact 儀表板中的 Agent 採用率圖表，正式加入 Copilot Chat 以及 VS Code Agents 視窗的使用數據，涵蓋目前九種不同的 Copilot 體驗。這項改動讓工程團隊管理者能具體量化與追蹤開發者在 IDE 內使用各類 Agent 工具的頻率與深度，有助於企業評估引進 AI 輔助開發工具的實質效益與導入進程。",
-        "id": "news:https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "GitHub Copilot 儀表板更新：納入 Copilot Chat 與 VS Code Agent 使用指標",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage"
-      },
-      {
-        "content": "本文深入探討 3D 創作軟體 Blender 的使用者介面與執行環境設計架構，並實測對比 Zed 編輯器所開發的 GPU 加速 UI 框架 GPUI。分析指出 Blender 歷經數十年最佳化的 C/C++ 渲染管線與自定義即時模式 UI 架構在多項微基準中展現出更出色的反應速度與資源效率，為 GUI 架構師與系統級前端工程師提供了關於現代桌面應用介面渲染與效能取捨的深度洞察。",
-        "id": "news:https://github.com/ppmpreetham/BUI",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "Blender 的 UI 與執行環境架構解析：為何執行速度顯著優於 GPUI",
-        "type": "news",
-        "url": "https://github.com/ppmpreetham/BUI"
-      },
-      {
-        "content": "本文深入探討大語言模型推論叢集擴展時的冷啟動瓶頸。在推論副本啟動到實際能處理請求之間，系統必須經歷權重載入、GPU 資源初始化、Kernel 編譯以及 CUDA Graph 捕獲等多個階段。文章剖析了縮短每個階段耗時的工程手段，對於負責模型自動水平擴展（Autoscaling）與高可用架構的 DevOps 與 AI 基礎設施工程師而言，是解決流量突發時延遲飆升的關鍵指南。",
-        "id": "news:https://cncf.io/blog/2026/11/06/faster-llm-inference-startup-what-you-need-to-know",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "加速 LLM 推論實例啟動：權重載入、CUDA Graph 與 GPU 初始化的關鍵技術",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/11/06/faster-llm-inference-startup-what-you-need-to-know/"
-      },
-      {
-        "content": "本文技術剖析了 Privacy Pass 等現行網頁隱私與防濫用密碼學協定在量子運算崛起時面臨的破密威脅，並探討新興後量子密碼學（PQC）演算法如何填補安全漏洞。文章針對密鑰交換、簽名大小與網路延遲的工程權衡進行詳細說明，為關注網路傳輸安全、身分驗證與基礎密碼學架構變革的後端與基礎設施工程師提供前瞻指導。",
-        "id": "news:https://blog.cloudflare.com/vole-mole",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "Web 隱私的後量子密碼學未來：Privacy Pass 等安全協定的抗量子演進",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/vole-mole/"
-      },
-      {
-        "content": "隨著 AI Agent 代表數百萬使用者自主瀏覽與調用服務，伺服器與反向代理端面臨使用者可見性被剝離、既有 Bot 防護失效的新問題。本文探討了伺服器端如何安全識別、授權與調度這類半自主代理流量的技術架構與協作標準，對於維護高流量 API、Web 安全閘道以及反爬蟲架構的基礎設施開發者而言具有極高的實務參考價值。",
-        "id": "news:https://blog.cloudflare.com/trusted-agent-delegation",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "當 AI Agent 成為網路流量主體：反向代理與伺服器端流量識別管理新挑戰",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/trusted-agent-delegation/"
-      },
-      {
-        "content": "GitHub 發布工程指南探討 AI 時代下的 Agentic Engineering 實務。文章指出單純生成程式碼速度變快後，軟體開發的瓶頸已轉移至前期的規劃架構、程式碼審查與生產環境事故排查。指南詳解如何利用 GitHub Copilot 協同 Agent 處理需求拆解與自動測試，同時明確界定哪些架構決策仍需工程師的關鍵判斷，協助開發者重構日常工程工作流。",
-        "id": "news:https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "超越單純程式碼生成：開發者邁向 Agentic Engineering 的實踐指南",
-        "type": "news",
-        "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/"
-      },
-      {
-        "content": "本文分享了 GitHub Agentic Workflows 如何結合 Marks & Spencer 與 Provation 等企業實務，構建現代化的 Agent 開發工廠。文章剖析了如何將自動化 Agent 無縫嵌入 CI/CD、程式碼合規檢查與多儲存庫治理流程中，為希望在團隊內部大規模導入自主 AI Agent 開發流程的架構師與工程主管提供了落地的架構參考。",
-        "id": "news:https://githubnext.com/talks/the-factory-mindset",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "軟體工廠思維：GitHub Agentic Workflows 在生產環境的實作經驗",
-        "type": "news",
-        "url": "https://githubnext.com/talks/the-factory-mindset/"
-      },
-      {
-        "content": "社群推薦的開源指南《The Little Book of Generative AI Foundations》，以直觀清晰的方式梳理了生成式 AI 背後的核心數學基礎，涵蓋機率論、微分流形、擴散過程與 Transformer 注意力機制的數學表徵。對於希望從調用 API 深入到底層演算法與模型架構細節的 AI 研發工程師而言，這是一份高品質的理論與實作銜接教材。",
-        "id": "news:https://arxiv.org/abs/2605.29713",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "生成式 AI 數學基礎入門指南：直觀理解生成模型的數學原理",
-        "type": "news",
-        "url": "https://arxiv.org/abs/2605.29713"
-      },
-      {
-        "content": "開源專案 sshole 在開發者社群引發熱烈討論，該工具旨在簡化 SSH 反向通道（reverse tunnel）與 NAT 穿透操作，讓開發者無需複雜配置即可將本機服務快速暴露至外部網路或進行遠端終端協同。對於經常需要進行本地除錯、Webhooks 測試與遠端伺服器存取的工程師而言，提供了一個輕量、開源且無需依賴第三方封閉服務的替代方案。",
-        "id": "news:https://sshhole.com/",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "sshole：極簡且高人氣的開源 SSH 穿透與通訊埠轉發工具",
-        "type": "news",
-        "url": "https://sshhole.com"
-      },
-      {
-        "content": "安全研究人員揭露了微軟 Windows 內建工具「小畫家」（MS Paint）中存在的一項嚴重遠端程式碼執行（RCE）漏洞。攻擊者可藉由特製的惡意影像檔案，在受害者開啟檔案時觸發記憶體損壞並以當前使用者權限執行任意程式碼。該通報提醒系統管理員與安全團隊應及時關注端點補丁部署，並警惕透過看似無害的媒體檔案進行釣魚與供應鏈滲透的風險。",
-        "id": "news:https://cve.org/CVERecord?id=CVE-2026-83844",
-        "publishedAt": "2026-11-07T00:03:48.387Z",
-        "title": "Windows 小畫家爆發遠端程式碼執行（RCE）漏洞安全通報",
-        "type": "news",
-        "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844"
-      },
-      {
-        "content": "Google 發表專為機器人領域（Robotics）打造的 Gemini 4 Argon 模型。這項發布顯示 Gemini 系列模型正將多模態與推理能力延伸至機器人控制與具身智慧領域，為從事機器人與實體自動化應用的開發者提供新的官方模型選擇。",
-        "id": "news:https://deepmind.google/blog/gemini-4-argon-for-robotics",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "Google 推出專為機器人領域設計的 Gemini 4 Argon 模型",
-        "type": "news",
-        "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/"
-      },
-      {
-        "content": "GitHub 宣布 Copilot 程式碼審查功能現在可透過 REST 與 GraphQL API 進行管理，涵蓋從企業政策到個別儲存庫的設定。此外，Copilot 的審查總覽摘要留言也改版得更加緊湊。這項更新讓維運與平台團隊能夠以程式化方式自動化管理程式碼審查規則，並減少 PR 審查介面的雜訊。",
-        "id": "news:https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "GitHub Copilot 程式碼審查支援 REST 與 GraphQL API 管理",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates"
-      },
-      {
-        "content": "GitHub Copilot 使用指標 API 新增針對個別使用者的標記欄位，可顯示哪些使用者缺少客戶端遙測數據，或其 IDE 與擴充套件版本低於指標統計所需的最低版本。這項變更使管理者能更精確地掌握團隊內部開發環境的更新狀況，及時修正版本落後問題。",
-        "id": "news:https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "GitHub Copilot 使用指標 API 新增遙測與擴充套件版本落後標記",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps"
-      },
-      {
-        "content": "安全研究發布了針對 Firecracker 虛擬機逃逸（VM Escape）的深度分析文章「PwnEscape Part 2」。由於 Firecracker 被廣泛應用於 Serverless 與安全隔離沙盒中，虛擬機逃逸漏洞的成因與利用細節對於設計雲端多租戶架構與沙盒防禦機制的開發者具有關鍵參考價值。",
-        "id": "news:https://pwn.ai/blog/firecracker-escape",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "Firecracker 虛擬機逃逸漏洞分析：PwnEscape 第二部",
-        "type": "news",
-        "url": "https://pwn.ai/blog/firecracker-escape"
-      },
       {
         "content": "該技術討論介紹了一種讓較低成本模型在需要時向 Claude Opus 請求協助的協作機制，成功在達到 Opus 等級準確度的同時，將成本降低至原本的四分之一。這對於正在生產環境中尋求平衡大模型推論成本與輸出精準度的 AI 架構師提供了實用的優化思路。",
         "id": "news:https://hightouch.com/blog/llm-judges-identity-resolution",
@@ -872,195 +760,323 @@
         "title": "安全研究員揭露重大車聯網 API 漏洞：可於全球遠端解鎖特定品牌所有車輛",
         "type": "news",
         "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/"
+      },
+      {
+        "content": "Anthropic 最新推出的 Fable 5.2 模型已在 GitHub Copilot 中全面推出，支援開發者在大型程式碼庫中執行複雜的多步驟編碼任務，提升開發效率。",
+        "id": "news:https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "Anthropic Claude Fable 5.2 模型現已正式支援 GitHub Copilot",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot"
+      },
+      {
+        "content": "企業級 GitHub Apps 現在可以呼叫企業層級的 Copilot 授權管理 API，讓管理者精確控制哪些使用者與團隊能被指派 Copilot 授權，提升企業協作與權限控管能力。",
+        "id": "news:https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "GitHub App 支援企業級 Copilot 授權管理 API",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management"
+      },
+      {
+        "content": "MiniMax 正式發布基於 H3 架構建構的開源圖像模型 H3-Image，為開發者提供全新的開源視覺生成工具選擇。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xso1ie/minimax_h3image_released_an_openweight_image",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "MiniMax 發布基於 H3 架構的開源圖像模型 H3-Image",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xso1ie/minimax_h3image_released_an_openweight_image/"
+      },
+      {
+        "content": "用於 GitHub Copilot CLI 的微軟 C++ 語言伺服器現在內建並自動執行 MSBuild 編譯指令擷取工具，代理程式無需再手動探索與執行建構設定。",
+        "id": "news:https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "C++ 語言伺服器現已自動設定 MSBuild 編譯建構",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds"
+      },
+      {
+        "content": "Google 向付費開發者正式推出全新前沿模型 Gemini 4 Carbon，其定位高於 Gemini 4 Argon，可處理複雜的推理任務並加速技術驗證。",
+        "id": "news:https://thenewstack.io/gemini-4-carbon-swarm",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "Google 向付費開發者釋出 Gemini 4 Carbon 模型",
+        "type": "news",
+        "url": "https://thenewstack.io/gemini-4-carbon-swarm/"
+      },
+      {
+        "content": "SpaceXSI 默默將 Grok API 的 AI 生成文字數位浮水印機制預設改為關閉，改變了開發者透過 API 生成文字時的預設行為與隱私處理方式。",
+        "id": "news:https://thenewstack.io/grok-api-watermarking-default",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "Grok API 預設將文字數位浮水印功能關閉",
+        "type": "news",
+        "url": "https://thenewstack.io/grok-api-watermarking-default/"
+      },
+      {
+        "content": "雲端 AI 服務 Fireworks AI 遭遇安全漏洞，進一步波及 Notion 及其平台客戶，提醒開發者加強對第三方 AI 服務供應鏈的安全防護與審查。",
+        "id": "news:https://notion.com/help/security-incident-involving-a-third-party-ai-vendor",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "Fireworks AI 發生安全漏洞影響 Notion 及客戶",
+        "type": "news",
+        "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor"
+      },
+      {
+        "content": "Google 推出最具能力的視覺語言動作模型 Gemini Robotics 2.5，顯著增強機器人在真實世界中的操作靈敏度、可靠性與安全性。",
+        "id": "news:https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "Google 發布 Gemini Robotics 2.5 提升機器人真實世界靈敏度",
+        "type": "news",
+        "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+      },
+      {
+        "content": "亞馬遜透過以自家架構取代 Sonnet 4.6 模型，成功大幅降低 AI 推理成本並節省數百萬美元，展示了大型企業在實際生產環境中優化模型架構的工程實踐。",
+        "id": "news:https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "亞馬遜以 Strands Decider 取代 Sonnet 4.6 節省數百萬成本",
+        "type": "news",
+        "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/"
+      },
+      {
+        "content": "開發者探討現代系統開發中對伺服器記憶體容量無節制成長的假設，分享在基礎設施規劃與資源最佳化上的實務反思與架構經驗。",
+        "id": "news:https://utcc.utoronto.ca/~cks/space/blog/sysadmin/ServerRAMGrowthReflex",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "重新省思伺服器對記憶體無限成長的需求迷思",
+        "type": "news",
+        "url": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/ServerRAMGrowthReflex"
+      },
+      {
+        "content": "深入探討在 AI 程式碼生成普及的時代，Rust 語言在安全性、型別系統與效能上的獨特價值，以及開發者如何看待 Rust 與 LLM 的結合。",
+        "id": "news:https://youtube.com/watch?v=5D7QPOIZ7gY",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "大語言模型時代下對 Rust 語言的反思與應用",
+        "type": "news",
+        "url": "https://www.youtube.com/watch?v=5D7QPOIZ7gY"
+      },
+      {
+        "content": "開發者以 Rust 與 WebGPU 技術打造的開源 3D 繪圖工具 KetchUp，展現了現代網頁端圖形效能與高效能框架的實作成果，對網頁前端與高效能渲染具參考價值。",
+        "id": "news:https://ketchup3d.github.io/app",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "KetchUp：基於 Rust 與 WebGPU 開發的開源 SketchUp 替代品",
+        "type": "news",
+        "url": "https://ketchup3d.github.io/app/"
+      },
+      {
+        "content": "介紹全新分群演算法 E-means，能在僅需傳統 k-means 十分之一的訓練輪次內達到更優異的表現，對機器學習效能優化具高度技術價值。",
+        "id": "news:https://e-means.github.io/",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "E-means 演算法：在十分之一訓練輪次內超越 k-means",
+        "type": "news",
+        "url": "https://e-means.github.io/"
+      },
+      {
+        "content": "藉由 Discord 桌面端重構的實際案例，探討原生技術與資源耗費較低的框架在現代作業系統中的效能優勢，對桌面應用軟體工程架構深具啟發。",
+        "id": "news:https://windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in",
+        "publishedAt": "2026-11-11T00:35:13.765Z",
+        "title": "為何所有 Windows 11 應用程式都該捨棄 Electron 框架",
+        "type": "news",
+        "url": "https://www.windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-10T02:40:05.287Z",
+      "generatedAt": "2026-11-11T00:35:13.765Z",
       "items": [
         {
-          "content": "Anthropic 正式推出最新旗艦模型 Claude Fable 5.2 與 Mythos 5.2。新版本在程式碼編寫與複雜多步驟推理任務上表現顯著提升，在 Artificial Analysis 基準評測中取得 65 分的高分，同時 Anthropic 亦調降了使用費率。此外，Claude Fable 5.2 已同步在 GitHub Copilot 正式開放（GA），支援開發者在大型專案中進行深度的程式碼撰寫與重構。對開發者而言，新模型不僅大幅強化了 AI 輔助編程的能力上限，也帶來更高的性價比與直接的 IDE 整合支援。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Claude Fable 5.2 and Mythos 5.2",
-          "sources": [
-            "hn"
-          ],
-          "title": "Anthropic 發表新一代旗艦模型 Claude Fable 5.2 與 Mythos 5.2",
-          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
-          "weightedScore": 962
-        },
-        {
-          "content": "Google 在發表第八代 TPU 的同時，同步推出了開源軟體系統 TPU Sync。該系統旨在透過優化硬體同步機制與推論排程，大幅減少大規模 AI 模型在 TPU 叢集上的推論延遲，Google 宣稱延遲降幅最高可超過 90%。對從事大型語言模型部署、推論服務維運與雲端 AI 架構設計的工程師而言，TPU Sync 提供了在不更換底層模型的情況下顯著提升高併發推論吞吐量與降低響應延遲的新解法，也是評估 Google Cloud AI 基礎設施效能的重要考量依據。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Google claims its new AI software cuts inference latency by over 90% — but there’s a catch",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Google 開源 TPU Sync 推論加速系統，號稱降低推論延遲達 90%",
-          "url": "https://thenewstack.io/google-tpu-sync-inference/",
-          "weightedScore": 50
-        },
-        {
-          "content": "GitHub 發布 Copilot 每週更新，正式將 Copilot 導入 JetBrains Air 以及 Xcode 的 Coding Assistant，進一步擴展對 iOS 與 JetBrains 生態系開發者的原生 IDE 支援。本次更新同時強化了 Pull Request 管理、全域設定調整以及 Agent 會話管理功能，並加入「Agent Merge」等協助自動化合併與衝突處理的能力。這項更新讓跨平台與行動端開發團隊能夠在原本習慣的開發環境中直接享用 Copilot Agent 工具，進一步降低在不同工具鏈間切換的摩擦成本。",
+          "content": "Anthropic 最新推出的 Fable 5.2 模型已在 GitHub Copilot 中全面推出，支援開發者在大型程式碼庫中執行複雜的多步驟編碼任務，提升開發效率。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot weekly releases — November 2",
+          "sourceTitle": "Claude Fable 5.2 in GitHub Copilot",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 更新發布：支援 Xcode 與 JetBrains Air 並強化 PR 管理",
-          "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+          "title": "Anthropic Claude Fable 5.2 模型現已正式支援 GitHub Copilot",
+          "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot",
           "weightedScore": 100
         },
         {
-          "content": "微軟 Outlook.com 宣布實施更嚴格的電子郵件安全策略，將直接拒收任何未配置 DMARC（網域型郵件驗證報告與一致性）驗證機制的網域來信。這意味著若開發團隊或維運人員未在其寄件網域中正確設定 SPF、DKIM 與 DMARC 紀錄，所有發往 Outlook.com、Hotmail 等微軟消費級信箱的系統通知信、註冊驗證碼與交易型郵件都將遭到退件。開發者與維運團隊應立即檢查現有網域的 DNS 驗證設定與 DMARC 策略，避免因驗證缺失導致核心業務郵件無法送達用戶。",
+          "content": "企業級 GitHub Apps 現在可以呼叫企業層級的 Copilot 授權管理 API，讓管理者精確控制哪些使用者與團隊能被指派 Copilot 授權，提升企業協作與權限控管能力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub App support for Enterprise Copilot seat management",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub App 支援企業級 Copilot 授權管理 API",
+          "url": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management",
+          "weightedScore": 100
+        },
+        {
+          "content": "MiniMax 正式發布基於 H3 架構建構的開源圖像模型 H3-Image，為開發者提供全新的開源視覺生成工具選擇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "MiniMax H3-Image Released, an Open-Weight Image Model built on H3",
+          "sources": [
+            "reddit-localllama"
+          ],
+          "title": "MiniMax 發布基於 H3 架構的開源圖像模型 H3-Image",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xso1ie/minimax_h3image_released_an_openweight_image/",
+          "weightedScore": 100
+        },
+        {
+          "content": "用於 GitHub Copilot CLI 的微軟 C++ 語言伺服器現在內建並自動執行 MSBuild 編譯指令擷取工具，代理程式無需再手動探索與執行建構設定。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "C++ language server now auto-configures MSBuild builds",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "C++ 語言伺服器現已自動設定 MSBuild 編譯建構",
+          "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
+          "weightedScore": 100
+        },
+        {
+          "content": "Google 向付費開發者正式推出全新前沿模型 Gemini 4 Carbon，其定位高於 Gemini 4 Argon，可處理複雜的推理任務並加速技術驗證。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Outlook.com is rejecting email from domains without DMARC",
+          "sourceId": "thenewstack",
+          "sourceTitle": "Google says Gemini 4 Carbon proved Signal’s encryption in weeks",
           "sources": [
-            "hn"
+            "thenewstack"
           ],
-          "title": "微軟 Outlook.com 開始全面拒收未配置 DMARC 的網域郵件",
-          "url": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc",
-          "weightedScore": 531
+          "title": "Google 向付費開發者釋出 Gemini 4 Carbon 模型",
+          "url": "https://thenewstack.io/gemini-4-carbon-swarm/",
+          "weightedScore": 50
         },
         {
-          "content": "最新消息指出，當用戶將 Google Gemini 連結至個人 Google 雲端硬碟（Drive）與 Gmail 進行分析時，系統可能會將相關文件與郵件內容路由至外部人工標註員進行審閱與訓練。這項行為引發了嚴重的隱私與資料外洩疑慮。對於在產品或內部工作流程中使用 Gemini 擴充功能、或倚賴 Google Workspace 處理敏感資料的開發團隊與企業而言，這項發現敲響了合規警鐘；開發者與企業架構師必須重新檢視存取權限與資料授權條款，避免未經授權將機密程式碼、客戶個資或敏感通訊暴露於第三方人工審查流程中。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Google Gemini routes personal Drive files and emails to human annotators",
-          "sources": [
-            "hn"
-          ],
-          "title": "Google Gemini 遭曝將用戶個人雲端硬碟與信箱內容轉發給人工標註員審查",
-          "url": "https://github.com/thisisme6598/gemini_files/",
-          "weightedScore": 444
-        },
-        {
-          "content": "隨著雲原生系統與 AI Agent 的普及，應用程式經常需要執行非開發團隊撰寫的程式碼——例如 AI Agent 即時生成的 Python 腳本或使用者上傳的外掛。微軟與開源社群推動的 Hyperlight 專案探討了如何在輕量級 Hypervisor 隔離的微型虛擬機器（micro-VM）中運行 Linux 應用。相較於傳統重型 VM 或容易發生容器逃逸的 Docker 隔離，Hyperlight 提供了極低延遲與極小記憶體開銷的微虛擬化邊界，為開發者在雲原生環境中建構高安全性、沙箱化執行 AI 生成程式碼的架構提供了可行的實踐範式。",
+          "content": "SpaceXSI 默默將 Grok API 的 AI 生成文字數位浮水印機制預設改為關閉，改變了開發者透過 API 生成文字時的預設行為與隱私處理方式。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Run Linux applications in hypervisor-isolated micro-VMs with Hyperlight",
+          "sourceId": "thenewstack",
+          "sourceTitle": "SpaceXSI quietly flips Grok API text watermarking to off by default",
           "sources": [
-            "cncf-blog"
+            "thenewstack"
           ],
-          "title": "透過 Hyperlight 在 Hypervisor 隔離微型虛擬機中安全執行非信任 AI 程式碼",
-          "url": "https://www.cncf.io/blog/2026/11/09/run-linux-applications-in-hypervisor-isolated-micro-vms-with-hyperlight/",
-          "weightedScore": 100
+          "title": "Grok API 預設將文字數位浮水印功能關閉",
+          "url": "https://thenewstack.io/grok-api-watermarking-default/",
+          "weightedScore": 50
         },
         {
-          "content": "OpenAI 公開了其內部基礎設施「Control Room」的架構細節。該系統作為核心控制平面，能夠在 OpenAI 跨資料中心的研究叢集上全面追蹤所有模型訓練與推論工作負載；一旦偵測到安全性威脅、漏洞利用或異常行為，系統能夠以極短延遲迅速強制終止相關任務。這篇文章展示了在超大規模 AI 叢集下如何進行集中化負載治理、資源隔離與應急阻斷。對於負責維運大型機器學習叢集、分散式排程架構與 AI 安全治理的工程師而言，提供了極具價值的實務設計參考。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Control Room: A central system to track and stop model workloads across our research infrastructure",
-          "sources": [
-            "openai-blog"
-          ],
-          "title": "OpenAI 揭秘 Control Room：集中監控並即時終止異常模型工作負載的架構實踐",
-          "url": "https://openai.com/index/control-room",
-          "weightedScore": 100
-        },
-        {
-          "content": "安全研究發現，OpenAI 的 ChatGPT 桌面端應用在執行遠端連接或特定任務時，會預設將用戶本地的 SSH Agent（SSH_AUTH_SOCK）轉發至遠端機器。這項機制可能使本機存放的 SSH 私鑰授權在缺乏透明提示與嚴格隔離的情況下暴露給遠端環境，構成潛在的憑證被劫持與橫向移動風險。對頻繁使用終端機、管理伺服器金鑰的軟體工程師而言，這是一項不可忽視的資安隱患；開發者若在工作機上使用 ChatGPT 桌面客戶端，應儘速檢查 SSH Agent 轉發設定，或暫時隔離金鑰存取權限以防憑證外洩。",
+          "content": "雲端 AI 服務 Fireworks AI 遭遇安全漏洞，進一步波及 Notion 及其平台客戶，提醒開發者加強對第三方 AI 服務供應鏈的安全防護與審查。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "ChatGPT Desktop forwards your SSH agent to remote machines",
+          "sourceTitle": "Fireworks AI security breach impacts Notion and their customers",
           "sources": [
             "hn"
           ],
-          "title": "ChatGPT 桌面端遭揭露會自動轉發本地 SSH Agent 憑證至遠端環境",
-          "url": "https://news.ycombinator.com/item?id=50422628",
-          "weightedScore": 206
+          "title": "Fireworks AI 發生安全漏洞影響 Notion 及客戶",
+          "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor",
+          "weightedScore": 159
         },
         {
-          "content": "資安研究人員公布了一項嚴重的車聯網平台漏洞，展示了如何透過特定汽車品牌車聯網雲端 API 的身分驗證與授權缺失，在全球範圍內遠端發送指令解鎖該品牌的任何連網車輛。該漏洞暴露出 API 缺乏嚴格的權限查核（BOLA/IDOR）與微服務通訊邊界驗證等經典軟體工程缺陷。此案例對後端、雲端與物聯網（IoT）開發者具有高度警示意義：在設計對接實體設備的遠端控制 API 時，必須實施嚴格的多因素授權、端到端身分綁定與異常頻率限制，防止因邏輯瑕疵造成災難性實體安全風險。",
+          "content": "Google 推出最具能力的視覺語言動作模型 Gemini Robotics 2.5，顯著增強機器人在真實世界中的操作靈敏度、可靠性與安全性。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sourceTitle": "Gemini Robotics 2.5 accelerates real-world general dexterity",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "Google 發布 Gemini Robotics 2.5 提升機器人真實世界靈敏度",
+          "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+          "weightedScore": 100
+        },
+        {
+          "content": "亞馬遜透過以自家架構取代 Sonnet 4.6 模型，成功大幅降低 AI 推理成本並節省數百萬美元，展示了大型企業在實際生產環境中優化模型架構的工程實踐。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Amazon saves millions by replacing Sonnet 4.6 with Strands Decider",
+          "sources": [
+            "hn"
+          ],
+          "title": "亞馬遜以 Strands Decider 取代 Sonnet 4.6 節省數百萬成本",
+          "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/",
+          "weightedScore": 684
+        },
+        {
+          "content": "開發者探討現代系統開發中對伺服器記憶體容量無節制成長的假設，分享在基礎設施規劃與資源最佳化上的實務反思與架構經驗。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "lobsters-devops",
+          "sourceTitle": "My reflex of assuming our servers need ever-growing amounts of RAM",
+          "sources": [
+            "lobsters-devops"
+          ],
+          "title": "重新省思伺服器對記憶體無限成長的需求迷思",
+          "url": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/ServerRAMGrowthReflex",
+          "weightedScore": 100
+        },
+        {
+          "content": "深入探討在 AI 程式碼生成普及的時代，Rust 語言在安全性、型別系統與效能上的獨特價值，以及開發者如何看待 Rust 與 LLM 的結合。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Reflections on Rust in the LLM Age",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "大語言模型時代下對 Rust 語言的反思與應用",
+          "url": "https://www.youtube.com/watch?v=5D7QPOIZ7gY",
+          "weightedScore": 100
+        },
+        {
+          "content": "開發者以 Rust 與 WebGPU 技術打造的開源 3D 繪圖工具 KetchUp，展現了現代網頁端圖形效能與高效能框架的實作成果，對網頁前端與高效能渲染具參考價值。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "KetchUp – Open-source SketchUp alternative built with Rust and WebGPU",
+          "sources": [
+            "hn"
+          ],
+          "title": "KetchUp：基於 Rust 與 WebGPU 開發的開源 SketchUp 替代品",
+          "url": "https://ketchup3d.github.io/app/",
+          "weightedScore": 759
+        },
+        {
+          "content": "介紹全新分群演算法 E-means，能在僅需傳統 k-means 十分之一的訓練輪次內達到更優異的表現，對機器學習效能優化具高度技術價值。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "E-means: Outperforming k-means in one-tenth the epochs",
+          "sources": [
+            "hn"
+          ],
+          "title": "E-means 演算法：在十分之一訓練輪次內超越 k-means",
+          "url": "https://e-means.github.io/",
+          "weightedScore": 494
+        },
+        {
+          "content": "藉由 Discord 桌面端重構的實際案例，探討原生技術與資源耗費較低的框架在現代作業系統中的效能優勢，對桌面應用軟體工程架構深具啟發。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Unlocking any car from X brand in most of the world",
+          "sourceTitle": "Every Windows 11 app should kill Electron, and Discord just showed why",
           "sources": [
             "hn"
           ],
-          "title": "安全研究員揭露重大車聯網 API 漏洞：可於全球遠端解鎖特定品牌所有車輛",
-          "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/",
-          "weightedScore": 601
+          "title": "為何所有 Windows 11 應用程式都該捨棄 Electron 框架",
+          "url": "https://www.windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in/",
+          "weightedScore": 480
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T22:41:18.589Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T22:41:18.589Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T22:41:18.589Z",
-      "sourceId": "simonwillison",
-      "sources": [
-        "simonwillison"
-      ],
-      "url": "https://simonwillison.net/2026/Sep/21/jev"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T22:41:18.589Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wqcrly/ling_tiny_30_is_a_glimpse_of_the_future"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-26T22:41:18.589Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://anthropic.com/news/claude-discovers-novel-enzyme-system"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-26T22:41:18.589Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/claude-opus-5-5-vs-opus-5"
-    },
     {
       "domain": "frontend-backend",
       "seenAt": "2026-09-27T22:58:16.977Z",
@@ -6750,6 +6766,146 @@
       ],
       "title": "Unlocking any car from X brand in most of the world",
       "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Claude Fable 5.2 in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub App support for Enterprise Copilot seat management",
+      "url": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "MiniMax H3-Image Released, an Open-Weight Image Model built on H3",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xso1ie/minimax_h3image_released_an_openweight_image"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "C++ language server now auto-configures MSBuild builds",
+      "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Google says Gemini 4 Carbon proved Signal’s encryption in weeks",
+      "url": "https://thenewstack.io/gemini-4-carbon-swarm"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "SpaceXSI quietly flips Grok API text watermarking to off by default",
+      "url": "https://thenewstack.io/grok-api-watermarking-default"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Fireworks AI security breach impacts Notion and their customers",
+      "url": "https://notion.com/help/security-incident-involving-a-third-party-ai-vendor"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Amazon saves millions by replacing Sonnet 4.6 with Strands Decider",
+      "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "title": "My reflex of assuming our servers need ever-growing amounts of RAM",
+      "url": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/ServerRAMGrowthReflex"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Reflections on Rust in the LLM Age",
+      "url": "https://youtube.com/watch?v=5D7QPOIZ7gY"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "KetchUp – Open-source SketchUp alternative built with Rust and WebGPU",
+      "url": "https://ketchup3d.github.io/app"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "E-means: Outperforming k-means in one-tenth the epochs",
+      "url": "https://e-means.github.io/"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-11T00:35:13.765Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Every Windows 11 app should kill Electron, and Discord just showed why",
+      "url": "https://windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in"
     }
   ]
 }
