@@ -474,127 +474,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-08T23:38:50.039Z",
-  "lastNewsPushAt": "2026-11-11T00:35:13.765Z",
+  "lastNewsPushAt": "2026-11-12T01:53:05.754Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-08T23:38:50.039Z",
       "summary": "本次新進 7 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 7 個與前後端 1 個，綜合榜 #1 為 vercel-labs/agent-desktop。"
     },
     "feed": [
-      {
-        "content": "該技術討論介紹了一種讓較低成本模型在需要時向 Claude Opus 請求協助的協作機制，成功在達到 Opus 等級準確度的同時，將成本降低至原本的四分之一。這對於正在生產環境中尋求平衡大模型推論成本與輸出精準度的 AI 架構師提供了實用的優化思路。",
-        "id": "news:https://hightouch.com/blog/llm-judges-identity-resolution",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "結合外部求助機制的模型架構：以四分之一成本達到 Opus 準確度",
-        "type": "news",
-        "url": "https://hightouch.com/blog/llm-judges-identity-resolution"
-      },
-      {
-        "content": "該深度討論指出，AI 程式碼生成與自動化工具的導入正迫使軟體產業不得不正視並償還過去四十年累積的技術債。傳統開發中被容忍的架構缺陷、模糊規格與缺乏測試，在 AI 介入時會被急遽放大，因此建構清晰的介面與堅固的工程基礎已成為有效運用 AI 的先決條件。",
-        "id": "news:https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "AI 正迫使軟體工程界償還累積 40 年的技術債",
-        "type": "news",
-        "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability"
-      },
-      {
-        "content": "該技術分析探討了如何攔截與防禦潛藏在 PDF 文件內的提示詞注入（Prompt Injection）攻擊。隨著越來越多 LLM 應用與 RAG 系統直接解析外部上傳的 PDF 檔案，攻擊者可能在文件中埋入隱蔽指令誤導模型，開發者需在資料前處理與模型輸入層強化安全過濾機制。",
-        "id": "news:https://tomclancy.info/joshua-judges-ruth.html",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "檢測隱藏在 PDF 文件中的提示詞注入攻擊",
-        "type": "news",
-        "url": "https://tomclancy.info/joshua-judges-ruth.html"
-      },
-      {
-        "content": "面對 AI 生成程式碼帶來的代碼量激增，工程團隊提出無需逐行閱讀即可維持信任的審查流程，改為專注檢查五項核心關鍵面向。這項實務經驗有助於開發團隊在高產出的 AI 輔助開發時代中平衡審查吞吐量與代碼庫品質。",
-        "id": "news:https://thenewstack.io/scale-ai-code-reviews",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "團隊審查 4 倍量 AI 程式碼的實務檢驗策略",
-        "type": "news",
-        "url": "https://thenewstack.io/scale-ai-code-reviews/"
-      },
-      {
-        "content": "文章分享了 Palette 專案的實踐經驗，探討如何訓練小型語言模型使其能夠理解並遵循特定的設計語言來自動生成簡報。這為希望在垂直領域運用小型模型取代大型通用模型、兼顧風格一致性與運行成本的開發者提供了參考範例。",
-        "id": "news:https://huggingface.co/blog/ibm-research/palette-deck-building",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "Palette 專案：訓練小型模型依據特定設計語言製作簡報",
-        "type": "news",
-        "url": "https://huggingface.co/blog/ibm-research/palette-deck-building"
-      },
-      {
-        "content": "終端模擬器 Ghostty 釋出 Libghostty 1.0。該核心函式庫將終端模擬與相關功能封裝為可重複使用的庫，讓軟體開發者能夠在其他應用程式或自製工具中直接嵌入與調用 Ghostty 的終端功能。",
-        "id": "news:https://mitchellh.com/writing/libghostty-1-0",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "GPU 加速終端模擬器核心庫 Libghostty 1.0 發布",
-        "type": "news",
-        "url": "https://mitchellh.com/writing/libghostty-1-0"
-      },
-      {
-        "content": "C++26 的相關標準草案在最新投票階段未獲通過（Disapproved）。這項變動反映出委員會與成員國對次世代 C++ 標準中的某些提案與細節仍存分歧，可能影響 C++26 的最終功能規劃與發布時程，值得關注 C++ 語言標準演進的系統開發者持續追蹤。",
-        "id": "news:https://andreasfertig.com/blog/2026/11/cpp26-dis-failed-how-does-cpp-survive",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "C++26 委員會草案投票未獲通過",
-        "type": "news",
-        "url": "https://andreasfertig.com/blog/2026/11/cpp26-dis-failed-how-does-cpp-survive/"
-      },
-      {
-        "content": "安全監控偵測到美國白宮內部網路中存在住宅代理（Residential Proxies）活動。住宅代理經常被惡意行為者用於掩護未授權流量或繞過存取控制，此事件凸顯了內部網路端點防禦與異常連線檢測在關鍵基礎設施與企業安全防護中的重要性。",
-        "id": "news:https://layer3intel.com/blog/residential-proxies-white-house-network",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "美國白宮內部網路偵測到住宅代理節點",
-        "type": "news",
-        "url": "https://layer3intel.com/blog/residential-proxies-white-house-network"
-      },
-      {
-        "content": "技術分析發現 macOS 系統中內建了一個未公開記錄（Undocumented）的家庭成員分類器模型。該研究剖析了作業系統底層如何未經公開說明即載入並執行特定分類機制，引發系統開發者與安全研究人員對作業系統內建模型、隱私與未公開 API 的關注。",
-        "id": "news:https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
-        "publishedAt": "2026-11-07T23:36:47.471Z",
-        "title": "逆向工程揭露每台 Mac 均內建未公開的家庭成員分類器",
-        "type": "news",
-        "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph"
-      },
-      {
-        "id": "repo:1161958643:new:2026-11-09",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "vercel-labs/agent-desktop 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/vercel-labs/agent-desktop"
-      },
-      {
-        "id": "repo:1273427276:climbed:2026-11-09",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "cloudflare/security-audit-skill 竄升",
-        "type": "board-climbed",
-        "url": "https://github.com/cloudflare/security-audit-skill"
-      },
-      {
-        "id": "repo:1148788086:new:2026-11-09",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "mattpocock/skills 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/mattpocock/skills"
-      },
-      {
-        "id": "repo:1222953295:new:2026-11-09",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "NVIDIA/auto-ontology 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/NVIDIA/auto-ontology"
-      },
-      {
-        "id": "repo:872119017:new:2026-11-09",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "D4Vinci/Scrapling 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/D4Vinci/Scrapling"
-      },
-      {
-        "id": "repo:1048065319:new:2026-11-09",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "thedotmack/claude-mem 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/thedotmack/claude-mem"
-      },
       {
         "id": "repo:1331261687:new:2026-11-09",
         "publishedAt": "2026-11-08T23:38:50.039Z",
@@ -872,346 +758,349 @@
         "title": "為何所有 Windows 11 應用程式都該捨棄 Electron 框架",
         "type": "news",
         "url": "https://www.windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in/"
+      },
+      {
+        "content": null,
+        "id": "news:https://pietromiotti.com/latest/maya-site",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "My AI agents found an unmapped Maya site?",
+        "type": "news",
+        "url": "https://pietromiotti.com/latest/maya-site"
+      },
+      {
+        "content": null,
+        "id": "news:https://thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
+        "type": "news",
+        "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers"
+      },
+      {
+        "content": null,
+        "id": "news:https://caleb.software/posts/claude-to-pi.html",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "Goodbye Claude, hello Pi",
+        "type": "news",
+        "url": "https://caleb.software/posts/claude-to-pi.html"
+      },
+      {
+        "content": null,
+        "id": "news:https://deepmind.google/blog/introducing-alphaproof-code",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "AlphaProof Code",
+        "type": "news",
+        "url": "https://deepmind.google/blog/introducing-alphaproof-code/"
+      },
+      {
+        "content": null,
+        "id": "news:https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "AI usage generates a fragile codebase",
+        "type": "news",
+        "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/"
+      },
+      {
+        "content": null,
+        "id": "news:https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "I'm not convinced the AI bubble exists",
+        "type": "news",
+        "url": "https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html#im-not-convinced-the-ai-bubble-exists"
+      },
+      {
+        "content": null,
+        "id": "news:https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "Apple has new Mac app coming to make running local AI models easy",
+        "type": "news",
+        "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/"
+      },
+      {
+        "content": null,
+        "id": "news:https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "A false smoke alarm almost drowned Jane Street's only NYC datacenter",
+        "type": "news",
+        "url": "https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/"
+      },
+      {
+        "content": null,
+        "id": "news:https://vulncheck.com/blog/anthropic-glasswing-november-update",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "Tracking Anthropic-discovered vulnerabilities",
+        "type": "news",
+        "url": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update"
+      },
+      {
+        "content": null,
+        "id": "news:https://simonwillison.net/2026/Nov/9/mysterious-beeps",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "Locating the source of a mysterious beep",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/"
+      },
+      {
+        "content": null,
+        "id": "news:https://github.com/GoogleChrome/modern-web-guidance",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+        "type": "news",
+        "url": "https://github.com/GoogleChrome/modern-web-guidance"
+      },
+      {
+        "content": null,
+        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "Gemini 4 Carbon is now available",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
+      },
+      {
+        "content": null,
+        "id": "news:https://artificialanalysis.ai/models/claude-fable-5-2",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far",
+        "type": "news",
+        "url": "https://artificialanalysis.ai/models/claude-fable-5-2"
+      },
+      {
+        "content": null,
+        "id": "news:https://cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
+        "type": "news",
+        "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/"
+      },
+      {
+        "content": null,
+        "id": "news:https://sergeykuhne.com/blog/fighting-ai-brain-fry",
+        "publishedAt": "2026-11-12T01:53:05.754Z",
+        "title": "How I'm fighting the AI brain fry",
+        "type": "news",
+        "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-11T00:35:13.765Z",
+      "generatedAt": "2026-11-12T01:53:05.754Z",
       "items": [
         {
-          "content": "Anthropic 最新推出的 Fable 5.2 模型已在 GitHub Copilot 中全面推出，支援開發者在大型程式碼庫中執行複雜的多步驟編碼任務，提升開發效率。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Claude Fable 5.2 in GitHub Copilot",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "Anthropic Claude Fable 5.2 模型現已正式支援 GitHub Copilot",
-          "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot",
-          "weightedScore": 100
-        },
-        {
-          "content": "企業級 GitHub Apps 現在可以呼叫企業層級的 Copilot 授權管理 API，讓管理者精確控制哪些使用者與團隊能被指派 Copilot 授權，提升企業協作與權限控管能力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub App support for Enterprise Copilot seat management",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub App 支援企業級 Copilot 授權管理 API",
-          "url": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management",
-          "weightedScore": 100
-        },
-        {
-          "content": "MiniMax 正式發布基於 H3 架構建構的開源圖像模型 H3-Image，為開發者提供全新的開源視覺生成工具選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "MiniMax H3-Image Released, an Open-Weight Image Model built on H3",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "MiniMax 發布基於 H3 架構的開源圖像模型 H3-Image",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xso1ie/minimax_h3image_released_an_openweight_image/",
-          "weightedScore": 100
-        },
-        {
-          "content": "用於 GitHub Copilot CLI 的微軟 C++ 語言伺服器現在內建並自動執行 MSBuild 編譯指令擷取工具，代理程式無需再手動探索與執行建構設定。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "C++ language server now auto-configures MSBuild builds",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "C++ 語言伺服器現已自動設定 MSBuild 編譯建構",
-          "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
-          "weightedScore": 100
-        },
-        {
-          "content": "Google 向付費開發者正式推出全新前沿模型 Gemini 4 Carbon，其定位高於 Gemini 4 Argon，可處理複雜的推理任務並加速技術驗證。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Google says Gemini 4 Carbon proved Signal’s encryption in weeks",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Google 向付費開發者釋出 Gemini 4 Carbon 模型",
-          "url": "https://thenewstack.io/gemini-4-carbon-swarm/",
-          "weightedScore": 50
-        },
-        {
-          "content": "SpaceXSI 默默將 Grok API 的 AI 生成文字數位浮水印機制預設改為關閉，改變了開發者透過 API 生成文字時的預設行為與隱私處理方式。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "SpaceXSI quietly flips Grok API text watermarking to off by default",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Grok API 預設將文字數位浮水印功能關閉",
-          "url": "https://thenewstack.io/grok-api-watermarking-default/",
-          "weightedScore": 50
-        },
-        {
-          "content": "雲端 AI 服務 Fireworks AI 遭遇安全漏洞，進一步波及 Notion 及其平台客戶，提醒開發者加強對第三方 AI 服務供應鏈的安全防護與審查。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Fireworks AI security breach impacts Notion and their customers",
+          "sourceTitle": "My AI agents found an unmapped Maya site?",
           "sources": [
             "hn"
           ],
-          "title": "Fireworks AI 發生安全漏洞影響 Notion 及客戶",
-          "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor",
-          "weightedScore": 159
+          "title": "My AI agents found an unmapped Maya site?",
+          "url": "https://pietromiotti.com/latest/maya-site",
+          "weightedScore": 928
         },
         {
-          "content": "Google 推出最具能力的視覺語言動作模型 Gemini Robotics 2.5，顯著增強機器人在真實世界中的操作靈敏度、可靠性與安全性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "deepmind-blog",
-          "sourceTitle": "Gemini Robotics 2.5 accelerates real-world general dexterity",
-          "sources": [
-            "deepmind-blog"
-          ],
-          "title": "Google 發布 Gemini Robotics 2.5 提升機器人真實世界靈敏度",
-          "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
-          "weightedScore": 100
-        },
-        {
-          "content": "亞馬遜透過以自家架構取代 Sonnet 4.6 模型，成功大幅降低 AI 推理成本並節省數百萬美元，展示了大型企業在實際生產環境中優化模型架構的工程實踐。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Amazon saves millions by replacing Sonnet 4.6 with Strands Decider",
+          "sourceTitle": "Goldman Sachs is pulling Claude Code from its bankers and traders",
           "sources": [
             "hn"
           ],
-          "title": "亞馬遜以 Strands Decider 取代 Sonnet 4.6 節省數百萬成本",
-          "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/",
-          "weightedScore": 684
+          "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
+          "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+          "weightedScore": 901
         },
         {
-          "content": "開發者探討現代系統開發中對伺服器記憶體容量無節制成長的假設，分享在基礎設施規劃與資源最佳化上的實務反思與架構經驗。",
-          "degraded": false,
-          "domain": "devops",
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "lobsters-devops",
-          "sourceTitle": "My reflex of assuming our servers need ever-growing amounts of RAM",
+          "sourceId": "hn",
+          "sourceTitle": "Goodbye Claude, hello Pi",
           "sources": [
+            "hn"
+          ],
+          "title": "Goodbye Claude, hello Pi",
+          "url": "https://caleb.software/posts/claude-to-pi.html",
+          "weightedScore": 821
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "AlphaProof Code",
+          "sources": [
+            "deepmind-blog",
+            "hn"
+          ],
+          "title": "AlphaProof Code",
+          "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+          "weightedScore": 769
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "AI usage generates a fragile codebase",
+          "sources": [
+            "hn"
+          ],
+          "title": "AI usage generates a fragile codebase",
+          "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
+          "weightedScore": 631
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "I'm not convinced the AI bubble exists",
+          "sources": [
+            "hn"
+          ],
+          "title": "I'm not convinced the AI bubble exists",
+          "url": "https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html#im-not-convinced-the-ai-bubble-exists",
+          "weightedScore": 570
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Apple has new Mac app coming to make running local AI models easy",
+          "sources": [
+            "hn"
+          ],
+          "title": "Apple has new Mac app coming to make running local AI models easy",
+          "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/",
+          "weightedScore": 517
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "devops",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "A false smoke alarm almost drowned Jane Street's only NYC datacenter",
+          "sources": [
+            "hn",
             "lobsters-devops"
           ],
-          "title": "重新省思伺服器對記憶體無限成長的需求迷思",
-          "url": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/ServerRAMGrowthReflex",
-          "weightedScore": 100
+          "title": "A false smoke alarm almost drowned Jane Street's only NYC datacenter",
+          "url": "https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/",
+          "weightedScore": 511
         },
         {
-          "content": "深入探討在 AI 程式碼生成普及的時代，Rust 語言在安全性、型別系統與效能上的獨特價值，以及開發者如何看待 Rust 與 LLM 的結合。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "Reflections on Rust in the LLM Age",
-          "sources": [
-            "lobsters-ai"
-          ],
-          "title": "大語言模型時代下對 Rust 語言的反思與應用",
-          "url": "https://www.youtube.com/watch?v=5D7QPOIZ7gY",
-          "weightedScore": 100
-        },
-        {
-          "content": "開發者以 Rust 與 WebGPU 技術打造的開源 3D 繪圖工具 KetchUp，展現了現代網頁端圖形效能與高效能框架的實作成果，對網頁前端與高效能渲染具參考價值。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "KetchUp – Open-source SketchUp alternative built with Rust and WebGPU",
-          "sources": [
-            "hn"
-          ],
-          "title": "KetchUp：基於 Rust 與 WebGPU 開發的開源 SketchUp 替代品",
-          "url": "https://ketchup3d.github.io/app/",
-          "weightedScore": 759
-        },
-        {
-          "content": "介紹全新分群演算法 E-means，能在僅需傳統 k-means 十分之一的訓練輪次內達到更優異的表現，對機器學習效能優化具高度技術價值。",
-          "degraded": false,
+          "content": null,
+          "degraded": true,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "E-means: Outperforming k-means in one-tenth the epochs",
+          "sourceTitle": "Tracking Anthropic-discovered vulnerabilities",
           "sources": [
             "hn"
           ],
-          "title": "E-means 演算法：在十分之一訓練輪次內超越 k-means",
-          "url": "https://e-means.github.io/",
-          "weightedScore": 494
+          "title": "Tracking Anthropic-discovered vulnerabilities",
+          "url": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update",
+          "weightedScore": 447
         },
         {
-          "content": "藉由 Discord 桌面端重構的實際案例，探討原生技術與資源耗費較低的框架在現代作業系統中的效能優勢，對桌面應用軟體工程架構深具啟發。",
-          "degraded": false,
-          "domain": "general",
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Locating the source of a mysterious beep",
+          "sources": [
+            "hn",
+            "simonwillison"
+          ],
+          "title": "Locating the source of a mysterious beep",
+          "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+          "weightedScore": 430
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Every Windows 11 app should kill Electron, and Discord just showed why",
+          "sourceTitle": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
           "sources": [
             "hn"
           ],
-          "title": "為何所有 Windows 11 應用程式都該捨棄 Electron 框架",
-          "url": "https://www.windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in/",
-          "weightedScore": 480
+          "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+          "url": "https://github.com/GoogleChrome/modern-web-guidance",
+          "weightedScore": 423
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Gemini 4 Carbon is now available",
+          "sources": [
+            "deepmind-blog",
+            "hn"
+          ],
+          "title": "Gemini 4 Carbon is now available",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+          "weightedScore": 391
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far",
+          "sources": [
+            "hn"
+          ],
+          "title": "Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far",
+          "url": "https://artificialanalysis.ai/models/claude-fable-5-2",
+          "weightedScore": 379
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "United Airlines bans AI agents from booking flights on behalf of travelers",
+          "sources": [
+            "hn"
+          ],
+          "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
+          "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+          "weightedScore": 372
+        },
+        {
+          "content": null,
+          "degraded": true,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "How I'm fighting the AI brain fry",
+          "sources": [
+            "hn"
+          ],
+          "title": "How I'm fighting the AI brain fry",
+          "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry",
+          "weightedScore": 313
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "gh-nodejs",
-      "sources": [
-        "gh-nodejs"
-      ],
-      "url": "https://github.com/nodejs/node/releases/tag/v24.21.0"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "deepmind-blog",
-      "sources": [
-        "deepmind-blog"
-      ],
-      "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/turnstile-spin"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://swarmtraces.org/"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wr5ylm/42x_faster_prompt_lookup_drafting_in_llamacpp"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://ollaya.dev/"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wpvep4/qwengram08b_i_transferred_qwen38_flashnexts_ngram"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "lobsters-ai",
-      "sources": [
-        "lobsters-ai"
-      ],
-      "url": "https://machinelearning.apple.com/research/homomorphic-encryption"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/evaleval-aisi"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://go.dev/blog/simd-experiment"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-09-27T22:58:16.977Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://dawo.community/en"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-09-29T00:20:10.113Z",
@@ -6906,6 +6795,160 @@
       ],
       "title": "Every Windows 11 app should kill Electron, and Discord just showed why",
       "url": "https://windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "My AI agents found an unmapped Maya site?",
+      "url": "https://pietromiotti.com/latest/maya-site"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
+      "url": "https://thestateofai.com/news/goldman-sachs-claude-code-traders-bankers"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Goodbye Claude, hello Pi",
+      "url": "https://caleb.software/posts/claude-to-pi.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "deepmind-blog",
+        "hn"
+      ],
+      "title": "AlphaProof Code",
+      "url": "https://deepmind.google/blog/introducing-alphaproof-code"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "AI usage generates a fragile codebase",
+      "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "I'm not convinced the AI bubble exists",
+      "url": "https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Apple has new Mac app coming to make running local AI models easy",
+      "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-devops"
+      ],
+      "title": "A false smoke alarm almost drowned Jane Street's only NYC datacenter",
+      "url": "https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Tracking Anthropic-discovered vulnerabilities",
+      "url": "https://vulncheck.com/blog/anthropic-glasswing-november-update"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "simonwillison"
+      ],
+      "title": "Locating the source of a mysterious beep",
+      "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "deepmind-blog",
+        "hn"
+      ],
+      "title": "Gemini 4 Carbon is now available",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-2"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
+      "url": "https://cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-12T01:53:05.754Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "How I'm fighting the AI brain fry",
+      "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry"
     }
   ]
 }
