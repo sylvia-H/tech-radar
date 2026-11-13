@@ -474,115 +474,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-08T23:38:50.039Z",
-  "lastNewsPushAt": "2026-11-12T01:53:05.754Z",
+  "lastNewsPushAt": "2026-11-13T01:00:15.496Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-08T23:38:50.039Z",
       "summary": "本次新進 7 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 7 個與前後端 1 個，綜合榜 #1 為 vercel-labs/agent-desktop。"
     },
     "feed": [
-      {
-        "id": "repo:1331261687:new:2026-11-09",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "milind-soni/OpenMausBot 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/milind-soni/OpenMausBot"
-      },
-      {
-        "id": "repo:1446569267:new:2026-11-09",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "AtomIllusionistDwell/watson-username-footprint-finder 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/AtomIllusionistDwell/watson-username-footprint-finder"
-      },
-      {
-        "content": "資安研究指出，Anthropic 推出的命令列 AI 開發工具 Claude Code 在使用者啟用「Don't Ask Again」自動確認選項後，可能在未經審核的情況下將敏感憑證與密碼寫入並推送到公開程式庫，已在 GitHub 上偵測到 1,122 份公開檔案遭到洩漏。這項問題對廣大採用 AI 輔助終端指令的開發者構成重大警訊，顯示在賦予 AI 自動執行與寫入權限時，必須落實 .gitignore 與機密管理防護，避免敏感資訊意外公開。",
-        "id": "news:https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "Claude Code「不再詢問」選項傳出資安漏洞，導致逾千份 GitHub 公開檔案外洩密碼",
-        "type": "news",
-        "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again"
-      },
-      {
-        "content": "開源虛擬機工具 Lima 正式發布 v2.3 版本。新版本在 Windows 平台上透過主機運算系統（Host Compute System, HCS）原生啟動虛擬機，無需安裝額外依賴套件；同時在 Linux 環境新增 VMnet 網路支援，並引進了選單式文字終端使用者介面（TUI）。Lima 作為許多容器與開發生態系（如 Colima、Rancher Desktop）的核心底層，本次對 Windows 原生支援大幅簡化了跨平台開發環境的建置流程。",
-        "id": "news:https://cncf.io/blog/2026/11/08/lima-v2-3-native-on-windows-vmnet-on-linux-and-menu-tui",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "輕量級虛擬機工具 Lima v2.3 發布：原生支援 Windows、Linux 支援 VMnet 並新增選單 TUI",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/11/08/lima-v2-3-native-on-windows-vmnet-on-linux-and-menu-tui/"
-      },
-      {
-        "content": "Perplexity 宣布推出新功能「Teammates」，允許系統協調多個 AI 代理（Agents）分工處理複雜任務。該架構具備跨工作階段的記憶能力，能記住先前的執行進度與上下文；即使使用者關閉瀏覽器分頁，代理仍會在背景持續執行任務而無需額外 Prompt 提示。這項更新展示了 AI 代理從即時單輪問答邁向非同步、持續自主運作工作流程的重要進展。",
-        "id": "news:https://thenewstack.io/perplexity-teammates-agent-orchestration",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "Perplexity 推出 Teammates 多代理協作架構：支援分頁關閉後背景持續運作與跨工作階段記憶",
-        "type": "news",
-        "url": "https://thenewstack.io/perplexity-teammates-agent-orchestration/"
-      },
-      {
-        "content": "針對大語言模型在軟體安全弱點修復能力的評測基準 CWE-bench 正式推出 v2 版本。新版顯著提升了常見弱點列舉（CWE）的覆蓋面，並在測試案例品質與評測透明度上進行全面優化。對於正在研發或評估 AI 代碼安全審查、漏洞自動修復工具的工程團隊而言，該基準能提供更客觀、嚴謹的量化檢驗標準。",
-        "id": "news:https://huggingface.co/blog/cwe-bench",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "安全漏洞修復基準測試 CWE-bench v2 發布：擴大涵蓋範圍並提高評測品質與透明度",
-        "type": "news",
-        "url": "https://huggingface.co/blog/cwe-bench"
-      },
-      {
-        "content": "社群開源專案 Llama-modchip 展示了一種新型推論最佳化技術，能夠在完全不依賴獨立 GPU 的情況下，僅使用 64GB 一般系統 RAM 成功載入並執行高達 284B 參數量級的 DeepSeek 模型。這項技術透過記憶體對映與極限卸載策略，大幅降低了超大型開源模型在本地端部署與實驗的硬體門檻，為個人開發者與資源受限的團隊提供了極高參考價值的本地推論範例。",
-        "id": "news:https://github.com/synchopate/llama-modchip",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "Llama-modchip 開源實作：無需 GPU、在 64GB 記憶體上執行 284B DeepSeek 大模型",
-        "type": "news",
-        "url": "https://github.com/synchopate/llama-modchip"
-      },
-      {
-        "content": "本文深入剖析了 Anthropic 發布的模型上下文協定（Model Context Protocol, MCP）。MCP 旨在解決大型語言模型與多樣化資料庫、API 及開發工具整合時缺乏統一介面的痛點，提供標準化的客戶端與伺服器通訊架構。深入了解 MCP 的協定規範與實作細節，能幫助開發者以模組化方式構建 AI Agent 工具鏈，避免陷入針對不同供應商與 API 重複撰寫膠水代碼的困境。",
-        "id": "news:https://mcp-explained.com/",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "深入剖析模型上下文協定（MCP）：標準化 AI 代理與外部工具整合的架構解析",
-        "type": "news",
-        "url": "https://mcp-explained.com/"
-      },
-      {
-        "content": "隨著複雜產品測試持續產出失敗案例，全天候運作的自主 QA 代理在規模化過程面臨基礎架構瓶頸。本文總結了工程團隊將自主代理從單一團隊擴展支援 50 個團隊的實務經驗，詳細分析了從 Serverless 架構遷移至容器化基礎設施的決策框架。內容深入探討資源利用率、冷啟動延遲、執行時長限制與維運成本的權衡，對需大規模部署背景 AI 工作負載的 DevOps 與後端工程師具高度實用價值。",
-        "id": "news:https://thenewstack.io/scaling-autonomous-agents-framework",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "自主代理從單一團隊拓展至 50 組團隊的規模化架構：從 Serverless 遷移至容器的決策框架",
-        "type": "news",
-        "url": "https://thenewstack.io/scaling-autonomous-agents-framework/"
-      },
-      {
-        "content": "本文深入探討自主 AI 代理（Agent）記憶系統的核心架構元件，將其拆解為工作記憶（Working Memory）、短長期持久化儲存、語意檢索與情境更新機制。文章系統性地分析了不同記憶層級在面對多輪對話、工具呼叫與複雜任務規劃時的實作挑戰，為正在設計與建構具備持續學習和跨會話記憶能力的 AI 應用工程師提供了清晰的架構指引。",
-        "id": "news:https://anthropic.com/research/components-of-agent-memory",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "解析 AI 代理記憶架構的核心元件：工作記憶、長期儲存與狀態檢索機制",
-        "type": "news",
-        "url": "https://www.anthropic.com/research/components-of-agent-memory"
-      },
-      {
-        "content": "MaxxBench 發布深入評測與分析，對近期多個 AI 程式代理在 DeepSWE 基準測試上所取得的高分提出嚴格檢視與質疑。分析探討了基準測試中可能存在的資料外洩、測試集過擬合以及評估指標與真實軟體開發能力脫節等問題。對於仰賴開源評測指標挑選 AI 程式設計工具與編程模型的開發者來說，該分析提醒了單一 Benchmark 分數的盲點與客觀驗證的重要性。",
-        "id": "news:https://maxxbench.unlap.ai/research/why-maxxbench",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "質疑 DeepSWE 跑分真實性：MaxxBench 深入檢驗 AI 軟體工程基準測試的有效性",
-        "type": "news",
-        "url": "https://maxxbench.unlap.ai/research/why-maxxbench/"
-      },
-      {
-        "content": "Asahi Linux 專案團隊發布最新進展報告，展示在 Apple Silicon 晶片上推進 Linux 核心支援的關鍵里程碑。報告涵蓋了最新 Linux 核心版本的適配工作、GPU 驅動程式逆向工程與上游整合進度、音訊及電源管理子系統的改善。這項進展不僅讓 Linux 在 ARM 架構 Mac 硬體上的實用性大幅提升，也為開源社群對現代 ARM SoC 的架構理解與驅動開發提供了極為寶貴的第一手技術參考。",
-        "id": "news:https://asahilinux.org/2026/11/progress-report-7-3",
-        "publishedAt": "2026-11-08T23:38:50.039Z",
-        "title": "Asahi Linux 公布最新開發進展：推進 Linux 7.3 支援並深化 Apple Silicon 硬體驅動整合",
-        "type": "news",
-        "url": "https://asahilinux.org/2026/11/progress-report-7-3/"
-      },
-      {
-        "content": "Anthropic 正式推出最新旗艦模型 Claude Fable 5.2 與 Mythos 5.2。新版本在程式碼編寫與複雜多步驟推理任務上表現顯著提升，在 Artificial Analysis 基準評測中取得 65 分的高分，同時 Anthropic 亦調降了使用費率。此外，Claude Fable 5.2 已同步在 GitHub Copilot 正式開放（GA），支援開發者在大型專案中進行深度的程式碼撰寫與重構。對開發者而言，新模型不僅大幅強化了 AI 輔助編程的能力上限，也帶來更高的性價比與直接的 IDE 整合支援。",
-        "id": "news:https://anthropic.com/claude-fable-and-mythos-5-2",
-        "publishedAt": "2026-11-10T02:40:05.287Z",
-        "title": "Anthropic 發表新一代旗艦模型 Claude Fable 5.2 與 Mythos 5.2",
-        "type": "news",
-        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
-      },
       {
         "content": "Google 在發表第八代 TPU 的同時，同步推出了開源軟體系統 TPU Sync。該系統旨在透過優化硬體同步機制與推論排程，大幅減少大規模 AI 模型在 TPU 叢集上的推論延遲，Google 宣稱延遲降幅最高可超過 90%。對從事大型語言模型部署、推論服務維運與雲端 AI 架構設計的工程師而言，TPU Sync 提供了在不更換底層模型的情況下顯著提升高併發推論吞吐量與降低響應延遲的新解法，也是評估 Google Cloud AI 基礎設施效能的重要考量依據。",
         "id": "news:https://thenewstack.io/google-tpu-sync-inference",
@@ -878,346 +776,303 @@
         "title": "How I'm fighting the AI brain fry",
         "type": "news",
         "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry"
+      },
+      {
+        "content": "Google 發布全新的 Gemini Decisions API，支援開發者在應用程式中整合更強大的決策與推理能力，提升複雜任務的自動化處理水準。",
+        "id": "news:https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "Gemini Decisions API 發布",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
+      },
+      {
+        "content": "Google 正式推出 Gemini 4 Hydrogen 模型，專為高效能與複雜推理任務設計，協助開發者在各類應用場景中獲得更快速的響應與準確度。",
+        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "Gemini 4 Hydrogen 模型正式推出",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+      },
+      {
+        "content": "Google 最新模型 Gemini 4 Carbon 已在 GitHub Copilot 中全面可用，專為複雜程式碼編寫、代理與推理任務設計，並著重於安全的程式碼生成。",
+        "id": "news:https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "Gemini 4 Carbon 現已在 GitHub Copilot 中全面可用",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot"
+      },
+      {
+        "content": "Node.js 釋出 27.0.0-alpha.0.1.0 Alpha 版本，帶來多項重要變更，包含 child_process 新增 subprocess.timedOut、crypto 模組強化 X.509 檢查與產生支援，以及 dns 模組合併相同並發查詢請求。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.1.0",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "Node.js 27.0.0-alpha.0.1.0 Alpha 版本釋出",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.1.0"
+      },
+      {
+        "content": "Node.js 發布版本 26.13.1 'Lithium' 與 24.22.3 'Krypton' 兩款長期支援版本的安全性更新，修復多項高風險漏洞，包含 http2 標頭釋放、tls/http 空寫入防護與 mTLS 重啟停用等問題。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v26.13.1",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "Node.js 發布 26.13.1 與 24.22.3 LTS 安全更新",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v26.13.1"
+      },
+      {
+        "content": "微軟 365 雲端服務傳出服務降級與中斷事故，影響全球多地用戶與企業依賴的相關雲端協作及 API 運作，相關修復作業正在進行中。",
+        "id": "news:https://status.cloud.microsoft/",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "Microsoft 365 發生服務降級與中斷事故",
+        "type": "news",
+        "url": "https://status.cloud.microsoft/"
+      },
+      {
+        "content": "Google 推出 Gemini 4 程式碼代理的新系統，支援在任務執行途中自動切換合適模型，使整體工作完成速度提升 19%。",
+        "id": "news:https://thenewstack.io/gemini-4-hydrogen-orchestrator",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "Google Gemini 4 支援任務中動態切換模型並提升效率",
+        "type": "news",
+        "url": "https://thenewstack.io/gemini-4-hydrogen-orchestrator/"
+      },
+      {
+        "content": "探討如何透過更快速的檢索技術來優化 RAG（檢索增強生成）系統，降低延遲並提升檢索準確度，對建構高效能 AI 知識庫具有實作參考價值。",
+        "id": "news:https://machinelearning.apple.com/research/faster-retrieval",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "RAG 檢索效能優化技術深度解析",
+        "type": "news",
+        "url": "https://machinelearning.apple.com/research/faster-retrieval"
+      },
+      {
+        "content": "GitHub 官方發布關於代理技能的實用指南，探討如何將可重複的工程工作封裝於檔案中供團隊審查與重複使用，同時維持主機端特定的環境與權限。",
+        "id": "news:https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "跨代理重複使用工程工作的實用指南",
+        "type": "news",
+        "url": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/"
+      },
+      {
+        "content": "深入探討分散式 AI 訓練工作負載在 Kubernetes 中面臨的複雜調度需求，分析如何透過群組調度和拓撲感知放置克服原生調度器的不足。",
+        "id": "news:https://cncf.io/blog/2026/11/12/gang-scheduling-and-topology-aware-placement-for-ai-training-in-kubernetes",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "Kubernetes AI 訓練的分組調度與拓撲感知放置",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/11/12/gang-scheduling-and-topology-aware-placement-for-ai-training-in-kubernetes/"
+      },
+      {
+        "content": "Cloudflare 技術團隊撰文介紹其在實驗性一致性服務中採用未曾大規模部署的新演算法 QuePaxa 的原因與運作原理，提供分散式系統架構設計的實務參考。",
+        "id": "news:https://blog.cloudflare.com/choosing-quepaxa",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "Cloudflare 選擇採用罕見的一致性演算法 QuePaxa",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/choosing-quepaxa/"
+      },
+      {
+        "content": "針對 GitHub Actions 工作流程的安全性提供實用防護建議與鎖定機制，協助開發團隊避免供應鏈攻擊與權限濫用風險。",
+        "id": "news:https://hugovk.dev/blog/2026/lock-github-actions",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "GitHub Actions 安全加固最佳實踐指南",
+        "type": "news",
+        "url": "https://hugovk.dev/blog/2026/lock-github-actions/"
+      },
+      {
+        "content": "3D 創作與開發工具 Blender 5.3 正式釋出，本次更新加入對 Gaussian Splat 的支援，提供開發者與創作者更強大的 3D 渲染與處理能力。",
+        "id": "news:https://blender.org/download/releases/5-3",
+        "publishedAt": "2026-11-13T01:00:15.496Z",
+        "title": "Blender 5.3 釋出並加入 Gaussian Splat 支援",
+        "type": "news",
+        "url": "https://www.blender.org/download/releases/5-3/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-12T01:53:05.754Z",
+      "generatedAt": "2026-11-13T01:00:15.496Z",
       "items": [
         {
-          "content": null,
-          "degraded": true,
+          "content": "Google 發布全新的 Gemini Decisions API，支援開發者在應用程式中整合更強大的決策與推理能力，提升複雜任務的自動化處理水準。",
+          "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "My AI agents found an unmapped Maya site?",
+          "sourceTitle": "Gemini Decisions API",
           "sources": [
             "hn"
           ],
-          "title": "My AI agents found an unmapped Maya site?",
-          "url": "https://pietromiotti.com/latest/maya-site",
-          "weightedScore": 928
+          "title": "Gemini Decisions API 發布",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+          "weightedScore": 553
         },
         {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Goldman Sachs is pulling Claude Code from its bankers and traders",
-          "sources": [
-            "hn"
-          ],
-          "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
-          "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
-          "weightedScore": 901
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Goodbye Claude, hello Pi",
-          "sources": [
-            "hn"
-          ],
-          "title": "Goodbye Claude, hello Pi",
-          "url": "https://caleb.software/posts/claude-to-pi.html",
-          "weightedScore": 821
-        },
-        {
-          "content": null,
-          "degraded": true,
+          "content": "Google 正式推出 Gemini 4 Hydrogen 模型，專為高效能與複雜推理任務設計，協助開發者在各類應用場景中獲得更快速的響應與準確度。",
+          "degraded": false,
           "domain": "ai",
           "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "AlphaProof Code",
+          "sourceTitle": "Gemini 4 Hydrogen",
           "sources": [
             "deepmind-blog",
             "hn"
           ],
-          "title": "AlphaProof Code",
-          "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
-          "weightedScore": 769
+          "title": "Gemini 4 Hydrogen 模型正式推出",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+          "weightedScore": 552
         },
         {
-          "content": null,
-          "degraded": true,
+          "content": "Google 最新模型 Gemini 4 Carbon 已在 GitHub Copilot 中全面可用，專為複雜程式碼編寫、代理與推理任務設計，並著重於安全的程式碼生成。",
+          "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Gemini 4 Carbon in GitHub Copilot",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "Gemini 4 Carbon 現已在 GitHub Copilot 中全面可用",
+          "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot",
+          "weightedScore": 100
+        },
+        {
+          "content": "Node.js 釋出 27.0.0-alpha.0.1.0 Alpha 版本，帶來多項重要變更，包含 child_process 新增 subprocess.timedOut、crypto 模組強化 X.509 檢查與產生支援，以及 dns 模組合併相同並發查詢請求。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "gh-nodejs",
+          "sourceTitle": "2026-11-12, Version 27.0.0-alpha.0.1.0 (Alpha), @aduh95",
+          "sources": [
+            "gh-nodejs"
+          ],
+          "title": "Node.js 27.0.0-alpha.0.1.0 Alpha 版本釋出",
+          "url": "https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.1.0",
+          "weightedScore": 100
+        },
+        {
+          "content": "Node.js 發布版本 26.13.1 'Lithium' 與 24.22.3 'Krypton' 兩款長期支援版本的安全性更新，修復多項高風險漏洞，包含 http2 標頭釋放、tls/http 空寫入防護與 mTLS 重啟停用等問題。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "gh-nodejs",
+          "sourceTitle": "2026-11-11, Version 26.13.1 'Lithium' (LTS), @aduh95",
+          "sources": [
+            "gh-nodejs"
+          ],
+          "title": "Node.js 發布 26.13.1 與 24.22.3 LTS 安全更新",
+          "url": "https://github.com/nodejs/node/releases/tag/v26.13.1",
+          "weightedScore": 100
+        },
+        {
+          "content": "微軟 365 雲端服務傳出服務降級與中斷事故，影響全球多地用戶與企業依賴的相關雲端協作及 API 運作，相關修復作業正在進行中。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "AI usage generates a fragile codebase",
+          "sourceTitle": "Service degradation on Microsoft 365",
           "sources": [
             "hn"
           ],
-          "title": "AI usage generates a fragile codebase",
-          "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
-          "weightedScore": 631
+          "title": "Microsoft 365 發生服務降級與中斷事故",
+          "url": "https://status.cloud.microsoft/",
+          "weightedScore": 468
         },
         {
-          "content": null,
-          "degraded": true,
+          "content": "Google 推出 Gemini 4 程式碼代理的新系統，支援在任務執行途中自動切換合適模型，使整體工作完成速度提升 19%。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Google’s Gemini 4 coding agent now switches models mid-task — and finishes 19% faster",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Google Gemini 4 支援任務中動態切換模型並提升效率",
+          "url": "https://thenewstack.io/gemini-4-hydrogen-orchestrator/",
+          "weightedScore": 50
+        },
+        {
+          "content": "探討如何透過更快速的檢索技術來優化 RAG（檢索增強生成）系統，降低延遲並提升檢索準確度，對建構高效能 AI 知識庫具有實作參考價值。",
+          "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "I'm not convinced the AI bubble exists",
+          "sourceTitle": "Faster Retrieval for Better, More Efficient RAG",
           "sources": [
             "hn"
           ],
-          "title": "I'm not convinced the AI bubble exists",
-          "url": "https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html#im-not-convinced-the-ai-bubble-exists",
-          "weightedScore": 570
+          "title": "RAG 檢索效能優化技術深度解析",
+          "url": "https://machinelearning.apple.com/research/faster-retrieval",
+          "weightedScore": 232
         },
         {
-          "content": null,
-          "degraded": true,
+          "content": "GitHub 官方發布關於代理技能的實用指南，探討如何將可重複的工程工作封裝於檔案中供團隊審查與重複使用，同時維持主機端特定的環境與權限。",
+          "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Apple has new Mac app coming to make running local AI models easy",
+          "sourceId": "github-blog-ai-ml",
+          "sourceTitle": "Build once, run on any agent: A practical guide to agent skills",
           "sources": [
-            "hn"
+            "github-blog-ai-ml"
           ],
-          "title": "Apple has new Mac app coming to make running local AI models easy",
-          "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/",
-          "weightedScore": 517
+          "title": "跨代理重複使用工程工作的實用指南",
+          "url": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/",
+          "weightedScore": 100
         },
         {
-          "content": null,
-          "degraded": true,
+          "content": "深入探討分散式 AI 訓練工作負載在 Kubernetes 中面臨的複雜調度需求，分析如何透過群組調度和拓撲感知放置克服原生調度器的不足。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sourceTitle": "Gang scheduling and topology-aware placement for AI training in Kubernetes",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "Kubernetes AI 訓練的分組調度與拓撲感知放置",
+          "url": "https://www.cncf.io/blog/2026/11/12/gang-scheduling-and-topology-aware-placement-for-ai-training-in-kubernetes/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 技術團隊撰文介紹其在實驗性一致性服務中採用未曾大規模部署的新演算法 QuePaxa 的原因與運作原理，提供分散式系統架構設計的實務參考。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Choosing QuePaxa, an unusual consensus algorithm",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare 選擇採用罕見的一致性演算法 QuePaxa",
+          "url": "https://blog.cloudflare.com/choosing-quepaxa/",
+          "weightedScore": 50
+        },
+        {
+          "content": "針對 GitHub Actions 工作流程的安全性提供實用防護建議與鎖定機制，協助開發團隊避免供應鏈攻擊與權限濫用風險。",
+          "degraded": false,
           "domain": "devops",
           "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "A false smoke alarm almost drowned Jane Street's only NYC datacenter",
+          "sourceTitle": "Lock Your GitHub Actions",
           "sources": [
             "hn",
             "lobsters-devops"
           ],
-          "title": "A false smoke alarm almost drowned Jane Street's only NYC datacenter",
-          "url": "https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/",
-          "weightedScore": 511
+          "title": "GitHub Actions 安全加固最佳實踐指南",
+          "url": "https://hugovk.dev/blog/2026/lock-github-actions/",
+          "weightedScore": 426
         },
         {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
+          "content": "3D 創作與開發工具 Blender 5.3 正式釋出，本次更新加入對 Gaussian Splat 的支援，提供開發者與創作者更強大的 3D 渲染與處理能力。",
+          "degraded": false,
+          "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Tracking Anthropic-discovered vulnerabilities",
+          "sourceTitle": "Blender 5.3 released with Gaussian Splat support",
           "sources": [
             "hn"
           ],
-          "title": "Tracking Anthropic-discovered vulnerabilities",
-          "url": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update",
-          "weightedScore": 447
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Locating the source of a mysterious beep",
-          "sources": [
-            "hn",
-            "simonwillison"
-          ],
-          "title": "Locating the source of a mysterious beep",
-          "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
-          "weightedScore": 430
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-          "sources": [
-            "hn"
-          ],
-          "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-          "url": "https://github.com/GoogleChrome/modern-web-guidance",
-          "weightedScore": 423
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Gemini 4 Carbon is now available",
-          "sources": [
-            "deepmind-blog",
-            "hn"
-          ],
-          "title": "Gemini 4 Carbon is now available",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
-          "weightedScore": 391
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far",
-          "sources": [
-            "hn"
-          ],
-          "title": "Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far",
-          "url": "https://artificialanalysis.ai/models/claude-fable-5-2",
-          "weightedScore": 379
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "United Airlines bans AI agents from booking flights on behalf of travelers",
-          "sources": [
-            "hn"
-          ],
-          "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
-          "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
-          "weightedScore": 372
-        },
-        {
-          "content": null,
-          "degraded": true,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "How I'm fighting the AI brain fry",
-          "sources": [
-            "hn"
-          ],
-          "title": "How I'm fighting the AI brain fry",
-          "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry",
-          "weightedScore": 313
+          "title": "Blender 5.3 釋出並加入 Gaussian Splat 支援",
+          "url": "https://www.blender.org/download/releases/5-3/",
+          "weightedScore": 495
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1ws9ydg/nvidia_shipped_openshell_an_open_source_sandbox"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/cloudflare-cf-cli-launch"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/openai-self-replicating-injections"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/vinext-nextjs-on-vite"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "gh-typescript",
-      "sources": [
-        "gh-typescript"
-      ],
-      "url": "https://github.com/microsoft/TypeScript/releases/tag/vscode-typescript%2Fv1.0.0"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://bloomberg.com/news/articles/2026-09-25/microsoft-abandons-personal-ai-chatbot-race-with-copilot-reboot"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/Hcompany/holo4"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://antonz.org/go-concurrency-distilled"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://tangled.org/yanndegat.tngl.sh/drawgent"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://github.com/reladraw/reladraw"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-29T00:20:10.113Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/claude-sonnet-cyber-safeguards"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-09-29T23:39:12.097Z",
@@ -6949,6 +6804,138 @@
       ],
       "title": "How I'm fighting the AI brain fry",
       "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Gemini Decisions API",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "hn",
+      "sources": [
+        "deepmind-blog",
+        "hn"
+      ],
+      "title": "Gemini 4 Hydrogen",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Gemini 4 Carbon in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "title": "2026-11-12, Version 27.0.0-alpha.0.1.0 (Alpha), @aduh95",
+      "url": "https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.1.0"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "title": "2026-11-11, Version 26.13.1 'Lithium' (LTS), @aduh95",
+      "url": "https://github.com/nodejs/node/releases/tag/v26.13.1"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Service degradation on Microsoft 365",
+      "url": "https://status.cloud.microsoft/"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Google’s Gemini 4 coding agent now switches models mid-task — and finishes 19% faster",
+      "url": "https://thenewstack.io/gemini-4-hydrogen-orchestrator"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Faster Retrieval for Better, More Efficient RAG",
+      "url": "https://machinelearning.apple.com/research/faster-retrieval"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "github-blog-ai-ml",
+      "sources": [
+        "github-blog-ai-ml"
+      ],
+      "title": "Build once, run on any agent: A practical guide to agent skills",
+      "url": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "Gang scheduling and topology-aware placement for AI training in Kubernetes",
+      "url": "https://cncf.io/blog/2026/11/12/gang-scheduling-and-topology-aware-placement-for-ai-training-in-kubernetes"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Choosing QuePaxa, an unusual consensus algorithm",
+      "url": "https://blog.cloudflare.com/choosing-quepaxa"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-devops"
+      ],
+      "title": "Lock Your GitHub Actions",
+      "url": "https://hugovk.dev/blog/2026/lock-github-actions"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-13T01:00:15.496Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Blender 5.3 released with Gaussian Splat support",
+      "url": "https://blender.org/download/releases/5-3"
     }
   ]
 }
