@@ -474,125 +474,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-08T23:38:50.039Z",
-  "lastNewsPushAt": "2026-11-13T01:00:15.496Z",
+  "lastNewsPushAt": "2026-11-14T00:50:49.972Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-08T23:38:50.039Z",
       "summary": "本次新進 7 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 7 個與前後端 1 個，綜合榜 #1 為 vercel-labs/agent-desktop。"
     },
     "feed": [
-      {
-        "content": "Google 在發表第八代 TPU 的同時，同步推出了開源軟體系統 TPU Sync。該系統旨在透過優化硬體同步機制與推論排程，大幅減少大規模 AI 模型在 TPU 叢集上的推論延遲，Google 宣稱延遲降幅最高可超過 90%。對從事大型語言模型部署、推論服務維運與雲端 AI 架構設計的工程師而言，TPU Sync 提供了在不更換底層模型的情況下顯著提升高併發推論吞吐量與降低響應延遲的新解法，也是評估 Google Cloud AI 基礎設施效能的重要考量依據。",
-        "id": "news:https://thenewstack.io/google-tpu-sync-inference",
-        "publishedAt": "2026-11-10T02:40:05.287Z",
-        "title": "Google 開源 TPU Sync 推論加速系統，號稱降低推論延遲達 90%",
-        "type": "news",
-        "url": "https://thenewstack.io/google-tpu-sync-inference/"
-      },
-      {
-        "content": "GitHub 發布 Copilot 每週更新，正式將 Copilot 導入 JetBrains Air 以及 Xcode 的 Coding Assistant，進一步擴展對 iOS 與 JetBrains 生態系開發者的原生 IDE 支援。本次更新同時強化了 Pull Request 管理、全域設定調整以及 Agent 會話管理功能，並加入「Agent Merge」等協助自動化合併與衝突處理的能力。這項更新讓跨平台與行動端開發團隊能夠在原本習慣的開發環境中直接享用 Copilot Agent 工具，進一步降低在不同工具鏈間切換的摩擦成本。",
-        "id": "news:https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
-        "publishedAt": "2026-11-10T02:40:05.287Z",
-        "title": "GitHub Copilot 更新發布：支援 Xcode 與 JetBrains Air 並強化 PR 管理",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2"
-      },
-      {
-        "content": "微軟 Outlook.com 宣布實施更嚴格的電子郵件安全策略，將直接拒收任何未配置 DMARC（網域型郵件驗證報告與一致性）驗證機制的網域來信。這意味著若開發團隊或維運人員未在其寄件網域中正確設定 SPF、DKIM 與 DMARC 紀錄，所有發往 Outlook.com、Hotmail 等微軟消費級信箱的系統通知信、註冊驗證碼與交易型郵件都將遭到退件。開發者與維運團隊應立即檢查現有網域的 DNS 驗證設定與 DMARC 策略，避免因驗證缺失導致核心業務郵件無法送達用戶。",
-        "id": "news:https://mailroute.net/blog/outlook-rejecting-email-without-dmarc",
-        "publishedAt": "2026-11-10T02:40:05.287Z",
-        "title": "微軟 Outlook.com 開始全面拒收未配置 DMARC 的網域郵件",
-        "type": "news",
-        "url": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc"
-      },
-      {
-        "content": "最新消息指出，當用戶將 Google Gemini 連結至個人 Google 雲端硬碟（Drive）與 Gmail 進行分析時，系統可能會將相關文件與郵件內容路由至外部人工標註員進行審閱與訓練。這項行為引發了嚴重的隱私與資料外洩疑慮。對於在產品或內部工作流程中使用 Gemini 擴充功能、或倚賴 Google Workspace 處理敏感資料的開發團隊與企業而言，這項發現敲響了合規警鐘；開發者與企業架構師必須重新檢視存取權限與資料授權條款，避免未經授權將機密程式碼、客戶個資或敏感通訊暴露於第三方人工審查流程中。",
-        "id": "news:https://github.com/thisisme6598/gemini_files",
-        "publishedAt": "2026-11-10T02:40:05.287Z",
-        "title": "Google Gemini 遭曝將用戶個人雲端硬碟與信箱內容轉發給人工標註員審查",
-        "type": "news",
-        "url": "https://github.com/thisisme6598/gemini_files/"
-      },
-      {
-        "content": "隨著雲原生系統與 AI Agent 的普及，應用程式經常需要執行非開發團隊撰寫的程式碼——例如 AI Agent 即時生成的 Python 腳本或使用者上傳的外掛。微軟與開源社群推動的 Hyperlight 專案探討了如何在輕量級 Hypervisor 隔離的微型虛擬機器（micro-VM）中運行 Linux 應用。相較於傳統重型 VM 或容易發生容器逃逸的 Docker 隔離，Hyperlight 提供了極低延遲與極小記憶體開銷的微虛擬化邊界，為開發者在雲原生環境中建構高安全性、沙箱化執行 AI 生成程式碼的架構提供了可行的實踐範式。",
-        "id": "news:https://cncf.io/blog/2026/11/09/run-linux-applications-in-hypervisor-isolated-micro-vms-with-hyperlight",
-        "publishedAt": "2026-11-10T02:40:05.287Z",
-        "title": "透過 Hyperlight 在 Hypervisor 隔離微型虛擬機中安全執行非信任 AI 程式碼",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/11/09/run-linux-applications-in-hypervisor-isolated-micro-vms-with-hyperlight/"
-      },
-      {
-        "content": "OpenAI 公開了其內部基礎設施「Control Room」的架構細節。該系統作為核心控制平面，能夠在 OpenAI 跨資料中心的研究叢集上全面追蹤所有模型訓練與推論工作負載；一旦偵測到安全性威脅、漏洞利用或異常行為，系統能夠以極短延遲迅速強制終止相關任務。這篇文章展示了在超大規模 AI 叢集下如何進行集中化負載治理、資源隔離與應急阻斷。對於負責維運大型機器學習叢集、分散式排程架構與 AI 安全治理的工程師而言，提供了極具價值的實務設計參考。",
-        "id": "news:https://openai.com/index/control-room",
-        "publishedAt": "2026-11-10T02:40:05.287Z",
-        "title": "OpenAI 揭秘 Control Room：集中監控並即時終止異常模型工作負載的架構實踐",
-        "type": "news",
-        "url": "https://openai.com/index/control-room"
-      },
-      {
-        "content": "安全研究發現，OpenAI 的 ChatGPT 桌面端應用在執行遠端連接或特定任務時，會預設將用戶本地的 SSH Agent（SSH_AUTH_SOCK）轉發至遠端機器。這項機制可能使本機存放的 SSH 私鑰授權在缺乏透明提示與嚴格隔離的情況下暴露給遠端環境，構成潛在的憑證被劫持與橫向移動風險。對頻繁使用終端機、管理伺服器金鑰的軟體工程師而言，這是一項不可忽視的資安隱患；開發者若在工作機上使用 ChatGPT 桌面客戶端，應儘速檢查 SSH Agent 轉發設定，或暫時隔離金鑰存取權限以防憑證外洩。",
-        "id": "news:https://news.ycombinator.com/item?id=50422628",
-        "publishedAt": "2026-11-10T02:40:05.287Z",
-        "title": "ChatGPT 桌面端遭揭露會自動轉發本地 SSH Agent 憑證至遠端環境",
-        "type": "news",
-        "url": "https://news.ycombinator.com/item?id=50422628"
-      },
-      {
-        "content": "資安研究人員公布了一項嚴重的車聯網平台漏洞，展示了如何透過特定汽車品牌車聯網雲端 API 的身分驗證與授權缺失，在全球範圍內遠端發送指令解鎖該品牌的任何連網車輛。該漏洞暴露出 API 缺乏嚴格的權限查核（BOLA/IDOR）與微服務通訊邊界驗證等經典軟體工程缺陷。此案例對後端、雲端與物聯網（IoT）開發者具有高度警示意義：在設計對接實體設備的遠端控制 API 時，必須實施嚴格的多因素授權、端到端身分綁定與異常頻率限制，防止因邏輯瑕疵造成災難性實體安全風險。",
-        "id": "news:https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world",
-        "publishedAt": "2026-11-10T02:40:05.287Z",
-        "title": "安全研究員揭露重大車聯網 API 漏洞：可於全球遠端解鎖特定品牌所有車輛",
-        "type": "news",
-        "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/"
-      },
-      {
-        "content": "Anthropic 最新推出的 Fable 5.2 模型已在 GitHub Copilot 中全面推出，支援開發者在大型程式碼庫中執行複雜的多步驟編碼任務，提升開發效率。",
-        "id": "news:https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "Anthropic Claude Fable 5.2 模型現已正式支援 GitHub Copilot",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot"
-      },
-      {
-        "content": "企業級 GitHub Apps 現在可以呼叫企業層級的 Copilot 授權管理 API，讓管理者精確控制哪些使用者與團隊能被指派 Copilot 授權，提升企業協作與權限控管能力。",
-        "id": "news:https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "GitHub App 支援企業級 Copilot 授權管理 API",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management"
-      },
-      {
-        "content": "MiniMax 正式發布基於 H3 架構建構的開源圖像模型 H3-Image，為開發者提供全新的開源視覺生成工具選擇。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xso1ie/minimax_h3image_released_an_openweight_image",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "MiniMax 發布基於 H3 架構的開源圖像模型 H3-Image",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xso1ie/minimax_h3image_released_an_openweight_image/"
-      },
-      {
-        "content": "用於 GitHub Copilot CLI 的微軟 C++ 語言伺服器現在內建並自動執行 MSBuild 編譯指令擷取工具，代理程式無需再手動探索與執行建構設定。",
-        "id": "news:https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "C++ 語言伺服器現已自動設定 MSBuild 編譯建構",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds"
-      },
-      {
-        "content": "Google 向付費開發者正式推出全新前沿模型 Gemini 4 Carbon，其定位高於 Gemini 4 Argon，可處理複雜的推理任務並加速技術驗證。",
-        "id": "news:https://thenewstack.io/gemini-4-carbon-swarm",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "Google 向付費開發者釋出 Gemini 4 Carbon 模型",
-        "type": "news",
-        "url": "https://thenewstack.io/gemini-4-carbon-swarm/"
-      },
-      {
-        "content": "SpaceXSI 默默將 Grok API 的 AI 生成文字數位浮水印機制預設改為關閉，改變了開發者透過 API 生成文字時的預設行為與隱私處理方式。",
-        "id": "news:https://thenewstack.io/grok-api-watermarking-default",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "Grok API 預設將文字數位浮水印功能關閉",
-        "type": "news",
-        "url": "https://thenewstack.io/grok-api-watermarking-default/"
-      },
       {
         "content": "雲端 AI 服務 Fireworks AI 遭遇安全漏洞，進一步波及 Notion 及其平台客戶，提醒開發者加強對第三方 AI 服務供應鏈的安全防護與審查。",
         "id": "news:https://notion.com/help/security-incident-involving-a-third-party-ai-vendor",
@@ -880,335 +768,323 @@
         "title": "Blender 5.3 釋出並加入 Gaussian Splat 支援",
         "type": "news",
         "url": "https://www.blender.org/download/releases/5-3/"
+      },
+      {
+        "content": "著名開源本地 LLM 推論專案 llama.cpp 正式發布 v1.0 版本。官方團隊強調未來將持續支援各大運算平台與新模型架構，同時確保專案維持輕量與精簡，以支援廣大基於其構建的下游應用。此外，團隊亦推出基於 llama.cpp 的桌面端應用程式，進一步降低一般開發者在本地端運行 AI 模型的門檻。這標誌著本地 LLM 開發基礎設施邁向成熟穩定階段。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xv8t2e/llamacpp_v10_is_here",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "本地推論框架 llama.cpp 正式釋出 v1.0.0 里程碑版本",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xv8t2e/llamacpp_v10_is_here/"
+      },
+      {
+        "content": "Anthropic 推出 Claude Managed Agents 的自託管版本，允許企業開發者在自己的基礎設施中部署與運行 AI 代理人工作流。然而官方要求嚴格的安全規範：一旦系統標記潛在的安全風險行為，管理者必須在 8 小時內介入處置。這項更新讓對資料隱私有高度合規要求的企業能自託管進階代理人系統，同時建立了 AI 代理人安全治理的全新營運標準。",
+        "id": "news:https://thenewstack.io/self-hosted-claude-managed-agents",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "Anthropic 開放企業自託管 Claude 託管代理人，附帶 8 小時安全響應規範",
+        "type": "news",
+        "url": "https://thenewstack.io/self-hosted-claude-managed-agents/"
+      },
+      {
+        "content": "OpenAI 正式發表 ChatGPT Wallet，旨在為 ChatGPT Work、Codex 等環境中的自主 AI 代理人提供安全完成線上採購與支付的能力。該機制在保有現行信用卡交易安全防護的基礎上，要求每一筆交易必須經過使用者明確審批。這為自動化代理人串接付費 API、雲端資源採購或電商交易提供了標準化且具備安全護欄的官方金融支付介面。",
+        "id": "news:https://openai.com/index/introducing-chatgpt-wallet",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "OpenAI 推出 ChatGPT Wallet，為自主代理人交易提供安全授權機制",
+        "type": "news",
+        "url": "https://openai.com/index/introducing-chatgpt-wallet"
+      },
+      {
+        "content": "Node.js 官方釋出 24.22.3（及 22.23.5）LTS 安全修補版本，緊急修復了多個高嚴重性漏洞（CVE-2026-123863 至 123866、CVE-2026-123872）。修復範圍涵蓋 HTTP/2 在串流移除時未釋放標頭、nghttp2 放棄串流檢測、通訊端寫入緩衝區保留，以及空寫入引發的巢狀解析器執行與無 session id 下 mTLS 恢復問題。建議所有生產環境後端服務儘速升級，以防禦記憶體洩漏與阻斷服務攻擊。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v24.22.3",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "Node.js 發布 LTS 安全更新，修復 HTTP/2 與 TLS 多項高風險漏洞",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v24.22.3"
+      },
+      {
+        "content": "GitHub 官方公告將於 2026 年 12 月 14 日在所有 GitHub Copilot 體驗中全面淘汰指定模型，影響範圍涵蓋 Copilot Chat、行內編輯、詢問與代理人模式，以及程式碼自動補全。官方提醒依賴特定模型輸出行為的團隊與企業開發者需提前評估遷移計畫，調整自訂工作流與設定，以避免模型下線後影響日常開發流程與自動化整合。",
+        "id": "news:https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "GitHub Copilot 宣布將於 12 月 14 日淘汰部分舊版 AI 模型",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december"
+      },
+      {
+        "content": "Anthropic 旗下核心服務包括 claude.ai 網頁介面、platform.claude.com 開發者 API 以及終端工具 Claude Code 出現錯誤率異常飆升的故障事件。此次服務中斷直接衝擊依賴 Claude API 的線上生產應用與開發者的輔助編程工作流，再度凸顯現代軟體架構深度依賴單一 AI 供應商時所面臨的單點故障風險，促使工程團隊思考多模型備援機制。",
+        "id": "news:https://status.claude.com/incidents/nn11wk485zfn",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "Anthropic 核心服務傳出故障，Claude API 與 Claude Code 均受波及",
+        "type": "news",
+        "url": "https://status.claude.com/incidents/nn11wk485zfn"
+      },
+      {
+        "content": "Cloudflare 正式推出 Spend Management 功能，開發者現在可以為 Cloudflare Workers 和 Durable Objects 主動設定支出上限（spending caps）與成本告警，後續將擴展至其他產品。Cloudflare 同步揭露其如何構建即時計量管線，將實際用量轉化為執行階段的限流決策。這項更新解決了無伺服器架構容易因流量暴衝或遞迴呼叫產生巨額帳單的隱患，提供可控的成本防護措施。",
+        "id": "news:https://blog.cloudflare.com/spend-management",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "Cloudflare 推出 Spend Management，支援 Workers 支出上限與預警",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/spend-management/"
+      },
+      {
+        "content": "Brave Search API 宣布正式支援基於 HTTP 402 支付協議的代理人自主支付機制（agentic payments）。這意味著自主運行的 AI Agent 不再需要預先綁定開發者的信用卡或月費 API Key，而能夠在發起搜尋請求時以機器對機器（M2M）的微額支付即時扣款完成交易。這為自主經濟架構與去中心化 AI 工具鏈的呼叫模式樹立了具體的落地範例。",
+        "id": "news:https://brave.com/blog/search-api-agentic-payments",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "Brave Search API 支援 x402 協議，開放 AI 代理人自主付費查詢",
+        "type": "news",
+        "url": "https://brave.com/blog/search-api-agentic-payments/"
+      },
+      {
+        "content": "團隊宣布將專為 AI 代理人打造的實驗性瀏覽器引擎 Kitesurf 正式開源。開發者可直接檢視原始碼、在本地環境運行，或直接部署至 Cloudflare Workers 上執行。傳統無頭瀏覽器資源消耗龐大且並非專為 LLM 視圖互動設計，Kitesurf 的輕量化與邊緣部署架構為需要執行網頁瀏覽、資料擷取與自動化表單互動的 AI Agent 提供了極具潛力的新基礎設施。",
+        "id": "news:https://blog.cloudflare.com/kitesurf-open-source",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "專為 AI 代理人設計的實驗性瀏覽器引擎 Kitesurf 正式開源",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/kitesurf-open-source/"
+      },
+      {
+        "content": "受到許多 JavaScript/TypeScript 開發者喜愛的輕量無伺服器腳本與 API 託管平台 Val Town 宣布將逐步結束營運。Val Town 過去以簡化小型雲端排程、Webhook 處理與原型 API 部署聞名。此項決策意味著所有在平台上運行的常駐工作與端點需要即刻安排遷移至其他 Serverless 平台，提醒開發者應隨時關注雲端依賴的永續性風險。",
+        "id": "news:https://blog.val.town/winding-down",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "輕量無伺服器腳本平台 Val Town 宣布停止營運，開發者須安排遷移",
+        "type": "news",
+        "url": "https://blog.val.town/winding-down"
+      },
+      {
+        "content": "深入分析開源 DeepSeek 編程代理人在主流編程基準測試中的非典型現象：該模型因習慣在修復問題時「順便清理無效程式碼」或進行常規重構等開發者普遍認可的最佳實務，反而在測試中被判定失敗並遭受扣分。這篇分析深入揭示了當前 AI 評測基準與現實工程實務之間的脫節問題，對正在微調程式碼模型或設計評估管線的 AI 工程師而言極具借鑑意義。",
+        "id": "news:https://thenewstack.io/deepseek-harness-cleanup-benchmark",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "寫法太乾淨反而被扣分？DeepSeek 編程代理人在評測中的代價分析",
+        "type": "news",
+        "url": "https://thenewstack.io/deepseek-harness-cleanup-benchmark/"
+      },
+      {
+        "content": "開發者分享如何突破硬體算力與記憶體瓶頸，將大型語言模型成功運行於低規格老舊設備與小型邊緣硬體上的工程實作。文章深入剖析極致量化技術、記憶體分頁調度、模型修剪與運算子核心優化，展示了如何在不依賴高階 GPU 的極端資源限制下，實現可用的模型推論速度。這對致力於終端離線 AI、IoT 智慧設備與邊緣運算的工程師提供了寶貴的實務技巧與底層架構思路。",
+        "id": "news:https://github.com/hyperionaidev/smolmaxxing",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "在老舊與邊緣設備上運行 LLM：底層推論最佳化實踐",
+        "type": "news",
+        "url": "https://github.com/hyperionaidev/smolmaxxing/"
+      },
+      {
+        "content": "本文深入探討如何透過 macOS 內建的硬體安全隔離區（Secure Enclave）產生並儲存 ED25519 或 ECDSA SSH 私鑰。透過將金鑰鎖定在安全晶片內部，即使主機作業系統遭惡意軟體入侵或記憶體被側錄，私鑰本身也無法被匯出或外洩，同時還可無縫整合 Touch ID 生物辨識授權。這為經常存取生產伺服器、Git 倉庫與雲端環境的工程師提供了免硬體金鑰的高強度開發安全實務。",
+        "id": "news:https://gatezh.com/posts/macos-secure-enclave-ssh-keys",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "利用 macOS 安全隔離區（Secure Enclave）保護 SSH 私鑰實踐",
+        "type": "news",
+        "url": "https://gatezh.com/posts/macos-secure-enclave-ssh-keys/"
+      },
+      {
+        "content": "社群深入檢視 Humble Bundle 因大量採用 AI 輔助編程而意外瓦解原有資安機制的案例。分析指出，開發團隊在快速推進功能時過度信任 AI 產生的程式碼，未能嚴格進行安全審查，導致權限驗證缺失、資料存取邏輯漏洞與邊界條件失效等嚴重安全破口。此案例為盲目追求 AI 開發效率的工程團隊敲響警鐘，強調即使由 AI 生成程式碼，架構設計、邊界檢查與嚴格的威脅建模仍然不可或缺。",
+        "id": "news:https://forums.spacebattles.com/threads/humble-bundle-just-completely-killed-most-of-their-security-through-vibecoding.1346295",
+        "publishedAt": "2026-11-14T00:50:49.972Z",
+        "title": "盲目依賴 AI 生成程式碼帶來的資安災難：以 Humble Bundle 漏洞為例",
+        "type": "news",
+        "url": "https://forums.spacebattles.com/threads/humble-bundle-just-completely-killed-most-of-their-security-through-vibecoding.1346295/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-13T01:00:15.496Z",
+      "generatedAt": "2026-11-14T00:50:49.972Z",
       "items": [
         {
-          "content": "Google 發布全新的 Gemini Decisions API，支援開發者在應用程式中整合更強大的決策與推理能力，提升複雜任務的自動化處理水準。",
+          "content": "著名開源本地 LLM 推論專案 llama.cpp 正式發布 v1.0 版本。官方團隊強調未來將持續支援各大運算平台與新模型架構，同時確保專案維持輕量與精簡，以支援廣大基於其構建的下游應用。此外，團隊亦推出基於 llama.cpp 的桌面端應用程式，進一步降低一般開發者在本地端運行 AI 模型的門檻。這標誌著本地 LLM 開發基礎設施邁向成熟穩定階段。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Gemini Decisions API",
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "llama.cpp v1.0 is here 🦙",
           "sources": [
-            "hn"
+            "reddit-localllama"
           ],
-          "title": "Gemini Decisions API 發布",
-          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
-          "weightedScore": 553
-        },
-        {
-          "content": "Google 正式推出 Gemini 4 Hydrogen 模型，專為高效能與複雜推理任務設計，協助開發者在各類應用場景中獲得更快速的響應與準確度。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Gemini 4 Hydrogen",
-          "sources": [
-            "deepmind-blog",
-            "hn"
-          ],
-          "title": "Gemini 4 Hydrogen 模型正式推出",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
-          "weightedScore": 552
-        },
-        {
-          "content": "Google 最新模型 Gemini 4 Carbon 已在 GitHub Copilot 中全面可用，專為複雜程式碼編寫、代理與推理任務設計，並著重於安全的程式碼生成。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Gemini 4 Carbon in GitHub Copilot",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "Gemini 4 Carbon 現已在 GitHub Copilot 中全面可用",
-          "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot",
+          "title": "本地推論框架 llama.cpp 正式釋出 v1.0.0 里程碑版本",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xv8t2e/llamacpp_v10_is_here/",
           "weightedScore": 100
         },
         {
-          "content": "Node.js 釋出 27.0.0-alpha.0.1.0 Alpha 版本，帶來多項重要變更，包含 child_process 新增 subprocess.timedOut、crypto 模組強化 X.509 檢查與產生支援，以及 dns 模組合併相同並發查詢請求。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sourceTitle": "2026-11-12, Version 27.0.0-alpha.0.1.0 (Alpha), @aduh95",
-          "sources": [
-            "gh-nodejs"
-          ],
-          "title": "Node.js 27.0.0-alpha.0.1.0 Alpha 版本釋出",
-          "url": "https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.1.0",
-          "weightedScore": 100
-        },
-        {
-          "content": "Node.js 發布版本 26.13.1 'Lithium' 與 24.22.3 'Krypton' 兩款長期支援版本的安全性更新，修復多項高風險漏洞，包含 http2 標頭釋放、tls/http 空寫入防護與 mTLS 重啟停用等問題。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sourceTitle": "2026-11-11, Version 26.13.1 'Lithium' (LTS), @aduh95",
-          "sources": [
-            "gh-nodejs"
-          ],
-          "title": "Node.js 發布 26.13.1 與 24.22.3 LTS 安全更新",
-          "url": "https://github.com/nodejs/node/releases/tag/v26.13.1",
-          "weightedScore": 100
-        },
-        {
-          "content": "微軟 365 雲端服務傳出服務降級與中斷事故，影響全球多地用戶與企業依賴的相關雲端協作及 API 運作，相關修復作業正在進行中。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Service degradation on Microsoft 365",
-          "sources": [
-            "hn"
-          ],
-          "title": "Microsoft 365 發生服務降級與中斷事故",
-          "url": "https://status.cloud.microsoft/",
-          "weightedScore": 468
-        },
-        {
-          "content": "Google 推出 Gemini 4 程式碼代理的新系統，支援在任務執行途中自動切換合適模型，使整體工作完成速度提升 19%。",
+          "content": "Anthropic 推出 Claude Managed Agents 的自託管版本，允許企業開發者在自己的基礎設施中部署與運行 AI 代理人工作流。然而官方要求嚴格的安全規範：一旦系統標記潛在的安全風險行為，管理者必須在 8 小時內介入處置。這項更新讓對資料隱私有高度合規要求的企業能自託管進階代理人系統，同時建立了 AI 代理人安全治理的全新營運標準。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "Google’s Gemini 4 coding agent now switches models mid-task — and finishes 19% faster",
+          "sourceTitle": "Anthropic now lets you self-host Claude Managed Agents. The catch? 8 hours to act if it flags a safety risk",
           "sources": [
             "thenewstack"
           ],
-          "title": "Google Gemini 4 支援任務中動態切換模型並提升效率",
-          "url": "https://thenewstack.io/gemini-4-hydrogen-orchestrator/",
+          "title": "Anthropic 開放企業自託管 Claude 託管代理人，附帶 8 小時安全響應規範",
+          "url": "https://thenewstack.io/self-hosted-claude-managed-agents/",
           "weightedScore": 50
         },
         {
-          "content": "探討如何透過更快速的檢索技術來優化 RAG（檢索增強生成）系統，降低延遲並提升檢索準確度，對建構高效能 AI 知識庫具有實作參考價值。",
+          "content": "OpenAI 正式發表 ChatGPT Wallet，旨在為 ChatGPT Work、Codex 等環境中的自主 AI 代理人提供安全完成線上採購與支付的能力。該機制在保有現行信用卡交易安全防護的基礎上，要求每一筆交易必須經過使用者明確審批。這為自動化代理人串接付費 API、雲端資源採購或電商交易提供了標準化且具備安全護欄的官方金融支付介面。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sourceTitle": "Introducing ChatGPT Wallet",
+          "sources": [
+            "openai-blog"
+          ],
+          "title": "OpenAI 推出 ChatGPT Wallet，為自主代理人交易提供安全授權機制",
+          "url": "https://openai.com/index/introducing-chatgpt-wallet",
+          "weightedScore": 100
+        },
+        {
+          "content": "Node.js 官方釋出 24.22.3（及 22.23.5）LTS 安全修補版本，緊急修復了多個高嚴重性漏洞（CVE-2026-123863 至 123866、CVE-2026-123872）。修復範圍涵蓋 HTTP/2 在串流移除時未釋放標頭、nghttp2 放棄串流檢測、通訊端寫入緩衝區保留，以及空寫入引發的巢狀解析器執行與無 session id 下 mTLS 恢復問題。建議所有生產環境後端服務儘速升級，以防禦記憶體洩漏與阻斷服務攻擊。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "gh-nodejs",
+          "sourceTitle": "2026-11-11, Version 24.22.3 'Krypton' (LTS), @aduh95",
+          "sources": [
+            "gh-nodejs"
+          ],
+          "title": "Node.js 發布 LTS 安全更新，修復 HTTP/2 與 TLS 多項高風險漏洞",
+          "url": "https://github.com/nodejs/node/releases/tag/v24.22.3",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 官方公告將於 2026 年 12 月 14 日在所有 GitHub Copilot 體驗中全面淘汰指定模型，影響範圍涵蓋 Copilot Chat、行內編輯、詢問與代理人模式，以及程式碼自動補全。官方提醒依賴特定模型輸出行為的團隊與企業開發者需提前評估遷移計畫，調整自訂工作流與設定，以避免模型下線後影響日常開發流程與自動化整合。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Upcoming deprecation of selected GitHub Copilot models in December",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 宣布將於 12 月 14 日淘汰部分舊版 AI 模型",
+          "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
+          "weightedScore": 100
+        },
+        {
+          "content": "Anthropic 旗下核心服務包括 claude.ai 網頁介面、platform.claude.com 開發者 API 以及終端工具 Claude Code 出現錯誤率異常飆升的故障事件。此次服務中斷直接衝擊依賴 Claude API 的線上生產應用與開發者的輔助編程工作流，再度凸顯現代軟體架構深度依賴單一 AI 供應商時所面臨的單點故障風險，促使工程團隊思考多模型備援機制。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Faster Retrieval for Better, More Efficient RAG",
+          "sourceTitle": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
           "sources": [
             "hn"
           ],
-          "title": "RAG 檢索效能優化技術深度解析",
-          "url": "https://machinelearning.apple.com/research/faster-retrieval",
-          "weightedScore": 232
+          "title": "Anthropic 核心服務傳出故障，Claude API 與 Claude Code 均受波及",
+          "url": "https://status.claude.com/incidents/nn11wk485zfn",
+          "weightedScore": 484
         },
         {
-          "content": "GitHub 官方發布關於代理技能的實用指南，探討如何將可重複的工程工作封裝於檔案中供團隊審查與重複使用，同時維持主機端特定的環境與權限。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
-          "sourceTitle": "Build once, run on any agent: A practical guide to agent skills",
-          "sources": [
-            "github-blog-ai-ml"
-          ],
-          "title": "跨代理重複使用工程工作的實用指南",
-          "url": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/",
-          "weightedScore": 100
-        },
-        {
-          "content": "深入探討分散式 AI 訓練工作負載在 Kubernetes 中面臨的複雜調度需求，分析如何透過群組調度和拓撲感知放置克服原生調度器的不足。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Gang scheduling and topology-aware placement for AI training in Kubernetes",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "Kubernetes AI 訓練的分組調度與拓撲感知放置",
-          "url": "https://www.cncf.io/blog/2026/11/12/gang-scheduling-and-topology-aware-placement-for-ai-training-in-kubernetes/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Cloudflare 技術團隊撰文介紹其在實驗性一致性服務中採用未曾大規模部署的新演算法 QuePaxa 的原因與運作原理，提供分散式系統架構設計的實務參考。",
+          "content": "Cloudflare 正式推出 Spend Management 功能，開發者現在可以為 Cloudflare Workers 和 Durable Objects 主動設定支出上限（spending caps）與成本告警，後續將擴展至其他產品。Cloudflare 同步揭露其如何構建即時計量管線，將實際用量轉化為執行階段的限流決策。這項更新解決了無伺服器架構容易因流量暴衝或遞迴呼叫產生巨額帳單的隱患，提供可控的成本防護措施。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cloudflare-blog",
-          "sourceTitle": "Choosing QuePaxa, an unusual consensus algorithm",
+          "sourceTitle": "Introducing Spend Management: Spending limits and alerts for Cloudflare",
           "sources": [
             "cloudflare-blog"
           ],
-          "title": "Cloudflare 選擇採用罕見的一致性演算法 QuePaxa",
-          "url": "https://blog.cloudflare.com/choosing-quepaxa/",
+          "title": "Cloudflare 推出 Spend Management，支援 Workers 支出上限與預警",
+          "url": "https://blog.cloudflare.com/spend-management/",
           "weightedScore": 50
         },
         {
-          "content": "針對 GitHub Actions 工作流程的安全性提供實用防護建議與鎖定機制，協助開發團隊避免供應鏈攻擊與權限濫用風險。",
+          "content": "Brave Search API 宣布正式支援基於 HTTP 402 支付協議的代理人自主支付機制（agentic payments）。這意味著自主運行的 AI Agent 不再需要預先綁定開發者的信用卡或月費 API Key，而能夠在發起搜尋請求時以機器對機器（M2M）的微額支付即時扣款完成交易。這為自主經濟架構與去中心化 AI 工具鏈的呼叫模式樹立了具體的落地範例。",
           "degraded": false,
-          "domain": "devops",
-          "sourceCount": 2,
+          "domain": "ai",
+          "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Lock Your GitHub Actions",
+          "sourceTitle": "Brave Search API now accepts agentic payments via the x402 protocol",
           "sources": [
-            "hn",
-            "lobsters-devops"
+            "hn"
           ],
-          "title": "GitHub Actions 安全加固最佳實踐指南",
-          "url": "https://hugovk.dev/blog/2026/lock-github-actions/",
-          "weightedScore": 426
+          "title": "Brave Search API 支援 x402 協議，開放 AI 代理人自主付費查詢",
+          "url": "https://brave.com/blog/search-api-agentic-payments/",
+          "weightedScore": 256
         },
         {
-          "content": "3D 創作與開發工具 Blender 5.3 正式釋出，本次更新加入對 Gaussian Splat 的支援，提供開發者與創作者更強大的 3D 渲染與處理能力。",
+          "content": "團隊宣布將專為 AI 代理人打造的實驗性瀏覽器引擎 Kitesurf 正式開源。開發者可直接檢視原始碼、在本地環境運行，或直接部署至 Cloudflare Workers 上執行。傳統無頭瀏覽器資源消耗龐大且並非專為 LLM 視圖互動設計，Kitesurf 的輕量化與邊緣部署架構為需要執行網頁瀏覽、資料擷取與自動化表單互動的 AI Agent 提供了極具潛力的新基礎設施。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Kitesurf is now open source",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "專為 AI 代理人設計的實驗性瀏覽器引擎 Kitesurf 正式開源",
+          "url": "https://blog.cloudflare.com/kitesurf-open-source/",
+          "weightedScore": 50
+        },
+        {
+          "content": "受到許多 JavaScript/TypeScript 開發者喜愛的輕量無伺服器腳本與 API 託管平台 Val Town 宣布將逐步結束營運。Val Town 過去以簡化小型雲端排程、Webhook 處理與原型 API 部署聞名。此項決策意味著所有在平台上運行的常駐工作與端點需要即刻安排遷移至其他 Serverless 平台，提醒開發者應隨時關注雲端依賴的永續性風險。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Val Town is winding down",
+          "sources": [
+            "hn"
+          ],
+          "title": "輕量無伺服器腳本平台 Val Town 宣布停止營運，開發者須安排遷移",
+          "url": "https://blog.val.town/winding-down",
+          "weightedScore": 422
+        },
+        {
+          "content": "深入分析開源 DeepSeek 編程代理人在主流編程基準測試中的非典型現象：該模型因習慣在修復問題時「順便清理無效程式碼」或進行常規重構等開發者普遍認可的最佳實務，反而在測試中被判定失敗並遭受扣分。這篇分析深入揭示了當前 AI 評測基準與現實工程實務之間的脫節問題，對正在微調程式碼模型或設計評估管線的 AI 工程師而言極具借鑑意義。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "DeepSeek’s coding agent is too tidy for its own good — and benchmarks are punishing it",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "寫法太乾淨反而被扣分？DeepSeek 編程代理人在評測中的代價分析",
+          "url": "https://thenewstack.io/deepseek-harness-cleanup-benchmark/",
+          "weightedScore": 50
+        },
+        {
+          "content": "開發者分享如何突破硬體算力與記憶體瓶頸，將大型語言模型成功運行於低規格老舊設備與小型邊緣硬體上的工程實作。文章深入剖析極致量化技術、記憶體分頁調度、模型修剪與運算子核心優化，展示了如何在不依賴高階 GPU 的極端資源限制下，實現可用的模型推論速度。這對致力於終端離線 AI、IoT 智慧設備與邊緣運算的工程師提供了寶貴的實務技巧與底層架構思路。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "I'm making LLMs work on small and old devices",
+          "sources": [
+            "hn"
+          ],
+          "title": "在老舊與邊緣設備上運行 LLM：底層推論最佳化實踐",
+          "url": "https://github.com/hyperionaidev/smolmaxxing/",
+          "weightedScore": 465
+        },
+        {
+          "content": "本文深入探討如何透過 macOS 內建的硬體安全隔離區（Secure Enclave）產生並儲存 ED25519 或 ECDSA SSH 私鑰。透過將金鑰鎖定在安全晶片內部，即使主機作業系統遭惡意軟體入侵或記憶體被側錄，私鑰本身也無法被匯出或外洩，同時還可無縫整合 Touch ID 生物辨識授權。這為經常存取生產伺服器、Git 倉庫與雲端環境的工程師提供了免硬體金鑰的高強度開發安全實務。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Blender 5.3 released with Gaussian Splat support",
+          "sourceTitle": "Protecting SSH Keys with macOS Secure Enclave",
           "sources": [
             "hn"
           ],
-          "title": "Blender 5.3 釋出並加入 Gaussian Splat 支援",
-          "url": "https://www.blender.org/download/releases/5-3/",
-          "weightedScore": 495
+          "title": "利用 macOS 安全隔離區（Secure Enclave）保護 SSH 私鑰實踐",
+          "url": "https://gatezh.com/posts/macos-secure-enclave-ssh-keys/",
+          "weightedScore": 401
+        },
+        {
+          "content": "社群深入檢視 Humble Bundle 因大量採用 AI 輔助編程而意外瓦解原有資安機制的案例。分析指出，開發團隊在快速推進功能時過度信任 AI 產生的程式碼，未能嚴格進行安全審查，導致權限驗證缺失、資料存取邏輯漏洞與邊界條件失效等嚴重安全破口。此案例為盲目追求 AI 開發效率的工程團隊敲響警鐘，強調即使由 AI 生成程式碼，架構設計、邊界檢查與嚴格的威脅建模仍然不可或缺。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "\"Humble Bundle just killed most of their security through vibecoding\"",
+          "sources": [
+            "hn"
+          ],
+          "title": "盲目依賴 AI 生成程式碼帶來的資安災難：以 Humble Bundle 漏洞為例",
+          "url": "https://forums.spacebattles.com/threads/humble-bundle-just-completely-killed-most-of-their-security-through-vibecoding.1346295/",
+          "weightedScore": 401
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "openai-blog"
-      ],
-      "url": "https://openai.com/index/introducing-gpt-6-1-sol"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "openai-blog",
-      "sources": [
-        "openai-blog"
-      ],
-      "url": "https://openai.com/index/devday-2026-recap"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/sign-in-with-chatgpt"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/openai-decision-api-luna"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/ai-era-framework"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://status.claude.com/incidents/4xvtc2gnq73l"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wt5f4e/looks_like_the_era_of_subsidised_compute_is"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "github-next",
-      "sources": [
-        "github-next"
-      ],
-      "url": "https://githubnext.com/projects/chopin"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "cncf-blog",
-      "sources": [
-        "cncf-blog"
-      ],
-      "url": "https://cncf.io/blog/2026/09/28/the-case-for-a-cloud-native-agent-harness"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://github.com/firelex/jeff"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "raschka-ahead-of-ai",
-      "sources": [
-        "raschka-ahead-of-ai"
-      ],
-      "url": "https://magazine.sebastianraschka.com/p/classifier-history-and-jev"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "lobsters-devops",
-      "sources": [
-        "lobsters-devops"
-      ],
-      "url": "https://victoriametrics.com/blog/the-life-of-a-metric"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-29T23:39:12.097Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-09-30T23:41:52.210Z",
@@ -6936,6 +6812,146 @@
       ],
       "title": "Blender 5.3 released with Gaussian Splat support",
       "url": "https://blender.org/download/releases/5-3"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "llama.cpp v1.0 is here 🦙",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xv8t2e/llamacpp_v10_is_here"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Anthropic now lets you self-host Claude Managed Agents. The catch? 8 hours to act if it flags a safety risk",
+      "url": "https://thenewstack.io/self-hosted-claude-managed-agents"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Introducing ChatGPT Wallet",
+      "url": "https://openai.com/index/introducing-chatgpt-wallet"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "title": "2026-11-11, Version 24.22.3 'Krypton' (LTS), @aduh95",
+      "url": "https://github.com/nodejs/node/releases/tag/v24.22.3"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Upcoming deprecation of selected GitHub Copilot models in December",
+      "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
+      "url": "https://status.claude.com/incidents/nn11wk485zfn"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Introducing Spend Management: Spending limits and alerts for Cloudflare",
+      "url": "https://blog.cloudflare.com/spend-management"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Brave Search API now accepts agentic payments via the x402 protocol",
+      "url": "https://brave.com/blog/search-api-agentic-payments"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Kitesurf is now open source",
+      "url": "https://blog.cloudflare.com/kitesurf-open-source"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Val Town is winding down",
+      "url": "https://blog.val.town/winding-down"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "DeepSeek’s coding agent is too tidy for its own good — and benchmarks are punishing it",
+      "url": "https://thenewstack.io/deepseek-harness-cleanup-benchmark"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "I'm making LLMs work on small and old devices",
+      "url": "https://github.com/hyperionaidev/smolmaxxing"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Protecting SSH Keys with macOS Secure Enclave",
+      "url": "https://gatezh.com/posts/macos-secure-enclave-ssh-keys"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-14T00:50:49.972Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "\"Humble Bundle just killed most of their security through vibecoding\"",
+      "url": "https://forums.spacebattles.com/threads/humble-bundle-just-completely-killed-most-of-their-security-through-vibecoding.1346295"
     }
   ]
 }
