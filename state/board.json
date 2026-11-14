@@ -474,133 +474,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-08T23:38:50.039Z",
-  "lastNewsPushAt": "2026-11-14T00:50:49.972Z",
+  "lastNewsPushAt": "2026-11-14T23:50:25.821Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-08T23:38:50.039Z",
       "summary": "本次新進 7 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 7 個與前後端 1 個，綜合榜 #1 為 vercel-labs/agent-desktop。"
     },
     "feed": [
-      {
-        "content": "雲端 AI 服務 Fireworks AI 遭遇安全漏洞，進一步波及 Notion 及其平台客戶，提醒開發者加強對第三方 AI 服務供應鏈的安全防護與審查。",
-        "id": "news:https://notion.com/help/security-incident-involving-a-third-party-ai-vendor",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "Fireworks AI 發生安全漏洞影響 Notion 及客戶",
-        "type": "news",
-        "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor"
-      },
-      {
-        "content": "Google 推出最具能力的視覺語言動作模型 Gemini Robotics 2.5，顯著增強機器人在真實世界中的操作靈敏度、可靠性與安全性。",
-        "id": "news:https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "Google 發布 Gemini Robotics 2.5 提升機器人真實世界靈敏度",
-        "type": "news",
-        "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
-      },
-      {
-        "content": "亞馬遜透過以自家架構取代 Sonnet 4.6 模型，成功大幅降低 AI 推理成本並節省數百萬美元，展示了大型企業在實際生產環境中優化模型架構的工程實踐。",
-        "id": "news:https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "亞馬遜以 Strands Decider 取代 Sonnet 4.6 節省數百萬成本",
-        "type": "news",
-        "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/"
-      },
-      {
-        "content": "開發者探討現代系統開發中對伺服器記憶體容量無節制成長的假設，分享在基礎設施規劃與資源最佳化上的實務反思與架構經驗。",
-        "id": "news:https://utcc.utoronto.ca/~cks/space/blog/sysadmin/ServerRAMGrowthReflex",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "重新省思伺服器對記憶體無限成長的需求迷思",
-        "type": "news",
-        "url": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/ServerRAMGrowthReflex"
-      },
-      {
-        "content": "深入探討在 AI 程式碼生成普及的時代，Rust 語言在安全性、型別系統與效能上的獨特價值，以及開發者如何看待 Rust 與 LLM 的結合。",
-        "id": "news:https://youtube.com/watch?v=5D7QPOIZ7gY",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "大語言模型時代下對 Rust 語言的反思與應用",
-        "type": "news",
-        "url": "https://www.youtube.com/watch?v=5D7QPOIZ7gY"
-      },
-      {
-        "content": "開發者以 Rust 與 WebGPU 技術打造的開源 3D 繪圖工具 KetchUp，展現了現代網頁端圖形效能與高效能框架的實作成果，對網頁前端與高效能渲染具參考價值。",
-        "id": "news:https://ketchup3d.github.io/app",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "KetchUp：基於 Rust 與 WebGPU 開發的開源 SketchUp 替代品",
-        "type": "news",
-        "url": "https://ketchup3d.github.io/app/"
-      },
-      {
-        "content": "介紹全新分群演算法 E-means，能在僅需傳統 k-means 十分之一的訓練輪次內達到更優異的表現，對機器學習效能優化具高度技術價值。",
-        "id": "news:https://e-means.github.io/",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "E-means 演算法：在十分之一訓練輪次內超越 k-means",
-        "type": "news",
-        "url": "https://e-means.github.io/"
-      },
-      {
-        "content": "藉由 Discord 桌面端重構的實際案例，探討原生技術與資源耗費較低的框架在現代作業系統中的效能優勢，對桌面應用軟體工程架構深具啟發。",
-        "id": "news:https://windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in",
-        "publishedAt": "2026-11-11T00:35:13.765Z",
-        "title": "為何所有 Windows 11 應用程式都該捨棄 Electron 框架",
-        "type": "news",
-        "url": "https://www.windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in/"
-      },
-      {
-        "content": null,
-        "id": "news:https://pietromiotti.com/latest/maya-site",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "My AI agents found an unmapped Maya site?",
-        "type": "news",
-        "url": "https://pietromiotti.com/latest/maya-site"
-      },
-      {
-        "content": null,
-        "id": "news:https://thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
-        "type": "news",
-        "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers"
-      },
-      {
-        "content": null,
-        "id": "news:https://caleb.software/posts/claude-to-pi.html",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "Goodbye Claude, hello Pi",
-        "type": "news",
-        "url": "https://caleb.software/posts/claude-to-pi.html"
-      },
-      {
-        "content": null,
-        "id": "news:https://deepmind.google/blog/introducing-alphaproof-code",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "AlphaProof Code",
-        "type": "news",
-        "url": "https://deepmind.google/blog/introducing-alphaproof-code/"
-      },
-      {
-        "content": null,
-        "id": "news:https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "AI usage generates a fragile codebase",
-        "type": "news",
-        "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/"
-      },
-      {
-        "content": null,
-        "id": "news:https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "I'm not convinced the AI bubble exists",
-        "type": "news",
-        "url": "https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html#im-not-convinced-the-ai-bubble-exists"
-      },
-      {
-        "content": null,
-        "id": "news:https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "Apple has new Mac app coming to make running local AI models easy",
-        "type": "news",
-        "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/"
-      },
       {
         "content": null,
         "id": "news:https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter",
@@ -880,346 +760,346 @@
         "title": "盲目依賴 AI 生成程式碼帶來的資安災難：以 Humble Bundle 漏洞為例",
         "type": "news",
         "url": "https://forums.spacebattles.com/threads/humble-bundle-just-completely-killed-most-of-their-security-through-vibecoding.1346295/"
+      },
+      {
+        "content": "Amazon Web Services 正式推出 AWS Emulator，這是一套可在本地運行的 AWS 服務模擬環境。針對近年興起的 AI coding agent，該工具提供了關鍵的本機驗證迴圈（verification loop），讓 Agent 在生成雲端架構、IaC 腳本或調用 AWS SDK 時，能在本地直接執行測試並自我修正，無須耗費真實雲端帳號成本或承擔配置失誤風險，大幅加速 Agent 開發流程。",
+        "id": "news:https://github.com/aws/aws-emulator",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "AWS 推出本地端 AWS Emulator，為 AI Agent 提供離線驗證與測試環境",
+        "type": "news",
+        "url": "https://github.com/aws/aws-emulator"
+      },
+      {
+        "content": "作為 llama.cpp 與多項本地開源大型語言模型底層核心的張量運算庫 GGML，正式發布 v1.0.0 版本。本次重大版本確立了穩定的 API 與跨平台運算架構，優化了 CPU 與各類硬體加速器的張量運算效能，為本地端邊緣推論生態系統提供更加標準化且可靠的底層基礎。",
+        "id": "news:https://github.com/ggml-org/ggml/releases/tag/v1.0.0",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "GGML 正式迎來 v1.0.0 里程碑：本地端 AI 核心張量庫邁入穩定架構",
+        "type": "news",
+        "url": "https://github.com/ggml-org/ggml/releases/tag/v1.0.0"
+      },
+      {
+        "content": "開發團隊發布參數量達 1450 億的 Edge0-145B 模型，主打讓開發者在個人工作站或邊緣設備上直接部署具備前沿旗艦級能力的 AI 模型。該模型透過架構與量化最佳化，大幅壓低記憶體頻寬與硬體門檻，為不依賴雲端專有 API、重視資料隱私與離線自主性的開發者提供了強大開源選項。",
+        "id": "news:https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "Edge0-145B 開源模型發布：在個人電腦上運行頂級前沿 AI 能力",
+        "type": "news",
+        "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer"
+      },
+      {
+        "content": "終端機工具 Atuin 正式推出「Atuin Threads」功能，支援跨機器同步所有 AI Coding Agent 的對話與操作歷程。開發者經常在不同工作站、遠端伺服器與筆電之間切換，Threads 解決了 Agent 狀態孤島問題，讓開發者在任何終端環境皆能無縫接續先前的上下文與執行任務。",
+        "id": "news:https://blog.atuin.sh/threads-agent-sessions",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "Atuin 推出 Atuin Threads：跨終端跨設備同步管理 AI Agent 對話 Session",
+        "type": "news",
+        "url": "https://blog.atuin.sh/threads-agent-sessions/"
+      },
+      {
+        "content": "Google DeepMind 正式公開新一代生物 AI 模型 AlphaGenome 2。該模型能夠深入解析細胞讀取 DNA 的機制，並準確預測基因序列及其突變如何影響特定人體細胞類型與疾病關聯。對於從事生物資訊、計算生物學及 AI for Science 的開發者而言，這代表著在結構生物學與疾病機制建模上的重要突破。",
+        "id": "news:https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "Google DeepMind 發表 AlphaGenome 2：精準預測 DNA 變異對細胞的影響",
+        "type": "news",
+        "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/"
+      },
+      {
+        "content": "Google DeepMind 正式公開其氣象 AI 預測模型所依賴的基礎資料集，包含高解析度降水資料與地球靜止氣象衛星觀測數據。此舉讓氣候科技與環境預測領域的機器學習開發者能直接取得高品質、標準化的行星觀測訓練資料，降低訓練前沿地球系統預測模型的門檻。",
+        "id": "news:https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "DeepMind 開源氣象 AI 預測模型背後的核心降水與衛星觀測資料集",
+        "type": "news",
+        "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/"
+      },
+      {
+        "content": "一項深入的逆向工程研究顯示，透過分析模型權重輸出中的浮點數捨入誤差與特定微架構計算特徵（硬體指紋），可以追蹤出前沿模型實際是在何種 GPU 架構下訓練完成。這項技術分析展示了硬體低階數值特性如何在神經網路訓練中留下痕跡，為模型溯源與合規驗證提供了嶄新的技術視角。",
+        "id": "news:https://unemploymentlabs.com/checkpoint-forensics",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "技術分析揭露：中國前沿 AI 模型輸出帶有受出口管制 GPU 的硬體指紋",
+        "type": "news",
+        "url": "https://unemploymentlabs.com/checkpoint-forensics"
+      },
+      {
+        "content": "Cloudflare 發布深度技術報告，剖析如 ARTEX 等 AI 自主編排滲透測試平台的運作機制。這類工具能全天候自主探索暴露在外的基礎設施並發動精準攻擊。報告指出傳統被動防護已難以應付具備自動決策能力的攻擊者，團隊必須轉向縱深防禦與即時異常感知架構，更新現代雲端基礎設施的安全模型。",
+        "id": "news:https://blog.cloudflare.com/adapting-to-ai-penetration-testing-orchestrators",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "Cloudflare 解析 AI 滲透測試編排工具帶來的威脅與新防禦架構",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/adapting-to-ai-penetration-testing-orchestrators/"
+      },
+      {
+        "content": "開發者深入分享如何在瀏覽器環境中利用 WebGL2 實現超逼真的動態沙粒物理與光影渲染。文章詳細探討了粒子系統的 GPU 運算管線、碰撞檢測演算法以及著色器效能調校技巧，展示了現代 Web 圖形技術在不依賴 WebGPU 的情況下，仍能在標準瀏覽器中榨乾硬體極限的實作範例。",
+        "id": "news:https://av.github.io/safe-sand",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "基於 WebGL2 實現超擬真沙粒即時物理模擬與渲染技術",
+        "type": "news",
+        "url": "https://av.github.io/safe-sand/"
+      },
+      {
+        "content": "GitHub Next 團隊發表前瞻架構演講，深入探討軟體工程範式的演變。內容涵蓋支援多個 AI Agent 同時協作的「Multiplayer Agents」架構、人機共創的規劃引擎，以及結合形式化驗證的「證明驅動開發（Proof-driven development）」，為開發者展示了未來由 Agent 主導的程式碼庫維護與驗證實踐。",
+        "id": "news:https://githubnext.com/talks/whats-next-with-github-next",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "GitHub Next 揭示未來架構藍圖：多人協作 Agent 與證明驅動開發",
+        "type": "news",
+        "url": "https://githubnext.com/talks/whats-next-with-github-next/"
+      },
+      {
+        "content": "知名 Nix 部署工具 deploy-rs 宣布重新啟動積極維護，團隊分享了現代化改版架構。deploy-rs 具備無代理人（agentless）、依賴 Nix profile 回滾機制等純粹函數式部署特性，本次演進修復了與新版 Rust 工具鏈及 Nix Flakes 的整合問題，並優化了多主機並行部署與健康檢查流程，為 NixOS 維運團隊帶來更穩健的自動化方案。",
+        "id": "news:https://serokell.io/blog/deploy-rs-nix",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "deploy-rs 重啟維護：NixOS 無代理程式部署工具的現代化演進",
+        "type": "news",
+        "url": "https://serokell.io/blog/deploy-rs-nix"
+      },
+      {
+        "content": "新推出的評測基準 XYBench 專注於測試 AI 模型解決「問題背後的真正問題」之能力。在工程實務中，使用者常因對解法產生誤解而提出錯誤問題（即 XY Problem）。該基準透過大量真實技術場景，衡量 Coding Agent 能否主動洞察提問者的真實意圖並提出根治方案，而非機械式地執行錯誤指令。",
+        "id": "news:https://huggingface.co/blog/allenai/xybench",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "XYBench 評測基準推出：評估 AI 是否具備識別「XY 問題」的診斷能力",
+        "type": "news",
+        "url": "https://huggingface.co/blog/allenai/xybench"
+      },
+      {
+        "content": "Rust 程式語言正式發布第 100 個六週週期版本 1.100。本次發布代表了 Rust 自 1.0 以來十年以上的穩定演進，持續在不破壞向後相容性的承諾下提供語言增強、型別系統改良與編譯速度最佳化。對於全球系統程式設計師而言，這是開源軟體工程與語言演進史上的重要里程碑。",
+        "id": "news:https://blog.rust-lang.org/2026/11/12/Rust-1.100.0",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "Rust 迎來 1.100 正式版里程碑：語言生態與編譯器最佳化新階段",
+        "type": "news",
+        "url": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/"
+      },
+      {
+        "content": "資安研究揭露，由 AI 全端應用生成平台 Lovable 產出的多個應用程式存在嚴重的授權控制缺陷，導致敏感資料庫端點直接暴露於公開網路，洩漏了包含使用者護照細節與超過 20 萬則私訊記錄。此事件凸顯了 AI Coding 工具在快速生成前後端時，極易忽略細緻的 RBAC 與端點鑑權，開發者使用生成工具時務必對資料庫規則進行嚴格人工審計。",
+        "id": "news:https://crissyfield.de/research/lovable-en",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "Lovable 生成應用爆發權限漏洞：外洩護照個資與逾 20 萬則私密訊息",
+        "type": "news",
+        "url": "https://www.crissyfield.de/research/lovable-en/"
+      },
+      {
+        "content": "一篇探討終端機 UI（TUI）實作的深度技術文章，提出了一種無需佔用整行或整列字元單元（Cell）即可繪製邊框的技巧。傳統 TUI 邊框往往會浪費珍貴的終端顯示行數，該方案利用字型繪製特性與特定的終端轉義序列，在有限的終端介面中達成邊界分割，為 TUI 開發者與 CLI 工具維護者提供了精巧的介面最佳化思路。",
+        "id": "news:https://joshka.net/cell-borders",
+        "publishedAt": "2026-11-14T23:50:25.821Z",
+        "title": "零儲存格開銷的終端邊框渲染技巧：在字元網格中榨出最大顯示空間",
+        "type": "news",
+        "url": "https://www.joshka.net/cell-borders/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-14T00:50:49.972Z",
+      "generatedAt": "2026-11-14T23:50:25.821Z",
       "items": [
         {
-          "content": "著名開源本地 LLM 推論專案 llama.cpp 正式發布 v1.0 版本。官方團隊強調未來將持續支援各大運算平台與新模型架構，同時確保專案維持輕量與精簡，以支援廣大基於其構建的下游應用。此外，團隊亦推出基於 llama.cpp 的桌面端應用程式，進一步降低一般開發者在本地端運行 AI 模型的門檻。這標誌著本地 LLM 開發基礎設施邁向成熟穩定階段。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "llama.cpp v1.0 is here 🦙",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "本地推論框架 llama.cpp 正式釋出 v1.0.0 里程碑版本",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xv8t2e/llamacpp_v10_is_here/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Anthropic 推出 Claude Managed Agents 的自託管版本，允許企業開發者在自己的基礎設施中部署與運行 AI 代理人工作流。然而官方要求嚴格的安全規範：一旦系統標記潛在的安全風險行為，管理者必須在 8 小時內介入處置。這項更新讓對資料隱私有高度合規要求的企業能自託管進階代理人系統，同時建立了 AI 代理人安全治理的全新營運標準。",
+          "content": "Amazon Web Services 正式推出 AWS Emulator，這是一套可在本地運行的 AWS 服務模擬環境。針對近年興起的 AI coding agent，該工具提供了關鍵的本機驗證迴圈（verification loop），讓 Agent 在生成雲端架構、IaC 腳本或調用 AWS SDK 時，能在本地直接執行測試並自我修正，無須耗費真實雲端帳號成本或承擔配置失誤風險，大幅加速 Agent 開發流程。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Anthropic now lets you self-host Claude Managed Agents. The catch? 8 hours to act if it flags a safety risk",
+          "sourceId": "hn",
+          "sourceTitle": "AWS emulator",
           "sources": [
-            "thenewstack"
+            "hn"
           ],
-          "title": "Anthropic 開放企業自託管 Claude 託管代理人，附帶 8 小時安全響應規範",
-          "url": "https://thenewstack.io/self-hosted-claude-managed-agents/",
-          "weightedScore": 50
+          "title": "AWS 推出本地端 AWS Emulator，為 AI Agent 提供離線驗證與測試環境",
+          "url": "https://github.com/aws/aws-emulator",
+          "weightedScore": 987
         },
         {
-          "content": "OpenAI 正式發表 ChatGPT Wallet，旨在為 ChatGPT Work、Codex 等環境中的自主 AI 代理人提供安全完成線上採購與支付的能力。該機制在保有現行信用卡交易安全防護的基礎上，要求每一筆交易必須經過使用者明確審批。這為自動化代理人串接付費 API、雲端資源採購或電商交易提供了標準化且具備安全護欄的官方金融支付介面。",
+          "content": "作為 llama.cpp 與多項本地開源大型語言模型底層核心的張量運算庫 GGML，正式發布 v1.0.0 版本。本次重大版本確立了穩定的 API 與跨平台運算架構，優化了 CPU 與各類硬體加速器的張量運算效能，為本地端邊緣推論生態系統提供更加標準化且可靠的底層基礎。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Introducing ChatGPT Wallet",
+          "sourceId": "hn",
+          "sourceTitle": "Ggml v1.0.0",
           "sources": [
-            "openai-blog"
+            "hn"
           ],
-          "title": "OpenAI 推出 ChatGPT Wallet，為自主代理人交易提供安全授權機制",
-          "url": "https://openai.com/index/introducing-chatgpt-wallet",
+          "title": "GGML 正式迎來 v1.0.0 里程碑：本地端 AI 核心張量庫邁入穩定架構",
+          "url": "https://github.com/ggml-org/ggml/releases/tag/v1.0.0",
+          "weightedScore": 398
+        },
+        {
+          "content": "開發團隊發布參數量達 1450 億的 Edge0-145B 模型，主打讓開發者在個人工作站或邊緣設備上直接部署具備前沿旗艦級能力的 AI 模型。該模型透過架構與量化最佳化，大幅壓低記憶體頻寬與硬體門檻，為不依賴雲端專有 API、重視資料隱私與離線自主性的開發者提供了強大開源選項。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Edge0-145B: Frontier AI Capabilities on Your Own Computer",
+          "sources": [
+            "hn"
+          ],
+          "title": "Edge0-145B 開源模型發布：在個人電腦上運行頂級前沿 AI 能力",
+          "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
+          "weightedScore": 352
+        },
+        {
+          "content": "終端機工具 Atuin 正式推出「Atuin Threads」功能，支援跨機器同步所有 AI Coding Agent 的對話與操作歷程。開發者經常在不同工作站、遠端伺服器與筆電之間切換，Threads 解決了 Agent 狀態孤島問題，讓開發者在任何終端環境皆能無縫接續先前的上下文與執行任務。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Atuin Threads: All your agent sessions on every machine",
+          "sources": [
+            "hn"
+          ],
+          "title": "Atuin 推出 Atuin Threads：跨終端跨設備同步管理 AI Agent 對話 Session",
+          "url": "https://blog.atuin.sh/threads-agent-sessions/",
+          "weightedScore": 237
+        },
+        {
+          "content": "Google DeepMind 正式公開新一代生物 AI 模型 AlphaGenome 2。該模型能夠深入解析細胞讀取 DNA 的機制，並準確預測基因序列及其突變如何影響特定人體細胞類型與疾病關聯。對於從事生物資訊、計算生物學及 AI for Science 的開發者而言，這代表著在結構生物學與疾病機制建模上的重要突破。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sourceTitle": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "Google DeepMind 發表 AlphaGenome 2：精準預測 DNA 變異對細胞的影響",
+          "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
           "weightedScore": 100
         },
         {
-          "content": "Node.js 官方釋出 24.22.3（及 22.23.5）LTS 安全修補版本，緊急修復了多個高嚴重性漏洞（CVE-2026-123863 至 123866、CVE-2026-123872）。修復範圍涵蓋 HTTP/2 在串流移除時未釋放標頭、nghttp2 放棄串流檢測、通訊端寫入緩衝區保留，以及空寫入引發的巢狀解析器執行與無 session id 下 mTLS 恢復問題。建議所有生產環境後端服務儘速升級，以防禦記憶體洩漏與阻斷服務攻擊。",
+          "content": "Google DeepMind 正式公開其氣象 AI 預測模型所依賴的基礎資料集，包含高解析度降水資料與地球靜止氣象衛星觀測數據。此舉讓氣候科技與環境預測領域的機器學習開發者能直接取得高品質、標準化的行星觀測訓練資料，降低訓練前沿地球系統預測模型的門檻。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "deepmind-blog",
+          "sourceTitle": "Opening the datasets behind our AI weather models",
+          "sources": [
+            "deepmind-blog"
+          ],
+          "title": "DeepMind 開源氣象 AI 預測模型背後的核心降水與衛星觀測資料集",
+          "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
+          "weightedScore": 100
+        },
+        {
+          "content": "一項深入的逆向工程研究顯示，透過分析模型權重輸出中的浮點數捨入誤差與特定微架構計算特徵（硬體指紋），可以追蹤出前沿模型實際是在何種 GPU 架構下訓練完成。這項技術分析展示了硬體低階數值特性如何在神經網路訓練中留下痕跡，為模型溯源與合規驗證提供了嶄新的技術視角。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Chinese frontier AI models carry the fingerprint of export-controlled GPUs",
+          "sources": [
+            "hn"
+          ],
+          "title": "技術分析揭露：中國前沿 AI 模型輸出帶有受出口管制 GPU 的硬體指紋",
+          "url": "https://unemploymentlabs.com/checkpoint-forensics",
+          "weightedScore": 371
+        },
+        {
+          "content": "Cloudflare 發布深度技術報告，剖析如 ARTEX 等 AI 自主編排滲透測試平台的運作機制。這類工具能全天候自主探索暴露在外的基礎設施並發動精準攻擊。報告指出傳統被動防護已難以應付具備自動決策能力的攻擊者，團隊必須轉向縱深防禦與即時異常感知架構，更新現代雲端基礎設施的安全模型。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Adapting to AI penetration testing orchestrators: The Modern Security Model",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare 解析 AI 滲透測試編排工具帶來的威脅與新防禦架構",
+          "url": "https://blog.cloudflare.com/adapting-to-ai-penetration-testing-orchestrators/",
+          "weightedScore": 50
+        },
+        {
+          "content": "開發者深入分享如何在瀏覽器環境中利用 WebGL2 實現超逼真的動態沙粒物理與光影渲染。文章詳細探討了粒子系統的 GPU 運算管線、碰撞檢測演算法以及著色器效能調校技巧，展示了現代 Web 圖形技術在不依賴 WebGPU 的情況下，仍能在標準瀏覽器中榨乾硬體極限的實作範例。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sourceTitle": "2026-11-11, Version 24.22.3 'Krypton' (LTS), @aduh95",
+          "sourceId": "hn",
+          "sourceTitle": "Hyper-realistic sand with WebGL2",
           "sources": [
-            "gh-nodejs"
+            "hn"
           ],
-          "title": "Node.js 發布 LTS 安全更新，修復 HTTP/2 與 TLS 多項高風險漏洞",
-          "url": "https://github.com/nodejs/node/releases/tag/v24.22.3",
+          "title": "基於 WebGL2 實現超擬真沙粒即時物理模擬與渲染技術",
+          "url": "https://av.github.io/safe-sand/",
+          "weightedScore": 445
+        },
+        {
+          "content": "GitHub Next 團隊發表前瞻架構演講，深入探討軟體工程範式的演變。內容涵蓋支援多個 AI Agent 同時協作的「Multiplayer Agents」架構、人機共創的規劃引擎，以及結合形式化驗證的「證明驅動開發（Proof-driven development）」，為開發者展示了未來由 Agent 主導的程式碼庫維護與驗證實踐。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-next",
+          "sourceTitle": "Universe 2026: What’s Next with GitHub Next",
+          "sources": [
+            "github-next"
+          ],
+          "title": "GitHub Next 揭示未來架構藍圖：多人協作 Agent 與證明驅動開發",
+          "url": "https://githubnext.com/talks/whats-next-with-github-next/",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 官方公告將於 2026 年 12 月 14 日在所有 GitHub Copilot 體驗中全面淘汰指定模型，影響範圍涵蓋 Copilot Chat、行內編輯、詢問與代理人模式，以及程式碼自動補全。官方提醒依賴特定模型輸出行為的團隊與企業開發者需提前評估遷移計畫，調整自訂工作流與設定，以避免模型下線後影響日常開發流程與自動化整合。",
+          "content": "知名 Nix 部署工具 deploy-rs 宣布重新啟動積極維護，團隊分享了現代化改版架構。deploy-rs 具備無代理人（agentless）、依賴 Nix profile 回滾機制等純粹函數式部署特性，本次演進修復了與新版 Rust 工具鏈及 Nix Flakes 的整合問題，並優化了多主機並行部署與健康檢查流程，為 NixOS 維運團隊帶來更穩健的自動化方案。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Upcoming deprecation of selected GitHub Copilot models in December",
+          "sourceId": "lobsters-devops",
+          "sourceTitle": "deploy-rs in 2026: reviving our Nix deployment tool",
           "sources": [
-            "github-changelog-copilot"
+            "lobsters-devops"
           ],
-          "title": "GitHub Copilot 宣布將於 12 月 14 日淘汰部分舊版 AI 模型",
-          "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
+          "title": "deploy-rs 重啟維護：NixOS 無代理程式部署工具的現代化演進",
+          "url": "https://serokell.io/blog/deploy-rs-nix",
           "weightedScore": 100
         },
         {
-          "content": "Anthropic 旗下核心服務包括 claude.ai 網頁介面、platform.claude.com 開發者 API 以及終端工具 Claude Code 出現錯誤率異常飆升的故障事件。此次服務中斷直接衝擊依賴 Claude API 的線上生產應用與開發者的輔助編程工作流，再度凸顯現代軟體架構深度依賴單一 AI 供應商時所面臨的單點故障風險，促使工程團隊思考多模型備援機制。",
+          "content": "新推出的評測基準 XYBench 專注於測試 AI 模型解決「問題背後的真正問題」之能力。在工程實務中，使用者常因對解法產生誤解而提出錯誤問題（即 XY Problem）。該基準透過大量真實技術場景，衡量 Coding Agent 能否主動洞察提問者的真實意圖並提出根治方案，而非機械式地執行錯誤指令。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "XYBench: Helping with the problem behind the question",
           "sources": [
-            "hn"
+            "huggingface-blog"
           ],
-          "title": "Anthropic 核心服務傳出故障，Claude API 與 Claude Code 均受波及",
-          "url": "https://status.claude.com/incidents/nn11wk485zfn",
-          "weightedScore": 484
+          "title": "XYBench 評測基準推出：評估 AI 是否具備識別「XY 問題」的診斷能力",
+          "url": "https://huggingface.co/blog/allenai/xybench",
+          "weightedScore": 100
         },
         {
-          "content": "Cloudflare 正式推出 Spend Management 功能，開發者現在可以為 Cloudflare Workers 和 Durable Objects 主動設定支出上限（spending caps）與成本告警，後續將擴展至其他產品。Cloudflare 同步揭露其如何構建即時計量管線，將實際用量轉化為執行階段的限流決策。這項更新解決了無伺服器架構容易因流量暴衝或遞迴呼叫產生巨額帳單的隱患，提供可控的成本防護措施。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Introducing Spend Management: Spending limits and alerts for Cloudflare",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 推出 Spend Management，支援 Workers 支出上限與預警",
-          "url": "https://blog.cloudflare.com/spend-management/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Brave Search API 宣布正式支援基於 HTTP 402 支付協議的代理人自主支付機制（agentic payments）。這意味著自主運行的 AI Agent 不再需要預先綁定開發者的信用卡或月費 API Key，而能夠在發起搜尋請求時以機器對機器（M2M）的微額支付即時扣款完成交易。這為自主經濟架構與去中心化 AI 工具鏈的呼叫模式樹立了具體的落地範例。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Brave Search API now accepts agentic payments via the x402 protocol",
-          "sources": [
-            "hn"
-          ],
-          "title": "Brave Search API 支援 x402 協議，開放 AI 代理人自主付費查詢",
-          "url": "https://brave.com/blog/search-api-agentic-payments/",
-          "weightedScore": 256
-        },
-        {
-          "content": "團隊宣布將專為 AI 代理人打造的實驗性瀏覽器引擎 Kitesurf 正式開源。開發者可直接檢視原始碼、在本地環境運行，或直接部署至 Cloudflare Workers 上執行。傳統無頭瀏覽器資源消耗龐大且並非專為 LLM 視圖互動設計，Kitesurf 的輕量化與邊緣部署架構為需要執行網頁瀏覽、資料擷取與自動化表單互動的 AI Agent 提供了極具潛力的新基礎設施。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Kitesurf is now open source",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "專為 AI 代理人設計的實驗性瀏覽器引擎 Kitesurf 正式開源",
-          "url": "https://blog.cloudflare.com/kitesurf-open-source/",
-          "weightedScore": 50
-        },
-        {
-          "content": "受到許多 JavaScript/TypeScript 開發者喜愛的輕量無伺服器腳本與 API 託管平台 Val Town 宣布將逐步結束營運。Val Town 過去以簡化小型雲端排程、Webhook 處理與原型 API 部署聞名。此項決策意味著所有在平台上運行的常駐工作與端點需要即刻安排遷移至其他 Serverless 平台，提醒開發者應隨時關注雲端依賴的永續性風險。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Val Town is winding down",
-          "sources": [
-            "hn"
-          ],
-          "title": "輕量無伺服器腳本平台 Val Town 宣布停止營運，開發者須安排遷移",
-          "url": "https://blog.val.town/winding-down",
-          "weightedScore": 422
-        },
-        {
-          "content": "深入分析開源 DeepSeek 編程代理人在主流編程基準測試中的非典型現象：該模型因習慣在修復問題時「順便清理無效程式碼」或進行常規重構等開發者普遍認可的最佳實務，反而在測試中被判定失敗並遭受扣分。這篇分析深入揭示了當前 AI 評測基準與現實工程實務之間的脫節問題，對正在微調程式碼模型或設計評估管線的 AI 工程師而言極具借鑑意義。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "DeepSeek’s coding agent is too tidy for its own good — and benchmarks are punishing it",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "寫法太乾淨反而被扣分？DeepSeek 編程代理人在評測中的代價分析",
-          "url": "https://thenewstack.io/deepseek-harness-cleanup-benchmark/",
-          "weightedScore": 50
-        },
-        {
-          "content": "開發者分享如何突破硬體算力與記憶體瓶頸，將大型語言模型成功運行於低規格老舊設備與小型邊緣硬體上的工程實作。文章深入剖析極致量化技術、記憶體分頁調度、模型修剪與運算子核心優化，展示了如何在不依賴高階 GPU 的極端資源限制下，實現可用的模型推論速度。這對致力於終端離線 AI、IoT 智慧設備與邊緣運算的工程師提供了寶貴的實務技巧與底層架構思路。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "I'm making LLMs work on small and old devices",
-          "sources": [
-            "hn"
-          ],
-          "title": "在老舊與邊緣設備上運行 LLM：底層推論最佳化實踐",
-          "url": "https://github.com/hyperionaidev/smolmaxxing/",
-          "weightedScore": 465
-        },
-        {
-          "content": "本文深入探討如何透過 macOS 內建的硬體安全隔離區（Secure Enclave）產生並儲存 ED25519 或 ECDSA SSH 私鑰。透過將金鑰鎖定在安全晶片內部，即使主機作業系統遭惡意軟體入侵或記憶體被側錄，私鑰本身也無法被匯出或外洩，同時還可無縫整合 Touch ID 生物辨識授權。這為經常存取生產伺服器、Git 倉庫與雲端環境的工程師提供了免硬體金鑰的高強度開發安全實務。",
+          "content": "Rust 程式語言正式發布第 100 個六週週期版本 1.100。本次發布代表了 Rust 自 1.0 以來十年以上的穩定演進，持續在不破壞向後相容性的承諾下提供語言增強、型別系統改良與編譯速度最佳化。對於全球系統程式設計師而言，這是開源軟體工程與語言演進史上的重要里程碑。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Protecting SSH Keys with macOS Secure Enclave",
+          "sourceTitle": "Rust 1.100",
           "sources": [
             "hn"
           ],
-          "title": "利用 macOS 安全隔離區（Secure Enclave）保護 SSH 私鑰實踐",
-          "url": "https://gatezh.com/posts/macos-secure-enclave-ssh-keys/",
-          "weightedScore": 401
+          "title": "Rust 迎來 1.100 正式版里程碑：語言生態與編譯器最佳化新階段",
+          "url": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/",
+          "weightedScore": 893
         },
         {
-          "content": "社群深入檢視 Humble Bundle 因大量採用 AI 輔助編程而意外瓦解原有資安機制的案例。分析指出，開發團隊在快速推進功能時過度信任 AI 產生的程式碼，未能嚴格進行安全審查，導致權限驗證缺失、資料存取邏輯漏洞與邊界條件失效等嚴重安全破口。此案例為盲目追求 AI 開發效率的工程團隊敲響警鐘，強調即使由 AI 生成程式碼，架構設計、邊界檢查與嚴格的威脅建模仍然不可或缺。",
+          "content": "資安研究揭露，由 AI 全端應用生成平台 Lovable 產出的多個應用程式存在嚴重的授權控制缺陷，導致敏感資料庫端點直接暴露於公開網路，洩漏了包含使用者護照細節與超過 20 萬則私訊記錄。此事件凸顯了 AI Coding 工具在快速生成前後端時，極易忽略細緻的 RBAC 與端點鑑權，開發者使用生成工具時務必對資料庫規則進行嚴格人工審計。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "\"Humble Bundle just killed most of their security through vibecoding\"",
+          "sourceTitle": "Lovable apps expose passport details and more than 200K private messages",
           "sources": [
             "hn"
           ],
-          "title": "盲目依賴 AI 生成程式碼帶來的資安災難：以 Humble Bundle 漏洞為例",
-          "url": "https://forums.spacebattles.com/threads/humble-bundle-just-completely-killed-most-of-their-security-through-vibecoding.1346295/",
-          "weightedScore": 401
+          "title": "Lovable 生成應用爆發權限漏洞：外洩護照個資與逾 20 萬則私密訊息",
+          "url": "https://www.crissyfield.de/research/lovable-en/",
+          "weightedScore": 579
+        },
+        {
+          "content": "一篇探討終端機 UI（TUI）實作的深度技術文章，提出了一種無需佔用整行或整列字元單元（Cell）即可繪製邊框的技巧。傳統 TUI 邊框往往會浪費珍貴的終端顯示行數，該方案利用字型繪製特性與特定的終端轉義序列，在有限的終端介面中達成邊界分割，為 TUI 開發者與 CLI 工具維護者提供了精巧的介面最佳化思路。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Terminal borders that don't cost a cell",
+          "sources": [
+            "hn",
+            "lobsters-programming"
+          ],
+          "title": "零儲存格開銷的終端邊框渲染技巧：在字元網格中榨出最大顯示空間",
+          "url": "https://www.joshka.net/cell-borders/",
+          "weightedScore": 502
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "deepmind-blog",
-      "sources": [
-        "deepmind-blog"
-      ],
-      "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://anthropic.com/claude-sonnet-5-5"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "ollama-blog",
-      "sources": [
-        "ollama-blog"
-      ],
-      "url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "openai-blog",
-      "sources": [
-        "openai-blog"
-      ],
-      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/nvidia/kumo-tabular"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/cohere-embed-pro-fast"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/auto-router"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/ai-model-overuse-user-insights"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wtg1hs/deepseek_harness_app_is_out_now"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://tomshardware.com/software/the-netherlands-is-rolling-alternative-nixos-based-software-ecosystem-after-u-s-sanctions-on-icc-took-microsoft-off-the-table-trial-programs-running-now-first-release-expected-at-end-of-2027"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "cncf-blog",
-      "sources": [
-        "cncf-blog"
-      ],
-      "url": "https://cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/open-tts-leaderboard"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-09-30T23:41:52.210Z",
-      "sourceId": "github-blog-ai-ml",
-      "sources": [
-        "github-blog-ai-ml"
-      ],
-      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-10-01T23:51:54.733Z",
@@ -6952,6 +6832,157 @@
       ],
       "title": "\"Humble Bundle just killed most of their security through vibecoding\"",
       "url": "https://forums.spacebattles.com/threads/humble-bundle-just-completely-killed-most-of-their-security-through-vibecoding.1346295"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "AWS emulator",
+      "url": "https://github.com/aws/aws-emulator"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Ggml v1.0.0",
+      "url": "https://github.com/ggml-org/ggml/releases/tag/v1.0.0"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Edge0-145B: Frontier AI Capabilities on Your Own Computer",
+      "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Atuin Threads: All your agent sessions on every machine",
+      "url": "https://blog.atuin.sh/threads-agent-sessions"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+      "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "Opening the datasets behind our AI weather models",
+      "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Chinese frontier AI models carry the fingerprint of export-controlled GPUs",
+      "url": "https://unemploymentlabs.com/checkpoint-forensics"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Adapting to AI penetration testing orchestrators: The Modern Security Model",
+      "url": "https://blog.cloudflare.com/adapting-to-ai-penetration-testing-orchestrators"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Hyper-realistic sand with WebGL2",
+      "url": "https://av.github.io/safe-sand"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "github-next",
+      "sources": [
+        "github-next"
+      ],
+      "title": "Universe 2026: What’s Next with GitHub Next",
+      "url": "https://githubnext.com/talks/whats-next-with-github-next"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "title": "deploy-rs in 2026: reviving our Nix deployment tool",
+      "url": "https://serokell.io/blog/deploy-rs-nix"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "XYBench: Helping with the problem behind the question",
+      "url": "https://huggingface.co/blog/allenai/xybench"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Rust 1.100",
+      "url": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Lovable apps expose passport details and more than 200K private messages",
+      "url": "https://crissyfield.de/research/lovable-en"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-14T23:50:25.821Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-programming"
+      ],
+      "title": "Terminal borders that don't cost a cell",
+      "url": "https://joshka.net/cell-borders"
     }
   ]
 }
