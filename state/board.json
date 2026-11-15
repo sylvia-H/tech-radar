@@ -1,31 +1,40 @@
 {
   "board": {
-    "872119017": {
+    "997737944": {
+      "domain": "frontend-backend",
+      "firstSeenAt": "2026-11-15T23:55:44.013Z",
+      "fullName": "ruvnet/RuView",
+      "language": "Rust",
+      "rank": 9,
+      "starsThisWeek": 1551,
+      "url": "https://github.com/ruvnet/RuView"
+    },
+    "1061953414": {
       "domain": "ai",
-      "firstSeenAt": "2026-11-08T23:38:50.039Z",
-      "fullName": "D4Vinci/Scrapling",
+      "firstSeenAt": "2026-11-15T23:55:44.013Z",
+      "fullName": "anthropics/skills",
       "language": "Python",
       "rank": 5,
-      "starsThisWeek": 8712,
-      "url": "https://github.com/D4Vinci/Scrapling"
+      "starsThisWeek": 6220,
+      "url": "https://github.com/anthropics/skills"
     },
-    "1048065319": {
+    "1131202426": {
       "domain": "ai",
-      "firstSeenAt": "2026-11-08T23:38:50.039Z",
-      "fullName": "thedotmack/claude-mem",
+      "firstSeenAt": "2026-11-15T23:55:44.013Z",
+      "fullName": "meta/astryx",
       "language": "TypeScript",
-      "rank": 7,
-      "starsThisWeek": 7482,
-      "url": "https://github.com/thedotmack/claude-mem"
+      "rank": 1,
+      "starsThisWeek": 13660,
+      "url": "https://github.com/meta/astryx"
     },
-    "1097346685": {
+    "1132001614": {
       "domain": "ai",
-      "firstSeenAt": "2026-11-01T23:30:25.194Z",
-      "fullName": "pbakaus/impeccable",
+      "firstSeenAt": "2026-11-15T23:55:44.013Z",
+      "fullName": "vercel-labs/agent-browser",
       "language": "Rust",
-      "rank": 6,
-      "starsThisWeek": 7623,
-      "url": "https://github.com/pbakaus/impeccable"
+      "rank": 8,
+      "starsThisWeek": 4601,
+      "url": "https://github.com/vercel-labs/agent-browser"
     },
     "1148788086": {
       "domain": "ai",
@@ -33,62 +42,53 @@
       "fullName": "mattpocock/skills",
       "language": "Shell",
       "rank": 3,
-      "starsThisWeek": 9664,
+      "starsThisWeek": 7308,
       "url": "https://github.com/mattpocock/skills"
+    },
+    "1153130349": {
+      "domain": "ai",
+      "firstSeenAt": "2026-11-15T23:55:44.013Z",
+      "fullName": "pingdotgg/t3code",
+      "language": "TypeScript",
+      "rank": 2,
+      "starsThisWeek": 9668,
+      "url": "https://github.com/pingdotgg/t3code"
     },
     "1161958643": {
       "domain": "ai",
       "firstSeenAt": "2026-11-08T23:38:50.039Z",
       "fullName": "vercel-labs/agent-desktop",
       "language": "Rust",
-      "rank": 1,
-      "starsThisWeek": 13858,
+      "rank": 7,
+      "starsThisWeek": 5171,
       "url": "https://github.com/vercel-labs/agent-desktop"
-    },
-    "1222953295": {
-      "domain": "ai",
-      "firstSeenAt": "2026-11-08T23:38:50.039Z",
-      "fullName": "NVIDIA/auto-ontology",
-      "language": "Python",
-      "rank": 4,
-      "starsThisWeek": 9044,
-      "url": "https://github.com/NVIDIA/auto-ontology"
-    },
-    "1226205410": {
-      "domain": "frontend-backend",
-      "firstSeenAt": "2026-10-25T22:29:10.259Z",
-      "fullName": "Renhuai123/ziwei-doushu",
-      "language": "TypeScript",
-      "rank": 9,
-      "starsThisWeek": 4906,
-      "url": "https://github.com/Renhuai123/ziwei-doushu"
-    },
-    "1273427276": {
-      "domain": "ai",
-      "firstSeenAt": "2026-10-25T22:29:10.259Z",
-      "fullName": "cloudflare/security-audit-skill",
-      "language": "JavaScript",
-      "rank": 2,
-      "starsThisWeek": 10405,
-      "url": "https://github.com/cloudflare/security-audit-skill"
     },
     "1331261687": {
       "domain": "ai",
       "firstSeenAt": "2026-11-08T23:38:50.039Z",
       "fullName": "milind-soni/OpenMausBot",
       "language": "TypeScript",
-      "rank": 8,
-      "starsThisWeek": 7077,
+      "rank": 4,
+      "starsThisWeek": 6413,
       "url": "https://github.com/milind-soni/OpenMausBot"
     },
-    "1446569267": {
+    "1368596582": {
+      "domain": "ai",
+      "firstSeenAt": "2026-11-15T23:55:44.013Z",
+      "fullName": "google/elephant-goldfish-model",
+      "language": "Python",
+      "rank": 6,
+      "starsThisWeek": 5539,
+      "url": "https://github.com/google/elephant-goldfish-model"
+    },
+    "1452450730": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-11-08T23:38:50.039Z",
-      "fullName": "AtomIllusionistDwell/watson-username-footprint-finder",
+      "firstSeenAt": "2026-11-15T23:55:44.013Z",
+      "fullName": "JDhruv14/line-art-animation",
       "language": "TypeScript",
       "rank": 10,
-      "starsThisWeek": 547,
-      "url": "https://github.com/AtomIllusionistDwell/watson-username-footprint-finder"
+      "starsThisWeek": 829,
+      "url": "https://github.com/JDhruv14/line-art-animation"
     }
   },
   "intros": {
@@ -220,6 +220,10 @@
       "intro": "本專案是一本深入探討 AI Agent 的開源技術書，解決了從原理到生產實踐的落地難題。書中圍繞「Agent = LLM + 上下文 + 工具」核心架構，由 10 章內容與 92 個配套實作專案組成。涵蓋 RAG、記憶工程、多 Agent 協作、模型後訓練及多模態交互等關鍵技術。適合希望透過系統化學習與實戰練習，掌握 AI Agent 工程化開發的開發者與架構師。",
       "introAt": "2026-07-26T23:05:01.196Z"
     },
+    "1061953414": {
+      "intro": "本專案解決 Claude 執行專業任務時缺乏標準化流程與特定規範的問題。核心特色包含提供多種實用的技能包（如文件處理、創意設計、技術開發與企業工作流程），每個技能皆為獨立資料夾，內含 `SKILL.md` 供 Claude 動態載入，並附有開發範本與標準規範。適合開發者、企業團隊及希望提升 Claude 實作能力的使用者，作為客製化 AI 代理與實作複雜工作流程的參考範例。",
+      "introAt": "2026-11-15T23:55:44.013Z"
+    },
     "1065936302": {
       "intro": "OpenStock 是付費市場平台的開源替代方案，提供免付費的即時股價追蹤、自訂警示與詳細公司資訊。核心採用 Next.js、TypeScript、shadcn/ui 與 Tailwind CSS，並整合 Finnhub 取得市場數據、TradingView 呈現互動圖表，以及透過 Inngest 結合 Gemini 實現 AI 個人化歡迎信與每日新聞摘要。適合尋求透明、無訂閱門檻且注重隱私的投資人與開發者使用。",
       "introAt": "2026-09-21T00:06:43.738Z"
@@ -256,6 +260,14 @@
       "intro": "World Monitor 是開源的即時全球情報儀表板，透過 AI 整合超過 500 個新聞源與多元數據，協助使用者監控地緣政治、金融市場及關鍵基礎設施。具備 3D 地球儀與 WebGL 平面地圖視覺化，支援本地 AI 運作，並整合 MCP 協議供 AI Agent 調用。適合需進行情勢感知、市場分析或研究的地緣政治觀察者及開發者，透過跨平台桌面應用或 API 獲取即時洞察。",
       "introAt": "2026-07-26T23:05:01.196Z"
     },
+    "1131202426": {
+      "intro": "Astryx 是源自 Meta 的開源設計系統，解決 13,000+ 個應用程式在介面開發與維護上的擴充難題。它內建 150+ 個無障礙元件、多種主題與命令列工具，支援 React 19 與 StyleX。核心特色包含高度可組合性、無樣式綁定（可相容 Tailwind 等工具），且從 API 到 CLI 皆為人類與 AI 協同開發所設計。適合需要現代化、高客製化且支援 AI 輔助開發的工程師與產品團隊。",
+      "introAt": "2026-11-15T23:55:44.013Z"
+    },
+    "1132001614": {
+      "intro": "專案為 AI 代理提供原生 Rust 瀏覽器自動化命令列工具，透過常駐背景 daemon 支援分步互動。核心特色為將網頁解析為帶有參考代碼（如 `@e1`）的輕量文字樹狀結構，讓 AI 能精確點擊、填寫或讀取狀態，並透過指令檢查執行結果。適用於需要驅動瀏覽器、進行網頁操作與自動化測試的 AI 代理與開發者。",
+      "introAt": "2026-11-15T23:55:44.013Z"
+    },
     "1136590548": {
       "intro": "ECC 為 AI 代理提供完整的工程系統與工具箱，解決每次提示詞重複建立流程的問題，優化上下文窗口並持久化重要內容。專案具備 68 個代理、286 項技能與安全掃描，支援 Claude Code、Codex 等多種開發環境，協助 AI 在建構前規劃、測試驗證變更並持續學習。",
       "introAt": "2026-09-06T23:45:03.614Z"
@@ -267,6 +279,10 @@
     "1151702019": {
       "intro": "Firecrawl 開發的高速 Rust PDF 解析與分類庫，無需 OCR 即可在 200 毫秒內完成文字提取並轉為乾淨的 Markdown。具備智慧分類、座標感知提取、多欄排版與表格偵測等功能。提供 Python、Node.js 及瀏覽器 WebAssembly 綁定，是處理原生文字 PDF、研究報告與財務文件的高效本地端首選。",
       "introAt": "2026-08-09T22:40:29.356Z"
+    },
+    "1153130349": {
+      "intro": "T3 Code 是開源的 Coding Agent 控制平臺，讓你在本機運行 AI 代理並透過單一介面管理。\n\n核心特色包含整合各大訂閱代理、支援多平臺（桌面、網頁、iOS、Android）、內建 Git 支援與高效能。\n\n適合想在電腦端啟動對話、隨時在手機審核下一步，並自由切換多種 AI 代理的開發者。",
+      "introAt": "2026-11-15T23:55:44.013Z"
     },
     "1157102282": {
       "intro": "OmniRoute 是免費的 AI 閘道，整合 43 個供應商與 516 種模型，每月提供約 15 億免費 Token。它能自動切換模型，確保服務不中斷。具備 19 種路由策略與自動化組合引擎，支援主流 AI 編碼工具與 MCP 協定，無需配置即可使用，是開發者優化 AI 使用成本與效能的利器。",
@@ -460,6 +476,10 @@
       "intro": "這是一個在瀏覽器中設計 Material 3 Expressive 介面的視覺化工具。支援拖曳豐富的元件、磁吸群組、多螢幕尺寸切換及頁面導航串連，並能將設計一鍵轉換為精準的 AI 程式碼提示詞。適合開發者搭配 Claude Code、Cursor 等 AI 工具快速建構跨平台應用程式。",
       "introAt": "2026-09-06T23:45:03.614Z"
     },
+    "1368596582": {
+      "intro": "EGM 專為 AI 程式碼助理打造，解決軟體開發中容易忽略隱藏假設與盲點的問題。核心特色採用「大象與金魚」工作流：大象負責保留專案脈絡並起草規格書，金魚則以無先前對話記錄的全新視角進行審查，並由開發者把關架構取捨。適合在 Claude Code、Antigravity 與 Codex 等環境中，進行系統化腦力激盪、規格草擬、設計審查及程式碼飄移檢測。",
+      "introAt": "2026-11-15T23:55:44.013Z"
+    },
     "1408371739": {
       "intro": "這是一個以 TypeScript 打造的 ASCII 動態藝術函式庫，專為極簡與終端機風格網站設計，在不破壞復古排版的前提下為頁面增添微動效。內含 217 種豐富組件，從色彩場景、載入動畫到圖標與物理效果應有盡有。支援 React、Next.js、Astro、Web Components 或純 HTML，也能在終端機中直接播放，並提供適用於 GitHub README 的動態 SVG 與自訂橫幅製作工具。",
       "introAt": "2026-10-11T23:37:19.365Z"
@@ -471,128 +491,20 @@
     "1446569267": {
       "intro": "Watson 是一款免費的 Windows 桌面版數位足跡查詢工具，旨在解決手動搜尋耗時、終端機工具門檻高且繁瑣的問題。\n\n使用者只需輸入暱稱、電子郵件、電話或網站等單一欄位，即可在約 30 秒內自動掃描超過 3,100 個公開頁面（如社群網路、論壇與遊戲平台），產出易讀的摘要報告，並支援一鍵匯出 PDF 及案件關聯地圖。\n\n本專案無需安裝 Python、不需要 API 金鑰、免註冊帳號，適合作為審查賣家、求職評估或檢視個人網路足跡的便利助手。",
       "introAt": "2026-11-08T23:38:50.039Z"
+    },
+    "1452450730": {
+      "intro": "這是一個結合 Claude Skill 與 TypeScript 的輕量動態線條藝術元件庫，能讓 SVG 圖形在日夜場景中生動地步行、騎乘與互動。\n\n核心特色包含零依賴的 TypeScript 模組，提供繪圖基底、步伐求解器、彈簧擺錘運動及日夜色票轉換，並支援無頭瀏覽器精準影格截圖輸出影片。\n\n適合開發者搭配 Claude 快速生成客製化的 SVG 動態場景、日夜循環與互動角色動畫。",
+      "introAt": "2026-11-15T23:55:44.013Z"
     }
   },
-  "lastBoardPushAt": "2026-11-08T23:38:50.039Z",
-  "lastNewsPushAt": "2026-11-14T23:50:25.821Z",
+  "lastBoardPushAt": "2026-11-15T23:55:44.013Z",
+  "lastNewsPushAt": "2026-11-15T23:55:44.013Z",
   "publish": {
     "boardSummary": {
-      "generatedAt": "2026-11-08T23:38:50.039Z",
-      "summary": "本次新進 7 個、竄升 1 個、下降 1 個，新進與竄升集中於 AI 7 個與前後端 1 個，綜合榜 #1 為 vercel-labs/agent-desktop。"
+      "generatedAt": "2026-11-15T23:55:44.013Z",
+      "summary": "本次榜單由 meta/astryx 奪得 #1，迎來 7 個新進項目與 1 個竄升項目（含 AI 6 個、前後端 2 個），同時有 1 個項目下降。"
     },
     "feed": [
-      {
-        "content": null,
-        "id": "news:https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "A false smoke alarm almost drowned Jane Street's only NYC datacenter",
-        "type": "news",
-        "url": "https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/"
-      },
-      {
-        "content": null,
-        "id": "news:https://vulncheck.com/blog/anthropic-glasswing-november-update",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "Tracking Anthropic-discovered vulnerabilities",
-        "type": "news",
-        "url": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update"
-      },
-      {
-        "content": null,
-        "id": "news:https://simonwillison.net/2026/Nov/9/mysterious-beeps",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "Locating the source of a mysterious beep",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/"
-      },
-      {
-        "content": null,
-        "id": "news:https://github.com/GoogleChrome/modern-web-guidance",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-        "type": "news",
-        "url": "https://github.com/GoogleChrome/modern-web-guidance"
-      },
-      {
-        "content": null,
-        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "Gemini 4 Carbon is now available",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
-      },
-      {
-        "content": null,
-        "id": "news:https://artificialanalysis.ai/models/claude-fable-5-2",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far",
-        "type": "news",
-        "url": "https://artificialanalysis.ai/models/claude-fable-5-2"
-      },
-      {
-        "content": null,
-        "id": "news:https://cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
-        "type": "news",
-        "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/"
-      },
-      {
-        "content": null,
-        "id": "news:https://sergeykuhne.com/blog/fighting-ai-brain-fry",
-        "publishedAt": "2026-11-12T01:53:05.754Z",
-        "title": "How I'm fighting the AI brain fry",
-        "type": "news",
-        "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry"
-      },
-      {
-        "content": "Google 發布全新的 Gemini Decisions API，支援開發者在應用程式中整合更強大的決策與推理能力，提升複雜任務的自動化處理水準。",
-        "id": "news:https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "Gemini Decisions API 發布",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
-      },
-      {
-        "content": "Google 正式推出 Gemini 4 Hydrogen 模型，專為高效能與複雜推理任務設計，協助開發者在各類應用場景中獲得更快速的響應與準確度。",
-        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "Gemini 4 Hydrogen 模型正式推出",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
-      },
-      {
-        "content": "Google 最新模型 Gemini 4 Carbon 已在 GitHub Copilot 中全面可用，專為複雜程式碼編寫、代理與推理任務設計，並著重於安全的程式碼生成。",
-        "id": "news:https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "Gemini 4 Carbon 現已在 GitHub Copilot 中全面可用",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot"
-      },
-      {
-        "content": "Node.js 釋出 27.0.0-alpha.0.1.0 Alpha 版本，帶來多項重要變更，包含 child_process 新增 subprocess.timedOut、crypto 模組強化 X.509 檢查與產生支援，以及 dns 模組合併相同並發查詢請求。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.1.0",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "Node.js 27.0.0-alpha.0.1.0 Alpha 版本釋出",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v27.0.0-alpha.0.1.0"
-      },
-      {
-        "content": "Node.js 發布版本 26.13.1 'Lithium' 與 24.22.3 'Krypton' 兩款長期支援版本的安全性更新，修復多項高風險漏洞，包含 http2 標頭釋放、tls/http 空寫入防護與 mTLS 重啟停用等問題。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v26.13.1",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "Node.js 發布 26.13.1 與 24.22.3 LTS 安全更新",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v26.13.1"
-      },
-      {
-        "content": "微軟 365 雲端服務傳出服務降級與中斷事故，影響全球多地用戶與企業依賴的相關雲端協作及 API 運作，相關修復作業正在進行中。",
-        "id": "news:https://status.cloud.microsoft/",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "Microsoft 365 發生服務降級與中斷事故",
-        "type": "news",
-        "url": "https://status.cloud.microsoft/"
-      },
       {
         "content": "Google 推出 Gemini 4 程式碼代理的新系統，支援在任務執行途中自動切換合適模型，使整體工作完成速度提升 19%。",
         "id": "news:https://thenewstack.io/gemini-4-hydrogen-orchestrator",
@@ -880,365 +792,205 @@
         "title": "零儲存格開銷的終端邊框渲染技巧：在字元網格中榨出最大顯示空間",
         "type": "news",
         "url": "https://www.joshka.net/cell-borders/"
+      },
+      {
+        "id": "repo:1131202426:new:2026-11-16",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "meta/astryx 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/meta/astryx"
+      },
+      {
+        "id": "repo:1153130349:new:2026-11-16",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "pingdotgg/t3code 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/pingdotgg/t3code"
+      },
+      {
+        "id": "repo:1331261687:climbed:2026-11-16",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "milind-soni/OpenMausBot 竄升",
+        "type": "board-climbed",
+        "url": "https://github.com/milind-soni/OpenMausBot"
+      },
+      {
+        "id": "repo:1061953414:new:2026-11-16",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "anthropics/skills 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/anthropics/skills"
+      },
+      {
+        "id": "repo:1368596582:new:2026-11-16",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "google/elephant-goldfish-model 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/google/elephant-goldfish-model"
+      },
+      {
+        "id": "repo:1132001614:new:2026-11-16",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "vercel-labs/agent-browser 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/vercel-labs/agent-browser"
+      },
+      {
+        "id": "repo:997737944:new:2026-11-16",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "ruvnet/RuView 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/ruvnet/RuView"
+      },
+      {
+        "id": "repo:1452450730:new:2026-11-16",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "JDhruv14/line-art-animation 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/JDhruv14/line-art-animation"
+      },
+      {
+        "content": "Node.js 官方釋出 v22.23.5「Jod」長期支援版（LTS）安全維護更新。本次更新重點修復了多個高風險安全漏洞，包括 CVE-2026-123863、CVE-2026-123865 與 CVE-2026-123866 等 HTTP/2 相關漏洞（涉及 stream 移除時未釋放標頭、nghttp2 放棄 stream 偵測以及 socket 寫入完成前的緩衝區保留問題），同時修復了 TLS/HTTP 中因空寫入引發巢狀解析器執行的 CVE-2026-123864，並解決未提供 session ID context 時 mTLS resumption 的安全風險。此版本對維運生產環境中 Node.js 服務的團隊極為重要，建議儘速安排升級以防範潛在阻斷服務與安全威脅。",
+        "id": "news:https://github.com/nodejs/node/releases/tag/v22.23.5",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "Node.js 發布 v22.23.5「Jod」LTS 安全更新，修復多項 HTTP/2 與 TLS 高危險漏洞",
+        "type": "news",
+        "url": "https://github.com/nodejs/node/releases/tag/v22.23.5"
+      },
+      {
+        "content": "IBM 宣布在 Granite 4.1（3B 與 8B 版本）中正式導入名為 LLMON 的 LLM 原生標記語言（LLM-Native Markup Language）。LLMON 專為語言模型最佳化設計，旨在提升模型在生成與解析結構化資料時的語意一致性與輸出效率，解決傳統 XML 或 JSON 格式在推論時帶來的 token 膨脹與解析失敗問題。對於在邊緣或輕量級環境中部署 Granite 模型、依賴結構化輸出進行自動化流程的開發者而言，這項更新能顯著提高模型與應用程式對接的穩定度。",
+        "id": "news:https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "IBM Granite 4.1 正式支援 LLM 原生標記語言 LLMON，強化 3B 與 8B 輸出架構",
+        "type": "news",
+        "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite"
+      },
+      {
+        "content": "開源模型加速框架 Unsloth 發布了針對 Qwen3.8-27B 的 Dynamic v3.1 量化更新。該更新透過動態量化機制進一步降低了模型推論時的 VRAM 需求，同時在關鍵基準測試中維持全精度等級的推論準確度。這項更新讓資源受限的中小型伺服器或本地端設備得以順暢執行 27B 級別的大型模型，有助於降低邊緣運算與私有化 LLM 部署的硬體門檻。",
+        "id": "news:https://unsloth.ai/docs/models/qwen3.8",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "Unsloth 發布 Qwen3.8-27B Dynamic v3.1 量化更新，大幅優化推論記憶體配置",
+        "type": "news",
+        "url": "https://unsloth.ai/docs/models/qwen3.8"
+      },
+      {
+        "content": "本文對現代大型語言模型（LLM）中的位置編碼（Positional Embeddings）機制進行了深度技術剖析。內容詳細拆解了絕對位置編碼、相對位置編碼、旋轉位置編碼（RoPE）、NoPE 以及 ALiBi 的數學原理與底層實作差異，並進一步探討長上下文外推（Context Extrapolation）在注意力計算上的瓶頸與工程取捨。對於從事 LLM 底層架構設計、自建微調流程或需要最佳化長文本推理表現的工程師而言，是掌握現代模型內部工作原理的高價值參考。",
+        "id": "news:https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "深入解析現代 LLM 位置編碼：從 RoPE、ALiBi 到長文本注意力推廣",
+        "type": "news",
+        "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings"
+      },
+      {
+        "content": "本文深入探討傳統資料庫通訊協定在現代大數據查詢情境下的效能瓶頸。傳統協定多採用逐列傳輸並重複夾帶欄位名稱等元資料，導致嚴重的傳輸頻寬浪費與序列化負擔。文章剖析了 DuckDB 如何透過現代化的二進位列式傳輸格式與串流批次架構，從根本解決資料庫訊息臃腫問題，顯著減少序列化成本與網路延遲。這項架構實踐對設計高效能資料管線與分散式後端系統的開發者具有高度啟發性。",
+        "id": "news:https://thenewstack.io/duckdb-quack-database-protocol",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "DuckDB 提出新型協定架構，解決傳統資料庫傳輸訊息臃腫問題",
+        "type": "news",
+        "url": "https://thenewstack.io/duckdb-quack-database-protocol/"
+      },
+      {
+        "content": "本篇評測深入分析了 Anthropic 最新發布的 Claude Fable 5.2 與旗艦模型 Claude Opus 5.5 在基準測試與推論成本上的實際差異。實測數據顯示，Fable 5.2 在多數核心評測項目上的得分與 Opus 5.5 幾乎持平，但推論成本卻高達後者的近 4 倍。這份評測為正在規劃將 Anthropic 模型接入生產環境或 Coding Agent 流程的開發架構師提供了關鍵的成本效益依據，避免盲目升級造成 API 預算失控。",
+        "id": "news:https://thenewstack.io/claude-fable-5-2-vs-opus-5-5",
+        "publishedAt": "2026-11-15T23:55:44.013Z",
+        "title": "Claude Fable 5.2 與 Opus 5.5 實測評估：得分相近但成本高達近 4 倍",
+        "type": "news",
+        "url": "https://thenewstack.io/claude-fable-5-2-vs-opus-5-5/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-14T23:50:25.821Z",
+      "generatedAt": "2026-11-15T23:55:44.013Z",
       "items": [
         {
-          "content": "Amazon Web Services 正式推出 AWS Emulator，這是一套可在本地運行的 AWS 服務模擬環境。針對近年興起的 AI coding agent，該工具提供了關鍵的本機驗證迴圈（verification loop），讓 Agent 在生成雲端架構、IaC 腳本或調用 AWS SDK 時，能在本地直接執行測試並自我修正，無須耗費真實雲端帳號成本或承擔配置失誤風險，大幅加速 Agent 開發流程。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "AWS emulator",
-          "sources": [
-            "hn"
-          ],
-          "title": "AWS 推出本地端 AWS Emulator，為 AI Agent 提供離線驗證與測試環境",
-          "url": "https://github.com/aws/aws-emulator",
-          "weightedScore": 987
-        },
-        {
-          "content": "作為 llama.cpp 與多項本地開源大型語言模型底層核心的張量運算庫 GGML，正式發布 v1.0.0 版本。本次重大版本確立了穩定的 API 與跨平台運算架構，優化了 CPU 與各類硬體加速器的張量運算效能，為本地端邊緣推論生態系統提供更加標準化且可靠的底層基礎。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Ggml v1.0.0",
-          "sources": [
-            "hn"
-          ],
-          "title": "GGML 正式迎來 v1.0.0 里程碑：本地端 AI 核心張量庫邁入穩定架構",
-          "url": "https://github.com/ggml-org/ggml/releases/tag/v1.0.0",
-          "weightedScore": 398
-        },
-        {
-          "content": "開發團隊發布參數量達 1450 億的 Edge0-145B 模型，主打讓開發者在個人工作站或邊緣設備上直接部署具備前沿旗艦級能力的 AI 模型。該模型透過架構與量化最佳化，大幅壓低記憶體頻寬與硬體門檻，為不依賴雲端專有 API、重視資料隱私與離線自主性的開發者提供了強大開源選項。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Edge0-145B: Frontier AI Capabilities on Your Own Computer",
-          "sources": [
-            "hn"
-          ],
-          "title": "Edge0-145B 開源模型發布：在個人電腦上運行頂級前沿 AI 能力",
-          "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
-          "weightedScore": 352
-        },
-        {
-          "content": "終端機工具 Atuin 正式推出「Atuin Threads」功能，支援跨機器同步所有 AI Coding Agent 的對話與操作歷程。開發者經常在不同工作站、遠端伺服器與筆電之間切換，Threads 解決了 Agent 狀態孤島問題，讓開發者在任何終端環境皆能無縫接續先前的上下文與執行任務。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Atuin Threads: All your agent sessions on every machine",
-          "sources": [
-            "hn"
-          ],
-          "title": "Atuin 推出 Atuin Threads：跨終端跨設備同步管理 AI Agent 對話 Session",
-          "url": "https://blog.atuin.sh/threads-agent-sessions/",
-          "weightedScore": 237
-        },
-        {
-          "content": "Google DeepMind 正式公開新一代生物 AI 模型 AlphaGenome 2。該模型能夠深入解析細胞讀取 DNA 的機制，並準確預測基因序列及其突變如何影響特定人體細胞類型與疾病關聯。對於從事生物資訊、計算生物學及 AI for Science 的開發者而言，這代表著在結構生物學與疾病機制建模上的重要突破。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "deepmind-blog",
-          "sourceTitle": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
-          "sources": [
-            "deepmind-blog"
-          ],
-          "title": "Google DeepMind 發表 AlphaGenome 2：精準預測 DNA 變異對細胞的影響",
-          "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Google DeepMind 正式公開其氣象 AI 預測模型所依賴的基礎資料集，包含高解析度降水資料與地球靜止氣象衛星觀測數據。此舉讓氣候科技與環境預測領域的機器學習開發者能直接取得高品質、標準化的行星觀測訓練資料，降低訓練前沿地球系統預測模型的門檻。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "deepmind-blog",
-          "sourceTitle": "Opening the datasets behind our AI weather models",
-          "sources": [
-            "deepmind-blog"
-          ],
-          "title": "DeepMind 開源氣象 AI 預測模型背後的核心降水與衛星觀測資料集",
-          "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
-          "weightedScore": 100
-        },
-        {
-          "content": "一項深入的逆向工程研究顯示，透過分析模型權重輸出中的浮點數捨入誤差與特定微架構計算特徵（硬體指紋），可以追蹤出前沿模型實際是在何種 GPU 架構下訓練完成。這項技術分析展示了硬體低階數值特性如何在神經網路訓練中留下痕跡，為模型溯源與合規驗證提供了嶄新的技術視角。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Chinese frontier AI models carry the fingerprint of export-controlled GPUs",
-          "sources": [
-            "hn"
-          ],
-          "title": "技術分析揭露：中國前沿 AI 模型輸出帶有受出口管制 GPU 的硬體指紋",
-          "url": "https://unemploymentlabs.com/checkpoint-forensics",
-          "weightedScore": 371
-        },
-        {
-          "content": "Cloudflare 發布深度技術報告，剖析如 ARTEX 等 AI 自主編排滲透測試平台的運作機制。這類工具能全天候自主探索暴露在外的基礎設施並發動精準攻擊。報告指出傳統被動防護已難以應付具備自動決策能力的攻擊者，團隊必須轉向縱深防禦與即時異常感知架構，更新現代雲端基礎設施的安全模型。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Adapting to AI penetration testing orchestrators: The Modern Security Model",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 解析 AI 滲透測試編排工具帶來的威脅與新防禦架構",
-          "url": "https://blog.cloudflare.com/adapting-to-ai-penetration-testing-orchestrators/",
-          "weightedScore": 50
-        },
-        {
-          "content": "開發者深入分享如何在瀏覽器環境中利用 WebGL2 實現超逼真的動態沙粒物理與光影渲染。文章詳細探討了粒子系統的 GPU 運算管線、碰撞檢測演算法以及著色器效能調校技巧，展示了現代 Web 圖形技術在不依賴 WebGPU 的情況下，仍能在標準瀏覽器中榨乾硬體極限的實作範例。",
+          "content": "Node.js 官方釋出 v22.23.5「Jod」長期支援版（LTS）安全維護更新。本次更新重點修復了多個高風險安全漏洞，包括 CVE-2026-123863、CVE-2026-123865 與 CVE-2026-123866 等 HTTP/2 相關漏洞（涉及 stream 移除時未釋放標頭、nghttp2 放棄 stream 偵測以及 socket 寫入完成前的緩衝區保留問題），同時修復了 TLS/HTTP 中因空寫入引發巢狀解析器執行的 CVE-2026-123864，並解決未提供 session ID context 時 mTLS resumption 的安全風險。此版本對維運生產環境中 Node.js 服務的團隊極為重要，建議儘速安排升級以防範潛在阻斷服務與安全威脅。",
           "degraded": false,
           "domain": "frontend-backend",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Hyper-realistic sand with WebGL2",
+          "sourceId": "gh-nodejs",
+          "sourceTitle": "2026-11-11, Version 22.23.5 'Jod' (LTS), @aduh95",
           "sources": [
-            "hn"
+            "gh-nodejs"
           ],
-          "title": "基於 WebGL2 實現超擬真沙粒即時物理模擬與渲染技術",
-          "url": "https://av.github.io/safe-sand/",
-          "weightedScore": 445
-        },
-        {
-          "content": "GitHub Next 團隊發表前瞻架構演講，深入探討軟體工程範式的演變。內容涵蓋支援多個 AI Agent 同時協作的「Multiplayer Agents」架構、人機共創的規劃引擎，以及結合形式化驗證的「證明驅動開發（Proof-driven development）」，為開發者展示了未來由 Agent 主導的程式碼庫維護與驗證實踐。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-next",
-          "sourceTitle": "Universe 2026: What’s Next with GitHub Next",
-          "sources": [
-            "github-next"
-          ],
-          "title": "GitHub Next 揭示未來架構藍圖：多人協作 Agent 與證明驅動開發",
-          "url": "https://githubnext.com/talks/whats-next-with-github-next/",
+          "title": "Node.js 發布 v22.23.5「Jod」LTS 安全更新，修復多項 HTTP/2 與 TLS 高危險漏洞",
+          "url": "https://github.com/nodejs/node/releases/tag/v22.23.5",
           "weightedScore": 100
         },
         {
-          "content": "知名 Nix 部署工具 deploy-rs 宣布重新啟動積極維護，團隊分享了現代化改版架構。deploy-rs 具備無代理人（agentless）、依賴 Nix profile 回滾機制等純粹函數式部署特性，本次演進修復了與新版 Rust 工具鏈及 Nix Flakes 的整合問題，並優化了多主機並行部署與健康檢查流程，為 NixOS 維運團隊帶來更穩健的自動化方案。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "lobsters-devops",
-          "sourceTitle": "deploy-rs in 2026: reviving our Nix deployment tool",
-          "sources": [
-            "lobsters-devops"
-          ],
-          "title": "deploy-rs 重啟維護：NixOS 無代理程式部署工具的現代化演進",
-          "url": "https://serokell.io/blog/deploy-rs-nix",
-          "weightedScore": 100
-        },
-        {
-          "content": "新推出的評測基準 XYBench 專注於測試 AI 模型解決「問題背後的真正問題」之能力。在工程實務中，使用者常因對解法產生誤解而提出錯誤問題（即 XY Problem）。該基準透過大量真實技術場景，衡量 Coding Agent 能否主動洞察提問者的真實意圖並提出根治方案，而非機械式地執行錯誤指令。",
+          "content": "IBM 宣布在 Granite 4.1（3B 與 8B 版本）中正式導入名為 LLMON 的 LLM 原生標記語言（LLM-Native Markup Language）。LLMON 專為語言模型最佳化設計，旨在提升模型在生成與解析結構化資料時的語意一致性與輸出效率，解決傳統 XML 或 JSON 格式在推論時帶來的 token 膨脹與解析失敗問題。對於在邊緣或輕量級環境中部署 Granite 模型、依賴結構化輸出進行自動化流程的開發者而言，這項更新能顯著提高模型與應用程式對接的穩定度。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "huggingface-blog",
-          "sourceTitle": "XYBench: Helping with the problem behind the question",
+          "sourceTitle": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
           "sources": [
             "huggingface-blog"
           ],
-          "title": "XYBench 評測基準推出：評估 AI 是否具備識別「XY 問題」的診斷能力",
-          "url": "https://huggingface.co/blog/allenai/xybench",
+          "title": "IBM Granite 4.1 正式支援 LLM 原生標記語言 LLMON，強化 3B 與 8B 輸出架構",
+          "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
           "weightedScore": 100
         },
         {
-          "content": "Rust 程式語言正式發布第 100 個六週週期版本 1.100。本次發布代表了 Rust 自 1.0 以來十年以上的穩定演進，持續在不破壞向後相容性的承諾下提供語言增強、型別系統改良與編譯速度最佳化。對於全球系統程式設計師而言，這是開源軟體工程與語言演進史上的重要里程碑。",
+          "content": "開源模型加速框架 Unsloth 發布了針對 Qwen3.8-27B 的 Dynamic v3.1 量化更新。該更新透過動態量化機制進一步降低了模型推論時的 VRAM 需求，同時在關鍵基準測試中維持全精度等級的推論準確度。這項更新讓資源受限的中小型伺服器或本地端設備得以順暢執行 27B 級別的大型模型，有助於降低邊緣運算與私有化 LLM 部署的硬體門檻。",
           "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Rust 1.100",
-          "sources": [
-            "hn"
-          ],
-          "title": "Rust 迎來 1.100 正式版里程碑：語言生態與編譯器最佳化新階段",
-          "url": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/",
-          "weightedScore": 893
-        },
-        {
-          "content": "資安研究揭露，由 AI 全端應用生成平台 Lovable 產出的多個應用程式存在嚴重的授權控制缺陷，導致敏感資料庫端點直接暴露於公開網路，洩漏了包含使用者護照細節與超過 20 萬則私訊記錄。此事件凸顯了 AI Coding 工具在快速生成前後端時，極易忽略細緻的 RBAC 與端點鑑權，開發者使用生成工具時務必對資料庫規則進行嚴格人工審計。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Lovable apps expose passport details and more than 200K private messages",
-          "sources": [
-            "hn"
-          ],
-          "title": "Lovable 生成應用爆發權限漏洞：外洩護照個資與逾 20 萬則私密訊息",
-          "url": "https://www.crissyfield.de/research/lovable-en/",
-          "weightedScore": 579
-        },
-        {
-          "content": "一篇探討終端機 UI（TUI）實作的深度技術文章，提出了一種無需佔用整行或整列字元單元（Cell）即可繪製邊框的技巧。傳統 TUI 邊框往往會浪費珍貴的終端顯示行數，該方案利用字型繪製特性與特定的終端轉義序列，在有限的終端介面中達成邊界分割，為 TUI 開發者與 CLI 工具維護者提供了精巧的介面最佳化思路。",
-          "degraded": false,
-          "domain": "general",
+          "domain": "ai",
           "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "Terminal borders that don't cost a cell",
+          "sourceTitle": "Unsloth Qwen3.8-27B Quantizations – Dynamic v3.1 Update",
           "sources": [
             "hn",
-            "lobsters-programming"
+            "reddit-localllama"
           ],
-          "title": "零儲存格開銷的終端邊框渲染技巧：在字元網格中榨出最大顯示空間",
-          "url": "https://www.joshka.net/cell-borders/",
-          "weightedScore": 502
+          "title": "Unsloth 發布 Qwen3.8-27B Dynamic v3.1 量化更新，大幅優化推論記憶體配置",
+          "url": "https://unsloth.ai/docs/models/qwen3.8",
+          "weightedScore": 357
+        },
+        {
+          "content": "本文對現代大型語言模型（LLM）中的位置編碼（Positional Embeddings）機制進行了深度技術剖析。內容詳細拆解了絕對位置編碼、相對位置編碼、旋轉位置編碼（RoPE）、NoPE 以及 ALiBi 的數學原理與底層實作差異，並進一步探討長上下文外推（Context Extrapolation）在注意力計算上的瓶頸與工程取捨。對於從事 LLM 底層架構設計、自建微調流程或需要最佳化長文本推理表現的工程師而言，是掌握現代模型內部工作原理的高價值參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Understanding Positional Embeddings in Modern LLMs",
+          "sources": [
+            "hn",
+            "raschka-ahead-of-ai"
+          ],
+          "title": "深入解析現代 LLM 位置編碼：從 RoPE、ALiBi 到長文本注意力推廣",
+          "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+          "weightedScore": 290
+        },
+        {
+          "content": "本文深入探討傳統資料庫通訊協定在現代大數據查詢情境下的效能瓶頸。傳統協定多採用逐列傳輸並重複夾帶欄位名稱等元資料，導致嚴重的傳輸頻寬浪費與序列化負擔。文章剖析了 DuckDB 如何透過現代化的二進位列式傳輸格式與串流批次架構，從根本解決資料庫訊息臃腫問題，顯著減少序列化成本與網路延遲。這項架構實踐對設計高效能資料管線與分散式後端系統的開發者具有高度啟發性。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "DuckDB has an answer to “bloated” database messages",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "DuckDB 提出新型協定架構，解決傳統資料庫傳輸訊息臃腫問題",
+          "url": "https://thenewstack.io/duckdb-quack-database-protocol/",
+          "weightedScore": 50
+        },
+        {
+          "content": "本篇評測深入分析了 Anthropic 最新發布的 Claude Fable 5.2 與旗艦模型 Claude Opus 5.5 在基準測試與推論成本上的實際差異。實測數據顯示，Fable 5.2 在多數核心評測項目上的得分與 Opus 5.5 幾乎持平，但推論成本卻高達後者的近 4 倍。這份評測為正在規劃將 Anthropic 模型接入生產環境或 Coding Agent 流程的開發架構師提供了關鍵的成本效益依據，避免盲目升級造成 API 預算失控。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Claude Fable 5.2 vs. Opus 5.5: Same scores at almost 4x the cost",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Claude Fable 5.2 與 Opus 5.5 實測評估：得分相近但成本高達近 4 倍",
+          "url": "https://thenewstack.io/claude-fable-5-2-vs-opus-5-5/",
+          "weightedScore": 50
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "openai-blog"
-      ],
-      "url": "https://openai.com/index/introducing-dots"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "hn",
-      "sources": [
-        "cloudflare-blog",
-        "hn"
-      ],
-      "url": "https://blog.cloudflare.com/clef-decision-models"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "hn",
-      "sources": [
-        "cloudflare-blog",
-        "hn"
-      ],
-      "url": "https://blog.cloudflare.com/cloudflare-k2-streams"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/allenai/olmocore3"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wu8tpg/we_just_opensourced_the_worlds_fastest_webgpu"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/ai-search-ga"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/cloudflare-x402-agent-spending"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "deepmind-blog",
-      "sources": [
-        "deepmind-blog"
-      ],
-      "url": "https://deepmind.google/blog/introducing-synthid-bio"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://earendil.com/posts/you-said-no-mcp"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "reddit-localllama"
-      ],
-      "url": "https://anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-01T23:51:54.733Z",
-      "sourceId": "cncf-blog",
-      "sources": [
-        "cncf-blog"
-      ],
-      "url": "https://cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams"
-    },
     {
       "domain": "devops",
       "seenAt": "2026-10-02T23:43:27.452Z",
@@ -6983,6 +6735,68 @@
       ],
       "title": "Terminal borders that don't cost a cell",
       "url": "https://joshka.net/cell-borders"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-15T23:55:44.013Z",
+      "sourceId": "gh-nodejs",
+      "sources": [
+        "gh-nodejs"
+      ],
+      "title": "2026-11-11, Version 22.23.5 'Jod' (LTS), @aduh95",
+      "url": "https://github.com/nodejs/node/releases/tag/v22.23.5"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-15T23:55:44.013Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+      "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-15T23:55:44.013Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "reddit-localllama"
+      ],
+      "title": "Unsloth Qwen3.8-27B Quantizations – Dynamic v3.1 Update",
+      "url": "https://unsloth.ai/docs/models/qwen3.8"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-15T23:55:44.013Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "raschka-ahead-of-ai"
+      ],
+      "title": "Understanding Positional Embeddings in Modern LLMs",
+      "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-15T23:55:44.013Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "DuckDB has an answer to “bloated” database messages",
+      "url": "https://thenewstack.io/duckdb-quack-database-protocol"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-15T23:55:44.013Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Claude Fable 5.2 vs. Opus 5.5: Same scores at almost 4x the cost",
+      "url": "https://thenewstack.io/claude-fable-5-2-vs-opus-5-5"
     }
   ]
 }
