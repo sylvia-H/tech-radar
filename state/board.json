@@ -498,101 +498,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-15T23:55:44.013Z",
-  "lastNewsPushAt": "2026-11-15T23:55:44.013Z",
+  "lastNewsPushAt": "2026-11-17T02:53:01.850Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-15T23:55:44.013Z",
       "summary": "本次榜單由 meta/astryx 奪得 #1，迎來 7 個新進項目與 1 個竄升項目（含 AI 6 個、前後端 2 個），同時有 1 個項目下降。"
     },
     "feed": [
-      {
-        "content": "Google 推出 Gemini 4 程式碼代理的新系統，支援在任務執行途中自動切換合適模型，使整體工作完成速度提升 19%。",
-        "id": "news:https://thenewstack.io/gemini-4-hydrogen-orchestrator",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "Google Gemini 4 支援任務中動態切換模型並提升效率",
-        "type": "news",
-        "url": "https://thenewstack.io/gemini-4-hydrogen-orchestrator/"
-      },
-      {
-        "content": "探討如何透過更快速的檢索技術來優化 RAG（檢索增強生成）系統，降低延遲並提升檢索準確度，對建構高效能 AI 知識庫具有實作參考價值。",
-        "id": "news:https://machinelearning.apple.com/research/faster-retrieval",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "RAG 檢索效能優化技術深度解析",
-        "type": "news",
-        "url": "https://machinelearning.apple.com/research/faster-retrieval"
-      },
-      {
-        "content": "GitHub 官方發布關於代理技能的實用指南，探討如何將可重複的工程工作封裝於檔案中供團隊審查與重複使用，同時維持主機端特定的環境與權限。",
-        "id": "news:https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "跨代理重複使用工程工作的實用指南",
-        "type": "news",
-        "url": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/"
-      },
-      {
-        "content": "深入探討分散式 AI 訓練工作負載在 Kubernetes 中面臨的複雜調度需求，分析如何透過群組調度和拓撲感知放置克服原生調度器的不足。",
-        "id": "news:https://cncf.io/blog/2026/11/12/gang-scheduling-and-topology-aware-placement-for-ai-training-in-kubernetes",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "Kubernetes AI 訓練的分組調度與拓撲感知放置",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/11/12/gang-scheduling-and-topology-aware-placement-for-ai-training-in-kubernetes/"
-      },
-      {
-        "content": "Cloudflare 技術團隊撰文介紹其在實驗性一致性服務中採用未曾大規模部署的新演算法 QuePaxa 的原因與運作原理，提供分散式系統架構設計的實務參考。",
-        "id": "news:https://blog.cloudflare.com/choosing-quepaxa",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "Cloudflare 選擇採用罕見的一致性演算法 QuePaxa",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/choosing-quepaxa/"
-      },
-      {
-        "content": "針對 GitHub Actions 工作流程的安全性提供實用防護建議與鎖定機制，協助開發團隊避免供應鏈攻擊與權限濫用風險。",
-        "id": "news:https://hugovk.dev/blog/2026/lock-github-actions",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "GitHub Actions 安全加固最佳實踐指南",
-        "type": "news",
-        "url": "https://hugovk.dev/blog/2026/lock-github-actions/"
-      },
-      {
-        "content": "3D 創作與開發工具 Blender 5.3 正式釋出，本次更新加入對 Gaussian Splat 的支援，提供開發者與創作者更強大的 3D 渲染與處理能力。",
-        "id": "news:https://blender.org/download/releases/5-3",
-        "publishedAt": "2026-11-13T01:00:15.496Z",
-        "title": "Blender 5.3 釋出並加入 Gaussian Splat 支援",
-        "type": "news",
-        "url": "https://www.blender.org/download/releases/5-3/"
-      },
-      {
-        "content": "著名開源本地 LLM 推論專案 llama.cpp 正式發布 v1.0 版本。官方團隊強調未來將持續支援各大運算平台與新模型架構，同時確保專案維持輕量與精簡，以支援廣大基於其構建的下游應用。此外，團隊亦推出基於 llama.cpp 的桌面端應用程式，進一步降低一般開發者在本地端運行 AI 模型的門檻。這標誌著本地 LLM 開發基礎設施邁向成熟穩定階段。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xv8t2e/llamacpp_v10_is_here",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "本地推論框架 llama.cpp 正式釋出 v1.0.0 里程碑版本",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xv8t2e/llamacpp_v10_is_here/"
-      },
-      {
-        "content": "Anthropic 推出 Claude Managed Agents 的自託管版本，允許企業開發者在自己的基礎設施中部署與運行 AI 代理人工作流。然而官方要求嚴格的安全規範：一旦系統標記潛在的安全風險行為，管理者必須在 8 小時內介入處置。這項更新讓對資料隱私有高度合規要求的企業能自託管進階代理人系統，同時建立了 AI 代理人安全治理的全新營運標準。",
-        "id": "news:https://thenewstack.io/self-hosted-claude-managed-agents",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "Anthropic 開放企業自託管 Claude 託管代理人，附帶 8 小時安全響應規範",
-        "type": "news",
-        "url": "https://thenewstack.io/self-hosted-claude-managed-agents/"
-      },
-      {
-        "content": "OpenAI 正式發表 ChatGPT Wallet，旨在為 ChatGPT Work、Codex 等環境中的自主 AI 代理人提供安全完成線上採購與支付的能力。該機制在保有現行信用卡交易安全防護的基礎上，要求每一筆交易必須經過使用者明確審批。這為自動化代理人串接付費 API、雲端資源採購或電商交易提供了標準化且具備安全護欄的官方金融支付介面。",
-        "id": "news:https://openai.com/index/introducing-chatgpt-wallet",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "OpenAI 推出 ChatGPT Wallet，為自主代理人交易提供安全授權機制",
-        "type": "news",
-        "url": "https://openai.com/index/introducing-chatgpt-wallet"
-      },
-      {
-        "content": "Node.js 官方釋出 24.22.3（及 22.23.5）LTS 安全修補版本，緊急修復了多個高嚴重性漏洞（CVE-2026-123863 至 123866、CVE-2026-123872）。修復範圍涵蓋 HTTP/2 在串流移除時未釋放標頭、nghttp2 放棄串流檢測、通訊端寫入緩衝區保留，以及空寫入引發的巢狀解析器執行與無 session id 下 mTLS 恢復問題。建議所有生產環境後端服務儘速升級，以防禦記憶體洩漏與阻斷服務攻擊。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v24.22.3",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "Node.js 發布 LTS 安全更新，修復 HTTP/2 與 TLS 多項高風險漏洞",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v24.22.3"
-      },
       {
         "content": "GitHub 官方公告將於 2026 年 12 月 14 日在所有 GitHub Copilot 體驗中全面淘汰指定模型，影響範圍涵蓋 Copilot Chat、行內編輯、詢問與代理人模式，以及程式碼自動補全。官方提醒依賴特定模型輸出行為的團隊與企業開發者需提前評估遷移計畫，調整自訂工作流與設定，以避免模型下線後影響日常開發流程與自動化整合。",
         "id": "news:https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
@@ -896,218 +808,257 @@
         "title": "Claude Fable 5.2 與 Opus 5.5 實測評估：得分相近但成本高達近 4 倍",
         "type": "news",
         "url": "https://thenewstack.io/claude-fable-5-2-vs-opus-5-5/"
+      },
+      {
+        "content": "阿里巴巴通義千問團隊正式推出新一代旗艦模型 Qwen4-Max。該模型代表了 Qwen 系列在超大規模參數上的最新成果，在複雜邏輯推理、長文本理解與程式碼生成能力上均有顯著升級。對於依賴大語言模型開發 AI Agent、高難度程式輔助工具及企業級後端服務的工程師而言，Qwen4-Max 提供了更強大的閉源與開源生態選擇，並進一步擴展了跨領域複雜任務的處理能力。",
+        "id": "news:https://qwen.ai/blog?id=qwen4-max",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "通義千問發布旗艦大模型 Qwen4-Max",
+        "type": "news",
+        "url": "https://qwen.ai/blog?id=qwen4-max"
+      },
+      {
+        "content": "Kubernetes 官方團隊正式宣布將排程移除 kube-proxy 中的 IPVS 後端實作。IPVS 模式早期作為 iptables 的高效能替代方案引入，但在長期運作中發現其 Linux 核心 API 與 Kubernetes Service API 無法完美契合，且難以完整支援所有 Service 邊緣行為。隨著 Kubernetes 1.29 引入的 nftables 後端已在 1.33 達到正式版（GA），社群決定排程退場 IPVS。此決定直接影響現有叢集網路架構，維運團隊應盡早規劃升級與遷移至 nftables 或 Cilium 等 eBPF 替代方案。",
+        "id": "news:https://kubernetes.io/blog/2026/11/16/ipvs-removal",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "Kubernetes 宣布排程淘汰並移除 kube-proxy 的 IPVS 後端",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/11/16/ipvs-removal/"
+      },
+      {
+        "content": "Visual Studio Code 在 1.146 版本中宣布，將於 2027 年 2 月正式退役用於驅動編輯器內 GitHub Copilot Agent 工作階段的「Local harness」舊版中介軟體架構。Local harness 原先負責協調模型、上下文與擴充工具的調度，隨著 Copilot Agent 架構的升級與標準化，該元件將走入歷史。對於開發 VS Code 擴充套件、外掛整合或自訂 Agent 工具鏈的開發者而言，需密切注意官方後續的 API 遷移指引，確保工具鏈在架構切換後仍可正常運作。",
+        "id": "news:https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "VS Code 宣布將於 2027 年 2 月退役 Copilot Agent 的 Local harness 機制",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027"
+      },
+      {
+        "content": "GitHub 宣布自 2026 年 11 月 16 日起，全面在 Copilot Chat、行內編輯、提問與 Agent 模式以及程式碼自動補全中停用多款舊版底層模型。這是先前預告淘汰排程的正式生效執行，Copilot 將全面轉由更新一代的模型架構支援。此變更將改變開發者日常呼叫程式碼建議的品質與延遲特性，企業管理員與開發團隊應確認現有工作流程與自訂整合是否順利過渡至新模型端點。",
+        "id": "news:https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "GitHub Copilot 正式停用多款舊版 AI 模型",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026"
+      },
+      {
+        "content": "GitHub 為 Copilot 推出全新企業端管控機制，允許企業管理員強制規定使用者的 Copilot 自訂設定必須來自特定的外掛程式（plugins）或受控設定檔，而非開發者個人本機或專案獨立的自訂配置。這項更新讓資安與架構團隊能夠集中管理程式碼助理的上下文規則與擴充外掛，有效防範未受審核的外掛引入惡意程式碼或外洩敏感內部脈絡，大幅提升企業在 AI 輔助開發下的安全合規水準。",
+        "id": "news:https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "GitHub Copilot 推出企業集中管控功能，可強制指定自訂設定來源",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from"
+      },
+      {
+        "content": "Hugging Face 與開放式模型路由平台 OpenRouter 宣布建立合作夥伴關係，旨在讓開發者能夠極速調用並運行 Hugging Face 上的開放權重（open-weight）模型。透過雙方基礎架構的整合，開發者無需手動佈署繁瑣的 GPU 伺服器與推論引擎，即可透過統一的 API 即時取用開源社群最新釋出的權重。這項服務整合大幅降低了評估開源模型與將其接入現有應用的門檻。",
+        "id": "news:https://huggingface.co/blog/openrouter",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "Hugging Face 與 OpenRouter 合作，大幅降低開放權重模型運行門檻",
+        "type": "news",
+        "url": "https://huggingface.co/blog/openrouter"
+      },
+      {
+        "content": "開發者社群實測指出，針對 Qwen3.8 Flash Next 等開源模型進行的「去拒絕（abliteration）」修改，本質上多為 rank-1 消融（rank-1 ablation），可直接封裝為小巧的 LoRA 檔案。開發者無需針對每種量化規格重新下載上百 GB 的完整已修改模型，只需在 llama.cpp 啟動指令中加上相應的 GGUF LoRA 權重參數（如 --lora），即可在任意量化版本上即時套用去拒絕效果。該技巧大幅節省了本機儲存空間、下載頻寬與多版本維護的時間成本。",
+        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xxawbh/why_download_abliterated_flash_next_models_when",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "透過 LoRA 輕量實現模型去拒絕：免下載上百 GB 完整重構量化檔",
+        "type": "news",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xxawbh/why_download_abliterated_flash_next_models_when/"
+      },
+      {
+        "content": "開源專案 OpenCode 開發者 Dax Raad 分享其利用 AI 輔助、僅花費 60 美元 API 成本將瀏覽器自動化核心元件以 Rust 語言完全重構的工程成果。重構後系統的記憶體佔用驚人地降低了 97%，大幅改善了長時間執行多個瀏覽器自動化執行個體時的系統穩定性與資源耗損。這項案例為需要在後端大量執行無頭瀏覽器與爬蟲自動化的工程團隊提供了極具參考價值的架構重構與效能優化範例。",
+        "id": "news:https://thenewstack.io/opencode-browse-rust-rewrite",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "Dax Raad 以 Rust 重構瀏覽器自動化工具：記憶體佔用降低 97%",
+        "type": "news",
+        "url": "https://thenewstack.io/opencode-browse-rust-rewrite/"
+      },
+      {
+        "content": "社群最新分析發現，Windows 11 系統遙測已開始主動監控並收集開發者在本機執行的 AI Coding Agent 與各類軟體開發工具的識別資訊與使用狀態。這項機制引起了開發者社群對工作隱私與智財權保護的高度擔憂，特別是在處理機密程式碼或受法規合規嚴格限制的企業專案時。開發者需重新檢視系統遙測設定、群組原則或評估在完全隔離的容器／虛擬機環境中運行敏感工具，以防止本機工具鏈活動被未預期地上傳。",
+        "id": "news:https://xusheng.dev/posts/windows-coding-agent-telemetry",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "Windows 11 被揭露正在蒐集本機 Coding Agent 與開發工具遙測資料",
+        "type": "news",
+        "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/"
+      },
+      {
+        "content": "開源地圖專案 Protomaps 透過單一檔案向量切片格式 PMTiles 與 HTTP Range Requests 機制，徹底革新了自託管地圖服務的架構。傳統上託管全球地圖需要龐大的 Tile Server 叢集與即時渲染資料庫，維護成本極高；而 Protomaps 允許開發者直接將地圖圖磚作為單一靜態檔案存放於 S3 或 Cloudflare R2 等物件儲存，前端瀏覽器直接按需讀取區塊。這讓前端與全端開發者能以極低成本、零伺服器維護負擔建構自主可控的互動式地圖應用。",
+        "id": "news:https://bruceroettgers.eu/blog/protomaps",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "Protomaps 實現純靜態地圖圖磚架構：自託管全球地圖變得極其平價",
+        "type": "news",
+        "url": "https://bruceroettgers.eu/blog/protomaps/"
+      },
+      {
+        "content": "安全研究揭露廣受歡迎的廣告攔截擴充套件 uBlock Origin 存在 Universal XSS（通用跨站腳本）漏洞。惡意網站可透過特定交互誘導或驅動其「元素選擇器（element picker）」功能，進而突破瀏覽器的同源策略（SOP），在任意網頁的上下文中注入並執行任意 JavaScript。鑑於 uBlock Origin 擁有廣泛的擴充權限並被無數開發者與使用者預設安裝，此漏洞對本地瀏覽安全性與敏感會話構成直接威脅，使用者與開發者應立即檢查並升級至最新修復版本。",
+        "id": "news:https://iter.ca/post/ubo-uxss",
+        "publishedAt": "2026-11-17T02:53:01.850Z",
+        "title": "uBlock Origin 驚爆 Universal XSS 重大漏洞：惡意網站可利用元素選擇器執行代碼",
+        "type": "news",
+        "url": "https://iter.ca/post/ubo-uxss/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-15T23:55:44.013Z",
+      "generatedAt": "2026-11-17T02:53:01.850Z",
       "items": [
         {
-          "content": "Node.js 官方釋出 v22.23.5「Jod」長期支援版（LTS）安全維護更新。本次更新重點修復了多個高風險安全漏洞，包括 CVE-2026-123863、CVE-2026-123865 與 CVE-2026-123866 等 HTTP/2 相關漏洞（涉及 stream 移除時未釋放標頭、nghttp2 放棄 stream 偵測以及 socket 寫入完成前的緩衝區保留問題），同時修復了 TLS/HTTP 中因空寫入引發巢狀解析器執行的 CVE-2026-123864，並解決未提供 session ID context 時 mTLS resumption 的安全風險。此版本對維運生產環境中 Node.js 服務的團隊極為重要，建議儘速安排升級以防範潛在阻斷服務與安全威脅。",
+          "content": "阿里巴巴通義千問團隊正式推出新一代旗艦模型 Qwen4-Max。該模型代表了 Qwen 系列在超大規模參數上的最新成果，在複雜邏輯推理、長文本理解與程式碼生成能力上均有顯著升級。對於依賴大語言模型開發 AI Agent、高難度程式輔助工具及企業級後端服務的工程師而言，Qwen4-Max 提供了更強大的閉源與開源生態選擇，並進一步擴展了跨領域複雜任務的處理能力。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "gh-nodejs",
-          "sourceTitle": "2026-11-11, Version 22.23.5 'Jod' (LTS), @aduh95",
+          "sourceId": "hn",
+          "sourceTitle": "Qwen4-Max",
           "sources": [
-            "gh-nodejs"
+            "hn"
           ],
-          "title": "Node.js 發布 v22.23.5「Jod」LTS 安全更新，修復多項 HTTP/2 與 TLS 高危險漏洞",
-          "url": "https://github.com/nodejs/node/releases/tag/v22.23.5",
+          "title": "通義千問發布旗艦大模型 Qwen4-Max",
+          "url": "https://qwen.ai/blog?id=qwen4-max",
+          "weightedScore": 854
+        },
+        {
+          "content": "Kubernetes 官方團隊正式宣布將排程移除 kube-proxy 中的 IPVS 後端實作。IPVS 模式早期作為 iptables 的高效能替代方案引入，但在長期運作中發現其 Linux 核心 API 與 Kubernetes Service API 無法完美契合，且難以完整支援所有 Service 邊緣行為。隨著 Kubernetes 1.29 引入的 nftables 後端已在 1.33 達到正式版（GA），社群決定排程退場 IPVS。此決定直接影響現有叢集網路架構，維運團隊應盡早規劃升級與遷移至 nftables 或 Cilium 等 eBPF 替代方案。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "kubernetes-blog",
+          "sourceTitle": "Scheduling the removal of the kube-proxy IPVS backend",
+          "sources": [
+            "kubernetes-blog"
+          ],
+          "title": "Kubernetes 宣布排程淘汰並移除 kube-proxy 的 IPVS 後端",
+          "url": "https://kubernetes.io/blog/2026/11/16/ipvs-removal/",
           "weightedScore": 100
         },
         {
-          "content": "IBM 宣布在 Granite 4.1（3B 與 8B 版本）中正式導入名為 LLMON 的 LLM 原生標記語言（LLM-Native Markup Language）。LLMON 專為語言模型最佳化設計，旨在提升模型在生成與解析結構化資料時的語意一致性與輸出效率，解決傳統 XML 或 JSON 格式在推論時帶來的 token 膨脹與解析失敗問題。對於在邊緣或輕量級環境中部署 Granite 模型、依賴結構化輸出進行自動化流程的開發者而言，這項更新能顯著提高模型與應用程式對接的穩定度。",
+          "content": "Visual Studio Code 在 1.146 版本中宣布，將於 2027 年 2 月正式退役用於驅動編輯器內 GitHub Copilot Agent 工作階段的「Local harness」舊版中介軟體架構。Local harness 原先負責協調模型、上下文與擴充工具的調度，隨著 Copilot Agent 架構的升級與標準化，該元件將走入歷史。對於開發 VS Code 擴充套件、外掛整合或自訂 Agent 工具鏈的開發者而言，需密切注意官方後續的 API 遷移指引，確保工具鏈在架構切換後仍可正常運作。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "VS Code retires the Local harness in February 2027",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "VS Code 宣布將於 2027 年 2 月退役 Copilot Agent 的 Local harness 機制",
+          "url": "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 宣布自 2026 年 11 月 16 日起，全面在 Copilot Chat、行內編輯、提問與 Agent 模式以及程式碼自動補全中停用多款舊版底層模型。這是先前預告淘汰排程的正式生效執行，Copilot 將全面轉由更新一代的模型架構支援。此變更將改變開發者日常呼叫程式碼建議的品質與延遲特性，企業管理員與開發團隊應確認現有工作流程與自訂整合是否順利過渡至新模型端點。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub Copilot models deprecated on November 16, 2026",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 正式停用多款舊版 AI 模型",
+          "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 為 Copilot 推出全新企業端管控機制，允許企業管理員強制規定使用者的 Copilot 自訂設定必須來自特定的外掛程式（plugins）或受控設定檔，而非開發者個人本機或專案獨立的自訂配置。這項更新讓資安與架構團隊能夠集中管理程式碼助理的上下文規則與擴充外掛，有效防範未受審核的外掛引入惡意程式碼或外洩敏感內部脈絡，大幅提升企業在 AI 輔助開發下的安全合規水準。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Control where GitHub Copilot customizations come from",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 推出企業集中管控功能，可強制指定自訂設定來源",
+          "url": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
+          "weightedScore": 100
+        },
+        {
+          "content": "Hugging Face 與開放式模型路由平台 OpenRouter 宣布建立合作夥伴關係，旨在讓開發者能夠極速調用並運行 Hugging Face 上的開放權重（open-weight）模型。透過雙方基礎架構的整合，開發者無需手動佈署繁瑣的 GPU 伺服器與推論引擎，即可透過統一的 API 即時取用開源社群最新釋出的權重。這項服務整合大幅降低了評估開源模型與將其接入現有應用的門檻。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "huggingface-blog",
-          "sourceTitle": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+          "sourceTitle": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
           "sources": [
             "huggingface-blog"
           ],
-          "title": "IBM Granite 4.1 正式支援 LLM 原生標記語言 LLMON，強化 3B 與 8B 輸出架構",
-          "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+          "title": "Hugging Face 與 OpenRouter 合作，大幅降低開放權重模型運行門檻",
+          "url": "https://huggingface.co/blog/openrouter",
           "weightedScore": 100
         },
         {
-          "content": "開源模型加速框架 Unsloth 發布了針對 Qwen3.8-27B 的 Dynamic v3.1 量化更新。該更新透過動態量化機制進一步降低了模型推論時的 VRAM 需求，同時在關鍵基準測試中維持全精度等級的推論準確度。這項更新讓資源受限的中小型伺服器或本地端設備得以順暢執行 27B 級別的大型模型，有助於降低邊緣運算與私有化 LLM 部署的硬體門檻。",
+          "content": "開發者社群實測指出，針對 Qwen3.8 Flash Next 等開源模型進行的「去拒絕（abliteration）」修改，本質上多為 rank-1 消融（rank-1 ablation），可直接封裝為小巧的 LoRA 檔案。開發者無需針對每種量化規格重新下載上百 GB 的完整已修改模型，只需在 llama.cpp 啟動指令中加上相應的 GGUF LoRA 權重參數（如 --lora），即可在任意量化版本上即時套用去拒絕效果。該技巧大幅節省了本機儲存空間、下載頻寬與多版本維護的時間成本。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Unsloth Qwen3.8-27B Quantizations – Dynamic v3.1 Update",
+          "sourceCount": 1,
+          "sourceId": "reddit-localllama",
+          "sourceTitle": "Why download abliterated Flash Next models when LoRA exists?",
           "sources": [
-            "hn",
             "reddit-localllama"
           ],
-          "title": "Unsloth 發布 Qwen3.8-27B Dynamic v3.1 量化更新，大幅優化推論記憶體配置",
-          "url": "https://unsloth.ai/docs/models/qwen3.8",
-          "weightedScore": 357
+          "title": "透過 LoRA 輕量實現模型去拒絕：免下載上百 GB 完整重構量化檔",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xxawbh/why_download_abliterated_flash_next_models_when/",
+          "weightedScore": 100
         },
         {
-          "content": "本文對現代大型語言模型（LLM）中的位置編碼（Positional Embeddings）機制進行了深度技術剖析。內容詳細拆解了絕對位置編碼、相對位置編碼、旋轉位置編碼（RoPE）、NoPE 以及 ALiBi 的數學原理與底層實作差異，並進一步探討長上下文外推（Context Extrapolation）在注意力計算上的瓶頸與工程取捨。對於從事 LLM 底層架構設計、自建微調流程或需要最佳化長文本推理表現的工程師而言，是掌握現代模型內部工作原理的高價值參考。",
+          "content": "開源專案 OpenCode 開發者 Dax Raad 分享其利用 AI 輔助、僅花費 60 美元 API 成本將瀏覽器自動化核心元件以 Rust 語言完全重構的工程成果。重構後系統的記憶體佔用驚人地降低了 97%，大幅改善了長時間執行多個瀏覽器自動化執行個體時的系統穩定性與資源耗損。這項案例為需要在後端大量執行無頭瀏覽器與爬蟲自動化的工程團隊提供了極具參考價值的架構重構與效能優化範例。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Dax Raad rebuilt his browser tool in Rust for $60. Then memory use fell 97%.",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Dax Raad 以 Rust 重構瀏覽器自動化工具：記憶體佔用降低 97%",
+          "url": "https://thenewstack.io/opencode-browse-rust-rewrite/",
+          "weightedScore": 50
+        },
+        {
+          "content": "社群最新分析發現，Windows 11 系統遙測已開始主動監控並收集開發者在本機執行的 AI Coding Agent 與各類軟體開發工具的識別資訊與使用狀態。這項機制引起了開發者社群對工作隱私與智財權保護的高度擔憂，特別是在處理機密程式碼或受法規合規嚴格限制的企業專案時。開發者需重新檢視系統遙測設定、群組原則或評估在完全隔離的容器／虛擬機環境中運行敏感工具，以防止本機工具鏈活動被未預期地上傳。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 2,
+          "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Understanding Positional Embeddings in Modern LLMs",
+          "sourceTitle": "Windows 11 Is Collecting Data on Which Coding Agents and Developer Tools You Use",
           "sources": [
-            "hn",
-            "raschka-ahead-of-ai"
+            "hn"
           ],
-          "title": "深入解析現代 LLM 位置編碼：從 RoPE、ALiBi 到長文本注意力推廣",
-          "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
-          "weightedScore": 290
+          "title": "Windows 11 被揭露正在蒐集本機 Coding Agent 與開發工具遙測資料",
+          "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/",
+          "weightedScore": 289
         },
         {
-          "content": "本文深入探討傳統資料庫通訊協定在現代大數據查詢情境下的效能瓶頸。傳統協定多採用逐列傳輸並重複夾帶欄位名稱等元資料，導致嚴重的傳輸頻寬浪費與序列化負擔。文章剖析了 DuckDB 如何透過現代化的二進位列式傳輸格式與串流批次架構，從根本解決資料庫訊息臃腫問題，顯著減少序列化成本與網路延遲。這項架構實踐對設計高效能資料管線與分散式後端系統的開發者具有高度啟發性。",
+          "content": "開源地圖專案 Protomaps 透過單一檔案向量切片格式 PMTiles 與 HTTP Range Requests 機制，徹底革新了自託管地圖服務的架構。傳統上託管全球地圖需要龐大的 Tile Server 叢集與即時渲染資料庫，維護成本極高；而 Protomaps 允許開發者直接將地圖圖磚作為單一靜態檔案存放於 S3 或 Cloudflare R2 等物件儲存，前端瀏覽器直接按需讀取區塊。這讓前端與全端開發者能以極低成本、零伺服器維護負擔建構自主可控的互動式地圖應用。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "frontend-backend",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "DuckDB has an answer to “bloated” database messages",
+          "sourceId": "hn",
+          "sourceTitle": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
           "sources": [
-            "thenewstack"
+            "hn"
           ],
-          "title": "DuckDB 提出新型協定架構，解決傳統資料庫傳輸訊息臃腫問題",
-          "url": "https://thenewstack.io/duckdb-quack-database-protocol/",
-          "weightedScore": 50
+          "title": "Protomaps 實現純靜態地圖圖磚架構：自託管全球地圖變得極其平價",
+          "url": "https://bruceroettgers.eu/blog/protomaps/",
+          "weightedScore": 455
         },
         {
-          "content": "本篇評測深入分析了 Anthropic 最新發布的 Claude Fable 5.2 與旗艦模型 Claude Opus 5.5 在基準測試與推論成本上的實際差異。實測數據顯示，Fable 5.2 在多數核心評測項目上的得分與 Opus 5.5 幾乎持平，但推論成本卻高達後者的近 4 倍。這份評測為正在規劃將 Anthropic 模型接入生產環境或 Coding Agent 流程的開發架構師提供了關鍵的成本效益依據，避免盲目升級造成 API 預算失控。",
+          "content": "安全研究揭露廣受歡迎的廣告攔截擴充套件 uBlock Origin 存在 Universal XSS（通用跨站腳本）漏洞。惡意網站可透過特定交互誘導或驅動其「元素選擇器（element picker）」功能，進而突破瀏覽器的同源策略（SOP），在任意網頁的上下文中注入並執行任意 JavaScript。鑑於 uBlock Origin 擁有廣泛的擴充權限並被無數開發者與使用者預設安裝，此漏洞對本地瀏覽安全性與敏感會話構成直接威脅，使用者與開發者應立即檢查並升級至最新修復版本。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "general",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Claude Fable 5.2 vs. Opus 5.5: Same scores at almost 4x the cost",
+          "sourceId": "hn",
+          "sourceTitle": "Universal XSS in uBlock Origin from website-driven element picker",
           "sources": [
-            "thenewstack"
+            "hn"
           ],
-          "title": "Claude Fable 5.2 與 Opus 5.5 實測評估：得分相近但成本高達近 4 倍",
-          "url": "https://thenewstack.io/claude-fable-5-2-vs-opus-5-5/",
-          "weightedScore": 50
+          "title": "uBlock Origin 驚爆 Universal XSS 重大漏洞：惡意網站可利用元素選擇器執行代碼",
+          "url": "https://iter.ca/post/ubo-uxss/",
+          "weightedScore": 599
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://blog.gitbutler.com/git-3-sha-256"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://svelte.dev/blog/sveltekit-3-is-here"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://github.com/magnitudedev/magnitude"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wvxl4n/qwen3827bhumanlikechat_20_texts_like_a_human_now"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "url": "https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wvv6im/new_in_llamacpp_decision_models"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/introducing-web-search-api"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "lobsters-programming",
-      "sources": [
-        "lobsters-programming"
-      ],
-      "url": "https://loige.co/hidden-design-compromises-of-docker-layers"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wvz1ex/i_made_my_iphone_a_second_gpu_for_my_24_gb"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "lobsters-devops",
-      "sources": [
-        "lobsters-devops"
-      ],
-      "url": "https://filipovski.net/2026/09/16/backups-arent-simple.html"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-10-02T23:43:27.452Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://lwn.net/Articles/1097401"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-10-03T22:49:56.394Z",
@@ -6797,6 +6748,116 @@
       ],
       "title": "Claude Fable 5.2 vs. Opus 5.5: Same scores at almost 4x the cost",
       "url": "https://thenewstack.io/claude-fable-5-2-vs-opus-5-5"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Qwen4-Max",
+      "url": "https://qwen.ai/blog?id=qwen4-max"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "title": "Scheduling the removal of the kube-proxy IPVS backend",
+      "url": "https://kubernetes.io/blog/2026/11/16/ipvs-removal"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "VS Code retires the Local harness in February 2027",
+      "url": "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot models deprecated on November 16, 2026",
+      "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Control where GitHub Copilot customizations come from",
+      "url": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
+      "url": "https://huggingface.co/blog/openrouter"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "reddit-localllama",
+      "sources": [
+        "reddit-localllama"
+      ],
+      "title": "Why download abliterated Flash Next models when LoRA exists?",
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1xxawbh/why_download_abliterated_flash_next_models_when"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Dax Raad rebuilt his browser tool in Rust for $60. Then memory use fell 97%.",
+      "url": "https://thenewstack.io/opencode-browse-rust-rewrite"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Windows 11 Is Collecting Data on Which Coding Agents and Developer Tools You Use",
+      "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
+      "url": "https://bruceroettgers.eu/blog/protomaps"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-17T02:53:01.850Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Universal XSS in uBlock Origin from website-driven element picker",
+      "url": "https://iter.ca/post/ubo-uxss"
     }
   ]
 }
