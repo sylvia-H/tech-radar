@@ -498,93 +498,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-15T23:55:44.013Z",
-  "lastNewsPushAt": "2026-11-17T02:53:01.850Z",
+  "lastNewsPushAt": "2026-11-18T02:20:18.033Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-15T23:55:44.013Z",
       "summary": "本次榜單由 meta/astryx 奪得 #1，迎來 7 個新進項目與 1 個竄升項目（含 AI 6 個、前後端 2 個），同時有 1 個項目下降。"
     },
     "feed": [
-      {
-        "content": "GitHub 官方公告將於 2026 年 12 月 14 日在所有 GitHub Copilot 體驗中全面淘汰指定模型，影響範圍涵蓋 Copilot Chat、行內編輯、詢問與代理人模式，以及程式碼自動補全。官方提醒依賴特定模型輸出行為的團隊與企業開發者需提前評估遷移計畫，調整自訂工作流與設定，以避免模型下線後影響日常開發流程與自動化整合。",
-        "id": "news:https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "GitHub Copilot 宣布將於 12 月 14 日淘汰部分舊版 AI 模型",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december"
-      },
-      {
-        "content": "Anthropic 旗下核心服務包括 claude.ai 網頁介面、platform.claude.com 開發者 API 以及終端工具 Claude Code 出現錯誤率異常飆升的故障事件。此次服務中斷直接衝擊依賴 Claude API 的線上生產應用與開發者的輔助編程工作流，再度凸顯現代軟體架構深度依賴單一 AI 供應商時所面臨的單點故障風險，促使工程團隊思考多模型備援機制。",
-        "id": "news:https://status.claude.com/incidents/nn11wk485zfn",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "Anthropic 核心服務傳出故障，Claude API 與 Claude Code 均受波及",
-        "type": "news",
-        "url": "https://status.claude.com/incidents/nn11wk485zfn"
-      },
-      {
-        "content": "Cloudflare 正式推出 Spend Management 功能，開發者現在可以為 Cloudflare Workers 和 Durable Objects 主動設定支出上限（spending caps）與成本告警，後續將擴展至其他產品。Cloudflare 同步揭露其如何構建即時計量管線，將實際用量轉化為執行階段的限流決策。這項更新解決了無伺服器架構容易因流量暴衝或遞迴呼叫產生巨額帳單的隱患，提供可控的成本防護措施。",
-        "id": "news:https://blog.cloudflare.com/spend-management",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "Cloudflare 推出 Spend Management，支援 Workers 支出上限與預警",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/spend-management/"
-      },
-      {
-        "content": "Brave Search API 宣布正式支援基於 HTTP 402 支付協議的代理人自主支付機制（agentic payments）。這意味著自主運行的 AI Agent 不再需要預先綁定開發者的信用卡或月費 API Key，而能夠在發起搜尋請求時以機器對機器（M2M）的微額支付即時扣款完成交易。這為自主經濟架構與去中心化 AI 工具鏈的呼叫模式樹立了具體的落地範例。",
-        "id": "news:https://brave.com/blog/search-api-agentic-payments",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "Brave Search API 支援 x402 協議，開放 AI 代理人自主付費查詢",
-        "type": "news",
-        "url": "https://brave.com/blog/search-api-agentic-payments/"
-      },
-      {
-        "content": "團隊宣布將專為 AI 代理人打造的實驗性瀏覽器引擎 Kitesurf 正式開源。開發者可直接檢視原始碼、在本地環境運行，或直接部署至 Cloudflare Workers 上執行。傳統無頭瀏覽器資源消耗龐大且並非專為 LLM 視圖互動設計，Kitesurf 的輕量化與邊緣部署架構為需要執行網頁瀏覽、資料擷取與自動化表單互動的 AI Agent 提供了極具潛力的新基礎設施。",
-        "id": "news:https://blog.cloudflare.com/kitesurf-open-source",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "專為 AI 代理人設計的實驗性瀏覽器引擎 Kitesurf 正式開源",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/kitesurf-open-source/"
-      },
-      {
-        "content": "受到許多 JavaScript/TypeScript 開發者喜愛的輕量無伺服器腳本與 API 託管平台 Val Town 宣布將逐步結束營運。Val Town 過去以簡化小型雲端排程、Webhook 處理與原型 API 部署聞名。此項決策意味著所有在平台上運行的常駐工作與端點需要即刻安排遷移至其他 Serverless 平台，提醒開發者應隨時關注雲端依賴的永續性風險。",
-        "id": "news:https://blog.val.town/winding-down",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "輕量無伺服器腳本平台 Val Town 宣布停止營運，開發者須安排遷移",
-        "type": "news",
-        "url": "https://blog.val.town/winding-down"
-      },
-      {
-        "content": "深入分析開源 DeepSeek 編程代理人在主流編程基準測試中的非典型現象：該模型因習慣在修復問題時「順便清理無效程式碼」或進行常規重構等開發者普遍認可的最佳實務，反而在測試中被判定失敗並遭受扣分。這篇分析深入揭示了當前 AI 評測基準與現實工程實務之間的脫節問題，對正在微調程式碼模型或設計評估管線的 AI 工程師而言極具借鑑意義。",
-        "id": "news:https://thenewstack.io/deepseek-harness-cleanup-benchmark",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "寫法太乾淨反而被扣分？DeepSeek 編程代理人在評測中的代價分析",
-        "type": "news",
-        "url": "https://thenewstack.io/deepseek-harness-cleanup-benchmark/"
-      },
-      {
-        "content": "開發者分享如何突破硬體算力與記憶體瓶頸，將大型語言模型成功運行於低規格老舊設備與小型邊緣硬體上的工程實作。文章深入剖析極致量化技術、記憶體分頁調度、模型修剪與運算子核心優化，展示了如何在不依賴高階 GPU 的極端資源限制下，實現可用的模型推論速度。這對致力於終端離線 AI、IoT 智慧設備與邊緣運算的工程師提供了寶貴的實務技巧與底層架構思路。",
-        "id": "news:https://github.com/hyperionaidev/smolmaxxing",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "在老舊與邊緣設備上運行 LLM：底層推論最佳化實踐",
-        "type": "news",
-        "url": "https://github.com/hyperionaidev/smolmaxxing/"
-      },
-      {
-        "content": "本文深入探討如何透過 macOS 內建的硬體安全隔離區（Secure Enclave）產生並儲存 ED25519 或 ECDSA SSH 私鑰。透過將金鑰鎖定在安全晶片內部，即使主機作業系統遭惡意軟體入侵或記憶體被側錄，私鑰本身也無法被匯出或外洩，同時還可無縫整合 Touch ID 生物辨識授權。這為經常存取生產伺服器、Git 倉庫與雲端環境的工程師提供了免硬體金鑰的高強度開發安全實務。",
-        "id": "news:https://gatezh.com/posts/macos-secure-enclave-ssh-keys",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "利用 macOS 安全隔離區（Secure Enclave）保護 SSH 私鑰實踐",
-        "type": "news",
-        "url": "https://gatezh.com/posts/macos-secure-enclave-ssh-keys/"
-      },
-      {
-        "content": "社群深入檢視 Humble Bundle 因大量採用 AI 輔助編程而意外瓦解原有資安機制的案例。分析指出，開發團隊在快速推進功能時過度信任 AI 產生的程式碼，未能嚴格進行安全審查，導致權限驗證缺失、資料存取邏輯漏洞與邊界條件失效等嚴重安全破口。此案例為盲目追求 AI 開發效率的工程團隊敲響警鐘，強調即使由 AI 生成程式碼，架構設計、邊界檢查與嚴格的威脅建模仍然不可或缺。",
-        "id": "news:https://forums.spacebattles.com/threads/humble-bundle-just-completely-killed-most-of-their-security-through-vibecoding.1346295",
-        "publishedAt": "2026-11-14T00:50:49.972Z",
-        "title": "盲目依賴 AI 生成程式碼帶來的資安災難：以 Humble Bundle 漏洞為例",
-        "type": "news",
-        "url": "https://forums.spacebattles.com/threads/humble-bundle-just-completely-killed-most-of-their-security-through-vibecoding.1346295/"
-      },
       {
         "content": "Amazon Web Services 正式推出 AWS Emulator，這是一套可在本地運行的 AWS 服務模擬環境。針對近年興起的 AI coding agent，該工具提供了關鍵的本機驗證迴圈（verification loop），讓 Agent 在生成雲端架構、IaC 腳本或調用 AWS SDK 時，能在本地直接執行測試並自我修正，無須耗費真實雲端帳號成本或承擔配置失誤風險，大幅加速 Agent 開發流程。",
         "id": "news:https://github.com/aws/aws-emulator",
@@ -896,269 +816,237 @@
         "title": "uBlock Origin 驚爆 Universal XSS 重大漏洞：惡意網站可利用元素選擇器執行代碼",
         "type": "news",
         "url": "https://iter.ca/post/ubo-uxss/"
+      },
+      {
+        "content": "OpenAI 正式推出 GPT-6.2 系列最新模型 Astra 與 Sol，專為 Agentic 程式設計與自動化 Code Review 任務進行架構調優。相較於先前的 GPT-6 模型，Astra 與 Sol 具備更強大的程式碼邏輯推演與上下文理解能力，能更精準地處理跨檔案的多步驟程式碼修改，目前已整合至 GitHub Copilot 等工具中全面開放使用。這項更新為需要構建自主 AI Agent 或強化 CI/CD 自動審查流程的開發者，提供了更高判斷力且針對軟體工程特化的新一代基底模型。",
+        "id": "news:https://openai.com/index/introducing-gpt-6-2-astra-sol",
+        "publishedAt": "2026-11-18T02:20:18.033Z",
+        "title": "OpenAI 正式發表 GPT-6.2 Astra 與 Sol 模型，強化 Agentic 程式碼生成",
+        "type": "news",
+        "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
+      },
+      {
+        "content": "微軟於 Ignite 大會正式發表專屬程式設計模型 MAI Code 2 與輕量版本 Code 2 Flash。官方評測指出，該系列模型在程式生成與邏輯修復等任務上展現出接近 Claude Opus 等頂級模型的實力，但推論成本僅需後者的約 5%。隨著 Coding Agent 與 IDE 智慧補全的普及，高昂的 Token 調用開銷成為企業規模化導入的主要瓶頸；MAI Code 2 系列的推出將顯著降低自動化編程、單元測試生成與程式庫重構的運算負擔。",
+        "id": "news:https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash",
+        "publishedAt": "2026-11-18T02:20:18.033Z",
+        "title": "微軟發表 MAI Code 2 與 Code 2 Flash 模型，主打高效能與 5% 極低推論成本",
+        "type": "news",
+        "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/"
+      },
+      {
+        "content": "GitHub 宣布為 Copilot Fusion 進行全面升級，除了新增更多可調用的底層模型外，還拓展至更廣泛的 Copilot 操作介面與終端環境。同時，GitHub 公布了在兩項公開 Terminal-Bench 基準測試中的評測成績，讓開發者在終端操作與命令列任務中擁有更清晰的模型效能依據。這項更新讓高度依賴 CLI 自動化與多模型切換的開發團隊，能依照任務複雜度靈活配置推論資源，進一步提升工程開發流暢度。",
+        "id": "news:https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
+        "publishedAt": "2026-11-18T02:20:18.033Z",
+        "title": "GitHub Copilot Fusion 升級：擴大模型支援並拓展終端與介面可用性",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models"
+      },
+      {
+        "content": "GitHub 於微軟 Ignite 大會宣布 Copilot 應用程式的重大支援擴展，正式納入 Azure DevOps 程式庫、GitHub Enterprise Server（GHES）自託管實例以及瀏覽器環境。這意味著身處受控企業網路、使用私有原始碼代管或跨雲架構的開發團隊，不再受限於公有雲 GitHub.com，可以直接在既有的私有基礎設施中無縫導入 Copilot Agent，兼顧代碼資安合規與內部專案的智慧輔助開發需求。",
+        "id": "news:https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases",
+        "publishedAt": "2026-11-18T02:20:18.033Z",
+        "title": "GitHub Copilot 應用程式延伸支援 Azure DevOps 與本地部署企業版伺服器",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases"
+      },
+      {
+        "content": "Anthropic 旗下 Claude Code 工程團隊公開探討了在打造自主編程 Agent 時的「輸出驗證（Verification）」設計思考。在多步驟的代碼修改與除錯流程中，AI Agent 極易產生看似正確但含有隱蔽缺陷的幻覺代碼；團隊深入分享了如何整合測試執行、語法檢查、環境反饋閉環以及防護機制，在 Agent 提交變更前主動攔截錯誤。這篇工程實務對於正在自行開發 Agent 工具或探索 AI 輔助軟體工程架構的開發者深具參考價值。",
+        "id": "news:https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification",
+        "publishedAt": "2026-11-18T02:20:18.033Z",
+        "title": "Anthropic 團隊深度解析 Claude Code 驗證機制與 Agent 程式碼可靠性",
+        "type": "news",
+        "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/"
+      },
+      {
+        "content": "最新基準評測顯示，即使底層調用相同的 AI 模型，使用不同的 Coding Agent 執行框架（Harness）在完成相同程式開發任務時，Token 消耗量與運算成本差異最高可達 5 倍。報告深入分析了各框架在 Prompt 構建策略、上下文修剪（Context Pruning）以及工具呼叫循環設計上的效率落差。這項發現對軟體團隊是一大警訊：在規劃 Agentic 工作流程時，除了挑選高性價比模型，調度層的工程實作與上下文優化同樣是決定落地成本的關鍵因素。",
+        "id": "news:https://thenewstack.io/coding-agent-harness-costs",
+        "publishedAt": "2026-11-18T02:20:18.033Z",
+        "title": "基準測試揭示：AI Coding Agent 執行架構不同，相同模型成本可相差達 5 倍",
+        "type": "news",
+        "url": "https://thenewstack.io/coding-agent-harness-costs/"
+      },
+      {
+        "content": "在微服務與雲原生架構中，OpenTelemetry（OTel）已成為標準的可觀測性收集工具，但收集監控指標所造成的效能開銷常被忽略。技術演講《擊敗 OTel 的隱形殺手》深入探討了 Collector 遙測管線在面對高併發流量時產生的 CPU、記憶體佔用與網路延遲瓶頸。講者分享了動態採樣策略（Sampling）、批次處理（Batching）參數調校與記憶體限制器配置的最佳實務，協助 DevOps 與後端工程師在保障全鏈路追蹤的同時，防止監控機制反噬正式環境效能。",
+        "id": "news:https://cncf.io/blog/2026/11/17/is-your-opentelemetry-pipeline-becoming-a-performance-bottleneck",
+        "publishedAt": "2026-11-18T02:20:18.033Z",
+        "title": "深入剖析 OpenTelemetry 效能開銷：避免可觀測性管線成為系統瓶頸",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/11/17/is-your-opentelemetry-pipeline-becoming-a-performance-bottleneck/"
+      },
+      {
+        "content": "開發者展示了一種前端與後端整合的全新實作架構：透過 WebAssembly 技術的 Python 執行環境 Pyodide，結合 Service Worker 攔截網路 HTTP 請求，成功在使用者瀏覽器內部完整運行 Python ASGI 伺服端應用 Datasette。這項技術完全不需要後端伺服器運算資源即可提供互動式 SQLite 資料查詢與視覺化功能，不僅實現了零伺服器維運負擔與離線可用性，更確保了資料完全保留在客戶端本機的高隱私度，為 Web 應用開發開闢了新思路。",
+        "id": "news:https://simonwillison.net/2026/Nov/17/datasette-lite",
+        "publishedAt": "2026-11-18T02:20:18.033Z",
+        "title": "結合 Service Worker 與 Pyodide，在瀏覽器端完全免伺服器執行 Python 應用 Datasette",
+        "type": "news",
+        "url": "https://simonwillison.net/2026/Nov/17/datasette-lite/"
+      },
+      {
+        "content": "廣受各大科技公司採用的 A/B 測試與功能發布平台 Optimizely 遭受駭客入侵，導致包含 Zoom 與 GitLab 在內的多個知名網站客戶端腳本被注入惡意軟體。這起供應鏈攻擊事件凸顯了現代前端架構中第三方 JavaScript 腳本所潛藏的巨大資安風險。開發團隊與維運人員應全面盤點外部腳本依賴，嚴格落實子資源完整性（Subresource Integrity, SRI）、內容安全策略（CSP）限制，並評估自託管或伺服端 A/B 測試方案，以防範第三方供應商失陷引發的安全連鎖反應。",
+        "id": "news:https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely",
+        "publishedAt": "2026-11-18T02:20:18.033Z",
+        "title": "知名 A/B 測試平台 Optimizely 遭入侵，Zoom 與 GitLab 等官網被植入惡意腳本",
+        "type": "news",
+        "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/"
+      },
+      {
+        "content": "資安研究人員披露了名為「Java4Shell」的重大安全漏洞，問題出在 OpenJDK 處理特定格式 Base64 編碼字串的底層邏輯，未經授權的攻擊者可藉此構造特製惡意輸入誘發記憶體損毀，進而在目標系統上實現遠端代碼執行（RCE）。由於 Base64 解碼廣泛存在於身分認證標頭、API 請求解析與微服務通訊環節中，此漏洞對各類 Java 後端服務構成嚴重威脅。開發者與系統維運人員應儘速檢視伺服器 OpenJDK 版本，並依官方與各 Linux 發行版公告完成安全修正檔更新。",
+        "id": "news:https://calif.io/java4shell",
+        "publishedAt": "2026-11-18T02:20:18.033Z",
+        "title": "Java4Shell 漏洞曝光：OpenJDK 在解析 Base64 時存在遠端代碼執行風險",
+        "type": "news",
+        "url": "https://calif.io/java4shell/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-17T02:53:01.850Z",
+      "generatedAt": "2026-11-18T02:20:18.033Z",
       "items": [
         {
-          "content": "阿里巴巴通義千問團隊正式推出新一代旗艦模型 Qwen4-Max。該模型代表了 Qwen 系列在超大規模參數上的最新成果，在複雜邏輯推理、長文本理解與程式碼生成能力上均有顯著升級。對於依賴大語言模型開發 AI Agent、高難度程式輔助工具及企業級後端服務的工程師而言，Qwen4-Max 提供了更強大的閉源與開源生態選擇，並進一步擴展了跨領域複雜任務的處理能力。",
+          "content": "OpenAI 正式推出 GPT-6.2 系列最新模型 Astra 與 Sol，專為 Agentic 程式設計與自動化 Code Review 任務進行架構調優。相較於先前的 GPT-6 模型，Astra 與 Sol 具備更強大的程式碼邏輯推演與上下文理解能力，能更精準地處理跨檔案的多步驟程式碼修改，目前已整合至 GitHub Copilot 等工具中全面開放使用。這項更新為需要構建自主 AI Agent 或強化 CI/CD 自動審查流程的開發者，提供了更高判斷力且針對軟體工程特化的新一代基底模型。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "GPT‑6.2 Astra and Sol",
+          "sources": [
+            "hn",
+            "openai-blog"
+          ],
+          "title": "OpenAI 正式發表 GPT-6.2 Astra 與 Sol 模型，強化 Agentic 程式碼生成",
+          "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+          "weightedScore": 1191
+        },
+        {
+          "content": "微軟於 Ignite 大會正式發表專屬程式設計模型 MAI Code 2 與輕量版本 Code 2 Flash。官方評測指出，該系列模型在程式生成與邏輯修復等任務上展現出接近 Claude Opus 等頂級模型的實力，但推論成本僅需後者的約 5%。隨著 Coding Agent 與 IDE 智慧補全的普及，高昂的 Token 調用開銷成為企業規模化導入的主要瓶頸；MAI Code 2 系列的推出將顯著降低自動化編程、單元測試生成與程式庫重構的運算負擔。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "MAI Code 2 and Code 2 Flash",
+          "sources": [
+            "github-changelog-copilot",
+            "hn"
+          ],
+          "title": "微軟發表 MAI Code 2 與 Code 2 Flash 模型，主打高效能與 5% 極低推論成本",
+          "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+          "weightedScore": 391
+        },
+        {
+          "content": "GitHub 宣布為 Copilot Fusion 進行全面升級，除了新增更多可調用的底層模型外，還拓展至更廣泛的 Copilot 操作介面與終端環境。同時，GitHub 公布了在兩項公開 Terminal-Bench 基準測試中的評測成績，讓開發者在終端操作與命令列任務中擁有更清晰的模型效能依據。這項更新讓高度依賴 CLI 自動化與多模型切換的開發團隊，能依照任務複雜度靈活配置推論資源，進一步提升工程開發流暢度。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub Copilot Fusion updates: more availability, benchmarks, and models",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot Fusion 升級：擴大模型支援並拓展終端與介面可用性",
+          "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
+          "weightedScore": 100
+        },
+        {
+          "content": "GitHub 於微軟 Ignite 大會宣布 Copilot 應用程式的重大支援擴展，正式納入 Azure DevOps 程式庫、GitHub Enterprise Server（GHES）自託管實例以及瀏覽器環境。這意味著身處受控企業網路、使用私有原始碼代管或跨雲架構的開發團隊，不再受限於公有雲 GitHub.com，可以直接在既有的私有基礎設施中無縫導入 Copilot Agent，兼顧代碼資安合規與內部專案的智慧輔助開發需求。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub Copilot app, Microsoft Ignite releases",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 應用程式延伸支援 Azure DevOps 與本地部署企業版伺服器",
+          "url": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases",
+          "weightedScore": 100
+        },
+        {
+          "content": "Anthropic 旗下 Claude Code 工程團隊公開探討了在打造自主編程 Agent 時的「輸出驗證（Verification）」設計思考。在多步驟的代碼修改與除錯流程中，AI Agent 極易產生看似正確但含有隱蔽缺陷的幻覺代碼；團隊深入分享了如何整合測試執行、語法檢查、環境反饋閉環以及防護機制，在 Agent 提交變更前主動攔截錯誤。這篇工程實務對於正在自行開發 Agent 工具或探索 AI 輔助軟體工程架構的開發者深具參考價值。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Qwen4-Max",
+          "sourceTitle": "How the Claude Code team thinks about verification",
           "sources": [
             "hn"
           ],
-          "title": "通義千問發布旗艦大模型 Qwen4-Max",
-          "url": "https://qwen.ai/blog?id=qwen4-max",
-          "weightedScore": 854
+          "title": "Anthropic 團隊深度解析 Claude Code 驗證機制與 Agent 程式碼可靠性",
+          "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+          "weightedScore": 267
         },
         {
-          "content": "Kubernetes 官方團隊正式宣布將排程移除 kube-proxy 中的 IPVS 後端實作。IPVS 模式早期作為 iptables 的高效能替代方案引入，但在長期運作中發現其 Linux 核心 API 與 Kubernetes Service API 無法完美契合，且難以完整支援所有 Service 邊緣行為。隨著 Kubernetes 1.29 引入的 nftables 後端已在 1.33 達到正式版（GA），社群決定排程退場 IPVS。此決定直接影響現有叢集網路架構，維運團隊應盡早規劃升級與遷移至 nftables 或 Cilium 等 eBPF 替代方案。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "kubernetes-blog",
-          "sourceTitle": "Scheduling the removal of the kube-proxy IPVS backend",
-          "sources": [
-            "kubernetes-blog"
-          ],
-          "title": "Kubernetes 宣布排程淘汰並移除 kube-proxy 的 IPVS 後端",
-          "url": "https://kubernetes.io/blog/2026/11/16/ipvs-removal/",
-          "weightedScore": 100
-        },
-        {
-          "content": "Visual Studio Code 在 1.146 版本中宣布，將於 2027 年 2 月正式退役用於驅動編輯器內 GitHub Copilot Agent 工作階段的「Local harness」舊版中介軟體架構。Local harness 原先負責協調模型、上下文與擴充工具的調度，隨著 Copilot Agent 架構的升級與標準化，該元件將走入歷史。對於開發 VS Code 擴充套件、外掛整合或自訂 Agent 工具鏈的開發者而言，需密切注意官方後續的 API 遷移指引，確保工具鏈在架構切換後仍可正常運作。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "VS Code retires the Local harness in February 2027",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "VS Code 宣布將於 2027 年 2 月退役 Copilot Agent 的 Local harness 機制",
-          "url": "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 宣布自 2026 年 11 月 16 日起，全面在 Copilot Chat、行內編輯、提問與 Agent 模式以及程式碼自動補全中停用多款舊版底層模型。這是先前預告淘汰排程的正式生效執行，Copilot 將全面轉由更新一代的模型架構支援。此變更將改變開發者日常呼叫程式碼建議的品質與延遲特性，企業管理員與開發團隊應確認現有工作流程與自訂整合是否順利過渡至新模型端點。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot models deprecated on November 16, 2026",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 正式停用多款舊版 AI 模型",
-          "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 為 Copilot 推出全新企業端管控機制，允許企業管理員強制規定使用者的 Copilot 自訂設定必須來自特定的外掛程式（plugins）或受控設定檔，而非開發者個人本機或專案獨立的自訂配置。這項更新讓資安與架構團隊能夠集中管理程式碼助理的上下文規則與擴充外掛，有效防範未受審核的外掛引入惡意程式碼或外洩敏感內部脈絡，大幅提升企業在 AI 輔助開發下的安全合規水準。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Control where GitHub Copilot customizations come from",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 推出企業集中管控功能，可強制指定自訂設定來源",
-          "url": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
-          "weightedScore": 100
-        },
-        {
-          "content": "Hugging Face 與開放式模型路由平台 OpenRouter 宣布建立合作夥伴關係，旨在讓開發者能夠極速調用並運行 Hugging Face 上的開放權重（open-weight）模型。透過雙方基礎架構的整合，開發者無需手動佈署繁瑣的 GPU 伺服器與推論引擎，即可透過統一的 API 即時取用開源社群最新釋出的權重。這項服務整合大幅降低了評估開源模型與將其接入現有應用的門檻。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "Hugging Face 與 OpenRouter 合作，大幅降低開放權重模型運行門檻",
-          "url": "https://huggingface.co/blog/openrouter",
-          "weightedScore": 100
-        },
-        {
-          "content": "開發者社群實測指出，針對 Qwen3.8 Flash Next 等開源模型進行的「去拒絕（abliteration）」修改，本質上多為 rank-1 消融（rank-1 ablation），可直接封裝為小巧的 LoRA 檔案。開發者無需針對每種量化規格重新下載上百 GB 的完整已修改模型，只需在 llama.cpp 啟動指令中加上相應的 GGUF LoRA 權重參數（如 --lora），即可在任意量化版本上即時套用去拒絕效果。該技巧大幅節省了本機儲存空間、下載頻寬與多版本維護的時間成本。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "reddit-localllama",
-          "sourceTitle": "Why download abliterated Flash Next models when LoRA exists?",
-          "sources": [
-            "reddit-localllama"
-          ],
-          "title": "透過 LoRA 輕量實現模型去拒絕：免下載上百 GB 完整重構量化檔",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xxawbh/why_download_abliterated_flash_next_models_when/",
-          "weightedScore": 100
-        },
-        {
-          "content": "開源專案 OpenCode 開發者 Dax Raad 分享其利用 AI 輔助、僅花費 60 美元 API 成本將瀏覽器自動化核心元件以 Rust 語言完全重構的工程成果。重構後系統的記憶體佔用驚人地降低了 97%，大幅改善了長時間執行多個瀏覽器自動化執行個體時的系統穩定性與資源耗損。這項案例為需要在後端大量執行無頭瀏覽器與爬蟲自動化的工程團隊提供了極具參考價值的架構重構與效能優化範例。",
+          "content": "最新基準評測顯示，即使底層調用相同的 AI 模型，使用不同的 Coding Agent 執行框架（Harness）在完成相同程式開發任務時，Token 消耗量與運算成本差異最高可達 5 倍。報告深入分析了各框架在 Prompt 構建策略、上下文修剪（Context Pruning）以及工具呼叫循環設計上的效率落差。這項發現對軟體團隊是一大警訊：在規劃 Agentic 工作流程時，除了挑選高性價比模型，調度層的工程實作與上下文優化同樣是決定落地成本的關鍵因素。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "Dax Raad rebuilt his browser tool in Rust for $60. Then memory use fell 97%.",
+          "sourceTitle": "Your AI coding agent could cost 5x more depending on the harness, benchmark finds",
           "sources": [
             "thenewstack"
           ],
-          "title": "Dax Raad 以 Rust 重構瀏覽器自動化工具：記憶體佔用降低 97%",
-          "url": "https://thenewstack.io/opencode-browse-rust-rewrite/",
+          "title": "基準測試揭示：AI Coding Agent 執行架構不同，相同模型成本可相差達 5 倍",
+          "url": "https://thenewstack.io/coding-agent-harness-costs/",
           "weightedScore": 50
         },
         {
-          "content": "社群最新分析發現，Windows 11 系統遙測已開始主動監控並收集開發者在本機執行的 AI Coding Agent 與各類軟體開發工具的識別資訊與使用狀態。這項機制引起了開發者社群對工作隱私與智財權保護的高度擔憂，特別是在處理機密程式碼或受法規合規嚴格限制的企業專案時。開發者需重新檢視系統遙測設定、群組原則或評估在完全隔離的容器／虛擬機環境中運行敏感工具，以防止本機工具鏈活動被未預期地上傳。",
+          "content": "在微服務與雲原生架構中，OpenTelemetry（OTel）已成為標準的可觀測性收集工具，但收集監控指標所造成的效能開銷常被忽略。技術演講《擊敗 OTel 的隱形殺手》深入探討了 Collector 遙測管線在面對高併發流量時產生的 CPU、記憶體佔用與網路延遲瓶頸。講者分享了動態採樣策略（Sampling）、批次處理（Batching）參數調校與記憶體限制器配置的最佳實務，協助 DevOps 與後端工程師在保障全鏈路追蹤的同時，防止監控機制反噬正式環境效能。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sourceTitle": "Is your OpenTelemetry pipeline becoming a performance bottleneck?",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "深入剖析 OpenTelemetry 效能開銷：避免可觀測性管線成為系統瓶頸",
+          "url": "https://www.cncf.io/blog/2026/11/17/is-your-opentelemetry-pipeline-becoming-a-performance-bottleneck/",
+          "weightedScore": 100
+        },
+        {
+          "content": "開發者展示了一種前端與後端整合的全新實作架構：透過 WebAssembly 技術的 Python 執行環境 Pyodide，結合 Service Worker 攔截網路 HTTP 請求，成功在使用者瀏覽器內部完整運行 Python ASGI 伺服端應用 Datasette。這項技術完全不需要後端伺服器運算資源即可提供互動式 SQLite 資料查詢與視覺化功能，不僅實現了零伺服器維運負擔與離線可用性，更確保了資料完全保留在客戶端本機的高隱私度，為 Web 應用開發開闢了新思路。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Windows 11 Is Collecting Data on Which Coding Agents and Developer Tools You Use",
+          "sourceId": "simonwillison",
+          "sourceTitle": "Running the full server-side Datasette Python app in the browser with service workers and Pyodide",
           "sources": [
-            "hn"
+            "simonwillison"
           ],
-          "title": "Windows 11 被揭露正在蒐集本機 Coding Agent 與開發工具遙測資料",
-          "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/",
-          "weightedScore": 289
+          "title": "結合 Service Worker 與 Pyodide，在瀏覽器端完全免伺服器執行 Python 應用 Datasette",
+          "url": "https://simonwillison.net/2026/Nov/17/datasette-lite/",
+          "weightedScore": 100
         },
         {
-          "content": "開源地圖專案 Protomaps 透過單一檔案向量切片格式 PMTiles 與 HTTP Range Requests 機制，徹底革新了自託管地圖服務的架構。傳統上託管全球地圖需要龐大的 Tile Server 叢集與即時渲染資料庫，維護成本極高；而 Protomaps 允許開發者直接將地圖圖磚作為單一靜態檔案存放於 S3 或 Cloudflare R2 等物件儲存，前端瀏覽器直接按需讀取區塊。這讓前端與全端開發者能以極低成本、零伺服器維護負擔建構自主可控的互動式地圖應用。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
-          "sources": [
-            "hn"
-          ],
-          "title": "Protomaps 實現純靜態地圖圖磚架構：自託管全球地圖變得極其平價",
-          "url": "https://bruceroettgers.eu/blog/protomaps/",
-          "weightedScore": 455
-        },
-        {
-          "content": "安全研究揭露廣受歡迎的廣告攔截擴充套件 uBlock Origin 存在 Universal XSS（通用跨站腳本）漏洞。惡意網站可透過特定交互誘導或驅動其「元素選擇器（element picker）」功能，進而突破瀏覽器的同源策略（SOP），在任意網頁的上下文中注入並執行任意 JavaScript。鑑於 uBlock Origin 擁有廣泛的擴充權限並被無數開發者與使用者預設安裝，此漏洞對本地瀏覽安全性與敏感會話構成直接威脅，使用者與開發者應立即檢查並升級至最新修復版本。",
+          "content": "廣受各大科技公司採用的 A/B 測試與功能發布平台 Optimizely 遭受駭客入侵，導致包含 Zoom 與 GitLab 在內的多個知名網站客戶端腳本被注入惡意軟體。這起供應鏈攻擊事件凸顯了現代前端架構中第三方 JavaScript 腳本所潛藏的巨大資安風險。開發團隊與維運人員應全面盤點外部腳本依賴，嚴格落實子資源完整性（Subresource Integrity, SRI）、內容安全策略（CSP）限制，並評估自託管或伺服端 A/B 測試方案，以防範第三方供應商失陷引發的安全連鎖反應。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Universal XSS in uBlock Origin from website-driven element picker",
+          "sourceTitle": "Optimizely compromised, served malware on Zoom, GitLab",
           "sources": [
             "hn"
           ],
-          "title": "uBlock Origin 驚爆 Universal XSS 重大漏洞：惡意網站可利用元素選擇器執行代碼",
-          "url": "https://iter.ca/post/ubo-uxss/",
-          "weightedScore": 599
+          "title": "知名 A/B 測試平台 Optimizely 遭入侵，Zoom 與 GitLab 等官網被植入惡意腳本",
+          "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
+          "weightedScore": 669
+        },
+        {
+          "content": "資安研究人員披露了名為「Java4Shell」的重大安全漏洞，問題出在 OpenJDK 處理特定格式 Base64 編碼字串的底層邏輯，未經授權的攻擊者可藉此構造特製惡意輸入誘發記憶體損毀，進而在目標系統上實現遠端代碼執行（RCE）。由於 Base64 解碼廣泛存在於身分認證標頭、API 請求解析與微服務通訊環節中，此漏洞對各類 Java 後端服務構成嚴重威脅。開發者與系統維運人員應儘速檢視伺服器 OpenJDK 版本，並依官方與各 Linux 發行版公告完成安全修正檔更新。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Java4Shell: RCE in OpenJDK when processing Base64",
+          "sources": [
+            "hn"
+          ],
+          "title": "Java4Shell 漏洞曝光：OpenJDK 在解析 Base64 時存在遠端代碼執行風險",
+          "url": "https://calif.io/java4shell/",
+          "weightedScore": 543
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wwl7y6/alephalphakolibri1_hugging_face_78b_parameters"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://bfl.ai/models/flux-3-image"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://dwarfstar.sh/"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "hn",
-      "sources": [
-        "cloudflare-blog",
-        "hn"
-      ],
-      "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "lobsters-devops",
-      "sources": [
-        "lobsters-devops"
-      ],
-      "url": "https://gvisor.dev/blog/2026/10/02/gvisor-cncf"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://deepseek.com/en/harness"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://github.com/streetcomplete/StreetComplete/issues/5421"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/allenai/astabrief"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/account-abuse-protection-dashboard"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "url": "https://huggingface.co/blog/microsoft/thinkingbox"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-03T22:49:56.394Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://turbopuffer.com/blog/rip-vector-database"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-10-04T23:01:45.455Z",
@@ -6858,6 +6746,108 @@
       ],
       "title": "Universal XSS in uBlock Origin from website-driven element picker",
       "url": "https://iter.ca/post/ubo-uxss"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-18T02:20:18.033Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "openai-blog"
+      ],
+      "title": "GPT‑6.2 Astra and Sol",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-18T02:20:18.033Z",
+      "sourceId": "hn",
+      "sources": [
+        "github-changelog-copilot",
+        "hn"
+      ],
+      "title": "MAI Code 2 and Code 2 Flash",
+      "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-18T02:20:18.033Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot Fusion updates: more availability, benchmarks, and models",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-18T02:20:18.033Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot app, Microsoft Ignite releases",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-18T02:20:18.033Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "How the Claude Code team thinks about verification",
+      "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-18T02:20:18.033Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Your AI coding agent could cost 5x more depending on the harness, benchmark finds",
+      "url": "https://thenewstack.io/coding-agent-harness-costs"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-18T02:20:18.033Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "Is your OpenTelemetry pipeline becoming a performance bottleneck?",
+      "url": "https://cncf.io/blog/2026/11/17/is-your-opentelemetry-pipeline-becoming-a-performance-bottleneck"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-18T02:20:18.033Z",
+      "sourceId": "simonwillison",
+      "sources": [
+        "simonwillison"
+      ],
+      "title": "Running the full server-side Datasette Python app in the browser with service workers and Pyodide",
+      "url": "https://simonwillison.net/2026/Nov/17/datasette-lite"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-18T02:20:18.033Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Optimizely compromised, served malware on Zoom, GitLab",
+      "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-18T02:20:18.033Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Java4Shell: RCE in OpenJDK when processing Base64",
+      "url": "https://calif.io/java4shell"
     }
   ]
 }
