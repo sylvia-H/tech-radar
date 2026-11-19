@@ -498,109 +498,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-15T23:55:44.013Z",
-  "lastNewsPushAt": "2026-11-18T02:20:18.033Z",
+  "lastNewsPushAt": "2026-11-19T01:50:30.517Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-15T23:55:44.013Z",
       "summary": "本次榜單由 meta/astryx 奪得 #1，迎來 7 個新進項目與 1 個竄升項目（含 AI 6 個、前後端 2 個），同時有 1 個項目下降。"
     },
     "feed": [
-      {
-        "content": "Amazon Web Services 正式推出 AWS Emulator，這是一套可在本地運行的 AWS 服務模擬環境。針對近年興起的 AI coding agent，該工具提供了關鍵的本機驗證迴圈（verification loop），讓 Agent 在生成雲端架構、IaC 腳本或調用 AWS SDK 時，能在本地直接執行測試並自我修正，無須耗費真實雲端帳號成本或承擔配置失誤風險，大幅加速 Agent 開發流程。",
-        "id": "news:https://github.com/aws/aws-emulator",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "AWS 推出本地端 AWS Emulator，為 AI Agent 提供離線驗證與測試環境",
-        "type": "news",
-        "url": "https://github.com/aws/aws-emulator"
-      },
-      {
-        "content": "作為 llama.cpp 與多項本地開源大型語言模型底層核心的張量運算庫 GGML，正式發布 v1.0.0 版本。本次重大版本確立了穩定的 API 與跨平台運算架構，優化了 CPU 與各類硬體加速器的張量運算效能，為本地端邊緣推論生態系統提供更加標準化且可靠的底層基礎。",
-        "id": "news:https://github.com/ggml-org/ggml/releases/tag/v1.0.0",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "GGML 正式迎來 v1.0.0 里程碑：本地端 AI 核心張量庫邁入穩定架構",
-        "type": "news",
-        "url": "https://github.com/ggml-org/ggml/releases/tag/v1.0.0"
-      },
-      {
-        "content": "開發團隊發布參數量達 1450 億的 Edge0-145B 模型，主打讓開發者在個人工作站或邊緣設備上直接部署具備前沿旗艦級能力的 AI 模型。該模型透過架構與量化最佳化，大幅壓低記憶體頻寬與硬體門檻，為不依賴雲端專有 API、重視資料隱私與離線自主性的開發者提供了強大開源選項。",
-        "id": "news:https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "Edge0-145B 開源模型發布：在個人電腦上運行頂級前沿 AI 能力",
-        "type": "news",
-        "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer"
-      },
-      {
-        "content": "終端機工具 Atuin 正式推出「Atuin Threads」功能，支援跨機器同步所有 AI Coding Agent 的對話與操作歷程。開發者經常在不同工作站、遠端伺服器與筆電之間切換，Threads 解決了 Agent 狀態孤島問題，讓開發者在任何終端環境皆能無縫接續先前的上下文與執行任務。",
-        "id": "news:https://blog.atuin.sh/threads-agent-sessions",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "Atuin 推出 Atuin Threads：跨終端跨設備同步管理 AI Agent 對話 Session",
-        "type": "news",
-        "url": "https://blog.atuin.sh/threads-agent-sessions/"
-      },
-      {
-        "content": "Google DeepMind 正式公開新一代生物 AI 模型 AlphaGenome 2。該模型能夠深入解析細胞讀取 DNA 的機制，並準確預測基因序列及其突變如何影響特定人體細胞類型與疾病關聯。對於從事生物資訊、計算生物學及 AI for Science 的開發者而言，這代表著在結構生物學與疾病機制建模上的重要突破。",
-        "id": "news:https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "Google DeepMind 發表 AlphaGenome 2：精準預測 DNA 變異對細胞的影響",
-        "type": "news",
-        "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/"
-      },
-      {
-        "content": "Google DeepMind 正式公開其氣象 AI 預測模型所依賴的基礎資料集，包含高解析度降水資料與地球靜止氣象衛星觀測數據。此舉讓氣候科技與環境預測領域的機器學習開發者能直接取得高品質、標準化的行星觀測訓練資料，降低訓練前沿地球系統預測模型的門檻。",
-        "id": "news:https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "DeepMind 開源氣象 AI 預測模型背後的核心降水與衛星觀測資料集",
-        "type": "news",
-        "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/"
-      },
-      {
-        "content": "一項深入的逆向工程研究顯示，透過分析模型權重輸出中的浮點數捨入誤差與特定微架構計算特徵（硬體指紋），可以追蹤出前沿模型實際是在何種 GPU 架構下訓練完成。這項技術分析展示了硬體低階數值特性如何在神經網路訓練中留下痕跡，為模型溯源與合規驗證提供了嶄新的技術視角。",
-        "id": "news:https://unemploymentlabs.com/checkpoint-forensics",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "技術分析揭露：中國前沿 AI 模型輸出帶有受出口管制 GPU 的硬體指紋",
-        "type": "news",
-        "url": "https://unemploymentlabs.com/checkpoint-forensics"
-      },
-      {
-        "content": "Cloudflare 發布深度技術報告，剖析如 ARTEX 等 AI 自主編排滲透測試平台的運作機制。這類工具能全天候自主探索暴露在外的基礎設施並發動精準攻擊。報告指出傳統被動防護已難以應付具備自動決策能力的攻擊者，團隊必須轉向縱深防禦與即時異常感知架構，更新現代雲端基礎設施的安全模型。",
-        "id": "news:https://blog.cloudflare.com/adapting-to-ai-penetration-testing-orchestrators",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "Cloudflare 解析 AI 滲透測試編排工具帶來的威脅與新防禦架構",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/adapting-to-ai-penetration-testing-orchestrators/"
-      },
-      {
-        "content": "開發者深入分享如何在瀏覽器環境中利用 WebGL2 實現超逼真的動態沙粒物理與光影渲染。文章詳細探討了粒子系統的 GPU 運算管線、碰撞檢測演算法以及著色器效能調校技巧，展示了現代 Web 圖形技術在不依賴 WebGPU 的情況下，仍能在標準瀏覽器中榨乾硬體極限的實作範例。",
-        "id": "news:https://av.github.io/safe-sand",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "基於 WebGL2 實現超擬真沙粒即時物理模擬與渲染技術",
-        "type": "news",
-        "url": "https://av.github.io/safe-sand/"
-      },
-      {
-        "content": "GitHub Next 團隊發表前瞻架構演講，深入探討軟體工程範式的演變。內容涵蓋支援多個 AI Agent 同時協作的「Multiplayer Agents」架構、人機共創的規劃引擎，以及結合形式化驗證的「證明驅動開發（Proof-driven development）」，為開發者展示了未來由 Agent 主導的程式碼庫維護與驗證實踐。",
-        "id": "news:https://githubnext.com/talks/whats-next-with-github-next",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "GitHub Next 揭示未來架構藍圖：多人協作 Agent 與證明驅動開發",
-        "type": "news",
-        "url": "https://githubnext.com/talks/whats-next-with-github-next/"
-      },
-      {
-        "content": "知名 Nix 部署工具 deploy-rs 宣布重新啟動積極維護，團隊分享了現代化改版架構。deploy-rs 具備無代理人（agentless）、依賴 Nix profile 回滾機制等純粹函數式部署特性，本次演進修復了與新版 Rust 工具鏈及 Nix Flakes 的整合問題，並優化了多主機並行部署與健康檢查流程，為 NixOS 維運團隊帶來更穩健的自動化方案。",
-        "id": "news:https://serokell.io/blog/deploy-rs-nix",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "deploy-rs 重啟維護：NixOS 無代理程式部署工具的現代化演進",
-        "type": "news",
-        "url": "https://serokell.io/blog/deploy-rs-nix"
-      },
-      {
-        "content": "新推出的評測基準 XYBench 專注於測試 AI 模型解決「問題背後的真正問題」之能力。在工程實務中，使用者常因對解法產生誤解而提出錯誤問題（即 XY Problem）。該基準透過大量真實技術場景，衡量 Coding Agent 能否主動洞察提問者的真實意圖並提出根治方案，而非機械式地執行錯誤指令。",
-        "id": "news:https://huggingface.co/blog/allenai/xybench",
-        "publishedAt": "2026-11-14T23:50:25.821Z",
-        "title": "XYBench 評測基準推出：評估 AI 是否具備識別「XY 問題」的診斷能力",
-        "type": "news",
-        "url": "https://huggingface.co/blog/allenai/xybench"
-      },
       {
         "content": "Rust 程式語言正式發布第 100 個六週週期版本 1.100。本次發布代表了 Rust 自 1.0 以來十年以上的穩定演進，持續在不破壞向後相容性的承諾下提供語言增強、型別系統改良與編譯速度最佳化。對於全球系統程式設計師而言，這是開源軟體工程與語言演進史上的重要里程碑。",
         "id": "news:https://blog.rust-lang.org/2026/11/12/Rust-1.100.0",
@@ -896,283 +800,284 @@
         "title": "Java4Shell 漏洞曝光：OpenJDK 在解析 Base64 時存在遠端代碼執行風險",
         "type": "news",
         "url": "https://calif.io/java4shell/"
+      },
+      {
+        "content": "Google 推出新一代 Gemini 4 Neon 模型。該模型專注於提升程式碼生成與自動化推理效能，進一步拓展了 Gemini 系列在軟體工程與智慧代理任務上的應用能力。",
+        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "Google 發布 Gemini 4 Neon 模型",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+      },
+      {
+        "content": "Google DeepMind 宣布新一代基礎世界模型 Genie 4 正式上線。Genie 4 具備從圖像與文字提示生成可互動虛擬環境的能力，為物理模擬、遊戲生成與環境互動智慧體的訓練帶來重大突破。",
+        "id": "news:https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "Google DeepMind 正式推出世界模型 Genie 4",
+        "type": "news",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/"
+      },
+      {
+        "content": "GitHub 宣布 Copilot 支援模型上下文協議（MCP）連接器公開預覽，新增 Supabase、Box、Calendly 等 8 項經過驗證的服務。開發者可直接將 Copilot 與後端資料庫及第三方工具串接，使 AI 代理能直接存取即時資料並呼叫外部服務。",
+        "id": "news:https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "GitHub Copilot 公測支援 Supabase 等驗證 MCP 伺服器連接器",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot"
+      },
+      {
+        "content": "Cloudflare 宣布將資料擷取模型 Clairic 與輕量版 Clairic-flash 以開放權重（open-weight）形式釋出。Clairic 正式脫離預覽階段，專門針對結構化資訊擷取任務進行優化，開發者可直接在 Workers AI 或私有基礎架構中部署使用。",
+        "id": "news:https://blog.cloudflare.com/open-clairic",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "Cloudflare Workers AI 開源 Clairic 與 Clairic-flash 權重",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/open-clairic/"
+      },
+      {
+        "content": "知名隱私 DNS 服務商 Quad9 因法國法院的強制封鎖裁決，宣布停止在法國的營運服務。此事件凸顯了司法管轄區透過遞迴 DNS 進行版權審查帶來的監管與合規風險，直接影響全球網路基礎設施的中立性與開發者所依賴的解析服務可靠度。",
+        "id": "news:https://blog.cloudflare.com/quad9-withdrawal-from-france",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "Quad9 退出法國市場：DNS 審查命令對基礎設施的中立性警訊",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/quad9-withdrawal-from-france/"
+      },
+      {
+        "content": "本文詳細解析 AI 編程代理 Codex 如何在本地環境安全執行終端命令。為防範自動化代理執行高風險指令，Codex 跨 macOS、Linux 與 Windows 構建了嚴密的檔案系統與網路存取限制層，讓開發者在賦予代理系統控制權的同時保有精準的安全防護邊界。",
+        "id": "news:https://openai.com/index/inside-the-codex-sandbox",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "深入剖析 Codex 沙盒：在多平台安全執行本地終端指令",
+        "type": "news",
+        "url": "https://openai.com/index/inside-the-codex-sandbox"
+      },
+      {
+        "content": "研究團隊提出基於能量模型的新型推論架構 Energy-Based Reasoners，在複雜邏輯與多步驟推理場景中實現高達 385 倍的推論效率提升。該技術突破了傳統自回歸模型在逐步思考時龐大的計算開銷，為輕量化高效推論開闢了新途徑。",
+        "id": "news:https://energy-based-reasoners.github.io/",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "Energy-Based Reasoners：推論效率提升 385 倍的新架構",
+        "type": "news",
+        "url": "https://energy-based-reasoners.github.io/"
+      },
+      {
+        "content": "本文探討如何優化開源 LLM 在長對話與多步驟代碼代理工作流中的表現。透過前綴快取（Prefix Caching）與精心規劃的 Prompt 與工具調用結構，能最大化重複利用 KV 快取，避免上下文增長導致嚴重的延遲與資源消耗。",
+        "id": "news:https://ollama.com/blog/open-models-long-horizon-agents",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "讓開源模型勝任長流程代理：前綴快取與推論路由實踐",
+        "type": "news",
+        "url": "https://ollama.com/blog/open-models-long-horizon-agents"
+      },
+      {
+        "content": "團隊深入剖析 Kyverno 基於通用表達式語言（CEL）的 K8s 准入控制路徑效能。測試發現過去被視為主要瓶頸的 CEL 表達式評估僅佔少數開銷，高達約 86% 的耗時集中於物件序列化與外圍處理邏輯，為叢集維運工程師提供了明確的優化方向。",
+        "id": "news:https://cncf.io/blog/2026/11/18/optimizing-kubernetes-admission-control-where-kyvernos-cel-admission-cost-actually-goes",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "Kubernetes 准入控制效能分析：Kyverno CEL 成本真相",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/11/18/optimizing-kubernetes-admission-control-where-kyvernos-cel-admission-cost-actually-goes/"
+      },
+      {
+        "content": "本文探討大型語言模型微調作業實際執行時間與理論算力估算出現顯著落差的根本原因。文章指出記憶體頻寬限制、GPU 間通信開銷與資料讀取延遲才是真實世界的效能瓶頸，協助機器學習工程師更精確評估分散式訓練集群的資源配置。",
+        "id": "news:https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "為什麼模型微調耗時遠超理論 FLOPs 算力計算？",
+        "type": "news",
+        "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time"
+      },
+      {
+        "content": "哈佛大學最新研究指出，AI 編程代理的普及大幅提升了代碼編寫產出，但整個軟體工程流程的瓶頸已全面轉移至人工代碼審查（Code Review）。快速增長的代碼量加劇了審查者的認知負擔與驗證難度，顯示工程團隊必須重塑審查機制以應對代理時代的生產力挑戰。",
+        "id": "news:https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "哈佛研究：AI 編程代理將軟體開發瓶頸轉移至代碼審查",
+        "type": "news",
+        "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/"
+      },
+      {
+        "content": "廣泛使用的網頁伺服器與反向代理軟體 Nginx 被揭露存在高危險性的未授權遠端代碼執行漏洞。攻擊者可在無需憑據的情況下利用該漏洞接管伺服器，對全球雲端基礎設施構成嚴重威脅，維運與後端開發人員應立即檢核系統並套用安全修補程式。",
+        "id": "news:https://wiz.io/blog/nginx-http2-rce-vulnerabilities",
+        "publishedAt": "2026-11-19T01:50:30.517Z",
+        "title": "Nginx 爆發未授權遠端代碼執行（RCE）重大安全漏洞",
+        "type": "news",
+        "url": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-18T02:20:18.033Z",
+      "generatedAt": "2026-11-19T01:50:30.517Z",
       "items": [
         {
-          "content": "OpenAI 正式推出 GPT-6.2 系列最新模型 Astra 與 Sol，專為 Agentic 程式設計與自動化 Code Review 任務進行架構調優。相較於先前的 GPT-6 模型，Astra 與 Sol 具備更強大的程式碼邏輯推演與上下文理解能力，能更精準地處理跨檔案的多步驟程式碼修改，目前已整合至 GitHub Copilot 等工具中全面開放使用。這項更新為需要構建自主 AI Agent 或強化 CI/CD 自動審查流程的開發者，提供了更高判斷力且針對軟體工程特化的新一代基底模型。",
+          "content": "Google 推出新一代 Gemini 4 Neon 模型。該模型專注於提升程式碼生成與自動化推理效能，進一步拓展了 Gemini 系列在軟體工程與智慧代理任務上的應用能力。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 2,
+          "sourceCount": 3,
           "sourceId": "hn",
-          "sourceTitle": "GPT‑6.2 Astra and Sol",
+          "sourceTitle": "Gemini 4 Neon",
           "sources": [
-            "hn",
-            "openai-blog"
-          ],
-          "title": "OpenAI 正式發表 GPT-6.2 Astra 與 Sol 模型，強化 Agentic 程式碼生成",
-          "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
-          "weightedScore": 1191
-        },
-        {
-          "content": "微軟於 Ignite 大會正式發表專屬程式設計模型 MAI Code 2 與輕量版本 Code 2 Flash。官方評測指出，該系列模型在程式生成與邏輯修復等任務上展現出接近 Claude Opus 等頂級模型的實力，但推論成本僅需後者的約 5%。隨著 Coding Agent 與 IDE 智慧補全的普及，高昂的 Token 調用開銷成為企業規模化導入的主要瓶頸；MAI Code 2 系列的推出將顯著降低自動化編程、單元測試生成與程式庫重構的運算負擔。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "MAI Code 2 and Code 2 Flash",
-          "sources": [
+            "deepmind-blog",
             "github-changelog-copilot",
             "hn"
           ],
-          "title": "微軟發表 MAI Code 2 與 Code 2 Flash 模型，主打高效能與 5% 極低推論成本",
-          "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
-          "weightedScore": 391
+          "title": "Google 發布 Gemini 4 Neon 模型",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+          "weightedScore": 546
         },
         {
-          "content": "GitHub 宣布為 Copilot Fusion 進行全面升級，除了新增更多可調用的底層模型外，還拓展至更廣泛的 Copilot 操作介面與終端環境。同時，GitHub 公布了在兩項公開 Terminal-Bench 基準測試中的評測成績，讓開發者在終端操作與命令列任務中擁有更清晰的模型效能依據。這項更新讓高度依賴 CLI 自動化與多模型切換的開發團隊，能依照任務複雜度靈活配置推論資源，進一步提升工程開發流暢度。",
+          "content": "Google DeepMind 宣布新一代基礎世界模型 Genie 4 正式上線。Genie 4 具備從圖像與文字提示生成可互動虛擬環境的能力，為物理模擬、遊戲生成與環境互動智慧體的訓練帶來重大突破。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot Fusion updates: more availability, benchmarks, and models",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot Fusion 升級：擴大模型支援並拓展終端與介面可用性",
-          "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 於微軟 Ignite 大會宣布 Copilot 應用程式的重大支援擴展，正式納入 Azure DevOps 程式庫、GitHub Enterprise Server（GHES）自託管實例以及瀏覽器環境。這意味著身處受控企業網路、使用私有原始碼代管或跨雲架構的開發團隊，不再受限於公有雲 GitHub.com，可以直接在既有的私有基礎設施中無縫導入 Copilot Agent，兼顧代碼資安合規與內部專案的智慧輔助開發需求。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot app, Microsoft Ignite releases",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 應用程式延伸支援 Azure DevOps 與本地部署企業版伺服器",
-          "url": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases",
-          "weightedScore": 100
-        },
-        {
-          "content": "Anthropic 旗下 Claude Code 工程團隊公開探討了在打造自主編程 Agent 時的「輸出驗證（Verification）」設計思考。在多步驟的代碼修改與除錯流程中，AI Agent 極易產生看似正確但含有隱蔽缺陷的幻覺代碼；團隊深入分享了如何整合測試執行、語法檢查、環境反饋閉環以及防護機制，在 Agent 提交變更前主動攔截錯誤。這篇工程實務對於正在自行開發 Agent 工具或探索 AI 輔助軟體工程架構的開發者深具參考價值。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
+          "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "How the Claude Code team thinks about verification",
+          "sourceTitle": "Genie 4 is now available",
           "sources": [
+            "deepmind-blog",
             "hn"
           ],
-          "title": "Anthropic 團隊深度解析 Claude Code 驗證機制與 Agent 程式碼可靠性",
-          "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
-          "weightedScore": 267
+          "title": "Google DeepMind 正式推出世界模型 Genie 4",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+          "weightedScore": 289
         },
         {
-          "content": "最新基準評測顯示，即使底層調用相同的 AI 模型，使用不同的 Coding Agent 執行框架（Harness）在完成相同程式開發任務時，Token 消耗量與運算成本差異最高可達 5 倍。報告深入分析了各框架在 Prompt 構建策略、上下文修剪（Context Pruning）以及工具呼叫循環設計上的效率落差。這項發現對軟體團隊是一大警訊：在規劃 Agentic 工作流程時，除了挑選高性價比模型，調度層的工程實作與上下文優化同樣是決定落地成本的關鍵因素。",
+          "content": "GitHub 宣布 Copilot 支援模型上下文協議（MCP）連接器公開預覽，新增 Supabase、Box、Calendly 等 8 項經過驗證的服務。開發者可直接將 Copilot 與後端資料庫及第三方工具串接，使 AI 代理能直接存取即時資料並呼叫外部服務。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Connect Supabase, Box, Calendly, and more to Copilot",
+          "sources": [
+            "github-changelog-copilot"
+          ],
+          "title": "GitHub Copilot 公測支援 Supabase 等驗證 MCP 伺服器連接器",
+          "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+          "weightedScore": 100
+        },
+        {
+          "content": "Cloudflare 宣布將資料擷取模型 Clairic 與輕量版 Clairic-flash 以開放權重（open-weight）形式釋出。Clairic 正式脫離預覽階段，專門針對結構化資訊擷取任務進行優化，開發者可直接在 Workers AI 或私有基礎架構中部署使用。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Your AI coding agent could cost 5x more depending on the harness, benchmark finds",
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "An updated Clairic and Clairic-flash are now open-weight, from the new Workers AI Superintelligence team",
           "sources": [
-            "thenewstack"
+            "cloudflare-blog"
           ],
-          "title": "基準測試揭示：AI Coding Agent 執行架構不同，相同模型成本可相差達 5 倍",
-          "url": "https://thenewstack.io/coding-agent-harness-costs/",
+          "title": "Cloudflare Workers AI 開源 Clairic 與 Clairic-flash 權重",
+          "url": "https://blog.cloudflare.com/open-clairic/",
           "weightedScore": 50
         },
         {
-          "content": "在微服務與雲原生架構中，OpenTelemetry（OTel）已成為標準的可觀測性收集工具，但收集監控指標所造成的效能開銷常被忽略。技術演講《擊敗 OTel 的隱形殺手》深入探討了 Collector 遙測管線在面對高併發流量時產生的 CPU、記憶體佔用與網路延遲瓶頸。講者分享了動態採樣策略（Sampling）、批次處理（Batching）參數調校與記憶體限制器配置的最佳實務，協助 DevOps 與後端工程師在保障全鏈路追蹤的同時，防止監控機制反噬正式環境效能。",
+          "content": "知名隱私 DNS 服務商 Quad9 因法國法院的強制封鎖裁決，宣布停止在法國的營運服務。此事件凸顯了司法管轄區透過遞迴 DNS 進行版權審查帶來的監管與合規風險，直接影響全球網路基礎設施的中立性與開發者所依賴的解析服務可靠度。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Quad9's withdrawal from France: A canary in the coal mine",
+          "sources": [
+            "cloudflare-blog",
+            "hn"
+          ],
+          "title": "Quad9 退出法國市場：DNS 審查命令對基礎設施的中立性警訊",
+          "url": "https://blog.cloudflare.com/quad9-withdrawal-from-france/",
+          "weightedScore": 983
+        },
+        {
+          "content": "本文詳細解析 AI 編程代理 Codex 如何在本地環境安全執行終端命令。為防範自動化代理執行高風險指令，Codex 跨 macOS、Linux 與 Windows 構建了嚴密的檔案系統與網路存取限制層，讓開發者在賦予代理系統控制權的同時保有精準的安全防護邊界。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sourceTitle": "Inside the Codex sandbox",
+          "sources": [
+            "openai-blog"
+          ],
+          "title": "深入剖析 Codex 沙盒：在多平台安全執行本地終端指令",
+          "url": "https://openai.com/index/inside-the-codex-sandbox",
+          "weightedScore": 100
+        },
+        {
+          "content": "研究團隊提出基於能量模型的新型推論架構 Energy-Based Reasoners，在複雜邏輯與多步驟推理場景中實現高達 385 倍的推論效率提升。該技術突破了傳統自回歸模型在逐步思考時龐大的計算開銷，為輕量化高效推論開闢了新途徑。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Energy-Based Reasoners: 385x more efficient inference",
+          "sources": [
+            "hn",
+            "lobsters-ai"
+          ],
+          "title": "Energy-Based Reasoners：推論效率提升 385 倍的新架構",
+          "url": "https://energy-based-reasoners.github.io/",
+          "weightedScore": 400
+        },
+        {
+          "content": "本文探討如何優化開源 LLM 在長對話與多步驟代碼代理工作流中的表現。透過前綴快取（Prefix Caching）與精心規劃的 Prompt 與工具調用結構，能最大化重複利用 KV 快取，避免上下文增長導致嚴重的延遲與資源消耗。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "ollama-blog",
+          "sourceTitle": "Making open models work for long-horizon agentic workloads",
+          "sources": [
+            "ollama-blog"
+          ],
+          "title": "讓開源模型勝任長流程代理：前綴快取與推論路由實踐",
+          "url": "https://ollama.com/blog/open-models-long-horizon-agents",
+          "weightedScore": 100
+        },
+        {
+          "content": "團隊深入剖析 Kyverno 基於通用表達式語言（CEL）的 K8s 准入控制路徑效能。測試發現過去被視為主要瓶頸的 CEL 表達式評估僅佔少數開銷，高達約 86% 的耗時集中於物件序列化與外圍處理邏輯，為叢集維運工程師提供了明確的優化方向。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cncf-blog",
-          "sourceTitle": "Is your OpenTelemetry pipeline becoming a performance bottleneck?",
+          "sourceTitle": "Optimizing Kubernetes admission control: Where Kyverno’s CEL admission cost actually goes",
           "sources": [
             "cncf-blog"
           ],
-          "title": "深入剖析 OpenTelemetry 效能開銷：避免可觀測性管線成為系統瓶頸",
-          "url": "https://www.cncf.io/blog/2026/11/17/is-your-opentelemetry-pipeline-becoming-a-performance-bottleneck/",
+          "title": "Kubernetes 准入控制效能分析：Kyverno CEL 成本真相",
+          "url": "https://www.cncf.io/blog/2026/11/18/optimizing-kubernetes-admission-control-where-kyvernos-cel-admission-cost-actually-goes/",
           "weightedScore": 100
         },
         {
-          "content": "開發者展示了一種前端與後端整合的全新實作架構：透過 WebAssembly 技術的 Python 執行環境 Pyodide，結合 Service Worker 攔截網路 HTTP 請求，成功在使用者瀏覽器內部完整運行 Python ASGI 伺服端應用 Datasette。這項技術完全不需要後端伺服器運算資源即可提供互動式 SQLite 資料查詢與視覺化功能，不僅實現了零伺服器維運負擔與離線可用性，更確保了資料完全保留在客戶端本機的高隱私度，為 Web 應用開發開闢了新思路。",
+          "content": "本文探討大型語言模型微調作業實際執行時間與理論算力估算出現顯著落差的根本原因。文章指出記憶體頻寬限制、GPU 間通信開銷與資料讀取延遲才是真實世界的效能瓶頸，協助機器學習工程師更精確評估分散式訓練集群的資源配置。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "simonwillison",
-          "sourceTitle": "Running the full server-side Datasette Python app in the browser with service workers and Pyodide",
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Why your fine-tuning job takes longer than the FLOPs say",
           "sources": [
-            "simonwillison"
+            "huggingface-blog"
           ],
-          "title": "結合 Service Worker 與 Pyodide，在瀏覽器端完全免伺服器執行 Python 應用 Datasette",
-          "url": "https://simonwillison.net/2026/Nov/17/datasette-lite/",
+          "title": "為什麼模型微調耗時遠超理論 FLOPs 算力計算？",
+          "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
           "weightedScore": 100
         },
         {
-          "content": "廣受各大科技公司採用的 A/B 測試與功能發布平台 Optimizely 遭受駭客入侵，導致包含 Zoom 與 GitLab 在內的多個知名網站客戶端腳本被注入惡意軟體。這起供應鏈攻擊事件凸顯了現代前端架構中第三方 JavaScript 腳本所潛藏的巨大資安風險。開發團隊與維運人員應全面盤點外部腳本依賴，嚴格落實子資源完整性（Subresource Integrity, SRI）、內容安全策略（CSP）限制，並評估自託管或伺服端 A/B 測試方案，以防範第三方供應商失陷引發的安全連鎖反應。",
+          "content": "哈佛大學最新研究指出，AI 編程代理的普及大幅提升了代碼編寫產出，但整個軟體工程流程的瓶頸已全面轉移至人工代碼審查（Code Review）。快速增長的代碼量加劇了審查者的認知負擔與驗證難度，顯示工程團隊必須重塑審查機制以應對代理時代的生產力挑戰。",
           "degraded": false,
-          "domain": "general",
+          "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Optimizely compromised, served malware on Zoom, GitLab",
+          "sourceTitle": "Harvard researchers find AI coding agents shifted the bottleneck to code review",
           "sources": [
             "hn"
           ],
-          "title": "知名 A/B 測試平台 Optimizely 遭入侵，Zoom 與 GitLab 等官網被植入惡意腳本",
-          "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
-          "weightedScore": 669
+          "title": "哈佛研究：AI 編程代理將軟體開發瓶頸轉移至代碼審查",
+          "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
+          "weightedScore": 319
         },
         {
-          "content": "資安研究人員披露了名為「Java4Shell」的重大安全漏洞，問題出在 OpenJDK 處理特定格式 Base64 編碼字串的底層邏輯，未經授權的攻擊者可藉此構造特製惡意輸入誘發記憶體損毀，進而在目標系統上實現遠端代碼執行（RCE）。由於 Base64 解碼廣泛存在於身分認證標頭、API 請求解析與微服務通訊環節中，此漏洞對各類 Java 後端服務構成嚴重威脅。開發者與系統維運人員應儘速檢視伺服器 OpenJDK 版本，並依官方與各 Linux 發行版公告完成安全修正檔更新。",
+          "content": "廣泛使用的網頁伺服器與反向代理軟體 Nginx 被揭露存在高危險性的未授權遠端代碼執行漏洞。攻擊者可在無需憑據的情況下利用該漏洞接管伺服器，對全球雲端基礎設施構成嚴重威脅，維運與後端開發人員應立即檢核系統並套用安全修補程式。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Java4Shell: RCE in OpenJDK when processing Base64",
+          "sourceTitle": "Unauthenticated remote code execution in Nginx",
           "sources": [
             "hn"
           ],
-          "title": "Java4Shell 漏洞曝光：OpenJDK 在解析 Base64 時存在遠端代碼執行風險",
-          "url": "https://calif.io/java4shell/",
-          "weightedScore": 543
+          "title": "Nginx 爆發未授權遠端代碼執行（RCE）重大安全漏洞",
+          "url": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+          "weightedScore": 1145
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "simonwillison",
-      "sources": [
-        "simonwillison"
-      ],
-      "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/one-observability-platform"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://chatgpt.com/features/sites"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wwu6zj/the_rise_of_overfit_inference_engines"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://github.com/Niko1221/Strata"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "url": "https://thenewstack.io/ci-bottleneck-agent-verification"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "url": "https://blog.cloudflare.com/streamline"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1wx8ruy/metas_muse_agent_1_in_the_app_store_system_prompt"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://stillwet.art/"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-10-04T23:01:45.455Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "url": "https://eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility"
-    },
     {
       "domain": "devops",
       "seenAt": "2026-10-06T01:16:30.479Z",
@@ -6848,6 +6753,131 @@
       ],
       "title": "Java4Shell: RCE in OpenJDK when processing Base64",
       "url": "https://calif.io/java4shell"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "deepmind-blog",
+        "github-changelog-copilot",
+        "hn"
+      ],
+      "title": "Gemini 4 Neon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "deepmind-blog",
+        "hn"
+      ],
+      "title": "Genie 4 is now available",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Connect Supabase, Box, Calendly, and more to Copilot",
+      "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "An updated Clairic and Clairic-flash are now open-weight, from the new Workers AI Superintelligence team",
+      "url": "https://blog.cloudflare.com/open-clairic"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "cloudflare-blog",
+        "hn"
+      ],
+      "title": "Quad9's withdrawal from France: A canary in the coal mine",
+      "url": "https://blog.cloudflare.com/quad9-withdrawal-from-france"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Inside the Codex sandbox",
+      "url": "https://openai.com/index/inside-the-codex-sandbox"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-ai"
+      ],
+      "title": "Energy-Based Reasoners: 385x more efficient inference",
+      "url": "https://energy-based-reasoners.github.io/"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "ollama-blog",
+      "sources": [
+        "ollama-blog"
+      ],
+      "title": "Making open models work for long-horizon agentic workloads",
+      "url": "https://ollama.com/blog/open-models-long-horizon-agents"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "Optimizing Kubernetes admission control: Where Kyverno’s CEL admission cost actually goes",
+      "url": "https://cncf.io/blog/2026/11/18/optimizing-kubernetes-admission-control-where-kyvernos-cel-admission-cost-actually-goes"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Why your fine-tuning job takes longer than the FLOPs say",
+      "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Harvard researchers find AI coding agents shifted the bottleneck to code review",
+      "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-19T01:50:30.517Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Unauthenticated remote code execution in Nginx",
+      "url": "https://wiz.io/blog/nginx-http2-rce-vulnerabilities"
     }
   ]
 }
