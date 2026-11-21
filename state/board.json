@@ -498,125 +498,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-15T23:55:44.013Z",
-  "lastNewsPushAt": "2026-11-20T01:44:51.037Z",
+  "lastNewsPushAt": "2026-11-21T01:24:25.779Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-15T23:55:44.013Z",
       "summary": "本次榜單由 meta/astryx 奪得 #1，迎來 7 個新進項目與 1 個竄升項目（含 AI 6 個、前後端 2 個），同時有 1 個項目下降。"
     },
     "feed": [
-      {
-        "content": "Node.js 官方釋出 v22.23.5「Jod」長期支援版（LTS）安全維護更新。本次更新重點修復了多個高風險安全漏洞，包括 CVE-2026-123863、CVE-2026-123865 與 CVE-2026-123866 等 HTTP/2 相關漏洞（涉及 stream 移除時未釋放標頭、nghttp2 放棄 stream 偵測以及 socket 寫入完成前的緩衝區保留問題），同時修復了 TLS/HTTP 中因空寫入引發巢狀解析器執行的 CVE-2026-123864，並解決未提供 session ID context 時 mTLS resumption 的安全風險。此版本對維運生產環境中 Node.js 服務的團隊極為重要，建議儘速安排升級以防範潛在阻斷服務與安全威脅。",
-        "id": "news:https://github.com/nodejs/node/releases/tag/v22.23.5",
-        "publishedAt": "2026-11-15T23:55:44.013Z",
-        "title": "Node.js 發布 v22.23.5「Jod」LTS 安全更新，修復多項 HTTP/2 與 TLS 高危險漏洞",
-        "type": "news",
-        "url": "https://github.com/nodejs/node/releases/tag/v22.23.5"
-      },
-      {
-        "content": "IBM 宣布在 Granite 4.1（3B 與 8B 版本）中正式導入名為 LLMON 的 LLM 原生標記語言（LLM-Native Markup Language）。LLMON 專為語言模型最佳化設計，旨在提升模型在生成與解析結構化資料時的語意一致性與輸出效率，解決傳統 XML 或 JSON 格式在推論時帶來的 token 膨脹與解析失敗問題。對於在邊緣或輕量級環境中部署 Granite 模型、依賴結構化輸出進行自動化流程的開發者而言，這項更新能顯著提高模型與應用程式對接的穩定度。",
-        "id": "news:https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
-        "publishedAt": "2026-11-15T23:55:44.013Z",
-        "title": "IBM Granite 4.1 正式支援 LLM 原生標記語言 LLMON，強化 3B 與 8B 輸出架構",
-        "type": "news",
-        "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite"
-      },
-      {
-        "content": "開源模型加速框架 Unsloth 發布了針對 Qwen3.8-27B 的 Dynamic v3.1 量化更新。該更新透過動態量化機制進一步降低了模型推論時的 VRAM 需求，同時在關鍵基準測試中維持全精度等級的推論準確度。這項更新讓資源受限的中小型伺服器或本地端設備得以順暢執行 27B 級別的大型模型，有助於降低邊緣運算與私有化 LLM 部署的硬體門檻。",
-        "id": "news:https://unsloth.ai/docs/models/qwen3.8",
-        "publishedAt": "2026-11-15T23:55:44.013Z",
-        "title": "Unsloth 發布 Qwen3.8-27B Dynamic v3.1 量化更新，大幅優化推論記憶體配置",
-        "type": "news",
-        "url": "https://unsloth.ai/docs/models/qwen3.8"
-      },
-      {
-        "content": "本文對現代大型語言模型（LLM）中的位置編碼（Positional Embeddings）機制進行了深度技術剖析。內容詳細拆解了絕對位置編碼、相對位置編碼、旋轉位置編碼（RoPE）、NoPE 以及 ALiBi 的數學原理與底層實作差異，並進一步探討長上下文外推（Context Extrapolation）在注意力計算上的瓶頸與工程取捨。對於從事 LLM 底層架構設計、自建微調流程或需要最佳化長文本推理表現的工程師而言，是掌握現代模型內部工作原理的高價值參考。",
-        "id": "news:https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
-        "publishedAt": "2026-11-15T23:55:44.013Z",
-        "title": "深入解析現代 LLM 位置編碼：從 RoPE、ALiBi 到長文本注意力推廣",
-        "type": "news",
-        "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings"
-      },
-      {
-        "content": "本文深入探討傳統資料庫通訊協定在現代大數據查詢情境下的效能瓶頸。傳統協定多採用逐列傳輸並重複夾帶欄位名稱等元資料，導致嚴重的傳輸頻寬浪費與序列化負擔。文章剖析了 DuckDB 如何透過現代化的二進位列式傳輸格式與串流批次架構，從根本解決資料庫訊息臃腫問題，顯著減少序列化成本與網路延遲。這項架構實踐對設計高效能資料管線與分散式後端系統的開發者具有高度啟發性。",
-        "id": "news:https://thenewstack.io/duckdb-quack-database-protocol",
-        "publishedAt": "2026-11-15T23:55:44.013Z",
-        "title": "DuckDB 提出新型協定架構，解決傳統資料庫傳輸訊息臃腫問題",
-        "type": "news",
-        "url": "https://thenewstack.io/duckdb-quack-database-protocol/"
-      },
-      {
-        "content": "本篇評測深入分析了 Anthropic 最新發布的 Claude Fable 5.2 與旗艦模型 Claude Opus 5.5 在基準測試與推論成本上的實際差異。實測數據顯示，Fable 5.2 在多數核心評測項目上的得分與 Opus 5.5 幾乎持平，但推論成本卻高達後者的近 4 倍。這份評測為正在規劃將 Anthropic 模型接入生產環境或 Coding Agent 流程的開發架構師提供了關鍵的成本效益依據，避免盲目升級造成 API 預算失控。",
-        "id": "news:https://thenewstack.io/claude-fable-5-2-vs-opus-5-5",
-        "publishedAt": "2026-11-15T23:55:44.013Z",
-        "title": "Claude Fable 5.2 與 Opus 5.5 實測評估：得分相近但成本高達近 4 倍",
-        "type": "news",
-        "url": "https://thenewstack.io/claude-fable-5-2-vs-opus-5-5/"
-      },
-      {
-        "content": "阿里巴巴通義千問團隊正式推出新一代旗艦模型 Qwen4-Max。該模型代表了 Qwen 系列在超大規模參數上的最新成果，在複雜邏輯推理、長文本理解與程式碼生成能力上均有顯著升級。對於依賴大語言模型開發 AI Agent、高難度程式輔助工具及企業級後端服務的工程師而言，Qwen4-Max 提供了更強大的閉源與開源生態選擇，並進一步擴展了跨領域複雜任務的處理能力。",
-        "id": "news:https://qwen.ai/blog?id=qwen4-max",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "通義千問發布旗艦大模型 Qwen4-Max",
-        "type": "news",
-        "url": "https://qwen.ai/blog?id=qwen4-max"
-      },
-      {
-        "content": "Kubernetes 官方團隊正式宣布將排程移除 kube-proxy 中的 IPVS 後端實作。IPVS 模式早期作為 iptables 的高效能替代方案引入，但在長期運作中發現其 Linux 核心 API 與 Kubernetes Service API 無法完美契合，且難以完整支援所有 Service 邊緣行為。隨著 Kubernetes 1.29 引入的 nftables 後端已在 1.33 達到正式版（GA），社群決定排程退場 IPVS。此決定直接影響現有叢集網路架構，維運團隊應盡早規劃升級與遷移至 nftables 或 Cilium 等 eBPF 替代方案。",
-        "id": "news:https://kubernetes.io/blog/2026/11/16/ipvs-removal",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "Kubernetes 宣布排程淘汰並移除 kube-proxy 的 IPVS 後端",
-        "type": "news",
-        "url": "https://kubernetes.io/blog/2026/11/16/ipvs-removal/"
-      },
-      {
-        "content": "Visual Studio Code 在 1.146 版本中宣布，將於 2027 年 2 月正式退役用於驅動編輯器內 GitHub Copilot Agent 工作階段的「Local harness」舊版中介軟體架構。Local harness 原先負責協調模型、上下文與擴充工具的調度，隨著 Copilot Agent 架構的升級與標準化，該元件將走入歷史。對於開發 VS Code 擴充套件、外掛整合或自訂 Agent 工具鏈的開發者而言，需密切注意官方後續的 API 遷移指引，確保工具鏈在架構切換後仍可正常運作。",
-        "id": "news:https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "VS Code 宣布將於 2027 年 2 月退役 Copilot Agent 的 Local harness 機制",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027"
-      },
-      {
-        "content": "GitHub 宣布自 2026 年 11 月 16 日起，全面在 Copilot Chat、行內編輯、提問與 Agent 模式以及程式碼自動補全中停用多款舊版底層模型。這是先前預告淘汰排程的正式生效執行，Copilot 將全面轉由更新一代的模型架構支援。此變更將改變開發者日常呼叫程式碼建議的品質與延遲特性，企業管理員與開發團隊應確認現有工作流程與自訂整合是否順利過渡至新模型端點。",
-        "id": "news:https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "GitHub Copilot 正式停用多款舊版 AI 模型",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026"
-      },
-      {
-        "content": "GitHub 為 Copilot 推出全新企業端管控機制，允許企業管理員強制規定使用者的 Copilot 自訂設定必須來自特定的外掛程式（plugins）或受控設定檔，而非開發者個人本機或專案獨立的自訂配置。這項更新讓資安與架構團隊能夠集中管理程式碼助理的上下文規則與擴充外掛，有效防範未受審核的外掛引入惡意程式碼或外洩敏感內部脈絡，大幅提升企業在 AI 輔助開發下的安全合規水準。",
-        "id": "news:https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "GitHub Copilot 推出企業集中管控功能，可強制指定自訂設定來源",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from"
-      },
-      {
-        "content": "Hugging Face 與開放式模型路由平台 OpenRouter 宣布建立合作夥伴關係，旨在讓開發者能夠極速調用並運行 Hugging Face 上的開放權重（open-weight）模型。透過雙方基礎架構的整合，開發者無需手動佈署繁瑣的 GPU 伺服器與推論引擎，即可透過統一的 API 即時取用開源社群最新釋出的權重。這項服務整合大幅降低了評估開源模型與將其接入現有應用的門檻。",
-        "id": "news:https://huggingface.co/blog/openrouter",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "Hugging Face 與 OpenRouter 合作，大幅降低開放權重模型運行門檻",
-        "type": "news",
-        "url": "https://huggingface.co/blog/openrouter"
-      },
-      {
-        "content": "開發者社群實測指出，針對 Qwen3.8 Flash Next 等開源模型進行的「去拒絕（abliteration）」修改，本質上多為 rank-1 消融（rank-1 ablation），可直接封裝為小巧的 LoRA 檔案。開發者無需針對每種量化規格重新下載上百 GB 的完整已修改模型，只需在 llama.cpp 啟動指令中加上相應的 GGUF LoRA 權重參數（如 --lora），即可在任意量化版本上即時套用去拒絕效果。該技巧大幅節省了本機儲存空間、下載頻寬與多版本維護的時間成本。",
-        "id": "news:https://reddit.com/r/LocalLLaMA/comments/1xxawbh/why_download_abliterated_flash_next_models_when",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "透過 LoRA 輕量實現模型去拒絕：免下載上百 GB 完整重構量化檔",
-        "type": "news",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xxawbh/why_download_abliterated_flash_next_models_when/"
-      },
-      {
-        "content": "開源專案 OpenCode 開發者 Dax Raad 分享其利用 AI 輔助、僅花費 60 美元 API 成本將瀏覽器自動化核心元件以 Rust 語言完全重構的工程成果。重構後系統的記憶體佔用驚人地降低了 97%，大幅改善了長時間執行多個瀏覽器自動化執行個體時的系統穩定性與資源耗損。這項案例為需要在後端大量執行無頭瀏覽器與爬蟲自動化的工程團隊提供了極具參考價值的架構重構與效能優化範例。",
-        "id": "news:https://thenewstack.io/opencode-browse-rust-rewrite",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "Dax Raad 以 Rust 重構瀏覽器自動化工具：記憶體佔用降低 97%",
-        "type": "news",
-        "url": "https://thenewstack.io/opencode-browse-rust-rewrite/"
-      },
       {
         "content": "社群最新分析發現，Windows 11 系統遙測已開始主動監控並收集開發者在本機執行的 AI Coding Agent 與各類軟體開發工具的識別資訊與使用狀態。這項機制引起了開發者社群對工作隱私與智財權保護的高度擔憂，特別是在處理機密程式碼或受法規合規嚴格限制的企業專案時。開發者需重新檢視系統遙測設定、群組原則或評估在完全隔離的容器／虛擬機環境中運行敏感工具，以防止本機工具鏈活動被未預期地上傳。",
         "id": "news:https://xusheng.dev/posts/windows-coding-agent-telemetry",
@@ -904,322 +792,323 @@
         "title": "英國政府被迫承認曾向蘋果發布秘密加密命令，引發端對端加密合規隱憂",
         "type": "news",
         "url": "https://macanorak.com/uk-government-forced-to-admit-it-issued-apple-a-secret-encryption-order/"
+      },
+      {
+        "content": "作為全球最廣泛採用的跨平台機器學習推理引擎之一，微軟開源的 ONNX Runtime 儲存庫無預警自 GitHub 消失。此突發事件直接衝擊依賴該儲存庫進行模型轉換、推理編譯、CI/CD 構建與 Issue 追蹤的開發者與生產管線。開發團隊應密切留意微軟官方後續的事後報告與儲存庫恢復進展，並評估對本地構建快取與依賴鏡像的影響。",
+        "id": "news:https://github.com/microsoft/onnxruntime",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "微軟 ONNX Runtime 儲存庫無預警自 GitHub 消失",
+        "type": "news",
+        "url": "https://github.com/microsoft/onnxruntime"
+      },
+      {
+        "content": "Cloudflare 發布資安通報，揭露影響預設組態 Ruby on Rails 與 Sinatra 應用的重大漏洞「ruby2shell」（CVE-2026-132825）。未授權攻擊者可直接藉由惡意請求破壞記憶體並執行任意程式碼。官方與資安團隊呼籲開發者立即升級 Ruby 至最新版本，若短時間內無法完成升級，建議透過 WAF 規則阻斷攻擊特徵以緩解風險。",
+        "id": "news:https://blog.cloudflare.com/ruby2shell-waf-protection",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "Ruby 與 Rails 重大漏洞 ruby2shell (CVE-2026-132825)：未授權即可觸發記憶體損壞",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/ruby2shell-waf-protection/"
+      },
+      {
+        "content": "資安團隊揭露名為「phpAfterShell」的重大安全漏洞，該弱點根植於 PHP 預設的 Session 處理器中，攻擊者可藉此在未授權情況下實現遠端程式碼執行（RCE）。官方已於最新修補版本中修復該漏洞及其他關鍵缺陷。使用 PHP 建置後端服務的團隊應儘速完成版本更新，或藉由 WAF 規則防禦攻擊流量，避免未修補窗口期遭入侵。",
+        "id": "news:https://blog.cloudflare.com/phpaftershell-waf-protection",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "PHP 揭露重大漏洞 phpAfterShell：預設 Session 處理機制存在程式碼執行風險",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/phpaftershell-waf-protection/"
+      },
+      {
+        "content": "Inkling 官方正式釋出 Inkling 2 Mini 模型，主打專為個人工作站與邊緣設備設計的極致推論效能。該模型在維持低延遲、低記憶體佔用的前提下，大幅提升了推理與指令遵循表現。對於追求資料在地化、不依賴雲端 API 且需要離線運行 AI Agent 的開發者而言，提供了一個強大且經濟的新基礎模型選擇。",
+        "id": "news:https://huggingface.co/blog/inkling2mini",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "Inkling 2 Mini 正式推出：專為本地部署打造的邊緣輕量級高效能模型",
+        "type": "news",
+        "url": "https://huggingface.co/blog/inkling2mini"
+      },
+      {
+        "content": "GitHub 宣布 Copilot 組織團隊客製化功能正式進入 GA 階段。現在組織管理者可直接為團隊集中定義並共享專屬的 Copilot 外掛程式與開發規範，成員無須各自進行繁瑣的手動配置。這項更新顯著降低了企業在工程團隊內推行統一內部工具鏈、專案上下文及編碼標準的門檻與管理成本。",
+        "id": "news:https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "GitHub Copilot 全面開放團隊客製化（Team Customizations）",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team"
+      },
+      {
+        "content": "OpenAI 官方深入說明其防範「對抗性蒸餾」的多層次防禦體系，結合理論訓練強化、推論防護罩、異常抽取模式偵測及存取規範執行，以保護前沿模型的推理與邏輯能力不被惡意抽取。對於正在設計專有商業模型 API 與企業級智慧財產防護的架構師而言，提供了極具價值的實務架構參考。",
+        "id": "news:https://openai.com/index/combatting-adversarial-distillation",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "OpenAI 公布對抗模型對抗性蒸餾（Adversarial Distillation）的防禦機制",
+        "type": "news",
+        "url": "https://openai.com/index/combatting-adversarial-distillation"
+      },
+      {
+        "content": "官方推出 Harness Adapters 適配層，讓開發者能將喜愛的任意基礎模型無縫接軌至主流 Agent Harness 測試與執行架構中。透過標準化適配器，工程師不僅能在不同供應商模型間靈活切換而無需大幅改寫核心邏輯，還能針對特定測試工作流優化呼叫策略，進一步降低延遲與 API 消耗成本。",
+        "id": "news:https://huggingface.co/blog/harness-adapters-at-scale",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "Harness Adapters 發布：解耦模型與 Agent 框架以優化效能與呼叫成本",
+        "type": "news",
+        "url": "https://huggingface.co/blog/harness-adapters-at-scale"
+      },
+      {
+        "content": "開源社群迎來全新 27B 參數模型 DaisyRose-27B，專注展現後訓練（Post-Training）階段的運算與資料效率突破。該模型在有限的精調資源下實現了優秀的推理與程式碼生成水準，為打算在私有硬體上部署、精調專屬領域模型並在意性價比的工程團隊，提供了一款極具吸引力的新開源底座。",
+        "id": "news:https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "DaisyRose-27B 發布：推進開源模型後訓練（Post-Training）效率新邊界",
+        "type": "news",
+        "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin"
+      },
+      {
+        "content": "研究團隊公開了代號「Frostbite」的處理器微架構，該架構完全由 AI 自主探索設計空間、生成 RTL 並完成功能驗證。這項突破打破了傳統人類晶片工程師的設計思維與優化慣性，證明生成式 AI 能在高度嚴謹的半導體微架構設計中獨立承擔核心工作，為未來的晶片設計自動化（EDA）掀起技術範式轉移。",
+        "id": "news:https://architectlabs.com/blog/frostbite",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "Frostbite：首個完全由 AI 自主探索、設計並完成驗證的全新 CPU 微架構",
+        "type": "news",
+        "url": "https://architectlabs.com/blog/frostbite"
+      },
+      {
+        "content": "文章詳細剖析了一個罕見但嚴重的 GitOps 故障情境：當開發者在 Argo CD 同步視窗關閉期間推送發布時，系統雖回報同步成功，但自我修復（Self-Heal）機制卻導致資料庫 Migration Hook 被跳過。作者抽絲剝繭分析了 Argo CD 控制迴圈與狀態機在資源比對中的邊緣案例，並提供生產環境避免資料庫與應用版本不一致的具體配置方案。",
+        "id": "news:https://cncf.io/blog/2026/11/20/when-a-sync-window-closes-how-argo-cd-self-heal-skipped-the-migration-hook",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "Argo CD 同步視窗陷阱：深入分析 Self-Heal 導致 Migration Hook 被跳過的機制",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/11/20/when-a-sync-window-closes-how-argo-cd-self-heal-skipped-the-migration-hook/"
+      },
+      {
+        "content": "當企業應用必須部署在客戶自行管理的 Kubernetes 叢集時，工程團隊往往面臨版本混亂、周邊組件缺失與升級排程不可控等難題。本文整理了實戰中的核心架構原則，包括依賴健康檢查自檢機制、隔離外部環境差異的打包策略、內建日誌排障工具等，為打造高適應性與低維護成本私有化交付方案的架構師提供了全面指引。",
+        "id": "news:https://cncf.io/blog/2026/11/19/how-to-support-your-app-on-kubernetes-environments-you-dont-control",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "在不可控的客戶端 Kubernetes 環境中穩定維運軟體的架構實務",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/11/19/how-to-support-your-app-on-kubernetes-environments-you-dont-control/"
+      },
+      {
+        "content": "研究提出名為「Program-as-Weights」的新概念，探討如何將傳統程式語言的結構化控制流與神經網路權重融合，以更自然的方式編寫和維護現實場景中的「模糊函數」（Fuzzy Functions）。這種將模型權重視為可編程構件的範式，為結合神經符號邏輯、解決複雜邊緣條件與非確定性業務邏輯開拓了全新的工程路徑。",
+        "id": "news:https://arxiv.org/abs/2607.02512",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "Program-as-Weights：結合權重表示與模糊邏輯的新型程式設計典範",
+        "type": "news",
+        "url": "https://arxiv.org/abs/2607.02512"
+      },
+      {
+        "content": "自 1985 年創刊至今的傳奇黑客安全刊物《Phrack》正式釋出第 73 期。本期收錄了多篇探討現代作業系統核心攻擊面、先進記憶體損壞利用、逆向工程技術以及韌體安全防護繞過的深度長文。對於從事系統安全、逆向工程、底層平台開發以及對現代防禦緩解機制有深度需求的工程師而言，是不可多得的硬核技術資源。",
+        "id": "news:https://phrack.org/issues/73/introduction_md",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "傳奇黑客雜誌《Phrack》第 73 期出刊：收錄最新底層安全與漏洞利用技術",
+        "type": "news",
+        "url": "https://phrack.org/issues/73/introduction_md"
+      },
+      {
+        "content": "消息指出 Google 正向 Android 裝置製造商施壓，要求收緊甚至取消 Bootloader 的解鎖能力。這項舉動引發了開發者社群對硬體所有權與開放開源生態的嚴重擔憂，特別是像 GrapheneOS 這類高度依賴硬體安全晶片與解鎖機制的隱私安全作業系統，其安裝與生存空間正面臨嚴峻挑戰。此舉可能進一步推動行動平台走向完全封閉。",
+        "id": "news:https://grapheneos.social/@GrapheneOS/117645038299496084",
+        "publishedAt": "2026-11-21T01:24:25.779Z",
+        "title": "Google 被曝施壓 OEM 限制 Bootloader 解鎖，衝擊 GrapheneOS 等隱私系統",
+        "type": "news",
+        "url": "https://grapheneos.social/@GrapheneOS/117645038299496084"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-20T01:44:51.037Z",
+      "generatedAt": "2026-11-21T01:24:25.779Z",
       "items": [
         {
-          "content": "開源專案 OpenRun 正式發布 1.0 版本，旨在為工程團隊提供針對內部工具（internal tools）的宣告式部署方案，並同時支援 Docker 與 Kubernetes 環境。對開發者而言，該工具能簡化內部服務的容器化維運流程，透過標準化的宣告配置提升交付效率並降低部署複雜度。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "lobsters-devops",
-          "sourceTitle": "OpenRun v1.0 - declarative deployments for internal tools on Docker or Kubernetes",
-          "sources": [
-            "lobsters-devops"
-          ],
-          "title": "OpenRun v1.0 正式發布：支援 Docker 與 K8s 的內部工具宣告式部署框架",
-          "url": "https://openrun.dev/blog/openrun-1.0/",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub Copilot code review 釋出重要功能更新，引進「自適應審查（Adaptive effort）」機制，能根據 Pull Request 的變更特性動態匹配審查深度，讓常規修改快速通過，並對複雜邏輯深入檢查；此外亦整合了機密資訊偵測能力。這讓開發團隊能更早攔截敏感憑證與程式碼缺陷，顯著降低審查負擔並強化安全性。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Copilot code review: Adaptive effort, secret detection, and more",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot 程式碼審查重大更新：導入自適應審查深度與機密外洩偵測",
-          "url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more",
-          "weightedScore": 100
-        },
-        {
-          "content": "Google 正式為 macOS 平台的 Gemini 應用程式加入「電腦操作（computer use）」功能，使該 AI 助理能夠跨桌面應用程式執行操作。這意味著 Gemini 不再局限於文字對話，而能直接與作業系統互動並自動化處理桌面任務，為開發者與使用者開啟更直接的本機 Agentic 互動工作流程。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Google just gave Gemini the run of your Mac — three days after Apple tightened the rules",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Google 為 macOS 版 Gemini 增添電腦操作能力，支援跨桌面應用自動化",
-          "url": "https://thenewstack.io/gemini-mac-computer-use/",
-          "weightedScore": 50
-        },
-        {
-          "content": "官方正式推出七款主打具備高擴展性與優異性價比的全新模型。這批模型著眼於在效能與推理成本之間取得平衡，為開發者在構建 AI 應用時提供更靈活、更具成本效益的架構選擇，滿足不同運算規模與預算限制下的業務需求。",
+          "content": "作為全球最廣泛採用的跨平台機器學習推理引擎之一，微軟開源的 ONNX Runtime 儲存庫無預警自 GitHub 消失。此突發事件直接衝擊依賴該儲存庫進行模型轉換、推理編譯、CI/CD 構建與 Issue 追蹤的開發者與生產管線。開發團隊應密切留意微軟官方後續的事後報告與儲存庫恢復進展，並評估對本地構建快取與依賴鏡像的影響。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Seven new models at scalable price-performance",
+          "sourceTitle": "Microsoft's ONNX Runtime has disappeared from GitHub",
           "sources": [
             "hn"
           ],
-          "title": "官方發表七款具備可擴展性價比的全新模型系列",
-          "url": "https://microsoft.ai/news/microsoft-ignite-2026/",
-          "weightedScore": 593
+          "title": "微軟 ONNX Runtime 儲存庫無預警自 GitHub 消失",
+          "url": "https://github.com/microsoft/onnxruntime",
+          "weightedScore": 467
         },
         {
-          "content": "OpenAI 分享其內部打造的「Performance Factory」系統架構。該系統由 Codex 驅動的一系列自動化工作流程組成，能主動搜尋、定位並修復程式碼中的效能問題，以確保 ChatGPT 持續具備高速回應能力。這項實踐為開發團隊展示了如何將程式碼 LLM 落地於持續效能工程，將自動化代碼優化引入日常系統維運中。",
+          "content": "Cloudflare 發布資安通報，揭露影響預設組態 Ruby on Rails 與 Sinatra 應用的重大漏洞「ruby2shell」（CVE-2026-132825）。未授權攻擊者可直接藉由惡意請求破壞記憶體並執行任意程式碼。官方與資安團隊呼籲開發者立即升級 Ruby 至最新版本，若短時間內無法完成升級，建議透過 WAF 規則阻斷攻擊特徵以緩解風險。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "How Cloudflare WAF protects against ruby2shell (CVE-2026-132825)",
           "sources": [
-            "openai-blog"
+            "cloudflare-blog"
           ],
-          "title": "揭秘 OpenAI Performance Factory：以 Codex 驅動的自動化效能優化系統",
-          "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
-          "weightedScore": 100
+          "title": "Ruby 與 Rails 重大漏洞 ruby2shell (CVE-2026-132825)：未授權即可觸發記憶體損壞",
+          "url": "https://blog.cloudflare.com/ruby2shell-waf-protection/",
+          "weightedScore": 50
         },
         {
-          "content": "技術社群深入探討如何在僅有 32GB 記憶體的嚴苛硬體限制下，運用 Hugging Face Transformers 框架將 180B 參數的混合專家模型（MoE）推論效能發揮到極致。文章深入解析記憶體調度、專家權重卸載（offloading）與量化等關鍵技術，為希望在有限運算資源下本機部署超大規模開源模型的工程師提供寶貴的實務參考。",
+          "content": "資安團隊揭露名為「phpAfterShell」的重大安全漏洞，該弱點根植於 PHP 預設的 Session 處理器中，攻擊者可藉此在未授權情況下實現遠端程式碼執行（RCE）。官方已於最新修補版本中修復該漏洞及其他關鍵缺陷。使用 PHP 建置後端服務的團隊應儘速完成版本更新，或藉由 WAF 規則防禦攻擊流量，避免未修補窗口期遭入侵。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "How Cloudflare WAF helps protect against phpAfterShell and other critical PHP flaws",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "PHP 揭露重大漏洞 phpAfterShell：預設 Session 處理機制存在程式碼執行風險",
+          "url": "https://blog.cloudflare.com/phpaftershell-waf-protection/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Inkling 官方正式釋出 Inkling 2 Mini 模型，主打專為個人工作站與邊緣設備設計的極致推論效能。該模型在維持低延遲、低記憶體佔用的前提下，大幅提升了推理與指令遵循表現。對於追求資料在地化、不依賴雲端 API 且需要離線運行 AI Agent 的開發者而言，提供了一個強大且經濟的新基礎模型選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "huggingface-blog",
-          "sourceTitle": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers",
+          "sourceTitle": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
           "sources": [
             "huggingface-blog"
           ],
-          "title": "在 32GB 記憶體極限運行 180B MoE 模型：Transformers 優化實踐",
-          "url": "https://huggingface.co/blog/moe-expert-streaming",
+          "title": "Inkling 2 Mini 正式推出：專為本地部署打造的邊緣輕量級高效能模型",
+          "url": "https://huggingface.co/blog/inkling2mini",
           "weightedScore": 100
         },
         {
-          "content": "本文詳細介紹歐盟委員會成功將開源去中心化通訊協定 Matrix 部署至超過 4 萬名內部人員的工程經驗。內容涵蓋大規模分散式伺服器的架構配置、聯邦機制、高可用性維運以及端到端加密的整合實作，為致力於在企業環境推動開源通訊架構與大規模 DevOps 部署的工程師提供了具體且經過實戰驗證的參考案例。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "How the European Commission rolled out Matrix to more than 40k staff",
-          "sources": [
-            "hn"
-          ],
-          "title": "歐盟執委會如何為逾四萬名人員規模化部署 Matrix 開源通訊架構",
-          "url": "https://element.io/blog/how-the-european-commission-rolled-out-matrix-to-more-than-40-000-staff/",
-          "weightedScore": 661
-        },
-        {
-          "content": "文章深入探討如何將 LLM 應用於二進位逆向工程領域。透過模型輔助理解反組譯代碼、推論函式語意結構以及輔助識別潛在漏洞，工程師與資安研究人員能夠大幅縮短靜態分析與惡意軟體研判的時間，展現了 AI 在底層軟體工程與安全分析領域的巨大輔助潛力。",
+          "content": "GitHub 宣布 Copilot 組織團隊客製化功能正式進入 GA 階段。現在組織管理者可直接為團隊集中定義並共享專屬的 Copilot 外掛程式與開發規範，成員無須各自進行繁瑣的手動配置。這項更新顯著降低了企業在工程團隊內推行統一內部工具鏈、專案上下文及編碼標準的門檻與管理成本。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "LLM assisted reverse engineering",
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Customize GitHub Copilot for your team",
           "sources": [
-            "hn"
+            "github-changelog-copilot"
           ],
-          "title": "結合大型語言模型輔助逆向工程：二進位分析與漏洞挖掘的新實務",
-          "url": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering",
-          "weightedScore": 297
+          "title": "GitHub Copilot 全面開放團隊客製化（Team Customizations）",
+          "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+          "weightedScore": 100
         },
         {
-          "content": "文章針對當前 AI Agent 架構設計提出深入反思，指出許多系統連最基本的流程或問候都過度仰賴呼叫 LLM 甚至查詢長期記憶，導致不必要的延遲與成本飆升。作者探討在 Agent 中結合確定性狀態機與規則邏輯的必要性，提醒架構師應明確切分推理任務與常規邏輯，以建構出兼顧響應速度、可靠度與成本效益的生產級 Agent。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Does your AI agent need an LLM to decide what to do next?",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "AI Agent 決策架構省思：下一步行動是否真的每次都需要 LLM 參與？",
-          "url": "https://thenewstack.io/aws-decider-models-agents/",
-          "weightedScore": 50
-        },
-        {
-          "content": "本文探討將大型語言模型導入半導體晶片設計流程的實踐成果。透過模型輔助撰寫與優化硬體描述語言、生成驗證測試平台（Testbench）並加速電子設計自動化（EDA）流程，展示了 AI 如何協助硬體工程師加速晶片開發週期，為跨軟硬體領域的系統開發者帶來新的自動化工作模式。",
+          "content": "OpenAI 官方深入說明其防範「對抗性蒸餾」的多層次防禦體系，結合理論訓練強化、推論防護罩、異常抽取模式偵測及存取規範執行，以保護前沿模型的推理與邏輯能力不被惡意抽取。對於正在設計專有商業模型 API 與企業級智慧財產防護的架構師而言，提供了極具價值的實務架構參考。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Advancing chip design with OpenAI models",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sourceTitle": "Combatting adversarial distillation",
           "sources": [
-            "hn",
             "openai-blog"
           ],
-          "title": "利用 OpenAI 模型推進晶片設計：硬體描述語言與 EDA 自動化探索",
-          "url": "https://openai.com/index/advancing-chip-design-with-our-models/",
-          "weightedScore": 320
+          "title": "OpenAI 公布對抗模型對抗性蒸餾（Adversarial Distillation）的防禦機制",
+          "url": "https://openai.com/index/combatting-adversarial-distillation",
+          "weightedScore": 100
         },
         {
-          "content": "英國政府在法庭程序中被迫承認曾依據相關法規向蘋果發布秘密技術能力命令，試圖要求其對端對端加密機制開立後門或限制安全防護。此事件揭示了各國監管法規對軟體通訊加密與雲端安全架構的潛在衝擊，對於需要設計端對端加密系統或處理跨國資料合規的開發者而言，具有高度的安全架構與法規風險參考價值。",
+          "content": "官方推出 Harness Adapters 適配層，讓開發者能將喜愛的任意基礎模型無縫接軌至主流 Agent Harness 測試與執行架構中。透過標準化適配器，工程師不僅能在不同供應商模型間靈活切換而無需大幅改寫核心邏輯，還能針對特定測試工作流優化呼叫策略，進一步降低延遲與 API 消耗成本。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "Harness Adapters 發布：解耦模型與 Agent 框架以優化效能與呼叫成本",
+          "url": "https://huggingface.co/blog/harness-adapters-at-scale",
+          "weightedScore": 100
+        },
+        {
+          "content": "開源社群迎來全新 27B 參數模型 DaisyRose-27B，專注展現後訓練（Post-Training）階段的運算與資料效率突破。該模型在有限的精調資源下實現了優秀的推理與程式碼生成水準，為打算在私有硬體上部署、精調專屬領域模型並在意性價比的工程團隊，提供了一款極具吸引力的新開源底座。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "DaisyRose-27B 發布：推進開源模型後訓練（Post-Training）效率新邊界",
+          "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+          "weightedScore": 100
+        },
+        {
+          "content": "研究團隊公開了代號「Frostbite」的處理器微架構，該架構完全由 AI 自主探索設計空間、生成 RTL 並完成功能驗證。這項突破打破了傳統人類晶片工程師的設計思維與優化慣性，證明生成式 AI 能在高度嚴謹的半導體微架構設計中獨立承擔核心工作，為未來的晶片設計自動化（EDA）掀起技術範式轉移。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+          "sources": [
+            "hn"
+          ],
+          "title": "Frostbite：首個完全由 AI 自主探索、設計並完成驗證的全新 CPU 微架構",
+          "url": "https://architectlabs.com/blog/frostbite",
+          "weightedScore": 621
+        },
+        {
+          "content": "文章詳細剖析了一個罕見但嚴重的 GitOps 故障情境：當開發者在 Argo CD 同步視窗關閉期間推送發布時，系統雖回報同步成功，但自我修復（Self-Heal）機制卻導致資料庫 Migration Hook 被跳過。作者抽絲剝繭分析了 Argo CD 控制迴圈與狀態機在資源比對中的邊緣案例，並提供生產環境避免資料庫與應用版本不一致的具體配置方案。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sourceTitle": "When a sync window closes: How Argo CD self-heal skipped the migration hook",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "Argo CD 同步視窗陷阱：深入分析 Self-Heal 導致 Migration Hook 被跳過的機制",
+          "url": "https://www.cncf.io/blog/2026/11/20/when-a-sync-window-closes-how-argo-cd-self-heal-skipped-the-migration-hook/",
+          "weightedScore": 100
+        },
+        {
+          "content": "當企業應用必須部署在客戶自行管理的 Kubernetes 叢集時，工程團隊往往面臨版本混亂、周邊組件缺失與升級排程不可控等難題。本文整理了實戰中的核心架構原則，包括依賴健康檢查自檢機制、隔離外部環境差異的打包策略、內建日誌排障工具等，為打造高適應性與低維護成本私有化交付方案的架構師提供了全面指引。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cncf-blog",
+          "sourceTitle": "How to support your app on Kubernetes environments you don’t control",
+          "sources": [
+            "cncf-blog"
+          ],
+          "title": "在不可控的客戶端 Kubernetes 環境中穩定維運軟體的架構實務",
+          "url": "https://www.cncf.io/blog/2026/11/19/how-to-support-your-app-on-kubernetes-environments-you-dont-control/",
+          "weightedScore": 100
+        },
+        {
+          "content": "研究提出名為「Program-as-Weights」的新概念，探討如何將傳統程式語言的結構化控制流與神經網路權重融合，以更自然的方式編寫和維護現實場景中的「模糊函數」（Fuzzy Functions）。這種將模型權重視為可編程構件的範式，為結合神經符號邏輯、解決複雜邊緣條件與非確定性業務邏輯開拓了全新的工程路徑。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Program-as-Weights: A Programming Paradigm for Fuzzy Functions",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "Program-as-Weights：結合權重表示與模糊邏輯的新型程式設計典範",
+          "url": "https://arxiv.org/abs/2607.02512",
+          "weightedScore": 100
+        },
+        {
+          "content": "自 1985 年創刊至今的傳奇黑客安全刊物《Phrack》正式釋出第 73 期。本期收錄了多篇探討現代作業系統核心攻擊面、先進記憶體損壞利用、逆向工程技術以及韌體安全防護繞過的深度長文。對於從事系統安全、逆向工程、底層平台開發以及對現代防禦緩解機制有深度需求的工程師而言，是不可多得的硬核技術資源。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "UK government forced to admit it issued Apple a secret encryption order",
+          "sourceTitle": "Phrack 73",
           "sources": [
             "hn"
           ],
-          "title": "英國政府被迫承認曾向蘋果發布秘密加密命令，引發端對端加密合規隱憂",
-          "url": "https://macanorak.com/uk-government-forced-to-admit-it-issued-apple-a-secret-encryption-order/",
-          "weightedScore": 503
+          "title": "傳奇黑客雜誌《Phrack》第 73 期出刊：收錄最新底層安全與漏洞利用技術",
+          "url": "https://phrack.org/issues/73/introduction_md",
+          "weightedScore": 473
+        },
+        {
+          "content": "消息指出 Google 正向 Android 裝置製造商施壓，要求收緊甚至取消 Bootloader 的解鎖能力。這項舉動引發了開發者社群對硬體所有權與開放開源生態的嚴重擔憂，特別是像 GrapheneOS 這類高度依賴硬體安全晶片與解鎖機制的隱私安全作業系統，其安裝與生存空間正面臨嚴峻挑戰。此舉可能進一步推動行動平台走向完全封閉。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Google is pushing OEMs against GrapheneOS and bootloader unlocking",
+          "sources": [
+            "hn"
+          ],
+          "title": "Google 被曝施壓 OEM 限制 Bootloader 解鎖，衝擊 GrapheneOS 等隱私系統",
+          "url": "https://grapheneos.social/@GrapheneOS/117645038299496084",
+          "weightedScore": 477
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Mistral Large 4",
-      "url": "https://mistral.ai/news/mistral-large-4"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "title": "The keys to the Internet change on October 11. Are you ready?",
-      "url": "https://blog.cloudflare.com/root-ksk-2024-rollover"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Polars 2.0",
-      "url": "https://pola.rs/posts/release-polars-2"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "deepmind-blog",
-        "hn"
-      ],
-      "title": "EmbeddingGemma 2: An open, lightweight multimodal embedding model",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "openai-blog"
-      ],
-      "title": "Sharing AI Progress in Mathematics",
-      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Tapo (Rust/Python library) now speaks TP-Link's TPAP protocol",
-      "url": "https://mihai.dinculescu.dev/posts/tapo-speaks-tpap"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Pop!_OS bans AI-generated code from much of its codebase",
-      "url": "https://neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "openai-blog",
-      "sources": [
-        "openai-blog"
-      ],
-      "title": "Advancing computer use with Ironclad",
-      "url": "https://openai.com/index/advancing-computer-use-with-ironclad"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "kubernetes-blog",
-      "sources": [
-        "kubernetes-blog"
-      ],
-      "title": "The Shift to cgroup v2 in Kubernetes: What You Need to Know",
-      "url": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Dust: Pretraining Transformers Without Backpropagation",
-      "url": "https://qlabs.sh/research/dust"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "Copilot tops GitHub’s own AI code review benchmark. An independent one tells a different story.",
-      "url": "https://thenewstack.io/github-reviewbench-code-review"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Show HN: AI search for every photo and every frame of video on macOS",
-      "url": "https://github.com/allenv0/SCM"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Beam: Reflection's 501B open-weight model",
-      "url": "https://reflection.ai/blog/introducing-beam"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Pixel 11 doesn't yet meet the GrapheneOS security standards and may be skipped",
-      "url": "https://discuss.grapheneos.org/d/41564-pixel-11-doesnt-yet-meet-the-grapheneos-security-standards-and-may-be-skipped"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-10-06T23:45:08.530Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "A browser-native classic Visual Basic VB6 IDE",
-      "url": "https://wieslawsoltes.github.io/VB6"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-10-08T00:08:11.517Z",
@@ -6861,6 +6750,146 @@
       ],
       "title": "UK government forced to admit it issued Apple a secret encryption order",
       "url": "https://macanorak.com/uk-government-forced-to-admit-it-issued-apple-a-secret-encryption-order"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Microsoft's ONNX Runtime has disappeared from GitHub",
+      "url": "https://github.com/microsoft/onnxruntime"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "How Cloudflare WAF protects against ruby2shell (CVE-2026-132825)",
+      "url": "https://blog.cloudflare.com/ruby2shell-waf-protection"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "How Cloudflare WAF helps protect against phpAfterShell and other critical PHP flaws",
+      "url": "https://blog.cloudflare.com/phpaftershell-waf-protection"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
+      "url": "https://huggingface.co/blog/inkling2mini"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Customize GitHub Copilot for your team",
+      "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Combatting adversarial distillation",
+      "url": "https://openai.com/index/combatting-adversarial-distillation"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
+      "url": "https://huggingface.co/blog/harness-adapters-at-scale"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+      "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+      "url": "https://architectlabs.com/blog/frostbite"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "When a sync window closes: How Argo CD self-heal skipped the migration hook",
+      "url": "https://cncf.io/blog/2026/11/20/when-a-sync-window-closes-how-argo-cd-self-heal-skipped-the-migration-hook"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "How to support your app on Kubernetes environments you don’t control",
+      "url": "https://cncf.io/blog/2026/11/19/how-to-support-your-app-on-kubernetes-environments-you-dont-control"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Program-as-Weights: A Programming Paradigm for Fuzzy Functions",
+      "url": "https://arxiv.org/abs/2607.02512"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Phrack 73",
+      "url": "https://phrack.org/issues/73/introduction_md"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-21T01:24:25.779Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Google is pushing OEMs against GrapheneOS and bootloader unlocking",
+      "url": "https://grapheneos.social/@GrapheneOS/117645038299496084"
     }
   ]
 }
