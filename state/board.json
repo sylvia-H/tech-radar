@@ -498,101 +498,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-15T23:55:44.013Z",
-  "lastNewsPushAt": "2026-11-21T01:24:25.779Z",
+  "lastNewsPushAt": "2026-11-22T00:16:38.088Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-15T23:55:44.013Z",
       "summary": "本次榜單由 meta/astryx 奪得 #1，迎來 7 個新進項目與 1 個竄升項目（含 AI 6 個、前後端 2 個），同時有 1 個項目下降。"
     },
     "feed": [
-      {
-        "content": "社群最新分析發現，Windows 11 系統遙測已開始主動監控並收集開發者在本機執行的 AI Coding Agent 與各類軟體開發工具的識別資訊與使用狀態。這項機制引起了開發者社群對工作隱私與智財權保護的高度擔憂，特別是在處理機密程式碼或受法規合規嚴格限制的企業專案時。開發者需重新檢視系統遙測設定、群組原則或評估在完全隔離的容器／虛擬機環境中運行敏感工具，以防止本機工具鏈活動被未預期地上傳。",
-        "id": "news:https://xusheng.dev/posts/windows-coding-agent-telemetry",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "Windows 11 被揭露正在蒐集本機 Coding Agent 與開發工具遙測資料",
-        "type": "news",
-        "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/"
-      },
-      {
-        "content": "開源地圖專案 Protomaps 透過單一檔案向量切片格式 PMTiles 與 HTTP Range Requests 機制，徹底革新了自託管地圖服務的架構。傳統上託管全球地圖需要龐大的 Tile Server 叢集與即時渲染資料庫，維護成本極高；而 Protomaps 允許開發者直接將地圖圖磚作為單一靜態檔案存放於 S3 或 Cloudflare R2 等物件儲存，前端瀏覽器直接按需讀取區塊。這讓前端與全端開發者能以極低成本、零伺服器維護負擔建構自主可控的互動式地圖應用。",
-        "id": "news:https://bruceroettgers.eu/blog/protomaps",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "Protomaps 實現純靜態地圖圖磚架構：自託管全球地圖變得極其平價",
-        "type": "news",
-        "url": "https://bruceroettgers.eu/blog/protomaps/"
-      },
-      {
-        "content": "安全研究揭露廣受歡迎的廣告攔截擴充套件 uBlock Origin 存在 Universal XSS（通用跨站腳本）漏洞。惡意網站可透過特定交互誘導或驅動其「元素選擇器（element picker）」功能，進而突破瀏覽器的同源策略（SOP），在任意網頁的上下文中注入並執行任意 JavaScript。鑑於 uBlock Origin 擁有廣泛的擴充權限並被無數開發者與使用者預設安裝，此漏洞對本地瀏覽安全性與敏感會話構成直接威脅，使用者與開發者應立即檢查並升級至最新修復版本。",
-        "id": "news:https://iter.ca/post/ubo-uxss",
-        "publishedAt": "2026-11-17T02:53:01.850Z",
-        "title": "uBlock Origin 驚爆 Universal XSS 重大漏洞：惡意網站可利用元素選擇器執行代碼",
-        "type": "news",
-        "url": "https://iter.ca/post/ubo-uxss/"
-      },
-      {
-        "content": "OpenAI 正式推出 GPT-6.2 系列最新模型 Astra 與 Sol，專為 Agentic 程式設計與自動化 Code Review 任務進行架構調優。相較於先前的 GPT-6 模型，Astra 與 Sol 具備更強大的程式碼邏輯推演與上下文理解能力，能更精準地處理跨檔案的多步驟程式碼修改，目前已整合至 GitHub Copilot 等工具中全面開放使用。這項更新為需要構建自主 AI Agent 或強化 CI/CD 自動審查流程的開發者，提供了更高判斷力且針對軟體工程特化的新一代基底模型。",
-        "id": "news:https://openai.com/index/introducing-gpt-6-2-astra-sol",
-        "publishedAt": "2026-11-18T02:20:18.033Z",
-        "title": "OpenAI 正式發表 GPT-6.2 Astra 與 Sol 模型，強化 Agentic 程式碼生成",
-        "type": "news",
-        "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
-      },
-      {
-        "content": "微軟於 Ignite 大會正式發表專屬程式設計模型 MAI Code 2 與輕量版本 Code 2 Flash。官方評測指出，該系列模型在程式生成與邏輯修復等任務上展現出接近 Claude Opus 等頂級模型的實力，但推論成本僅需後者的約 5%。隨著 Coding Agent 與 IDE 智慧補全的普及，高昂的 Token 調用開銷成為企業規模化導入的主要瓶頸；MAI Code 2 系列的推出將顯著降低自動化編程、單元測試生成與程式庫重構的運算負擔。",
-        "id": "news:https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash",
-        "publishedAt": "2026-11-18T02:20:18.033Z",
-        "title": "微軟發表 MAI Code 2 與 Code 2 Flash 模型，主打高效能與 5% 極低推論成本",
-        "type": "news",
-        "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/"
-      },
-      {
-        "content": "GitHub 宣布為 Copilot Fusion 進行全面升級，除了新增更多可調用的底層模型外，還拓展至更廣泛的 Copilot 操作介面與終端環境。同時，GitHub 公布了在兩項公開 Terminal-Bench 基準測試中的評測成績，讓開發者在終端操作與命令列任務中擁有更清晰的模型效能依據。這項更新讓高度依賴 CLI 自動化與多模型切換的開發團隊，能依照任務複雜度靈活配置推論資源，進一步提升工程開發流暢度。",
-        "id": "news:https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
-        "publishedAt": "2026-11-18T02:20:18.033Z",
-        "title": "GitHub Copilot Fusion 升級：擴大模型支援並拓展終端與介面可用性",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models"
-      },
-      {
-        "content": "GitHub 於微軟 Ignite 大會宣布 Copilot 應用程式的重大支援擴展，正式納入 Azure DevOps 程式庫、GitHub Enterprise Server（GHES）自託管實例以及瀏覽器環境。這意味著身處受控企業網路、使用私有原始碼代管或跨雲架構的開發團隊，不再受限於公有雲 GitHub.com，可以直接在既有的私有基礎設施中無縫導入 Copilot Agent，兼顧代碼資安合規與內部專案的智慧輔助開發需求。",
-        "id": "news:https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases",
-        "publishedAt": "2026-11-18T02:20:18.033Z",
-        "title": "GitHub Copilot 應用程式延伸支援 Azure DevOps 與本地部署企業版伺服器",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases"
-      },
-      {
-        "content": "Anthropic 旗下 Claude Code 工程團隊公開探討了在打造自主編程 Agent 時的「輸出驗證（Verification）」設計思考。在多步驟的代碼修改與除錯流程中，AI Agent 極易產生看似正確但含有隱蔽缺陷的幻覺代碼；團隊深入分享了如何整合測試執行、語法檢查、環境反饋閉環以及防護機制，在 Agent 提交變更前主動攔截錯誤。這篇工程實務對於正在自行開發 Agent 工具或探索 AI 輔助軟體工程架構的開發者深具參考價值。",
-        "id": "news:https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification",
-        "publishedAt": "2026-11-18T02:20:18.033Z",
-        "title": "Anthropic 團隊深度解析 Claude Code 驗證機制與 Agent 程式碼可靠性",
-        "type": "news",
-        "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/"
-      },
-      {
-        "content": "最新基準評測顯示，即使底層調用相同的 AI 模型，使用不同的 Coding Agent 執行框架（Harness）在完成相同程式開發任務時，Token 消耗量與運算成本差異最高可達 5 倍。報告深入分析了各框架在 Prompt 構建策略、上下文修剪（Context Pruning）以及工具呼叫循環設計上的效率落差。這項發現對軟體團隊是一大警訊：在規劃 Agentic 工作流程時，除了挑選高性價比模型，調度層的工程實作與上下文優化同樣是決定落地成本的關鍵因素。",
-        "id": "news:https://thenewstack.io/coding-agent-harness-costs",
-        "publishedAt": "2026-11-18T02:20:18.033Z",
-        "title": "基準測試揭示：AI Coding Agent 執行架構不同，相同模型成本可相差達 5 倍",
-        "type": "news",
-        "url": "https://thenewstack.io/coding-agent-harness-costs/"
-      },
-      {
-        "content": "在微服務與雲原生架構中，OpenTelemetry（OTel）已成為標準的可觀測性收集工具，但收集監控指標所造成的效能開銷常被忽略。技術演講《擊敗 OTel 的隱形殺手》深入探討了 Collector 遙測管線在面對高併發流量時產生的 CPU、記憶體佔用與網路延遲瓶頸。講者分享了動態採樣策略（Sampling）、批次處理（Batching）參數調校與記憶體限制器配置的最佳實務，協助 DevOps 與後端工程師在保障全鏈路追蹤的同時，防止監控機制反噬正式環境效能。",
-        "id": "news:https://cncf.io/blog/2026/11/17/is-your-opentelemetry-pipeline-becoming-a-performance-bottleneck",
-        "publishedAt": "2026-11-18T02:20:18.033Z",
-        "title": "深入剖析 OpenTelemetry 效能開銷：避免可觀測性管線成為系統瓶頸",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/11/17/is-your-opentelemetry-pipeline-becoming-a-performance-bottleneck/"
-      },
-      {
-        "content": "開發者展示了一種前端與後端整合的全新實作架構：透過 WebAssembly 技術的 Python 執行環境 Pyodide，結合 Service Worker 攔截網路 HTTP 請求，成功在使用者瀏覽器內部完整運行 Python ASGI 伺服端應用 Datasette。這項技術完全不需要後端伺服器運算資源即可提供互動式 SQLite 資料查詢與視覺化功能，不僅實現了零伺服器維運負擔與離線可用性，更確保了資料完全保留在客戶端本機的高隱私度，為 Web 應用開發開闢了新思路。",
-        "id": "news:https://simonwillison.net/2026/Nov/17/datasette-lite",
-        "publishedAt": "2026-11-18T02:20:18.033Z",
-        "title": "結合 Service Worker 與 Pyodide，在瀏覽器端完全免伺服器執行 Python 應用 Datasette",
-        "type": "news",
-        "url": "https://simonwillison.net/2026/Nov/17/datasette-lite/"
-      },
       {
         "content": "廣受各大科技公司採用的 A/B 測試與功能發布平台 Optimizely 遭受駭客入侵，導致包含 Zoom 與 GitLab 在內的多個知名網站客戶端腳本被注入惡意軟體。這起供應鏈攻擊事件凸顯了現代前端架構中第三方 JavaScript 腳本所潛藏的巨大資安風險。開發團隊與維運人員應全面盤點外部腳本依賴，嚴格落實子資源完整性（Subresource Integrity, SRI）、內容安全策略（CSP）限制，並評估自託管或伺服端 A/B 測試方案，以防範第三方供應商失陷引發的安全連鎖反應。",
         "id": "news:https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely",
@@ -904,365 +816,257 @@
         "title": "Google 被曝施壓 OEM 限制 Bootloader 解鎖，衝擊 GrapheneOS 等隱私系統",
         "type": "news",
         "url": "https://grapheneos.social/@GrapheneOS/117645038299496084"
+      },
+      {
+        "content": "GitHub 宣布 OpenAI 的 GPT-6.2 Astra 與 GPT-6.2 Sol 正式於 GitHub Copilot 全面推出（GA）。這兩款新模型專為 Agentic 程式編寫與程式碼審查（Code Review）設計，相較於早期的 GPT-6 模型具備更強大的程式碼判斷力。對開發者而言，這代表在 Copilot 的日常開發流程中能直接取用最新的代理型 AI 能力，在複雜重構、自主除錯與跨檔案審查時可獲得更可靠的決策品質。",
+        "id": "news:https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "OpenAI GPT-6.2 Astra 與 Sol 正式登陸 GitHub Copilot",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available"
+      },
+      {
+        "content": "GitHub 發布 JetBrains IDE 系列的 Copilot 更新，帶來遠端存取（Remote Access）、本機端語音聽寫（On-device voice dictation）以及瀏覽器操作控制能力。此外，JetBrains 開發者也獲得了上下文用量快捷鍵、歷史差異比較（Historical Diffs）等改善。這項更新顯著提升了非 VS Code 生態系開發者的自主代理體驗，讓使用 IntelliJ 或 WebStorm 的團隊能在本機與遠端環境中更流暢地進行多模態互動與程式碼審閱。",
+        "id": "news:https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "GitHub Copilot JetBrains 外掛迎來 Ignite 更新：支援遠端存取與本機語音聽寫",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases"
+      },
+      {
+        "content": "隨著 AI 代理（AI Agents）在行動裝置上的普及，行動作業系統平台開始收緊對螢幕畫面截取與即時資料存取的權限，限制第三方 Agent 透過無障礙服務或背景擷取獲取使用者畫面。這項變動對仰賴視覺觀察（Screen-use / GUI Agent）來完成跨 App 自動化任務的開發者帶來重大衝擊，意味著未來行動端 Agent 無法再任意依賴「看螢幕點按鈕」的通用模式，促使開發者必須轉向更規範化的平台原生 API、意圖傳遞協議或結構化授權通道。",
+        "id": "news:https://signal.org/blog/protecting-your-privacy",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "行動作業系統平台限制 AI 代理擷取螢幕資料，衝擊自治型 Agent 架構",
+        "type": "news",
+        "url": "https://signal.org/blog/protecting-your-privacy/"
+      },
+      {
+        "content": "開源社群發布了極致輕量的語音辨識與翻譯模型 Rumble-2-Flash，參數規模僅 0.5B（5 億），卻能涵蓋超過 40 種語言的語音處理任務。對終端與邊緣端開發者而言，該模型的推出大幅降低了自託管語音管線的硬體門檻，可在資源受限的伺服器或本機設備上運行低延遲的即時語音轉文字服務，為本地化語音助理與多語言對話應用提供了高性價比的開源新選項。",
+        "id": "news:https://huggingface.co/blog/rumble-2-flash",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "開源輕量級語音模型 Rumble-2-Flash 發布，僅 0.5B 參數支援逾 40 種語言",
+        "type": "news",
+        "url": "https://huggingface.co/blog/rumble-2-flash"
+      },
+      {
+        "content": "GitHub 宣布企業用戶現在能將各用戶端上的 GitHub Copilot 代理活動直接串流至 Microsoft Agent 365 控制平台。透過這項整合，企業管理者能將分散的 Copilot 稽核日誌彙整至單一的代理治理中心，全面掌握 AI 代理執行的動作與程式碼存取軌跡。這對於需要滿足嚴格合規性、資料治理與安全審計的企業級軟體團隊而言，提供了導入自主型編程代理時不可或缺的可觀測性架構。",
+        "id": "news:https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "企業現可透過 Microsoft Agent 365 統一監控 GitHub Copilot 代理行為",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365"
+      },
+      {
+        "content": "一項最新的技術研究指出，大型語言模型具備在推論與生成過程中動態改寫自身權重矩陣的能力。這項發現突破了傳統上將神經網路視為靜態權重的典範，展示了模型如何利用自身輸出作為權重更新的訊號，實現動態記憶更新與即時任務適應。對 AI 研究人員與架構工程師而言，這項技術為解決長上下文記憶遺忘、持續學習（Continual Learning）以及無需外部微調管線的即時自我進化架構開啟了全新的可能性。",
+        "id": "news:https://arxiv.org/abs/2611.21885",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "研究揭示大型語言模型可在推論階段自行改寫模型權重",
+        "type": "news",
+        "url": "https://arxiv.org/abs/2611.21885"
+      },
+      {
+        "content": "最新實測與技術分析顯示，現代前緣大型語言模型已能夠直接從 Hex Dump（十六進位傾印）中逐位元（Byte by Byte）閱讀並撰寫可執行的二進位檔案。這項能力打破了以往 LLM 必須依賴反編譯器將機器碼轉換為高階語言才能理解邏輯的限制。對於資安研究員與逆向工程開發者而言，這代表自主型二進位分析 Agent 能直接處理惡意程式樣本、修補二進位檔漏洞或進行底層暫存器級別的除錯，顯著提升了底層軟體工程與漏洞挖掘的自動化潛力。",
+        "id": "news:https://sgiannopoulos.github.io/blog/machine-code-programming",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "大型語言模型展現逐位元解析與生成十六進位執行檔的逆向工程能力",
+        "type": "news",
+        "url": "https://sgiannopoulos.github.io/blog/machine-code-programming/"
+      },
+      {
+        "content": "針對近期發布的 GPT-6.2 Sol 與目前業界基準 Claude Opus 5.5 的實測對比分析出爐。評測顯示，Opus 5.5 在複雜邏輯推理與極限邊界條件的程式碼生成上依然保持領先，但 GPT-6.2 Sol 在推理延遲、運算成本以及常規工程任務的處理表現上具備極佳的平衡點。這份評測為工程團隊在構建 AI 代理與程式輔助工具時提供了關鍵參考：在需要極高準確性的關鍵路徑可選用頂級模型，而在高頻率、大吞吐量的輔助編程任務中，Sol 展現出更高的投報率。",
+        "id": "news:https://thenewstack.io/gpt-6-2-sol-vs-claude-opus-5-5",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "GPT-6.2 Sol 實測評測：程式準確度雖不及 Claude Opus 5.5 但具性價比優勢",
+        "type": "news",
+        "url": "https://thenewstack.io/gpt-6-2-sol-vs-claude-opus-5-5/"
+      },
+      {
+        "content": "儘管歐盟《數位市場法》（DMA）迫使 Apple 開放替代瀏覽器引擎，但市場上至今仍未見到基於 Blink 或 Gecko 的 iOS 瀏覽器上線。深入分析指出，根本原因在於 Apple 對替代引擎實施的嚴苛授權限制（Entitlements）：包括 JIT 編譯器的記憶體映射限制、無法存取硬體加速圖形管線、跨進程沙盒隔絕困難，以及僅限歐盟地區生效的碎片化維護成本。這篇深度分析為前端與 Web 平台開發者揭示了行動 Web 生態中 PWA 與原生瀏覽器體驗無法突破現狀的核心技術障礙。",
+        "id": "news:https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "為何 iOS 至今仍無非 WebKit 瀏覽器？剖析架構限制與法規權限瓶頸",
+        "type": "news",
+        "url": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/"
+      },
+      {
+        "content": "本文深入探討雲原生與 Kubernetes 架構中的資安實務盲點，指出許多工程團隊將「執行期安全監控（Runtime Security）」誤當作安全防線的基準線。文章分析，當各團隊以微服務自主性為由獨立部署執行期工具時，往往只產生日誌警報卻缺乏統一的平台基線與準入控制（Admission Control），最終形成資安孤島。對 DevOps 與平台工程師而言，文章強調唯有將安全性左移（Shift-left）、建立全域一致的基礎設施宣告式策略，才能從根本降低漏洞與系統遭入侵的風險。",
+        "id": "news:https://cncf.io/blog/2026/11/16/your-runtime-security-tool-is-not-your-baseline-silos-dressed-as-autonomy-in-cloud-native-teams",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "執行期安全工具非防禦基準：雲原生團隊以自主之名產生的資安孤島剖析",
+        "type": "news",
+        "url": "https://www.cncf.io/blog/2026/11/16/your-runtime-security-tool-is-not-your-baseline-silos-dressed-as-autonomy-in-cloud-native-teams/"
+      },
+      {
+        "content": "技術社群對 Anthropic 旗下 Claude 模型的底層能力進行深度解析，發現其在預訓練階段納入了極為龐大的蛋白質序列與生物資訊結構資料集。這項發現解釋了為何 Claude 在非自然語言的符號排列、長序列依賴性建模以及生物化學領域具備異常突出的推理表現。對機器學習與模型架構工程師而言，這證實了將特定科學領域的結構化序列資料融入通用基礎模型的預訓練，能夠增強模型對抽象邏輯與複雜幾何關係的泛化能力，為未來的多領域混合訓練策略提供借鑑。",
+        "id": "news:http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences",
+        "publishedAt": "2026-11-22T00:16:38.088Z",
+        "title": "技術剖析：Claude 預訓練階段納入大規模蛋白質序列帶來的跨領域推論優勢",
+        "type": "news",
+        "url": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-21T01:24:25.779Z",
+      "generatedAt": "2026-11-22T00:16:38.088Z",
       "items": [
         {
-          "content": "作為全球最廣泛採用的跨平台機器學習推理引擎之一，微軟開源的 ONNX Runtime 儲存庫無預警自 GitHub 消失。此突發事件直接衝擊依賴該儲存庫進行模型轉換、推理編譯、CI/CD 構建與 Issue 追蹤的開發者與生產管線。開發團隊應密切留意微軟官方後續的事後報告與儲存庫恢復進展，並評估對本地構建快取與依賴鏡像的影響。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Microsoft's ONNX Runtime has disappeared from GitHub",
-          "sources": [
-            "hn"
-          ],
-          "title": "微軟 ONNX Runtime 儲存庫無預警自 GitHub 消失",
-          "url": "https://github.com/microsoft/onnxruntime",
-          "weightedScore": 467
-        },
-        {
-          "content": "Cloudflare 發布資安通報，揭露影響預設組態 Ruby on Rails 與 Sinatra 應用的重大漏洞「ruby2shell」（CVE-2026-132825）。未授權攻擊者可直接藉由惡意請求破壞記憶體並執行任意程式碼。官方與資安團隊呼籲開發者立即升級 Ruby 至最新版本，若短時間內無法完成升級，建議透過 WAF 規則阻斷攻擊特徵以緩解風險。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "How Cloudflare WAF protects against ruby2shell (CVE-2026-132825)",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Ruby 與 Rails 重大漏洞 ruby2shell (CVE-2026-132825)：未授權即可觸發記憶體損壞",
-          "url": "https://blog.cloudflare.com/ruby2shell-waf-protection/",
-          "weightedScore": 50
-        },
-        {
-          "content": "資安團隊揭露名為「phpAfterShell」的重大安全漏洞，該弱點根植於 PHP 預設的 Session 處理器中，攻擊者可藉此在未授權情況下實現遠端程式碼執行（RCE）。官方已於最新修補版本中修復該漏洞及其他關鍵缺陷。使用 PHP 建置後端服務的團隊應儘速完成版本更新，或藉由 WAF 規則防禦攻擊流量，避免未修補窗口期遭入侵。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "How Cloudflare WAF helps protect against phpAfterShell and other critical PHP flaws",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "PHP 揭露重大漏洞 phpAfterShell：預設 Session 處理機制存在程式碼執行風險",
-          "url": "https://blog.cloudflare.com/phpaftershell-waf-protection/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Inkling 官方正式釋出 Inkling 2 Mini 模型，主打專為個人工作站與邊緣設備設計的極致推論效能。該模型在維持低延遲、低記憶體佔用的前提下，大幅提升了推理與指令遵循表現。對於追求資料在地化、不依賴雲端 API 且需要離線運行 AI Agent 的開發者而言，提供了一個強大且經濟的新基礎模型選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "Inkling 2 Mini 正式推出：專為本地部署打造的邊緣輕量級高效能模型",
-          "url": "https://huggingface.co/blog/inkling2mini",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 宣布 Copilot 組織團隊客製化功能正式進入 GA 階段。現在組織管理者可直接為團隊集中定義並共享專屬的 Copilot 外掛程式與開發規範，成員無須各自進行繁瑣的手動配置。這項更新顯著降低了企業在工程團隊內推行統一內部工具鏈、專案上下文及編碼標準的門檻與管理成本。",
+          "content": "GitHub 宣布 OpenAI 的 GPT-6.2 Astra 與 GPT-6.2 Sol 正式於 GitHub Copilot 全面推出（GA）。這兩款新模型專為 Agentic 程式編寫與程式碼審查（Code Review）設計，相較於早期的 GPT-6 模型具備更強大的程式碼判斷力。對開發者而言，這代表在 Copilot 的日常開發流程中能直接取用最新的代理型 AI 能力，在複雜重構、自主除錯與跨檔案審查時可獲得更可靠的決策品質。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Customize GitHub Copilot for your team",
+          "sourceTitle": "OpenAI’s GPT-6.2 Astra and GPT-6.2 Sol now available",
           "sources": [
             "github-changelog-copilot"
           ],
-          "title": "GitHub Copilot 全面開放團隊客製化（Team Customizations）",
-          "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+          "title": "OpenAI GPT-6.2 Astra 與 Sol 正式登陸 GitHub Copilot",
+          "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
           "weightedScore": 100
         },
         {
-          "content": "OpenAI 官方深入說明其防範「對抗性蒸餾」的多層次防禦體系，結合理論訓練強化、推論防護罩、異常抽取模式偵測及存取規範執行，以保護前沿模型的推理與邏輯能力不被惡意抽取。對於正在設計專有商業模型 API 與企業級智慧財產防護的架構師而言，提供了極具價值的實務架構參考。",
+          "content": "GitHub 發布 JetBrains IDE 系列的 Copilot 更新，帶來遠端存取（Remote Access）、本機端語音聽寫（On-device voice dictation）以及瀏覽器操作控制能力。此外，JetBrains 開發者也獲得了上下文用量快捷鍵、歷史差異比較（Historical Diffs）等改善。這項更新顯著提升了非 VS Code 生態系開發者的自主代理體驗，讓使用 IntelliJ 或 WebStorm 的團隊能在本機與遠端環境中更流暢地進行多模態互動與程式碼審閱。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "Combatting adversarial distillation",
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "GitHub Copilot in JetBrains, Ignite releases",
           "sources": [
-            "openai-blog"
+            "github-changelog-copilot"
           ],
-          "title": "OpenAI 公布對抗模型對抗性蒸餾（Adversarial Distillation）的防禦機制",
-          "url": "https://openai.com/index/combatting-adversarial-distillation",
+          "title": "GitHub Copilot JetBrains 外掛迎來 Ignite 更新：支援遠端存取與本機語音聽寫",
+          "url": "https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases",
           "weightedScore": 100
         },
         {
-          "content": "官方推出 Harness Adapters 適配層，讓開發者能將喜愛的任意基礎模型無縫接軌至主流 Agent Harness 測試與執行架構中。透過標準化適配器，工程師不僅能在不同供應商模型間靈活切換而無需大幅改寫核心邏輯，還能針對特定測試工作流優化呼叫策略，進一步降低延遲與 API 消耗成本。",
+          "content": "隨著 AI 代理（AI Agents）在行動裝置上的普及，行動作業系統平台開始收緊對螢幕畫面截取與即時資料存取的權限，限制第三方 Agent 透過無障礙服務或背景擷取獲取使用者畫面。這項變動對仰賴視覺觀察（Screen-use / GUI Agent）來完成跨 App 自動化任務的開發者帶來重大衝擊，意味著未來行動端 Agent 無法再任意依賴「看螢幕點按鈕」的通用模式，促使開發者必須轉向更規範化的平台原生 API、意圖傳遞協議或結構化授權通道。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Restricting AI agents in mobile operating systems platforms from capturing data",
+          "sources": [
+            "hn"
+          ],
+          "title": "行動作業系統平台限制 AI 代理擷取螢幕資料，衝擊自治型 Agent 架構",
+          "url": "https://signal.org/blog/protecting-your-privacy/",
+          "weightedScore": 570
+        },
+        {
+          "content": "開源社群發布了極致輕量的語音辨識與翻譯模型 Rumble-2-Flash，參數規模僅 0.5B（5 億），卻能涵蓋超過 40 種語言的語音處理任務。對終端與邊緣端開發者而言，該模型的推出大幅降低了自託管語音管線的硬體門檻，可在資源受限的伺服器或本機設備上運行低延遲的即時語音轉文字服務，為本地化語音助理與多語言對話應用提供了高性價比的開源新選項。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "huggingface-blog",
-          "sourceTitle": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
+          "sourceTitle": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
           "sources": [
             "huggingface-blog"
           ],
-          "title": "Harness Adapters 發布：解耦模型與 Agent 框架以優化效能與呼叫成本",
-          "url": "https://huggingface.co/blog/harness-adapters-at-scale",
+          "title": "開源輕量級語音模型 Rumble-2-Flash 發布，僅 0.5B 參數支援逾 40 種語言",
+          "url": "https://huggingface.co/blog/rumble-2-flash",
           "weightedScore": 100
         },
         {
-          "content": "開源社群迎來全新 27B 參數模型 DaisyRose-27B，專注展現後訓練（Post-Training）階段的運算與資料效率突破。該模型在有限的精調資源下實現了優秀的推理與程式碼生成水準，為打算在私有硬體上部署、精調專屬領域模型並在意性價比的工程團隊，提供了一款極具吸引力的新開源底座。",
+          "content": "GitHub 宣布企業用戶現在能將各用戶端上的 GitHub Copilot 代理活動直接串流至 Microsoft Agent 365 控制平台。透過這項整合，企業管理者能將分散的 Copilot 稽核日誌彙整至單一的代理治理中心，全面掌握 AI 代理執行的動作與程式碼存取軌跡。這對於需要滿足嚴格合規性、資料治理與安全審計的企業級軟體團隊而言，提供了導入自主型編程代理時不可或缺的可觀測性架構。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Monitor GitHub Copilot activity through Microsoft Agent 365",
           "sources": [
-            "huggingface-blog"
+            "github-changelog-copilot"
           ],
-          "title": "DaisyRose-27B 發布：推進開源模型後訓練（Post-Training）效率新邊界",
-          "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+          "title": "企業現可透過 Microsoft Agent 365 統一監控 GitHub Copilot 代理行為",
+          "url": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365",
           "weightedScore": 100
         },
         {
-          "content": "研究團隊公開了代號「Frostbite」的處理器微架構，該架構完全由 AI 自主探索設計空間、生成 RTL 並完成功能驗證。這項突破打破了傳統人類晶片工程師的設計思維與優化慣性，證明生成式 AI 能在高度嚴謹的半導體微架構設計中獨立承擔核心工作，為未來的晶片設計自動化（EDA）掀起技術範式轉移。",
+          "content": "一項最新的技術研究指出，大型語言模型具備在推論與生成過程中動態改寫自身權重矩陣的能力。這項發現突破了傳統上將神經網路視為靜態權重的典範，展示了模型如何利用自身輸出作為權重更新的訊號，實現動態記憶更新與即時任務適應。對 AI 研究人員與架構工程師而言，這項技術為解決長上下文記憶遺忘、持續學習（Continual Learning）以及無需外部微調管線的即時自我進化架構開啟了全新的可能性。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+          "sourceTitle": "Language Models Can Rewrite Their Own Weights",
           "sources": [
             "hn"
           ],
-          "title": "Frostbite：首個完全由 AI 自主探索、設計並完成驗證的全新 CPU 微架構",
-          "url": "https://architectlabs.com/blog/frostbite",
-          "weightedScore": 621
+          "title": "研究揭示大型語言模型可在推論階段自行改寫模型權重",
+          "url": "https://arxiv.org/abs/2611.21885",
+          "weightedScore": 478
         },
         {
-          "content": "文章詳細剖析了一個罕見但嚴重的 GitOps 故障情境：當開發者在 Argo CD 同步視窗關閉期間推送發布時，系統雖回報同步成功，但自我修復（Self-Heal）機制卻導致資料庫 Migration Hook 被跳過。作者抽絲剝繭分析了 Argo CD 控制迴圈與狀態機在資源比對中的邊緣案例，並提供生產環境避免資料庫與應用版本不一致的具體配置方案。",
+          "content": "最新實測與技術分析顯示，現代前緣大型語言模型已能夠直接從 Hex Dump（十六進位傾印）中逐位元（Byte by Byte）閱讀並撰寫可執行的二進位檔案。這項能力打破了以往 LLM 必須依賴反編譯器將機器碼轉換為高階語言才能理解邏輯的限制。對於資安研究員與逆向工程開發者而言，這代表自主型二進位分析 Agent 能直接處理惡意程式樣本、修補二進位檔漏洞或進行底層暫存器級別的除錯，顯著提升了底層軟體工程與漏洞挖掘的自動化潛力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "LLMs can read and write executables byte by byte from a hex dump",
+          "sources": [
+            "hn"
+          ],
+          "title": "大型語言模型展現逐位元解析與生成十六進位執行檔的逆向工程能力",
+          "url": "https://sgiannopoulos.github.io/blog/machine-code-programming/",
+          "weightedScore": 179
+        },
+        {
+          "content": "針對近期發布的 GPT-6.2 Sol 與目前業界基準 Claude Opus 5.5 的實測對比分析出爐。評測顯示，Opus 5.5 在複雜邏輯推理與極限邊界條件的程式碼生成上依然保持領先，但 GPT-6.2 Sol 在推理延遲、運算成本以及常規工程任務的處理表現上具備極佳的平衡點。這份評測為工程團隊在構建 AI 代理與程式輔助工具時提供了關鍵參考：在需要極高準確性的關鍵路徑可選用頂級模型，而在高頻率、大吞吐量的輔助編程任務中，Sol 展現出更高的投報率。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "GPT-6.2 Sol vs. Claude Opus 5.5: Not as accurate, but still might be the better buy",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "GPT-6.2 Sol 實測評測：程式準確度雖不及 Claude Opus 5.5 但具性價比優勢",
+          "url": "https://thenewstack.io/gpt-6-2-sol-vs-claude-opus-5-5/",
+          "weightedScore": 50
+        },
+        {
+          "content": "儘管歐盟《數位市場法》（DMA）迫使 Apple 開放替代瀏覽器引擎，但市場上至今仍未見到基於 Blink 或 Gecko 的 iOS 瀏覽器上線。深入分析指出，根本原因在於 Apple 對替代引擎實施的嚴苛授權限制（Entitlements）：包括 JIT 編譯器的記憶體映射限制、無法存取硬體加速圖形管線、跨進程沙盒隔絕困難，以及僅限歐盟地區生效的碎片化維護成本。這篇深度分析為前端與 Web 平台開發者揭示了行動 Web 生態中 PWA 與原生瀏覽器體驗無法突破現狀的核心技術障礙。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Why there are still no non-WebKit browsers on iOS",
+          "sources": [
+            "hn"
+          ],
+          "title": "為何 iOS 至今仍無非 WebKit 瀏覽器？剖析架構限制與法規權限瓶頸",
+          "url": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/",
+          "weightedScore": 468
+        },
+        {
+          "content": "本文深入探討雲原生與 Kubernetes 架構中的資安實務盲點，指出許多工程團隊將「執行期安全監控（Runtime Security）」誤當作安全防線的基準線。文章分析，當各團隊以微服務自主性為由獨立部署執行期工具時，往往只產生日誌警報卻缺乏統一的平台基線與準入控制（Admission Control），最終形成資安孤島。對 DevOps 與平台工程師而言，文章強調唯有將安全性左移（Shift-left）、建立全域一致的基礎設施宣告式策略，才能從根本降低漏洞與系統遭入侵的風險。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "cncf-blog",
-          "sourceTitle": "When a sync window closes: How Argo CD self-heal skipped the migration hook",
+          "sourceTitle": "Your runtime security tool is not your baseline: Silos dressed as autonomy in cloud native teams",
           "sources": [
             "cncf-blog"
           ],
-          "title": "Argo CD 同步視窗陷阱：深入分析 Self-Heal 導致 Migration Hook 被跳過的機制",
-          "url": "https://www.cncf.io/blog/2026/11/20/when-a-sync-window-closes-how-argo-cd-self-heal-skipped-the-migration-hook/",
+          "title": "執行期安全工具非防禦基準：雲原生團隊以自主之名產生的資安孤島剖析",
+          "url": "https://www.cncf.io/blog/2026/11/16/your-runtime-security-tool-is-not-your-baseline-silos-dressed-as-autonomy-in-cloud-native-teams/",
           "weightedScore": 100
         },
         {
-          "content": "當企業應用必須部署在客戶自行管理的 Kubernetes 叢集時，工程團隊往往面臨版本混亂、周邊組件缺失與升級排程不可控等難題。本文整理了實戰中的核心架構原則，包括依賴健康檢查自檢機制、隔離外部環境差異的打包策略、內建日誌排障工具等，為打造高適應性與低維護成本私有化交付方案的架構師提供了全面指引。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "How to support your app on Kubernetes environments you don’t control",
-          "sources": [
-            "cncf-blog"
-          ],
-          "title": "在不可控的客戶端 Kubernetes 環境中穩定維運軟體的架構實務",
-          "url": "https://www.cncf.io/blog/2026/11/19/how-to-support-your-app-on-kubernetes-environments-you-dont-control/",
-          "weightedScore": 100
-        },
-        {
-          "content": "研究提出名為「Program-as-Weights」的新概念，探討如何將傳統程式語言的結構化控制流與神經網路權重融合，以更自然的方式編寫和維護現實場景中的「模糊函數」（Fuzzy Functions）。這種將模型權重視為可編程構件的範式，為結合神經符號邏輯、解決複雜邊緣條件與非確定性業務邏輯開拓了全新的工程路徑。",
+          "content": "技術社群對 Anthropic 旗下 Claude 模型的底層能力進行深度解析，發現其在預訓練階段納入了極為龐大的蛋白質序列與生物資訊結構資料集。這項發現解釋了為何 Claude 在非自然語言的符號排列、長序列依賴性建模以及生物化學領域具備異常突出的推理表現。對機器學習與模型架構工程師而言，這證實了將特定科學領域的結構化序列資料融入通用基礎模型的預訓練，能夠增強模型對抽象邏輯與複雜幾何關係的泛化能力，為未來的多領域混合訓練策略提供借鑑。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "Program-as-Weights: A Programming Paradigm for Fuzzy Functions",
-          "sources": [
-            "lobsters-ai"
-          ],
-          "title": "Program-as-Weights：結合權重表示與模糊邏輯的新型程式設計典範",
-          "url": "https://arxiv.org/abs/2607.02512",
-          "weightedScore": 100
-        },
-        {
-          "content": "自 1985 年創刊至今的傳奇黑客安全刊物《Phrack》正式釋出第 73 期。本期收錄了多篇探討現代作業系統核心攻擊面、先進記憶體損壞利用、逆向工程技術以及韌體安全防護繞過的深度長文。對於從事系統安全、逆向工程、底層平台開發以及對現代防禦緩解機制有深度需求的工程師而言，是不可多得的硬核技術資源。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Phrack 73",
+          "sourceTitle": "Claude was trained on protein sequences at scale",
           "sources": [
             "hn"
           ],
-          "title": "傳奇黑客雜誌《Phrack》第 73 期出刊：收錄最新底層安全與漏洞利用技術",
-          "url": "https://phrack.org/issues/73/introduction_md",
-          "weightedScore": 473
-        },
-        {
-          "content": "消息指出 Google 正向 Android 裝置製造商施壓，要求收緊甚至取消 Bootloader 的解鎖能力。這項舉動引發了開發者社群對硬體所有權與開放開源生態的嚴重擔憂，特別是像 GrapheneOS 這類高度依賴硬體安全晶片與解鎖機制的隱私安全作業系統，其安裝與生存空間正面臨嚴峻挑戰。此舉可能進一步推動行動平台走向完全封閉。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Google is pushing OEMs against GrapheneOS and bootloader unlocking",
-          "sources": [
-            "hn"
-          ],
-          "title": "Google 被曝施壓 OEM 限制 Bootloader 解鎖，衝擊 GrapheneOS 等隱私系統",
-          "url": "https://grapheneos.social/@GrapheneOS/117645038299496084",
-          "weightedScore": 477
+          "title": "技術剖析：Claude 預訓練階段納入大規模蛋白質序列帶來的跨領域推論優勢",
+          "url": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/",
+          "weightedScore": 181
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Anthropic reported diary entry to police, woman faces felony charge",
-      "url": "https://techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "simonwillison"
-      ],
-      "title": "We're going to need default hard budget caps on pretty much everything",
-      "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "github-changelog-copilot",
-        "hn",
-        "simonwillison"
-      ],
-      "title": "Claude Haiku 5.5",
-      "url": "https://anthropic.com/claude-haiku-5-5"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "openai-blog"
-      ],
-      "title": "GPT‑6 and Intelligent UI for everyone",
-      "url": "https://openai.com/index/gpt-6-for-everyone"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
-      "url": "https://niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "OpenTPU – An open-source AI accelerator, developed by AI",
-      "url": "https://github.com/FeSens/openTPU"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
-      "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Claude Code’s suggested message feature: I think the real customer is the model",
-      "url": "https://zohaib.cc/blog/smartest-claude-code-feature"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
-      "url": "https://rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Penguin Mail – open-source Rust email client for Linux with AI",
-      "url": "https://penguin-mail.com/"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Religious scholars met with Anthropic",
-      "url": "https://nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Docker Agent",
-      "url": "https://github.com/docker/docker-agent"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "cncf-blog",
-      "sources": [
-        "cncf-blog"
-      ],
-      "title": "CiliumCon is back at KubeCon + CloudNativeCon North America 2026",
-      "url": "https://cncf.io/blog/2026/10/07/ciliumcon-is-back-at-kubecon-cloudnativecon-north-america-2026"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "github-blog-ai-ml",
-      "sources": [
-        "github-blog-ai-ml"
-      ],
-      "title": "Secret protection must scale with software",
-      "url": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-08T00:08:11.517Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "title": "Purpose-built model for leaked secret detection",
-      "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection"
-    },
     {
       "domain": "devops",
       "seenAt": "2026-10-09T00:16:25.961Z",
@@ -6890,6 +6694,116 @@
       ],
       "title": "Google is pushing OEMs against GrapheneOS and bootloader unlocking",
       "url": "https://grapheneos.social/@GrapheneOS/117645038299496084"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "OpenAI’s GPT-6.2 Astra and GPT-6.2 Sol now available",
+      "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "GitHub Copilot in JetBrains, Ignite releases",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Restricting AI agents in mobile operating systems platforms from capturing data",
+      "url": "https://signal.org/blog/protecting-your-privacy"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
+      "url": "https://huggingface.co/blog/rumble-2-flash"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Monitor GitHub Copilot activity through Microsoft Agent 365",
+      "url": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Language Models Can Rewrite Their Own Weights",
+      "url": "https://arxiv.org/abs/2611.21885"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "LLMs can read and write executables byte by byte from a hex dump",
+      "url": "https://sgiannopoulos.github.io/blog/machine-code-programming"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "GPT-6.2 Sol vs. Claude Opus 5.5: Not as accurate, but still might be the better buy",
+      "url": "https://thenewstack.io/gpt-6-2-sol-vs-claude-opus-5-5"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Why there are still no non-WebKit browsers on iOS",
+      "url": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "cncf-blog",
+      "sources": [
+        "cncf-blog"
+      ],
+      "title": "Your runtime security tool is not your baseline: Silos dressed as autonomy in cloud native teams",
+      "url": "https://cncf.io/blog/2026/11/16/your-runtime-security-tool-is-not-your-baseline-silos-dressed-as-autonomy-in-cloud-native-teams"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-22T00:16:38.088Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Claude was trained on protein sequences at scale",
+      "url": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences"
     }
   ]
 }
