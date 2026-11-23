@@ -1,40 +1,49 @@
 {
   "board": {
-    "997737944": {
+    "612230": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-11-15T23:55:44.013Z",
-      "fullName": "ruvnet/RuView",
-      "language": "Rust",
+      "firstSeenAt": "2026-11-23T00:45:56.544Z",
+      "fullName": "nvm-sh/nvm",
+      "language": "Shell",
       "rank": 9,
-      "starsThisWeek": 1551,
-      "url": "https://github.com/ruvnet/RuView"
+      "starsThisWeek": 651,
+      "url": "https://github.com/nvm-sh/nvm"
     },
     "1061953414": {
       "domain": "ai",
       "firstSeenAt": "2026-11-15T23:55:44.013Z",
       "fullName": "anthropics/skills",
       "language": "Python",
-      "rank": 5,
-      "starsThisWeek": 6220,
+      "rank": 6,
+      "starsThisWeek": 3864,
       "url": "https://github.com/anthropics/skills"
     },
-    "1131202426": {
+    "1073224795": {
       "domain": "ai",
-      "firstSeenAt": "2026-11-15T23:55:44.013Z",
-      "fullName": "meta/astryx",
-      "language": "TypeScript",
-      "rank": 1,
-      "starsThisWeek": 13660,
-      "url": "https://github.com/meta/astryx"
+      "firstSeenAt": "2026-11-23T00:45:56.544Z",
+      "fullName": "obra/superpowers",
+      "language": "Shell",
+      "rank": 2,
+      "starsThisWeek": 7956,
+      "url": "https://github.com/obra/superpowers"
     },
-    "1132001614": {
+    "1136590548": {
       "domain": "ai",
-      "firstSeenAt": "2026-11-15T23:55:44.013Z",
-      "fullName": "vercel-labs/agent-browser",
-      "language": "Rust",
-      "rank": 8,
-      "starsThisWeek": 4601,
-      "url": "https://github.com/vercel-labs/agent-browser"
+      "firstSeenAt": "2026-11-23T00:45:56.544Z",
+      "fullName": "affaan-m/ECC",
+      "language": "JavaScript",
+      "rank": 4,
+      "starsThisWeek": 5444,
+      "url": "https://github.com/affaan-m/ECC"
+    },
+    "1140843380": {
+      "domain": "ai",
+      "firstSeenAt": "2026-11-23T00:45:56.544Z",
+      "fullName": "mvanhorn/last30days-skill",
+      "language": "Python",
+      "rank": 5,
+      "starsThisWeek": 4731,
+      "url": "https://github.com/mvanhorn/last30days-skill"
     },
     "1148788086": {
       "domain": "ai",
@@ -42,56 +51,51 @@
       "fullName": "mattpocock/skills",
       "language": "Shell",
       "rank": 3,
-      "starsThisWeek": 7308,
+      "starsThisWeek": 5545,
       "url": "https://github.com/mattpocock/skills"
     },
-    "1153130349": {
+    "1229774092": {
       "domain": "ai",
-      "firstSeenAt": "2026-11-15T23:55:44.013Z",
-      "fullName": "pingdotgg/t3code",
-      "language": "TypeScript",
-      "rank": 2,
-      "starsThisWeek": 9668,
-      "url": "https://github.com/pingdotgg/t3code"
-    },
-    "1161958643": {
-      "domain": "ai",
-      "firstSeenAt": "2026-11-08T23:38:50.039Z",
-      "fullName": "vercel-labs/agent-desktop",
-      "language": "Rust",
-      "rank": 7,
-      "starsThisWeek": 5171,
-      "url": "https://github.com/vercel-labs/agent-desktop"
+      "firstSeenAt": "2026-11-23T00:45:56.544Z",
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "language": "Python",
+      "rank": 1,
+      "starsThisWeek": 11269,
+      "url": "https://github.com/elementalsouls/Claude-BugHunter"
     },
     "1331261687": {
       "domain": "ai",
       "firstSeenAt": "2026-11-08T23:38:50.039Z",
       "fullName": "milind-soni/OpenMausBot",
       "language": "TypeScript",
-      "rank": 4,
-      "starsThisWeek": 6413,
+      "rank": 8,
+      "starsThisWeek": 3728,
       "url": "https://github.com/milind-soni/OpenMausBot"
     },
-    "1368596582": {
+    "1356077516": {
       "domain": "ai",
-      "firstSeenAt": "2026-11-15T23:55:44.013Z",
-      "fullName": "google/elephant-goldfish-model",
+      "firstSeenAt": "2026-11-23T00:45:56.544Z",
+      "fullName": "kajisho5/ffmpeg-skill",
       "language": "Python",
-      "rank": 6,
-      "starsThisWeek": 5539,
-      "url": "https://github.com/google/elephant-goldfish-model"
+      "rank": 7,
+      "starsThisWeek": 3748,
+      "url": "https://github.com/kajisho5/ffmpeg-skill"
     },
-    "1452450730": {
+    "1462885033": {
       "domain": "frontend-backend",
-      "firstSeenAt": "2026-11-15T23:55:44.013Z",
-      "fullName": "JDhruv14/line-art-animation",
+      "firstSeenAt": "2026-11-23T00:45:56.544Z",
+      "fullName": "dynamicdeblackice-commits/joplin-arvella-notes",
       "language": "TypeScript",
       "rank": 10,
-      "starsThisWeek": 829,
-      "url": "https://github.com/JDhruv14/line-art-animation"
+      "starsThisWeek": 147,
+      "url": "https://github.com/dynamicdeblackice-commits/joplin-arvella-notes"
     }
   },
   "intros": {
+    "612230": {
+      "intro": "Node Version Manager (nvm) 是一個用於 Node.js 的版本管理器，讓使用者能透過命令列快速安裝與切換不同的 Node 版本。\n\n本專案採單一使用者安裝、依 Shell 叫用的設計，支援所有符合 POSIX 標準的 Shell（如 sh、dash、ksh、zsh、bash），並適用於 Unix、macOS 與 Windows WSL 等平台。\n\n它提供簡易的安裝與更新腳本，支援環境變數自訂設定，並可透過 `.…",
+      "introAt": "2026-11-23T00:45:56.544Z"
+    },
     "10270250": {
       "intro": "React 是一個用於建構使用者介面的 JavaScript 函式庫，專注於解決互動式畫面的開發痛點。其核心特色包含宣告式設計、以 JavaScript 編寫的元件化架構，以及支援「一次學習、隨處編寫」的特性，能透過 Node 進行伺服器端渲染或驅動 React Native 行動應用。此專案設計為可逐步採用，無論是想在現有專案中按需導入部分功能，或是建立全新的 JavaScript 工具鏈應用皆適合，且不對其餘技術堆疊做出假設。",
       "introAt": "2026-09-14T00:04:01.546Z"
@@ -272,6 +276,10 @@
       "intro": "ECC 為 AI 代理提供完整的工程系統與工具箱，解決每次提示詞重複建立流程的問題，優化上下文窗口並持久化重要內容。專案具備 68 個代理、286 項技能與安全掃描，支援 Claude Code、Codex 等多種開發環境，協助 AI 在建構前規劃、測試驗證變更並持續學習。",
       "introAt": "2026-09-06T23:45:03.614Z"
     },
+    "1140843380": {
+      "intro": "這是一個由AI代理驅動的搜尋引擎，打破傳統搜尋引擎與各平台的資料高牆。它能同時並行搜尋Reddit、X、YouTube、TikTok、Polymarket、GitHub與arXiv等十多個平台，透過真實使用者的投票、按讚與資金押注來進行評分。AI代理會將這些跨平台的真實意見與數據綜合整理成一份重點摘要。適合需要在會議前快速掌握某人或企業最新動態、了解社群真實討論，或是追蹤技術與市場趨勢的使用者。",
+      "introAt": "2026-11-23T00:45:56.544Z"
+    },
     "1148788086": {
       "intro": "這是一套專為真實工程需求設計的 AI 代理技能集，旨在解決與 AI 溝通不良、輸出冗長及代碼品質低落的問題。透過「互動式引導」、「定義領域語言」及「TDD 紅綠重構」等核心技術，協助開發者與 AI 深度對齊、精簡溝通成本。適合追求高質量開發、希望提升 AI 協作效率的工程師使用，支援透過 Shell 安裝或作為 Claude Code 外掛，靈活導入你的開發流程。",
       "introAt": "2026-07-19T11:16:05.077Z"
@@ -404,6 +412,10 @@
       "intro": "這是一個開源的紫微斗數排盤引擎與知識庫系統，基於倪海廈《天紀》教學體系。專案提供完整的排盤演算法、四化系統與格局資料，並釋出包含 67.5 萬張命盤與 13 維解讀的 v4.0 開源數據集。採用 TypeScript 與 Next.js 開發，致力於將公開的傳統智慧與演算法分享給大眾，適合命理研究者與開發者用於學習、排盤與整合應用。",
       "introAt": "2026-10-25T22:29:10.259Z"
     },
+    "1229774092": {
+      "intro": "這是一個專為 AI 代理設計的資安與漏洞挖掘技能包，能將 Claude 轉化為資深安全研究員或紅隊攻擊專家。專案內含數十種漏洞檢測模式、攻擊矩陣與企業邊界滲透策略，支援自動化情境觸發與多種 AI 代理平台，適用於漏洞賞金獵人、網站滲透測試及外部紅隊演練等資安任務。",
+      "introAt": "2026-11-23T00:45:56.544Z"
+    },
     "1232493406": {
       "intro": "Prime Agent 是一個開源的編碼與研究代理，專為通用與長時間運作的任務設計。它透過遞迴語言模型與持續骨架（Continual Harness），讓背景執行的常駐行程、子代理協同與 IPython 環境跨越單一對話視窗持續運作。核心特色包含程式化控制、動態技能建立、代理間直接通訊與背景守護行程。適合需要長時間運作、自動化評估與複雜研究任務的開發者使用。",
       "introAt": "2026-08-16T22:30:27.586Z"
@@ -476,6 +488,10 @@
       "intro": "這是一個在瀏覽器中設計 Material 3 Expressive 介面的視覺化工具。支援拖曳豐富的元件、磁吸群組、多螢幕尺寸切換及頁面導航串連，並能將設計一鍵轉換為精準的 AI 程式碼提示詞。適合開發者搭配 Claude Code、Cursor 等 AI 工具快速建構跨平台應用程式。",
       "introAt": "2026-09-06T23:45:03.614Z"
     },
+    "1356077516": {
+      "intro": "賦予你的 AI 程式設計代理（如 Claude Code、Cursor、Codex）強大的影片剪輯能力！本專案提供 42 個本地端 FFmpeg 專業工具，支援剪輯、字幕、動態特效與響度標準化。完全離線執行，無需雲端 API 金鑰或上傳檔案，確保素材隱私。代理能透過標準化工作流程自動執行探測、編輯與驗證，並內建互動式審查網頁，非常適合需要 AI 自動化處理影片剪輯、音訊優化與轉碼的開發者。",
+      "introAt": "2026-11-23T00:45:56.544Z"
+    },
     "1368596582": {
       "intro": "EGM 專為 AI 程式碼助理打造，解決軟體開發中容易忽略隱藏假設與盲點的問題。核心特色採用「大象與金魚」工作流：大象負責保留專案脈絡並起草規格書，金魚則以無先前對話記錄的全新視角進行審查，並由開發者把關架構取捨。適合在 Claude Code、Antigravity 與 Codex 等環境中，進行系統化腦力激盪、規格草擬、設計審查及程式碼飄移檢測。",
       "introAt": "2026-11-15T23:55:44.013Z"
@@ -495,168 +511,20 @@
     "1452450730": {
       "intro": "這是一個結合 Claude Skill 與 TypeScript 的輕量動態線條藝術元件庫，能讓 SVG 圖形在日夜場景中生動地步行、騎乘與互動。\n\n核心特色包含零依賴的 TypeScript 模組，提供繪圖基底、步伐求解器、彈簧擺錘運動及日夜色票轉換，並支援無頭瀏覽器精準影格截圖輸出影片。\n\n適合開發者搭配 Claude 快速生成客製化的 SVG 動態場景、日夜循環與互動角色動畫。",
       "introAt": "2026-11-15T23:55:44.013Z"
+    },
+    "1462885033": {
+      "intro": "本專案提供一個基於 Joplin 資料模型的桌面筆記應用程式，主打端到端加密與本地優先架構，讓使用者能在離線狀態下安全管理 Markdown 筆記。核心特色包含階層式筆記本、全文檢索、版本歷史，以及支援 WebDAV 與檔案系統的雙向同步引擎。非常適合重視隱私、習慣離線作業並需要跨平台同步 Markdown 知識庫的研究人員與文字工作者。",
+      "introAt": "2026-11-23T00:45:56.544Z"
     }
   },
-  "lastBoardPushAt": "2026-11-15T23:55:44.013Z",
-  "lastNewsPushAt": "2026-11-22T00:16:38.088Z",
+  "lastBoardPushAt": "2026-11-23T00:45:56.544Z",
+  "lastNewsPushAt": "2026-11-23T00:45:56.544Z",
   "publish": {
     "boardSummary": {
-      "generatedAt": "2026-11-15T23:55:44.013Z",
-      "summary": "本次榜單由 meta/astryx 奪得 #1，迎來 7 個新進項目與 1 個竄升項目（含 AI 6 個、前後端 2 個），同時有 1 個項目下降。"
+      "generatedAt": "2026-11-23T00:45:56.544Z",
+      "summary": "本次綜合榜 #1 為 elementalsouls/Claude-BugHunter，榜單共計 7 個新進、0 個竄升、2 個下降，其中新進全數分佈於 AI 5 個與前後端 2 個領域。"
     },
     "feed": [
-      {
-        "content": "廣受各大科技公司採用的 A/B 測試與功能發布平台 Optimizely 遭受駭客入侵，導致包含 Zoom 與 GitLab 在內的多個知名網站客戶端腳本被注入惡意軟體。這起供應鏈攻擊事件凸顯了現代前端架構中第三方 JavaScript 腳本所潛藏的巨大資安風險。開發團隊與維運人員應全面盤點外部腳本依賴，嚴格落實子資源完整性（Subresource Integrity, SRI）、內容安全策略（CSP）限制，並評估自託管或伺服端 A/B 測試方案，以防範第三方供應商失陷引發的安全連鎖反應。",
-        "id": "news:https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely",
-        "publishedAt": "2026-11-18T02:20:18.033Z",
-        "title": "知名 A/B 測試平台 Optimizely 遭入侵，Zoom 與 GitLab 等官網被植入惡意腳本",
-        "type": "news",
-        "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/"
-      },
-      {
-        "content": "資安研究人員披露了名為「Java4Shell」的重大安全漏洞，問題出在 OpenJDK 處理特定格式 Base64 編碼字串的底層邏輯，未經授權的攻擊者可藉此構造特製惡意輸入誘發記憶體損毀，進而在目標系統上實現遠端代碼執行（RCE）。由於 Base64 解碼廣泛存在於身分認證標頭、API 請求解析與微服務通訊環節中，此漏洞對各類 Java 後端服務構成嚴重威脅。開發者與系統維運人員應儘速檢視伺服器 OpenJDK 版本，並依官方與各 Linux 發行版公告完成安全修正檔更新。",
-        "id": "news:https://calif.io/java4shell",
-        "publishedAt": "2026-11-18T02:20:18.033Z",
-        "title": "Java4Shell 漏洞曝光：OpenJDK 在解析 Base64 時存在遠端代碼執行風險",
-        "type": "news",
-        "url": "https://calif.io/java4shell/"
-      },
-      {
-        "content": "Google 推出新一代 Gemini 4 Neon 模型。該模型專注於提升程式碼生成與自動化推理效能，進一步拓展了 Gemini 系列在軟體工程與智慧代理任務上的應用能力。",
-        "id": "news:https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "Google 發布 Gemini 4 Neon 模型",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
-      },
-      {
-        "content": "Google DeepMind 宣布新一代基礎世界模型 Genie 4 正式上線。Genie 4 具備從圖像與文字提示生成可互動虛擬環境的能力，為物理模擬、遊戲生成與環境互動智慧體的訓練帶來重大突破。",
-        "id": "news:https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "Google DeepMind 正式推出世界模型 Genie 4",
-        "type": "news",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/"
-      },
-      {
-        "content": "GitHub 宣布 Copilot 支援模型上下文協議（MCP）連接器公開預覽，新增 Supabase、Box、Calendly 等 8 項經過驗證的服務。開發者可直接將 Copilot 與後端資料庫及第三方工具串接，使 AI 代理能直接存取即時資料並呼叫外部服務。",
-        "id": "news:https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "GitHub Copilot 公測支援 Supabase 等驗證 MCP 伺服器連接器",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot"
-      },
-      {
-        "content": "Cloudflare 宣布將資料擷取模型 Clairic 與輕量版 Clairic-flash 以開放權重（open-weight）形式釋出。Clairic 正式脫離預覽階段，專門針對結構化資訊擷取任務進行優化，開發者可直接在 Workers AI 或私有基礎架構中部署使用。",
-        "id": "news:https://blog.cloudflare.com/open-clairic",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "Cloudflare Workers AI 開源 Clairic 與 Clairic-flash 權重",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/open-clairic/"
-      },
-      {
-        "content": "知名隱私 DNS 服務商 Quad9 因法國法院的強制封鎖裁決，宣布停止在法國的營運服務。此事件凸顯了司法管轄區透過遞迴 DNS 進行版權審查帶來的監管與合規風險，直接影響全球網路基礎設施的中立性與開發者所依賴的解析服務可靠度。",
-        "id": "news:https://blog.cloudflare.com/quad9-withdrawal-from-france",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "Quad9 退出法國市場：DNS 審查命令對基礎設施的中立性警訊",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/quad9-withdrawal-from-france/"
-      },
-      {
-        "content": "本文詳細解析 AI 編程代理 Codex 如何在本地環境安全執行終端命令。為防範自動化代理執行高風險指令，Codex 跨 macOS、Linux 與 Windows 構建了嚴密的檔案系統與網路存取限制層，讓開發者在賦予代理系統控制權的同時保有精準的安全防護邊界。",
-        "id": "news:https://openai.com/index/inside-the-codex-sandbox",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "深入剖析 Codex 沙盒：在多平台安全執行本地終端指令",
-        "type": "news",
-        "url": "https://openai.com/index/inside-the-codex-sandbox"
-      },
-      {
-        "content": "研究團隊提出基於能量模型的新型推論架構 Energy-Based Reasoners，在複雜邏輯與多步驟推理場景中實現高達 385 倍的推論效率提升。該技術突破了傳統自回歸模型在逐步思考時龐大的計算開銷，為輕量化高效推論開闢了新途徑。",
-        "id": "news:https://energy-based-reasoners.github.io/",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "Energy-Based Reasoners：推論效率提升 385 倍的新架構",
-        "type": "news",
-        "url": "https://energy-based-reasoners.github.io/"
-      },
-      {
-        "content": "本文探討如何優化開源 LLM 在長對話與多步驟代碼代理工作流中的表現。透過前綴快取（Prefix Caching）與精心規劃的 Prompt 與工具調用結構，能最大化重複利用 KV 快取，避免上下文增長導致嚴重的延遲與資源消耗。",
-        "id": "news:https://ollama.com/blog/open-models-long-horizon-agents",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "讓開源模型勝任長流程代理：前綴快取與推論路由實踐",
-        "type": "news",
-        "url": "https://ollama.com/blog/open-models-long-horizon-agents"
-      },
-      {
-        "content": "團隊深入剖析 Kyverno 基於通用表達式語言（CEL）的 K8s 准入控制路徑效能。測試發現過去被視為主要瓶頸的 CEL 表達式評估僅佔少數開銷，高達約 86% 的耗時集中於物件序列化與外圍處理邏輯，為叢集維運工程師提供了明確的優化方向。",
-        "id": "news:https://cncf.io/blog/2026/11/18/optimizing-kubernetes-admission-control-where-kyvernos-cel-admission-cost-actually-goes",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "Kubernetes 准入控制效能分析：Kyverno CEL 成本真相",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/11/18/optimizing-kubernetes-admission-control-where-kyvernos-cel-admission-cost-actually-goes/"
-      },
-      {
-        "content": "本文探討大型語言模型微調作業實際執行時間與理論算力估算出現顯著落差的根本原因。文章指出記憶體頻寬限制、GPU 間通信開銷與資料讀取延遲才是真實世界的效能瓶頸，協助機器學習工程師更精確評估分散式訓練集群的資源配置。",
-        "id": "news:https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "為什麼模型微調耗時遠超理論 FLOPs 算力計算？",
-        "type": "news",
-        "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time"
-      },
-      {
-        "content": "哈佛大學最新研究指出，AI 編程代理的普及大幅提升了代碼編寫產出，但整個軟體工程流程的瓶頸已全面轉移至人工代碼審查（Code Review）。快速增長的代碼量加劇了審查者的認知負擔與驗證難度，顯示工程團隊必須重塑審查機制以應對代理時代的生產力挑戰。",
-        "id": "news:https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "哈佛研究：AI 編程代理將軟體開發瓶頸轉移至代碼審查",
-        "type": "news",
-        "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/"
-      },
-      {
-        "content": "廣泛使用的網頁伺服器與反向代理軟體 Nginx 被揭露存在高危險性的未授權遠端代碼執行漏洞。攻擊者可在無需憑據的情況下利用該漏洞接管伺服器，對全球雲端基礎設施構成嚴重威脅，維運與後端開發人員應立即檢核系統並套用安全修補程式。",
-        "id": "news:https://wiz.io/blog/nginx-http2-rce-vulnerabilities",
-        "publishedAt": "2026-11-19T01:50:30.517Z",
-        "title": "Nginx 爆發未授權遠端代碼執行（RCE）重大安全漏洞",
-        "type": "news",
-        "url": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities"
-      },
-      {
-        "content": "開源專案 OpenRun 正式發布 1.0 版本，旨在為工程團隊提供針對內部工具（internal tools）的宣告式部署方案，並同時支援 Docker 與 Kubernetes 環境。對開發者而言，該工具能簡化內部服務的容器化維運流程，透過標準化的宣告配置提升交付效率並降低部署複雜度。",
-        "id": "news:https://openrun.dev/blog/openrun-1.0",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "OpenRun v1.0 正式發布：支援 Docker 與 K8s 的內部工具宣告式部署框架",
-        "type": "news",
-        "url": "https://openrun.dev/blog/openrun-1.0/"
-      },
-      {
-        "content": "GitHub Copilot code review 釋出重要功能更新，引進「自適應審查（Adaptive effort）」機制，能根據 Pull Request 的變更特性動態匹配審查深度，讓常規修改快速通過，並對複雜邏輯深入檢查；此外亦整合了機密資訊偵測能力。這讓開發團隊能更早攔截敏感憑證與程式碼缺陷，顯著降低審查負擔並強化安全性。",
-        "id": "news:https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "GitHub Copilot 程式碼審查重大更新：導入自適應審查深度與機密外洩偵測",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more"
-      },
-      {
-        "content": "Google 正式為 macOS 平台的 Gemini 應用程式加入「電腦操作（computer use）」功能，使該 AI 助理能夠跨桌面應用程式執行操作。這意味著 Gemini 不再局限於文字對話，而能直接與作業系統互動並自動化處理桌面任務，為開發者與使用者開啟更直接的本機 Agentic 互動工作流程。",
-        "id": "news:https://thenewstack.io/gemini-mac-computer-use",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "Google 為 macOS 版 Gemini 增添電腦操作能力，支援跨桌面應用自動化",
-        "type": "news",
-        "url": "https://thenewstack.io/gemini-mac-computer-use/"
-      },
-      {
-        "content": "官方正式推出七款主打具備高擴展性與優異性價比的全新模型。這批模型著眼於在效能與推理成本之間取得平衡，為開發者在構建 AI 應用時提供更靈活、更具成本效益的架構選擇，滿足不同運算規模與預算限制下的業務需求。",
-        "id": "news:https://microsoft.ai/news/microsoft-ignite-2026",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "官方發表七款具備可擴展性價比的全新模型系列",
-        "type": "news",
-        "url": "https://microsoft.ai/news/microsoft-ignite-2026/"
-      },
-      {
-        "content": "OpenAI 分享其內部打造的「Performance Factory」系統架構。該系統由 Codex 驅動的一系列自動化工作流程組成，能主動搜尋、定位並修復程式碼中的效能問題，以確保 ChatGPT 持續具備高速回應能力。這項實踐為開發團隊展示了如何將程式碼 LLM 落地於持續效能工程，將自動化代碼優化引入日常系統維運中。",
-        "id": "news:https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "揭秘 OpenAI Performance Factory：以 Codex 驅動的自動化效能優化系統",
-        "type": "news",
-        "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast"
-      },
       {
         "content": "技術社群深入探討如何在僅有 32GB 記憶體的嚴苛硬體限制下，運用 Hugging Face Transformers 框架將 180B 參數的混合專家模型（MoE）推論效能發揮到極致。文章深入解析記憶體調度、專家權重卸載（offloading）與量化等關鍵技術，為希望在有限運算資源下本機部署超大規模開源模型的工程師提供寶貴的實務參考。",
         "id": "news:https://huggingface.co/blog/moe-expert-streaming",
@@ -904,299 +772,328 @@
         "title": "技術剖析：Claude 預訓練階段納入大規模蛋白質序列帶來的跨領域推論優勢",
         "type": "news",
         "url": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/"
+      },
+      {
+        "id": "repo:1229774092:new:2026-11-23",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "elementalsouls/Claude-BugHunter 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/elementalsouls/Claude-BugHunter"
+      },
+      {
+        "id": "repo:1073224795:new:2026-11-23",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "obra/superpowers 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/obra/superpowers"
+      },
+      {
+        "id": "repo:1136590548:new:2026-11-23",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "affaan-m/ECC 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/affaan-m/ECC"
+      },
+      {
+        "id": "repo:1140843380:new:2026-11-23",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "mvanhorn/last30days-skill 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/mvanhorn/last30days-skill"
+      },
+      {
+        "id": "repo:1356077516:new:2026-11-23",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "kajisho5/ffmpeg-skill 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/kajisho5/ffmpeg-skill"
+      },
+      {
+        "id": "repo:612230:new:2026-11-23",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "nvm-sh/nvm 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/nvm-sh/nvm"
+      },
+      {
+        "id": "repo:1462885033:new:2026-11-23",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "dynamicdeblackice-commits/joplin-arvella-notes 新進榜",
+        "type": "board-new",
+        "url": "https://github.com/dynamicdeblackice-commits/joplin-arvella-notes"
+      },
+      {
+        "content": "llama.cpp 發布 v1.0.0 版本，為本地人工智慧生態系統奠定更強大且穩定基礎。此版本對開發者而言，提供了更完善的模型執行支援與效能優化，有助於在邊緣裝置與本地端更高效地部署大型語言模型。",
+        "id": "news:https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "llama.cpp v1.0.0 正式釋出：打造更穩固的本地 AI 生態系基礎",
+        "type": "news",
+        "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+      },
+      {
+        "content": "Google 推出的 Gemini 4 Neon 在 Models Engineering Index 評測中奪下第一名。對開發者而言，這代表新一代模型在工程任務上的效能表現再度刷新，提供更強大的程式碼生成與推理能力。",
+        "id": "news:https://git-aarvin.github.io/mei",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "Gemini 4 Neon 登頂模型工程指數榜首",
+        "type": "news",
+        "url": "https://git-aarvin.github.io/mei/"
+      },
+      {
+        "content": "開發社群近期推出 Inkling 2 Mini 模型，主打輕量與高效能。對於在資源受限環境下進行本地 AI 開發的工程師而言，提供了一個兼顧執行速度與表現的新選擇。",
+        "id": "news:https://thinkingmachines.ai/news/inkling-2-mini",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "Inkling 2 Mini 模型全新發布",
+        "type": "news",
+        "url": "https://thinkingmachines.ai/news/inkling-2-mini/"
+      },
+      {
+        "content": "報導指出多家 AI 推論服務商近期發生資料處理相關事故。這對依賴第三方 AI API 的開發者是一項重要警訊，需重新評估系統架構中的資料隱私、備援機制與容錯能力。",
+        "id": "news:https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "AI 推論服務商近期頻傳資料處理事故",
+        "type": "news",
+        "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/"
+      },
+      {
+        "content": "OpenJDK 的 Base64 解碼器爆出重大記憶體損壞漏洞 Java4Shell（CVE-2026-114938），可導致遠端程式碼執行。Cloudflare 已針對付費方案釋出六項 WAF 受管規則協助防護，開發者應儘速修補 Java 執行環境。",
+        "id": "news:https://blog.cloudflare.com/java4shell-waf-protection",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "Cloudflare 發布 WAF 規則以防範 Java4Shell 漏洞",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/java4shell-waf-protection/"
+      },
+      {
+        "content": "Nginx 官方修補了 5 項被統稱為 nginx2root 的重大記憶體損壞漏洞，未經身份驗證的攻擊者可能藉此在伺服器上執行程式碼。使用 Cloudflare 代理的源站雖可獲得部分防護，但管理員仍須儘速更新。",
+        "id": "news:https://blog.cloudflare.com/nginx2root",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "Nginx 揭露 5 項名為 nginx2root 的記憶體損壞漏洞",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/nginx2root/"
+      },
+      {
+        "content": "開發者分享從零開始重建本地語音助理管線的技術細節與架構考量。對於想擺脫雲端依賴、建立私有化語音互動應用的開發者，提供了極具價值的實作參考與架構藍圖。",
+        "id": "news:https://blog.platypush.tech/article/Rewriting-my-voice-assistant-pipeline",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "重建個人本地語音助理管線的實作經驗分享",
+        "type": "news",
+        "url": "https://blog.platypush.tech/article/Rewriting-my-voice-assistant-pipeline"
+      },
+      {
+        "content": "探討時序模型在 Streamhouse 架構中的整合與應用場景。對於處理即時資料流與預測分析的工程團隊，這篇文章提供了將機器學習模型直接導入即時管線的實務見解。",
+        "id": "news:https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "資料流架構中的時間序列模型應用與新挑戰",
+        "type": "news",
+        "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse"
+      },
+      {
+        "content": "介紹如何透過 AWS 模擬器來測試 Terraform 基礎設施即程式碼（IaC）的配置。這能幫助 DevOps 工程師在不實際部署至雲端環境的情況下，於本地進行更快速且安全的自動化測試。",
+        "id": "news:https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "使用 AWS 模擬器進行 Terraform 測試實務",
+        "type": "news",
+        "url": "https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator/"
+      },
+      {
+        "content": "展示 Codex 安全外掛程式的實際運作畫面，涵蓋從初始設定到檢視檢測結果的完整工作流程。對於希望將 AI 輔助安全審查導入日常開發的團隊提供了具體參考。",
+        "id": "news:https://openai.com/business/learn/codex-security-plugin-demo",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "探索 Codex 安全外掛程式的運作與工作流程",
+        "type": "news",
+        "url": "https://openai.com/business/learn/codex-security-plugin-demo"
+      },
+      {
+        "content": "探討如何利用 smoltcp、DPDK 與 AF_XDP 等高效能網路技術，在單一虛擬機上實現高達 1500 萬個網頁伺服器的極限測試。這對系統架構師與網路底層開發者而言，是研究高效能網路堆疊與核心旁路技術的重要參考。",
+        "id": "news:https://kapteko.com/15-million-webservers",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "單一虛擬機運行 1500 萬網頁伺服器：高壓網路堆疊解析",
+        "type": "news",
+        "url": "https://kapteko.com/15-million-webservers/"
+      },
+      {
+        "content": "探討利用 Lean 形式化驗證工具對黎曼猜想進行機器輔助驗證。這對關注形式化方法與程式碼正確性證明的軟體工程師而言，展示了現代定理證明工具在極端複雜數學與軟體驗證上的應用潛力。",
+        "id": "news:https://leanprover-community.github.io/blog/posts/riemann-hypothesis",
+        "publishedAt": "2026-11-23T00:45:56.544Z",
+        "title": "使用 Lean 互動式定理證明器驗證黎曼猜想",
+        "type": "news",
+        "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-22T00:16:38.088Z",
+      "generatedAt": "2026-11-23T00:45:56.544Z",
       "items": [
         {
-          "content": "GitHub 宣布 OpenAI 的 GPT-6.2 Astra 與 GPT-6.2 Sol 正式於 GitHub Copilot 全面推出（GA）。這兩款新模型專為 Agentic 程式編寫與程式碼審查（Code Review）設計，相較於早期的 GPT-6 模型具備更強大的程式碼判斷力。對開發者而言，這代表在 Copilot 的日常開發流程中能直接取用最新的代理型 AI 能力，在複雜重構、自主除錯與跨檔案審查時可獲得更可靠的決策品質。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "OpenAI’s GPT-6.2 Astra and GPT-6.2 Sol now available",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "OpenAI GPT-6.2 Astra 與 Sol 正式登陸 GitHub Copilot",
-          "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
-          "weightedScore": 100
-        },
-        {
-          "content": "GitHub 發布 JetBrains IDE 系列的 Copilot 更新，帶來遠端存取（Remote Access）、本機端語音聽寫（On-device voice dictation）以及瀏覽器操作控制能力。此外，JetBrains 開發者也獲得了上下文用量快捷鍵、歷史差異比較（Historical Diffs）等改善。這項更新顯著提升了非 VS Code 生態系開發者的自主代理體驗，讓使用 IntelliJ 或 WebStorm 的團隊能在本機與遠端環境中更流暢地進行多模態互動與程式碼審閱。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "GitHub Copilot in JetBrains, Ignite releases",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "GitHub Copilot JetBrains 外掛迎來 Ignite 更新：支援遠端存取與本機語音聽寫",
-          "url": "https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases",
-          "weightedScore": 100
-        },
-        {
-          "content": "隨著 AI 代理（AI Agents）在行動裝置上的普及，行動作業系統平台開始收緊對螢幕畫面截取與即時資料存取的權限，限制第三方 Agent 透過無障礙服務或背景擷取獲取使用者畫面。這項變動對仰賴視覺觀察（Screen-use / GUI Agent）來完成跨 App 自動化任務的開發者帶來重大衝擊，意味著未來行動端 Agent 無法再任意依賴「看螢幕點按鈕」的通用模式，促使開發者必須轉向更規範化的平台原生 API、意圖傳遞協議或結構化授權通道。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Restricting AI agents in mobile operating systems platforms from capturing data",
-          "sources": [
-            "hn"
-          ],
-          "title": "行動作業系統平台限制 AI 代理擷取螢幕資料，衝擊自治型 Agent 架構",
-          "url": "https://signal.org/blog/protecting-your-privacy/",
-          "weightedScore": 570
-        },
-        {
-          "content": "開源社群發布了極致輕量的語音辨識與翻譯模型 Rumble-2-Flash，參數規模僅 0.5B（5 億），卻能涵蓋超過 40 種語言的語音處理任務。對終端與邊緣端開發者而言，該模型的推出大幅降低了自託管語音管線的硬體門檻，可在資源受限的伺服器或本機設備上運行低延遲的即時語音轉文字服務，為本地化語音助理與多語言對話應用提供了高性價比的開源新選項。",
+          "content": "llama.cpp 發布 v1.0.0 版本，為本地人工智慧生態系統奠定更強大且穩定基礎。此版本對開發者而言，提供了更完善的模型執行支援與效能優化，有助於在邊緣裝置與本地端更高效地部署大型語言模型。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "huggingface-blog",
-          "sourceTitle": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
+          "sourceTitle": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
           "sources": [
             "huggingface-blog"
           ],
-          "title": "開源輕量級語音模型 Rumble-2-Flash 發布，僅 0.5B 參數支援逾 40 種語言",
-          "url": "https://huggingface.co/blog/rumble-2-flash",
+          "title": "llama.cpp v1.0.0 正式釋出：打造更穩固的本地 AI 生態系基礎",
+          "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
           "weightedScore": 100
         },
         {
-          "content": "GitHub 宣布企業用戶現在能將各用戶端上的 GitHub Copilot 代理活動直接串流至 Microsoft Agent 365 控制平台。透過這項整合，企業管理者能將分散的 Copilot 稽核日誌彙整至單一的代理治理中心，全面掌握 AI 代理執行的動作與程式碼存取軌跡。這對於需要滿足嚴格合規性、資料治理與安全審計的企業級軟體團隊而言，提供了導入自主型編程代理時不可或缺的可觀測性架構。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Monitor GitHub Copilot activity through Microsoft Agent 365",
-          "sources": [
-            "github-changelog-copilot"
-          ],
-          "title": "企業現可透過 Microsoft Agent 365 統一監控 GitHub Copilot 代理行為",
-          "url": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365",
-          "weightedScore": 100
-        },
-        {
-          "content": "一項最新的技術研究指出，大型語言模型具備在推論與生成過程中動態改寫自身權重矩陣的能力。這項發現突破了傳統上將神經網路視為靜態權重的典範，展示了模型如何利用自身輸出作為權重更新的訊號，實現動態記憶更新與即時任務適應。對 AI 研究人員與架構工程師而言，這項技術為解決長上下文記憶遺忘、持續學習（Continual Learning）以及無需外部微調管線的即時自我進化架構開啟了全新的可能性。",
+          "content": "Google 推出的 Gemini 4 Neon 在 Models Engineering Index 評測中奪下第一名。對開發者而言，這代表新一代模型在工程任務上的效能表現再度刷新，提供更強大的程式碼生成與推理能力。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Language Models Can Rewrite Their Own Weights",
+          "sourceTitle": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
           "sources": [
             "hn"
           ],
-          "title": "研究揭示大型語言模型可在推論階段自行改寫模型權重",
-          "url": "https://arxiv.org/abs/2611.21885",
-          "weightedScore": 478
+          "title": "Gemini 4 Neon 登頂模型工程指數榜首",
+          "url": "https://git-aarvin.github.io/mei/",
+          "weightedScore": 375
         },
         {
-          "content": "最新實測與技術分析顯示，現代前緣大型語言模型已能夠直接從 Hex Dump（十六進位傾印）中逐位元（Byte by Byte）閱讀並撰寫可執行的二進位檔案。這項能力打破了以往 LLM 必須依賴反編譯器將機器碼轉換為高階語言才能理解邏輯的限制。對於資安研究員與逆向工程開發者而言，這代表自主型二進位分析 Agent 能直接處理惡意程式樣本、修補二進位檔漏洞或進行底層暫存器級別的除錯，顯著提升了底層軟體工程與漏洞挖掘的自動化潛力。",
+          "content": "開發社群近期推出 Inkling 2 Mini 模型，主打輕量與高效能。對於在資源受限環境下進行本地 AI 開發的工程師而言，提供了一個兼顧執行速度與表現的新選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "LLMs can read and write executables byte by byte from a hex dump",
+          "sourceTitle": "Inkling 2 Mini",
           "sources": [
             "hn"
           ],
-          "title": "大型語言模型展現逐位元解析與生成十六進位執行檔的逆向工程能力",
-          "url": "https://sgiannopoulos.github.io/blog/machine-code-programming/",
-          "weightedScore": 179
+          "title": "Inkling 2 Mini 模型全新發布",
+          "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+          "weightedScore": 1453
         },
         {
-          "content": "針對近期發布的 GPT-6.2 Sol 與目前業界基準 Claude Opus 5.5 的實測對比分析出爐。評測顯示，Opus 5.5 在複雜邏輯推理與極限邊界條件的程式碼生成上依然保持領先，但 GPT-6.2 Sol 在推理延遲、運算成本以及常規工程任務的處理表現上具備極佳的平衡點。這份評測為工程團隊在構建 AI 代理與程式輔助工具時提供了關鍵參考：在需要極高準確性的關鍵路徑可選用頂級模型，而在高頻率、大吞吐量的輔助編程任務中，Sol 展現出更高的投報率。",
+          "content": "報導指出多家 AI 推論服務商近期發生資料處理相關事故。這對依賴第三方 AI API 的開發者是一項重要警訊，需重新評估系統架構中的資料隱私、備援機制與容錯能力。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Data Processing Incidents on Inference Providers",
+          "sources": [
+            "hn"
+          ],
+          "title": "AI 推論服務商近期頻傳資料處理事故",
+          "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+          "weightedScore": 279
+        },
+        {
+          "content": "OpenJDK 的 Base64 解碼器爆出重大記憶體損壞漏洞 Java4Shell（CVE-2026-114938），可導致遠端程式碼執行。Cloudflare 已針對付費方案釋出六項 WAF 受管規則協助防護，開發者應儘速修補 Java 執行環境。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "GPT-6.2 Sol vs. Claude Opus 5.5: Not as accurate, but still might be the better buy",
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "How Cloudflare WAF helps protect against Java4Shell (CVE-2026-114938)",
           "sources": [
-            "thenewstack"
+            "cloudflare-blog"
           ],
-          "title": "GPT-6.2 Sol 實測評測：程式準確度雖不及 Claude Opus 5.5 但具性價比優勢",
-          "url": "https://thenewstack.io/gpt-6-2-sol-vs-claude-opus-5-5/",
+          "title": "Cloudflare 發布 WAF 規則以防範 Java4Shell 漏洞",
+          "url": "https://blog.cloudflare.com/java4shell-waf-protection/",
           "weightedScore": 50
         },
         {
-          "content": "儘管歐盟《數位市場法》（DMA）迫使 Apple 開放替代瀏覽器引擎，但市場上至今仍未見到基於 Blink 或 Gecko 的 iOS 瀏覽器上線。深入分析指出，根本原因在於 Apple 對替代引擎實施的嚴苛授權限制（Entitlements）：包括 JIT 編譯器的記憶體映射限制、無法存取硬體加速圖形管線、跨進程沙盒隔絕困難，以及僅限歐盟地區生效的碎片化維護成本。這篇深度分析為前端與 Web 平台開發者揭示了行動 Web 生態中 PWA 與原生瀏覽器體驗無法突破現狀的核心技術障礙。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Why there are still no non-WebKit browsers on iOS",
-          "sources": [
-            "hn"
-          ],
-          "title": "為何 iOS 至今仍無非 WebKit 瀏覽器？剖析架構限制與法規權限瓶頸",
-          "url": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/",
-          "weightedScore": 468
-        },
-        {
-          "content": "本文深入探討雲原生與 Kubernetes 架構中的資安實務盲點，指出許多工程團隊將「執行期安全監控（Runtime Security）」誤當作安全防線的基準線。文章分析，當各團隊以微服務自主性為由獨立部署執行期工具時，往往只產生日誌警報卻缺乏統一的平台基線與準入控制（Admission Control），最終形成資安孤島。對 DevOps 與平台工程師而言，文章強調唯有將安全性左移（Shift-left）、建立全域一致的基礎設施宣告式策略，才能從根本降低漏洞與系統遭入侵的風險。",
+          "content": "Nginx 官方修補了 5 項被統稱為 nginx2root 的重大記憶體損壞漏洞，未經身份驗證的攻擊者可能藉此在伺服器上執行程式碼。使用 Cloudflare 代理的源站雖可獲得部分防護，但管理員仍須儘速更新。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "cncf-blog",
-          "sourceTitle": "Your runtime security tool is not your baseline: Silos dressed as autonomy in cloud native teams",
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "nginx2root: Five new nginx vulnerabilities, and how Cloudflare protects origins from the worst of them",
           "sources": [
-            "cncf-blog"
+            "cloudflare-blog"
           ],
-          "title": "執行期安全工具非防禦基準：雲原生團隊以自主之名產生的資安孤島剖析",
-          "url": "https://www.cncf.io/blog/2026/11/16/your-runtime-security-tool-is-not-your-baseline-silos-dressed-as-autonomy-in-cloud-native-teams/",
-          "weightedScore": 100
+          "title": "Nginx 揭露 5 項名為 nginx2root 的記憶體損壞漏洞",
+          "url": "https://blog.cloudflare.com/nginx2root/",
+          "weightedScore": 50
         },
         {
-          "content": "技術社群對 Anthropic 旗下 Claude 模型的底層能力進行深度解析，發現其在預訓練階段納入了極為龐大的蛋白質序列與生物資訊結構資料集。這項發現解釋了為何 Claude 在非自然語言的符號排列、長序列依賴性建模以及生物化學領域具備異常突出的推理表現。對機器學習與模型架構工程師而言，這證實了將特定科學領域的結構化序列資料融入通用基礎模型的預訓練，能夠增強模型對抽象邏輯與複雜幾何關係的泛化能力，為未來的多領域混合訓練策略提供借鑑。",
+          "content": "開發者分享從零開始重建本地語音助理管線的技術細節與架構考量。對於想擺脫雲端依賴、建立私有化語音互動應用的開發者，提供了極具價值的實作參考與架構藍圖。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "Rebuilding my local voice assistant pipeline",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "重建個人本地語音助理管線的實作經驗分享",
+          "url": "https://blog.platypush.tech/article/Rewriting-my-voice-assistant-pipeline",
+          "weightedScore": 100
+        },
+        {
+          "content": "探討時序模型在 Streamhouse 架構中的整合與應用場景。對於處理即時資料流與預測分析的工程團隊，這篇文章提供了將機器學習模型直接導入即時管線的實務見解。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Time-Series Models in the Streamhouse: A New Frontier and Use Cases",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "資料流架構中的時間序列模型應用與新挑戰",
+          "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
+          "weightedScore": 100
+        },
+        {
+          "content": "介紹如何透過 AWS 模擬器來測試 Terraform 基礎設施即程式碼（IaC）的配置。這能幫助 DevOps 工程師在不實際部署至雲端環境的情況下，於本地進行更快速且安全的自動化測試。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "lobsters-programming",
+          "sourceTitle": "Testing Terraform with AWS Emulator",
+          "sources": [
+            "lobsters-programming"
+          ],
+          "title": "使用 AWS 模擬器進行 Terraform 測試實務",
+          "url": "https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator/",
+          "weightedScore": 100
+        },
+        {
+          "content": "展示 Codex 安全外掛程式的實際運作畫面，涵蓋從初始設定到檢視檢測結果的完整工作流程。對於希望將 AI 輔助安全審查導入日常開發的團隊提供了具體參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "openai-blog",
+          "sourceTitle": "Explore the Codex Security Plugin",
+          "sources": [
+            "openai-blog"
+          ],
+          "title": "探索 Codex 安全外掛程式的運作與工作流程",
+          "url": "https://openai.com/business/learn/codex-security-plugin-demo",
+          "weightedScore": 100
+        },
+        {
+          "content": "探討如何利用 smoltcp、DPDK 與 AF_XDP 等高效能網路技術，在單一虛擬機上實現高達 1500 萬個網頁伺服器的極限測試。這對系統架構師與網路底層開發者而言，是研究高效能網路堆疊與核心旁路技術的重要參考。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Claude was trained on protein sequences at scale",
+          "sourceTitle": "15M web servers on one VM – smoltcp, DPDK, AF_XDP",
           "sources": [
             "hn"
           ],
-          "title": "技術剖析：Claude 預訓練階段納入大規模蛋白質序列帶來的跨領域推論優勢",
-          "url": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/",
-          "weightedScore": 181
+          "title": "單一虛擬機運行 1500 萬網頁伺服器：高壓網路堆疊解析",
+          "url": "https://kapteko.com/15-million-webservers/",
+          "weightedScore": 411
+        },
+        {
+          "content": "探討利用 Lean 形式化驗證工具對黎曼猜想進行機器輔助驗證。這對關注形式化方法與程式碼正確性證明的軟體工程師而言，展示了現代定理證明工具在極端複雜數學與軟體驗證上的應用潛力。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Lean verification of the Riemann Hypothesis",
+          "sources": [
+            "hn"
+          ],
+          "title": "使用 Lean 互動式定理證明器驗證黎曼猜想",
+          "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+          "weightedScore": 1210
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "lobsters-devops",
-      "sources": [
-        "lobsters-devops"
-      ],
-      "title": "64-Day Certificate Lifetimes Coming Feb 2027",
-      "url": "https://letsencrypt.org/2026/10/07/64-day-certs.html"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "gh-nodejs",
-      "sources": [
-        "gh-nodejs"
-      ],
-      "title": "2026-10-07, Version 26.11.0 (Current), @aduh95",
-      "url": "https://github.com/nodejs/node/releases/tag/v26.11.0"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "title": "Local sandboxing for GitHub Copilot now generally available",
-      "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "title": "Discover local models in GitHub Copilot CLI",
-      "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "lobsters-ai",
-      "sources": [
-        "lobsters-ai"
-      ],
-      "title": "Burn 0.22.0: Faster Builds, Easier Extensions, and Smarter Autotuning",
-      "url": "https://tracel.ai/blog/release-0.22.0"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "title": "Introducing Falcon ASR",
-      "url": "https://huggingface.co/blog/tiiuae/falcon-asr"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "Claude can now build your dashboards",
-      "url": "https://thenewstack.io/claude-dashboards-data-motion"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Decisions API is in public beta",
-      "url": "https://developers.openai.com/api/docs/guides/decisions"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "title": "llama : add a GPU cache for MoE experts kept in host memory by am17an · Pull Request #29887 · ggml-org/llama.cpp",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1x03xkc/llama_add_a_gpu_cache_for_moe_experts_kept_in"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "cncf-blog",
-      "sources": [
-        "cncf-blog"
-      ],
-      "title": "Don’t give AI agents root. Make them propose the next system state.",
-      "url": "https://cncf.io/blog/2026/10/08/dont-give-ai-agents-root-make-them-propose-the-next-system-state"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "title": "Building an evidence-grounded agentic security operations harness on Cloudflare",
-      "url": "https://blog.cloudflare.com/agentic-security-operations"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Shipping JPEG XL in Chrome",
-      "url": "https://developer.chrome.com/blog/jpeg-xl-in-chrome"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T00:16:25.961Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "title": "Last week some of South Korea's biggest banks were hit by a cyberattack. We now know the entire hack may have been done by a single person. He used a combined stack of an open-source AI penetration tool named ARTEX, DeepSeek v4.1-Flash, GLM-5.3, Grok 4.6, and Claude Code (CrowdStrike)",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1x0n4pt/last_week_some_of_south_koreas_biggest_banks_were"
-    },
     {
       "domain": "frontend-backend",
       "seenAt": "2026-10-09T23:59:03.593Z",
@@ -6804,6 +6701,126 @@
       ],
       "title": "Claude was trained on protein sequences at scale",
       "url": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
+      "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
+      "url": "https://git-aarvin.github.io/mei"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Inkling 2 Mini",
+      "url": "https://thinkingmachines.ai/news/inkling-2-mini"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Data Processing Incidents on Inference Providers",
+      "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "How Cloudflare WAF helps protect against Java4Shell (CVE-2026-114938)",
+      "url": "https://blog.cloudflare.com/java4shell-waf-protection"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "nginx2root: Five new nginx vulnerabilities, and how Cloudflare protects origins from the worst of them",
+      "url": "https://blog.cloudflare.com/nginx2root"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "Rebuilding my local voice assistant pipeline",
+      "url": "https://blog.platypush.tech/article/Rewriting-my-voice-assistant-pipeline"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Time-Series Models in the Streamhouse: A New Frontier and Use Cases",
+      "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "lobsters-programming",
+      "sources": [
+        "lobsters-programming"
+      ],
+      "title": "Testing Terraform with AWS Emulator",
+      "url": "https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "Explore the Codex Security Plugin",
+      "url": "https://openai.com/business/learn/codex-security-plugin-demo"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "15M web servers on one VM – smoltcp, DPDK, AF_XDP",
+      "url": "https://kapteko.com/15-million-webservers"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-23T00:45:56.544Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Lean verification of the Riemann Hypothesis",
+      "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis"
     }
   ]
 }
