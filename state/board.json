@@ -518,93 +518,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-23T00:45:56.544Z",
-  "lastNewsPushAt": "2026-11-23T00:45:56.544Z",
+  "lastNewsPushAt": "2026-11-24T04:42:23.365Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-23T00:45:56.544Z",
       "summary": "本次綜合榜 #1 為 elementalsouls/Claude-BugHunter，榜單共計 7 個新進、0 個竄升、2 個下降，其中新進全數分佈於 AI 5 個與前後端 2 個領域。"
     },
     "feed": [
-      {
-        "content": "技術社群深入探討如何在僅有 32GB 記憶體的嚴苛硬體限制下，運用 Hugging Face Transformers 框架將 180B 參數的混合專家模型（MoE）推論效能發揮到極致。文章深入解析記憶體調度、專家權重卸載（offloading）與量化等關鍵技術，為希望在有限運算資源下本機部署超大規模開源模型的工程師提供寶貴的實務參考。",
-        "id": "news:https://huggingface.co/blog/moe-expert-streaming",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "在 32GB 記憶體極限運行 180B MoE 模型：Transformers 優化實踐",
-        "type": "news",
-        "url": "https://huggingface.co/blog/moe-expert-streaming"
-      },
-      {
-        "content": "本文詳細介紹歐盟委員會成功將開源去中心化通訊協定 Matrix 部署至超過 4 萬名內部人員的工程經驗。內容涵蓋大規模分散式伺服器的架構配置、聯邦機制、高可用性維運以及端到端加密的整合實作，為致力於在企業環境推動開源通訊架構與大規模 DevOps 部署的工程師提供了具體且經過實戰驗證的參考案例。",
-        "id": "news:https://element.io/blog/how-the-european-commission-rolled-out-matrix-to-more-than-40-000-staff",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "歐盟執委會如何為逾四萬名人員規模化部署 Matrix 開源通訊架構",
-        "type": "news",
-        "url": "https://element.io/blog/how-the-european-commission-rolled-out-matrix-to-more-than-40-000-staff/"
-      },
-      {
-        "content": "文章深入探討如何將 LLM 應用於二進位逆向工程領域。透過模型輔助理解反組譯代碼、推論函式語意結構以及輔助識別潛在漏洞，工程師與資安研究人員能夠大幅縮短靜態分析與惡意軟體研判的時間，展現了 AI 在底層軟體工程與安全分析領域的巨大輔助潛力。",
-        "id": "news:https://slowchronicle.com/posts/llm-assisted-reverse-engineering",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "結合大型語言模型輔助逆向工程：二進位分析與漏洞挖掘的新實務",
-        "type": "news",
-        "url": "https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering"
-      },
-      {
-        "content": "文章針對當前 AI Agent 架構設計提出深入反思，指出許多系統連最基本的流程或問候都過度仰賴呼叫 LLM 甚至查詢長期記憶，導致不必要的延遲與成本飆升。作者探討在 Agent 中結合確定性狀態機與規則邏輯的必要性，提醒架構師應明確切分推理任務與常規邏輯，以建構出兼顧響應速度、可靠度與成本效益的生產級 Agent。",
-        "id": "news:https://thenewstack.io/aws-decider-models-agents",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "AI Agent 決策架構省思：下一步行動是否真的每次都需要 LLM 參與？",
-        "type": "news",
-        "url": "https://thenewstack.io/aws-decider-models-agents/"
-      },
-      {
-        "content": "本文探討將大型語言模型導入半導體晶片設計流程的實踐成果。透過模型輔助撰寫與優化硬體描述語言、生成驗證測試平台（Testbench）並加速電子設計自動化（EDA）流程，展示了 AI 如何協助硬體工程師加速晶片開發週期，為跨軟硬體領域的系統開發者帶來新的自動化工作模式。",
-        "id": "news:https://openai.com/index/advancing-chip-design-with-our-models",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "利用 OpenAI 模型推進晶片設計：硬體描述語言與 EDA 自動化探索",
-        "type": "news",
-        "url": "https://openai.com/index/advancing-chip-design-with-our-models/"
-      },
-      {
-        "content": "英國政府在法庭程序中被迫承認曾依據相關法規向蘋果發布秘密技術能力命令，試圖要求其對端對端加密機制開立後門或限制安全防護。此事件揭示了各國監管法規對軟體通訊加密與雲端安全架構的潛在衝擊，對於需要設計端對端加密系統或處理跨國資料合規的開發者而言，具有高度的安全架構與法規風險參考價值。",
-        "id": "news:https://macanorak.com/uk-government-forced-to-admit-it-issued-apple-a-secret-encryption-order",
-        "publishedAt": "2026-11-20T01:44:51.037Z",
-        "title": "英國政府被迫承認曾向蘋果發布秘密加密命令，引發端對端加密合規隱憂",
-        "type": "news",
-        "url": "https://macanorak.com/uk-government-forced-to-admit-it-issued-apple-a-secret-encryption-order/"
-      },
-      {
-        "content": "作為全球最廣泛採用的跨平台機器學習推理引擎之一，微軟開源的 ONNX Runtime 儲存庫無預警自 GitHub 消失。此突發事件直接衝擊依賴該儲存庫進行模型轉換、推理編譯、CI/CD 構建與 Issue 追蹤的開發者與生產管線。開發團隊應密切留意微軟官方後續的事後報告與儲存庫恢復進展，並評估對本地構建快取與依賴鏡像的影響。",
-        "id": "news:https://github.com/microsoft/onnxruntime",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "微軟 ONNX Runtime 儲存庫無預警自 GitHub 消失",
-        "type": "news",
-        "url": "https://github.com/microsoft/onnxruntime"
-      },
-      {
-        "content": "Cloudflare 發布資安通報，揭露影響預設組態 Ruby on Rails 與 Sinatra 應用的重大漏洞「ruby2shell」（CVE-2026-132825）。未授權攻擊者可直接藉由惡意請求破壞記憶體並執行任意程式碼。官方與資安團隊呼籲開發者立即升級 Ruby 至最新版本，若短時間內無法完成升級，建議透過 WAF 規則阻斷攻擊特徵以緩解風險。",
-        "id": "news:https://blog.cloudflare.com/ruby2shell-waf-protection",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "Ruby 與 Rails 重大漏洞 ruby2shell (CVE-2026-132825)：未授權即可觸發記憶體損壞",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/ruby2shell-waf-protection/"
-      },
-      {
-        "content": "資安團隊揭露名為「phpAfterShell」的重大安全漏洞，該弱點根植於 PHP 預設的 Session 處理器中，攻擊者可藉此在未授權情況下實現遠端程式碼執行（RCE）。官方已於最新修補版本中修復該漏洞及其他關鍵缺陷。使用 PHP 建置後端服務的團隊應儘速完成版本更新，或藉由 WAF 規則防禦攻擊流量，避免未修補窗口期遭入侵。",
-        "id": "news:https://blog.cloudflare.com/phpaftershell-waf-protection",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "PHP 揭露重大漏洞 phpAfterShell：預設 Session 處理機制存在程式碼執行風險",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/phpaftershell-waf-protection/"
-      },
-      {
-        "content": "Inkling 官方正式釋出 Inkling 2 Mini 模型，主打專為個人工作站與邊緣設備設計的極致推論效能。該模型在維持低延遲、低記憶體佔用的前提下，大幅提升了推理與指令遵循表現。對於追求資料在地化、不依賴雲端 API 且需要離線運行 AI Agent 的開發者而言，提供了一個強大且經濟的新基礎模型選擇。",
-        "id": "news:https://huggingface.co/blog/inkling2mini",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "Inkling 2 Mini 正式推出：專為本地部署打造的邊緣輕量級高效能模型",
-        "type": "news",
-        "url": "https://huggingface.co/blog/inkling2mini"
-      },
       {
         "content": "GitHub 宣布 Copilot 組織團隊客製化功能正式進入 GA 階段。現在組織管理者可直接為團隊集中定義並共享專屬的 Copilot 外掛程式與開發規範，成員無須各自進行繁瑣的手動配置。這項更新顯著降低了企業在工程團隊內推行統一內部工具鏈、專案上下文及編碼標準的門檻與管理成本。",
         "id": "news:https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
@@ -917,304 +837,235 @@
         "title": "使用 Lean 互動式定理證明器驗證黎曼猜想",
         "type": "news",
         "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+      },
+      {
+        "content": "Z.ai 正式發布 GLM-5.4 模型，主打專為通用程式碼任務設計的 Loop Transformer 架構。該架構透過讓運算重複執行相同的 28 層結構，在不線性增加參數量的前提下大幅提升運算深度，使 750B 規模的模型號稱能匹敵 3 兆參數級別的表現。這項架構突破展示了透過層級重複循環提高計算效率的新方向，對於從事程式碼輔助生成與大模型架構研究的開發者而言，提供了跳脫傳統純堆疊參數量的高效能推論新思路。",
+        "id": "news:https://z.ai/blog/glm-5.4",
+        "publishedAt": "2026-11-24T04:42:23.365Z",
+        "title": "Z.ai 發表 GLM-5.4：首創循環 Transformer 架構，強化通用程式碼能力",
+        "type": "news",
+        "url": "https://z.ai/blog/glm-5.4"
+      },
+      {
+        "content": "從零開始打造且不依賴現有程式碼庫的獨立網頁瀏覽器專案 Ladybird，正式宣布推出首個 Alpha 版本。在當前瀏覽器引擎市場高度由 Chromium 與 WebKit 主導的生態下，Ladybird 的 Alpha 釋出象徵著全新的第三方開源網頁渲染與 JavaScript 引擎走向實用化里程碑。這對前端與 Web 平台開發者至關重要，代表未來跨瀏覽器相容性測試將迎來非主流商業巨頭掌控的新基準，有助於促進 Web 開放標準的健全發展。",
+        "id": "news:https://ladybird.org/posts/alpha",
+        "publishedAt": "2026-11-24T04:42:23.365Z",
+        "title": "獨立瀏覽器引擎 Ladybird 正式進入 Alpha 階段",
+        "type": "news",
+        "url": "https://ladybird.org/posts/alpha/"
+      },
+      {
+        "content": "OpenAI 與思科宣布推出開源 Linux 執行階段環境 Shirudo。該專案旨在協助系統管理員與維運團隊在正式套用修補程式的過渡期間，即時保護正在運行的生產系統，避免尚未修補的已知或零日漏洞遭惡意利用。對於 DevOps、SRE 與基礎設施安全工程師而言，Shirudo 提供了一種在系統不停機且尚未完成完整更新驗證時，降低暴露風險的開源防禦工具。",
+        "id": "news:https://openai.com/index/introducing-shirudo",
+        "publishedAt": "2026-11-24T04:42:23.365Z",
+        "title": "OpenAI 與思科聯手推出開源 Linux 執行階段 Shirudo，強化即時修補防禦",
+        "type": "news",
+        "url": "https://openai.com/index/introducing-shirudo"
+      },
+      {
+        "content": "Anthropic 推出名為 Claude Ship 的開發輔助工具，由三個專職 AI Agent 組成團隊，能夠自動執行常規 Pull Request（PR）的程式碼審查、直接進行錯誤修正並最終核准合併。這項工具將 AI 從純粹的程式碼自動補全或建議，推進到端到端的自主審查與合併流程，有助於大幅減輕工程團隊在日常維護型 PR 上的負擔，同時也代表軟體開發工作流正在加速轉向 Agent 原生審查模式。",
+        "id": "news:https://thenewstack.io/anthropic-claude-ship-approvals",
+        "publishedAt": "2026-11-24T04:42:23.365Z",
+        "title": "Anthropic 推出 Claude Ship：由三組 Agent 協同審核、修正並批准日常 PR",
+        "type": "news",
+        "url": "https://thenewstack.io/anthropic-claude-ship-approvals/"
+      },
+      {
+        "content": "Kubernetes 發布團隊釋出 v1.38 版本的預先導覽，彙整即將在正式版中引入的重大架構調整、功能棄用與移除項目。官方提醒叢集維運人員及早評估這些變更，以確保生產環境的升級平順與長期健康度。對於 SRE 與平台工程師而言，提早掌握即將淘汰的 API 版本與替代方案，是避免未來升級中斷或設定失效的必要準備。",
+        "id": "news:https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek",
+        "publishedAt": "2026-11-24T04:42:23.365Z",
+        "title": "Kubernetes v1.38 預覽：即將登場的重要功能變更與棄用清單",
+        "type": "news",
+        "url": "https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek/"
+      },
+      {
+        "content": "Google DeepMind 正式開源用於驗證量子演算法的 Lean 4 形式化驗證框架。該框架曾被用於檢驗其 Gemini 4 Agent 所生成的演算法，並宣稱將量子運算成本降低達 290 倍。這項開源發布讓外部研究人員與工程師能夠自行查驗 Agent 的數學推導與證明正確性，展示了結合大型語言模型與互動式定理證明器在高度精密科學與演算法工程中的落地潛力。",
+        "id": "news:https://thenewstack.io/deepmind-lean-quantum-verification",
+        "publishedAt": "2026-11-24T04:42:23.365Z",
+        "title": "Google DeepMind 開源 Lean 4 驗證框架：驗證 AI Agent 設計之量子演算法",
+        "type": "news",
+        "url": "https://thenewstack.io/deepmind-lean-quantum-verification/"
+      },
+      {
+        "content": "Cloudflare 分享其工程團隊如何基於內部測試框架延伸出專屬的網路協定測試工具，並詳細介紹該機制在 DNS 探測上的實際應用與架構設計。文章探討了在大規模分散式環境下驗證底層網路協定可靠性所面臨的挑戰與解法，為負責分散式系統、網路基礎架構與高可用性系統測試的工程師，提供了第一手的協定級自動化測試架構經驗。",
+        "id": "news:https://blog.cloudflare.com/probing-dns-at-cloudflare",
+        "publishedAt": "2026-11-24T04:42:23.365Z",
+        "title": "Cloudflare 深入剖析內部 DNS 測試工具與網路協定驗證架構實作",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/probing-dns-at-cloudflare/"
+      },
+      {
+        "content": "本文由 Alpine Linux 維護者撰寫，記錄在爆發 PHP2Shell 重大安全威脅期間，社群團隊如何在有限業餘時間內搶修並復原 wiki.alpinelinux.org 的實戰歷程。內容深入剖析了面臨漏洞威脅時的緊急應變、歷史遺留系統隔離、服務重構與系統恢復決策，為開源維護者與 DevOps/SRE 工程師提供了真實世界中應對供應鏈與底層漏洞的第一手事故處置範例。",
+        "id": "news:https://lambdacreate.com/posts/held-together-by-spare-time",
+        "publishedAt": "2026-11-24T04:42:23.365Z",
+        "title": "Alpine Linux 維運實戰：在 PHP2Shell 漏洞危機中搶修 Wiki 基礎設施",
+        "type": "news",
+        "url": "https://lambdacreate.com/posts/held-together-by-spare-time"
+      },
+      {
+        "content": "隨著 AI Agent 從單純對話擴展到多步驟工作流，傳統靜態 Benchmark 已難以反映實際能力。本文深入探討建立與維護 Agentic Evaluation 系統的實務工程經驗，包含動態環境設計、多步驟決策評估、工具呼叫準確率驗證以及回歸測試的維護機制。對於正在將 LLM Agent 投入生產環境的 AI 工程師而言，這是確保模型在工作流迭代中不退化、具備可觀測性與品質保證的重要指南。",
+        "id": "news:https://huggingface.co/blog/agentic-evals",
+        "publishedAt": "2026-11-24T04:42:23.365Z",
+        "title": "如何建立與維護 Agentic 評測體系：從架構設計到長期維運",
+        "type": "news",
+        "url": "https://huggingface.co/blog/agentic-evals"
+      },
+      {
+        "content": "開源專案 XNU Linux 實現了在 Linux 核心上直接運行完整 OS X GUI 使用者空間的能力。該專案透過模擬與相容 Mach/XNU 子系統與必要底層服務，讓原生的 OS X 圖形應用無須透過虛擬機即可在 Linux 環境執行。這項底層系統工程展示了作業系統 ABI 相容層的重大突破，對於作業系統核心開發者、虛擬化與二進位轉譯研究者而言具備極高的技術參考價值。",
+        "id": "news:https://github.com/AFK-surf/xnulinux",
+        "publishedAt": "2026-11-24T04:42:23.365Z",
+        "title": "XNU Linux 專案：在 Linux 上實現完整的 OS X 圖形使用者空間",
+        "type": "news",
+        "url": "https://github.com/AFK-surf/xnulinux"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-23T00:45:56.544Z",
+      "generatedAt": "2026-11-24T04:42:23.365Z",
       "items": [
         {
-          "content": "llama.cpp 發布 v1.0.0 版本，為本地人工智慧生態系統奠定更強大且穩定基礎。此版本對開發者而言，提供了更完善的模型執行支援與效能優化，有助於在邊緣裝置與本地端更高效地部署大型語言模型。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "llama.cpp v1.0.0 正式釋出：打造更穩固的本地 AI 生態系基礎",
-          "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
-          "weightedScore": 100
-        },
-        {
-          "content": "Google 推出的 Gemini 4 Neon 在 Models Engineering Index 評測中奪下第一名。對開發者而言，這代表新一代模型在工程任務上的效能表現再度刷新，提供更強大的程式碼生成與推理能力。",
+          "content": "Z.ai 正式發布 GLM-5.4 模型，主打專為通用程式碼任務設計的 Loop Transformer 架構。該架構透過讓運算重複執行相同的 28 層結構，在不線性增加參數量的前提下大幅提升運算深度，使 750B 規模的模型號稱能匹敵 3 兆參數級別的表現。這項架構突破展示了透過層級重複循環提高計算效率的新方向，對於從事程式碼輔助生成與大模型架構研究的開發者而言，提供了跳脫傳統純堆疊參數量的高效能推論新思路。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
+          "sourceTitle": "GLM-5.4: Toward generalized coding with our first loop transformer",
           "sources": [
             "hn"
           ],
-          "title": "Gemini 4 Neon 登頂模型工程指數榜首",
-          "url": "https://git-aarvin.github.io/mei/",
-          "weightedScore": 375
+          "title": "Z.ai 發表 GLM-5.4：首創循環 Transformer 架構，強化通用程式碼能力",
+          "url": "https://z.ai/blog/glm-5.4",
+          "weightedScore": 1085
         },
         {
-          "content": "開發社群近期推出 Inkling 2 Mini 模型，主打輕量與高效能。對於在資源受限環境下進行本地 AI 開發的工程師而言，提供了一個兼顧執行速度與表現的新選擇。",
+          "content": "從零開始打造且不依賴現有程式碼庫的獨立網頁瀏覽器專案 Ladybird，正式宣布推出首個 Alpha 版本。在當前瀏覽器引擎市場高度由 Chromium 與 WebKit 主導的生態下，Ladybird 的 Alpha 釋出象徵著全新的第三方開源網頁渲染與 JavaScript 引擎走向實用化里程碑。這對前端與 Web 平台開發者至關重要，代表未來跨瀏覽器相容性測試將迎來非主流商業巨頭掌控的新基準，有助於促進 Web 開放標準的健全發展。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "frontend-backend",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Inkling 2 Mini",
+          "sourceTitle": "Ladybird is now in alpha",
           "sources": [
             "hn"
           ],
-          "title": "Inkling 2 Mini 模型全新發布",
-          "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
-          "weightedScore": 1453
+          "title": "獨立瀏覽器引擎 Ladybird 正式進入 Alpha 階段",
+          "url": "https://ladybird.org/posts/alpha/",
+          "weightedScore": 1587
         },
         {
-          "content": "報導指出多家 AI 推論服務商近期發生資料處理相關事故。這對依賴第三方 AI API 的開發者是一項重要警訊，需重新評估系統架構中的資料隱私、備援機制與容錯能力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Data Processing Incidents on Inference Providers",
-          "sources": [
-            "hn"
-          ],
-          "title": "AI 推論服務商近期頻傳資料處理事故",
-          "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
-          "weightedScore": 279
-        },
-        {
-          "content": "OpenJDK 的 Base64 解碼器爆出重大記憶體損壞漏洞 Java4Shell（CVE-2026-114938），可導致遠端程式碼執行。Cloudflare 已針對付費方案釋出六項 WAF 受管規則協助防護，開發者應儘速修補 Java 執行環境。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "How Cloudflare WAF helps protect against Java4Shell (CVE-2026-114938)",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 發布 WAF 規則以防範 Java4Shell 漏洞",
-          "url": "https://blog.cloudflare.com/java4shell-waf-protection/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Nginx 官方修補了 5 項被統稱為 nginx2root 的重大記憶體損壞漏洞，未經身份驗證的攻擊者可能藉此在伺服器上執行程式碼。使用 Cloudflare 代理的源站雖可獲得部分防護，但管理員仍須儘速更新。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "nginx2root: Five new nginx vulnerabilities, and how Cloudflare protects origins from the worst of them",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Nginx 揭露 5 項名為 nginx2root 的記憶體損壞漏洞",
-          "url": "https://blog.cloudflare.com/nginx2root/",
-          "weightedScore": 50
-        },
-        {
-          "content": "開發者分享從零開始重建本地語音助理管線的技術細節與架構考量。對於想擺脫雲端依賴、建立私有化語音互動應用的開發者，提供了極具價值的實作參考與架構藍圖。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "Rebuilding my local voice assistant pipeline",
-          "sources": [
-            "lobsters-ai"
-          ],
-          "title": "重建個人本地語音助理管線的實作經驗分享",
-          "url": "https://blog.platypush.tech/article/Rewriting-my-voice-assistant-pipeline",
-          "weightedScore": 100
-        },
-        {
-          "content": "探討時序模型在 Streamhouse 架構中的整合與應用場景。對於處理即時資料流與預測分析的工程團隊，這篇文章提供了將機器學習模型直接導入即時管線的實務見解。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Time-Series Models in the Streamhouse: A New Frontier and Use Cases",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "資料流架構中的時間序列模型應用與新挑戰",
-          "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
-          "weightedScore": 100
-        },
-        {
-          "content": "介紹如何透過 AWS 模擬器來測試 Terraform 基礎設施即程式碼（IaC）的配置。這能幫助 DevOps 工程師在不實際部署至雲端環境的情況下，於本地進行更快速且安全的自動化測試。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "lobsters-programming",
-          "sourceTitle": "Testing Terraform with AWS Emulator",
-          "sources": [
-            "lobsters-programming"
-          ],
-          "title": "使用 AWS 模擬器進行 Terraform 測試實務",
-          "url": "https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator/",
-          "weightedScore": 100
-        },
-        {
-          "content": "展示 Codex 安全外掛程式的實際運作畫面，涵蓋從初始設定到檢視檢測結果的完整工作流程。對於希望將 AI 輔助安全審查導入日常開發的團隊提供了具體參考。",
+          "content": "OpenAI 與思科宣布推出開源 Linux 執行階段環境 Shirudo。該專案旨在協助系統管理員與維運團隊在正式套用修補程式的過渡期間，即時保護正在運行的生產系統，避免尚未修補的已知或零日漏洞遭惡意利用。對於 DevOps、SRE 與基礎設施安全工程師而言，Shirudo 提供了一種在系統不停機且尚未完成完整更新驗證時，降低暴露風險的開源防禦工具。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "openai-blog",
-          "sourceTitle": "Explore the Codex Security Plugin",
+          "sourceTitle": "OpenAI and Cisco introduce Shirudo",
           "sources": [
             "openai-blog"
           ],
-          "title": "探索 Codex 安全外掛程式的運作與工作流程",
-          "url": "https://openai.com/business/learn/codex-security-plugin-demo",
+          "title": "OpenAI 與思科聯手推出開源 Linux 執行階段 Shirudo，強化即時修補防禦",
+          "url": "https://openai.com/index/introducing-shirudo",
           "weightedScore": 100
         },
         {
-          "content": "探討如何利用 smoltcp、DPDK 與 AF_XDP 等高效能網路技術，在單一虛擬機上實現高達 1500 萬個網頁伺服器的極限測試。這對系統架構師與網路底層開發者而言，是研究高效能網路堆疊與核心旁路技術的重要參考。",
+          "content": "Anthropic 推出名為 Claude Ship 的開發輔助工具，由三個專職 AI Agent 組成團隊，能夠自動執行常規 Pull Request（PR）的程式碼審查、直接進行錯誤修正並最終核准合併。這項工具將 AI 從純粹的程式碼自動補全或建議，推進到端到端的自主審查與合併流程，有助於大幅減輕工程團隊在日常維護型 PR 上的負擔，同時也代表軟體開發工作流正在加速轉向 Agent 原生審查模式。",
           "degraded": false,
-          "domain": "general",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "15M web servers on one VM – smoltcp, DPDK, AF_XDP",
+          "sourceId": "thenewstack",
+          "sourceTitle": "Anthropic’s Claude Ship lets Claude approve routine pull requests",
           "sources": [
-            "hn"
+            "thenewstack"
           ],
-          "title": "單一虛擬機運行 1500 萬網頁伺服器：高壓網路堆疊解析",
-          "url": "https://kapteko.com/15-million-webservers/",
-          "weightedScore": 411
+          "title": "Anthropic 推出 Claude Ship：由三組 Agent 協同審核、修正並批准日常 PR",
+          "url": "https://thenewstack.io/anthropic-claude-ship-approvals/",
+          "weightedScore": 50
         },
         {
-          "content": "探討利用 Lean 形式化驗證工具對黎曼猜想進行機器輔助驗證。這對關注形式化方法與程式碼正確性證明的軟體工程師而言，展示了現代定理證明工具在極端複雜數學與軟體驗證上的應用潛力。",
+          "content": "Kubernetes 發布團隊釋出 v1.38 版本的預先導覽，彙整即將在正式版中引入的重大架構調整、功能棄用與移除項目。官方提醒叢集維運人員及早評估這些變更，以確保生產環境的升級平順與長期健康度。對於 SRE 與平台工程師而言，提早掌握即將淘汰的 API 版本與替代方案，是避免未來升級中斷或設定失效的必要準備。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "kubernetes-blog",
+          "sourceTitle": "Kubernetes v1.38 Sneak Peek",
+          "sources": [
+            "kubernetes-blog"
+          ],
+          "title": "Kubernetes v1.38 預覽：即將登場的重要功能變更與棄用清單",
+          "url": "https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek/",
+          "weightedScore": 100
+        },
+        {
+          "content": "Google DeepMind 正式開源用於驗證量子演算法的 Lean 4 形式化驗證框架。該框架曾被用於檢驗其 Gemini 4 Agent 所生成的演算法，並宣稱將量子運算成本降低達 290 倍。這項開源發布讓外部研究人員與工程師能夠自行查驗 Agent 的數學推導與證明正確性，展示了結合大型語言模型與互動式定理證明器在高度精密科學與演算法工程中的落地潛力。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "Google’s AI agents cut quantum computing costs 290-fold — now you can check their work",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "Google DeepMind 開源 Lean 4 驗證框架：驗證 AI Agent 設計之量子演算法",
+          "url": "https://thenewstack.io/deepmind-lean-quantum-verification/",
+          "weightedScore": 50
+        },
+        {
+          "content": "Cloudflare 分享其工程團隊如何基於內部測試框架延伸出專屬的網路協定測試工具，並詳細介紹該機制在 DNS 探測上的實際應用與架構設計。文章探討了在大規模分散式環境下驗證底層網路協定可靠性所面臨的挑戰與解法，為負責分散式系統、網路基礎架構與高可用性系統測試的工程師，提供了第一手的協定級自動化測試架構經驗。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Probing DNS at Cloudflare",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "Cloudflare 深入剖析內部 DNS 測試工具與網路協定驗證架構實作",
+          "url": "https://blog.cloudflare.com/probing-dns-at-cloudflare/",
+          "weightedScore": 50
+        },
+        {
+          "content": "本文由 Alpine Linux 維護者撰寫，記錄在爆發 PHP2Shell 重大安全威脅期間，社群團隊如何在有限業餘時間內搶修並復原 wiki.alpinelinux.org 的實戰歷程。內容深入剖析了面臨漏洞威脅時的緊急應變、歷史遺留系統隔離、服務重構與系統恢復決策，為開源維護者與 DevOps/SRE 工程師提供了真實世界中應對供應鏈與底層漏洞的第一手事故處置範例。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "lobsters-devops",
+          "sourceTitle": "Held together by spare time: Reviving wiki.alpinelinux.org during PHP2Shell",
+          "sources": [
+            "lobsters-devops"
+          ],
+          "title": "Alpine Linux 維運實戰：在 PHP2Shell 漏洞危機中搶修 Wiki 基礎設施",
+          "url": "https://lambdacreate.com/posts/held-together-by-spare-time",
+          "weightedScore": 100
+        },
+        {
+          "content": "隨著 AI Agent 從單純對話擴展到多步驟工作流，傳統靜態 Benchmark 已難以反映實際能力。本文深入探討建立與維護 Agentic Evaluation 系統的實務工程經驗，包含動態環境設計、多步驟決策評估、工具呼叫準確率驗證以及回歸測試的維護機制。對於正在將 LLM Agent 投入生產環境的 AI 工程師而言，這是確保模型在工作流迭代中不退化、具備可觀測性與品質保證的重要指南。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "How to build and maintain an agentic evaluation",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "如何建立與維護 Agentic 評測體系：從架構設計到長期維運",
+          "url": "https://huggingface.co/blog/agentic-evals",
+          "weightedScore": 100
+        },
+        {
+          "content": "開源專案 XNU Linux 實現了在 Linux 核心上直接運行完整 OS X GUI 使用者空間的能力。該專案透過模擬與相容 Mach/XNU 子系統與必要底層服務，讓原生的 OS X 圖形應用無須透過虛擬機即可在 Linux 環境執行。這項底層系統工程展示了作業系統 ABI 相容層的重大突破，對於作業系統核心開發者、虛擬化與二進位轉譯研究者而言具備極高的技術參考價值。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Lean verification of the Riemann Hypothesis",
+          "sourceTitle": "XNU Linux: Full OS X GUI Userspace on Linux",
           "sources": [
             "hn"
           ],
-          "title": "使用 Lean 互動式定理證明器驗證黎曼猜想",
-          "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
-          "weightedScore": 1210
+          "title": "XNU Linux 專案：在 Linux 上實現完整的 OS X 圖形使用者空間",
+          "url": "https://github.com/AFK-surf/xnulinux",
+          "weightedScore": 604
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Python 3.15",
-      "url": "https://python.org/downloads/release/python-3150"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "title": "Deno is joining Cloudflare",
-      "url": "https://blog.cloudflare.com/deno-joins-cloudflare"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "Kubernetes on cgroup v1 is dead. Here’s what comes next.",
-      "url": "https://thenewstack.io/kubernetes-node-swap-ai"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "title": "Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects",
-      "url": "https://blog.cloudflare.com/workers-on-demand-profiling"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "Amazon ECS now auto-repairs failing GPUs and instances. Here’s why it matters for SREs.",
-      "url": "https://thenewstack.io/amazon-ecs-auto-repair"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn",
-        "lobsters-ai"
-      ],
-      "title": "Whistle: Speech to Text in 16.9 MB",
-      "url": "https://cactuscompute.com/blog/whistle"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "title": "Qwen/Qwen-Image-2.1-Turbo · Hugging Face",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1x1ldef/qwenqwenimage21turbo_hugging_face"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "title": "GitHub Copilot weekly releases — October 5",
-      "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
-      "url": "https://dgt.is/blog/2026-10-07-deepseek-freek-out"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "title": "$2800 rig with 8x Radeon Pro V620 (256 GB VRAM) + custom vLLM fork = Qwen3.8-Flash-Next at 60 to 100 t/s decode and 3000+ t/s prefill",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1x0wnz1/2800_rig_with_8x_radeon_pro_v620_256_gb_vram"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "title": "Impactful scheduling for GPU clusters",
-      "url": "https://huggingface.co/blog/allenai/impactful-scheduling"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-09T23:59:03.593Z",
-      "sourceId": "cncf-blog",
-      "sources": [
-        "cncf-blog"
-      ],
-      "title": "Who owns NIS2 and DORA on a Kubernetes platform team",
-      "url": "https://cncf.io/blog/2026/10/09/who-owns-nis2-and-dora-on-a-kubernetes-platform-team"
-    },
     {
       "domain": "frontend-backend",
       "seenAt": "2026-10-10T23:28:22.953Z",
@@ -6821,6 +6672,106 @@
       ],
       "title": "Lean verification of the Riemann Hypothesis",
       "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-24T04:42:23.365Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "GLM-5.4: Toward generalized coding with our first loop transformer",
+      "url": "https://z.ai/blog/glm-5.4"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-24T04:42:23.365Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Ladybird is now in alpha",
+      "url": "https://ladybird.org/posts/alpha"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-24T04:42:23.365Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "OpenAI and Cisco introduce Shirudo",
+      "url": "https://openai.com/index/introducing-shirudo"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-24T04:42:23.365Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Anthropic’s Claude Ship lets Claude approve routine pull requests",
+      "url": "https://thenewstack.io/anthropic-claude-ship-approvals"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-24T04:42:23.365Z",
+      "sourceId": "kubernetes-blog",
+      "sources": [
+        "kubernetes-blog"
+      ],
+      "title": "Kubernetes v1.38 Sneak Peek",
+      "url": "https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-24T04:42:23.365Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Google’s AI agents cut quantum computing costs 290-fold — now you can check their work",
+      "url": "https://thenewstack.io/deepmind-lean-quantum-verification"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-24T04:42:23.365Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Probing DNS at Cloudflare",
+      "url": "https://blog.cloudflare.com/probing-dns-at-cloudflare"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-24T04:42:23.365Z",
+      "sourceId": "lobsters-devops",
+      "sources": [
+        "lobsters-devops"
+      ],
+      "title": "Held together by spare time: Reviving wiki.alpinelinux.org during PHP2Shell",
+      "url": "https://lambdacreate.com/posts/held-together-by-spare-time"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-24T04:42:23.365Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "How to build and maintain an agentic evaluation",
+      "url": "https://huggingface.co/blog/agentic-evals"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-24T04:42:23.365Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "XNU Linux: Full OS X GUI Userspace on Linux",
+      "url": "https://github.com/AFK-surf/xnulinux"
     }
   ]
 }
