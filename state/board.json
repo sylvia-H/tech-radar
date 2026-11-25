@@ -518,109 +518,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-23T00:45:56.544Z",
-  "lastNewsPushAt": "2026-11-24T04:42:23.365Z",
+  "lastNewsPushAt": "2026-11-25T03:29:56.134Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-23T00:45:56.544Z",
       "summary": "本次綜合榜 #1 為 elementalsouls/Claude-BugHunter，榜單共計 7 個新進、0 個竄升、2 個下降，其中新進全數分佈於 AI 5 個與前後端 2 個領域。"
     },
     "feed": [
-      {
-        "content": "GitHub 宣布 Copilot 組織團隊客製化功能正式進入 GA 階段。現在組織管理者可直接為團隊集中定義並共享專屬的 Copilot 外掛程式與開發規範，成員無須各自進行繁瑣的手動配置。這項更新顯著降低了企業在工程團隊內推行統一內部工具鏈、專案上下文及編碼標準的門檻與管理成本。",
-        "id": "news:https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "GitHub Copilot 全面開放團隊客製化（Team Customizations）",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team"
-      },
-      {
-        "content": "OpenAI 官方深入說明其防範「對抗性蒸餾」的多層次防禦體系，結合理論訓練強化、推論防護罩、異常抽取模式偵測及存取規範執行，以保護前沿模型的推理與邏輯能力不被惡意抽取。對於正在設計專有商業模型 API 與企業級智慧財產防護的架構師而言，提供了極具價值的實務架構參考。",
-        "id": "news:https://openai.com/index/combatting-adversarial-distillation",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "OpenAI 公布對抗模型對抗性蒸餾（Adversarial Distillation）的防禦機制",
-        "type": "news",
-        "url": "https://openai.com/index/combatting-adversarial-distillation"
-      },
-      {
-        "content": "官方推出 Harness Adapters 適配層，讓開發者能將喜愛的任意基礎模型無縫接軌至主流 Agent Harness 測試與執行架構中。透過標準化適配器，工程師不僅能在不同供應商模型間靈活切換而無需大幅改寫核心邏輯，還能針對特定測試工作流優化呼叫策略，進一步降低延遲與 API 消耗成本。",
-        "id": "news:https://huggingface.co/blog/harness-adapters-at-scale",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "Harness Adapters 發布：解耦模型與 Agent 框架以優化效能與呼叫成本",
-        "type": "news",
-        "url": "https://huggingface.co/blog/harness-adapters-at-scale"
-      },
-      {
-        "content": "開源社群迎來全新 27B 參數模型 DaisyRose-27B，專注展現後訓練（Post-Training）階段的運算與資料效率突破。該模型在有限的精調資源下實現了優秀的推理與程式碼生成水準，為打算在私有硬體上部署、精調專屬領域模型並在意性價比的工程團隊，提供了一款極具吸引力的新開源底座。",
-        "id": "news:https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "DaisyRose-27B 發布：推進開源模型後訓練（Post-Training）效率新邊界",
-        "type": "news",
-        "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin"
-      },
-      {
-        "content": "研究團隊公開了代號「Frostbite」的處理器微架構，該架構完全由 AI 自主探索設計空間、生成 RTL 並完成功能驗證。這項突破打破了傳統人類晶片工程師的設計思維與優化慣性，證明生成式 AI 能在高度嚴謹的半導體微架構設計中獨立承擔核心工作，為未來的晶片設計自動化（EDA）掀起技術範式轉移。",
-        "id": "news:https://architectlabs.com/blog/frostbite",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "Frostbite：首個完全由 AI 自主探索、設計並完成驗證的全新 CPU 微架構",
-        "type": "news",
-        "url": "https://architectlabs.com/blog/frostbite"
-      },
-      {
-        "content": "文章詳細剖析了一個罕見但嚴重的 GitOps 故障情境：當開發者在 Argo CD 同步視窗關閉期間推送發布時，系統雖回報同步成功，但自我修復（Self-Heal）機制卻導致資料庫 Migration Hook 被跳過。作者抽絲剝繭分析了 Argo CD 控制迴圈與狀態機在資源比對中的邊緣案例，並提供生產環境避免資料庫與應用版本不一致的具體配置方案。",
-        "id": "news:https://cncf.io/blog/2026/11/20/when-a-sync-window-closes-how-argo-cd-self-heal-skipped-the-migration-hook",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "Argo CD 同步視窗陷阱：深入分析 Self-Heal 導致 Migration Hook 被跳過的機制",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/11/20/when-a-sync-window-closes-how-argo-cd-self-heal-skipped-the-migration-hook/"
-      },
-      {
-        "content": "當企業應用必須部署在客戶自行管理的 Kubernetes 叢集時，工程團隊往往面臨版本混亂、周邊組件缺失與升級排程不可控等難題。本文整理了實戰中的核心架構原則，包括依賴健康檢查自檢機制、隔離外部環境差異的打包策略、內建日誌排障工具等，為打造高適應性與低維護成本私有化交付方案的架構師提供了全面指引。",
-        "id": "news:https://cncf.io/blog/2026/11/19/how-to-support-your-app-on-kubernetes-environments-you-dont-control",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "在不可控的客戶端 Kubernetes 環境中穩定維運軟體的架構實務",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/11/19/how-to-support-your-app-on-kubernetes-environments-you-dont-control/"
-      },
-      {
-        "content": "研究提出名為「Program-as-Weights」的新概念，探討如何將傳統程式語言的結構化控制流與神經網路權重融合，以更自然的方式編寫和維護現實場景中的「模糊函數」（Fuzzy Functions）。這種將模型權重視為可編程構件的範式，為結合神經符號邏輯、解決複雜邊緣條件與非確定性業務邏輯開拓了全新的工程路徑。",
-        "id": "news:https://arxiv.org/abs/2607.02512",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "Program-as-Weights：結合權重表示與模糊邏輯的新型程式設計典範",
-        "type": "news",
-        "url": "https://arxiv.org/abs/2607.02512"
-      },
-      {
-        "content": "自 1985 年創刊至今的傳奇黑客安全刊物《Phrack》正式釋出第 73 期。本期收錄了多篇探討現代作業系統核心攻擊面、先進記憶體損壞利用、逆向工程技術以及韌體安全防護繞過的深度長文。對於從事系統安全、逆向工程、底層平台開發以及對現代防禦緩解機制有深度需求的工程師而言，是不可多得的硬核技術資源。",
-        "id": "news:https://phrack.org/issues/73/introduction_md",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "傳奇黑客雜誌《Phrack》第 73 期出刊：收錄最新底層安全與漏洞利用技術",
-        "type": "news",
-        "url": "https://phrack.org/issues/73/introduction_md"
-      },
-      {
-        "content": "消息指出 Google 正向 Android 裝置製造商施壓，要求收緊甚至取消 Bootloader 的解鎖能力。這項舉動引發了開發者社群對硬體所有權與開放開源生態的嚴重擔憂，特別是像 GrapheneOS 這類高度依賴硬體安全晶片與解鎖機制的隱私安全作業系統，其安裝與生存空間正面臨嚴峻挑戰。此舉可能進一步推動行動平台走向完全封閉。",
-        "id": "news:https://grapheneos.social/@GrapheneOS/117645038299496084",
-        "publishedAt": "2026-11-21T01:24:25.779Z",
-        "title": "Google 被曝施壓 OEM 限制 Bootloader 解鎖，衝擊 GrapheneOS 等隱私系統",
-        "type": "news",
-        "url": "https://grapheneos.social/@GrapheneOS/117645038299496084"
-      },
-      {
-        "content": "GitHub 宣布 OpenAI 的 GPT-6.2 Astra 與 GPT-6.2 Sol 正式於 GitHub Copilot 全面推出（GA）。這兩款新模型專為 Agentic 程式編寫與程式碼審查（Code Review）設計，相較於早期的 GPT-6 模型具備更強大的程式碼判斷力。對開發者而言，這代表在 Copilot 的日常開發流程中能直接取用最新的代理型 AI 能力，在複雜重構、自主除錯與跨檔案審查時可獲得更可靠的決策品質。",
-        "id": "news:https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "OpenAI GPT-6.2 Astra 與 Sol 正式登陸 GitHub Copilot",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available"
-      },
-      {
-        "content": "GitHub 發布 JetBrains IDE 系列的 Copilot 更新，帶來遠端存取（Remote Access）、本機端語音聽寫（On-device voice dictation）以及瀏覽器操作控制能力。此外，JetBrains 開發者也獲得了上下文用量快捷鍵、歷史差異比較（Historical Diffs）等改善。這項更新顯著提升了非 VS Code 生態系開發者的自主代理體驗，讓使用 IntelliJ 或 WebStorm 的團隊能在本機與遠端環境中更流暢地進行多模態互動與程式碼審閱。",
-        "id": "news:https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "GitHub Copilot JetBrains 外掛迎來 Ignite 更新：支援遠端存取與本機語音聽寫",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases"
-      },
       {
         "content": "隨著 AI 代理（AI Agents）在行動裝置上的普及，行動作業系統平台開始收緊對螢幕畫面截取與即時資料存取的權限，限制第三方 Agent 透過無障礙服務或背景擷取獲取使用者畫面。這項變動對仰賴視覺觀察（Screen-use / GUI Agent）來完成跨 App 自動化任務的開發者帶來重大衝擊，意味著未來行動端 Agent 無法再任意依賴「看螢幕點按鈕」的通用模式，促使開發者必須轉向更規範化的平台原生 API、意圖傳遞協議或結構化授權通道。",
         "id": "news:https://signal.org/blog/protecting-your-privacy",
@@ -917,296 +821,281 @@
         "title": "XNU Linux 專案：在 Linux 上實現完整的 OS X 圖形使用者空間",
         "type": "news",
         "url": "https://github.com/AFK-surf/xnulinux"
+      },
+      {
+        "content": "Grafana 官方發布多個版本更新，修復了數個安全性漏洞。建議開發者與維運團隊盡速升級相關版本，以確保基礎設施安全。",
+        "id": "news:https://grafana.com/grafana/download",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "Grafana 發布多個版本安全性更新以修復漏洞",
+        "type": "news",
+        "url": "https://grafana.com/grafana/download"
+      },
+      {
+        "content": "開發團隊正式推出 Ternary Bonsai 2.5 27B 模型，帶來全新的模型架構與效能表現，為開發者在建構 AI 應用時提供更多選擇。",
+        "id": "news:https://prismml.com/news/bonsai-2-5-27b",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "Ternary Bonsai 2.5 27B 模型正式發布",
+        "type": "news",
+        "url": "https://prismml.com/news/bonsai-2-5-27b"
+      },
+      {
+        "content": "Confluent 團隊嘗試利用 AI 編碼代理將 Kafka Java 用戶端重寫為 Rust 語言，歷時三個月後決定放棄並重新來過，為 AI 輔助開發提供深刻實務省思。",
+        "id": "news:https://thenewstack.io/confluent-kafka-rust-agents",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "Confluent 以 AI 重寫 Kafka Java 用戶端遭遇挫折後重新開始",
+        "type": "news",
+        "url": "https://thenewstack.io/confluent-kafka-rust-agents/"
+      },
+      {
+        "content": "最新研究指出矩陣乘法的運算複雜度為 Θ(n^2.25)，在基礎計算理論上取得進展，有助於未來在高效能運算與機器學習中優化大規模運算效能。",
+        "id": "news:https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "矩陣乘法演算法複雜度研究取得新突破",
+        "type": "news",
+        "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf"
+      },
+      {
+        "content": "技術團隊分享 iFood 將 AI 編碼代理推廣至 15,000 個程式碼儲存庫的實戰經驗，探討大規模分散式環境中的自動化工作流程與品質管理策略。",
+        "id": "news:https://openai.com/business/customer-stories/ifood",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "iFood 如何在 15,000 個儲存庫中規模化應用 AI 編碼代理",
+        "type": "news",
+        "url": "https://openai.com/business/customer-stories/ifood"
+      },
+      {
+        "content": "研究團隊利用 AI 代理與形式化驗證技術改善量子演算法，展示 AI 在核融合與化學等科學計算領域中的實際應用潛力。",
+        "id": "news:https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "結合 AI 代理與形式化驗證尋找更快的量子演算法",
+        "type": "news",
+        "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/"
+      },
+      {
+        "content": "介紹針對機器人操作的 Sim2Real 工作流程，結合 Isaac Lab 與 Newton 進行障礙迴避訓練，為具身智能開發者提供參考案例。",
+        "id": "news:https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "Microduck 障礙迴避：基於 Isaac Lab 與 Newton 的 Sim2Real 工作流程",
+        "type": "news",
+        "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance"
+      },
+      {
+        "content": "針對 3D 生成模型推出詳盡的微調指南，深入探討模型訓練、參數調整與優化策略，為相關領域開發者提供實用的技術參考。",
+        "id": "news:https://huggingface.co/blog/3d-lora-finetuning",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "3D 生成模型微調技術指南",
+        "type": "news",
+        "url": "https://huggingface.co/blog/3d-lora-finetuning"
+      },
+      {
+        "content": "最新測試顯示 GPT-6 模型具備原生且內建的蛋白質設計能力，可應用於生醫領域的分子結構設計，標誌著 LLM 在跨領域科學研究上的延伸。",
+        "id": "news:https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "GPT-6 模型展現內建蛋白質設計能力",
+        "type": "news",
+        "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/"
+      },
+      {
+        "content": "開源郵件伺服器專案 Stalwart 宣佈現已成為 Microsoft Exchange 的直接替代方案，為企業與開發者提供開源且支援現代協定的基礎設施選擇。",
+        "id": "news:https://stalw.art/blog/microsoft-exchange-replacement",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "Stalwart 推出可直接替換 Microsoft Exchange 的郵件伺服器方案",
+        "type": "news",
+        "url": "https://stalw.art/blog/microsoft-exchange-replacement/"
+      },
+      {
+        "content": "高效能 UI 框架 GPUI 宣佈將從主專案中獨立出來建立專屬儲存庫，推動生態系發展並方便外部開發者參與貢獻。",
+        "id": "news:https://github.com/zed-industries/gpui",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "GPUI 框架將獨立建立專屬儲存庫",
+        "type": "news",
+        "url": "https://github.com/zed-industries/gpui"
+      },
+      {
+        "content": "隱私導向搜尋引擎 Kagi 旗下新產品 Kagi Mail 宣佈推出公開測試版，提供注重隱私與高效郵件管理的用戶與開發者進行體驗評測。",
+        "id": "news:https://blog.kagi.com/kagi-mail-public-beta",
+        "publishedAt": "2026-11-25T03:29:56.134Z",
+        "title": "Kagi Mail 開放公開測試版",
+        "type": "news",
+        "url": "https://blog.kagi.com/kagi-mail-public-beta"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-24T04:42:23.365Z",
+      "generatedAt": "2026-11-25T03:29:56.134Z",
       "items": [
         {
-          "content": "Z.ai 正式發布 GLM-5.4 模型，主打專為通用程式碼任務設計的 Loop Transformer 架構。該架構透過讓運算重複執行相同的 28 層結構，在不線性增加參數量的前提下大幅提升運算深度，使 750B 規模的模型號稱能匹敵 3 兆參數級別的表現。這項架構突破展示了透過層級重複循環提高計算效率的新方向，對於從事程式碼輔助生成與大模型架構研究的開發者而言，提供了跳脫傳統純堆疊參數量的高效能推論新思路。",
+          "content": "Grafana 官方發布多個版本更新，修復了數個安全性漏洞。建議開發者與維運團隊盡速升級相關版本，以確保基礎設施安全。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Grafana 12.4.16, 13.0.14, 13.1.11, 13.2.7 and 13.3.2 (multiple CVEs)",
+          "sources": [
+            "hn"
+          ],
+          "title": "Grafana 發布多個版本安全性更新以修復漏洞",
+          "url": "https://grafana.com/grafana/download",
+          "weightedScore": 145
+        },
+        {
+          "content": "開發團隊正式推出 Ternary Bonsai 2.5 27B 模型，帶來全新的模型架構與效能表現，為開發者在建構 AI 應用時提供更多選擇。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "GLM-5.4: Toward generalized coding with our first loop transformer",
+          "sourceTitle": "Ternary Bonsai 2.5 27B",
           "sources": [
             "hn"
           ],
-          "title": "Z.ai 發表 GLM-5.4：首創循環 Transformer 架構，強化通用程式碼能力",
-          "url": "https://z.ai/blog/glm-5.4",
-          "weightedScore": 1085
+          "title": "Ternary Bonsai 2.5 27B 模型正式發布",
+          "url": "https://prismml.com/news/bonsai-2-5-27b",
+          "weightedScore": 367
         },
         {
-          "content": "從零開始打造且不依賴現有程式碼庫的獨立網頁瀏覽器專案 Ladybird，正式宣布推出首個 Alpha 版本。在當前瀏覽器引擎市場高度由 Chromium 與 WebKit 主導的生態下，Ladybird 的 Alpha 釋出象徵著全新的第三方開源網頁渲染與 JavaScript 引擎走向實用化里程碑。這對前端與 Web 平台開發者至關重要，代表未來跨瀏覽器相容性測試將迎來非主流商業巨頭掌控的新基準，有助於促進 Web 開放標準的健全發展。",
+          "content": "Confluent 團隊嘗試利用 AI 編碼代理將 Kafka Java 用戶端重寫為 Rust 語言，歷時三個月後決定放棄並重新來過，為 AI 輔助開發提供深刻實務省思。",
           "degraded": false,
-          "domain": "frontend-backend",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Ladybird is now in alpha",
+          "sourceId": "thenewstack",
+          "sourceTitle": "Confluent spent 3 months rewriting Kafka’s Java client in Rust with AI — and had to start over",
           "sources": [
-            "hn"
+            "thenewstack"
           ],
-          "title": "獨立瀏覽器引擎 Ladybird 正式進入 Alpha 階段",
-          "url": "https://ladybird.org/posts/alpha/",
-          "weightedScore": 1587
+          "title": "Confluent 以 AI 重寫 Kafka Java 用戶端遭遇挫折後重新開始",
+          "url": "https://thenewstack.io/confluent-kafka-rust-agents/",
+          "weightedScore": 50
         },
         {
-          "content": "OpenAI 與思科宣布推出開源 Linux 執行階段環境 Shirudo。該專案旨在協助系統管理員與維運團隊在正式套用修補程式的過渡期間，即時保護正在運行的生產系統，避免尚未修補的已知或零日漏洞遭惡意利用。對於 DevOps、SRE 與基礎設施安全工程師而言，Shirudo 提供了一種在系統不停機且尚未完成完整更新驗證時，降低暴露風險的開源防禦工具。",
+          "content": "最新研究指出矩陣乘法的運算複雜度為 Θ(n^2.25)，在基礎計算理論上取得進展，有助於未來在高效能運算與機器學習中優化大規模運算效能。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "Matrix Multiplication is Θ(n^2.25) [pdf]",
+          "sources": [
+            "hn",
+            "lobsters-ai"
+          ],
+          "title": "矩陣乘法演算法複雜度研究取得新突破",
+          "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+          "weightedScore": 299
+        },
+        {
+          "content": "技術團隊分享 iFood 將 AI 編碼代理推廣至 15,000 個程式碼儲存庫的實戰經驗，探討大規模分散式環境中的自動化工作流程與品質管理策略。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "openai-blog",
-          "sourceTitle": "OpenAI and Cisco introduce Shirudo",
+          "sourceTitle": "How iFood scales coding agents across 15,000 repositories",
           "sources": [
             "openai-blog"
           ],
-          "title": "OpenAI 與思科聯手推出開源 Linux 執行階段 Shirudo，強化即時修補防禦",
-          "url": "https://openai.com/index/introducing-shirudo",
+          "title": "iFood 如何在 15,000 個儲存庫中規模化應用 AI 編碼代理",
+          "url": "https://openai.com/business/customer-stories/ifood",
           "weightedScore": 100
         },
         {
-          "content": "Anthropic 推出名為 Claude Ship 的開發輔助工具，由三個專職 AI Agent 組成團隊，能夠自動執行常規 Pull Request（PR）的程式碼審查、直接進行錯誤修正並最終核准合併。這項工具將 AI 從純粹的程式碼自動補全或建議，推進到端到端的自主審查與合併流程，有助於大幅減輕工程團隊在日常維護型 PR 上的負擔，同時也代表軟體開發工作流正在加速轉向 Agent 原生審查模式。",
+          "content": "研究團隊利用 AI 代理與形式化驗證技術改善量子演算法，展示 AI 在核融合與化學等科學計算領域中的實際應用潛力。",
           "degraded": false,
-          "domain": "devops",
+          "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Anthropic’s Claude Ship lets Claude approve routine pull requests",
+          "sourceId": "deepmind-blog",
+          "sourceTitle": "Finding faster quantum algorithms with agents and formal verification",
           "sources": [
-            "thenewstack"
+            "deepmind-blog"
           ],
-          "title": "Anthropic 推出 Claude Ship：由三組 Agent 協同審核、修正並批准日常 PR",
-          "url": "https://thenewstack.io/anthropic-claude-ship-approvals/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Kubernetes 發布團隊釋出 v1.38 版本的預先導覽，彙整即將在正式版中引入的重大架構調整、功能棄用與移除項目。官方提醒叢集維運人員及早評估這些變更，以確保生產環境的升級平順與長期健康度。對於 SRE 與平台工程師而言，提早掌握即將淘汰的 API 版本與替代方案，是避免未來升級中斷或設定失效的必要準備。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "kubernetes-blog",
-          "sourceTitle": "Kubernetes v1.38 Sneak Peek",
-          "sources": [
-            "kubernetes-blog"
-          ],
-          "title": "Kubernetes v1.38 預覽：即將登場的重要功能變更與棄用清單",
-          "url": "https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek/",
+          "title": "結合 AI 代理與形式化驗證尋找更快的量子演算法",
+          "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
           "weightedScore": 100
         },
         {
-          "content": "Google DeepMind 正式開源用於驗證量子演算法的 Lean 4 形式化驗證框架。該框架曾被用於檢驗其 Gemini 4 Agent 所生成的演算法，並宣稱將量子運算成本降低達 290 倍。這項開源發布讓外部研究人員與工程師能夠自行查驗 Agent 的數學推導與證明正確性，展示了結合大型語言模型與互動式定理證明器在高度精密科學與演算法工程中的落地潛力。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "Google’s AI agents cut quantum computing costs 290-fold — now you can check their work",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "Google DeepMind 開源 Lean 4 驗證框架：驗證 AI Agent 設計之量子演算法",
-          "url": "https://thenewstack.io/deepmind-lean-quantum-verification/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Cloudflare 分享其工程團隊如何基於內部測試框架延伸出專屬的網路協定測試工具，並詳細介紹該機制在 DNS 探測上的實際應用與架構設計。文章探討了在大規模分散式環境下驗證底層網路協定可靠性所面臨的挑戰與解法，為負責分散式系統、網路基礎架構與高可用性系統測試的工程師，提供了第一手的協定級自動化測試架構經驗。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Probing DNS at Cloudflare",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "Cloudflare 深入剖析內部 DNS 測試工具與網路協定驗證架構實作",
-          "url": "https://blog.cloudflare.com/probing-dns-at-cloudflare/",
-          "weightedScore": 50
-        },
-        {
-          "content": "本文由 Alpine Linux 維護者撰寫，記錄在爆發 PHP2Shell 重大安全威脅期間，社群團隊如何在有限業餘時間內搶修並復原 wiki.alpinelinux.org 的實戰歷程。內容深入剖析了面臨漏洞威脅時的緊急應變、歷史遺留系統隔離、服務重構與系統恢復決策，為開源維護者與 DevOps/SRE 工程師提供了真實世界中應對供應鏈與底層漏洞的第一手事故處置範例。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "lobsters-devops",
-          "sourceTitle": "Held together by spare time: Reviving wiki.alpinelinux.org during PHP2Shell",
-          "sources": [
-            "lobsters-devops"
-          ],
-          "title": "Alpine Linux 維運實戰：在 PHP2Shell 漏洞危機中搶修 Wiki 基礎設施",
-          "url": "https://lambdacreate.com/posts/held-together-by-spare-time",
-          "weightedScore": 100
-        },
-        {
-          "content": "隨著 AI Agent 從單純對話擴展到多步驟工作流，傳統靜態 Benchmark 已難以反映實際能力。本文深入探討建立與維護 Agentic Evaluation 系統的實務工程經驗，包含動態環境設計、多步驟決策評估、工具呼叫準確率驗證以及回歸測試的維護機制。對於正在將 LLM Agent 投入生產環境的 AI 工程師而言，這是確保模型在工作流迭代中不退化、具備可觀測性與品質保證的重要指南。",
+          "content": "介紹針對機器人操作的 Sim2Real 工作流程，結合 Isaac Lab 與 Newton 進行障礙迴避訓練，為具身智能開發者提供參考案例。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "huggingface-blog",
-          "sourceTitle": "How to build and maintain an agentic evaluation",
+          "sourceTitle": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
           "sources": [
             "huggingface-blog"
           ],
-          "title": "如何建立與維護 Agentic 評測體系：從架構設計到長期維運",
-          "url": "https://huggingface.co/blog/agentic-evals",
+          "title": "Microduck 障礙迴避：基於 Isaac Lab 與 Newton 的 Sim2Real 工作流程",
+          "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
           "weightedScore": 100
         },
         {
-          "content": "開源專案 XNU Linux 實現了在 Linux 核心上直接運行完整 OS X GUI 使用者空間的能力。該專案透過模擬與相容 Mach/XNU 子系統與必要底層服務，讓原生的 OS X 圖形應用無須透過虛擬機即可在 Linux 環境執行。這項底層系統工程展示了作業系統 ABI 相容層的重大突破，對於作業系統核心開發者、虛擬化與二進位轉譯研究者而言具備極高的技術參考價值。",
+          "content": "針對 3D 生成模型推出詳盡的微調指南，深入探討模型訓練、參數調整與優化策略，為相關領域開發者提供實用的技術參考。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "The Definitive Fine-Tuning Guide for 3D Generation Models",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "3D 生成模型微調技術指南",
+          "url": "https://huggingface.co/blog/3d-lora-finetuning",
+          "weightedScore": 100
+        },
+        {
+          "content": "最新測試顯示 GPT-6 模型具備原生且內建的蛋白質設計能力，可應用於生醫領域的分子結構設計，標誌著 LLM 在跨領域科學研究上的延伸。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 2,
+          "sourceId": "hn",
+          "sourceTitle": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+          "sources": [
+            "hn",
+            "openai-blog"
+          ],
+          "title": "GPT-6 模型展現內建蛋白質設計能力",
+          "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+          "weightedScore": 295
+        },
+        {
+          "content": "開源郵件伺服器專案 Stalwart 宣佈現已成為 Microsoft Exchange 的直接替代方案，為企業與開發者提供開源且支援現代協定的基礎設施選擇。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "XNU Linux: Full OS X GUI Userspace on Linux",
+          "sourceTitle": "Stalwart is now a drop-in replacement for Microsoft Exchange",
           "sources": [
             "hn"
           ],
-          "title": "XNU Linux 專案：在 Linux 上實現完整的 OS X 圖形使用者空間",
-          "url": "https://github.com/AFK-surf/xnulinux",
-          "weightedScore": 604
+          "title": "Stalwart 推出可直接替換 Microsoft Exchange 的郵件伺服器方案",
+          "url": "https://stalw.art/blog/microsoft-exchange-replacement/",
+          "weightedScore": 687
+        },
+        {
+          "content": "高效能 UI 框架 GPUI 宣佈將從主專案中獨立出來建立專屬儲存庫，推動生態系發展並方便外部開發者參與貢獻。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "GPUI is getting its own repository",
+          "sources": [
+            "hn"
+          ],
+          "title": "GPUI 框架將獨立建立專屬儲存庫",
+          "url": "https://github.com/zed-industries/gpui",
+          "weightedScore": 381
+        },
+        {
+          "content": "隱私導向搜尋引擎 Kagi 旗下新產品 Kagi Mail 宣佈推出公開測試版，提供注重隱私與高效郵件管理的用戶與開發者進行體驗評測。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Kagi Mail (public beta)",
+          "sources": [
+            "hn"
+          ],
+          "title": "Kagi Mail 開放公開測試版",
+          "url": "https://blog.kagi.com/kagi-mail-public-beta",
+          "weightedScore": 458
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Cloudflare acquires Deno",
-      "url": "https://deno.com/blog/cloudflare"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "gh-cpython",
-      "sources": [
-        "gh-cpython"
-      ],
-      "title": "v3.15.0",
-      "url": "https://github.com/python/cpython/releases/tag/v3.15.0"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "Microsoft skipped OpenAI’s decision model and built its own on Alibaba’s Qwen",
-      "url": "https://thenewstack.io/microsoft-decision-model-foundry"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "title": "Introducing Clef-omni with full multimodality, plus a faster Clef and a cheaper Clef-flash",
-      "url": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "title": "New controls and chat improvements in Copilot for JetBrains",
-      "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "title": "Copilot code review: New organization billing options and controls",
-      "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "OpenAI Withdraws 3 Math Papers",
-      "url": "https://github.com/openai/math/blob/main/history.md"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "lobsters-ai",
-      "sources": [
-        "lobsters-ai"
-      ],
-      "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
-      "url": "https://arxiv.org/html/2610.05978v1"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "What mathematicians should know about the Lean Theorem Prover: reliability & AI",
-      "url": "https://terrytao.wordpress.com/2026/10/09/what-mathematicians-should-know-about-the-lean-theorem-proverquestions-of-reliability-and-ai"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "huggingface-blog",
-      "sources": [
-        "huggingface-blog"
-      ],
-      "title": "One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO",
-      "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "How to turn AI production feedback into better agents",
-      "url": "https://thenewstack.io/ai-agent-evaluation-loop"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "title": "Open-source Mac app that runs EmbeddingGemma 2 locally to search your files by what’s in them",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
-      "url": "https://github.com/rociiu/talorys"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-10T23:28:22.953Z",
-      "sourceId": "lobsters-ai",
-      "sources": [
-        "lobsters-ai",
-        "lobsters-programming"
-      ],
-      "title": "Voxlocal: a minimal voice agent written in Rust",
-      "url": "https://samkhawase.com/blog/voxlocal-minimal-voice-agent"
-    },
     {
       "domain": "devops",
       "seenAt": "2026-10-11T23:37:19.365Z",
@@ -6772,6 +6661,128 @@
       ],
       "title": "XNU Linux: Full OS X GUI Userspace on Linux",
       "url": "https://github.com/AFK-surf/xnulinux"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Grafana 12.4.16, 13.0.14, 13.1.11, 13.2.7 and 13.3.2 (multiple CVEs)",
+      "url": "https://grafana.com/grafana/download"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Ternary Bonsai 2.5 27B",
+      "url": "https://prismml.com/news/bonsai-2-5-27b"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "Confluent spent 3 months rewriting Kafka’s Java client in Rust with AI — and had to start over",
+      "url": "https://thenewstack.io/confluent-kafka-rust-agents"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-ai"
+      ],
+      "title": "Matrix Multiplication is Θ(n^2.25) [pdf]",
+      "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "openai-blog",
+      "sources": [
+        "openai-blog"
+      ],
+      "title": "How iFood scales coding agents across 15,000 repositories",
+      "url": "https://openai.com/business/customer-stories/ifood"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "Finding faster quantum algorithms with agents and formal verification",
+      "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+      "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "The Definitive Fine-Tuning Guide for 3D Generation Models",
+      "url": "https://huggingface.co/blog/3d-lora-finetuning"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "openai-blog"
+      ],
+      "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Stalwart is now a drop-in replacement for Microsoft Exchange",
+      "url": "https://stalw.art/blog/microsoft-exchange-replacement"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "GPUI is getting its own repository",
+      "url": "https://github.com/zed-industries/gpui"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-25T03:29:56.134Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Kagi Mail (public beta)",
+      "url": "https://blog.kagi.com/kagi-mail-public-beta"
     }
   ]
 }
