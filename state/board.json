@@ -518,106 +518,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-23T00:45:56.544Z",
-  "lastNewsPushAt": "2026-11-25T03:29:56.134Z",
+  "lastNewsPushAt": "2026-11-26T02:45:13.516Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-23T00:45:56.544Z",
       "summary": "本次綜合榜 #1 為 elementalsouls/Claude-BugHunter，榜單共計 7 個新進、0 個竄升、2 個下降，其中新進全數分佈於 AI 5 個與前後端 2 個領域。"
     },
     "feed": [
-      {
-        "content": "隨著 AI 代理（AI Agents）在行動裝置上的普及，行動作業系統平台開始收緊對螢幕畫面截取與即時資料存取的權限，限制第三方 Agent 透過無障礙服務或背景擷取獲取使用者畫面。這項變動對仰賴視覺觀察（Screen-use / GUI Agent）來完成跨 App 自動化任務的開發者帶來重大衝擊，意味著未來行動端 Agent 無法再任意依賴「看螢幕點按鈕」的通用模式，促使開發者必須轉向更規範化的平台原生 API、意圖傳遞協議或結構化授權通道。",
-        "id": "news:https://signal.org/blog/protecting-your-privacy",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "行動作業系統平台限制 AI 代理擷取螢幕資料，衝擊自治型 Agent 架構",
-        "type": "news",
-        "url": "https://signal.org/blog/protecting-your-privacy/"
-      },
-      {
-        "content": "開源社群發布了極致輕量的語音辨識與翻譯模型 Rumble-2-Flash，參數規模僅 0.5B（5 億），卻能涵蓋超過 40 種語言的語音處理任務。對終端與邊緣端開發者而言，該模型的推出大幅降低了自託管語音管線的硬體門檻，可在資源受限的伺服器或本機設備上運行低延遲的即時語音轉文字服務，為本地化語音助理與多語言對話應用提供了高性價比的開源新選項。",
-        "id": "news:https://huggingface.co/blog/rumble-2-flash",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "開源輕量級語音模型 Rumble-2-Flash 發布，僅 0.5B 參數支援逾 40 種語言",
-        "type": "news",
-        "url": "https://huggingface.co/blog/rumble-2-flash"
-      },
-      {
-        "content": "GitHub 宣布企業用戶現在能將各用戶端上的 GitHub Copilot 代理活動直接串流至 Microsoft Agent 365 控制平台。透過這項整合，企業管理者能將分散的 Copilot 稽核日誌彙整至單一的代理治理中心，全面掌握 AI 代理執行的動作與程式碼存取軌跡。這對於需要滿足嚴格合規性、資料治理與安全審計的企業級軟體團隊而言，提供了導入自主型編程代理時不可或缺的可觀測性架構。",
-        "id": "news:https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "企業現可透過 Microsoft Agent 365 統一監控 GitHub Copilot 代理行為",
-        "type": "news",
-        "url": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365"
-      },
-      {
-        "content": "一項最新的技術研究指出，大型語言模型具備在推論與生成過程中動態改寫自身權重矩陣的能力。這項發現突破了傳統上將神經網路視為靜態權重的典範，展示了模型如何利用自身輸出作為權重更新的訊號，實現動態記憶更新與即時任務適應。對 AI 研究人員與架構工程師而言，這項技術為解決長上下文記憶遺忘、持續學習（Continual Learning）以及無需外部微調管線的即時自我進化架構開啟了全新的可能性。",
-        "id": "news:https://arxiv.org/abs/2611.21885",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "研究揭示大型語言模型可在推論階段自行改寫模型權重",
-        "type": "news",
-        "url": "https://arxiv.org/abs/2611.21885"
-      },
-      {
-        "content": "最新實測與技術分析顯示，現代前緣大型語言模型已能夠直接從 Hex Dump（十六進位傾印）中逐位元（Byte by Byte）閱讀並撰寫可執行的二進位檔案。這項能力打破了以往 LLM 必須依賴反編譯器將機器碼轉換為高階語言才能理解邏輯的限制。對於資安研究員與逆向工程開發者而言，這代表自主型二進位分析 Agent 能直接處理惡意程式樣本、修補二進位檔漏洞或進行底層暫存器級別的除錯，顯著提升了底層軟體工程與漏洞挖掘的自動化潛力。",
-        "id": "news:https://sgiannopoulos.github.io/blog/machine-code-programming",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "大型語言模型展現逐位元解析與生成十六進位執行檔的逆向工程能力",
-        "type": "news",
-        "url": "https://sgiannopoulos.github.io/blog/machine-code-programming/"
-      },
-      {
-        "content": "針對近期發布的 GPT-6.2 Sol 與目前業界基準 Claude Opus 5.5 的實測對比分析出爐。評測顯示，Opus 5.5 在複雜邏輯推理與極限邊界條件的程式碼生成上依然保持領先，但 GPT-6.2 Sol 在推理延遲、運算成本以及常規工程任務的處理表現上具備極佳的平衡點。這份評測為工程團隊在構建 AI 代理與程式輔助工具時提供了關鍵參考：在需要極高準確性的關鍵路徑可選用頂級模型，而在高頻率、大吞吐量的輔助編程任務中，Sol 展現出更高的投報率。",
-        "id": "news:https://thenewstack.io/gpt-6-2-sol-vs-claude-opus-5-5",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "GPT-6.2 Sol 實測評測：程式準確度雖不及 Claude Opus 5.5 但具性價比優勢",
-        "type": "news",
-        "url": "https://thenewstack.io/gpt-6-2-sol-vs-claude-opus-5-5/"
-      },
-      {
-        "content": "儘管歐盟《數位市場法》（DMA）迫使 Apple 開放替代瀏覽器引擎，但市場上至今仍未見到基於 Blink 或 Gecko 的 iOS 瀏覽器上線。深入分析指出，根本原因在於 Apple 對替代引擎實施的嚴苛授權限制（Entitlements）：包括 JIT 編譯器的記憶體映射限制、無法存取硬體加速圖形管線、跨進程沙盒隔絕困難，以及僅限歐盟地區生效的碎片化維護成本。這篇深度分析為前端與 Web 平台開發者揭示了行動 Web 生態中 PWA 與原生瀏覽器體驗無法突破現狀的核心技術障礙。",
-        "id": "news:https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "為何 iOS 至今仍無非 WebKit 瀏覽器？剖析架構限制與法規權限瓶頸",
-        "type": "news",
-        "url": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/"
-      },
-      {
-        "content": "本文深入探討雲原生與 Kubernetes 架構中的資安實務盲點，指出許多工程團隊將「執行期安全監控（Runtime Security）」誤當作安全防線的基準線。文章分析，當各團隊以微服務自主性為由獨立部署執行期工具時，往往只產生日誌警報卻缺乏統一的平台基線與準入控制（Admission Control），最終形成資安孤島。對 DevOps 與平台工程師而言，文章強調唯有將安全性左移（Shift-left）、建立全域一致的基礎設施宣告式策略，才能從根本降低漏洞與系統遭入侵的風險。",
-        "id": "news:https://cncf.io/blog/2026/11/16/your-runtime-security-tool-is-not-your-baseline-silos-dressed-as-autonomy-in-cloud-native-teams",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "執行期安全工具非防禦基準：雲原生團隊以自主之名產生的資安孤島剖析",
-        "type": "news",
-        "url": "https://www.cncf.io/blog/2026/11/16/your-runtime-security-tool-is-not-your-baseline-silos-dressed-as-autonomy-in-cloud-native-teams/"
-      },
-      {
-        "content": "技術社群對 Anthropic 旗下 Claude 模型的底層能力進行深度解析，發現其在預訓練階段納入了極為龐大的蛋白質序列與生物資訊結構資料集。這項發現解釋了為何 Claude 在非自然語言的符號排列、長序列依賴性建模以及生物化學領域具備異常突出的推理表現。對機器學習與模型架構工程師而言，這證實了將特定科學領域的結構化序列資料融入通用基礎模型的預訓練，能夠增強模型對抽象邏輯與複雜幾何關係的泛化能力，為未來的多領域混合訓練策略提供借鑑。",
-        "id": "news:http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences",
-        "publishedAt": "2026-11-22T00:16:38.088Z",
-        "title": "技術剖析：Claude 預訓練階段納入大規模蛋白質序列帶來的跨領域推論優勢",
-        "type": "news",
-        "url": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/"
-      },
-      {
-        "id": "repo:1229774092:new:2026-11-23",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "elementalsouls/Claude-BugHunter 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/elementalsouls/Claude-BugHunter"
-      },
-      {
-        "id": "repo:1073224795:new:2026-11-23",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "obra/superpowers 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/obra/superpowers"
-      },
-      {
-        "id": "repo:1136590548:new:2026-11-23",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "affaan-m/ECC 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/affaan-m/ECC"
-      },
       {
         "id": "repo:1140843380:new:2026-11-23",
         "publishedAt": "2026-11-23T00:45:56.544Z",
@@ -917,275 +824,279 @@
         "title": "Kagi Mail 開放公開測試版",
         "type": "news",
         "url": "https://blog.kagi.com/kagi-mail-public-beta"
+      },
+      {
+        "content": "OpenAI 在最新預印論文中宣稱，已成功解決自 1969 年以來困擾理論計算機科學界長達 57 年的數學難題。這項突破可能對底層 AI 計算架構與效率帶來深遠影響，備受業界關注。",
+        "id": "news:https://thenewstack.io/openai-matrix-multiplication-exponent",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "OpenAI 宣稱解決影響 AI 計算核心的 57 年數學難題",
+        "type": "news",
+        "url": "https://thenewstack.io/openai-matrix-multiplication-exponent/"
+      },
+      {
+        "content": "JetBrains 推出專為快速程式碼編輯與工具互動設計的開源程式碼模型 Mellum 最新變體。該模型透過精簡思考過程，實現了減少 45% Token 消耗量的顯著效率提升，對開發者在日常編碼中的 AI 輔助成本有直接幫助。",
+        "id": "news:https://thenewstack.io/jetbrains-mellum2-1-instruct-coding-model",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "JetBrains 推出全新 Mellum 程式碼模型，Token 消耗量減少 45%",
+        "type": "news",
+        "url": "https://thenewstack.io/jetbrains-mellum2-1-instruct-coding-model/"
+      },
+      {
+        "content": "Google 正式宣布推出 Gemini 4 Carbon，為開發者與企業用戶提供最新的 AI 模型能力更新，進一步擴展其模型生態系與應用場景。",
+        "id": "news:https://deepmind.google/blog/gemini-4-carbon-is-now-available",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "Google 推出全新 Gemini 4 Carbon 模型",
+        "type": "news",
+        "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/"
+      },
+      {
+        "content": "平台推出全新 Search for Agents 功能，只要開啟開關即可讓網站對 AI 代理完全可搜尋。包含自動內容索引、可發現的搜尋 API 以及原生的 HTTP QUERY 支援，方便 AI 代理更有效率地抓取與檢索網站資料。",
+        "id": "news:https://blog.cloudflare.com/search-for-agents",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "推出 Search for Agents 功能，讓網站支援 AI 代理搜尋",
+        "type": "news",
+        "url": "https://blog.cloudflare.com/search-for-agents/"
+      },
+      {
+        "content": "GitHub 官方發布公告指出，若組織未針對具備 Copilot 授權成員的 Copilot 程式碼審查選擇計費方式，相關費用將自特定日期起自動預設計費至組織帳戶，提醒管理員留意相關設定與成本分攤。",
+        "id": "news:https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "GitHub Copilot 程式碼審查費用將預設由組織帳戶支付",
+        "type": "news",
+        "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization"
+      },
+      {
+        "content": "DNS 安全服務商 Quad9 宣布將其 DNS 服務從法國撤出，此舉直接影響該地區的網路基礎設施與開發者可依賴的解析服務，屬於重要的外部營運變動事件。",
+        "id": "news:https://quad9.net/news/blog/quad9-service-deactivation-in-france",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "Quad9 宣布自法國撤出其 DNS 服務",
+        "type": "news",
+        "url": "https://quad9.net/news/blog/quad9-service-deactivation-in-france/"
+      },
+      {
+        "content": "本文深入介紹如何結合 Inkling、Qwen 與 Unsloth 等開源模型與微調工具，在本地端建構與執行 AI 工作流程，為希望擺脫雲端依賴的開發者提供實用的實作經驗。",
+        "id": "news:https://gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "使用 Inkling、Qwen 與 Unsloth 的本地 AI 初學者指南",
+        "type": "news",
+        "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth"
+      },
+      {
+        "content": "本文探討前端開發者如何突破 iOS Safari 預設的 60 FPS 渲染限制，透過底層效能最佳化技巧，讓網頁應用程式（PWA）具備流暢的原生級互動體驗，對前端效能調校極具參考價值。",
+        "id": "news:https://rida.dev/blog/bypassing-ios-safari-60-fps-limit",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "繞過 iOS Safari 60 FPS 限制以打造原生質感的網頁應用程式",
+        "type": "news",
+        "url": "https://rida.dev/blog/bypassing-ios-safari-60-fps-limit"
+      },
+      {
+        "content": "Anthropic 釋出針對 GRH 定理更精簡的 Lean 形式化驗證版本，展示了利用自動化推理與機器輔助證明來驗證複雜數學與邏輯問題的最新進展。",
+        "id": "news:https://github.com/lsernau/grh-lean",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "Anthropic 發布更簡短的 GRH Lean 形式化驗證版本",
+        "type": "news",
+        "url": "https://github.com/lsernau/grh-lean"
+      },
+      {
+        "content": "開發者利用大型語言模型（LLM）的程式碼理解與逆向能力，成功將開源韌體 Rockbox 移植到一款來自拍賣網站、無官方技術文檔的 9 美元神祕 MP3 播放器上，展示了 AI 在硬體底層逆向與移植上的創新應用。",
+        "id": "news:https://jayd.ml/2026/11/14/rockbox-on-yp3.html",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "藉助 LLM 將 Rockbox 移植到無規格文件的 9 美元平價 MP3 播放器",
+        "type": "news",
+        "url": "https://jayd.ml/2026/11/14/rockbox-on-yp3.html"
+      },
+      {
+        "content": "開發者為 9front 作業系統打造了致敬經典 Macintosh 風格的現代化圖形桌面環境 9/UX，大幅提升了系統的易用性與操作體驗，是作業系統與介面實作的重要開源進展。",
+        "id": "news:https://progrium.github.io/9ux",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "9front 推出受 Macintosh 啟發的全新桌面環境 9/UX",
+        "type": "news",
+        "url": "https://progrium.github.io/9ux/"
+      },
+      {
+        "content": "密碼管理工具 1Password 近期傳出安全事件，官方正進行調查並提醒用戶與開發者關注帳號與憑證安全，對依賴密碼庫的團隊具備高度安全警示意義。",
+        "id": "news:https://1password.com/blog/update-on-nov-2026-security-incident",
+        "publishedAt": "2026-11-26T02:45:13.516Z",
+        "title": "1Password 發生安全事件通報",
+        "type": "news",
+        "url": "https://1password.com/blog/update-on-nov-2026-security-incident"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-25T03:29:56.134Z",
+      "generatedAt": "2026-11-26T02:45:13.516Z",
       "items": [
         {
-          "content": "Grafana 官方發布多個版本更新，修復了數個安全性漏洞。建議開發者與維運團隊盡速升級相關版本，以確保基礎設施安全。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Grafana 12.4.16, 13.0.14, 13.1.11, 13.2.7 and 13.3.2 (multiple CVEs)",
-          "sources": [
-            "hn"
-          ],
-          "title": "Grafana 發布多個版本安全性更新以修復漏洞",
-          "url": "https://grafana.com/grafana/download",
-          "weightedScore": 145
-        },
-        {
-          "content": "開發團隊正式推出 Ternary Bonsai 2.5 27B 模型，帶來全新的模型架構與效能表現，為開發者在建構 AI 應用時提供更多選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Ternary Bonsai 2.5 27B",
-          "sources": [
-            "hn"
-          ],
-          "title": "Ternary Bonsai 2.5 27B 模型正式發布",
-          "url": "https://prismml.com/news/bonsai-2-5-27b",
-          "weightedScore": 367
-        },
-        {
-          "content": "Confluent 團隊嘗試利用 AI 編碼代理將 Kafka Java 用戶端重寫為 Rust 語言，歷時三個月後決定放棄並重新來過，為 AI 輔助開發提供深刻實務省思。",
+          "content": "OpenAI 在最新預印論文中宣稱，已成功解決自 1969 年以來困擾理論計算機科學界長達 57 年的數學難題。這項突破可能對底層 AI 計算架構與效率帶來深遠影響，備受業界關注。",
           "degraded": false,
           "domain": "devops",
           "sourceCount": 1,
           "sourceId": "thenewstack",
-          "sourceTitle": "Confluent spent 3 months rewriting Kafka’s Java client in Rust with AI — and had to start over",
+          "sourceTitle": "OpenAI claims to have solved a 57-year-old math problem at the heart of AI computation",
           "sources": [
             "thenewstack"
           ],
-          "title": "Confluent 以 AI 重寫 Kafka Java 用戶端遭遇挫折後重新開始",
-          "url": "https://thenewstack.io/confluent-kafka-rust-agents/",
+          "title": "OpenAI 宣稱解決影響 AI 計算核心的 57 年數學難題",
+          "url": "https://thenewstack.io/openai-matrix-multiplication-exponent/",
           "weightedScore": 50
         },
         {
-          "content": "最新研究指出矩陣乘法的運算複雜度為 Θ(n^2.25)，在基礎計算理論上取得進展，有助於未來在高效能運算與機器學習中優化大規模運算效能。",
+          "content": "JetBrains 推出專為快速程式碼編輯與工具互動設計的開源程式碼模型 Mellum 最新變體。該模型透過精簡思考過程，實現了減少 45% Token 消耗量的顯著效率提升，對開發者在日常編碼中的 AI 輔助成本有直接幫助。",
           "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
-          "sourceId": "hn",
-          "sourceTitle": "Matrix Multiplication is Θ(n^2.25) [pdf]",
-          "sources": [
-            "hn",
-            "lobsters-ai"
-          ],
-          "title": "矩陣乘法演算法複雜度研究取得新突破",
-          "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
-          "weightedScore": 299
-        },
-        {
-          "content": "技術團隊分享 iFood 將 AI 編碼代理推廣至 15,000 個程式碼儲存庫的實戰經驗，探討大規模分散式環境中的自動化工作流程與品質管理策略。",
-          "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "openai-blog",
-          "sourceTitle": "How iFood scales coding agents across 15,000 repositories",
+          "sourceId": "thenewstack",
+          "sourceTitle": "JetBrains’ latest Mellum coding model uses 45% fewer tokens. It got there by not thinking.",
           "sources": [
-            "openai-blog"
+            "thenewstack"
           ],
-          "title": "iFood 如何在 15,000 個儲存庫中規模化應用 AI 編碼代理",
-          "url": "https://openai.com/business/customer-stories/ifood",
-          "weightedScore": 100
+          "title": "JetBrains 推出全新 Mellum 程式碼模型，Token 消耗量減少 45%",
+          "url": "https://thenewstack.io/jetbrains-mellum2-1-instruct-coding-model/",
+          "weightedScore": 50
         },
         {
-          "content": "研究團隊利用 AI 代理與形式化驗證技術改善量子演算法，展示 AI 在核融合與化學等科學計算領域中的實際應用潛力。",
+          "content": "Google 正式宣布推出 Gemini 4 Carbon，為開發者與企業用戶提供最新的 AI 模型能力更新，進一步擴展其模型生態系與應用場景。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "deepmind-blog",
-          "sourceTitle": "Finding faster quantum algorithms with agents and formal verification",
+          "sourceTitle": "Gemini 4 Carbon is now available",
           "sources": [
             "deepmind-blog"
           ],
-          "title": "結合 AI 代理與形式化驗證尋找更快的量子演算法",
-          "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+          "title": "Google 推出全新 Gemini 4 Carbon 模型",
+          "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
           "weightedScore": 100
         },
         {
-          "content": "介紹針對機器人操作的 Sim2Real 工作流程，結合 Isaac Lab 與 Newton 進行障礙迴避訓練，為具身智能開發者提供參考案例。",
+          "content": "平台推出全新 Search for Agents 功能，只要開啟開關即可讓網站對 AI 代理完全可搜尋。包含自動內容索引、可發現的搜尋 API 以及原生的 HTTP QUERY 支援，方便 AI 代理更有效率地抓取與檢索網站資料。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "cloudflare-blog",
+          "sourceTitle": "Introducing Search for Agents",
+          "sources": [
+            "cloudflare-blog"
+          ],
+          "title": "推出 Search for Agents 功能，讓網站支援 AI 代理搜尋",
+          "url": "https://blog.cloudflare.com/search-for-agents/",
+          "weightedScore": 50
+        },
+        {
+          "content": "GitHub 官方發布公告指出，若組織未針對具備 Copilot 授權成員的 Copilot 程式碼審查選擇計費方式，相關費用將自特定日期起自動預設計費至組織帳戶，提醒管理員留意相關設定與成本分攤。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+          "sourceId": "github-changelog-copilot",
+          "sourceTitle": "Copilot code review billing will default to the organization",
           "sources": [
-            "huggingface-blog"
+            "github-changelog-copilot"
           ],
-          "title": "Microduck 障礙迴避：基於 Isaac Lab 與 Newton 的 Sim2Real 工作流程",
-          "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+          "title": "GitHub Copilot 程式碼審查費用將預設由組織帳戶支付",
+          "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
           "weightedScore": 100
         },
         {
-          "content": "針對 3D 生成模型推出詳盡的微調指南，深入探討模型訓練、參數調整與優化策略，為相關領域開發者提供實用的技術參考。",
+          "content": "DNS 安全服務商 Quad9 宣布將其 DNS 服務從法國撤出，此舉直接影響該地區的網路基礎設施與開發者可依賴的解析服務，屬於重要的外部營運變動事件。",
           "degraded": false,
-          "domain": "ai",
+          "domain": "devops",
           "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "The Definitive Fine-Tuning Guide for 3D Generation Models",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "3D 生成模型微調技術指南",
-          "url": "https://huggingface.co/blog/3d-lora-finetuning",
-          "weightedScore": 100
-        },
-        {
-          "content": "最新測試顯示 GPT-6 模型具備原生且內建的蛋白質設計能力，可應用於生醫領域的分子結構設計，標誌著 LLM 在跨領域科學研究上的延伸。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+          "sourceTitle": "Quad9 pulled their DNS service from France",
           "sources": [
-            "hn",
-            "openai-blog"
+            "hn"
           ],
-          "title": "GPT-6 模型展現內建蛋白質設計能力",
-          "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
-          "weightedScore": 295
+          "title": "Quad9 宣布自法國撤出其 DNS 服務",
+          "url": "https://quad9.net/news/blog/quad9-service-deactivation-in-france/",
+          "weightedScore": 383
         },
         {
-          "content": "開源郵件伺服器專案 Stalwart 宣佈現已成為 Microsoft Exchange 的直接替代方案，為企業與開發者提供開源且支援現代協定的基礎設施選擇。",
+          "content": "本文深入介紹如何結合 Inkling、Qwen 與 Unsloth 等開源模型與微調工具，在本地端建構與執行 AI 工作流程，為希望擺脫雲端依賴的開發者提供實用的實作經驗。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+          "sources": [
+            "hn"
+          ],
+          "title": "使用 Inkling、Qwen 與 Unsloth 的本地 AI 初學者指南",
+          "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+          "weightedScore": 776
+        },
+        {
+          "content": "本文探討前端開發者如何突破 iOS Safari 預設的 60 FPS 渲染限制，透過底層效能最佳化技巧，讓網頁應用程式（PWA）具備流暢的原生級互動體驗，對前端效能調校極具參考價值。",
+          "degraded": false,
+          "domain": "frontend-backend",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Bypassing iOS Safari's 60 FPS Limit to Build Web Applications That Feel Native",
+          "sources": [
+            "hn"
+          ],
+          "title": "繞過 iOS Safari 60 FPS 限制以打造原生質感的網頁應用程式",
+          "url": "https://rida.dev/blog/bypassing-ios-safari-60-fps-limit",
+          "weightedScore": 440
+        },
+        {
+          "content": "Anthropic 釋出針對 GRH 定理更精簡的 Lean 形式化驗證版本，展示了利用自動化推理與機器輔助證明來驗證複雜數學與邏輯問題的最新進展。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Much shorter version of GRH Lean verification from Anthropic",
+          "sources": [
+            "hn"
+          ],
+          "title": "Anthropic 發布更簡短的 GRH Lean 形式化驗證版本",
+          "url": "https://github.com/lsernau/grh-lean",
+          "weightedScore": 299
+        },
+        {
+          "content": "開發者利用大型語言模型（LLM）的程式碼理解與逆向能力，成功將開源韌體 Rockbox 移植到一款來自拍賣網站、無官方技術文檔的 9 美元神祕 MP3 播放器上，展示了 AI 在硬體底層逆向與移植上的創新應用。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Porting Rockbox to an undocumented $9 AliExpress 'YP3' MP3 player with LLMs",
+          "sources": [
+            "hn"
+          ],
+          "title": "藉助 LLM 將 Rockbox 移植到無規格文件的 9 美元平價 MP3 播放器",
+          "url": "https://jayd.ml/2026/11/14/rockbox-on-yp3.html",
+          "weightedScore": 231
+        },
+        {
+          "content": "開發者為 9front 作業系統打造了致敬經典 Macintosh 風格的現代化圖形桌面環境 9/UX，大幅提升了系統的易用性與操作體驗，是作業系統與介面實作的重要開源進展。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "lobsters-ai",
+          "sourceTitle": "9/UX: a Macintosh-inspired desktop for 9front",
+          "sources": [
+            "lobsters-ai"
+          ],
+          "title": "9front 推出受 Macintosh 啟發的全新桌面環境 9/UX",
+          "url": "https://progrium.github.io/9ux/",
+          "weightedScore": 100
+        },
+        {
+          "content": "密碼管理工具 1Password 近期傳出安全事件，官方正進行調查並提醒用戶與開發者關注帳號與憑證安全，對依賴密碼庫的團隊具備高度安全警示意義。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Stalwart is now a drop-in replacement for Microsoft Exchange",
+          "sourceTitle": "1Password Security Incident",
           "sources": [
             "hn"
           ],
-          "title": "Stalwart 推出可直接替換 Microsoft Exchange 的郵件伺服器方案",
-          "url": "https://stalw.art/blog/microsoft-exchange-replacement/",
-          "weightedScore": 687
-        },
-        {
-          "content": "高效能 UI 框架 GPUI 宣佈將從主專案中獨立出來建立專屬儲存庫，推動生態系發展並方便外部開發者參與貢獻。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "GPUI is getting its own repository",
-          "sources": [
-            "hn"
-          ],
-          "title": "GPUI 框架將獨立建立專屬儲存庫",
-          "url": "https://github.com/zed-industries/gpui",
-          "weightedScore": 381
-        },
-        {
-          "content": "隱私導向搜尋引擎 Kagi 旗下新產品 Kagi Mail 宣佈推出公開測試版，提供注重隱私與高效郵件管理的用戶與開發者進行體驗評測。",
-          "degraded": false,
-          "domain": "general",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Kagi Mail (public beta)",
-          "sources": [
-            "hn"
-          ],
-          "title": "Kagi Mail 開放公開測試版",
-          "url": "https://blog.kagi.com/kagi-mail-public-beta",
-          "weightedScore": 458
+          "title": "1Password 發生安全事件通報",
+          "url": "https://1password.com/blog/update-on-nov-2026-security-incident",
+          "weightedScore": 1197
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-11T23:37:19.365Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Mxc: Microsoft Execution Containers version 1.0.0",
-      "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-11T23:37:19.365Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "title": "Update your IDE to restore agent activity in Copilot usage metrics",
-      "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-11T23:37:19.365Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "Claude found 29,000 possible bugs in open source. Only 516 have been fixed.",
-      "url": "https://thenewstack.io/anthropic-oss-scanner-vulnerabilities"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-11T23:37:19.365Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "Claude Code found my app’s shared contract in two MCP calls. Then the records ran out.",
-      "url": "https://thenewstack.io/claude-code-mcp-records"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-11T23:37:19.365Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Five months treating bugs like patients and coding agents like a medical team",
-      "url": "https://cockroachlabs.com/blog/experiment-running-hospital-code"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-11T23:37:19.365Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "title": "Building a 4x R9700 setup for a 10 person startup",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1x2u742/building_a_4x_r9700_setup_for_a_10_person_startup"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-11T23:37:19.365Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
-      "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-10-11T23:37:19.365Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Telegram Desktop vulnerability allowed any user's file to be stolen",
-      "url": "https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-10-11T23:37:19.365Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "REA Reverse – Engineer Anything",
-      "url": "https://rea.tools/"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-10-13T01:58:42.615Z",
@@ -6783,6 +6694,126 @@
       ],
       "title": "Kagi Mail (public beta)",
       "url": "https://blog.kagi.com/kagi-mail-public-beta"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "OpenAI claims to have solved a 57-year-old math problem at the heart of AI computation",
+      "url": "https://thenewstack.io/openai-matrix-multiplication-exponent"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "JetBrains’ latest Mellum coding model uses 45% fewer tokens. It got there by not thinking.",
+      "url": "https://thenewstack.io/jetbrains-mellum2-1-instruct-coding-model"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "Gemini 4 Carbon is now available",
+      "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "cloudflare-blog",
+      "sources": [
+        "cloudflare-blog"
+      ],
+      "title": "Introducing Search for Agents",
+      "url": "https://blog.cloudflare.com/search-for-agents"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "github-changelog-copilot",
+      "sources": [
+        "github-changelog-copilot"
+      ],
+      "title": "Copilot code review billing will default to the organization",
+      "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Quad9 pulled their DNS service from France",
+      "url": "https://quad9.net/news/blog/quad9-service-deactivation-in-france"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+      "url": "https://gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth"
+    },
+    {
+      "domain": "frontend-backend",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Bypassing iOS Safari's 60 FPS Limit to Build Web Applications That Feel Native",
+      "url": "https://rida.dev/blog/bypassing-ios-safari-60-fps-limit"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Much shorter version of GRH Lean verification from Anthropic",
+      "url": "https://github.com/lsernau/grh-lean"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Porting Rockbox to an undocumented $9 AliExpress 'YP3' MP3 player with LLMs",
+      "url": "https://jayd.ml/2026/11/14/rockbox-on-yp3.html"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "lobsters-ai",
+      "sources": [
+        "lobsters-ai"
+      ],
+      "title": "9/UX: a Macintosh-inspired desktop for 9front",
+      "url": "https://progrium.github.io/9ux"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-26T02:45:13.516Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "1Password Security Incident",
+      "url": "https://1password.com/blog/update-on-nov-2026-security-incident"
     }
   ]
 }
