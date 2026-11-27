@@ -518,97 +518,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-23T00:45:56.544Z",
-  "lastNewsPushAt": "2026-11-26T02:45:13.516Z",
+  "lastNewsPushAt": "2026-11-27T02:45:49.430Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-23T00:45:56.544Z",
       "summary": "本次綜合榜 #1 為 elementalsouls/Claude-BugHunter，榜單共計 7 個新進、0 個竄升、2 個下降，其中新進全數分佈於 AI 5 個與前後端 2 個領域。"
     },
     "feed": [
-      {
-        "id": "repo:1140843380:new:2026-11-23",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "mvanhorn/last30days-skill 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/mvanhorn/last30days-skill"
-      },
-      {
-        "id": "repo:1356077516:new:2026-11-23",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "kajisho5/ffmpeg-skill 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/kajisho5/ffmpeg-skill"
-      },
-      {
-        "id": "repo:612230:new:2026-11-23",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "nvm-sh/nvm 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/nvm-sh/nvm"
-      },
-      {
-        "id": "repo:1462885033:new:2026-11-23",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "dynamicdeblackice-commits/joplin-arvella-notes 新進榜",
-        "type": "board-new",
-        "url": "https://github.com/dynamicdeblackice-commits/joplin-arvella-notes"
-      },
-      {
-        "content": "llama.cpp 發布 v1.0.0 版本，為本地人工智慧生態系統奠定更強大且穩定基礎。此版本對開發者而言，提供了更完善的模型執行支援與效能優化，有助於在邊緣裝置與本地端更高效地部署大型語言模型。",
-        "id": "news:https://huggingface.co/blog/ggml-org/llama-cpp-v1",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "llama.cpp v1.0.0 正式釋出：打造更穩固的本地 AI 生態系基礎",
-        "type": "news",
-        "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
-      },
-      {
-        "content": "Google 推出的 Gemini 4 Neon 在 Models Engineering Index 評測中奪下第一名。對開發者而言，這代表新一代模型在工程任務上的效能表現再度刷新，提供更強大的程式碼生成與推理能力。",
-        "id": "news:https://git-aarvin.github.io/mei",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "Gemini 4 Neon 登頂模型工程指數榜首",
-        "type": "news",
-        "url": "https://git-aarvin.github.io/mei/"
-      },
-      {
-        "content": "開發社群近期推出 Inkling 2 Mini 模型，主打輕量與高效能。對於在資源受限環境下進行本地 AI 開發的工程師而言，提供了一個兼顧執行速度與表現的新選擇。",
-        "id": "news:https://thinkingmachines.ai/news/inkling-2-mini",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "Inkling 2 Mini 模型全新發布",
-        "type": "news",
-        "url": "https://thinkingmachines.ai/news/inkling-2-mini/"
-      },
-      {
-        "content": "報導指出多家 AI 推論服務商近期發生資料處理相關事故。這對依賴第三方 AI API 的開發者是一項重要警訊，需重新評估系統架構中的資料隱私、備援機制與容錯能力。",
-        "id": "news:https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "AI 推論服務商近期頻傳資料處理事故",
-        "type": "news",
-        "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/"
-      },
-      {
-        "content": "OpenJDK 的 Base64 解碼器爆出重大記憶體損壞漏洞 Java4Shell（CVE-2026-114938），可導致遠端程式碼執行。Cloudflare 已針對付費方案釋出六項 WAF 受管規則協助防護，開發者應儘速修補 Java 執行環境。",
-        "id": "news:https://blog.cloudflare.com/java4shell-waf-protection",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "Cloudflare 發布 WAF 規則以防範 Java4Shell 漏洞",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/java4shell-waf-protection/"
-      },
-      {
-        "content": "Nginx 官方修補了 5 項被統稱為 nginx2root 的重大記憶體損壞漏洞，未經身份驗證的攻擊者可能藉此在伺服器上執行程式碼。使用 Cloudflare 代理的源站雖可獲得部分防護，但管理員仍須儘速更新。",
-        "id": "news:https://blog.cloudflare.com/nginx2root",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "Nginx 揭露 5 項名為 nginx2root 的記憶體損壞漏洞",
-        "type": "news",
-        "url": "https://blog.cloudflare.com/nginx2root/"
-      },
-      {
-        "content": "開發者分享從零開始重建本地語音助理管線的技術細節與架構考量。對於想擺脫雲端依賴、建立私有化語音互動應用的開發者，提供了極具價值的實作參考與架構藍圖。",
-        "id": "news:https://blog.platypush.tech/article/Rewriting-my-voice-assistant-pipeline",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "重建個人本地語音助理管線的實作經驗分享",
-        "type": "news",
-        "url": "https://blog.platypush.tech/article/Rewriting-my-voice-assistant-pipeline"
-      },
       {
         "content": "探討時序模型在 Streamhouse 架構中的整合與應用場景。對於處理即時資料流與預測分析的工程團隊，這篇文章提供了將機器學習模型直接導入即時管線的實務見解。",
         "id": "news:https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
@@ -920,313 +836,257 @@
         "title": "1Password 發生安全事件通報",
         "type": "news",
         "url": "https://1password.com/blog/update-on-nov-2026-security-incident"
+      },
+      {
+        "content": "Google 正式宣布推出 Gemini 4 Hydrogen。作為 Gemini 4 系列的最新成員，此發布延續了該模型家族在不同運算等級與專業場景上的布局。對開發者而言，Hydrogen 版本的亮相提供了新的模型選擇與 API 整合可能，有助於在推論成本、反應速度與任務複雜度之間取得更合適的平衡。開發者應關注其在各項基準測試中的效能表現，以及後續在 Google AI Studio 與 Vertex AI 上的部署細節。",
+        "id": "news:https://deepmind.google/blog/introducing-gemini-4-hydrogen",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "Google 發布 Gemini 4 Hydrogen 模型，拓展 Gemini 4 系列能力",
+        "type": "news",
+        "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/"
+      },
+      {
+        "content": "Google 發布了名為 Cogentic 的系列論文，聚焦於整數分解（Integer Factorization）與離散對數（Discrete Logarithms）等經典數學與計算難題。整數分解與離散對數是現代公鑰密碼學（如 RSA 與 Diffie-Hellman）的安全性基石；Google 透過結合先進演算法與計算架構提出的新方法，引起了密碼學界與開發社群對既有加密體系長期強韌度的討論。這項研究提醒資安與後端架構師應持續關注後量子密碼學（PQC）的過渡時程，並提早評估長期資料保護方案的抗威脅能力。",
+        "id": "news:https://github.com/google-research/google-research/tree/master/cogentic_research_papers",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "Google 發表 Cogentic 系列研究論文，探索整數分解與離散對數演算法突破",
+        "type": "news",
+        "url": "https://github.com/google-research/google-research/tree/master/cogentic_research_papers"
+      },
+      {
+        "content": "Google 宣布將讓其 AI Agent 採用 Anthropic 主導的模型上下文協定（Model Context Protocol, MCP），並著手推出官方 MCP 伺服器整合 Google 旗下服務。值得注意的是，其官方 Gmail MCP 伺服器目前設計為無法直接寄送電子郵件，僅允許讀取等較受限的操作。這項轉變標誌著 MCP 協定進一步跨越廠商藩籬成為 Agent 工具整合的事實標準，同時也展示了主流大廠在賦予自主 Agent 外部操作權限時的安全護欄考量。對開發者而言，可加速基於 MCP 標準建構跨平台 Agent，並需依循其權限邊界設計工作流程。",
+        "id": "news:https://techstackups.com/articles/google-workspace-ai-agents-mcp",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "Google 擁抱 MCP 標準推官方 Agent 伺服器，但 Gmail 伺服器限制寄件權限",
+        "type": "news",
+        "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/"
+      },
+      {
+        "content": "NVIDIA 針對文件解析專用模型 Nemotron 3.5 Parse 發布最新技術實作分享，涵蓋開放資料集釋出、模型微調策略以及推論加速方案。文件解析一直是大語言模型應用於檢索增強生成（RAG）與企業知識庫時的關鍵瓶頸；透過 Nemotron 3.5 Parse 的開放資料與專屬微調流程，開發者能更有效率地從複雜表格與非結構化排版中擷取精確資訊，並藉由優化推論管道降低落地部署的延遲與硬體運算成本。",
+        "id": "news:https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "NVIDIA 釋出 Nemotron 3.5 Parse 開發指南，涵蓋開放資料、微調與推論加速",
+        "type": "news",
+        "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin"
+      },
+      {
+        "content": "隨著開發流程中 AI 代理（Coding Agents）的普及，中央代理維運（Central Agentic Ops, CAO）提出了一套跨多個程式碼儲存庫監控與治理 Agentic 工作流程的架構設計。該機制旨在解決多個自主 Agent 平行修改程式碼時所引發的權限失控、審查斷層與追蹤不易等問題。對工程團隊而言，CAO 提供了一個結構化的維運視角，協助團隊在享受自動化編程效益的同時，建立對 Agent 行為的稽核日誌、變更安全護欄與跨專案一致性控管。",
+        "id": "news:https://githubnext.com/projects/central-agentic-ops",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "跨儲存庫監控與治理：Central Agentic Ops（CAO）框架登場",
+        "type": "news",
+        "url": "https://githubnext.com/projects/central-agentic-ops/"
+      },
+      {
+        "content": "一項最新研究指出，即使大型語言模型在提示詞與 API 層面處於嚴格隔離的沙盒環境中，若部署在同一個底層推論伺服器架構上，模型之間仍可透過硬體共用資源與推論快取等微架構側信道實現隱蔽通訊。此項發現對當前多租戶（Multi-tenant）LLM 託管服務與安全敏感型 Agent 隔離架構帶來直接衝擊。開發者與基礎設施工程師在設計高安全性 AI 應用時，不能僅依賴應用層沙盒，而需重新評估推論基礎設施層級的資源隔離與防洩漏機制。",
+        "id": "news:https://lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "研究揭示沙盒化模型可透過共用推論伺服器建立隱蔽側信道通訊",
+        "type": "news",
+        "url": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being"
+      },
+      {
+        "content": "本文深入探討多代理系統（Multi-Agent Systems）的三種主流組織拓撲：Swarms（無中心蜂群）、Flocks（規則引導群體）與 Gangs（緊密協同分工小組），並詳細分析各架構在工作分解、通訊開銷與決策容錯上的權衡。文章進一步提供了多代理互動下的微調與對抗訓練技術，以及如何建立客觀基準評估協同效能而非單一 Agent 表現。對於正從單一對話模型轉向多 Agent 複雜任務編排的軟體架構師而言，這篇內容提供了系統性的工程落地方案。",
+        "id": "news:https://huggingface.co/blog/training-swarms",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "多代理系統架構深度解析：群體協同的構建、訓練與評估方法",
+        "type": "news",
+        "url": "https://huggingface.co/blog/training-swarms"
+      },
+      {
+        "content": "社群針對 AMD 平台推出了專屬優化的 llama.cpp 分支版本，深入針對 AMD Ryzen AI、Radeon GPU 及 ROCm 生態系進行推論核心優化與記憶體頻寬微調。llama.cpp 作為邊緣與本地端 LLM 執行的主流專案，過去大多優先針對 CUDA 與 Apple Silicon 進行調優；此 AMD 專用分支的推出，大幅改善了 AMD 硬體使用者的本機推論吞吐量與相容性體驗，為尋求 NVIDIA 以外替代硬體方案的本機 AI 開發者與部署團隊提供了更實用的開源選擇。",
+        "id": "news:https://devnull.land/amd-specific-llama-cpp",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "開源社群推出針對 AMD 硬體架構優化的 llama.cpp 專屬分支",
+        "type": "news",
+        "url": "https://devnull.land/amd-specific-llama-cpp"
+      },
+      {
+        "content": "GitHub 官方發表技術專文，說明如何對大型既有老舊應用程式進行邊界評估，制定小步迭代的安全現代化步驟，並利用 GitHub Copilot agent skill 將評估與重構方法模組化復用。對於維護龐大 Legacy 系統的工程團隊而言，一次性重寫往往伴隨巨大風險；文章展示了如何結合靜態分析與客製化 Agent 技能，在確保業務邏輯不中斷的前提下，逐步將單體服務重構為現代化架構，提供具體可落地的工程實踐指南。",
+        "id": "news:https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "GitHub 探討老舊系統現代化策略：結合 Copilot Agent Skill 進行安全重構",
+        "type": "news",
+        "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/"
+      },
+      {
+        "content": "PenGPT 提出了將自回歸 Transformer 模型應用於向量手寫與草圖生成的全新架構。相較於將手寫轉為像素點陣的擴散模型，PenGPT 直接對手寫筆畫的座標序列、壓感與軌跡拓撲進行建模，能夠生成具備連貫向量路徑的逼真筆跡與圖表草稿。這項技術為手寫筆記數位化、互動式白板以及向量繪圖應用的前端與 AI 開發者帶來了輕量級且高解析度無損的全新生成工具。",
+        "id": "news:https://greydanus.github.io/2026/11/12/pengpt",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "PenGPT 開發架構：專注於手寫筆跡與向量草圖生成的 Transformer 模型",
+        "type": "news",
+        "url": "https://greydanus.github.io/2026/11/12/pengpt/"
+      },
+      {
+        "content": "一篇社群技術分析探討了 Ubuntu 官方在 CVE 安全漏洞通報後的修補釋出時間，指出其在部分上游套件的修補延遲上顯著落後於 Debian、Alpine 等發行版。對於大量將 Ubuntu 用作伺服器底層作業系統、容器基礎映像檔（Base Images）以及 CI/CD 執行環境的 DevOps 與資安工程師而言，慢速的安全性更新可能延長系統暴露於已知威脅的空窗期。開發團隊應藉此檢視內部容器映像檔的相依套件掃描策略，並評估在關鍵基礎設施中切換為滾動修補更及時之發行版的可行性。",
+        "id": "news:https://openwall.com/lists/oss-security/2026/11/25/9",
+        "publishedAt": "2026-11-27T02:45:49.430Z",
+        "title": "社群分析指出 Ubuntu 安全漏洞修補週期緩慢，引發基礎設施維運隱憂",
+        "type": "news",
+        "url": "https://www.openwall.com/lists/oss-security/2026/11/25/9"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-26T02:45:13.516Z",
+      "generatedAt": "2026-11-27T02:45:49.430Z",
       "items": [
         {
-          "content": "OpenAI 在最新預印論文中宣稱，已成功解決自 1969 年以來困擾理論計算機科學界長達 57 年的數學難題。這項突破可能對底層 AI 計算架構與效率帶來深遠影響，備受業界關注。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "OpenAI claims to have solved a 57-year-old math problem at the heart of AI computation",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "OpenAI 宣稱解決影響 AI 計算核心的 57 年數學難題",
-          "url": "https://thenewstack.io/openai-matrix-multiplication-exponent/",
-          "weightedScore": 50
-        },
-        {
-          "content": "JetBrains 推出專為快速程式碼編輯與工具互動設計的開源程式碼模型 Mellum 最新變體。該模型透過精簡思考過程，實現了減少 45% Token 消耗量的顯著效率提升，對開發者在日常編碼中的 AI 輔助成本有直接幫助。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "thenewstack",
-          "sourceTitle": "JetBrains’ latest Mellum coding model uses 45% fewer tokens. It got there by not thinking.",
-          "sources": [
-            "thenewstack"
-          ],
-          "title": "JetBrains 推出全新 Mellum 程式碼模型，Token 消耗量減少 45%",
-          "url": "https://thenewstack.io/jetbrains-mellum2-1-instruct-coding-model/",
-          "weightedScore": 50
-        },
-        {
-          "content": "Google 正式宣布推出 Gemini 4 Carbon，為開發者與企業用戶提供最新的 AI 模型能力更新，進一步擴展其模型生態系與應用場景。",
+          "content": "Google 正式宣布推出 Gemini 4 Hydrogen。作為 Gemini 4 系列的最新成員，此發布延續了該模型家族在不同運算等級與專業場景上的布局。對開發者而言，Hydrogen 版本的亮相提供了新的模型選擇與 API 整合可能，有助於在推論成本、反應速度與任務複雜度之間取得更合適的平衡。開發者應關注其在各項基準測試中的效能表現，以及後續在 Google AI Studio 與 Vertex AI 上的部署細節。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "deepmind-blog",
-          "sourceTitle": "Gemini 4 Carbon is now available",
+          "sourceTitle": "Introducing Gemini 4 Hydrogen",
           "sources": [
             "deepmind-blog"
           ],
-          "title": "Google 推出全新 Gemini 4 Carbon 模型",
-          "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
+          "title": "Google 發布 Gemini 4 Hydrogen 模型，拓展 Gemini 4 系列能力",
+          "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
           "weightedScore": 100
         },
         {
-          "content": "平台推出全新 Search for Agents 功能，只要開啟開關即可讓網站對 AI 代理完全可搜尋。包含自動內容索引、可發現的搜尋 API 以及原生的 HTTP QUERY 支援，方便 AI 代理更有效率地抓取與檢索網站資料。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "cloudflare-blog",
-          "sourceTitle": "Introducing Search for Agents",
-          "sources": [
-            "cloudflare-blog"
-          ],
-          "title": "推出 Search for Agents 功能，讓網站支援 AI 代理搜尋",
-          "url": "https://blog.cloudflare.com/search-for-agents/",
-          "weightedScore": 50
-        },
-        {
-          "content": "GitHub 官方發布公告指出，若組織未針對具備 Copilot 授權成員的 Copilot 程式碼審查選擇計費方式，相關費用將自特定日期起自動預設計費至組織帳戶，提醒管理員留意相關設定與成本分攤。",
+          "content": "Google 發布了名為 Cogentic 的系列論文，聚焦於整數分解（Integer Factorization）與離散對數（Discrete Logarithms）等經典數學與計算難題。整數分解與離散對數是現代公鑰密碼學（如 RSA 與 Diffie-Hellman）的安全性基石；Google 透過結合先進演算法與計算架構提出的新方法，引起了密碼學界與開發社群對既有加密體系長期強韌度的討論。這項研究提醒資安與後端架構師應持續關注後量子密碼學（PQC）的過渡時程，並提早評估長期資料保護方案的抗威脅能力。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "github-changelog-copilot",
-          "sourceTitle": "Copilot code review billing will default to the organization",
+          "sourceId": "hn",
+          "sourceTitle": "Google releases Cogentic papers on integer factorization, discrete logs and more",
           "sources": [
-            "github-changelog-copilot"
+            "hn"
           ],
-          "title": "GitHub Copilot 程式碼審查費用將預設由組織帳戶支付",
-          "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
+          "title": "Google 發表 Cogentic 系列研究論文，探索整數分解與離散對數演算法突破",
+          "url": "https://github.com/google-research/google-research/tree/master/cogentic_research_papers",
+          "weightedScore": 503
+        },
+        {
+          "content": "Google 宣布將讓其 AI Agent 採用 Anthropic 主導的模型上下文協定（Model Context Protocol, MCP），並著手推出官方 MCP 伺服器整合 Google 旗下服務。值得注意的是，其官方 Gmail MCP 伺服器目前設計為無法直接寄送電子郵件，僅允許讀取等較受限的操作。這項轉變標誌著 MCP 協定進一步跨越廠商藩籬成為 Agent 工具整合的事實標準，同時也展示了主流大廠在賦予自主 Agent 外部操作權限時的安全護欄考量。對開發者而言，可加速基於 MCP 標準建構跨平台 Agent，並需依循其權限邊界設計工作流程。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
+          "sources": [
+            "hn"
+          ],
+          "title": "Google 擁抱 MCP 標準推官方 Agent 伺服器，但 Gmail 伺服器限制寄件權限",
+          "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
+          "weightedScore": 257
+        },
+        {
+          "content": "NVIDIA 針對文件解析專用模型 Nemotron 3.5 Parse 發布最新技術實作分享，涵蓋開放資料集釋出、模型微調策略以及推論加速方案。文件解析一直是大語言模型應用於檢索增強生成（RAG）與企業知識庫時的關鍵瓶頸；透過 Nemotron 3.5 Parse 的開放資料與專屬微調流程，開發者能更有效率地從複雜表格與非結構化排版中擷取精確資訊，並藉由優化推論管道降低落地部署的延遲與硬體運算成本。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "NVIDIA 釋出 Nemotron 3.5 Parse 開發指南，涵蓋開放資料、微調與推論加速",
+          "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
           "weightedScore": 100
         },
         {
-          "content": "DNS 安全服務商 Quad9 宣布將其 DNS 服務從法國撤出，此舉直接影響該地區的網路基礎設施與開發者可依賴的解析服務，屬於重要的外部營運變動事件。",
-          "degraded": false,
-          "domain": "devops",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Quad9 pulled their DNS service from France",
-          "sources": [
-            "hn"
-          ],
-          "title": "Quad9 宣布自法國撤出其 DNS 服務",
-          "url": "https://quad9.net/news/blog/quad9-service-deactivation-in-france/",
-          "weightedScore": 383
-        },
-        {
-          "content": "本文深入介紹如何結合 Inkling、Qwen 與 Unsloth 等開源模型與微調工具，在本地端建構與執行 AI 工作流程，為希望擺脫雲端依賴的開發者提供實用的實作經驗。",
+          "content": "隨著開發流程中 AI 代理（Coding Agents）的普及，中央代理維運（Central Agentic Ops, CAO）提出了一套跨多個程式碼儲存庫監控與治理 Agentic 工作流程的架構設計。該機制旨在解決多個自主 Agent 平行修改程式碼時所引發的權限失控、審查斷層與追蹤不易等問題。對工程團隊而言，CAO 提供了一個結構化的維運視角，協助團隊在享受自動化編程效益的同時，建立對 Agent 行為的稽核日誌、變更安全護欄與跨專案一致性控管。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+          "sourceId": "github-next",
+          "sourceTitle": "Central Agentic Ops (CAO)",
           "sources": [
-            "hn"
+            "github-next"
           ],
-          "title": "使用 Inkling、Qwen 與 Unsloth 的本地 AI 初學者指南",
-          "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
-          "weightedScore": 776
-        },
-        {
-          "content": "本文探討前端開發者如何突破 iOS Safari 預設的 60 FPS 渲染限制，透過底層效能最佳化技巧，讓網頁應用程式（PWA）具備流暢的原生級互動體驗，對前端效能調校極具參考價值。",
-          "degraded": false,
-          "domain": "frontend-backend",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Bypassing iOS Safari's 60 FPS Limit to Build Web Applications That Feel Native",
-          "sources": [
-            "hn"
-          ],
-          "title": "繞過 iOS Safari 60 FPS 限制以打造原生質感的網頁應用程式",
-          "url": "https://rida.dev/blog/bypassing-ios-safari-60-fps-limit",
-          "weightedScore": 440
-        },
-        {
-          "content": "Anthropic 釋出針對 GRH 定理更精簡的 Lean 形式化驗證版本，展示了利用自動化推理與機器輔助證明來驗證複雜數學與邏輯問題的最新進展。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Much shorter version of GRH Lean verification from Anthropic",
-          "sources": [
-            "hn"
-          ],
-          "title": "Anthropic 發布更簡短的 GRH Lean 形式化驗證版本",
-          "url": "https://github.com/lsernau/grh-lean",
-          "weightedScore": 299
-        },
-        {
-          "content": "開發者利用大型語言模型（LLM）的程式碼理解與逆向能力，成功將開源韌體 Rockbox 移植到一款來自拍賣網站、無官方技術文檔的 9 美元神祕 MP3 播放器上，展示了 AI 在硬體底層逆向與移植上的創新應用。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Porting Rockbox to an undocumented $9 AliExpress 'YP3' MP3 player with LLMs",
-          "sources": [
-            "hn"
-          ],
-          "title": "藉助 LLM 將 Rockbox 移植到無規格文件的 9 美元平價 MP3 播放器",
-          "url": "https://jayd.ml/2026/11/14/rockbox-on-yp3.html",
-          "weightedScore": 231
-        },
-        {
-          "content": "開發者為 9front 作業系統打造了致敬經典 Macintosh 風格的現代化圖形桌面環境 9/UX，大幅提升了系統的易用性與操作體驗，是作業系統與介面實作的重要開源進展。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "lobsters-ai",
-          "sourceTitle": "9/UX: a Macintosh-inspired desktop for 9front",
-          "sources": [
-            "lobsters-ai"
-          ],
-          "title": "9front 推出受 Macintosh 啟發的全新桌面環境 9/UX",
-          "url": "https://progrium.github.io/9ux/",
+          "title": "跨儲存庫監控與治理：Central Agentic Ops（CAO）框架登場",
+          "url": "https://githubnext.com/projects/central-agentic-ops/",
           "weightedScore": 100
         },
         {
-          "content": "密碼管理工具 1Password 近期傳出安全事件，官方正進行調查並提醒用戶與開發者關注帳號與憑證安全，對依賴密碼庫的團隊具備高度安全警示意義。",
+          "content": "一項最新研究指出，即使大型語言模型在提示詞與 API 層面處於嚴格隔離的沙盒環境中，若部署在同一個底層推論伺服器架構上，模型之間仍可透過硬體共用資源與推論快取等微架構側信道實現隱蔽通訊。此項發現對當前多租戶（Multi-tenant）LLM 託管服務與安全敏感型 Agent 隔離架構帶來直接衝擊。開發者與基礎設施工程師在設計高安全性 AI 應用時，不能僅依賴應用層沙盒，而需重新評估推論基礎設施層級的資源隔離與防洩漏機制。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
+          "sources": [
+            "hn"
+          ],
+          "title": "研究揭示沙盒化模型可透過共用推論伺服器建立隱蔽側信道通訊",
+          "url": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
+          "weightedScore": 465
+        },
+        {
+          "content": "本文深入探討多代理系統（Multi-Agent Systems）的三種主流組織拓撲：Swarms（無中心蜂群）、Flocks（規則引導群體）與 Gangs（緊密協同分工小組），並詳細分析各架構在工作分解、通訊開銷與決策容錯上的權衡。文章進一步提供了多代理互動下的微調與對抗訓練技術，以及如何建立客觀基準評估協同效能而非單一 Agent 表現。對於正從單一對話模型轉向多 Agent 複雜任務編排的軟體架構師而言，這篇內容提供了系統性的工程落地方案。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "多代理系統架構深度解析：群體協同的構建、訓練與評估方法",
+          "url": "https://huggingface.co/blog/training-swarms",
+          "weightedScore": 100
+        },
+        {
+          "content": "社群針對 AMD 平台推出了專屬優化的 llama.cpp 分支版本，深入針對 AMD Ryzen AI、Radeon GPU 及 ROCm 生態系進行推論核心優化與記憶體頻寬微調。llama.cpp 作為邊緣與本地端 LLM 執行的主流專案，過去大多優先針對 CUDA 與 Apple Silicon 進行調優；此 AMD 專用分支的推出，大幅改善了 AMD 硬體使用者的本機推論吞吐量與相容性體驗，為尋求 NVIDIA 以外替代硬體方案的本機 AI 開發者與部署團隊提供了更實用的開源選擇。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "AMD-specific fork of llama.cpp",
+          "sources": [
+            "hn"
+          ],
+          "title": "開源社群推出針對 AMD 硬體架構優化的 llama.cpp 專屬分支",
+          "url": "https://devnull.land/amd-specific-llama-cpp",
+          "weightedScore": 294
+        },
+        {
+          "content": "GitHub 官方發表技術專文，說明如何對大型既有老舊應用程式進行邊界評估，制定小步迭代的安全現代化步驟，並利用 GitHub Copilot agent skill 將評估與重構方法模組化復用。對於維護龐大 Legacy 系統的工程團隊而言，一次性重寫往往伴隨巨大風險；文章展示了如何結合靜態分析與客製化 Agent 技能，在確保業務邏輯不中斷的前提下，逐步將單體服務重構為現代化架構，提供具體可落地的工程實踐指南。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "github-blog-ai-ml",
+          "sourceTitle": "How to choose the next safe step in application modernization",
+          "sources": [
+            "github-blog-ai-ml"
+          ],
+          "title": "GitHub 探討老舊系統現代化策略：結合 Copilot Agent Skill 進行安全重構",
+          "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+          "weightedScore": 100
+        },
+        {
+          "content": "PenGPT 提出了將自回歸 Transformer 模型應用於向量手寫與草圖生成的全新架構。相較於將手寫轉為像素點陣的擴散模型，PenGPT 直接對手寫筆畫的座標序列、壓感與軌跡拓撲進行建模，能夠生成具備連貫向量路徑的逼真筆跡與圖表草稿。這項技術為手寫筆記數位化、互動式白板以及向量繪圖應用的前端與 AI 開發者帶來了輕量級且高解析度無損的全新生成工具。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "PenGPT: A Generative Transformer for Handwriting and Sketches",
+          "sources": [
+            "hn"
+          ],
+          "title": "PenGPT 開發架構：專注於手寫筆跡與向量草圖生成的 Transformer 模型",
+          "url": "https://greydanus.github.io/2026/11/12/pengpt/",
+          "weightedScore": 404
+        },
+        {
+          "content": "一篇社群技術分析探討了 Ubuntu 官方在 CVE 安全漏洞通報後的修補釋出時間，指出其在部分上游套件的修補延遲上顯著落後於 Debian、Alpine 等發行版。對於大量將 Ubuntu 用作伺服器底層作業系統、容器基礎映像檔（Base Images）以及 CI/CD 執行環境的 DevOps 與資安工程師而言，慢速的安全性更新可能延長系統暴露於已知威脅的空窗期。開發團隊應藉此檢視內部容器映像檔的相依套件掃描策略，並評估在關鍵基礎設施中切換為滾動修補更及時之發行版的可行性。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "1Password Security Incident",
+          "sourceTitle": "Slow Ubuntu security response times",
           "sources": [
             "hn"
           ],
-          "title": "1Password 發生安全事件通報",
-          "url": "https://1password.com/blog/update-on-nov-2026-security-incident",
-          "weightedScore": 1197
+          "title": "社群分析指出 Ubuntu 安全漏洞修補週期緩慢，引發基礎設施維運隱憂",
+          "url": "https://www.openwall.com/lists/oss-security/2026/11/25/9",
+          "weightedScore": 411
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "title": "Qwen released QwenGyre - RL framework for training AI agents on extremely long complex tasks",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1x41myz/qwen_released_qwengyre_rl_framework_for_training"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "gh-cpython",
-      "sources": [
-        "gh-cpython"
-      ],
-      "title": "Python 3.10 end of life",
-      "url": "https://github.com/python/cpython/releases/tag/3.10"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "title": "Filter, reshape, and redact logs before export with Transformers",
-      "url": "https://blog.cloudflare.com/transformers-on-logpush"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "“A major overhaul”: OpenCode 2.0 puts its terminal, desktop, and web apps on one shared service",
-      "url": "https://thenewstack.io/opencode-2-shared-service"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "QGIS enacts moratorium on AI contributions",
-      "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "github-blog-ai-ml",
-      "sources": [
-        "github-blog-ai-ml"
-      ],
-      "title": "GitHub Copilot app for Beginners: How to teach Copilot about your codebase",
-      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-teach-copilot-about-your-codebase"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "NYC's \"Click to Cancel\" rule is now in effect",
-      "url": "https://nyc.gov/main/click-to-cancel"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "GPUs on Kubernetes are bring-your-own-everything, starting with the bill",
-      "url": "https://thenewstack.io/gpus-on-kubernetes"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "500B tokens later: Letting AI agents decompile a first-person shooter",
-      "url": "https://momo5502.com/posts/2026-10-09-game-decompilation"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "lobsters-devops",
-      "sources": [
-        "lobsters-devops"
-      ],
-      "title": "Implementing kubernetes node bin packing",
-      "url": "https://blog.costgraph.ai/node-rightsizing"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "lobsters-devops",
-      "sources": [
-        "lobsters-devops"
-      ],
-      "title": "3-2-1 Backup Strategy with restic and Backblaze B2",
-      "url": "https://chuck.is/paranoid"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Passkeys are a trap",
-      "url": "https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-10-13T01:58:42.615Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Fingerprints are the new cookies",
-      "url": "https://royfish.dev/fingerprints-are-the-new-cookies"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-10-13T23:42:40.985Z",
@@ -6814,6 +6674,116 @@
       ],
       "title": "1Password Security Incident",
       "url": "https://1password.com/blog/update-on-nov-2026-security-incident"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "Introducing Gemini 4 Hydrogen",
+      "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Google releases Cogentic papers on integer factorization, discrete logs and more",
+      "url": "https://github.com/google-research/google-research/tree/master/cogentic_research_papers"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
+      "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+      "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "github-next",
+      "sources": [
+        "github-next"
+      ],
+      "title": "Central Agentic Ops (CAO)",
+      "url": "https://githubnext.com/projects/central-agentic-ops"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
+      "url": "https://lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+      "url": "https://huggingface.co/blog/training-swarms"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "AMD-specific fork of llama.cpp",
+      "url": "https://devnull.land/amd-specific-llama-cpp"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "github-blog-ai-ml",
+      "sources": [
+        "github-blog-ai-ml"
+      ],
+      "title": "How to choose the next safe step in application modernization",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "PenGPT: A Generative Transformer for Handwriting and Sketches",
+      "url": "https://greydanus.github.io/2026/11/12/pengpt"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-27T02:45:49.430Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Slow Ubuntu security response times",
+      "url": "https://openwall.com/lists/oss-security/2026/11/25/9"
     }
   ]
 }
