@@ -518,77 +518,13 @@
     }
   },
   "lastBoardPushAt": "2026-11-23T00:45:56.544Z",
-  "lastNewsPushAt": "2026-11-27T02:45:49.430Z",
+  "lastNewsPushAt": "2026-11-28T02:36:29.257Z",
   "publish": {
     "boardSummary": {
       "generatedAt": "2026-11-23T00:45:56.544Z",
       "summary": "本次綜合榜 #1 為 elementalsouls/Claude-BugHunter，榜單共計 7 個新進、0 個竄升、2 個下降，其中新進全數分佈於 AI 5 個與前後端 2 個領域。"
     },
     "feed": [
-      {
-        "content": "探討時序模型在 Streamhouse 架構中的整合與應用場景。對於處理即時資料流與預測分析的工程團隊，這篇文章提供了將機器學習模型直接導入即時管線的實務見解。",
-        "id": "news:https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "資料流架構中的時間序列模型應用與新挑戰",
-        "type": "news",
-        "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse"
-      },
-      {
-        "content": "介紹如何透過 AWS 模擬器來測試 Terraform 基礎設施即程式碼（IaC）的配置。這能幫助 DevOps 工程師在不實際部署至雲端環境的情況下，於本地進行更快速且安全的自動化測試。",
-        "id": "news:https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "使用 AWS 模擬器進行 Terraform 測試實務",
-        "type": "news",
-        "url": "https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator/"
-      },
-      {
-        "content": "展示 Codex 安全外掛程式的實際運作畫面，涵蓋從初始設定到檢視檢測結果的完整工作流程。對於希望將 AI 輔助安全審查導入日常開發的團隊提供了具體參考。",
-        "id": "news:https://openai.com/business/learn/codex-security-plugin-demo",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "探索 Codex 安全外掛程式的運作與工作流程",
-        "type": "news",
-        "url": "https://openai.com/business/learn/codex-security-plugin-demo"
-      },
-      {
-        "content": "探討如何利用 smoltcp、DPDK 與 AF_XDP 等高效能網路技術，在單一虛擬機上實現高達 1500 萬個網頁伺服器的極限測試。這對系統架構師與網路底層開發者而言，是研究高效能網路堆疊與核心旁路技術的重要參考。",
-        "id": "news:https://kapteko.com/15-million-webservers",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "單一虛擬機運行 1500 萬網頁伺服器：高壓網路堆疊解析",
-        "type": "news",
-        "url": "https://kapteko.com/15-million-webservers/"
-      },
-      {
-        "content": "探討利用 Lean 形式化驗證工具對黎曼猜想進行機器輔助驗證。這對關注形式化方法與程式碼正確性證明的軟體工程師而言，展示了現代定理證明工具在極端複雜數學與軟體驗證上的應用潛力。",
-        "id": "news:https://leanprover-community.github.io/blog/posts/riemann-hypothesis",
-        "publishedAt": "2026-11-23T00:45:56.544Z",
-        "title": "使用 Lean 互動式定理證明器驗證黎曼猜想",
-        "type": "news",
-        "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
-      },
-      {
-        "content": "Z.ai 正式發布 GLM-5.4 模型，主打專為通用程式碼任務設計的 Loop Transformer 架構。該架構透過讓運算重複執行相同的 28 層結構，在不線性增加參數量的前提下大幅提升運算深度，使 750B 規模的模型號稱能匹敵 3 兆參數級別的表現。這項架構突破展示了透過層級重複循環提高計算效率的新方向，對於從事程式碼輔助生成與大模型架構研究的開發者而言，提供了跳脫傳統純堆疊參數量的高效能推論新思路。",
-        "id": "news:https://z.ai/blog/glm-5.4",
-        "publishedAt": "2026-11-24T04:42:23.365Z",
-        "title": "Z.ai 發表 GLM-5.4：首創循環 Transformer 架構，強化通用程式碼能力",
-        "type": "news",
-        "url": "https://z.ai/blog/glm-5.4"
-      },
-      {
-        "content": "從零開始打造且不依賴現有程式碼庫的獨立網頁瀏覽器專案 Ladybird，正式宣布推出首個 Alpha 版本。在當前瀏覽器引擎市場高度由 Chromium 與 WebKit 主導的生態下，Ladybird 的 Alpha 釋出象徵著全新的第三方開源網頁渲染與 JavaScript 引擎走向實用化里程碑。這對前端與 Web 平台開發者至關重要，代表未來跨瀏覽器相容性測試將迎來非主流商業巨頭掌控的新基準，有助於促進 Web 開放標準的健全發展。",
-        "id": "news:https://ladybird.org/posts/alpha",
-        "publishedAt": "2026-11-24T04:42:23.365Z",
-        "title": "獨立瀏覽器引擎 Ladybird 正式進入 Alpha 階段",
-        "type": "news",
-        "url": "https://ladybird.org/posts/alpha/"
-      },
-      {
-        "content": "OpenAI 與思科宣布推出開源 Linux 執行階段環境 Shirudo。該專案旨在協助系統管理員與維運團隊在正式套用修補程式的過渡期間，即時保護正在運行的生產系統，避免尚未修補的已知或零日漏洞遭惡意利用。對於 DevOps、SRE 與基礎設施安全工程師而言，Shirudo 提供了一種在系統不停機且尚未完成完整更新驗證時，降低暴露風險的開源防禦工具。",
-        "id": "news:https://openai.com/index/introducing-shirudo",
-        "publishedAt": "2026-11-24T04:42:23.365Z",
-        "title": "OpenAI 與思科聯手推出開源 Linux 執行階段 Shirudo，強化即時修補防禦",
-        "type": "news",
-        "url": "https://openai.com/index/introducing-shirudo"
-      },
       {
         "content": "Anthropic 推出名為 Claude Ship 的開發輔助工具，由三個專職 AI Agent 組成團隊，能夠自動執行常規 Pull Request（PR）的程式碼審查、直接進行錯誤修正並最終核准合併。這項工具將 AI 從純粹的程式碼自動補全或建議，推進到端到端的自主審查與合併流程，有助於大幅減輕工程團隊在日常維護型 PR 上的負擔，同時也代表軟體開發工作流正在加速轉向 Agent 原生審查模式。",
         "id": "news:https://thenewstack.io/anthropic-claude-ship-approvals",
@@ -924,321 +860,192 @@
         "title": "社群分析指出 Ubuntu 安全漏洞修補週期緩慢，引發基礎設施維運隱憂",
         "type": "news",
         "url": "https://www.openwall.com/lists/oss-security/2026/11/25/9"
+      },
+      {
+        "content": "AWS 發表專為 AI 編程代理（Coding Agents）設計的 Nitro Sandboxes 機制，旨在為自主代理所生成的未受信任程式碼提供安全、輕量的沙盒執行環境。隨著自動化編程代理具備自主編寫並執行腳本的能力，若直接在主機或容器內運行可能引發嚴重的系統安全性與逃逸風險。Nitro Sandboxes 藉由 AWS Nitro 架構的微虛擬化技術，以極短的啟動時間提供強隔離邊界，確保代理程式在受限且可控的環境中完成測試與驗證，為構建安全自主 AI Agent 的 DevOps 與雲端架構師提供了關鍵基礎設施支持。",
+        "id": "news:https://thenewstack.io/aws-nitro-sandboxes-agents",
+        "publishedAt": "2026-11-28T02:36:29.257Z",
+        "title": "AWS 推出 Nitro Sandboxes：為 AI 編程代理提供隔離運行環境",
+        "type": "news",
+        "url": "https://thenewstack.io/aws-nitro-sandboxes-agents/"
+      },
+      {
+        "content": "開源大語言模型推論框架 llama.cpp 官方正式上線針對 AMD Ryzen 處理器與 Radeon 顯示卡的效能基準測試（Benchmark）儀表板。該儀表板匯集了不同架構、運算核心與量化精度（如 GGUF）在 AMD 硬體上的實際推論吞吐量與延遲數據。隨著在非 NVIDIA 晶片上部署本機 LLM 的需求增加，此測試工具讓開發者能客觀評估 AMD 硬體的本機 AI 推論能力，為邊緣推論與低成本開發工作站的硬體選型及參數調優提供可靠數據依據。",
+        "id": "news:https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+        "publishedAt": "2026-11-28T02:36:29.257Z",
+        "title": "llama.cpp 推出 AMD Ryzen 與 Radeon 專屬效能基準測試儀表板",
+        "type": "news",
+        "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench"
+      },
+      {
+        "content": "Google 宣布為其科學運算平台 Antigravity 推出名為 Mass Spec Skills 的專業 AI 技能工具，專門用於解析串聯質譜（Tandem Mass Spectra）並逆向識別複雜分子結構。質譜解析長年依賴人工比對與啟發式規則庫，在未知化合物分析上面臨瓶頸；該工具整合了領域特定的機器學習模型與代理技能，大幅提升自動化結構解析的精準度與效率。這項進展不僅展示了領域專業 AI 代理在科學計算中的落地潛力，也為從事 AI for Science 與生醫領域的演算法工程師提供了新的工具框架。",
+        "id": "news:https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity",
+        "publishedAt": "2026-11-28T02:36:29.257Z",
+        "title": "Google 推出 Mass Spec Skills：賦能 AI 代理從質譜數據精準識別分子結構",
+        "type": "news",
+        "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/"
+      },
+      {
+        "content": "本文深入探討在 AWS 新一代自研 AI 加速晶片 Trainium3 上部署並最佳化 LTX-2.5 影片生成模型的實戰經驗。工程團隊詳細分析了從 CUDA 生態轉換至 AWS Neuron SDK 編譯器的技術挑戰、注意力機制的運算調度，以及相較於主流 GPU 在推論延遲與成本上的實際表現。對於面臨 GPU 算力瓶頸、評估自研 ASIC 晶片以降低大型多模態生成模型生產環境推論開銷的架構師與 MLOps 工程師而言，本文提供了寶貴的一手實測數據與架構借鑑。",
+        "id": "news:https://huggingface.co/blog/video-trainium3",
+        "publishedAt": "2026-11-28T02:36:29.257Z",
+        "title": "在 AWS Trainium3 上實測 LTX-2.5 影片生成模型的工程實踐與效能剖析",
+        "type": "news",
+        "url": "https://huggingface.co/blog/video-trainium3"
+      },
+      {
+        "content": "近期在各大評測排行榜上引發廣泛關注的神祕高效能模型 Jev，經社群技術人員深入進行架構分析、權重特徵比對與輸出 token 機率分佈測試後，被指出實質極可能源自阿里開源的 Qwen3.5-35B-A3B 模型。該分析揭示了當前部分新模型宣稱的原創性背後實為對頂尖開源基礎架構的指令微調或封裝，為正在進行 LLM 選型、基準評測（Benchmarking）與防範偽冒架構的 AI 開發團隊提供了敏銳的技術洞察與甄別方法。",
+        "id": "news:https://modaic.dev/blog/latency-doesnt-lie",
+        "publishedAt": "2026-11-28T02:36:29.257Z",
+        "title": "社群逆向分析神祕高分模型 Jev：極可能為阿里開源 Qwen3.5-35B-A3B",
+        "type": "news",
+        "url": "https://modaic.dev/blog/latency-doesnt-lie"
+      },
+      {
+        "content": "隨著 AI 輔助編程工具普及導致自動生成程式碼量激增，傳統基於單元測試與動態分析的品質保證手段面臨極限。本文深入探討軟體工程界引入「可形式化驗證（Formally Verifiable）主流程式語言」的技術迫切性與實作路徑，分析如何將邏輯證明與型別系統深度融合，使關鍵業務系統在編譯階段即可數學證明其無內存漏洞與邏輯矛盾。文章從編譯器設計與工程實用性的平衡切入，對關注下一代程式語言架構與高可靠性系統工程的開發者極具啟發價值。",
+        "id": "news:https://blainehansen.me/post/mainstream-verifiable-language",
+        "publishedAt": "2026-11-28T02:36:29.257Z",
+        "title": "形式化驗證主流程式語言的必要性：AI 時代下的軟體安全新範式",
+        "type": "news",
+        "url": "https://blainehansen.me/post/mainstream-verifiable-language/"
+      },
+      {
+        "content": "資安研究人員在多個熱門電商網站發現新型信用卡側錄（Magecart）攻擊，攻擊者在注入惡意 JavaScript 腳本後，罕見地濫用 WebRTC 協定的端對端資料通道（DataChannel）將竊取的支付卡數據即時外洩。由於傳統網站內容安全策略（CSP）通常著重於限制 HTTP/HTTPS 與 WebSocket 的外發連線，而忽略了 WebRTC 的 P2P 傳輸通道，使惡意流量得以繞過常規資安監控。此事件提醒前端與 Web 資安工程師需重新檢視瀏覽器 API 權限管理，並在 CSP 中對 WebRTC 連線施加嚴格防護策略。",
+        "id": "news:https://infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer",
+        "publishedAt": "2026-11-28T02:36:29.257Z",
+        "title": "駭客利用 WebRTC 資料通道偷渡購物網站信用卡資料，繞過傳統 CSP 防護",
+        "type": "news",
+        "url": "https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer"
+      },
+      {
+        "content": "開發者透過逆向工程解析了 Windows 系統核心內建的音量等響度均衡（Loudness Equalization）數位訊號處理（DSP）演算法，並將其完整以 C 語言重寫並移植為 Linux 現代音訊架構 PipeWire 的專用濾波器節點。作者詳細記錄了動態範圍壓縮（DRC）曲線逆向分析、濾波器頻率響應還原以及 PipeWire 模組化音訊流管道（SPA plugin）整合的技術細節。這項開源成果不僅強化了 Linux 桌面系統的音訊體驗，更為從事 Linux 系統底層音訊處理、驅動開發與訊號演算法工程師提供了優秀的實作範例。",
+        "id": "news:https://github.com/xoxorwr/pw-loudness-eq",
+        "publishedAt": "2026-11-28T02:36:29.257Z",
+        "title": "開發者逆向工程 Windows 音量均衡演算法並成功移植至 PipeWire",
+        "type": "news",
+        "url": "https://github.com/xoxorwr/pw-loudness-eq"
       }
     ],
     "news": {
-      "generatedAt": "2026-11-27T02:45:49.430Z",
+      "generatedAt": "2026-11-28T02:36:29.257Z",
       "items": [
         {
-          "content": "Google 正式宣布推出 Gemini 4 Hydrogen。作為 Gemini 4 系列的最新成員，此發布延續了該模型家族在不同運算等級與專業場景上的布局。對開發者而言，Hydrogen 版本的亮相提供了新的模型選擇與 API 整合可能，有助於在推論成本、反應速度與任務複雜度之間取得更合適的平衡。開發者應關注其在各項基準測試中的效能表現，以及後續在 Google AI Studio 與 Vertex AI 上的部署細節。",
+          "content": "AWS 發表專為 AI 編程代理（Coding Agents）設計的 Nitro Sandboxes 機制，旨在為自主代理所生成的未受信任程式碼提供安全、輕量的沙盒執行環境。隨著自動化編程代理具備自主編寫並執行腳本的能力，若直接在主機或容器內運行可能引發嚴重的系統安全性與逃逸風險。Nitro Sandboxes 藉由 AWS Nitro 架構的微虛擬化技術，以極短的啟動時間提供強隔離邊界，確保代理程式在受限且可控的環境中完成測試與驗證，為構建安全自主 AI Agent 的 DevOps 與雲端架構師提供了關鍵基礎設施支持。",
+          "degraded": false,
+          "domain": "devops",
+          "sourceCount": 1,
+          "sourceId": "thenewstack",
+          "sourceTitle": "AWS Nitro Sandboxes give AI agents a place to run",
+          "sources": [
+            "thenewstack"
+          ],
+          "title": "AWS 推出 Nitro Sandboxes：為 AI 編程代理提供隔離運行環境",
+          "url": "https://thenewstack.io/aws-nitro-sandboxes-agents/",
+          "weightedScore": 50
+        },
+        {
+          "content": "開源大語言模型推論框架 llama.cpp 官方正式上線針對 AMD Ryzen 處理器與 Radeon 顯示卡的效能基準測試（Benchmark）儀表板。該儀表板匯集了不同架構、運算核心與量化精度（如 GGUF）在 AMD 硬體上的實際推論吞吐量與延遲數據。隨著在非 NVIDIA 晶片上部署本機 LLM 的需求增加，此測試工具讓開發者能客觀評估 AMD 硬體的本機 AI 推論能力，為邊緣推論與低成本開發工作站的硬體選型及參數調優提供可靠數據依據。",
+          "degraded": false,
+          "domain": "ai",
+          "sourceCount": 1,
+          "sourceId": "huggingface-blog",
+          "sourceTitle": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+          "sources": [
+            "huggingface-blog"
+          ],
+          "title": "llama.cpp 推出 AMD Ryzen 與 Radeon 專屬效能基準測試儀表板",
+          "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+          "weightedScore": 100
+        },
+        {
+          "content": "Google 宣布為其科學運算平台 Antigravity 推出名為 Mass Spec Skills 的專業 AI 技能工具，專門用於解析串聯質譜（Tandem Mass Spectra）並逆向識別複雜分子結構。質譜解析長年依賴人工比對與啟發式規則庫，在未知化合物分析上面臨瓶頸；該工具整合了領域特定的機器學習模型與代理技能，大幅提升自動化結構解析的精準度與效率。這項進展不僅展示了領域專業 AI 代理在科學計算中的落地潛力，也為從事 AI for Science 與生醫領域的演算法工程師提供了新的工具框架。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "deepmind-blog",
-          "sourceTitle": "Introducing Gemini 4 Hydrogen",
+          "sourceTitle": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
           "sources": [
             "deepmind-blog"
           ],
-          "title": "Google 發布 Gemini 4 Hydrogen 模型，拓展 Gemini 4 系列能力",
-          "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+          "title": "Google 推出 Mass Spec Skills：賦能 AI 代理從質譜數據精準識別分子結構",
+          "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
           "weightedScore": 100
         },
         {
-          "content": "Google 發布了名為 Cogentic 的系列論文，聚焦於整數分解（Integer Factorization）與離散對數（Discrete Logarithms）等經典數學與計算難題。整數分解與離散對數是現代公鑰密碼學（如 RSA 與 Diffie-Hellman）的安全性基石；Google 透過結合先進演算法與計算架構提出的新方法，引起了密碼學界與開發社群對既有加密體系長期強韌度的討論。這項研究提醒資安與後端架構師應持續關注後量子密碼學（PQC）的過渡時程，並提早評估長期資料保護方案的抗威脅能力。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Google releases Cogentic papers on integer factorization, discrete logs and more",
-          "sources": [
-            "hn"
-          ],
-          "title": "Google 發表 Cogentic 系列研究論文，探索整數分解與離散對數演算法突破",
-          "url": "https://github.com/google-research/google-research/tree/master/cogentic_research_papers",
-          "weightedScore": 503
-        },
-        {
-          "content": "Google 宣布將讓其 AI Agent 採用 Anthropic 主導的模型上下文協定（Model Context Protocol, MCP），並著手推出官方 MCP 伺服器整合 Google 旗下服務。值得注意的是，其官方 Gmail MCP 伺服器目前設計為無法直接寄送電子郵件，僅允許讀取等較受限的操作。這項轉變標誌著 MCP 協定進一步跨越廠商藩籬成為 Agent 工具整合的事實標準，同時也展示了主流大廠在賦予自主 Agent 外部操作權限時的安全護欄考量。對開發者而言，可加速基於 MCP 標準建構跨平台 Agent，並需依循其權限邊界設計工作流程。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
-          "sources": [
-            "hn"
-          ],
-          "title": "Google 擁抱 MCP 標準推官方 Agent 伺服器，但 Gmail 伺服器限制寄件權限",
-          "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
-          "weightedScore": 257
-        },
-        {
-          "content": "NVIDIA 針對文件解析專用模型 Nemotron 3.5 Parse 發布最新技術實作分享，涵蓋開放資料集釋出、模型微調策略以及推論加速方案。文件解析一直是大語言模型應用於檢索增強生成（RAG）與企業知識庫時的關鍵瓶頸；透過 Nemotron 3.5 Parse 的開放資料與專屬微調流程，開發者能更有效率地從複雜表格與非結構化排版中擷取精確資訊，並藉由優化推論管道降低落地部署的延遲與硬體運算成本。",
+          "content": "本文深入探討在 AWS 新一代自研 AI 加速晶片 Trainium3 上部署並最佳化 LTX-2.5 影片生成模型的實戰經驗。工程團隊詳細分析了從 CUDA 生態轉換至 AWS Neuron SDK 編譯器的技術挑戰、注意力機制的運算調度，以及相較於主流 GPU 在推論延遲與成本上的實際表現。對於面臨 GPU 算力瓶頸、評估自研 ASIC 晶片以降低大型多模態生成模型生產環境推論開銷的架構師與 MLOps 工程師而言，本文提供了寶貴的一手實測數據與架構借鑑。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "huggingface-blog",
-          "sourceTitle": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+          "sourceTitle": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
           "sources": [
             "huggingface-blog"
           ],
-          "title": "NVIDIA 釋出 Nemotron 3.5 Parse 開發指南，涵蓋開放資料、微調與推論加速",
-          "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+          "title": "在 AWS Trainium3 上實測 LTX-2.5 影片生成模型的工程實踐與效能剖析",
+          "url": "https://huggingface.co/blog/video-trainium3",
           "weightedScore": 100
         },
         {
-          "content": "隨著開發流程中 AI 代理（Coding Agents）的普及，中央代理維運（Central Agentic Ops, CAO）提出了一套跨多個程式碼儲存庫監控與治理 Agentic 工作流程的架構設計。該機制旨在解決多個自主 Agent 平行修改程式碼時所引發的權限失控、審查斷層與追蹤不易等問題。對工程團隊而言，CAO 提供了一個結構化的維運視角，協助團隊在享受自動化編程效益的同時，建立對 Agent 行為的稽核日誌、變更安全護欄與跨專案一致性控管。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-next",
-          "sourceTitle": "Central Agentic Ops (CAO)",
-          "sources": [
-            "github-next"
-          ],
-          "title": "跨儲存庫監控與治理：Central Agentic Ops（CAO）框架登場",
-          "url": "https://githubnext.com/projects/central-agentic-ops/",
-          "weightedScore": 100
-        },
-        {
-          "content": "一項最新研究指出，即使大型語言模型在提示詞與 API 層面處於嚴格隔離的沙盒環境中，若部署在同一個底層推論伺服器架構上，模型之間仍可透過硬體共用資源與推論快取等微架構側信道實現隱蔽通訊。此項發現對當前多租戶（Multi-tenant）LLM 託管服務與安全敏感型 Agent 隔離架構帶來直接衝擊。開發者與基礎設施工程師在設計高安全性 AI 應用時，不能僅依賴應用層沙盒，而需重新評估推論基礎設施層級的資源隔離與防洩漏機制。",
+          "content": "近期在各大評測排行榜上引發廣泛關注的神祕高效能模型 Jev，經社群技術人員深入進行架構分析、權重特徵比對與輸出 token 機率分佈測試後，被指出實質極可能源自阿里開源的 Qwen3.5-35B-A3B 模型。該分析揭示了當前部分新模型宣稱的原創性背後實為對頂尖開源基礎架構的指令微調或封裝，為正在進行 LLM 選型、基準評測（Benchmarking）與防範偽冒架構的 AI 開發團隊提供了敏銳的技術洞察與甄別方法。",
           "degraded": false,
           "domain": "ai",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
+          "sourceTitle": "Jev is probably Qwen3.5-35B-A3B",
           "sources": [
             "hn"
           ],
-          "title": "研究揭示沙盒化模型可透過共用推論伺服器建立隱蔽側信道通訊",
-          "url": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
-          "weightedScore": 465
+          "title": "社群逆向分析神祕高分模型 Jev：極可能為阿里開源 Qwen3.5-35B-A3B",
+          "url": "https://modaic.dev/blog/latency-doesnt-lie",
+          "weightedScore": 345
         },
         {
-          "content": "本文深入探討多代理系統（Multi-Agent Systems）的三種主流組織拓撲：Swarms（無中心蜂群）、Flocks（規則引導群體）與 Gangs（緊密協同分工小組），並詳細分析各架構在工作分解、通訊開銷與決策容錯上的權衡。文章進一步提供了多代理互動下的微調與對抗訓練技術，以及如何建立客觀基準評估協同效能而非單一 Agent 表現。對於正從單一對話模型轉向多 Agent 複雜任務編排的軟體架構師而言，這篇內容提供了系統性的工程落地方案。",
+          "content": "隨著 AI 輔助編程工具普及導致自動生成程式碼量激增，傳統基於單元測試與動態分析的品質保證手段面臨極限。本文深入探討軟體工程界引入「可形式化驗證（Formally Verifiable）主流程式語言」的技術迫切性與實作路徑，分析如何將邏輯證明與型別系統深度融合，使關鍵業務系統在編譯階段即可數學證明其無內存漏洞與邏輯矛盾。文章從編譯器設計與工程實用性的平衡切入，對關注下一代程式語言架構與高可靠性系統工程的開發者極具啟發價值。",
           "degraded": false,
           "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "huggingface-blog",
-          "sourceTitle": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
-          "sources": [
-            "huggingface-blog"
-          ],
-          "title": "多代理系統架構深度解析：群體協同的構建、訓練與評估方法",
-          "url": "https://huggingface.co/blog/training-swarms",
-          "weightedScore": 100
-        },
-        {
-          "content": "社群針對 AMD 平台推出了專屬優化的 llama.cpp 分支版本，深入針對 AMD Ryzen AI、Radeon GPU 及 ROCm 生態系進行推論核心優化與記憶體頻寬微調。llama.cpp 作為邊緣與本地端 LLM 執行的主流專案，過去大多優先針對 CUDA 與 Apple Silicon 進行調優；此 AMD 專用分支的推出，大幅改善了 AMD 硬體使用者的本機推論吞吐量與相容性體驗，為尋求 NVIDIA 以外替代硬體方案的本機 AI 開發者與部署團隊提供了更實用的開源選擇。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
+          "sourceCount": 2,
           "sourceId": "hn",
-          "sourceTitle": "AMD-specific fork of llama.cpp",
+          "sourceTitle": "The need for a formally verifiable mainstream programming language",
           "sources": [
-            "hn"
+            "hn",
+            "lobsters-ai"
           ],
-          "title": "開源社群推出針對 AMD 硬體架構優化的 llama.cpp 專屬分支",
-          "url": "https://devnull.land/amd-specific-llama-cpp",
-          "weightedScore": 294
+          "title": "形式化驗證主流程式語言的必要性：AI 時代下的軟體安全新範式",
+          "url": "https://blainehansen.me/post/mainstream-verifiable-language/",
+          "weightedScore": 417
         },
         {
-          "content": "GitHub 官方發表技術專文，說明如何對大型既有老舊應用程式進行邊界評估，制定小步迭代的安全現代化步驟，並利用 GitHub Copilot agent skill 將評估與重構方法模組化復用。對於維護龐大 Legacy 系統的工程團隊而言，一次性重寫往往伴隨巨大風險；文章展示了如何結合靜態分析與客製化 Agent 技能，在確保業務邏輯不中斷的前提下，逐步將單體服務重構為現代化架構，提供具體可落地的工程實踐指南。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "github-blog-ai-ml",
-          "sourceTitle": "How to choose the next safe step in application modernization",
-          "sources": [
-            "github-blog-ai-ml"
-          ],
-          "title": "GitHub 探討老舊系統現代化策略：結合 Copilot Agent Skill 進行安全重構",
-          "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
-          "weightedScore": 100
-        },
-        {
-          "content": "PenGPT 提出了將自回歸 Transformer 模型應用於向量手寫與草圖生成的全新架構。相較於將手寫轉為像素點陣的擴散模型，PenGPT 直接對手寫筆畫的座標序列、壓感與軌跡拓撲進行建模，能夠生成具備連貫向量路徑的逼真筆跡與圖表草稿。這項技術為手寫筆記數位化、互動式白板以及向量繪圖應用的前端與 AI 開發者帶來了輕量級且高解析度無損的全新生成工具。",
-          "degraded": false,
-          "domain": "ai",
-          "sourceCount": 1,
-          "sourceId": "hn",
-          "sourceTitle": "PenGPT: A Generative Transformer for Handwriting and Sketches",
-          "sources": [
-            "hn"
-          ],
-          "title": "PenGPT 開發架構：專注於手寫筆跡與向量草圖生成的 Transformer 模型",
-          "url": "https://greydanus.github.io/2026/11/12/pengpt/",
-          "weightedScore": 404
-        },
-        {
-          "content": "一篇社群技術分析探討了 Ubuntu 官方在 CVE 安全漏洞通報後的修補釋出時間，指出其在部分上游套件的修補延遲上顯著落後於 Debian、Alpine 等發行版。對於大量將 Ubuntu 用作伺服器底層作業系統、容器基礎映像檔（Base Images）以及 CI/CD 執行環境的 DevOps 與資安工程師而言，慢速的安全性更新可能延長系統暴露於已知威脅的空窗期。開發團隊應藉此檢視內部容器映像檔的相依套件掃描策略，並評估在關鍵基礎設施中切換為滾動修補更及時之發行版的可行性。",
+          "content": "資安研究人員在多個熱門電商網站發現新型信用卡側錄（Magecart）攻擊，攻擊者在注入惡意 JavaScript 腳本後，罕見地濫用 WebRTC 協定的端對端資料通道（DataChannel）將竊取的支付卡數據即時外洩。由於傳統網站內容安全策略（CSP）通常著重於限制 HTTP/HTTPS 與 WebSocket 的外發連線，而忽略了 WebRTC 的 P2P 傳輸通道，使惡意流量得以繞過常規資安監控。此事件提醒前端與 Web 資安工程師需重新檢視瀏覽器 API 權限管理，並在 CSP 中對 WebRTC 連線施加嚴格防護策略。",
           "degraded": false,
           "domain": "general",
           "sourceCount": 1,
           "sourceId": "hn",
-          "sourceTitle": "Slow Ubuntu security response times",
+          "sourceTitle": "Credit card skimming scripts using WebRTC found on popular shopping sites",
           "sources": [
             "hn"
           ],
-          "title": "社群分析指出 Ubuntu 安全漏洞修補週期緩慢，引發基礎設施維運隱憂",
-          "url": "https://www.openwall.com/lists/oss-security/2026/11/25/9",
-          "weightedScore": 411
+          "title": "駭客利用 WebRTC 資料通道偷渡購物網站信用卡資料，繞過傳統 CSP 防護",
+          "url": "https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer",
+          "weightedScore": 440
+        },
+        {
+          "content": "開發者透過逆向工程解析了 Windows 系統核心內建的音量等響度均衡（Loudness Equalization）數位訊號處理（DSP）演算法，並將其完整以 C 語言重寫並移植為 Linux 現代音訊架構 PipeWire 的專用濾波器節點。作者詳細記錄了動態範圍壓縮（DRC）曲線逆向分析、濾波器頻率響應還原以及 PipeWire 模組化音訊流管道（SPA plugin）整合的技術細節。這項開源成果不僅強化了 Linux 桌面系統的音訊體驗，更為從事 Linux 系統底層音訊處理、驅動開發與訊號演算法工程師提供了優秀的實作範例。",
+          "degraded": false,
+          "domain": "general",
+          "sourceCount": 1,
+          "sourceId": "hn",
+          "sourceTitle": "Windows Loudness Equalization, reverse-engineered and ported to PipeWire",
+          "sources": [
+            "hn"
+          ],
+          "title": "開發者逆向工程 Windows 音量均衡演算法並成功移植至 PipeWire",
+          "url": "https://github.com/xoxorwr/pw-loudness-eq",
+          "weightedScore": 346
         }
       ]
     }
   },
   "seenNews": [
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "hn",
-      "sources": [
-        "deepmind-blog",
-        "github-changelog-copilot",
-        "hn"
-      ],
-      "title": "Gemini 4 Argon",
-      "url": "https://deepmind.google/models/gemini"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "reddit-localllama",
-      "sources": [
-        "reddit-localllama"
-      ],
-      "title": "LiquidAI/LFM2.5-24B-A2B",
-      "url": "https://reddit.com/r/LocalLLaMA/comments/1x52kco/liquidailfm2524ba2b"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "github-blog-ai-ml",
-      "sources": [
-        "github-blog-ai-ml"
-      ],
-      "title": "GitHub’s model for secret detection: Finding more secrets with less noise",
-      "url": "https://github.blog/ai-and-ml/githubs-model-for-secret-detection-finding-more-secrets-with-less-noise"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "github-changelog-copilot",
-      "sources": [
-        "github-changelog-copilot"
-      ],
-      "title": "Enterprise managed settings enforcement updates",
-      "url": "https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "ollama-blog",
-      "sources": [
-        "ollama-blog"
-      ],
-      "title": "Run AI agents safely with Ollama and Fly.io",
-      "url": "https://ollama.com/blog/fly-io-sprites"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Redesigning source control at Anthropic",
-      "url": "https://anthropic.com/engineering/redesigning-source-control"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "cloudflare-blog",
-      "sources": [
-        "cloudflare-blog"
-      ],
-      "title": "Under the hood, off the hot path: How D1 scales to millions of databases",
-      "url": "https://blog.cloudflare.com/d1-control-plane"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "The agent did the work. The audit log couldn’t say who asked.",
-      "url": "https://thenewstack.io/ai-agent-credentials-identity-provider"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Janas: Run LLMs larger than RAM by streaming experts from SSD",
-      "url": "https://github.com/prabanta-dev/janas"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "Codex CLI installs a persistent, self-updating background daemon by default",
-      "url": "https://github.com/openai/codex/issues/48195"
-    },
-    {
-      "domain": "ai",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "A look at the math that OpenAI claims computes faster Fourier transforms",
-      "url": "https://argmin.net/p/faster-fourier-transforms"
-    },
-    {
-      "domain": "devops",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "thenewstack",
-      "sources": [
-        "thenewstack"
-      ],
-      "title": "Anthropic’s red team ran AI on 15 cheap TV boxes. Then the math got unsettling.",
-      "url": "https://thenewstack.io/self-replicating-ai-worms"
-    },
-    {
-      "domain": "frontend-backend",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "lobsters-programming",
-      "sources": [
-        "lobsters-programming"
-      ],
-      "title": "scriptc | TypeScript-to-Native Compiler",
-      "url": "https://scriptc.dev/"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "11 year old unsoundness bugs found in Rust borrow checker",
-      "url": "https://github.com/rust-lang/rust/issues/164250"
-    },
-    {
-      "domain": "general",
-      "seenAt": "2026-10-13T23:42:40.985Z",
-      "sourceId": "hn",
-      "sources": [
-        "hn"
-      ],
-      "title": "A Modern Web App in C",
-      "url": "https://prophitt.me/writing/a-modern-web-app-in-c"
-    },
     {
       "domain": "ai",
       "seenAt": "2026-10-14T23:08:50.711Z",
@@ -6784,6 +6591,87 @@
       ],
       "title": "Slow Ubuntu security response times",
       "url": "https://openwall.com/lists/oss-security/2026/11/25/9"
+    },
+    {
+      "domain": "devops",
+      "seenAt": "2026-11-28T02:36:29.257Z",
+      "sourceId": "thenewstack",
+      "sources": [
+        "thenewstack"
+      ],
+      "title": "AWS Nitro Sandboxes give AI agents a place to run",
+      "url": "https://thenewstack.io/aws-nitro-sandboxes-agents"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-28T02:36:29.257Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+      "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-28T02:36:29.257Z",
+      "sourceId": "deepmind-blog",
+      "sources": [
+        "deepmind-blog"
+      ],
+      "title": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
+      "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-28T02:36:29.257Z",
+      "sourceId": "huggingface-blog",
+      "sources": [
+        "huggingface-blog"
+      ],
+      "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
+      "url": "https://huggingface.co/blog/video-trainium3"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-28T02:36:29.257Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Jev is probably Qwen3.5-35B-A3B",
+      "url": "https://modaic.dev/blog/latency-doesnt-lie"
+    },
+    {
+      "domain": "ai",
+      "seenAt": "2026-11-28T02:36:29.257Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn",
+        "lobsters-ai"
+      ],
+      "title": "The need for a formally verifiable mainstream programming language",
+      "url": "https://blainehansen.me/post/mainstream-verifiable-language"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-28T02:36:29.257Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Credit card skimming scripts using WebRTC found on popular shopping sites",
+      "url": "https://infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer"
+    },
+    {
+      "domain": "general",
+      "seenAt": "2026-11-28T02:36:29.257Z",
+      "sourceId": "hn",
+      "sources": [
+        "hn"
+      ],
+      "title": "Windows Loudness Equalization, reverse-engineered and ported to PipeWire",
+      "url": "https://github.com/xoxorwr/pw-loudness-eq"
     }
   ]
 }
